@@ -1,0 +1,318 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-25",
+  "worlds": [
+    {
+      "id": "known_world",
+      "name": "The Known World",
+      "description": "A gritty, dying-empire setting of crumbling kingdoms, blasted steppes, cursed ruins, and sorcerous cities. Magic is real but always exacts a price. The dead linger. Shadows have will. Gods are cruel or indifferent.",
+      "tone": "Sword & sorcery pulp — Howard, Smith, Leiber. Muscular prose, doomed heroes, ironic endings.",
+      "rules": [
+        "Magic always exacts a price — in blood, memory, years, or something less tangible.",
+        "Shadow-magic is real; shadows can be stolen, sold, worn, or inhabited by other entities.",
+        "Yarithax's gold carries a debt that compounds daily — the dead Lich-King's collectors are relentless.",
+        "Demons deal in intangibles: years of life, happiness, certainty, loyalty.",
+        "The dead can return to honor — or collect on — oaths sworn in life.",
+        "Living architecture exists: structures that breathe, digest, or grow around the living.",
+        "World-crossing is possible through rare magical catastrophe or demonic contract, but is never casual."
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "vraxen_the_knife",
+      "name": "Vraxen the Knife",
+      "role": "Thief / Cursed Rogue",
+      "world": "known_world",
+      "status": "cursed",
+      "bio": "A master thief who has robbed a hundred merchant princes. Attempted to rob the idol of Khar-Zul in its inner temple, prying six of nine emerald eyes free before the shadows came alive. Escaped with six gems but gained a new companion: a shadow wearing his own face, patient as carved stone, crouching beside him at dawn. His fate thereafter is unknown.",
+      "traits": ["audacious", "calculating", "now-haunted"],
+      "known_locations": ["Temple of Khar-Zul"],
+      "affiliations": [],
+      "first_story": "The Thief of Khar-Zul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "His doppelganger shadow may reappear in future stories. The six emerald eyes of Khar-Zul are loose in the world."
+    },
+    {
+      "id": "soraya",
+      "name": "Soraya",
+      "role": "Sell-Sword / Mercenary",
+      "world": "known_world",
+      "status": "active",
+      "bio": "A renowned sell-sword hired to escort merchant caravans. Killed nine blood-cursed drivers on the Ashen Wastes when she discovered her employer Aldric had sold them to a sorcerer. Slew the sorcerer last, slowly. Kept none of Aldric's gold, but stole his shadow and sold it in the night markets of Pelimor. Tells herself it was justice.",
+      "traits": ["ruthless efficiency", "dark conscience", "pragmatic morality"],
+      "known_locations": ["Ashen Wastes", "Pelimor"],
+      "affiliations": [],
+      "first_story": "Blood-Price of the Caravan",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "Operates primarily around the Ashen Wastes and Pelimor. Has contacts in Pelimor's night markets."
+    },
+    {
+      "id": "aldric",
+      "name": "Aldric",
+      "role": "Merchant / Schemer",
+      "world": "known_world",
+      "status": "shadow-stolen",
+      "bio": "A spice merchant operating on the Ashen Wastes route. Hired Soraya as a sell-sword escort, while secretly paying bandits, toll-lords, and a blood-sorcerer to smooth his passage. His drivers were transformed into shadow-eyed killers. Survived the journey but had his shadow stolen by Soraya and sold in Pelimor's night markets.",
+      "traits": ["duplicitous", "cowardly", "transactional"],
+      "known_locations": ["Ashen Wastes", "Pelimor"],
+      "affiliations": [],
+      "first_story": "Blood-Price of the Caravan",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "A man without a shadow wandering the Known World. His fate may have interesting consequences."
+    },
+    {
+      "id": "malachite_doss",
+      "name": "Malachite Doss",
+      "role": "Scholar / Ruin-Delver",
+      "world": "known_world",
+      "status": "changed",
+      "bio": "A scholar of ancient ruins who descended into the Sunken Ziggurat of Yeng and found the Lamp of Suroth. Lit it in exchange for one truth and the destruction of one lie he had lived by. Learned his dead wife had never loved him — only his library — a truth he had suppressed for thirty years. The flame consumed his belief that knowledge was its own reward. Left the ruin lighter and heavier at once, no longer certain of his life's purpose.",
+      "traits": ["intellectual", "self-deceiving", "changed by truth"],
+      "known_locations": ["Sunken Ziggurat of Yeng"],
+      "affiliations": [],
+      "first_story": "The Lamp of Suroth",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "Carries the memory of the Lamp's truth. May return to ruins seeking further truths or running from them."
+    },
+    {
+      "id": "kael_bloodhorn",
+      "name": "Kael Bloodhorn",
+      "role": "Warlord / Barbarian Chief",
+      "world": "known_world",
+      "status": "broken",
+      "bio": "Chieftain who brought 800 Veth warriors to siege the Bone Citadel, a living fortress of bone-white stone. Lost 700 warriors to its defenses before reaching the heart chamber. Sent his last 100 through drainage tunnels with torches; they were absorbed into the Citadel's walls — alive, preserved, breathing, visible like insects in amber. Kael spent the rest of his life attempting to free them. He failed. He never stopped trying.",
+      "traits": ["stubborn valor", "grief-driven", "relentless"],
+      "known_locations": ["Bone Citadel", "the Steppe"],
+      "affiliations": ["Veth warriors"],
+      "first_story": "Siege of the Bone Citadel",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "His warriors remain alive within the Bone Citadel walls. The Citadel screamed for three days after being burned, then went still — its status is unknown."
+    },
+    {
+      "id": "tessaly_dorn",
+      "name": "Tessaly Dorn",
+      "role": "Adventurer / Debt-Collector",
+      "world": "known_world",
+      "status": "active — in service to the dead",
+      "bio": "An adventurer who spent twelve gold coins from Yarithax's hoard before reading the inscription: 'This debt is not yet settled.' The Lich-King's grey collectors found her — two thin men who walk through walls and never sleep. After failing to pay with soul or years, she settled an eleven-month debt working as a collector herself, chasing debts for the dead. She collected punctually. She understood the job.",
+      "traits": ["resourceful", "quick-thinking", "grimly professional"],
+      "known_locations": ["wherever debts lead"],
+      "affiliations": ["Yarithax's collectors (former)"],
+      "first_story": "The Curse of Yarithax's Gold",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "Her debt is paid. But she knows the collectors and their methods. Yarithax's gold still circulates in the world."
+    },
+    {
+      "id": "pieter_vane",
+      "name": "Pieter Vane",
+      "role": "Oath-Breaker",
+      "world": "known_world",
+      "status": "presumed dead / claimed by the dead",
+      "bio": "A man who broke his oath to a dead king on a Tuesday, for twenty gold pieces and a horse. The horse went lame; the gold was spent in a month. The dead king found him in a dockside tavern three provinces away the following Wednesday — patient, without threat. Pieter recited the oath from memory without being asked; he had never forgotten it. He paid his tab, followed the dead king into the cold street, and was never seen again. A new unmarked tomb appeared on the north road soon after.",
+      "traits": ["guilty", "haunted", "ultimately honorable in his acceptance"],
+      "known_locations": ["dockside tavern (province unknown)", "north road tomb"],
+      "affiliations": [],
+      "first_story": "The Oath-Breaker's Due",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "Almost certainly dead and entombed. The dead king's identity is unknown — a potential story hook."
+    },
+    {
+      "id": "conjuress_mel",
+      "name": "Conjuress Mel",
+      "role": "Sorceress / Demonologist",
+      "world": "known_world",
+      "status": "active — partner to Varek",
+      "bio": "A conjuress who owed three favors to the demon Varek for spells cast during the Siege of Amrath. The first favor: deliver a letter to a dead man — completed. The second: steal a year from a sleeping child — refused, punished, ultimately complied. The third, named on her wedding morning: her marriage itself — happiness as collection. Instead she drew a binding circle she had months to prepare and offered Varek an unprecedented counter: herself as a fellow collector of intangibles. Varek agreed. They work together now.",
+      "traits": ["brilliant", "ruthless when cornered", "pragmatic survivor"],
+      "known_locations": ["Amrath (past)", "unknown (present)"],
+      "affiliations": ["Varek (partner)"],
+      "first_story": "The Sorcerer's Debt",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "Now partners with Varek. They collect intangibles — happiness, certainty, loyalty, love — from mortals. A significant ongoing force in the Known World."
+    },
+    {
+      "id": "varek",
+      "name": "Varek",
+      "role": "Demon / Collector of Intangibles",
+      "world": "known_world",
+      "status": "active — partnered with Conjuress Mel",
+      "bio": "An elegant demon who deals in intangibles: years of life, happiness, certainty, loyalty. Made a three-favor contract with Conjuress Mel during the Siege of Amrath. Planned to claim her marriage (happiness) as his third collection, but was outmaneuvered when she offered herself as a partner-collector instead. Accepted, as it was a better arrangement for both. Now collects alongside Mel.",
+      "traits": ["elegant", "patient", "genuinely capable of surprise"],
+      "known_locations": ["everywhere and nowhere"],
+      "affiliations": ["Conjuress Mel (partner)"],
+      "first_story": "The Sorcerer's Debt",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "Can be encountered at weddings, moments of great happiness, or wherever certainty gathers. Is genuinely surprised by mortals who outthink him — rare and notable."
+    },
+    {
+      "id": "urgha_the_unmoved",
+      "name": "Urgha the Unmoved",
+      "role": "Mercenary / Warrior",
+      "world": "known_world",
+      "status": "active",
+      "bio": "A mercenary of fearsome reputation, named for her emotional detachment. Hired by an emperor to retrieve a tax collector's funds or his ears. Instead showed mercy when she found the collector had spent the money on physicians for his ill daughter. She kept neither money nor ears, sent her own personal physician to treat the child, and paid out of pocket. She remained unmoved — and was very angry about having shown mercy for years afterward.",
+      "traits": ["ferocious", "secretly compassionate", "proud of her reputation"],
+      "known_locations": ["various — mercenary routes"],
+      "affiliations": ["the emperor (client)", "her personal physician"],
+      "first_story": "The Barbarian's Mercy",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "The emperor presumably still wants his money or the collector's ears. Urgha's mercy may have consequences."
+    },
+    {
+      "id": "cassia_vorn",
+      "name": "Cassia Vorn",
+      "role": "Thief / Avenger",
+      "world": "known_world",
+      "status": "active — and diminished",
+      "bio": "The last thief of Crimson Gate, a city burned with three thousand people inside. Negotiated with a demon past all the standard offers (wealth, power, enemy's life) until the demon, unused to educated clients, dropped its script and simply asked what she wanted. She wanted the name of the man who burned Crimson Gate — information, not power, the currency of an older economy. She traded her certainty (intoxicating to beings made of doubt) for the name, then used it. She is notably less certain now, but the name was used.",
+      "traits": ["razor intelligence", "grief-driven", "now uncertain"],
+      "known_locations": ["Crimson Gate (ruins)", "wherever vengeance leads"],
+      "affiliations": [],
+      "first_story": "The Last Thief of Crimson Gate",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "The man who burned Crimson Gate has been identified. His fate is a story hook. Cassia's lost certainty may have ongoing consequences — what does a sharp mind look like without its sharpest edge?"
+    },
+    {
+      "id": "king_aldous_iii",
+      "name": "King Aldous III",
+      "role": "King (deceased)",
+      "world": "known_world",
+      "status": "deceased",
+      "bio": "Won a desperate war by wearing the Plague-Bringer's Crown from the sealed vault beneath Ostern for thirty seconds. The gambit worked — the enemy surrendered rather than face a man with nothing left to lose. Reigned eleven more years: erratic, sleepless, prone to speaking to people who were not in the room. His shadow had been on backwards for years, which the physicians noted only after his death by ordinary causes. The Crown was returned to Ostern, which built a deeper vault.",
+      "traits": ["reckless courage", "haunted", "effective despite madness"],
+      "known_locations": ["Ostern (kingdom)", "the royal court"],
+      "affiliations": ["the kingdom of Ostern"],
+      "first_story": "The Plague-Bringer's Crown",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "notes": "Dead of natural causes. His backwards shadow suggests the Crown's curse ran deeper than thirty seconds. The deeper vault at Ostern is a story hook."
+    }
+  ],
+  "places": [
+    {
+      "id": "temple_of_khar_zul",
+      "name": "Temple of Khar-Zul",
+      "world": "known_world",
+      "description": "An inner-dark temple housing the idol of Khar-Zul, a god with nine emerald eyes worth more than most kingdoms. The shadows within are alive — by the third stolen gem they move; by the sixth they have teeth. The temple itself screamed in a voice of grinding granite when the god was robbed.",
+      "status": "active — and aware",
+      "notes": "Six of the nine emerald eyes are now loose in the world, carried by Vraxen. Three remain in the idol."
+    },
+    {
+      "id": "ashen_wastes",
+      "name": "Ashen Wastes",
+      "world": "known_world",
+      "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
+      "status": "active",
+      "notes": "The site of the blood-cursed caravan massacre. A shadow was stolen here."
+    },
+    {
+      "id": "pelimor",
+      "name": "Pelimor",
+      "world": "known_world",
+      "description": "A city with functioning night markets where unusual commodities — including stolen shadows — are bought and sold by buyers who never give their names.",
+      "status": "active",
+      "notes": "Hub of shadow trade and other occult commerce. Aldric's stolen shadow was sold here."
+    },
+    {
+      "id": "sunken_ziggurat_of_yeng",
+      "name": "Sunken Ziggurat of Yeng",
+      "world": "known_world",
+      "description": "An ancient subterranean ruin where the air tastes of centuries. Houses the Lamp of Suroth in a sealed chamber. Multiple sealed doors hint at further depths and further lamps — or worse.",
+      "status": "partially explored",
+      "notes": "Malachite Doss found and used the Lamp. The other sealed doors remain unexplored."
+    },
+    {
+      "id": "bone_citadel",
+      "name": "The Bone Citadel",
+      "world": "known_world",
+      "description": "A living fortress of bone-white stone on the steppe. Towers breathe. Gates digest. The heart is a pulsing white chamber fed by roots spreading under the whole steppe. It absorbed 100 Veth warriors into its walls — alive, preserved, visible beneath the surface like insects in amber. Screamed for three days after Kael's assault, then went silent.",
+      "status": "unknown — silent after the assault",
+      "notes": "700 Veth warriors are dead. 100 are alive-in-walls. Kael Bloodhorn spent his life here. The Citadel's silence may mean death, dormancy, or something worse."
+    },
+    {
+      "id": "amrath",
+      "name": "Amrath",
+      "world": "known_world",
+      "description": "A city that survived a siege — the Siege of Amrath — during which Conjuress Mel made her desperate three-favor pact with Varek. Its current condition after the siege is unspecified.",
+      "status": "post-siege",
+      "notes": "The site of Mel's original demon pact. The political fallout of the siege is a potential story hook."
+    },
+    {
+      "id": "crimson_gate",
+      "name": "Crimson Gate",
+      "world": "known_world",
+      "description": "A city burned with three thousand people inside by a man whose identity Cassia Vorn traded her certainty to learn. Now ruins.",
+      "status": "ruins",
+      "notes": "The arsonist has been identified by Cassia. His fate is a story hook. The ruins may hold survivors, ghosts, or artifacts."
+    },
+    {
+      "id": "ostern",
+      "name": "Ostern",
+      "world": "known_world",
+      "description": "A kingdom ruled by King Aldous III until his death. Home to the sealed vault beneath the city that housed the Plague-Bringer's Crown. After Aldous's death, the Crown was returned and a deeper vault was built.",
+      "status": "active — under new rule",
+      "notes": "The deeper vault is a story hook. Aldous's court may have retained his erratic advisors or courtiers who grew used to a backwards-shadowed king."
+    }
+  ],
+  "deities_and_entities": [
+    {
+      "id": "khar_zul",
+      "name": "Khar-Zul",
+      "type": "deity",
+      "world": "known_world",
+      "description": "A god worshipped in inner-dark temples, represented by an idol with nine emerald eyes. The idol's gems are warm to the touch. Khar-Zul's shadows have teeth. The temple screams in grinding granite when the god is robbed.",
+      "status": "active — and offended",
+      "notes": "Six of nine emerald eyes are missing. Khar-Zul's response to the theft is ongoing — the doppelganger shadow following Vraxen may be the god's instrument."
+    },
+    {
+      "id": "yarithax",
+      "name": "Yarithax",
+      "type": "Lich-King (undead entity)",
+      "world": "known_world",
+      "description": "A dead Lich-King whose gold coins bear his profile and the inscription 'This debt is not yet settled.' The debt compounds daily. His collectors — two thin men in grey carrying ledgers, who walk through walls and never sleep — pursue all holders of his gold. Souls are worth less than twelve gold marks.",
+      "status": "undead — collecting",
+      "notes": "His gold still circulates. Tessaly Dorn has paid her debt but knows his collectors. More debtors exist."
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "lamp_of_suroth",
+      "name": "Lamp of Suroth",
+      "world": "known_world",
+      "location": "Sunken Ziggurat of Yeng",
+      "description": "An iron lamp, ugly, filled with something that is not oil. Its inscription: 'He who lights this buys one truth at the cost of one lie he has lived by.' The flame burns black. The truth that emerges is always smaller than the lie it consumes. The lamp gutters out after one use per visitor.",
+      "status": "used once — may be refillable",
+      "notes": "Malachite Doss used it. Other sealed doors in the Ziggurat may house similar or worse artifacts."
+    },
+    {
+      "id": "plague_bringers_crown",
+      "name": "The Plague-Bringer's Crown",
+      "world": "known_world",
+      "location": "deeper vault beneath Ostern",
+      "description": "A relic that killed four wearers before Aldous III survived thirty seconds. Wearing it projects absolute desperation — the aura of a man with nothing left to lose. Its curse runs deep; Aldous's shadow was on backwards for eleven years after wearing it for half a minute.",
+      "status": "sealed in deeper vault",
+      "notes": "Four previous wearers are dead. Aldous survived but was changed. The deeper vault at Ostern is a story hook."
+    },
+    {
+      "id": "emerald_eyes_of_khar_zul",
+      "name": "The Six Emerald Eyes of Khar-Zul",
+      "world": "known_world",
+      "location": "with Vraxen the Knife (last known)",
+      "description": "Six of nine emerald eyes pried from the idol of Khar-Zul. Each was warm — obscenely so — to the touch. Worth more than most kingdoms. Three remain in the idol.",
+      "status": "loose in the world",
+      "notes": "Six gems in unknown hands. Each may carry a fragment of Khar-Zul's attention or malice."
+    }
+  ]
+}
