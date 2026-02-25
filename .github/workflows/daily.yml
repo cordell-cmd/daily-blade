@@ -1,0 +1,36 @@
+name: Generate Daily Stories
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate stories
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python generate_stories.py
+
+      - name: Commit and push stories.json
+        run: |
+          git config user.name "Daily Blade Bot"
+          git config user.email "actions@github.com"
+          git add stories.json
+          git diff --cached --quiet || git commit -m "Daily stories $(date -u '+%Y-%m-%d')"
+          git push
