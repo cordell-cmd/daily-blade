@@ -100,6 +100,84 @@
       color: var(--gold);
     }
 
+    /* ── Main Nav Tabs ────────────────────────────────────────────── */
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding: 1.5rem 0 0;
+      border-bottom: 2px solid rgba(201,146,42,.25);
+    }
+
+    .main-tab {
+      font-family: 'Cinzel', serif;
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      color: var(--muted);
+      padding: .6rem 1.2rem .7rem;
+      cursor: pointer;
+      transition: color .18s, border-color .18s;
+      white-space: nowrap;
+    }
+
+    .main-tab:hover {
+      color: var(--aged);
+    }
+
+    .main-tab.active {
+      color: var(--gold);
+      border-bottom-color: var(--gold);
+    }
+
+    .main-nav-right {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding-bottom: .4rem;
+    }
+
+    /* ── Genre Filter Bar ─────────────────────────────────────────── */
+    .genre-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      padding: 1.1rem 0 .8rem;
+      border-bottom: 1px solid rgba(201,146,42,.15);
+      margin-bottom: 1.8rem;
+    }
+
+    .genre-btn {
+      font-family: 'Cinzel', serif;
+      font-size: .6rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      background: none;
+      border: 1px solid rgba(201,146,42,.3);
+      color: var(--muted);
+      padding: .3rem .75rem;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background .15s, color .15s, border-color .15s;
+      white-space: nowrap;
+    }
+
+    .genre-btn:hover {
+      border-color: var(--gold);
+      color: var(--aged);
+    }
+
+    .genre-btn.active {
+      background: rgba(201,146,42,.15);
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
     /* ── Controls ─────────────────────────────────────────────────── */
     .controls {
       display: flex;
@@ -107,9 +185,8 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 1rem;
-      padding: 1.5rem 0 .5rem;
-      border-bottom: 1px solid rgba(201,146,42,.25);
-      margin-bottom: 2rem;
+      padding: .6rem 0 .5rem;
+      margin-bottom: .4rem;
     }
 
     .controls-left {
@@ -118,12 +195,6 @@
       letter-spacing: .2em;
       color: var(--gold);
       text-transform: uppercase;
-    }
-
-    .controls-right {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
     }
 
     /* ── Buttons ──────────────────────────────────────────────────── */
@@ -203,6 +274,10 @@
       transition: transform .2s, box-shadow .2s;
     }
 
+    .story-card.hidden {
+      display: none;
+    }
+
     .story-card:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 28px rgba(0,0,0,.65);
@@ -238,6 +313,12 @@
       padding: .15rem .5rem;
       border-radius: 2px;
       margin-bottom: .7rem;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+
+    .story-tag:hover {
+      background: rgba(201,146,42,.15);
     }
 
     .story-title {
@@ -272,6 +353,168 @@
       padding-right: .12em;
       color: var(--gold);
       text-shadow: 2px 2px 4px rgba(0,0,0,.7);
+    }
+
+    /* ── No Results ───────────────────────────────────────────────── */
+    .no-results {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-style: italic;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    /* ── Characters View ──────────────────────────────────────────── */
+    #char-view {
+      display: none;
+    }
+
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.8rem;
+    }
+
+    @media (max-width: 400px) {
+      .char-grid { grid-template-columns: 1fr; }
+    }
+
+    .char-card {
+      background: linear-gradient(160deg, #1b0c05 0%, #110904 100%);
+      border: 1px solid rgba(201,146,42,.3);
+      border-top: 3px solid var(--darkgold);
+      border-radius: 3px;
+      padding: 1.4rem 1.5rem 1.5rem;
+      position: relative;
+      box-shadow: 0 3px 16px rgba(0,0,0,.45);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .char-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 24px rgba(0,0,0,.6);
+    }
+
+    .char-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: .75rem;
+      margin-bottom: .8rem;
+    }
+
+    .char-name {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--parchment);
+      line-height: 1.2;
+      text-shadow: 1px 1px 3px rgba(0,0,0,.5);
+    }
+
+    .char-badges {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: .3rem;
+      flex-shrink: 0;
+    }
+
+    .badge {
+      font-family: 'Cinzel', serif;
+      font-size: .55rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: .18rem .5rem;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .badge-role {
+      background: rgba(201,146,42,.15);
+      border: 1px solid rgba(201,146,42,.4);
+      color: var(--gold);
+    }
+
+    .badge-status-active    { background: rgba(30,80,30,.3);  border: 1px solid #3a8a3a; color: #6dbb6d; }
+    .badge-status-dead      { background: rgba(80,10,10,.3);  border: 1px solid #8b1a1a; color: #c96060; }
+    .badge-status-cursed    { background: rgba(60,20,80,.3);  border: 1px solid #7a3a9a; color: #b07acc; }
+    .badge-status-changed   { background: rgba(20,50,70,.3);  border: 1px solid #2a6a8a; color: #5aaabb; }
+    .badge-status-unknown   { background: rgba(40,30,10,.3);  border: 1px solid #6a5a1a; color: #9a8a4a; }
+    .badge-status-default   { background: rgba(40,30,20,.3);  border: 1px solid rgba(201,146,42,.3); color: var(--muted); }
+
+    .char-divider {
+      border: none;
+      border-top: 1px solid rgba(201,146,42,.2);
+      margin: .8rem 0;
+    }
+
+    .char-bio {
+      font-size: .875rem;
+      color: var(--aged);
+      line-height: 1.7;
+      margin-bottom: .9rem;
+    }
+
+    .char-traits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-bottom: .9rem;
+    }
+
+    .char-trait {
+      font-family: 'Cinzel', serif;
+      font-size: .55rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--blood);
+      border: 1px solid rgba(139,26,26,.4);
+      padding: .12rem .45rem;
+      border-radius: 2px;
+    }
+
+    .char-footer {
+      font-size: .75rem;
+      color: var(--muted);
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .char-first-story {
+      color: var(--muted);
+    }
+
+    .char-appearances {
+      font-family: 'Cinzel', serif;
+      font-size: .6rem;
+      letter-spacing: .1em;
+      color: rgba(201,146,42,.5);
+      white-space: nowrap;
+    }
+
+    .char-world {
+      font-family: 'Cinzel', serif;
+      font-size: .58rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: rgba(201,146,42,.4);
+      position: absolute;
+      top: .6rem;
+      right: .8rem;
+    }
+
+    /* Characters loading/empty states */
+    .char-status {
+      text-align: center;
+      padding: 3rem 1rem;
+      font-style: italic;
+      color: var(--aged);
     }
 
     /* ── Error ────────────────────────────────────────────────────── */
@@ -512,20 +755,58 @@
     <p class="masthead-date" id="today-date"></p>
   </header>
 
-  <div class="controls">
-    <span class="controls-left" id="story-count-label">— Loading today's tales… —</span>
-    <div class="controls-right">
+  <!-- ── Main Nav ───────────────────────────────────────────────── -->
+  <nav class="main-nav" aria-label="Main sections">
+    <button class="main-tab active" id="tab-tales" aria-selected="true">⚔ Tales</button>
+    <button class="main-tab" id="tab-characters" aria-selected="false">❧ Characters</button>
+    <div class="main-nav-right">
       <button class="btn btn-blood" id="today-btn" style="display:none;" aria-label="Return to today's stories">← Today's Tales</button>
       <button class="btn" id="archive-btn" aria-label="Browse the archive">📜 Archive</button>
     </div>
+  </nav>
+
+  <!-- ── Tales View ─────────────────────────────────────────────── -->
+  <div id="tales-view">
+
+    <!-- Genre filter bar -->
+    <div class="genre-bar" id="genre-bar" role="group" aria-label="Filter by genre">
+      <button class="genre-btn active" data-genre="all">All Tales</button>
+      <button class="genre-btn" data-genre="Sword &amp; Sorcery">Sword &amp; Sorcery</button>
+      <button class="genre-btn" data-genre="Dark Fantasy">Dark Fantasy</button>
+      <button class="genre-btn" data-genre="Lost World">Lost World</button>
+      <button class="genre-btn" data-genre="Barbarian Quest">Barbarian Quest</button>
+      <button class="genre-btn" data-genre="Ancient Curse">Ancient Curse</button>
+      <button class="genre-btn" data-genre="Forbidden Tomb">Forbidden Tomb</button>
+      <button class="genre-btn" data-genre="Witch Hunt">Witch Hunt</button>
+      <button class="genre-btn" data-genre="Blood Oath">Blood Oath</button>
+      <button class="genre-btn" data-genre="Demon Pact">Demon Pact</button>
+      <button class="genre-btn" data-genre="War of Kings">War of Kings</button>
+    </div>
+
+    <div class="controls">
+      <span class="controls-left" id="story-count-label">— Loading today's tales… —</span>
+    </div>
+
+    <div id="status-msg">
+      <span class="spinner"></span>
+      <em>Summoning the stories…</em>
+    </div>
+
+    <div class="story-grid" id="story-grid" style="display:none;"></div>
+
   </div>
 
-  <div id="status-msg">
-    <span class="spinner"></span>
-    <em>Summoning the stories…</em>
+  <!-- ── Characters View ────────────────────────────────────────── -->
+  <div id="char-view">
+    <div class="controls" style="margin-top:1.5rem;">
+      <span class="controls-left" id="char-count-label">— The Roster of Known Heroes &amp; Villains —</span>
+    </div>
+    <div id="char-status-msg" class="char-status">
+      <span class="spinner"></span>
+      <em>Consulting the lore scrolls…</em>
+    </div>
+    <div class="char-grid" id="char-grid" style="display:none;"></div>
   </div>
-
-  <div class="story-grid" id="story-grid" style="display:none;"></div>
 
   <footer>
     <strong>The Daily Blade</strong> &nbsp;·&nbsp;
@@ -538,13 +819,17 @@
 
 <script>
   // ── Config ────────────────────────────────────────────────────────────
-  const STORIES_URL     = './stories.json';
-  const ARCHIVE_IDX_URL = './archive/index.json';
-  const ARCHIVE_URL     = (date) => `./archive/${date}.json`;
+  const STORIES_URL       = './stories.json';
+  const ARCHIVE_IDX_URL   = './archive/index.json';
+  const ARCHIVE_URL       = (date) => `./archive/${date}.json`;
+  const CHARACTERS_URL    = './characters.json';
 
   // ── State ─────────────────────────────────────────────────────────────
-  let currentDate    = null;   // null = today's stories.json
-  let archiveLoaded  = false;
+  let currentDate      = null;   // null = today's stories.json
+  let archiveLoaded    = false;
+  let currentTab       = 'tales'; // 'tales' | 'characters'
+  let activeGenre      = 'all';
+  let charsLoaded      = false;
 
   // ── Helpers ───────────────────────────────────────────────────────────
   function todayStr() {
@@ -559,7 +844,7 @@
   }
 
   function escHtml(str) {
-    return str
+    return String(str)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
@@ -567,12 +852,54 @@
   }
 
   function setStatus(html) {
-    document.getElementById('status-msg').innerHTML = html;
-    document.getElementById('status-msg').style.display = '';
-    document.getElementById('story-grid').style.display = 'none';
+    const msg  = document.getElementById('status-msg');
+    const grid = document.getElementById('story-grid');
+    msg.innerHTML = html;
+    msg.style.display = '';
+    grid.style.display = 'none';
   }
 
-  // ── Render ────────────────────────────────────────────────────────────
+  // ── Genre Filter ──────────────────────────────────────────────────────
+  function applyGenreFilter(genre) {
+    activeGenre = genre;
+
+    // Update button states
+    document.querySelectorAll('.genre-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.genre === genre);
+    });
+
+    // Show/hide story cards
+    const cards = document.querySelectorAll('.story-card');
+    let visible = 0;
+    cards.forEach(card => {
+      const match = genre === 'all' || card.dataset.subgenre === genre;
+      card.classList.toggle('hidden', !match);
+      if (match) visible++;
+    });
+
+    // Show "no results" if needed
+    const noRes = document.getElementById('genre-no-results');
+    if (noRes) noRes.remove();
+    if (visible === 0 && cards.length > 0) {
+      const el = document.createElement('p');
+      el.id = 'genre-no-results';
+      el.className = 'no-results';
+      el.innerHTML = `<em>No tales of that kind today. Return on another dawn, or view all tales.</em>`;
+      document.getElementById('story-grid').appendChild(el);
+    }
+
+    // Update count label
+    const label = document.getElementById('story-count-label');
+    if (genre === 'all') {
+      label.textContent = currentDate
+        ? `— Tales from ${formatDate(currentDate)} —`
+        : '— Ten tales of blood and glory, conjured this very dawn —';
+    } else {
+      label.textContent = `— ${visible} tale${visible !== 1 ? 's' : ''} of ${genre} —`;
+    }
+  }
+
+  // ── Render Stories ────────────────────────────────────────────────────
   function renderStories(data) {
     document.getElementById('status-msg').style.display = 'none';
 
@@ -583,23 +910,26 @@
     data.stories.forEach((s, i) => {
       const card = document.createElement('article');
       card.className = 'story-card';
+      card.dataset.subgenre = s.subgenre || '';
+      const subgenreEsc = escHtml(s.subgenre || 'Sword & Sorcery');
       card.innerHTML = `
         <p class="story-number">Tale ${String(i + 1).padStart(2, '0')} of 10</p>
-        <span class="story-tag">${escHtml(s.subgenre || 'Sword & Sorcery')}</span>
+        <span class="story-tag" title="Filter by this genre" data-genre="${subgenreEsc}">${subgenreEsc}</span>
         <h2 class="story-title">${escHtml(s.title || 'Untitled')}</h2>
         <hr class="story-divider" />
         <p class="story-text">${escHtml(s.text || '')}</p>
       `;
+      // Genre tag click filter
+      card.querySelector('.story-tag').addEventListener('click', () => {
+        applyGenreFilter(s.subgenre || 'all');
+      });
       grid.appendChild(card);
     });
 
-    const label = document.getElementById('story-count-label');
-    const storyDate = data.date ? formatDate(data.date) : 'Today';
     const isToday = data.date === todayStr();
 
-    label.textContent = isToday
-      ? '— Ten tales of blood and glory, conjured this very dawn —'
-      : `— Tales from ${storyDate} —`;
+    // Apply current genre filter to newly rendered cards
+    applyGenreFilter(activeGenre);
 
     // Show/hide "Return to Today" button
     document.getElementById('today-btn').style.display = isToday ? 'none' : '';
@@ -663,6 +993,122 @@
     }
   }
 
+  // ── Status badge helper for characters ────────────────────────────────
+  function statusBadgeClass(status) {
+    if (!status) return 'badge-status-default';
+    const s = status.toLowerCase();
+    if (s.includes('active'))  return 'badge-status-active';
+    if (s.includes('dead') || s.includes('deceased')) return 'badge-status-dead';
+    if (s.includes('curs'))    return 'badge-status-cursed';
+    if (s.includes('chang'))   return 'badge-status-changed';
+    if (s.includes('unknown')) return 'badge-status-unknown';
+    return 'badge-status-default';
+  }
+
+  // ── Render Characters ─────────────────────────────────────────────────
+  function renderCharacters(data) {
+    const statusEl = document.getElementById('char-status-msg');
+    const grid     = document.getElementById('char-grid');
+    statusEl.style.display = 'none';
+    grid.innerHTML = '';
+    grid.style.display = '';
+
+    const chars = data.characters || [];
+    if (chars.length === 0) {
+      statusEl.innerHTML = '<em>No characters recorded yet. Return after tomorrow\'s tales.</em>';
+      statusEl.style.display = '';
+      return;
+    }
+
+    document.getElementById('char-count-label').textContent =
+      `— ${chars.length} Known Soul${chars.length !== 1 ? 's' : ''} of the Blade —`;
+
+    chars.forEach(c => {
+      const card = document.createElement('div');
+      card.className = 'char-card';
+
+      const statusClass = statusBadgeClass(c.status);
+      const statusLabel = escHtml(c.status || 'Unknown');
+      const traits = (c.traits || []).map(t =>
+        `<span class="char-trait">${escHtml(t)}</span>`
+      ).join('');
+      const appearances = c.appearances > 1
+        ? `${c.appearances} appearances`
+        : 'First appearance';
+
+      card.innerHTML = `
+        <span class="char-world">${escHtml(c.world || 'The Known World')}</span>
+        <div class="char-card-top">
+          <div class="char-name">${escHtml(c.name)}</div>
+          <div class="char-badges">
+            <span class="badge badge-role">${escHtml(c.role || '?')}</span>
+            <span class="badge ${statusClass}">${statusLabel}</span>
+          </div>
+        </div>
+        <hr class="char-divider" />
+        <p class="char-bio">${escHtml(c.bio || '')}</p>
+        ${traits ? `<div class="char-traits">${traits}</div>` : ''}
+        <div class="char-footer">
+          <span class="char-first-story">${escHtml(c.first_story || '')}</span>
+          <span class="char-appearances">${escHtml(appearances)}</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // ── Fetch Characters ──────────────────────────────────────────────────
+  async function loadCharacters() {
+    if (charsLoaded) return;
+    const statusEl = document.getElementById('char-status-msg');
+    const grid     = document.getElementById('char-grid');
+    statusEl.innerHTML = '<span class="spinner"></span><em>Consulting the lore scrolls…</em>';
+    statusEl.style.display = '';
+    grid.style.display = 'none';
+
+    try {
+      const res = await fetch(CHARACTERS_URL + '?t=' + Date.now());
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      charsLoaded = true;
+      renderCharacters(data);
+    } catch (err) {
+      console.error(err);
+      statusEl.innerHTML = `<div class="error-box">
+        <strong>⚠ The Scrolls Are Lost</strong>
+        Could not load characters: ${escHtml(err.message)}
+      </div>`;
+      statusEl.style.display = '';
+    }
+  }
+
+  // ── Tab Switching ─────────────────────────────────────────────────────
+  function switchTab(tab) {
+    currentTab = tab;
+    const talesView = document.getElementById('tales-view');
+    const charView  = document.getElementById('char-view');
+    const tabTales  = document.getElementById('tab-tales');
+    const tabChars  = document.getElementById('tab-characters');
+
+    if (tab === 'tales') {
+      talesView.style.display = '';
+      charView.style.display  = 'none';
+      tabTales.classList.add('active');
+      tabTales.setAttribute('aria-selected', 'true');
+      tabChars.classList.remove('active');
+      tabChars.setAttribute('aria-selected', 'false');
+    } else {
+      talesView.style.display = 'none';
+      charView.style.display  = '';
+      tabChars.classList.add('active');
+      tabChars.setAttribute('aria-selected', 'true');
+      tabTales.classList.remove('active');
+      tabTales.setAttribute('aria-selected', 'false');
+      loadCharacters();
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   // ── Archive Drawer ────────────────────────────────────────────────────
   function openArchive() {
     document.getElementById('archive-drawer').classList.add('open');
@@ -711,6 +1157,7 @@
           </div>
         `;
         btn.addEventListener('click', () => {
+          if (currentTab !== 'tales') switchTab('tales');
           if (isToday) {
             loadTodayStories();
             closeArchive();
@@ -729,12 +1176,22 @@
   }
 
   // ── Event Listeners ────────────────────────────────────────────────────
+  document.getElementById('tab-tales').addEventListener('click', () => switchTab('tales'));
+  document.getElementById('tab-characters').addEventListener('click', () => switchTab('characters'));
+
+  document.querySelectorAll('.genre-btn').forEach(btn => {
+    btn.addEventListener('click', () => applyGenreFilter(btn.dataset.genre));
+  });
+
   document.getElementById('archive-btn').addEventListener('click', openArchive);
   document.getElementById('archive-close').addEventListener('click', closeArchive);
   document.getElementById('archive-overlay').addEventListener('click', closeArchive);
-  document.getElementById('today-btn').addEventListener('click', loadTodayStories);
+  document.getElementById('today-btn').addEventListener('click', () => {
+    if (currentTab !== 'tales') switchTab('tales');
+    loadTodayStories();
+  });
 
-  // Close on Escape
+  // Close archive on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeArchive();
   });
