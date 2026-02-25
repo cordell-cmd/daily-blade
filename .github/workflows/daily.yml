@@ -1,42 +1,53 @@
 name: Generate Daily Stories
 
+
 on:
   # Run every day at 6:00 AM UTC (1:00 AM Eastern / 10:00 PM Pacific)
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 6 * * *"→ Runs at 06:00
+
+
 
   # Also allows you to run it manually from the GitHub Actions tab
   workflow_dispatch:
+
 
 jobs:
   generate:
     runs-on: ubuntu-latest
 
+
     permissions:
       contents: write   # needed to commit stories back to the repo
+
 
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+
       - name: Install dependencies
         run: pip install -r requirements.txt
+
 
       - name: Generate stories
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python generate_stories.py
 
+
       - name: Commit and push stories
         run: |
           git config user.name  "Daily Blade Bot"
           git config user.email "actions@github.com"
-          git add stories.json archive/
+          git add stories.json archive/ lore.json characters.json
           # Only commit if something actually changed
           git diff --cached --quiet || git commit -m "🗡️ Daily stories — $(date -u '+%Y-%m-%d')"
           git push
+
