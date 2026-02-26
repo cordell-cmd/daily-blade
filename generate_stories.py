@@ -262,7 +262,7 @@ def update_characters_file(lore, date_key, stories=None):
         return [
             {"date": date_key, "title": s.get("title", "")}
             for s in stories
-            if first in (s.get("body", "") + " " + s.get("title", "")).lower()
+            if first in (s.get("text", "") + " " + s.get("title", "")).lower()
         ]
 
     # ── Merge new characters from today's lore ────────────────────────────────────
