@@ -298,15 +298,22 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         return date_key
 
     def stories_for_entity(name):
-        """Find all stories that mention this entity by first-word matching."""
-        first = name.split()[0].lower()
+        """Find all stories that mention this entity, skipping leading articles."""
+        _SKIP = {'the', 'a', 'an'}
+        _words = [w.strip('()[].,!?') for w in name.lower().split()]
+        _sig   = [w for w in _words if w and w not in _SKIP]
+        # Use a two-word phrase if possible (more specific), else one word
+        if len(_sig) >= 2:
+            _key = _sig[0] + ' ' + _sig[1]
+        else:
+            _key = _sig[0] if _sig else (_words[0] if _words else name.lower())
         matches = []
         seen = set()
         for d, s in stories_by_title:
             key = (d, s.get("title", ""))
             if key not in seen:
                 text = (s.get("text", "") + " " + s.get("title", "")).lower()
-                if first in text:
+                if _key in text:
                     matches.append({"date": d, "title": s.get("title", "")})
                     seen.add(key)
         return matches
