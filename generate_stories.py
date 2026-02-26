@@ -410,11 +410,17 @@ def update_codex_file(lore, date_key, stories=None):
 
     # ── Helper: find stories that mention an entity by name ─────────────
     def stories_for(name):
-        first = name.split()[0].lower()
+        _SKIP = {'the', 'a', 'an'}
+        _words = [w.strip('()[].,!?') for w in name.lower().split()]
+        _sig   = [w for w in _words if w and w not in _SKIP]
+        if len(_sig) >= 2:
+            _key = _sig[0] + ' ' + _sig[1]
+        else:
+            _key = _sig[0] if _sig else (_words[0] if _words else name.lower())
         return [
             {"date": date_key, "title": s.get("title", "")}
             for s in stories
-            if first in (s.get("text", "") + " " + s.get("title", "")).lower()
+            if _key in (s.get("text", "") + " " + s.get("title", "")).lower()
         ]
 
     # ── Helper: resolve world name from lore worlds list ─────────────────
