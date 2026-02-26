@@ -50,7 +50,7 @@ def load_lore():
 def save_lore(lore, date_key):
     lore["last_updated"] = date_key
     with open(LORE_FILE, "w", encoding="utf-8") as f:
-        json.dump(lore, f, ensure_ascii=False, indent=2)
+        json.dump(lore, f, ensure_ascii=True, indent=2)
 
 
 def build_lore_context(lore):
@@ -312,7 +312,7 @@ def update_characters_file(lore, date_key, stories=None):
 
     output = {"last_updated": date_key, "characters": list(existing_chars.values())}
     with open(CHARACTERS_FILE, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        json.dump(output, f, ensure_ascii=True, indent=2)
     print(f"\u2713 Saved {CHARACTERS_FILE} ({len(output['characters'])} characters total)")
 def parse_json_response(raw):
     """Strip markdown fences and extract JSON from a Claude response."""
@@ -344,7 +344,7 @@ def load_archive_index():
 
 def save_archive_index(idx):
     with open(ARCHIVE_IDX, "w", encoding="utf-8") as f:
-        json.dump(idx, f, ensure_ascii=False, indent=2)
+        json.dump(idx, f, ensure_ascii=True, indent=2)
 
 
 # ── Main ────────────────────────────────────────────────────────────────────
@@ -433,14 +433,14 @@ def main():
     }
 
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        json.dump(output, f, ensure_ascii=True, indent=2)
     print(f"✔ Saved {len(stories)} stories to {OUTPUT_FILE}")
 
     # ── Save to archive/<date>.json ────────────────────────────────────────
     ensure_archive_dir()
     archive_file = os.path.join(ARCHIVE_DIR, f"{date_key}.json")
     with open(archive_file, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        json.dump(output, f, ensure_ascii=True, indent=2)
     print(f"✔ Archived to {archive_file}")
 
     # ── Update archive/index.json ──────────────────────────────────────────
