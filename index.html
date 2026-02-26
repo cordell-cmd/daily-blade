@@ -1,775 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Daily Blade — Pulp Fantasy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cinzel+Decorative:wght@700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
-  <style>
-    /* ── Reset & Base ─────────────────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --ink:       #1a0d05;
-      --parchment: #f4e8cf;
-      --aged:      #e2d0a8;
-      --blood:     #8b1a1a;
-      --gold:      #c9922a;
-      --darkgold:  #7a4f0d;
-      --shadow:    #2a1505;
-      --muted:     #5c3d1e;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--ink);
-      color: var(--parchment);
-      font-family: 'IM Fell English', Georgia, serif;
-      min-height: 100vh;
-      line-height: 1.7;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.4;
-    }
-
-    .page-wrap {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem 4rem;
-    }
-
-    /* ── Masthead ─────────────────────────────────────────────────── */
-    .masthead {
-      text-align: center;
-      padding: 2.5rem 1rem 1.5rem;
-      border-bottom: 3px double var(--gold);
-    }
-
-    .masthead::after {
-      content: '⚔ ✦ ⚔';
-      display: block;
-      color: var(--gold);
-      font-size: 1.1rem;
-      letter-spacing: .4em;
-      margin-top: .5rem;
-    }
-
-    .masthead-eyebrow {
-      font-family: 'Cinzel', serif;
-      font-size: .72rem;
-      letter-spacing: .35em;
-      color: var(--gold);
-      text-transform: uppercase;
-      margin-bottom: .5rem;
-    }
-
-    .masthead-title {
-      font-family: 'Cinzel Decorative', 'Cinzel', serif;
-      font-size: clamp(2.4rem, 7vw, 5rem);
-      font-weight: 700;
-      color: var(--parchment);
-      text-shadow: 3px 3px 0 var(--blood), 5px 5px 10px rgba(0,0,0,.7);
-      line-height: 1.1;
-      letter-spacing: .03em;
-    }
-
-    .masthead-sub {
-      font-family: 'Cinzel', serif;
-      font-size: .8rem;
-      letter-spacing: .25em;
-      color: var(--aged);
-      margin-top: .6rem;
-    }
-
-    .masthead-date {
-      margin-top: .8rem;
-      font-style: italic;
-      font-size: .85rem;
-      color: var(--gold);
-    }
-
-    /* ── Main Nav Tabs ────────────────────────────────────────────── */
-    .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      padding: 1.5rem 0 0;
-      border-bottom: 2px solid rgba(201,146,42,.25);
-    }
-
-    .main-tab {
-      font-family: 'Cinzel', serif;
-      font-size: .72rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      background: none;
-      border: none;
-      border-bottom: 3px solid transparent;
-      margin-bottom: -2px;
-      color: var(--muted);
-      padding: .6rem 1.2rem .7rem;
-      cursor: pointer;
-      transition: color .18s, border-color .18s;
-      white-space: nowrap;
-    }
-
-    .main-tab:hover {
-      color: var(--aged);
-    }
-
-    .main-tab.active {
-      color: var(--gold);
-      border-bottom-color: var(--gold);
-    }
-
-    .main-nav-right {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-      padding-bottom: .4rem;
-    }
-
-    /* ── Genre Filter Bar ─────────────────────────────────────────── */
-    .genre-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .45rem;
-      padding: 1.1rem 0 .8rem;
-      border-bottom: 1px solid rgba(201,146,42,.15);
-      margin-bottom: 1.8rem;
-    }
-
-    .genre-btn {
-      font-family: 'Cinzel', serif;
-      font-size: .6rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      background: none;
-      border: 1px solid rgba(201,146,42,.3);
-      color: var(--muted);
-      padding: .3rem .75rem;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: background .15s, color .15s, border-color .15s;
-      white-space: nowrap;
-    }
-
-    .genre-btn:hover {
-      border-color: var(--gold);
-      color: var(--aged);
-    }
-
-    .genre-btn.active {
-      background: rgba(201,146,42,.15);
-      border-color: var(--gold);
-      color: var(--gold);
-    }
-
-    /* ── Controls ─────────────────────────────────────────────────── */
-    .controls {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding: .6rem 0 .5rem;
-      margin-bottom: .4rem;
-    }
-
-    .controls-left {
-      font-family: 'Cinzel', serif;
-      font-size: .72rem;
-      letter-spacing: .2em;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-
-    /* ── Buttons ──────────────────────────────────────────────────── */
-    .btn {
-      font-family: 'Cinzel', serif;
-      font-size: .65rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      border: 1px solid var(--gold);
-      background: transparent;
-      color: var(--gold);
-      padding: .4rem .9rem;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: background .18s, color .18s;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      background: var(--gold);
-      color: var(--ink);
-    }
-
-    .btn-blood {
-      border-color: var(--blood);
-      color: var(--blood);
-    }
-
-    .btn-blood:hover {
-      background: var(--blood);
-      color: var(--parchment);
-    }
-
-    /* ── Status ───────────────────────────────────────────────────── */
-    #status-msg {
-      text-align: center;
-      padding: 3rem 1rem;
-      font-style: italic;
-      color: var(--aged);
-    }
-
-    .spinner {
-      display: inline-block;
-      width: 1.4rem;
-      height: 1.4rem;
-      border: 3px solid rgba(201,146,42,.2);
-      border-top-color: var(--gold);
-      border-radius: 50%;
-      animation: spin 0.9s linear infinite;
-      vertical-align: middle;
-      margin-right: .6rem;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* ── Story Grid ───────────────────────────────────────────────── */
-    .story-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-      gap: 1.8rem;
-    }
-
-    @media (max-width: 560px) {
-      .story-grid { grid-template-columns: 1fr; }
-    }
-
-    /* ── Story Card ───────────────────────────────────────────────── */
-    .story-card {
-      background: linear-gradient(160deg, #1e0e06 0%, #130b04 100%);
-      border: 1px solid rgba(201,146,42,.35);
-      border-top: 3px solid var(--blood);
-      border-radius: 3px;
-      padding: 1.5rem 1.8rem 1.6rem;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 20px rgba(0,0,0,.5);
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .story-card.hidden {
-      display: none;
-    }
-
-    .story-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0,0,0,.65);
-    }
-
-    .story-card::before {
-      content: '✦';
-      position: absolute;
-      top: .6rem;
-      right: .9rem;
-      color: var(--blood);
-      font-size: .8rem;
-      opacity: .6;
-    }
-
-    .story-number {
-      font-family: 'Cinzel', serif;
-      font-size: .65rem;
-      letter-spacing: .3em;
-      color: var(--blood);
-      text-transform: uppercase;
-      margin-bottom: .3rem;
-    }
-
-    .story-tag {
-      display: inline-block;
-      font-family: 'Cinzel', serif;
-      font-size: .6rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      border: 1px solid rgba(201,146,42,.4);
-      padding: .15rem .5rem;
-      border-radius: 2px;
-      margin-bottom: .7rem;
-      cursor: pointer;
-      transition: background .15s, color .15s;
-    }
-
-    .story-tag:hover {
-      background: rgba(201,146,42,.15);
-    }
-
-    .story-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.12rem;
-      font-weight: 700;
-      color: var(--parchment);
-      line-height: 1.3;
-      margin-bottom: .9rem;
-      text-shadow: 1px 1px 4px rgba(0,0,0,.6);
-    }
-
-    .story-divider {
-      border: none;
-      border-top: 1px solid rgba(201,146,42,.25);
-      margin-bottom: .9rem;
-    }
-
-    .story-text {
-      font-size: .9rem;
-      color: var(--aged);
-      line-height: 1.75;
-      text-align: justify;
-      hyphens: auto;
-    }
-
-    .story-text::first-letter {
-      float: left;
-      font-family: 'Cinzel Decorative', 'Cinzel', serif;
-      font-size: 3.2rem;
-      line-height: .75;
-      padding-right: .12em;
-      color: var(--gold);
-      text-shadow: 2px 2px 4px rgba(0,0,0,.7);
-    }
-
-    /* ── No Results ───────────────────────────────────────────────── */
-    .no-results {
-      text-align: center;
-      padding: 3rem 1rem;
-      font-style: italic;
-      color: var(--muted);
-      grid-column: 1 / -1;
-    }
-
-    /* ── Characters View ──────────────────────────────────────────── */
-    #char-view {
-      display: none;
-    }
-
-    .char-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.8rem;
-    }
-
-    @media (max-width: 400px) {
-      .char-grid { grid-template-columns: 1fr; }
-    }
-
-    .char-card {
-      background: linear-gradient(160deg, #1b0c05 0%, #110904 100%);
-      border: 1px solid rgba(201,146,42,.3);
-      border-top: 3px solid var(--darkgold);
-      border-radius: 3px;
-      padding: 1.4rem 1.5rem 1.5rem;
-      position: relative;
-      box-shadow: 0 3px 16px rgba(0,0,0,.45);
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .char-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 7px 24px rgba(0,0,0,.6);
-    }
-
-    .char-card-top {
-      display: block;
-      margin-bottom: 0.3rem;
-    }
-
-    .char-name {
-      font-family: 'Cinzel', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--parchment);
-      line-height: 1.2;
-      text-shadow: 1px 1px 3px rgba(0,0,0,.5);
-      padding-right: 5.5rem;
-    }
-
-    .char-badges {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.45rem;
-      margin-bottom: 0.65rem;
-    }
-
-    .badge {
-      font-family: 'Cinzel', serif;
-      font-size: .55rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      padding: .18rem .5rem;
-      border-radius: 2px;
-      white-space: nowrap;
-    }
-
-    .badge-role {
-      background: rgba(201,146,42,.15);
-      border: 1px solid rgba(201,146,42,.4);
-      color: var(--gold);
-    }
-
-    .badge-status-active    { background: rgba(30,80,30,.3);  border: 1px solid #3a8a3a; color: #6dbb6d; }
-    .badge-status-dead      { background: rgba(80,10,10,.3);  border: 1px solid #8b1a1a; color: #c96060; }
-    .badge-status-cursed    { background: rgba(60,20,80,.3);  border: 1px solid #7a3a9a; color: #b07acc; }
-    .badge-status-changed   { background: rgba(20,50,70,.3);  border: 1px solid #2a6a8a; color: #5aaabb; }
-    .badge-status-unknown   { background: rgba(40,30,10,.3);  border: 1px solid #6a5a1a; color: #9a8a4a; }
-    .badge-status-default   { background: rgba(40,30,20,.3);  border: 1px solid rgba(201,146,42,.3); color: var(--muted); }
-
-    .char-divider {
-      border: none;
-      border-top: 1px solid rgba(201,146,42,.2);
-      margin: .8rem 0;
-    }
-
-    .char-bio {
-      font-size: .875rem;
-      color: var(--aged);
-      line-height: 1.7;
-      margin-bottom: .9rem;
-    }
-
-    .char-traits {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .35rem;
-      margin-bottom: .9rem;
-    }
-
-    .char-trait {
-      font-family: 'Cinzel', serif;
-      font-size: .55rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--blood);
-      border: 1px solid rgba(139,26,26,.4);
-      padding: .12rem .45rem;
-      border-radius: 2px;
-    }
-
-    .char-footer {
-      font-size: .75rem;
-      color: var(--muted);
-      font-style: italic;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .5rem;
-      flex-wrap: wrap;
-    }
-
-    .char-first-story {
-      color: var(--muted);
-    }
-
-    .char-appearances {
-      font-family: 'Cinzel', serif;
-      font-size: .6rem;
-      letter-spacing: .1em;
-      color: rgba(201,146,42,.5);
-      white-space: nowrap;
-    }
-
-    .char-world {
-      font-family: 'Cinzel', serif;
-      font-size: .58rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: rgba(201,146,42,.4);
-      position: absolute;
-      top: .6rem;
-      right: .8rem;
-    }
-
-    /* Characters loading/empty states */
-    .char-status {
-      text-align: center;
-      padding: 3rem 1rem;
-      font-style: italic;
-      color: var(--aged);
-    }
-
-    /* ── Error ────────────────────────────────────────────────────── */
-    .error-box {
-      background: rgba(139,26,26,.12);
-      border: 1px solid var(--blood);
-      border-radius: 3px;
-      padding: 1.2rem 1.5rem;
-      text-align: center;
-      color: #e07070;
-      font-style: italic;
-      font-size: .9rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .error-box strong {
-      display: block;
-      font-family: 'Cinzel', serif;
-      font-size: .75rem;
-      letter-spacing: .2em;
-      color: var(--blood);
-      margin-bottom: .4rem;
-    }
-
-    /* ── Archive Overlay ──────────────────────────────────────────── */
-    .archive-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.65);
-      z-index: 100;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .3s;
-    }
-
-    .archive-overlay.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-
-    /* ── Archive Drawer ───────────────────────────────────────────── */
-    .archive-drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100%;
-      width: min(380px, 94vw);
-      background: #120803;
-      border-left: 2px solid var(--gold);
-      z-index: 101;
-      display: flex;
-      flex-direction: column;
-      transform: translateX(100%);
-      transition: transform .32s cubic-bezier(.4,0,.2,1);
-      box-shadow: -8px 0 40px rgba(0,0,0,.7);
-    }
-
-    .archive-drawer.open {
-      transform: translateX(0);
-    }
-
-    .archive-drawer-head {
-      padding: 1.6rem 1.5rem 1rem;
-      border-bottom: 2px solid rgba(201,146,42,.3);
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-shrink: 0;
-    }
-
-    .archive-drawer-title {
-      font-family: 'Cinzel Decorative', 'Cinzel', serif;
-      font-size: 1.15rem;
-      color: var(--gold);
-      line-height: 1.2;
-      text-shadow: 1px 1px 6px rgba(0,0,0,.8);
-    }
-
-    .archive-drawer-sub {
-      font-family: 'Cinzel', serif;
-      font-size: .6rem;
-      letter-spacing: .25em;
-      color: var(--muted);
-      text-transform: uppercase;
-      margin-top: .3rem;
-    }
-
-    .archive-close {
-      background: none;
-      border: 1px solid rgba(201,146,42,.3);
-      color: var(--gold);
-      font-size: 1.1rem;
-      width: 2rem;
-      height: 2rem;
-      border-radius: 2px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: background .15s, color .15s;
-      line-height: 1;
-    }
-
-    .archive-close:hover {
-      background: var(--gold);
-      color: var(--ink);
-    }
-
-    .archive-list {
-      overflow-y: auto;
-      flex: 1;
-      padding: .5rem 0;
-    }
-
-    .archive-list::-webkit-scrollbar { width: 5px; }
-    .archive-list::-webkit-scrollbar-track { background: transparent; }
-    .archive-list::-webkit-scrollbar-thumb { background: rgba(201,146,42,.3); border-radius: 3px; }
-
-    .archive-loading {
-      padding: 2rem 1.5rem;
-      font-style: italic;
-      color: var(--muted);
-      font-size: .85rem;
-      text-align: center;
-    }
-
-    .archive-entry {
-      display: block;
-      width: 100%;
-      background: none;
-      border: none;
-      border-bottom: 1px solid rgba(201,146,42,.1);
-      padding: .95rem 1.5rem;
-      text-align: left;
-      cursor: pointer;
-      transition: background .15s;
-      color: inherit;
-    }
-
-    .archive-entry:hover {
-      background: rgba(201,146,42,.08);
-    }
-
-    .archive-entry.active {
-      background: rgba(201,146,42,.12);
-      border-left: 3px solid var(--gold);
-    }
-
-    .archive-entry-label {
-      font-family: 'Cinzel', serif;
-      font-size: .7rem;
-      letter-spacing: .2em;
-      color: var(--blood);
-      text-transform: uppercase;
-      margin-bottom: .2rem;
-    }
-
-    .archive-entry-date {
-      font-family: 'IM Fell English', Georgia, serif;
-      font-size: .95rem;
-      color: var(--aged);
-    }
-
-    .archive-entry.today .archive-entry-date {
-      color: var(--gold);
-    }
-
-    .archive-entry-today-badge {
-      display: inline-block;
-      font-family: 'Cinzel', serif;
-      font-size: .55rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--ink);
-      background: var(--gold);
-      padding: .1rem .4rem;
-      border-radius: 2px;
-      margin-left: .5rem;
-      vertical-align: middle;
-    }
-
-    .archive-empty {
-      padding: 2rem 1.5rem;
-      font-style: italic;
-      color: var(--muted);
-      font-size: .85rem;
-      text-align: center;
-    }
-
-    /* ── Footer ───────────────────────────────────────────────────── */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      border-top: 3px double rgba(201,146,42,.3);
-      margin-top: 3rem;
-      font-style: italic;
-      font-size: .78rem;
-      color: var(--muted);
-      letter-spacing: .05em;
-    }
-
-    footer strong {
-      color: var(--gold);
-      font-style: normal;
-      font-family: 'Cinzel', serif;
-      letter-spacing: .15em;
-    }
-
-    .char-tagline {
-      font-style: italic;
-      color: var(--gold);
-      font-size: .85rem;
-      letter-spacing: .04em;
-      margin: .3rem 0 .5rem;
-      opacity: .9;
-    }
-
-    .char-story-links {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem;
-      align-items: center;
-      border-top: 1px solid rgba(201,146,42,.15);
-      padding-top: .8rem;
-    }
-
-    .char-story-links-label {
-      font-size: .7rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      margin-right: .3rem;
-      flex-basis: 100%;
-    }
-
-    .char-story-link {
-      background: none;
-      border: 1px solid rgba(201,146,42,.3);
-      color: var(--gold);
-      font-family: 'Cinzel', serif;
-      font-size: .72rem;
-      padding: .25rem .65rem;
-      cursor: pointer;
-      transition: background .15s, color .15s, border-color .15s;
-    }
-
-    .char-story-link:hover {
-      background: rgba(201,146,42,.12);
-      color: var(--parchment);
-      border-color: rgba(201,146,42,.6);
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Daily Blade — Pulp Fantasy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cinzel+Decorative:wght@700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+/* ── Reset & Base ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ink: #1a0d05;
+  --parchment: #f4e8cf;
+  --aged: #e2d0a8;
+  --blood: #8b1a1a;
+  --gold: #c9922a;
+  --darkgold: #7a4f0d;
+  --shadow: #2a1505;
+  --muted: #5c3d1e;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--ink); color: var(--parchment); font-family: 'IM Fell English', Georgia, serif; min-height: 100vh; line-height: 1.7; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
+.page-wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+/* ── Masthead ─────────────────────────────────────────────────── */
+.masthead { text-align: center; padding: 2.5rem 1rem 1.5rem; border-bottom: 3px double var(--gold); }
+.masthead::after { content: '⚔ ✦ ⚔'; display: block; color: var(--gold); font-size: 1.1rem; letter-spacing: .4em; margin-top: .5rem; }
+.masthead-eyebrow { font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .35em; color: var(--gold); text-transform: uppercase; margin-bottom: .5rem; }
+.masthead-title { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: clamp(2.4rem, 7vw, 5rem); font-weight: 700; color: var(--parchment); text-shadow: 3px 3px 0 var(--blood), 5px 5px 10px rgba(0,0,0,.7); line-height: 1.1; letter-spacing: .03em; }
+.masthead-sub { font-family: 'Cinzel', serif; font-size: .8rem; letter-spacing: .25em; color: var(--aged); margin-top: .6rem; }
+.masthead-date { margin-top: .8rem; font-style: italic; font-size: .85rem; color: var(--gold); }
+
+/* ── Main Nav Tabs ────────────────────────────────────────────── */
+.main-nav { display: flex; align-items: center; gap: 0; padding: 1.5rem 0 0; border-bottom: 2px solid rgba(201,146,42,.25); }
+.main-tab { font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; color: var(--muted); padding: .6rem 1.2rem .7rem; cursor: pointer; transition: color .18s, border-color .18s; white-space: nowrap; }
+.main-tab:hover { color: var(--aged); }
+.main-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+.main-nav-right { margin-left: auto; display: flex; align-items: center; gap: .6rem; padding-bottom: .4rem; }
+
+/* ── Genre Filter Bar ─────────────────────────────────────────── */
+.genre-bar { display: flex; flex-wrap: wrap; gap: .45rem; padding: 1.1rem 0 .8rem; border-bottom: 1px solid rgba(201,146,42,.15); margin-bottom: 1.8rem; }
+.genre-btn { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.3); color: var(--muted); padding: .3rem .75rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; white-space: nowrap; }
+.genre-btn:hover { border-color: var(--gold); color: var(--aged); }
+.genre-btn.active { background: rgba(201,146,42,.15); border-color: var(--gold); color: var(--gold); }
+
+/* ── Controls ─────────────────────────────────────────────────── */
+.controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: .6rem 0 .5rem; margin-bottom: .4rem; }
+.controls-left { font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+
+/* ── Buttons ──────────────────────────────────────────────────── */
+.btn { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; border: 1px solid var(--gold); background: transparent; color: var(--gold); padding: .4rem .9rem; border-radius: 2px; cursor: pointer; transition: background .18s, color .18s; white-space: nowrap; }
+.btn:hover { background: var(--gold); color: var(--ink); }
+.btn-blood { border-color: var(--blood); color: var(--blood); }
+.btn-blood:hover { background: var(--blood); color: var(--parchment); }
+
+/* ── Status ───────────────────────────────────────────────────── */
+#status-msg { text-align: center; padding: 3rem 1rem; font-style: italic; color: var(--aged); }
+.spinner { display: inline-block; width: 1.4rem; height: 1.4rem; border: 3px solid rgba(201,146,42,.2); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.9s linear infinite; vertical-align: middle; margin-right: .6rem; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Story Grid ───────────────────────────────────────────────── */
+.story-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 1.8rem; }
+@media (max-width: 560px) { .story-grid { grid-template-columns: 1fr; } }
+
+/* ── Story Card ───────────────────────────────────────────────── */
+.story-card { background: linear-gradient(160deg, #1e0e06 0%, #130b04 100%); border: 1px solid rgba(201,146,42,.35); border-top: 3px solid var(--blood); border-radius: 3px; padding: 1.5rem 1.8rem 1.6rem; position: relative; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.5); transition: transform .2s, box-shadow .2s; }
+.story-card.hidden { display: none; }
+.story-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.65); }
+.story-card::before { content: '✦'; position: absolute; top: .6rem; right: .9rem; color: var(--blood); font-size: .8rem; opacity: .6; }
+.story-number { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .3em; color: var(--blood); text-transform: uppercase; margin-bottom: .3rem; }
+.story-tag { display: inline-block; font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,146,42,.4); padding: .15rem .5rem; border-radius: 2px; margin-bottom: .7rem; cursor: pointer; transition: background .15s, color .15s; }
+.story-tag:hover { background: rgba(201,146,42,.15); }
+.story-title { font-family: 'Cinzel', serif; font-size: 1.12rem; font-weight: 700; color: var(--parchment); line-height: 1.3; margin-bottom: .9rem; text-shadow: 1px 1px 4px rgba(0,0,0,.6); }
+.story-divider { border: none; border-top: 1px solid rgba(201,146,42,.25); margin-bottom: .9rem; }
+.story-text { font-size: .9rem; color: var(--aged); line-height: 1.75; text-align: justify; hyphens: auto; }
+.story-text::first-letter { float: left; font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 3.2rem; line-height: .75; padding-right: .12em; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.7); }
+
+/* ── No Results ───────────────────────────────────────────────── */
+.no-results { text-align: center; padding: 3rem 1rem; font-style: italic; color: var(--muted); grid-column: 1 / -1; }
+
+/* ── Codex View ───────────────────────────────────────────────── */
+#char-view { display: none; }
+
+/* ── Codex Filter Bar ─────────────────────────────────────────── */
+.codex-filter-bar { display: flex; flex-wrap: wrap; gap: .45rem; padding: 1.1rem 0 .8rem; border-bottom: 1px solid rgba(201,146,42,.15); margin-bottom: 1rem; }
+.codex-filter-btn { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.3); color: var(--muted); padding: .3rem .75rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; white-space: nowrap; }
+.codex-filter-btn:hover { border-color: var(--gold); color: var(--aged); }
+.codex-filter-btn.active { background: rgba(201,146,42,.15); border-color: var(--gold); color: var(--gold); }
+
+/* ── Codex Grid ───────────────────────────────────────────────── */
+.char-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+@media (max-width: 400px) { .char-grid { grid-template-columns: 1fr; } }
+
+/* ── Shared Codex Card ─────────────────────────────────────────── */
+.codex-card { border-radius: 3px; padding: 1.4rem 1.5rem 1.5rem; position: relative; box-shadow: 0 3px 16px rgba(0,0,0,.45); transition: transform .2s, box-shadow .2s; }
+.codex-card:hover { transform: translateY(-2px); box-shadow: 0 7px 24px rgba(0,0,0,.6); }
+.codex-card.hidden { display: none; }
+.codex-type-label { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(201,146,42,.4); position: absolute; top: .6rem; right: .8rem; }
+.codex-card-name { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 700; color: var(--parchment); line-height: 1.2; text-shadow: 1px 1px 3px rgba(0,0,0,.5); padding-right: 5.5rem; }
+.codex-card-tagline { font-style: italic; color: var(--gold); font-size: .85rem; letter-spacing: .04em; margin: .3rem 0 .5rem; opacity: .9; }
+.codex-card-badges { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.45rem; margin-bottom: 0.65rem; }
+.codex-divider { border: none; border-top: 1px solid rgba(201,146,42,.2); margin: .8rem 0; }
+.codex-card-footer { font-size: .75rem; color: var(--muted); font-style: italic; display: flex; align-items: center; justify-content: space-between; gap: .5rem; flex-wrap: wrap; padding-top: .6rem; border-top: 1px solid rgba(201,146,42,.12); margin-top: .6rem; }
+.codex-appearances { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .1em; color: rgba(201,146,42,.5); white-space: nowrap; }
+.codex-body { font-size: .875rem; color: var(--aged); line-height: 1.7; margin-bottom: .6rem; }
+
+/* ── Character Cards ───────────────────────────────────────────── */
+.char-card { background: linear-gradient(160deg, #1b0c05 0%, #110904 100%); border: 1px solid rgba(201,146,42,.3); border-top: 3px solid var(--darkgold); }
+.badge { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 2px; white-space: nowrap; }
+.badge-role { background: rgba(201,146,42,.15); border: 1px solid rgba(201,146,42,.4); color: var(--gold); }
+.badge-status-active { background: rgba(30,80,30,.3); border: 1px solid #3a8a3a; color: #6dbb6d; }
+.badge-status-dead { background: rgba(80,10,10,.3); border: 1px solid #8b1a1a; color: #c96060; }
+.badge-status-cursed { background: rgba(60,20,80,.3); border: 1px solid #7a3a9a; color: #b07acc; }
+.badge-status-changed { background: rgba(20,50,70,.3); border: 1px solid #2a6a8a; color: #5aaabb; }
+.badge-status-unknown { background: rgba(40,30,10,.3); border: 1px solid #6a5a1a; color: #9a8a4a; }
+.badge-status-default { background: rgba(40,30,20,.3); border: 1px solid rgba(201,146,42,.3); color: var(--muted); }
+.char-traits { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .6rem; }
+.char-trait { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .15em; text-transform: uppercase; color: var(--blood); border: 1px solid rgba(139,26,26,.4); padding: .12rem .45rem; border-radius: 2px; }
+
+/* ── Place Cards ────────────────────────────────────────────────── */
+.place-card { background: linear-gradient(160deg, #080d05 0%, #060a04 100%); border: 1px solid rgba(74,120,30,.3); border-top: 3px solid #3a7a1a; }
+.badge-place { background: rgba(74,120,30,.15); border: 1px solid rgba(74,120,30,.5); color: #7abb50; }
+.place-atmosphere { font-style: italic; color: rgba(226,208,168,.7); font-size: .85rem; margin-bottom: .6rem; }
+
+/* ── Event Cards ────────────────────────────────────────────────── */
+.event-card { background: linear-gradient(160deg, #0d0518 0%, #080313 100%); border: 1px solid rgba(100,50,160,.3); border-top: 3px solid #6a2a9a; }
+.badge-event { background: rgba(100,50,160,.15); border: 1px solid rgba(100,50,160,.5); color: #b07acc; }
+.event-participants { font-size: .8rem; color: var(--muted); margin: .2rem 0 .5rem; }
+.event-participants strong { font-style: normal; color: rgba(176,122,204,.7); font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .3rem; }
+.event-significance { font-size: .82rem; color: rgba(176,122,204,.65); font-style: italic; margin-top: .3rem; }
+
+/* ── Weapon Cards ───────────────────────────────────────────────── */
+.weapon-card { background: linear-gradient(160deg, #130a0a 0%, #0e0707 100%); border: 1px solid rgba(160,80,30,.3); border-top: 3px solid #9a4a1a; }
+.badge-weapon { background: rgba(160,80,30,.15); border: 1px solid rgba(160,80,30,.5); color: #d0844a; }
+.weapon-holder { font-size: .8rem; color: var(--muted); font-style: italic; margin-top: .3rem; }
+
+/* ── Artifact Cards ─────────────────────────────────────────────── */
+.artifact-card { background: linear-gradient(160deg, #0e0d14 0%, #090810 100%); border: 1px solid rgba(80,100,180,.3); border-top: 3px solid #4a5aaa; }
+.badge-artifact { background: rgba(80,100,180,.15); border: 1px solid rgba(80,100,180,.5); color: #8090dd; }
+.artifact-holder { font-size: .8rem; color: var(--muted); font-style: italic; margin-top: .3rem; }
+
+/* ── Story Links (codex cards) ──────────────────────────────────── */
+.codex-story-links { margin-top: .8rem; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; border-top: 1px solid rgba(201,146,42,.15); padding-top: .8rem; }
+.codex-story-links-label { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; flex-basis: 100%; }
+.codex-story-link { background: none; border: 1px solid rgba(201,146,42,.3); color: var(--gold); font-family: 'Cinzel', serif; font-size: .72rem; padding: .25rem .65rem; cursor: pointer; transition: background .15s, color .15s, border-color .15s; border-radius: 2px; }
+.codex-story-link:hover { background: rgba(201,146,42,.12); color: var(--parchment); border-color: rgba(201,146,42,.6); }
+
+/* Characters loading/empty states */
+.char-status { text-align: center; padding: 3rem 1rem; font-style: italic; color: var(--aged); }
+
+/* ── Error ────────────────────────────────────────────────────────── */
+.error-box { background: rgba(139,26,26,.12); border: 1px solid var(--blood); border-radius: 3px; padding: 1.2rem 1.5rem; text-align: center; color: #e07070; font-style: italic; font-size: .9rem; max-width: 600px; margin: 0 auto; }
+.error-box strong { display: block; font-family: 'Cinzel', serif; font-size: .75rem; letter-spacing: .2em; color: var(--blood); margin-bottom: .4rem; }
+
+/* ── Archive Overlay ──────────────────────────────────────────────── */
+.archive-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 100; opacity: 0; pointer-events: none; transition: opacity .3s; }
+.archive-overlay.open { opacity: 1; pointer-events: all; }
+
+/* ── Archive Drawer ───────────────────────────────────────────────── */
+.archive-drawer { position: fixed; top: 0; right: 0; height: 100%; width: min(380px, 94vw); background: #120803; border-left: 2px solid var(--gold); z-index: 101; display: flex; flex-direction: column; transform: translateX(100%); transition: transform .32s cubic-bezier(.4,0,.2,1); box-shadow: -8px 0 40px rgba(0,0,0,.7); }
+.archive-drawer.open { transform: translateX(0); }
+.archive-drawer-head { padding: 1.6rem 1.5rem 1rem; border-bottom: 2px solid rgba(201,146,42,.3); display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-shrink: 0; }
+.archive-drawer-title { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 1.15rem; color: var(--gold); line-height: 1.2; text-shadow: 1px 1px 6px rgba(0,0,0,.8); }
+.archive-drawer-sub { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .25em; color: var(--muted); text-transform: uppercase; margin-top: .3rem; }
+.archive-close { background: none; border: 1px solid rgba(201,146,42,.3); color: var(--gold); font-size: 1.1rem; width: 2rem; height: 2rem; border-radius: 2px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .15s, color .15s; line-height: 1; }
+.archive-close:hover { background: var(--gold); color: var(--ink); }
+.archive-list { overflow-y: auto; flex: 1; padding: .5rem 0; }
+.archive-list::-webkit-scrollbar { width: 5px; }
+.archive-list::-webkit-scrollbar-track { background: transparent; }
+.archive-list::-webkit-scrollbar-thumb { background: rgba(201,146,42,.3); border-radius: 3px; }
+.archive-loading { padding: 2rem 1.5rem; font-style: italic; color: var(--muted); font-size: .85rem; text-align: center; }
+.archive-entry { display: block; width: 100%; background: none; border: none; border-bottom: 1px solid rgba(201,146,42,.1); padding: .95rem 1.5rem; text-align: left; cursor: pointer; transition: background .15s; color: inherit; }
+.archive-entry:hover { background: rgba(201,146,42,.08); }
+.archive-entry.active { background: rgba(201,146,42,.12); border-left: 3px solid var(--gold); }
+.archive-entry-label { font-family: 'Cinzel', serif; font-size: .7rem; letter-spacing: .2em; color: var(--blood); text-transform: uppercase; margin-bottom: .2rem; }
+.archive-entry-date { font-family: 'IM Fell English', Georgia, serif; font-size: .95rem; color: var(--aged); }
+.archive-entry.today .archive-entry-date { color: var(--gold); }
+.archive-entry-today-badge { display: inline-block; font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: .1rem .4rem; border-radius: 2px; margin-left: .5rem; vertical-align: middle; }
+.archive-empty { padding: 2rem 1.5rem; font-style: italic; color: var(--muted); font-size: .85rem; text-align: center; }
+
+/* ── Footer ───────────────────────────────────────────────────────── */
+footer { text-align: center; padding: 2rem 1rem; border-top: 3px double rgba(201,146,42,.3); margin-top: 3rem; font-style: italic; font-size: .78rem; color: var(--muted); letter-spacing: .05em; }
+footer strong { color: var(--gold); font-style: normal; font-family: 'Cinzel', serif; letter-spacing: .15em; }
+</style>
 </head>
 <body>
 
@@ -791,7 +206,6 @@
 </div>
 
 <div class="page-wrap">
-
   <header class="masthead">
     <p class="masthead-eyebrow">Est. Anno Domini — Daily Edition</p>
     <h1 class="masthead-title">The Daily Blade</h1>
@@ -799,39 +213,43 @@
     <p class="masthead-date" id="today-date"></p>
   </header>
 
-  <!-- ── Main Nav ───────────────────────────────────────────────── -->
+  <!-- ── Main Nav ─────────────────────────────────────────────── -->
   <nav class="main-nav" aria-label="Main sections">
     <button class="main-tab active" id="tab-tales" aria-selected="true">⚔ Tales</button>
-    <button class="main-tab" id="tab-characters" aria-selected="false">❧ Characters</button>
+    <button class="main-tab" id="tab-characters" aria-selected="false">📖 Codex</button>
     <div class="main-nav-right">
       <button class="btn" id="archive-btn" aria-label="Browse the archive">📜 Archive</button>
     </div>
   </nav>
 
-  <!-- ── Tales View ─────────────────────────────────────────────── -->
+  <!-- ── Tales View ───────────────────────────────────────────── -->
   <div id="tales-view">
-
     <!-- Genre filter bar -->
     <div class="genre-bar" id="genre-bar" role="group" aria-label="Filter by genre">
     </div>
-
     <div class="controls">
       <span class="controls-left" id="story-count-label">— Loading today's tales… —</span>
     </div>
-
     <div id="status-msg">
       <span class="spinner"></span>
       <em>Summoning the stories…</em>
     </div>
-
     <div class="story-grid" id="story-grid" style="display:none;"></div>
-
   </div>
 
-  <!-- ── Characters View ────────────────────────────────────────── -->
+  <!-- ── Codex View ───────────────────────────────────────────── -->
   <div id="char-view">
-    <div class="controls" style="margin-top:1.5rem;">
-      <span class="controls-left" id="char-count-label">— The Roster of Known Heroes &amp; Villains —</span>
+    <!-- Entity type filter pills -->
+    <div class="codex-filter-bar" id="codex-filter-bar" role="group" aria-label="Filter codex by type">
+      <button class="codex-filter-btn active" data-type="all">All Entries</button>
+      <button class="codex-filter-btn" data-type="characters">⚔ Characters</button>
+      <button class="codex-filter-btn" data-type="places">🏰 Places</button>
+      <button class="codex-filter-btn" data-type="events">⚡ Events</button>
+      <button class="codex-filter-btn" data-type="weapons">🗡 Weapons</button>
+      <button class="codex-filter-btn" data-type="artifacts">💎 Artifacts</button>
+    </div>
+    <div class="controls" style="margin-top:.5rem;">
+      <span class="controls-left" id="char-count-label">— The Codex of Known Lore —</span>
     </div>
     <div id="char-status-msg" class="char-status">
       <span class="spinner"></span>
@@ -841,429 +259,514 @@
   </div>
 
   <footer>
-    <strong>The Daily Blade</strong> &nbsp;·&nbsp;
-    Stories generated by <strong>Claude</strong> AI &nbsp;·&nbsp;
-    New tales conjured each dawn &nbsp;·&nbsp;
-    All characters, sorceries &amp; kingdoms are entirely fictitious
+    <strong>The Daily Blade</strong> &nbsp;·&nbsp; Stories generated by <strong>Claude</strong> AI &nbsp;·&nbsp; New tales conjured each dawn &nbsp;·&nbsp; All characters, sorceries &amp; kingdoms are entirely fictitious
   </footer>
-
 </div>
 
 <script>
-  // ── Config ────────────────────────────────────────────────────────────
-  const STORIES_URL       = './stories.json';
-  const ARCHIVE_IDX_URL   = './archive/index.json';
-  const ARCHIVE_URL       = (date) => `./archive/${date}.json`;
-  const CHARACTERS_URL    = './characters.json';
+// ── Config ──────────────────────────────────────────────────────────
+const STORIES_URL    = './stories.json';
+const ARCHIVE_IDX_URL = './archive/index.json';
+const ARCHIVE_URL    = (date) => `./archive/${date}.json`;
+const CODEX_URL      = './codex.json';
 
-  // ── State ─────────────────────────────────────────────────────────────
-  let currentDate      = null;   // null = today's stories.json
-  let archiveLoaded    = false;
-  let currentTab       = 'tales'; // 'tales' | 'characters'
-  let activeGenre      = 'all';
-  let charsLoaded      = false;
+// ── State ───────────────────────────────────────────────────────────
+let currentDate     = null;
+let archiveLoaded   = false;
+let currentTab      = 'tales';
+let activeGenre     = 'all';
+let codexLoaded     = false;
+let activeCodexType = 'all';
 
-  // ── Helpers ───────────────────────────────────────────────────────────
-  function todayStr() {
-    return new Date().toISOString().slice(0, 10);
+// ── Helpers ─────────────────────────────────────────────────────────
+function todayStr() { return new Date().toISOString().slice(0, 10); }
+function formatDate(isoStr) {
+  const d = new Date(isoStr + 'T12:00:00');
+  return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+}
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+function setStatus(html) {
+  const msg  = document.getElementById('status-msg');
+  const grid = document.getElementById('story-grid');
+  msg.innerHTML = html;
+  msg.style.display = '';
+  grid.style.display = 'none';
+}
+
+// ── Genre Filter ─────────────────────────────────────────────────────
+function applyGenreFilter(genre) {
+  activeGenre = genre;
+  document.querySelectorAll('.genre-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.genre === genre);
+  });
+  const cards = document.querySelectorAll('.story-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const match = genre === 'all' || card.dataset.subgenre === genre;
+    card.classList.toggle('hidden', !match);
+    if (match) visible++;
+  });
+  const noRes = document.getElementById('genre-no-results');
+  if (noRes) noRes.remove();
+  if (visible === 0 && cards.length > 0) {
+    const el = document.createElement('p');
+    el.id = 'genre-no-results';
+    el.className = 'no-results';
+    el.innerHTML = `<em>No tales of that kind today. Return on another dawn, or view all tales.</em>`;
+    document.getElementById('story-grid').appendChild(el);
   }
+  const label = document.getElementById('story-count-label');
+  if (genre === 'all') {
+    label.textContent = currentDate
+      ? `— Tales from ${formatDate(currentDate)} —`
+      : '— Ten tales of blood and glory, conjured this very dawn —';
+  } else {
+    label.textContent = `— ${visible} tale${visible !== 1 ? 's' : ''} of ${genre} —`;
+  }
+}
 
-  function formatDate(isoStr) {
-    const d = new Date(isoStr + 'T12:00:00');
-    return d.toLocaleDateString('en-US', {
-      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+// ── Codex Filter ─────────────────────────────────────────────────────
+function applyCodexFilter(type) {
+  activeCodexType = type;
+  document.querySelectorAll('.codex-filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.type === type);
+  });
+  const cards = document.querySelectorAll('.codex-card');
+  let visible = 0;
+  cards.forEach(card => {
+    const match = type === 'all' || card.dataset.entityType === type;
+    card.classList.toggle('hidden', !match);
+    if (match) visible++;
+  });
+  const label = document.getElementById('char-count-label');
+  if (type === 'all') {
+    label.textContent = `— ${visible} Entr${visible !== 1 ? 'ies' : 'y'} in the Codex —`;
+  } else {
+    const typeLabel = { characters: 'Characters', places: 'Places', events: 'Events', weapons: 'Weapons', artifacts: 'Artifacts' }[type] || type;
+    label.textContent = `— ${visible} Known ${typeLabel} —`;
+  }
+}
+
+// ── Fix UTF-8 mojibake ───────────────────────────────────────────────
+function fixMojibake(str) {
+  try {
+    const bytes = new Uint8Array(str.length);
+    for (let i = 0; i < str.length; i++) bytes[i] = str.charCodeAt(i) & 0xff;
+    return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+  } catch (e) { return str; }
+}
+
+// ── Render Stories ───────────────────────────────────────────────────
+function renderStories(data) {
+  document.getElementById('status-msg').style.display = 'none';
+  const grid = document.getElementById('story-grid');
+  grid.innerHTML = '';
+  grid.style.display = '';
+  data.stories.forEach((s, i) => {
+    const card = document.createElement('article');
+    card.className = 'story-card';
+    card.dataset.subgenre = s.subgenre || '';
+    const subgenreEsc = escHtml(s.subgenre || 'Sword & Sorcery');
+    card.innerHTML = `
+      <p class="story-number">Tale ${String(i + 1).padStart(2, '0')} of ${data.stories.length}</p>
+      <span class="story-tag" title="Filter by this genre" data-genre="${subgenreEsc}">${subgenreEsc}</span>
+      <h2 class="story-title">${escHtml(s.title || 'Untitled')}</h2>
+      <hr class="story-divider" />
+      <p class="story-text">${escHtml(fixMojibake(s.text || ''))}</p>
+    `;
+    card.querySelector('.story-tag').addEventListener('click', () => {
+      applyGenreFilter(s.subgenre || 'all');
     });
-  }
+    grid.appendChild(card);
+  });
 
-  function escHtml(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
-  }
-
-  function setStatus(html) {
-    const msg  = document.getElementById('status-msg');
-    const grid = document.getElementById('story-grid');
-    msg.innerHTML = html;
-    msg.style.display = '';
-    grid.style.display = 'none';
-  }
-
-  // ── Genre Filter ──────────────────────────────────────────────────────
-  function applyGenreFilter(genre) {
-    activeGenre = genre;
-
-    // Update button states
-    document.querySelectorAll('.genre-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.genre === genre);
-    });
-
-    const cards = document.querySelectorAll('.story-card');
-    let visible = 0;
-    cards.forEach(card => {
-      const match = genre === 'all' || card.dataset.subgenre === genre;
-      card.classList.toggle('hidden', !match);
-      if (match) visible++;
-    });
-
-    // Show "no results" if needed
-    const noRes = document.getElementById('genre-no-results');
-    if (noRes) noRes.remove();
-    if (visible === 0 && cards.length > 0) {
-      const el = document.createElement('p');
-      el.id = 'genre-no-results';
-      el.className = 'no-results';
-      el.innerHTML = `<em>No tales of that kind today. Return on another dawn, or view all tales.</em>`;
-      document.getElementById('story-grid').appendChild(el);
+  // Build genre filter buttons
+  const genreBar = document.getElementById('genre-bar');
+  genreBar.innerHTML = '';
+  const allBtn = document.createElement('button');
+  allBtn.className = 'btn genre-btn' + (activeGenre === 'all' ? ' active' : '');
+  allBtn.dataset.genre = 'all';
+  allBtn.textContent = 'All Tales';
+  allBtn.addEventListener('click', () => applyGenreFilter('all'));
+  genreBar.appendChild(allBtn);
+  const seenGenres = new Set();
+  data.stories.forEach(s => {
+    const g = (s.subgenre || '').trim();
+    if (g && !seenGenres.has(g.toLowerCase())) {
+      seenGenres.add(g.toLowerCase());
+      const btn = document.createElement('button');
+      btn.className = 'btn genre-btn';
+      btn.dataset.genre = g;
+      btn.textContent = g;
+      btn.addEventListener('click', () => applyGenreFilter(g));
+      genreBar.appendChild(btn);
     }
+  });
 
-    // Update count label
-    const label = document.getElementById('story-count-label');
-    if (genre === 'all') {
-      label.textContent = currentDate
-        ? `— Tales from ${formatDate(currentDate)} —`
-        : '— Ten tales of blood and glory, conjured this very dawn —';
-    } else {
-      label.textContent = `— ${visible} tale${visible !== 1 ? 's' : ''} of ${genre} —`;
-    }
-  }
+  applyGenreFilter(activeGenre);
+  document.querySelectorAll('.archive-entry').forEach(el => {
+    el.classList.toggle('active', el.dataset.date === data.date);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-  // ── Fix UTF-8 mojibake (em dashes etc stored as Latin-1 bytes) ────────────
-  function fixMojibake(str) {
-    try {
-      const bytes = new Uint8Array(str.length);
-      for (let i = 0; i < str.length; i++) bytes[i] = str.charCodeAt(i) & 0xff;
-      return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
-    } catch (e) { return str; }
-  }
-
-  // ── Render Stories ────────────────────────────────────────────────────
-  function renderStories(data) {
-    document.getElementById('status-msg').style.display = 'none';
-
-    const grid = document.getElementById('story-grid');
-    grid.innerHTML = '';
-    grid.style.display = '';
-
-    data.stories.forEach((s, i) => {
-      const card = document.createElement('article');
-      card.className = 'story-card';
-      card.dataset.subgenre = s.subgenre || '';
-      const subgenreEsc = escHtml(s.subgenre || 'Sword & Sorcery');
-      card.innerHTML = `
-        <p class="story-number">Tale ${String(i + 1).padStart(2, '0')} of ${data.stories.length}</p>
-        <span class="story-tag" title="Filter by this genre" data-genre="${subgenreEsc}">${subgenreEsc}</span>
-        <h2 class="story-title">${escHtml(s.title || 'Untitled')}</h2>
-        <hr class="story-divider" />
-        <p class="story-text">${escHtml(fixMojibake(s.text || ''))}</p>
-      `;
-      // Genre tag click filter
-      card.querySelector('.story-tag').addEventListener('click', () => {
-        applyGenreFilter(s.subgenre || 'all');
-      });
-      grid.appendChild(card);
-    });
-
-    const isToday = data.date === todayStr();
-
-    // Build genre filter buttons dynamically from this batch of stories
-    const genreBar = document.getElementById('genre-bar');
-    genreBar.innerHTML = '';
-    const allBtn = document.createElement('button');
-    allBtn.className = 'btn genre-btn' + (activeGenre === 'all' ? ' active' : '');
-    allBtn.dataset.genre = 'all';
-    allBtn.textContent = 'All Tales';
-    allBtn.addEventListener('click', () => applyGenreFilter('all'));
-    genreBar.appendChild(allBtn);
-    const seenGenres = new Set();
-    data.stories.forEach(s => {
-      const g = (s.subgenre || '').trim();
-      if (g && !seenGenres.has(g.toLowerCase())) {
-        seenGenres.add(g.toLowerCase());
-        const btn = document.createElement('button');
-        btn.className = 'btn genre-btn';
-        btn.dataset.genre = g;
-        btn.textContent = g;
-        btn.addEventListener('click', () => applyGenreFilter(g));
-        genreBar.appendChild(btn);
-      }
-    });
-
-    // Apply current genre filter to newly rendered cards
-    applyGenreFilter(activeGenre);
-
-
-    // Update active entry in archive list
-    document.querySelectorAll('.archive-entry').forEach(el => {
-      el.classList.toggle('active', el.dataset.date === data.date);
-    });
-
-    // Scroll to top
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // ── Fetch Today ────────────────────────────────────────────────────────
-  async function loadTodayStories() {
-    currentDate = null;
-    setStatus('<span class="spinner"></span><em>Summoning the stories…</em>');
-    try {
-      const res = await fetch(STORIES_URL + '?t=' + Date.now());
-      if (!res.ok) {
-        if (res.status === 404) {
-          setStatus(`<div class="error-box">
-            <strong>⚔ No Tales Yet</strong>
-            The scribes haven't conjured today's stories yet. Check back after 6 AM UTC,
-            or trigger the workflow manually from the GitHub Actions tab.
-          </div>`);
-        } else {
-          throw new Error(`HTTP ${res.status}`);
-        }
-        return;
-      }
-      const data = await res.json();
-      if (!data.stories || data.stories.length === 0) throw new Error('stories.json has no stories.');
-      renderStories(data);
-    } catch (err) {
-      console.error(err);
-      setStatus(`<div class="error-box">
-        <strong>⚠ The Ritual Failed</strong>
-        Could not load stories: ${escHtml(err.message)}
-      </div>`);
-    }
-  }
-
-  // ── Fetch Archive Entry ────────────────────────────────────────────────
-  async function loadArchiveDate(date) {
-    currentDate = date;
-    closeArchive();
-    setStatus('<span class="spinner"></span><em>Retrieving tales from the vault…</em>');
-    try {
-      const res = await fetch(ARCHIVE_URL(date) + '?t=' + Date.now());
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      if (!data.stories || data.stories.length === 0) throw new Error('No stories in archive entry.');
-      renderStories(data);
-    } catch (err) {
-      console.error(err);
-      setStatus(`<div class="error-box">
-        <strong>⚠ The Vault is Sealed</strong>
-        Could not retrieve tales from ${escHtml(date)}: ${escHtml(err.message)}
-      </div>`);
-    }
-  }
-
-  // ── Status badge helper for characters ────────────────────────────────
-  function statusBadgeClass(status) {
-    if (!status) return 'badge-status-default';
-    const s = status.toLowerCase();
-    if (s.includes('active'))  return 'badge-status-active';
-    if (s.includes('dead') || s.includes('deceased')) return 'badge-status-dead';
-    if (s.includes('curs'))    return 'badge-status-cursed';
-    if (s.includes('chang'))   return 'badge-status-changed';
-    if (s.includes('unknown')) return 'badge-status-unknown';
-    return 'badge-status-default';
-  }
-
-  // ── Render Characters ─────────────────────────────────────────────────
-  function renderCharacters(data) {
-    const statusEl = document.getElementById('char-status-msg');
-    const grid     = document.getElementById('char-grid');
-    statusEl.style.display = 'none';
-    grid.innerHTML = '';
-    grid.style.display = '';
-
-    const chars = data.characters || [];
-    if (chars.length === 0) {
-      statusEl.innerHTML = '<em>No characters recorded yet. Return after tomorrow\'s tales.</em>';
-      statusEl.style.display = '';
+// ── Fetch Today ──────────────────────────────────────────────────────
+async function loadTodayStories() {
+  currentDate = null;
+  setStatus('<span class="spinner"></span><em>Summoning the stories…</em>');
+  try {
+    const res = await fetch(STORIES_URL + '?t=' + Date.now());
+    if (!res.ok) {
+      if (res.status === 404) {
+        setStatus(`<div class="error-box"><strong>⚔ No Tales Yet</strong> The scribes haven't conjured today's stories yet. Check back after 6 AM UTC.</div>`);
+      } else { throw new Error(`HTTP ${res.status}`); }
       return;
     }
+    const data = await res.json();
+    if (!data.stories || data.stories.length === 0) throw new Error('stories.json has no stories.');
+    renderStories(data);
+  } catch (err) {
+    console.error(err);
+    setStatus(`<div class="error-box"><strong>⚠ The Ritual Failed</strong> Could not load stories: ${escHtml(err.message)}</div>`);
+  }
+}
 
-    document.getElementById('char-count-label').textContent =
-      `— ${chars.length} Known Soul${chars.length !== 1 ? 's' : ''} of the Blade —`;
+// ── Fetch Archive Entry ──────────────────────────────────────────────
+async function loadArchiveDate(date) {
+  currentDate = date;
+  closeArchive();
+  setStatus('<span class="spinner"></span><em>Retrieving tales from the vault…</em>');
+  try {
+    const res = await fetch(ARCHIVE_URL(date) + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    if (!data.stories || data.stories.length === 0) throw new Error('No stories in archive entry.');
+    renderStories(data);
+  } catch (err) {
+    console.error(err);
+    setStatus(`<div class="error-box"><strong>⚠ The Vault is Sealed</strong> Could not retrieve tales from ${escHtml(date)}: ${escHtml(err.message)}</div>`);
+  }
+}
 
-    chars.forEach(c => {
-      const card = document.createElement('div');
-      card.className = 'char-card';
+// ── Status badge helper ──────────────────────────────────────────────
+function statusBadgeClass(status) {
+  if (!status) return 'badge-status-default';
+  const s = status.toLowerCase();
+  if (s.includes('active')) return 'badge-status-active';
+  if (s.includes('dead') || s.includes('deceased')) return 'badge-status-dead';
+  if (s.includes('curs')) return 'badge-status-cursed';
+  if (s.includes('chang')) return 'badge-status-changed';
+  if (s.includes('unknown')) return 'badge-status-unknown';
+  return 'badge-status-default';
+}
 
-      const statusClass = statusBadgeClass(c.status);
-      const statusLabel = escHtml(c.status || 'Unknown');
-      const traits = (c.traits || []).map(t =>
-        `<span class="char-trait">${escHtml(t)}</span>`
-      ).join('');
-      const appearances = c.appearances > 1
-        ? `${c.appearances} appearances`
-        : 'First appearance';
+// ── Story link builder ───────────────────────────────────────────────
+function buildStoryLinks(appearances) {
+  if (!appearances || appearances.length === 0) return '';
+  const links = appearances.map(s =>
+    `<button class="codex-story-link" data-date="${escHtml(s.date)}">${escHtml(s.title)}</button>`
+  ).join('');
+  return `<div class="codex-story-links"><span class="codex-story-links-label">Appears in</span>${links}</div>`;
+}
 
-      const tagline = escHtml(c.tagline || '');
-      const storyLinks = (c.story_appearances || []).map(s =>
-        `<button class="char-story-link" data-date="${escHtml(s.date)}">${escHtml(s.title)}</button>`
-      ).join('');
-      card.innerHTML = `
-        <span class="char-world">${escHtml(c.world || 'The Known World')}</span>
-        <div class="char-card-top">
-          <div class="char-name">${escHtml(c.name)}</div>
-          ${tagline ? `<div class="char-tagline">${tagline}</div>` : ''}
-          <div class="char-badges">
-            <span class="badge badge-role">${escHtml(c.role || 'Unknown')}</span>
-            <span class="badge badge-status">${escHtml(c.status || 'Unknown')}</span>
-          </div>
-        </div>
-        <div class="char-bio">${escHtml(c.bio || '')}</div>
-        <div class="char-traits">${traits}</div>
-        <div class="char-appearances">${appearances}</div>
-        ${storyLinks ? `<div class="char-story-links"><span class="char-story-links-label">Appears in</span>${storyLinks}</div>` : ''}
-      `;
-      card.querySelectorAll('.char-story-link').forEach(btn => {
-        btn.addEventListener('click', () => {
-          switchTab('tales');
-          const d = btn.dataset.date;
-          if (d === todayStr()) loadTodayStories(); else loadArchiveDate(d);
-        });
-      });
-      grid.appendChild(card);
+function attachStoryLinkListeners(card) {
+  card.querySelectorAll('.codex-story-link').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchTab('tales');
+      const d = btn.dataset.date;
+      if (d === todayStr()) loadTodayStories(); else loadArchiveDate(d);
     });
-  }
+  });
+}
 
-  // ── Fetch Characters ──────────────────────────────────────────────────
-  async function loadCharacters() {
-    if (charsLoaded) return;
-    const statusEl = document.getElementById('char-status-msg');
-    const grid     = document.getElementById('char-grid');
-    statusEl.innerHTML = '<span class="spinner"></span><em>Consulting the lore scrolls…</em>';
+// ── Render Codex ────────────────────────────────────────────────────
+function renderCodex(data) {
+  const statusEl = document.getElementById('char-status-msg');
+  const grid     = document.getElementById('char-grid');
+  statusEl.style.display = 'none';
+  grid.innerHTML = '';
+  grid.style.display = '';
+
+  const characters = data.characters || [];
+  const places     = data.places     || [];
+  const events     = data.events     || [];
+  const weapons    = data.weapons    || [];
+  const artifacts  = data.artifacts  || [];
+
+  const total = characters.length + places.length + events.length + weapons.length + artifacts.length;
+
+  if (total === 0) {
+    statusEl.innerHTML = '<em>The codex is empty. Return after the backfill workflow completes.</em>';
     statusEl.style.display = '';
-    grid.style.display = 'none';
+    return;
+  }
 
-    try {
-      const res = await fetch(CHARACTERS_URL + '?t=' + Date.now());
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      charsLoaded = true;
-      renderCharacters(data);
-    } catch (err) {
-      console.error(err);
-      statusEl.innerHTML = `<div class="error-box">
-        <strong>⚠ The Scrolls Are Lost</strong>
-        Could not load characters: ${escHtml(err.message)}
-      </div>`;
-      statusEl.style.display = '';
+  // ── Characters ──────────────────────────────────────────────────
+  characters.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'codex-card char-card';
+    card.dataset.entityType = 'characters';
+    const statusClass = statusBadgeClass(c.status);
+    const traits = (c.traits || []).map(t =>
+      `<span class="char-trait">${escHtml(t)}</span>`
+    ).join('');
+    const appearances = c.appearances > 1 ? `${c.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <span class="codex-type-label">Character</span>
+      <div class="codex-card-name">${escHtml(c.name)}</div>
+      ${c.tagline ? `<div class="codex-card-tagline">${escHtml(c.tagline)}</div>` : ''}
+      <div class="codex-card-badges">
+        <span class="badge badge-role">${escHtml(c.role || 'Unknown')}</span>
+        <span class="badge ${statusClass}">${escHtml(c.status || 'Unknown')}</span>
+      </div>
+      <hr class="codex-divider" />
+      <div class="codex-body">${escHtml(c.bio || '')}</div>
+      ${traits ? `<div class="char-traits">${traits}</div>` : ''}
+      <div class="codex-card-footer">
+        <span class="codex-appearances">${appearances}</span>
+        ${c.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(c.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(c.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ── Places ──────────────────────────────────────────────────────
+  places.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'codex-card place-card';
+    card.dataset.entityType = 'places';
+    const appearances = p.appearances > 1 ? `${p.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <span class="codex-type-label">Place</span>
+      <div class="codex-card-name">${escHtml(p.name)}</div>
+      ${p.tagline ? `<div class="codex-card-tagline">${escHtml(p.tagline)}</div>` : ''}
+      <div class="codex-card-badges">
+        <span class="badge badge-place">${escHtml(p.place_type || 'Location')}</span>
+        ${p.status ? `<span class="badge badge-status-default">${escHtml(p.status)}</span>` : ''}
+      </div>
+      <hr class="codex-divider" />
+      ${p.atmosphere ? `<div class="place-atmosphere">${escHtml(p.atmosphere)}</div>` : ''}
+      <div class="codex-body">${escHtml(p.description || '')}</div>
+      <div class="codex-card-footer">
+        <span class="codex-appearances">${appearances}</span>
+        ${p.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(p.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(p.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ── Events ──────────────────────────────────────────────────────
+  events.forEach(e => {
+    const card = document.createElement('div');
+    card.className = 'codex-card event-card';
+    card.dataset.entityType = 'events';
+    const participants = (e.participants || []).map(p => escHtml(p)).join(', ');
+    const appearances = e.appearances > 1 ? `${e.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <span class="codex-type-label">Event</span>
+      <div class="codex-card-name">${escHtml(e.name)}</div>
+      ${e.tagline ? `<div class="codex-card-tagline">${escHtml(e.tagline)}</div>` : ''}
+      <div class="codex-card-badges">
+        <span class="badge badge-event">${escHtml(e.event_type || 'Event')}</span>
+      </div>
+      <hr class="codex-divider" />
+      ${participants ? `<div class="event-participants"><strong>Participants:</strong>${participants}</div>` : ''}
+      <div class="codex-body">${escHtml(e.outcome || '')}</div>
+      ${e.significance ? `<div class="event-significance">${escHtml(e.significance)}</div>` : ''}
+      <div class="codex-card-footer">
+        <span class="codex-appearances">${appearances}</span>
+        ${e.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(e.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(e.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ── Weapons ─────────────────────────────────────────────────────
+  weapons.forEach(w => {
+    const card = document.createElement('div');
+    card.className = 'codex-card weapon-card';
+    card.dataset.entityType = 'weapons';
+    const appearances = w.appearances > 1 ? `${w.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <span class="codex-type-label">Weapon</span>
+      <div class="codex-card-name">${escHtml(w.name)}</div>
+      ${w.tagline ? `<div class="codex-card-tagline">${escHtml(w.tagline)}</div>` : ''}
+      <div class="codex-card-badges">
+        <span class="badge badge-weapon">${escHtml(w.weapon_type || 'Weapon')}</span>
+        ${w.status ? `<span class="badge badge-status-default">${escHtml(w.status)}</span>` : ''}
+      </div>
+      <hr class="codex-divider" />
+      ${w.origin ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Origin:</em> ${escHtml(w.origin)}</div>` : ''}
+      <div class="codex-body">${escHtml(w.powers || '')}</div>
+      ${w.last_known_holder ? `<div class="weapon-holder">Last held by: ${escHtml(w.last_known_holder)}</div>` : ''}
+      <div class="codex-card-footer">
+        <span class="codex-appearances">${appearances}</span>
+        ${w.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(w.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(w.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ── Artifacts ───────────────────────────────────────────────────
+  artifacts.forEach(a => {
+    const card = document.createElement('div');
+    card.className = 'codex-card artifact-card';
+    card.dataset.entityType = 'artifacts';
+    const appearances = a.appearances > 1 ? `${a.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <span class="codex-type-label">Artifact</span>
+      <div class="codex-card-name">${escHtml(a.name)}</div>
+      ${a.tagline ? `<div class="codex-card-tagline">${escHtml(a.tagline)}</div>` : ''}
+      <div class="codex-card-badges">
+        <span class="badge badge-artifact">${escHtml(a.artifact_type || 'Artifact')}</span>
+        ${a.status ? `<span class="badge badge-status-default">${escHtml(a.status)}</span>` : ''}
+      </div>
+      <hr class="codex-divider" />
+      ${a.origin ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Origin:</em> ${escHtml(a.origin)}</div>` : ''}
+      <div class="codex-body">${escHtml(a.powers || '')}</div>
+      ${a.last_known_holder ? `<div class="artifact-holder">Last held by: ${escHtml(a.last_known_holder)}</div>` : ''}
+      <div class="codex-card-footer">
+        <span class="codex-appearances">${appearances}</span>
+        ${a.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(a.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(a.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  applyCodexFilter(activeCodexType);
+}
+
+// ── Fetch Codex ──────────────────────────────────────────────────────
+async function loadCodex() {
+  if (codexLoaded) return;
+  const statusEl = document.getElementById('char-status-msg');
+  const grid     = document.getElementById('char-grid');
+  statusEl.innerHTML = '<span class="spinner"></span><em>Consulting the lore scrolls…</em>';
+  statusEl.style.display = '';
+  grid.style.display = 'none';
+  try {
+    const res = await fetch(CODEX_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    codexLoaded = true;
+    renderCodex(data);
+  } catch (err) {
+    console.error(err);
+    statusEl.innerHTML = `<div class="error-box"><strong>⚠ The Codex is Lost</strong> Could not load: ${escHtml(err.message)}</div>`;
+    statusEl.style.display = '';
+  }
+}
+
+// ── Tab Switching ──────────────────────────────────────────────────
+function switchTab(tab) {
+  currentTab = tab;
+  const talesView = document.getElementById('tales-view');
+  const charView  = document.getElementById('char-view');
+  const tabTales  = document.getElementById('tab-tales');
+  const tabChars  = document.getElementById('tab-characters');
+  if (tab === 'tales') {
+    talesView.style.display = '';
+    charView.style.display  = 'none';
+    tabTales.classList.add('active');
+    tabTales.setAttribute('aria-selected', 'true');
+    tabChars.classList.remove('active');
+    tabChars.setAttribute('aria-selected', 'false');
+  } else {
+    talesView.style.display = 'none';
+    charView.style.display  = 'block';
+    tabChars.classList.add('active');
+    tabChars.setAttribute('aria-selected', 'true');
+    tabTales.classList.remove('active');
+    tabTales.setAttribute('aria-selected', 'false');
+    loadCodex();
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── Archive Drawer ───────────────────────────────────────────────────
+function openArchive() {
+  document.getElementById('archive-drawer').classList.add('open');
+  document.getElementById('archive-overlay').classList.add('open');
+  document.getElementById('archive-overlay').setAttribute('aria-hidden', 'false');
+  if (!archiveLoaded) loadArchiveIndex();
+}
+function closeArchive() {
+  document.getElementById('archive-drawer').classList.remove('open');
+  document.getElementById('archive-overlay').classList.remove('open');
+  document.getElementById('archive-overlay').setAttribute('aria-hidden', 'true');
+}
+async function loadArchiveIndex() {
+  const listEl = document.getElementById('archive-list');
+  listEl.innerHTML = '<div class="archive-loading"><span class="spinner"></span> Consulting the grimoire…</div>';
+  try {
+    const res = await fetch(ARCHIVE_IDX_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const idx = await res.json();
+    archiveLoaded = true;
+    const today = todayStr();
+    const dates = idx.dates || [];
+    if (dates.length === 0) {
+      listEl.innerHTML = '<div class="archive-empty"><em>The vault is empty.<br>Return tomorrow.</em></div>';
+      return;
     }
-  }
-
-  // ── Tab Switching ─────────────────────────────────────────────────────
-  function switchTab(tab) {
-    currentTab = tab;
-    const talesView = document.getElementById('tales-view');
-    const charView  = document.getElementById('char-view');
-    const tabTales  = document.getElementById('tab-tales');
-    const tabChars  = document.getElementById('tab-characters');
-
-    if (tab === 'tales') {
-      talesView.style.display = '';
-      charView.style.display  = 'none';
-      tabTales.classList.add('active');
-      tabTales.setAttribute('aria-selected', 'true');
-      tabChars.classList.remove('active');
-      tabChars.setAttribute('aria-selected', 'false');
-    } else {
-      talesView.style.display = 'none';
-      charView.style.display  = 'block';
-      tabChars.classList.add('active');
-      tabChars.setAttribute('aria-selected', 'true');
-      tabTales.classList.remove('active');
-      tabTales.setAttribute('aria-selected', 'false');
-      loadCharacters();
-    }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  // ── Archive Drawer ────────────────────────────────────────────────────
-  function openArchive() {
-    document.getElementById('archive-drawer').classList.add('open');
-    document.getElementById('archive-overlay').classList.add('open');
-    document.getElementById('archive-overlay').setAttribute('aria-hidden', 'false');
-    if (!archiveLoaded) loadArchiveIndex();
-  }
-
-  function closeArchive() {
-    document.getElementById('archive-drawer').classList.remove('open');
-    document.getElementById('archive-overlay').classList.remove('open');
-    document.getElementById('archive-overlay').setAttribute('aria-hidden', 'true');
-  }
-
-  async function loadArchiveIndex() {
-    const listEl = document.getElementById('archive-list');
-    listEl.innerHTML = '<div class="archive-loading"><span class="spinner"></span> Consulting the grimoire…</div>';
-
-    try {
-      const res = await fetch(ARCHIVE_IDX_URL + '?t=' + Date.now());
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const idx = await res.json();
-      archiveLoaded = true;
-
-      const today = todayStr();
-      const dates = idx.dates || [];
-
-      if (dates.length === 0) {
-        listEl.innerHTML = '<div class="archive-empty"><em>The vault is empty.<br>Return tomorrow.</em></div>';
-        return;
-      }
-
-      listEl.innerHTML = '';
-      let issueNum = dates.length;
-
-      dates.forEach((date) => {
-        const isToday = date === today;
-        const btn = document.createElement('button');
-        btn.className = 'archive-entry' + (isToday ? ' today' : '') + (date === currentDate ? ' active' : '');
-        btn.dataset.date = date;
-        btn.innerHTML = `
-          <div class="archive-entry-label">Issue ${String(issueNum).padStart(3, '0')}</div>
-          <div class="archive-entry-date">
-            ${escHtml(formatDate(date))}
-            ${isToday ? '<span class="archive-entry-today-badge">Today</span>' : ''}
-          </div>
-        `;
-        btn.addEventListener('click', () => {
-          if (currentTab !== 'tales') switchTab('tales');
-          if (isToday) {
-            loadTodayStories();
-            closeArchive();
-          } else {
-            loadArchiveDate(date);
-          }
-        });
-        listEl.appendChild(btn);
-        issueNum--;
+    listEl.innerHTML = '';
+    let issueNum = dates.length;
+    dates.forEach((date) => {
+      const isToday = date === today;
+      const btn = document.createElement('button');
+      btn.className = 'archive-entry' + (isToday ? ' today' : '') + (date === currentDate ? ' active' : '');
+      btn.dataset.date = date;
+      btn.innerHTML = `
+        <div class="archive-entry-label">Issue ${String(issueNum).padStart(3, '0')}</div>
+        <div class="archive-entry-date">
+          ${escHtml(formatDate(date))}
+          ${isToday ? '<span class="archive-entry-today-badge">Today</span>' : ''}
+        </div>
+      `;
+      btn.addEventListener('click', () => {
+        if (currentTab !== 'tales') switchTab('tales');
+        if (isToday) { loadTodayStories(); closeArchive(); }
+        else { loadArchiveDate(date); }
       });
-
-    } catch (err) {
-      console.error(err);
-      listEl.innerHTML = `<div class="archive-empty"><em>Could not open the vault.<br>${escHtml(err.message)}</em></div>`;
-    }
+      listEl.appendChild(btn);
+      issueNum--;
+    });
+  } catch (err) {
+    console.error(err);
+    listEl.innerHTML = `<div class="archive-empty"><em>Could not open the vault.<br>${escHtml(err.message)}</em></div>`;
   }
+}
 
-  // ── Event Listeners ────────────────────────────────────────────────────
-  document.getElementById('tab-tales').addEventListener('click', () => switchTab('tales'));
-  document.getElementById('tab-characters').addEventListener('click', () => switchTab('characters'));
+// ── Event Listeners ──────────────────────────────────────────────────
+document.getElementById('tab-tales').addEventListener('click', () => switchTab('tales'));
+document.getElementById('tab-characters').addEventListener('click', () => switchTab('characters'));
+document.querySelectorAll('.codex-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyCodexFilter(btn.dataset.type));
+});
+document.getElementById('archive-btn').addEventListener('click', openArchive);
+document.getElementById('archive-close').addEventListener('click', closeArchive);
+document.getElementById('archive-overlay').addEventListener('click', closeArchive);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeArchive(); });
 
-  document.querySelectorAll('.genre-btn').forEach(btn => {
-    btn.addEventListener('click', () => applyGenreFilter(btn.dataset.genre));
-  });
-
-  document.getElementById('archive-btn').addEventListener('click', openArchive);
-  document.getElementById('archive-close').addEventListener('click', closeArchive);
-  document.getElementById('archive-overlay').addEventListener('click', closeArchive);
-  // Close archive on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeArchive();
-  });
-
-  // ── Boot ──────────────────────────────────────────────────────────────
-  document.getElementById('today-date').textContent = formatDate(todayStr());
-  loadTodayStories();
+// ── Boot ─────────────────────────────────────────────────────────────
+document.getElementById('today-date').textContent = formatDate(todayStr());
+loadTodayStories();
 </script>
 </body>
 </html>
