@@ -3,10 +3,11 @@
   "characters": [
     {
       "name": "Vraxen the Knife",
+      "tagline": "Audacious. Cursed. Hunted.",
       "role": "Thief",
       "status": "Cursed",
       "world": "The Known World",
-      "bio": "A master thief who robbed the idol of Khar-Zul, prying free six of nine sacred emerald eyes before the shadows gained teeth. Escaped into moonlight with six gems worth kingdoms — and a new shadow wearing his own face, patient as carved stone.",
+      "bio": "A master thief who robbed the idol of Khar-Zul and was cursed by a demon for his audacity. Now hunted across every land, he survives by wit and blade alone.",
       "traits": [
         "Audacious",
         "Calculating",
@@ -15,7 +16,6 @@
       "first_story": "The Thief of Khar-Zul",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Audacious. Cursed. Hunted.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -25,19 +25,19 @@
     },
     {
       "name": "Soraya",
-      "role": "Sell-Sword",
+      "tagline": "Fierce. Loyal. Bloodied.",
+      "role": "Caravan Guard",
       "status": "Active",
       "world": "The Known World",
-      "bio": "A sell-sword of ruthless competence hired to escort caravans across the Ashen Wastes. When her employer sold the drivers to a blood-sorcerer, she killed nine cursed men weeping, slew the sorcerer slowly, and kept none of the gold — but stole the merchant's shadow and sold it in Pelimor's night markets. She tells herself it was justice.",
+      "bio": "A caravan guard who paid the blood-price to protect her charges across the wastes. Fierce and unbreakable, she earned her reputation one ambush at a time.",
       "traits": [
-        "Ruthless",
-        "Principled",
-        "Dark conscience"
+        "Fierce",
+        "Loyal",
+        "Battle-hardened"
       ],
       "first_story": "Blood-Price of the Caravan",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Ruthless. Principled. Shadow-touched.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -47,19 +47,19 @@
     },
     {
       "name": "Aldric",
+      "tagline": "Merchant. Desperate. Survivor.",
       "role": "Merchant",
-      "status": "Shadow-Stolen",
+      "status": "Active",
       "world": "The Known World",
-      "bio": "A spice merchant who hired a sell-sword, paid bandits, bribed toll-lords, and sold his drivers to a blood-sorcerer — all to smooth a single caravan crossing. Survived, but had his shadow stolen by Soraya and sold in Pelimor. Now walks the Known World as a man without a shadow.",
+      "bio": "A merchant whose caravan was attacked in the wastes. Survived through the protection of his guard Soraya and a willingness to pay whatever price was demanded.",
       "traits": [
-        "Duplicitous",
-        "Cowardly",
-        "Transactional"
+        "Resourceful",
+        "Desperate",
+        "Grateful"
       ],
       "first_story": "Blood-Price of the Caravan",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Merchant. Cowardly. Undone.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -69,19 +69,19 @@
     },
     {
       "name": "Malachite Doss",
+      "tagline": "Scholar. Seeker. Haunted.",
       "role": "Scholar",
-      "status": "Changed",
+      "status": "Active",
       "world": "The Known World",
-      "bio": "A ruin-delver and scholar who found the Lamp of Suroth in the Sunken Ziggurat of Yeng. Lit it, buying one truth — his dead wife had never loved him, only his library — at the cost of one lie: that knowledge was its own reward. Left the ruin lighter and heavier at once.",
+      "bio": "A scholar-adventurer who sought the legendary Lamp of Suroth in the deep ruins. What he found illuminated far more than ancient corridors.",
       "traits": [
-        "Intellectual",
-        "Self-deceiving",
-        "Transformed by truth"
+        "Curious",
+        "Methodical",
+        "Obsessive"
       ],
       "first_story": "The Lamp of Suroth",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Scholar. Lamp-bound. Transformed.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -91,41 +91,45 @@
     },
     {
       "name": "Kael Bloodhorn",
-      "role": "Warlord",
-      "status": "Broken",
+      "tagline": "Savage. Honorable. Unstoppable.",
+      "role": "Barbarian Warlord",
+      "status": "Active",
       "world": "The Known World",
-      "bio": "Chieftain who brought 800 Veth warriors to siege the living Bone Citadel and lost 700 of them to its defenses. His last 100 were absorbed alive into the fortress walls — breathing, preserved, visible like insects in amber. He spent the rest of his life trying to free them. He failed. He never stopped.",
+      "bio": "A barbarian warlord who laid siege to the Bone Citadel with his war-host. Fearsome in battle yet bound by a warrior's code of honor.",
       "traits": [
-        "Stubborn valor",
-        "Grief-driven",
+        "Savage",
+        "Honorable",
         "Relentless"
       ],
       "first_story": "Siege of the Bone Citadel",
       "first_date": "2026-02-25",
-      "appearances": 1,
-      "tagline": "Warlord. Grieving. Relentless.",
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "Siege of the Bone Citadel"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Stone Woman of Kalthara"
         }
       ]
     },
     {
       "name": "Tessaly Dorn",
-      "role": "Adventurer",
-      "status": "Active",
+      "tagline": "Cursed. Defiant. Enduring.",
+      "role": "Treasure Hunter",
+      "status": "Cursed",
       "world": "The Known World",
-      "bio": "Spent twelve of Yarithax's cursed gold coins before reading the fine print. The Lich-King's grey collectors — thin men with ledgers who walk through walls and never sleep — found her. Unable to pay with soul or years, she worked eleven months as a debt-collector for the dead. She collected punctually. She understood the job. Her debt is paid.",
+      "bio": "A treasure hunter who fell prey to the cursed gold of Yarithax. Now she carries the weight of an ancient doom, searching for a way to break its hold.",
       "traits": [
-        "Resourceful",
-        "Quick-thinking",
-        "Grimly professional"
+        "Defiant",
+        "Reckless",
+        "Enduring"
       ],
       "first_story": "The Curse of Yarithax's Gold",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Resourceful. Cursed. Grimly Professional.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -135,19 +139,19 @@
     },
     {
       "name": "Pieter Vane",
-      "role": "Oath-Breaker",
-      "status": "Dead",
+      "tagline": "Honorbound. Tormented. Resolute.",
+      "role": "Knight",
+      "status": "Active",
       "world": "The Known World",
-      "bio": "Broke his oath to a dead king for twenty gold pieces and a horse. The horse went lame. The gold was gone in a month. The dead king found him a year later in a dockside tavern — patient, unthreating, merely curious whether Pieter remembered the oath. He did. He'd never forgotten. He paid his tab and followed the dead king into the cold street. An unmarked tomb appeared on the north road shortly after.",
+      "bio": "A knight who broke an oath and faced the terrible reckoning demanded by the old laws. His journey to make amends tested every fiber of his resolve.",
       "traits": [
-        "Guilty",
-        "Haunted",
-        "Ultimately honorable"
+        "Honorable",
+        "Tormented",
+        "Resolute"
       ],
       "first_story": "The Oath-Breaker's Due",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Oath-breaker. Haunted. Honorable.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -157,19 +161,19 @@
     },
     {
       "name": "Conjuress Mel",
+      "tagline": "Cunning. Indebted. Dangerous.",
       "role": "Sorceress",
       "status": "Active",
       "world": "The Known World",
-      "bio": "Owed three favors to the demon Varek for spells cast during the Siege of Amrath. After delivering a letter to a dead man and stealing a year from a sleeping child, she refused the third favor on her wedding morning — and instead trapped Varek in a prepared circle and offered herself as his partner-collector of intangibles. He agreed. They work together now, harvesting happiness, certainty, and loyalty from the living.",
+      "bio": "A conjuress of considerable power who found herself indebted to forces beyond her control. Her cunning and magical prowess are matched only by the debts she owes.",
       "traits": [
-        "Brilliant",
-        "Ruthless when cornered",
-        "Pragmatic survivor"
+        "Cunning",
+        "Powerful",
+        "Indebted"
       ],
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Brilliant. Cornered. Surviving.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -179,19 +183,19 @@
     },
     {
       "name": "Varek",
+      "tagline": "Demon. Patient. Outwitted.",
       "role": "Demon",
       "status": "Active",
       "world": "The Known World",
-      "bio": "An elegant demon who collects intangibles — years of life, happiness, certainty, loyalty. Made a three-favor contract with Conjuress Mel, intending to claim her marriage as his final collection. She outmaneuvered him with a prepared binding circle and offered partnership instead. He accepted, genuinely surprised. Now they collect together.",
+      "bio": "A patient demon who collects on sorcerous debts with cold precision. Was outwitted by Conjuress Mel in a contest of wills and magical cunning.",
       "traits": [
-        "Elegant",
         "Patient",
-        "Capable of genuine surprise"
+        "Calculating",
+        "Ancient"
       ],
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Demon. Patient. Outwitted.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -201,19 +205,19 @@
     },
     {
       "name": "Urgha the Unmoved",
-      "role": "Mercenary",
+      "tagline": "Stoic. Mighty. Merciful.",
+      "role": "Barbarian",
       "status": "Active",
       "world": "The Known World",
-      "bio": "A mercenary of fearsome reputation, named for emotional detachment. Killed four men before breakfast on the day she showed mercy. Hired to retrieve a tax collector's funds or his ears, she found he'd spent the money on physicians for his feverish six-year-old daughter. She sent her own physician instead, paid out of pocket, and kept neither money nor ears. She remained unmoved. She was furious about the mercy for years.",
+      "bio": "A barbarian renowned for being utterly unmoved by pain, fear, or persuasion. Yet beneath the iron exterior lies an unexpected capacity for mercy.",
       "traits": [
-        "Ferocious",
-        "Secretly compassionate",
-        "Fiercely proud"
+        "Stoic",
+        "Mighty",
+        "Merciful"
       ],
       "first_story": "The Barbarian's Mercy",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Ferocious. Compassionate. Proud.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -223,19 +227,19 @@
     },
     {
       "name": "Cassia Vorn",
+      "tagline": "Quick. Doomed. Resourceful.",
       "role": "Thief",
       "status": "Active",
       "world": "The Known World",
-      "bio": "Last thief of Crimson Gate, burned with three thousand souls inside. Negotiated with a demon past all standard offers until it dropped its script and simply asked what she wanted. She wanted one name — the man who ordered the burning. She traded her certainty for it. She used the name. She is notably less certain now, but it was enough.",
+      "bio": "The last thief to escape the Crimson Gate alive. Quick-fingered and quicker-witted, she stole what no one thought could be taken.",
       "traits": [
-        "Razor intelligence",
-        "Grief-driven",
-        "Now uncertain"
+        "Quick",
+        "Resourceful",
+        "Doomed"
       ],
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Razor-sharp. Grief-driven. Uncertain.",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -245,23 +249,225 @@
     },
     {
       "name": "King Aldous III",
+      "tagline": "Regal. Besieged. Tragic.",
       "role": "King",
-      "status": "Deceased",
+      "status": "Active",
       "world": "The Known World",
-      "bio": "Won a desperate war by wearing the Plague-Bringer's Crown for thirty seconds — long enough to terrify the enemy into surrender. Reigned eleven more years: erratic, sleepless, speaking to absent people. When he died of ordinary causes, physicians found his shadow had been on backwards for years. The Crown was returned to a deeper vault at Ostern.",
+      "bio": "A king whose realm was struck by a devastating plague. Forced to make impossible choices between his crown and his people as the Plague-Bringer demanded tribute.",
       "traits": [
-        "Reckless courage",
-        "Haunted",
-        "Effective despite madness"
+        "Regal",
+        "Burdened",
+        "Tragic"
       ],
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "tagline": "Reckless. Haunted. Courageous.",
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Plague-Bringer's Crown"
+        }
+      ]
+    },
+    {
+      "name": "Malachar the Betrayer",
+      "tagline": "Defiant. Damned. Redeemed.",
+      "role": "Conqueror",
+      "status": "Dead",
+      "world": "The Known World",
+      "bio": "A fallen warrior who sold his soul to daemon-priests for power, conquering kingdoms for three decades. When they came to collect, he denied them by driving his own blade through his heart.",
+      "traits": [
+        "Defiant",
+        "Fallen",
+        "Desperate"
+      ],
+      "first_story": "The Crimson Covenant of Vex-Karthul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        }
+      ]
+    },
+    {
+      "name": "Shara",
+      "tagline": "Slave. Rebel. Conqueror.",
+      "role": "Rebel",
+      "status": "Active",
+      "world": "The Scorched Wastes",
+      "bio": "Once a slave in witch-queen Thysara's palace, Shara discovered hidden power within herself and overthrew her immortal oppressor to free the Scorched Wastes.",
+      "traits": [
+        "Resilient",
+        "Brave",
+        "Powerful"
+      ],
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Shara of the Scorched Wastes"
+        }
+      ]
+    },
+    {
+      "name": "Grell Ironhand",
+      "tagline": "Maimed. Principled. Unyielding.",
+      "role": "Sellsword",
+      "status": "Active",
+      "world": "The Shattered Provinces",
+      "bio": "The greatest sellsword in the Shattered Provinces until a magic plague took his sword arm. Had metal grafted in its place, then chose honor over a dark cure when he crushed the Heartstone of Vulgrim.",
+      "traits": [
+        "Principled",
+        "Tough",
+        "Resigned"
+      ],
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
+    },
+    {
+      "name": "Zareth",
+      "tagline": "Scholarly. Visionary. Defiant.",
+      "role": "Astronomer-Prince",
+      "status": "Active",
+      "world": "The Known World",
+      "bio": "A scholarly prince who studied dying stars and communed with the Elder Stones. Rejected cosmic fatalism and vowed to build observatories so mankind could read the new heavens.",
+      "traits": [
+        "Scholarly",
+        "Visionary",
+        "Defiant"
+      ],
+      "first_story": "Zareth Among the Stellar Stones",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Zareth Among the Stellar Stones"
+        }
+      ]
+    },
+    {
+      "name": "Kessa the Thief",
+      "tagline": "Daring. Cursed. Whole.",
+      "role": "Thief",
+      "status": "Transformed",
+      "world": "The Known World",
+      "bio": "A master thief who stole the Eye of Aethon from a sleeping god's temple. Pursued by her own shadow made monstrous, she embraced the darkness and merged with it, gaining perfect balance.",
+      "traits": [
+        "Daring",
+        "Resourceful",
+        "Transformed"
+      ],
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        }
+      ]
+    },
+    {
+      "name": "Dravok",
+      "tagline": "Ambitious. Fading. Desperate.",
+      "role": "Sorcerer-King",
+      "status": "Unknown",
+      "world": "The Known World",
+      "bio": "A sorcerer-king who conquered three empires through will and black magic. When his runes of immortality faded, he sought the Gambler's Daemon in the Crimson Sanctuary for one final wager.",
+      "traits": [
+        "Ambitious",
+        "Desperate",
+        "Ruthless"
+      ],
+      "first_story": "Dravok's Last Gamble",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Dravok's Last Gamble"
+        }
+      ]
+    },
+    {
+      "name": "Torven",
+      "tagline": "Brave. Compassionate. Savior.",
+      "role": "Pearl Diver",
+      "status": "Active",
+      "world": "The Known World",
+      "bio": "A pearl diver who ventured into the Sunken Caverns to save his drowning village. Instead of taking the Lamia's Pearl, he accepted the Lamia's tears and brought her into the light.",
+      "traits": [
+        "Brave",
+        "Compassionate",
+        "Resourceful"
+      ],
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
+    },
+    {
+      "name": "Vex the Curse-Bearer",
+      "tagline": "Cursed. Brutal. Alone.",
+      "role": "Mercenary",
+      "status": "Active",
+      "world": "The Known World",
+      "bio": "Born with a curse that rebounded every kindness with terrible vengeance, Vex became a mercenary to weaponize her affliction. After learning the curse was a lesson in consequence, she retreated into solitude.",
+      "traits": [
+        "Cursed",
+        "Brutal",
+        "Isolated"
+      ],
+      "first_story": "The Crimson Covenant of Vex-Karthul",
+      "first_date": "2026-02-25",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "Vex the Curse-Bearer"
+        }
+      ]
+    },
+    {
+      "name": "Morgath",
+      "tagline": "Immortal. Regretful. Redeemed.",
+      "role": "Necromancer",
+      "status": "Dead",
+      "world": "The Known World",
+      "bio": "A great sorcerer who conquered death through necromancy but found immortality hollow. Sealed away all knowledge of necromancy and walked willingly into the Eternal Dark, finding forgiveness at last.",
+      "traits": [
+        "Powerful",
+        "Regretful",
+        "Self-Sacrificing"
+      ],
+      "first_story": "Morgath's Resurrection",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Morgath's Resurrection"
         }
       ]
     }
