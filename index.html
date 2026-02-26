@@ -813,17 +813,6 @@
 
     <!-- Genre filter bar -->
     <div class="genre-bar" id="genre-bar" role="group" aria-label="Filter by genre">
-      <button class="genre-btn active" data-genre="all">All Tales</button>
-      <button class="genre-btn" data-genre="Sword &amp; Sorcery">Sword &amp; Sorcery</button>
-      <button class="genre-btn" data-genre="Dark Fantasy">Dark Fantasy</button>
-      <button class="genre-btn" data-genre="Lost World">Lost World</button>
-      <button class="genre-btn" data-genre="Barbarian Quest">Barbarian Quest</button>
-      <button class="genre-btn" data-genre="Ancient Curse">Ancient Curse</button>
-      <button class="genre-btn" data-genre="Forbidden Tomb">Forbidden Tomb</button>
-      <button class="genre-btn" data-genre="Witch Hunt">Witch Hunt</button>
-      <button class="genre-btn" data-genre="Blood Oath">Blood Oath</button>
-      <button class="genre-btn" data-genre="Demon Pact">Demon Pact</button>
-      <button class="genre-btn" data-genre="War of Kings">War of Kings</button>
     </div>
 
     <div class="controls">
@@ -978,6 +967,29 @@
     });
 
     const isToday = data.date === todayStr();
+
+    // Build genre filter buttons dynamically from this batch of stories
+    const genreBar = document.getElementById('genre-bar');
+    genreBar.innerHTML = '';
+    const allBtn = document.createElement('button');
+    allBtn.className = 'btn genre-btn' + (activeGenre === 'all' ? ' active' : '');
+    allBtn.dataset.genre = 'all';
+    allBtn.textContent = 'All Tales';
+    allBtn.addEventListener('click', () => applyGenreFilter('all'));
+    genreBar.appendChild(allBtn);
+    const seenGenres = new Set();
+    data.stories.forEach(s => {
+      const g = (s.subgenre || '').trim();
+      if (g && !seenGenres.has(g.toLowerCase())) {
+        seenGenres.add(g.toLowerCase());
+        const btn = document.createElement('button');
+        btn.className = 'btn genre-btn';
+        btn.dataset.genre = g;
+        btn.textContent = g;
+        btn.addEventListener('click', () => applyGenreFilter(g));
+        genreBar.appendChild(btn);
+      }
+    });
 
     // Apply current genre filter to newly rendered cards
     applyGenreFilter(activeGenre);
