@@ -9,7 +9,7 @@ and artifacts from every story, then merges results into codex.json.
 
 Also migrates any existing characters.json data so nothing is lost.
 
-Run manually via GitHub Actions (workflow_dispatch) or locally.
+Run manually via GitHub Actions (workflow_dispatch) or locally
 """
 
 import os
@@ -667,7 +667,7 @@ def main():
     client = anthropic.Anthropic(api_key=api_key)
 
     # Process stories in batches of 5 to stay within token limits
-    BATCH_SIZE = 5
+    BATCH_SIZE = 2
     batches = [all_stories[i:i+BATCH_SIZE] for i in range(0, len(all_stories), BATCH_SIZE)]
     print(f"\nProcessing {len(all_stories)} stories in {len(batches)} batches of up to {BATCH_SIZE}...")
 
