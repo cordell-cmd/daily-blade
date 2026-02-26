@@ -247,6 +247,13 @@ footer strong { color: var(--gold); font-style: normal; font-family: 'Cinzel', s
       <button class="codex-filter-btn" data-type="events">⚡ Events</button>
       <button class="codex-filter-btn" data-type="weapons">🗡 Weapons</button>
       <button class="codex-filter-btn" data-type="artifacts">💎 Artifacts</button>
+      <button class="codex-filter-btn" data-type="factions">🧙 Factions</button>
+      <button class="codex-filter-btn" data-type="lore">📜 Lore</button>
+      <button class="codex-filter-btn" data-type="flora_fauna">🌿 Flora & Fauna</button>
+      <button class="codex-filter-btn" data-type="magic">✨ Magic</button>
+      <button class="codex-filter-btn" data-type="relics">💀 Relics</button>
+      <button class="codex-filter-btn" data-type="regions">🗺 Regions</button>
+      <button class="codex-filter-btn" data-type="substances">⚗️ Substances</button>
     </div>
     <div class="controls" style="margin-top:.5rem;">
       <span class="controls-left" id="char-count-label">— The Codex of Known Lore —</span>
@@ -498,8 +505,15 @@ function renderCodex(data) {
   const events     = data.events     || [];
   const weapons    = data.weapons    || [];
   const artifacts  = data.artifacts  || [];
+  const factions    = data.factions    || [];
+  const lore        = data.lore        || [];
+  const flora_fauna = data.flora_fauna || [];
+  const magic       = data.magic       || [];
+  const relics      = data.relics      || [];
+  const regions     = data.regions     || [];
+  const substances  = data.substances  || [];
 
-  const total = characters.length + places.length + events.length + weapons.length + artifacts.length;
+  const total = characters.length + places.length + events.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
 
   if (total === 0) {
     statusEl.innerHTML = '<em>The codex is empty. Return after the backfill workflow completes.</em>';
@@ -644,6 +658,208 @@ function renderCodex(data) {
         ${a.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(a.first_story)}</span>` : ''}
       </div>
       ${buildStoryLinks(a.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ─── Factions ──────────────────────────────────────────────────────
+  factions.forEach(f => {
+    const card = document.createElement('div');
+    card.className = 'codex-card faction-card';
+    card.dataset.entityType = 'factions';
+    const appearances = f.appearances > 1 ? `${f.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <div class="codex-card-header">
+        <div class="codex-card-name">${escHtml(f.name)}</div>
+        ${f.tagline ? `<div class="codex-card-tagline">${escHtml(f.tagline)}</div>` : ''}
+        <div class="codex-card-badges">
+          <span class="badge badge-faction">${escHtml(f.alignment || 'Faction')}</span>
+          ${f.status ? `<span class="badge badge-status-default">${escHtml(f.status)}</span>` : ''}
+        </div>
+      </div>
+      <hr class="codex-divider" />
+      ${f.leader ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Leader:</em> ${escHtml(f.leader)}</div>` : ''}
+      <div class="codex-body">${escHtml(f.description || '')}</div>
+      ${f.goals ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Goals:</em> ${escHtml(f.goals)}</div>` : ''}
+      <div class="codex-meta">
+        <span>${appearances}</span>
+        ${f.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(f.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(f.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ─── Lore ──────────────────────────────────────────────────────────
+  lore.forEach(l => {
+    const card = document.createElement('div');
+    card.className = 'codex-card lore-card';
+    card.dataset.entityType = 'lore';
+    const appearances = l.appearances > 1 ? `${l.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <div class="codex-card-header">
+        <div class="codex-card-name">${escHtml(l.name)}</div>
+        ${l.tagline ? `<div class="codex-card-tagline">${escHtml(l.tagline)}</div>` : ''}
+        <div class="codex-card-badges">
+          <span class="badge badge-lore">${escHtml(l.category || 'Lore')}</span>
+          ${l.status ? `<span class="badge badge-status-default">${escHtml(l.status)}</span>` : ''}
+        </div>
+      </div>
+      <hr class="codex-divider" />
+      ${l.source ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Source:</em> ${escHtml(l.source)}</div>` : ''}
+      <div class="codex-body">${escHtml(l.description || '')}</div>
+      <div class="codex-meta">
+        <span>${appearances}</span>
+        ${l.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(l.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(l.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ─── Flora_fauna ───────────────────────────────────────────────────
+  flora_fauna.forEach(ff => {
+    const card = document.createElement('div');
+    card.className = 'codex-card flora-card';
+    card.dataset.entityType = 'flora_fauna';
+    const appearances = ff.appearances > 1 ? `${ff.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <div class="codex-card-header">
+        <div class="codex-card-name">${escHtml(ff.name)}</div>
+        ${ff.tagline ? `<div class="codex-card-tagline">${escHtml(ff.tagline)}</div>` : ''}
+        <div class="codex-card-badges">
+          <span class="badge badge-flora">${escHtml(ff.type || 'Flora')}</span>
+          ${ff.status ? `<span class="badge badge-status-default">${escHtml(ff.status)}</span>` : ''}
+        </div>
+      </div>
+      <hr class="codex-divider" />
+      ${ff.habitat ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Habitat:</em> ${escHtml(ff.habitat)}</div>` : ''}
+      <div class="codex-body">${escHtml(ff.description || '')}</div>
+      ${ff.rarity ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Rarity:</em> ${escHtml(ff.rarity)}</div>` : ''}
+      <div class="codex-meta">
+        <span>${appearances}</span>
+        ${ff.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(ff.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(ff.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ─── Magic ─────────────────────────────────────────────────────────
+  magic.forEach(m => {
+    const card = document.createElement('div');
+    card.className = 'codex-card magic-card';
+    card.dataset.entityType = 'magic';
+    const appearances = m.appearances > 1 ? `${m.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <div class="codex-card-header">
+        <div class="codex-card-name">${escHtml(m.name)}</div>
+        ${m.tagline ? `<div class="codex-card-tagline">${escHtml(m.tagline)}</div>` : ''}
+        <div class="codex-card-badges">
+          <span class="badge badge-magic">${escHtml(m.type || 'Magic')}</span>
+          ${m.status ? `<span class="badge badge-status-default">${escHtml(m.status)}</span>` : ''}
+        </div>
+      </div>
+      <hr class="codex-divider" />
+      ${m.element ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Element:</em> ${escHtml(m.element)}</div>` : ''}
+      <div class="codex-body">${escHtml(m.description || '')}</div>
+      ${m.difficulty ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Difficulty:</em> ${escHtml(m.difficulty)}</div>` : ''}
+      <div class="codex-meta">
+        <span>${appearances}</span>
+        ${m.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(m.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(m.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ─── Relics ────────────────────────────────────────────────────────
+  relics.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'codex-card relic-card';
+    card.dataset.entityType = 'relics';
+    const appearances = r.appearances > 1 ? `${r.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <div class="codex-card-header">
+        <div class="codex-card-name">${escHtml(r.name)}</div>
+        ${r.tagline ? `<div class="codex-card-tagline">${escHtml(r.tagline)}</div>` : ''}
+        <div class="codex-card-badges">
+          <span class="badge badge-relic">${escHtml(r.origin || 'Relic')}</span>
+          ${r.status ? `<span class="badge badge-status-default">${escHtml(r.status)}</span>` : ''}
+        </div>
+      </div>
+      <hr class="codex-divider" />
+      ${r.curse ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Curse:</em> ${escHtml(r.curse)}</div>` : ''}
+      <div class="codex-body">${escHtml(r.description || '')}</div>
+      ${r.power ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Power:</em> ${escHtml(r.power)}</div>` : ''}
+      <div class="codex-meta">
+        <span>${appearances}</span>
+        ${r.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(r.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(r.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ─── Regions ───────────────────────────────────────────────────────
+  regions.forEach(reg => {
+    const card = document.createElement('div');
+    card.className = 'codex-card region-card';
+    card.dataset.entityType = 'regions';
+    const appearances = reg.appearances > 1 ? `${reg.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <div class="codex-card-header">
+        <div class="codex-card-name">${escHtml(reg.name)}</div>
+        ${reg.tagline ? `<div class="codex-card-tagline">${escHtml(reg.tagline)}</div>` : ''}
+        <div class="codex-card-badges">
+          <span class="badge badge-region">${escHtml(reg.climate || 'Region')}</span>
+          ${reg.status ? `<span class="badge badge-status-default">${escHtml(reg.status)}</span>` : ''}
+        </div>
+      </div>
+      <hr class="codex-divider" />
+      ${reg.ruler ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Ruler:</em> ${escHtml(reg.ruler)}</div>` : ''}
+      <div class="codex-body">${escHtml(reg.description || '')}</div>
+      ${reg.terrain ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Terrain:</em> ${escHtml(reg.terrain)}</div>` : ''}
+      <div class="codex-meta">
+        <span>${appearances}</span>
+        ${reg.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(reg.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(reg.story_appearances)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ─── Substances ────────────────────────────────────────────────────
+  substances.forEach(sub => {
+    const card = document.createElement('div');
+    card.className = 'codex-card substance-card';
+    card.dataset.entityType = 'substances';
+    const appearances = sub.appearances > 1 ? `${sub.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <div class="codex-card-header">
+        <div class="codex-card-name">${escHtml(sub.name)}</div>
+        ${sub.tagline ? `<div class="codex-card-tagline">${escHtml(sub.tagline)}</div>` : ''}
+        <div class="codex-card-badges">
+          <span class="badge badge-substance">${escHtml(sub.rarity || 'Substance')}</span>
+          ${sub.status ? `<span class="badge badge-status-default">${escHtml(sub.status)}</span>` : ''}
+        </div>
+      </div>
+      <hr class="codex-divider" />
+      ${sub.properties ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Properties:</em> ${escHtml(sub.properties)}</div>` : ''}
+      <div class="codex-body">${escHtml(sub.description || '')}</div>
+      ${sub.use ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Use:</em> ${escHtml(sub.use)}</div>` : ''}
+      <div class="codex-meta">
+        <span>${appearances}</span>
+        ${sub.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(sub.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(sub.story_appearances)}
     `;
     attachStoryLinkListeners(card);
     grid.appendChild(card);
