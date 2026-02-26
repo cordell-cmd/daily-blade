@@ -4,7 +4,8 @@ generate_stories.py
 Calls the Claude API to generate 10 sword-and-sorcery stories,
 saves them to stories.json (today's edition) and to archive/<date>.json.
 Updates archive/index.json with the running list of available dates.
-Maintains lore.json (world bible) and characters.json (UI character list).
+Maintains lore.json (world bible), characters.json (UI character list),
+and codex.json (full entity codex: characters, places, events, weapons, artifacts).
 Run daily via GitHub Actions.
 """
 
@@ -15,7 +16,7 @@ import re
 from datetime import datetime, timezone
 import anthropic
 
-# ── Config ─────────────────────────────────────────────────────────────────
+# ── Config ────────────────────────────────────────────────────────────────
 MODEL           = "claude-haiku-4-5-20251001"
 NUM_STORIES     = 10
 OUTPUT_FILE     = "stories.json"
@@ -23,11 +24,11 @@ ARCHIVE_DIR     = "archive"
 ARCHIVE_IDX     = "archive/index.json"
 LORE_FILE       = "lore.json"
 CHARACTERS_FILE = "characters.json"
+CODEX_FILE      = "codex.json"
 
 # Subgenres are generated dynamically by the AI for each story
 
-
-# ── Lore helpers ─────────────────────────────────────────────────────────────
+# ── Lore helpers ──────────────────────────────────────────────────────────
 def load_lore():
     """Load the existing lore bible, or return a minimal skeleton."""
     if os.path.exists(LORE_FILE):
@@ -38,16 +39,16 @@ def load_lore():
         "worlds": [],
         "characters": [],
         "places": [],
+        "events": [],
+        "weapons": [],
         "deities_and_entities": [],
         "artifacts": []
     }
-
 
 def save_lore(lore, date_key):
     lore["last_updated"] = date_key
     with open(LORE_FILE, "w", encoding="utf-8") as f:
         json.dump(lore, f, ensure_ascii=True, indent=2)
-
 
 def build_lore_context(lore):
     """Format the lore bible into a concise prompt string for the story generator."""
@@ -99,8 +100,7 @@ def build_lore_context(lore):
 
     return "\n".join(lines)
 
-
-# ── Story generation prompt ────────────────────────────────────────────────
+# ── Story generation prompt ──────────────────────────────────────────────
 def build_prompt(today_str, lore):
     lore_context = build_lore_context(lore)
     lore_section = ""
@@ -108,6 +108,7 @@ def build_prompt(today_str, lore):
         lore_section = f"""
 EXISTING LORE — READ CAREFULLY BEFORE WRITING:
 {lore_context}
+
 LORE CONSISTENCY RULES:
 - If you use an existing character name, their personality, status, and background must match the established lore above.
 - If you use an existing place name, its geography, atmosphere, and known history must be consistent with established lore.
@@ -116,8 +117,9 @@ LORE CONSISTENCY RULES:
 - Stories may share the same world but use different characters and locations.
 - World-crossing events (characters moving between worlds) are extremely rare and require major magical cause.
 """
-
-    return f"""You are a pulp fantasy writer in the tradition of Robert E. Howard, Clark Ashton Smith, and Fritz Leiber. Generate exactly 10 original short sword-and-sorcery stories. Each story should be vivid, action-packed, and around 120–160 words long.
+    return f"""You are a pulp fantasy writer in the tradition of Robert E. Howard, Clark Ashton Smith, and Fritz Leiber.
+Generate exactly 10 original short sword-and-sorcery stories.
+Each story should be vivid, action-packed, and around 120–160 words long.
 
 Today's date is {today_str}. Use this as subtle creative inspiration if you like.
 {lore_section}
@@ -142,12 +144,13 @@ Guidelines:
   Ghost Empire, Thieves' War, Demon Pact, Sea Sorcery, Witch Hunt, Siege & Betrayal — or anything
   that fits. The label should feel like a pulp magazine category."""
 
-
-# ── Lore extraction prompt ─────────────────────────────────────────────────
+# ── Lore extraction prompt ───────────────────────────────────────────────
 def build_lore_extraction_prompt(stories, existing_lore):
-    existing_names = {c["name"].lower() for c in existing_lore.get("characters", [])}
-    existing_places = {p["name"].lower() for p in existing_lore.get("places", [])}
-    existing_deities = {d["name"].lower() for d in existing_lore.get("deities_and_entities", [])}
+    existing_chars     = {c["name"].lower() for c in existing_lore.get("characters", [])}
+    existing_places    = {p["name"].lower() for p in existing_lore.get("places", [])}
+    existing_events    = {e["name"].lower() for e in existing_lore.get("events", [])}
+    existing_weapons   = {w["name"].lower() for w in existing_lore.get("weapons", [])}
+    existing_deities   = {d["name"].lower() for d in existing_lore.get("deities_and_entities", [])}
     existing_artifacts = {a["name"].lower() for a in existing_lore.get("artifacts", [])}
 
     stories_text = "\n\n".join(
@@ -155,11 +158,15 @@ def build_lore_extraction_prompt(stories, existing_lore):
         for i, s in enumerate(stories)
     )
 
-    return f"""You are a lore archivist for a sword-and-sorcery story universe. Analyze the following stories and extract NEW lore elements — characters, places, deities/entities, and artifacts that appear in these stories but are NOT already in the existing lore lists.
+    return f"""You are a lore archivist for a sword-and-sorcery story universe.
+Analyze the following stories and extract NEW lore elements — characters, places, notable events,
+mythical weapons, and artifacts that appear in these stories but are NOT already in the existing lore lists.
 
 ALREADY KNOWN (do NOT re-extract these):
-- Characters: {', '.join(existing_names) if existing_names else 'none'}
+- Characters: {', '.join(existing_chars) if existing_chars else 'none'}
 - Places: {', '.join(existing_places) if existing_places else 'none'}
+- Events: {', '.join(existing_events) if existing_events else 'none'}
+- Weapons: {', '.join(existing_weapons) if existing_weapons else 'none'}
 - Deities/Entities: {', '.join(existing_deities) if existing_deities else 'none'}
 - Artifacts: {', '.join(existing_artifacts) if existing_artifacts else 'none'}
 
@@ -172,6 +179,7 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
     {{
       "id": "snake_case_id",
       "name": "Full Name",
+      "tagline": "Three punchy evocative words. (e.g. Cursed. Reckless. Hunted.)",
       "role": "Role (e.g. Thief, Warlord, Sorceress)",
       "world": "known_world",
       "status": "active / dead / cursed / unknown / etc",
@@ -180,16 +188,43 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "known_locations": ["place names mentioned"],
       "affiliations": ["groups or individuals"],
       "notes": "Any story hooks or unresolved threads."
-      "tagline": "Three punchy evocative words. (e.g. Cursed. Reckless. Hunted.)"
     }}
   ],
   "places": [
     {{
       "id": "snake_case_id",
       "name": "Place Name",
+      "tagline": "Three evocative words describing this place.",
+      "place_type": "city / fortress / ruin / temple / wilderness / etc",
       "world": "known_world",
+      "atmosphere": "One sentence mood/tone description.",
       "description": "Description based on the story.",
       "status": "active / ruins / unknown / etc",
+      "notes": "Any story hooks."
+    }}
+  ],
+  "events": [
+    {{
+      "id": "snake_case_id",
+      "name": "Event Name",
+      "tagline": "Three evocative words describing this event.",
+      "event_type": "battle / war / ritual / uprising / catastrophe / etc",
+      "participants": ["character or faction names involved"],
+      "outcome": "What happened — who won or lost, what changed.",
+      "significance": "Why this matters to the world.",
+      "notes": "Any unresolved threads or consequences."
+    }}
+  ],
+  "weapons": [
+    {{
+      "id": "snake_case_id",
+      "name": "Weapon Name",
+      "tagline": "Three evocative words describing this weapon.",
+      "weapon_type": "sword / axe / spear / bow / staff / etc",
+      "origin": "Where it came from or who forged it.",
+      "powers": "Any magical or legendary properties.",
+      "last_known_holder": "Who had it last.",
+      "status": "active / destroyed / lost / sealed",
       "notes": "Any story hooks."
     }}
   ],
@@ -208,23 +243,23 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
     {{
       "id": "snake_case_id",
       "name": "Artifact Name",
-      "world": "known_world",
-      "location": "where it is or was last seen",
-      "description": "What it does, based on the story.",
+      "tagline": "Three evocative words describing this artifact.",
+      "artifact_type": "ring / tome / idol / amulet / etc",
+      "origin": "Where it came from.",
+      "powers": "What it does, based on the story.",
+      "last_known_holder": "Who had it last.",
       "status": "active / destroyed / sealed / lost",
       "notes": "Any hooks."
     }}
   ]
 }}"""
 
-
-# ── Lore merging ──────────────────────────────────────────────────────────
+# ── Lore merging ────────────────────────────────────────────────────────
 def merge_lore(existing_lore, new_lore, date_key):
     """Merge newly extracted lore into the existing lore, skipping duplicates by name."""
-    for category in ["characters", "places", "deities_and_entities", "artifacts"]:
+    for category in ["characters", "places", "events", "weapons", "deities_and_entities", "artifacts"]:
         existing_names = {
-            item["name"].lower()
-            for item in existing_lore.get(category, [])
+            item["name"].lower() for item in existing_lore.get(category, [])
         }
         for item in new_lore.get(category, []):
             if item.get("name", "").lower() not in existing_names:
@@ -241,13 +276,238 @@ def merge_lore(existing_lore, new_lore, date_key):
                         break
     return existing_lore
 
+# ── Codex file update ────────────────────────────────────────────────────
+def update_codex_file(lore, date_key, stories=None):
+    """Merge today's lore into codex.json, covering all entity types with story appearances."""
+    stories = stories or []
 
-# ── Characters file update ────────────────────────────────────────────────
+    # ── Load existing codex ──────────────────────────────────────────────
+    codex = {
+        "last_updated": date_key,
+        "characters": [],
+        "places": [],
+        "events": [],
+        "weapons": [],
+        "artifacts": [],
+    }
+    if os.path.exists(CODEX_FILE):
+        try:
+            with open(CODEX_FILE, "r", encoding="utf-8") as f:
+                codex = json.load(f)
+        except (json.JSONDecodeError, IOError):
+            pass
+
+    # ── Helper: find stories that mention an entity by name ─────────────
+    def stories_for(name):
+        first = name.split()[0].lower()
+        return [
+            {"date": date_key, "title": s.get("title", "")}
+            for s in stories
+            if first in (s.get("text", "") + " " + s.get("title", "")).lower()
+        ]
+
+    # ── Helper: resolve world name from lore worlds list ─────────────────
+    def resolve_world(raw_world):
+        return next(
+            (w["name"] for w in lore.get("worlds", []) if w["id"] == raw_world),
+            raw_world or "The Known World"
+        )
+
+    # ── Merge characters ─────────────────────────────────────────────────
+    existing_chars = {c["name"].lower(): c for c in codex.get("characters", [])}
+    for c in lore.get("characters", []):
+        name = c.get("name", "Unknown")
+        name_low = name.lower()
+        world = resolve_world(c.get("world", ""))
+        today_appearances = stories_for(name)
+        if name_low in existing_chars:
+            ex = existing_chars[name_low]
+            ex["role"]   = c.get("role",   ex.get("role",   "Unknown"))
+            ex["status"] = c.get("status", ex.get("status", "Unknown"))
+            ex["world"]  = world
+            ex["bio"]    = c.get("bio",    ex.get("bio",    ""))
+            ex["traits"] = c.get("traits", ex.get("traits", []))
+            if c.get("tagline") and not ex.get("tagline"):
+                ex["tagline"] = c["tagline"]
+            prior = ex.get("story_appearances", [])
+            new_ones = [a for a in today_appearances
+                        if not any(p["date"] == a["date"] and p["title"] == a["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_chars[name_low] = {
+                "name":              name,
+                "tagline":           c.get("tagline", ""),
+                "role":              c.get("role", "Unknown"),
+                "status":            c.get("status", "Unknown"),
+                "world":             world,
+                "bio":               c.get("bio", ""),
+                "traits":            c.get("traits", []),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["characters"] = list(existing_chars.values())
+
+    # ── Merge places ─────────────────────────────────────────────────────
+    existing_places = {p["name"].lower(): p for p in codex.get("places", [])}
+    for p in lore.get("places", []):
+        name = p.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_places:
+            ex = existing_places[name_low]
+            ex["description"] = p.get("description", ex.get("description", ""))
+            ex["status"]      = p.get("status",      ex.get("status",      "unknown"))
+            if p.get("tagline") and not ex.get("tagline"):
+                ex["tagline"] = p["tagline"]
+            if p.get("place_type") and not ex.get("place_type"):
+                ex["place_type"] = p["place_type"]
+            if p.get("atmosphere") and not ex.get("atmosphere"):
+                ex["atmosphere"] = p["atmosphere"]
+            prior = ex.get("story_appearances", [])
+            new_ones = [a for a in today_appearances
+                        if not any(p2["date"] == a["date"] and p2["title"] == a["title"] for p2 in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_places[name_low] = {
+                "name":              name,
+                "tagline":           p.get("tagline", ""),
+                "place_type":        p.get("place_type", ""),
+                "world":             resolve_world(p.get("world", "")),
+                "atmosphere":        p.get("atmosphere", ""),
+                "description":       p.get("description", ""),
+                "status":            p.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["places"] = list(existing_places.values())
+
+    # ── Merge events ─────────────────────────────────────────────────────
+    existing_events = {e["name"].lower(): e for e in codex.get("events", [])}
+    for e in lore.get("events", []):
+        name = e.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_events:
+            ex = existing_events[name_low]
+            ex["outcome"]      = e.get("outcome",      ex.get("outcome",      ""))
+            ex["significance"] = e.get("significance", ex.get("significance", ""))
+            prior = ex.get("story_appearances", [])
+            new_ones = [a for a in today_appearances
+                        if not any(p["date"] == a["date"] and p["title"] == a["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_events[name_low] = {
+                "name":              name,
+                "tagline":           e.get("tagline", ""),
+                "event_type":        e.get("event_type", ""),
+                "participants":      e.get("participants", []),
+                "outcome":           e.get("outcome", ""),
+                "significance":      e.get("significance", ""),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["events"] = list(existing_events.values())
+
+    # ── Merge weapons ────────────────────────────────────────────────────
+    existing_weapons = {w["name"].lower(): w for w in codex.get("weapons", [])}
+    for w in lore.get("weapons", []):
+        name = w.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_weapons:
+            ex = existing_weapons[name_low]
+            ex["powers"]            = w.get("powers",            ex.get("powers",            ""))
+            ex["last_known_holder"] = w.get("last_known_holder", ex.get("last_known_holder", ""))
+            ex["status"]            = w.get("status",            ex.get("status",            "unknown"))
+            prior = ex.get("story_appearances", [])
+            new_ones = [a for a in today_appearances
+                        if not any(p["date"] == a["date"] and p["title"] == a["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_weapons[name_low] = {
+                "name":              name,
+                "tagline":           w.get("tagline", ""),
+                "weapon_type":       w.get("weapon_type", ""),
+                "origin":            w.get("origin", ""),
+                "powers":            w.get("powers", ""),
+                "last_known_holder": w.get("last_known_holder", ""),
+                "status":            w.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["weapons"] = list(existing_weapons.values())
+
+    # ── Merge artifacts ──────────────────────────────────────────────────
+    existing_artifacts = {a["name"].lower(): a for a in codex.get("artifacts", [])}
+    for a in lore.get("artifacts", []):
+        name = a.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_artifacts:
+            ex = existing_artifacts[name_low]
+            ex["powers"]            = a.get("powers",            ex.get("powers",            ""))
+            ex["last_known_holder"] = a.get("last_known_holder", ex.get("last_known_holder", ""))
+            ex["status"]            = a.get("status",            ex.get("status",            "unknown"))
+            prior = ex.get("story_appearances", [])
+            new_ones = [app for app in today_appearances
+                        if not any(p["date"] == app["date"] and p["title"] == app["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_artifacts[name_low] = {
+                "name":              name,
+                "tagline":           a.get("tagline", ""),
+                "artifact_type":     a.get("artifact_type", ""),
+                "origin":            a.get("origin", ""),
+                "powers":            a.get("powers", ""),
+                "last_known_holder": a.get("last_known_holder", ""),
+                "status":            a.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["artifacts"] = list(existing_artifacts.values())
+
+    codex["last_updated"] = date_key
+    with open(CODEX_FILE, "w", encoding="utf-8") as f:
+        json.dump(codex, f, ensure_ascii=True, indent=2)
+    print(
+        f"\u2713 Saved {CODEX_FILE} ("
+        f"{len(codex['characters'])} chars, "
+        f"{len(codex['places'])} places, "
+        f"{len(codex['events'])} events, "
+        f"{len(codex['weapons'])} weapons, "
+        f"{len(codex['artifacts'])} artifacts)"
+    )
+
+# ── Characters file update (legacy) ──────────────────────────────────────
 def update_characters_file(lore, date_key, stories=None):
     """Merge today's lore characters into characters.json, preserving history."""
     stories = stories or []
 
-    # ── Load existing characters ──────────────────────────────────────────────────────
     existing_chars = {}
     if os.path.exists(CHARACTERS_FILE):
         try:
@@ -257,7 +517,6 @@ def update_characters_file(lore, date_key, stories=None):
         except (json.JSONDecodeError, IOError):
             pass
 
-    # ── Map each character to the specific stories they appear in today ───
     def stories_for(name):
         first = name.split()[0].lower()
         return [
@@ -266,48 +525,42 @@ def update_characters_file(lore, date_key, stories=None):
             if first in (s.get("text", "") + " " + s.get("title", "")).lower()
         ]
 
-    # ── Merge new characters from today's lore ────────────────────────────────────
     for c in lore.get("characters", []):
-        name     = c.get("name", "Unknown")
+        name = c.get("name", "Unknown")
         name_low = name.lower()
-        world    = next(
+        world = next(
             (w["name"] for w in lore.get("worlds", []) if w["id"] == c.get("world")),
             c.get("world", "The Known World")
         )
         today_appearances = stories_for(name)
-
         if name_low in existing_chars:
             ex = existing_chars[name_low]
-            # Update mutable fields with latest lore data
             ex["role"]   = c.get("role",   ex.get("role",   "Unknown"))
             ex["status"] = c.get("status", ex.get("status", "Unknown"))
             ex["world"]  = world
             ex["bio"]    = c.get("bio",    ex.get("bio",    ""))
             ex["traits"] = c.get("traits", ex.get("traits", []))
-            # Preserve tagline; fill if blank and model provided one
             if c.get("tagline") and not ex.get("tagline"):
                 ex["tagline"] = c["tagline"]
-            # Append today's appearances if not already recorded
-            prior    = ex.get("story_appearances", [])
+            prior = ex.get("story_appearances", [])
             new_ones = [a for a in today_appearances
-                        if not any(p["date"] == a["date"] and p["title"] == a["title"]
-                                   for p in prior)]
+                        if not any(p["date"] == a["date"] and p["title"] == a["title"] for p in prior)]
             if new_ones:
-                ex["appearances"]       = ex.get("appearances", 1) + len(new_ones)
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
                 ex["story_appearances"] = prior + new_ones
         else:
             first_title = today_appearances[0]["title"] if today_appearances else ""
             existing_chars[name_low] = {
-                "name":             name,
-                "tagline":          c.get("tagline", ""),
-                "role":             c.get("role",    "Unknown"),
-                "status":           c.get("status",  "Unknown"),
-                "world":            world,
-                "bio":              c.get("bio",     ""),
-                "traits":           c.get("traits",  []),
-                "first_story":      first_title,
-                "first_date":       date_key,
-                "appearances":      len(today_appearances) or 1,
+                "name":              name,
+                "tagline":           c.get("tagline", ""),
+                "role":              c.get("role", "Unknown"),
+                "status":            c.get("status", "Unknown"),
+                "world":             world,
+                "bio":               c.get("bio", ""),
+                "traits":            c.get("traits", []),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
                 "story_appearances": today_appearances,
             }
 
@@ -315,6 +568,7 @@ def update_characters_file(lore, date_key, stories=None):
     with open(CHARACTERS_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=True, indent=2)
     print(f"\u2713 Saved {CHARACTERS_FILE} ({len(output['characters'])} characters total)")
+
 def parse_json_response(raw):
     """Strip markdown fences and extract JSON from a Claude response."""
     raw = raw.strip()
@@ -330,11 +584,9 @@ def parse_json_response(raw):
             return json.loads(raw[start:end + 1])
     raise ValueError("No JSON structure found in response")
 
-
-# ── Archive helpers ──────────────────────────────────────────────────────────
+# ── Archive helpers ────────────────────────────────────────────────────────
 def ensure_archive_dir():
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
-
 
 def load_archive_index():
     if os.path.exists(ARCHIVE_IDX):
@@ -342,13 +594,11 @@ def load_archive_index():
             return json.load(f)
     return {"dates": []}
 
-
 def save_archive_index(idx):
     with open(ARCHIVE_IDX, "w", encoding="utf-8") as f:
         json.dump(idx, f, ensure_ascii=True, indent=2)
 
-
-# ── Main ────────────────────────────────────────────────────────────────────
+# ── Main ──────────────────────────────────────────────────────────────────
 def main():
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
@@ -358,26 +608,23 @@ def main():
     today     = datetime.now(timezone.utc)
     today_str = today.strftime("%B %d, %Y")
     date_key  = today.strftime("%Y-%m-%d")
+    print(f"Generating stories for {date_key}...")
 
-    print(f"Generating stories for {date_key}…")
-
-    # ── Load existing lore ──────────────────────────────────────────────────
+    # ── Load existing lore ────────────────────────────────────────────────
     lore = load_lore()
-    print(f"✔ Loaded lore ({len(lore.get('characters', []))} characters, "
+    print(f"\u2713 Loaded lore ({len(lore.get('characters', []))} characters, "
           f"{len(lore.get('places', []))} places)")
 
     client = anthropic.Anthropic(api_key=api_key)
 
-    # ── CALL 1: Generate stories with lore context ─────────────────────────
-    print("Calling Claude to generate stories…")
+    # ── CALL 1: Generate stories with lore context ───────────────────────
+    print("Calling Claude to generate stories...")
     message = client.messages.create(
         model=MODEL,
         max_tokens=4096,
         messages=[{"role": "user", "content": build_prompt(today_str, lore)}]
     )
-
     raw = message.content[0].text.strip()
-
     try:
         stories_raw = parse_json_response(raw)
     except (ValueError, json.JSONDecodeError) as e:
@@ -385,19 +632,18 @@ def main():
         print("Raw response:", raw[:500], file=sys.stderr)
         sys.exit(1)
 
-    # Attach sub-genre labels and first_story field
+    # Attach sub-genre labels
     stories = []
     for i, s in enumerate(stories_raw[:NUM_STORIES]):
         stories.append({
-            "title":    s.get("title", "Untitled"),
-            "text":     s.get("text",  ""),
+            "title":    s.get("title",    "Untitled"),
+            "text":     s.get("text",     ""),
             "subgenre": s.get("subgenre", "Sword & Sorcery")
         })
+    print(f"\u2713 Generated {len(stories)} stories")
 
-    print(f"✔ Generated {len(stories)} stories")
-
-    # ── CALL 2: Extract new lore from generated stories ────────────────────
-    print("Calling Claude to extract lore from new stories…")
+    # ── CALL 2: Extract new lore from generated stories ──────────────────
+    print("Calling Claude to extract lore from new stories...")
     lore_message = client.messages.create(
         model=MODEL,
         max_tokens=4096,
@@ -406,59 +652,61 @@ def main():
             "content": build_lore_extraction_prompt(stories, lore)
         }]
     )
-
     lore_raw = lore_message.content[0].text.strip()
-
     try:
         new_lore = parse_json_response(lore_raw)
-        # Tag new characters with story titles from the stories list
-        # (best effort — we match by checking if name appears in story text)
         for char in new_lore.get("characters", []):
             for s in stories:
                 if char["name"].lower() in s["text"].lower() or char["name"].lower() in s["title"].lower():
                     char["first_story"] = s["title"]
                     break
         lore = merge_lore(lore, new_lore, date_key)
-        new_char_count  = len(new_lore.get("characters", []))
-        new_place_count = len(new_lore.get("places", []))
-        print(f"✔ Extracted {new_char_count} new characters, {new_place_count} new places")
+        print(
+            f"\u2713 Extracted "
+            f"{len(new_lore.get('characters', []))} chars, "
+            f"{len(new_lore.get('places', []))} places, "
+            f"{len(new_lore.get('events', []))} events, "
+            f"{len(new_lore.get('weapons', []))} weapons, "
+            f"{len(new_lore.get('artifacts', []))} artifacts"
+        )
     except (ValueError, json.JSONDecodeError) as e:
         print(f"WARNING: Could not parse lore extraction JSON: {e}", file=sys.stderr)
         print("Continuing without updating lore.", file=sys.stderr)
 
-    # ── Save today's stories.json ──────────────────────────────────────────
+    # ── Save today's stories.json ─────────────────────────────────────────
     output = {
         "date":         date_key,
         "generated_at": today.strftime("%Y-%m-%dT%H:%M:%SZ"),
         "stories":      stories
     }
-
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=True, indent=2)
-    print(f"✔ Saved {len(stories)} stories to {OUTPUT_FILE}")
+    print(f"\u2713 Saved {len(stories)} stories to {OUTPUT_FILE}")
 
-    # ── Save to archive/<date>.json ────────────────────────────────────────
+    # ── Save to archive/<date>.json ──────────────────────────────────────
     ensure_archive_dir()
     archive_file = os.path.join(ARCHIVE_DIR, f"{date_key}.json")
     with open(archive_file, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=True, indent=2)
-    print(f"✔ Archived to {archive_file}")
+    print(f"\u2713 Archived to {archive_file}")
 
-    # ── Update archive/index.json ──────────────────────────────────────────
+    # ── Update archive/index.json ─────────────────────────────────────────
     idx = load_archive_index()
     if date_key not in idx["dates"]:
         idx["dates"].insert(0, date_key)
-        idx["dates"].sort(reverse=True)
+    idx["dates"].sort(reverse=True)
     save_archive_index(idx)
-    print(f"✔ Updated {ARCHIVE_IDX} ({len(idx['dates'])} dates total)")
+    print(f"\u2713 Updated {ARCHIVE_IDX} ({len(idx['dates'])} dates total)")
 
     # ── Save lore.json ─────────────────────────────────────────────────────
     save_lore(lore, date_key)
-    print(f"✔ Saved {LORE_FILE} ({len(lore.get('characters',[]))} characters total)")
+    print(f"\u2713 Saved {LORE_FILE} ({len(lore.get('characters', []))} characters total)")
 
-    # ── Update characters.json ─────────────────────────────────────────────
+    # ── Update characters.json (legacy) ───────────────────────────────────
     update_characters_file(lore, date_key, stories)
 
+    # ── Update codex.json ──────────────────────────────────────────────────
+    update_codex_file(lore, date_key, stories)
 
 if __name__ == "__main__":
     main()
