@@ -24,11 +24,7 @@ ARCHIVE_IDX     = "archive/index.json"
 LORE_FILE       = "lore.json"
 CHARACTERS_FILE = "characters.json"
 
-SUBGENRES = [
-    "Sword & Sorcery", "Dark Fantasy", "Lost World", "Barbarian Quest",
-    "Ancient Curse", "Forbidden Tomb", "Witch Hunt", "Blood Oath",
-    "Demon Pact", "War of Kings"
-]
+# Subgenres are generated dynamically by the AI for each story
 
 
 # ── Lore helpers ─────────────────────────────────────────────────────────────
@@ -127,7 +123,7 @@ Today's date is {today_str}. Use this as subtle creative inspiration if you like
 {lore_section}
 Respond with ONLY valid JSON — no prose before or after — matching this exact structure:
 [
-  {{ "title": "Story Title Here", "text": "Full story text here…" }},
+  {{ "title": "Story Title Here", "subgenre": "Two or Three Word Label", "text": "Full story text here…" }},
   …9 more entries…
 ]
 
@@ -139,7 +135,12 @@ Guidelines:
 - Vary protagonists, locations, and types of magic/conflict across all 10 stories
 - Use dramatic, muscular prose — short punchy sentences mixed with lush description
 - Avoid modern slang; use archaic flavor without being unreadable
-- No two stories should share a protagonist or primary location"""
+- No two stories should share a protagonist or primary location
+- For each story, invent a vivid 2-4 word subgenre label that captures its specific flavor.
+  You are NOT limited to any fixed list — be creative. Examples of the kind of variety to aim for:
+  Sword & Sorcery, Dark Fantasy, Political Intrigue, Forbidden Alchemy, Lost World, Blood Oath,
+  Ghost Empire, Thieves' War, Demon Pact, Sea Sorcery, Witch Hunt, Siege & Betrayal — or anything
+  that fits. The label should feel like a pulp magazine category."""
 
 
 # ── Lore extraction prompt ─────────────────────────────────────────────────
@@ -390,7 +391,7 @@ def main():
         stories.append({
             "title":    s.get("title", "Untitled"),
             "text":     s.get("text",  ""),
-            "subgenre": SUBGENRES[i % len(SUBGENRES)]
+            "subgenre": s.get("subgenre", "Sword & Sorcery")
         })
 
     print(f"✔ Generated {len(stories)} stories")
