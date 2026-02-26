@@ -179,6 +179,7 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "known_locations": ["place names mentioned"],
       "affiliations": ["groups or individuals"],
       "notes": "Any story hooks or unresolved threads."
+      "tagline": "Three punchy evocative words. (e.g. Cursed. Reckless. Hunted.)"
     }}
   ],
   "places": [
@@ -241,35 +242,78 @@ def merge_lore(existing_lore, new_lore, date_key):
 
 
 # ── Characters file update ────────────────────────────────────────────────
-def update_characters_file(lore, date_key):
-    """Generate the simplified characters.json for frontend display."""
-    chars = []
-    for c in lore.get("characters", []):
-        chars.append({
-            "name":         c.get("name", "Unknown"),
-            "role":         c.get("role", "Unknown"),
-            "status":       c.get("status", "Unknown"),
-            "world":        next(
-                (w["name"] for w in lore.get("worlds", []) if w["id"] == c.get("world")),
-                c.get("world", "The Known World")
-            ),
-            "bio":          c.get("bio", ""),
-            "traits":       c.get("traits", []),
-            "first_story":  c.get("first_story", ""),
-            "first_date":   c.get("first_date", date_key),
-            "appearances":  c.get("appearances", 1)
-        })
+def update_characters_file(lore, date_key, stories=None):
+    """Merge today's lore characters into characters.json, preserving history."""
+    stories = stories or []
 
-    output = {
-        "last_updated": date_key,
-        "characters": chars
-    }
+    # ── Load existing characters ──────────────────────────────────────────────────────
+    existing_chars = {}
+    if os.path.exists(CHARACTERS_FILE):
+        try:
+            with open(CHARACTERS_FILE, "r", encoding="utf-8") as f:
+                for ch in json.load(f).get("characters", []):
+                    existing_chars[ch["name"].lower()] = ch
+        except (json.JSONDecodeError, IOError):
+            pass
+
+    # ── Map each character to the specific stories they appear in today ───
+    def stories_for(name):
+        first = name.split()[0].lower()
+        return [
+            {"date": date_key, "title": s.get("title", "")}
+            for s in stories
+            if first in (s.get("body", "") + " " + s.get("title", "")).lower()
+        ]
+
+    # ── Merge new characters from today's lore ────────────────────────────────────
+    for c in lore.get("characters", []):
+        name     = c.get("name", "Unknown")
+        name_low = name.lower()
+        world    = next(
+            (w["name"] for w in lore.get("worlds", []) if w["id"] == c.get("world")),
+            c.get("world", "The Known World")
+        )
+        today_appearances = stories_for(name)
+
+        if name_low in existing_chars:
+            ex = existing_chars[name_low]
+            # Update mutable fields with latest lore data
+            ex["role"]   = c.get("role",   ex.get("role",   "Unknown"))
+            ex["status"] = c.get("status", ex.get("status", "Unknown"))
+            ex["world"]  = world
+            ex["bio"]    = c.get("bio",    ex.get("bio",    ""))
+            ex["traits"] = c.get("traits", ex.get("traits", []))
+            # Preserve tagline; fill if blank and model provided one
+            if c.get("tagline") and not ex.get("tagline"):
+                ex["tagline"] = c["tagline"]
+            # Append today's appearances if not already recorded
+            prior    = ex.get("story_appearances", [])
+            new_ones = [a for a in today_appearances
+                        if not any(p["date"] == a["date"] and p["title"] == a["title"]
+                                   for p in prior)]
+            if new_ones:
+                ex["appearances"]       = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_chars[name_low] = {
+                "name":             name,
+                "tagline":          c.get("tagline", ""),
+                "role":             c.get("role",    "Unknown"),
+                "status":           c.get("status",  "Unknown"),
+                "world":            world,
+                "bio":              c.get("bio",     ""),
+                "traits":           c.get("traits",  []),
+                "first_story":      first_title,
+                "first_date":       date_key,
+                "appearances":      len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+
+    output = {"last_updated": date_key, "characters": list(existing_chars.values())}
     with open(CHARACTERS_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
-    print(f"✔ Updated {CHARACTERS_FILE} ({len(chars)} characters total)")
-
-
-# ── JSON parsing helper ───────────────────────────────────────────────────
+    print(f"\u2713 Saved {CHARACTERS_FILE} ({len(output['characters'])} characters total)")
 def parse_json_response(raw):
     """Strip markdown fences and extract JSON from a Claude response."""
     raw = raw.strip()
@@ -412,7 +456,7 @@ def main():
     print(f"✔ Saved {LORE_FILE} ({len(lore.get('characters',[]))} characters total)")
 
     # ── Update characters.json ─────────────────────────────────────────────
-    update_characters_file(lore, date_key)
+    update_characters_file(lore, date_key, stories)
 
 
 if __name__ == "__main__":
