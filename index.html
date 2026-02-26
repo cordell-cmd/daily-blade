@@ -725,6 +725,51 @@
       font-family: 'Cinzel', serif;
       letter-spacing: .15em;
     }
+
+    .char-tagline {
+      font-style: italic;
+      color: var(--gold);
+      font-size: .85rem;
+      letter-spacing: .04em;
+      margin: .3rem 0 .5rem;
+      opacity: .9;
+    }
+
+    .char-story-links {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      align-items: center;
+      border-top: 1px solid rgba(201,146,42,.15);
+      padding-top: .8rem;
+    }
+
+    .char-story-links-label {
+      font-size: .7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-right: .3rem;
+      flex-basis: 100%;
+    }
+
+    .char-story-link {
+      background: none;
+      border: 1px solid rgba(201,146,42,.3);
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: .72rem;
+      padding: .25rem .65rem;
+      cursor: pointer;
+      transition: background .15s, color .15s, border-color .15s;
+    }
+
+    .char-story-link:hover {
+      background: rgba(201,146,42,.12);
+      color: var(--parchment);
+      border-color: rgba(201,146,42,.6);
+    }
   </style>
 </head>
 <body>
@@ -905,7 +950,7 @@
 
     const grid = document.getElementById('story-grid');
     grid.innerHTML = '';
-    grid.style.display = '';
+    grid.style.display = 'block';
 
     data.stories.forEach((s, i) => {
       const card = document.createElement('article');
@@ -1036,23 +1081,32 @@
         ? `${c.appearances} appearances`
         : 'First appearance';
 
+      const tagline = escHtml(c.tagline || '');
+      const storyLinks = (c.story_appearances || []).map(s =>
+        `<button class="char-story-link" data-date="${escHtml(s.date)}">${escHtml(s.title)}</button>`
+      ).join('');
       card.innerHTML = `
         <span class="char-world">${escHtml(c.world || 'The Known World')}</span>
         <div class="char-card-top">
           <div class="char-name">${escHtml(c.name)}</div>
+          ${tagline ? `<div class="char-tagline">${tagline}</div>` : ''}
           <div class="char-badges">
-            <span class="badge badge-role">${escHtml(c.role || '?')}</span>
-            <span class="badge ${statusClass}">${statusLabel}</span>
+            <span class="badge badge-role">${escHtml(c.role || 'Unknown')}</span>
+            <span class="badge badge-status">${escHtml(c.status || 'Unknown')}</span>
           </div>
         </div>
-        <hr class="char-divider" />
-        <p class="char-bio">${escHtml(c.bio || '')}</p>
-        ${traits ? `<div class="char-traits">${traits}</div>` : ''}
-        <div class="char-footer">
-          <span class="char-first-story">${escHtml(c.first_story || '')}</span>
-          <span class="char-appearances">${escHtml(appearances)}</span>
-        </div>
+        <div class="char-bio">${escHtml(c.bio || '')}</div>
+        <div class="char-traits">${traits}</div>
+        <div class="char-appearances">${appearances}</div>
+        ${storyLinks ? `<div class="char-story-links"><span class="char-story-links-label">Appears in</span>${storyLinks}</div>` : ''}
       `;
+      card.querySelectorAll('.char-story-link').forEach(btn => {
+        btn.addEventListener('click', () => {
+          switchTab('tales');
+          const d = btn.dataset.date;
+          if (d === todayStr()) loadTodayStories(); else loadArchiveDate(d);
+        });
+      });
       grid.appendChild(card);
     });
   }
@@ -1099,7 +1153,7 @@
       tabChars.setAttribute('aria-selected', 'false');
     } else {
       talesView.style.display = 'none';
-      charView.style.display  = '';
+      charView.style.display  = 'block';
       tabChars.classList.add('active');
       tabChars.setAttribute('aria-selected', 'true');
       tabTales.classList.remove('active');
