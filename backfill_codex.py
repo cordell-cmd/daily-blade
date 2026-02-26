@@ -36,7 +36,7 @@ def parse_json_response(raw):
         m = re.search(r"```(?:json)?\s*([\s\S]*?)```", raw)
         if m:
             raw = m.group(1).strip()
-    for open_ch, close_ch in [("[", "]"), ("{", "}")]:
+    for open_ch, close_ch in [("{", "}"), ("[", "]")]:
         start = raw.find(open_ch)
         end   = raw.rfind(close_ch)
         if start != -1 and end != -1:
