@@ -911,7 +911,6 @@
       btn.classList.toggle('active', btn.dataset.genre === genre);
     });
 
-    // Show/hide story cards
     const cards = document.querySelectorAll('.story-card');
     let visible = 0;
     cards.forEach(card => {
@@ -974,8 +973,6 @@
     // Apply current genre filter to newly rendered cards
     applyGenreFilter(activeGenre);
 
-    // Show/hide "Return to Today" button
-    document.getElementById('today-btn').style.display = isToday ? 'none' : '';
 
     // Update active entry in archive list
     document.querySelectorAll('.archive-entry').forEach(el => {
@@ -1238,11 +1235,6 @@
   document.getElementById('archive-btn').addEventListener('click', openArchive);
   document.getElementById('archive-close').addEventListener('click', closeArchive);
   document.getElementById('archive-overlay').addEventListener('click', closeArchive);
-  document.getElementById('today-btn').addEventListener('click', () => {
-    if (currentTab !== 'tales') switchTab('tales');
-    loadTodayStories();
-  });
-
   // Close archive on Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeArchive();
