@@ -1,17 +1,17 @@
 {
-  "last_updated": "2026-02-25",
+  "last_updated": "2026-02-26",
   "characters": [
     {
       "name": "Vraxen the Knife",
       "tagline": "Audacious. Cursed. Hunted.",
-      "role": "Thief",
-      "status": "Cursed",
+      "role": "Thief / Cursed Rogue",
+      "status": "cursed",
       "world": "The Known World",
-      "bio": "A master thief who robbed the idol of Khar-Zul and was cursed by a demon for his audacity. Now hunted across every land, he survives by wit and blade alone.",
+      "bio": "A master thief who has robbed a hundred merchant princes. Attempted to rob the idol of Khar-Zul in its inner temple, prying six of nine emerald eyes free before the shadows came alive. Escaped with six gems but gained a new companion: a shadow wearing his own face, patient as carved stone, crouching beside him at dawn. His fate thereafter is unknown.",
       "traits": [
-        "Audacious",
-        "Calculating",
-        "Haunted"
+        "audacious",
+        "calculating",
+        "now-haunted"
       ],
       "first_story": "The Thief of Khar-Zul",
       "first_date": "2026-02-25",
@@ -26,14 +26,14 @@
     {
       "name": "Soraya",
       "tagline": "Fierce. Loyal. Bloodied.",
-      "role": "Caravan Guard",
-      "status": "Active",
+      "role": "Sell-Sword / Mercenary",
+      "status": "active",
       "world": "The Known World",
-      "bio": "A caravan guard who paid the blood-price to protect her charges across the wastes. Fierce and unbreakable, she earned her reputation one ambush at a time.",
+      "bio": "A renowned sell-sword hired to escort merchant caravans. Killed nine blood-cursed drivers on the Ashen Wastes when she discovered her employer Aldric had sold them to a sorcerer. Slew the sorcerer last, slowly. Kept none of Aldric's gold, but stole his shadow and sold it in the night markets of Pelimor. Tells herself it was justice.",
       "traits": [
-        "Fierce",
-        "Loyal",
-        "Battle-hardened"
+        "ruthless efficiency",
+        "dark conscience",
+        "pragmatic morality"
       ],
       "first_story": "Blood-Price of the Caravan",
       "first_date": "2026-02-25",
@@ -48,14 +48,14 @@
     {
       "name": "Aldric",
       "tagline": "Merchant. Desperate. Survivor.",
-      "role": "Merchant",
-      "status": "Active",
+      "role": "Merchant / Schemer",
+      "status": "shadow-stolen",
       "world": "The Known World",
-      "bio": "A merchant whose caravan was attacked in the wastes. Survived through the protection of his guard Soraya and a willingness to pay whatever price was demanded.",
+      "bio": "A spice merchant operating on the Ashen Wastes route. Hired Soraya as a sell-sword escort, while secretly paying bandits, toll-lords, and a blood-sorcerer to smooth his passage. His drivers were transformed into shadow-eyed killers. Survived the journey but had his shadow stolen by Soraya and sold in Pelimor's night markets.",
       "traits": [
-        "Resourceful",
-        "Desperate",
-        "Grateful"
+        "duplicitous",
+        "cowardly",
+        "transactional"
       ],
       "first_story": "Blood-Price of the Caravan",
       "first_date": "2026-02-25",
@@ -70,14 +70,14 @@
     {
       "name": "Malachite Doss",
       "tagline": "Scholar. Seeker. Haunted.",
-      "role": "Scholar",
-      "status": "Active",
+      "role": "Scholar / Ruin-Delver",
+      "status": "changed",
       "world": "The Known World",
-      "bio": "A scholar-adventurer who sought the legendary Lamp of Suroth in the deep ruins. What he found illuminated far more than ancient corridors.",
+      "bio": "A scholar of ancient ruins who descended into the Sunken Ziggurat of Yeng and found the Lamp of Suroth. Lit it in exchange for one truth and the destruction of one lie he had lived by. Learned his dead wife had never loved him \u2014 only his library \u2014 a truth he had suppressed for thirty years. The flame consumed his belief that knowledge was its own reward. Left the ruin lighter and heavier at once, no longer certain of his life's purpose.",
       "traits": [
-        "Curious",
-        "Methodical",
-        "Obsessive"
+        "intellectual",
+        "self-deceiving",
+        "changed by truth"
       ],
       "first_story": "The Lamp of Suroth",
       "first_date": "2026-02-25",
@@ -92,18 +92,18 @@
     {
       "name": "Kael Bloodhorn",
       "tagline": "Savage. Honorable. Unstoppable.",
-      "role": "Barbarian Warlord",
-      "status": "Active",
+      "role": "Warlord / Barbarian Chief",
+      "status": "broken",
       "world": "The Known World",
-      "bio": "A barbarian warlord who laid siege to the Bone Citadel with his war-host. Fearsome in battle yet bound by a warrior's code of honor.",
+      "bio": "Chieftain who brought 800 Veth warriors to siege the Bone Citadel, a living fortress of bone-white stone. Lost 700 warriors to its defenses before reaching the heart chamber. Sent his last 100 through drainage tunnels with torches; they were absorbed into the Citadel's walls \u2014 alive, preserved, breathing, visible like insects in amber. Kael spent the rest of his life attempting to free them. He failed. He never stopped trying.",
       "traits": [
-        "Savage",
-        "Honorable",
-        "Relentless"
+        "stubborn valor",
+        "grief-driven",
+        "relentless"
       ],
       "first_story": "Siege of the Bone Citadel",
       "first_date": "2026-02-25",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -112,20 +112,24 @@
         {
           "date": "2026-02-25",
           "title": "The Stone Woman of Kalthara"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
         }
       ]
     },
     {
       "name": "Tessaly Dorn",
       "tagline": "Cursed. Defiant. Enduring.",
-      "role": "Treasure Hunter",
-      "status": "Cursed",
+      "role": "Adventurer / Debt-Collector",
+      "status": "active \u2014 in service to the dead",
       "world": "The Known World",
-      "bio": "A treasure hunter who fell prey to the cursed gold of Yarithax. Now she carries the weight of an ancient doom, searching for a way to break its hold.",
+      "bio": "An adventurer who spent twelve gold coins from Yarithax's hoard before reading the inscription: 'This debt is not yet settled.' The Lich-King's grey collectors found her \u2014 two thin men who walk through walls and never sleep. After failing to pay with soul or years, she settled an eleven-month debt working as a collector herself, chasing debts for the dead. She collected punctually. She understood the job.",
       "traits": [
-        "Defiant",
-        "Reckless",
-        "Enduring"
+        "resourceful",
+        "quick-thinking",
+        "grimly professional"
       ],
       "first_story": "The Curse of Yarithax's Gold",
       "first_date": "2026-02-25",
@@ -140,14 +144,14 @@
     {
       "name": "Pieter Vane",
       "tagline": "Honorbound. Tormented. Resolute.",
-      "role": "Knight",
-      "status": "Active",
+      "role": "Oath-Breaker",
+      "status": "presumed dead / claimed by the dead",
       "world": "The Known World",
-      "bio": "A knight who broke an oath and faced the terrible reckoning demanded by the old laws. His journey to make amends tested every fiber of his resolve.",
+      "bio": "A man who broke his oath to a dead king on a Tuesday, for twenty gold pieces and a horse. The horse went lame; the gold was spent in a month. The dead king found him in a dockside tavern three provinces away the following Wednesday \u2014 patient, without threat. Pieter recited the oath from memory without being asked; he had never forgotten it. He paid his tab, followed the dead king into the cold street, and was never seen again. A new unmarked tomb appeared on the north road soon after.",
       "traits": [
-        "Honorable",
-        "Tormented",
-        "Resolute"
+        "guilty",
+        "haunted",
+        "ultimately honorable in his acceptance"
       ],
       "first_story": "The Oath-Breaker's Due",
       "first_date": "2026-02-25",
@@ -162,58 +166,66 @@
     {
       "name": "Conjuress Mel",
       "tagline": "Cunning. Indebted. Dangerous.",
-      "role": "Sorceress",
-      "status": "Active",
+      "role": "Sorceress / Demonologist",
+      "status": "active \u2014 partner to Varek",
       "world": "The Known World",
-      "bio": "A conjuress of considerable power who found herself indebted to forces beyond her control. Her cunning and magical prowess are matched only by the debts she owes.",
+      "bio": "A conjuress who owed three favors to the demon Varek for spells cast during the Siege of Amrath. The first favor: deliver a letter to a dead man \u2014 completed. The second: steal a year from a sleeping child \u2014 refused, punished, ultimately complied. The third, named on her wedding morning: her marriage itself \u2014 happiness as collection. Instead she drew a binding circle she had months to prepare and offered Varek an unprecedented counter: herself as a fellow collector of intangibles. Varek agreed. They work together now.",
       "traits": [
-        "Cunning",
-        "Powerful",
-        "Indebted"
+        "brilliant",
+        "ruthless when cornered",
+        "pragmatic survivor"
       ],
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Sorcerer's Debt"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Conjuress and the Year-Thief"
         }
       ]
     },
     {
       "name": "Varek",
       "tagline": "Demon. Patient. Outwitted.",
-      "role": "Demon",
-      "status": "Active",
+      "role": "Demon / Collector of Intangibles",
+      "status": "active \u2014 partnered with Conjuress Mel",
       "world": "The Known World",
-      "bio": "A patient demon who collects on sorcerous debts with cold precision. Was outwitted by Conjuress Mel in a contest of wills and magical cunning.",
+      "bio": "An elegant demon who deals in intangibles: years of life, happiness, certainty, loyalty. Made a three-favor contract with Conjuress Mel during the Siege of Amrath. Planned to claim her marriage (happiness) as his third collection, but was outmaneuvered when she offered herself as a partner-collector instead. Accepted, as it was a better arrangement for both. Now collects alongside Mel.",
       "traits": [
-        "Patient",
-        "Calculating",
-        "Ancient"
+        "elegant",
+        "patient",
+        "genuinely capable of surprise"
       ],
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Sorcerer's Debt"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Conjuress and the Year-Thief"
         }
       ]
     },
     {
       "name": "Urgha the Unmoved",
       "tagline": "Stoic. Mighty. Merciful.",
-      "role": "Barbarian",
-      "status": "Active",
+      "role": "Mercenary / Warrior",
+      "status": "active",
       "world": "The Known World",
-      "bio": "A barbarian renowned for being utterly unmoved by pain, fear, or persuasion. Yet beneath the iron exterior lies an unexpected capacity for mercy.",
+      "bio": "A mercenary of fearsome reputation, named for her emotional detachment. Hired by an emperor to retrieve a tax collector's funds or his ears. Instead showed mercy when she found the collector had spent the money on physicians for his ill daughter. She kept neither money nor ears, sent her own personal physician to treat the child, and paid out of pocket. She remained unmoved \u2014 and was very angry about having shown mercy for years afterward.",
       "traits": [
-        "Stoic",
-        "Mighty",
-        "Merciful"
+        "ferocious",
+        "secretly compassionate",
+        "proud of her reputation"
       ],
       "first_story": "The Barbarian's Mercy",
       "first_date": "2026-02-25",
@@ -228,14 +240,14 @@
     {
       "name": "Cassia Vorn",
       "tagline": "Quick. Doomed. Resourceful.",
-      "role": "Thief",
-      "status": "Active",
+      "role": "Thief / Avenger",
+      "status": "active \u2014 and diminished",
       "world": "The Known World",
-      "bio": "The last thief to escape the Crimson Gate alive. Quick-fingered and quicker-witted, she stole what no one thought could be taken.",
+      "bio": "The last thief of Crimson Gate, a city burned with three thousand people inside. Negotiated with a demon past all the standard offers (wealth, power, enemy's life) until the demon, unused to educated clients, dropped its script and simply asked what she wanted. She wanted the name of the man who burned Crimson Gate \u2014 information, not power, the currency of an older economy. She traded her certainty (intoxicating to beings made of doubt) for the name, then used it. She is notably less certain now, but the name was used.",
       "traits": [
-        "Quick",
-        "Resourceful",
-        "Doomed"
+        "razor intelligence",
+        "grief-driven",
+        "now uncertain"
       ],
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
@@ -250,22 +262,46 @@
     {
       "name": "King Aldous III",
       "tagline": "Regal. Besieged. Tragic.",
-      "role": "King",
-      "status": "Active",
+      "role": "King (deceased)",
+      "status": "deceased",
       "world": "The Known World",
-      "bio": "A king whose realm was struck by a devastating plague. Forced to make impossible choices between his crown and his people as the Plague-Bringer demanded tribute.",
+      "bio": "Won a desperate war by wearing the Plague-Bringer's Crown from the sealed vault beneath Ostern for thirty seconds. The gambit worked \u2014 the enemy surrendered rather than face a man with nothing left to lose. Reigned eleven more years: erratic, sleepless, prone to speaking to people who were not in the room. His shadow had been on backwards for years, which the physicians noted only after his death by ordinary causes. The Crown was returned to Ostern, which built a deeper vault.",
       "traits": [
-        "Regal",
-        "Burdened",
-        "Tragic"
+        "reckless courage",
+        "haunted",
+        "effective despite madness"
       ],
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 7,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Plague-Bringer's Crown"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Collector's Daughter"
         }
       ]
     },
