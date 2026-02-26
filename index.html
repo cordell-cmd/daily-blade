@@ -537,7 +537,7 @@ function renderCodex(data) {
       ${c.tagline ? `<div class="codex-card-tagline">${escHtml(c.tagline)}</div>` : ''}
       <div class="codex-card-badges">
         <span class="badge badge-role">${escHtml(c.role || 'Unknown')}</span>
-        <span class="badge ${statusClass}">${escHtml(c.status || 'Unknown')}</span>
+        <span class="badge ${statusClass}">${escHtml(c.status && c.status.toLowerCase() === 'deceased' ? 'Dead' : (c.status || 'Unknown'))}</span>
       </div>
       <hr class="codex-divider" />
       <div class="codex-body">${escHtml(c.bio || '')}</div>
