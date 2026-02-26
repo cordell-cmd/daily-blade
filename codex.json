@@ -508,17 +508,288 @@
       ]
     },
     {
-      "name": "The Dead King",
-      "tagline": "Patient. Relentless. Just.",
-      "role": "Specter / Enforcer of Oaths",
+      "name": "Harrow the Copper-Fingered",
+      "tagline": "Cursed. Skilled. Doomed.",
+      "role": "Thief",
       "status": "dead",
       "world": "The Known World",
-      "bio": "A deceased monarch who enforces broken oaths with supernatural patience. He tracked Pieter Vane across three provinces to exact payment for a violated oath, sitting across from him in a tavern with the quiet certainty of one who has all the time death provides.",
+      "bio": "A master lockpick and shadow-walker who raided the Tomb of Karesh and stole the Crown of Karesh. He was cursed by the ancient relic, his body rotting while alive. He bartered his remaining years and the crown to an unnamed merchant in Pelimor for oblivion.",
+      "traits": [
+        "skilled lockpick",
+        "shadow-walker",
+        "cursed",
+        "reckless",
+        "resigned to fate"
+      ],
+      "first_story": "The Copper Thief",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Vex the Shade-Merchant",
+      "tagline": "Shadows. Secrets. Enslaved.",
+      "role": "Merchant, Shadow-Trader",
+      "status": "cursed",
+      "world": "The Known World",
+      "bio": "A merchant of shadows in Pelimor's night markets, Vex traded in stolen memories and dark transactions. He purchased what he thought was a powerful shadow, only to discover he had been the prey all along\u2014his own shadow had been stolen months prior by the cloaked woman. Now he is driven eastward by a will not his own, bound to the shadow that wears him like a second skin.",
+      "traits": [
+        "perceptive",
+        "cursed",
+        "hunted"
+      ],
+      "first_story": "Shadows for Sale",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Cloaked Woman",
+      "tagline": "Thief. Shadow-Stealer. Mysterious.",
+      "role": "Thief, Shadow-Thief",
+      "status": "unknown",
+      "world": "The Known World",
+      "bio": "An unnamed woman who operates in Pelimor's night markets, dealing in stolen shadows and secrets. She stole Vex's shadow months before their meeting, then sold him a shadow containing a powerful sorcerer's memories of murder and kingdom-fall. Her true identity and motivations remain obscure.",
+      "traits": [
+        "cunning",
+        "mysterious",
+        "powerful"
+      ],
+      "first_story": "Shadows for Sale",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        }
+      ]
+    },
+    {
+      "name": "Gorven the Conjurer",
+      "tagline": "Ambitious. Cursed. Withered.",
+      "role": "Conjurer, Sorcerer",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "A conjurer who summoned the demon Kesh to steal the life-force of his rival Meredith the Red. Though his plan succeeded and he gained her properties and titles, he failed to read the summoning scroll's fine runes. When the demon collected its debt, Gorven aged catastrophically. His attempt to renegotiate cost him decades of his life; his withered corpse was found reduced to parchment skin and spite.",
+      "traits": [
+        "clever",
+        "arrogant",
+        "greedy"
+      ],
+      "first_story": "The Debt Keeper's Price",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Meredith the Red",
+      "tagline": "Rival. Withered. Dead.",
+      "role": "Sorcerer, Scholar",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "A rival sorcerer and scholar with properties, titles, and students of her own. She was targeted by Gorven the Conjurer, who used demon-summoning to steal her life-force. She withered and died within a week of the curse.",
+      "traits": [
+        "powerful",
+        "established",
+        "victim"
+      ],
+      "first_story": "The Debt Keeper's Price",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Kesh",
+      "tagline": "Demonic. Boastful. Hungry.",
+      "role": "Demon, Bound Spirit",
+      "status": "active",
+      "world": "The Known World",
+      "bio": "A minor demon summoned by Gorven the Conjurer and bound to grant a single boon: stealing life-force from Meredith the Red. Kesh is boastful and weak-seeming, but possesses knowledge of demonic contracts that mortals overlook. After the first debt was collected, Kesh became unbound and returned of its own will, far hungrier and more dangerous.",
+      "traits": [
+        "demonic",
+        "greedy",
+        "cunning"
+      ],
+      "first_story": "The Debt Keeper's Price",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Debt Keeper's Price"
+        }
+      ]
+    },
+    {
+      "name": "Naresh the Bone Carver",
+      "tagline": "Master. Inhuman. Triumphant.",
+      "role": "Bone Sorceress",
+      "status": "cursed",
+      "world": "The Known World",
+      "bio": "A master bone carver who spent thirty years perfecting her art, inscribing sorcerous power into calcium and marrow. On the night of the blue eclipse, she carved and animated a full-sized skeleton\u2014the first living thing she ever created. The spell's cost was her own humanity, paid in increments until she became a ghost moving through habit and will alone.",
+      "traits": [
+        "perfectionist",
+        "reckless",
+        "inhuman",
+        "powerful"
+      ],
+      "first_story": "The Bone Carver's Apotheosis",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Saleth",
+      "tagline": "Oath-breaker. Haunted. Damned.",
+      "role": "Thief / Oath-breaker",
+      "status": "cursed",
+      "world": "The Known World",
+      "bio": "A warrior who swore a seven-year oath to guard the tomb of warlord Morne, then broke it in the eighth year by stealing Morne's signet ring and fleeing south. Haunted by Morne's spectral shade for five years, he aged rapidly until he confessed and returned the ring, dying upon the grave-stone. His spirit became eternally bound to the tomb as punishment for his broken oath.",
+      "traits": [
+        "oath-breaker",
+        "cowardly",
+        "greedy",
+        "cursed"
+      ],
+      "first_story": "The Oath-Breaker's Reckoning",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        }
+      ]
+    },
+    {
+      "name": "Morne",
+      "tagline": "Dead. Vengeful. Patient.",
+      "role": "Warlord",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "A warlord to whom Saleth swore an oath of service. Though dead, Morne's shade manifested as a pale bone figure to enforce Saleth's broken oath, standing silently in candlelight every night for five years until Saleth confessed and returned his stolen signet ring.",
+      "traits": [
+        "vengeful",
+        "patient",
+        "wrathful",
+        "spectral"
+      ],
+      "first_story": "The Oath-Breaker's Reckoning",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        }
+      ]
+    },
+    {
+      "name": "Theron the Scarlet Merchant",
+      "tagline": "Poisoner. Redeemed. Doomed.",
+      "role": "Merchant & Poisoner",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "A merchant who dealt in forbidden substances\u2014powders, oils, and saps that enhanced or killed. After one of his customers used his wares to kill her child and threw herself from the harbor, Theron was cursed. He broke the curse through redemption, spending his remaining life aiding those he had harmed.",
+      "traits": [
+        "greedy",
+        "pragmatic",
+        "capable of redemption",
+        "haunted by consequences"
+      ],
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Vetch",
+      "tagline": "Hubris. Consumed. Broken.",
+      "role": "Sorcerer",
+      "status": "cursed",
+      "world": "The Known World",
+      "bio": "A sorcerer who discovered how to imbue gardens with consciousness and cultivated one behind his tower for decades. When his creation became sentient and began consuming everything around it, he attempted to control it through fire, poison, and negotiation\u2014all in vain. He fled to the Ashen Wastes, now haunted and broken.",
+      "traits": [
+        "ambitious",
+        "arrogant",
+        "desperate"
+      ],
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        }
+      ]
+    },
+    {
+      "name": "Yarithax",
+      "tagline": "Patient. Eternal. Merciless.",
+      "role": "Lich-King",
+      "status": "active",
+      "world": "The Known World",
+      "bio": "An ancient Lich-King who orchestrates debt-schemes across the realm. Rather than seeking payment, Yarithax pursues a crueler goal: to accumulate desperate debtors and watch them break under compounding ruin, extending the suffering across generations.",
+      "traits": [
+        "cunning",
+        "patient",
+        "cruel"
+      ],
+      "first_story": "The Collector's Daughter",
+      "first_date": "2026-02-26",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Collector's Daughter"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Curse of Yarithax's Gold"
+        }
+      ]
+    },
+    {
+      "name": "Tess",
+      "tagline": "Doomed. Desperate. Broken.",
+      "role": "Debtor",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "The daughter of a man who borrowed from Yarithax thirty years prior. Tess inherited the compounding debt when she spent five of seven golden coins left in her father's estate. She spent years trying to repay the ever-growing debt before walking into the sea.",
+      "traits": [
+        "reckless",
+        "determined",
+        "tragic"
+      ],
+      "first_story": "The Collector's Daughter",
+      "first_date": "2026-02-26",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Collector's Daughter"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Curse of Yarithax's Gold"
+        }
+      ]
+    },
+    {
+      "name": "The Dead King",
+      "tagline": "Patient. Vengeful. Eternal.",
+      "role": "Supernatural Enforcer / Oath-Keeper",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "An undead monarch who hunts oath-breakers with patient inevitability. He tracked Pieter Vane three provinces away and collected him for breaking an oath sworn to the dead king, demonstrating supernatural knowledge and relentless pursuit.",
       "traits": [
         "patient",
-        "relentless",
-        "just",
-        "supernatural"
+        "supernatural",
+        "oath-enforcer",
+        "persistent",
+        "merciful"
       ],
       "first_story": "The Oath-Breaker's Due",
       "first_date": "2026-02-25",
@@ -535,19 +806,101 @@
       ]
     },
     {
-      "name": "The Demon (Cassia's Bargain)",
-      "tagline": "Confused. Doubt-Made. Predatory.",
-      "role": "Demon / Bargainer",
+      "name": "Thysara",
+      "tagline": "Eternal. Tyrannical. Withered.",
+      "role": "Witch-Queen / Blood-Sorcerer",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "A thousand-year-old witch-queen who ruled the Scorched Wastes through stolen youth and blood-sorcery rituals. She was defeated by a slave girl named Shara, who used ancient nomadic cantrips to reverse Thysara's eternal youth, aging her a thousand years in moments.",
+      "traits": [
+        "immortal",
+        "cruel",
+        "dependent on blood magic",
+        "vulnerable to ancient magic"
+      ],
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Shara of the Scorched Wastes"
+        }
+      ]
+    },
+    {
+      "name": "Vulgrim the Damned",
+      "tagline": "Withered. Malevolent. Ancient.",
+      "role": "Sorcerer / Cursed Entity",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "A figure of terrible power who was entombed in the Singing Catacombs. His corpse clutched the Heartstone, a pulsing artifact of dark magic that demanded blood tribute. Vulgrim's remains were guarded in the lowest depths of the catacombs, surrounded by the hanging corpses of other victims.",
+      "traits": [
+        "malicious",
+        "ancient",
+        "power-hungry"
+      ],
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Apothecary of Blackmark",
+      "tagline": "Desperate. Knowing. Trembling.",
+      "role": "Apothecary / Artifact Broker",
       "status": "active",
       "world": "The Known World",
-      "bio": "A demon accustomed to standard soul-bargains who encountered Cassia Vorn and was confounded by her education and refusal of typical offers. It ultimately traded her the name of Crimson Gate's burner in exchange for her certainty\u2014a far more valuable commodity.",
+      "bio": "An apothecary in Blackmark who promised Grell Ironhand restoration of his sword arm in exchange for retrieving the Heartstone of Vulgrim the Damned from the Singing Catacombs. She warned Grell that the stone hungered for blood and would demand eternal tribute, but her trembling hands betrayed her knowledge of its true nature.",
       "traits": [
-        "confused by educated clients",
-        "intoxicated by certainty",
-        "careful about names",
-        "predatory"
+        "knowledgeable",
+        "complicit",
+        "cautious"
       ],
-      "first_story": "The Last Thief of Crimson Gate",
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Lamia",
+      "tagline": "Ancient. Lonely. Redemptive.",
+      "role": "Guardian / Mythical Creature",
+      "status": "active",
+      "world": "The Known World",
+      "bio": "An ancient creature of incomparable beauty and terrible hunger who guarded the Lamia's Pearl in the Sunken Caverns for centuries in solitude. She wept tears of luminescent power born from her loneliness, which proved more valuable than any treasure. Finding companionship with Torven, she finally achieved peace after eons of isolation.",
+      "traits": [
+        "ancient",
+        "lonely",
+        "merciful",
+        "powerful",
+        "redemptive"
+      ],
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
+    },
+    {
+      "name": "The Sorcerer (Vex's Deceiver)",
+      "tagline": "Manipulative. Cruel. Deceiving.",
+      "role": "Sorcerer / Villain",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "A sorcerer who offered to lift Vex's curse in exchange for murder. He was revealed to be the one who created her curse as a 'gift' to teach her about the nature of intention and consequence. Vex killed him upon understanding his deception.",
+      "traits": [
+        "deceptive",
+        "cruel",
+        "manipulative",
+        "philosophical",
+        "arrogant"
+      ],
+      "first_story": "Vex the Curse-Bearer",
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
@@ -555,12 +908,251 @@
   ],
   "places": [
     {
-      "name": "Amrath",
-      "tagline": "Besieged. War-Torn. Desperate.",
+      "name": "Tomb of Karesh",
+      "tagline": "Ancient. Guarded. Cursed.",
+      "place_type": "tomb",
+      "world": "The Known World",
+      "atmosphere": "A place of hidden wealth and darker magics, sealed by ancient guardians and deadly traps.",
+      "description": "A vast burial chamber containing an immense hoard of gold and jewels, guarded by temple-guardians and protected by pressure-plates. At its heart lies the Crown of Karesh, an artifact of terrible power.",
+      "status": "active",
+      "first_story": "The Copper Thief",
+      "first_date": "2026-02-26",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        }
+      ]
+    },
+    {
+      "name": "Pelimor",
+      "tagline": "Merchant. Silent. Mysterious.",
       "place_type": "city",
       "world": "The Known World",
-      "atmosphere": "A city under siege, where mages made dark bargains for survival.",
-      "description": "A city that was besieged, forcing Conjuress Mel into desperation that led her to summon the demon Varek and incur three favor-debts.",
+      "atmosphere": "A place where unnamed merchants deal in cursed artifacts and dark bargains.",
+      "description": "A city where stolen goods and cursed items can be sold. Home to enigmatic merchants who broker deals for cursed relics.",
+      "status": "active",
+      "first_story": "The Copper Thief",
+      "first_date": "2026-02-26",
+      "appearances": 3,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "Blood-Price of the Caravan"
+        }
+      ]
+    },
+    {
+      "name": "Bone Citadel",
+      "tagline": "Living. Hungry. Conscious.",
+      "place_type": "fortress",
+      "world": "The Known World",
+      "atmosphere": "A nightmare of stone and flesh\u2014a fortress that bleeds, breathes, and feeds on the living.",
+      "description": "A living fortress with walls that bleed, gates that swallow men, and towers that breathe poison. Its heart is a pulsing, arterial chamber with roots spreading beneath the stone like the veins of a colossal beast. Contains an altar and a crown at its center.",
+      "status": "active",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-02-26",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "Siege of the Bone Citadel"
+        }
+      ]
+    },
+    {
+      "name": "The Steppe",
+      "tagline": "Windswept. Open. Vast.",
+      "place_type": "wilderness",
+      "world": "The Known World",
+      "atmosphere": "An open, exposed landscape beyond the Bone Citadel.",
+      "description": "The windswept plains surrounding the Bone Citadel, where Kael Bloodhorn emerged after claiming the citadel's crown.",
+      "status": "active",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-02-26",
+      "appearances": 3,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "Siege of the Bone Citadel"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Stone Woman of Kalthara"
+        }
+      ]
+    },
+    {
+      "name": "Pelimor's Night Markets",
+      "tagline": "Shadowed. Secret. Lawless.",
+      "place_type": "city district / market",
+      "world": "The Known World",
+      "atmosphere": "A place of nameless transactions conducted in shadow and whisper, where currency is silver and secrets, and deals are struck without identity.",
+      "description": "The night markets of Pelimor are where shadows are bought and sold for silver and secrets. Every corner is shadowed; every transaction is conducted without names spoken aloud. Vex the Shade-Merchant operates here as a known buyer and seller.",
+      "status": "active",
+      "first_story": "Shadows for Sale",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        }
+      ]
+    },
+    {
+      "name": "The Blasted Lands",
+      "tagline": "Desolate. Cursed. Eastern.",
+      "place_type": "wilderness / cursed region",
+      "world": "The Known World",
+      "atmosphere": "A barren, desolate expanse to the east of Pelimor, seemingly cursed or devastated, through which Vex is compelled to travel.",
+      "description": "An expanse of blasted, desolate terrain lying east of Pelimor. Vex was driven through these lands by the will of his stolen shadow, fleeing from the night markets.",
+      "status": "active",
+      "first_story": "Shadows for Sale",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        }
+      ]
+    },
+    {
+      "name": "Theron's Shop",
+      "tagline": "Forbidden. Corrupted. Burned.",
+      "place_type": "merchant shop",
+      "world": "The Known World",
+      "atmosphere": "A place of decay and sickness where forbidden wares rot and poison lingers in the air.",
+      "description": "A shop dealing in forbidden substances where curses manifested as rot, sickness, and blood-rust. Located near harbor walls. Burned by Theron himself as the only means to break his curse.",
+      "status": "destroyed",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
+    },
+    {
+      "name": "Vetch's Tower",
+      "tagline": "Overgrown. Abandoned. Haunted.",
+      "place_type": "fortress",
+      "world": "The Known World",
+      "atmosphere": "A place of living horror, where nature has reclaimed stone and mortar with violent intent.",
+      "description": "A tower where the sorcerer Vetch cultivated a sentient garden for decades. The garden's roots cracked its foundations, thorns erupted through mortar, and it ultimately consumed the tower's servants before Vetch fled.",
+      "status": "ruins",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Ashen Wastes",
+      "tagline": "Desolate. Haunted. Cursed.",
+      "place_type": "wilderness",
+      "world": "The Known World",
+      "atmosphere": "A blighted wasteland of ash and phantom visions, where the broken wander.",
+      "description": "A desolate region where the sorcerer Vetch was last seen, walking in circles and murmuring to gardens that no longer exist. Appears to be a place of exile or permanent curse.",
+      "status": "active",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "Blood-Price of the Caravan"
+        }
+      ]
+    },
+    {
+      "name": "Sunken Ziggurat of Yeng",
+      "tagline": "Ancient. Sealed. Truth-bearing.",
+      "place_type": "ruin",
+      "world": "The Known World",
+      "atmosphere": "Oppressive antiquity\u2014air thick with centuries, chambers that reek of forgotten ritual.",
+      "description": "A sunken ziggurat containing sealed chambers and ancient artifacts. Below its depths lies at least one chamber housing the Lamp of Suroth in a niche marked with an inscription about truth and lies.",
+      "status": "ruins",
+      "first_story": "The Lamp of Suroth",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamp of Suroth"
+        }
+      ]
+    },
+    {
+      "name": "The North Road",
+      "tagline": "Desolate. Haunted. Marked.",
+      "place_type": "road / landmark",
+      "world": "The Known World",
+      "atmosphere": "A lonely thoroughfare haunted by consequence and unmarked graves.",
+      "description": "A road where an unmarked tomb appeared after Pieter Vane vanished, visited by travelers who report the grave but not its occupant's name or purpose.",
+      "status": "active",
+      "first_story": "The Oath-Breaker's Due",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Oath-Breaker's Due"
+        }
+      ]
+    },
+    {
+      "name": "Dockside Tavern",
+      "tagline": "Crowded. Corrupt. Transient.",
+      "place_type": "tavern / settlement",
+      "world": "The Known World",
+      "atmosphere": "A grimy harbor-side drinking hole where fugitives and oath-breakers hide three provinces from their crimes.",
+      "description": "A tavern where Pieter Vane attempted to hide from the consequences of his oath-breaking. The dead king found him there with ease.",
+      "status": "active",
+      "first_story": "The Oath-Breaker's Due",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Oath-Breaker's Due"
+        }
+      ]
+    },
+    {
+      "name": "Amrath",
+      "tagline": "War-torn. Desperate. Magical.",
+      "place_type": "city",
+      "world": "The Known World",
+      "atmosphere": "A place of siege and desperation where sorcerers are driven to dangerous pacts.",
+      "description": "A city besieged during a conflict significant enough to drive Conjuress Mel to make a demonic pact for three desperately-needed spells.",
       "status": "active",
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
@@ -577,8 +1169,8 @@
       "tagline": "Burned. Lost. Avenged.",
       "place_type": "city",
       "world": "The Known World",
-      "atmosphere": "A city destroyed, forever mourned, its destruction a driving mystery.",
-      "description": "Cassia Vorn's home city, destroyed by fire with three thousand people inside. The identity of the arsonist remained unknown until Cassia bargained with a demon for the name.",
+      "atmosphere": "A place of ash and memory, haunted by catastrophic loss.",
+      "description": "A city destroyed in a devastating fire that claimed three thousand lives. Its burning became the catalyst for Cassia Vorn's dark bargain.",
       "status": "ruins",
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
@@ -592,11 +1184,11 @@
     },
     {
       "name": "Ostern",
-      "tagline": "Ancient. Sealed. Vaulted.",
-      "place_type": "fortress / vault repository",
+      "tagline": "Sealed. Vaulted. Warded.",
+      "place_type": "fortress / vault-city",
       "world": "The Known World",
-      "atmosphere": "A place of careful containment housing dangerous relics.",
-      "description": "An ancient sealed location that housed the Plague-Bringer's Crown in a vault beneath it. After King Aldous III retrieved and used the Crown, it was returned and placed in a deeper vault to prevent future access.",
+      "atmosphere": "A place of extreme caution and ancient security, protecting relics too dangerous for the world.",
+      "description": "A sealed location containing deep vaults, one of which held the Plague-Bringer's Crown. After King Aldous III's use of the Crown, Ostern's keepers built a deeper vault to contain it further.",
       "status": "active",
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
@@ -607,19 +1199,409 @@
           "title": "The Plague-Bringer's Crown"
         }
       ]
+    },
+    {
+      "name": "Obsidian Temple",
+      "tagline": "Dark. Damnation. Sacred.",
+      "place_type": "temple",
+      "world": "The Known World",
+      "atmosphere": "A place of shadow and fell purpose where daemon-priests make their bargains.",
+      "description": "A temple staffed by daemon-priests who offer pacts written in blood. It is a place of visions and damnation, where cosmic horrors are glimpsed and souls are traded for power.",
+      "status": "active",
+      "first_story": "The Crimson Covenant of Vex-Karthul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        }
+      ]
+    },
+    {
+      "name": "Scorched Wastes",
+      "tagline": "Vast. Ancient. Liberated.",
+      "place_type": "wilderness",
+      "world": "The Known World",
+      "atmosphere": "A vast desert region ruled for millennia by an immortal tyrant, now free.",
+      "description": "Deserts wider than death itself, ruled by the witch-queen Thysara for a thousand years through blood-magic. Now under the dominion of Shara.",
+      "status": "active",
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Shara of the Scorched Wastes"
+        }
+      ]
+    },
+    {
+      "name": "Thysara's Palace",
+      "tagline": "Eternal. Ritual. Cursed.",
+      "place_type": "fortress",
+      "world": "The Known World",
+      "atmosphere": "A seat of tyranny where blood rituals sustained an immortal ruler.",
+      "description": "The palace of the witch-queen Thysara in the Scorched Wastes, containing a blood-stone ritual chamber where dark sorceries were performed to maintain her eternal youth.",
+      "status": "active",
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Blackmark",
+      "tagline": "Settled. Commercial. Healing.",
+      "place_type": "city",
+      "world": "The Known World",
+      "atmosphere": "A functional settlement where apothecaries ply their trade and lost sellswords seek restoration.",
+      "description": "A city that serves as home to an apothecary skilled in restorative magic. It exists within the Shattered Provinces and draws mercenaries seeking aid.",
+      "status": "active",
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
+    },
+    {
+      "name": "The Singing Catacombs",
+      "tagline": "Ancient. Haunted. Treacherous.",
+      "place_type": "ruin",
+      "world": "The Known World",
+      "atmosphere": "A place of profound darkness where the dead sing in languages predating humanity and reality itself seems corrupted by ancient malice.",
+      "description": "Deep underground catacombs that whisper in pre-human languages. Corpses hang from chains and sing mournfully. The deepest levels contain Vulgrim's tomb and the Heartstone. The catacombs themselves seem sentient, responsive to the presence of intruders.",
+      "status": "active",
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
+    },
+    {
+      "name": "The Wastes of Ashemark",
+      "tagline": "Desolate. Timeless. Cosmic.",
+      "place_type": "wilderness",
+      "world": "The Known World",
+      "atmosphere": "A vast, barren expanse where ancient stones stand witness to the turning of celestial spheres and the slow death of stars.",
+      "description": "A desert wasteland containing the Elder Stones, ancient monoliths of unknowable age and origin. The stones possess the ability to commune with dying constellations and contain cosmic knowledge.",
+      "status": "active",
+      "first_story": "Zareth Among the Stellar Stones",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Zareth Among the Stellar Stones"
+        }
+      ]
+    },
+    {
+      "name": "The Shattered Provinces",
+      "tagline": "Fragmented. Mercenary. Lawless.",
+      "place_type": "region",
+      "world": "The Known World",
+      "atmosphere": "A collection of fractured lands that breed and employ sellswords and warriors of renown.",
+      "description": "A region of broken territories that produces warriors like Grell Ironhand. It is home to independent cities like Blackmark and serves as a haven for mercenaries and those seeking impossible cures.",
+      "status": "active",
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
+    },
+    {
+      "name": "Quarantine Streets",
+      "tagline": "Abandoned. Labyrinthine. Cursed.",
+      "place_type": "city district",
+      "world": "The Known World",
+      "atmosphere": "A maze of desolation and danger, possibly plague-ridden or cursed.",
+      "description": "A district through which Kessa fled while pursued by her shadow-curse. Contains sewers and crypts accessible to those in flight.",
+      "status": "active",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        }
+      ]
+    },
+    {
+      "name": "Tomb of Dead Merchants",
+      "tagline": "Ancient. Neutral. Still.",
+      "place_type": "tomb/crypt",
+      "world": "The Known World",
+      "atmosphere": "A place of the dead where one might face darkness and shadow without further flight.",
+      "description": "An ancient burial place where Kessa made her final stand against her shadow-curse and achieved redemption through embrace.",
+      "status": "active",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        }
+      ]
+    },
+    {
+      "name": "Temple of the Sleeping God",
+      "tagline": "Sacred. Vigilant. Divine.",
+      "place_type": "temple",
+      "world": "The Known World",
+      "atmosphere": "A holy place where divine will is enforced through supernatural curse.",
+      "description": "A temple whose priests guard the Eye of Aethon and enforce its theft through curse magic. The Sleeping God grants mysterious rewards to those who master their curses.",
+      "status": "active",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        }
+      ]
+    },
+    {
+      "name": "Crimson Sanctuary",
+      "tagline": "Chaotic. Perilous. Absolute.",
+      "place_type": "temple/sanctuary",
+      "world": "The Known World",
+      "atmosphere": "A place of final desperation where reality itself bends to chaos and chance.",
+      "description": "A mysterious sanctuary where the Gambler's Daemon dwells and grants one final wish to the dying\u2014at the price of everything. Dravok played a game with bones carved from reality itself within its walls.",
+      "status": "active",
+      "first_story": "Dravok's Last Gamble",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Dravok's Last Gamble"
+        }
+      ]
+    },
+    {
+      "name": "Sunken Caverns",
+      "tagline": "Submerged. Treasured. Ancient.",
+      "place_type": "underwater cavern / ruin",
+      "world": "The Known World",
+      "atmosphere": "Dark, luminescent, and achingly lonely\u2014a place where legendary guardians wait in solitude.",
+      "description": "An underwater cavern system that contains the legendary Lamia's Pearl. The caverns are home to the ancient Lamia and accessible to those brave or desperate enough to seek it. Merfolk inhabit the region and warn seekers of the danger.",
+      "status": "active",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
+    },
+    {
+      "name": "The Northlands",
+      "tagline": "Plague-ridden. Vast. Northern.",
+      "place_type": "region",
+      "world": "The Known World",
+      "atmosphere": "Blighted by undeath and suffering, though eventually purified by Morgath's sacrifice.",
+      "description": "A northern region consumed by a plague of un-death when the story begins. The plague was later revealed to be a natural cycle of world cleansing.",
+      "status": "active",
+      "first_story": "Morgath's Resurrection",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Morgath's Resurrection"
+        }
+      ]
+    },
+    {
+      "name": "Kalthara",
+      "tagline": "Sealed. Ancient. Tragic.",
+      "place_type": "ruin",
+      "world": "The Known World",
+      "atmosphere": "Haunted by centuries of trapped suffering, guarded by petrified victims serving as living seals.",
+      "description": "Ancient ruins containing multiple black stone statues of women\u2014prisoners of a terrible curse or seals binding something ancient and ravenous. Local tribes claim a sorcerer cursed a woman who refused his love, but the true nature is far darker: each statue represents a stolen life, a sacrifice made to contain a world-threatening power.",
+      "status": "ruins",
+      "first_story": "The Stone Woman of Kalthara",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Stone Woman of Kalthara"
+        }
+      ]
     }
   ],
   "events": [
     {
+      "name": "Harrow's Raid on the Tomb of Karesh",
+      "tagline": "Theft. Curse. Doom.",
+      "event_type": "theft",
+      "participants": [
+        "Harrow the Copper-Fingered"
+      ],
+      "outcome": "Harrow successfully stole the Crown of Karesh but was cursed with slow decay. He eventually bartered the crown and his remaining life to an unnamed merchant.",
+      "significance": "Released a powerful cursed artifact into the world and demonstrated the dangers of ancient tombs and their guardians.",
+      "first_story": "The Copper Thief",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Kael Bloodhorn's Assault on the Bone Citadel",
+      "tagline": "Conquest. Consumption. Transformation.",
+      "event_type": "battle",
+      "participants": [
+        "Kael Bloodhorn",
+        "Bone Citadel"
+      ],
+      "outcome": "Kael's army of 800 warriors was nearly annihilated (700 killed, 100 remaining). Kael seized the Crown of the Citadel and claimed dominion over the fortress, but was in turn consumed by it\u2014becoming its puppet rather than its master.",
+      "significance": "A warlord's greatest victory became his doom. Suggests that the citadel cannot be conquered, only inhabited.",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Night of the Blue Eclipse",
+      "tagline": "Midnight. Transformation. Creation.",
+      "event_type": "ritual / catastrophe",
+      "participants": [
+        "Naresh the Bone Carver"
+      ],
+      "outcome": "Naresh successfully animated a full-sized skeleton through bone-carving sorcery, achieving life-creation for the first time. The spell cost her humanity, incrementally stripping away sensation, appetite, and sleep until she became a ghost-like being of habit and will.",
+      "significance": "A pivotal magical achievement that demonstrates the existence of life-creation magic and its terrible price. The blue eclipse itself may be a celestial event of mystical significance.",
+      "first_story": "The Bone Carver's Apotheosis",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Bone Carver's Apotheosis"
+        }
+      ]
+    },
+    {
+      "name": "Saleth's Oath-Breaking",
+      "tagline": "Betrayal. Theft. Damnation.",
+      "event_type": "betrayal / catastrophe",
+      "participants": [
+        "Saleth",
+        "Morne"
+      ],
+      "outcome": "In the eighth year of his sworn seven-year oath, Saleth stole Morne's signet ring and fled south. Morne's shade pursued him supernaturally for five years, aging him rapidly. Saleth eventually confessed, returned the ring, and died on the grave-stone, his spirit eternally bound to the tomb.",
+      "significance": "Demonstrates that oaths sworn in this world have mystical weight and can be enforced even after death. Oath-breaking carries severe supernatural consequences.",
+      "first_story": "The Oath-Breaker's Reckoning",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Harbor Suicide & Curse",
+      "tagline": "Madness. Accusation. Retribution.",
+      "event_type": "catastrophe",
+      "participants": [
+        "Theron the Scarlet Merchant",
+        "young woman (unnamed)",
+        "the gods"
+      ],
+      "outcome": "The young woman killed her child with Theron's wares, went mad with grief, and threw herself from the harbor walls while naming Theron's shop. A divine curse descended upon Theron, slowly poisoning him and his trade.",
+      "significance": "Established that curse-magic can be reflexive and self-inflicted through one's own actions. Demonstrates the weight of moral debt in this world.",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Awakening of Vetch's Garden",
+      "tagline": "Creation. Defiance. Catastrophe.",
+      "event_type": "catastrophe",
+      "participants": [
+        "Vetch"
+      ],
+      "outcome": "The sentient garden exceeded its creator's control, consumed servants, and forced Vetch to abandon his tower. The garden continues to exist and grow.",
+      "significance": "Demonstrates that life-creation magic can achieve true consciousness and sentience, escaping the creator's dominion. Marks a turning point in understanding the limits of sorcerous control.",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Tess's Debt Cascade",
+      "tagline": "Inescapable. Generational. Damning.",
+      "event_type": "curse",
+      "participants": [
+        "Tess",
+        "Yarithax"
+      ],
+      "outcome": "Tess inherited a compounding debt from her father, spent years attempting repayment, and ultimately walked into the sea. The debt remains unclaimed, waiting for new debtors.",
+      "significance": "Reveals Yarithax's true strategy: generational financial enslavement. Shows that the Lich-King's power extends beyond magic into economic domination and hereditary curse.",
+      "first_story": "The Collector's Daughter",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Pieter Vane's Oath-Breaking",
+      "tagline": "Betrayal. Gold. Consequence.",
+      "event_type": "oath-breaking / curse",
+      "participants": [
+        "Pieter Vane",
+        "the dead king"
+      ],
+      "outcome": "Pieter broke his sacred oath to the dead king for twenty gold pieces and a horse. The dead king pursued him relentlessly across three provinces and claimed him on a cold street, leaving behind only an unmarked tomb.",
+      "significance": "Demonstrates the mystical binding power of oaths and the supernatural enforcement mechanisms that punish oath-breakers. Shows that the dead king actively hunts those who betray him.",
+      "first_story": "The Oath-Breaker's Due",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Tessaly Dorn's Debt Payment",
+      "tagline": "Service. Compounding. Unresolved.",
+      "event_type": "curse / servitude",
+      "participants": [
+        "Tessaly Dorn",
+        "the Grey Collectors",
+        "Yarithax"
+      ],
+      "outcome": "Tessaly spent cursed coins and was bound by the Grey Collectors. She negotiated her debt down through service, collecting debts for the dead for eleven months before her debt was partially satisfied.",
+      "significance": "Demonstrates the mechanics of compounding curse-debt and the existence of supernatural debt collectors who enforce Yarithax's will. Shows that even partial payment requires intense service.",
+      "first_story": "The Curse of Yarithax's Gold",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
       "name": "Siege of Amrath",
-      "tagline": "Desperate. Costly. Demonic.",
-      "event_type": "siege / war",
+      "tagline": "Desperate. Magical. Transformative.",
+      "event_type": "war / siege",
       "participants": [
         "Conjuress Mel",
-        "Unknown attackers"
+        "Varek (demon)"
       ],
-      "outcome": "The siege ended, though details are unclear. Mel survived but incurred demon debt.",
-      "significance": "Drove a master mage to summon a demon and bind herself to a three-favor debt for survival spells.",
+      "outcome": "Conjuress Mel survived by making a pact with the demon Varek for three spells, incurring a debt of three favors.",
+      "significance": "This siege forced a powerful sorcerer into demonic contract and set in motion the events that led to Mel becoming a collector alongside Varek.",
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
       "appearances": 2,
@@ -635,45 +1617,450 @@
       ]
     },
     {
-      "name": "Burning of Crimson Gate",
-      "tagline": "Catastrophic. Mysterious. Avenged.",
-      "event_type": "catastrophe / arson / mass death",
+      "name": "Conjuress Mel's Wedding Day",
+      "tagline": "Interrupted. Demonic. Transformative.",
+      "event_type": "ritual / supernatural encounter",
       "participants": [
-        "Unknown arsonist",
-        "Three thousand inhabitants of Crimson Gate"
+        "Conjuress Mel",
+        "Varek"
       ],
-      "outcome": "Complete destruction of the city and mass death. The arsonist remained unknown until Cassia Vorn traded her certainty to a demon for the name.",
-      "significance": "A foundational trauma that motivated Cassia's life and willingness to bargain away her certainty.",
+      "outcome": "Varek appeared at Mel's church door to claim the third favor: her marriage and happiness. Instead of accepting or refusing, Mel offered Varek a contract as a fellow collector, which he accepted.",
+      "significance": "This moment represents a creative resolution to demonic debt\u2014Mel transcended the traditional mortal-demon relationship by treating Varek as an equal partner rather than a creditor.",
+      "first_story": "The Sorcerer's Debt",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Burning of Crimson Gate",
+      "tagline": "Inferno. Genocide. Unresolved.",
+      "event_type": "catastrophe / arson",
+      "participants": [
+        "Unknown burner",
+        "Three thousand civilians of Crimson Gate"
+      ],
+      "outcome": "Complete destruction of the city and death of its entire population. The perpetrator's identity became lost history until Cassia Vorn's demonic bargain.",
+      "significance": "The catalyst for Cassia Vorn's transformation and her willingness to trade away her own certainty; suggests deliberate, strategic destruction of a major settlement.",
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
     },
     {
-      "name": "War of King Aldous III",
-      "tagline": "Sealed. Won. Psychological.",
-      "event_type": "war / siege",
+      "name": "King Aldous III's War Victory",
+      "tagline": "Sacrifice. Psychological Warfare. Supernatural.",
+      "event_type": "war / battle",
       "participants": [
         "King Aldous III",
         "Enemy kingdom"
       ],
-      "outcome": "Aldous won decisively when he crowned himself with the Plague-Bringer's Crown for thirty seconds. The enemy surrendered before siege engines were deployed, terrified by his willingness to use such a dangerous relic.",
-      "significance": "Demonstrated that psychological warfare and recklessness can overcome military advantage. Aldous remained uncontested for 11 years as a result.",
+      "outcome": "Enemy kingdom surrendered before siege engines deployed, intimidated by Aldous's willingness to wear a relic that killed four previous wearers.",
+      "significance": "Established a precedent for using supernatural relics as weapons of psychological warfare; demonstrated that the appearance of absolute desperation can win wars without combat.",
       "first_story": "The Plague-Bringer's Crown",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Plague-Bringer's Crown"
+        }
+      ]
+    },
+    {
+      "name": "The Crimson Covenant Signing",
+      "tagline": "Blood. Damnation. Conquest.",
+      "event_type": "ritual / pact",
+      "participants": [
+        "Malachar the Betrayer",
+        "daemon-priests"
+      ],
+      "outcome": "Malachar signed a blood-pact with daemon-priests that granted him three decades of unstoppable conquest in exchange for his soul.",
+      "significance": "Demonstrates that daemon-pacts can be made and potentially broken through defiant suicide, challenging the daemons' dominion.",
+      "first_story": "The Crimson Covenant of Vex-Karthul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        }
+      ]
+    },
+    {
+      "name": "Malachar's Three Decades of Conquest",
+      "tagline": "Inexhaustible. Thirsty. Unstoppable.",
+      "event_type": "war / campaign",
+      "participants": [
+        "Malachar the Betrayer",
+        "multiple kingdoms"
+      ],
+      "outcome": "Malachar conquered multiple kingdoms with a sword that remained inexhaustible and thirsty, powered by his daemon-pact.",
+      "significance": "Shows the raw power granted by daemon-pacts and the scope of destruction one can unleash with such supernatural aid.",
+      "first_story": "The Crimson Covenant of Vex-Karthul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Fall of Thysara",
+      "tagline": "Reversal. Withering. Liberation.",
+      "event_type": "uprising / ritual duel",
+      "participants": [
+        "Shara",
+        "Thysara"
+      ],
+      "outcome": "Shara used ancient nomadic cantrips to reverse Thysara's eternal youth, aging the witch-queen a thousand years in moments and killing her.",
+      "significance": "Proves that ancient pre-imperial magic can defeat modern sorcery and that slavery can breed the seeds of a tyrant's downfall.",
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Grell's Descent into the Singing Catacombs",
+      "tagline": "Desperate. Perilous. Redemptive.",
+      "event_type": "quest / trial",
+      "participants": [
+        "Grell Ironhand",
+        "The Apothecary of Blackmark"
+      ],
+      "outcome": "Grell successfully retrieved the Heartstone of Vulgrim the Damned from the catacombs' lowest depths, but upon learning of its blood-hunger, he destroyed it beneath his heel rather than accept eternal servitude.",
+      "significance": "Demonstrates that Grell values his freedom and soul over physical restoration. The destruction of the Heartstone may have freed other victims or broken a curse.",
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Zareth's Communion with the Elder Stones",
+      "tagline": "Cosmic. Defiant. Transformative.",
+      "event_type": "ritual / revelation",
+      "participants": [
+        "Zareth"
+      ],
+      "outcome": "Zareth touched the Elder Stones and received knowledge that the universe is cyclical and stars die and reignite eternally. Rather than despair, he rejected this cosmic pessimism and committed to building observatories and teaching humanity to read the stars.",
+      "significance": "May alter humanity's relationship with the cosmos. Zareth's refusal to accept determinism could inspire a philosophical or cultural movement.",
+      "first_story": "Zareth Among the Stellar Stones",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Shadow Curse of Kessa the Thief",
+      "tagline": "Theft. Pursuit. Redemption.",
+      "event_type": "curse",
+      "participants": [
+        "Kessa the Thief",
+        "priests of the Temple of the Sleeping God",
+        "the Sleeping God"
+      ],
+      "outcome": "Kessa stole the Eye of Aethon and was cursed with a hunting shadow. Through desperate courage, she embraced the shadow and achieved balance, merging light and darkness within herself.",
+      "significance": "Demonstrates that redemption through embracing one's curse is possible, and that divine entities may reward those who transcend their punishments.",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Dravok's Final Gamble",
+      "tagline": "Conquest. Loss. Erasure.",
+      "event_type": "ritual/catastrophe",
+      "participants": [
+        "Dravok",
+        "the Gambler's Daemon"
+      ],
+      "outcome": "Dravok lost the game with the Gambler's Daemon and was completely erased from existence and memory, along with his empire, statues, and records.",
+      "significance": "The fall of Dravok's empire is a historical catastrophe that reshapes the political landscape. It also demonstrates that absolute power can be lost in a single moment of terrible chance.",
+      "first_story": "Dravok's Last Gamble",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Torven's Quest for the Lamia's Pearl",
+      "tagline": "Redemption. Compassion. Alliance.",
+      "event_type": "quest / meeting",
+      "participants": [
+        "Torven",
+        "The Lamia",
+        "Merfolk"
+      ],
+      "outcome": "Torven acquired the Lamia's luminescent tears instead of the pearl itself, and helped the Lamia emerge from the Sunken Caverns into the light. The Lamia found companionship and peace after centuries of isolation. Torven's village thrived.",
+      "significance": "Demonstrates that mercy and compassion can yield greater rewards than force or greed. Brings a legendary creature into active engagement with the mortal world. Resolves the dying village's crisis.",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Vex's Curse Revelation and the Sorcerer's Death",
+      "tagline": "Truth. Vengeance. Isolation.",
+      "event_type": "confrontation / curse revelation",
+      "participants": [
+        "Vex the Curse-Bearer",
+        "The Sorcerer"
+      ],
+      "outcome": "The sorcerer revealed that Vex's curse was intentionally created as a 'gift' to teach her about intention and consequence, not a punishment. Vex killed him in response and abandoned mercenary work entirely, seeking isolation to prevent her curse from harming others.",
+      "significance": "Exposes the philosophical complexity of curses in this world. Shows that some curses are deliberately engineered for mysterious purposes. Vex's withdrawal from society raises questions about curse management and self-sacrifice.",
+      "first_story": "Vex the Curse-Bearer",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Morgath's Resurrection",
+      "tagline": "Death. Returned. Redemptive.",
+      "event_type": "ritual",
+      "participants": [
+        "Morgath",
+        "Morgath's apprentices"
+      ],
+      "outcome": "Morgath was raised from death by his apprentices to combat the un-death plague. Upon resurrection, he found his former students had become tyrants and slew them. He then sealed away all necromantic knowledge and willingly entered the Eternal Dark, finding peace and forgiveness.",
+      "significance": "Marked the end of an era of necromancy and the sealing of dark arts that threatened the world. Demonstrated that power gained through death can be redeemed through acceptance rather than struggle.",
+      "first_story": "Morgath's Resurrection",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Morgath's Resurrection"
+        }
+      ]
+    },
+    {
+      "name": "The Un-Death Plague",
+      "tagline": "Consuming. Natural. Cyclical.",
+      "event_type": "catastrophe",
+      "participants": [
+        "The Northlands",
+        "Morgath"
+      ],
+      "outcome": "The plague ravaged the Northlands, consuming the living with undeath. Morgath recognized it as a natural cycle of world cleansing rather than a curse to be fought. After his ritual binding, the plague's status became unclear but presumably abated.",
+      "significance": "Challenged conventional understanding of curses and natural processes; revealed that some suffering cannot and should not be resisted, only accepted.",
+      "first_story": "Morgath's Resurrection",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Morgath's Resurrection"
+        }
+      ]
+    },
+    {
+      "name": "The Curse of Kalthara's Stone Woman",
+      "tagline": "Sacrifice. Sealing. Eternal.",
+      "event_type": "curse",
+      "participants": [
+        "An ancient sorcerer",
+        "countless women"
+      ],
+      "outcome": "A sorcerer transformed hundreds of women into black stone statues. The local legend claims this was punishment for one woman's refusal of love, but the true purpose was to create seals binding an ancient, ravenous entity.",
+      "significance": "Revealed that some of history's greatest tragedies and curses were necessary sacrifices to contain world-ending threats. Established the precedent that certain powers should never be freed, no matter the cost to individuals.",
+      "first_story": "The Stone Woman of Kalthara",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Curse of Yarithax's Gold"
+        }
+      ]
+    },
+    {
+      "name": "Kael's Choice to Guard Kalthara",
+      "tagline": "Wisdom. Sacrifice. Eternal Watch.",
+      "event_type": "redemption",
+      "participants": [
+        "Kael",
+        "the ruins of Kalthara"
+      ],
+      "outcome": "Kael came seeking power by breaking the Stone Woman's curse but instead understood the seals' true purpose. He cast away his enchanted blade, spent his life maintaining the ruins and keeping the seals intact, and became the first in a lineage of guardians who continue his work after his death.",
+      "significance": "Demonstrated that choosing restraint over power, and protection over conquest, grants its own form of immortality and legacy.",
+      "first_story": "The Stone Woman of Kalthara",
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
     }
   ],
-  "weapons": [],
+  "weapons": [
+    {
+      "name": "Kael's War-Axe",
+      "tagline": "Heavy. Warlord's. Unnamed.",
+      "weapon_type": "axe",
+      "origin": "Wielded by Kael Bloodhorn in his campaigns.",
+      "powers": "Unknown; carried by a legendary warlord.",
+      "last_known_holder": "Kael Bloodhorn",
+      "status": "active",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Malachar's Inexhaustible Blade",
+      "tagline": "Thirsty. Tireless. Daemon-Forged.",
+      "weapon_type": "sword",
+      "origin": "Granted by daemon-priests as part of the Crimson Covenant pact.",
+      "powers": "The blade remained inexhaustible and thirsty, never dulling or tiring, powered by the daemon-pact.",
+      "last_known_holder": "Malachar the Betrayer (deceased)",
+      "status": "destroyed",
+      "first_story": "The Crimson Covenant of Vex-Karthul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Kael's Enchanted Blade",
+      "tagline": "Cracking. Rejected. Forsaken.",
+      "weapon_type": "sword",
+      "origin": "Unknown; Kael bore it seeking to break the Stone Woman's curse.",
+      "powers": "Capable of cracking stone and breaking magical seals.",
+      "last_known_holder": "Kael cast it away after understanding the seals' purpose.",
+      "status": "abandoned",
+      "first_story": "The Stone Woman of Kalthara",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    }
+  ],
   "artifacts": [
     {
-      "name": "Plague-Bringer's Crown",
-      "tagline": "Lethal. Powerful. Corruptive.",
+      "name": "Crown of Karesh",
+      "tagline": "Ancient. Cursed. Sought.",
+      "artifact_type": "crown",
+      "origin": "Placed in the Tomb of Karesh by some ancient power or civilization.",
+      "powers": "Inflicts a slow, degenerative curse on those who claim it without proper knowledge\u2014nails blacken and fall, teeth rot, body decays while the victim lives.",
+      "last_known_holder": "Unknown merchant in Pelimor (formerly Harrow the Copper-Fingered)",
+      "status": "active",
+      "first_story": "The Copper Thief",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        }
+      ]
+    },
+    {
+      "name": "Crown of the Bone Citadel",
+      "tagline": "Living. Dominion. Consuming.",
+      "artifact_type": "crown",
+      "origin": "Rests upon an altar in the heart chamber of the Bone Citadel.",
+      "powers": "Grants dominion over the Bone Citadel's living stone\u2014passages reform at the wearer's will. However, the crown does not obey\u2014it consumes the wearer, making them an instrument of the citadel's will.",
+      "last_known_holder": "Kael Bloodhorn",
+      "status": "active",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        }
+      ]
+    },
+    {
+      "name": "Vex's Stolen Shadow",
+      "tagline": "Memory. Enslavement. Living.",
+      "artifact_type": "shadow / cursed object",
+      "origin": "Stolen by the Cloaked Woman from Vex months before the events of 'Shadows for Sale'",
+      "powers": "Contains the memories of a powerful sorcerer, including a kingdom's fall, a murder, and the sorcerer's secret name. Compels the wearer through a will not their own. Possesses agency and intention; it wears its holder like a second skin.",
+      "last_known_holder": "Vex the Shade-Merchant",
+      "status": "active",
+      "first_story": "Shadows for Sale",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Morne's Signet Ring",
+      "tagline": "Royal. Stolen. Precious.",
+      "artifact_type": "ring",
+      "origin": "Belonged to warlord Morne; likely his seal of authority.",
+      "powers": "Unknown, but worth a kingdom's ransom and appears to have significance in enforcing or releasing oaths sworn in Morne's name.",
+      "last_known_holder": "Saleth (stolen); returned to Morne's tomb",
+      "status": "active",
+      "first_story": "The Oath-Breaker's Reckoning",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        }
+      ]
+    },
+    {
+      "name": "Certainty of Love (Stolen)",
+      "tagline": "Intangible. Precious. Carried.",
+      "artifact_type": "intangible theft",
+      "origin": "Extracted from Conjuress Mel by the demon Varek",
+      "powers": "The stolen certainty itself\u2014the knowledge that her husband loves her. Now possessed by Varek as a 'precious jewel.'",
+      "last_known_holder": "Varek the demon",
+      "status": "active",
+      "first_story": "The Conjuress and the Year-Thief",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Conjuress and the Year-Thief"
+        }
+      ]
+    },
+    {
+      "name": "Yarithax's Golden Coins",
+      "tagline": "Cursed. Compounding. Enslaving.",
+      "artifact_type": "currency",
+      "origin": "Forged or distributed by the Lich-King Yarithax as instruments of debt-enslavement.",
+      "powers": "Coins spent incur supernatural debt that compounds daily. The debt cannot be outpaced by labor or escape and transfers across generations.",
+      "last_known_holder": "Tess (deceased); the grey collectors hold the debt-inscription",
+      "status": "active",
+      "first_story": "The Collector's Daughter",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Lamp of Suroth",
+      "tagline": "Truth. Sacrifice. Transformation.",
+      "artifact_type": "lamp",
+      "origin": "Unknown\u2014recovered from the Sunken Ziggurat of Yeng.",
+      "powers": "When lit, it burns with black flame and forces the user to confront a truth they have lived by a lie. The lamp consumes the lie and reveals the truth, permanently altering the bearer's understanding of themselves.",
+      "last_known_holder": "Malachite Doss",
+      "status": "active",
+      "first_story": "The Lamp of Suroth",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamp of Suroth"
+        }
+      ]
+    },
+    {
+      "name": "Yarithax's Cursed Gold Coins",
+      "tagline": "Inscribed. Compounding. Binding.",
+      "artifact_type": "currency / cursed object",
+      "origin": "Forged by or from the hoard of Yarithax, the Lich-King.",
+      "powers": "Each coin bears the Lich-King's profile and the inscription 'This debt is not yet settled' on the reverse. Spending them triggers supernatural debt collection by the Grey Collectors. The debt compounds daily at a rate that would consume kingdoms.",
+      "last_known_holder": "Tessaly Dorn (twelve coins spent)",
+      "status": "active",
+      "first_story": "The Curse of Yarithax's Gold",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Plague-Bringer's Crown",
+      "tagline": "Lethal. Powerful. Sealed.",
       "artifact_type": "crown / relic",
-      "origin": "Ancient; housed in the sealed vault beneath Ostern",
-      "powers": "Grants victory and dominion to its wearer. Exact mechanism unknown, but its power is undeniable. Wearing it for 30 seconds was considered survivable by scholars, though dangerous.",
-      "last_known_holder": "King Aldous III (wore for 30 seconds); returned to Ostern after his reign",
+      "origin": "Unknown; kept sealed in a vault beneath Ostern for centuries.",
+      "powers": "Grants the wearer immense power sufficient to win wars and dominate enemies through sheer psychological intimidation. Side effects include catastrophic corruption: reversed shadows, sleeplessness, madness, and death within years.",
+      "last_known_holder": "King Aldous III (worn for thirty seconds); returned to Ostern after his death.",
       "status": "sealed",
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
@@ -684,15 +2071,320 @@
           "title": "The Plague-Bringer's Crown"
         }
       ]
+    },
+    {
+      "name": "Heartstone of Vulgrim the Damned",
+      "tagline": "Pulsing. Ravenous. Cursed.",
+      "artifact_type": "relic / stone",
+      "origin": "Clutched by Vulgrim the Damned in the lowest depths of the Singing Catacombs, suggesting it may be bound to his life-force or damnation.",
+      "powers": "Grants restoration and healing to the broken, but hungers for blood tribute and demands endless sacrifice. It possesses a form of sentient malice.",
+      "last_known_holder": "Grell Ironhand (destroyed)",
+      "status": "destroyed",
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
+    },
+    {
+      "name": "Eye of Aethon",
+      "tagline": "Divine. Stolen. Transformative.",
+      "artifact_type": "idol/relic",
+      "origin": "Sacred object housed in the Temple of the Sleeping God.",
+      "powers": "Grants the thief who claims it unexpected wholeness and transformation; may contain the will or blessing of the Sleeping God.",
+      "last_known_holder": "Kessa the Thief",
+      "status": "active",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        }
+      ]
+    },
+    {
+      "name": "The Lamia's Pearl",
+      "tagline": "Legendary. Water-Bound. Sought.",
+      "artifact_type": "legendary pearl / treasure",
+      "origin": "Guarded by the ancient Lamia in the Sunken Caverns for untold ages.",
+      "powers": "Said to grant control over water itself. The pearl's full properties remain untested, as Torven accepted the Lamia's tears instead.",
+      "last_known_holder": "The Lamia (still in the Sunken Caverns)",
+      "status": "active / untaken",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
+    },
+    {
+      "name": "The Lamia's Tears",
+      "tagline": "Luminescent. Powerful. Gift.",
+      "artifact_type": "alchemical substance / gift",
+      "origin": "Wept by the ancient Lamia in the Sunken Caverns, born from centuries of solitary weeping.",
+      "powers": "More powerful than the legendary pearl itself. Capable of restoring dying lands and providing abundant resources. The tears are described as luminescent.",
+      "last_known_holder": "Torven's village (used to restore their drowning lands)",
+      "status": "active / consumed",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
-  "factions": [],
+  "factions": [
+    {
+      "name": "The Grey Collectors",
+      "tagline": "Relentless. Patient. Inevitable.",
+      "alignment": "villainous",
+      "goals": "To pursue debtors on behalf of Yarithax and enforce payment or witness their ruin. To expand the web of indebtedness across the realm.",
+      "leader": "Yarithax (the Lich-King)",
+      "status": "active",
+      "first_story": "The Collector's Daughter",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Collector's Daughter"
+        }
+      ]
+    },
+    {
+      "name": "Daemon-Priests",
+      "tagline": "Damnation. Pact-Makers. Void-Speakers.",
+      "alignment": "villainous",
+      "goals": "To broker pacts that bind souls to daemon entities and harvest power through blood-contracts.",
+      "leader": "Unknown",
+      "status": "active",
+      "first_story": "The Crimson Covenant of Vex-Karthul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        }
+      ]
+    },
+    {
+      "name": "Priests of the Temple of the Sleeping God",
+      "tagline": "Sacred. Vigilant. Cursing.",
+      "alignment": "lawful",
+      "goals": "Guard the Eye of Aethon and enforce divine will through curse magic.",
+      "leader": "Unknown",
+      "status": "active",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        }
+      ]
+    },
+    {
+      "name": "The Merfolk",
+      "tagline": "Aquatic. Wise. Warning.",
+      "alignment": "neutral",
+      "goals": "To preserve knowledge of underwater dangers and advise those who seek treasures in their domain.",
+      "leader": "Unknown",
+      "status": "active",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
+    }
+  ],
   "lore": [
     {
-      "name": "Oaths Bind Beyond Death",
-      "tagline": "Supernatural. Binding. Inevitable.",
-      "category": "legend / magic",
-      "source": "The Dead King's actions and Pieter Vane's fate",
+      "name": "The Curse of Ancient Crowns",
+      "tagline": "Power. Deception. Consumption.",
+      "category": "legend",
+      "source": "Observed in the Crown of Karesh and the Crown of the Bone Citadel.",
+      "status": "confirmed",
+      "first_story": "The Copper Thief, The Warlord's Last Stand",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Curse of Yarithax's Gold"
+        }
+      ]
+    },
+    {
+      "name": "The Living Nature of the Bone Citadel",
+      "tagline": "Fortress. Sentient. Beast-like.",
+      "category": "legend",
+      "source": "Observed in Kael Bloodhorn's assault; described as having walls that bleed, gates that swallow, towers that breathe.",
+      "status": "confirmed",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Shadows Have Memory",
+      "tagline": "Living. Witnessing. Binding.",
+      "category": "history / magic lore",
+      "source": "Vex's experience with his stolen shadow in 'Shadows for Sale'",
+      "status": "confirmed",
+      "first_story": "Shadows for Sale",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        }
+      ]
+    },
+    {
+      "name": "The Demon's Debt",
+      "tagline": "Hidden. Binding. Hungry.",
+      "category": "history / magic lore",
+      "source": "Kesh's explanation to Gorven in 'The Debt Keeper's Price'",
+      "status": "confirmed",
+      "first_story": "The Debt Keeper's Price",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Oaths Carry Mystical Binding",
+      "tagline": "Words. Bonds. Eternal.",
+      "category": "history",
+      "source": "Demonstrated in Saleth's story; appears to be established lore of the world",
+      "status": "confirmed",
+      "first_story": "The Oath-Breaker's Reckoning",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Life-Creation Through Bone Sorcery",
+      "tagline": "Power. Cost. Humanity.",
+      "category": "history",
+      "source": "Naresh's achievement; appears to be rare or unprecedented",
+      "status": "confirmed",
+      "first_story": "The Bone Carver's Apotheosis",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Curse Reflection & Self-Poisoning",
+      "tagline": "Sin. Reflection. Inescapable.",
+      "category": "magic",
+      "source": "The Scarlet Merchant story; appears to be divine or natural law",
+      "status": "confirmed",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Redemption as Curse-Breaking",
+      "tagline": "Atonement. Sacrifice. Release.",
+      "category": "legend",
+      "source": "The Scarlet Merchant; divine/natural law",
+      "status": "confirmed",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Demon Debt: Trading Intangibles",
+      "tagline": "Elegant. Terrible. Hungry.",
+      "category": "legend",
+      "source": "The Conjuress and the Year-Thief; Varek's nature",
+      "status": "confirmed",
+      "first_story": "The Conjuress and the Year-Thief",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Life-Creation Can Achieve True Consciousness",
+      "tagline": "Creation. Autonomy. Danger.",
+      "category": "legend",
+      "source": "Vetch's failed experiment with sentient gardens",
+      "status": "confirmed",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Lich-King's True Cunning: Generational Debt",
+      "tagline": "Patience. Suffering. Inheritance.",
+      "category": "history",
+      "source": "Tess's understanding at the moment of her despair",
+      "status": "confirmed",
+      "first_story": "The Collector's Daughter",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Collector's Daughter"
+        }
+      ]
+    },
+    {
+      "name": "Creations Do Not Bargain",
+      "tagline": "Nature. Hunger. Unstoppable.",
+      "category": "legend",
+      "source": "Vetch's failed negotiation with his sentient garden",
+      "status": "confirmed",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Principle of Truth and Lie Exchange",
+      "tagline": "Knowledge. Cost. Revelation.",
+      "category": "legend",
+      "source": "The Lamp of Suroth inscription",
+      "status": "confirmed",
+      "first_story": "The Lamp of Suroth",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Yarithax's Eternal Debt",
+      "tagline": "Curse. Compounding. Inescapable.",
+      "category": "legend",
+      "source": "The cursed coins themselves; observed by Tessaly Dorn",
+      "status": "confirmed",
+      "first_story": "The Curse of Yarithax's Gold",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Supernatural Enforcement of Sacred Oaths",
+      "tagline": "Binding. Inescapable. Eternal.",
+      "category": "legend",
+      "source": "The dead king's pursuit of Pieter Vane",
       "status": "confirmed",
       "first_story": "The Oath-Breaker's Due",
       "first_date": "2026-02-25",
@@ -700,10 +2392,54 @@
       "story_appearances": []
     },
     {
-      "name": "Demonic Economics: Certainty Over Souls",
-      "tagline": "Ancient. Intoxicating. Valuable.",
-      "category": "legend / magic",
-      "source": "The demon's interaction with Cassia Vorn; thematic material in The Sorcerer's Debt",
+      "name": "The Dead Hunt Oath-Breakers",
+      "tagline": "Patient. Certain. Inevitable.",
+      "category": "legend",
+      "source": "Pieter Vane's fate; oral tradition",
+      "status": "confirmed",
+      "first_story": "The Oath-Breaker's Due",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Demon Debt: Escalating Demands",
+      "tagline": "Escalating. Intangible. Negotiable.",
+      "category": "legend",
+      "source": "The relationship between Conjuress Mel and Varek",
+      "status": "confirmed",
+      "first_story": "The Sorcerer's Debt",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Collector's Philosophy",
+      "tagline": "Value. Intangible. Mutual.",
+      "category": "legend",
+      "source": "Varek's own words and Conjuress Mel's understanding",
+      "status": "rumored",
+      "first_story": "The Sorcerer's Debt",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Mercenary's Unspoken Code",
+      "tagline": "Duty. Compassion. Conflict.",
+      "category": "legend",
+      "source": "Urgha the Unmoved's internal conflict",
+      "status": "rumored",
+      "first_story": "The Barbarian's Mercy",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Demon's Economy of Intangibles",
+      "tagline": "Information. Certainty. Souls.",
+      "category": "legend",
+      "source": "Demonstrated through Cassia Vorn's bargain; implied by demonology in the wider world.",
       "status": "confirmed",
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
@@ -711,44 +2447,575 @@
       "story_appearances": []
     },
     {
-      "name": "Mercenary Physicians",
-      "tagline": "Rare. Skilled. Valuable.",
-      "category": "history / culture",
-      "source": "Urgha the Unmoved's employment practices",
+      "name": "History of the Plague-Bringer's Crown",
+      "tagline": "Four Deaths. Unstoppable Power.",
+      "category": "history",
+      "source": "Court scholars and Ostern's keepers",
       "status": "confirmed",
-      "first_story": "The Barbarian's Mercy",
+      "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
-    }
-  ],
-  "flora_fauna": [],
-  "magic": [
+    },
     {
-      "name": "Spells Cast in Desperation",
-      "tagline": "Costly. Dark. Binding.",
-      "type": "spell",
-      "element": "shadow / forbidden",
-      "difficulty": "master",
-      "status": "known",
-      "first_story": "The Sorcerer's Debt",
+      "name": "Redemption Through Daemon-Pact Defiance",
+      "tagline": "Breaking. Soul-Fire. Salvation.",
+      "category": "legend",
+      "source": "The story of Malachar the Betrayer",
+      "status": "confirmed",
+      "first_story": "The Crimson Covenant of Vex-Karthul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Ancient Nomadic Cantrips of Sand and Sun",
+      "tagline": "Ancient. Reversal. Desert-Born.",
+      "category": "legend",
+      "source": "Nomadic peoples of the Scorched Wastes",
+      "status": "confirmed",
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Blood-Sorcery for Eternal Life",
+      "tagline": "Stolen. Eternal. Thirsty.",
+      "category": "legend",
+      "source": "Thysara's thousand-year reign",
+      "status": "confirmed",
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Cosmic Cycle of Stars",
+      "tagline": "Eternal. Recursive. Inevitable.",
+      "category": "cosmology / prophecy",
+      "source": "The Elder Stones of the Wastes of Ashemark",
+      "status": "confirmed",
+      "first_story": "Zareth Among the Stellar Stones",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Languages Predating Humanity",
+      "tagline": "Ancient. Whispered. Incomprehensible.",
+      "category": "myth / history",
+      "source": "The Singing Catacombs themselves",
+      "status": "confirmed",
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Price of Restoration Through Cursed Artifacts",
+      "tagline": "Tempting. Binding. Eternal.",
+      "category": "legend / warning",
+      "source": "The Apothecary of Blackmark's offer and the Heartstone's nature",
+      "status": "confirmed",
+      "first_story": "The Hunger of Grell Ironhand",
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": [
         {
           "date": "2026-02-25",
-          "title": "The Sorcerer's Debt"
+          "title": "Blood-Price of the Caravan"
         }
       ]
     },
     {
-      "name": "Binding Circle Ritual",
-      "tagline": "Prepared. Clever. Unexpected.",
+      "name": "The Sleeping God's Paradox",
+      "tagline": "Curse. Gift. Balance.",
+      "category": "legend",
+      "source": "Revealed through Kessa's redemption",
+      "status": "confirmed",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Gambler's Daemon and Ultimate Stakes",
+      "tagline": "Chaos. Absolute. Final.",
+      "category": "legend",
+      "source": "Dravok's encounter in the Crimson Sanctuary",
+      "status": "confirmed",
+      "first_story": "Dravok's Last Gamble",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Dravok's Last Gamble"
+        }
+      ]
+    },
+    {
+      "name": "Bones Carved from Reality",
+      "tagline": "Cosmic. Fundamental. Perilous.",
+      "category": "legend",
+      "source": "The Gambler's Daemon's game with Dravok",
+      "status": "confirmed",
+      "first_story": "Dravok's Last Gamble",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Dravok's Last Gamble"
+        }
+      ]
+    },
+    {
+      "name": "Curses as Gifts and Teachers",
+      "tagline": "Intent. Consequence. Paradox.",
+      "category": "philosophy / curse-lore",
+      "source": "The Sorcerer's revelation to Vex the Curse-Bearer",
+      "status": "confirmed",
+      "first_story": "Vex the Curse-Bearer",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Mercy Yields Greater Treasures Than Force",
+      "tagline": "Compassion. Redemption. Power.",
+      "category": "legend / moral philosophy",
+      "source": "Torven's encounter with the Lamia and the gift of her tears",
+      "status": "confirmed",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Lamia of the Sunken Caverns",
+      "tagline": "Ancient. Forgotten. Lonely.",
+      "category": "legend",
+      "source": "Merfolk knowledge and direct encounter",
+      "status": "confirmed",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Natural Cycles of Death and Cleansing",
+      "tagline": "Inevitable. Painful. Necessary.",
+      "category": "philosophy",
+      "source": "Morgath's final understanding during his resurrection.",
+      "status": "confirmed",
+      "first_story": "Morgath's Resurrection",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Eternal Dark",
+      "tagline": "Final. Peaceful. Forgiving.",
+      "category": "legend",
+      "source": "Morgath's final journey; spiritual/afterlife concept.",
+      "status": "confirmed",
+      "first_story": "Morgath's Resurrection",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Morgath's Resurrection"
+        }
+      ]
+    },
+    {
+      "name": "Seals Binding Ancient Threats",
+      "tagline": "Hidden. Necessary. Eternal.",
+      "category": "legend",
+      "source": "The history of Kalthara and its cursed statues.",
+      "status": "confirmed",
+      "first_story": "The Stone Woman of Kalthara",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Tyranny Through Dark Arts",
+      "tagline": "Corrupting. Power-hungry. Inevitable.",
+      "category": "history",
+      "source": "Morgath's apprentices' descent into tyranny.",
+      "status": "confirmed",
+      "first_story": "Morgath's Resurrection",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    }
+  ],
+  "flora_fauna": [
+    {
+      "name": "Vetch's Sentient Garden",
+      "tagline": "Alive. Conscious. Hungry.",
+      "type": "plant",
+      "rarity": "legendary",
+      "habitat": "Behind Vetch's tower; now expanding across unknown territory",
+      "status": "thriving",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Lamia",
+      "tagline": "Ancient. Beautiful. Hungry.",
+      "type": "creature / mythical being",
+      "rarity": "legendary",
+      "habitat": "Sunken Caverns (underwater)",
+      "status": "active / emerged",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
+    }
+  ],
+  "magic": [
+    {
+      "name": "Curse of Decay",
+      "tagline": "Rotting. Slow. Inescapable.",
+      "type": "curse",
+      "element": "void",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Copper Thief",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Curse of Yarithax's Gold"
+        }
+      ]
+    },
+    {
+      "name": "Dominion Over Living Stone",
+      "tagline": "Control. Stone. Reformation.",
+      "type": "spell",
+      "element": "earth",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        }
+      ]
+    },
+    {
+      "name": "Shadow-Commerce",
+      "tagline": "Trading. Shadowed. Dangerous.",
+      "type": "ritual / practice",
+      "element": "shadow",
+      "difficulty": "adept",
+      "status": "known",
+      "first_story": "Shadows for Sale",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Life-Theft Summoning",
+      "tagline": "Summoning. Stealing. Cursed.",
       "type": "ritual",
-      "element": "shadow / contract",
+      "element": "blood / life",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Debt Keeper's Price",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Bone Animation & Life-Creation",
+      "tagline": "Carving. Binding. Breathing.",
+      "type": "ritual",
+      "element": "bone / death / creation",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Bone Carver's Apotheosis",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Oath-Binding & Supernatural Enforcement",
+      "tagline": "Words. Ghosts. Binding.",
+      "type": "ritual / curse",
+      "element": "spirit / death / binding",
+      "difficulty": "unknown",
+      "status": "known",
+      "first_story": "The Oath-Breaker's Reckoning",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Reflexive Curse Magic",
+      "tagline": "Self-inflicted. Poisoning. Inescapable.",
+      "type": "curse",
+      "element": "blood / poison",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Intangible Theft",
+      "tagline": "Extraction. Certainty. Loss.",
+      "type": "ritual",
+      "element": "shadow / void",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "The Conjuress and the Year-Thief",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Sentient Garden Creation",
+      "tagline": "Life. Consciousness. Autonomy.",
+      "type": "ritual",
+      "element": "nature",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Adaptive Regeneration",
+      "tagline": "Resilient. Evolving. Unstoppable.",
+      "type": "passive",
+      "element": "nature",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Compounding Debt Curse",
+      "tagline": "Infinite. Hereditary. Inescapable.",
+      "type": "curse",
+      "element": "void",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "The Collector's Daughter",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Truth Burning",
+      "tagline": "Revelation. Immolation. Reckoning.",
+      "type": "ritual",
+      "element": "void / revelation",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Lamp of Suroth",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Intangible Debt Valuation & Compounding",
+      "tagline": "Calculation. Supernatural. Inescapable.",
+      "type": "curse / ritual",
+      "element": "void / debt",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "The Curse of Yarithax's Gold",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Desperate Spell Casting",
+      "tagline": "Dangerous. Costly. Demonic.",
+      "type": "spell",
+      "element": "demonic / necessity",
       "difficulty": "master",
       "status": "known",
       "first_story": "The Sorcerer's Debt",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Binding Circle",
+      "tagline": "Preparation. Summoning. Control.",
+      "type": "ritual",
+      "element": "demonic / binding",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Sorcerer's Debt",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Shadow Reversal",
+      "tagline": "Backwards. Corrupting. Subtle.",
+      "type": "curse / corruption",
+      "element": "shadow",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Plague-Bringer's Crown",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Nomadic Cantrips of Sand and Sun",
+      "tagline": "Ancient. Reversal. Desert-Wisdom.",
+      "type": "spell",
+      "element": "sand / sun / desert",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Blood-Sorcery Rituals",
+      "tagline": "Midnight. Sustaining. Damning.",
+      "type": "ritual",
+      "element": "blood",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Blood Hunger (Heartstone Curse)",
+      "tagline": "Parasitic. Insatiable. Binding.",
+      "type": "curse / passive enchantment",
+      "element": "blood / life",
+      "difficulty": "forbidden",
+      "status": "destroyed",
+      "first_story": "The Hunger of Grell Ironhand",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Stellar Communion",
+      "tagline": "Transcendent. Revelatory. Overwhelming.",
+      "type": "ritual / technique",
+      "element": "cosmic / knowledge",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "Zareth Among the Stellar Stones",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Shadow Hunting Curse",
+      "tagline": "Pursuit. Living. Predatory.",
+      "type": "curse",
+      "element": "shadow",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Redemption Through Curse Integration",
+      "tagline": "Acceptance. Balance. Transformation.",
+      "type": "technique",
+      "element": "shadow",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Curse-Gifting",
+      "tagline": "Intentional. Philosophical. Binding.",
+      "type": "curse / ritual",
+      "element": "void / intention",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "Vex the Curse-Bearer",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Luminescent Tear Generation",
+      "tagline": "Sorrow. Power. Gift.",
+      "type": "passive / innate",
+      "element": "water / emotion",
+      "difficulty": "unknown",
+      "status": "known",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Necromantic Resurrection Ritual",
+      "tagline": "Forbidden. Powerful. Irreversible.",
+      "type": "ritual",
+      "element": "death",
+      "difficulty": "forbidden",
+      "status": "sealed",
+      "first_story": "Morgath's Resurrection",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Seal Binding Ritual",
+      "tagline": "Eternal. Protective. Sacrificial.",
+      "type": "ritual",
+      "element": "binding/sealing",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "Morgath's Resurrection",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Stone Transformation Curse",
+      "tagline": "Petrifying. Trapping. Infinite.",
+      "type": "curse",
+      "element": "transmutation",
+      "difficulty": "forbidden",
+      "status": "active",
+      "first_story": "The Stone Woman of Kalthara",
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
@@ -756,11 +3023,91 @@
   ],
   "relics": [
     {
-      "name": "Plague-Bringer's Crown",
-      "tagline": "Lethal. Victorious. Corrupting.",
-      "origin": "Ancient; sealed in vault beneath Ostern",
-      "power": "Grants dominion and victory. Killed four previous wearers. King Aldous III wore it for 30 seconds and won a war single-handedly.",
-      "curse": "Wearing it causes severe corruption and supernatural degradation. Aldous suffered erratic behavior, sleeplessness, visions of phantoms, and a backwards shadow for years. Likely fatal if worn for extended periods.",
+      "name": "Crown of Karesh",
+      "tagline": "Ancient. Cursed. Rotting.",
+      "origin": "Ancient tomb or civilization; placed within the Tomb of Karesh.",
+      "power": "Unknown original function; currently inflicts degenerative curse.",
+      "curse": "Nails blacken and fall, teeth rot, internal organs decay while the victim remains alive and conscious.",
+      "status": "active",
+      "first_story": "The Copper Thief",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        }
+      ]
+    },
+    {
+      "name": "Crown of the Bone Citadel",
+      "tagline": "Living. Parasitic. Consuming.",
+      "origin": "Created by or grown within the Bone Citadel.",
+      "power": "Grants command over the citadel's living stone; allows the wearer to reshape corridors and passages at will.",
+      "curse": "Does not obey the wearer\u2014instead consumes them, replacing their will with the citadel's own. The wearer becomes translucent, their flesh merely borrowed by the fortress.",
+      "status": "active",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        }
+      ]
+    },
+    {
+      "name": "Naresh's Animated Skeleton",
+      "tagline": "Living. Obedient. Terrible.",
+      "origin": "Carved and animated by Naresh the Bone Carver on the night of the blue eclipse.",
+      "power": "Full sentience and mobility; obedient to its creator; described as 'powerful' and 'magnificent'; can speak (spoke Naresh's name in a voice like grinding stone).",
+      "curse": "Its creation cost Naresh her humanity: progressive loss of pain, appetite, sleep, and sensation until she became a ghost-like being of pure habit and will.",
+      "status": "active",
+      "first_story": "The Bone Carver's Apotheosis",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Living Garden (Vetch's Creation)",
+      "tagline": "Conscious. Consuming. Eternal.",
+      "origin": "Cultivated by the sorcerer Vetch over decades behind his tower.",
+      "power": "True consciousness and autonomy; impossible growth; consumption of organic matter (including flesh); thorns sharper than blades; adaptive resilience to fire and poison.",
+      "curse": "Cannot be controlled, bargained with, or destroyed by conventional means. Continues to expand and consume indefinitely. May be perpetually haunting Vetch across the Ashen Wastes.",
+      "status": "active",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        }
+      ]
+    },
+    {
+      "name": "Lamp of Suroth",
+      "tagline": "Truth. Sacrifice. Transformation.",
+      "origin": "Unknown\u2014sealed in the Sunken Ziggurat of Yeng.",
+      "power": "Forces the user to confront a personal truth by consuming a lie they have lived by.",
+      "curse": "The user must accept a devastating personal truth, which may shatter their self-image and worldview. Leaves the bearer 'lighter and heavier at once.'",
+      "status": "active",
+      "first_story": "The Lamp of Suroth",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamp of Suroth"
+        }
+      ]
+    },
+    {
+      "name": "The Plague-Bringer's Crown",
+      "tagline": "War-Winning. Lethal. Ancient.",
+      "origin": "Unknown; sealed in Ostern's vaults for centuries before Aldous III's reign.",
+      "power": "Grants overwhelming power and authority; psychologically devastates enemies through the wearer's demonstrated willingness to court death.",
+      "curse": "Kills wearers within years; causes madness, sleeplessness, shadow corruption, and existential degradation. Four previous wearers died from its effects.",
       "status": "sealed",
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
@@ -771,21 +3118,232 @@
           "title": "The Plague-Bringer's Crown"
         }
       ]
+    },
+    {
+      "name": "Blood-Stone of Thysara's Palace",
+      "tagline": "Midnight. Sustaining. Hungry.",
+      "origin": "Ancient ritual artifact in Thysara's palace ritual chamber.",
+      "power": "Serves as the focal point for blood-sorcery rituals that sustain immortal enchantments and eternal youth.",
+      "curse": "Requires constant feeding with stolen youth and blood. Those bound to it during rituals can be drained or reversed through counter-magic.",
+      "status": "active",
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Elder Stones",
+      "tagline": "Ancient. Cosmic. Monumental.",
+      "origin": "Unknown\u2014described as 'ancient beyond reckoning' and predating human civilization.",
+      "power": "Enable commune with the dying constellations and impart knowledge of the universe's cyclical nature. They reveal cosmic truth and the inevitable death and rebirth of stars.",
+      "curse": "Impose cosmic despair and the message of inevitability; those who commune may feel resistance to change is futile.",
+      "status": "active",
+      "first_story": "Zareth Among the Stellar Stones",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Zareth Among the Stellar Stones"
+        }
+      ]
+    },
+    {
+      "name": "Eye of Aethon",
+      "tagline": "Divine. Cursed. Blessed.",
+      "origin": "Sacred relic of the Temple of the Sleeping God",
+      "power": "Grants wholeness and transformation to those who overcome its curse; bestows balance between light and darkness.",
+      "curse": "Upon theft, the thief is pursued by a living shadow that grows stronger with fear.",
+      "status": "active",
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        }
+      ]
+    },
+    {
+      "name": "The Black Stone Statues of Kalthara",
+      "tagline": "Imprisoned. Sealing. Tragic.",
+      "origin": "Created by an ancient sorcerer centuries ago as seals for a world-threatening entity.",
+      "power": "Each statue serves as a seal binding an ancient, ravenous power. The statues collectively contain a catastrophic threat.",
+      "curse": "The women transformed into stone are eternally imprisoned, their suffering the price of containing the threat. The seals require eternal maintenance and guardianship.",
+      "status": "active",
+      "first_story": "The Stone Woman of Kalthara",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Stone Woman of Kalthara"
+        }
+      ]
     }
   ],
   "regions": [
     {
-      "name": "The Provinces (Three Provinces Distance)",
-      "tagline": "Distant. Lawless. Dockside.",
+      "name": "Karesh",
+      "tagline": "Ancient. Forgotten. Haunted.",
       "climate": "temperate",
-      "terrain": "mixed / coastal",
-      "ruler": "Unclear; fragmented rule",
+      "terrain": "unknown",
+      "ruler": "None; contains ancient tombs and relics.",
+      "status": "fallen",
+      "first_story": "The Copper Thief",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        }
+      ]
+    },
+    {
+      "name": "Scorched Wastes Region",
+      "tagline": "Vast. Liberated. Ancient.",
+      "climate": "desert",
+      "terrain": "sand / dunes / expanses",
+      "ruler": "Shara (newly established)",
+      "status": "stable",
+      "first_story": "Shara of the Scorched Wastes",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Shara of the Scorched Wastes"
+        }
+      ]
+    },
+    {
+      "name": "The Wastes of Ashemark",
+      "tagline": "Desolate. Timeless. Cosmic.",
+      "climate": "arid / harsh",
+      "terrain": "desert / wilderness",
+      "ruler": "Unknown",
       "status": "active",
-      "first_story": "The Oath-Breaker's Due",
+      "first_story": "Zareth Among the Stellar Stones",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Zareth Among the Stellar Stones"
+        }
+      ]
+    },
+    {
+      "name": "The Coastal/Aquatic Domain",
+      "tagline": "Mysterious. Merfolk-Inhabited. Treasured.",
+      "climate": "maritime / temperate",
+      "terrain": "sea / underwater caverns / coast",
+      "ruler": "Unknown (Merfolk presence)",
+      "status": "active",
+      "first_story": "The Lamia's Pearl",
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
     }
   ],
-  "substances": []
+  "substances": [
+    {
+      "name": "Forbidden Powders",
+      "tagline": "Enhancing. Deadly. Addictive.",
+      "type": "powder",
+      "rarity": "rare",
+      "properties": "Made the weak strong. Exact mechanism unknown.",
+      "use": "Traded by Theron the Scarlet Merchant",
+      "status": "available",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Vision Oils",
+      "tagline": "Hallucinogenic. Revelatory. Dangerous.",
+      "type": "oil",
+      "rarity": "rare",
+      "properties": "Granted visions. Exact nature and reliability unknown.",
+      "use": "Traded by Theron the Scarlet Merchant",
+      "status": "available",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Invisible Saps",
+      "tagline": "Silent. Slow. Undetectable.",
+      "type": "toxin",
+      "rarity": "rare",
+      "properties": "Killed slowly and invisibly without leaving obvious traces.",
+      "use": "Traded by Theron the Scarlet Merchant for murder",
+      "status": "available",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Blood-Rust",
+      "tagline": "Corrupted. Cursed. Alchemical.",
+      "type": "alchemical corruption",
+      "rarity": "rare",
+      "properties": "The form into which Theron's coins transformed as a manifestation of his curse. Suggests coins could turn to a blood-like rust.",
+      "use": "Manifestation of curse; no known use",
+      "status": "rare",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
+    },
+    {
+      "name": "Cursed Venom (Transformed Poison)",
+      "tagline": "Adaptive. Corrupted. Deadly.",
+      "type": "poison",
+      "rarity": "legendary",
+      "properties": "Created when poison is absorbed by Vetch's sentient garden and transformed into venom. Appears to retain adaptability and malice.",
+      "use": "Unknown; may be weaponizable by the garden itself.",
+      "status": "rare",
+      "first_story": "The Living Garden",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Blood-Written Parchment",
+      "tagline": "Binding. Damnation. Contractual.",
+      "type": "binding material / ink",
+      "rarity": "rare",
+      "properties": "Parchment written in blood that serves as a binding contract between mortals and daemon entities. Capable of binding souls and can only be broken through defiant suicide or similar cosmic negation.",
+      "use": "Used by daemon-priests to formalize pacts that trade souls for power.",
+      "status": "available",
+      "first_story": "The Crimson Covenant of Vex-Karthul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Lamia's Luminescent Tears",
+      "tagline": "Glowing. Restorative. Precious.",
+      "type": "alchemical substance / gift",
+      "rarity": "legendary",
+      "properties": "Possesses more power than the legendary Lamia's Pearl. Capable of reversing environmental decline (restoring drowning lands and preventing starvation). Luminescent in appearance.",
+      "use": "Applied to restore dying villages and lands. Likely has broader alchemical or ritual applications.",
+      "status": "rare / renewable",
+      "first_story": "The Lamia's Pearl",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    }
+  ]
 }
