@@ -4,7 +4,7 @@ name: Generate Daily Stories
 on:
   # Run every day at 6:00 AM UTC (1:00 AM Eastern / 10:00 PM Pacific)
   schedule:
-    - cron: "0 6 * * *"→ Runs at 06:00
+    - cron: "0 6 * * *"
 
 
 
