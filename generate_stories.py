@@ -42,7 +42,14 @@ def load_lore():
         "events": [],
         "weapons": [],
         "deities_and_entities": [],
-        "artifacts": []
+        "artifacts": [],
+        "factions": [],
+        "lore": [],
+        "flora_fauna": [],
+        "magic": [],
+        "relics": [],
+        "regions": [],
+        "substances": []
     }
 
 def save_lore(lore, date_key):
@@ -151,7 +158,14 @@ def build_lore_extraction_prompt(stories, existing_lore):
     existing_events    = {e["name"].lower() for e in existing_lore.get("events", [])}
     existing_weapons   = {w["name"].lower() for w in existing_lore.get("weapons", [])}
     existing_deities   = {d["name"].lower() for d in existing_lore.get("deities_and_entities", [])}
-    existing_artifacts = {a["name"].lower() for a in existing_lore.get("artifacts", [])}
+    existing_artifacts   = {a["name"].lower() for a in existing_lore.get("artifacts",   [])}
+    existing_factions    = {f["name"].lower() for f in existing_lore.get("factions",    [])}
+    existing_lore_items  = {l["name"].lower() for l in existing_lore.get("lore",         [])}
+    existing_flora_fauna = {x["name"].lower() for x in existing_lore.get("flora_fauna",  [])}
+    existing_magic       = {m["name"].lower() for m in existing_lore.get("magic",        [])}
+    existing_relics      = {r["name"].lower() for r in existing_lore.get("relics",       [])}
+    existing_regions     = {g["name"].lower() for g in existing_lore.get("regions",      [])}
+    existing_substances  = {s["name"].lower() for s in existing_lore.get("substances",   [])}
 
     stories_text = "\n\n".join(
         f"STORY {i+1}: {s['title']}\n{s['text']}"
@@ -169,6 +183,13 @@ ALREADY KNOWN (do NOT re-extract these):
 - Weapons: {', '.join(existing_weapons) if existing_weapons else 'none'}
 - Deities/Entities: {', '.join(existing_deities) if existing_deities else 'none'}
 - Artifacts: {', '.join(existing_artifacts) if existing_artifacts else 'none'}
+- Factions: {', '.join(sorted(existing_factions)) if existing_factions else 'none'}
+- Lore & Legends: {', '.join(sorted(existing_lore_items)) if existing_lore_items else 'none'}
+- Flora & Fauna: {', '.join(sorted(existing_flora_fauna)) if existing_flora_fauna else 'none'}
+- Magic & Abilities: {', '.join(sorted(existing_magic)) if existing_magic else 'none'}
+- Relics & Cursed Items: {', '.join(sorted(existing_relics)) if existing_relics else 'none'}
+- Regions & Realms: {', '.join(sorted(existing_regions)) if existing_regions else 'none'}
+- Substances & Materials: {', '.join(sorted(existing_substances)) if existing_substances else 'none'}
 
 STORIES TO ANALYZE:
 {stories_text}
@@ -251,13 +272,96 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "status": "active / destroyed / sealed / lost",
       "notes": "Any hooks."
     }}
+  ],
+  "factions": [
+    {{
+      "id": "snake_case_id",
+      "name": "Faction Name",
+      "tagline": "Three evocative words.",
+      "alignment": "lawful / neutral / chaotic / corrupt / villainous",
+      "goals": "What they seek or protect.",
+      "leader": "Who leads them.",
+      "status": "active / disbanded / rising / fallen",
+      "notes": "Any hooks."
+    }}
+  ],
+  "lore": [
+    {{
+      "id": "snake_case_id",
+      "name": "Lore Entry Name",
+      "tagline": "Three evocative words.",
+      "category": "legend / prophecy / history / myth",
+      "source": "Who told it or where it originates.",
+      "status": "confirmed / rumored / forgotten",
+      "notes": "Any hooks."
+    }}
+  ],
+  "flora_fauna": [
+    {{
+      "id": "snake_case_id",
+      "name": "Creature or Plant Name",
+      "tagline": "Three evocative words.",
+      "type": "creature / beast / plant / fungus / spirit",
+      "rarity": "common / rare / legendary",
+      "habitat": "Where it lives.",
+      "status": "thriving / endangered / extinct",
+      "notes": "Any hooks."
+    }}
+  ],
+  "magic": [
+    {{
+      "id": "snake_case_id",
+      "name": "Spell or Ability Name",
+      "tagline": "Three evocative words.",
+      "type": "spell / ritual / passive / curse / technique",
+      "element": "fire / shadow / time / blood / void / etc",
+      "difficulty": "novice / adept / master / forbidden",
+      "status": "known / lost / forbidden",
+      "notes": "Any hooks."
+    }}
+  ],
+  "relics": [
+    {{
+      "id": "snake_case_id",
+      "name": "Relic Name",
+      "tagline": "Three evocative words.",
+      "origin": "Where it came from.",
+      "power": "What it does.",
+      "curse": "What it costs or corrupts.",
+      "status": "active / dormant / destroyed / sealed",
+      "notes": "Any hooks."
+    }}
+  ],
+  "regions": [
+    {{
+      "id": "snake_case_id",
+      "name": "Region or Realm Name",
+      "tagline": "Three evocative words.",
+      "climate": "arctic / desert / temperate / volcanic / blighted / etc",
+      "terrain": "mountains / forest / plains / sea / ruins / etc",
+      "ruler": "Who controls it.",
+      "status": "stable / contested / fallen / cursed",
+      "notes": "Any hooks."
+    }}
+  ],
+  "substances": [
+    {{
+      "id": "snake_case_id",
+      "name": "Substance or Material Name",
+      "tagline": "Three evocative words.",
+      "type": "poison / metal / herb / elixir / mineral / etc",
+      "rarity": "common / rare / legendary",
+      "properties": "What it does.",
+      "use": "How it is typically used.",
+      "notes": "Any hooks."
+    }}
   ]
 }}"""
 
 # ── Lore merging ────────────────────────────────────────────────────────
 def merge_lore(existing_lore, new_lore, date_key):
     """Merge newly extracted lore into the existing lore, skipping duplicates by name."""
-    for category in ["characters", "places", "events", "weapons", "deities_and_entities", "artifacts"]:
+    for category in ["characters", "places", "events", "weapons", "deities_and_entities", "artifacts", "factions", "lore", "flora_fauna", "magic", "relics", "regions", "substances"]:
         existing_names = {
             item["name"].lower() for item in existing_lore.get(category, [])
         }
@@ -289,6 +393,13 @@ def update_codex_file(lore, date_key, stories=None):
         "events": [],
         "weapons": [],
         "artifacts": [],
+        "factions": [],
+        "lore": [],
+        "flora_fauna": [],
+        "magic": [],
+        "relics": [],
+        "regions": [],
+        "substances": [],
     }
     if os.path.exists(CODEX_FILE):
         try:
@@ -490,6 +601,235 @@ def update_codex_file(lore, date_key, stories=None):
                 "story_appearances": today_appearances,
             }
     codex["artifacts"] = list(existing_artifacts.values())
+    # ── Merge factions ──────────────────────────────────────────────
+    existing_factions = {x["name"].lower(): x for x in codex.get("factions", [])}
+    for f in lore.get("factions", []):
+        name = f.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_factions:
+            ex = existing_factions[name_low]
+            ex["goals"]         = f.get("goals",         ex.get("goals",         ""))
+            ex["leader"]        = f.get("leader",        ex.get("leader",        ""))
+            ex["status"]        = f.get("status",        ex.get("status",        "unknown"))
+            prior = ex.get("story_appearances", [])
+            new_ones = [app for app in today_appearances
+                        if not any(p["date"] == app["date"] and p["title"] == app["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_factions[name_low] = {
+                "name":              name,
+                "tagline":           f.get("tagline", ""),
+                "alignment":          f.get("alignment", ""),
+                "goals":              f.get("goals", ""),
+                "leader":             f.get("leader", ""),
+                "status":            f.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["factions"] = list(existing_factions.values())
+
+    # ── Merge lore ──────────────────────────────────────────────────
+    existing_lore = {x["name"].lower(): x for x in codex.get("lore", [])}
+    for lo in lore.get("lore", []):
+        name = lo.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_lore:
+            ex = existing_lore[name_low]
+            ex["source"]        = lo.get("source",        ex.get("source",        ""))
+            ex["status"]        = lo.get("status",        ex.get("status",        "unknown"))
+            prior = ex.get("story_appearances", [])
+            new_ones = [app for app in today_appearances
+                        if not any(p["date"] == app["date"] and p["title"] == app["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_lore[name_low] = {
+                "name":              name,
+                "tagline":           lo.get("tagline", ""),
+                "category":           lo.get("category", ""),
+                "source":             lo.get("source", ""),
+                "status":            lo.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["lore"] = list(existing_lore.values())
+
+    # ── Merge flora_fauna ───────────────────────────────────────────
+    existing_flora_fauna = {x["name"].lower(): x for x in codex.get("flora_fauna", [])}
+    for ff in lore.get("flora_fauna", []):
+        name = ff.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_flora_fauna:
+            ex = existing_flora_fauna[name_low]
+            ex["habitat"]       = ff.get("habitat",       ex.get("habitat",       ""))
+            ex["rarity"]        = ff.get("rarity",        ex.get("rarity",        ""))
+            ex["status"]        = ff.get("status",        ex.get("status",        "unknown"))
+            prior = ex.get("story_appearances", [])
+            new_ones = [app for app in today_appearances
+                        if not any(p["date"] == app["date"] and p["title"] == app["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_flora_fauna[name_low] = {
+                "name":              name,
+                "tagline":           ff.get("tagline", ""),
+                "type":               ff.get("type", ""),
+                "rarity":             ff.get("rarity", ""),
+                "habitat":            ff.get("habitat", ""),
+                "status":            ff.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["flora_fauna"] = list(existing_flora_fauna.values())
+
+    # ── Merge magic ─────────────────────────────────────────────────
+    existing_magic = {x["name"].lower(): x for x in codex.get("magic", [])}
+    for mg in lore.get("magic", []):
+        name = mg.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_magic:
+            ex = existing_magic[name_low]
+            ex["element"]       = mg.get("element",       ex.get("element",       ""))
+            ex["difficulty"]    = mg.get("difficulty",    ex.get("difficulty",    ""))
+            ex["status"]        = mg.get("status",        ex.get("status",        "unknown"))
+            prior = ex.get("story_appearances", [])
+            new_ones = [app for app in today_appearances
+                        if not any(p["date"] == app["date"] and p["title"] == app["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_magic[name_low] = {
+                "name":              name,
+                "tagline":           mg.get("tagline", ""),
+                "type":               mg.get("type", ""),
+                "element":            mg.get("element", ""),
+                "difficulty":         mg.get("difficulty", ""),
+                "status":            mg.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["magic"] = list(existing_magic.values())
+
+    # ── Merge relics ────────────────────────────────────────────────
+    existing_relics = {x["name"].lower(): x for x in codex.get("relics", [])}
+    for rl in lore.get("relics", []):
+        name = rl.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_relics:
+            ex = existing_relics[name_low]
+            ex["power"]         = rl.get("power",         ex.get("power",         ""))
+            ex["curse"]         = rl.get("curse",         ex.get("curse",         ""))
+            ex["status"]        = rl.get("status",        ex.get("status",        "unknown"))
+            prior = ex.get("story_appearances", [])
+            new_ones = [app for app in today_appearances
+                        if not any(p["date"] == app["date"] and p["title"] == app["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_relics[name_low] = {
+                "name":              name,
+                "tagline":           rl.get("tagline", ""),
+                "origin":             rl.get("origin", ""),
+                "power":              rl.get("power", ""),
+                "curse":              rl.get("curse", ""),
+                "status":            rl.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["relics"] = list(existing_relics.values())
+
+    # ── Merge regions ───────────────────────────────────────────────
+    existing_regions = {x["name"].lower(): x for x in codex.get("regions", [])}
+    for rg in lore.get("regions", []):
+        name = rg.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_regions:
+            ex = existing_regions[name_low]
+            ex["ruler"]         = rg.get("ruler",         ex.get("ruler",         ""))
+            ex["climate"]       = rg.get("climate",       ex.get("climate",       ""))
+            ex["status"]        = rg.get("status",        ex.get("status",        "unknown"))
+            prior = ex.get("story_appearances", [])
+            new_ones = [app for app in today_appearances
+                        if not any(p["date"] == app["date"] and p["title"] == app["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_regions[name_low] = {
+                "name":              name,
+                "tagline":           rg.get("tagline", ""),
+                "climate":            rg.get("climate", ""),
+                "terrain":            rg.get("terrain", ""),
+                "ruler":              rg.get("ruler", ""),
+                "status":            rg.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["regions"] = list(existing_regions.values())
+
+    # ── Merge substances ────────────────────────────────────────────
+    existing_substances = {x["name"].lower(): x for x in codex.get("substances", [])}
+    for sub in lore.get("substances", []):
+        name = sub.get("name", "Unknown")
+        name_low = name.lower()
+        today_appearances = stories_for(name)
+        if name_low in existing_substances:
+            ex = existing_substances[name_low]
+            ex["properties"]    = sub.get("properties",    ex.get("properties",    ""))
+            ex["use"]           = sub.get("use",           ex.get("use",           ""))
+            ex["status"]        = sub.get("status",        ex.get("status",        "unknown"))
+            prior = ex.get("story_appearances", [])
+            new_ones = [app for app in today_appearances
+                        if not any(p["date"] == app["date"] and p["title"] == app["title"] for p in prior)]
+            if new_ones:
+                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                ex["story_appearances"] = prior + new_ones
+        else:
+            first_title = today_appearances[0]["title"] if today_appearances else ""
+            existing_substances[name_low] = {
+                "name":              name,
+                "tagline":           sub.get("tagline", ""),
+                "type":               sub.get("type", ""),
+                "rarity":             sub.get("rarity", ""),
+                "properties":         sub.get("properties", ""),
+                "use":                sub.get("use", ""),
+                "status":            sub.get("status", "unknown"),
+                "first_story":       first_title,
+                "first_date":        date_key,
+                "appearances":       len(today_appearances) or 1,
+                "story_appearances": today_appearances,
+            }
+    codex["substances"] = list(existing_substances.values())
 
     codex["last_updated"] = date_key
     with open(CODEX_FILE, "w", encoding="utf-8") as f:
@@ -500,7 +840,14 @@ def update_codex_file(lore, date_key, stories=None):
         f"{len(codex['places'])} places, "
         f"{len(codex['events'])} events, "
         f"{len(codex['weapons'])} weapons, "
-        f"{len(codex['artifacts'])} artifacts)"
+        f"{len(codex['artifacts'])} artifacts, "
+        f"{len(codex.get('factions', []))} factions, "
+        f"{len(codex.get('lore', []))} lore, "
+        f"{len(codex.get('flora_fauna', []))} flora/fauna, "
+        f"{len(codex.get('magic', []))} magic, "
+        f"{len(codex.get('relics', []))} relics, "
+        f"{len(codex.get('regions', []))} regions, "
+        f"{len(codex.get('substances', []))} substances)"
     )
 
 # ── Characters file update (legacy) ──────────────────────────────────────
