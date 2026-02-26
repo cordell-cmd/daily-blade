@@ -84,7 +84,14 @@ def build_extraction_prompt(stories_with_dates, existing_codex):
     existing_places    = {p["name"].lower() for p in existing_codex.get("places", [])}
     existing_events    = {e["name"].lower() for e in existing_codex.get("events", [])}
     existing_weapons   = {w["name"].lower() for w in existing_codex.get("weapons", [])}
-    existing_artifacts = {a["name"].lower() for a in existing_codex.get("artifacts", [])}
+    existing_artifacts   = {a["name"].lower() for a in existing_codex.get("artifacts",   [])}
+    existing_factions    = {f["name"].lower() for f in existing_codex.get("factions",    [])}
+    existing_lore_items  = {l["name"].lower() for l in existing_codex.get("lore",         [])}
+    existing_flora_fauna = {x["name"].lower() for x in existing_codex.get("flora_fauna",  [])}
+    existing_magic       = {m["name"].lower() for m in existing_codex.get("magic",        [])}
+    existing_relics      = {r["name"].lower() for r in existing_codex.get("relics",       [])}
+    existing_regions     = {g["name"].lower() for g in existing_codex.get("regions",      [])}
+    existing_substances  = {s["name"].lower() for s in existing_codex.get("substances",   [])}
 
     stories_text = "\n\n".join(
         f"STORY (date: {date_key}): {s['title']}\n{s['text']}"
@@ -105,6 +112,13 @@ ALREADY KNOWN (do NOT re-extract these — only extract truly NEW ones):
 - Events: {', '.join(sorted(existing_events)) if existing_events else 'none yet'}
 - Weapons: {', '.join(sorted(existing_weapons)) if existing_weapons else 'none yet'}
 - Artifacts: {', '.join(sorted(existing_artifacts)) if existing_artifacts else 'none yet'}
+- Factions: {', '.join(sorted(existing_factions)) if existing_factions else 'none yet'}
+- Lore & Legends: {', '.join(sorted(existing_lore_items)) if existing_lore_items else 'none yet'}
+- Flora & Fauna: {', '.join(sorted(existing_flora_fauna)) if existing_flora_fauna else 'none yet'}
+- Magic & Abilities: {', '.join(sorted(existing_magic)) if existing_magic else 'none yet'}
+- Relics & Cursed Items: {', '.join(sorted(existing_relics)) if existing_relics else 'none yet'}
+- Regions & Realms: {', '.join(sorted(existing_regions)) if existing_regions else 'none yet'}
+- Substances & Materials: {', '.join(sorted(existing_substances)) if existing_substances else 'none yet'}
 
 STORIES TO ANALYZE:
 {stories_text}
@@ -176,6 +190,97 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "powers": "What it does, based on the story.",
       "last_known_holder": "Who had it last.",
       "status": "active / destroyed / sealed / lost",
+      "first_story": "Exact story title where it first appears",
+      "notes": "Any hooks."
+    }}
+  ],
+  "factions": [
+    {{
+      "id": "snake_case_id",
+      "name": "Faction Name",
+      "tagline": "Three evocative words.",
+      "alignment": "lawful / neutral / chaotic / corrupt / villainous",
+      "goals": "What they seek or protect.",
+      "leader": "Who leads them.",
+      "status": "active / disbanded / rising / fallen",
+      "first_story": "Exact story title where it first appears",
+      "notes": "Any hooks."
+    }}
+  ],
+  "lore": [
+    {{
+      "id": "snake_case_id",
+      "name": "Lore Entry Name",
+      "tagline": "Three evocative words.",
+      "category": "legend / prophecy / history / myth",
+      "source": "Who told it or where it originates.",
+      "status": "confirmed / rumored / forgotten",
+      "first_story": "Exact story title where it first appears",
+      "notes": "Any hooks."
+    }}
+  ],
+  "flora_fauna": [
+    {{
+      "id": "snake_case_id",
+      "name": "Creature or Plant Name",
+      "tagline": "Three evocative words.",
+      "type": "creature / beast / plant / fungus / spirit",
+      "rarity": "common / rare / legendary",
+      "habitat": "Where it lives.",
+      "status": "thriving / endangered / extinct",
+      "first_story": "Exact story title where it first appears",
+      "notes": "Any hooks."
+    }}
+  ],
+  "magic": [
+    {{
+      "id": "snake_case_id",
+      "name": "Spell or Ability Name",
+      "tagline": "Three evocative words.",
+      "type": "spell / ritual / passive / curse / technique",
+      "element": "fire / shadow / time / blood / void / etc",
+      "difficulty": "novice / adept / master / forbidden",
+      "status": "known / lost / forbidden",
+      "first_story": "Exact story title where it first appears",
+      "notes": "Any hooks."
+    }}
+  ],
+  "relics": [
+    {{
+      "id": "snake_case_id",
+      "name": "Relic Name",
+      "tagline": "Three evocative words.",
+      "origin": "Where it came from.",
+      "power": "What it does.",
+      "curse": "What it costs or corrupts.",
+      "status": "active / dormant / destroyed / sealed",
+      "first_story": "Exact story title where it first appears",
+      "notes": "Any hooks."
+    }}
+  ],
+  "regions": [
+    {{
+      "id": "snake_case_id",
+      "name": "Region or Realm Name",
+      "tagline": "Three evocative words.",
+      "climate": "arctic / desert / temperate / volcanic / blighted / etc",
+      "terrain": "mountains / forest / plains / sea / ruins / etc",
+      "ruler": "Who controls it.",
+      "status": "stable / contested / fallen / cursed",
+      "first_story": "Exact story title where it first appears",
+      "notes": "Any hooks."
+    }}
+  ],
+  "substances": [
+    {{
+      "id": "snake_case_id",
+      "name": "Substance or Material Name",
+      "tagline": "Three evocative words.",
+      "type": "poison / metal / herb / elixir / mineral / etc",
+      "rarity": "common / rare / legendary",
+      "properties": "What it does.",
+      "use": "How it is typically used.",
+      "status": "available / rare / depleted",
       "first_story": "Exact story title where it first appears",
       "notes": "Any hooks."
     }}
@@ -329,6 +434,166 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
                 "story_appearances": story_appearances,
             }
     codex["artifacts"] = list(existing_artifacts.values())
+    # ── Factions ──────────────────────────────────────────────
+    existing_factions = {x["name"].lower(): x for x in codex.get("factions", [])}
+    for f in new_entities.get("factions", []):
+        name = f.get("name", "Unknown")
+        name_low = name.lower()
+        first_story_title = f.get("first_story", "")
+        first_date = find_story_date(first_story_title)
+        story_appearances = stories_for_entity(name)
+        if name_low not in existing_factions:
+            existing_factions[name_low] = {
+                "name":              name,
+                "tagline":           f.get("tagline", ""),
+                "alignment":          f.get("alignment", ""),
+                "goals":              f.get("goals", ""),
+                "leader":             f.get("leader", ""),
+                "status":            f.get("status", "unknown"),
+                "first_story":       first_story_title,
+                "first_date":        first_date,
+                "appearances":       len(story_appearances) or 1,
+                "story_appearances": story_appearances,
+            }
+    codex["factions"] = list(existing_factions.values())
+
+    # ── Lore ──────────────────────────────────────────────────
+    existing_lore = {x["name"].lower(): x for x in codex.get("lore", [])}
+    for lo in new_entities.get("lore", []):
+        name = lo.get("name", "Unknown")
+        name_low = name.lower()
+        first_story_title = lo.get("first_story", "")
+        first_date = find_story_date(first_story_title)
+        story_appearances = stories_for_entity(name)
+        if name_low not in existing_lore:
+            existing_lore[name_low] = {
+                "name":              name,
+                "tagline":           lo.get("tagline", ""),
+                "category":           lo.get("category", ""),
+                "source":             lo.get("source", ""),
+                "status":            lo.get("status", "unknown"),
+                "first_story":       first_story_title,
+                "first_date":        first_date,
+                "appearances":       len(story_appearances) or 1,
+                "story_appearances": story_appearances,
+            }
+    codex["lore"] = list(existing_lore.values())
+
+    # ── Flora_fauna ───────────────────────────────────────────
+    existing_flora_fauna = {x["name"].lower(): x for x in codex.get("flora_fauna", [])}
+    for ff in new_entities.get("flora_fauna", []):
+        name = ff.get("name", "Unknown")
+        name_low = name.lower()
+        first_story_title = ff.get("first_story", "")
+        first_date = find_story_date(first_story_title)
+        story_appearances = stories_for_entity(name)
+        if name_low not in existing_flora_fauna:
+            existing_flora_fauna[name_low] = {
+                "name":              name,
+                "tagline":           ff.get("tagline", ""),
+                "type":               ff.get("type", ""),
+                "rarity":             ff.get("rarity", ""),
+                "habitat":            ff.get("habitat", ""),
+                "status":            ff.get("status", "unknown"),
+                "first_story":       first_story_title,
+                "first_date":        first_date,
+                "appearances":       len(story_appearances) or 1,
+                "story_appearances": story_appearances,
+            }
+    codex["flora_fauna"] = list(existing_flora_fauna.values())
+
+    # ── Magic ─────────────────────────────────────────────────
+    existing_magic = {x["name"].lower(): x for x in codex.get("magic", [])}
+    for mg in new_entities.get("magic", []):
+        name = mg.get("name", "Unknown")
+        name_low = name.lower()
+        first_story_title = mg.get("first_story", "")
+        first_date = find_story_date(first_story_title)
+        story_appearances = stories_for_entity(name)
+        if name_low not in existing_magic:
+            existing_magic[name_low] = {
+                "name":              name,
+                "tagline":           mg.get("tagline", ""),
+                "type":               mg.get("type", ""),
+                "element":            mg.get("element", ""),
+                "difficulty":         mg.get("difficulty", ""),
+                "status":            mg.get("status", "unknown"),
+                "first_story":       first_story_title,
+                "first_date":        first_date,
+                "appearances":       len(story_appearances) or 1,
+                "story_appearances": story_appearances,
+            }
+    codex["magic"] = list(existing_magic.values())
+
+    # ── Relics ────────────────────────────────────────────────
+    existing_relics = {x["name"].lower(): x for x in codex.get("relics", [])}
+    for rl in new_entities.get("relics", []):
+        name = rl.get("name", "Unknown")
+        name_low = name.lower()
+        first_story_title = rl.get("first_story", "")
+        first_date = find_story_date(first_story_title)
+        story_appearances = stories_for_entity(name)
+        if name_low not in existing_relics:
+            existing_relics[name_low] = {
+                "name":              name,
+                "tagline":           rl.get("tagline", ""),
+                "origin":             rl.get("origin", ""),
+                "power":              rl.get("power", ""),
+                "curse":              rl.get("curse", ""),
+                "status":            rl.get("status", "unknown"),
+                "first_story":       first_story_title,
+                "first_date":        first_date,
+                "appearances":       len(story_appearances) or 1,
+                "story_appearances": story_appearances,
+            }
+    codex["relics"] = list(existing_relics.values())
+
+    # ── Regions ───────────────────────────────────────────────
+    existing_regions = {x["name"].lower(): x for x in codex.get("regions", [])}
+    for rg in new_entities.get("regions", []):
+        name = rg.get("name", "Unknown")
+        name_low = name.lower()
+        first_story_title = rg.get("first_story", "")
+        first_date = find_story_date(first_story_title)
+        story_appearances = stories_for_entity(name)
+        if name_low not in existing_regions:
+            existing_regions[name_low] = {
+                "name":              name,
+                "tagline":           rg.get("tagline", ""),
+                "climate":            rg.get("climate", ""),
+                "terrain":            rg.get("terrain", ""),
+                "ruler":              rg.get("ruler", ""),
+                "status":            rg.get("status", "unknown"),
+                "first_story":       first_story_title,
+                "first_date":        first_date,
+                "appearances":       len(story_appearances) or 1,
+                "story_appearances": story_appearances,
+            }
+    codex["regions"] = list(existing_regions.values())
+
+    # ── Substances ────────────────────────────────────────────
+    existing_substances = {x["name"].lower(): x for x in codex.get("substances", [])}
+    for sub in new_entities.get("substances", []):
+        name = sub.get("name", "Unknown")
+        name_low = name.lower()
+        first_story_title = sub.get("first_story", "")
+        first_date = find_story_date(first_story_title)
+        story_appearances = stories_for_entity(name)
+        if name_low not in existing_substances:
+            existing_substances[name_low] = {
+                "name":              name,
+                "tagline":           sub.get("tagline", ""),
+                "type":               sub.get("type", ""),
+                "rarity":             sub.get("rarity", ""),
+                "properties":         sub.get("properties", ""),
+                "use":                sub.get("use", ""),
+                "status":            sub.get("status", "unknown"),
+                "first_story":       first_story_title,
+                "first_date":        first_date,
+                "appearances":       len(story_appearances) or 1,
+                "story_appearances": story_appearances,
+            }
+    codex["substances"] = list(existing_substances.values())
 
     return codex
 
@@ -380,6 +645,13 @@ def main():
         "events":       [],
         "weapons":      [],
         "artifacts":    [],
+        "factions":     [],
+        "lore":         [],
+        "flora_fauna":  [],
+        "magic":        [],
+        "relics":       [],
+        "regions":      [],
+        "substances":   [],
     }
 
     # First: migrate existing characters.json data
