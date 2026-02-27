@@ -181,6 +181,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .badge-status-unknown { background: rgba(40,30,10,.3); border: 1px solid #6a5a1a; color: #9a8a4a; }
 .badge-status-default { background: rgba(40,30,20,.3); border: 1px solid rgba(201,146,42,.3); color: var(--muted); }
 .badge-faction { background: rgba(201,146,42,.12); border: 1px solid rgba(201,146,42,.45); color: var(--gold); }
+.badge-polity { background: rgba(201,146,42,.10); border: 1px solid rgba(201,146,42,.40); color: rgba(226,208,168,.95); }
 .badge-lore { background: rgba(201,146,42,.08); border: 1px solid rgba(201,146,42,.35); color: rgba(226,208,168,.92); }
 .badge-flora { background: rgba(74,120,30,.15); border: 1px solid rgba(74,120,30,.55); color: #7abb50; }
 .badge-magic { background: rgba(60,20,80,.22); border: 1px solid rgba(122,58,154,.55); color: #c29ae2; }
@@ -395,6 +396,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
       <button class="codex-filter-btn" data-type="continents">🧭 Continents</button>
       <button class="codex-filter-btn" data-type="subcontinents">🗺 Subcontinents</button>
       <button class="codex-filter-btn" data-type="realms">🏛 Realms</button>
+      <button class="codex-filter-btn" data-type="polities">👑 Polities</button>
       <button class="codex-filter-btn" data-type="provinces">🏷 Provinces</button>
       <button class="codex-filter-btn" data-type="regions">🗺 Regions</button>
       <button class="codex-filter-btn" data-type="districts">🧱 Districts</button>
@@ -536,6 +538,7 @@ function codexTypeLabel(type) {
     continents: 'Continents',
     subcontinents: 'Subcontinents',
     realms: 'Realms',
+    polities: 'Polities',
     provinces: 'Provinces',
     districts: 'Districts',
     regions: 'Regions',
@@ -559,6 +562,7 @@ function badgeClassForEntityType(type) {
     continents: 'badge-region',
     subcontinents: 'badge-region',
     realms: 'badge-region',
+    polities: 'badge-polity',
     provinces: 'badge-region',
     districts: 'badge-region',
     regions: 'badge-region',
@@ -580,7 +584,7 @@ function buildCodexEntityIndex(data) {
 
   const categories = [
     'characters','places','hemispheres','continents','subcontinents','realms','provinces','regions','districts',
-    'events','weapons','artifacts','factions','lore','flora_fauna','magic','relics','substances'
+    'polities','events','weapons','artifacts','factions','lore','flora_fauna','magic','relics','substances'
   ];
   const index = new Map();
   const names = [];
@@ -732,7 +736,7 @@ function renderEntityBadges(containerEl, entitiesByType) {
   }
 
   const typeOrder = [
-    'characters', 'places', 'events', 'factions', 'magic', 'relics', 'artifacts', 'weapons', 'lore', 'flora_fauna', 'substances',
+    'characters', 'places', 'polities', 'events', 'factions', 'magic', 'relics', 'artifacts', 'weapons', 'lore', 'flora_fauna', 'substances',
     'regions', 'districts', 'provinces', 'realms', 'subcontinents', 'continents', 'hemispheres'
   ];
   const types = Array.from(entitiesByType.keys());
@@ -943,6 +947,7 @@ function _primaryLabelTokensForEntity(type, obj) {
   if (type === 'events') return pick(o.event_type, 'Event');
   if (type === 'weapons') return pick(o.weapon_type, 'Weapon');
   if (type === 'artifacts') return pick(o.artifact_type, 'Artifact');
+  if (type === 'polities') return pick(o.polity_type, 'Polity');
   if (type === 'factions') return pick(o.alignment, 'Faction');
   if (type === 'lore') return pick(o.category, 'Lore');
   if (type === 'flora_fauna') return pick(o.type, 'Flora');
@@ -982,6 +987,7 @@ function updateCodexCountLabel() {
     continents: 'Continents',
     subcontinents: 'Subcontinents',
     realms: 'Realms',
+    polities: 'Polities',
     provinces: 'Provinces',
     districts: 'Districts',
     regions: 'Regions',
@@ -1063,6 +1069,7 @@ function applyCodexOrganization() {
     events: 'Events',
     weapons: 'Weapons',
     artifacts: 'Artifacts',
+    polities: 'Polities',
     factions: 'Factions',
     lore: 'Lore',
     flora_fauna: 'Flora & Fauna',
@@ -1206,11 +1213,23 @@ function applyCodexFilter(type) {
 
 // ── Fix UTF-8 mojibake ───────────────────────────────────────────────
 function fixMojibake(str) {
+  const raw = String(str || '');
+  const cleaned = stripControlChars(raw).replace(/[\uFE0E\uFE0F]/g, '');
+
+  // Heuristic: ONLY attempt a Latin-1-bytes -> UTF-8 decode if the string
+  // looks like classic mojibake. Otherwise this transform can corrupt valid
+  // Unicode punctuation (e.g., em-dashes) into control chars that get stripped.
+  // Common markers include: Ã, Â, â€ (smart quotes/dashes), and the replacement char �.
+  const looksLikeMojibake = /(?:Ã.|Â.|â€|�)/.test(cleaned);
+  if (!looksLikeMojibake) return cleaned;
+
   try {
-    const bytes = new Uint8Array(str.length);
-    for (let i = 0; i < str.length; i++) bytes[i] = str.charCodeAt(i) & 0xff;
+    const bytes = new Uint8Array(cleaned.length);
+    for (let i = 0; i < cleaned.length; i++) bytes[i] = cleaned.charCodeAt(i) & 0xff;
     return stripControlChars(new TextDecoder('utf-8', { fatal: true }).decode(bytes)).replace(/[\uFE0E\uFE0F]/g, '');
-  } catch (e) { return stripControlChars(String(str || '')).replace(/[\uFE0E\uFE0F]/g, ''); }
+  } catch (e) {
+    return cleaned;
+  }
 }
 
 // ── Render Stories ───────────────────────────────────────────────────
@@ -1727,6 +1746,7 @@ function renderCodex(data) {
   const continents  = [...(data.continents  || [])].sort(byName);
   const subcontinents = [...(data.subcontinents || [])].sort(byName);
   const realms      = [...(data.realms      || [])].sort(byName);
+  const polities    = [...(data.polities    || [])].sort(byName);
   const provinces   = [...(data.provinces   || [])].sort(byName);
   const districts   = [...(data.districts   || [])].sort(byName);
   const events      = [...(data.events      || [])].sort(byName);
@@ -1740,7 +1760,7 @@ function renderCodex(data) {
   const regions     = [...(data.regions     || [])].sort(byName);
   const substances  = [...(data.substances  || [])].sort(byName);
 
-  const total = characters.length + places.length + hemispheres.length + continents.length + subcontinents.length + realms.length + provinces.length + districts.length + events.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
+  const total = characters.length + places.length + hemispheres.length + continents.length + subcontinents.length + realms.length + polities.length + provinces.length + districts.length + events.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
 
   if (total === 0) {
     statusEl.innerHTML = '<em>The codex is empty. Return after the backfill workflow completes.</em>';
@@ -2079,6 +2099,46 @@ function renderCodex(data) {
         ${a.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(a.first_story)}</span>` : ''}
       </div>
       ${buildStoryLinks(a.story_appearances, a.first_story, a.first_date)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ─── Polities ───────────────────────────────────────────────────────
+  polities.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'codex-card polity-card';
+    stampCodexCardMeta(card, 'polities', p.name, _primaryLabelTokensForEntity('polities', p));
+    const appearances = p.appearances > 1 ? `${p.appearances} appearances` : 'First appearance';
+    const sovereigns = Array.isArray(p.sovereigns)
+      ? p.sovereigns.filter(Boolean).join(', ')
+      : (p.sovereigns ? String(p.sovereigns) : '');
+    const claimants = Array.isArray(p.claimants)
+      ? p.claimants.filter(Boolean).join(', ')
+      : (p.claimants ? String(p.claimants) : '');
+    const seat = p.seat || p.capital || p.place || '';
+
+    card.innerHTML = `
+      <div class="codex-card-header">
+        <div class="codex-card-name">${escHtml(p.name)}</div>
+        ${p.tagline ? `<div class="codex-card-tagline">${escHtml(p.tagline)}</div>` : ''}
+        <div class="codex-card-badges">
+          <span class="badge badge-polity">${escHtml(p.polity_type || 'Polity')}</span>
+          ${p.status ? `<span class="badge badge-status-default">${escHtml(p.status)}</span>` : ''}
+        </div>
+      </div>
+      <hr class="codex-divider" />
+      ${sovereigns ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Sovereign:</em> ${escHtml(sovereigns)}</div>` : ''}
+      ${claimants ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Claimants:</em> ${escHtml(claimants)}</div>` : ''}
+      ${seat ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Seat:</em> ${escHtml(seat)}</div>` : ''}
+      <div class="codex-body">${escHtml(p.description || '')}</div>
+      ${buildMostSpecificLocationLine({ ...p, place: seat }, { includePlace: true })}
+      ${buildEntityParentChain({ ...p, place: seat })}
+      <div class="codex-meta">
+        <span>${appearances}</span>
+        ${p.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(p.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(p.story_appearances, p.first_story, p.first_date)}
     `;
     attachStoryLinkListeners(card);
     grid.appendChild(card);

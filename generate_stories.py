@@ -100,6 +100,7 @@ def load_lore():
         "continents": [],
         "subcontinents": [],
         "realms": [],
+        "polities": [],
         "provinces": [],
         "districts": [],
         "characters": [],
@@ -888,6 +889,12 @@ ADDITIONAL CANON GUARDRAILS:
 - Continuity is GOOD: recurring characters/places are encouraged.
 - If you reuse a previously-established name, it MUST refer to that same entity and not contradict their known status, role, bio, or history.
 - If you're unsure about an established fact, keep it ambiguous rather than contradicting canon.
+
+SOVEREIGNTY / CROWN CONSISTENCY:
+- Treat "the Crown" / "the Throne" as an institution of rulership tied to a specific realm (and usually a seat/capital).
+- If a story involves a crown, explicitly name which realm/region it governs.
+- Do NOT imply two different sole crown-holders for the same realm/region at the same time.
+    - If there are multiple, state co-rulers (e.g., king and queen) OR a contested claim (pretender/regent/usurper) explicitly.
 """
     return f"""You are a pulp fantasy writer in the tradition of Robert E. Howard, Clark Ashton Smith, and Fritz Leiber.
 Generate exactly 10 original short sword-and-sorcery stories.
@@ -1002,6 +1009,7 @@ def build_lore_extraction_prompt(stories, existing_lore):
     existing_deities   = {d["name"].lower() for d in existing_lore.get("deities_and_entities", [])}
     existing_artifacts   = {a["name"].lower() for a in existing_lore.get("artifacts",   [])}
     existing_factions    = {f["name"].lower() for f in existing_lore.get("factions",    [])}
+    existing_polities    = {p["name"].lower() for p in existing_lore.get("polities",    [])}
     existing_lore_items  = {l["name"].lower() for l in existing_lore.get("lore",         [])}
     existing_flora_fauna = {x["name"].lower() for x in existing_lore.get("flora_fauna",  [])}
     existing_magic       = {m["name"].lower() for m in existing_lore.get("magic",        [])}
@@ -1031,7 +1039,7 @@ def build_lore_extraction_prompt(stories, existing_lore):
     )
 
     return f"""You are a lore archivist for a sword-and-sorcery story universe.
-Analyze the following stories and extract lore elements — characters, places, events, weapons, artifacts, factions, lore, flora/fauna, magic, relics, regions, substances, and geo hierarchy entries (hemisphere/continent/subcontinent/realm/province/district) — that appear in these stories.
+Analyze the following stories and extract lore elements — characters, places, events, weapons, artifacts, factions, polities (governments/crowns/thrones), lore, flora/fauna, magic, relics, regions, substances, and geo hierarchy entries (hemisphere/continent/subcontinent/realm/province/district) — that appear in these stories.
 
 Priority: COMPLETENESS over novelty.
 - It is OK if you re-extract something that already exists; the merge step will deduplicate.
@@ -1044,6 +1052,8 @@ Be exhaustive:
 
 Coverage checklist (per story):
 - List every named proper noun that appears to refer to a person, place, region/realm, faction, event, ritual, spell/ability, relic/artifact/weapon, or creature.
+- If a story refers to a governing institution ("the Crown", "the Throne", "the Regency", "the Council"), capture it as a Polity tied to a realm/seat.
+- Do NOT classify a realm's rulership institution as a Faction unless it is explicitly a distinct factional group.
 - Ensure each named thing is represented in at least one output category.
 - Treat patterns like "X of Y" and "The X of Y" as likely names; include them when they read like a title, place, or event.
 
@@ -1059,6 +1069,7 @@ EXISTING CANON (reference only; non-exhaustive; ok to repeat):
 - Deities/Entities: {_known_summary(existing_deities)}
 - Artifacts: {_known_summary(existing_artifacts)}
 - Factions: {_known_summary(existing_factions)}
+- Polities (Crowns/Governments): {_known_summary(existing_polities)}
 - Lore & Legends: {_known_summary(existing_lore_items)}
 - Flora & Fauna: {_known_summary(existing_flora_fauna)}
 - Magic & Abilities: {_known_summary(existing_magic)}
@@ -1183,6 +1194,22 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "notes": "Any hooks."
     }}
   ],
+    "polities": [
+        {{
+            "id": "snake_case_id",
+            "name": "Polity / Crown Name (e.g., The Crown of X, The Regency of Y, The High Council)",
+            "tagline": "Three evocative words.",
+            "polity_type": "crown / monarchy / regency / council / empire / republic / theocracy / etc",
+            "realm": "Realm name governed, or 'unknown'",
+            "region": "Region name governed, or 'unknown'",
+            "seat": "Seat/capital/place of rule, or 'unknown'",
+            "sovereigns": ["name(s) of ruler(s) if stated"],
+            "claimants": ["pretenders/usurpers/regents if stated"],
+            "status": "stable / contested / fallen / usurped / unknown",
+            "description": "How this government rules; what it demands; how it is seen.",
+            "notes": "Any hooks."
+        }}
+    ],
   "lore": [
     {{
       "id": "snake_case_id",
@@ -1335,6 +1362,7 @@ def merge_lore(existing_lore, new_lore, date_key):
         "continents",
         "subcontinents",
         "realms",
+        "polities",
         "provinces",
         "districts",
         "characters",
@@ -1370,6 +1398,85 @@ def merge_lore(existing_lore, new_lore, date_key):
     ensure_place_parent_chain(existing_lore)
     enforce_continent_limit(existing_lore)
     return existing_lore
+
+
+def warn_polity_conflicts(lore: dict):
+    """Print warnings for potentially contradictory crown/sovereignty claims.
+
+    This is heuristic and non-fatal. It aims to catch the most common issue:
+    multiple different sole sovereigns implied for the same realm/region.
+    """
+    if not isinstance(lore, dict):
+        return
+    polities = lore.get("polities") or []
+    if not isinstance(polities, list) or not polities:
+        return
+
+    def _clean(v: str) -> str:
+        return (v or "").strip()
+
+    def _is_unknown(v: str) -> bool:
+        return not _clean(v) or _clean(v).lower() in {"unknown", "n/a", "na", "none"}
+
+    def _status_allows_conflict(status: str) -> bool:
+        s = (_clean(status)).lower()
+        return any(w in s for w in ("contested", "disputed", "usurped", "civil war", "succession"))
+
+    def _sovereign_list(p: dict):
+        raw = p.get("sovereigns")
+        if isinstance(raw, list):
+            out = [str(x).strip() for x in raw if str(x).strip()]
+            return [x for x in out if not _is_unknown(x)]
+        if isinstance(raw, str):
+            x = raw.strip()
+            return [x] if x and not _is_unknown(x) else []
+        return []
+
+    buckets = {}  # key -> list of (name, sovereigns, status)
+    for p in polities:
+        if not isinstance(p, dict):
+            continue
+        name = _clean(p.get("name") or "")
+        if not name:
+            continue
+        realm = _clean(p.get("realm") or "")
+        region = _clean(p.get("region") or "")
+        seat = _clean(p.get("seat") or "")
+        key = None
+        if not _is_unknown(realm):
+            key = f"realm:{realm.lower()}"
+        elif not _is_unknown(region):
+            key = f"region:{region.lower()}"
+        elif not _is_unknown(seat):
+            key = f"seat:{seat.lower()}"
+        else:
+            continue
+
+        sovs = _sovereign_list(p)
+        if not sovs:
+            continue
+        buckets.setdefault(key, []).append((name, sovs, _clean(p.get("status") or "")))
+
+    for key, items in buckets.items():
+        if len(items) < 2:
+            continue
+        if any(_status_allows_conflict(status) for _, _, status in items):
+            continue
+
+        all_names = sorted({n for _, sovs, _ in items for n in sovs})
+        if len(all_names) <= 1:
+            continue
+
+        # Allow a single polity that explicitly lists co-rulers.
+        has_corulers = any(len(set(sovs)) >= 2 for _, sovs, _ in items)
+        if has_corulers and len(all_names) == 2:
+            continue
+
+        print(
+            f"WARNING: Possible crown/sovereignty conflict for {key}: "
+            + "; ".join([f"{pol_name} -> {', '.join(sovs)}" for pol_name, sovs, _ in items]),
+            file=sys.stderr,
+        )
 
 
 def _count_story_mentions(stories, name: str) -> int:
@@ -1555,6 +1662,7 @@ def update_codex_file(lore, date_key, stories=None):
         "continents": [],
         "subcontinents": [],
         "realms": [],
+        "polities": [],
         "provinces": [],
         "districts": [],
         "characters": [],
@@ -1694,6 +1802,7 @@ def update_codex_file(lore, date_key, stories=None):
     merge_named_category("continents", ["function", "status", "notes"]) 
     merge_named_category("subcontinents", ["continent", "function", "status", "notes"]) 
     merge_named_category("realms", ["continent", "capital", "function", "taxation", "military", "status", "notes"]) 
+    merge_named_category("polities", ["polity_type", "realm", "region", "seat", "sovereigns", "claimants", "status", "description", "notes"]) 
     merge_named_category("provinces", ["realm", "region", "function", "status", "notes"]) 
     merge_named_category("districts", ["province", "region", "function", "status", "notes"]) 
 
@@ -2831,6 +2940,7 @@ def main():
                     char["first_story"] = s.get("title", "")
                     break
         lore = merge_lore(lore, new_lore, date_key)
+        warn_polity_conflicts(lore)
         print(
             f"\u2713 Extracted "
             f"{len(new_lore.get('characters', []))} chars, "

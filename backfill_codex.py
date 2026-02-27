@@ -86,6 +86,7 @@ def build_extraction_prompt(stories_with_dates, existing_codex):
     existing_weapons   = {w["name"].lower() for w in existing_codex.get("weapons", [])}
     existing_artifacts   = {a["name"].lower() for a in existing_codex.get("artifacts",   [])}
     existing_factions    = {f["name"].lower() for f in existing_codex.get("factions",    [])}
+    existing_polities    = {p["name"].lower() for p in existing_codex.get("polities",    [])}
     existing_lore_items  = {l["name"].lower() for l in existing_codex.get("lore",         [])}
     existing_flora_fauna = {x["name"].lower() for x in existing_codex.get("flora_fauna",  [])}
     existing_magic       = {m["name"].lower() for m in existing_codex.get("magic",        [])}
@@ -114,6 +115,7 @@ Analyze the following stories and extract ALL notable lore elements:
 - Notable events (battles, wars, rituals, catastrophes — things that have a name or are referenced as a historical event)
 - Named mythical/legendary weapons (swords, axes, staves with special names or powers)
 - Named artifacts and magical objects (rings, tomes, idols, amulets, etc.)
+- Named polities/governments ("the Crown", "the Throne", councils, regencies, empires) tied to a realm/seat when possible
 
 Priority: COMPLETENESS over novelty.
 - It is OK if you include already-known entries; the merge step will deduplicate.
@@ -123,6 +125,9 @@ Naming rules:
 - The `name` field MUST match the surface form used in the story text as closely as possible.
 - Do NOT add disambiguating suffixes/prefixes like "(as Region)", "(the place)", "(event)", etc.
 
+Classification note:
+- If the text refers to a realm's rulership institution ("the Crown", "the Throne", "the Regency", "the Council"), capture it under "polities" (governments), not "factions", unless it is explicitly a distinct factional group.
+
 EXISTING CANON (reference only; non-exhaustive; ok to repeat):
 - Characters: {_known_summary(existing_chars)}
 - Places: {_known_summary(existing_places)}
@@ -130,6 +135,7 @@ EXISTING CANON (reference only; non-exhaustive; ok to repeat):
 - Weapons: {_known_summary(existing_weapons)}
 - Artifacts: {_known_summary(existing_artifacts)}
 - Factions: {_known_summary(existing_factions)}
+- Polities (Crowns/Governments): {_known_summary(existing_polities)}
 - Lore & Legends: {_known_summary(existing_lore_items)}
 - Flora & Fauna: {_known_summary(existing_flora_fauna)}
 - Magic & Abilities: {_known_summary(existing_magic)}
@@ -224,6 +230,23 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "notes": "Any hooks."
     }}
   ],
+    "polities": [
+        {{
+            "id": "snake_case_id",
+            "name": "Polity / Crown Name (e.g., The Crown of X, The Regency of Y, The High Council)",
+            "tagline": "Three evocative words.",
+            "polity_type": "crown / monarchy / regency / council / empire / republic / theocracy / etc",
+            "realm": "Realm name governed, or 'unknown'",
+            "region": "Region name governed, or 'unknown'",
+            "seat": "Seat/capital/place of rule, or 'unknown'",
+            "sovereigns": ["name(s) of ruler(s) if stated"],
+            "claimants": ["pretenders/usurpers/regents if stated"],
+            "status": "stable / contested / fallen / usurped / unknown",
+            "description": "How this government rules; what it demands; how it is seen.",
+            "first_story": "Exact story title where it first appears",
+            "notes": "Any hooks."
+        }}
+    ],
   "lore": [
     {{
       "id": "snake_case_id",
@@ -488,6 +511,33 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
             }
     codex["factions"] = list(existing_factions.values())
 
+    # ── Polities ──────────────────────────────────────────────
+    existing_polities = {x["name"].lower(): x for x in codex.get("polities", [])}
+    for p in new_entities.get("polities", []):
+        name = p.get("name", "Unknown")
+        name_low = name.lower()
+        first_story_title = p.get("first_story", "")
+        first_date = find_story_date(first_story_title)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
+        if name_low not in existing_polities:
+            existing_polities[name_low] = {
+                "name":              name,
+                "tagline":           p.get("tagline", ""),
+                "polity_type":       p.get("polity_type", ""),
+                "realm":             p.get("realm", "unknown"),
+                "region":            p.get("region", "unknown"),
+                "seat":              p.get("seat", "unknown"),
+                "sovereigns":        p.get("sovereigns", []),
+                "claimants":         p.get("claimants", []),
+                "status":            p.get("status", "unknown"),
+                "description":       p.get("description", ""),
+                "first_story":       first_story_title,
+                "first_date":        first_date,
+                "appearances":       len(story_appearances) or 1,
+                "story_appearances": story_appearances,
+            }
+    codex["polities"] = list(existing_polities.values())
+
     # ── Lore ──────────────────────────────────────────────────
     existing_lore = {x["name"].lower(): x for x in codex.get("lore", [])}
     for lo in new_entities.get("lore", []):
@@ -677,6 +727,7 @@ def main():
         "weapons":      [],
         "artifacts":    [],
         "factions":     [],
+        "polities":     [],
         "lore":         [],
         "flora_fauna":  [],
         "magic":        [],

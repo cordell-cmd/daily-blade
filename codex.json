@@ -3377,6 +3377,47 @@
       ]
     }
   ],
+  "polities": [
+    {
+      "name": "The Crown",
+      "tagline": "Authoritarian. Strategic. Betraying.",
+      "polity_type": "crown",
+      "realm": "unknown",
+      "region": "unknown",
+      "seat": "unknown",
+      "sovereigns": [
+        "Unknown"
+      ],
+      "claimants": [],
+      "status": "active",
+      "description": "The institution of rulership and royal authority, issuing orders to border fortresses and shaping strategy even at the cost of oaths and lives.",
+      "first_story": "The Broken Oath",
+      "first_date": "2026-02-27",
+      "appearances": 5,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Warlord's Widow"
+        },
+        {
+          "date": "2026-02-27",
+          "title": "The Broken Oath"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Plague-Bringer's Crown"
+        }
+      ]
+    }
+  ],
   "factions": [
     {
       "name": "Shadow-Brokers",
@@ -3443,39 +3484,6 @@
         {
           "date": "2026-02-27",
           "title": "The Tide-Thief's Escape"
-        }
-      ]
-    },
-    {
-      "name": "The Crown",
-      "tagline": "Authoritarian. Strategic. Betraying.",
-      "alignment": "lawful",
-      "goals": "Maintain control over border fortresses and military strategy, even if it means abandoning defenders and breaking oaths.",
-      "leader": "Unknown (implied ruler)",
-      "status": "active",
-      "first_story": "The Broken Oath",
-      "first_date": "2026-02-27",
-      "appearances": 5,
-      "story_appearances": [
-        {
-          "date": "2026-02-27",
-          "title": "The Warlord's Widow"
-        },
-        {
-          "date": "2026-02-27",
-          "title": "The Broken Oath"
-        },
-        {
-          "date": "2026-02-26",
-          "title": "The Copper Thief"
-        },
-        {
-          "date": "2026-02-26",
-          "title": "The Warlord's Last Stand"
-        },
-        {
-          "date": "2026-02-25",
-          "title": "The Plague-Bringer's Crown"
         }
       ]
     },
