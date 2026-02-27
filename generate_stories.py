@@ -2052,6 +2052,100 @@ def parse_json_response(raw):
     raise ValueError("No JSON structure found in response")
 
 
+def normalize_extracted_lore(extracted):
+    """Normalize lore extraction output into the expected dict-of-arrays structure.
+
+    Claude is prompted to return a dict, but in practice it can occasionally return
+    a top-level JSON array. This normalizer coerces common shapes into a safe
+    dictionary for downstream processing.
+    """
+    expected_keys = [
+        "characters",
+        "places",
+        "events",
+        "weapons",
+        "deities_and_entities",
+        "artifacts",
+        "factions",
+        "lore",
+        "flora_fauna",
+        "magic",
+        "relics",
+        "regions",
+        "realms",
+        "continents",
+        "subcontinents",
+        "hemispheres",
+        "provinces",
+        "districts",
+        "substances",
+    ]
+    empty = {k: [] for k in expected_keys}
+
+    if isinstance(extracted, dict):
+        normalized = dict(extracted)
+        for key in expected_keys:
+            if key not in normalized:
+                normalized[key] = []
+            elif not isinstance(normalized[key], list):
+                normalized[key] = []
+        return normalized
+
+    if isinstance(extracted, list):
+        buckets = {k: [] for k in expected_keys}
+        for item in extracted:
+            if not isinstance(item, dict):
+                continue
+
+            # Heuristic bucketing by distinctive keys.
+            if "place_type" in item or "atmosphere" in item or "continent" in item or "realm" in item:
+                buckets["places"].append(item)
+                continue
+            if "event_type" in item or "participants" in item or "outcome" in item:
+                buckets["events"].append(item)
+                continue
+            if "weapon_type" in item or "last_known_holder" in item:
+                buckets["weapons"].append(item)
+                continue
+            if "artifact_type" in item:
+                buckets["artifacts"].append(item)
+                continue
+            if "alignment" in item or "leader" in item or "goals" in item:
+                buckets["factions"].append(item)
+                continue
+            if "rarity" in item or "habitat" in item:
+                buckets["flora_fauna"].append(item)
+                continue
+            if "element" in item or "difficulty" in item:
+                buckets["magic"].append(item)
+                continue
+            if "curse" in item and "power" in item:
+                buckets["relics"].append(item)
+                continue
+            if "category" in item and "source" in item:
+                buckets["lore"].append(item)
+                continue
+
+            # Default fallback.
+            buckets["characters"].append(item)
+
+        print(
+            "WARNING: Lore extraction returned a JSON array; coerced into the expected dict structure.",
+            file=sys.stderr,
+        )
+        coerced = dict(empty)
+        for key, value in buckets.items():
+            if value:
+                coerced[key] = value
+        return coerced
+
+    print(
+        f"WARNING: Lore extraction returned unexpected type: {type(extracted).__name__}; ignoring.",
+        file=sys.stderr,
+    )
+    return dict(empty)
+
+
 def _signature_key_for_name(name: str) -> str:
     """Create a lightweight search key for detecting entity mentions."""
     if not name:
@@ -2545,11 +2639,20 @@ def main():
     )
     lore_raw = lore_message.content[0].text.strip()
     try:
-        new_lore = parse_json_response(lore_raw)
+        new_lore_raw = parse_json_response(lore_raw)
+        new_lore = normalize_extracted_lore(new_lore_raw)
         for char in new_lore.get("characters", []):
+            if not isinstance(char, dict):
+                continue
+            nm = (char.get("name") or "").strip()
+            if not nm:
+                continue
+            nm_low = nm.lower()
             for s in stories:
-                if char["name"].lower() in s["text"].lower() or char["name"].lower() in s["title"].lower():
-                    char["first_story"] = s["title"]
+                title_low = (s.get("title", "") or "").lower()
+                text_low = (s.get("text", "") or "").lower()
+                if nm_low in text_low or nm_low in title_low:
+                    char["first_story"] = s.get("title", "")
                     break
         lore = merge_lore(lore, new_lore, date_key)
         print(
