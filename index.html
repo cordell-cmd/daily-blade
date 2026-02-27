@@ -662,16 +662,8 @@ function buildCodexEntityIndex(data) {
   const index = new Map();
   const names = [];
 
-  const addToIndex = (key, type, obj, opts) => {
+  const addToIndex = (key, type, obj) => {
     if (!key || key.length < 3) return;
-    const options = opts || {};
-    const allowCharacterAliasCollision = options.allowCharacterAliasCollision !== false;
-
-    if (type === 'characters' && !allowCharacterAliasCollision && index.has(key)) {
-      const existing = index.get(key) || [];
-      const collides = existing.some(e => e && e.type === 'characters' && e.obj && e.obj !== obj);
-      if (collides) return;
-    }
     if (!index.has(key)) index.set(key, []);
     index.get(key).push({ type, obj });
   };
@@ -716,14 +708,14 @@ function buildCodexEntityIndex(data) {
       const theIdx = key.indexOf(' the ');
       if (theIdx > 2) {
         const alias = key.slice(0, theIdx).trim();
-        addToIndex(alias, type, obj, { allowCharacterAliasCollision: false });
+        addToIndex(alias, type, obj);
       }
 
       if (baseKey && baseKey !== key) {
         const theIdx2 = baseKey.indexOf(' the ');
         if (theIdx2 > 2) {
           const alias = baseKey.slice(0, theIdx2).trim();
-          addToIndex(alias, type, obj, { allowCharacterAliasCollision: false });
+          addToIndex(alias, type, obj);
         }
       }
 
@@ -731,14 +723,14 @@ function buildCodexEntityIndex(data) {
       const commaIdx = key.indexOf(',');
       if (commaIdx > 2) {
         const alias = key.slice(0, commaIdx).trim();
-        addToIndex(alias, type, obj, { allowCharacterAliasCollision: false });
+        addToIndex(alias, type, obj);
       }
 
       if (baseKey && baseKey !== key) {
         const commaIdx2 = baseKey.indexOf(',');
         if (commaIdx2 > 2) {
           const alias = baseKey.slice(0, commaIdx2).trim();
-          addToIndex(alias, type, obj, { allowCharacterAliasCollision: false });
+          addToIndex(alias, type, obj);
         }
       }
     });
@@ -786,9 +778,52 @@ async function ensureCodexDataLoaded() {
   }
 }
 
-function extractEntitiesFromText(rawText) {
+function extractEntitiesFromText(rawText, opts = {}) {
   const text = fixMojibake(rawText || '');
   if (!CODEX_ENTITY_REGEX || !CODEX_ENTITY_INDEX || CODEX_ENTITY_INDEX.size === 0) return new Map();
+
+  const storyTitle = String(opts.storyTitle || '').trim().toLowerCase();
+  const storyDate = String(opts.storyDate || '').trim();
+
+  function storyAppearsInObj(obj) {
+    if (!storyTitle && !storyDate) return false;
+    if (!obj || typeof obj !== 'object') return false;
+
+    const fs = String(obj.first_story || '').trim().toLowerCase();
+    if (storyTitle && fs && fs === storyTitle) return true;
+    const fd = String(obj.first_date || '').trim();
+    if (storyDate && fd && fd === storyDate) {
+      // If first_date matches but title is missing, we still treat as a weak signal.
+      if (!storyTitle) return true;
+    }
+
+    const apps = obj.story_appearances;
+    if (!Array.isArray(apps) || !apps.length) return false;
+    for (const a of apps) {
+      if (!a || typeof a !== 'object') continue;
+      const t = String(a.title || '').trim().toLowerCase();
+      const d = String(a.date || '').trim();
+      if (storyTitle && t && t === storyTitle) return true;
+      if (storyDate && d && d === storyDate) {
+        if (!storyTitle) return true;
+      }
+    }
+    return false;
+  }
+
+  function canonicalNameMentionedInText(name) {
+    const nm = String(name || '').trim();
+    if (!nm || nm.length < 4) return false;
+    try {
+      const esc = escapeRegexPiece(nm);
+      const re = new RegExp(`(^|[^\\p{L}\\p{N}])${esc}(?=$|[^\\p{L}\\p{N}])`, 'iu');
+      return re.test(text);
+    } catch (e) {
+      const esc = escapeRegexPiece(nm);
+      const re = new RegExp(`(^|[^A-Za-z0-9])${esc}(?=$|[^A-Za-z0-9])`, 'i');
+      return re.test(text);
+    }
+  }
 
   // Some entity names are also common nouns/materials. We avoid false-positive
   // codex badges by applying small, contextual suppression rules.
@@ -825,7 +860,24 @@ function extractEntitiesFromText(rawText) {
     const contextLower = text.slice(ctxA, ctxB).toLowerCase();
     const key = normalizeEntityKey(namePart);
     const matches = CODEX_ENTITY_INDEX.get(key) || [];
-    matches.forEach(({ type, obj }) => {
+
+    // If an alias key maps to multiple character entries, pick the best match
+    // for this story so we don't show the wrong person.
+    let effectiveMatches = matches;
+    const charMatches = matches.filter(m => m && m.type === 'characters');
+    if (charMatches.length > 1) {
+      const mentioned = charMatches.filter(m => canonicalNameMentionedInText(m.obj && m.obj.name));
+      if (mentioned.length === 1) {
+        effectiveMatches = matches.filter(m => m.type !== 'characters').concat(mentioned);
+      } else if (storyTitle || storyDate) {
+        const inStory = charMatches.filter(m => storyAppearsInObj(m.obj));
+        if (inStory.length === 1) {
+          effectiveMatches = matches.filter(m => m.type !== 'characters').concat(inStory);
+        }
+      }
+    }
+
+    effectiveMatches.forEach(({ type, obj }) => {
       let canonicalName = (obj && obj.name) ? String(obj.name).trim() : String(namePart).trim();
       // If codex entry has a trailing qualifier ("Name (as Region)"), prefer the
       // story-surface name for display, while still linking to the same entry.
@@ -919,7 +971,10 @@ function enhanceStoryEntityBadges() {
     const box = card.querySelector('.story-entities');
     if (!p || !box) return;
     if (box.dataset.enhanced === '1') return;
-    const entities = extractEntitiesFromText(p.dataset.rawText || '');
+    const entities = extractEntitiesFromText(p.dataset.rawText || '', {
+      storyTitle: card.dataset.titleRaw || '',
+      storyDate: card.dataset.date || '',
+    });
     renderEntityBadges(box, entities);
     box.dataset.enhanced = '1';
   });
@@ -927,7 +982,10 @@ function enhanceStoryEntityBadges() {
   const modalBox = document.getElementById('story-modal-entities');
   const modalText = document.getElementById('story-modal-text');
   if (modalBox && modalText && modalText.dataset && modalText.dataset.rawText) {
-    const entities = extractEntitiesFromText(modalText.dataset.rawText || '');
+    const entities = extractEntitiesFromText(modalText.dataset.rawText || '', {
+      storyTitle: modalText.dataset.storyTitle || '',
+      storyDate: modalText.dataset.storyDate || '',
+    });
     renderEntityBadges(modalBox, entities);
   }
 }
@@ -1387,6 +1445,8 @@ function renderStories(data) {
     card.className = 'story-card';
     card.dataset.subgenre = s.subgenre || '';
     card.dataset.title = String(s.title || '').trim().toLowerCase();
+    card.dataset.titleRaw = String(s.title || '').trim();
+    card.dataset.date = String(data.date || '').trim();
     const subgenreEsc = escHtml(s.subgenre || 'Sword & Sorcery');
     card.innerHTML = `
       <p class="story-number">Tale ${String(i + 1).padStart(2, '0')} of ${data.stories.length}</p>
@@ -1458,7 +1518,11 @@ function closeStoryModal() {
   }
   const t = document.getElementById('story-modal-text');
   t.textContent = '';
-  if (t && t.dataset) delete t.dataset.rawText;
+  if (t && t.dataset) {
+    delete t.dataset.rawText;
+    delete t.dataset.storyTitle;
+    delete t.dataset.storyDate;
+  }
 }
 
 function openStoryModalSkeleton() {
@@ -1593,6 +1657,8 @@ async function openStoryModalByAppearance(date, title, opts = {}) {
     const rawText = fixMojibake(story.text || '');
     const textEl = document.getElementById('story-modal-text');
     textEl.dataset.rawText = rawText;
+    textEl.dataset.storyTitle = String(story.title || t).trim();
+    textEl.dataset.storyDate = String(day.date || d).trim();
     textEl.textContent = rawText;
 
     // Show entity badges once codex data is ready.
