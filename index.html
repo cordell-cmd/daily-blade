@@ -474,6 +474,7 @@ const ARCHIVE_URL    = (date) => `./archive/${date}.json`;
 const CODEX_URL      = './codex.json';
 const DEFAULT_GITHUB_REPO = { owner: 'cordell-cmd', repo: 'daily-blade' };
 const AUDIT_WORKFLOW_FILE = 'audit.yml';
+const AUDIT_PROXY_DEFAULT_URL = ''; // optional: set to your deployed proxy endpoint (e.g. https://<worker>.workers.dev/audit)
 
 function isDeveloperMode() {
   const host = String(window.location.hostname || '').toLowerCase();
@@ -535,6 +536,39 @@ function getDevGitHubToken() {
     return String(window.localStorage && window.localStorage.getItem('dailyBladeGhToken') || '').trim();
   } catch (e) {
     return '';
+  }
+}
+
+function getDevAuditProxyUrl() {
+  try {
+    const v = String(window.localStorage && window.localStorage.getItem('dailyBladeAuditProxyUrl') || '').trim();
+    return v || String(AUDIT_PROXY_DEFAULT_URL || '').trim();
+  } catch (e) {
+    return String(AUDIT_PROXY_DEFAULT_URL || '').trim();
+  }
+}
+
+function setDevAuditProxyUrl(url) {
+  try {
+    window.localStorage && window.localStorage.setItem('dailyBladeAuditProxyUrl', String(url || '').trim());
+  } catch (e) {
+    // ignore
+  }
+}
+
+function getDevAuditProxyAuth() {
+  try {
+    return String(window.localStorage && window.localStorage.getItem('dailyBladeAuditProxyAuth') || '').trim();
+  } catch (e) {
+    return '';
+  }
+}
+
+function setDevAuditProxyAuth(token) {
+  try {
+    window.localStorage && window.localStorage.setItem('dailyBladeAuditProxyAuth', String(token || '').trim());
+  } catch (e) {
+    // ignore
   }
 }
 
@@ -641,6 +675,42 @@ async function dispatchAuditWorkflow(dateKey, title) {
   return { owner, repo, startedAt };
 }
 
+async function dispatchAuditViaProxy(dateKey, title, ui = {}) {
+  const d = String(dateKey || '').trim();
+  const t = String(title || '').trim();
+  if (!d || !t) throw new Error('Missing date/title');
+
+  let proxyUrl = getDevAuditProxyUrl();
+  if (!proxyUrl) {
+    if (!isDeveloperMode()) throw new Error('Audit proxy not configured');
+    const entered = window.prompt('Audit Proxy URL (recommended for one-click audits):', '');
+    if (!entered) throw new Error('Audit proxy not configured');
+    proxyUrl = String(entered || '').trim();
+    setDevAuditProxyUrl(proxyUrl);
+  }
+
+  const headers = { 'Content-Type': 'application/json' };
+  const auth = getDevAuditProxyAuth();
+  if (auth) headers['X-Dev-Auth'] = auth;
+
+  const res = await fetch(proxyUrl, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ date: d, title: t }),
+  });
+  if (!res.ok) {
+    let msg = '';
+    try {
+      const j = await res.json();
+      msg = j && (j.error || j.message) ? String(j.error || j.message) : '';
+    } catch (e) {
+      msg = '';
+    }
+    throw new Error(`Audit proxy ${res.status}${msg ? `: ${msg}` : ''}`);
+  }
+  return true;
+}
+
 async function pollLatestAuditRun(owner, repo, startedAtMs, opts = {}) {
   const timeoutMs = Number.isFinite(opts.timeoutMs) ? opts.timeoutMs : 180000;
   const intervalMs = Number.isFinite(opts.intervalMs) ? opts.intervalMs : 3500;
@@ -680,62 +750,87 @@ async function automatedAuditStory(dateKey, title, ui = {}) {
     if (ui && ui.statusEl) ui.statusEl.textContent = String(msg || '');
   };
 
-  // Token bootstrap (developer-only). Auto-clear if stale/invalid.
-  if (devTokenIsStale(14)) {
-    clearDevGitHubToken();
-  }
-
-  const ensureToken = async () => {
-    if (getDevGitHubToken()) return true;
-    const hint = 'Paste a GitHub fine-grained token with permission to run Actions workflows (and read Actions). Saved locally in your browser for convenience.';
-    const tok = window.prompt(`Developer token required.\n\n${hint}\n\nToken:`, '');
-    if (!tok) return false;
-    setDevGitHubToken(tok);
-    return true;
-  };
-
-  if (!(await ensureToken())) {
-    setStatus('Audit canceled (no token).');
-    return;
-  }
-
-  setStatus('Queuing audit…');
-  let dispatch = null;
-  let triedReset = false;
-  while (!dispatch) {
-    try {
-      dispatch = await dispatchAuditWorkflow(d, t);
-    } catch (e) {
-      if (!triedReset && isGitHubAuthError(e)) {
-        triedReset = true;
-        clearDevGitHubToken();
-        setStatus('Token rejected. Re-entering…');
-        if (!(await ensureToken())) {
-          setStatus('Audit canceled (no token).');
-          return;
-        }
-        continue;
-      }
-      setStatus('Audit failed to start.');
+  // Preferred path: audit proxy (no GitHub UI, no PAT prompt in browser).
+  // Fallback path: direct GitHub API (requires a PAT in localStorage).
+  let usedProxy = false;
+  try {
+    setStatus('Queuing audit…');
+    await dispatchAuditViaProxy(d, t, ui);
+    usedProxy = true;
+  } catch (e) {
+    // If no proxy is configured, fall back to GitHub API token mode.
+    const msg = e && e.message ? String(e.message) : '';
+    const proxyNotConfigured = msg.toLowerCase().includes('proxy not configured');
+    if (!proxyNotConfigured) {
+      // Proxy exists but failed (auth, 5xx, etc.) -> surface.
       throw e;
     }
   }
 
-  setStatus('Audit running…');
-  try {
-    const res = await pollLatestAuditRun(dispatch.owner, dispatch.repo, dispatch.startedAt, { timeoutMs: 180000, intervalMs: 4000 });
-    if (res && res.status === 'completed') {
-      if (res.conclusion === 'success') {
-        setStatus('Audit complete. Refreshing Codex…');
-      } else {
-        setStatus('Audit completed (check result).');
-      }
-    } else if (res && res.status === 'timeout') {
-      setStatus('Audit queued (still running).');
+  let dispatch = null;
+  if (!usedProxy) {
+    if (devTokenIsStale(14)) {
+      clearDevGitHubToken();
     }
-  } catch (e) {
-    setStatus('Audit status unavailable.');
-    // Continue; we can still try refreshing later.
+
+    const ensureToken = async () => {
+      if (getDevGitHubToken()) return true;
+      const hint = 'No audit proxy configured. Paste a GitHub fine-grained token with permission to run Actions workflows (and read Actions). Saved locally in your browser.';
+      const tok = window.prompt(`Developer token required.\n\n${hint}\n\nToken:`, '');
+      if (!tok) return false;
+      setDevGitHubToken(tok);
+      return true;
+    };
+
+    if (!(await ensureToken())) {
+      setStatus('Audit canceled.');
+      return;
+    }
+
+    setStatus('Queuing audit…');
+    let triedReset = false;
+    while (!dispatch) {
+      try {
+        dispatch = await dispatchAuditWorkflow(d, t);
+      } catch (e) {
+        if (!triedReset && isGitHubAuthError(e)) {
+          triedReset = true;
+          clearDevGitHubToken();
+          setStatus('Token rejected. Re-entering…');
+          if (!(await ensureToken())) {
+            setStatus('Audit canceled.');
+            return;
+          }
+          continue;
+        }
+        setStatus('Audit failed to start.');
+        throw e;
+      }
+    }
+  }
+
+  // Status polling only works when we can read Actions runs.
+  if (dispatch) {
+    setStatus('Audit running…');
+    try {
+      const res = await pollLatestAuditRun(dispatch.owner, dispatch.repo, dispatch.startedAt, { timeoutMs: 180000, intervalMs: 4000 });
+      if (res && res.status === 'completed') {
+        if (res.conclusion === 'success') {
+          setStatus('Audit complete. Refreshing Codex…');
+        } else {
+          setStatus('Audit completed (check result).');
+        }
+      } else if (res && res.status === 'timeout') {
+        setStatus('Audit queued (still running).');
+      }
+    } catch (e) {
+      setStatus('Audit status unavailable.');
+    }
+  } else {
+    // Proxy path: give the workflow time to run before refresh.
+    setStatus('Audit running…');
+    await sleep(6500);
+    setStatus('Refreshing Codex…');
   }
 
   // Best-effort: refresh codex + badges.
