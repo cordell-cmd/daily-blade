@@ -1089,6 +1089,7 @@ def build_lore_extraction_prompt(stories, existing_lore):
     existing_chars     = {c["name"].lower() for c in existing_lore.get("characters", [])}
     existing_places    = {p["name"].lower() for p in existing_lore.get("places", [])}
     existing_events    = {e["name"].lower() for e in existing_lore.get("events", [])}
+    existing_rituals   = {r["name"].lower() for r in existing_lore.get("rituals", []) if isinstance(r, dict) and r.get("name")}
     existing_weapons   = {w["name"].lower() for w in existing_lore.get("weapons", [])}
     existing_deities   = {d["name"].lower() for d in existing_lore.get("deities_and_entities", [])}
     existing_artifacts   = {a["name"].lower() for a in existing_lore.get("artifacts",   [])}
@@ -1152,6 +1153,7 @@ EXISTING CANON (reference only; non-exhaustive; ok to repeat):
 - Characters: {_known_summary(existing_chars)}
 - Places: {_known_summary(existing_places)}
 - Events: {_known_summary(existing_events)}
+- Rituals: {_known_summary(existing_rituals)}
 - Weapons: {_known_summary(existing_weapons)}
 - Deities/Entities: {_known_summary(existing_deities)}
 - Artifacts: {_known_summary(existing_artifacts)}
@@ -1243,6 +1245,19 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "notes": "Any unresolved threads or consequences."
     }}
   ],
+    "rituals": [
+        {{
+            "id": "snake_case_id",
+            "name": "Ritual Name",
+            "tagline": "Three evocative words describing this ritual.",
+            "ritual_type": "dismissal / binding / summoning / oath / warding / sacrifice / etc",
+            "performed_by": ["character/faction names involved"],
+            "requirements": "Key components, constraints, or setup (or 'unknown').",
+            "effect": "What it does, based strictly on the story.",
+            "cost": "What it costs, corrupts, or demands (or 'unknown').",
+            "notes": "Any unresolved threads or consequences."
+        }}
+    ],
   "weapons": [
     {{
       "id": "snake_case_id",
@@ -1552,6 +1567,7 @@ def merge_lore(existing_lore, new_lore, date_key):
         "characters",
         "places",
         "events",
+        "rituals",
         "weapons",
         "deities_and_entities",
         "artifacts",
@@ -1913,6 +1929,7 @@ def update_codex_file(lore, date_key, stories=None):
         "characters": [],
         "places": [],
         "events": [],
+        "rituals": [],
         "weapons": [],
         "artifacts": [],
         "factions": [],
@@ -2158,6 +2175,9 @@ def update_codex_file(lore, date_key, stories=None):
     merge_named_category("polities", ["polity_type", "realm", "region", "seat", "sovereigns", "claimants", "status", "description", "notes"]) 
     merge_named_category("provinces", ["realm", "region", "function", "status", "notes"]) 
     merge_named_category("districts", ["province", "region", "function", "status", "notes"]) 
+
+    # ── Rituals ─────────────────────────────────────────────────────────
+    merge_named_category("rituals", ["ritual_type", "performed_by", "requirements", "effect", "cost", "notes"])
 
     # ── Merge places ─────────────────────────────────────────────────────
     existing_places = {p["name"].lower(): p for p in codex.get("places", [])}
@@ -2561,6 +2581,7 @@ def update_codex_file(lore, date_key, stories=None):
         "characters",
         "places",
         "events",
+        "rituals",
         "weapons",
         "artifacts",
         "factions",
@@ -2581,6 +2602,7 @@ def update_codex_file(lore, date_key, stories=None):
         f"{len(codex['characters'])} chars, "
         f"{len(codex['places'])} places, "
         f"{len(codex['events'])} events, "
+        f"{len(codex.get('rituals', []))} rituals, "
         f"{len(codex['weapons'])} weapons, "
         f"{len(codex['artifacts'])} artifacts, "
         f"{len(codex.get('factions', []))} factions, "
@@ -2685,6 +2707,7 @@ def normalize_extracted_lore(extracted):
         "characters",
         "places",
         "events",
+        "rituals",
         "weapons",
         "deities_and_entities",
         "artifacts",

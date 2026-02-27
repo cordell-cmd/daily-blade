@@ -145,6 +145,7 @@ def build_extraction_prompt(stories_with_dates, existing_codex):
     existing_relics      = {r["name"].lower() for r in existing_codex.get("relics",       [])}
     existing_regions     = {g["name"].lower() for g in existing_codex.get("regions",      [])}
     existing_substances  = {s["name"].lower() for s in existing_codex.get("substances",   [])}
+    existing_rituals     = {r["name"].lower() for r in existing_codex.get("rituals",      [])}
 
     def _known_summary(items, limit=40):
         items = sorted({str(x).strip() for x in (items or set()) if str(x).strip()})
@@ -187,6 +188,7 @@ EXISTING CANON (reference only; non-exhaustive; ok to repeat):
 - Characters: {_known_summary(existing_chars)}
 - Places: {_known_summary(existing_places)}
 - Events: {_known_summary(existing_events)}
+- Rituals: {_known_summary(existing_rituals)}
 - Weapons: {_known_summary(existing_weapons)}
 - Artifacts: {_known_summary(existing_artifacts)}
 - Factions: {_known_summary(existing_factions)}
@@ -255,6 +257,20 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "notes": "Any unresolved threads or consequences."
     }}
   ],
+    "rituals": [
+        {{
+            "id": "snake_case_id",
+            "name": "Ritual Name",
+            "tagline": "Three evocative words describing this ritual.",
+            "ritual_type": "banishment / binding / oath / necromancy / ward / communion / etc",
+            "performed_by": ["character names"],
+            "requirements": "Components, sacrifices, timing, location, or spoken words.",
+            "effect": "What it does in-world, based on the story.",
+            "cost": "What it costs (blood, memory, years, titles, sanity, etc).",
+            "first_story": "Exact story title where it first appears",
+            "notes": "Any unresolved threads or caveats."
+        }}
+    ],
   "weapons": [
     {{
       "id": "snake_case_id",
@@ -660,6 +676,32 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
             }
     codex["events"] = list(existing_events.values())
 
+    # ── Rituals ─────────────────────────────────────────────────────────
+    existing_rituals = {r["name"].lower(): r for r in codex.get("rituals", [])}
+    for r in new_entities.get("rituals", []):
+        name = r.get("name", "Unknown")
+        name_low = name.lower()
+        first_story_title = r.get("first_story", "")
+        first_date = find_story_date(first_story_title)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
+
+        if name_low not in existing_rituals:
+            existing_rituals[name_low] = {
+                "name":              name,
+                "tagline":           r.get("tagline", ""),
+                "ritual_type":       r.get("ritual_type", ""),
+                "performed_by":      r.get("performed_by", []),
+                "requirements":      r.get("requirements", ""),
+                "effect":            r.get("effect", ""),
+                "cost":              r.get("cost", ""),
+                "first_story":       first_story_title,
+                "first_date":        first_date,
+                "appearances":       len(story_appearances) or 1,
+                "story_appearances": story_appearances,
+                "notes":             r.get("notes", ""),
+            }
+    codex["rituals"] = list(existing_rituals.values())
+
     # ── Weapons ──────────────────────────────────────────────────────────
     existing_weapons = {w["name"].lower(): w for w in codex.get("weapons", [])}
     for w in new_entities.get("weapons", []):
@@ -946,6 +988,7 @@ def main():
         "characters":   [],
         "places":       [],
         "events":       [],
+        "rituals":      [],
         "weapons":      [],
         "artifacts":    [],
         "factions":     [],
@@ -986,10 +1029,11 @@ def main():
             n_chars  = len(new_entities.get("characters", []))
             n_places = len(new_entities.get("places", []))
             n_events = len(new_entities.get("events", []))
+            n_rituals = len(new_entities.get("rituals", []))
             n_weaps  = len(new_entities.get("weapons", []))
             n_arts   = len(new_entities.get("artifacts", []))
             print(f"  Extracted: {n_chars} chars, {n_places} places, "
-                  f"{n_events} events, {n_weaps} weapons, {n_arts} artifacts")
+                f"{n_events} events, {n_rituals} rituals, {n_weaps} weapons, {n_arts} artifacts")
 
             codex = merge_into_codex(codex, new_entities, all_stories, date_key)
 
@@ -1007,6 +1051,7 @@ def main():
     print(f"  Characters: {len(codex['characters'])}")
     print(f"  Places:     {len(codex['places'])}")
     print(f"  Events:     {len(codex['events'])}")
+    print(f"  Rituals:    {len(codex['rituals'])}")
     print(f"  Weapons:    {len(codex['weapons'])}")
     print(f"  Artifacts:  {len(codex['artifacts'])}")
     print(f"{'='*60}")

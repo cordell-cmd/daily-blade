@@ -212,6 +212,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 /* ── Event Cards ────────────────────────────────────────────────── */
 .event-card { background: linear-gradient(160deg, #0d0518 0%, #080313 100%); border: 1px solid rgba(100,50,160,.3); border-top: 3px solid #6a2a9a; }
 .badge-event { background: rgba(100,50,160,.15); border: 1px solid rgba(100,50,160,.5); color: #b07acc; }
+.badge-ritual { background: rgba(120,60,160,.14); border: 1px solid rgba(120,60,160,.52); color: #c29ae2; }
 .event-participants { font-size: .8rem; color: var(--muted); margin: .2rem 0 .5rem; }
 .event-participants strong { font-style: normal; color: rgba(176,122,204,.7); font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .3rem; }
 .event-significance { font-size: .82rem; color: rgba(176,122,204,.65); font-style: italic; margin-top: .3rem; }
@@ -401,6 +402,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
       <button class="codex-filter-btn" data-type="regions">🗺 Regions</button>
       <button class="codex-filter-btn" data-type="districts">🧱 Districts</button>
       <button class="codex-filter-btn" data-type="events">⚡ Events</button>
+      <button class="codex-filter-btn" data-type="rituals">🕯 Rituals</button>
       <button class="codex-filter-btn" data-type="weapons">🗡 Weapons</button>
       <button class="codex-filter-btn" data-type="artifacts">💎 Artifacts</button>
       <button class="codex-filter-btn" data-type="factions">🧙 Factions</button>
@@ -441,6 +443,75 @@ const STORIES_URL    = './stories.json';
 const ARCHIVE_IDX_URL = './archive/index.json';
 const ARCHIVE_URL    = (date) => `./archive/${date}.json`;
 const CODEX_URL      = './codex.json';
+
+function isDeveloperMode() {
+  const host = String(window.location.hostname || '').toLowerCase();
+  if (host === 'localhost' || host === '127.0.0.1') return true;
+  try {
+    const params = new URLSearchParams(String(window.location.search || ''));
+    const dev = (params.get('dev') || '').trim().toLowerCase();
+    if (dev === '1' || dev === 'true' || dev === 'yes') return true;
+  } catch (e) {
+    // ignore
+  }
+  try {
+    return String(window.localStorage && window.localStorage.getItem('dailyBladeDev') || '') === '1';
+  } catch (e) {
+    return false;
+  }
+}
+
+function inferGitHubRepoFromPages() {
+  const host = String(window.location.hostname || '').toLowerCase();
+  const pathParts = String(window.location.pathname || '').split('/').filter(Boolean);
+  if (!host.endsWith('.github.io')) return null;
+  const owner = host.split('.')[0];
+  const repo = pathParts[0] || '';
+  if (!owner || !repo) return null;
+  return { owner, repo };
+}
+
+function auditWorkflowUrl() {
+  const info = inferGitHubRepoFromPages();
+  if (!info) return null;
+  return `https://github.com/${info.owner}/${info.repo}/actions/workflows/audit.yml`;
+}
+
+async function copyToClipboard(text) {
+  const t = String(text || '');
+  try {
+    if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(t);
+      return true;
+    }
+  } catch (e) {
+    // ignore and fall back
+  }
+  try {
+    window.prompt('Copy these Audit inputs (paste into the workflow form):', t);
+  } catch (e) {
+    // ignore
+  }
+  return false;
+}
+
+async function launchAuditWorkflow(dateKey, title) {
+  const d = String(dateKey || '').trim();
+  const t = String(title || '').trim();
+  if (!d || !t) return;
+
+  const inputs = `date: ${d}\ntitle: ${t}`;
+  const url = auditWorkflowUrl();
+
+  await copyToClipboard(inputs);
+
+  if (url) {
+    window.open(url, '_blank', 'noopener');
+    alert('Audit inputs copied. In GitHub Actions, click “Run workflow” and paste the date/title.');
+  } else {
+    alert('Audit inputs copied. Open your repo’s Actions → Audit Story workflow, then paste the date/title.');
+  }
+}
 
 // ── State ───────────────────────────────────────────────────────────
 let currentDate     = null;
@@ -543,6 +614,7 @@ function codexTypeLabel(type) {
     districts: 'Districts',
     regions: 'Regions',
     events: 'Events',
+    rituals: 'Rituals',
     weapons: 'Weapons',
     artifacts: 'Artifacts',
     factions: 'Factions',
@@ -567,6 +639,7 @@ function badgeClassForEntityType(type) {
     districts: 'badge-region',
     regions: 'badge-region',
     events: 'badge-event',
+    rituals: 'badge-ritual',
     weapons: 'badge-weapon',
     artifacts: 'badge-artifact',
     factions: 'badge-faction',
@@ -584,13 +657,21 @@ function buildCodexEntityIndex(data) {
 
   const categories = [
     'characters','places','hemispheres','continents','subcontinents','realms','provinces','regions','districts',
-    'polities','events','weapons','artifacts','factions','lore','flora_fauna','magic','relics','substances'
+    'polities','events','rituals','weapons','artifacts','factions','lore','flora_fauna','magic','relics','substances'
   ];
   const index = new Map();
   const names = [];
 
-  const addToIndex = (key, type, obj) => {
+  const addToIndex = (key, type, obj, opts) => {
     if (!key || key.length < 3) return;
+    const options = opts || {};
+    const allowCharacterAliasCollision = options.allowCharacterAliasCollision !== false;
+
+    if (type === 'characters' && !allowCharacterAliasCollision && index.has(key)) {
+      const existing = index.get(key) || [];
+      const collides = existing.some(e => e && e.type === 'characters' && e.obj && e.obj !== obj);
+      if (collides) return;
+    }
     if (!index.has(key)) index.set(key, []);
     index.get(key).push({ type, obj });
   };
@@ -635,14 +716,14 @@ function buildCodexEntityIndex(data) {
       const theIdx = key.indexOf(' the ');
       if (theIdx > 2) {
         const alias = key.slice(0, theIdx).trim();
-        addToIndex(alias, type, obj);
+        addToIndex(alias, type, obj, { allowCharacterAliasCollision: false });
       }
 
       if (baseKey && baseKey !== key) {
         const theIdx2 = baseKey.indexOf(' the ');
         if (theIdx2 > 2) {
           const alias = baseKey.slice(0, theIdx2).trim();
-          addToIndex(alias, type, obj);
+          addToIndex(alias, type, obj, { allowCharacterAliasCollision: false });
         }
       }
 
@@ -650,14 +731,14 @@ function buildCodexEntityIndex(data) {
       const commaIdx = key.indexOf(',');
       if (commaIdx > 2) {
         const alias = key.slice(0, commaIdx).trim();
-        addToIndex(alias, type, obj);
+        addToIndex(alias, type, obj, { allowCharacterAliasCollision: false });
       }
 
       if (baseKey && baseKey !== key) {
         const commaIdx2 = baseKey.indexOf(',');
         if (commaIdx2 > 2) {
           const alias = baseKey.slice(0, commaIdx2).trim();
-          addToIndex(alias, type, obj);
+          addToIndex(alias, type, obj, { allowCharacterAliasCollision: false });
         }
       }
     });
@@ -761,6 +842,29 @@ function extractEntitiesFromText(rawText) {
       if (!bucket.has(canonKey)) bucket.set(canonKey, { key: canonKey, type, name: canonicalName });
     });
   }
+
+  // If a story mentions both a full epithet name and its short form,
+  // prefer the full form so we don't show duplicate badges.
+  // Example: "Kael" + "Kael the Nameless" => keep only the latter.
+  const chars = found.get('characters');
+  if (chars && chars.size) {
+    const longEntries = Array.from(chars.values()).map(e => String(e && e.name ? e.name : '')).filter(Boolean);
+    longEntries.forEach(nm => {
+      const lower = nm.toLowerCase();
+      let base = '';
+      const theIdx = lower.indexOf(' the ');
+      if (theIdx > 1) base = nm.slice(0, theIdx).trim();
+      if (!base) {
+        const commaIdx = nm.indexOf(',');
+        if (commaIdx > 1) base = nm.slice(0, commaIdx).trim();
+      }
+      const baseKey = normalizeEntityKey(base);
+      const fullKey = normalizeEntityKey(nm);
+      if (baseKey && fullKey && baseKey !== fullKey && chars.has(baseKey) && chars.has(fullKey)) {
+        chars.delete(baseKey);
+      }
+    });
+  }
   return found;
 }
 
@@ -773,7 +877,7 @@ function renderEntityBadges(containerEl, entitiesByType) {
   }
 
   const typeOrder = [
-    'characters', 'places', 'polities', 'events', 'factions', 'magic', 'relics', 'artifacts', 'weapons', 'lore', 'flora_fauna', 'substances',
+    'characters', 'places', 'polities', 'events', 'rituals', 'factions', 'magic', 'relics', 'artifacts', 'weapons', 'lore', 'flora_fauna', 'substances',
     'regions', 'districts', 'provinces', 'realms', 'subcontinents', 'continents', 'hemispheres'
   ];
   const types = Array.from(entitiesByType.keys());
@@ -982,6 +1086,7 @@ function _primaryLabelTokensForEntity(type, obj) {
   if (type === 'characters') return pick(o.role, 'Unknown');
   if (type === 'places') return pick(o.place_type, 'Location');
   if (type === 'events') return pick(o.event_type, 'Event');
+  if (type === 'rituals') return pick(o.ritual_type, 'Ritual');
   if (type === 'weapons') return pick(o.weapon_type, 'Weapon');
   if (type === 'artifacts') return pick(o.artifact_type, 'Artifact');
   if (type === 'polities') return pick(o.polity_type, 'Polity');
@@ -1029,6 +1134,7 @@ function updateCodexCountLabel() {
     districts: 'Districts',
     regions: 'Regions',
     events: 'Events',
+    rituals: 'Rituals',
     weapons: 'Weapons',
     artifacts: 'Artifacts',
     factions: 'Factions',
@@ -1104,6 +1210,7 @@ function applyCodexOrganization() {
     regions: 'Regions',
     districts: 'Districts',
     events: 'Events',
+    rituals: 'Rituals',
     weapons: 'Weapons',
     artifacts: 'Artifacts',
     polities: 'Polities',
@@ -1437,6 +1544,17 @@ async function openStoryModalByAppearance(date, title, opts = {}) {
       if (match) match.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
     actions.appendChild(btnDay);
+
+    if (isDeveloperMode()) {
+      const btnAudit = document.createElement('button');
+      btnAudit.className = 'btn';
+      btnAudit.textContent = 'Audit Story';
+      btnAudit.title = 'Developer-only: run a server-side audit via GitHub Actions';
+      btnAudit.addEventListener('click', () => {
+        launchAuditWorkflow(day.date || d, story.title || t);
+      });
+      actions.appendChild(btnAudit);
+    }
 
     if (appearances.length > 1) {
       const count = document.createElement('span');
@@ -1787,6 +1905,7 @@ function renderCodex(data) {
   const provinces   = [...(data.provinces   || [])].sort(byName);
   const districts   = [...(data.districts   || [])].sort(byName);
   const events      = [...(data.events      || [])].sort(byName);
+  const rituals     = [...(data.rituals     || [])].sort(byName);
   const weapons     = [...(data.weapons     || [])].sort(byName);
   const artifacts   = [...(data.artifacts   || [])].sort(byName);
   const factions    = [...(data.factions    || [])].sort(byName);
@@ -1797,7 +1916,7 @@ function renderCodex(data) {
   const regions     = [...(data.regions     || [])].sort(byName);
   const substances  = [...(data.substances  || [])].sort(byName);
 
-  const total = characters.length + places.length + hemispheres.length + continents.length + subcontinents.length + realms.length + polities.length + provinces.length + districts.length + events.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
+  const total = characters.length + places.length + hemispheres.length + continents.length + subcontinents.length + realms.length + polities.length + provinces.length + districts.length + events.length + rituals.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
 
   if (total === 0) {
     statusEl.innerHTML = '<em>The codex is empty. Return after the backfill workflow completes.</em>';
@@ -2076,6 +2195,38 @@ function renderCodex(data) {
         ${e.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(e.first_story)}</span>` : ''}
       </div>
       ${buildStoryLinks(e.story_appearances, e.first_story, e.first_date)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ── Rituals ─────────────────────────────────────────────────────
+  rituals.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'codex-card event-card';
+    stampCodexCardMeta(card, 'rituals', r.name, _primaryLabelTokensForEntity('rituals', r));
+    const performers = (r.performed_by || []).map(p => escHtml(p)).join(', ');
+    const appearances = r.appearances > 1 ? `${r.appearances} appearances` : 'First appearance';
+    card.innerHTML = `
+      <span class="codex-type-label">Ritual</span>
+      <div class="codex-card-name">${escHtml(r.name)}</div>
+      ${r.tagline ? `<div class="codex-card-tagline">${escHtml(r.tagline)}</div>` : ''}
+      <div class="codex-card-badges">
+        <span class="badge badge-ritual">${escHtml(r.ritual_type || 'Ritual')}</span>
+      </div>
+      <hr class="codex-divider" />
+      ${performers ? `<div class="event-participants"><strong>Performed by:</strong>${performers}</div>` : ''}
+      ${r.requirements ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Requirements:</em> ${escHtml(r.requirements)}</div>` : ''}
+      ${r.effect ? `<div class="codex-body">${escHtml(r.effect)}</div>` : ''}
+      ${r.cost ? `<div class="event-significance">Cost: ${escHtml(r.cost)}</div>` : ''}
+      ${r.notes ? `<div class="event-significance">${escHtml(r.notes)}</div>` : ''}
+      ${buildMostSpecificLocationLine(r)}
+      ${buildEntityParentChain(r)}
+      <div class="codex-card-footer">
+        <span class="codex-appearances">${appearances}</span>
+        ${r.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(r.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(r.story_appearances, r.first_story, r.first_date)}
     `;
     attachStoryLinkListeners(card);
     grid.appendChild(card);
