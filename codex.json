@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-26",
+  "last_updated": "2026-02-27",
   "characters": [
     {
       "name": "Vraxen the Knife",
@@ -57,7 +57,7 @@
           "title": "Blood-Price of the Caravan"
         }
       ],
-      "travel_scope": "regional",
+      "travel_scope": "unknown",
       "home_place": "Ashen Wastes",
       "home_region": "",
       "home_realm": "",
@@ -92,7 +92,7 @@
           "title": "Blood-Price of the Caravan"
         }
       ],
-      "travel_scope": "regional",
+      "travel_scope": "unknown",
       "home_place": "Ashen Wastes",
       "home_region": "",
       "home_realm": "",
@@ -127,7 +127,7 @@
           "title": "The Lamp of Suroth"
         }
       ],
-      "travel_scope": "local",
+      "travel_scope": "unknown",
       "home_place": "Sunken Ziggurat of Yeng",
       "home_region": "",
       "home_realm": "",
@@ -170,7 +170,7 @@
           "title": "The Warlord's Last Stand"
         }
       ],
-      "travel_scope": "regional",
+      "travel_scope": "unknown",
       "home_place": "The Steppe",
       "home_region": "",
       "home_realm": "",
@@ -240,7 +240,7 @@
           "title": "The Oath-Breaker's Due"
         }
       ],
-      "travel_scope": "regional",
+      "travel_scope": "unknown",
       "home_place": "The North Road",
       "home_region": "",
       "home_realm": "",
@@ -279,7 +279,7 @@
           "title": "The Conjuress and the Year-Thief"
         }
       ],
-      "travel_scope": "local",
+      "travel_scope": "unknown",
       "home_place": "Amrath",
       "home_region": "",
       "home_realm": "",
@@ -318,7 +318,7 @@
           "title": "The Conjuress and the Year-Thief"
         }
       ],
-      "travel_scope": "local",
+      "travel_scope": "unknown",
       "home_place": "Amrath",
       "home_region": "",
       "home_realm": "",
@@ -388,7 +388,7 @@
           "title": "The Last Thief of Crimson Gate"
         }
       ],
-      "travel_scope": "local",
+      "travel_scope": "unknown",
       "home_place": "Crimson Gate",
       "home_region": "",
       "home_realm": "",
@@ -447,7 +447,7 @@
           "title": "The Collector's Daughter"
         }
       ],
-      "travel_scope": "interrealm",
+      "travel_scope": "unknown",
       "home_place": "Ostern",
       "home_region": "",
       "home_realm": "",
@@ -1469,6 +1469,278 @@
       "district": "unknown",
       "place": "",
       "parent_place": ""
+    },
+    {
+      "name": "Kael the Nameless",
+      "tagline": "Shadow-broker. Identity-thief. Consumed.",
+      "role": "Shadow-Broker",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "Xul'thyris",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A shadow-broker who dealt in stolen identities and borrowed faces in the gambling dens of Xul'thyris. Hired to sever the High Magistrate's shadow from light and stone, Kael discovered that shadows hunger and remember their owners. He was consumed by his own theft, becoming nothing but darkness wearing skin.",
+      "traits": [
+        "skilled at deception",
+        "mercenary",
+        "haunted by stolen lives"
+      ],
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Mordica the Bone-Carver",
+      "tagline": "Sculptor of suffering. Forty years. Consumed.",
+      "role": "Bone-Carver / Necromancer",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A bone-carver for forty years who carved phylacteries and spirit-binding totems without moral question. Hired by a widow to bind her daughter's remains with anguish, she created a monument in bone and suffering\u2014only to become the final piece of the widow's terrible work.",
+      "traits": [
+        "amoral craftsperson",
+        "skilled in necromancy",
+        "price-blind"
+      ],
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Yareth",
+      "tagline": "Sister-seeker. Joy-bartered. Haunted.",
+      "role": "Steppe-Rider / Warrior",
+      "status": "alive",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "the blasted steppes",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A steppe-rider searching the blasted steppes for her brother, lost during a war for the Sunken Wells. She bargained with a being of impossible nature for his return\u2014trading seven years of her joy. Her brother returned unchanged but amnesiac, and Yareth exists in a hollow shell, her emotions consumed by the bargain.",
+      "traits": [
+        "determined",
+        "grief-stricken",
+        "desperate"
+      ],
+      "first_story": "The Steppe-Rider's Bargain",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Steppe-Rider's Bargain"
+        }
+      ]
+    },
+    {
+      "name": "Caros the Fortunate",
+      "tagline": "Treasure-finder. Curse-bearer. Consumed.",
+      "role": "Thief / Fugitive",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A fortunate thief who stumbled upon Morthaxes's cursed treasure in Castle Greymarch\u2014ten thousand gold coins stamped with a Lich-King's visage. The coins could not be spent or destroyed; their debt compounded daily until Caros owed more than could exist. The Collector claimed him when his flesh had nothing left to offer.",
+      "traits": [
+        "lucky initially",
+        "desperate",
+        "doomed"
+      ],
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Morg",
+      "tagline": "Sworn sentinel. Blood-bound. Digested.",
+      "role": "Tomb-Keeper / Guardian",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "Tomb of Shard-V\u00eal",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A tomb-keeper sworn in blood-oath to guard the Tomb of Shard-V\u00eal for twelve years, part of a lineage of guardians. When the Plague Wars ended and no successors came, the living tomb grew hungry. Morg's oath prevented him from breaking his vow; instead, the tomb consumed him piece by piece, incorporating his bones into its burial chamber.",
+      "traits": [
+        "loyal to oath",
+        "trapped",
+        "merged with stone"
+      ],
+      "first_story": "The Tomb-Keeper's Vigil",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Tomb-Keeper's Vigil"
+        }
+      ]
+    },
+    {
+      "name": "Sister Kess",
+      "tagline": "Healer-broken. Truth-cursed. Mercy-poisoned.",
+      "role": "Novice Nun / Healer",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "convent",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A novice sister who broke her vows to seek the Witch of Ravenmoor, desperate to save the plague-village of Carrion's Rest. The witch lifted the plague but cursed Kess with absolute truth\u2014she could never lie again. She saved the village but destroyed herself, unable to offer comfort or hide doubt, each truth shattered faith.",
+      "traits": [
+        "compassionate",
+        "conflicted",
+        "curse-bearer"
+      ],
+      "first_story": "The Witch-Price of Mercy",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Witch-Price of Mercy"
+        }
+      ]
+    },
+    {
+      "name": "Kessara",
+      "tagline": "Regent-widowed. Ghost-bound. Liberated.",
+      "role": "Warlord / Regent",
+      "status": "alive",
+      "travel_scope": "regional",
+      "home_place": "Sunken Marches",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A widow who ruled the Sunken Marches in name only while her dead husband Velgrim the Terrible held true power as a practical, vengeful ghost. Rather than submit to his demands for massacre, Kessara performed a ritual of dismissal, sacrificing her claim to the land itself to release his spirit. She departed as a wanderer, leaving the Marches to her husband's eternal rule.",
+      "traits": [
+        "strategic",
+        "willing to sacrifice",
+        "independent"
+      ],
+      "first_story": "The Warlord's Widow",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Warlord's Widow"
+        }
+      ]
+    },
+    {
+      "name": "Master Lethyn",
+      "tagline": "Alchemist-glutted. Youth-hungry. Inhuman.",
+      "role": "Alchemist / Sorcerer",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "An alchemist who perfected a potion of youth through extraction of living flesh. What began as voluntary sacrifice became coerced theft and murder as his hunger grew beyond control. His own transformation into a flesh-eating thing was irreversible; he burned for three days while still consuming, his screams part of his alchemy.",
+      "traits": [
+        "ambitious",
+        "amoral",
+        "self-consuming"
+      ],
+      "first_story": "The Alchemist's Appetite",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Alchemist's Appetite"
+        }
+      ]
+    },
+    {
+      "name": "Thorne",
+      "tagline": "Oath-bound. Rebel. Satisfied.",
+      "role": "Fortress Warden / Soldier",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "Grimmholt",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A warden sworn by blood-oath to defend Grimmholt fortress against the Rot-King's forces. When the Crown ordered him to surrender the fortress, Thorne faced a choice between breaking his oath or treason. He chose rebellion, sealing the gates and holding against both the Rot-King and royal armies for two years. He died unburdened when his betrayed fortress fell.",
+      "traits": [
+        "faithful",
+        "defiant",
+        "self-sacrificing"
+      ],
+      "first_story": "The Broken Oath",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Broken Oath"
+        }
+      ]
+    },
+    {
+      "name": "Nara the Tide-Thief",
+      "tagline": "Magic-thief. Ocean-hunted. Redeemed.",
+      "role": "Thief / Sorcerer",
+      "status": "alive",
+      "travel_scope": "interrealm",
+      "home_place": "unknown",
+      "home_region": "Sapphire Deep",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A thief who stole water-magic from the merfolk of the Sapphire Deep. Hunted across three continents for years, she learned that the sea cannot be stolen from\u2014only reclaimed. Cornered in the desert city of Vel-Karsh, she bound her stolen magic into a single glass vial and shattered it, transforming the world to settle her debt. The merfolk accepted the reshaping as payment.",
+      "traits": [
+        "resourceful",
+        "desperate",
+        "willing to reshape reality"
+      ],
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Velgrim the Terrible",
+      "tagline": "Ghost-warlord. Persistent. Released.",
+      "role": "Ghost / Warlord",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "Sunken Marches",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A powerful warlord who died three seasons before the events of his story but refused to pass into final death. His ghost manifested as a practical, demanding presence in the Sunken Marches, directing sieges and collecting tribute. He was finally released to peaceful death when his widow Kessara sacrificed her claim to the throne.",
+      "traits": [
+        "persistent",
+        "practical",
+        "honour-bound"
+      ],
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "places": [
@@ -1509,7 +1781,7 @@
       "place_type": "city",
       "world": "The Known World",
       "atmosphere": "A place where unnamed merchants deal in cursed artifacts and dark bargains.",
-      "description": "A city where stolen goods and cursed items can be sold. Home to enigmatic merchants who broker deals for cursed relics.",
+      "description": "A city with functioning night markets where unusual commodities \u2014 including stolen shadows \u2014 are bought and sold by buyers who never give their names.",
       "status": "active",
       "first_story": "The Copper Thief",
       "first_date": "2026-02-26",
@@ -1718,7 +1990,7 @@
       "place_type": "wilderness",
       "world": "The Known World",
       "atmosphere": "A blighted wasteland of ash and phantom visions, where the broken wander.",
-      "description": "A desolate region where the sorcerer Vetch was last seen, walking in circles and murmuring to gardens that no longer exist. Appears to be a place of exile or permanent curse.",
+      "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
       "status": "active",
       "first_story": "The Living Garden",
       "first_date": "2026-02-26",
@@ -1749,8 +2021,8 @@
       "place_type": "ruin",
       "world": "The Known World",
       "atmosphere": "Oppressive antiquity\u2014air thick with centuries, chambers that reek of forgotten ritual.",
-      "description": "A sunken ziggurat containing sealed chambers and ancient artifacts. Below its depths lies at least one chamber housing the Lamp of Suroth in a niche marked with an inscription about truth and lies.",
-      "status": "ruins",
+      "description": "An ancient subterranean ruin where the air tastes of centuries. Houses the Lamp of Suroth in a sealed chamber. Multiple sealed doors hint at further depths and further lamps \u2014 or worse.",
+      "status": "partially explored",
       "first_story": "The Lamp of Suroth",
       "first_date": "2026-02-25",
       "appearances": 1,
@@ -1830,8 +2102,8 @@
       "place_type": "city",
       "world": "The Known World",
       "atmosphere": "A place of siege and desperation where sorcerers are driven to dangerous pacts.",
-      "description": "A city besieged during a conflict significant enough to drive Conjuress Mel to make a demonic pact for three desperately-needed spells.",
-      "status": "active",
+      "description": "A city that survived a siege \u2014 the Siege of Amrath \u2014 during which Conjuress Mel made her desperate three-favor pact with Varek. Its current condition after the siege is unspecified.",
+      "status": "post-siege",
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
       "appearances": 1,
@@ -1857,7 +2129,7 @@
       "place_type": "city",
       "world": "The Known World",
       "atmosphere": "A place of ash and memory, haunted by catastrophic loss.",
-      "description": "A city destroyed in a devastating fire that claimed three thousand lives. Its burning became the catalyst for Cassia Vorn's dark bargain.",
+      "description": "A city burned with three thousand people inside by a man whose identity Cassia Vorn traded her certainty to learn. Now ruins.",
       "status": "ruins",
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
@@ -1884,8 +2156,8 @@
       "place_type": "fortress / vault-city",
       "world": "The Known World",
       "atmosphere": "A place of extreme caution and ancient security, protecting relics too dangerous for the world.",
-      "description": "A sealed location containing deep vaults, one of which held the Plague-Bringer's Crown. After King Aldous III's use of the Crown, Ostern's keepers built a deeper vault to contain it further.",
-      "status": "active",
+      "description": "A kingdom ruled by King Aldous III until his death. Home to the sealed vault beneath the city that housed the Plague-Bringer's Crown. After Aldous's death, the Crown was returned and a deeper vault was built.",
+      "status": "active \u2014 under new rule",
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
       "appearances": 1,
@@ -2259,6 +2531,46 @@
       "district": "unknown",
       "place": "",
       "parent_place": ""
+    },
+    {
+      "name": "Temple of Khar-Zul",
+      "tagline": "",
+      "place_type": "temple",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "An inner-dark temple housing the idol of Khar-Zul, a god with nine emerald eyes worth more than most kingdoms. The shadows within are alive \u2014 by the third stolen gem they move; by the sixth they have teeth. The temple itself screamed in a voice of grinding granite when the god was robbed.",
+      "status": "active \u2014 and aware",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Bone Citadel",
+      "tagline": "",
+      "place_type": "fortress",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "A living fortress of bone-white stone on the steppe. Towers breathe. Gates digest. The heart is a pulsing white chamber fed by roots spreading under the whole steppe. It absorbed 100 Veth warriors into its walls \u2014 alive, preserved, visible beneath the surface like insects in amber. Screamed for three days after Kael's assault, then went silent.",
+      "status": "unknown \u2014 silent after the assault",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "events": [
@@ -3309,7 +3621,7 @@
       "origin": "Unknown\u2014recovered from the Sunken Ziggurat of Yeng.",
       "powers": "When lit, it burns with black flame and forces the user to confront a truth they have lived by a lie. The lamp consumes the lie and reveals the truth, permanently altering the bearer's understanding of themselves.",
       "last_known_holder": "Malachite Doss",
-      "status": "active",
+      "status": "used once \u2014 may be refillable",
       "first_story": "The Lamp of Suroth",
       "first_date": "2026-02-25",
       "appearances": 1,
@@ -3365,7 +3677,7 @@
       "origin": "Unknown; kept sealed in a vault beneath Ostern for centuries.",
       "powers": "Grants the wearer immense power sufficient to win wars and dominate enemies through sheer psychological intimidation. Side effects include catastrophic corruption: reversed shadows, sleeplessness, madness, and death within years.",
       "last_known_holder": "King Aldous III (worn for thirty seconds); returned to Ostern after his death.",
-      "status": "sealed",
+      "status": "sealed in deeper vault",
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
       "appearances": 1,
@@ -3497,6 +3809,19 @@
       "district": "unknown",
       "place": "",
       "parent_place": ""
+    },
+    {
+      "name": "The Six Emerald Eyes of Khar-Zul",
+      "tagline": "",
+      "artifact_type": "",
+      "origin": "",
+      "powers": "",
+      "last_known_holder": "",
+      "status": "loose in the world",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "factions": [

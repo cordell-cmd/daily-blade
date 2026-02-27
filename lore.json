@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-02-26",
+  "last_updated": "2026-02-27",
   "worlds": [
     {
       "id": "known_world",
@@ -456,6 +456,322 @@
       "district": "unknown",
       "place": "",
       "parent_place": ""
+    },
+    {
+      "id": "kael_the_nameless",
+      "name": "Kael the Nameless",
+      "tagline": "Shadow-broker. Identity-thief. Consumed.",
+      "role": "Shadow-Broker",
+      "world": "known_world",
+      "status": "dead",
+      "home_place": "Xul'thyris",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A shadow-broker who dealt in stolen identities and borrowed faces in the gambling dens of Xul'thyris. Hired to sever the High Magistrate's shadow from light and stone, Kael discovered that shadows hunger and remember their owners. He was consumed by his own theft, becoming nothing but darkness wearing skin.",
+      "traits": [
+        "skilled at deception",
+        "mercenary",
+        "haunted by stolen lives"
+      ],
+      "known_locations": [
+        "Xul'thyris"
+      ],
+      "affiliations": [
+        "merchant prince"
+      ],
+      "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
+      "first_story": "The Shadow-Broker's Debt",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "mordica_bone_carver",
+      "name": "Mordica the Bone-Carver",
+      "tagline": "Sculptor of suffering. Forty years. Consumed.",
+      "role": "Bone-Carver / Necromancer",
+      "world": "known_world",
+      "status": "dead",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A bone-carver for forty years who carved phylacteries and spirit-binding totems without moral question. Hired by a widow to bind her daughter's remains with anguish, she created a monument in bone and suffering\u2014only to become the final piece of the widow's terrible work.",
+      "traits": [
+        "amoral craftsperson",
+        "skilled in necromancy",
+        "price-blind"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "widow"
+      ],
+      "notes": "The widow's ritual consumed Mordica's flesh and youth; suggests bone-carving magic exacts physical toll on the practitioner. The 'Old Tongue' is confirmed as a source of binding power.",
+      "first_story": "The Bone-Carver's Last Commission",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "yareth_steppe_rider",
+      "name": "Yareth",
+      "tagline": "Sister-seeker. Joy-bartered. Haunted.",
+      "role": "Steppe-Rider / Warrior",
+      "world": "known_world",
+      "status": "alive",
+      "home_place": "unknown",
+      "home_region": "the blasted steppes",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A steppe-rider searching the blasted steppes for her brother, lost during a war for the Sunken Wells. She bargained with a being of impossible nature for his return\u2014trading seven years of her joy. Her brother returned unchanged but amnesiac, and Yareth exists in a hollow shell, her emotions consumed by the bargain.",
+      "traits": [
+        "determined",
+        "grief-stricken",
+        "desperate"
+      ],
+      "known_locations": [
+        "blasted steppes",
+        "Old Keth"
+      ],
+      "affiliations": [
+        "brother (echo-bound)"
+      ],
+      "notes": "The Underlords are confirmed entities with gardens deep below. Bargains with non-human beings carry unpredictable costs. Her brother may not be truly her brother anymore.",
+      "first_story": "The Steppe-Rider's Bargain",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "caros_the_fortunate",
+      "name": "Caros the Fortunate",
+      "tagline": "Treasure-finder. Curse-bearer. Consumed.",
+      "role": "Thief / Fugitive",
+      "world": "known_world",
+      "status": "dead",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A fortunate thief who stumbled upon Morthaxes's cursed treasure in Castle Greymarch\u2014ten thousand gold coins stamped with a Lich-King's visage. The coins could not be spent or destroyed; their debt compounded daily until Caros owed more than could exist. The Collector claimed him when his flesh had nothing left to offer.",
+      "traits": [
+        "lucky initially",
+        "desperate",
+        "doomed"
+      ],
+      "known_locations": [
+        "Castle Greymarch"
+      ],
+      "affiliations": [
+        "the Collector"
+      ],
+      "notes": "Morthaxes's gold is bound by compound debt magic. The Collector appears as an agent of the Lich-King, tracking cursed wealth across time.",
+      "first_story": "The Collector's Due",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "morg_tomb_keeper",
+      "name": "Morg",
+      "tagline": "Sworn sentinel. Blood-bound. Digested.",
+      "role": "Tomb-Keeper / Guardian",
+      "world": "known_world",
+      "status": "dead",
+      "home_place": "Tomb of Shard-V\u00eal",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A tomb-keeper sworn in blood-oath to guard the Tomb of Shard-V\u00eal for twelve years, part of a lineage of guardians. When the Plague Wars ended and no successors came, the living tomb grew hungry. Morg's oath prevented him from breaking his vow; instead, the tomb consumed him piece by piece, incorporating his bones into its burial chamber.",
+      "traits": [
+        "loyal to oath",
+        "trapped",
+        "merged with stone"
+      ],
+      "known_locations": [
+        "Tomb of Shard-V\u00eal"
+      ],
+      "affiliations": [
+        "tomb-keeper lineage"
+      ],
+      "notes": "Blood-oaths are magically binding and cannot be broken without severe consequence. The tomb is sentient and patient. Morg's consciousness persists as part of the structure, warning visitors.",
+      "first_story": "The Tomb-Keeper's Vigil",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "sister_kess",
+      "name": "Sister Kess",
+      "tagline": "Healer-broken. Truth-cursed. Mercy-poisoned.",
+      "role": "Novice Nun / Healer",
+      "world": "known_world",
+      "status": "dead",
+      "home_place": "convent",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A novice sister who broke her vows to seek the Witch of Ravenmoor, desperate to save the plague-village of Carrion's Rest. The witch lifted the plague but cursed Kess with absolute truth\u2014she could never lie again. She saved the village but destroyed herself, unable to offer comfort or hide doubt, each truth shattered faith.",
+      "traits": [
+        "compassionate",
+        "conflicted",
+        "curse-bearer"
+      ],
+      "known_locations": [
+        "Carrion's Rest",
+        "convent",
+        "Ravenmoor"
+      ],
+      "affiliations": [
+        "convent",
+        "Witch of Ravenmoor"
+      ],
+      "notes": "The Witch of Ravenmoor uses blackthorn knives for blood-magic curses. Truth-magic is a form of binding curse. Mercy and honesty can be incompatible burdens.",
+      "first_story": "The Witch-Price of Mercy",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "kessara_sunken_marches",
+      "name": "Kessara",
+      "tagline": "Regent-widowed. Ghost-bound. Liberated.",
+      "role": "Warlord / Regent",
+      "world": "known_world",
+      "status": "alive",
+      "home_place": "Sunken Marches",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A widow who ruled the Sunken Marches in name only while her dead husband Velgrim the Terrible held true power as a practical, vengeful ghost. Rather than submit to his demands for massacre, Kessara performed a ritual of dismissal, sacrificing her claim to the land itself to release his spirit. She departed as a wanderer, leaving the Marches to her husband's eternal rule.",
+      "traits": [
+        "strategic",
+        "willing to sacrifice",
+        "independent"
+      ],
+      "known_locations": [
+        "Sunken Marches",
+        "Blackthorn"
+      ],
+      "affiliations": [
+        "Velgrim the Terrible (ghost-husband)"
+      ],
+      "notes": "Dismissal rituals require sacrifice of something precious. Ghosts can be satisfied and released to peace. She chose freedom over power.",
+      "first_story": "The Warlord's Widow",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "master_lethyn",
+      "name": "Master Lethyn",
+      "tagline": "Alchemist-glutted. Youth-hungry. Inhuman.",
+      "role": "Alchemist / Sorcerer",
+      "world": "known_world",
+      "status": "dead",
+      "home_place": "tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "An alchemist who perfected a potion of youth through extraction of living flesh. What began as voluntary sacrifice became coerced theft and murder as his hunger grew beyond control. His own transformation into a flesh-eating thing was irreversible; he burned for three days while still consuming, his screams part of his alchemy.",
+      "traits": [
+        "ambitious",
+        "amoral",
+        "self-consuming"
+      ],
+      "known_locations": [
+        "tower"
+      ],
+      "affiliations": [
+        "victims"
+      ],
+      "notes": "Some alchemical transformations cannot be undone, only abandoned to burn. The Great Work of youth-restoration is forbidden knowledge. Alchemy can rewrite morality and nature itself.",
+      "first_story": "The Alchemist's Appetite",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "thorne_grimmholt",
+      "name": "Thorne",
+      "tagline": "Oath-bound. Rebel. Satisfied.",
+      "role": "Fortress Warden / Soldier",
+      "world": "known_world",
+      "status": "dead",
+      "home_place": "Grimmholt",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A warden sworn by blood-oath to defend Grimmholt fortress against the Rot-King's forces. When the Crown ordered him to surrender the fortress, Thorne faced a choice between breaking his oath or treason. He chose rebellion, sealing the gates and holding against both the Rot-King and royal armies for two years. He died unburdened when his betrayed fortress fell.",
+      "traits": [
+        "faithful",
+        "defiant",
+        "self-sacrificing"
+      ],
+      "known_locations": [
+        "Grimmholt"
+      ],
+      "affiliations": [
+        "Rot-King",
+        "the Crown"
+      ],
+      "notes": "Blood-oaths enforce themselves with magic; breaking them causes spiritual death. Sometimes honoring an oath requires breaking every law protecting it. His defiance satisfied the oath's hunger.",
+      "first_story": "The Broken Oath",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "nara_tide_thief",
+      "name": "Nara the Tide-Thief",
+      "tagline": "Magic-thief. Ocean-hunted. Redeemed.",
+      "role": "Thief / Sorcerer",
+      "world": "known_world",
+      "status": "alive",
+      "home_place": "unknown",
+      "home_region": "Sapphire Deep",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "A thief who stole water-magic from the merfolk of the Sapphire Deep. Hunted across three continents for years, she learned that the sea cannot be stolen from\u2014only reclaimed. Cornered in the desert city of Vel-Karsh, she bound her stolen magic into a single glass vial and shattered it, transforming the world to settle her debt. The merfolk accepted the reshaping as payment.",
+      "traits": [
+        "resourceful",
+        "desperate",
+        "willing to reshape reality"
+      ],
+      "known_locations": [
+        "Sapphire Deep",
+        "Vel-Karsh"
+      ],
+      "affiliations": [
+        "merfolk"
+      ],
+      "notes": "Water-magic is bound to ocean and death. Debts to merfolk scale across continents. Sometimes debts are best settled by changing the world itself.",
+      "first_story": "The Tide-Thief's Escape",
+      "first_date": "2026-02-27",
+      "appearances": 1
+    },
+    {
+      "id": "velgrim_the_terrible",
+      "name": "Velgrim the Terrible",
+      "tagline": "Ghost-warlord. Persistent. Released.",
+      "role": "Ghost / Warlord",
+      "world": "known_world",
+      "status": "dead",
+      "home_place": "Sunken Marches",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A powerful warlord who died three seasons before the events of his story but refused to pass into final death. His ghost manifested as a practical, demanding presence in the Sunken Marches, directing sieges and collecting tribute. He was finally released to peaceful death when his widow Kessara sacrificed her claim to the throne.",
+      "traits": [
+        "persistent",
+        "practical",
+        "honour-bound"
+      ],
+      "known_locations": [
+        "Sunken Marches"
+      ],
+      "affiliations": [
+        "Kessara",
+        "his generals"
+      ],
+      "notes": "Ghosts can persist in the material world through force of will or unfinished business. They can be satisfied and released through appropriate ritual sacrifice.",
+      "first_story": "The Warlord's Widow",
+      "first_date": "2026-02-27",
+      "appearances": 1
     }
   ],
   "places": [
