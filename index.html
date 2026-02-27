@@ -505,6 +505,13 @@ function normalizeEntityKey(name) {
     .replace(/\s+/g, ' ');
 }
 
+function stripTrailingParenthetical(name) {
+  // Remove trailing qualifiers like " (as Region)" that can break matching.
+  // Only strips a parenthetical at the end.
+  const s = String(name || '').trim();
+  return s.replace(/\s*\([^)]*\)\s*$/g, '').trim();
+}
+
 function escapeRegexPiece(str) {
   // Escape for literal matching, but treat apostrophes as either straight or curly.
   const s = String(str || '');
@@ -593,9 +600,22 @@ function buildCodexEntityIndex(data) {
       if (!key) return;
       addToIndex(key, type, obj);
 
+      // Alias without trailing parenthetical qualifiers.
+      // Example: "Sunken Marches (as Region)" -> "Sunken Marches"
+      const base = stripTrailingParenthetical(nm);
+      const baseKey = normalizeEntityKey(base);
+      if (baseKey && baseKey !== key) {
+        addToIndex(baseKey, type, obj);
+      }
+
       // Alias without leading article for easier matching in prose.
       if (key.startsWith('the ')) {
         const alias = key.slice(4).trim();
+        addToIndex(alias, type, obj);
+      }
+
+      if (baseKey && baseKey !== key && baseKey.startsWith('the ')) {
+        const alias = baseKey.slice(4).trim();
         addToIndex(alias, type, obj);
       }
 
@@ -606,11 +626,27 @@ function buildCodexEntityIndex(data) {
         addToIndex(alias, type, obj);
       }
 
+      if (baseKey && baseKey !== key) {
+        const theIdx2 = baseKey.indexOf(' the ');
+        if (theIdx2 > 2) {
+          const alias = baseKey.slice(0, theIdx2).trim();
+          addToIndex(alias, type, obj);
+        }
+      }
+
       // Alias before comma: "Name, Title" -> "Name"
       const commaIdx = key.indexOf(',');
       if (commaIdx > 2) {
         const alias = key.slice(0, commaIdx).trim();
         addToIndex(alias, type, obj);
+      }
+
+      if (baseKey && baseKey !== key) {
+        const commaIdx2 = baseKey.indexOf(',');
+        if (commaIdx2 > 2) {
+          const alias = baseKey.slice(0, commaIdx2).trim();
+          addToIndex(alias, type, obj);
+        }
       }
     });
   });
@@ -669,7 +705,14 @@ function extractEntitiesFromText(rawText) {
     const key = normalizeEntityKey(namePart);
     const matches = CODEX_ENTITY_INDEX.get(key) || [];
     matches.forEach(({ type, obj }) => {
-      const canonicalName = (obj && obj.name) ? String(obj.name).trim() : String(namePart).trim();
+      let canonicalName = (obj && obj.name) ? String(obj.name).trim() : String(namePart).trim();
+      // If codex entry has a trailing qualifier ("Name (as Region)"), prefer the
+      // story-surface name for display, while still linking to the same entry.
+      const base = stripTrailingParenthetical(canonicalName);
+      if (base && base !== canonicalName) {
+        const baseKey = normalizeEntityKey(base);
+        if (baseKey && baseKey === key) canonicalName = base;
+      }
       if (!canonicalName) return;
       const canonKey = normalizeEntityKey(canonicalName);
       if (!found.has(type)) found.set(type, new Map());
