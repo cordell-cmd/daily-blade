@@ -902,19 +902,16 @@ Respond with ONLY valid JSON — no prose before or after — matching this exac
   …9 more entries…
 ]
 
-TONE + FANTASY VARIETY REQUIREMENTS (important):
-- Do NOT make every story macabre. Across the 10 stories, include a mix of tones:
-    - At least 3 should be lighter/adventurous/wondrous (mystery, heist, exploration, comic irony, romance, heroic triumph).
-    - At most 3 should be outright grim-horror/necromancy/corpse-heavy.
-- Do NOT make every story about sorcery. Magic may appear, but include plenty of non-magic conflict: steel, politics, survival, bargains, travel, rivalries.
-- Ensure a broad fantasy assortment across the issue. Across the 10 stories, include (not necessarily all in one story):
-    - Non-human peoples: e.g., elves, dwarves, goblin-kind, hobbit-like smallfolk, orcs/ogres/trolls.
-    - Mythic creatures: e.g., at least one dragon/wyrm OR similarly iconic beast.
-    - Fae/fairy influence: at least one story must involve a fae court, fairy realm, or fae-bargain.
-- Stories may be centered on ANY fantasy focus (not just people):
-    - A creature as the main subject (hunts, migrations, curses, ecosystems).
-    - An artifact/weapon/relic as the main subject (heist, origin, curse, custody).
-    - A place as the main subject (ruin expedition, city intrigue, haunted road, strange market).
+TONE + FANTASY VARIETY (creative palette; use your judgment):
+- Avoid monotone issues: aim for a MIX of tones, not 10 grim macabre tales.
+    - Include some lighter/adventurous/wondrous pieces (mystery, heist, exploration, comic irony, heroic triumph).
+    - Include at least one love-story / romance thread (can be sweet, tragic, or bittersweet; keep it pulp-fantasy).
+- Magic is welcome but not mandatory: aim for a mix of sorcery and non-magic conflict (steel, politics, survival, bargains, travel, rivalries).
+- Use the full fantasy toolbox when it fits the world rules: across the issue, try to include variety such as
+    - Non-human peoples (elves, dwarves, goblin-kind, smallfolk, orcs/ogres/trolls).
+    - Mythic creatures (a dragon/wyrm or similarly iconic beast).
+    - Fae/fairy influence (a fae court, fairy realm, or a fae-bargain).
+- Stories may center on ANY fantasy focus (not just people): creatures, artifacts/weapons/relics, or places can be the "main character".
 
 REUSE INTENSITY RULES (only applies when an entry is labeled):
 - If you see "INTENDED REUSE INTENSITY: cameo" for an entity, keep it light: brief appearance/mention, not the protagonist or primary location, and avoid major new canon changes for that entity.
