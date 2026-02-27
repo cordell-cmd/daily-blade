@@ -21,39 +21,39 @@
   --muted: #5c3d1e;
 }
 html { scroll-behavior: smooth; }
-body { background: var(--ink); color: var(--parchment); font-family: 'IM Fell English', Georgia, serif; min-height: 100vh; line-height: 1.7; }
+body { background: var(--ink); color: var(--parchment); font-family: 'IM Fell English', Georgia, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; min-height: 100vh; line-height: 1.7; }
 body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; opacity: 0.4; }
 .page-wrap { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 0 1.5rem 4rem; }
 
 /* ── Masthead ─────────────────────────────────────────────────── */
 .masthead { text-align: center; padding: 2.5rem 1rem 1.5rem; border-bottom: 3px double var(--gold); }
 .masthead::after { content: '⚔ ✦ ⚔'; display: block; color: var(--gold); font-size: 1.1rem; letter-spacing: .4em; margin-top: .5rem; }
-.masthead-eyebrow { font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .35em; color: var(--gold); text-transform: uppercase; margin-bottom: .5rem; }
-.masthead-title { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: clamp(2.4rem, 7vw, 5rem); font-weight: 700; color: var(--parchment); text-shadow: 3px 3px 0 var(--blood), 5px 5px 10px rgba(0,0,0,.7); line-height: 1.1; letter-spacing: .03em; }
-.masthead-sub { font-family: 'Cinzel', serif; font-size: .8rem; letter-spacing: .25em; color: var(--aged); margin-top: .6rem; }
+.masthead-eyebrow { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .72rem; letter-spacing: .35em; color: var(--gold); text-transform: uppercase; margin-bottom: .5rem; }
+.masthead-title { font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: clamp(2.4rem, 7vw, 5rem); font-weight: 700; color: var(--parchment); text-shadow: 3px 3px 0 var(--blood), 5px 5px 10px rgba(0,0,0,.7); line-height: 1.1; letter-spacing: .03em; }
+.masthead-sub { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .8rem; letter-spacing: .25em; color: var(--aged); margin-top: .6rem; }
 .masthead-date { margin-top: .8rem; font-style: italic; font-size: .85rem; color: var(--gold); }
 
 /* ── Main Nav Tabs ────────────────────────────────────────────── */
 .main-nav { display: flex; align-items: center; gap: 0; padding: 1.5rem 0 0; border-bottom: 2px solid rgba(201,146,42,.25); }
-.main-tab { font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; color: var(--muted); padding: .6rem 1.2rem .7rem; cursor: pointer; transition: color .18s, border-color .18s; white-space: nowrap; }
+.main-tab { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; background: none; border: none; border-bottom: 3px solid transparent; margin-bottom: -2px; color: var(--muted); padding: .6rem 1.2rem .7rem; cursor: pointer; transition: color .18s, border-color .18s; white-space: nowrap; }
 .main-tab:hover { color: var(--aged); }
 .main-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
 .main-nav-right { margin-left: auto; display: flex; align-items: center; gap: .6rem; padding-bottom: .4rem; }
 
 /* ── Genre Filter Bar ─────────────────────────────────────────── */
 .genre-bar { display: flex; flex-wrap: wrap; gap: .45rem; padding: 1.1rem 0 .8rem; border-bottom: 1px solid rgba(201,146,42,.15); margin-bottom: 1.8rem; }
-.genre-btn { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.3); color: var(--muted); padding: .3rem .75rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; white-space: nowrap; }
+.genre-btn { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.3); color: var(--muted); padding: .3rem .75rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; white-space: nowrap; }
 .genre-btn:hover { border-color: var(--gold); color: var(--aged); }
 .genre-btn.active { background: rgba(201,146,42,.15); border-color: var(--gold); color: var(--gold); }
 
 /* ── Controls ─────────────────────────────────────────────────── */
 .controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: .6rem 0 .5rem; margin-bottom: .4rem; }
-.controls-left { font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+.controls-left { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .72rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
 .controls-right { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; justify-content: flex-end; }
 
-.codex-organize-label { font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(201,146,42,.65); }
+.codex-organize-label { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(201,146,42,.65); }
 .codex-organize-select {
-  font-family: 'Cinzel', serif;
+  font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif;
   font-size: .62rem;
   letter-spacing: .14em;
   text-transform: uppercase;
@@ -76,11 +76,11 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .codex-organize-select option { background: #120803; color: var(--gold); }
 
 .codex-group-header { grid-column: 1 / -1; border-top: 1px solid rgba(201,146,42,.22); border-bottom: 1px solid rgba(201,146,42,.12); padding: .75rem .2rem .65rem; margin: .4rem 0 -.35rem; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
-.codex-group-title { font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,208,168,.9); }
-.codex-group-count { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(201,146,42,.55); }
+.codex-group-title { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,208,168,.9); }
+.codex-group-count { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(201,146,42,.55); }
 
 /* ── Buttons ──────────────────────────────────────────────────── */
-.btn { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; border: 1px solid var(--gold); background: transparent; color: var(--gold); padding: .4rem .9rem; border-radius: 2px; cursor: pointer; transition: background .18s, color .18s; white-space: nowrap; }
+.btn { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; border: 1px solid var(--gold); background: transparent; color: var(--gold); padding: .4rem .9rem; border-radius: 2px; cursor: pointer; transition: background .18s, color .18s; white-space: nowrap; }
 .btn:hover { background: var(--gold); color: var(--ink); }
 .btn-blood { border-color: var(--blood); color: var(--blood); }
 .btn-blood:hover { background: var(--blood); color: var(--parchment); }
@@ -99,13 +99,32 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .story-card.hidden { display: none; }
 .story-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.65); }
 .story-card::before { content: '✦'; position: absolute; top: .6rem; right: .9rem; color: var(--blood); font-size: .8rem; opacity: .6; }
-.story-number { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .3em; color: var(--blood); text-transform: uppercase; margin-bottom: .3rem; }
-.story-tag { display: inline-block; font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,146,42,.4); padding: .15rem .5rem; border-radius: 2px; margin-bottom: .7rem; cursor: pointer; transition: background .15s, color .15s; }
+.story-number { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .65rem; letter-spacing: .3em; color: var(--blood); text-transform: uppercase; margin-bottom: .3rem; }
+.story-tag { display: inline-block; font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(201,146,42,.4); padding: .15rem .5rem; border-radius: 2px; margin-bottom: .7rem; cursor: pointer; transition: background .15s, color .15s; }
 .story-tag:hover { background: rgba(201,146,42,.15); }
-.story-title { font-family: 'Cinzel', serif; font-size: 1.12rem; font-weight: 700; color: var(--parchment); line-height: 1.3; margin-bottom: .9rem; text-shadow: 1px 1px 4px rgba(0,0,0,.6); }
+.story-title { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 1.12rem; font-weight: 700; color: var(--parchment); line-height: 1.3; margin-bottom: .9rem; text-shadow: 1px 1px 4px rgba(0,0,0,.6); }
 .story-divider { border: none; border-top: 1px solid rgba(201,146,42,.25); margin-bottom: .9rem; }
 .story-text { font-size: .9rem; color: var(--aged); line-height: 1.75; text-align: justify; hyphens: auto; }
-.story-text::first-letter { float: left; font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 3.2rem; line-height: .75; padding-right: .12em; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.7); }
+.story-text::first-letter { float: left; font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 3.2rem; line-height: .75; padding-right: .12em; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.7); }
+
+.entity-link {
+  display: inline;
+  font: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: var(--gold);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: rgba(201,146,42,.55);
+  text-decoration-thickness: 1px;
+  text-underline-offset: .12em;
+}
+.entity-link:hover { color: var(--parchment); text-decoration-color: var(--gold); }
+.entity-link:focus { outline: 2px solid rgba(201,146,42,.55); outline-offset: 2px; border-radius: 2px; }
+
+.codex-card.codex-flash { box-shadow: 0 0 0 2px rgba(201,146,42,.6), 0 10px 30px rgba(0,0,0,.6) !important; }
 
 /* ── No Results ───────────────────────────────────────────────── */
 .no-results { text-align: center; padding: 3rem 1rem; font-style: italic; color: var(--muted); grid-column: 1 / -1; }
@@ -115,7 +134,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 
 /* ── Codex Filter Bar ─────────────────────────────────────────── */
 .codex-filter-bar { display: flex; flex-wrap: wrap; gap: .45rem; padding: 1.1rem 0 .8rem; border-bottom: 1px solid rgba(201,146,42,.15); margin-bottom: 1rem; }
-.codex-filter-btn { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.3); color: var(--muted); padding: .3rem .75rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; white-space: nowrap; }
+.codex-filter-btn { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.3); color: var(--muted); padding: .3rem .75rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; white-space: nowrap; }
 .codex-filter-btn:hover { border-color: var(--gold); color: var(--aged); }
 .codex-filter-btn.active { background: rgba(201,146,42,.15); border-color: var(--gold); color: var(--gold); }
 
@@ -128,14 +147,14 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .codex-card:hover { transform: translateY(-2px); box-shadow: 0 7px 24px rgba(0,0,0,.6); }
 .codex-card.hidden { display: none; }
 .codex-card.hidden-org { display: none; }
-.codex-type-label { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(201,146,42,.4); position: absolute; top: .6rem; right: .8rem; }
-.codex-card-name { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 700; color: var(--parchment); line-height: 1.2; text-shadow: 1px 1px 3px rgba(0,0,0,.5); padding-right: 5.5rem; overflow-wrap: anywhere; word-break: break-word; }
+.codex-type-label { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(201,146,42,.4); position: absolute; top: .6rem; right: .8rem; }
+.codex-card-name { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 1.05rem; font-weight: 700; color: var(--parchment); line-height: 1.2; text-shadow: 1px 1px 3px rgba(0,0,0,.5); padding-right: 5.5rem; overflow-wrap: anywhere; word-break: break-word; }
 .codex-card-tagline { font-style: italic; color: var(--gold); font-size: .85rem; letter-spacing: .04em; margin: .3rem 0 .5rem; opacity: .9; }
 .codex-card-badges { display: flex; flex-direction: row; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.45rem; margin-bottom: 0.65rem; }
 .codex-card-badges .badge { max-width: 100%; white-space: normal; overflow-wrap: anywhere; word-break: break-word; }
 .codex-divider { border: none; border-top: 1px solid rgba(201,146,42,.2); margin: .8rem 0; }
 .codex-card-footer { font-size: .75rem; color: var(--muted); font-style: italic; display: flex; align-items: center; justify-content: space-between; gap: .5rem; flex-wrap: wrap; padding-top: .6rem; border-top: 1px solid rgba(201,146,42,.12); margin-top: .6rem; }
-.codex-appearances { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .1em; color: rgba(201,146,42,.5); white-space: nowrap; }
+.codex-appearances { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .1em; color: rgba(201,146,42,.5); white-space: nowrap; }
 .codex-body { font-size: .875rem; color: var(--aged); line-height: 1.7; margin-bottom: .6rem; max-width: 100%; overflow-wrap: anywhere; word-break: break-word; }
 
 /* Used by several codex card types (relics, lore, etc.) */
@@ -144,7 +163,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 
 /* ── Character Cards ───────────────────────────────────────────── */
 .char-card { background: linear-gradient(160deg, #1b0c05 0%, #110904 100%); border: 1px solid rgba(201,146,42,.3); border-top: 3px solid var(--darkgold); }
-.badge { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 2px; white-space: nowrap; background: rgba(0,0,0,.18); border: 1px solid rgba(201,146,42,.22); color: rgba(226,208,168,.9); }
+.badge { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 2px; white-space: nowrap; background: rgba(0,0,0,.18); border: 1px solid rgba(201,146,42,.22); color: rgba(226,208,168,.9); }
 .badge-role { background: rgba(201,146,42,.15); border: 1px solid rgba(201,146,42,.4); color: var(--gold); }
 .badge-status-active { background: rgba(30,80,30,.3); border: 1px solid #3a8a3a; color: #6dbb6d; }
 .badge-status-dead { background: rgba(80,10,10,.3); border: 1px solid #8b1a1a; color: #c96060; }
@@ -165,7 +184,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .badge-travel-interrealm { background: rgba(60,20,80,.25); border: 1px solid rgba(122,58,154,.55); color: #c29ae2; }
 .badge-travel-unknown { background: rgba(40,30,20,.2); border: 1px solid rgba(201,146,42,.18); color: rgba(92,61,30,.95); }
 .char-traits { display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .6rem; }
-.char-trait { font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .15em; text-transform: uppercase; color: var(--blood); border: 1px solid rgba(139,26,26,.4); padding: .12rem .45rem; border-radius: 2px; }
+.char-trait { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .55rem; letter-spacing: .15em; text-transform: uppercase; color: var(--blood); border: 1px solid rgba(139,26,26,.4); padding: .12rem .45rem; border-radius: 2px; }
 
 /* ── Place Cards ────────────────────────────────────────────────── */
 .place-card { background: linear-gradient(160deg, #080d05 0%, #060a04 100%); border: 1px solid rgba(74,120,30,.3); border-top: 3px solid #3a7a1a; }
@@ -174,17 +193,17 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 
 /* ── Geography (place cards) ───────────────────────────────────── */
 .codex-geo-details { margin-top: .55rem; }
-.codex-geo-details summary { cursor: pointer; font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(201,146,42,.65); }
+.codex-geo-details summary { cursor: pointer; font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(201,146,42,.65); }
 .codex-geo-details summary:hover { color: var(--gold); }
 .codex-geo-chain { margin-top: .55rem; font-size: .78rem; color: var(--muted); font-style: italic; line-height: 1.5; }
-.codex-geo-chain strong { font-style: normal; color: rgba(226,208,168,.75); font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .35rem; }
+.codex-geo-chain strong { font-style: normal; color: rgba(226,208,168,.75); font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .35rem; }
 .codex-geo-chain .geo-row { display: flex; gap: .5rem; flex-wrap: wrap; }
 
 /* ── Event Cards ────────────────────────────────────────────────── */
 .event-card { background: linear-gradient(160deg, #0d0518 0%, #080313 100%); border: 1px solid rgba(100,50,160,.3); border-top: 3px solid #6a2a9a; }
 .badge-event { background: rgba(100,50,160,.15); border: 1px solid rgba(100,50,160,.5); color: #b07acc; }
 .event-participants { font-size: .8rem; color: var(--muted); margin: .2rem 0 .5rem; }
-.event-participants strong { font-style: normal; color: rgba(176,122,204,.7); font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .3rem; }
+.event-participants strong { font-style: normal; color: rgba(176,122,204,.7); font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .3rem; }
 .event-significance { font-size: .82rem; color: rgba(176,122,204,.65); font-style: italic; margin-top: .3rem; }
 
 /* ── Weapon Cards ───────────────────────────────────────────────── */
@@ -200,7 +219,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 /* ── Story Links (codex cards) ──────────────────────────────────── */
 .codex-story-links { margin-top: .8rem; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; border-top: 1px solid rgba(201,146,42,.15); padding-top: .8rem; }
 .codex-story-links-label { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; flex-basis: 100%; }
-.codex-story-link { background: none; border: 1px solid rgba(201,146,42,.3); color: var(--gold); font-family: 'Cinzel', serif; font-size: .72rem; padding: .25rem .65rem; cursor: pointer; transition: background .15s, color .15s, border-color .15s; border-radius: 2px; }
+.codex-story-link { background: none; border: 1px solid rgba(201,146,42,.3); color: var(--gold); font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .72rem; padding: .25rem .65rem; cursor: pointer; transition: background .15s, color .15s, border-color .15s; border-radius: 2px; }
 .codex-story-link:hover { background: rgba(201,146,42,.12); color: var(--parchment); border-color: rgba(201,146,42,.6); }
 
 /* ── Story Modal (single-story preview) ─────────────────────────── */
@@ -208,25 +227,29 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .story-modal-overlay.open { opacity: 1; pointer-events: all; }
 .story-modal { position: fixed; inset: 0; z-index: 121; display: grid; place-items: center; padding: 1.2rem; opacity: 0; pointer-events: none; transition: opacity .22s ease; }
 .story-modal.open { opacity: 1; pointer-events: all; }
+
+/* Codex modal sits above the story modal when both are open */
+#codex-modal-overlay { z-index: 130; }
+#codex-modal { z-index: 131; }
 .story-modal-panel { width: min(860px, 96vw); max-height: min(88vh, 860px); overflow: auto; background: linear-gradient(160deg, #1e0e06 0%, #130b04 100%); border: 1px solid rgba(201,146,42,.45); border-top: 3px solid var(--blood); border-radius: 4px; box-shadow: 0 14px 55px rgba(0,0,0,.75); padding: 1.25rem 1.35rem 1.35rem; position: relative; }
 .story-modal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .5rem; }
-.story-modal-title { font-family: 'Cinzel', serif; font-size: 1.15rem; font-weight: 700; color: var(--parchment); line-height: 1.25; text-shadow: 1px 1px 4px rgba(0,0,0,.7); }
-.story-modal-sub { font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .22em; color: rgba(201,146,42,.75); text-transform: uppercase; margin-top: .25rem; }
+.story-modal-title { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 1.15rem; font-weight: 700; color: var(--parchment); line-height: 1.25; text-shadow: 1px 1px 4px rgba(0,0,0,.7); }
+.story-modal-sub { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .22em; color: rgba(201,146,42,.75); text-transform: uppercase; margin-top: .25rem; }
 .story-modal-close { background: none; border: 1px solid rgba(201,146,42,.35); color: var(--gold); font-size: 1.05rem; width: 2.1rem; height: 2.1rem; border-radius: 2px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .15s, color .15s; line-height: 1; }
 .story-modal-close:hover { background: var(--gold); color: var(--ink); }
 .story-modal-actions { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; margin-top: .65rem; }
 .story-modal-actions .btn { padding: .35rem .8rem; }
 .story-modal-actions .btn-icon { padding: .32rem .6rem; letter-spacing: .12em; }
-.story-modal-actions .story-modal-count { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(201,146,42,.65); margin-left: auto; }
+.story-modal-actions .story-modal-count { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(201,146,42,.65); margin-left: auto; }
 .story-modal-text { font-size: .92rem; color: var(--aged); line-height: 1.75; text-align: justify; hyphens: auto; margin-top: .75rem; white-space: pre-wrap; }
-.story-modal-text::first-letter { float: left; font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 3.1rem; line-height: .75; padding-right: .12em; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.7); }
+.story-modal-text::first-letter { float: left; font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 3.1rem; line-height: .75; padding-right: .12em; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.7); }
 
 /* Characters loading/empty states */
 .char-status { text-align: center; padding: 3rem 1rem; font-style: italic; color: var(--aged); }
 
 /* ── Error ────────────────────────────────────────────────────────── */
 .error-box { background: rgba(139,26,26,.12); border: 1px solid var(--blood); border-radius: 3px; padding: 1.2rem 1.5rem; text-align: center; color: #e07070; font-style: italic; font-size: .9rem; max-width: 600px; margin: 0 auto; }
-.error-box strong { display: block; font-family: 'Cinzel', serif; font-size: .75rem; letter-spacing: .2em; color: var(--blood); margin-bottom: .4rem; }
+.error-box strong { display: block; font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .75rem; letter-spacing: .2em; color: var(--blood); margin-bottom: .4rem; }
 
 /* ── Archive Overlay ──────────────────────────────────────────────── */
 .archive-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.65); z-index: 100; opacity: 0; pointer-events: none; transition: opacity .3s; }
@@ -236,8 +259,8 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .archive-drawer { position: fixed; top: 0; right: 0; height: 100%; width: min(380px, 94vw); background: #120803; border-left: 2px solid var(--gold); z-index: 101; display: flex; flex-direction: column; transform: translateX(100%); transition: transform .32s cubic-bezier(.4,0,.2,1); box-shadow: -8px 0 40px rgba(0,0,0,.7); }
 .archive-drawer.open { transform: translateX(0); }
 .archive-drawer-head { padding: 1.6rem 1.5rem 1rem; border-bottom: 2px solid rgba(201,146,42,.3); display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-shrink: 0; }
-.archive-drawer-title { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 1.15rem; color: var(--gold); line-height: 1.2; text-shadow: 1px 1px 6px rgba(0,0,0,.8); }
-.archive-drawer-sub { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .25em; color: var(--muted); text-transform: uppercase; margin-top: .3rem; }
+.archive-drawer-title { font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 1.15rem; color: var(--gold); line-height: 1.2; text-shadow: 1px 1px 6px rgba(0,0,0,.8); }
+.archive-drawer-sub { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .25em; color: var(--muted); text-transform: uppercase; margin-top: .3rem; }
 .archive-close { background: none; border: 1px solid rgba(201,146,42,.3); color: var(--gold); font-size: 1.1rem; width: 2rem; height: 2rem; border-radius: 2px; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background .15s, color .15s; line-height: 1; }
 .archive-close:hover { background: var(--gold); color: var(--ink); }
 .archive-list { overflow-y: auto; flex: 1; padding: .5rem 0; }
@@ -248,15 +271,15 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .archive-entry { display: block; width: 100%; background: none; border: none; border-bottom: 1px solid rgba(201,146,42,.1); padding: .95rem 1.5rem; text-align: left; cursor: pointer; transition: background .15s; color: inherit; }
 .archive-entry:hover { background: rgba(201,146,42,.08); }
 .archive-entry.active { background: rgba(201,146,42,.12); border-left: 3px solid var(--gold); }
-.archive-entry-label { font-family: 'Cinzel', serif; font-size: .7rem; letter-spacing: .2em; color: var(--blood); text-transform: uppercase; margin-bottom: .2rem; }
-.archive-entry-date { font-family: 'IM Fell English', Georgia, serif; font-size: .95rem; color: var(--aged); }
+.archive-entry-label { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .7rem; letter-spacing: .2em; color: var(--blood); text-transform: uppercase; margin-bottom: .2rem; }
+.archive-entry-date { font-family: 'IM Fell English', Georgia, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .95rem; color: var(--aged); }
 .archive-entry.today .archive-entry-date { color: var(--gold); }
-.archive-entry-today-badge { display: inline-block; font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: .1rem .4rem; border-radius: 2px; margin-left: .5rem; vertical-align: middle; }
+.archive-entry-today-badge { display: inline-block; font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .55rem; letter-spacing: .2em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: .1rem .4rem; border-radius: 2px; margin-left: .5rem; vertical-align: middle; }
 .archive-empty { padding: 2rem 1.5rem; font-style: italic; color: var(--muted); font-size: .85rem; text-align: center; }
 
 /* ── Footer ───────────────────────────────────────────────────────── */
 footer { text-align: center; padding: 2rem 1rem; border-top: 3px double rgba(201,146,42,.3); margin-top: 3rem; font-style: italic; font-size: .78rem; color: var(--muted); letter-spacing: .05em; }
-footer strong { color: var(--gold); font-style: normal; font-family: 'Cinzel', serif; letter-spacing: .15em; }
+footer strong { color: var(--gold); font-style: normal; font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; letter-spacing: .15em; }
 footer a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted rgba(201,146,42,.55); }
 footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 </style>
@@ -280,6 +303,23 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <div class="story-modal-actions" id="story-modal-actions"></div>
     <hr class="story-divider" />
     <div class="story-modal-text" id="story-modal-text"></div>
+  </div>
+</div>
+
+<!-- Codex entry modal (for entity links inside story text) -->
+<div class="story-modal-overlay" id="codex-modal-overlay" aria-hidden="true"></div>
+<div class="story-modal" id="codex-modal" role="dialog" aria-label="Codex entry" aria-modal="true">
+  <div class="story-modal-panel" id="codex-modal-panel">
+    <div class="story-modal-top">
+      <div>
+        <div class="story-modal-title" id="codex-modal-title">—</div>
+        <div class="story-modal-sub" id="codex-modal-sub">—</div>
+      </div>
+      <button class="story-modal-close" id="codex-modal-close" aria-label="Close codex entry">✕</button>
+    </div>
+    <div class="story-modal-actions" id="codex-modal-actions"></div>
+    <hr class="story-divider" />
+    <div class="story-modal-text" id="codex-modal-body"></div>
   </div>
 </div>
 
@@ -351,7 +391,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
       <button class="codex-filter-btn" data-type="flora_fauna">🌿 Flora & Fauna</button>
       <button class="codex-filter-btn" data-type="magic">✨ Magic</button>
       <button class="codex-filter-btn" data-type="relics">💀 Relics</button>
-      <button class="codex-filter-btn" data-type="substances">⚗️ Substances</button>
+      <button class="codex-filter-btn" data-type="substances">⚗ Substances</button>
     </div>
     <div class="controls" style="margin-top:.5rem;">
       <span class="controls-left" id="char-count-label">— The Codex of Known Lore —</span>
@@ -397,6 +437,12 @@ let activeCodexOrganizeMode = 'default';
 let activeCodexOrganizeLabel = 'all';
 let CODEX_DATA_CACHE = null;
 
+// Entity linking (clickable names inside story text)
+let codexDataLoaded = false;
+let CODEX_ENTITY_INDEX = new Map(); // key (normalized lower) -> [{ type, obj }]
+let CODEX_ENTITY_REGEX = null;
+let CODEX_DATA_PROMISE = null;
+
 // Cache for day story payloads used by the story modal.
 // key: date string (YYYY-MM-DD), value: { date, stories: [...] }
 const STORY_DAY_CACHE = new Map();
@@ -413,6 +459,7 @@ function formatDate(isoStr) {
 }
 function escHtml(str) {
   return String(str)
+    .replace(/[\uFE0E\uFE0F]/g, '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -426,6 +473,334 @@ function splitMultiLabels(value) {
     .split(/\s*(?:\/|\||;|,|&|\band\b)\s*/i)
     .map(s => s.trim())
     .filter(Boolean);
+}
+
+function normalizeEntityKey(name) {
+  return String(name || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/\s+/g, ' ');
+}
+
+function escapeRegexPiece(str) {
+  // Escape for literal matching, but treat apostrophes as either straight or curly.
+  const s = String(str || '');
+  let out = '';
+  for (const ch of s) {
+    if (ch === "'" || ch === '\u2019' || ch === '\u2018') {
+      out += "(?:'|\u2019|\u2018)";
+      continue;
+    }
+    // Escape regex metacharacters
+    if (/[$()*+.?[\\\]^{|}]/.test(ch)) out += '\\' + ch;
+    else out += ch;
+  }
+  return out;
+}
+
+function codexTypeLabel(type) {
+  return {
+    characters: 'Characters',
+    places: 'Places',
+    hemispheres: 'Hemispheres',
+    continents: 'Continents',
+    subcontinents: 'Subcontinents',
+    realms: 'Realms',
+    provinces: 'Provinces',
+    districts: 'Districts',
+    regions: 'Regions',
+    events: 'Events',
+    weapons: 'Weapons',
+    artifacts: 'Artifacts',
+    factions: 'Factions',
+    lore: 'Lore',
+    flora_fauna: 'Flora & Fauna',
+    magic: 'Magic',
+    relics: 'Relics',
+    substances: 'Substances',
+  }[type] || String(type || 'Entry');
+}
+
+function badgeClassForEntityType(type) {
+  return {
+    characters: 'badge-role',
+    places: 'badge-place',
+    hemispheres: 'badge-region',
+    continents: 'badge-region',
+    subcontinents: 'badge-region',
+    realms: 'badge-region',
+    provinces: 'badge-region',
+    districts: 'badge-region',
+    regions: 'badge-region',
+    events: 'badge-event',
+    weapons: 'badge-weapon',
+    artifacts: 'badge-artifact',
+    factions: 'badge-faction',
+    lore: 'badge-lore',
+    flora_fauna: 'badge-flora',
+    magic: 'badge-magic',
+    relics: 'badge-relic',
+    substances: 'badge-substance',
+  }[type] || 'badge-status-default';
+}
+
+function buildCodexEntityIndex(data) {
+  const d = data || CODEX_DATA_CACHE;
+  if (!d) return;
+
+  const categories = [
+    'characters','places','hemispheres','continents','subcontinents','realms','provinces','regions','districts',
+    'events','weapons','artifacts','factions','lore','flora_fauna','magic','relics','substances'
+  ];
+  const index = new Map();
+  const names = [];
+
+  const addToIndex = (key, type, obj) => {
+    if (!key || key.length < 3) return;
+    if (!index.has(key)) index.set(key, []);
+    index.get(key).push({ type, obj });
+  };
+
+  categories.forEach(type => {
+    const arr = Array.isArray(d[type]) ? d[type] : [];
+    arr.forEach(obj => {
+      const nm = (obj && obj.name) ? String(obj.name).trim() : '';
+      if (!nm) return;
+      const key = normalizeEntityKey(nm);
+      if (!key) return;
+      addToIndex(key, type, obj);
+
+      // Alias without leading article for easier matching in prose.
+      if (key.startsWith('the ')) {
+        const alias = key.slice(4).trim();
+        addToIndex(alias, type, obj);
+      }
+
+      // Alias for epithets: "Velgrim the Terrible" -> "Velgrim"
+      const theIdx = key.indexOf(' the ');
+      if (theIdx > 2) {
+        const alias = key.slice(0, theIdx).trim();
+        addToIndex(alias, type, obj);
+      }
+
+      // Alias before comma: "Name, Title" -> "Name"
+      const commaIdx = key.indexOf(',');
+      if (commaIdx > 2) {
+        const alias = key.slice(0, commaIdx).trim();
+        addToIndex(alias, type, obj);
+      }
+    });
+  });
+
+  index.forEach((_, key) => names.push(key));
+  names.sort((a, b) => b.length - a.length);
+
+  // Build one big regex to find any entity name, with optional leading "the".
+  // Uses Unicode property escapes for robust word-ish boundaries.
+  const alts = names
+    .filter(n => n.length >= 3)
+    .map(n => escapeRegexPiece(n))
+    .join('|');
+  CODEX_ENTITY_INDEX = index;
+  if (!alts) {
+    CODEX_ENTITY_REGEX = null;
+    return;
+  }
+
+  // Prefer Unicode-aware boundaries; fall back for older browsers.
+  try {
+    CODEX_ENTITY_REGEX = new RegExp(`(^|[^\\p{L}\\p{N}])((?:the\\s+)?)(${alts})(?=$|[^\\p{L}\\p{N}])`, 'giu');
+  } catch (e) {
+    CODEX_ENTITY_REGEX = new RegExp(`(^|[^A-Za-z0-9])((?:the\\s+)?)(${alts})(?=$|[^A-Za-z0-9])`, 'gi');
+  }
+}
+
+async function ensureCodexDataLoaded() {
+  if (codexDataLoaded && CODEX_DATA_CACHE) return CODEX_DATA_CACHE;
+  if (CODEX_DATA_PROMISE) return CODEX_DATA_PROMISE;
+  CODEX_DATA_PROMISE = (async () => {
+    const res = await fetch(CODEX_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    CODEX_DATA_CACHE = data;
+    codexDataLoaded = true;
+    buildCodexEntityIndex(data);
+    return data;
+  })();
+  try {
+    return await CODEX_DATA_PROMISE;
+  } finally {
+    CODEX_DATA_PROMISE = null;
+  }
+}
+
+function linkifyStoryTextToHtml(rawText) {
+  const text = fixMojibake(rawText || '');
+  if (!CODEX_ENTITY_REGEX || !CODEX_ENTITY_INDEX || CODEX_ENTITY_INDEX.size === 0) return escHtml(text);
+
+  let out = '';
+  let last = 0;
+  CODEX_ENTITY_REGEX.lastIndex = 0;
+  let m;
+  while ((m = CODEX_ENTITY_REGEX.exec(text)) !== null) {
+    const full = m[0];
+    const boundary = m[1] || '';
+    const thePart = m[2] || '';
+    const namePart = m[3] || '';
+    const start = m.index;
+
+    out += escHtml(text.slice(last, start));
+    out += escHtml(boundary);
+
+    const key = normalizeEntityKey(namePart);
+    const matches = CODEX_ENTITY_INDEX.get(key) || [];
+    const type = (matches.length === 1) ? matches[0].type : '';
+    const label = `${thePart}${namePart}`;
+
+    out += `<button type="button" class="entity-link" data-entity-key="${escHtml(key)}"${type ? ` data-entity-type="${escHtml(type)}"` : ''}>${escHtml(label)}</button>`;
+    last = start + full.length;
+  }
+  out += escHtml(text.slice(last));
+  return out;
+}
+
+function enhanceStoryEntityLinks() {
+  if (!CODEX_ENTITY_REGEX) return;
+  document.querySelectorAll('.story-text[data-raw-text]').forEach(p => {
+    if (p.dataset.enhanced === '1') return;
+    p.innerHTML = linkifyStoryTextToHtml(p.dataset.rawText || '');
+    p.dataset.enhanced = '1';
+  });
+  const modalText = document.getElementById('story-modal-text');
+  if (modalText && modalText.dataset && modalText.dataset.rawText) {
+    modalText.innerHTML = linkifyStoryTextToHtml(modalText.dataset.rawText || '');
+  }
+}
+
+function isCodexModalOpen() {
+  return document.getElementById('codex-modal').classList.contains('open');
+}
+
+function closeCodexModal() {
+  document.getElementById('codex-modal-overlay').classList.remove('open');
+  document.getElementById('codex-modal').classList.remove('open');
+  document.getElementById('codex-modal-overlay').setAttribute('aria-hidden', 'true');
+  document.getElementById('codex-modal-title').textContent = '—';
+  document.getElementById('codex-modal-sub').textContent = '—';
+  document.getElementById('codex-modal-actions').innerHTML = '';
+  document.getElementById('codex-modal-body').innerHTML = '';
+}
+
+function openCodexModalSkeleton() {
+  document.getElementById('codex-modal-overlay').classList.add('open');
+  document.getElementById('codex-modal').classList.add('open');
+  document.getElementById('codex-modal-overlay').setAttribute('aria-hidden', 'false');
+}
+
+function renderCodexEntryModalBody(type, obj, key) {
+  const tokens = _primaryLabelTokensForEntity(type, obj);
+  const primary = (tokens && tokens.length) ? tokens[0] : 'Unknown';
+  const appearances = obj && typeof obj.appearances === 'number'
+    ? (obj.appearances > 1 ? `${obj.appearances} appearances` : 'First appearance')
+    : (obj && obj.first_story ? 'First appearance' : 'Entry');
+  const body = `
+    <div class="codex-card-header">
+      ${obj && obj.tagline ? `<div class="codex-card-tagline">${escHtml(obj.tagline)}</div>` : ''}
+      <div class="codex-card-badges">
+        <span class="badge ${badgeClassForEntityType(type)}">${escHtml(primary)}</span>
+        ${obj && obj.status ? `<span class="badge ${statusBadgeClass(obj.status)}">${escHtml(obj.status)}</span>` : ''}
+      </div>
+    </div>
+    <hr class="codex-divider" />
+    <div class="codex-body">${escHtml((obj && obj.description) ? obj.description : '')}</div>
+    ${typeof buildMostSpecificLocationLine === 'function' ? buildMostSpecificLocationLine(obj) : ''}
+    ${typeof buildEntityParentChain === 'function' ? buildEntityParentChain(obj) : ''}
+    <div class="codex-meta">
+      <span>${escHtml(appearances)}</span>
+      ${obj && obj.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(obj.first_story)}</span>` : ''}
+    </div>
+    ${buildStoryLinks(obj ? obj.story_appearances : null, obj ? obj.first_story : '', obj ? obj.first_date : '')}
+  `;
+
+  const titleEl = document.getElementById('codex-modal-title');
+  const subEl = document.getElementById('codex-modal-sub');
+  const bodyEl = document.getElementById('codex-modal-body');
+  titleEl.textContent = (obj && obj.name) ? obj.name : (key || '—');
+  subEl.textContent = codexTypeLabel(type);
+  bodyEl.innerHTML = body;
+
+  const actions = document.getElementById('codex-modal-actions');
+  actions.innerHTML = '';
+  const viewBtn = document.createElement('button');
+  viewBtn.className = 'btn btn-icon';
+  viewBtn.textContent = 'View in Codex';
+  viewBtn.addEventListener('click', async () => {
+    closeCodexModal();
+    switchTab('characters');
+    await loadCodex(false);
+    if (type) applyCodexFilter(type);
+    const card = document.querySelector(`.codex-card[data-entity-type="${CSS.escape(type)}"][data-name-sort="${CSS.escape(normalizeEntityKey(obj && obj.name ? obj.name : key))}"]`);
+    if (card) {
+      card.classList.add('codex-flash');
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => card.classList.remove('codex-flash'), 1200);
+    }
+  });
+  actions.appendChild(viewBtn);
+
+  // Enable story preview buttons inside the modal.
+  attachStoryLinkListeners(document.getElementById('codex-modal-panel'));
+}
+
+async function openCodexEntryByKey(key, typeHint = '') {
+  openCodexModalSkeleton();
+  document.getElementById('codex-modal-title').textContent = 'Consulting the lore scrolls…';
+  document.getElementById('codex-modal-sub').textContent = '—';
+  document.getElementById('codex-modal-actions').innerHTML = '';
+  document.getElementById('codex-modal-body').innerHTML = '<span class="spinner"></span><em>Searching the Codex…</em>';
+
+  try {
+    await ensureCodexDataLoaded();
+    const matches = CODEX_ENTITY_INDEX.get(key) || [];
+    if (matches.length === 0) {
+      document.getElementById('codex-modal-title').textContent = 'Not found';
+      document.getElementById('codex-modal-sub').textContent = '—';
+      document.getElementById('codex-modal-body').innerHTML = `<div class="error-box"><strong>⚠ Entry Missing</strong> The Codex has no entry for <em>${escHtml(key)}</em> yet.</div>`;
+      return;
+    }
+
+    let pick = null;
+    if (typeHint) {
+      pick = matches.find(m => m.type === typeHint) || null;
+    }
+
+    if (!pick && matches.length === 1) {
+      pick = matches[0];
+    }
+
+    if (!pick) {
+      document.getElementById('codex-modal-title').textContent = 'Choose an entry';
+      document.getElementById('codex-modal-sub').textContent = key;
+      const bodyEl = document.getElementById('codex-modal-body');
+      const options = matches.map(m => `<button type="button" class="codex-story-link" data-choose-type="${escHtml(m.type)}">${escHtml(codexTypeLabel(m.type))}</button>`).join('');
+      bodyEl.innerHTML = `<div class="codex-body" style="margin-bottom:.6rem">Multiple entries share this name. Which did you mean?</div><div class="codex-story-links"><span class="codex-story-links-label">Open</span>${options}</div>`;
+      bodyEl.querySelectorAll('button[data-choose-type]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          openCodexEntryByKey(key, btn.dataset.chooseType || '');
+        });
+      });
+      return;
+    }
+
+    renderCodexEntryModalBody(pick.type, pick.obj, key);
+  } catch (err) {
+    console.error(err);
+    document.getElementById('codex-modal-title').textContent = '⚠ Could not open entry';
+    document.getElementById('codex-modal-sub').textContent = '—';
+    document.getElementById('codex-modal-actions').innerHTML = '';
+    document.getElementById('codex-modal-body').textContent = (err && err.message) ? err.message : String(err);
+  }
 }
 
 function _primaryLabelTokensForEntity(type, obj) {
@@ -708,8 +1083,8 @@ function fixMojibake(str) {
   try {
     const bytes = new Uint8Array(str.length);
     for (let i = 0; i < str.length; i++) bytes[i] = str.charCodeAt(i) & 0xff;
-    return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
-  } catch (e) { return str; }
+    return new TextDecoder('utf-8', { fatal: true }).decode(bytes).replace(/[\uFE0E\uFE0F]/g, '');
+  } catch (e) { return String(str || '').replace(/[\uFE0E\uFE0F]/g, ''); }
 }
 
 // ── Render Stories ───────────────────────────────────────────────────
@@ -729,13 +1104,26 @@ function renderStories(data) {
       <span class="story-tag" title="Filter by this genre" data-genre="${subgenreEsc}">${subgenreEsc}</span>
       <h2 class="story-title">${escHtml(s.title || 'Untitled')}</h2>
       <hr class="story-divider" />
-      <p class="story-text">${escHtml(fixMojibake(s.text || ''))}</p>
+      <p class="story-text"></p>
     `;
+
+    const rawText = fixMojibake(s.text || '');
+    const p = card.querySelector('.story-text');
+    p.dataset.rawText = rawText;
+    p.dataset.enhanced = '0';
+    // Default render: plain text. (Enhanced links apply once codex data is available.)
+    p.textContent = rawText;
+
     card.querySelector('.story-tag').addEventListener('click', () => {
       applyGenreFilter(s.subgenre || 'all');
     });
     grid.appendChild(card);
   });
+
+  // Fetch codex in the background and upgrade story text with clickable entity links.
+  ensureCodexDataLoaded()
+    .then(() => enhanceStoryEntityLinks())
+    .catch(() => {/* non-fatal */});
 
   // Build genre filter buttons
   const genreBar = document.getElementById('genre-bar');
@@ -895,7 +1283,15 @@ async function openStoryModalByAppearance(date, title, opts = {}) {
       actions.appendChild(next);
     }
 
-    document.getElementById('story-modal-text').textContent = fixMojibake(story.text || '');
+    const rawText = fixMojibake(story.text || '');
+    const textEl = document.getElementById('story-modal-text');
+    textEl.dataset.rawText = rawText;
+    textEl.textContent = rawText;
+
+    // Upgrade modal text with clickable entity links once codex data is ready.
+    ensureCodexDataLoaded()
+      .then(() => enhanceStoryEntityLinks())
+      .catch(() => {/* non-fatal */});
   } catch (err) {
     console.error(err);
     document.getElementById('story-modal-title').textContent = '⚠ Could not open story';
@@ -1784,11 +2180,21 @@ async function loadCodex(force = false) {
   statusEl.style.display = '';
   grid.style.display = 'none';
   try {
-    const res = await fetch(CODEX_URL + '?t=' + Date.now());
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    let data = null;
+    if (CODEX_DATA_CACHE && codexDataLoaded && !force) {
+      data = CODEX_DATA_CACHE;
+      if (!CODEX_ENTITY_REGEX || !CODEX_ENTITY_INDEX || CODEX_ENTITY_INDEX.size === 0) {
+        buildCodexEntityIndex(data);
+      }
+    } else {
+      const res = await fetch(CODEX_URL + '?t=' + Date.now());
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      data = await res.json();
+      CODEX_DATA_CACHE = data;
+      codexDataLoaded = true;
+      buildCodexEntityIndex(data);
+    }
     codexLoaded = true;
-    CODEX_DATA_CACHE = data;
     renderCodex(data);
   } catch (err) {
     console.error(err);
@@ -1902,11 +2308,27 @@ document.getElementById('archive-overlay').addEventListener('click', closeArchiv
 document.getElementById('story-modal-close').addEventListener('click', closeStoryModal);
 document.getElementById('story-modal-overlay').addEventListener('click', closeStoryModal);
 
+// Codex modal close
+document.getElementById('codex-modal-close').addEventListener('click', closeCodexModal);
+document.getElementById('codex-modal-overlay').addEventListener('click', closeCodexModal);
+
+// Entity links inside story text
+document.addEventListener('click', (e) => {
+  const btn = e.target && e.target.closest ? e.target.closest('.entity-link') : null;
+  if (!btn) return;
+  const key = btn.dataset.entityKey || '';
+  if (!key) return;
+  const typeHint = btn.dataset.entityType || '';
+  openCodexEntryByKey(key, typeHint);
+});
+
 // Escape key: close story modal first, otherwise close archive drawer.
 document.addEventListener('keydown', (e) => {
   const modalOpen = document.getElementById('story-modal').classList.contains('open');
+  const codexOpen = document.getElementById('codex-modal').classList.contains('open');
 
   if (e.key === 'Escape') {
+    if (codexOpen) { closeCodexModal(); return; }
     if (modalOpen) { closeStoryModal(); return; }
     closeArchive();
     return;
