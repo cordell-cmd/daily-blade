@@ -893,6 +893,11 @@ ADDITIONAL CANON GUARDRAILS:
 Generate exactly 10 original short sword-and-sorcery stories.
 Each story should be vivid, action-packed, and around 120–160 words long.
 
+ORIGINALITY / COPYRIGHT SAFETY:
+- Create ONLY original characters, places, factions, creatures, spells, artifacts, and titles.
+- Do NOT use or reference recognizable copyrighted names or specific settings from existing works (e.g., no Gandalf, no Middle-earth, etc.).
+- Generic fantasy archetypes are fine (wizards, dragons, elves, dwarves, etc.), but names and particulars must be newly invented.
+
 Today's date is {today_str}. Use this as subtle creative inspiration if you like.
 {lore_section}
 {reuse_section}
@@ -907,10 +912,11 @@ TONE + FANTASY VARIETY (creative palette; use your judgment):
     - Include some lighter/adventurous/wondrous pieces (mystery, heist, exploration, comic irony, heroic triumph).
     - Include at least one love-story / romance thread (can be sweet, tragic, or bittersweet; keep it pulp-fantasy).
 - Magic is welcome but not mandatory: aim for a mix of sorcery and non-magic conflict (steel, politics, survival, bargains, travel, rivalries).
-- Use the full fantasy toolbox when it fits the world rules: across the issue, try to include variety such as
-    - Non-human peoples (elves, dwarves, goblin-kind, smallfolk, orcs/ogres/trolls).
-    - Mythic creatures (a dragon/wyrm or similarly iconic beast).
-    - Fae/fairy influence (a fae court, fairy realm, or a fae-bargain).
+- Use the full fantasy toolbox when it fits the world rules.
+    - The examples below are NOT a limit; you are encouraged to invent new kinds of peoples, creatures, cultures, magics, and wonders.
+    - Non-human peoples (elves, dwarves, goblin-kind, smallfolk, orcs/ogres/trolls — or wholly new lineages).
+    - Mythic creatures (a dragon/wyrm or similarly iconic beast — or a brand-new apex terror).
+    - Fae/fairy influence (a fae court, fairy realm, or a fae-bargain — or any other uncanny otherworld).
 - Stories may center on ANY fantasy focus (not just people): creatures, artifacts/weapons/relics, or places can be the "main character".
 
 REUSE INTENSITY RULES (only applies when an entry is labeled):
@@ -1010,39 +1016,61 @@ def build_lore_extraction_prompt(stories, existing_lore):
     existing_subcontinents = {s["name"].lower() for s in existing_lore.get("subcontinents", []) if isinstance(s, dict) and s.get("name")}
     existing_hemispheres  = {h["name"].lower() for h in existing_lore.get("hemispheres",  []) if isinstance(h, dict) and h.get("name")}
 
+    def _known_summary(items, limit=50):
+        items = sorted({str(x).strip() for x in (items or set()) if str(x).strip()})
+        if not items:
+            return "none"
+        if len(items) <= limit:
+            return ", ".join(items)
+        sample = ", ".join(items[:limit])
+        return f"{len(items)} known; sample: {sample}"
+
     stories_text = "\n\n".join(
         f"STORY {i+1}: {s['title']}\n{s['text']}"
         for i, s in enumerate(stories)
     )
 
     return f"""You are a lore archivist for a sword-and-sorcery story universe.
-Analyze the following stories and extract NEW lore elements — characters, places, events, weapons, artifacts, factions, lore, flora/fauna, magic, relics, regions, substances, and geo hierarchy entries (hemisphere/continent/subcontinent/realm/province/district) — that appear in these stories but are NOT already in the existing lore lists.
+Analyze the following stories and extract lore elements — characters, places, events, weapons, artifacts, factions, lore, flora/fauna, magic, relics, regions, substances, and geo hierarchy entries (hemisphere/continent/subcontinent/realm/province/district) — that appear in these stories.
+
+Priority: COMPLETENESS over novelty.
+- It is OK if you re-extract something that already exists; the merge step will deduplicate.
+- When in doubt, include the entry (you may use 'unknown' fields).
 
 Be exhaustive:
 - Do not miss named wars, sieges, rituals, treaties, curses, plagues, or disasters.
 - If a story names a domain/territory ruled by someone, capture it as a Region/Realm/Place as appropriate.
 - Prefer creating an entry even if details are sparse; use 'unknown' for unknown fields.
 
-ALREADY KNOWN (do NOT re-extract these):
-- Characters: {', '.join(existing_chars) if existing_chars else 'none'}
-- Places: {', '.join(existing_places) if existing_places else 'none'}
-- Events: {', '.join(existing_events) if existing_events else 'none'}
-- Weapons: {', '.join(existing_weapons) if existing_weapons else 'none'}
-- Deities/Entities: {', '.join(existing_deities) if existing_deities else 'none'}
-- Artifacts: {', '.join(existing_artifacts) if existing_artifacts else 'none'}
-- Factions: {', '.join(sorted(existing_factions)) if existing_factions else 'none'}
-- Lore & Legends: {', '.join(sorted(existing_lore_items)) if existing_lore_items else 'none'}
-- Flora & Fauna: {', '.join(sorted(existing_flora_fauna)) if existing_flora_fauna else 'none'}
-- Magic & Abilities: {', '.join(sorted(existing_magic)) if existing_magic else 'none'}
-- Relics & Cursed Items: {', '.join(sorted(existing_relics)) if existing_relics else 'none'}
-- Continents: {', '.join(sorted(existing_continents)) if existing_continents else 'none'}
-- Hemispheres: {', '.join(sorted(existing_hemispheres)) if existing_hemispheres else 'none'}
-- Subcontinents: {', '.join(sorted(existing_subcontinents)) if existing_subcontinents else 'none'}
-- Realms: {', '.join(sorted(existing_realms)) if existing_realms else 'none'}
-- Provinces: {', '.join(sorted(existing_provinces)) if existing_provinces else 'none'}
-- Regions: {', '.join(sorted(existing_regions)) if existing_regions else 'none'}
-- Districts: {', '.join(sorted(existing_districts)) if existing_districts else 'none'}
-- Substances & Materials: {', '.join(sorted(existing_substances)) if existing_substances else 'none'}
+Coverage checklist (per story):
+- List every named proper noun that appears to refer to a person, place, region/realm, faction, event, ritual, spell/ability, relic/artifact/weapon, or creature.
+- Ensure each named thing is represented in at least one output category.
+- Treat patterns like "X of Y" and "The X of Y" as likely names; include them when they read like a title, place, or event.
+
+Naming rules:
+- The `name` field MUST match the surface form used in the story text as closely as possible.
+- Do NOT add disambiguating suffixes/prefixes like "(as Region)", "(the place)", "(event)", etc.
+
+EXISTING CANON (reference only; non-exhaustive; ok to repeat):
+- Characters: {_known_summary(existing_chars)}
+- Places: {_known_summary(existing_places)}
+- Events: {_known_summary(existing_events)}
+- Weapons: {_known_summary(existing_weapons)}
+- Deities/Entities: {_known_summary(existing_deities)}
+- Artifacts: {_known_summary(existing_artifacts)}
+- Factions: {_known_summary(existing_factions)}
+- Lore & Legends: {_known_summary(existing_lore_items)}
+- Flora & Fauna: {_known_summary(existing_flora_fauna)}
+- Magic & Abilities: {_known_summary(existing_magic)}
+- Relics & Cursed Items: {_known_summary(existing_relics)}
+- Continents: {_known_summary(existing_continents)}
+- Hemispheres: {_known_summary(existing_hemispheres)}
+- Subcontinents: {_known_summary(existing_subcontinents)}
+- Realms: {_known_summary(existing_realms)}
+- Provinces: {_known_summary(existing_provinces)}
+- Regions: {_known_summary(existing_regions)}
+- Districts: {_known_summary(existing_districts)}
+- Substances & Materials: {_known_summary(existing_substances)}
 
 GEOGRAPHY CONSTRAINTS:
 - We are grounding this universe on ONE main planet/world.
@@ -2361,6 +2389,12 @@ def build_lore_revision_prompt(stories, lore, referenced_entries):
 
 Goal: revise the stories ONLY as needed so they DO NOT contradict established canon.
 
+Tone / variety guardrails:
+- Preserve each story's existing tone (romantic, comedic, wondrous, political, grim, etc.).
+- Do NOT darken the story or inject extra gore, cruelty, necromancy, or grim sorcery unless it is already present in that story.
+- Do NOT add new magical systems, prophecies, demons, curses, or eldritch horrors as part of a canon fix.
+- Keep the broader fantasy palette intact; do not homogenize all stories toward one vibe.
+
 Canon rules:
 {rules_block}
 
@@ -2403,6 +2437,11 @@ def build_canon_checker_prompt(stories, lore, referenced_entries, mode="rewrite"
 
 Task: identify contradictions between today's stories and the established canon entries referenced today.
 
+Tone / variety guardrails:
+- Preserve the tone and subgenre of each story.
+- If rewriting, do NOT darken the content or add new grim sorcery/necromancy to resolve a contradiction.
+- Prefer small factual/continuity tweaks (names, dates, places, affiliations, outcomes) over inventing new lore.
+
 Canon rules:
 {rules_block}
 
@@ -2422,6 +2461,7 @@ Output requirements:
 - Also include `stories`: the revised stories array, with the SMALLEST possible edits to remove contradictions.
 - Do NOT change titles or subgenre labels.
 - Keep prose style and length roughly similar.
+ - Keep romance/comedy/wonder beats intact when present.
 """ if wants_rewrite else """
 - Do NOT rewrite the stories.
 """) + f"""

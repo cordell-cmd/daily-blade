@@ -93,6 +93,15 @@ def build_extraction_prompt(stories_with_dates, existing_codex):
     existing_regions     = {g["name"].lower() for g in existing_codex.get("regions",      [])}
     existing_substances  = {s["name"].lower() for s in existing_codex.get("substances",   [])}
 
+    def _known_summary(items, limit=40):
+        items = sorted({str(x).strip() for x in (items or set()) if str(x).strip()})
+        if not items:
+            return "none"
+        if len(items) <= limit:
+            return ", ".join(items)
+        sample = ", ".join(items[:limit])
+        return f"{len(items)} known; sample: {sample}"
+
     stories_text = "\n\n".join(
         f"STORY (date: {date_key}): {s['title']}\n{s['text']}"
         for date_key, s in stories_with_dates
@@ -106,19 +115,27 @@ Analyze the following stories and extract ALL notable lore elements:
 - Named mythical/legendary weapons (swords, axes, staves with special names or powers)
 - Named artifacts and magical objects (rings, tomes, idols, amulets, etc.)
 
-ALREADY KNOWN (do NOT re-extract these — only extract truly NEW ones):
-- Characters: {', '.join(sorted(existing_chars)) if existing_chars else 'none yet'}
-- Places: {', '.join(sorted(existing_places)) if existing_places else 'none yet'}
-- Events: {', '.join(sorted(existing_events)) if existing_events else 'none yet'}
-- Weapons: {', '.join(sorted(existing_weapons)) if existing_weapons else 'none yet'}
-- Artifacts: {', '.join(sorted(existing_artifacts)) if existing_artifacts else 'none yet'}
-- Factions: {', '.join(sorted(existing_factions)) if existing_factions else 'none yet'}
-- Lore & Legends: {', '.join(sorted(existing_lore_items)) if existing_lore_items else 'none yet'}
-- Flora & Fauna: {', '.join(sorted(existing_flora_fauna)) if existing_flora_fauna else 'none yet'}
-- Magic & Abilities: {', '.join(sorted(existing_magic)) if existing_magic else 'none yet'}
-- Relics & Cursed Items: {', '.join(sorted(existing_relics)) if existing_relics else 'none yet'}
-- Regions & Realms: {', '.join(sorted(existing_regions)) if existing_regions else 'none yet'}
-- Substances & Materials: {', '.join(sorted(existing_substances)) if existing_substances else 'none yet'}
+Priority: COMPLETENESS over novelty.
+- It is OK if you include already-known entries; the merge step will deduplicate.
+- Be exhaustive about named wars, sieges, rituals, treaties, curses, plagues, disasters, and titled historical moments.
+
+Naming rules:
+- The `name` field MUST match the surface form used in the story text as closely as possible.
+- Do NOT add disambiguating suffixes/prefixes like "(as Region)", "(the place)", "(event)", etc.
+
+EXISTING CANON (reference only; non-exhaustive; ok to repeat):
+- Characters: {_known_summary(existing_chars)}
+- Places: {_known_summary(existing_places)}
+- Events: {_known_summary(existing_events)}
+- Weapons: {_known_summary(existing_weapons)}
+- Artifacts: {_known_summary(existing_artifacts)}
+- Factions: {_known_summary(existing_factions)}
+- Lore & Legends: {_known_summary(existing_lore_items)}
+- Flora & Fauna: {_known_summary(existing_flora_fauna)}
+- Magic & Abilities: {_known_summary(existing_magic)}
+- Relics & Cursed Items: {_known_summary(existing_relics)}
+- Regions & Realms: {_known_summary(existing_regions)}
+- Substances & Materials: {_known_summary(existing_substances)}
 
 STORIES TO ANALYZE:
 {stories_text}
