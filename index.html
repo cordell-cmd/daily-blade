@@ -1156,8 +1156,15 @@ function renderCodex(data) {
   grid.innerHTML = '';
   grid.style.display = '';
 
-  const characters = data.characters || [];
-  const places     = data.places     || [];
+  const byName = (a, b) => {
+    const an = String((a && a.name) ? a.name : '').toLowerCase();
+    const bn = String((b && b.name) ? b.name : '').toLowerCase();
+    return an.localeCompare(bn);
+  };
+
+  // Default Codex ordering: alphabetical within each category.
+  const characters = [...(data.characters || [])].sort(byName);
+  const places     = [...(data.places     || [])].sort(byName);
   // Build place-type lookup for labeling parent places.
   PLACE_TYPE_BY_NAME = new Map();
   places.forEach(p => {
@@ -1167,22 +1174,22 @@ function renderCodex(data) {
     if (pt) PLACE_TYPE_BY_NAME.set(nm.toLowerCase(), pt);
   });
 
-  const hemispheres = data.hemispheres || [];
-  const continents  = data.continents  || [];
-  const subcontinents = data.subcontinents || [];
-  const realms      = data.realms      || [];
-  const provinces   = data.provinces   || [];
-  const districts   = data.districts   || [];
-  const events     = data.events     || [];
-  const weapons    = data.weapons    || [];
-  const artifacts  = data.artifacts  || [];
-  const factions    = data.factions    || [];
-  const lore        = data.lore        || [];
-  const flora_fauna = data.flora_fauna || [];
-  const magic       = data.magic       || [];
-  const relics      = data.relics      || [];
-  const regions     = data.regions     || [];
-  const substances  = data.substances  || [];
+  const hemispheres = [...(data.hemispheres || [])].sort(byName);
+  const continents  = [...(data.continents  || [])].sort(byName);
+  const subcontinents = [...(data.subcontinents || [])].sort(byName);
+  const realms      = [...(data.realms      || [])].sort(byName);
+  const provinces   = [...(data.provinces   || [])].sort(byName);
+  const districts   = [...(data.districts   || [])].sort(byName);
+  const events      = [...(data.events      || [])].sort(byName);
+  const weapons     = [...(data.weapons     || [])].sort(byName);
+  const artifacts   = [...(data.artifacts   || [])].sort(byName);
+  const factions    = [...(data.factions    || [])].sort(byName);
+  const lore        = [...(data.lore        || [])].sort(byName);
+  const flora_fauna = [...(data.flora_fauna || [])].sort(byName);
+  const magic       = [...(data.magic       || [])].sort(byName);
+  const relics      = [...(data.relics      || [])].sort(byName);
+  const regions     = [...(data.regions     || [])].sort(byName);
+  const substances  = [...(data.substances  || [])].sort(byName);
 
   const total = characters.length + places.length + hemispheres.length + continents.length + subcontinents.length + realms.length + provinces.length + districts.length + events.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
 
