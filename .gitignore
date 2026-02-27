@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Local env files / secrets
+*.env
+.daily-blade.env
+
+# Backups created by audit/backfill scripts
+*.bak.*
+
+# VS Code
+.vscode/

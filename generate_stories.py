@@ -13,6 +13,8 @@ import os
 import json
 import sys
 import re
+import random
+import hashlib
 from datetime import datetime, timezone
 import anthropic
 
@@ -26,7 +28,61 @@ LORE_FILE       = "lore.json"
 CHARACTERS_FILE = "characters.json"
 CODEX_FILE      = "codex.json"
 
+# Geography / hierarchy controls
+MAX_CONTINENTS = int(os.environ.get("MAX_CONTINENTS", "7"))
+
 # Subgenres are generated dynamically by the AI for each story
+
+# Optional lore consistency controls
+ENABLE_LORE_REVISION_PASS = os.environ.get("ENABLE_LORE_REVISION_PASS", "0").strip().lower() in {"1", "true", "yes", "y"}
+
+# Canon checker: audits for contradictions against referenced canon, and can auto-rewrite stories.
+ENABLE_CANON_CHECKER = os.environ.get("ENABLE_CANON_CHECKER", "0").strip().lower() in {"1", "true", "yes", "y"}
+CANON_CHECKER_MODE = os.environ.get("CANON_CHECKER_MODE", "rewrite").strip().lower()  # rewrite | report
+
+# Existing-entity updates: extract updates for ALREADY KNOWN entities referenced today.
+# This is how we can learn status changes (dead -> reanimated, etc.) even though the "NEW lore" extractor skips known names.
+ENABLE_EXISTING_CHARACTER_UPDATES = os.environ.get(
+    "ENABLE_EXISTING_CHARACTER_UPDATES",
+    "1",
+).strip().lower() in {"1", "true", "yes", "y"}
+
+# Prompt size controls (do not limit lore growth; only limit what we *send* each run).
+# Set to 0 to disable that section.
+LORE_SPOTLIGHT_MAX_PER_CATEGORY = int(os.environ.get("LORE_SPOTLIGHT_MAX_PER_CATEGORY", "0"))
+LORE_RANDOM_SPOTLIGHT_PER_CATEGORY = int(os.environ.get("LORE_RANDOM_SPOTLIGHT_PER_CATEGORY", "0"))
+
+# Reuse planner: Haiku decides whether to reuse, and selects from a random candidate list.
+ENABLE_REUSE_PLANNER = os.environ.get("ENABLE_REUSE_PLANNER", "1").strip().lower() in {"1", "true", "yes", "y"}
+REUSE_CANDIDATES_PER_CATEGORY = int(os.environ.get("REUSE_CANDIDATES_PER_CATEGORY", "20"))
+REUSE_MAX_PER_CATEGORY = int(os.environ.get("REUSE_MAX_PER_CATEGORY", "1"))
+REUSE_DEFAULT_INTENSITY = os.environ.get("REUSE_DEFAULT_INTENSITY", "cameo").strip().lower()
+
+# Reuse dossier: when we intentionally reuse an entity, scan its prior appearance tales and inject a compact dossier.
+ENABLE_REUSE_DOSSIER = os.environ.get("ENABLE_REUSE_DOSSIER", "1").strip().lower() in {"1", "true", "yes", "y"}
+REUSE_DOSSIER_MAX_APPEARANCES = int(os.environ.get("REUSE_DOSSIER_MAX_APPEARANCES", "25"))  # 0 = no limit
+REUSE_DOSSIER_MAX_CHARS_PER_STORY = int(os.environ.get("REUSE_DOSSIER_MAX_CHARS_PER_STORY", "4000"))
+REUSE_DOSSIER_MAX_TOKENS = int(os.environ.get("REUSE_DOSSIER_MAX_TOKENS", "1200"))
+REUSE_ALLOWED_CATEGORIES_RAW = os.environ.get("REUSE_ALLOWED_CATEGORIES", "all").strip()
+
+
+def get_reuse_allowed_categories(lore: dict):
+    """Return the categories that the reuse planner may consider.
+
+    By default this is "all" list-like categories present in lore.
+    Set REUSE_ALLOWED_CATEGORIES to a comma-separated list to restrict.
+    """
+    raw = (REUSE_ALLOWED_CATEGORIES_RAW or "all").strip()
+    if not raw or raw.lower() in {"all", "*"}:
+        cats = []
+        if isinstance(lore, dict):
+            for k, v in lore.items():
+                if k in {"worlds", "version", "last_updated"}:
+                    continue
+                if isinstance(v, list):
+                    cats.append(k)
+        return sorted(set(cats))
+    return [c.strip() for c in raw.split(",") if c.strip()]
 
 # ── Lore helpers ──────────────────────────────────────────────────────────
 def load_lore():
@@ -37,6 +93,12 @@ def load_lore():
     return {
         "version": "1.0",
         "worlds": [],
+        "hemispheres": [],
+        "continents": [],
+        "subcontinents": [],
+        "realms": [],
+        "provinces": [],
+        "districts": [],
         "characters": [],
         "places": [],
         "events": [],
@@ -51,6 +113,111 @@ def load_lore():
         "regions": [],
         "substances": []
     }
+
+
+def _truthy_non_unknown(val: str) -> bool:
+    v = (val or "").strip()
+    if not v:
+        return False
+    return v.lower() not in {"unknown", "n/a", "na", "none"}
+
+
+def ensure_place_parent_chain(lore: dict):
+    """Ensure geo entities declare a complete parent chain (may be 'unknown').
+
+    Applies to:
+    - places (parents only)
+    - regions/districts/provinces/realms/subcontinents/continents/hemispheres
+    
+    Notes:
+    - We don't force a specific 'world' name; we only ensure the field exists.
+    - For geo categories (e.g., realms), we default the self-level field (realm) to item.name if missing.
+    """
+    if not isinstance(lore, dict):
+        return lore
+
+    def _ensure_chain(obj: dict):
+        obj.setdefault("world", "The Known World")
+        if not _truthy_non_unknown(obj.get("world") or ""):
+            obj["world"] = "The Known World"
+        obj.setdefault("hemisphere", "unknown")
+        obj.setdefault("continent", "unknown")
+        obj.setdefault("subcontinent", "unknown")
+        obj.setdefault("realm", "unknown")
+        obj.setdefault("province", "unknown")
+        obj.setdefault("region", "unknown")
+        obj.setdefault("district", "unknown")
+
+    # Places: parent chain only.
+    places = lore.get("places")
+    if isinstance(places, list):
+        for p in places:
+            if isinstance(p, dict):
+                _ensure_chain(p)
+
+    # Geo hierarchy categories: chain + self-level field.
+    self_field_by_cat = {
+        "hemispheres": "hemisphere",
+        "continents": "continent",
+        "subcontinents": "subcontinent",
+        "realms": "realm",
+        "provinces": "province",
+        "districts": "district",
+        "regions": "region",
+    }
+    for cat, self_field in self_field_by_cat.items():
+        items = lore.get(cat)
+        if not isinstance(items, list):
+            continue
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            _ensure_chain(it)
+            nm = (it.get("name") or "").strip()
+            if nm and not _truthy_non_unknown(it.get(self_field) or ""):
+                it[self_field] = nm
+    return lore
+
+
+def enforce_continent_limit(lore: dict):
+    """Keep continent count bounded and prevent places from referencing trimmed continents."""
+    if not isinstance(lore, dict):
+        return lore
+    conts = lore.get("continents")
+    if not isinstance(conts, list):
+        conts = []
+        lore["continents"] = conts
+
+    max_n = max(0, int(MAX_CONTINENTS or 0))
+    if max_n and len(conts) > max_n:
+        conts[:] = conts[:max_n]
+
+    allowed = {((c.get("name") or "").strip().lower()) for c in conts if isinstance(c, dict) and (c.get("name") or "").strip()}
+    if not allowed:
+        return lore
+
+    for p in lore.get("places", []) or []:
+        if not isinstance(p, dict):
+            continue
+        continent = (p.get("continent") or "").strip()
+        if _truthy_non_unknown(continent) and continent.lower() not in allowed:
+            p["continent"] = "unknown"
+
+    for r in lore.get("regions", []) or []:
+        if not isinstance(r, dict):
+            continue
+        continent = (r.get("continent") or "").strip()
+        if _truthy_non_unknown(continent) and continent.lower() not in allowed:
+            r["continent"] = "unknown"
+
+    for realm in lore.get("realms", []) or []:
+        if not isinstance(realm, dict):
+            continue
+        continent = (realm.get("continent") or "").strip()
+        if _truthy_non_unknown(continent) and continent.lower() not in allowed:
+            realm["continent"] = "unknown"
+
+    return lore
 
 def save_lore(lore, date_key):
     lore["last_updated"] = date_key
@@ -107,9 +274,485 @@ def build_lore_context(lore):
 
     return "\n".join(lines)
 
+
+def _safe_sorted_by_appearances(items):
+    def _key(x):
+        try:
+            return int(x.get("appearances", 0) or 0)
+        except Exception:
+            return 0
+    return sorted(items or [], key=_key, reverse=True)
+
+
+def _stable_seed_int(seed_text: str, salt: str) -> int:
+    payload = (seed_text or "") + "|" + (salt or "")
+    digest = hashlib.sha256(payload.encode("utf-8")).digest()
+    # Use 64 bits for deterministic RNG seed.
+    return int.from_bytes(digest[:8], "big", signed=False)
+
+
+def _sample_candidates(items, k: int, seed_text: str, salt: str):
+    items = [x for x in (items or []) if isinstance(x, dict) and (x.get("name") or "").strip()]
+    if not items or k <= 0:
+        return []
+    rng = random.Random(_stable_seed_int(seed_text, salt))
+    k = min(int(k), len(items))
+    return rng.sample(items, k=k)
+
+
+def build_reuse_plan_prompt(today_str, lore, candidates_by_category):
+    """Ask the model whether to reuse canon today, and if so pick from provided candidates."""
+    world = lore.get("worlds", [{}])[0] if lore.get("worlds") else {}
+    rules = world.get("rules", []) if isinstance(world.get("rules", []), list) else []
+    rules_block = "\n".join([f"- {r}" for r in rules]) if rules else "- (none)"
+
+    candidate_lines = []
+    for cat, items in (candidates_by_category or {}).items():
+        if not items:
+            continue
+        candidate_lines.append(f"=== {cat.upper()} CANDIDATES ===")
+        for it in items:
+            name = (it.get("name") or "").strip()
+            if not name:
+                continue
+            hint = (it.get("tagline") or it.get("role") or it.get("place_type") or it.get("artifact_type") or it.get("weapon_type") or "").strip()
+            if hint:
+                candidate_lines.append(f"- {name} — {hint}")
+            else:
+                candidate_lines.append(f"- {name}")
+        candidate_lines.append("")
+
+    allowed_cats = ", ".join(sorted(candidates_by_category.keys())) if candidates_by_category else "(none)"
+
+    return f"""You are planning today's issue of an ongoing sword-and-sorcery universe.
+
+Today's date: {today_str}
+
+Canon rules:
+{rules_block}
+
+Decision: for today's 10 stories, should we intentionally reuse any existing canon entities (characters/places/relics/etc), or tell entirely new tales?
+
+Important:
+- Reuse is optional.
+- If you choose reuse, pick ONLY from the candidates listed below.
+- Keep reuse light: at most {REUSE_MAX_PER_CATEGORY} selection(s) per category.
+
+Available categories today: {allowed_cats}
+
+Reuse intensity:
+- cameo: light touch; brief presence or mention; do NOT make them the protagonist or primary location; avoid major new canon changes.
+- central: the entity can meaningfully drive plot; still respect established canon.
+
+Return ONLY valid JSON like:
+{{
+  "reuse": true,
+  "selections": {{
+        "characters": [{{"name": "Name", "intensity": "cameo"}}],
+        "places": [{{"name": "Name", "intensity": "cameo"}}],
+        "relics": [{{"name": "Name", "intensity": "cameo"}}]
+  }},
+  "rationale": "1-2 sentences"
+}}
+
+Notes:
+- For backwards compatibility, each selection may also be a bare string "Name".
+- If intensity is omitted, default to "{REUSE_DEFAULT_INTENSITY}".
+
+CANDIDATES:
+{os.linesep.join(candidate_lines).strip()}
+"""
+
+
+def normalize_reuse_plan(plan, candidates_by_category):
+    """Ensure planner output is safe: selections must be within candidates and within max counts."""
+    safe = {"reuse": False, "selections": {}, "rationale": ""}
+    if not isinstance(plan, dict):
+        return safe
+    safe["reuse"] = bool(plan.get("reuse"))
+    safe["rationale"] = (plan.get("rationale") or "").strip()[:400]
+    selections = plan.get("selections") if isinstance(plan.get("selections"), dict) else {}
+
+    candidate_name_sets = {}
+    for cat, items in (candidates_by_category or {}).items():
+        candidate_name_sets[cat] = { (it.get("name") or "").strip().lower() for it in (items or []) if (it.get("name") or "").strip() }
+
+    def _normalize_intensity(raw: str) -> str:
+        val = (raw or "").strip().lower()
+        if val in {"cameo", "central"}:
+            return val
+        return (REUSE_DEFAULT_INTENSITY or "cameo") if (REUSE_DEFAULT_INTENSITY or "") in {"cameo", "central"} else "cameo"
+
+    out = {}
+    for cat, raw_list in selections.items():
+        if cat not in candidate_name_sets:
+            continue
+        if not isinstance(raw_list, list):
+            continue
+
+        picked = []
+        picked_names_lower = set()
+        for entry in raw_list:
+            name = ""
+            intensity = ""
+            if isinstance(entry, str):
+                name = entry
+            elif isinstance(entry, dict):
+                name = entry.get("name") or ""
+                intensity = entry.get("intensity") or ""
+            else:
+                continue
+
+            nm = (name or "").strip()
+            if not nm:
+                continue
+            if nm.lower() not in candidate_name_sets[cat]:
+                continue
+            if nm.lower() in picked_names_lower:
+                continue
+
+            picked.append({
+                "name": nm,
+                "intensity": _normalize_intensity(intensity),
+            })
+            picked_names_lower.add(nm.lower())
+            if len(picked) >= REUSE_MAX_PER_CATEGORY:
+                break
+
+        if picked:
+            out[cat] = picked
+
+    safe["selections"] = out
+    if not out:
+        safe["reuse"] = False
+    return safe
+
+
+def get_full_canon_entries_for_selections(lore, selections):
+    """Return full lore entries for selected names by category."""
+    out = {}
+    if not isinstance(selections, dict):
+        return out
+    for cat, names in selections.items():
+        if not isinstance(names, list) or not names:
+            continue
+        lore_items = lore.get(cat, []) or []
+        idx = { (it.get("name") or "").strip().lower(): it for it in lore_items if isinstance(it, dict) and (it.get("name") or "").strip() }
+        picked = []
+        for n in names:
+            name = ""
+            if isinstance(n, str):
+                name = n
+            elif isinstance(n, dict):
+                name = n.get("name") or ""
+            it = idx.get((name or "").strip().lower())
+            if it:
+                picked.append(it)
+        if picked:
+            out[cat] = picked
+    return out
+
+
+def load_codex_file():
+    if os.path.exists(CODEX_FILE):
+        try:
+            with open(CODEX_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+
+def _codex_entry_map(codex):
+    out = {}
+    if not isinstance(codex, dict):
+        return out
+    for cat, items in codex.items():
+        if not isinstance(items, list):
+            continue
+        idx = {}
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            nm = (it.get("name") or "").strip()
+            if nm:
+                idx[nm.lower()] = it
+        if idx:
+            out[cat] = idx
+    return out
+
+
+def _load_archive_day(date_key: str):
+    path = os.path.join(ARCHIVE_DIR, f"{date_key}.json")
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return {}
+    return {}
+
+
+def load_story_by_date_and_title(date_key: str, title: str):
+    day = _load_archive_day(date_key)
+    stories = day.get("stories") if isinstance(day, dict) else None
+    if not isinstance(stories, list):
+        return None
+    wanted = (title or "").strip().lower()
+    for s in stories:
+        if not isinstance(s, dict):
+            continue
+        if (s.get("title") or "").strip().lower() == wanted:
+            return s
+    return None
+
+
+def _clip_text(text: str, max_chars: int) -> str:
+    t = text or ""
+    max_chars = int(max_chars or 0)
+    if max_chars <= 0 or len(t) <= max_chars:
+        return t
+    # Keep head+tail for some context.
+    head = int(max_chars * 0.7)
+    tail = max_chars - head
+    return t[:head].rstrip() + "\n…\n" + t[-tail:].lstrip()
+
+
+def gather_prior_tales_for_entity(codex_entry, max_appearances: int, max_chars_per_story: int):
+    apps = codex_entry.get("story_appearances") if isinstance(codex_entry, dict) else None
+    if not isinstance(apps, list) or not apps:
+        return []
+
+    max_appearances = int(max_appearances or 0)
+    if max_appearances > 0:
+        apps = apps[-max_appearances:]
+
+    out = []
+    for app in apps:
+        if not isinstance(app, dict):
+            continue
+        date_key = (app.get("date") or "").strip()
+        title = (app.get("title") or "").strip()
+        if not date_key or not title:
+            continue
+        story = load_story_by_date_and_title(date_key, title)
+        if not story:
+            continue
+        out.append({
+            "date": date_key,
+            "title": story.get("title", title),
+            "subgenre": story.get("subgenre", ""),
+            "text": _clip_text(story.get("text", ""), max_chars_per_story),
+        })
+    return out
+
+
+def build_reuse_dossier_prompt(entity_name: str, category: str, canon_entry, prior_tales):
+    canon_json = json.dumps(canon_entry, ensure_ascii=False, sort_keys=True)
+    tales_payload = json.dumps(prior_tales or [], ensure_ascii=False, indent=2)
+    return f"""You are an archivist building a canon dossier for a recurring sword-and-sorcery universe.
+
+Entity category: {category}
+Entity name: {entity_name}
+
+AUTHORITATIVE CANON JSON (highest priority):
+{canon_json}
+
+PRIOR TALES (read all; do not invent facts not supported by these texts):
+{tales_payload}
+
+Task: Produce a compact dossier for the writer to ensure full continuity.
+
+Constraints:
+- Only include facts supported by the canon JSON and/or prior tales.
+- If the prior tales contain ambiguity, keep it ambiguous.
+- Prefer the canon JSON if there is any conflict.
+- Focus on stable identity, status, relationships, motivations, known possessions, and unresolved threads.
+
+Return ONLY plain text, with these sections:
+CANON SUMMARY:
+- (bullets)
+
+OPEN THREADS:
+- (bullets)
+
+DO-NOT-CHANGE (continuity locks):
+- (bullets)
+"""
+
+
+def allowed_reuse_name_set(full_entries_by_cat):
+    allowed = set()
+    for items in (full_entries_by_cat or {}).values():
+        for it in items or []:
+            nm = (it.get("name") or "").strip()
+            if nm:
+                allowed.add(nm.lower())
+    return allowed
+
+
+def _pick_top_plus_random(items, top_n: int, random_n: int, seed_text: str, salt: str):
+    items = items or []
+    top_n = max(0, int(top_n or 0))
+    random_n = max(0, int(random_n or 0))
+    if not items:
+        return []
+
+    ordered = _safe_sorted_by_appearances(items)
+    top = ordered[:top_n] if top_n else []
+    if random_n <= 0:
+        return top
+
+    remaining = [x for x in ordered if x not in top]
+    if not remaining:
+        return top
+
+    rng = random.Random(_stable_seed_int(seed_text, salt))
+    k = min(random_n, len(remaining))
+    sampled = rng.sample(remaining, k=k)
+    return top + sampled
+
+
+def build_spotlight_section(lore, seed_text: str, top_per_category=20, random_per_category=3):
+    """Return a compact canon snippet for a small subset of entities.
+
+    This is the main way the model can keep reused entities consistent without sending the entire lore bible.
+    It scales with lore growth because selection is bounded (top + rotating sample).
+    """
+    lines = []
+
+    def add_section(title, cat_key, render_fn):
+        picked = _pick_top_plus_random(
+            lore.get(cat_key, []) or [],
+            top_n=top_per_category,
+            random_n=random_per_category,
+            seed_text=seed_text,
+            salt=cat_key,
+        )
+        if not picked:
+            return
+        lines.append(title)
+        for item in picked:
+            try:
+                lines.append(render_fn(item))
+            except Exception:
+                continue
+        lines.append("")
+
+    add_section(
+        "=== CANON SPOTLIGHT: CHARACTERS ===",
+        "characters",
+        lambda c: "• "
+            + f"{c.get('name','Unknown')}"
+            + (f" ({c.get('role','?')})" if c.get("role") else "")
+            + (f" [{c.get('status','unknown')}]" if c.get("status") else "")
+            + (f" Traits: {', '.join(c.get('traits', [])[:6])}." if isinstance(c.get("traits"), list) and c.get("traits") else "")
+            + (f" Bio: {(c.get('bio','') or '')[:220]}" if (c.get("bio") or "").strip() else ""),
+    )
+
+    add_section(
+        "=== CANON SPOTLIGHT: PLACES ===",
+        "places",
+        lambda p: "• "
+            + f"{p.get('name','Unknown')}"
+            + (f" ({p.get('place_type','')})" if p.get("place_type") else "")
+            + (f" Status: {p.get('status')}" if p.get("status") else "")
+            + (f" — {(p.get('description','') or '')[:240]}" if (p.get("description") or "").strip() else ""),
+    )
+
+    add_section(
+        "=== CANON SPOTLIGHT: RELICS ===",
+        "relics",
+        lambda r: "• "
+            + f"{r.get('name','Unknown')}"
+            + (f" Origin: {(r.get('origin','') or '')[:120]}" if (r.get("origin") or "").strip() else "")
+            + (f" Power: {(r.get('power','') or '')[:140]}" if (r.get("power") or "").strip() else "")
+            + (f" Curse: {(r.get('curse','') or '')[:140]}" if (r.get("curse") or "").strip() else ""),
+    )
+
+    add_section(
+        "=== CANON SPOTLIGHT: WEAPONS ===",
+        "weapons",
+        lambda w: "• "
+            + f"{w.get('name','Unknown')}"
+            + (f" Type: {w.get('weapon_type')}" if w.get("weapon_type") else "")
+            + (f" Powers: {(w.get('powers','') or '')[:180]}" if (w.get("powers") or "").strip() else "")
+            + (f" Holder: {w.get('last_known_holder')}" if w.get("last_known_holder") else ""),
+    )
+
+    add_section(
+        "=== CANON SPOTLIGHT: ARTIFACTS ===",
+        "artifacts",
+        lambda a: "• "
+            + f"{a.get('name','Unknown')}"
+            + (f" Type: {a.get('artifact_type')}" if a.get("artifact_type") else "")
+            + (f" Powers: {(a.get('powers','') or '')[:180]}" if (a.get("powers") or "").strip() else "")
+            + (f" Holder: {a.get('last_known_holder')}" if a.get("last_known_holder") else ""),
+    )
+
+    add_section(
+        "=== CANON SPOTLIGHT: FACTIONS ===",
+        "factions",
+        lambda f: "• "
+            + f"{f.get('name','Unknown')}"
+            + (f" Alignment: {f.get('alignment')}" if f.get("alignment") else "")
+            + (f" Goals: {(f.get('goals','') or '')[:200]}" if (f.get("goals") or "").strip() else "")
+            + (f" Leader: {f.get('leader')}" if f.get("leader") else ""),
+    )
+
+    return "\n".join(lines).strip()
+
+
+def build_generation_lore_context(lore, seed_text: str):
+    """Scalable lore context for generation: world rules (no full-lore dump)."""
+    parts = []
+    # Worlds + rules are the most important global canon.
+    if lore.get("worlds"):
+        w0 = lore["worlds"][0]
+        parts.append("=== WORLD ===")
+        parts.append(f"• {w0.get('name','The Known World')}: {w0.get('description','')}")
+        if w0.get("rules"):
+            parts.append("")
+            parts.append("=== LORE RULES (must be respected) ===")
+            parts.extend([f"• {r}" for r in w0.get("rules", [])])
+
+    return "\n".join([p for p in parts if p is not None]).strip()
+
 # ── Story generation prompt ──────────────────────────────────────────────
-def build_prompt(today_str, lore):
-    lore_context = build_lore_context(lore)
+def build_prompt(today_str, lore, reused_entries=None, reuse_details=None):
+    lore_context = build_generation_lore_context(lore, seed_text=today_str)
+    reused_entries = reused_entries or {}
+    reuse_details = reuse_details or {}
+
+    reuse_section = ""
+    if reused_entries:
+        blocks = []
+        blocks.append("AUTHORITATIVE CANON ENTRIES YOU MAY REUSE TODAY:")
+        blocks.append("If you reuse any of these names, they MUST match these exact facts.")
+        for cat, items in reused_entries.items():
+            if not items:
+                continue
+            blocks.append(f"=== {cat.upper()} ===")
+            for it in items:
+                nm = (it.get("name") or "").strip() if isinstance(it, dict) else ""
+                details = None
+                if nm:
+                    for d in reuse_details.get(cat, []) or []:
+                        if isinstance(d, dict) and (d.get("name") or "").strip().lower() == nm.lower():
+                            details = d
+                            break
+                if details:
+                    intensity = (details.get("intensity") or "").strip().lower()
+                    if intensity:
+                        blocks.append(f"INTENDED REUSE INTENSITY: {intensity}")
+                    if details.get("appearance_count") is not None:
+                        blocks.append(f"PRIOR APPEARANCES COUNT: {details.get('appearance_count')}")
+                    dossier = (details.get("dossier") or "").strip()
+                    if dossier:
+                        blocks.append("PRIOR-TALES DOSSIER (derived from scanning prior appearances):")
+                        blocks.append(dossier)
+                blocks.append(json.dumps(it, ensure_ascii=False, sort_keys=True))
+        reuse_section = "\n" + "\n".join(blocks) + "\n"
     lore_section = ""
     if lore_context.strip():
         lore_section = f"""
@@ -119,10 +762,15 @@ EXISTING LORE — READ CAREFULLY BEFORE WRITING:
 LORE CONSISTENCY RULES:
 - If you use an existing character name, their personality, status, and background must match the established lore above.
 - If you use an existing place name, its geography, atmosphere, and known history must be consistent with established lore.
+- If you reuse a character with travel_scope=local or regional, do not place them in distant realms without making travel a clear, plausible part of the story.
 - Do not contradict established lore rules (magic costs, shadow-magic, etc.).
 - You MAY introduce entirely new characters, places, and entities — but they must fit the world's tone and rules.
 - Stories may share the same world but use different characters and locations.
 - World-crossing events (characters moving between worlds) are extremely rare and require major magical cause.
+ADDITIONAL CANON GUARDRAILS:
+- Continuity is GOOD: recurring characters/places are encouraged.
+- If you reuse a previously-established name, it MUST refer to that same entity and not contradict their known status, role, bio, or history.
+- If you're unsure about an established fact, keep it ambiguous rather than contradicting canon.
 """
     return f"""You are a pulp fantasy writer in the tradition of Robert E. Howard, Clark Ashton Smith, and Fritz Leiber.
 Generate exactly 10 original short sword-and-sorcery stories.
@@ -130,11 +778,16 @@ Each story should be vivid, action-packed, and around 120–160 words long.
 
 Today's date is {today_str}. Use this as subtle creative inspiration if you like.
 {lore_section}
+{reuse_section}
 Respond with ONLY valid JSON — no prose before or after — matching this exact structure:
 [
   {{ "title": "Story Title Here", "subgenre": "Two or Three Word Label", "text": "Full story text here…" }},
   …9 more entries…
 ]
+
+REUSE INTENSITY RULES (only applies when an entry is labeled):
+- If you see "INTENDED REUSE INTENSITY: cameo" for an entity, keep it light: brief appearance/mention, not the protagonist or primary location, and avoid major new canon changes for that entity.
+- If you see "INTENDED REUSE INTENSITY: central" for an entity, it may meaningfully drive plot, but MUST remain consistent with canon and the dossier.
 
 Guidelines:
 - Heroes and antiheroes with colorful names (barbarians, sell-swords, sorcerers, thieves)
@@ -151,6 +804,61 @@ Guidelines:
   Ghost Empire, Thieves' War, Demon Pact, Sea Sorcery, Witch Hunt, Siege & Betrayal — or anything
   that fits. The label should feel like a pulp magazine category."""
 
+
+def find_canon_collisions(stories, lore, allowed_names_lower):
+    """Return referenced canon entries not in the allowed reuse set.
+
+    This is the key safeguard against accidental name reuse out of context.
+    """
+    referenced = find_referenced_canon_entries(stories, lore)
+    collisions = {}
+    allowed = allowed_names_lower or set()
+    for cat, items in (referenced or {}).items():
+        bad = []
+        for it in items or []:
+            nm = (it.get("name") or "").strip()
+            if nm and nm.lower() not in allowed:
+                bad.append(it)
+        if bad:
+            collisions[cat] = bad
+    return collisions
+
+
+def build_collision_rename_prompt(stories, collisions_by_cat):
+    """Prompt for minimal rewrite that renames accidental canon collisions to NEW names."""
+    stories_payload = json.dumps(stories, ensure_ascii=False, indent=2)
+    lines = []
+    for cat, items in (collisions_by_cat or {}).items():
+        if not items:
+            continue
+        lines.append(f"=== ACCIDENTAL COLLISIONS: {cat.upper()} ===")
+        for it in items:
+            nm = (it.get("name") or "").strip()
+            if nm:
+                lines.append(f"- {nm}")
+        lines.append("")
+
+    return f"""You are an editor.
+
+Problem: the stories accidentally reused existing canon names listed below, but they were NOT intended as canon continuity.
+
+Task: revise ONLY as needed to rename those names to brand new names (and adjust any related references) while preserving plot and style.
+
+Constraints:
+- Smallest possible edits.
+- Do NOT change titles or subgenre.
+- Do NOT introduce any of the collision names again.
+- Keep story lengths roughly similar.
+
+Collision names to rename:
+{os.linesep.join(lines).strip()}
+
+Return ONLY valid JSON in the exact same array structure as input.
+
+STORIES JSON INPUT:
+{stories_payload}
+"""
+
 # ── Lore extraction prompt ───────────────────────────────────────────────
 def build_lore_extraction_prompt(stories, existing_lore):
     existing_chars     = {c["name"].lower() for c in existing_lore.get("characters", [])}
@@ -166,6 +874,13 @@ def build_lore_extraction_prompt(stories, existing_lore):
     existing_relics      = {r["name"].lower() for r in existing_lore.get("relics",       [])}
     existing_regions     = {g["name"].lower() for g in existing_lore.get("regions",      [])}
     existing_substances  = {s["name"].lower() for s in existing_lore.get("substances",   [])}
+
+    existing_continents   = {c["name"].lower() for c in existing_lore.get("continents",   []) if isinstance(c, dict) and c.get("name")}
+    existing_realms       = {r["name"].lower() for r in existing_lore.get("realms",       []) if isinstance(r, dict) and r.get("name")}
+    existing_provinces    = {p["name"].lower() for p in existing_lore.get("provinces",    []) if isinstance(p, dict) and p.get("name")}
+    existing_districts    = {d["name"].lower() for d in existing_lore.get("districts",    []) if isinstance(d, dict) and d.get("name")}
+    existing_subcontinents = {s["name"].lower() for s in existing_lore.get("subcontinents", []) if isinstance(s, dict) and s.get("name")}
+    existing_hemispheres  = {h["name"].lower() for h in existing_lore.get("hemispheres",  []) if isinstance(h, dict) and h.get("name")}
 
     stories_text = "\n\n".join(
         f"STORY {i+1}: {s['title']}\n{s['text']}"
@@ -188,8 +903,20 @@ ALREADY KNOWN (do NOT re-extract these):
 - Flora & Fauna: {', '.join(sorted(existing_flora_fauna)) if existing_flora_fauna else 'none'}
 - Magic & Abilities: {', '.join(sorted(existing_magic)) if existing_magic else 'none'}
 - Relics & Cursed Items: {', '.join(sorted(existing_relics)) if existing_relics else 'none'}
-- Regions & Realms: {', '.join(sorted(existing_regions)) if existing_regions else 'none'}
+- Continents: {', '.join(sorted(existing_continents)) if existing_continents else 'none'}
+- Hemispheres: {', '.join(sorted(existing_hemispheres)) if existing_hemispheres else 'none'}
+- Subcontinents: {', '.join(sorted(existing_subcontinents)) if existing_subcontinents else 'none'}
+- Realms: {', '.join(sorted(existing_realms)) if existing_realms else 'none'}
+- Provinces: {', '.join(sorted(existing_provinces)) if existing_provinces else 'none'}
+- Regions: {', '.join(sorted(existing_regions)) if existing_regions else 'none'}
+- Districts: {', '.join(sorted(existing_districts)) if existing_districts else 'none'}
 - Substances & Materials: {', '.join(sorted(existing_substances)) if existing_substances else 'none'}
+
+GEOGRAPHY CONSTRAINTS:
+- We are grounding this universe on ONE main planet/world.
+- The number of continents must remain low and bounded. Maximum continents: {MAX_CONTINENTS}.
+- Prefer to assign new places to an existing continent/realm/region when plausible.
+- You MAY create a new continent only if truly necessary, and you must not exceed the maximum.
 
 STORIES TO ANALYZE:
 {stories_text}
@@ -204,6 +931,10 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "role": "Role (e.g. Thief, Warlord, Sorceress)",
       "world": "known_world",
       "status": "active / dead / cursed / unknown / etc",
+            "home_place": "Name of a city/town/structure they are based in, or 'unknown'",
+            "home_region": "Region name, or 'unknown'",
+            "home_realm": "Realm name, or 'unknown'",
+            "travel_scope": "local|regional|realmwide|interrealm|unknown",
       "bio": "2-3 sentence bio based strictly on what appears in the story.",
       "traits": ["trait1", "trait2", "trait3"],
       "known_locations": ["place names mentioned"],
@@ -218,6 +949,13 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "tagline": "Three evocative words describing this place.",
       "place_type": "city / fortress / ruin / temple / wilderness / etc",
       "world": "known_world",
+            "hemisphere": "Name or 'unknown'",
+            "continent": "Name or 'unknown'",
+            "subcontinent": "Name or 'unknown'",
+            "realm": "Name or 'unknown'",
+            "province": "Name or 'unknown'",
+            "region": "Name or 'unknown'",
+            "district": "Name or 'unknown'",
       "atmosphere": "One sentence mood/tone description.",
       "description": "Description based on the story.",
       "status": "active / ruins / unknown / etc",
@@ -335,15 +1073,86 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
   "regions": [
     {{
       "id": "snake_case_id",
-      "name": "Region or Realm Name",
+            "name": "Region Name",
       "tagline": "Three evocative words.",
-      "climate": "arctic / desert / temperate / volcanic / blighted / etc",
-      "terrain": "mountains / forest / plains / sea / ruins / etc",
-      "ruler": "Who controls it.",
-      "status": "stable / contested / fallen / cursed",
+            "continent": "Name or 'unknown'",
+            "realm": "Name or 'unknown'",
+            "climate": "arctic / desert / temperate / volcanic / blighted / etc",
+            "terrain": "mountains / forest / plains / sea / ruins / etc",
+            "function": "What this region IS for in the world bible (climate zone, travel reality, hazards, culture vibe).",
+            "status": "stable / contested / fallen / cursed",
       "notes": "Any hooks."
     }}
   ],
+    "realms": [
+        {{
+            "id": "snake_case_id",
+            "name": "Realm Name",
+            "tagline": "Three evocative words.",
+            "continent": "Name or 'unknown'",
+            "capital": "Capital city or 'unknown'",
+            "function": "What this realm IS for (sovereignty, law, diplomacy, taxes).",
+            "taxation": "How they tax/collect/tribute.",
+            "military": "How they defend/expand (legions, marches, navy, etc).",
+            "status": "stable / contested / fallen / cursed",
+            "notes": "Any hooks."
+        }}
+    ],
+    "continents": [
+        {{
+            "id": "snake_case_id",
+            "name": "Continent Name",
+            "tagline": "Three evocative words.",
+            "function": "What this continent IS for (macro-biomes, cultural sphere, long-distance travel logic).",
+            "status": "stable / fragmented / unknown",
+            "notes": "Any hooks."
+        }}
+    ],
+    "subcontinents": [
+        {{
+            "id": "snake_case_id",
+            "name": "Subcontinent Name",
+            "tagline": "Three evocative words.",
+            "continent": "Name or 'unknown'",
+            "function": "What this subcontinent IS for (trade zone, shared language sphere, coast vs interior).",
+            "status": "stable / contested / unknown",
+            "notes": "Any hooks."
+        }}
+    ],
+    "hemispheres": [
+        {{
+            "id": "snake_case_id",
+            "name": "Hemisphere Name",
+            "tagline": "Three evocative words.",
+            "function": "What this hemisphere IS for (climate/season logic at global scale).",
+            "status": "known / unknown",
+            "notes": "Any hooks."
+        }}
+    ],
+    "provinces": [
+        {{
+            "id": "snake_case_id",
+            "name": "Province / Territory Name",
+            "tagline": "Three evocative words.",
+            "realm": "Realm Name or 'unknown'",
+            "region": "Region Name or 'unknown'",
+            "function": "What this province IS for (tax zone, administration, logistics).",
+            "status": "stable / contested / unknown",
+            "notes": "Any hooks."
+        }}
+    ],
+    "districts": [
+        {{
+            "id": "snake_case_id",
+            "name": "District Name",
+            "tagline": "Three evocative words.",
+            "province": "Province Name or 'unknown'",
+            "region": "Region Name or 'unknown'",
+            "function": "What this district IS for (military defense zone, patrol boundary, terrain management).",
+            "status": "stable / contested / unknown",
+            "notes": "Any hooks."
+        }}
+    ],
   "substances": [
     {{
       "id": "snake_case_id",
@@ -361,7 +1170,27 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
 # ── Lore merging ────────────────────────────────────────────────────────
 def merge_lore(existing_lore, new_lore, date_key):
     """Merge newly extracted lore into the existing lore, skipping duplicates by name."""
-    for category in ["characters", "places", "events", "weapons", "deities_and_entities", "artifacts", "factions", "lore", "flora_fauna", "magic", "relics", "regions", "substances"]:
+    for category in [
+        "hemispheres",
+        "continents",
+        "subcontinents",
+        "realms",
+        "provinces",
+        "districts",
+        "characters",
+        "places",
+        "events",
+        "weapons",
+        "deities_and_entities",
+        "artifacts",
+        "factions",
+        "lore",
+        "flora_fauna",
+        "magic",
+        "relics",
+        "regions",
+        "substances",
+    ]:
         existing_names = {
             item["name"].lower() for item in existing_lore.get(category, [])
         }
@@ -378,7 +1207,181 @@ def merge_lore(existing_lore, new_lore, date_key):
                     if existing_item["name"].lower() == item["name"].lower():
                         existing_item["appearances"] = existing_item.get("appearances", 1) + 1
                         break
+    ensure_place_parent_chain(existing_lore)
+    enforce_continent_limit(existing_lore)
     return existing_lore
+
+
+def _count_story_mentions(stories, name: str) -> int:
+    if not stories or not name:
+        return 0
+    key = _signature_key_for_name(name)
+    if not key or len(key) < 4:
+        return 0
+    return sum(
+        1
+        for s in stories
+        if key in ((s.get("title", "") + " " + s.get("text", "")).lower())
+    )
+
+
+def build_existing_character_updates_prompt(stories, lore, referenced_characters):
+    """Prompt to update already-known characters based on today's stories.
+
+    Important: treat canon as current truth. If a story is clearly a prequel/flashback,
+    do NOT change the current status — only add a note.
+    """
+    stories_payload = json.dumps(stories, ensure_ascii=False, indent=2)
+
+    canon_chars = []
+    for c in referenced_characters or []:
+        canon_chars.append(json.dumps(c, ensure_ascii=False, sort_keys=True))
+
+    world_rules = []
+    if lore.get("worlds") and lore["worlds"][0].get("rules"):
+        world_rules = lore["worlds"][0]["rules"]
+    rules_block = "\n".join([f"- {r}" for r in world_rules]) if world_rules else "- (none)"
+
+    return f"""You are the lore archivist updating an ongoing sword-and-sorcery universe.
+
+Your job: for ALREADY KNOWN characters referenced today, extract ONLY NEW facts revealed by today's stories.
+
+Key focus: STATUS TRACKING.
+- If the stories clearly kill a character, mark them dead.
+- If the stories clearly resurrect/reanimate/raise a character, update status accordingly (reanimated/undead/revived/etc).
+- If a character is shown alive but their current canon status is dead, treat it as a PREQUEL/FLASHBACK unless the story explicitly resurrects them.
+- Never contradict canon; when uncertain, leave status unchanged.
+
+Secondary focus: TRAVEL SCOPE.
+- We track how much of a traveler a character is so distant-realm meetings stay plausible.
+- Set travel_scope only when the stories provide clear evidence.
+- Values:
+    - local: mostly stays within one city/settlement/structure
+    - regional: travels within a region
+    - realmwide: travels broadly within a realm
+    - interrealm: travels between realms
+    - unknown: insufficient evidence
+
+Canon rules:
+{rules_block}
+
+Authoritative canon character entries (current truth):
+{os.linesep.join(canon_chars) if canon_chars else '(none)'}
+
+Return ONLY valid JSON with this structure:
+{{
+  "characters": [
+    {{
+      "name": "Character Name (must match canon)",
+      "status": "new current status (only if it should change)",
+      "should_update_current_status": true,
+            "travel_scope": "local|regional|realmwide|interrealm|unknown (only if you have evidence)",
+            "home_place": "Optional: update if clearly established, else omit",
+            "home_region": "Optional: update if clearly established, else omit",
+            "home_realm": "Optional: update if clearly established, else omit",
+            "travel_note": "Optional: 1 sentence justification for travel_scope/home fields",
+      "event": {{
+                "type": "death|resurrection|reanimation|undeath|prequel|other",
+        "story_title": "Which story caused the change",
+        "note": "One sentence describing what happened",
+        "evidence": "Short quote-like paraphrase of the story text"
+      }},
+      "notes_append": "Optional: add 1-2 sentences as a hook or clarification"
+    }}
+  ]
+}}
+
+Constraints:
+- Only include characters that appear in the canon list above.
+- If no status change, omit the character unless you are recording a meaningful event (e.g., prequel appearance while canon-dead).
+- Keep notes concise.
+
+STORIES JSON INPUT:
+{stories_payload}
+"""
+
+
+def apply_existing_character_updates(lore, updates, date_key, stories=None):
+    """Apply status updates + history to lore.json characters."""
+    if not updates or not isinstance(updates, dict):
+        return lore
+
+    chars = lore.get("characters", []) or []
+    idx = { (c.get("name") or "").strip().lower(): c for c in chars if c.get("name") }
+
+    for up in updates.get("characters", []) or []:
+        name = (up.get("name") or "").strip()
+        if not name:
+            continue
+        key = name.lower()
+        if key not in idx:
+            continue
+
+        current = idx[key]
+        old_status = current.get("status")
+        new_status = (up.get("status") or "").strip()
+        should_update = bool(up.get("should_update_current_status"))
+        event = up.get("event") if isinstance(up.get("event"), dict) else {}
+
+        # Always increment appearances if the character is referenced today.
+        mention_count = _count_story_mentions(stories or [], name)
+        if mention_count:
+            try:
+                current["appearances"] = int(current.get("appearances", 0) or 0) + int(mention_count)
+            except Exception:
+                current["appearances"] = (current.get("appearances") or 0) + mention_count
+
+        event_type = (event.get("type") or "").strip() or "other"
+        has_event_payload = any((event.get("story_title"), event.get("note"), event.get("evidence")))
+
+        if has_event_payload:
+            hist = current.get("status_history")
+            if not isinstance(hist, list):
+                hist = []
+
+            # For non-status-change events (e.g. prequel), record from==to.
+            to_status_for_event = new_status if (should_update and new_status) else (old_status or "unknown")
+            hist.append({
+                "date": date_key,
+                "from_status": old_status or "unknown",
+                "to_status": to_status_for_event,
+                "type": event_type,
+                "story_title": (event.get("story_title") or ""),
+                "note": (event.get("note") or ""),
+                "evidence": (event.get("evidence") or ""),
+            })
+            current["status_history"] = hist
+
+        if should_update and new_status and (not old_status or old_status.strip().lower() != new_status.lower()):
+            current["status"] = new_status
+
+        notes_append = (up.get("notes_append") or "").strip()
+        if notes_append:
+            existing_notes = (current.get("notes") or "").strip()
+            if existing_notes:
+                current["notes"] = existing_notes.rstrip() + "\n" + notes_append
+            else:
+                current["notes"] = notes_append
+
+        # Travel scope + home anchoring (only update when explicitly provided).
+        travel_scope = (up.get("travel_scope") or "").strip().lower()
+        if travel_scope in {"local", "regional", "realmwide", "interrealm", "unknown"}:
+            current["travel_scope"] = travel_scope
+
+        for field in ["home_place", "home_region", "home_realm"]:
+            if field in up:
+                val = (up.get(field) or "").strip()
+                if val:
+                    current[field] = val
+
+        travel_note = (up.get("travel_note") or "").strip()
+        if travel_note:
+            existing = (current.get("travel_notes") or "").strip()
+            stamp = f"[{date_key}] {travel_note}"
+            current["travel_notes"] = (existing + "\n" + stamp).strip() if existing else stamp
+
+    lore["characters"] = chars
+    return lore
 
 # ── Codex file update ────────────────────────────────────────────────────
 def update_codex_file(lore, date_key, stories=None):
@@ -388,6 +1391,12 @@ def update_codex_file(lore, date_key, stories=None):
     # ── Load existing codex ──────────────────────────────────────────────
     codex = {
         "last_updated": date_key,
+        "hemispheres": [],
+        "continents": [],
+        "subcontinents": [],
+        "realms": [],
+        "provinces": [],
+        "districts": [],
         "characters": [],
         "places": [],
         "events": [],
@@ -430,6 +1439,42 @@ def update_codex_file(lore, date_key, stories=None):
             raw_world or "The Known World"
         )
 
+    def merge_named_category(cat_key: str, field_keys: list):
+        existing = {i.get("name", "").lower(): i for i in codex.get(cat_key, []) if isinstance(i, dict) and i.get("name")}
+        for item in lore.get(cat_key, []) or []:
+            if not isinstance(item, dict):
+                continue
+            name = (item.get("name") or "").strip()
+            if not name:
+                continue
+            name_low = name.lower()
+            today_apps = stories_for(name)
+            if name_low in existing:
+                ex = existing[name_low]
+                for k in field_keys:
+                    if k in item and (item.get(k) is not None):
+                        ex[k] = item.get(k)
+                prior = ex.get("story_appearances", [])
+                new_ones = [a for a in today_apps if not any(p["date"] == a["date"] and p["title"] == a["title"] for p in prior)]
+                if new_ones:
+                    ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
+                    ex["story_appearances"] = prior + new_ones
+            else:
+                first_title = today_apps[0]["title"] if today_apps else ""
+                base = {
+                    "name": name,
+                    "tagline": item.get("tagline", ""),
+                    "first_story": first_title,
+                    "first_date": date_key,
+                    "appearances": len(today_apps) or 1,
+                    "story_appearances": today_apps,
+                }
+                for k in field_keys:
+                    if k not in base:
+                        base[k] = item.get(k, "")
+                existing[name_low] = base
+        codex[cat_key] = list(existing.values())
+
     # ── Merge characters ─────────────────────────────────────────────────
     existing_chars = {c["name"].lower(): c for c in codex.get("characters", [])}
     for c in lore.get("characters", []):
@@ -441,6 +1486,16 @@ def update_codex_file(lore, date_key, stories=None):
             ex = existing_chars[name_low]
             ex["role"]   = c.get("role",   ex.get("role",   "Unknown"))
             ex["status"] = c.get("status", ex.get("status", "Unknown"))
+            if c.get("travel_scope"):
+                ex["travel_scope"] = c.get("travel_scope", ex.get("travel_scope", "unknown"))
+            if c.get("home_place"):
+                ex["home_place"] = c.get("home_place", ex.get("home_place", ""))
+            if c.get("home_region"):
+                ex["home_region"] = c.get("home_region", ex.get("home_region", ""))
+            if c.get("home_realm"):
+                ex["home_realm"] = c.get("home_realm", ex.get("home_realm", ""))
+            if isinstance(c.get("status_history"), list):
+                ex["status_history"] = c.get("status_history", ex.get("status_history", []))
             ex["world"]  = world
             ex["bio"]    = c.get("bio",    ex.get("bio",    ""))
             ex["traits"] = c.get("traits", ex.get("traits", []))
@@ -459,6 +1514,11 @@ def update_codex_file(lore, date_key, stories=None):
                 "tagline":           c.get("tagline", ""),
                 "role":              c.get("role", "Unknown"),
                 "status":            c.get("status", "Unknown"),
+                "travel_scope":       c.get("travel_scope", "unknown"),
+                "home_place":         c.get("home_place", ""),
+                "home_region":        c.get("home_region", ""),
+                "home_realm":         c.get("home_realm", ""),
+                "status_history":     c.get("status_history", []) if isinstance(c.get("status_history"), list) else [],
                 "world":             world,
                 "bio":               c.get("bio", ""),
                 "traits":            c.get("traits", []),
@@ -469,6 +1529,14 @@ def update_codex_file(lore, date_key, stories=None):
             }
     codex["characters"] = list(existing_chars.values())
 
+    # ── Geo hierarchy categories ─────────────────────────────────────────
+    merge_named_category("hemispheres", ["function", "status", "notes"]) 
+    merge_named_category("continents", ["function", "status", "notes"]) 
+    merge_named_category("subcontinents", ["continent", "function", "status", "notes"]) 
+    merge_named_category("realms", ["continent", "capital", "function", "taxation", "military", "status", "notes"]) 
+    merge_named_category("provinces", ["realm", "region", "function", "status", "notes"]) 
+    merge_named_category("districts", ["province", "region", "function", "status", "notes"]) 
+
     # ── Merge places ─────────────────────────────────────────────────────
     existing_places = {p["name"].lower(): p for p in codex.get("places", [])}
     for p in lore.get("places", []):
@@ -477,6 +1545,13 @@ def update_codex_file(lore, date_key, stories=None):
         today_appearances = stories_for(name)
         if name_low in existing_places:
             ex = existing_places[name_low]
+            ex["hemisphere"] = p.get("hemisphere", ex.get("hemisphere", "unknown"))
+            ex["continent"] = p.get("continent", ex.get("continent", "unknown"))
+            ex["subcontinent"] = p.get("subcontinent", ex.get("subcontinent", "unknown"))
+            ex["realm"] = p.get("realm", ex.get("realm", "unknown"))
+            ex["province"] = p.get("province", ex.get("province", "unknown"))
+            ex["region"] = p.get("region", ex.get("region", "unknown"))
+            ex["district"] = p.get("district", ex.get("district", "unknown"))
             ex["description"] = p.get("description", ex.get("description", ""))
             ex["status"]      = p.get("status",      ex.get("status",      "unknown"))
             if p.get("tagline") and not ex.get("tagline"):
@@ -498,6 +1573,13 @@ def update_codex_file(lore, date_key, stories=None):
                 "tagline":           p.get("tagline", ""),
                 "place_type":        p.get("place_type", ""),
                 "world":             resolve_world(p.get("world", "")),
+                "hemisphere":        p.get("hemisphere", "unknown"),
+                "continent":         p.get("continent", "unknown"),
+                "subcontinent":      p.get("subcontinent", "unknown"),
+                "realm":             p.get("realm", "unknown"),
+                "province":          p.get("province", "unknown"),
+                "region":            p.get("region", "unknown"),
+                "district":          p.get("district", "unknown"),
                 "atmosphere":        p.get("atmosphere", ""),
                 "description":       p.get("description", ""),
                 "status":            p.get("status", "unknown"),
@@ -837,6 +1919,38 @@ def update_codex_file(lore, date_key, stories=None):
             }
     codex["substances"] = list(existing_substances.values())
 
+    # ── Normalize story appearances (fallback to first_story/first_date) ──
+    def ensure_story_appearances(items):
+        for item in items:
+            first_story = item.get("first_story")
+            first_date  = item.get("first_date") or date_key
+            story_apps  = item.get("story_appearances")
+
+            if first_story and (not isinstance(story_apps, list) or len(story_apps) == 0):
+                item["story_appearances"] = [{"date": first_date, "title": first_story}]
+
+            if isinstance(item.get("story_appearances"), list):
+                try:
+                    item["appearances"] = max(int(item.get("appearances", 0) or 0), len(item["story_appearances"]) or 1)
+                except Exception:
+                    item["appearances"] = len(item["story_appearances"]) or 1
+
+    for cat in [
+        "characters",
+        "places",
+        "events",
+        "weapons",
+        "artifacts",
+        "factions",
+        "lore",
+        "flora_fauna",
+        "magic",
+        "relics",
+        "regions",
+        "substances",
+    ]:
+        ensure_story_appearances(codex.get(cat, []))
+
     codex["last_updated"] = date_key
     with open(CODEX_FILE, "w", encoding="utf-8") as f:
         json.dump(codex, f, ensure_ascii=True, indent=2)
@@ -937,6 +2051,159 @@ def parse_json_response(raw):
             return json.loads(raw[start:end + 1])
     raise ValueError("No JSON structure found in response")
 
+
+def _signature_key_for_name(name: str) -> str:
+    """Create a lightweight search key for detecting entity mentions."""
+    if not name:
+        return ""
+    _SKIP = {"the", "a", "an", "of", "and", "to", "in", "on", "at"}
+    words = [w.strip("()[]{}.,!?\"'“”‘’:-").lower() for w in name.split()]
+    sig = [w for w in words if w and w not in _SKIP]
+    if len(sig) >= 2:
+        return sig[0] + " " + sig[1]
+    if sig:
+        return sig[0]
+    return words[0] if words else ""
+
+
+def find_referenced_canon_entries(stories, lore):
+    """Find existing lore entries referenced in story text/title.
+
+    Returns: dict[category] -> list[entry]
+    """
+    haystack = "\n\n".join(
+        (s.get("title", "") + "\n" + s.get("text", ""))
+        for s in (stories or [])
+    ).lower()
+    if not haystack.strip():
+        return {}
+
+    categories = [
+        "characters",
+        "places",
+        "events",
+        "weapons",
+        "deities_and_entities",
+        "artifacts",
+        "factions",
+        "lore",
+        "flora_fauna",
+        "magic",
+        "relics",
+        "regions",
+        "substances",
+    ]
+    referenced = {}
+
+    for cat in categories:
+        items = lore.get(cat, []) or []
+        hits = []
+        for item in items:
+            name = (item.get("name") or "").strip()
+            if not name:
+                continue
+            key = _signature_key_for_name(name)
+            if not key or len(key) < 4:
+                # avoid extreme false positives on tiny keys
+                continue
+            if key in haystack:
+                hits.append(item)
+        if hits:
+            referenced[cat] = hits
+    return referenced
+
+
+def build_lore_revision_prompt(stories, lore, referenced_entries):
+    """Prompt a minimal-edit revision pass that aligns any reused canon with the lore bible."""
+    world_rules = []
+    if lore.get("worlds") and lore["worlds"][0].get("rules"):
+        world_rules = lore["worlds"][0]["rules"]
+
+    canon_lines = []
+    for cat, items in referenced_entries.items():
+        label = cat.replace("_", " ").upper()
+        canon_lines.append(f"=== CANON: {label} ===")
+        for it in items:
+            # Include the full entry as JSON for precision, but only for referenced entities.
+            canon_lines.append(json.dumps(it, ensure_ascii=False, sort_keys=True))
+        canon_lines.append("")
+
+    stories_payload = json.dumps(stories, ensure_ascii=False, indent=2)
+    rules_block = "\n".join([f"- {r}" for r in world_rules]) if world_rules else "- (none)"
+
+    return f"""You are an editor for an ongoing sword-and-sorcery universe.
+
+Goal: revise the stories ONLY as needed so they DO NOT contradict established canon.
+
+Canon rules:
+{rules_block}
+
+Canon entries referenced today (these must be treated as authoritative):
+{os.linesep.join(canon_lines).strip()}
+
+Editing constraints:
+- Make the smallest possible changes to fix canon conflicts.
+- Keep each story's title and subgenre unchanged.
+- Do NOT introduce any additional reserved/canon names that are not already in the stories.
+- If a detail would conflict, rewrite that detail to be ambiguous or consistent.
+
+Return ONLY valid JSON in the exact same array structure as input (10 objects with title/subgenre/text).
+
+STORIES JSON INPUT:
+{stories_payload}
+"""
+
+
+def build_canon_checker_prompt(stories, lore, referenced_entries, mode="rewrite"):
+    """Ask the model to flag contradictions vs canon and optionally rewrite with minimal edits."""
+    world_rules = []
+    if lore.get("worlds") and lore["worlds"][0].get("rules"):
+        world_rules = lore["worlds"][0]["rules"]
+
+    canon_lines = []
+    for cat, items in referenced_entries.items():
+        label = cat.replace("_", " ").upper()
+        canon_lines.append(f"=== CANON: {label} ===")
+        for it in items:
+            canon_lines.append(json.dumps(it, ensure_ascii=False, sort_keys=True))
+        canon_lines.append("")
+
+    stories_payload = json.dumps(stories, ensure_ascii=False, indent=2)
+    rules_block = "\n".join([f"- {r}" for r in world_rules]) if world_rules else "- (none)"
+    mode = (mode or "rewrite").strip().lower()
+    wants_rewrite = mode != "report"
+
+    return f"""You are the canon checker for an ongoing sword-and-sorcery universe.
+
+Task: identify contradictions between today's stories and the established canon entries referenced today.
+
+Canon rules:
+{rules_block}
+
+Authoritative canon entries (only these are guaranteed referenced today):
+{os.linesep.join(canon_lines).strip()}
+
+Output requirements:
+- Respond with ONLY valid JSON.
+- Always include an `issues` array. Each issue must include:
+  - story_index (0-9)
+  - title
+  - severity (low|medium|high)
+  - contradictions (array of short bullet-like strings)
+  - suggested_fix (string)
+""" + (
+        """
+- Also include `stories`: the revised stories array, with the SMALLEST possible edits to remove contradictions.
+- Do NOT change titles or subgenre labels.
+- Keep prose style and length roughly similar.
+""" if wants_rewrite else """
+- Do NOT rewrite the stories.
+""") + f"""
+
+STORIES JSON INPUT:
+{stories_payload}
+"""
+
 # ── Archive helpers ────────────────────────────────────────────────────────
 def ensure_archive_dir():
     os.makedirs(ARCHIVE_DIR, exist_ok=True)
@@ -951,6 +2218,26 @@ def save_archive_index(idx):
     with open(ARCHIVE_IDX, "w", encoding="utf-8") as f:
         json.dump(idx, f, ensure_ascii=True, indent=2)
 
+
+def _truthy_env(name: str) -> bool:
+    return (os.environ.get(name) or "").strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+def _already_generated_for_date(date_key: str) -> bool:
+    """Return True if the archive file exists and looks complete for date_key."""
+    archive_file = os.path.join(ARCHIVE_DIR, f"{date_key}.json")
+    if not os.path.exists(archive_file):
+        return False
+    try:
+        with open(archive_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if (data.get("date") or "").strip() != date_key:
+            return False
+        stories = data.get("stories")
+        return isinstance(stories, list) and len(stories) >= int(NUM_STORIES)
+    except Exception:
+        return False
+
 # ── Main ──────────────────────────────────────────────────────────────────
 def main():
     api_key = os.environ.get("ANTHROPIC_API_KEY")
@@ -963,19 +2250,141 @@ def main():
     date_key  = today.strftime("%Y-%m-%d")
     print(f"Generating stories for {date_key}...")
 
+    if _already_generated_for_date(date_key) and not _truthy_env("FORCE_REGENERATE"):
+        print(f"\u2713 Already generated for {date_key}; skipping (set FORCE_REGENERATE=1 to override).")
+        return
+
     # ── Load existing lore ────────────────────────────────────────────────
     lore = load_lore()
+    ensure_place_parent_chain(lore)
+    enforce_continent_limit(lore)
     print(f"\u2713 Loaded lore ({len(lore.get('characters', []))} characters, "
           f"{len(lore.get('places', []))} places)")
 
     client = anthropic.Anthropic(api_key=api_key)
+
+    # ── Optional: Reuse planning (decide reuse + select candidates) ──────
+    reuse_plan = {"reuse": False, "selections": {}, "rationale": ""}
+    reused_entries = {}
+    allowed_names_lower = set()
+    reuse_details = {}
+    if ENABLE_REUSE_PLANNER:
+        candidates_by_cat = {}
+        for cat in get_reuse_allowed_categories(lore):
+            items = lore.get(cat, []) or []
+            if not items:
+                continue
+            candidates_by_cat[cat] = _sample_candidates(
+                items,
+                k=REUSE_CANDIDATES_PER_CATEGORY,
+                seed_text=date_key,
+                salt=f"reuse_candidates:{cat}",
+            )
+
+        if candidates_by_cat:
+            print("Planning reuse for today's stories...")
+            plan_msg = client.messages.create(
+                model=MODEL,
+                max_tokens=1024,
+                messages=[{"role": "user", "content": build_reuse_plan_prompt(today_str, lore, candidates_by_cat)}],
+            )
+            plan_raw = plan_msg.content[0].text.strip()
+            try:
+                plan = parse_json_response(plan_raw)
+                reuse_plan = normalize_reuse_plan(plan, candidates_by_cat)
+                if reuse_plan.get("reuse"):
+                    reused_entries = get_full_canon_entries_for_selections(lore, reuse_plan.get("selections", {}))
+                    allowed_names_lower = allowed_reuse_name_set(reused_entries)
+                    print(f"\u2713 Reuse plan: {reuse_plan.get('selections', {})}")
+                else:
+                    print("\u2713 Reuse plan: no intentional reuse")
+            except (ValueError, json.JSONDecodeError) as e:
+                print(f"WARNING: Could not parse reuse plan JSON: {e}", file=sys.stderr)
+                print("Continuing with no intentional reuse.", file=sys.stderr)
+
+    # ── Optional: Build reuse dossiers from prior appearances ───────────
+    # Goal: if we reuse (e.g.) Vraxen in story #N, the model has effectively
+    # scanned all Vraxen tales and can stay consistent without prompt spam.
+    if reused_entries:
+        # Map intended intensity from the reuse plan (normalized selections).
+        intended_intensity = {}
+        try:
+            for cat, picked in (reuse_plan.get("selections") or {}).items():
+                if not isinstance(picked, list):
+                    continue
+                for entry in picked:
+                    if isinstance(entry, dict):
+                        nm = (entry.get("name") or "").strip()
+                        intensity = (entry.get("intensity") or "").strip().lower()
+                    elif isinstance(entry, str):
+                        nm = entry.strip()
+                        intensity = ""
+                    else:
+                        continue
+                    if nm:
+                        if intensity not in {"cameo", "central"}:
+                            intensity = (REUSE_DEFAULT_INTENSITY or "cameo").strip().lower()
+                        if intensity not in {"cameo", "central"}:
+                            intensity = "cameo"
+                        intended_intensity[(cat, nm.lower())] = intensity
+        except Exception:
+            intended_intensity = {}
+
+        codex = load_codex_file() if ENABLE_REUSE_DOSSIER else {}
+        codex_map = _codex_entry_map(codex) if ENABLE_REUSE_DOSSIER else {}
+
+        for cat, items in reused_entries.items():
+            if not items:
+                continue
+            for it in items:
+                if not isinstance(it, dict):
+                    continue
+                nm = (it.get("name") or "").strip()
+                if not nm:
+                    continue
+
+                intensity = intended_intensity.get((cat, nm.lower()), (REUSE_DEFAULT_INTENSITY or "cameo").strip().lower())
+                if intensity not in {"cameo", "central"}:
+                    intensity = "cameo"
+
+                detail = {
+                    "name": nm,
+                    "intensity": intensity,
+                }
+
+                if ENABLE_REUSE_DOSSIER:
+                    codex_entry = (codex_map.get(cat, {}) or {}).get(nm.lower())
+                    if isinstance(codex_entry, dict):
+                        apps = codex_entry.get("story_appearances")
+                        detail["appearance_count"] = len(apps) if isinstance(apps, list) else 0
+                        prior_tales = gather_prior_tales_for_entity(
+                            codex_entry,
+                            max_appearances=REUSE_DOSSIER_MAX_APPEARANCES,
+                            max_chars_per_story=REUSE_DOSSIER_MAX_CHARS_PER_STORY,
+                        )
+                        if prior_tales:
+                            print(f"Scanning {len(prior_tales)} prior tale(s) for reused {cat[:-1] if cat.endswith('s') else cat}: {nm}...")
+                            dossier_prompt = build_reuse_dossier_prompt(nm, cat, it, prior_tales)
+                            try:
+                                dossier_msg = client.messages.create(
+                                    model=MODEL,
+                                    max_tokens=REUSE_DOSSIER_MAX_TOKENS,
+                                    messages=[{"role": "user", "content": dossier_prompt}],
+                                )
+                                detail["dossier"] = dossier_msg.content[0].text.strip()
+                            except Exception as e:
+                                print(f"WARNING: Reuse dossier build failed for {nm}: {e}", file=sys.stderr)
+                    else:
+                        detail["appearance_count"] = 0
+
+                reuse_details.setdefault(cat, []).append(detail)
 
     # ── CALL 1: Generate stories with lore context ───────────────────────
     print("Calling Claude to generate stories...")
     message = client.messages.create(
         model=MODEL,
         max_tokens=4096,
-        messages=[{"role": "user", "content": build_prompt(today_str, lore)}]
+        messages=[{"role": "user", "content": build_prompt(today_str, lore, reused_entries=reused_entries, reuse_details=reuse_details)}]
     )
     raw = message.content[0].text.strip()
     try:
@@ -994,6 +2403,135 @@ def main():
             "subgenre": s.get("subgenre", "Sword & Sorcery")
         })
     print(f"\u2713 Generated {len(stories)} stories")
+
+    # ── Collision renamer: prevent accidental canon name reuse ───────────
+    collisions = find_canon_collisions(stories, lore, allowed_names_lower)
+    if collisions:
+        total = sum(len(v) for v in collisions.values())
+        print(f"\u26a0\ufe0f Detected {total} accidental canon name collision(s); renaming...")
+        rename_msg = client.messages.create(
+            model=MODEL,
+            max_tokens=4096,
+            messages=[{
+                "role": "user",
+                "content": build_collision_rename_prompt(stories, collisions),
+            }],
+        )
+        rename_raw = rename_msg.content[0].text.strip()
+        try:
+            revised = parse_json_response(rename_raw)
+            revised_stories = []
+            for s in revised[:NUM_STORIES]:
+                revised_stories.append({
+                    "title": s.get("title", "Untitled"),
+                    "text": s.get("text", ""),
+                    "subgenre": s.get("subgenre", "Sword & Sorcery"),
+                })
+            if len(revised_stories) == len(stories):
+                stories = revised_stories
+                print("\u2713 Renamed accidental canon collisions")
+        except (ValueError, json.JSONDecodeError) as e:
+            print(f"WARNING: Could not parse collision-rename JSON: {e}", file=sys.stderr)
+            print("Continuing with original stories.", file=sys.stderr)
+
+    # ── Optional: Revision pass to enforce canon for any reused entities ─
+    if ENABLE_LORE_REVISION_PASS:
+        referenced = find_referenced_canon_entries(stories, lore)
+        if referenced:
+            total_hits = sum(len(v) for v in referenced.values())
+            print(f"Lore revision enabled: detected {total_hits} referenced canon entities; revising stories...")
+            revision_message = client.messages.create(
+                model=MODEL,
+                max_tokens=4096,
+                messages=[{
+                    "role": "user",
+                    "content": build_lore_revision_prompt(stories, lore, referenced),
+                }],
+            )
+            revision_raw = revision_message.content[0].text.strip()
+            try:
+                revised = parse_json_response(revision_raw)
+                revised_stories = []
+                for s in revised[:NUM_STORIES]:
+                    revised_stories.append({
+                        "title": s.get("title", "Untitled"),
+                        "text": s.get("text", ""),
+                        "subgenre": s.get("subgenre", "Sword & Sorcery"),
+                    })
+                if len(revised_stories) == len(stories):
+                    stories = revised_stories
+                    print("\u2713 Revised stories for canon consistency")
+            except (ValueError, json.JSONDecodeError) as e:
+                print(f"WARNING: Could not parse lore revision JSON: {e}", file=sys.stderr)
+                print("Continuing with original stories.", file=sys.stderr)
+
+    # ── Optional: Canon checker (flag contradictions; optionally rewrite) ─
+    if ENABLE_CANON_CHECKER:
+        referenced = find_referenced_canon_entries(stories, lore)
+        if referenced:
+            total_hits = sum(len(v) for v in referenced.values())
+            print(f"Canon checker enabled: auditing against {total_hits} referenced canon entities...")
+            check_message = client.messages.create(
+                model=MODEL,
+                max_tokens=4096,
+                messages=[{
+                    "role": "user",
+                    "content": build_canon_checker_prompt(stories, lore, referenced, mode=CANON_CHECKER_MODE),
+                }],
+            )
+            check_raw = check_message.content[0].text.strip()
+            try:
+                check_result = parse_json_response(check_raw)
+                issues = check_result.get("issues", []) if isinstance(check_result, dict) else []
+                if issues:
+                    high = sum(1 for i in issues if (i.get("severity") or "").lower() == "high")
+                    print(f"\u26a0\ufe0f Canon issues found: {len(issues)} (high severity: {high})")
+                else:
+                    print("\u2713 Canon checker: no issues reported")
+
+                if CANON_CHECKER_MODE != "report":
+                    revised = check_result.get("stories") if isinstance(check_result, dict) else None
+                    if isinstance(revised, list) and revised:
+                        revised_stories = []
+                        for s in revised[:NUM_STORIES]:
+                            revised_stories.append({
+                                "title": s.get("title", "Untitled"),
+                                "text": s.get("text", ""),
+                                "subgenre": s.get("subgenre", "Sword & Sorcery"),
+                            })
+                        if len(revised_stories) == len(stories):
+                            stories = revised_stories
+                            print("\u2713 Applied canon-safe rewrites")
+            except (ValueError, json.JSONDecodeError) as e:
+                print(f"WARNING: Could not parse canon checker JSON: {e}", file=sys.stderr)
+                print("Continuing without canon checker changes.", file=sys.stderr)
+
+    # ── Optional: Update existing characters (death/resurrection/etc.) ───
+    if ENABLE_EXISTING_CHARACTER_UPDATES:
+        referenced = find_referenced_canon_entries(stories, lore)
+        referenced_chars = referenced.get("characters", []) if isinstance(referenced, dict) else []
+        if referenced_chars:
+            print(f"Updating existing characters from today's stories ({len(referenced_chars)} referenced)...")
+            updates_message = client.messages.create(
+                model=MODEL,
+                max_tokens=2048,
+                messages=[{
+                    "role": "user",
+                    "content": build_existing_character_updates_prompt(stories, lore, referenced_chars),
+                }],
+            )
+            updates_raw = updates_message.content[0].text.strip()
+            try:
+                updates = parse_json_response(updates_raw)
+                lore = apply_existing_character_updates(lore, updates, date_key, stories=stories)
+                changed = len((updates or {}).get("characters", []) or []) if isinstance(updates, dict) else 0
+                if changed:
+                    print(f"\u2713 Applied {changed} character status update(s)")
+                else:
+                    print("\u2713 No character status changes detected")
+            except (ValueError, json.JSONDecodeError) as e:
+                print(f"WARNING: Could not parse existing-character updates JSON: {e}", file=sys.stderr)
+                print("Continuing without character status updates.", file=sys.stderr)
 
     # ── CALL 2: Extract new lore from generated stories ──────────────────
     print("Calling Claude to extract lore from new stories...")

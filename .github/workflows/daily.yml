@@ -2,14 +2,15 @@ name: Generate Daily Stories
 
 
 on:
-  # Run every day at 6:00 AM UTC (1:00 AM Eastern / 10:00 PM Pacific)
+  # Run hourly, but only generate at 06:00 US/Eastern.
+  # GitHub cron is always UTC and doesn't support time zones, so we gate execution in-job.
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "5 * * * *"
 
 
 
   # Also allows you to run it manually from the GitHub Actions tab
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 
 jobs:
@@ -33,20 +34,40 @@ jobs:
 
 
       - name: Install dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Check if it's 06:00 US/Eastern
+        id: timecheck
+        run: |
+          python - <<'PY'
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          now = datetime.now(ZoneInfo("America/New_York"))
+          should_run = (now.hour == 6)
+
+          print(f"Now (America/New_York): {now.isoformat()} | should_run={should_run}")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+            f.write(f"run={'true' if should_run else 'false'}\n")
+          PY
 
 
       - name: Generate stories
+        if: steps.timecheck.outputs.run == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python generate_stories.py
 
 
       - name: Commit and push stories
+        if: steps.timecheck.outputs.run == 'true'
         run: |
           git config user.name  "Daily Blade Bot"
           git config user.email "actions@github.com"
-          git add stories.json archive/ lore.json characters.json
+          git add stories.json archive/ lore.json characters.json codex.json
           # Only commit if something actually changed
           git diff --cached --quiet || git commit -m "🗡️ Daily stories — $(date -u '+%Y-%m-%d')"
           git push

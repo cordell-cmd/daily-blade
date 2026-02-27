@@ -290,6 +290,13 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
 def merge_into_codex(codex, new_entities, stories_by_title, date_key):
     """Merge extracted entities into the codex, building story_appearances."""
 
+    def ensure_min_appearance(story_appearances, first_story_title, first_date):
+        if story_appearances and isinstance(story_appearances, list) and len(story_appearances) > 0:
+            return story_appearances
+        if first_story_title:
+            return [{"date": first_date or date_key, "title": first_story_title}]
+        return []
+
     def find_story_date(story_title):
         """Find the date for a given story title."""
         for d, s in stories_by_title:
@@ -325,7 +332,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = c.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
 
         if name_low not in existing_chars:
             existing_chars[name_low] = {
@@ -350,7 +357,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = p.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
 
         if name_low not in existing_places:
             existing_places[name_low] = {
@@ -375,7 +382,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = e.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
 
         if name_low not in existing_events:
             existing_events[name_low] = {
@@ -399,7 +406,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = w.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
 
         if name_low not in existing_weapons:
             existing_weapons[name_low] = {
@@ -424,7 +431,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = a.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
 
         if name_low not in existing_artifacts:
             existing_artifacts[name_low] = {
@@ -448,7 +455,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = f.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
         if name_low not in existing_factions:
             existing_factions[name_low] = {
                 "name":              name,
@@ -471,7 +478,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = lo.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
         if name_low not in existing_lore:
             existing_lore[name_low] = {
                 "name":              name,
@@ -493,7 +500,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = ff.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
         if name_low not in existing_flora_fauna:
             existing_flora_fauna[name_low] = {
                 "name":              name,
@@ -516,7 +523,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = mg.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
         if name_low not in existing_magic:
             existing_magic[name_low] = {
                 "name":              name,
@@ -539,7 +546,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = rl.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
         if name_low not in existing_relics:
             existing_relics[name_low] = {
                 "name":              name,
@@ -562,7 +569,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = rg.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
         if name_low not in existing_regions:
             existing_regions[name_low] = {
                 "name":              name,
@@ -585,7 +592,7 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         name_low = name.lower()
         first_story_title = sub.get("first_story", "")
         first_date = find_story_date(first_story_title)
-        story_appearances = stories_for_entity(name)
+        story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
         if name_low not in existing_substances:
             existing_substances[name_low] = {
                 "name":              name,
