@@ -107,6 +107,15 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .story-text { font-size: .9rem; color: var(--aged); line-height: 1.75; text-align: justify; hyphens: auto; }
 .story-text::first-letter { float: left; font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 3.2rem; line-height: .75; padding-right: .12em; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.7); }
 
+/* ── Story Entities (badges under each story) ─────────────────── */
+.story-entities { margin-top: .85rem; padding-top: .85rem; border-top: 1px solid rgba(201,146,42,.18); display: grid; gap: .55rem; }
+.story-entities-row { display: flex; align-items: baseline; gap: .65rem; flex-wrap: wrap; }
+.story-entities-label { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .58rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(201,146,42,.6); white-space: nowrap; }
+.story-entities-badges { display: flex; flex-wrap: wrap; gap: .35rem; }
+.entity-badge { cursor: pointer; background: rgba(0,0,0,.14); }
+.entity-badge:hover { border-color: rgba(201,146,42,.6); color: var(--parchment); }
+.entity-badge:focus { outline: 2px solid rgba(201,146,42,.45); outline-offset: 2px; }
+
 .entity-link {
   display: inline;
   font: inherit;
@@ -244,6 +253,11 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .story-modal-text { font-size: .92rem; color: var(--aged); line-height: 1.75; text-align: justify; hyphens: auto; margin-top: .75rem; white-space: pre-wrap; }
 .story-modal-text::first-letter { float: left; font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 3.1rem; line-height: .75; padding-right: .12em; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.7); }
 
+/* Codex modal body should not inherit story typography */
+.codex-modal-body { margin-top: .75rem; }
+.codex-modal-body .codex-card:hover { transform: none; box-shadow: 0 3px 16px rgba(0,0,0,.45); }
+.codex-modal-body .codex-card { margin: 0; }
+
 /* Characters loading/empty states */
 .char-status { text-align: center; padding: 3rem 1rem; font-style: italic; color: var(--aged); }
 
@@ -301,6 +315,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
       <button class="story-modal-close" id="story-modal-close" aria-label="Close story">✕</button>
     </div>
     <div class="story-modal-actions" id="story-modal-actions"></div>
+    <div class="story-entities" id="story-modal-entities" style="display:none;" aria-label="Entities in this story"></div>
     <hr class="story-divider" />
     <div class="story-modal-text" id="story-modal-text"></div>
   </div>
@@ -319,7 +334,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     </div>
     <div class="story-modal-actions" id="codex-modal-actions"></div>
     <hr class="story-divider" />
-    <div class="story-modal-text" id="codex-modal-body"></div>
+    <div class="codex-modal-body" id="codex-modal-body"></div>
   </div>
 </div>
 
@@ -457,8 +472,15 @@ function formatDate(isoStr) {
   const d = new Date(isoStr + 'T12:00:00');
   return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 }
+function stripControlChars(str) {
+  // Remove non-printable control characters that can render as tofu/rectangles.
+  // Keep tab/newline for formatting.
+  return String(str || '')
+    .replace(/\r\n?/g, '\n')
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F-\u009F]/g, '');
+}
 function escHtml(str) {
-  return String(str)
+  return stripControlChars(String(str))
     .replace(/[\uFE0E\uFE0F]/g, '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -635,46 +657,90 @@ async function ensureCodexDataLoaded() {
   }
 }
 
-function linkifyStoryTextToHtml(rawText) {
+function extractEntitiesFromText(rawText) {
   const text = fixMojibake(rawText || '');
-  if (!CODEX_ENTITY_REGEX || !CODEX_ENTITY_INDEX || CODEX_ENTITY_INDEX.size === 0) return escHtml(text);
+  if (!CODEX_ENTITY_REGEX || !CODEX_ENTITY_INDEX || CODEX_ENTITY_INDEX.size === 0) return new Map();
 
-  let out = '';
-  let last = 0;
+  const found = new Map(); // type -> Map(nameKey -> { key, type, name })
   CODEX_ENTITY_REGEX.lastIndex = 0;
   let m;
   while ((m = CODEX_ENTITY_REGEX.exec(text)) !== null) {
-    const full = m[0];
-    const boundary = m[1] || '';
-    const thePart = m[2] || '';
     const namePart = m[3] || '';
-    const start = m.index;
-
-    out += escHtml(text.slice(last, start));
-    out += escHtml(boundary);
-
     const key = normalizeEntityKey(namePart);
     const matches = CODEX_ENTITY_INDEX.get(key) || [];
-    const type = (matches.length === 1) ? matches[0].type : '';
-    const label = `${thePart}${namePart}`;
-
-    out += `<button type="button" class="entity-link" data-entity-key="${escHtml(key)}"${type ? ` data-entity-type="${escHtml(type)}"` : ''}>${escHtml(label)}</button>`;
-    last = start + full.length;
+    matches.forEach(({ type, obj }) => {
+      const canonicalName = (obj && obj.name) ? String(obj.name).trim() : String(namePart).trim();
+      if (!canonicalName) return;
+      const canonKey = normalizeEntityKey(canonicalName);
+      if (!found.has(type)) found.set(type, new Map());
+      const bucket = found.get(type);
+      if (!bucket.has(canonKey)) bucket.set(canonKey, { key: canonKey, type, name: canonicalName });
+    });
   }
-  out += escHtml(text.slice(last));
-  return out;
+  return found;
 }
 
-function enhanceStoryEntityLinks() {
-  if (!CODEX_ENTITY_REGEX) return;
-  document.querySelectorAll('.story-text[data-raw-text]').forEach(p => {
-    if (p.dataset.enhanced === '1') return;
-    p.innerHTML = linkifyStoryTextToHtml(p.dataset.rawText || '');
-    p.dataset.enhanced = '1';
+function renderEntityBadges(containerEl, entitiesByType) {
+  if (!containerEl) return;
+  if (!entitiesByType || entitiesByType.size === 0) {
+    containerEl.innerHTML = '';
+    containerEl.style.display = 'none';
+    return;
+  }
+
+  const typeOrder = [
+    'characters', 'places', 'events', 'factions', 'magic', 'relics', 'artifacts', 'weapons', 'lore', 'flora_fauna', 'substances',
+    'regions', 'districts', 'provinces', 'realms', 'subcontinents', 'continents', 'hemispheres'
+  ];
+  const types = Array.from(entitiesByType.keys());
+  types.sort((a, b) => {
+    const ai = typeOrder.indexOf(a);
+    const bi = typeOrder.indexOf(b);
+    if (ai >= 0 && bi >= 0) return ai - bi;
+    if (ai >= 0) return -1;
+    if (bi >= 0) return 1;
+    return String(a).localeCompare(String(b));
   });
+
+  const rows = [];
+  types.forEach(type => {
+    const bucket = entitiesByType.get(type);
+    const list = bucket ? Array.from(bucket.values()) : [];
+    if (list.length === 0) return;
+    list.sort((x, y) => String(x.name).toLowerCase().localeCompare(String(y.name).toLowerCase()));
+    const badges = list.map(e => (
+      `<button type="button" class="badge entity-badge ${badgeClassForEntityType(type)}" data-entity-key="${escHtml(e.key)}" data-entity-type="${escHtml(type)}">${escHtml(e.name)}</button>`
+    )).join('');
+    rows.push(`
+      <div class="story-entities-row">
+        <span class="story-entities-label">${escHtml(codexTypeLabel(type))}</span>
+        <div class="story-entities-badges">${badges}</div>
+      </div>
+    `);
+  });
+
+  containerEl.innerHTML = rows.join('');
+  containerEl.style.display = rows.length ? '' : 'none';
+}
+
+function enhanceStoryEntityBadges() {
+  if (!CODEX_ENTITY_REGEX) return;
+
+  document.querySelectorAll('.story-card').forEach(card => {
+    const p = card.querySelector('.story-text[data-raw-text]');
+    const box = card.querySelector('.story-entities');
+    if (!p || !box) return;
+    if (box.dataset.enhanced === '1') return;
+    const entities = extractEntitiesFromText(p.dataset.rawText || '');
+    renderEntityBadges(box, entities);
+    box.dataset.enhanced = '1';
+  });
+
+  const modalBox = document.getElementById('story-modal-entities');
   const modalText = document.getElementById('story-modal-text');
-  if (modalText && modalText.dataset && modalText.dataset.rawText) {
-    modalText.innerHTML = linkifyStoryTextToHtml(modalText.dataset.rawText || '');
+  if (modalBox && modalText && modalText.dataset && modalText.dataset.rawText) {
+    const entities = extractEntitiesFromText(modalText.dataset.rawText || '');
+    renderEntityBadges(modalBox, entities);
   }
 }
 
@@ -699,36 +765,51 @@ function openCodexModalSkeleton() {
 }
 
 function renderCodexEntryModalBody(type, obj, key) {
-  const tokens = _primaryLabelTokensForEntity(type, obj);
-  const primary = (tokens && tokens.length) ? tokens[0] : 'Unknown';
-  const appearances = obj && typeof obj.appearances === 'number'
-    ? (obj.appearances > 1 ? `${obj.appearances} appearances` : 'First appearance')
-    : (obj && obj.first_story ? 'First appearance' : 'Entry');
-  const body = `
-    <div class="codex-card-header">
-      ${obj && obj.tagline ? `<div class="codex-card-tagline">${escHtml(obj.tagline)}</div>` : ''}
-      <div class="codex-card-badges">
-        <span class="badge ${badgeClassForEntityType(type)}">${escHtml(primary)}</span>
-        ${obj && obj.status ? `<span class="badge ${statusBadgeClass(obj.status)}">${escHtml(obj.status)}</span>` : ''}
-      </div>
-    </div>
-    <hr class="codex-divider" />
-    <div class="codex-body">${escHtml((obj && obj.description) ? obj.description : '')}</div>
-    ${typeof buildMostSpecificLocationLine === 'function' ? buildMostSpecificLocationLine(obj) : ''}
-    ${typeof buildEntityParentChain === 'function' ? buildEntityParentChain(obj) : ''}
-    <div class="codex-meta">
-      <span>${escHtml(appearances)}</span>
-      ${obj && obj.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(obj.first_story)}</span>` : ''}
-    </div>
-    ${buildStoryLinks(obj ? obj.story_appearances : null, obj ? obj.first_story : '', obj ? obj.first_date : '')}
-  `;
-
   const titleEl = document.getElementById('codex-modal-title');
   const subEl = document.getElementById('codex-modal-sub');
   const bodyEl = document.getElementById('codex-modal-body');
   titleEl.textContent = (obj && obj.name) ? obj.name : (key || '—');
   subEl.textContent = codexTypeLabel(type);
-  bodyEl.innerHTML = body;
+
+  // Prefer rendering the *exact* Codex card by cloning it from the Codex view.
+  const wantKey = normalizeEntityKey(obj && obj.name ? obj.name : key);
+  const selector = `.codex-card[data-entity-type="${CSS.escape(type)}"][data-name-sort="${CSS.escape(wantKey)}"]`;
+  const source = document.querySelector(selector);
+  if (source) {
+    bodyEl.innerHTML = '';
+    const clone = source.cloneNode(true);
+    clone.classList.remove('hidden');
+    clone.classList.remove('hidden-org');
+    clone.classList.remove('codex-flash');
+    bodyEl.appendChild(clone);
+    attachStoryLinkListeners(clone);
+  } else {
+    // Fallback: lightweight details when Codex hasn't rendered yet.
+    const tokens = _primaryLabelTokensForEntity(type, obj);
+    const primary = (tokens && tokens.length) ? tokens[0] : 'Unknown';
+    const appearances = obj && typeof obj.appearances === 'number'
+      ? (obj.appearances > 1 ? `${obj.appearances} appearances` : 'First appearance')
+      : (obj && obj.first_story ? 'First appearance' : 'Entry');
+    bodyEl.innerHTML = `
+      <div class="codex-card-header">
+        ${obj && obj.tagline ? `<div class="codex-card-tagline">${escHtml(obj.tagline)}</div>` : ''}
+        <div class="codex-card-badges">
+          <span class="badge ${badgeClassForEntityType(type)}">${escHtml(primary)}</span>
+          ${obj && obj.status ? `<span class="badge ${statusBadgeClass(obj.status)}">${escHtml(obj.status)}</span>` : ''}
+        </div>
+      </div>
+      <hr class="codex-divider" />
+      <div class="codex-body">${escHtml((obj && (obj.description || obj.bio || obj.outcome)) ? (obj.description || obj.bio || obj.outcome) : '')}</div>
+      ${buildMostSpecificLocationLine(obj)}
+      ${buildEntityParentChain(obj)}
+      <div class="codex-meta">
+        <span>${escHtml(appearances)}</span>
+        ${obj && obj.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(obj.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(obj ? obj.story_appearances : null, obj ? obj.first_story : '', obj ? obj.first_date : '')}
+    `;
+    attachStoryLinkListeners(document.getElementById('codex-modal-panel'));
+  }
 
   const actions = document.getElementById('codex-modal-actions');
   actions.innerHTML = '';
@@ -762,6 +843,8 @@ async function openCodexEntryByKey(key, typeHint = '') {
 
   try {
     await ensureCodexDataLoaded();
+    // Ensure the Codex view has rendered, so we can clone the exact card markup.
+    await loadCodex(false);
     const matches = CODEX_ENTITY_INDEX.get(key) || [];
     if (matches.length === 0) {
       document.getElementById('codex-modal-title').textContent = 'Not found';
@@ -1083,8 +1166,8 @@ function fixMojibake(str) {
   try {
     const bytes = new Uint8Array(str.length);
     for (let i = 0; i < str.length; i++) bytes[i] = str.charCodeAt(i) & 0xff;
-    return new TextDecoder('utf-8', { fatal: true }).decode(bytes).replace(/[\uFE0E\uFE0F]/g, '');
-  } catch (e) { return String(str || '').replace(/[\uFE0E\uFE0F]/g, ''); }
+    return stripControlChars(new TextDecoder('utf-8', { fatal: true }).decode(bytes)).replace(/[\uFE0E\uFE0F]/g, '');
+  } catch (e) { return stripControlChars(String(str || '')).replace(/[\uFE0E\uFE0F]/g, ''); }
 }
 
 // ── Render Stories ───────────────────────────────────────────────────
@@ -1105,13 +1188,12 @@ function renderStories(data) {
       <h2 class="story-title">${escHtml(s.title || 'Untitled')}</h2>
       <hr class="story-divider" />
       <p class="story-text"></p>
+      <div class="story-entities" style="display:none;" aria-label="Entities in this story"></div>
     `;
 
     const rawText = fixMojibake(s.text || '');
     const p = card.querySelector('.story-text');
     p.dataset.rawText = rawText;
-    p.dataset.enhanced = '0';
-    // Default render: plain text. (Enhanced links apply once codex data is available.)
     p.textContent = rawText;
 
     card.querySelector('.story-tag').addEventListener('click', () => {
@@ -1120,9 +1202,9 @@ function renderStories(data) {
     grid.appendChild(card);
   });
 
-  // Fetch codex in the background and upgrade story text with clickable entity links.
+  // Fetch codex in the background and add entity badges under each story.
   ensureCodexDataLoaded()
-    .then(() => enhanceStoryEntityLinks())
+    .then(() => enhanceStoryEntityBadges())
     .catch(() => {/* non-fatal */});
 
   // Build genre filter buttons
@@ -1162,7 +1244,15 @@ function closeStoryModal() {
   document.getElementById('story-modal-title').textContent = '—';
   document.getElementById('story-modal-sub').textContent = '—';
   document.getElementById('story-modal-actions').innerHTML = '';
-  document.getElementById('story-modal-text').textContent = '';
+  const ents = document.getElementById('story-modal-entities');
+  if (ents) {
+    ents.innerHTML = '';
+    ents.style.display = 'none';
+    delete ents.dataset.enhanced;
+  }
+  const t = document.getElementById('story-modal-text');
+  t.textContent = '';
+  if (t && t.dataset) delete t.dataset.rawText;
 }
 
 function openStoryModalSkeleton() {
@@ -1288,9 +1378,9 @@ async function openStoryModalByAppearance(date, title, opts = {}) {
     textEl.dataset.rawText = rawText;
     textEl.textContent = rawText;
 
-    // Upgrade modal text with clickable entity links once codex data is ready.
+    // Show entity badges once codex data is ready.
     ensureCodexDataLoaded()
-      .then(() => enhanceStoryEntityLinks())
+      .then(() => enhanceStoryEntityBadges())
       .catch(() => {/* non-fatal */});
   } catch (err) {
     console.error(err);
@@ -2312,9 +2402,9 @@ document.getElementById('story-modal-overlay').addEventListener('click', closeSt
 document.getElementById('codex-modal-close').addEventListener('click', closeCodexModal);
 document.getElementById('codex-modal-overlay').addEventListener('click', closeCodexModal);
 
-// Entity links inside story text
+// Entity badges under stories / in story modal
 document.addEventListener('click', (e) => {
-  const btn = e.target && e.target.closest ? e.target.closest('.entity-link') : null;
+  const btn = e.target && e.target.closest ? e.target.closest('.entity-badge') : null;
   if (!btn) return;
   const key = btn.dataset.entityKey || '';
   if (!key) return;

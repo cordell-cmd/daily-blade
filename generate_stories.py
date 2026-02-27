@@ -18,6 +18,9 @@ import hashlib
 from datetime import datetime, timezone
 import anthropic
 
+# ── Text sanitation (prevents control-char tofu/rectangles in UI) ──────
+_CONTROL_CHAR_RE = re.compile(r"[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]")
+
 # ── Config ────────────────────────────────────────────────────────────────
 MODEL           = "claude-haiku-4-5-20251001"
 NUM_STORIES     = 10
@@ -120,6 +123,120 @@ def _truthy_non_unknown(val: str) -> bool:
     if not v:
         return False
     return v.lower() not in {"unknown", "n/a", "na", "none"}
+
+
+def sanitize_text(value: str) -> str:
+    if value is None:
+        return ""
+    s = str(value)
+    s = s.replace("\r\n", "\n").replace("\r", "\n")
+    return _CONTROL_CHAR_RE.sub("", s)
+
+
+def sanitize_stories(stories):
+    out = []
+    for s in (stories or []):
+        if not isinstance(s, dict):
+            continue
+        out.append({
+            "title": sanitize_text(s.get("title", "Untitled")),
+            "text": sanitize_text(s.get("text", "")),
+            "subgenre": sanitize_text(s.get("subgenre", "Sword & Sorcery")),
+        })
+    return out
+
+
+def _make_snake_id(name: str) -> str:
+    base = re.sub(r"[^a-zA-Z0-9]+", "_", (name or "").strip().lower()).strip("_")
+    return base or "unknown"
+
+
+def ensure_home_location_entities_exist(lore, date_key: str):
+    """Auto-create placeholder geo entities referenced by character home_* anchors.
+
+    This reduces UX dead-ends when a story reveals a new domain (e.g., a region someone rules)
+    via a character update, but the NEW-lore extractor fails to add that region/place yet.
+    """
+    if not isinstance(lore, dict):
+        return lore
+
+    places = lore.get("places") or []
+    regions = lore.get("regions") or []
+    realms = lore.get("realms") or []
+
+    place_names = {str(p.get("name", "")).strip().lower() for p in places if isinstance(p, dict) and p.get("name")}
+    region_names = {str(r.get("name", "")).strip().lower() for r in regions if isinstance(r, dict) and r.get("name")}
+    realm_names = {str(rm.get("name", "")).strip().lower() for rm in realms if isinstance(rm, dict) and rm.get("name")}
+
+    for c in lore.get("characters") or []:
+        if not isinstance(c, dict):
+            continue
+
+        home_place = sanitize_text(c.get("home_place", "")).strip()
+        home_region = sanitize_text(c.get("home_region", "")).strip()
+        home_realm = sanitize_text(c.get("home_realm", "")).strip()
+
+        if _truthy_non_unknown(home_realm) and home_realm.lower() not in realm_names:
+            realms.append({
+                "id": _make_snake_id(home_realm),
+                "name": home_realm,
+                "tagline": "",
+                "continent": "unknown",
+                "capital": "unknown",
+                "function": "Auto-added from character home_realm.",
+                "taxation": "unknown",
+                "military": "unknown",
+                "status": "unknown",
+                "notes": "",
+                "first_date": date_key,
+                "appearances": 1,
+            })
+            realm_names.add(home_realm.lower())
+
+        if _truthy_non_unknown(home_region) and home_region.lower() not in region_names:
+            regions.append({
+                "id": _make_snake_id(home_region),
+                "name": home_region,
+                "tagline": "",
+                "continent": "unknown",
+                "realm": home_realm if _truthy_non_unknown(home_realm) else "unknown",
+                "climate": "unknown",
+                "terrain": "unknown",
+                "function": "Auto-added from character home_region.",
+                "status": "unknown",
+                "notes": "",
+                "first_date": date_key,
+                "appearances": 1,
+            })
+            region_names.add(home_region.lower())
+
+        if _truthy_non_unknown(home_place) and home_place.lower() not in place_names:
+            places.append({
+                "id": _make_snake_id(home_place),
+                "name": home_place,
+                "tagline": "",
+                "place_type": "unknown",
+                "world": "known_world",
+                "hemisphere": "unknown",
+                "continent": "unknown",
+                "subcontinent": "unknown",
+                "realm": home_realm if _truthy_non_unknown(home_realm) else "unknown",
+                "province": "unknown",
+                "region": home_region if _truthy_non_unknown(home_region) else "unknown",
+                "district": "unknown",
+                "atmosphere": "",
+                "description": "Auto-added from character home_place.",
+                "status": "unknown",
+                "notes": "",
+                "first_date": date_key,
+                "appearances": 1,
+            })
+            place_names.add(home_place.lower())
+
+    lore["places"] = places
+    lore["regions"] = regions
+    lore["realms"] = realms
+    return lore
 
 
 def ensure_place_parent_chain(lore: dict):
@@ -785,6 +902,20 @@ Respond with ONLY valid JSON — no prose before or after — matching this exac
   …9 more entries…
 ]
 
+TONE + FANTASY VARIETY REQUIREMENTS (important):
+- Do NOT make every story macabre. Across the 10 stories, include a mix of tones:
+    - At least 3 should be lighter/adventurous/wondrous (mystery, heist, exploration, comic irony, romance, heroic triumph).
+    - At most 3 should be outright grim-horror/necromancy/corpse-heavy.
+- Do NOT make every story about sorcery. Magic may appear, but include plenty of non-magic conflict: steel, politics, survival, bargains, travel, rivalries.
+- Ensure a broad fantasy assortment across the issue. Across the 10 stories, include (not necessarily all in one story):
+    - Non-human peoples: e.g., elves, dwarves, goblin-kind, hobbit-like smallfolk, orcs/ogres/trolls.
+    - Mythic creatures: e.g., at least one dragon/wyrm OR similarly iconic beast.
+    - Fae/fairy influence: at least one story must involve a fae court, fairy realm, or fae-bargain.
+- Stories may be centered on ANY fantasy focus (not just people):
+    - A creature as the main subject (hunts, migrations, curses, ecosystems).
+    - An artifact/weapon/relic as the main subject (heist, origin, curse, custody).
+    - A place as the main subject (ruin expedition, city intrigue, haunted road, strange market).
+
 REUSE INTENSITY RULES (only applies when an entry is labeled):
 - If you see "INTENDED REUSE INTENSITY: cameo" for an entity, keep it light: brief appearance/mention, not the protagonist or primary location, and avoid major new canon changes for that entity.
 - If you see "INTENDED REUSE INTENSITY: central" for an entity, it may meaningfully drive plot, but MUST remain consistent with canon and the dossier.
@@ -888,8 +1019,12 @@ def build_lore_extraction_prompt(stories, existing_lore):
     )
 
     return f"""You are a lore archivist for a sword-and-sorcery story universe.
-Analyze the following stories and extract NEW lore elements — characters, places, notable events,
-mythical weapons, and artifacts that appear in these stories but are NOT already in the existing lore lists.
+Analyze the following stories and extract NEW lore elements — characters, places, events, weapons, artifacts, factions, lore, flora/fauna, magic, relics, regions, substances, and geo hierarchy entries (hemisphere/continent/subcontinent/realm/province/district) — that appear in these stories but are NOT already in the existing lore lists.
+
+Be exhaustive:
+- Do not miss named wars, sieges, rituals, treaties, curses, plagues, or disasters.
+- If a story names a domain/territory ruled by someone, capture it as a Region/Realm/Place as appropriate.
+- Prefer creating an entry even if details are sparse; use 'unknown' for unknown fields.
 
 ALREADY KNOWN (do NOT re-extract these):
 - Characters: {', '.join(existing_chars) if existing_chars else 'none'}
@@ -2600,6 +2735,9 @@ def main():
                 print(f"WARNING: Could not parse canon checker JSON: {e}", file=sys.stderr)
                 print("Continuing without canon checker changes.", file=sys.stderr)
 
+    # ── Sanitize story text (removes stray control characters) ─────────
+    stories = sanitize_stories(stories)
+
     # ── Optional: Update existing characters (death/resurrection/etc.) ───
     if ENABLE_EXISTING_CHARACTER_UPDATES:
         referenced = find_referenced_canon_entries(stories, lore)
@@ -2618,6 +2756,7 @@ def main():
             try:
                 updates = parse_json_response(updates_raw)
                 lore = apply_existing_character_updates(lore, updates, date_key, stories=stories)
+                lore = ensure_home_location_entities_exist(lore, date_key)
                 changed = len((updates or {}).get("characters", []) or []) if isinstance(updates, dict) else 0
                 if changed:
                     print(f"\u2713 Applied {changed} character status update(s)")
