@@ -19,6 +19,15 @@ import re
 from datetime import datetime, timezone
 import anthropic
 
+
+def _maybe_load_dotenv():
+    """Best-effort load of a local .env file for development."""
+    try:
+        from dotenv import load_dotenv  # type: ignore
+    except Exception:
+        return
+    load_dotenv(override=False)
+
 # ── Config ────────────────────────────────────────────────────────────────
 MODEL           = "claude-haiku-4-5-20251001"
 OUTPUT_FILE     = "stories.json"
@@ -80,6 +89,49 @@ def load_all_stories():
 
 def build_extraction_prompt(stories_with_dates, existing_codex):
     """Build the extraction prompt for a batch of stories."""
+    def _extract_name_candidates(stories_with_dates, max_candidates=180):
+        stop_single = {
+            "a", "an", "and", "are", "as", "at", "be", "been", "but", "by", "each", "for",
+            "from", "had", "has", "have", "he", "her", "hers", "him", "his", "i", "if",
+            "in", "into", "is", "it", "its", "like", "me", "my", "no", "not", "now",
+            "of", "off", "on", "one", "or", "our", "out", "she", "so", "some", "soon",
+            "than", "that", "the", "their", "then", "there", "these", "they", "this",
+            "those", "three", "to", "too", "two", "under", "up", "upon", "was", "we",
+            "were", "what", "when", "who", "why", "will", "with", "you", "your",
+        }
+        bad_single = {"anything", "everything", "nothing", "someone", "something", "yes"}
+
+        cand_re = re.compile(
+            r"\b[A-Z][\w’'\-]+(?:(?:(?:[ \t]+(?:of|the|and|in|on|at|to|for)[ \t]+)|[ \t]+)[A-Z][\w’'\-]+){1,4}\b"
+            r"|\b[A-Z][\w’'\-]{2,}\b"
+        )
+        candidates = []
+        seen = set()
+        for _, s in stories_with_dates or []:
+            title = (s.get("title") or "")
+            text = (s.get("text") or "")
+            for chunk in [title] + (text.splitlines() if text else []):
+                if not chunk.strip():
+                    continue
+                for m in cand_re.finditer(chunk):
+                    cand = (m.group(0) or "").strip()
+                    if not cand:
+                        continue
+                    cand_norm = " ".join(cand.split())
+                    key = cand_norm.lower()
+                    if key in seen:
+                        continue
+                    if " " not in cand_norm:
+                        if key in stop_single or key in bad_single:
+                            continue
+                        if len(cand_norm) <= 2:
+                            continue
+                    seen.add(key)
+                    candidates.append(cand_norm)
+                    if len(candidates) >= max_candidates:
+                        return candidates
+        return candidates
+
     existing_chars     = {c["name"].lower() for c in existing_codex.get("characters", [])}
     existing_places    = {p["name"].lower() for p in existing_codex.get("places", [])}
     existing_events    = {e["name"].lower() for e in existing_codex.get("events", [])}
@@ -107,6 +159,9 @@ def build_extraction_prompt(stories_with_dates, existing_codex):
         f"STORY (date: {date_key}): {s['title']}\n{s['text']}"
         for date_key, s in stories_with_dates
     )
+
+    name_candidates = _extract_name_candidates(stories_with_dates)
+    candidates_block = "\n".join([f"- {c}" for c in name_candidates]) if name_candidates else "- (none)"
 
     return f"""You are a lore archivist for a sword-and-sorcery story universe.
 Analyze the following stories and extract ALL notable lore elements:
@@ -145,6 +200,14 @@ EXISTING CANON (reference only; non-exhaustive; ok to repeat):
 
 STORIES TO ANALYZE:
 {stories_text}
+
+NAME CANDIDATES (for completeness; ignore common words like "The" / "But"):
+{candidates_block}
+
+Hard requirement:
+- For every candidate above that is truly a named entity in the story text (person/place/title/institution/event/ritual/object/creature), ensure it appears in at least one output category.
+- Do NOT omit one-off names just because they appear only once.
+- Do NOT drop or simplify punctuation/diacritics in names (keep apostrophes, hyphens, accents).
 
 Respond with ONLY valid JSON in this exact structure (use empty arrays if nothing new was found):
 {{
@@ -700,6 +763,7 @@ def migrate_characters_json(codex):
 
 # ── Main ──────────────────────────────────────────────────────────────────
 def main():
+    _maybe_load_dotenv()
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         print("ERROR: ANTHROPIC_API_KEY environment variable not set.", file=sys.stderr)

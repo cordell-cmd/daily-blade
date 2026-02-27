@@ -18,6 +18,20 @@ import hashlib
 from datetime import datetime, timezone
 import anthropic
 
+
+def _maybe_load_dotenv():
+    """Best-effort load of a local .env file for development.
+
+    GitHub Actions already supplies ANTHROPIC_API_KEY via secrets, but local
+    runs (different terminals, VS Code tasks, tool runners) often don't inherit
+    exported env vars. This makes local behavior more consistent.
+    """
+    try:
+        from dotenv import load_dotenv  # type: ignore
+    except Exception:
+        return
+    load_dotenv(override=False)
+
 # ── Text sanitation (prevents control-char tofu/rectangles in UI) ──────
 _CONTROL_CHAR_RE = re.compile(r"[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]")
 
@@ -1012,6 +1026,66 @@ STORIES JSON INPUT:
 
 # ── Lore extraction prompt ───────────────────────────────────────────────
 def build_lore_extraction_prompt(stories, existing_lore):
+    def _extract_name_candidates(stories, max_candidates=140):
+        """Heuristic list of capitalized name-like candidates from story text.
+
+        Purpose: help the model avoid missing one-off named entities (esp. places)
+        during the lore extraction pass.
+        """
+        stop_single = {
+            "a", "an", "and", "are", "as", "at", "be", "been", "but", "by", "each", "for",
+            "from", "had", "has", "have", "he", "her", "hers", "him", "his", "i", "if",
+            "in", "into", "is", "it", "its", "like", "me", "my", "no", "not", "now",
+            "of", "off", "on", "one", "or", "our", "out", "she", "so", "some", "soon",
+            "than", "that", "the", "their", "then", "there", "these", "they", "this",
+            "those", "three", "to", "too", "two", "under", "up", "upon", "was", "we",
+            "were", "what", "when", "who", "why", "will", "with", "you", "your",
+        }
+        # Allow multi-word titles like "High Magistrate" (don’t stopword-filter phrases).
+        bad_single = {
+            "anything", "everything", "nothing", "someone", "something",
+            "yes", "yours", "mine", "ours", "theirs",
+        }
+
+        # Capitalized word / phrase matcher, with apostrophes, unicode quotes, and hyphens.
+        # NOTE: avoid spanning newlines to prevent merging title + first sentence.
+        # Examples: Xul'thyris, Thul-Kâr, Castle Greymarch, High Magistrate, Kael the Nameless
+        cand_re = re.compile(
+            r"\b[A-Z][\w’'\-]+(?:(?:(?:[ \t]+(?:of|the|and|in|on|at|to|for)[ \t]+)|[ \t]+)[A-Z][\w’'\-]+){1,4}\b"
+            r"|\b[A-Z][\w’'\-]{2,}\b"
+        )
+
+        candidates = []
+        seen = set()
+        for s in stories or []:
+            title = (s.get("title") or "")
+            text = (s.get("text") or "")
+            for chunk in [title] + (text.splitlines() if text else []):
+                if not chunk.strip():
+                    continue
+                for m in cand_re.finditer(chunk):
+                    cand = (m.group(0) or "").strip()
+                    if not cand:
+                        continue
+                    cand_norm = " ".join(cand.split())
+                    key = cand_norm.lower()
+                    if key in seen:
+                        continue
+
+                    # Filter obvious false positives for single-word candidates.
+                    if " " not in cand_norm:
+                        if key in stop_single or key in bad_single:
+                            continue
+                        # Avoid picking up sentence-start pronouns that slip through.
+                        if len(cand_norm) <= 2:
+                            continue
+
+                    seen.add(key)
+                    candidates.append(cand_norm)
+                    if len(candidates) >= max_candidates:
+                        return candidates
+        return candidates
+
     existing_chars     = {c["name"].lower() for c in existing_lore.get("characters", [])}
     existing_places    = {p["name"].lower() for p in existing_lore.get("places", [])}
     existing_events    = {e["name"].lower() for e in existing_lore.get("events", [])}
@@ -1047,6 +1121,9 @@ def build_lore_extraction_prompt(stories, existing_lore):
         f"STORY {i+1}: {s['title']}\n{s['text']}"
         for i, s in enumerate(stories)
     )
+
+    name_candidates = _extract_name_candidates(stories)
+    candidates_block = "\n".join([f"- {c}" for c in name_candidates]) if name_candidates else "- (none)"
 
     return f"""You are a lore archivist for a sword-and-sorcery story universe.
 Analyze the following stories and extract lore elements — characters, places, events, weapons, artifacts, factions, polities (governments/crowns/thrones), lore, flora/fauna, magic, relics, regions, substances, and geo hierarchy entries (hemisphere/continent/subcontinent/realm/province/district) — that appear in these stories.
@@ -1101,6 +1178,14 @@ GEOGRAPHY CONSTRAINTS:
 
 STORIES TO ANALYZE:
 {stories_text}
+
+NAME CANDIDATES (for completeness; ignore common words like "The" / "But"):
+{candidates_block}
+
+Hard requirement:
+- For every candidate above that is truly a named entity in the story text (person/place/realm/title/institution/event/ritual/spell/object/creature), ensure it appears in at least one output category.
+- Do NOT omit one-off names just because they appear only once.
+- Do NOT drop or simplify punctuation/diacritics in names (keep apostrophes, hyphens, accents).
 
 Respond with ONLY valid JSON in this exact structure (use empty arrays if nothing new was found):
 {{
@@ -2625,6 +2710,7 @@ def _already_generated_for_date(date_key: str) -> bool:
 
 # ── Main ──────────────────────────────────────────────────────────────────
 def main():
+    _maybe_load_dotenv()
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         print("ERROR: ANTHROPIC_API_KEY environment variable not set.", file=sys.stderr)
