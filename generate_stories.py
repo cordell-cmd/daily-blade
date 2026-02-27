@@ -890,6 +890,16 @@ ADDITIONAL CANON GUARDRAILS:
 - If you reuse a previously-established name, it MUST refer to that same entity and not contradict their known status, role, bio, or history.
 - If you're unsure about an established fact, keep it ambiguous rather than contradicting canon.
 
+HOMONYMS / CONTEXTUAL NAMING (important for UI + canon clarity):
+- If a canon proper noun is ALSO a common noun/material (e.g., a place named "Blackthorn" vs blackthorn wood), use context-appropriate casing.
+    - Use lowercase for materials/common nouns ("blackthorn", "blackthorn wood").
+    - Use the canonical capitalization ONLY when you mean the proper noun/place.
+- Avoid using existing place/realm names as common nouns for unrelated things (materials, adjectives) unless you explicitly mean the place.
+
+COHESION / CONSEQUENCES:
+- Ensure the ending reflects the consequences of major actions earlier in the story.
+    - If a ritual of dismissal releases a ghost, the ghost cannot still be ruling in the final lines unless you explicitly state the rite failed or was subverted.
+
 SOVEREIGNTY / CROWN CONSISTENCY:
 - Treat "the Crown" / "the Throne" as an institution of rulership tied to a specific realm (and usually a seat/capital).
 - If a story involves a crown, explicitly name which realm/region it governs.

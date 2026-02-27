@@ -701,11 +701,39 @@ function extractEntitiesFromText(rawText) {
   const text = fixMojibake(rawText || '');
   if (!CODEX_ENTITY_REGEX || !CODEX_ENTITY_INDEX || CODEX_ENTITY_INDEX.size === 0) return new Map();
 
+  // Some entity names are also common nouns/materials. We avoid false-positive
+  // codex badges by applying small, contextual suppression rules.
+  function shouldSuppressEntityMatch(type, canonicalKey, matchedSurface, contextLower) {
+    const ck = String(canonicalKey || '');
+    if (!ck) return false;
+
+    // Blackthorn: can be a place, but is also a common wood/material.
+    // If the match is lowercase or clearly weapon/material context, suppress the place badge.
+    if (ck === 'blackthorn' && type === 'places') {
+      if (matchedSurface && matchedSurface === matchedSurface.toLowerCase()) return true;
+      if (/\bknife\s+of\s+blackthorn\b/.test(contextLower)) return true;
+      if (/\bblackthorn\s+(?:wood|bough|branch|handle|haft|hilt|stake|splinter)\b/.test(contextLower)) return true;
+      if (/\b(?:of|made\s+of|carved\s+from|fashioned\s+from)\s+blackthorn\b/.test(contextLower)
+          && /\b(?:knife|blade|dagger|staff|rod|bow|cane|club)\b/.test(contextLower)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   const found = new Map(); // type -> Map(nameKey -> { key, type, name })
   CODEX_ENTITY_REGEX.lastIndex = 0;
   let m;
   while ((m = CODEX_ENTITY_REGEX.exec(text)) !== null) {
     const namePart = m[3] || '';
+    const boundaryLen = (m[1] || '').length;
+    const theLen = (m[2] || '').length;
+    const matchWordStart = (m.index || 0) + boundaryLen + theLen;
+    const matchWordEnd = matchWordStart + String(namePart).length;
+    const matchedSurface = text.slice(matchWordStart, Math.min(text.length, matchWordEnd));
+    const ctxA = Math.max(0, matchWordStart - 90);
+    const ctxB = Math.min(text.length, matchWordEnd + 90);
+    const contextLower = text.slice(ctxA, ctxB).toLowerCase();
     const key = normalizeEntityKey(namePart);
     const matches = CODEX_ENTITY_INDEX.get(key) || [];
     matches.forEach(({ type, obj }) => {
@@ -719,6 +747,7 @@ function extractEntitiesFromText(rawText) {
       }
       if (!canonicalName) return;
       const canonKey = normalizeEntityKey(canonicalName);
+      if (shouldSuppressEntityMatch(type, canonKey, matchedSurface, contextLower)) return;
       if (!found.has(type)) found.set(type, new Map());
       const bucket = found.get(type);
       if (!bucket.has(canonKey)) bucket.set(canonKey, { key: canonKey, type, name: canonicalName });
