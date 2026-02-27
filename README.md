@@ -24,3 +24,9 @@ python3 -m http.server 8008
 ```
 
 Then open `http://localhost:8008/`.
+
+## License / Public domain
+
+All stories, lore, codex data, and site code in this repository are dedicated to the public domain under CC0 1.0.
+
+See [LICENSE](LICENSE).
