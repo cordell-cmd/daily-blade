@@ -180,7 +180,25 @@ PLACE_HEADWORDS = {
     "Cairn": "cairn",
     "Hall": "hall",
     "Market": "market",
+    "Garden": "garden",
+    "Gardens": "garden",
 }
+
+
+LANGUAGE_KEYWORDS = {
+    "Tongue",
+    "Language",
+    "Script",
+    "Cant",
+    "Runes",
+    "Glyphs",
+}
+
+
+KINSHIP_RE = re.compile(
+    r"\b([A-Z][\w'’\-]+)'s\s+(brother|sister|son|daughter|father|mother|uncle|aunt|cousin)\b",
+    re.IGNORECASE,
+)
 
 
 def load_json(path: str):
@@ -279,31 +297,66 @@ def extract_candidates_from_story(story: dict) -> List[str]:
     candidates: List[str] = []
     seen: Set[str] = set()
 
+    def add(cand: str):
+        cand = (cand or "").strip()
+        if not cand:
+            return
+        cand = re.sub(r"\s+", " ", cand)
+        cand = cand.replace("—", "-").replace("–", "-").replace("’", "'")
+        if title and cand.casefold() == title.casefold():
+            return
+        if cand in SENTENCE_START_STOP:
+            return
+        key = norm_key(cand)
+        if not key or key in seen:
+            return
+        seen.add(key)
+        candidates.append(cand)
+
     for line in text.splitlines():
+        raw = line
         line = line.strip().replace("—", "-").replace("–", "-")
         if not line:
             continue
+
+        # Title-case candidates (core path)
         for m in TITLE_PHRASE_RE.finditer(line):
-            cand = (m.group(0) or "").strip()
-            if not cand:
-                continue
-            cand = re.sub(r"\s+", " ", cand)
-            cand = cand.replace("—", "-").replace("–", "-")
-            cand = cand.replace("’", "'")
+            add(m.group(0) or "")
 
-            # Skip story titles themselves.
-            if title and cand.casefold() == title.casefold():
-                continue
+        lower = line.lower()
 
-            # Skip trivial sentence starts.
-            if cand in SENTENCE_START_STOP:
-                continue
+        # Events like "the war for the Sunken Wells" (note: 'war' can be lowercase)
+        for m in re.finditer(
+            r"\b(war|battle|siege|treaty|pact|accord|rebellion|uprising|massacre|plague|curse)\s+for\s+the\s+([A-Z][\w'’\-]+(?:\s+[A-Z][\w'’\-]+){0,6})\b",
+            line,
+        ):
+            head = (m.group(1) or "").strip().capitalize()
+            tail = (m.group(2) or "").strip()
+            add(f"{head} for the {tail}")
 
-            key = norm_key(cand)
-            if key in seen:
-                continue
-            seen.add(key)
-            candidates.append(cand)
+        # Places like "ruins of Old Keth" / "gardens of the Underlords" (head can be lowercase)
+        for m in re.finditer(r"\b(ruins|gardens)\s+of\s+(the\s+)?([A-Z][\w'’\-]+(?:\s+[A-Z][\w'’\-]+){0,6})\b", line, re.IGNORECASE):
+            head = (m.group(1) or "").strip().capitalize()
+            the = (m.group(2) or "")
+            tail = (m.group(3) or "").strip()
+            if the.strip():
+                add(f"{head} of the {tail}")
+            else:
+                add(f"{head} of {tail}")
+
+        # Factions like "the khan's armies" (often lowercase)
+        if re.search(r"\bthe\s+khan's\s+armies\b", lower):
+            add("The Khan's Armies")
+
+        # Contextual kinship: line-leading "Name ... her brother" -> "Name's brother"
+        # Keep this conservative to avoid junk like "Worse's brother".
+        m = re.search(r"^\s*([A-Z][\w’\-]+)\b[^\n]{0,180}\bher\s+brother\b", line)
+        if m:
+            who = (m.group(1) or "").strip().replace("’", "'")
+            if who.endswith("'s"):
+                who = who[:-2]
+            if who and who not in {"Worse", "Better", "Perhaps", "Then", "But", "And", "Or", "If", "When", "As"}:
+                add(f"{who}'s brother")
 
     return candidates
 
@@ -323,6 +376,35 @@ def looks_like_character(name: str) -> bool:
 
 def classify_candidate(name: str) -> Tuple[str, dict]:
     n = (name or "").strip()
+
+    # Characters (kinship labels like "Yareth's brother")
+    if re.search(r"\b[A-Z][\w'’\-]+\s*'s\s+(brother|sister|son|daughter|father|mother|uncle|aunt|cousin)\b", n):
+        return "characters", {
+            "name": n,
+            "tagline": "",
+            "role": "Unknown",
+            "status": "unknown",
+            "travel_scope": "unknown",
+            "home_place": "",
+            "home_region": "",
+            "home_realm": "",
+            "status_history": [],
+            "world": "The Known World",
+            "bio": "",
+            "traits": [],
+            "notes": "",
+        }
+
+    # Lore: languages / scripts
+    if any(k in n for k in LANGUAGE_KEYWORDS):
+        return "lore", {
+            "name": n,
+            "tagline": "",
+            "category": "language",
+            "source": "",
+            "status": "rumored",
+            "notes": "",
+        }
 
     # Events
     head = n.split()[0] if n.split() else ""
@@ -355,6 +437,29 @@ def classify_candidate(name: str) -> Tuple[str, dict]:
         }
 
     # Factions
+    if re.search(r"\b(khan's\s+armies|khan\s+armies)\b", n, re.IGNORECASE):
+        return "factions", {
+            "name": "The Khan's Armies",
+            "tagline": "",
+            "alignment": "",
+            "goals": "",
+            "leader": "",
+            "status": "unknown",
+            "notes": "",
+        }
+
+    # Factions (heuristic plural groups like "Underlords" / "Steppe Riders")
+    if " " not in n and re.search(r"(lords|riders|armies|hosts|clans)$", n, re.IGNORECASE):
+        return "factions", {
+            "name": n,
+            "tagline": "",
+            "alignment": "",
+            "goals": "",
+            "leader": "",
+            "status": "unknown",
+            "notes": "",
+        }
+
     if any(k in n for k in FACTION_KEYWORDS):
         return "factions", {
             "name": n,
@@ -466,11 +571,19 @@ def should_add_placeholder(cat: str, name: str) -> bool:
     if cat == "polities":
         return True
 
+    if cat == "factions":
+        return True
+
     if cat == "characters":
         # Only allow obvious character formats; skip single-token names.
         if " " not in n:
+            # Allow kinship labels which are multi-token but might include apostrophe.
             return False
-        return looks_like_character(n)
+        return looks_like_character(n) or ("'s " in n and any(r in n.lower() for r in ["brother","sister","son","daughter","father","mother","uncle","aunt","cousin"]))
+
+    if cat == "lore":
+        # Allow language/legend/history entries if they look like a proper noun.
+        return True
 
     return False
 
@@ -511,6 +624,8 @@ def main() -> int:
     ap.add_argument("--include-archives", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--max-add", type=int, default=40)
+    ap.add_argument("--story-title", type=str, default="", help="Only scan stories whose title contains this text")
+    ap.add_argument("--disable-place-gate", action="store_true", help="Scan even if the story already matches a known place")
     args = ap.parse_args()
 
     codex = load_codex()
@@ -524,6 +639,13 @@ def main() -> int:
 
     # Gather stories
     stories_with_dates = list(iter_story_sources(include_archives=bool(args.include_archives)))
+    if args.story_title:
+        want = args.story_title.casefold().strip()
+        stories_with_dates = [
+            (d, s)
+            for d, s in stories_with_dates
+            if want in ((s.get("title") or "").casefold())
+        ]
 
     # For skipping story titles:
     all_titles = {norm_key((s.get("title") or "")) for _, s in stories_with_dates if (s.get("title") or "").strip()}
@@ -531,11 +653,55 @@ def main() -> int:
     additions: List[Tuple[str, dict]] = []
 
     for _, s in stories_with_dates:
-        # Only intervene for stories that currently have zero place matches.
+        # Default behavior: only intervene for stories that currently have zero place matches.
+        # Can be disabled for targeted fixes (e.g., missing events/lore/factions).
         blob = ((s.get("title") or "") + "\n" + (s.get("text") or "")).lower()
-        has_place_hit = any((pn and pn in blob) for pn in existing_place_names)
-        if has_place_hit:
-            continue
+        if not args.disable_place_gate:
+            has_place_hit = any((pn and pn in blob) for pn in existing_place_names)
+            if has_place_hit:
+                continue
+
+        # Add kinship refs like "Yareth's brother" as lightweight character placeholders.
+        for m in KINSHIP_RE.finditer(s.get("text") or ""):
+            who = (m.group(1) or "").strip()
+            rel = (m.group(2) or "").strip().lower()
+            if not who or not rel:
+                continue
+            label = f"{who}'s {rel}"
+            ck = norm_key(label)
+            if ck and ck not in existing_keys:
+                cat, entry = ("characters", {
+                    "name": label,
+                    "tagline": "",
+                    "role": "Unknown",
+                    "status": "unknown",
+                    "travel_scope": "unknown",
+                    "home_place": "",
+                    "home_region": "",
+                    "home_realm": "",
+                    "status_history": [],
+                    "world": "The Known World",
+                    "bio": "",
+                    "traits": [],
+                    "notes": "",
+                })
+                apps = appearances_for(entry["name"], stories_with_dates)
+                if apps:
+                    entry["first_story"] = apps[0]["title"]
+                    entry["first_date"] = apps[0]["date"]
+                    entry["story_appearances"] = apps
+                    entry["appearances"] = max(1, len(apps))
+                else:
+                    entry["first_story"] = ""
+                    entry["first_date"] = (load_json(OUTPUT_FILE).get("date") if os.path.exists(OUTPUT_FILE) else "unknown")
+                    entry["story_appearances"] = []
+                    entry["appearances"] = 1
+                additions.append((cat, entry))
+                existing_keys.add(ck)
+                if len(additions) >= int(args.max_add):
+                    break
+        if len(additions) >= int(args.max_add):
+            break
 
         for cand in extract_candidates_from_story(s):
             ck = norm_key(cand)

@@ -604,6 +604,14 @@ function buildCodexEntityIndex(data) {
       if (!key) return;
       addToIndex(key, type, obj);
 
+      // Explicit aliases from the data model.
+      if (obj && Array.isArray(obj.aliases)) {
+        obj.aliases.forEach(a => {
+          const ak = normalizeEntityKey(a);
+          if (ak && ak !== key) addToIndex(ak, type, obj);
+        });
+      }
+
       // Alias without trailing parenthetical qualifiers.
       // Example: "Sunken Marches (as Region)" -> "Sunken Marches"
       const base = stripTrailingParenthetical(nm);

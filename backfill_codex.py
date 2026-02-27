@@ -208,6 +208,8 @@ Hard requirement:
 - For every candidate above that is truly a named entity in the story text (person/place/title/institution/event/ritual/object/creature), ensure it appears in at least one output category.
 - Do NOT omit one-off names just because they appear only once.
 - Do NOT drop or simplify punctuation/diacritics in names (keep apostrophes, hyphens, accents).
+- Do NOT create duplicate entities for shortened references: if a character is "Kael the Nameless" and the story also says "Kael", output ONE character entry with the most complete name and list the shorter forms in "aliases".
+- If a story mentions a named language/dialect/script (e.g. "Old Tongue"), include it under "lore" with category "language".
 
 Respond with ONLY valid JSON in this exact structure (use empty arrays if nothing new was found):
 {{
@@ -215,6 +217,7 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
     {{
       "id": "snake_case_id",
       "name": "Full Name",
+            "aliases": ["Short form", "Epithetless form"],
       "tagline": "Three punchy evocative words. (e.g. Cursed. Reckless. Hunted.)",
       "role": "Role (e.g. Thief, Warlord, Sorceress)",
       "world": "The Known World",
@@ -393,6 +396,76 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
 def merge_into_codex(codex, new_entities, stories_by_title, date_key):
     """Merge extracted entities into the codex, building story_appearances."""
 
+    def _strip_trailing_parenthetical(name: str) -> str:
+        if not name:
+            return ""
+        return re.sub(r"\s*\([^)]*\)\s*$", "", str(name)).strip()
+
+    def _norm_key(name: str) -> str:
+        if not name:
+            return ""
+        s = str(name).strip().replace("’", "'")
+        s = _strip_trailing_parenthetical(s)
+        s = re.sub(r"\s+", " ", s)
+        return s.casefold()
+
+    def _alias_keys_for_character(name: str):
+        key = _norm_key(name)
+        out = set([key]) if key else set()
+        if not key:
+            return out
+        if key.startswith("the "):
+            out.add(key[4:].strip())
+        the_idx = key.find(" the ")
+        if the_idx > 2:
+            out.add(key[:the_idx].strip())
+        comma_idx = key.find(",")
+        if comma_idx > 2:
+            out.add(key[:comma_idx].strip())
+        base = _norm_key(_strip_trailing_parenthetical(name))
+        if base and base != key:
+            out.add(base)
+        return {x for x in out if x and len(x) >= 2}
+
+    def _ensure_alias_list(obj: dict):
+        aliases = obj.get("aliases")
+        if aliases is None:
+            return
+        if not isinstance(aliases, list):
+            obj["aliases"] = []
+
+    def _merge_aliases(target: dict, incoming_aliases):
+        if not isinstance(incoming_aliases, list):
+            return
+        cur = target.get("aliases")
+        if not isinstance(cur, list):
+            cur = []
+        seen = {str(a).strip() for a in cur if str(a).strip()}
+        for a in incoming_aliases:
+            a = (str(a).strip() if a is not None else "")
+            if a and a not in seen and a != target.get("name"):
+                cur.append(a)
+                seen.add(a)
+        if cur:
+            target["aliases"] = cur
+
+    def _merge_story_appearances(target: dict, story_appearances: list):
+        prior = target.get("story_appearances")
+        if not isinstance(prior, list):
+            prior = []
+        seen = {(p.get("date"), p.get("title")) for p in prior if isinstance(p, dict)}
+        new_ones = []
+        for a in story_appearances or []:
+            if not isinstance(a, dict):
+                continue
+            key = (a.get("date"), a.get("title"))
+            if key not in seen:
+                new_ones.append(a)
+                seen.add(key)
+        if new_ones:
+            target["story_appearances"] = prior + new_ones
+            target["appearances"] = max(int(target.get("appearances") or 0), 1) + len(new_ones)
+
     def ensure_min_appearance(story_appearances, first_story_title, first_date):
         if story_appearances and isinstance(story_appearances, list) and len(story_appearances) > 0:
             return story_appearances
@@ -429,17 +502,66 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
         return matches
 
     # ── Characters ───────────────────────────────────────────────────────
-    existing_chars = {c["name"].lower(): c for c in codex.get("characters", [])}
+    existing_chars_list = codex.get("characters", [])
+    if not isinstance(existing_chars_list, list):
+        existing_chars_list = []
+        codex["characters"] = existing_chars_list
+
+    # Index by canonical keys and alias keys.
+    existing_chars = {}
+    first_token_buckets = {}
+    for ch in existing_chars_list:
+        if not isinstance(ch, dict):
+            continue
+        nm = (ch.get("name") or "").strip()
+        if not nm:
+            continue
+        _ensure_alias_list(ch)
+        for k in _alias_keys_for_character(nm):
+            existing_chars.setdefault(k, ch)
+        if isinstance(ch.get("aliases"), list):
+            for a in ch.get("aliases"):
+                ak = _norm_key(a)
+                if ak:
+                    existing_chars.setdefault(ak, ch)
+        tok = _norm_key(nm).split(" ")[0] if _norm_key(nm) else ""
+        if tok:
+            first_token_buckets.setdefault(tok, []).append(ch)
+
     for c in new_entities.get("characters", []):
-        name = c.get("name", "Unknown")
-        name_low = name.lower()
+        name = (c.get("name") or "Unknown").strip()
+        name_key = _norm_key(name)
         first_story_title = c.get("first_story", "")
         first_date = find_story_date(first_story_title)
         story_appearances = ensure_min_appearance(stories_for_entity(name), first_story_title, first_date)
 
-        if name_low not in existing_chars:
-            existing_chars[name_low] = {
+        incoming_aliases = c.get("aliases")
+        target = existing_chars.get(name_key) if name_key else None
+        if target is None and isinstance(incoming_aliases, list):
+            for a in incoming_aliases:
+                ak = _norm_key(a)
+                if ak and ak in existing_chars:
+                    target = existing_chars[ak]
+                    break
+
+        # Epithetless match
+        if target is None and name_key:
+            the_idx = name_key.find(" the ")
+            if the_idx > 2:
+                base = name_key[:the_idx].strip()
+                target = existing_chars.get(base)
+
+        # Single token -> unambiguous multi-word mapping
+        if target is None and name_key and " " not in name_key:
+            bucket = first_token_buckets.get(name_key) or []
+            multi = [x for x in bucket if isinstance(x.get("name"), str) and len(x.get("name").split()) >= 2]
+            if len(multi) == 1:
+                target = multi[0]
+
+        if target is None:
+            new_obj = {
                 "name":              name,
+                "aliases":           incoming_aliases if isinstance(incoming_aliases, list) else [],
                 "tagline":           c.get("tagline", ""),
                 "role":              c.get("role", "Unknown"),
                 "status":            c.get("status", "Unknown"),
@@ -451,7 +573,43 @@ def merge_into_codex(codex, new_entities, stories_by_title, date_key):
                 "appearances":       len(story_appearances) or 1,
                 "story_appearances": story_appearances,
             }
-    codex["characters"] = list(existing_chars.values())
+            existing_chars_list.append(new_obj)
+            for k in _alias_keys_for_character(new_obj.get("name")):
+                existing_chars.setdefault(k, new_obj)
+            for a in (new_obj.get("aliases") or []):
+                ak = _norm_key(a)
+                if ak:
+                    existing_chars.setdefault(ak, new_obj)
+            tok = _norm_key(new_obj.get("name")).split(" ")[0] if _norm_key(new_obj.get("name")) else ""
+            if tok:
+                first_token_buckets.setdefault(tok, []).append(new_obj)
+        else:
+            _ensure_alias_list(target)
+
+            # Prefer the more complete name as canonical.
+            ex_name = (target.get("name") or "").strip()
+            exk = _norm_key(ex_name)
+            if exk and name_key and exk != name_key:
+                if (" the " in name_key or "," in name_key) and (" the " not in exk and "," not in exk) and name_key.split(" ")[0] == exk.split(" ")[0]:
+                    _merge_aliases(target, [ex_name])
+                    target["name"] = name
+                else:
+                    _merge_aliases(target, [name])
+
+            _merge_aliases(target, incoming_aliases)
+
+            # Fill missing fields lightly.
+            for k in ["tagline", "role", "status", "world", "bio", "traits"]:
+                v = c.get(k)
+                if v is None:
+                    continue
+                if k not in target or target.get(k) in {"", [], None, "unknown", "Unknown"}:
+                    target[k] = v
+
+            # Merge appearances and story appearances.
+            _merge_story_appearances(target, story_appearances)
+
+    codex["characters"] = existing_chars_list
 
     # ── Places ───────────────────────────────────────────────────────────
     existing_places = {p["name"].lower(): p for p in codex.get("places", [])}

@@ -1186,6 +1186,8 @@ Hard requirement:
 - For every candidate above that is truly a named entity in the story text (person/place/realm/title/institution/event/ritual/spell/object/creature), ensure it appears in at least one output category.
 - Do NOT omit one-off names just because they appear only once.
 - Do NOT drop or simplify punctuation/diacritics in names (keep apostrophes, hyphens, accents).
+- Do NOT create duplicate entities for shortened references: if a character is "Kael the Nameless" and the story also says "Kael", output ONE character entry with the most complete name and list the shorter forms in "aliases".
+- If a story mentions a named language/dialect/script (e.g. "Old Tongue"), include it under "lore" with category "language".
 
 Respond with ONLY valid JSON in this exact structure (use empty arrays if nothing new was found):
 {{
@@ -1193,6 +1195,7 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
     {{
       "id": "snake_case_id",
       "name": "Full Name",
+            "aliases": ["Short form", "Epithetless form"],
       "tagline": "Three punchy evocative words. (e.g. Cursed. Reckless. Hunted.)",
       "role": "Role (e.g. Thief, Warlord, Sorceress)",
       "world": "known_world",
@@ -1450,6 +1453,92 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
 }}"""
 
 # ── Lore merging ────────────────────────────────────────────────────────
+def _strip_trailing_parenthetical(name: str) -> str:
+    if not name:
+        return ""
+    # Strip one trailing parenthetical qualifier: "Name (as Region)" -> "Name"
+    return re.sub(r"\s*\([^)]*\)\s*$", "", str(name)).strip()
+
+
+def _norm_entity_key(name: str) -> str:
+    if not name:
+        return ""
+    s = str(name).strip().replace("’", "'")
+    s = _strip_trailing_parenthetical(s)
+    s = re.sub(r"\s+", " ", s)
+    return s.casefold()
+
+
+def _character_alias_keys(name: str) -> set:
+    """Return a set of safe alias keys derived from a canonical character name."""
+    key = _norm_entity_key(name)
+    out = set([key]) if key else set()
+    if not key:
+        return out
+
+    if key.startswith("the "):
+        out.add(key[4:].strip())
+
+    the_idx = key.find(" the ")
+    if the_idx > 2:
+        out.add(key[:the_idx].strip())
+
+    comma_idx = key.find(",")
+    if comma_idx > 2:
+        out.add(key[:comma_idx].strip())
+
+    base = _norm_entity_key(_strip_trailing_parenthetical(name))
+    if base and base != key:
+        out.add(base)
+    return {x for x in out if x and len(x) >= 2}
+
+
+def _resolve_character_target(existing_chars: list, incoming_name: str):
+    """Resolve an incoming character name to an existing canonical entry when safe.
+
+    Prefers matching by exact name, explicit aliases, or epithet/"the" reduction.
+    Also supports safe single-token->full-name mapping when unambiguous.
+    """
+    inc_key = _norm_entity_key(incoming_name)
+    if not inc_key:
+        return None
+
+    by_key = {}
+    first_token_buckets = {}
+    for c in existing_chars or []:
+        if not isinstance(c, dict):
+            continue
+        nm = (c.get("name") or "").strip()
+        if not nm:
+            continue
+        for k in _character_alias_keys(nm):
+            by_key.setdefault(k, c)
+
+        aliases = c.get("aliases")
+        if isinstance(aliases, list):
+            for a in aliases:
+                ak = _norm_entity_key(a)
+                if ak:
+                    by_key.setdefault(ak, c)
+
+        tok = _norm_entity_key(nm).split(" ")[0] if _norm_entity_key(nm) else ""
+        if tok:
+            first_token_buckets.setdefault(tok, []).append(c)
+
+    if inc_key in by_key:
+        return by_key[inc_key]
+
+    # If incoming is a single token, map to the ONLY existing multi-word name that shares it.
+    # This avoids creating a second entry for "Kael" when "Kael the Nameless" already exists.
+    if " " not in inc_key:
+        bucket = first_token_buckets.get(inc_key) or []
+        multi = [c for c in bucket if isinstance(c.get("name"), str) and len(c.get("name").split()) >= 2]
+        if len(multi) == 1:
+            return multi[0]
+
+    return None
+
+
 def merge_lore(existing_lore, new_lore, date_key):
     """Merge newly extracted lore into the existing lore, skipping duplicates by name."""
     for category in [
@@ -1474,22 +1563,83 @@ def merge_lore(existing_lore, new_lore, date_key):
         "regions",
         "substances",
     ]:
-        existing_names = {
-            item["name"].lower() for item in existing_lore.get(category, [])
-        }
-        for item in new_lore.get(category, []):
-            if item.get("name", "").lower() not in existing_names:
-                # Tag with first appearance date
-                item["first_date"] = date_key
-                item["appearances"] = 1
-                existing_lore.setdefault(category, []).append(item)
-                existing_names.add(item["name"].lower())
-            else:
-                # Increment appearance count for existing entries
-                for existing_item in existing_lore.get(category, []):
-                    if existing_item["name"].lower() == item["name"].lower():
-                        existing_item["appearances"] = existing_item.get("appearances", 1) + 1
-                        break
+        if category == "characters":
+            existing_list = existing_lore.get("characters") or []
+            if not isinstance(existing_list, list):
+                existing_list = []
+                existing_lore["characters"] = existing_list
+
+            for item in new_lore.get("characters", []) or []:
+                if not isinstance(item, dict):
+                    continue
+                incoming_name = (item.get("name") or "").strip()
+                if not incoming_name:
+                    continue
+
+                target = _resolve_character_target(existing_list, incoming_name)
+                if target is None:
+                    # Tag with first appearance date
+                    item["first_date"] = date_key
+                    item["appearances"] = 1
+                    # Normalize aliases array if present
+                    if "aliases" in item and not isinstance(item.get("aliases"), list):
+                        item["aliases"] = []
+                    existing_list.append(item)
+                    continue
+
+                # Merge into existing canonical character.
+                target["appearances"] = target.get("appearances", 1) + 1
+
+                # Prefer the more complete name as canonical.
+                existing_name = (target.get("name") or "").strip()
+                if existing_name and incoming_name:
+                    exk = _norm_entity_key(existing_name)
+                    ink = _norm_entity_key(incoming_name)
+                    if exk and ink and exk != ink:
+                        # Upgrade if incoming looks like a more complete epithet/title form.
+                        if (" the " in ink or "," in ink) and (" the " not in exk and "," not in exk) and ink.split(" ")[0] == exk.split(" ")[0]:
+                            # Preserve old as alias
+                            aliases = target.get("aliases")
+                            if not isinstance(aliases, list):
+                                aliases = []
+                            if existing_name not in aliases:
+                                aliases.append(existing_name)
+                            target["aliases"] = aliases
+                            target["name"] = incoming_name
+
+                        # Otherwise keep canonical name, but record incoming as alias.
+                        aliases = target.get("aliases")
+                        if not isinstance(aliases, list):
+                            aliases = []
+                        if incoming_name != target.get("name") and incoming_name not in aliases:
+                            aliases.append(incoming_name)
+                        target["aliases"] = aliases
+
+                # Fill any missing fields without overwriting established canon.
+                for k, v in item.items():
+                    if k in {"name", "first_date", "appearances"}:
+                        continue
+                    if v is None:
+                        continue
+                    if k not in target or target.get(k) in {"", [], {}, None, "unknown"}:
+                        target[k] = v
+        else:
+            existing_names = {
+                item["name"].lower() for item in existing_lore.get(category, [])
+            }
+            for item in new_lore.get(category, []):
+                if item.get("name", "").lower() not in existing_names:
+                    # Tag with first appearance date
+                    item["first_date"] = date_key
+                    item["appearances"] = 1
+                    existing_lore.setdefault(category, []).append(item)
+                    existing_names.add(item["name"].lower())
+                else:
+                    # Increment appearance count for existing entries
+                    for existing_item in existing_lore.get(category, []):
+                        if existing_item["name"].lower() == item["name"].lower():
+                            existing_item["appearances"] = existing_item.get("appearances", 1) + 1
+                            break
     ensure_place_parent_chain(existing_lore)
     enforce_continent_limit(existing_lore)
     return existing_lore
@@ -1838,15 +1988,87 @@ def update_codex_file(lore, date_key, stories=None):
                 existing[name_low] = base
         codex[cat_key] = list(existing.values())
 
+    def _ensure_alias_list(obj: dict):
+        aliases = obj.get("aliases")
+        if aliases is None:
+            return
+        if not isinstance(aliases, list):
+            obj["aliases"] = []
+
+    def _merge_aliases(target: dict, incoming_aliases):
+        if incoming_aliases is None:
+            return
+        if not isinstance(incoming_aliases, list):
+            return
+        cur = target.get("aliases")
+        if not isinstance(cur, list):
+            cur = []
+        seen = {str(a).strip() for a in cur if str(a).strip()}
+        for a in incoming_aliases:
+            a = (str(a).strip() if a is not None else "")
+            if a and a not in seen and a != target.get("name"):
+                cur.append(a)
+                seen.add(a)
+        if cur:
+            target["aliases"] = cur
+
+    def _find_existing_character(existing_map: dict, incoming_name: str, incoming_aliases=None):
+        key = _norm_entity_key(incoming_name)
+        if not key:
+            return None
+        if key in existing_map:
+            return existing_map[key]
+        # Try explicit aliases provided by lore.
+        if isinstance(incoming_aliases, list):
+            for a in incoming_aliases:
+                ak = _norm_entity_key(a)
+                if ak and ak in existing_map:
+                    return existing_map[ak]
+        # Try epithetless alias ("X the Y" -> "X").
+        the_idx = key.find(" the ")
+        if the_idx > 2:
+            base = key[:the_idx].strip()
+            if base in existing_map:
+                return existing_map[base]
+        # Single-token -> match exactly one multi-word canonical name.
+        if " " not in key:
+            candidates = []
+            for k, obj in existing_map.items():
+                if k.split(" ")[0] == key and " " in k:
+                    candidates.append(obj)
+            if len({id(x) for x in candidates}) == 1:
+                return candidates[0]
+        return None
+
     # ── Merge characters ─────────────────────────────────────────────────
-    existing_chars = {c["name"].lower(): c for c in codex.get("characters", [])}
+    existing_chars_list = codex.get("characters", [])
+    if not isinstance(existing_chars_list, list):
+        existing_chars_list = []
+    # Build a key->obj map including canonical keys and alias keys.
+    existing_chars = {}
+    for obj in existing_chars_list:
+        if not isinstance(obj, dict):
+            continue
+        nm = (obj.get("name") or "").strip()
+        if not nm:
+            continue
+        _ensure_alias_list(obj)
+        for k in _character_alias_keys(nm):
+            existing_chars.setdefault(k, obj)
+        if isinstance(obj.get("aliases"), list):
+            for a in obj.get("aliases"):
+                ak = _norm_entity_key(a)
+                if ak:
+                    existing_chars.setdefault(ak, obj)
+
     for c in lore.get("characters", []):
-        name = c.get("name", "Unknown")
-        name_low = name.lower()
+        name = (c.get("name") or "Unknown").strip()
+        aliases_in = c.get("aliases") if isinstance(c, dict) else None
         world = resolve_world(c.get("world", ""))
         today_appearances = stories_for(name)
-        if name_low in existing_chars:
-            ex = existing_chars[name_low]
+
+        ex = _find_existing_character(existing_chars, name, aliases_in)
+        if ex is not None:
             ex["role"]   = c.get("role",   ex.get("role",   "Unknown"))
             ex["status"] = c.get("status", ex.get("status", "Unknown"))
             if c.get("travel_scope"):
@@ -1864,6 +2086,20 @@ def update_codex_file(lore, date_key, stories=None):
             ex["traits"] = c.get("traits", ex.get("traits", []))
             if c.get("tagline") and not ex.get("tagline"):
                 ex["tagline"] = c["tagline"]
+
+            _merge_aliases(ex, aliases_in)
+
+            # Prefer the more complete name as canonical.
+            ex_name = (ex.get("name") or "").strip()
+            exk = _norm_entity_key(ex_name)
+            ink = _norm_entity_key(name)
+            if exk and ink and exk != ink:
+                if (" the " in ink or "," in ink) and (" the " not in exk and "," not in exk) and ink.split(" ")[0] == exk.split(" ")[0]:
+                    _merge_aliases(ex, [ex_name])
+                    ex["name"] = name
+                else:
+                    _merge_aliases(ex, [name])
+
             prior = ex.get("story_appearances", [])
             new_ones = [a for a in today_appearances
                         if not any(p["date"] == a["date"] and p["title"] == a["title"] for p in prior)]
@@ -1872,8 +2108,9 @@ def update_codex_file(lore, date_key, stories=None):
                 ex["story_appearances"] = prior + new_ones
         else:
             first_title = today_appearances[0]["title"] if today_appearances else ""
-            existing_chars[name_low] = {
+            new_obj = {
                 "name":              name,
+                "aliases":           c.get("aliases", []) if isinstance(c.get("aliases"), list) else [],
                 "tagline":           c.get("tagline", ""),
                 "role":              c.get("role", "Unknown"),
                 "status":            c.get("status", "Unknown"),
@@ -1890,7 +2127,28 @@ def update_codex_file(lore, date_key, stories=None):
                 "appearances":       len(today_appearances) or 1,
                 "story_appearances": today_appearances,
             }
-    codex["characters"] = list(existing_chars.values())
+
+            _ensure_alias_list(new_obj)
+            codex.setdefault("characters", []).append(new_obj)
+            # Update index maps for subsequent merges in this run.
+            for k in _character_alias_keys(new_obj.get("name")):
+                existing_chars.setdefault(k, new_obj)
+            for a in (new_obj.get("aliases") or []):
+                ak = _norm_entity_key(a)
+                if ak:
+                    existing_chars.setdefault(ak, new_obj)
+
+    # De-dupe obvious alias duplicates (safe case: "X" vs "X the Y")
+    uniq = []
+    seen_ids = set()
+    for obj in codex.get("characters", []) or []:
+        if not isinstance(obj, dict):
+            continue
+        if id(obj) in seen_ids:
+            continue
+        uniq.append(obj)
+        seen_ids.add(id(obj))
+    codex["characters"] = uniq
 
     # ── Geo hierarchy categories ─────────────────────────────────────────
     merge_named_category("hemispheres", ["function", "status", "notes"]) 
