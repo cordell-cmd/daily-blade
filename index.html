@@ -541,6 +541,7 @@ function getDevGitHubToken() {
 function setDevGitHubToken(token) {
   try {
     window.localStorage && window.localStorage.setItem('dailyBladeGhToken', String(token || '').trim());
+    window.localStorage && window.localStorage.setItem('dailyBladeGhTokenSetAt', String(Date.now()));
   } catch (e) {
     // ignore
   }
@@ -549,8 +550,22 @@ function setDevGitHubToken(token) {
 function clearDevGitHubToken() {
   try {
     window.localStorage && window.localStorage.removeItem('dailyBladeGhToken');
+    window.localStorage && window.localStorage.removeItem('dailyBladeGhTokenSetAt');
   } catch (e) {
     // ignore
+  }
+}
+
+function devTokenIsStale(maxAgeDays = 14) {
+  try {
+    const raw = String(window.localStorage && window.localStorage.getItem('dailyBladeGhTokenSetAt') || '').trim();
+    const setAt = raw ? Number(raw) : 0;
+    if (!setAt || !Number.isFinite(setAt)) return false;
+    const ageMs = Date.now() - setAt;
+    const maxMs = maxAgeDays * 24 * 60 * 60 * 1000;
+    return ageMs > maxMs;
+  } catch (e) {
+    return false;
   }
 }
 
@@ -584,11 +599,24 @@ async function githubApiRequest(path, opts = {}) {
     } catch (e) {
       // ignore
     }
-    throw new Error(`GitHub API ${res.status}${extra}`);
+    const err = new Error(`GitHub API ${res.status}${extra}`);
+    err.status = res.status;
+    throw err;
   }
 
   if (res.status === 204) return null;
   return await res.json();
+}
+
+function isGitHubAuthError(err) {
+  const status = err && typeof err.status === 'number' ? err.status : null;
+  if (status === 401 || status === 403) return true;
+  const msg = err && err.message ? String(err.message).toLowerCase() : '';
+  if (!msg) return false;
+  return msg.includes('gitHub api 401'.toLowerCase()) ||
+    msg.includes('gitHub api 403'.toLowerCase()) ||
+    msg.includes('bad credentials') ||
+    msg.includes('requires authentication');
 }
 
 function invalidateCodexCache() {
@@ -652,24 +680,45 @@ async function automatedAuditStory(dateKey, title, ui = {}) {
     if (ui && ui.statusEl) ui.statusEl.textContent = String(msg || '');
   };
 
-  // Token bootstrap (developer-only).
-  if (!getDevGitHubToken()) {
-    const hint = 'Paste a GitHub fine-grained token with permission to run Actions workflows (and read Actions). This stays only in your browser (localStorage).';
+  // Token bootstrap (developer-only). Auto-clear if stale/invalid.
+  if (devTokenIsStale(14)) {
+    clearDevGitHubToken();
+  }
+
+  const ensureToken = async () => {
+    if (getDevGitHubToken()) return true;
+    const hint = 'Paste a GitHub fine-grained token with permission to run Actions workflows (and read Actions). Saved locally in your browser for convenience.';
     const tok = window.prompt(`Developer token required.\n\n${hint}\n\nToken:`, '');
-    if (!tok) {
-      setStatus('Audit canceled (no token).');
-      return;
-    }
+    if (!tok) return false;
     setDevGitHubToken(tok);
+    return true;
+  };
+
+  if (!(await ensureToken())) {
+    setStatus('Audit canceled (no token).');
+    return;
   }
 
   setStatus('Queuing audit…');
   let dispatch = null;
-  try {
-    dispatch = await dispatchAuditWorkflow(d, t);
-  } catch (e) {
-    setStatus('Audit failed to start.');
-    throw e;
+  let triedReset = false;
+  while (!dispatch) {
+    try {
+      dispatch = await dispatchAuditWorkflow(d, t);
+    } catch (e) {
+      if (!triedReset && isGitHubAuthError(e)) {
+        triedReset = true;
+        clearDevGitHubToken();
+        setStatus('Token rejected. Re-entering…');
+        if (!(await ensureToken())) {
+          setStatus('Audit canceled (no token).');
+          return;
+        }
+        continue;
+      }
+      setStatus('Audit failed to start.');
+      throw e;
+    }
   }
 
   setStatus('Audit running…');
