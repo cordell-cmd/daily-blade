@@ -208,7 +208,30 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 
 /* ── Geography (place cards) ───────────────────────────────────── */
 .codex-geo-details { margin-top: .55rem; }
-.codex-geo-details summary { cursor: pointer; font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(201,146,42,.65); }
+.codex-geo-details summary {
+  cursor: pointer;
+  font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif;
+  font-size: .62rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(201,146,42,.65);
+  list-style: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+}
+.codex-geo-details summary::-webkit-details-marker { display: none; }
+.codex-geo-details summary::marker { content: ''; }
+.codex-geo-details summary::before {
+  content: '▸';
+  display: inline-block;
+  color: currentColor;
+  font-size: .78rem;
+  line-height: 1;
+  transform-origin: 50% 50%;
+  transition: transform .15s ease;
+}
+.codex-geo-details[open] summary::before { transform: rotate(90deg); }
 .codex-geo-details summary:hover { color: var(--gold); }
 .codex-geo-chain { margin-top: .55rem; font-size: .78rem; color: var(--muted); font-style: italic; line-height: 1.5; }
 .codex-geo-chain strong { font-style: normal; color: rgba(226,208,168,.75); font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .35rem; }
