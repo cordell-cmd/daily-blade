@@ -280,6 +280,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .story-modal-actions .btn { padding: .35rem .8rem; }
 .story-modal-actions .btn-icon { padding: .32rem .6rem; letter-spacing: .12em; }
 .story-modal-actions .story-modal-count { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(201,146,42,.65); margin-left: auto; }
+.story-modal-actions .story-modal-status { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(226,208,168,.55); }
 .story-modal-text { font-size: .92rem; color: var(--aged); line-height: 1.75; text-align: justify; hyphens: auto; margin-top: .75rem; white-space: pre-wrap; }
 .story-modal-text::first-letter { float: left; font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 3.1rem; line-height: .75; padding-right: .12em; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.7); }
 
@@ -471,6 +472,8 @@ const STORIES_URL    = './stories.json';
 const ARCHIVE_IDX_URL = './archive/index.json';
 const ARCHIVE_URL    = (date) => `./archive/${date}.json`;
 const CODEX_URL      = './codex.json';
+const DEFAULT_GITHUB_REPO = { owner: 'cordell-cmd', repo: 'daily-blade' };
+const AUDIT_WORKFLOW_FILE = 'audit.yml';
 
 function isDeveloperMode() {
   const host = String(window.location.hostname || '').toLowerCase();
@@ -505,6 +508,10 @@ function auditWorkflowUrl() {
   return `https://github.com/${info.owner}/${info.repo}/actions/workflows/audit.yml`;
 }
 
+function getGitHubRepoInfo() {
+  return inferGitHubRepoFromPages() || DEFAULT_GITHUB_REPO;
+}
+
 async function copyToClipboard(text) {
   const t = String(text || '');
   try {
@@ -523,21 +530,174 @@ async function copyToClipboard(text) {
   return false;
 }
 
-async function launchAuditWorkflow(dateKey, title) {
+function getDevGitHubToken() {
+  try {
+    return String(window.localStorage && window.localStorage.getItem('dailyBladeGhToken') || '').trim();
+  } catch (e) {
+    return '';
+  }
+}
+
+function setDevGitHubToken(token) {
+  try {
+    window.localStorage && window.localStorage.setItem('dailyBladeGhToken', String(token || '').trim());
+  } catch (e) {
+    // ignore
+  }
+}
+
+function clearDevGitHubToken() {
+  try {
+    window.localStorage && window.localStorage.removeItem('dailyBladeGhToken');
+  } catch (e) {
+    // ignore
+  }
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function githubApiRequest(path, opts = {}) {
+  const token = getDevGitHubToken();
+  if (!token) throw new Error('Missing developer GitHub token');
+
+  const url = `https://api.github.com${path}`;
+  const headers = {
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28',
+    'Authorization': `Bearer ${token}`,
+    ...(opts.headers || {})
+  };
+
+  const res = await fetch(url, {
+    method: opts.method || 'GET',
+    headers,
+    body: (opts.body !== undefined) ? JSON.stringify(opts.body) : undefined,
+  });
+
+  if (!res.ok) {
+    let extra = '';
+    try {
+      const j = await res.json();
+      if (j && j.message) extra = `: ${j.message}`;
+    } catch (e) {
+      // ignore
+    }
+    throw new Error(`GitHub API ${res.status}${extra}`);
+  }
+
+  if (res.status === 204) return null;
+  return await res.json();
+}
+
+function invalidateCodexCache() {
+  CODEX_DATA_CACHE = null;
+  codexDataLoaded = false;
+  CODEX_ENTITY_INDEX = new Map();
+  CODEX_ENTITY_REGEX = null;
+  CODEX_DATA_PROMISE = null;
+}
+
+async function dispatchAuditWorkflow(dateKey, title) {
+  const d = String(dateKey || '').trim();
+  const t = String(title || '').trim();
+  if (!d || !t) throw new Error('Missing date/title');
+
+  const { owner, repo } = getGitHubRepoInfo();
+  const startedAt = Date.now();
+  await githubApiRequest(`/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/actions/workflows/${encodeURIComponent(AUDIT_WORKFLOW_FILE)}/dispatches`, {
+    method: 'POST',
+    body: { ref: 'main', inputs: { date: d, title: t } },
+  });
+  return { owner, repo, startedAt };
+}
+
+async function pollLatestAuditRun(owner, repo, startedAtMs, opts = {}) {
+  const timeoutMs = Number.isFinite(opts.timeoutMs) ? opts.timeoutMs : 180000;
+  const intervalMs = Number.isFinite(opts.intervalMs) ? opts.intervalMs : 3500;
+  const deadline = Date.now() + timeoutMs;
+
+  while (Date.now() < deadline) {
+    const data = await githubApiRequest(`/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/actions/workflows/${encodeURIComponent(AUDIT_WORKFLOW_FILE)}/runs?event=workflow_dispatch&per_page=10`, { method: 'GET' });
+    const runs = (data && Array.isArray(data.workflow_runs)) ? data.workflow_runs : [];
+
+    const run = runs.find(r => {
+      const created = r && r.created_at ? Date.parse(r.created_at) : 0;
+      // Allow a bit of clock skew.
+      return created && created >= (startedAtMs - 30000);
+    }) || runs[0];
+
+    if (run) {
+      const status = String(run.status || '').toLowerCase();
+      const conclusion = String(run.conclusion || '').toLowerCase();
+      if (status === 'completed') {
+        return { run, status, conclusion };
+      }
+      return { run, status, conclusion: '' };
+    }
+
+    await sleep(intervalMs);
+  }
+
+  return { run: null, status: 'timeout', conclusion: '' };
+}
+
+async function automatedAuditStory(dateKey, title, ui = {}) {
   const d = String(dateKey || '').trim();
   const t = String(title || '').trim();
   if (!d || !t) return;
 
-  const inputs = `date: ${d}\ntitle: ${t}`;
-  const url = auditWorkflowUrl();
+  const setStatus = (msg) => {
+    if (ui && ui.statusEl) ui.statusEl.textContent = String(msg || '');
+  };
 
-  await copyToClipboard(inputs);
+  // Token bootstrap (developer-only).
+  if (!getDevGitHubToken()) {
+    const hint = 'Paste a GitHub fine-grained token with permission to run Actions workflows (and read Actions). This stays only in your browser (localStorage).';
+    const tok = window.prompt(`Developer token required.\n\n${hint}\n\nToken:`, '');
+    if (!tok) {
+      setStatus('Audit canceled (no token).');
+      return;
+    }
+    setDevGitHubToken(tok);
+  }
 
-  if (url) {
-    window.open(url, '_blank', 'noopener');
-    alert('Audit inputs copied. In GitHub Actions, click “Run workflow” and paste the date/title.');
-  } else {
-    alert('Audit inputs copied. Open your repo’s Actions → Audit Story workflow, then paste the date/title.');
+  setStatus('Queuing audit…');
+  let dispatch = null;
+  try {
+    dispatch = await dispatchAuditWorkflow(d, t);
+  } catch (e) {
+    setStatus('Audit failed to start.');
+    throw e;
+  }
+
+  setStatus('Audit running…');
+  try {
+    const res = await pollLatestAuditRun(dispatch.owner, dispatch.repo, dispatch.startedAt, { timeoutMs: 180000, intervalMs: 4000 });
+    if (res && res.status === 'completed') {
+      if (res.conclusion === 'success') {
+        setStatus('Audit complete. Refreshing Codex…');
+      } else {
+        setStatus('Audit completed (check result).');
+      }
+    } else if (res && res.status === 'timeout') {
+      setStatus('Audit queued (still running).');
+    }
+  } catch (e) {
+    setStatus('Audit status unavailable.');
+    // Continue; we can still try refreshing later.
+  }
+
+  // Best-effort: refresh codex + badges.
+  try {
+    invalidateCodexCache();
+    await ensureCodexDataLoaded();
+    if (codexLoaded) await loadCodex(true);
+    enhanceStoryEntityBadges();
+    setStatus('Audit applied.');
+  } catch (e) {
+    setStatus('Audit done (refresh page if needed).');
   }
 }
 
@@ -1662,11 +1822,32 @@ async function openStoryModalByAppearance(date, title, opts = {}) {
       const btnAudit = document.createElement('button');
       btnAudit.className = 'btn';
       btnAudit.textContent = 'Audit Story';
-      btnAudit.title = 'Developer-only: run a server-side audit via GitHub Actions';
-      btnAudit.addEventListener('click', () => {
-        launchAuditWorkflow(day.date || d, story.title || t);
+      btnAudit.title = 'Developer-only: run a server-side audit (no browser API keys)';
+      const status = document.createElement('span');
+      status.className = 'story-modal-status';
+      status.textContent = '';
+      btnAudit.addEventListener('click', async () => {
+        btnAudit.disabled = true;
+        status.textContent = 'Starting…';
+        try {
+          await automatedAuditStory(day.date || d, story.title || t, { statusEl: status });
+        } catch (e) {
+          console.error(e);
+          status.textContent = (e && e.message) ? String(e.message) : 'Audit failed.';
+          // If the token is bad, let the dev reset easily.
+          if ((e && e.message && String(e.message).includes('401')) || (e && e.message && String(e.message).toLowerCase().includes('bad credentials'))) {
+            try {
+              if (window.confirm('Your saved GitHub token looks invalid. Clear it now?')) {
+                clearDevGitHubToken();
+              }
+            } catch (_) { /* ignore */ }
+          }
+        } finally {
+          btnAudit.disabled = false;
+        }
       });
       actions.appendChild(btnAudit);
+      actions.appendChild(status);
     }
 
     if (appearances.length > 1) {
