@@ -49,6 +49,15 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 /* ── Controls ─────────────────────────────────────────────────── */
 .controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: .6rem 0 .5rem; margin-bottom: .4rem; }
 .controls-left { font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+.controls-right { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; justify-content: flex-end; }
+
+.codex-organize-label { font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(201,146,42,.65); }
+.codex-organize-select { font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; background: rgba(0,0,0,.15); color: var(--gold); border: 1px solid rgba(201,146,42,.35); padding: .3rem .55rem; border-radius: 2px; outline: none; }
+.codex-organize-select:focus { border-color: rgba(201,146,42,.75); box-shadow: 0 0 0 2px rgba(201,146,42,.12); }
+
+.codex-group-header { grid-column: 1 / -1; border-top: 1px solid rgba(201,146,42,.22); border-bottom: 1px solid rgba(201,146,42,.12); padding: .75rem .2rem .65rem; margin: .4rem 0 -.35rem; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.codex-group-title { font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(226,208,168,.9); }
+.codex-group-count { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(201,146,42,.55); }
 
 /* ── Buttons ──────────────────────────────────────────────────── */
 .btn { font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; border: 1px solid var(--gold); background: transparent; color: var(--gold); padding: .4rem .9rem; border-radius: 2px; cursor: pointer; transition: background .18s, color .18s; white-space: nowrap; }
@@ -98,6 +107,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .codex-card { border-radius: 3px; padding: 1.4rem 1.5rem 1.5rem; position: relative; box-shadow: 0 3px 16px rgba(0,0,0,.45); transition: transform .2s, box-shadow .2s; min-width: 0; overflow-wrap: anywhere; word-break: break-word; }
 .codex-card:hover { transform: translateY(-2px); box-shadow: 0 7px 24px rgba(0,0,0,.6); }
 .codex-card.hidden { display: none; }
+.codex-card.hidden-org { display: none; }
 .codex-type-label { font-family: 'Cinzel', serif; font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(201,146,42,.4); position: absolute; top: .6rem; right: .8rem; }
 .codex-card-name { font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 700; color: var(--parchment); line-height: 1.2; text-shadow: 1px 1px 3px rgba(0,0,0,.5); padding-right: 5.5rem; overflow-wrap: anywhere; word-break: break-word; }
 .codex-card-tagline { font-style: italic; color: var(--gold); font-size: .85rem; letter-spacing: .04em; margin: .3rem 0 .5rem; opacity: .9; }
@@ -318,6 +328,16 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     </div>
     <div class="controls" style="margin-top:.5rem;">
       <span class="controls-left" id="char-count-label">— The Codex of Known Lore —</span>
+      <div class="controls-right" id="codex-organize-controls" style="display:none;">
+        <span class="codex-organize-label">Organize</span>
+        <select class="codex-organize-select" id="codex-organize-mode" aria-label="Organize codex entries">
+          <option value="default">Default</option>
+          <option value="label">By Label</option>
+        </select>
+        <select class="codex-organize-select" id="codex-organize-label" aria-label="Filter codex by label" style="display:none;">
+          <option value="all">All Labels</option>
+        </select>
+      </div>
     </div>
     <div id="char-status-msg" class="char-status">
       <span class="spinner"></span>
@@ -346,6 +366,10 @@ let activeGenre     = 'all';
 let codexLoaded     = false;
 let activeCodexType = 'all';
 
+let activeCodexOrganizeMode = 'default';
+let activeCodexOrganizeLabel = 'all';
+let CODEX_DATA_CACHE = null;
+
 // Cache for day story payloads used by the story modal.
 // key: date string (YYYY-MM-DD), value: { date, stories: [...] }
 const STORY_DAY_CACHE = new Map();
@@ -366,6 +390,212 @@ function escHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function splitMultiLabels(value) {
+  if (!value) return [];
+  const raw = String(value);
+  return raw
+    .split(/\s*(?:\/|\||;|,|&|\band\b)\s*/i)
+    .map(s => s.trim())
+    .filter(Boolean);
+}
+
+function _primaryLabelTokensForEntity(type, obj) {
+  const o = obj || {};
+  const pick = (v, fallback) => {
+    const tokens = splitMultiLabels(v);
+    if (tokens.length) return tokens;
+    if (fallback) return [fallback];
+    return ['Unknown'];
+  };
+
+  if (type === 'characters') return pick(o.role, 'Unknown');
+  if (type === 'places') return pick(o.place_type, 'Location');
+  if (type === 'events') return pick(o.event_type, 'Event');
+  if (type === 'weapons') return pick(o.weapon_type, 'Weapon');
+  if (type === 'artifacts') return pick(o.artifact_type, 'Artifact');
+  if (type === 'factions') return pick(o.alignment, 'Faction');
+  if (type === 'lore') return pick(o.category, 'Lore');
+  if (type === 'flora_fauna') return pick(o.type, 'Flora');
+  if (type === 'magic') return pick(o.type, 'Magic');
+  if (type === 'relics') return pick(o.origin, 'Relic');
+  if (type === 'substances') return pick(o.rarity, 'Substance');
+  if (['hemispheres','continents','subcontinents','realms','provinces','districts','regions'].includes(type)) {
+    return pick(o.climate, type.slice(0,1).toUpperCase() + type.slice(1, -1));
+  }
+  return ['Unknown'];
+}
+
+function stampCodexCardMeta(card, entityType, name, primaryLabelTokens) {
+  const nm = (name || '').trim();
+  card.dataset.entityType = entityType;
+  card.dataset.nameSort = nm.toLowerCase();
+  const tokens = Array.isArray(primaryLabelTokens) ? primaryLabelTokens : splitMultiLabels(primaryLabelTokens);
+  card.dataset.primaryLabels = (tokens && tokens.length ? tokens : ['Unknown']).join('|');
+}
+
+function visibleCodexCards() {
+  return Array.from(document.querySelectorAll('.codex-card'))
+    .filter(c => !c.classList.contains('hidden') && !c.classList.contains('hidden-org'));
+}
+
+function updateCodexCountLabel() {
+  const label = document.getElementById('char-count-label');
+  const visible = visibleCodexCards().length;
+  if (activeCodexType === 'all') {
+    label.textContent = `— ${visible} Entr${visible !== 1 ? 'ies' : 'y'} in the Codex —`;
+    return;
+  }
+  const typeLabel = {
+    characters: 'Characters',
+    places: 'Places',
+    hemispheres: 'Hemispheres',
+    continents: 'Continents',
+    subcontinents: 'Subcontinents',
+    realms: 'Realms',
+    provinces: 'Provinces',
+    districts: 'Districts',
+    regions: 'Regions',
+    events: 'Events',
+    weapons: 'Weapons',
+    artifacts: 'Artifacts',
+    factions: 'Factions',
+    lore: 'Lore',
+    flora_fauna: 'Flora & Fauna',
+    magic: 'Magic',
+    relics: 'Relics',
+    substances: 'Substances',
+  }[activeCodexType] || activeCodexType;
+  label.textContent = `— ${visible} Known ${typeLabel} —`;
+}
+
+function clearCodexGroupHeaders() {
+  document.querySelectorAll('.codex-group-header').forEach(el => el.remove());
+}
+
+function applyCodexOrganization() {
+  const grid = document.getElementById('char-grid');
+  if (!grid) return;
+
+  clearCodexGroupHeaders();
+  document.querySelectorAll('.codex-card').forEach(c => c.classList.remove('hidden-org'));
+
+  const controls = document.getElementById('codex-organize-controls');
+  const labelSelect = document.getElementById('codex-organize-label');
+  if (controls) controls.style.display = (codexLoaded ? '' : 'none');
+
+  if (!codexLoaded) return;
+
+  if (activeCodexOrganizeMode !== 'label') {
+    if (labelSelect) labelSelect.style.display = 'none';
+    updateCodexCountLabel();
+    return;
+  }
+
+  const base = Array.from(grid.querySelectorAll('.codex-card')).filter(c => !c.classList.contains('hidden'));
+
+  // Special case: when viewing "All Entries", grouping-by-label isn't meaningful.
+  // In this case we interpret "By Label" as "By Category" and hide the label filter.
+  const groupByCategory = (activeCodexType === 'all');
+  if (labelSelect) labelSelect.style.display = groupByCategory ? 'none' : '';
+
+  if (!groupByCategory && activeCodexOrganizeLabel && activeCodexOrganizeLabel !== 'all') {
+    const needle = activeCodexOrganizeLabel.toLowerCase();
+    base.forEach(c => {
+      const tokens = String(c.dataset.primaryLabels || '').split('|').map(s => s.trim().toLowerCase()).filter(Boolean);
+      if (!tokens.includes(needle)) c.classList.add('hidden-org');
+    });
+  }
+
+  const cards = base.filter(c => !c.classList.contains('hidden-org'));
+  const groups = new Map();
+  cards.forEach(c => {
+    let key = 'Unknown';
+    if (groupByCategory) {
+      key = String(c.dataset.entityType || 'Unknown');
+    } else {
+      const tokens = String(c.dataset.primaryLabels || '').split('|').map(s => s.trim()).filter(Boolean);
+      key = (tokens[0] || 'Unknown').trim() || 'Unknown';
+    }
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(c);
+  });
+
+  const typeLabel = {
+    characters: 'Characters',
+    places: 'Places',
+    hemispheres: 'Hemispheres',
+    continents: 'Continents',
+    subcontinents: 'Subcontinents',
+    realms: 'Realms',
+    provinces: 'Provinces',
+    regions: 'Regions',
+    districts: 'Districts',
+    events: 'Events',
+    weapons: 'Weapons',
+    artifacts: 'Artifacts',
+    factions: 'Factions',
+    lore: 'Lore',
+    flora_fauna: 'Flora & Fauna',
+    magic: 'Magic',
+    relics: 'Relics',
+    substances: 'Substances',
+  };
+
+  const groupKeys = Array.from(groups.keys()).sort((a, b) => {
+    if (groupByCategory) {
+      const aa = (typeLabel[a] || a).toLowerCase();
+      const bb = (typeLabel[b] || b).toLowerCase();
+      return aa.localeCompare(bb);
+    }
+    const aa = a.toLowerCase();
+    const bb = b.toLowerCase();
+    if (aa === 'unknown') return 1;
+    if (bb === 'unknown') return -1;
+    return aa.localeCompare(bb);
+  });
+
+  // Rebuild visible card order with headers.
+  const frag = document.createDocumentFragment();
+  groupKeys.forEach(k => {
+    const arr = groups.get(k) || [];
+    arr.sort((x, y) => String(x.dataset.nameSort || '').localeCompare(String(y.dataset.nameSort || '')));
+    const header = document.createElement('div');
+    header.className = 'codex-group-header';
+    const label = groupByCategory ? (typeLabel[k] || k) : k;
+    header.innerHTML = `<div class="codex-group-title">${escHtml(label)}</div><div class="codex-group-count">${arr.length} entr${arr.length !== 1 ? 'ies' : 'y'}</div>`;
+    frag.appendChild(header);
+    arr.forEach(c => frag.appendChild(c));
+  });
+
+  // Append hidden (by type) cards after, preserving them in DOM.
+  const hiddenCards = Array.from(grid.querySelectorAll('.codex-card')).filter(c => c.classList.contains('hidden') || c.classList.contains('hidden-org'));
+  hiddenCards.forEach(c => frag.appendChild(c));
+  grid.innerHTML = '';
+  grid.appendChild(frag);
+
+  updateCodexCountLabel();
+}
+
+function refreshCodexLabelOptions() {
+  const labelSelect = document.getElementById('codex-organize-label');
+  if (!labelSelect) return;
+  const cards = Array.from(document.querySelectorAll('.codex-card')).filter(c => !c.classList.contains('hidden'));
+  const tokens = new Set();
+  cards.forEach(c => {
+    String(c.dataset.primaryLabels || '')
+      .split('|')
+      .map(s => s.trim())
+      .filter(Boolean)
+      .forEach(t => tokens.add(t));
+  });
+  const sorted = Array.from(tokens).sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+  labelSelect.innerHTML = '<option value="all">All Labels</option>' + sorted.map(t => `<option value="${escHtml(t)}">${escHtml(t)}</option>`).join('');
+  if (!sorted.some(t => t.toLowerCase() === String(activeCodexOrganizeLabel || '').toLowerCase())) {
+    activeCodexOrganizeLabel = 'all';
+  }
+  labelSelect.value = activeCodexOrganizeLabel;
 }
 function setStatus(html) {
   const msg  = document.getElementById('status-msg');
@@ -437,38 +667,13 @@ function applyCodexFilter(type) {
     btn.classList.toggle('active', btn.dataset.type === type);
   });
   const cards = document.querySelectorAll('.codex-card');
-  let visible = 0;
   cards.forEach(card => {
     const match = type === 'all' || card.dataset.entityType === type;
     card.classList.toggle('hidden', !match);
-    if (match) visible++;
   });
-  const label = document.getElementById('char-count-label');
-  if (type === 'all') {
-    label.textContent = `— ${visible} Entr${visible !== 1 ? 'ies' : 'y'} in the Codex —`;
-  } else {
-    const typeLabel = {
-      characters: 'Characters',
-      places: 'Places',
-      hemispheres: 'Hemispheres',
-      continents: 'Continents',
-      subcontinents: 'Subcontinents',
-      realms: 'Realms',
-      provinces: 'Provinces',
-      districts: 'Districts',
-      regions: 'Regions',
-      events: 'Events',
-      weapons: 'Weapons',
-      artifacts: 'Artifacts',
-      factions: 'Factions',
-      lore: 'Lore',
-      flora_fauna: 'Flora & Fauna',
-      magic: 'Magic',
-      relics: 'Relics',
-      substances: 'Substances',
-    }[type] || type;
-    label.textContent = `— ${visible} Known ${typeLabel} —`;
-  }
+
+  refreshCodexLabelOptions();
+  applyCodexOrganization();
 }
 
 // ── Fix UTF-8 mojibake ───────────────────────────────────────────────
@@ -984,7 +1189,7 @@ function renderCodex(data) {
   characters.forEach(c => {
     const card = document.createElement('div');
     card.className = 'codex-card char-card';
-    card.dataset.entityType = 'characters';
+    stampCodexCardMeta(card, 'characters', c.name, _primaryLabelTokensForEntity('characters', c));
     const statusClass = statusBadgeClass(c.status);
     const statusHist = Array.isArray(c.status_history) ? c.status_history : [];
     const lastStatusEvent = statusHist.length ? statusHist[statusHist.length - 1] : null;
@@ -1033,7 +1238,7 @@ function renderCodex(data) {
   places.forEach(p => {
     const card = document.createElement('div');
     card.className = 'codex-card place-card';
-    card.dataset.entityType = 'places';
+    stampCodexCardMeta(card, 'places', p.name, _primaryLabelTokensForEntity('places', p));
     const appearances = p.appearances > 1 ? `${p.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Place</span>
@@ -1062,7 +1267,7 @@ function renderCodex(data) {
   hemispheres.forEach(h => {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
-    card.dataset.entityType = 'hemispheres';
+    stampCodexCardMeta(card, 'hemispheres', h.name, _primaryLabelTokensForEntity('hemispheres', h));
     const appearances = h.appearances > 1 ? `${h.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Hemisphere</span>
@@ -1090,7 +1295,7 @@ function renderCodex(data) {
   continents.forEach(cn => {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
-    card.dataset.entityType = 'continents';
+    stampCodexCardMeta(card, 'continents', cn.name, _primaryLabelTokensForEntity('continents', cn));
     const appearances = cn.appearances > 1 ? `${cn.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Continent</span>
@@ -1118,7 +1323,7 @@ function renderCodex(data) {
   subcontinents.forEach(sc => {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
-    card.dataset.entityType = 'subcontinents';
+    stampCodexCardMeta(card, 'subcontinents', sc.name, _primaryLabelTokensForEntity('subcontinents', sc));
     const appearances = sc.appearances > 1 ? `${sc.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Subcontinent</span>
@@ -1146,7 +1351,7 @@ function renderCodex(data) {
   realms.forEach(rm => {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
-    card.dataset.entityType = 'realms';
+    stampCodexCardMeta(card, 'realms', rm.name, _primaryLabelTokensForEntity('realms', rm));
     const appearances = rm.appearances > 1 ? `${rm.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Realm</span>
@@ -1174,7 +1379,7 @@ function renderCodex(data) {
   provinces.forEach(pv => {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
-    card.dataset.entityType = 'provinces';
+    stampCodexCardMeta(card, 'provinces', pv.name, _primaryLabelTokensForEntity('provinces', pv));
     const appearances = pv.appearances > 1 ? `${pv.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Province</span>
@@ -1202,7 +1407,7 @@ function renderCodex(data) {
   districts.forEach(dt => {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
-    card.dataset.entityType = 'districts';
+    stampCodexCardMeta(card, 'districts', dt.name, _primaryLabelTokensForEntity('districts', dt));
     const appearances = dt.appearances > 1 ? `${dt.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">District</span>
@@ -1230,7 +1435,7 @@ function renderCodex(data) {
   events.forEach(e => {
     const card = document.createElement('div');
     card.className = 'codex-card event-card';
-    card.dataset.entityType = 'events';
+    stampCodexCardMeta(card, 'events', e.name, _primaryLabelTokensForEntity('events', e));
     const participants = (e.participants || []).map(p => escHtml(p)).join(', ');
     const appearances = e.appearances > 1 ? `${e.appearances} appearances` : 'First appearance';
     card.innerHTML = `
@@ -1260,7 +1465,7 @@ function renderCodex(data) {
   weapons.forEach(w => {
     const card = document.createElement('div');
     card.className = 'codex-card weapon-card';
-    card.dataset.entityType = 'weapons';
+    stampCodexCardMeta(card, 'weapons', w.name, _primaryLabelTokensForEntity('weapons', w));
     const appearances = w.appearances > 1 ? `${w.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Weapon</span>
@@ -1290,7 +1495,7 @@ function renderCodex(data) {
   artifacts.forEach(a => {
     const card = document.createElement('div');
     card.className = 'codex-card artifact-card';
-    card.dataset.entityType = 'artifacts';
+    stampCodexCardMeta(card, 'artifacts', a.name, _primaryLabelTokensForEntity('artifacts', a));
     const appearances = a.appearances > 1 ? `${a.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Artifact</span>
@@ -1320,7 +1525,7 @@ function renderCodex(data) {
   factions.forEach(f => {
     const card = document.createElement('div');
     card.className = 'codex-card faction-card';
-    card.dataset.entityType = 'factions';
+    stampCodexCardMeta(card, 'factions', f.name, _primaryLabelTokensForEntity('factions', f));
     const appearances = f.appearances > 1 ? `${f.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -1351,7 +1556,7 @@ function renderCodex(data) {
   lore.forEach(l => {
     const card = document.createElement('div');
     card.className = 'codex-card lore-card';
-    card.dataset.entityType = 'lore';
+    stampCodexCardMeta(card, 'lore', l.name, _primaryLabelTokensForEntity('lore', l));
     const appearances = l.appearances > 1 ? `${l.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -1381,7 +1586,7 @@ function renderCodex(data) {
   flora_fauna.forEach(ff => {
     const card = document.createElement('div');
     card.className = 'codex-card flora-card';
-    card.dataset.entityType = 'flora_fauna';
+    stampCodexCardMeta(card, 'flora_fauna', ff.name, _primaryLabelTokensForEntity('flora_fauna', ff));
     const appearances = ff.appearances > 1 ? `${ff.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -1412,7 +1617,7 @@ function renderCodex(data) {
   magic.forEach(m => {
     const card = document.createElement('div');
     card.className = 'codex-card magic-card';
-    card.dataset.entityType = 'magic';
+    stampCodexCardMeta(card, 'magic', m.name, _primaryLabelTokensForEntity('magic', m));
     const appearances = m.appearances > 1 ? `${m.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -1443,7 +1648,7 @@ function renderCodex(data) {
   relics.forEach(r => {
     const card = document.createElement('div');
     card.className = 'codex-card relic-card';
-    card.dataset.entityType = 'relics';
+    stampCodexCardMeta(card, 'relics', r.name, _primaryLabelTokensForEntity('relics', r));
     const appearances = r.appearances > 1 ? `${r.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -1474,7 +1679,7 @@ function renderCodex(data) {
   regions.forEach(reg => {
     const card = document.createElement('div');
     card.className = 'codex-card region-card';
-    card.dataset.entityType = 'regions';
+    stampCodexCardMeta(card, 'regions', reg.name, _primaryLabelTokensForEntity('regions', reg));
     const appearances = reg.appearances > 1 ? `${reg.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -1505,7 +1710,7 @@ function renderCodex(data) {
   substances.forEach(sub => {
     const card = document.createElement('div');
     card.className = 'codex-card substance-card';
-    card.dataset.entityType = 'substances';
+    stampCodexCardMeta(card, 'substances', sub.name, _primaryLabelTokensForEntity('substances', sub));
     const appearances = sub.appearances > 1 ? `${sub.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -1532,6 +1737,7 @@ function renderCodex(data) {
     grid.appendChild(card);
   });
 
+  refreshCodexLabelOptions();
   applyCodexFilter(activeCodexType);
 }
 
@@ -1548,6 +1754,7 @@ async function loadCodex(force = false) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     codexLoaded = true;
+    CODEX_DATA_CACHE = data;
     renderCodex(data);
   } catch (err) {
     console.error(err);
@@ -1641,6 +1848,17 @@ document.getElementById('tab-tales').addEventListener('click', () => switchTab('
 document.getElementById('tab-characters').addEventListener('click', () => switchTab('characters'));
 document.querySelectorAll('.codex-filter-btn').forEach(btn => {
   btn.addEventListener('click', () => applyCodexFilter(btn.dataset.type));
+});
+
+// Codex organize controls
+document.getElementById('codex-organize-mode').addEventListener('change', (e) => {
+  activeCodexOrganizeMode = e.target.value || 'default';
+  refreshCodexLabelOptions();
+  applyCodexOrganization();
+});
+document.getElementById('codex-organize-label').addEventListener('change', (e) => {
+  activeCodexOrganizeLabel = e.target.value || 'all';
+  applyCodexOrganization();
 });
 document.getElementById('archive-btn').addEventListener('click', openArchive);
 document.getElementById('archive-close').addEventListener('click', closeArchive);
