@@ -2687,13 +2687,32 @@ def parse_json_response(raw):
         m = re.search(r"```(?:json)?\s*([\s\S]*?)```", raw)
         if m:
             raw = m.group(1).strip()
-    # Find outermost [ ] for arrays or { } for objects
-    for open_ch, close_ch in [("[", "]"), ("{", "}")]:
-        start = raw.find(open_ch)
-        end   = raw.rfind(close_ch)
-        if start != -1 and end != -1:
-            return json.loads(raw[start:end + 1])
-    raise ValueError("No JSON structure found in response")
+
+    # Prefer a real JSON parse that tolerates extra trailing text.
+    # Claude sometimes returns: { ... }\n\n(brief explanation)
+    decoder = json.JSONDecoder()
+    candidate_starts = sorted({i for i in (raw.find("{"), raw.find("[")) if i != -1})
+
+    # If the first occurrences aren't usable, fall back to scanning for any '{'/'['.
+    if not candidate_starts:
+        raise ValueError("No JSON structure found in response")
+
+    # Add additional candidate starts by scanning the whole string.
+    # This is still cheap for our response sizes and makes parsing robust.
+    for idx, ch in enumerate(raw):
+        if ch in "{[":
+            candidate_starts.append(idx)
+    candidate_starts = sorted(set(candidate_starts))
+
+    last_error = None
+    for start in candidate_starts:
+        try:
+            obj, _end = decoder.raw_decode(raw[start:])
+            return obj
+        except Exception as e:
+            last_error = e
+
+    raise ValueError(f"No JSON structure found in response (last error: {last_error})")
 
 
 def normalize_extracted_lore(extracted):
