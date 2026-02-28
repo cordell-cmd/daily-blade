@@ -2188,42 +2188,35 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
             if only_title:
                 return [{"date": date_key, "title": only_title}]
 
-        text_blobs = [((s.get("text", "") or "") + " " + (s.get("title", "") or "")).lower() for s in stories if isinstance(s, dict)]
+        def _norm_blob(s: str) -> str:
+            return (
+                str(s or "")
+                .replace("\u2019", "'")
+                .replace("\u2018", "'")
+                .replace("\u2011", "-")
+                .lower()
+            )
 
-        # Mention detection: look for significant tokens in order within a small window.
-        _SKIP = {"the", "a", "an"}
-        tokens = [t for t in re.findall(r"[a-z0-9]+(?:[-‑][a-z0-9]+)?", (name or "").lower()) if t and t not in _SKIP]
-        if not tokens:
-            tokens = [str(name or "").strip().lower()]
-        tokens = tokens[:4]
+        text_blobs = [
+            _norm_blob((s.get("text", "") or "") + " " + (s.get("title", "") or ""))
+            for s in stories
+            if isinstance(s, dict)
+        ]
+
+        # Mention detection: strict surface-form phrase match with boundaries.
+        # This avoids substring false positives like "crow" matching "crown".
+        raw_name = _strip_trailing_parenthetical(str(name or "").strip())
+
+        def _phrase_in_blob(phrase: str, blob: str) -> bool:
+            phrase = (phrase or "").strip()
+            if not phrase:
+                return False
+            return bool(re.search(r"(?<![a-z0-9])" + re.escape(_norm_blob(phrase)) + r"(?![a-z0-9])", blob))
 
         def _mentions(blob: str) -> bool:
             if not blob:
                 return False
-            # Fast-path: exact name substring.
-            nm = str(name or "").strip().lower()
-            if nm and nm in blob:
-                return True
-            if len(tokens) == 1:
-                return tokens[0] in blob
-            # Ordered token match, allowing small gaps (handles "X the Y" etc.).
-            pos = blob.find(tokens[0])
-            while pos != -1:
-                cur = pos + len(tokens[0])
-                ok = True
-                for tok in tokens[1:]:
-                    nxt = blob.find(tok, cur)
-                    if nxt == -1:
-                        ok = False
-                        break
-                    if nxt - cur > 90:
-                        ok = False
-                        break
-                    cur = nxt + len(tok)
-                if ok:
-                    return True
-                pos = blob.find(tokens[0], pos + 1)
-            return False
+            return _phrase_in_blob(raw_name, blob)
 
         hits = []
         for s, blob in zip([s for s in stories if isinstance(s, dict)], text_blobs):
@@ -2745,8 +2738,22 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
 
     # ── Merge relics ────────────────────────────────────────────────
     existing_relics = {x["name"].lower(): x for x in codex.get("relics", [])}
+
+    def _base_name_for_crosscat(n: str) -> str:
+        return _norm_entity_key(_strip_trailing_parenthetical(str(n or "")))
+
+    character_name_bases = {
+        _base_name_for_crosscat(c.get("name", ""))
+        for c in (codex.get("characters") or [])
+        if isinstance(c, dict) and (c.get("name") or "").strip()
+    }
+
     for rl in lore.get("relics", []):
-        name = rl.get("name", "Unknown")
+        name = _strip_trailing_parenthetical(rl.get("name", "Unknown"))
+        if _base_name_for_crosscat(name) in character_name_bases:
+            # Prevent cross-category drift where a person gets extracted into relics.
+            # The character entry should carry the story appearance.
+            continue
         name_low = name.lower()
         today_appearances = stories_for(name)
         if name_low in existing_relics:
@@ -3240,6 +3247,86 @@ def _signature_key_for_name(name: str) -> str:
     if sig:
         return sig[0]
     return words[0] if words else ""
+
+
+def _norm_text_for_matching(s: str) -> str:
+    return (
+        str(s or "")
+        .replace("\u2019", "'")
+        .replace("\u2018", "'")
+        .replace("\u2011", "-")
+        .lower()
+    )
+
+
+def _tokens_for_entity_name(name: str, max_tokens: int = 4) -> list[str]:
+    """Extract significant word tokens from an entity name for mention checks."""
+    _SKIP = {"the", "a", "an", "of", "and", "to", "in", "on", "at", "for", "from", "by", "with"}
+    nm = _strip_trailing_parenthetical(str(name or "").strip())
+    nm = _norm_text_for_matching(nm)
+    toks = [
+        t
+        for t in re.findall(r"[a-z0-9]+(?:[-‑][a-z0-9]+)?", nm)
+        if t and t not in _SKIP
+    ]
+    return toks[: max(1, int(max_tokens or 4))] if toks else ([nm] if nm else [])
+
+
+def entity_name_mentioned_in_text(name: str, text: str) -> bool:
+    """Return True if name appears in text with token/phrase boundaries.
+
+    This is deliberately conservative: it avoids substring matches like "crow" in "crown",
+    while still allowing small re-orderings like "ritual of dismissal".
+    """
+    blob = _norm_text_for_matching(text)
+    nm = _strip_trailing_parenthetical(str(name or "").strip())
+    if not nm or not blob:
+        return False
+
+    nm_norm = _norm_text_for_matching(nm)
+    return bool(re.search(r"(?<![a-z0-9])" + re.escape(nm_norm) + r"(?![a-z0-9])", blob))
+
+
+def filter_lore_to_stories(lore: dict, stories: list[dict]) -> dict:
+    """Drop extracted entities that are not mentioned in the provided stories."""
+    if not isinstance(lore, dict):
+        return lore
+    if not isinstance(stories, list) or not stories:
+        return lore
+
+    blob = "\n\n".join(
+        str((s.get("title", "") or "").strip()) + "\n" + str((s.get("text", "") or "").strip())
+        for s in stories
+        if isinstance(s, dict)
+    )
+
+    def _keep_item(cat: str, it: dict) -> bool:
+        nm = (it.get("name") or "").strip()
+        if not nm:
+            return False
+        # Characters may have explicit aliases; allow any alias to satisfy grounding.
+        if cat == "characters":
+            if entity_name_mentioned_in_text(nm, blob):
+                return True
+            aliases = it.get("aliases")
+            if isinstance(aliases, list):
+                for a in aliases:
+                    if entity_name_mentioned_in_text(str(a or "").strip(), blob):
+                        return True
+            return False
+        return entity_name_mentioned_in_text(nm, blob)
+
+    for cat, arr in list(lore.items()):
+        if not isinstance(arr, list):
+            continue
+        kept = []
+        for it in arr:
+            if not isinstance(it, dict):
+                continue
+            if _keep_item(cat, it):
+                kept.append(it)
+        lore[cat] = kept
+    return lore
 
 
 def find_referenced_canon_entries(stories, lore):
@@ -3806,6 +3893,7 @@ def main():
     try:
         new_lore_raw = parse_json_response(lore_raw)
         new_lore = normalize_extracted_lore(new_lore_raw)
+        new_lore = filter_lore_to_stories(new_lore, stories)
         for char in new_lore.get("characters", []):
             if not isinstance(char, dict):
                 continue

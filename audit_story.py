@@ -145,6 +145,7 @@ def main() -> int:
     raw = resp.content[0].text.strip() if resp and resp.content else ""
     extracted = gs.parse_json_response(raw)
     lore = gs.normalize_extracted_lore(extracted)
+    lore = gs.filter_lore_to_stories(lore, [story])
 
     # Merge into codex.json (writes the file).
     gs.update_codex_file(lore, date_key=date_key, stories=[story], assume_all_from_stories=True)
