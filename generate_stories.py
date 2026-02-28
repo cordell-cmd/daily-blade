@@ -61,6 +61,10 @@ CANON_CHECKER_MODE = os.environ.get("CANON_CHECKER_MODE", "rewrite").strip().low
 ENABLE_CHILD_HARM_GUARD = os.environ.get("ENABLE_CHILD_HARM_GUARD", "1").strip().lower() in {"1", "true", "yes", "y"}
 CHILD_HARM_MAX_REWRITES = int(os.environ.get("CHILD_HARM_MAX_REWRITES", "2"))
 
+# Content guardrails: block rape/sexual assault and explicit sex depictions.
+ENABLE_SEXUAL_CONTENT_GUARD = os.environ.get("ENABLE_SEXUAL_CONTENT_GUARD", "1").strip().lower() in {"1", "true", "yes", "y"}
+SEXUAL_CONTENT_MAX_REWRITES = int(os.environ.get("SEXUAL_CONTENT_MAX_REWRITES", "2"))
+
 # Existing-entity updates: extract updates for ALREADY KNOWN entities referenced today.
 # This is how we can learn status changes (dead -> reanimated, etc.) even though the "NEW lore" extractor skips known names.
 ENABLE_EXISTING_CHARACTER_UPDATES = os.environ.get(
@@ -950,6 +954,11 @@ CONTENT GUARDRAILS (must follow):
     - Allowed examples: a plague, famine, or natural disaster affecting a town/village/region (many people), described briefly.
     - Not allowed: a specific child being killed, poisoned, sacrificed, or abused.
 
+- Do NOT write rape/sexual assault or sexual violence.
+- Do NOT depict explicit sex acts or create vivid visuals of sex.
+    - Sexual/romantic tension is fine; allusion is fine.
+    - Keep any intimacy off-screen / fade-to-black; avoid explicit anatomy or explicit action verbs.
+
 TONE + FANTASY VARIETY (creative palette; use your judgment):
 - Avoid monotone issues: aim for a MIX of tones, not 10 grim macabre tales.
     - Include some lighter/adventurous/wondrous pieces (mystery, heist, exploration, comic irony, heroic triumph).
@@ -1075,6 +1084,85 @@ HARD RULES:
 
 NARROW EXCEPTION (allowed only as brief background):
 - A broad tragedy like plague/famine/natural disaster affecting many people, described briefly and without exploitation.
+
+What to fix:
+{chr(10).join(problems)}
+
+EDITING INSTRUCTIONS:
+- Rewrite ONLY the violating stories; keep all other stories unchanged.
+- Preserve the overall tone and ~120–160 word length per story.
+- Keep JSON structure identical: a list of 10 objects with keys title/subgenre/text.
+- Respond with ONLY valid JSON; no prose.
+
+STORIES JSON INPUT:
+{payload}
+"""
+
+
+_SEXUAL_VIOLENCE_RE = re.compile(
+    r"\b(rape|raped|raping|rapist|sexual\s+assault|assaulted\s+her|assaulted\s+him|forced\s+himself\s+on|forced\s+herself\s+on|violated\s+her|violated\s+him|ravish|ravished|defile|defiled|molest|molested)\b",
+    re.IGNORECASE,
+)
+_EXPLICIT_SEX_ACT_RE = re.compile(
+    r"\b(intercourse|copulat|fornicat|thrust(?:ing)?|orgasm|climax|came\b|moan(?:ed|ing)?\b|writh(?:ing)?\b)\b",
+    re.IGNORECASE,
+)
+_EXPLICIT_ANATOMY_RE = re.compile(
+    r"\b(penis|vagina|clitoris|genitals|nipple(?:s)?|bare\s+breasts?)\b",
+    re.IGNORECASE,
+)
+
+
+def sexual_content_violations_for_story(story: dict) -> list:
+    title = (story.get("title") or "") if isinstance(story, dict) else ""
+    text = (story.get("text") or "") if isinstance(story, dict) else ""
+    blob = f"{title}\n\n{text}".strip()
+    if not blob:
+        return []
+
+    violations = []
+    if _SEXUAL_VIOLENCE_RE.search(blob):
+        violations.append("rape/sexual assault or sexual violence")
+
+    # Explicit sex depiction: either explicit anatomy, or explicit act language.
+    if _EXPLICIT_ANATOMY_RE.search(blob) or _EXPLICIT_SEX_ACT_RE.search(blob):
+        violations.append("explicit sex depiction")
+
+    return sorted(set(violations))
+
+
+def find_sexual_content_violations(stories: list) -> list:
+    out = []
+    for i, s in enumerate(stories or []):
+        if not isinstance(s, dict):
+            continue
+        v = sexual_content_violations_for_story(s)
+        if v:
+            snippet = ((s.get("text") or "").strip()[:240]).replace("\n", " ")
+            out.append({
+                "index": i,
+                "title": s.get("title", "Untitled"),
+                "violations": v,
+                "snippet": snippet,
+            })
+    return out
+
+
+def build_sexual_content_rewrite_prompt(stories: list, violations: list) -> str:
+    problems = []
+    for v in violations:
+        problems.append(f"- Story #{v.get('index')+1}: {v.get('title')} — {', '.join(v.get('violations') or [])}")
+
+    payload = json.dumps(stories, ensure_ascii=False, indent=2)
+    return f"""You are editing a list of 10 original pulp fantasy stories.
+
+Goal: Remove rape/sexual assault AND remove explicit sex depictions.
+
+HARD RULES:
+- Do NOT depict or imply rape/sexual assault/sexual violence.
+- Do NOT depict explicit sex acts or create vivid visuals of sex.
+- Sexual/romantic tension is allowed; allusion is allowed.
+- Keep intimacy off-screen (fade-to-black).
 
 What to fix:
 {chr(10).join(problems)}
@@ -3448,6 +3536,39 @@ def main():
                     stories = revised_stories
             except (ValueError, json.JSONDecodeError) as e:
                 print(f"WARNING: Could not parse child-safety rewrite JSON: {e}", file=sys.stderr)
+                print("Continuing to next rewrite attempt with original stories.", file=sys.stderr)
+
+    # ── Optional: Content guardrail (block rape/sexual assault + explicit sex) ─
+    if ENABLE_SEXUAL_CONTENT_GUARD:
+        for attempt in range(max(0, SEXUAL_CONTENT_MAX_REWRITES) + 1):
+            violations = find_sexual_content_violations(stories)
+            if not violations:
+                break
+            if attempt >= max(0, SEXUAL_CONTENT_MAX_REWRITES):
+                print("ERROR: Sexual-content guardrail could not be satisfied after rewrites.", file=sys.stderr)
+                for v in violations:
+                    print(f" - Story #{v.get('index')+1}: {v.get('title')} — {', '.join(v.get('violations') or [])}", file=sys.stderr)
+                sys.exit(1)
+            print(f"\u26a0\ufe0f Sexual-content guardrail: rewriting {len(violations)} story(ies) (attempt {attempt+1}/{SEXUAL_CONTENT_MAX_REWRITES})...")
+            rewrite_msg = client.messages.create(
+                model=MODEL,
+                max_tokens=4096,
+                messages=[{"role": "user", "content": build_sexual_content_rewrite_prompt(stories, violations)}],
+            )
+            rewrite_raw = rewrite_msg.content[0].text.strip()
+            try:
+                revised = parse_json_response(rewrite_raw)
+                revised_stories = []
+                for s in revised[:NUM_STORIES]:
+                    revised_stories.append({
+                        "title": s.get("title", "Untitled"),
+                        "text": s.get("text", ""),
+                        "subgenre": s.get("subgenre", "Sword & Sorcery"),
+                    })
+                if len(revised_stories) == len(stories):
+                    stories = revised_stories
+            except (ValueError, json.JSONDecodeError) as e:
+                print(f"WARNING: Could not parse sexual-safety rewrite JSON: {e}", file=sys.stderr)
                 print("Continuing to next rewrite attempt with original stories.", file=sys.stderr)
 
     # ── Collision renamer: prevent accidental canon name reuse ───────────
