@@ -2280,6 +2280,57 @@ function buildEntityGeoMeta(e, opts = {}) {
   return `<div class="codex-meta">${parts.join('')}</div>`;
 }
 
+function inferPrimaryPlaceFromStoryAppearances(e) {
+  if (!CODEX_STORY_ENTITY_INDEX || !(CODEX_STORY_ENTITY_INDEX instanceof Map) || CODEX_STORY_ENTITY_INDEX.size === 0) {
+    return '';
+  }
+  if (!e || typeof e !== 'object') return '';
+
+  const apps = [];
+  if (Array.isArray(e.story_appearances)) {
+    for (const a of e.story_appearances) {
+      if (!a || typeof a !== 'object') continue;
+      const d = String(a.date || '').trim();
+      const t = String(a.title || '').trim();
+      if (d && t) apps.push({ date: d, title: t });
+    }
+  }
+  if (apps.length === 0) {
+    const d = String(e.first_date || '').trim();
+    const t = String(e.first_story || '').trim();
+    if (d && t) apps.push({ date: d, title: t });
+  }
+  if (apps.length === 0) return '';
+
+  const selfName = String(e.name || '').trim().toLowerCase();
+  const counts = new Map();
+
+  for (const a of apps) {
+    const k = normalizeStoryKey(a.date, a.title);
+    if (!k) continue;
+    const byType = CODEX_STORY_ENTITY_INDEX.get(k);
+    if (!byType || !(byType instanceof Map)) continue;
+    const bucket = byType.get('places');
+    if (!bucket || !(bucket instanceof Map) || bucket.size === 0) continue;
+    for (const [, obj] of bucket.entries()) {
+      const nm = String(obj && obj.name ? obj.name : '').trim();
+      if (!nm) continue;
+      if (selfName && nm.toLowerCase() === selfName) continue;
+      counts.set(nm, (counts.get(nm) || 0) + 1);
+    }
+  }
+
+  let best = '';
+  let bestCount = 0;
+  for (const [nm, c] of counts.entries()) {
+    if (c > bestCount) {
+      best = nm;
+      bestCount = c;
+    }
+  }
+  return best;
+}
+
 function buildMostSpecificLocationLine(e, opts = {}) {
   const includePlace = opts.includePlace !== false;
   const defaultWorld = 'The Known World';
@@ -2447,6 +2498,13 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card char-card';
     stampCodexCardMeta(card, 'characters', c.name, _primaryLabelTokensForEntity('characters', c));
+    const inferredPlace = inferPrimaryPlaceFromStoryAppearances(c);
+    const cGeo = {
+      ...c,
+      place: truthyNonUnknown(c.home_place) ? c.home_place : inferredPlace,
+      region: truthyNonUnknown(c.home_region) ? c.home_region : '',
+      realm: truthyNonUnknown(c.home_realm) ? c.home_realm : '',
+    };
     const statusClass = statusBadgeClass(c.status);
     const statusHist = Array.isArray(c.status_history) ? c.status_history : [];
     const lastStatusEvent = statusHist.length ? statusHist[statusHist.length - 1] : null;
@@ -2476,8 +2534,8 @@ function renderCodex(data) {
         ${travelBadge(c.travel_scope)}
       </div>
       ${statusEventLine ? `<div class="codex-meta"><span>${escHtml(statusEventLine)}</span></div>` : ''}
-      ${buildMostSpecificLocationLine(c, { includePlace: true })}
-      ${buildEntityParentChain(c)}
+      ${buildMostSpecificLocationLine(cGeo, { includePlace: true })}
+      ${buildEntityParentChain(cGeo)}
       <hr class="codex-divider" />
       <div class="codex-body">${escHtml(c.bio || '')}</div>
       ${traits ? `<div class="char-traits">${traits}</div>` : ''}
@@ -2496,6 +2554,7 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card place-card';
     stampCodexCardMeta(card, 'places', p.name, _primaryLabelTokensForEntity('places', p));
+    const pGeo = { ...p, place: p.name };
     const appearances = p.appearances > 1 ? `${p.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Place</span>
@@ -2506,7 +2565,7 @@ function renderCodex(data) {
         ${p.status ? `<span class="badge badge-status-default">${escHtml(p.status)}</span>` : ''}
       </div>
       ${buildMostSpecificLocationLine(p, { includePlace: false })}
-      ${buildEntityParentChain(p, { hidePlaceRow: true })}
+      ${buildEntityParentChain(pGeo)}
       <hr class="codex-divider" />
       ${p.atmosphere ? `<div class="place-atmosphere">${escHtml(p.atmosphere)}</div>` : ''}
       <div class="codex-body">${escHtml(p.description || '')}</div>
@@ -2525,6 +2584,7 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
     stampCodexCardMeta(card, 'hemispheres', h.name, _primaryLabelTokensForEntity('hemispheres', h));
+    const hGeo = { ...h, hemisphere: h.name };
     const appearances = h.appearances > 1 ? `${h.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Hemisphere</span>
@@ -2534,8 +2594,8 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(h.climate || 'Hemisphere')}</span>
         ${h.status ? `<span class="badge badge-status-default">${escHtml(h.status)}</span>` : ''}
       </div>
-      ${buildMostSpecificLocationLine(h)}
-      ${buildEntityParentChain(h)}
+      ${buildMostSpecificLocationLine(hGeo)}
+      ${buildEntityParentChain(hGeo)}
       <hr class="codex-divider" />
       <div class="codex-body">${escHtml(h.description || '')}</div>
       <div class="codex-card-footer">
@@ -2553,6 +2613,7 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
     stampCodexCardMeta(card, 'continents', cn.name, _primaryLabelTokensForEntity('continents', cn));
+    const cnGeo = { ...cn, continent: cn.name };
     const appearances = cn.appearances > 1 ? `${cn.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Continent</span>
@@ -2562,8 +2623,8 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(cn.climate || 'Continent')}</span>
         ${cn.status ? `<span class="badge badge-status-default">${escHtml(cn.status)}</span>` : ''}
       </div>
-      ${buildMostSpecificLocationLine(cn)}
-      ${buildEntityParentChain(cn)}
+      ${buildMostSpecificLocationLine(cnGeo)}
+      ${buildEntityParentChain(cnGeo)}
       <hr class="codex-divider" />
       <div class="codex-body">${escHtml(cn.description || '')}</div>
       <div class="codex-card-footer">
@@ -2581,6 +2642,7 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
     stampCodexCardMeta(card, 'subcontinents', sc.name, _primaryLabelTokensForEntity('subcontinents', sc));
+    const scGeo = { ...sc, subcontinent: sc.name };
     const appearances = sc.appearances > 1 ? `${sc.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Subcontinent</span>
@@ -2590,8 +2652,8 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(sc.climate || 'Subcontinent')}</span>
         ${sc.status ? `<span class="badge badge-status-default">${escHtml(sc.status)}</span>` : ''}
       </div>
-      ${buildMostSpecificLocationLine(sc)}
-      ${buildEntityParentChain(sc)}
+      ${buildMostSpecificLocationLine(scGeo)}
+      ${buildEntityParentChain(scGeo)}
       <hr class="codex-divider" />
       <div class="codex-body">${escHtml(sc.description || '')}</div>
       <div class="codex-card-footer">
@@ -2609,6 +2671,7 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
     stampCodexCardMeta(card, 'realms', rm.name, _primaryLabelTokensForEntity('realms', rm));
+    const rmGeo = { ...rm, realm: rm.name };
     const appearances = rm.appearances > 1 ? `${rm.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Realm</span>
@@ -2618,8 +2681,8 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(rm.climate || 'Realm')}</span>
         ${rm.status ? `<span class="badge badge-status-default">${escHtml(rm.status)}</span>` : ''}
       </div>
-      ${buildMostSpecificLocationLine(rm)}
-      ${buildEntityParentChain(rm)}
+      ${buildMostSpecificLocationLine(rmGeo)}
+      ${buildEntityParentChain(rmGeo)}
       <hr class="codex-divider" />
       <div class="codex-body">${escHtml(rm.description || '')}</div>
       <div class="codex-card-footer">
@@ -2637,6 +2700,7 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
     stampCodexCardMeta(card, 'provinces', pv.name, _primaryLabelTokensForEntity('provinces', pv));
+    const pvGeo = { ...pv, province: pv.name };
     const appearances = pv.appearances > 1 ? `${pv.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Province</span>
@@ -2646,8 +2710,8 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(pv.climate || 'Province')}</span>
         ${pv.status ? `<span class="badge badge-status-default">${escHtml(pv.status)}</span>` : ''}
       </div>
-      ${buildMostSpecificLocationLine(pv)}
-      ${buildEntityParentChain(pv)}
+      ${buildMostSpecificLocationLine(pvGeo)}
+      ${buildEntityParentChain(pvGeo)}
       <hr class="codex-divider" />
       <div class="codex-body">${escHtml(pv.description || '')}</div>
       <div class="codex-card-footer">
@@ -2665,6 +2729,7 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card geo-card';
     stampCodexCardMeta(card, 'districts', dt.name, _primaryLabelTokensForEntity('districts', dt));
+    const dtGeo = { ...dt, district: dt.name };
     const appearances = dt.appearances > 1 ? `${dt.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">District</span>
@@ -2674,8 +2739,8 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(dt.climate || 'District')}</span>
         ${dt.status ? `<span class="badge badge-status-default">${escHtml(dt.status)}</span>` : ''}
       </div>
-      ${buildMostSpecificLocationLine(dt)}
-      ${buildEntityParentChain(dt)}
+      ${buildMostSpecificLocationLine(dtGeo)}
+      ${buildEntityParentChain(dtGeo)}
       <hr class="codex-divider" />
       <div class="codex-body">${escHtml(dt.description || '')}</div>
       <div class="codex-card-footer">
@@ -2693,6 +2758,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card event-card';
     stampCodexCardMeta(card, 'events', e.name, _primaryLabelTokensForEntity('events', e));
+    const ePlace = inferPrimaryPlaceFromStoryAppearances(e);
+    const eGeo = ePlace ? { ...e, place: ePlace } : e;
     const participants = (e.participants || []).map(p => escHtml(p)).join(', ');
     const appearances = e.appearances > 1 ? `${e.appearances} appearances` : 'First appearance';
     card.innerHTML = `
@@ -2702,8 +2769,8 @@ function renderCodex(data) {
       <div class="codex-card-badges">
         <span class="badge badge-event">${escHtml(e.event_type || 'Event')}</span>
       </div>
-      ${buildMostSpecificLocationLine(e)}
-      ${buildEntityParentChain(e)}
+      ${buildMostSpecificLocationLine(eGeo)}
+      ${buildEntityParentChain(eGeo)}
       <hr class="codex-divider" />
       ${participants ? `<div class="event-participants"><strong>Participants:</strong>${participants}</div>` : ''}
       <div class="codex-body">${escHtml(e.outcome || '')}</div>
@@ -2723,6 +2790,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card event-card';
     stampCodexCardMeta(card, 'rituals', r.name, _primaryLabelTokensForEntity('rituals', r));
+    const rPlace = inferPrimaryPlaceFromStoryAppearances(r);
+    const rGeo = rPlace ? { ...r, place: rPlace } : r;
     const performers = (r.performed_by || []).map(p => escHtml(p)).join(', ');
     const appearances = r.appearances > 1 ? `${r.appearances} appearances` : 'First appearance';
     card.innerHTML = `
@@ -2732,8 +2801,8 @@ function renderCodex(data) {
       <div class="codex-card-badges">
         <span class="badge badge-ritual">${escHtml(r.ritual_type || 'Ritual')}</span>
       </div>
-      ${buildMostSpecificLocationLine(r)}
-      ${buildEntityParentChain(r)}
+      ${buildMostSpecificLocationLine(rGeo)}
+      ${buildEntityParentChain(rGeo)}
       <hr class="codex-divider" />
       ${performers ? `<div class="event-participants"><strong>Performed by:</strong>${performers}</div>` : ''}
       ${r.requirements ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Requirements:</em> ${escHtml(r.requirements)}</div>` : ''}
@@ -2755,6 +2824,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card weapon-card';
     stampCodexCardMeta(card, 'weapons', w.name, _primaryLabelTokensForEntity('weapons', w));
+    const wPlace = inferPrimaryPlaceFromStoryAppearances(w);
+    const wGeo = wPlace ? { ...w, place: wPlace } : w;
     const appearances = w.appearances > 1 ? `${w.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Weapon</span>
@@ -2764,8 +2835,8 @@ function renderCodex(data) {
         <span class="badge badge-weapon">${escHtml(w.weapon_type || 'Weapon')}</span>
         ${w.status ? `<span class="badge badge-status-default">${escHtml(w.status)}</span>` : ''}
       </div>
-      ${buildMostSpecificLocationLine(w)}
-      ${buildEntityParentChain(w)}
+      ${buildMostSpecificLocationLine(wGeo)}
+      ${buildEntityParentChain(wGeo)}
       <hr class="codex-divider" />
       ${w.origin ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Origin:</em> ${escHtml(w.origin)}</div>` : ''}
       <div class="codex-body">${escHtml(w.powers || '')}</div>
@@ -2785,6 +2856,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card artifact-card';
     stampCodexCardMeta(card, 'artifacts', a.name, _primaryLabelTokensForEntity('artifacts', a));
+    const aPlace = inferPrimaryPlaceFromStoryAppearances(a);
+    const aGeo = aPlace ? { ...a, place: aPlace } : a;
     const appearances = a.appearances > 1 ? `${a.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <span class="codex-type-label">Artifact</span>
@@ -2794,8 +2867,8 @@ function renderCodex(data) {
         <span class="badge badge-artifact">${escHtml(a.artifact_type || 'Artifact')}</span>
         ${a.status ? `<span class="badge badge-status-default">${escHtml(a.status)}</span>` : ''}
       </div>
-      ${buildMostSpecificLocationLine(a)}
-      ${buildEntityParentChain(a)}
+      ${buildMostSpecificLocationLine(aGeo)}
+      ${buildEntityParentChain(aGeo)}
       <hr class="codex-divider" />
       ${a.origin ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Origin:</em> ${escHtml(a.origin)}</div>` : ''}
       <div class="codex-body">${escHtml(a.powers || '')}</div>
@@ -2855,6 +2928,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card faction-card';
     stampCodexCardMeta(card, 'factions', f.name, _primaryLabelTokensForEntity('factions', f));
+    const fPlace = inferPrimaryPlaceFromStoryAppearances(f);
+    const fGeo = fPlace ? { ...f, place: fPlace } : f;
     const appearances = f.appearances > 1 ? `${f.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -2865,8 +2940,8 @@ function renderCodex(data) {
           ${f.status ? `<span class="badge badge-status-default">${escHtml(f.status)}</span>` : ''}
         </div>
       </div>
-      ${buildMostSpecificLocationLine(f)}
-      ${buildEntityParentChain(f)}
+        ${buildMostSpecificLocationLine(fGeo)}
+        ${buildEntityParentChain(fGeo)}
       <hr class="codex-divider" />
       ${f.leader ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Leader:</em> ${escHtml(f.leader)}</div>` : ''}
       <div class="codex-body">${escHtml(f.description || '')}</div>
@@ -2886,6 +2961,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card lore-card';
     stampCodexCardMeta(card, 'lore', l.name, _primaryLabelTokensForEntity('lore', l));
+    const lPlace = inferPrimaryPlaceFromStoryAppearances(l);
+    const lGeo = lPlace ? { ...l, place: lPlace } : l;
     const appearances = l.appearances > 1 ? `${l.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -2896,8 +2973,8 @@ function renderCodex(data) {
           ${l.status ? `<span class="badge badge-status-default">${escHtml(l.status)}</span>` : ''}
         </div>
       </div>
-      ${buildMostSpecificLocationLine(l)}
-      ${buildEntityParentChain(l)}
+        ${buildMostSpecificLocationLine(lGeo)}
+        ${buildEntityParentChain(lGeo)}
       <hr class="codex-divider" />
       ${l.source ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Source:</em> ${escHtml(l.source)}</div>` : ''}
       <div class="codex-body">${escHtml(l.description || '')}</div>
@@ -2916,6 +2993,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card flora-card';
     stampCodexCardMeta(card, 'flora_fauna', ff.name, _primaryLabelTokensForEntity('flora_fauna', ff));
+    const ffPlace = inferPrimaryPlaceFromStoryAppearances(ff);
+    const ffGeo = ffPlace ? { ...ff, place: ffPlace } : ff;
     const appearances = ff.appearances > 1 ? `${ff.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -2926,8 +3005,8 @@ function renderCodex(data) {
           ${ff.status ? `<span class="badge badge-status-default">${escHtml(ff.status)}</span>` : ''}
         </div>
       </div>
-      ${buildMostSpecificLocationLine(ff)}
-      ${buildEntityParentChain(ff)}
+        ${buildMostSpecificLocationLine(ffGeo)}
+        ${buildEntityParentChain(ffGeo)}
       <hr class="codex-divider" />
       ${ff.habitat ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Habitat:</em> ${escHtml(ff.habitat)}</div>` : ''}
       <div class="codex-body">${escHtml(ff.description || '')}</div>
@@ -2947,6 +3026,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card magic-card';
     stampCodexCardMeta(card, 'magic', m.name, _primaryLabelTokensForEntity('magic', m));
+    const mPlace = inferPrimaryPlaceFromStoryAppearances(m);
+    const mGeo = mPlace ? { ...m, place: mPlace } : m;
     const appearances = m.appearances > 1 ? `${m.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -2957,8 +3038,8 @@ function renderCodex(data) {
           ${m.status ? `<span class="badge badge-status-default">${escHtml(m.status)}</span>` : ''}
         </div>
       </div>
-      ${buildMostSpecificLocationLine(m)}
-      ${buildEntityParentChain(m)}
+        ${buildMostSpecificLocationLine(mGeo)}
+        ${buildEntityParentChain(mGeo)}
       <hr class="codex-divider" />
       ${m.element ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Element:</em> ${escHtml(m.element)}</div>` : ''}
       <div class="codex-body">${escHtml(m.description || '')}</div>
@@ -2978,6 +3059,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card relic-card';
     stampCodexCardMeta(card, 'relics', r.name, _primaryLabelTokensForEntity('relics', r));
+    const rPlace2 = inferPrimaryPlaceFromStoryAppearances(r);
+    const rGeo2 = rPlace2 ? { ...r, place: rPlace2 } : r;
     const appearances = r.appearances > 1 ? `${r.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -2988,8 +3071,8 @@ function renderCodex(data) {
           ${r.status ? `<span class="badge badge-status-default">${escHtml(r.status)}</span>` : ''}
         </div>
       </div>
-      ${buildMostSpecificLocationLine(r)}
-      ${buildEntityParentChain(r)}
+      ${buildMostSpecificLocationLine(rGeo2)}
+      ${buildEntityParentChain(rGeo2)}
       <hr class="codex-divider" />
       ${r.curse ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Curse:</em> ${escHtml(r.curse)}</div>` : ''}
       <div class="codex-body">${escHtml(r.description || '')}</div>
@@ -3009,6 +3092,7 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card region-card';
     stampCodexCardMeta(card, 'regions', reg.name, _primaryLabelTokensForEntity('regions', reg));
+    const regGeo = { ...reg, region: reg.name };
     const appearances = reg.appearances > 1 ? `${reg.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -3019,8 +3103,8 @@ function renderCodex(data) {
           ${reg.status ? `<span class="badge badge-status-default">${escHtml(reg.status)}</span>` : ''}
         </div>
       </div>
-      ${buildMostSpecificLocationLine(reg)}
-      ${buildEntityParentChain(reg)}
+        ${buildMostSpecificLocationLine(regGeo)}
+        ${buildEntityParentChain(regGeo)}
       <hr class="codex-divider" />
       ${reg.ruler ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Ruler:</em> ${escHtml(reg.ruler)}</div>` : ''}
       <div class="codex-body">${escHtml(reg.description || '')}</div>
@@ -3040,6 +3124,8 @@ function renderCodex(data) {
     const card = document.createElement('div');
     card.className = 'codex-card substance-card';
     stampCodexCardMeta(card, 'substances', sub.name, _primaryLabelTokensForEntity('substances', sub));
+    const subPlace = inferPrimaryPlaceFromStoryAppearances(sub);
+    const subGeo = subPlace ? { ...sub, place: subPlace } : sub;
     const appearances = sub.appearances > 1 ? `${sub.appearances} appearances` : 'First appearance';
     card.innerHTML = `
       <div class="codex-card-header">
@@ -3050,8 +3136,8 @@ function renderCodex(data) {
           ${sub.status ? `<span class="badge badge-status-default">${escHtml(sub.status)}</span>` : ''}
         </div>
       </div>
-      ${buildMostSpecificLocationLine(sub)}
-      ${buildEntityParentChain(sub)}
+        ${buildMostSpecificLocationLine(subGeo)}
+        ${buildEntityParentChain(subGeo)}
       <hr class="codex-divider" />
       ${sub.properties ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Properties:</em> ${escHtml(sub.properties)}</div>` : ''}
       <div class="codex-body">${escHtml(sub.description || '')}</div>

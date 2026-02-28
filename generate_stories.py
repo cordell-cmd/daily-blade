@@ -2784,9 +2784,14 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
         today_appearances = stories_for(name)
         if name_low in existing_regions:
             ex = existing_regions[name_low]
+            ex["continent"]     = rg.get("continent",     ex.get("continent",     "unknown"))
+            ex["realm"]         = rg.get("realm",         ex.get("realm",         "unknown"))
             ex["ruler"]         = rg.get("ruler",         ex.get("ruler",         ""))
             ex["climate"]       = rg.get("climate",       ex.get("climate",       ""))
+            ex["terrain"]       = rg.get("terrain",       ex.get("terrain",       ""))
+            ex["function"]      = rg.get("function",      ex.get("function",      ""))
             ex["status"]        = rg.get("status",        ex.get("status",        "unknown"))
+            ex["notes"]         = rg.get("notes",         ex.get("notes",         ""))
             prior = ex.get("story_appearances", [])
             new_ones = [app for app in today_appearances
                         if not any(p["date"] == app["date"] and p["title"] == app["title"] for p in prior)]
@@ -2798,10 +2803,14 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
             existing_regions[name_low] = {
                 "name":              name,
                 "tagline":           rg.get("tagline", ""),
+                "continent":         rg.get("continent", "unknown"),
+                "realm":             rg.get("realm", "unknown"),
                 "climate":            rg.get("climate", ""),
                 "terrain":            rg.get("terrain", ""),
                 "ruler":              rg.get("ruler", ""),
+                "function":           rg.get("function", ""),
                 "status":            rg.get("status", "unknown"),
+                "notes":             rg.get("notes", ""),
                 "first_story":       first_title,
                 "first_date":        date_key,
                 "appearances":       len(today_appearances) or 1,
@@ -2900,6 +2909,11 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
         "substances",
     ]:
         ensure_story_appearances(codex.get(cat, []))
+
+    # Ensure geo entities carry a complete parent chain so the UI can render
+    # meaningful hierarchy even when some levels are unknown.
+    ensure_place_parent_chain(codex)
+    enforce_continent_limit(codex)
 
     codex["last_updated"] = date_key
     with open(CODEX_FILE, "w", encoding="utf-8") as f:
