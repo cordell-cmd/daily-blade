@@ -3199,8 +3199,8 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
                 "affected_realms",
                 "radius",
             ]:
-                if k in e and e.get(k) not in {None, "", [], {}}:
-                    if ex.get(k) in {None, "", [], {}}:
+                if k in e and e.get(k) not in (None, "", [], {}):
+                    if ex.get(k) in (None, "", [], {}):
                         ex[k] = e.get(k)
 
             ex["outcome"]      = e.get("outcome",      ex.get("outcome",      ""))
