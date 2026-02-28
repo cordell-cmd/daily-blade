@@ -2,7 +2,8 @@ name: Generate Daily Stories
 
 
 on:
-  # Run hourly. The generator will no-op if today's issue already exists.
+  # Run hourly; we gate generation in-job so it runs at ~06:00 America/New_York
+  # (DST-safe), and also catches up ASAP if a run was missed.
   schedule:
     - cron: "5 * * * *"
 
@@ -42,13 +43,51 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
+      - name: Decide whether to generate
+        id: gate
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+
+          NUM_STORIES = 10
+          event_name = os.environ.get("GITHUB_EVENT_NAME", "")
+          now = datetime.now(ZoneInfo("America/New_York"))
+          date_key = now.strftime("%Y-%m-%d")
+
+          # Only generate on schedule after 06:00 ET.
+          # Manual dispatch can generate anytime.
+          allowed_by_time = (event_name == "workflow_dispatch") or (now.hour >= 6)
+
+          archive_path = os.path.join("archive", f"{date_key}.json")
+          already = False
+          try:
+            with open(archive_path, "r", encoding="utf-8") as f:
+              data = json.load(f)
+            stories = data.get("stories")
+            already = isinstance(stories, list) and len(stories) >= NUM_STORIES and (data.get("date") == date_key)
+          except Exception:
+            already = False
+
+          should_run = allowed_by_time and (not already)
+          print(f"Event={event_name} now_ET={now.isoformat()} date_key={date_key} allowed_by_time={allowed_by_time} already={already} should_run={should_run}")
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+            f.write(f"date_key={date_key}\n")
+            f.write(f"run={'true' if should_run else 'false'}\n")
+          PY
+
       - name: Generate stories
+        if: steps.gate.outputs.run == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ISSUE_TIMEZONE: America/New_York
         run: python generate_stories.py
 
 
       - name: Commit and push stories
+        if: steps.gate.outputs.run == 'true'
         run: |
           git config user.name  "Daily Blade Bot"
           git config user.email "actions@github.com"
