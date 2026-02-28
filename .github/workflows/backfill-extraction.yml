@@ -65,4 +65,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add lore.json codex.json characters.json
           git commit -m "Backfill extraction: ${{ inputs.date }}"
+          git pull --rebase
           git push
