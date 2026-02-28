@@ -57,6 +57,10 @@ ENABLE_LORE_REVISION_PASS = os.environ.get("ENABLE_LORE_REVISION_PASS", "0").str
 ENABLE_CANON_CHECKER = os.environ.get("ENABLE_CANON_CHECKER", "0").strip().lower() in {"1", "true", "yes", "y"}
 CANON_CHECKER_MODE = os.environ.get("CANON_CHECKER_MODE", "rewrite").strip().lower()  # rewrite | report
 
+# Content guardrails: block stories involving child death/targeted harm.
+ENABLE_CHILD_HARM_GUARD = os.environ.get("ENABLE_CHILD_HARM_GUARD", "1").strip().lower() in {"1", "true", "yes", "y"}
+CHILD_HARM_MAX_REWRITES = int(os.environ.get("CHILD_HARM_MAX_REWRITES", "2"))
+
 # Existing-entity updates: extract updates for ALREADY KNOWN entities referenced today.
 # This is how we can learn status changes (dead -> reanimated, etc.) even though the "NEW lore" extractor skips known names.
 ENABLE_EXISTING_CHARACTER_UPDATES = os.environ.get(
@@ -938,6 +942,14 @@ Respond with ONLY valid JSON — no prose before or after — matching this exac
   …9 more entries…
 ]
 
+CONTENT GUARDRAILS (must follow):
+- Do NOT write stories involving child death or targeted harm to children.
+    - No infanticide, no parents killing children, no child sacrifice, no child murder, no violence directed at a child.
+- Avoid plots centered on a dead child, even off-screen.
+- Children may be mentioned only in non-exploitative background context when the harm is NOT targeted and is a broad tragedy.
+    - Allowed examples: a plague, famine, or natural disaster affecting a town/village/region (many people), described briefly.
+    - Not allowed: a specific child being killed, poisoned, sacrificed, or abused.
+
 TONE + FANTASY VARIETY (creative palette; use your judgment):
 - Avoid monotone issues: aim for a MIX of tones, not 10 grim macabre tales.
     - Include some lighter/adventurous/wondrous pieces (mystery, heist, exploration, comic irony, heroic triumph).
@@ -968,6 +980,114 @@ Guidelines:
   Sword & Sorcery, Dark Fantasy, Political Intrigue, Forbidden Alchemy, Lost World, Blood Oath,
   Ghost Empire, Thieves' War, Demon Pact, Sea Sorcery, Witch Hunt, Siege & Betrayal — or anything
   that fits. The label should feel like a pulp magazine category."""
+
+
+_CHILD_TERM_RE = re.compile(r"\b(child|children|kid|kids|boy|girl|infant|baby|toddler|son|daughter)\b", re.IGNORECASE)
+_CHILD_OWN_RE = re.compile(r"\b(her|his|their|my|your|our)\s+own\s+(child|son|daughter|baby|infant)\b", re.IGNORECASE)
+_CHILD_DEATH_RE = re.compile(r"\b(died|die|dead|death|corpse|funeral|buried)\b", re.IGNORECASE)
+_CHILD_VIOLENCE_RE = re.compile(
+    r"\b(kill|killed|killing|murder|murdered|slay|slain|stab|stabbed|strangle|strangled|smother|smothered|drown|drowned|poison|poisoned|sacrifice|sacrificed|burned\s+alive|butcher|butchered)\b",
+    re.IGNORECASE,
+)
+_NATURAL_CAUSE_RE = re.compile(
+    r"\b(plague|epidemic|pox|fever|sickness|disease|illness|famine|drought|flood|fire|wildfire|earthquake|storm|blizzard|landslide|tidal\s+wave)\b",
+    re.IGNORECASE,
+)
+_MASS_CONTEXT_RE = re.compile(
+    r"\b(village|town|city|realm|region|province|district|many|dozens|scores|hundreds|thousands|the\s+people|the\s+populace|crowds)\b",
+    re.IGNORECASE,
+)
+
+
+def _natural_mass_context(text: str) -> bool:
+    s = (text or "")
+    if re.search(r"\b(plague|epidemic)\b", s, flags=re.IGNORECASE):
+        return True
+    return bool(_NATURAL_CAUSE_RE.search(s) and _MASS_CONTEXT_RE.search(s))
+
+
+def _near(text: str, a: re.Pattern, b: re.Pattern, window: int = 90) -> bool:
+    s = text or ""
+    for ma in a.finditer(s):
+        start = max(0, ma.start() - window)
+        end = min(len(s), ma.end() + window)
+        if b.search(s[start:end]):
+            return True
+    return False
+
+
+def child_harm_violations_for_story(story: dict) -> list:
+    title = (story.get("title") or "") if isinstance(story, dict) else ""
+    text = (story.get("text") or "") if isinstance(story, dict) else ""
+    blob = f"{title}\n\n{text}".strip()
+    if not blob:
+        return []
+
+    violations = []
+    has_child = bool(_CHILD_TERM_RE.search(blob) or _CHILD_OWN_RE.search(blob))
+    if not has_child:
+        return []
+
+    if _CHILD_OWN_RE.search(blob) and _CHILD_VIOLENCE_RE.search(blob):
+        violations.append("targeted harm to a child (own child + violence)")
+
+    if _near(blob, _CHILD_TERM_RE, _CHILD_VIOLENCE_RE, window=120) or _near(blob, _CHILD_OWN_RE, _CHILD_VIOLENCE_RE, window=200):
+        violations.append("violence directed at a child")
+
+    if _near(blob, _CHILD_TERM_RE, _CHILD_DEATH_RE, window=120):
+        if not _natural_mass_context(blob):
+            violations.append("child death without broad natural-disaster/illness context")
+
+    return sorted(set(violations))
+
+
+def find_child_harm_violations(stories: list) -> list:
+    out = []
+    for i, s in enumerate(stories or []):
+        if not isinstance(s, dict):
+            continue
+        v = child_harm_violations_for_story(s)
+        if v:
+            snippet = ((s.get("text") or "").strip()[:240]).replace("\n", " ")
+            out.append({
+                "index": i,
+                "title": s.get("title", "Untitled"),
+                "violations": v,
+                "snippet": snippet,
+            })
+    return out
+
+
+def build_child_harm_rewrite_prompt(stories: list, violations: list) -> str:
+    problems = []
+    for v in violations:
+        problems.append(f"- Story #{v.get('index')+1}: {v.get('title')} — {', '.join(v.get('violations') or [])}")
+
+    payload = json.dumps(stories, ensure_ascii=False, indent=2)
+    return f"""You are editing a list of 10 original pulp fantasy stories.
+
+Goal: Remove ANY child death or targeted harm to children.
+
+HARD RULES:
+- Do NOT depict or imply violence against children.
+- Do NOT include infanticide, child murder, child sacrifice, or a parent killing a child.
+- Avoid plots centered on a dead child, even off-screen.
+
+NARROW EXCEPTION (allowed only as brief background):
+- A broad tragedy like plague/famine/natural disaster affecting many people, described briefly and without exploitation.
+
+What to fix:
+{chr(10).join(problems)}
+
+EDITING INSTRUCTIONS:
+- Rewrite ONLY the violating stories; keep all other stories unchanged.
+- Preserve the overall tone and ~120–160 word length per story.
+- Keep JSON structure identical: a list of 10 objects with keys title/subgenre/text.
+- Respond with ONLY valid JSON; no prose.
+
+STORIES JSON INPUT:
+{payload}
+"""
 
 
 def find_canon_collisions(stories, lore, allowed_names_lower):
@@ -3296,6 +3416,39 @@ def main():
             "subgenre": s.get("subgenre", "Sword & Sorcery")
         })
     print(f"\u2713 Generated {len(stories)} stories")
+
+    # ── Optional: Content guardrail (block child death/targeted harm) ───
+    if ENABLE_CHILD_HARM_GUARD:
+        for attempt in range(max(0, CHILD_HARM_MAX_REWRITES) + 1):
+            violations = find_child_harm_violations(stories)
+            if not violations:
+                break
+            if attempt >= max(0, CHILD_HARM_MAX_REWRITES):
+                print("ERROR: Child-harm guardrail could not be satisfied after rewrites.", file=sys.stderr)
+                for v in violations:
+                    print(f" - Story #{v.get('index')+1}: {v.get('title')} — {', '.join(v.get('violations') or [])}", file=sys.stderr)
+                sys.exit(1)
+            print(f"\u26a0\ufe0f Child-harm guardrail: rewriting {len(violations)} story(ies) (attempt {attempt+1}/{CHILD_HARM_MAX_REWRITES})...")
+            rewrite_msg = client.messages.create(
+                model=MODEL,
+                max_tokens=4096,
+                messages=[{"role": "user", "content": build_child_harm_rewrite_prompt(stories, violations)}],
+            )
+            rewrite_raw = rewrite_msg.content[0].text.strip()
+            try:
+                revised = parse_json_response(rewrite_raw)
+                revised_stories = []
+                for s in revised[:NUM_STORIES]:
+                    revised_stories.append({
+                        "title": s.get("title", "Untitled"),
+                        "text": s.get("text", ""),
+                        "subgenre": s.get("subgenre", "Sword & Sorcery"),
+                    })
+                if len(revised_stories) == len(stories):
+                    stories = revised_stories
+            except (ValueError, json.JSONDecodeError) as e:
+                print(f"WARNING: Could not parse child-safety rewrite JSON: {e}", file=sys.stderr)
+                print("Continuing to next rewrite attempt with original stories.", file=sys.stderr)
 
     # ── Collision renamer: prevent accidental canon name reuse ───────────
     collisions = find_canon_collisions(stories, lore, allowed_names_lower)
