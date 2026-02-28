@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-27",
+  "last_updated": "2026-02-26",
   "characters": [
     {
       "name": "Vraxen the Knife",
@@ -1431,6 +1431,63 @@
           "title": "The Shadow-Broker's Debt"
         }
       ]
+    },
+    {
+      "name": "Theron the Scarlet Merchant",
+      "aliases": [
+        "Theron",
+        "The Scarlet Merchant"
+      ],
+      "tagline": "Poisoner. Cursed. Redeemed.",
+      "role": "Merchant, Poisoner",
+      "status": "dead",
+      "travel_scope": "regional",
+      "home_place": "His shop",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "known_world",
+      "bio": "Theron the Scarlet Merchant grew wealthy selling forbidden powders, oils, and saps that poisoned slowly and invisibly. When a young woman customer used his wares to kill her own child and then threw herself from the harbor walls, naming his shop in her final screams, a terrible curse descended upon him. Every coin he earned turned to blood-rust, every customer sickened, and his own reflection showed him as a withering corpse\u2014he was being slowly poisoned by his own trade's curse-magic reflected back upon him. Understanding his only path to redemption, Theron burned his shop and spent his remaining youth seeking out those he had harmed, offering genuine cure and aid; by the time he died still young and gaunt, three families prospered because of his redemption, though the gods never forgave him.",
+      "traits": [
+        "merchant",
+        "poisoner",
+        "cursed",
+        "seeking redemption",
+        "willing to sacrifice"
+      ],
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Young Woman Customer",
+      "aliases": [],
+      "tagline": "Mad. Murderous. Drowning.",
+      "role": "Customer, Murderer",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "known_world",
+      "bio": "An unnamed young woman purchased poisonous wares from Theron the Scarlet Merchant, believing her own child to be cursed. She used his poison to kill the boy and, overcome with grief and guilt, threw herself from the harbor walls while naming Theron's shop in her final screams.",
+      "traits": [
+        "grieving",
+        "mad",
+        "desperate",
+        "willing to murder"
+      ],
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     }
   ],
   "places": [
@@ -2302,6 +2359,56 @@
           "title": "The Shadow-Broker's Debt"
         }
       ]
+    },
+    {
+      "name": "Theron's Shop",
+      "tagline": "Forbidden. Corrupted. Burned.",
+      "place_type": "shop / merchant stall",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place of decay and curse, where wares rot on shelves and every customer emerges sickened.",
+      "description": "Theron's shop was where he dealt in forbidden powders, oils, and saps. Once it came under curse, every customer who entered emerged sickened and his wares rotted upon the shelves. Theron eventually burned it down as part of his redemption.",
+      "status": "destroyed",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
+    },
+    {
+      "name": "Harbor Walls",
+      "tagline": "Drowning. Cursing. Dying.",
+      "place_type": "fortification / landmark",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A grim place of suicide and final accusations, where a mad woman screams curses into the void.",
+      "description": "The harbor walls are where the young woman customer threw herself after killing her child, naming Theron's shop in her final screams as she died.",
+      "status": "active",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     }
   ],
   "events": [
@@ -3054,6 +3161,35 @@
       "significance": "Suggests that shadow-broking operates on a credit system where debts are eventually collected, and that collectors may take payment in flesh or identity.",
       "first_story": "",
       "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Young Woman's Suicide and Curse",
+      "tagline": "Grief. Madness. Curse.",
+      "event_type": "tragedy / curse-initiation",
+      "participants": [
+        "Young Woman Customer",
+        "Theron the Scarlet Merchant"
+      ],
+      "outcome": "The young woman threw herself from the harbor walls, naming Theron's shop in her final screams. This accusation triggered a terrible curse upon Theron, causing every coin he earned to turn to blood-rust, every customer to sicken, and his own reflection to show him as a withering corpse.",
+      "significance": "This event initiates the curse that defines Theron's story and forces him toward redemption. It demonstrates the power of accusation and oath-like statements to invoke curse-magic.",
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Theron's Redemption",
+      "tagline": "Restitution. Sacrifice. Release.",
+      "event_type": "redemption arc / curse-breaking",
+      "participants": [
+        "Theron the Scarlet Merchant"
+      ],
+      "outcome": "Theron burned his shop and spent his remaining youth seeking out those he had harmed, offering genuine cure and aid. By the time he died\u2014still young and gaunt\u2014three families prospered because of his redemption. The curse released him, though the gods never forgave him.",
+      "significance": "This demonstrates that curse-magic can be broken through genuine restitution and sacrifice, not merely through ritual dismissal. It also suggests that divine forgiveness and magical curse-breaking are separate phenomena.",
+      "first_story": "",
+      "first_date": "2026-02-26",
       "appearances": 1,
       "story_appearances": []
     }
@@ -4305,6 +4441,39 @@
           "title": "The Shadow-Broker's Debt"
         }
       ]
+    },
+    {
+      "name": "Curse of the Merchant Poisoner",
+      "tagline": "Reflection. Restitution. Release.",
+      "category": "legend",
+      "source": "The tale of Theron the Scarlet Merchant",
+      "status": "confirmed",
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Dying Accusation as Curse Invocation",
+      "tagline": "Accusation. Dying words. Binding.",
+      "category": "legend",
+      "source": "The tale of Theron the Scarlet Merchant",
+      "status": "confirmed",
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Divine Forgiveness vs. Curse Breaking",
+      "tagline": "Gods. Justice. Separation.",
+      "category": "legend",
+      "source": "The tale of Theron the Scarlet Merchant",
+      "status": "confirmed",
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "flora_fauna": [
@@ -5106,6 +5275,30 @@
       "first_date": "2026-02-27",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "Curse Magic Reflection",
+      "tagline": "Returned. Poisoned. Inevitable.",
+      "type": "curse",
+      "element": "poison / reflection",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Curse Breaking Through Restitution",
+      "tagline": "Atonement. Sacrifice. Release.",
+      "type": "ritual / passive",
+      "element": "restoration / redemption",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "relics": [
@@ -5681,6 +5874,63 @@
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "Scarlet Powders",
+      "tagline": "Forbidden. Strength-giving. Deadly.",
+      "type": "poison / powder",
+      "rarity": "rare",
+      "properties": "Made the weak strong; exact mechanism unknown.",
+      "use": "Ingested or applied by customers for enhancement; can be used to poison others.",
+      "status": "unknown",
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Vision Oils",
+      "tagline": "Hallucinogenic. Revelatory. Corrupting.",
+      "type": "potion / oil",
+      "rarity": "rare",
+      "properties": "Granted visions to those who used them; exact nature of visions unknown.",
+      "use": "Applied or ingested by customers seeking altered perception or prophetic insight.",
+      "status": "unknown",
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Slow-Acting Saps",
+      "tagline": "Subtle. Silent. Lethal.",
+      "type": "poison / sap",
+      "rarity": "rare",
+      "properties": "Killed slowly and invisibly; victims may not realize they are being poisoned.",
+      "use": "Used by customers to murder others without immediate detection.",
+      "status": "unknown",
+      "first_story": "",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Blood-Rust",
+      "tagline": "Cursed. Metallic. Oxidized.",
+      "type": "substance / curse manifestation",
+      "rarity": "rare",
+      "properties": "A rust-like substance that forms on coins earned through forbidden trade; appears to be a manifestation of curse-magic.",
+      "use": "A sign of curse-magic; renders money worthless.",
+      "status": "unknown",
+      "first_story": "The Scarlet Merchant",
+      "first_date": "2026-02-26",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     }
   ],
   "hemispheres": [],
