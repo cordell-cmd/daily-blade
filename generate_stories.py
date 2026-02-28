@@ -68,6 +68,15 @@ WORLD_EVENT_ARCS_MAX = int(os.environ.get("WORLD_EVENT_ARCS_MAX", "2"))
 # Arc persistence tuning (does not force arcs; only influences which arcs are highlighted)
 WORLD_EVENT_ARC_ACTIVE_DAYS = int(os.environ.get("WORLD_EVENT_ARC_ACTIVE_DAYS", "14"))
 WORLD_EVENT_ARC_INTENSITY_MAX = int(os.environ.get("WORLD_EVENT_ARC_INTENSITY_MAX", "5"))
+# Event arc dossiers: summarize prior tales via an API call instead of raw text injection.
+ENABLE_EVENT_ARC_DOSSIER = os.environ.get("ENABLE_EVENT_ARC_DOSSIER", "1").strip().lower() in {"1", "true", "yes", "y"}
+EVENT_ARC_DOSSIER_MAX_TALES = int(os.environ.get("EVENT_ARC_DOSSIER_MAX_TALES", "0"))  # 0 = no limit
+EVENT_ARC_DOSSIER_MAX_CHARS_PER_STORY = int(os.environ.get("EVENT_ARC_DOSSIER_MAX_CHARS_PER_STORY", "2000"))
+EVENT_ARC_DOSSIER_MAX_TOKENS = int(os.environ.get("EVENT_ARC_DOSSIER_MAX_TOKENS", "1500"))
+
+# Entity directory: compact one-line summaries of codex entities injected into the generation prompt.
+# Caps per category prevent prompt bloat as the codex grows (thousands of entities by end of year).
+ENTITY_DIR_MAX_PER_CATEGORY = int(os.environ.get("ENTITY_DIR_MAX_PER_CATEGORY", "40"))
 
 # Subgenres are generated dynamically by the AI for each story
 
@@ -111,9 +120,12 @@ REUSE_DEFAULT_INTENSITY = os.environ.get("REUSE_DEFAULT_INTENSITY", "cameo").str
 
 # Reuse dossier: when we intentionally reuse an entity, scan its prior appearance tales and inject a compact dossier.
 ENABLE_REUSE_DOSSIER = os.environ.get("ENABLE_REUSE_DOSSIER", "1").strip().lower() in {"1", "true", "yes", "y"}
-REUSE_DOSSIER_MAX_APPEARANCES = int(os.environ.get("REUSE_DOSSIER_MAX_APPEARANCES", "25"))  # 0 = no limit
+REUSE_DOSSIER_MAX_APPEARANCES = int(os.environ.get("REUSE_DOSSIER_MAX_APPEARANCES", "0"))  # 0 = no limit (full backstory)
 REUSE_DOSSIER_MAX_CHARS_PER_STORY = int(os.environ.get("REUSE_DOSSIER_MAX_CHARS_PER_STORY", "4000"))
 REUSE_DOSSIER_MAX_TOKENS = int(os.environ.get("REUSE_DOSSIER_MAX_TOKENS", "1200"))
+# Progressive dossier scaling: once total tale input exceeds this char limit,
+# older tales are progressively clipped so recent tales stay full-fidelity.
+REUSE_DOSSIER_MAX_TOTAL_INPUT_CHARS = int(os.environ.get("REUSE_DOSSIER_MAX_TOTAL_INPUT_CHARS", "80000"))  # ~20K tokens
 REUSE_ALLOWED_CATEGORIES_RAW = os.environ.get("REUSE_ALLOWED_CATEGORIES", "all").strip()
 
 
@@ -673,6 +685,42 @@ def load_story_by_date_and_title(date_key: str, title: str):
     return None
 
 
+# ── Recent-theme lookback (cross-day diversity) ───────────────────────────
+RECENT_THEME_LOOKBACK_DAYS = 3          # how many past issues to scan
+
+
+def _get_recent_story_themes(today_str: str, lookback_days: int = RECENT_THEME_LOOKBACK_DAYS) -> str:
+    """Return a compact summary of titles + subgenres from the last N archived days.
+
+    Used to inject cross-day diversity awareness into the generation prompt so
+    the model avoids repeating the same core concepts every day.
+    """
+    all_dates = _load_known_issue_dates()
+    # Exclude today (may not be archived yet) and take the last N.
+    past_dates = [d for d in all_dates if d < today_str][-lookback_days:]
+    if not past_dates:
+        return ""
+
+    lines: list[str] = []
+    for dkey in past_dates:
+        day = _load_archive_day(dkey)
+        stories = day.get("stories") if isinstance(day, dict) else None
+        if not isinstance(stories, list):
+            continue
+        titles_subs = []
+        for s in stories:
+            if not isinstance(s, dict):
+                continue
+            t = (s.get("title") or "").strip()
+            sg = (s.get("subgenre") or "").strip()
+            if t:
+                titles_subs.append(f'"{t}" [{sg}]' if sg else f'"{t}"')
+        if titles_subs:
+            lines.append(f"{dkey}: {', '.join(titles_subs)}")
+
+    return "\n".join(lines)
+
+
 def _clip_text(text: str, max_chars: int) -> str:
     t = text or ""
     max_chars = int(max_chars or 0)
@@ -684,7 +732,27 @@ def _clip_text(text: str, max_chars: int) -> str:
     return t[:head].rstrip() + "\n…\n" + t[-tail:].lstrip()
 
 
-def gather_prior_tales_for_entity(codex_entry, max_appearances: int, max_chars_per_story: int):
+def gather_prior_tales_for_entity(
+    codex_entry,
+    max_appearances: int,
+    max_chars_per_story: int,
+    max_total_chars: int = 0,
+):
+    """Gather prior tales for an entity, with progressive clipping for scale.
+
+    Parameters
+    ----------
+    codex_entry : dict
+        The codex entry with ``story_appearances``.
+    max_appearances : int
+        Max number of appearances to load.  0 = no limit.
+    max_chars_per_story : int
+        Initial per-story text clip limit.
+    max_total_chars : int
+        Soft cap on the combined text of all returned tales.  When exceeded,
+        older tales are progressively clipped (keeping the most recent tales
+        at full fidelity) so the total fits within budget.  0 = no limit.
+    """
     apps = codex_entry.get("story_appearances") if isinstance(codex_entry, dict) else None
     if not isinstance(apps, list) or not apps:
         return []
@@ -710,6 +778,44 @@ def gather_prior_tales_for_entity(codex_entry, max_appearances: int, max_chars_p
             "subgenre": story.get("subgenre", ""),
             "text": _clip_text(story.get("text", ""), max_chars_per_story),
         })
+
+    # ── Progressive clipping: keep recent tales full, clip older ones ──
+    max_total_chars = int(max_total_chars or 0)
+    if max_total_chars > 0 and len(out) > 1:
+        total = sum(len(t.get("text", "")) for t in out)
+        if total > max_total_chars:
+            # Strategy: split tales into "recent" (last 30%) kept at full
+            # fidelity, and "older" (first 70%) that get progressively
+            # clipped.  Oldest tales get clipped the most.
+            recent_count = max(1, len(out) // 3)  # keep ~33% recent at full
+            older = out[:-recent_count]
+            recent = out[-recent_count:]
+            recent_chars = sum(len(t.get("text", "")) for t in recent)
+            budget_for_older = max(0, max_total_chars - recent_chars)
+
+            if budget_for_older <= 0:
+                # Even recent tales exceed budget — clip them uniformly
+                per_story = max(200, max_total_chars // len(recent))
+                for t in recent:
+                    t["text"] = _clip_text(t["text"], per_story)
+                # Drop all older tales — metadata only
+                for t in older:
+                    t["text"] = f"[{t['date']}] (tale omitted for brevity)"
+            else:
+                # Distribute budget_for_older across older tales with a
+                # linear ramp: oldest gets the least, most recent of the
+                # older group gets the most.
+                n = len(older)
+                # Weights: 1, 2, 3, ..., n  (oldest=1, newest=n)
+                weight_sum = n * (n + 1) // 2
+                for idx, t in enumerate(older):
+                    weight = idx + 1  # oldest=1, newest=n
+                    per_tale_budget = max(
+                        200,  # minimum: keep at least a snippet
+                        int(budget_for_older * weight / weight_sum),
+                    )
+                    t["text"] = _clip_text(t["text"], per_tale_budget)
+
     return out
 
 
@@ -744,6 +850,47 @@ OPEN THREADS:
 
 DO-NOT-CHANGE (continuity locks):
 - (bullets)
+"""
+
+
+def build_event_arc_dossier_prompt(event_entry: dict, prior_tales: list):
+    """Build a prompt that asks the model to summarize the narrative arc so far
+    for a world event, producing a compact dossier the story writer can use."""
+    name = (event_entry.get("name") or "unnamed event").strip()
+    canon_json = json.dumps(event_entry, ensure_ascii=False, sort_keys=True)
+    tales_payload = json.dumps(prior_tales or [], ensure_ascii=False, indent=2)
+    return f"""You are an archivist summarizing the narrative arc of a world event in a sword-and-sorcery universe.
+
+Event name: {name}
+
+AUTHORITATIVE CANON JSON:
+{canon_json}
+
+PRIOR TALES IN CHRONOLOGICAL ORDER ({len(prior_tales or [])} tales):
+{tales_payload}
+
+Task: Produce a compact *arc summary* that a story writer can use to write the next installment.
+
+Constraints:
+- Only include facts supported by the canon JSON and/or prior tales.
+- Preserve chronological flow: what happened first, then what, then what.
+- Note any escalation, reversals, or turning points.
+- Note which characters, factions, and places are involved and their current status.
+- Highlight unresolved threads and the current state of the conflict.
+- Keep it concise: aim for a tight narrative summary, not a retelling.
+
+Return ONLY plain text, with these sections:
+ARC SO FAR:
+(chronological narrative summary, 3-8 sentences)
+
+KEY PLAYERS:
+- (bullets: name + current status/role)
+
+CURRENT STATE:
+- (1-3 bullets: where things stand right now)
+
+OPEN THREADS:
+- (bullets: unresolved plot points the next story could develop)
 """
 
 
@@ -870,19 +1017,147 @@ def build_spotlight_section(lore, seed_text: str, top_per_category=20, random_pe
 
 
 def build_generation_lore_context(lore, seed_text: str):
-    """Scalable lore context for generation: world rules (no full-lore dump)."""
+    """Rich lore context for generation: world rules + compact entity directory.
+
+    This gives the model awareness of the full established world so it can
+    organically reference existing characters, places, factions, etc. and
+    avoid accidentally contradicting canon or re-inventing existing entities.
+    """
     parts = []
     # Worlds + rules are the most important global canon.
     if lore.get("worlds"):
         w0 = lore["worlds"][0]
         parts.append("=== WORLD ===")
         parts.append(f"• {w0.get('name','The Known World')}: {w0.get('description','')}")
+        if w0.get("tone"):
+            parts.append(f"• Tone: {w0.get('tone','')}")
         if w0.get("rules"):
             parts.append("")
             parts.append("=== LORE RULES (must be respected) ===")
             parts.extend([f"• {r}" for r in w0.get("rules", [])])
 
+    # ── Compact entity directory from the codex ──
+    # Goal: the model knows WHO and WHAT exists so it can weave a living world.
+    # Each entity gets a one-line summary (name + key trait/role/location).
+    # Capped at ENTITY_DIR_MAX_PER_CATEGORY per category, prioritized by recency.
+    codex = load_codex_file()
+    if isinstance(codex, dict):
+        _dir_sections = [
+            ("characters", "KNOWN CHARACTERS", lambda it: _compact_char_line(it)),
+            ("places", "KNOWN PLACES", lambda it: _compact_place_line(it)),
+            ("factions", "KNOWN FACTIONS", lambda it: _compact_faction_line(it)),
+            ("regions", "KNOWN REGIONS", lambda it: _compact_generic_line(it)),
+            ("polities", "KNOWN POLITIES", lambda it: _compact_generic_line(it)),
+            ("artifacts", "KNOWN ARTIFACTS", lambda it: _compact_generic_line(it)),
+            ("flora_fauna", "KNOWN CREATURES & FLORA", lambda it: _compact_generic_line(it)),
+            ("magic", "KNOWN MAGIC TYPES", lambda it: _compact_generic_line(it)),
+        ]
+        cap = max(1, ENTITY_DIR_MAX_PER_CATEGORY)
+        for cat, header, formatter in _dir_sections:
+            items = codex.get(cat, [])
+            if not isinstance(items, list) or not items:
+                continue
+            # Sort by most recent story appearance (most recently used first).
+            items_sorted = sorted(items, key=_entity_last_appearance_sort_key, reverse=True)
+            total_count = len(items_sorted)
+            shown = items_sorted[:cap]
+            lines = []
+            for it in shown:
+                if not isinstance(it, dict):
+                    continue
+                line = formatter(it)
+                if line:
+                    lines.append(line)
+            if lines:
+                parts.append("")
+                if total_count > cap:
+                    parts.append(f"=== {header} (showing {len(lines)} most recent of {total_count}) ===")
+                else:
+                    parts.append(f"=== {header} ({len(lines)} entries) ===")
+                parts.extend(lines)
+
     return "\n".join([p for p in parts if p is not None]).strip()
+
+
+def _entity_last_appearance_sort_key(it: dict) -> str:
+    """Return the most recent story_appearances date for sorting, or '' for never-seen."""
+    if not isinstance(it, dict):
+        return ""
+    apps = it.get("story_appearances")
+    if not isinstance(apps, list) or not apps:
+        return ""
+    dates = []
+    for a in apps:
+        if isinstance(a, dict):
+            d = str(a.get("date") or "").strip()
+            if d:
+                dates.append(d)
+    return max(dates) if dates else ""
+
+
+def _compact_char_line(it: dict) -> str:
+    """One-line summary: Name — role/title, status, location."""
+    nm = (it.get("name") or "").strip()
+    if not nm:
+        return ""
+    bits = [nm]
+    role = (it.get("role") or it.get("title") or "").strip()
+    if role:
+        bits.append(role)
+    status = (it.get("status") or "").strip()
+    if status and status.lower() not in {"unknown", ""}:
+        bits.append(f"[{status}]")
+    loc = (it.get("place") or it.get("region") or it.get("realm") or "").strip()
+    if loc and loc.lower() != "unknown":
+        bits.append(f"({loc})")
+    return "• " + " — ".join(bits[:2]) + (" " + " ".join(bits[2:]) if len(bits) > 2 else "")
+
+
+def _compact_place_line(it: dict) -> str:
+    """One-line summary: Name — type/description snippet, region."""
+    nm = (it.get("name") or "").strip()
+    if not nm:
+        return ""
+    bits = [nm]
+    desc = (it.get("description") or it.get("bio") or "").strip()
+    if desc:
+        # First sentence or first 80 chars
+        short = desc.split(".")[0].strip()
+        if len(short) > 80:
+            short = short[:77] + "..."
+        bits.append(short)
+    region = (it.get("region") or it.get("realm") or "").strip()
+    if region and region.lower() != "unknown":
+        bits.append(f"({region})")
+    return "• " + " — ".join(bits[:2]) + (" " + bits[2] if len(bits) > 2 else "")
+
+
+def _compact_faction_line(it: dict) -> str:
+    """One-line summary: Name — description snippet."""
+    nm = (it.get("name") or "").strip()
+    if not nm:
+        return ""
+    desc = (it.get("description") or it.get("bio") or "").strip()
+    short = ""
+    if desc:
+        short = desc.split(".")[0].strip()
+        if len(short) > 100:
+            short = short[:97] + "..."
+    return f"• {nm}" + (f" — {short}" if short else "")
+
+
+def _compact_generic_line(it: dict) -> str:
+    """One-line summary: Name — first sentence of description."""
+    nm = (it.get("name") or "").strip()
+    if not nm:
+        return ""
+    desc = (it.get("description") or it.get("bio") or it.get("significance") or "").strip()
+    short = ""
+    if desc:
+        short = desc.split(".")[0].strip()
+        if len(short) > 100:
+            short = short[:97] + "..."
+    return f"• {nm}" + (f" — {short}" if short else "")
 
 
 def _canon_loc_names_from_codex(codex: dict) -> dict[str, list[str]]:
@@ -1236,20 +1511,19 @@ def _in_event_scope(entity_anchors: dict[str, str], event_geo: dict) -> bool:
     return False
 
 
-def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
-    """Build a small, issue-wide world-events section for the generation prompt."""
-    if not ENABLE_WORLD_EVENT_ARCS:
-        return ""
+def _select_world_event_arcs(today_str: str, codex=None) -> list:
+    """Pick a small set of active/important events deterministically per day.
 
-    codex = load_codex_file()
+    Returns a list of event dicts from the codex.  The same seed produces the
+    same selection on a given day, so repeated calls are idempotent.
+    """
+    if codex is None:
+        codex = load_codex_file()
     events = codex.get("events", []) if isinstance(codex, dict) else []
     if not isinstance(events, list) or not events:
-        return ""
+        return []
 
-    loc_names = _canon_loc_names_from_codex(codex)
     known_dates = _load_known_issue_dates()
-
-    # Pick a small set of active/important events deterministically per day.
     rng = random.Random(_stable_seed_int(today_str, "world_event_arcs"))
     scored = []
     for e in events:
@@ -1262,24 +1536,42 @@ def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
         out = (e.get("outcome") or "")
         arc = _event_arc_metrics(e, known_dates)
 
-        # Base importance from descriptive heft, then bias toward active arcs.
         weight = 1.0 + min(3.0, (len(sig) + len(out)) / 400.0)
-        # Active arcs get a boost; resolved arcs get a slight penalty.
         if arc.get("resolved"):
             weight *= 0.7
         else:
             weight *= (1.0 + 0.18 * int(arc.get("intensity") or 1))
             if int(arc.get("days_ago") or 999) <= 2:
                 weight *= 1.25
-        # Tiny jitter so ties don't always pick the same.
         weight *= (0.92 + 0.16 * rng.random())
         scored.append((weight, e, arc))
 
     scored.sort(key=lambda x: x[0], reverse=True)
     picked = [e for _, e, _ in scored[: max(1, min(WORLD_EVENT_ARCS_MAX, 4))]]
     picked = picked[: max(0, int(WORLD_EVENT_ARCS_MAX or 0))]
+    return picked
+
+
+def build_world_event_arcs_section(today_str: str, lore: dict, event_arc_dossiers=None) -> str:
+    """Build a small, issue-wide world-events section for the generation prompt.
+
+    Parameters
+    ----------
+    event_arc_dossiers : dict | None
+        Optional mapping of ``event_name_lower -> dossier_text`` produced by
+        pre-summarization API calls.  When present and non-empty for an event,
+        the compact dossier replaces raw tale injection.
+    """
+    if not ENABLE_WORLD_EVENT_ARCS:
+        return ""
+
+    codex = load_codex_file()
+    picked = _select_world_event_arcs(today_str, codex)
     if not picked:
         return ""
+
+    loc_names = _canon_loc_names_from_codex(codex)
+    known_dates = _load_known_issue_dates()
 
     lines = []
     lines.append("ISSUE-WIDE WORLD EVENTS (shared continuity / cross-story pressures):")
@@ -1354,6 +1646,32 @@ def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
             lines.append("   Significance: " + _clip_text(significance, 240).replace("\n", " "))
         if outcome:
             lines.append("   Outcome/aftershocks: " + _clip_text(outcome, 240).replace("\n", " "))
+
+        # ── Event arc context: prefer pre-computed dossier, fallback to raw tales ──
+        event_arc_dossiers = event_arc_dossiers or {}
+        event_name_lc = (e.get("name") or "").strip().lower()
+        dossier_text = (event_arc_dossiers.get(event_name_lc) or "").strip()
+        if dossier_text:
+            lines.append("   ARC DOSSIER (summarized from prior tales):")
+            for dline in dossier_text.split("\n"):
+                lines.append(f"     {dline}")
+        else:
+            # Fallback: inject raw tales (capped for scale)
+            event_tales = gather_prior_tales_for_entity(
+                e,
+                max_appearances=EVENT_ARC_DOSSIER_MAX_TALES,
+                max_chars_per_story=EVENT_ARC_DOSSIER_MAX_CHARS_PER_STORY,
+                max_total_chars=REUSE_DOSSIER_MAX_TOTAL_INPUT_CHARS,
+            )
+            if event_tales:
+                lines.append(f"   PRIOR STORY APPEARANCES ({len(event_tales)} tales — read these to understand the arc so far):")
+                for tale in event_tales:
+                    tdate = tale.get("date", "")
+                    ttitle = tale.get("title", "")
+                    ttext = tale.get("text", "")
+                    lines.append(f"   [{tdate}] \"{ttitle}\":")
+                    for tline in ttext.split("\n"):
+                        lines.append(f"     {tline.strip()}")
 
         # Optional cross-category canon ingredients within the event radius.
         try:
@@ -1434,12 +1752,23 @@ def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
     return "\n".join(lines).strip()
 
 # ── Story generation prompt ──────────────────────────────────────────────
-def build_prompt(today_str, lore, reused_entries=None, reuse_details=None):
+def build_prompt(today_str, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None):
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     reused_entries = reused_entries or {}
     reuse_details = reuse_details or {}
 
-    world_events_section = build_world_event_arcs_section(today_str, lore)
+    world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
+
+    # ── Cross-day diversity: recent titles/subgenres ──
+    recent_themes_raw = _get_recent_story_themes(today_str)
+    recent_themes_section = ""
+    if recent_themes_raw.strip():
+        recent_themes_section = f"""
+RECENT STORIES (from the last few days — DO NOT repeat these same core concepts):
+{recent_themes_raw}
+- You may reference the same WORLD (locations, characters) but choose DIFFERENT themes, conflicts, and plot shapes.
+- If the recent list is heavy on one motif (e.g. shadow trade, oaths, demon pacts), deliberately steer AWAY from that motif today.
+"""
 
     reuse_section = ""
     if reused_entries:
@@ -1520,6 +1849,7 @@ ORIGINALITY / COPYRIGHT SAFETY:
 Today's date is {today_str}. Use this as subtle creative inspiration if you like.
 {lore_section}
 {reuse_section}
+{recent_themes_section}
 Respond with ONLY valid JSON — no prose before or after — matching this exact structure:
 [
   {{ "title": "Story Title Here", "subgenre": "Two or Three Word Label", "text": "Full story text here…" }},
@@ -1539,17 +1869,64 @@ CONTENT GUARDRAILS (must follow):
     - Sexual/romantic tension is fine; allusion is fine.
     - Keep any intimacy off-screen / fade-to-black; avoid explicit anatomy or explicit action verbs.
 
-TONE + FANTASY VARIETY (creative palette; use your judgment):
-- Avoid monotone issues: aim for a MIX of tones, not 10 grim macabre tales.
-    - Include some lighter/adventurous/wondrous pieces (mystery, heist, exploration, comic irony, heroic triumph).
-    - Include at least one love-story / romance thread (can be sweet, tragic, or bittersweet; keep it pulp-fantasy).
-- Magic is welcome but not mandatory: aim for a mix of sorcery and non-magic conflict (steel, politics, survival, bargains, travel, rivalries).
-- Use the full fantasy toolbox when it fits the world rules.
-    - The examples below are NOT a limit; you are encouraged to invent new kinds of peoples, creatures, cultures, magics, and wonders.
-    - Non-human peoples (elves, dwarves, goblin-kind, smallfolk, orcs/ogres/trolls — or wholly new lineages).
-    - Mythic creatures (a dragon/wyrm or similarly iconic beast — or a brand-new apex terror).
-    - Fae/fairy influence (a fae court, fairy realm, or a fae-bargain — or any other uncanny otherworld).
+TONE + FANTASY VARIETY — MANDATORY DISTRIBUTION RULES:
+These are HARD constraints, not suggestions. Follow them exactly.
+
+1. TONE MIX (across the 10 stories):
+   - At MOST 3 stories may be grim / tragic / horror / damnation.
+   - At LEAST 2 stories must be LIGHTER in tone: adventure, wonder, comic irony, clever trickery, heroic triumph, or exploration.
+   - At LEAST 1 story must have a genuine love / romance thread (sweet, tragic, or bittersweet — keep it pulp-fantasy).
+   - At LEAST 1 story should end with an unambiguously positive or hopeful outcome.
+   - The remaining stories can be any tone (bittersweet, morally gray, tense, mysterious, etc.).
+
+2. THEME CAPS (no single motif may dominate the set):
+   - At MOST 2 stories may center on demon pacts / demonic bargains.
+   - At MOST 2 stories may center on shadow theft / shadow markets / shadow manipulation.
+   - At MOST 2 stories may center on broken oaths or oath-consequences.
+   - At MOST 2 stories may center on cursed objects / cursed gold / debt-horror.
+   - At MOST 1 story may center on a living fortress / sentient architecture.
+   - At MOST 1 story may center on bone carving / necromantic animation.
+   - If the RECENT STORIES section above shows heavy use of a motif, use ZERO of that motif today.
+   EXCEPTION — ACTIVE WORLD EVENT ARCS: If the ISSUE-WIDE WORLD EVENTS section lists an active
+   event at "rising", "crisis", or "climax" stage, MORE stories may reflect that event's motif
+   (up to 4 stories showing its effects). This is expected — large-scale events naturally
+   dominate the news. But even then, the affected stories should explore DIFFERENT facets
+   (military, civilian, economic, romantic, political, comedic, etc.) rather than repeating
+   the same plot shape.
+
+3. REQUIRED BREADTH — touch on AT LEAST 5 DIFFERENT conflict types from this non-exhaustive list:
+   - Political intrigue / court scheming / succession crisis
+   - Sea voyage / piracy / coastal adventure
+   - Heist / caper / thieves' guild rivalry
+   - Romance / forbidden love / marriage-pact
+   - Nature / druidism / wilderness survival / beast-bonding
+   - Fellowship / a band of companions on a quest
+   - Coming of age / a young hero's first trial
+   - War / battlefield tactics / siege (at army scale)
+   - Divine intervention / temples / priest-warrior conflicts
+   - Music, art, or beauty as a source of power
+   - Exploration / lost world / first contact with an unknown culture
+   - Non-human POV (dragon, fae, construct, spirit, beast)
+   - Trade / merchant adventure / economic rivalry (non-magical)
+   - Comedy of errors / trickster tale / con game
+   You are NOT limited to this list — invent fresh angles freely.
+
+4. PROTAGONIST VARIETY:
+   - No more than 3 protagonists should be lone antiheroes.
+   - Include at least one non-human or inhuman protagonist (fae, dwarf, orc, dragon, golem, spirit, etc.).
+   - Include at least one protagonist who is part of a group (party, crew, warband, family).
+   - At least one protagonist should be young or at the start of their journey.
+
+5. SETTING VARIETY:
+   - Use at least 3 clearly different types of terrain or environment (city, sea, forest, desert, mountain, tundra, underground, sky, swamp, ruin, etc.).
+   - Not every location needs to be cursed or sinister. Some should feel wondrous, beautiful, or alive.
+
+FANTASY TOOLBOX (use the full range — these are NOT a limit; invent freely):
+- Non-human peoples (elves, dwarves, goblin-kind, smallfolk, orcs/ogres/trolls — or wholly new lineages).
+- Mythic creatures (a dragon/wyrm or similarly iconic beast — or a brand-new apex terror).
+- Fae/fairy influence (a fae court, fairy realm, or a fae-bargain — or any other uncanny otherworld).
 - Stories may center on ANY fantasy focus (not just people): creatures, artifacts/weapons/relics, or places can be the "main character".
+- Magic is welcome but not mandatory: aim for a mix of sorcery and non-magic conflict (steel, politics, survival, travel, rivalries).
 
 REUSE INTENSITY RULES (only applies when an entry is labeled):
 - If you see "INTENDED REUSE INTENSITY: cameo" for an entity, keep it light: brief appearance/mention, not the protagonist or primary location, and avoid major new canon changes for that entity.
@@ -1557,8 +1934,8 @@ REUSE INTENSITY RULES (only applies when an entry is labeled):
 
 Guidelines:
 - Heroes and antiheroes with colorful names (barbarians, sell-swords, sorcerers, thieves)
-- Vivid exotic settings: crumbling empires, cursed ruins, blasted steppes, sorcerous cities
-- Stakes that feel epic: ancient evil, demonic pacts, dying gods, vengeful sorcery
+- Vivid exotic settings: crumbling empires, cursed ruins, blasted steppes, sorcerous cities — but also thriving markets, verdant forests, coral reefs, mountain monasteries, sky-citadels
+- Stakes that feel epic: ancient evil, demonic pacts, dying gods, vengeful sorcery — but also personal: lost love, family honor, a dare, a wager, a dream
 - Each story must be complete with a beginning, conflict, and satisfying (or ironic) ending
 - Vary protagonists, locations, and types of magic/conflict across all 10 stories
 - Use dramatic, muscular prose — short punchy sentences mixed with lush description
@@ -1566,8 +1943,9 @@ Guidelines:
 - No two stories should share a protagonist or primary location
 - For each story, invent a vivid 2-4 word subgenre label that captures its specific flavor.
   You are NOT limited to any fixed list — be creative. Examples of the kind of variety to aim for:
-  Sword & Sorcery, Dark Fantasy, Political Intrigue, Forbidden Alchemy, Lost World, Blood Oath,
-  Ghost Empire, Thieves' War, Demon Pact, Sea Sorcery, Witch Hunt, Siege & Betrayal — or anything
+  Sword & Sorcery, Dark Fantasy, Political Intrigue, Forbidden Alchemy, Lost World,
+  Sea Rover, Fae Romance, Trickster's Gambit, Druid's Trial, War Drums, Dragon's Court,
+  Pirate's Honor, Coming of Age, Merchant Prince, Wilderness Oath — or anything
   that fits. The label should feel like a pulp magazine category."""
 
 
@@ -3846,10 +4224,10 @@ Here is the prior response (verbatim):
 """
 
 
-def build_missing_stories_prompt(today_str: str, lore: dict, missing: int, existing_titles=None) -> str:
+def build_missing_stories_prompt(today_str: str, lore: dict, missing: int, existing_titles=None, event_arc_dossiers=None) -> str:
     existing_titles = existing_titles or []
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
-    world_events_section = build_world_event_arcs_section(today_str, lore)
+    world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
     avoid = "\n".join(f"- {t}" for t in existing_titles if t)
     avoid_section = f"\nDo not reuse these existing titles:\n{avoid}\n" if avoid else ""
     return f"""Generate {int(missing)} additional sword-and-sorcery stories for the issue dated {today_str}.
@@ -4697,6 +5075,7 @@ def main():
                             codex_entry,
                             max_appearances=REUSE_DOSSIER_MAX_APPEARANCES,
                             max_chars_per_story=REUSE_DOSSIER_MAX_CHARS_PER_STORY,
+                            max_total_chars=REUSE_DOSSIER_MAX_TOTAL_INPUT_CHARS,
                         )
                         if prior_tales:
                             print(f"Scanning {len(prior_tales)} prior tale(s) for reused {cat[:-1] if cat.endswith('s') else cat}: {nm}...")
@@ -4715,12 +5094,46 @@ def main():
 
                 reuse_details.setdefault(cat, []).append(detail)
 
+    # ── Optional: Pre-compute event arc dossiers ─────────────────────────
+    # When ENABLE_EVENT_ARC_DOSSIER is on and an event has prior tale
+    # appearances, we summarize its narrative arc via an API call so the
+    # generation prompt gets a compact dossier instead of raw story text.
+    event_arc_dossiers = {}
+    if ENABLE_WORLD_EVENT_ARCS and ENABLE_EVENT_ARC_DOSSIER:
+        selected_events = _select_world_event_arcs(today_str)
+        for evt in selected_events:
+            evt_name = (evt.get("name") or "").strip()
+            if not evt_name:
+                continue
+            event_tales = gather_prior_tales_for_entity(
+                evt,
+                max_appearances=EVENT_ARC_DOSSIER_MAX_TALES,
+                max_chars_per_story=EVENT_ARC_DOSSIER_MAX_CHARS_PER_STORY,
+                max_total_chars=REUSE_DOSSIER_MAX_TOTAL_INPUT_CHARS,
+            )
+            if not event_tales:
+                continue
+            print(f"Building arc dossier for event \"{evt_name}\" ({len(event_tales)} tales)...")
+            dossier_prompt = build_event_arc_dossier_prompt(evt, event_tales)
+            try:
+                dossier_msg = client.messages.create(
+                    model=MODEL,
+                    max_tokens=EVENT_ARC_DOSSIER_MAX_TOKENS,
+                    messages=[{"role": "user", "content": dossier_prompt}],
+                )
+                dossier_text = dossier_msg.content[0].text.strip()
+                if dossier_text:
+                    event_arc_dossiers[evt_name.lower()] = dossier_text
+                    print(f"✓ Arc dossier for \"{evt_name}\": {len(dossier_text)} chars")
+            except Exception as e:
+                print(f"WARNING: Event arc dossier failed for \"{evt_name}\": {e}", file=sys.stderr)
+
     # ── CALL 1: Generate stories with lore context ───────────────────────
     print("Calling Claude to generate stories...")
     message = client.messages.create(
         model=MODEL,
         max_tokens=4096,
-        messages=[{"role": "user", "content": build_prompt(today_str, lore, reused_entries=reused_entries, reuse_details=reuse_details)}]
+        messages=[{"role": "user", "content": build_prompt(today_str, lore, reused_entries=reused_entries, reuse_details=reuse_details, event_arc_dossiers=event_arc_dossiers)}]
     )
     raw = message.content[0].text.strip()
     try:
@@ -4773,7 +5186,7 @@ def main():
                 max_tokens=4096,
                 messages=[{
                     "role": "user",
-                    "content": build_missing_stories_prompt(today_str, lore, missing, existing_titles=[s.get("title") for s in stories if isinstance(s, dict)]),
+                    "content": build_missing_stories_prompt(today_str, lore, missing, existing_titles=[s.get("title") for s in stories if isinstance(s, dict)], event_arc_dossiers=event_arc_dossiers),
                 }],
             )
             extra_raw = extra_msg.content[0].text.strip()
