@@ -2850,14 +2850,39 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
             first_date  = item.get("first_date") or date_key
             story_apps  = item.get("story_appearances")
 
+            # Normalize story_appearances to a unique list.
+            if not isinstance(story_apps, list):
+                story_apps = []
+            uniq = []
+            seen = set()
+            for a in story_apps:
+                if not isinstance(a, dict):
+                    continue
+                d = str(a.get("date", "") or "").strip() or first_date
+                t = str(a.get("title", "") or "").strip()
+                if not t:
+                    continue
+                key = (d, t)
+                if key in seen:
+                    continue
+                seen.add(key)
+                uniq.append({"date": d, "title": t})
+            story_apps = uniq
+            item["story_appearances"] = story_apps
+
             if first_story and (not isinstance(story_apps, list) or len(story_apps) == 0):
                 item["story_appearances"] = [{"date": first_date, "title": first_story}]
 
+            # If we have story appearances but first_story/first_date are missing, backfill them.
+            if isinstance(item.get("story_appearances"), list) and item["story_appearances"]:
+                if not (item.get("first_story") or "").strip():
+                    item["first_story"] = item["story_appearances"][0].get("title", "")
+                if not (item.get("first_date") or "").strip():
+                    item["first_date"] = item["story_appearances"][0].get("date", date_key)
+
             if isinstance(item.get("story_appearances"), list):
-                try:
-                    item["appearances"] = max(int(item.get("appearances", 0) or 0), len(item["story_appearances"]) or 1)
-                except Exception:
-                    item["appearances"] = len(item["story_appearances"]) or 1
+                # Appearances tracks how many distinct stories an entity appears in.
+                item["appearances"] = len(item["story_appearances"]) or 1
 
     for cat in [
         "characters",
