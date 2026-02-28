@@ -1076,6 +1076,8 @@ def build_lore_extraction_prompt(stories, existing_lore):
                     cand = (m.group(0) or "").strip()
                     if not cand:
                         continue
+                    if cand.lower().startswith("the "):
+                        cand = cand[4:].strip()
                     cand_norm = " ".join(cand.split())
                     key = cand_norm.lower()
                     if key in seen:
@@ -2769,6 +2771,103 @@ def normalize_extracted_lore(extracted):
     ]
     empty = {k: [] for k in expected_keys}
 
+    def _canonicalize_object_of_name(name: str) -> str:
+        """Canonicalize important object-of names.
+
+        Examples:
+        - "the idol of Khar-Zul" -> "Idol of Khar-Zul"
+        - "idol of Khar-Zul"     -> "Idol of Khar-Zul"
+
+        We only touch this narrow pattern to avoid rewriting names like
+        "The Lamia's Pearl".
+        """
+        if not name:
+            return ""
+        s = str(name).strip()
+        m = re.match(
+            r"^(?:the\s+)?(idol|crown|throne|blade|dagger|ring|tome|amulet|chalice|mask|orb|eye|eyes)\s+of\s+(.+)$",
+            s,
+            flags=re.IGNORECASE,
+        )
+        if not m:
+            return s
+        obj = (m.group(1) or "").strip().lower()
+        rest = (m.group(2) or "").strip()
+        if not obj or not rest:
+            return s
+        return obj.capitalize() + " of " + rest
+
+    def _looks_like_named_artifact(name: str) -> bool:
+        return bool(
+            re.match(
+                r"^\s*(?:the\s+)?(idol|crown|throne|blade|dagger|ring|tome|amulet|chalice|mask|orb|eye|eyes)\s+of\s+",
+                str(name or ""),
+                flags=re.IGNORECASE,
+            )
+        )
+
+    def _postprocess(normalized: dict) -> dict:
+        # Canonicalize artifact names (narrow pattern only).
+        artifacts_out = []
+        for a in normalized.get("artifacts", []) or []:
+            if not isinstance(a, dict):
+                continue
+            a2 = dict(a)
+            a2["name"] = _canonicalize_object_of_name(a2.get("name", ""))
+            artifacts_out.append(a2)
+
+        # Move misclassified object-of items out of relics into artifacts.
+        relics_in = normalized.get("relics", []) or []
+        relics_out = []
+        for rl in relics_in:
+            if not isinstance(rl, dict):
+                continue
+            name = _canonicalize_object_of_name(rl.get("name", ""))
+            if _looks_like_named_artifact(name):
+                powers = str(rl.get("power", "") or "").strip()
+                curse = str(rl.get("curse", "") or "").strip()
+                if curse:
+                    powers = (powers + ("\n\n" if powers else "") + f"Curse: {curse}").strip()
+                artifacts_out.append({
+                    "name": name,
+                    "tagline": rl.get("tagline", ""),
+                    "artifact_type": "idol" if name.lower().startswith("idol of ") else "",
+                    "origin": rl.get("origin", ""),
+                    "powers": powers,
+                    "last_known_holder": "",
+                    "status": rl.get("status", "unknown"),
+                })
+                continue
+            rl2 = dict(rl)
+            rl2["name"] = name
+            relics_out.append(rl2)
+
+        # Deduplicate artifacts by case-insensitive name.
+        deduped_artifacts = {}
+        for a in artifacts_out:
+            if not isinstance(a, dict):
+                continue
+            nm = str(a.get("name", "")).strip()
+            if not nm:
+                continue
+            key = nm.lower()
+            if key not in deduped_artifacts:
+                deduped_artifacts[key] = a
+                continue
+            ex = deduped_artifacts[key]
+            # Prefer non-empty fields; append powers if both exist and differ.
+            for fld in ["tagline", "artifact_type", "origin", "last_known_holder", "status"]:
+                if not ex.get(fld) and a.get(fld):
+                    ex[fld] = a.get(fld)
+            p1 = str(ex.get("powers", "") or "").strip()
+            p2 = str(a.get("powers", "") or "").strip()
+            if p2 and p2 != p1:
+                ex["powers"] = (p1 + ("\n\n" if p1 else "") + p2).strip()
+
+        normalized["artifacts"] = list(deduped_artifacts.values())
+        normalized["relics"] = relics_out
+        return normalized
+
     if isinstance(extracted, dict):
         normalized = dict(extracted)
         for key in expected_keys:
@@ -2776,7 +2875,7 @@ def normalize_extracted_lore(extracted):
                 normalized[key] = []
             elif not isinstance(normalized[key], list):
                 normalized[key] = []
-        return normalized
+        return _postprocess(normalized)
 
     if isinstance(extracted, list):
         buckets = {k: [] for k in expected_keys}
