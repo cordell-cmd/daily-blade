@@ -19,6 +19,14 @@ from datetime import datetime, timezone
 import anthropic
 
 
+def _parse_date_key(date_key: str):
+    s = (date_key or "").strip()
+    try:
+        return datetime.strptime(s, "%Y-%m-%d").date()
+    except Exception:
+        return None
+
+
 def _maybe_load_dotenv():
     """Best-effort load of a local .env file for development.
 
@@ -52,6 +60,9 @@ MAX_CONTINENTS = int(os.environ.get("MAX_CONTINENTS", "7"))
 # so multiple stories/characters can be influenced by shared pressures.
 ENABLE_WORLD_EVENT_ARCS = os.environ.get("ENABLE_WORLD_EVENT_ARCS", "1").strip().lower() in {"1", "true", "yes", "y"}
 WORLD_EVENT_ARCS_MAX = int(os.environ.get("WORLD_EVENT_ARCS_MAX", "2"))
+# Arc persistence tuning (does not force arcs; only influences which arcs are highlighted)
+WORLD_EVENT_ARC_ACTIVE_DAYS = int(os.environ.get("WORLD_EVENT_ARC_ACTIVE_DAYS", "14"))
+WORLD_EVENT_ARC_INTENSITY_MAX = int(os.environ.get("WORLD_EVENT_ARC_INTENSITY_MAX", "5"))
 
 # Subgenres are generated dynamically by the AI for each story
 
@@ -884,6 +895,149 @@ def _canon_loc_names_from_codex(codex: dict) -> dict[str, list[str]]:
     return out
 
 
+def _load_known_issue_dates() -> list[str]:
+    """Best-effort list of available issue dates (YYYY-MM-DD)."""
+    dates: list[str] = []
+    if os.path.exists(ARCHIVE_IDX):
+        try:
+            idx = json.load(open(ARCHIVE_IDX, "r", encoding="utf-8"))
+            raw = idx.get("dates") if isinstance(idx, dict) else None
+            if isinstance(raw, list):
+                dates = [str(x or "").strip() for x in raw if str(x or "").strip()]
+        except Exception:
+            dates = []
+
+    # Ensure today exists if stories.json has a date.
+    try:
+        if os.path.exists(OUTPUT_FILE):
+            day = json.load(open(OUTPUT_FILE, "r", encoding="utf-8"))
+            d = str(day.get("date") or "").strip() if isinstance(day, dict) else ""
+            if d and d not in dates:
+                dates.append(d)
+    except Exception:
+        pass
+
+    # Sort lexicographically (YYYY-MM-DD). Archive index is typically already ordered.
+    dates = sorted(set(dates))
+    return dates
+
+
+def _event_is_resolved(event: dict) -> bool:
+    """Heuristic: decide whether an event feels resolved/ended."""
+    if not isinstance(event, dict):
+        return False
+    blob = " ".join([
+        str(event.get("tagline") or ""),
+        str(event.get("outcome") or ""),
+        str(event.get("significance") or ""),
+        str(event.get("notes") or ""),
+    ]).lower()
+    # Strong resolution tokens.
+    if re.search(r"\b(ended|over|resolved|concluded|peace\s+signed|sealed\b|banished|departed|destroyed|extinguished)\b", blob):
+        return True
+    return False
+
+
+def _event_arc_metrics(event: dict, known_dates: list[str]) -> dict:
+    """Compute arc recency, trend, and a coarse stage/intensity from appearances."""
+    apps = event.get("story_appearances") if isinstance(event, dict) else None
+    if not isinstance(apps, list) or not apps:
+        return {"last_date": "", "recent_count": 0, "intensity": 1, "stage": "seed"}
+
+    dates = []
+    for a in apps:
+        if not isinstance(a, dict):
+            continue
+        d = str(a.get("date") or "").strip()
+        if d:
+            dates.append(d)
+    if not dates:
+        return {"last_date": "", "recent_count": 0, "intensity": 1, "stage": "seed"}
+
+    dates = sorted(set(dates))
+    last_date = dates[-1]
+
+    # Compute recency in "issues" using archive index ordering.
+    idx = {d: i for i, d in enumerate(known_dates or [])}
+    if last_date in idx:
+        days_ago = (len(known_dates) - 1) - idx[last_date]
+    else:
+        # Fallback: compare calendar dates.
+        last_dt = _parse_date_key(last_date)
+        today_dt = _parse_date_key(known_dates[-1]) if known_dates else None
+        if last_dt and today_dt:
+            days_ago = max(0, (today_dt - last_dt).days)
+        else:
+            days_ago = 999
+
+    # Recent appearances window.
+    active_days = max(1, int(WORLD_EVENT_ARC_ACTIVE_DAYS or 14))
+    recent_dates = set()
+    if known_dates:
+        tail = known_dates[-active_days:]
+        recent_dates = set(tail)
+    recent_count = sum(1 for d in dates if d in recent_dates) if recent_dates else 0
+
+    # Trend: compare last 5 issues vs prior 5 issues.
+    trend = 0
+    if known_dates and len(known_dates) >= 6:
+        tail = known_dates[-5:]
+        prev = known_dates[-10:-5] if len(known_dates) >= 10 else known_dates[:-5]
+        tail_n = sum(1 for d in dates if d in set(tail))
+        prev_n = sum(1 for d in dates if d in set(prev))
+        trend = tail_n - prev_n
+
+    resolved = _event_is_resolved(event)
+
+    # Intensity: coarse 1..max from recency + recent_count + trend.
+    # Not forcing anything: this only influences prompt flavor.
+    intensity = 1
+    if resolved:
+        intensity = 1
+    else:
+        if recent_count >= 4:
+            intensity = 5
+        elif recent_count == 3:
+            intensity = 4
+        elif recent_count == 2:
+            intensity = 3
+        elif recent_count == 1:
+            intensity = 2
+        else:
+            intensity = 1
+
+        if days_ago <= 1:
+            intensity = min(intensity + 1, int(WORLD_EVENT_ARC_INTENSITY_MAX or 5))
+        if trend >= 2:
+            intensity = min(intensity + 1, int(WORLD_EVENT_ARC_INTENSITY_MAX or 5))
+
+    intensity = max(1, min(intensity, int(WORLD_EVENT_ARC_INTENSITY_MAX or 5)))
+
+    # Stage: how it should read in-story.
+    if resolved:
+        stage = "aftermath"
+    elif intensity <= 1:
+        stage = "seed"
+    elif intensity == 2:
+        stage = "simmering"
+    elif intensity == 3:
+        stage = "rising"
+    elif intensity == 4:
+        stage = "crisis"
+    else:
+        stage = "climax"
+
+    return {
+        "last_date": last_date,
+        "days_ago": days_ago,
+        "recent_count": int(recent_count),
+        "trend": int(trend),
+        "resolved": bool(resolved),
+        "intensity": int(intensity),
+        "stage": stage,
+    }
+
+
 def _infer_event_geo_from_codex(event: dict, loc_names: dict[str, list[str]]) -> dict:
     """Infer a rough epicenter + affected scope for an event from its text.
 
@@ -1083,8 +1237,9 @@ def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
         return ""
 
     loc_names = _canon_loc_names_from_codex(codex)
+    known_dates = _load_known_issue_dates()
 
-    # Pick a small set of recent/important events deterministically per day.
+    # Pick a small set of active/important events deterministically per day.
     rng = random.Random(_stable_seed_int(today_str, "world_event_arcs"))
     scored = []
     for e in events:
@@ -1095,13 +1250,23 @@ def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
             continue
         sig = (e.get("significance") or "")
         out = (e.get("outcome") or "")
+        arc = _event_arc_metrics(e, known_dates)
+
+        # Base importance from descriptive heft, then bias toward active arcs.
         weight = 1.0 + min(3.0, (len(sig) + len(out)) / 400.0)
+        # Active arcs get a boost; resolved arcs get a slight penalty.
+        if arc.get("resolved"):
+            weight *= 0.7
+        else:
+            weight *= (1.0 + 0.18 * int(arc.get("intensity") or 1))
+            if int(arc.get("days_ago") or 999) <= 2:
+                weight *= 1.25
         # Tiny jitter so ties don't always pick the same.
         weight *= (0.92 + 0.16 * rng.random())
-        scored.append((weight, e))
+        scored.append((weight, e, arc))
 
     scored.sort(key=lambda x: x[0], reverse=True)
-    picked = [e for _, e in scored[: max(1, min(WORLD_EVENT_ARCS_MAX, 4))]]
+    picked = [e for _, e, _ in scored[: max(1, min(WORLD_EVENT_ARCS_MAX, 4))]]
     picked = picked[: max(0, int(WORLD_EVENT_ARCS_MAX or 0))]
     if not picked:
         return ""
@@ -1111,6 +1276,11 @@ def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
     lines.append("- Treat these as real background pressures in the world. Some stories may be directly inside the affected area; others may only hear rumor.")
     lines.append("- If a story is set within an event's scope, show at least ONE concrete effect (refugees, rationing, conscription, tolls, cults, broken trade, riots, shadow-markets, etc.).")
     lines.append("- You may let minor characters cross paths across stories due to these pressures, but do NOT reuse the same protagonist or primary location.")
+    lines.append("- If you organically introduce a NEW large-scale event, let it persist across future issues: escalate from hints → consequences → turning points → aftermath, then either resolve it or let it cool into lasting scars.")
+    lines.append("- Arc pacing mechanic (organic):")
+    lines.append("  - seed/simmering: subtle signs, rumors, odd shortages, new cult whispers; easy to miss.")
+    lines.append("  - rising/crisis: unmistakable consequences, travel disruption, faction moves, villains/saints emerging.")
+    lines.append("  - climax/aftermath: a breaking point or a scar; show what changed and what remains unresolved.")
     lines.append("")
 
     for i, e in enumerate(picked, start=1):
@@ -1118,6 +1288,7 @@ def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
         et = (e.get("event_type") or "").strip()
         tag = (e.get("tagline") or "").strip()
         geo = _infer_event_geo_from_codex(e, loc_names)
+        arc = _event_arc_metrics(e, known_dates)
         scope = geo.get("scope", "regional")
         epic = geo.get("epicenter", "unknown")
 
@@ -1132,6 +1303,30 @@ def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
             meta.append(f"Epicenter: {epic}")
         if meta:
             lines.append("   " + " | ".join(meta))
+
+        # Arc status hint: helps the model persist/slow-burn/escalate across days without forcing.
+        stage = str(arc.get("stage") or "seed")
+        intensity = int(arc.get("intensity") or 1)
+        last_seen = str(arc.get("last_date") or "").strip()
+        recent_count = int(arc.get("recent_count") or 0)
+        arc_bits = [f"Arc: {stage}", f"Intensity: {intensity}/{int(WORLD_EVENT_ARC_INTENSITY_MAX or 5)}"]
+        if last_seen:
+            arc_bits.append(f"Last seen: {last_seen}")
+        if recent_count:
+            arc_bits.append(f"Recent issues: {recent_count}")
+        lines.append("   " + " | ".join(arc_bits))
+
+        scope_lc = str(scope or "").strip().lower()
+        if scope_lc in {"city", "local"}:
+            lines.append("   Visibility: most effects are localized; outsiders hear rumor or see displaced people.")
+        elif scope_lc in {"regional", "region"}:
+            lines.append("   Visibility: travel and trade disruptions; neighboring places feel second-order effects.")
+        elif scope_lc in {"realm", "kingdom", "nation"}:
+            lines.append("   Visibility: policy/edicts, taxes, conscription, border controls; distant places feel price shocks.")
+        elif scope_lc in {"continent", "subcontinent"}:
+            lines.append("   Visibility: multi-region instability; supply chains fracture; refugees and mercenary work surge.")
+        elif scope_lc in {"hemisphere", "world"}:
+            lines.append("   Visibility: widespread scarcity and fear; even unrelated stories should carry a trace (rumor, shortages, omens).")
 
         # Provide a short list of canon location names referenced by the event, if any.
         refs = []
