@@ -68,6 +68,12 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add lore.json codex.json characters.json
           git commit -m "Backfill extraction: ${{ inputs.date }}"
-          git fetch origin main
-          git rebase origin/main
-          git push origin main
+          # Retry loop: pull --rebase then push (handles any new commits on main)
+          for attempt in 1 2 3 4 5; do
+            echo "Push attempt $attempt..."
+            git pull --rebase origin main && git push origin main && echo "✓ Pushed successfully" && exit 0
+            echo "Attempt $attempt failed, retrying in 5s..."
+            sleep 5
+          done
+          echo "Failed to push after 5 attempts"
+          exit 1
