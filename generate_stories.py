@@ -1841,6 +1841,12 @@ def build_lore_extraction_prompt(stories, existing_lore):
             r"([A-Z][\w’'\-]+(?:[ \t\-]+[A-Z][\w’'\-]+){0,4})\b"
         )
 
+        # Catch possessive named items like "Morthaxes's gold" or "Karesh's crown".
+        # This helps surface named treasures/materials that are otherwise easy to miss.
+        possessive_item_re = re.compile(
+            r"\b([A-Z][\w’'\-]+(?:[ \t\-]+[A-Z][\w’'\-]+){0,2})['’]s\s+(gold|silver|hoard|treasure|coin|coins|crown|blade|debt|ledger)\b"
+        )
+
         candidates = []
         seen = set()
         for s in stories or []:
@@ -1856,6 +1862,19 @@ def build_lore_extraction_prompt(stories, existing_lore):
                         continue
                     if cand.lower().startswith("the "):
                         cand = cand[4:].strip()
+                    cand_norm = " ".join(cand.split())
+                    key = cand_norm.lower()
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    candidates.append(cand_norm)
+                    if len(candidates) >= max_candidates:
+                        return candidates
+
+                for m in possessive_item_re.finditer(chunk):
+                    cand = (m.group(0) or "").strip()
+                    if not cand:
+                        continue
                     cand_norm = " ".join(cand.split())
                     key = cand_norm.lower()
                     if key in seen:
@@ -1951,6 +1970,8 @@ Coverage checklist (per story):
 Naming rules:
 - The `name` field MUST match the surface form used in the story text as closely as possible.
 - Do NOT add disambiguating suffixes/prefixes like "(as Region)", "(the place)", "(event)", etc.
+- If a person/entity name appears only in possessive form (e.g. "Morthaxes's"), use the base name without the trailing possessive for the entity name ("Morthaxes").
+- Keep apostrophes that are part of the canonical name itself (e.g. "Xul'thyris").
 
 EXISTING CANON (reference only; non-exhaustive; ok to repeat):
 - Characters: {_known_summary(existing_chars)}

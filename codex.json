@@ -599,6 +599,35 @@
       ]
     },
     {
+      "name": "Lich-King Morthaxes",
+      "tagline": "Ancient. Patient. Avaricious.",
+      "role": "Lich-King",
+      "status": "undead",
+      "world": "The Known World",
+      "bio": "A long-dead lich-king whose visage is stamped on a cursed hoard of gold. Through a compounding debt-curse and an agent called the Collector, Morthaxes's treasure ruins those who take it and returns to claim what cannot be paid.",
+      "traits": [
+        "ancient",
+        "patient",
+        "avaricious"
+      ],
+      "first_story": "The Collector's Due",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Collector's Due"
+        }
+      ],
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "aliases": [
+        "Morthaxes"
+      ]
+    },
+    {
       "name": "Morg",
       "tagline": "Sworn sentinel. Blood-bound. Digested.",
       "role": "Tomb-Keeper / Guardian",
@@ -3270,6 +3299,25 @@
         {
           "date": "2026-02-25",
           "title": "The Thief of Khar-Zul"
+        }
+      ]
+    },
+    {
+      "name": "Morthaxes's gold",
+      "tagline": "Cursed. Compounding. Unspendable.",
+      "artifact_type": "currency / cursed treasure",
+      "origin": "Hidden for three centuries in the drowned vaults beneath Castle Greymarch.",
+      "powers": "A hoard of gold coins stamped with the Lich-King's visage. The coins cannot be spent, destroyed, or melted; the debt they carry doubles daily until it exceeds what can exist.",
+      "last_known_holder": "Caros the Fortunate",
+      "status": "active",
+      "notes": "The Collector arrives as an agent and ledger-keeper to enforce the compounding debt.",
+      "first_story": "The Collector's Due",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Collector's Due"
         }
       ]
     }
