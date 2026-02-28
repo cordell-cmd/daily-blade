@@ -927,25 +927,149 @@ def _infer_event_geo_from_codex(event: dict, loc_names: dict[str, list[str]]) ->
                 uniq.append(x)
             mentions[cat] = uniq
 
-    epicenter = "unknown"
-    for cat, _ in priority:
-        if mentions.get(cat):
-            epicenter = mentions[cat][0]
-            break
+    # Include explicit affected_* lists if present (preferred over text inference).
+    for key, cat in [
+        ("affected_places", "places"),
+        ("affected_regions", "regions"),
+        ("affected_realms", "realms"),
+    ]:
+        vals = event.get(key)
+        if isinstance(vals, list):
+            cleaned = [str(x or "").strip() for x in vals if str(x or "").strip()]
+            if cleaned:
+                mentions.setdefault(cat, [])
+                existing = {str(x or "").strip().lower() for x in mentions.get(cat, [])}
+                for x in cleaned:
+                    xl = x.lower()
+                    if xl in existing:
+                        continue
+                    existing.add(xl)
+                    mentions[cat].append(x)
 
-    scope = "regional"
-    if mentions.get("worlds"):
-        scope = "world"
-    elif mentions.get("continents") or mentions.get("subcontinents"):
-        scope = "continental"
-    elif mentions.get("realms"):
+    # Prefer explicit epicenter fields if present.
+    epicenter = "unknown"
+    explicit_place = (event.get("epicenter_place") or "").strip()
+    explicit_region = (event.get("epicenter_region") or "").strip()
+    explicit_realm = (event.get("epicenter_realm") or "").strip()
+    if explicit_place:
+        epicenter = explicit_place
+    elif explicit_region:
+        epicenter = explicit_region
+    elif explicit_realm:
+        epicenter = explicit_realm
+    else:
+        for cat, _ in priority:
+            if mentions.get(cat):
+                epicenter = mentions[cat][0]
+                break
+
+    scope = (event.get("scope") or "").strip().lower()
+    if scope not in {"city", "regional", "continental", "world"}:
         scope = "regional"
-    elif mentions.get("regions"):
-        scope = "regional"
-    elif mentions.get("places") or mentions.get("districts") or mentions.get("provinces"):
-        scope = "city"
+        if mentions.get("worlds"):
+            scope = "world"
+        elif mentions.get("continents") or mentions.get("subcontinents"):
+            scope = "continental"
+        elif mentions.get("realms") or mentions.get("regions"):
+            scope = "regional"
+        elif mentions.get("places") or mentions.get("districts") or mentions.get("provinces"):
+            scope = "city"
 
     return {"scope": scope, "epicenter": epicenter, "mentions": mentions}
+
+
+def _entity_geo_anchors(category: str, item: dict) -> dict[str, str]:
+    """Extract conservative geo anchors for an entity from codex fields."""
+    if not isinstance(item, dict):
+        return {}
+
+    def _get(key: str) -> str:
+        return str(item.get(key) or "").strip()
+
+    anchors = {
+        "world": _get("world"),
+        "hemisphere": _get("hemisphere"),
+        "continent": _get("continent"),
+        "subcontinent": _get("subcontinent"),
+        "realm": _get("realm"),
+        "province": _get("province"),
+        "region": _get("region"),
+        "district": _get("district"),
+        "place": _get("place"),
+    }
+
+    if category == "characters":
+        anchors["place"] = _get("home_place") or anchors.get("place", "")
+        anchors["region"] = _get("home_region") or anchors.get("region", "")
+        anchors["realm"] = _get("home_realm") or anchors.get("realm", "")
+
+    if category in {"places", "districts", "provinces", "regions", "realms", "continents", "subcontinents", "hemispheres", "worlds"}:
+        nm = _get("name")
+        if nm:
+            if category == "places":
+                anchors["place"] = anchors.get("place") or nm
+            elif category == "districts":
+                anchors["district"] = anchors.get("district") or nm
+            elif category == "provinces":
+                anchors["province"] = anchors.get("province") or nm
+            elif category == "regions":
+                anchors["region"] = anchors.get("region") or nm
+            elif category == "realms":
+                anchors["realm"] = anchors.get("realm") or nm
+            elif category == "continents":
+                anchors["continent"] = anchors.get("continent") or nm
+            elif category == "subcontinents":
+                anchors["subcontinent"] = anchors.get("subcontinent") or nm
+            elif category == "hemispheres":
+                anchors["hemisphere"] = anchors.get("hemisphere") or nm
+            elif category == "worlds":
+                anchors["world"] = anchors.get("world") or nm
+
+    return {k: v for k, v in anchors.items() if _truthy_non_unknown(v)}
+
+
+def _in_event_scope(entity_anchors: dict[str, str], event_geo: dict) -> bool:
+    if not entity_anchors or not isinstance(event_geo, dict):
+        return False
+
+    scope = str(event_geo.get("scope") or "regional").strip().lower()
+    mentions = event_geo.get("mentions") if isinstance(event_geo.get("mentions"), dict) else {}
+
+    def _has(cat: str, value: str) -> bool:
+        vals = mentions.get(cat)
+        if not isinstance(vals, list) or not vals:
+            return False
+        vl = value.lower()
+        return any(str(x or "").strip().lower() == vl for x in vals)
+
+    if scope == "city":
+        return (
+            ("place" in entity_anchors and _has("places", entity_anchors["place"]))
+            or ("district" in entity_anchors and _has("districts", entity_anchors["district"]))
+            or ("province" in entity_anchors and _has("provinces", entity_anchors["province"]))
+        )
+
+    if scope == "regional":
+        return (
+            ("region" in entity_anchors and _has("regions", entity_anchors["region"]))
+            or ("realm" in entity_anchors and _has("realms", entity_anchors["realm"]))
+            or ("place" in entity_anchors and _has("places", entity_anchors["place"]))
+        )
+
+    if scope == "continental":
+        return (
+            ("continent" in entity_anchors and _has("continents", entity_anchors["continent"]))
+            or ("subcontinent" in entity_anchors and _has("subcontinents", entity_anchors["subcontinent"]))
+            or ("realm" in entity_anchors and _has("realms", entity_anchors["realm"]))
+            or ("region" in entity_anchors and _has("regions", entity_anchors["region"]))
+        )
+
+    if scope == "world":
+        if "world" in entity_anchors and _has("worlds", entity_anchors["world"]):
+            return True
+        return True
+
+    return False
 
 
 def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
@@ -1025,6 +1149,81 @@ def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
             lines.append("   Significance: " + _clip_text(significance, 240).replace("\n", " "))
         if outcome:
             lines.append("   Outcome/aftershocks: " + _clip_text(outcome, 240).replace("\n", " "))
+
+        # Optional cross-category canon ingredients within the event radius.
+        try:
+            suggestions = []
+            suggestion_cats = [
+                "characters",
+                "factions",
+                "artifacts",
+                "weapons",
+                "relics",
+                "substances",
+                "magic",
+                "flora_fauna",
+            ]
+            participants = e.get("participants")
+            participant_set = {str(x or "").strip().lower() for x in participants} if isinstance(participants, list) else set()
+
+            for cat in suggestion_cats:
+                items = codex.get(cat, []) if isinstance(codex, dict) else []
+                if not isinstance(items, list) or not items:
+                    continue
+
+                pool = []
+                seen = set()
+
+                # Include any participant matches for this category.
+                if participant_set:
+                    for it in items:
+                        if not isinstance(it, dict):
+                            continue
+                        nm_it = (it.get("name") or "").strip()
+                        if nm_it and nm_it.lower() in participant_set:
+                            k = nm_it.lower()
+                            if k in seen:
+                                continue
+                            seen.add(k)
+                            pool.append(it)
+
+                # Include geo-anchored in-scope items.
+                for it in items:
+                    if not isinstance(it, dict):
+                        continue
+                    nm_it = (it.get("name") or "").strip()
+                    if not nm_it:
+                        continue
+                    anchors = _entity_geo_anchors(cat, it)
+                    if not anchors:
+                        continue
+                    if not _in_event_scope(anchors, geo):
+                        continue
+                    k = nm_it.lower()
+                    if k in seen:
+                        continue
+                    seen.add(k)
+                    pool.append(it)
+
+                if not pool:
+                    continue
+
+                pool = _safe_sorted_by_appearances(pool)
+                names = []
+                for it in pool[:2]:
+                    nm_it = (it.get("name") or "").strip()
+                    if nm_it:
+                        names.append(nm_it)
+                if names:
+                    suggestions.append((cat, names))
+
+            if suggestions:
+                lines.append("   Optional in-scope canon ingredients (use if relevant):")
+                for cat, names in suggestions:
+                    label = cat.replace("_", "/")
+                    lines.append(f"   - {label}: {', '.join(names)}")
+        except Exception:
+            pass
         lines.append("")
 
     return "\n".join(lines).strip()
