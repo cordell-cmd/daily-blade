@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-25",
+  "last_updated": "2026-02-27",
   "characters": [
     {
       "name": "Vraxen the Knife",
@@ -552,14 +552,16 @@
     {
       "name": "Kael the Nameless",
       "tagline": "Shadow-broker. Identity-thief. Consumed.",
-      "role": "Shadow-Broker",
-      "status": "dead",
-      "world": "The Known World",
-      "bio": "A shadow-broker who dealt in stolen identities and borrowed faces in the gambling dens of Xul'thyris. Hired to sever the High Magistrate's shadow from light and stone, Kael discovered that shadows hunger and remember their owners. He was consumed by his own theft, becoming nothing but darkness wearing skin.",
+      "role": "Shadow-broker, Identity Thief",
+      "status": "cursed",
+      "world": "known_world",
+      "bio": "Kael the Nameless was a shadow-broker operating in the gambling dens of Xul'thyris, trading in stolen identities and borrowed faces. Hired to sever the High Magistrate's shadow, he succeeded but triggered a curse: the severed shadow hunted him, consuming his stolen identities and memories until it wore him instead. By the story's end, he has become a hollow vessel\u2014darkness wearing skin.",
       "traits": [
-        "skilled at deception",
-        "mercenary",
-        "haunted by stolen lives"
+        "shadow-broker",
+        "identity-thief",
+        "cursed",
+        "increasingly hollow",
+        "skilled at theft"
       ],
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
@@ -569,6 +571,13 @@
           "date": "2026-02-27",
           "title": "The Shadow-Broker's Debt"
         }
+      ],
+      "travel_scope": "local",
+      "home_place": "Xul'thyris",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "aliases": [
+        "Kael"
       ]
     },
     {
@@ -1365,6 +1374,63 @@
       "first_date": "2026-02-26",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "merchant prince",
+      "aliases": [],
+      "tagline": "Wealthy. Ruthless. Anonymous.",
+      "role": "Merchant Prince, Employer",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "Xul'thyris",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "known_world",
+      "bio": "An unnamed merchant prince in Xul'thyris who hires Kael to steal the High Magistrate's shadow for triple wages. His true motives for wanting the magistrate's shadow severed remain unstated.",
+      "traits": [
+        "wealthy",
+        "manipulative",
+        "employer",
+        "mysterious"
+      ],
+      "first_story": "The Shadow-Broker's Debt",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Shadow-Broker's Debt"
+        }
+      ]
+    },
+    {
+      "name": "High Magistrate",
+      "aliases": [],
+      "tagline": "Authority. Shadow-cursed. Dead.",
+      "role": "Magistrate, City Official",
+      "status": "dead",
+      "travel_scope": "local",
+      "home_place": "Xul'thyris",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "known_world",
+      "bio": "The High Magistrate of Xul'thyris, whose shadow was severed by Kael and subsequently consumed him. The magistrate died three days after the shadow-theft, his fate bound to the magical violation.",
+      "traits": [
+        "authority",
+        "magistrate",
+        "victim of curse"
+      ],
+      "first_story": "The Shadow-Broker's Debt",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Shadow-Broker's Debt"
+        }
+      ]
     }
   ],
   "places": [
@@ -2044,8 +2110,8 @@
     },
     {
       "name": "Xul'thyris",
-      "tagline": "",
-      "place_type": "",
+      "tagline": "Gambling dens. Shadow-trade. Corruption.",
+      "place_type": "city",
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -2054,9 +2120,9 @@
       "province": "unknown",
       "region": "unknown",
       "district": "unknown",
-      "atmosphere": "",
-      "description": "",
-      "status": "unknown",
+      "atmosphere": "A city of vice and shadow-trade, where fortunes are gambled and dark dealings flourish in the gambling dens.",
+      "description": "Xul'thyris is a gambling hub where shadow-brokers like Kael operate, trading in stolen identities and borrowed shadows. It contains gambling dens and at least one magistrate's villa.",
+      "status": "active",
       "notes": "",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
@@ -2209,6 +2275,31 @@
         {
           "date": "2026-02-25",
           "title": "The Thief of Khar-Zul"
+        }
+      ]
+    },
+    {
+      "name": "magistrate's villa",
+      "tagline": "Candlelight. Stone. Shadows.",
+      "place_type": "residence",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place of domestic security where shadows cast by candlelight and stone can be severed from their masters.",
+      "description": "The villa of the High Magistrate in Xul'thyris, where Kael infiltrated to sever the magistrate's shadow from candlelight and stone.",
+      "status": "active",
+      "first_story": "The Shadow-Broker's Debt",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Shadow-Broker's Debt"
         }
       ]
     }
@@ -2934,6 +3025,37 @@
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "Shadow Severance of the High Magistrate",
+      "tagline": "Theft. Curse. Consumption.",
+      "event_type": "curse / magical violation",
+      "participants": [
+        "Kael the Nameless",
+        "High Magistrate",
+        "merchant prince"
+      ],
+      "outcome": "Kael successfully severed the High Magistrate's shadow from candlelight and stone, but triggered a devastating curse. The magistrate died three days later. The shadow, animated with hunger, consumed Kael's stolen identities and memories over seven days, until Kael became a hollow vessel\u2014darkness wearing skin.",
+      "significance": "Demonstrates the forbidden nature of shadow-theft and the principle that severed shadows hunger with primal intensity. Shows that some debts in shadow-magic exact catastrophic interest.",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Shadow-Broker's Collection",
+      "tagline": "Debt. Payment. Darkness.",
+      "event_type": "transaction / debt settlement",
+      "participants": [
+        "shadow-broker",
+        "Kael the Nameless"
+      ],
+      "outcome": "On the seventh night, the shadow-broker came to collect payment for Kael's debt. By this time, Kael had already been consumed by the cursed shadow and was no longer himself\u2014only darkness wearing skin.",
+      "significance": "Suggests that shadow-broking operates on a credit system where debts are eventually collected, and that collectors may take payment in flesh or identity.",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "rituals": [
@@ -3373,6 +3495,18 @@
         }
       ],
       "appearances": 1
+    },
+    {
+      "name": "shadow-brokers",
+      "tagline": "Trade. Identity. Debt.",
+      "alignment": "chaotic",
+      "goals": "Facilitate shadow-theft, identity-trading, and magical transactions; collect debts.",
+      "leader": "unknown",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "polities": [
@@ -3485,6 +3619,25 @@
           "title": "The Plague-Bringer's Crown"
         }
       ]
+    },
+    {
+      "name": "Magistracy of Xul'thyris",
+      "tagline": "Authority. Challenged. Vulnerable.",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [],
+      "polity_type": "magistracy",
+      "realm": "unknown",
+      "region": "unknown",
+      "seat": "Xul'thyris",
+      "sovereigns": [
+        "High Magistrate"
+      ],
+      "claimants": [],
+      "status": "active",
+      "description": "The legal authority governing Xul'thyris, represented by the High Magistrate. Its authority is challenged by shadow-brokers and underground gambling operations.",
+      "notes": "Vulnerable to shadow-trade and underground vice; current magistrate's death may destabilize governance."
     }
   ],
   "lore": [
@@ -4114,6 +4267,44 @@
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "Shadow Theft Curse",
+      "tagline": "Severance. Hunger. Consumption.",
+      "category": "legend",
+      "source": "Demonstrated in the tale of Kael the Nameless",
+      "status": "confirmed",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Shadow-Broking Trade",
+      "tagline": "Forbidden. Lucrative. Damned.",
+      "category": "history",
+      "source": "Operating in Xul'thyris gambling dens",
+      "status": "confirmed",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Candlelight and Stone Shadow Binding",
+      "tagline": "Light. Anchoring. Severance.",
+      "category": "legend",
+      "source": "Method used by Kael in the magistrate's villa",
+      "status": "confirmed",
+      "first_story": "The Shadow-Broker's Debt",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Shadow-Broker's Debt"
+        }
+      ]
     }
   ],
   "flora_fauna": [
@@ -4886,6 +5077,35 @@
       "first_date": "2026-02-25",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "Shadow-Broking",
+      "tagline": "Theft. Identity. Severance.",
+      "type": "technique",
+      "element": "shadow",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Shadow-Broker's Debt",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Shadow-Broker's Debt"
+        }
+      ]
+    },
+    {
+      "name": "Shadow Hunger",
+      "tagline": "Consumption. Memory-theft. Possession.",
+      "type": "curse",
+      "element": "shadow",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "relics": [
@@ -5189,6 +5409,18 @@
           "title": "Morgath's Resurrection"
         }
       ]
+    },
+    {
+      "name": "Shadow of the High Magistrate",
+      "tagline": "Severed. Hungry. Consuming.",
+      "origin": "Severed by Kael the Nameless from the High Magistrate via shadow-broking",
+      "power": "An autonomous shadow entity that hungers for stolen identities and memories. Consumed Kael's stolen selves over seven days and eventually possessed him entirely.",
+      "curse": "Unquenchable hunger; consumes the thief's identities; compounds interest in flesh; possesses the thief as a final vessel.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-02-27",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "regions": [
