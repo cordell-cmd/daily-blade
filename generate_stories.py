@@ -16,6 +16,7 @@ import re
 import random
 import hashlib
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 import anthropic
 
 
@@ -52,6 +53,10 @@ ARCHIVE_IDX     = "archive/index.json"
 LORE_FILE       = "lore.json"
 CHARACTERS_FILE = "characters.json"
 CODEX_FILE      = "codex.json"
+
+# Issue date/timezone: used for archive filenames and 'already generated' checks.
+# Default matches the previous workflow's intended schedule (US/Eastern).
+ISSUE_TIMEZONE = (os.environ.get("ISSUE_TIMEZONE") or "America/New_York").strip()
 
 # Geography / hierarchy controls
 MAX_CONTINENTS = int(os.environ.get("MAX_CONTINENTS", "7"))
@@ -3959,6 +3964,116 @@ def filter_lore_to_stories(lore: dict, stories: list[dict]) -> dict:
     return lore
 
 
+def ensure_named_leaders_present(lore: dict, stories: list[dict]) -> dict:
+    """Ensure named leaders mentioned in story text exist as entities.
+
+    Motivation: The extraction model sometimes captures a faction but forgets to
+    emit the named leader as a character/entity. This adds a small deterministic
+    backstop for obvious cases (e.g., "The Rot-King").
+    """
+    if not isinstance(lore, dict):
+        return lore
+    if not isinstance(stories, list) or not stories:
+        return lore
+
+    blob = "\n\n".join(
+        str((s.get("title", "") or "").strip()) + "\n" + str((s.get("text", "") or "").strip())
+        for s in stories
+        if isinstance(s, dict)
+    )
+    if not blob.strip():
+        return lore
+
+    def _norm_name(x: str) -> str:
+        return _norm_text_for_matching(_strip_trailing_parenthetical(str(x or "").strip()))
+
+    existing = set()
+    for cat in ("characters", "deities_and_entities", "factions"):
+        arr = lore.get(cat)
+        if not isinstance(arr, list):
+            continue
+        for it in arr:
+            if isinstance(it, dict) and str(it.get("name") or "").strip():
+                existing.add(_norm_name(it.get("name")))
+
+    # Candidate names from extracted factions' leader fields.
+    leaders: list[str] = []
+    facs = lore.get("factions")
+    if isinstance(facs, list):
+        for f in facs:
+            if not isinstance(f, dict):
+                continue
+            leader = str(f.get("leader") or "").strip()
+            if not leader:
+                continue
+            if leader.strip().lower() in {"unknown", "none", "n/a"}:
+                continue
+            leaders.append(leader)
+
+    if not leaders:
+        return lore
+
+    lore.setdefault("characters", [])
+    if not isinstance(lore.get("characters"), list):
+        lore["characters"] = []
+
+    for leader in leaders:
+        key = _norm_name(leader)
+        if not key or key in existing:
+            continue
+
+        # Only add if actually mentioned in the story text.
+        if not entity_name_mentioned_in_text(leader, blob):
+            # Try without leading "The".
+            if _norm_text_for_matching(leader).startswith("the "):
+                alt = leader.strip()[4:].strip()
+                if alt and entity_name_mentioned_in_text(alt, blob):
+                    leader = "The " + alt
+                else:
+                    continue
+            else:
+                continue
+
+        first_story = ""
+        for s in stories:
+            if not isinstance(s, dict):
+                continue
+            sb = str((s.get("title", "") or "").strip()) + "\n" + str((s.get("text", "") or "").strip())
+            if entity_name_mentioned_in_text(leader, sb):
+                first_story = str(s.get("title") or "").strip()
+                break
+
+        aliases = []
+        if _norm_text_for_matching(leader).startswith("the "):
+            base = leader.strip()[4:].strip()
+            if base:
+                aliases.append(base)
+
+        lore["characters"].append({
+            "id": to_snake_case(leader),
+            "name": leader,
+            "aliases": aliases,
+            "tagline": "Named. Threatening. Looming.",
+            "role": "Leader / Ruler",
+            "world": "The Known World",
+            "status": "active",
+            "home_place": "unknown",
+            "home_region": "unknown",
+            "home_realm": "unknown",
+            "travel_scope": "unknown",
+            "bio": "A named leader referenced in the issue's stories; details unknown beyond the text.",
+            "traits": ["commanding", "dangerous", "enigmatic"],
+            "known_locations": [],
+            "affiliations": [],
+            "notes": "Auto-added because a faction leader was named in-story.",
+            **({"first_story": first_story} if first_story else {}),
+        })
+
+        existing.add(_norm_name(leader))
+
+    return lore
+
+
 def find_referenced_canon_entries(stories, lore):
     """Find existing lore entries referenced in story text/title.
 
@@ -4128,6 +4243,18 @@ def _truthy_env(name: str) -> bool:
     return (os.environ.get(name) or "").strip().lower() in {"1", "true", "yes", "y", "on"}
 
 
+def _issue_now() -> datetime:
+    """Current datetime in the configured issue timezone.
+
+    Falls back to UTC if the timezone name is invalid.
+    """
+    try:
+        tz = ZoneInfo(ISSUE_TIMEZONE)
+    except Exception:
+        tz = timezone.utc
+    return datetime.now(tz)
+
+
 def _already_generated_for_date(date_key: str) -> bool:
     """Return True if the archive file exists and looks complete for date_key."""
     archive_file = os.path.join(ARCHIVE_DIR, f"{date_key}.json")
@@ -4146,19 +4273,19 @@ def _already_generated_for_date(date_key: str) -> bool:
 # ── Main ──────────────────────────────────────────────────────────────────
 def main():
     _maybe_load_dotenv()
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("ERROR: ANTHROPIC_API_KEY environment variable not set.", file=sys.stderr)
-        sys.exit(1)
-
-    today     = datetime.now(timezone.utc)
-    today_str = today.strftime("%B %d, %Y")
-    date_key  = today.strftime("%Y-%m-%d")
-    print(f"Generating stories for {date_key}...")
+    issue_now = _issue_now()
+    today_str = issue_now.strftime("%B %d, %Y")
+    date_key = issue_now.strftime("%Y-%m-%d")
+    print(f"Generating stories for {date_key} (tz={ISSUE_TIMEZONE})...")
 
     if _already_generated_for_date(date_key) and not _truthy_env("FORCE_REGENERATE"):
         print(f"\u2713 Already generated for {date_key}; skipping (set FORCE_REGENERATE=1 to override).")
         return
+
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        print("ERROR: ANTHROPIC_API_KEY environment variable not set.", file=sys.stderr)
+        sys.exit(1)
 
     # ── Load existing lore ────────────────────────────────────────────────
     lore = load_lore()
@@ -4524,6 +4651,7 @@ def main():
         new_lore_raw = parse_json_response(lore_raw)
         new_lore = normalize_extracted_lore(new_lore_raw)
         new_lore = filter_lore_to_stories(new_lore, stories)
+        new_lore = ensure_named_leaders_present(new_lore, stories)
         for char in new_lore.get("characters", []):
             if not isinstance(char, dict):
                 continue
