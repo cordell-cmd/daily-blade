@@ -15,7 +15,6 @@ Usage:
 
 from __future__ import annotations
 
-import argparse
 import json
 import os
 import re
@@ -121,24 +120,6 @@ def _item_is_mentioned(cat: str, item: dict, blob: str) -> bool:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(
-        description=(
-            "Prune codex story_appearances to only stories that actually mention the entity. "
-            "Optionally delete entities that end up with zero story_appearances."
-        )
-    )
-    parser.add_argument(
-        "--delete-unused",
-        action="store_true",
-        help="Delete entries whose story_appearances is missing/empty after pruning (default: keep).",
-    )
-    parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Compute changes and print a summary, but do not write codex.json.",
-    )
-    args = parser.parse_args()
-
     if not os.path.exists(CODEX_FILE):
         raise SystemExit(f"Missing {CODEX_FILE}")
 
@@ -171,22 +152,15 @@ def main() -> int:
 
     total_removed = 0
     total_kept = 0
-    total_deleted = 0
 
     for cat, arr in list(codex.items()):
         if not isinstance(arr, list):
             continue
-
-        new_arr = []
         for item in arr:
             if not isinstance(item, dict):
                 continue
             apps = item.get("story_appearances")
             if not isinstance(apps, list) or not apps:
-                if args.delete_unused:
-                    total_deleted += 1
-                else:
-                    new_arr.append(item)
                 continue
 
             new_apps = []
@@ -224,24 +198,11 @@ def main() -> int:
                     item["first_story"] = new_apps[0].get("title", "")
                 if not str(item.get("first_date", "") or "").strip():
                     item["first_date"] = new_apps[0].get("date", "")
-                new_arr.append(item)
-            else:
-                if args.delete_unused:
-                    total_deleted += 1
-                else:
-                    new_arr.append(item)
 
-        codex[cat] = new_arr
-
-    if not args.dry_run:
-        with open(CODEX_FILE, "w", encoding="utf-8") as f:
-            json.dump(codex, f, ensure_ascii=True, indent=2)
+    with open(CODEX_FILE, "w", encoding="utf-8") as f:
+        json.dump(codex, f, ensure_ascii=True, indent=2)
 
     print(f"Pruned story_appearances: removed={total_removed}, kept={total_kept}")
-    if args.delete_unused:
-        print(f"Deleted unused entities: deleted={total_deleted}")
-    if args.dry_run:
-        print("(dry-run) No files were written")
     return 0
 
 
