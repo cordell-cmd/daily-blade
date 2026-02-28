@@ -1975,9 +1975,30 @@ async function fetchDayStories(date) {
 }
 
 function findStoryInDay(dayData, title) {
-  const want = String(title || '').trim().toLowerCase();
+  const normalizeTitleKey = (s) => {
+    const raw = String(s || '').trim().toLowerCase();
+    if (!raw) return '';
+    // Normalize common Unicode punctuation and remove possessive punctuation so
+    // "Broker's" and "Brokers" match.
+    const cleaned = raw
+      .replace(/\u2019|\u2018/g, "'")
+      .replace(/\u2011/g, '-')
+      .replace(/[’']/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+    return cleaned;
+  };
+
+  const wantRaw = String(title || '').trim().toLowerCase();
+  const want = normalizeTitleKey(title);
   if (!want || !dayData || !Array.isArray(dayData.stories)) return null;
-  return dayData.stories.find(s => String(s && s.title ? s.title : '').trim().toLowerCase() === want) || null;
+
+  // Prefer exact match first (fast path), then normalized match.
+  const exact = dayData.stories.find(s => String(s && s.title ? s.title : '').trim().toLowerCase() === wantRaw) || null;
+  if (exact) return exact;
+
+  return dayData.stories.find(s => normalizeTitleKey(s && s.title ? s.title : '') === want) || null;
 }
 
 function normalizeAppearances(list) {
@@ -2231,6 +2252,18 @@ function attachStoryLinkListeners(card) {
       const d = btn.dataset.date;
       const t = btn.dataset.title || btn.textContent || '';
 
+      const normalizeTitleKey = (s) => {
+        const raw = String(s || '').trim().toLowerCase();
+        if (!raw) return '';
+        return raw
+          .replace(/\u2019|\u2018/g, "'")
+          .replace(/\u2011/g, '-')
+          .replace(/[’']/g, '')
+          .replace(/[^a-z0-9]+/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
+      };
+
       let appearances = [];
       try {
         const wrap = btn.closest('.codex-story-links');
@@ -2238,7 +2271,8 @@ function attachStoryLinkListeners(card) {
         if (raw) appearances = JSON.parse(decodeURIComponent(raw));
       } catch (e) { appearances = []; }
       appearances = normalizeAppearances(appearances);
-      const idx = appearances.findIndex(a => (a.date || '') === (d || '') && String(a.title || '').trim() === String(t || '').trim());
+      const wantKey = normalizeTitleKey(t);
+      const idx = appearances.findIndex(a => (a.date || '') === (d || '') && normalizeTitleKey(a.title || '') === wantKey);
 
       openStoryModalByAppearance(d, t, { appearances, index: idx >= 0 ? idx : 0 });
     });
