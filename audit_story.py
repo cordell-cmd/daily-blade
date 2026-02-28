@@ -147,8 +147,17 @@ def main() -> int:
     lore = gs.normalize_extracted_lore(extracted)
     lore = gs.filter_lore_to_stories(lore, [story])
 
+    # Merge into lore.json (same as daily generation and backfill).
+    existing_lore = gs.load_lore()
+    gs.merge_lore(lore, existing_lore)
+    gs.save_lore(existing_lore, date_key)
+
     # Merge into codex.json (writes the file).
     gs.update_codex_file(lore, date_key=date_key, stories=[story], assume_all_from_stories=True)
+
+    # Merge into characters.json.
+    if hasattr(gs, "update_characters_file"):
+        gs.update_characters_file(lore, date_key=date_key, stories=[story])
 
     # Tiny coverage sanity-check: if the model extracted entities but none got linked to
     # this audited story, fail fast (prevents silent no-op audits).

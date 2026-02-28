@@ -21,8 +21,11 @@ jobs:
       group: audit-story
       cancel-in-progress: false
     steps:
-      - name: Checkout
+      - name: Checkout latest main
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -82,6 +85,13 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add codex.json
+          git add codex.json lore.json characters.json
           git commit -m "Audit: ${{ inputs.date }} — ${{ inputs.title }}"
-          git push
+          for attempt in 1 2 3 4 5; do
+            echo "Push attempt $attempt..."
+            git pull --rebase origin main && git push origin main && echo "✓ Pushed successfully" && exit 0
+            echo "Attempt $attempt failed, retrying in 5s..."
+            sleep 5
+          done
+          echo "Failed to push after 5 attempts"
+          exit 1
