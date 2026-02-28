@@ -2073,6 +2073,10 @@ Hard requirement:
 - Do NOT create duplicate entities for shortened references: if a character is "Kael the Nameless" and the story also says "Kael", output ONE character entry with the most complete name and list the shorter forms in "aliases".
 - If a story mentions a named language/dialect/script (e.g. "Old Tongue"), include it under "lore" with category "language".
 
+Classification guidance:
+- flora_fauna is for SPECIES or NATURAL organisms that exist independently in the world (e.g. wyverns, dire wolves, blood-orchids). Do NOT list ordinary animals (crows, horses, rats) that appear only as a character's magical disguise, familiar form, or shapeshifted body. Instead, note the transformation ability under "magic" (as a spell/technique) or mention it in the character's bio.
+- If a creature is mundane and common in any real-world setting (crow, wolf, horse), it should only appear in flora_fauna if the story presents it as a distinct magical species or world-specific variant (e.g. "shadow-crow", "iron wolf"). An ordinary crow used as a witch's scrying form is a magical ability, not a creature entry.
+
 Respond with ONLY valid JSON in this exact structure (use empty arrays if nothing new was found):
 {{
   "characters": [
