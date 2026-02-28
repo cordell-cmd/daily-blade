@@ -110,7 +110,7 @@ def main() -> int:
     lore = gs.normalize_extracted_lore(extracted)
 
     # Merge into codex.json (writes the file).
-    gs.update_codex_file(lore, date_key=date_key, stories=[story])
+    gs.update_codex_file(lore, date_key=date_key, stories=[story], assume_all_from_stories=True)
 
     print(f"✓ Audit merged for {date_key} / {title}")
     return 0

@@ -2145,7 +2145,7 @@ def apply_existing_character_updates(lore, updates, date_key, stories=None):
     return lore
 
 # ── Codex file update ────────────────────────────────────────────────────
-def update_codex_file(lore, date_key, stories=None):
+def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: bool = False):
     """Merge today's lore into codex.json, covering all entity types with story appearances."""
     stories = stories or []
 
@@ -2182,18 +2182,54 @@ def update_codex_file(lore, date_key, stories=None):
 
     # ── Helper: find stories that mention an entity by name ─────────────
     def stories_for(name):
-        _SKIP = {'the', 'a', 'an'}
-        _words = [w.strip('()[].,!?') for w in name.lower().split()]
-        _sig   = [w for w in _words if w and w not in _SKIP]
-        if len(_sig) >= 2:
-            _key = _sig[0] + ' ' + _sig[1]
-        else:
-            _key = _sig[0] if _sig else (_words[0] if _words else name.lower())
-        return [
-            {"date": date_key, "title": s.get("title", "")}
-            for s in stories
-            if _key in (s.get("text", "") + " " + s.get("title", "")).lower()
-        ]
+        # In single-story audit mode, everything extracted is from that story.
+        if assume_all_from_stories and len(stories) == 1:
+            only_title = str((stories[0] or {}).get("title", "") or "").strip()
+            if only_title:
+                return [{"date": date_key, "title": only_title}]
+
+        text_blobs = [((s.get("text", "") or "") + " " + (s.get("title", "") or "")).lower() for s in stories if isinstance(s, dict)]
+
+        # Mention detection: look for significant tokens in order within a small window.
+        _SKIP = {"the", "a", "an"}
+        tokens = [t for t in re.findall(r"[a-z0-9]+(?:[-‑][a-z0-9]+)?", (name or "").lower()) if t and t not in _SKIP]
+        if not tokens:
+            tokens = [str(name or "").strip().lower()]
+        tokens = tokens[:4]
+
+        def _mentions(blob: str) -> bool:
+            if not blob:
+                return False
+            # Fast-path: exact name substring.
+            nm = str(name or "").strip().lower()
+            if nm and nm in blob:
+                return True
+            if len(tokens) == 1:
+                return tokens[0] in blob
+            # Ordered token match, allowing small gaps (handles "X the Y" etc.).
+            pos = blob.find(tokens[0])
+            while pos != -1:
+                cur = pos + len(tokens[0])
+                ok = True
+                for tok in tokens[1:]:
+                    nxt = blob.find(tok, cur)
+                    if nxt == -1:
+                        ok = False
+                        break
+                    if nxt - cur > 90:
+                        ok = False
+                        break
+                    cur = nxt + len(tok)
+                if ok:
+                    return True
+                pos = blob.find(tokens[0], pos + 1)
+            return False
+
+        hits = []
+        for s, blob in zip([s for s in stories if isinstance(s, dict)], text_blobs):
+            if _mentions(blob):
+                hits.append({"date": date_key, "title": s.get("title", "")})
+        return hits
 
     # ── Helper: resolve world name from lore worlds list ─────────────────
     def resolve_world(raw_world):
