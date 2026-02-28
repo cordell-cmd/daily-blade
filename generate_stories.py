@@ -48,6 +48,11 @@ CODEX_FILE      = "codex.json"
 # Geography / hierarchy controls
 MAX_CONTINENTS = int(os.environ.get("MAX_CONTINENTS", "7"))
 
+# World-event arcs: inject a small set of large-scale events into the generation prompt
+# so multiple stories/characters can be influenced by shared pressures.
+ENABLE_WORLD_EVENT_ARCS = os.environ.get("ENABLE_WORLD_EVENT_ARCS", "1").strip().lower() in {"1", "true", "yes", "y"}
+WORLD_EVENT_ARCS_MAX = int(os.environ.get("WORLD_EVENT_ARCS_MAX", "2"))
+
 # Subgenres are generated dynamically by the AI for each story
 
 # Optional lore consistency controls
@@ -858,11 +863,179 @@ def build_generation_lore_context(lore, seed_text: str):
 
     return "\n".join([p for p in parts if p is not None]).strip()
 
+
+def _canon_loc_names_from_codex(codex: dict) -> dict[str, list[str]]:
+    if not isinstance(codex, dict):
+        return {}
+    out: dict[str, list[str]] = {}
+    for cat in ["places", "districts", "provinces", "regions", "realms", "subcontinents", "continents", "hemispheres", "worlds", "polities"]:
+        items = codex.get(cat, [])
+        if not isinstance(items, list):
+            continue
+        names = []
+        for it in items:
+            if not isinstance(it, dict):
+                continue
+            nm = (it.get("name") or "").strip()
+            if nm:
+                names.append(nm)
+        if names:
+            out[cat] = names
+    return out
+
+
+def _infer_event_geo_from_codex(event: dict, loc_names: dict[str, list[str]]) -> dict:
+    """Infer a rough epicenter + affected scope for an event from its text.
+
+    This keeps the system robust even when events don't yet store explicit geo fields.
+    """
+    if not isinstance(event, dict):
+        return {"scope": "regional", "epicenter": "unknown", "mentions": {}}
+
+    blob = "\n".join([
+        str(event.get("name") or "").strip(),
+        str(event.get("tagline") or "").strip(),
+        str(event.get("significance") or "").strip(),
+        str(event.get("outcome") or "").strip(),
+    ]).strip()
+
+    mentions: dict[str, list[str]] = {}
+    priority = [
+        ("places", "place"),
+        ("districts", "district"),
+        ("provinces", "province"),
+        ("regions", "region"),
+        ("realms", "realm"),
+        ("subcontinents", "subcontinent"),
+        ("continents", "continent"),
+        ("worlds", "world"),
+    ]
+    for cat, _ in priority:
+        found = []
+        for nm in loc_names.get(cat, []) or []:
+            if entity_name_mentioned_in_text(nm, blob):
+                found.append(nm)
+        if found:
+            # Deduplicate while preserving order.
+            seen = set()
+            uniq = []
+            for x in found:
+                xl = x.lower()
+                if xl in seen:
+                    continue
+                seen.add(xl)
+                uniq.append(x)
+            mentions[cat] = uniq
+
+    epicenter = "unknown"
+    for cat, _ in priority:
+        if mentions.get(cat):
+            epicenter = mentions[cat][0]
+            break
+
+    scope = "regional"
+    if mentions.get("worlds"):
+        scope = "world"
+    elif mentions.get("continents") or mentions.get("subcontinents"):
+        scope = "continental"
+    elif mentions.get("realms"):
+        scope = "regional"
+    elif mentions.get("regions"):
+        scope = "regional"
+    elif mentions.get("places") or mentions.get("districts") or mentions.get("provinces"):
+        scope = "city"
+
+    return {"scope": scope, "epicenter": epicenter, "mentions": mentions}
+
+
+def build_world_event_arcs_section(today_str: str, lore: dict) -> str:
+    """Build a small, issue-wide world-events section for the generation prompt."""
+    if not ENABLE_WORLD_EVENT_ARCS:
+        return ""
+
+    codex = load_codex_file()
+    events = codex.get("events", []) if isinstance(codex, dict) else []
+    if not isinstance(events, list) or not events:
+        return ""
+
+    loc_names = _canon_loc_names_from_codex(codex)
+
+    # Pick a small set of recent/important events deterministically per day.
+    rng = random.Random(_stable_seed_int(today_str, "world_event_arcs"))
+    scored = []
+    for e in events:
+        if not isinstance(e, dict):
+            continue
+        nm = (e.get("name") or "").strip()
+        if not nm:
+            continue
+        sig = (e.get("significance") or "")
+        out = (e.get("outcome") or "")
+        weight = 1.0 + min(3.0, (len(sig) + len(out)) / 400.0)
+        # Tiny jitter so ties don't always pick the same.
+        weight *= (0.92 + 0.16 * rng.random())
+        scored.append((weight, e))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+    picked = [e for _, e in scored[: max(1, min(WORLD_EVENT_ARCS_MAX, 4))]]
+    picked = picked[: max(0, int(WORLD_EVENT_ARCS_MAX or 0))]
+    if not picked:
+        return ""
+
+    lines = []
+    lines.append("ISSUE-WIDE WORLD EVENTS (shared continuity / cross-story pressures):")
+    lines.append("- Treat these as real background pressures in the world. Some stories may be directly inside the affected area; others may only hear rumor.")
+    lines.append("- If a story is set within an event's scope, show at least ONE concrete effect (refugees, rationing, conscription, tolls, cults, broken trade, riots, shadow-markets, etc.).")
+    lines.append("- You may let minor characters cross paths across stories due to these pressures, but do NOT reuse the same protagonist or primary location.")
+    lines.append("")
+
+    for i, e in enumerate(picked, start=1):
+        nm = (e.get("name") or "Unknown").strip() or "Unknown"
+        et = (e.get("event_type") or "").strip()
+        tag = (e.get("tagline") or "").strip()
+        geo = _infer_event_geo_from_codex(e, loc_names)
+        scope = geo.get("scope", "regional")
+        epic = geo.get("epicenter", "unknown")
+
+        lines.append(f"{i}) {nm}")
+        meta = []
+        if tag:
+            meta.append(f"Tagline: {tag}")
+        if et:
+            meta.append(f"Type: {et}")
+        meta.append(f"Scope: {scope}")
+        if epic and epic != "unknown":
+            meta.append(f"Epicenter: {epic}")
+        if meta:
+            lines.append("   " + " | ".join(meta))
+
+        # Provide a short list of canon location names referenced by the event, if any.
+        refs = []
+        for cat, label in [("places", "Places"), ("regions", "Regions"), ("realms", "Realms"), ("continents", "Continents")]:
+            vals = geo.get("mentions", {}).get(cat) if isinstance(geo.get("mentions"), dict) else None
+            if isinstance(vals, list) and vals:
+                refs.append(f"{label}: {', '.join(vals[:4])}")
+        if refs:
+            lines.append("   Referenced canon locations: " + " · ".join(refs))
+
+        # Clip long fields to keep prompt lean.
+        significance = (e.get("significance") or "").strip()
+        outcome = (e.get("outcome") or "").strip()
+        if significance:
+            lines.append("   Significance: " + _clip_text(significance, 240).replace("\n", " "))
+        if outcome:
+            lines.append("   Outcome/aftershocks: " + _clip_text(outcome, 240).replace("\n", " "))
+        lines.append("")
+
+    return "\n".join(lines).strip()
+
 # ── Story generation prompt ──────────────────────────────────────────────
 def build_prompt(today_str, lore, reused_entries=None, reuse_details=None):
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     reused_entries = reused_entries or {}
     reuse_details = reuse_details or {}
+
+    world_events_section = build_world_event_arcs_section(today_str, lore)
 
     reuse_section = ""
     if reused_entries:
@@ -928,6 +1101,9 @@ SOVEREIGNTY / CROWN CONSISTENCY:
 - Do NOT imply two different sole crown-holders for the same realm/region at the same time.
     - If there are multiple, state co-rulers (e.g., king and queen) OR a contested claim (pretender/regent/usurper) explicitly.
 """
+
+    if world_events_section.strip():
+        lore_section = (lore_section or "") + "\n\n" + world_events_section + "\n"
     return f"""You are a pulp fantasy writer in the tradition of Robert E. Howard, Clark Ashton Smith, and Fritz Leiber.
 Generate exactly 10 original short sword-and-sorcery stories.
 Each story should be vivid, action-packed, and around 120–160 words long.
@@ -1472,6 +1648,14 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "name": "Event Name",
       "tagline": "Three evocative words describing this event.",
       "event_type": "battle / war / ritual / uprising / catastrophe / etc",
+            "scope": "city|regional|continental|world (best guess based on story scope)",
+            "epicenter_place": "Place name, or 'unknown'",
+            "epicenter_region": "Region name, or 'unknown'",
+            "epicenter_realm": "Realm name, or 'unknown'",
+            "affected_places": ["place names impacted"],
+            "affected_regions": ["region names impacted"],
+            "affected_realms": ["realm names impacted"],
+            "radius": "Optional plain-English radius (e.g. 'citywide', 'across the realm', 'three days by road')",
       "participants": ["character or faction names involved"],
       "outcome": "What happened — who won or lost, what changed.",
       "significance": "Why this matters to the world.",
@@ -2515,6 +2699,29 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
         today_appearances = stories_for(name)
         if name_low in existing_events:
             ex = existing_events[name_low]
+            # Preserve richer metadata when present.
+            if e.get("tagline") and not ex.get("tagline"):
+                ex["tagline"] = e.get("tagline")
+            if e.get("event_type") and not ex.get("event_type"):
+                ex["event_type"] = e.get("event_type")
+            if e.get("participants") and not ex.get("participants"):
+                ex["participants"] = e.get("participants")
+
+            # Optional geo/scope fields (used for large-scale continuity arcs).
+            for k in [
+                "scope",
+                "epicenter_place",
+                "epicenter_region",
+                "epicenter_realm",
+                "affected_places",
+                "affected_regions",
+                "affected_realms",
+                "radius",
+            ]:
+                if k in e and e.get(k) not in {None, "", [], {}}:
+                    if ex.get(k) in {None, "", [], {}}:
+                        ex[k] = e.get(k)
+
             ex["outcome"]      = e.get("outcome",      ex.get("outcome",      ""))
             ex["significance"] = e.get("significance", ex.get("significance", ""))
             prior = ex.get("story_appearances", [])
@@ -2529,6 +2736,14 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
                 "name":              name,
                 "tagline":           e.get("tagline", ""),
                 "event_type":        e.get("event_type", ""),
+                "scope":             e.get("scope", ""),
+                "epicenter_place":   e.get("epicenter_place", ""),
+                "epicenter_region":  e.get("epicenter_region", ""),
+                "epicenter_realm":   e.get("epicenter_realm", ""),
+                "affected_places":   e.get("affected_places", []),
+                "affected_regions":  e.get("affected_regions", []),
+                "affected_realms":   e.get("affected_realms", []),
+                "radius":            e.get("radius", ""),
                 "participants":      e.get("participants", []),
                 "outcome":           e.get("outcome", ""),
                 "significance":      e.get("significance", ""),
