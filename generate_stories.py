@@ -1753,6 +1753,54 @@ STORIES JSON INPUT:
 """
 
 
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+")
+
+
+def _fallback_safe_story_text(title: str) -> str:
+    t = (title or "").strip() or "Untitled"
+    return (
+        f"They tell the tale of {t} in whispers, not for what was shown, but for what was refused. "
+        "A pact is offered in a lamplit room; a hand is taken, then released. "
+        "Desire becomes a temptation, then a lever—ten words that could ruin a life, or save a city. "
+        "The hero chooses the harder currency: restraint, dignity, and consequence. "
+        "When the door finally closes, the story turns away. What follows happens off-screen, "
+        "leaving only footsteps, a steady breath, and a promise kept. "
+        "By dawn, there is no scandal to feast on—only a new scar in the world and a price paid in silence."
+    )
+
+
+def sanitize_story_for_sexual_content(story: dict) -> dict:
+    """Deterministically remove explicit sexual content from a story.
+
+    This is a backstop to keep daily generation from hard-failing. It prefers
+    removing only sentences containing explicit patterns; if anything remains
+    violating, it replaces the story text with a safe, fade-to-black fallback.
+    """
+    if not isinstance(story, dict):
+        return story
+
+    title = str(story.get("title") or "").strip() or "Untitled"
+    text = str(story.get("text") or "")
+
+    patterns = (_SEXUAL_VIOLENCE_RE, _EXPLICIT_ANATOMY_RE, _EXPLICIT_SEX_ACT_RE)
+
+    parts = [p.strip() for p in _SENTENCE_SPLIT_RE.split(text) if p.strip()]
+    kept = []
+    for p in parts:
+        if any(rx.search(p) for rx in patterns):
+            continue
+        kept.append(p)
+
+    sanitized = " ".join(kept).strip()
+    new_story = dict(story)
+    new_story["text"] = sanitized
+
+    if sexual_content_violations_for_story(new_story):
+        new_story["text"] = _fallback_safe_story_text(title)
+
+    return new_story
+
+
 def find_canon_collisions(stories, lore, allowed_names_lower):
     """Return referenced canon entries not in the allowed reuse set.
 
@@ -4488,10 +4536,18 @@ def main():
             if not violations:
                 break
             if attempt >= max(0, SEXUAL_CONTENT_MAX_REWRITES):
-                print("ERROR: Sexual-content guardrail could not be satisfied after rewrites.", file=sys.stderr)
+                print("WARNING: Sexual-content guardrail could not be satisfied after rewrites; sanitizing deterministically.", file=sys.stderr)
                 for v in violations:
                     print(f" - Story #{v.get('index')+1}: {v.get('title')} — {', '.join(v.get('violations') or [])}", file=sys.stderr)
-                sys.exit(1)
+                for v in violations:
+                    try:
+                        idx = int(v.get("index"))
+                    except Exception:
+                        continue
+                    if 0 <= idx < len(stories) and isinstance(stories[idx], dict):
+                        stories[idx] = sanitize_story_for_sexual_content(stories[idx])
+                # After sanitization, proceed even if the model couldn't rewrite cleanly.
+                break
             print(f"\u26a0\ufe0f Sexual-content guardrail: rewriting {len(violations)} story(ies) (attempt {attempt+1}/{SEXUAL_CONTENT_MAX_REWRITES})...")
             rewrite_msg = client.messages.create(
                 model=MODEL,
