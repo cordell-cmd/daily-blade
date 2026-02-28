@@ -2256,8 +2256,15 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
                 prior = ex.get("story_appearances", [])
                 new_ones = [a for a in today_apps if not any(p["date"] == a["date"] and p["title"] == a["title"] for p in prior)]
                 if new_ones:
-                    ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
                     ex["story_appearances"] = prior + new_ones
+                # Keep appearances aligned with unique story_appearances when present.
+                apps = ex.get("story_appearances", [])
+                if isinstance(apps, list) and apps:
+                    ex["appearances"] = len(apps)
+                    if not (ex.get("first_story") or "").strip():
+                        ex["first_story"] = apps[0].get("title", "")
+                    if not (ex.get("first_date") or "").strip():
+                        ex["first_date"] = apps[0].get("date", date_key)
             else:
                 first_title = today_apps[0]["title"] if today_apps else ""
                 base = {
@@ -2390,8 +2397,14 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
             new_ones = [a for a in today_appearances
                         if not any(p["date"] == a["date"] and p["title"] == a["title"] for p in prior)]
             if new_ones:
-                ex["appearances"] = ex.get("appearances", 1) + len(new_ones)
                 ex["story_appearances"] = prior + new_ones
+            apps = ex.get("story_appearances", [])
+            if isinstance(apps, list) and apps:
+                ex["appearances"] = len(apps)
+                if not (ex.get("first_story") or "").strip():
+                    ex["first_story"] = apps[0].get("title", "")
+                if not (ex.get("first_date") or "").strip():
+                    ex["first_date"] = apps[0].get("date", date_key)
         else:
             first_title = today_appearances[0]["title"] if today_appearances else ""
             new_obj = {
