@@ -3734,6 +3734,91 @@ def parse_json_response(raw):
     raise ValueError(f"No JSON structure found in response (last error: {last_error})")
 
 
+def _looks_like_story_dict(obj: object) -> bool:
+    if not isinstance(obj, dict):
+        return False
+    has_title = any(k in obj for k in ("title", "name", "heading"))
+    has_text = any(k in obj for k in ("text", "story", "body", "content"))
+    return has_title and has_text
+
+
+def extract_story_items(obj: object, _depth: int = 0):
+    """Return a list of story dicts from common Claude response shapes.
+
+    Claude usually returns a JSON array of {title,text,subgenre} objects, but it
+    sometimes wraps that list in additional dict layers (e.g. {"data":{...}}) or
+    returns a dict keyed by numeric/story_* keys.
+    """
+    if _depth > 6:
+        return None
+
+    if isinstance(obj, str):
+        s = obj.strip()
+        if not s:
+            return None
+        try:
+            parsed = json.loads(s)
+        except Exception:
+            return None
+        return extract_story_items(parsed, _depth=_depth + 1)
+
+    if isinstance(obj, list):
+        if any(_looks_like_story_dict(x) for x in obj):
+            return obj
+        # Some models may return a list with a single wrapper object.
+        for x in obj:
+            found = extract_story_items(x, _depth=_depth + 1)
+            if isinstance(found, list) and found:
+                return found
+        return None
+
+    if isinstance(obj, dict):
+        # Prefer direct keys.
+        for key in ("stories", "tales", "items", "entries", "results"):
+            if key in obj:
+                found = extract_story_items(obj.get(key), _depth=_depth + 1)
+                if isinstance(found, list) and found:
+                    return found
+
+        # Common wrappers.
+        for key in ("data", "output", "payload", "response", "result"):
+            if key in obj:
+                found = extract_story_items(obj.get(key), _depth=_depth + 1)
+                if isinstance(found, list) and found:
+                    return found
+
+        # A single story object.
+        if _looks_like_story_dict(obj):
+            return [obj]
+
+        # A dict keyed by numeric/story_* keys.
+        values = list(obj.values())
+        if values and all(isinstance(v, dict) for v in values):
+            def _k(k):
+                m = re.search(r"(\d+)", str(k))
+                return int(m.group(1)) if m else 10**9
+
+            ordered = [obj[k] for k in sorted(obj.keys(), key=_k)]
+            if any(_looks_like_story_dict(v) for v in ordered):
+                return ordered
+
+    return None
+
+
+def coerce_story_dict(obj: object) -> dict:
+    """Normalize a single story dict to {title,text,subgenre}."""
+    if not isinstance(obj, dict):
+        return {"title": "Untitled", "text": "", "subgenre": "Sword & Sorcery"}
+
+    title = obj.get("title") or obj.get("name") or obj.get("heading") or "Untitled"
+    text = obj.get("text")
+    if text is None:
+        text = obj.get("story") or obj.get("body") or obj.get("content") or ""
+
+    subgenre = obj.get("subgenre") or obj.get("genre") or obj.get("sub_genre") or "Sword & Sorcery"
+    return {"title": title, "text": text, "subgenre": subgenre}
+
+
 def normalize_extracted_lore(extracted):
     """Normalize lore extraction output into the expected dict-of-arrays structure.
 
@@ -4483,25 +4568,18 @@ def main():
         print("Raw response:", raw[:500], file=sys.stderr)
         sys.exit(1)
 
-    # Attach sub-genre labels
-    if isinstance(stories_raw, dict) and isinstance(stories_raw.get("stories"), list):
-        story_items = stories_raw.get("stories") or []
-    else:
-        story_items = stories_raw
+    story_items = extract_story_items(stories_raw)
     if not isinstance(story_items, list):
-        print("ERROR: Parsed story JSON was not a list (or a dict with a 'stories' list).", file=sys.stderr)
+        print("ERROR: Parsed story JSON did not contain a story list in a known shape.", file=sys.stderr)
+        if isinstance(stories_raw, dict):
+            keys = ", ".join(sorted(str(k) for k in stories_raw.keys())[:40])
+            print(f"Top-level keys: {keys}", file=sys.stderr)
         print(f"Parsed type: {type(stories_raw)}", file=sys.stderr)
         sys.exit(1)
 
     stories = []
-    for i, s in enumerate(story_items[:NUM_STORIES]):
-        if not isinstance(s, dict):
-            continue
-        stories.append({
-            "title":    s.get("title",    "Untitled"),
-            "text":     s.get("text",     ""),
-            "subgenre": s.get("subgenre", "Sword & Sorcery")
-        })
+    for s in story_items[:NUM_STORIES]:
+        stories.append(coerce_story_dict(s))
     print(f"\u2713 Generated {len(stories)} stories")
 
     # ── Optional: Content guardrail (block child death/targeted harm) ───
@@ -4524,13 +4602,8 @@ def main():
             rewrite_raw = rewrite_msg.content[0].text.strip()
             try:
                 revised = parse_json_response(rewrite_raw)
-                revised_stories = []
-                for s in revised[:NUM_STORIES]:
-                    revised_stories.append({
-                        "title": s.get("title", "Untitled"),
-                        "text": s.get("text", ""),
-                        "subgenre": s.get("subgenre", "Sword & Sorcery"),
-                    })
+                revised_items = extract_story_items(revised) or []
+                revised_stories = [coerce_story_dict(s) for s in revised_items[:NUM_STORIES]]
                 if len(revised_stories) == len(stories):
                     stories = revised_stories
             except (ValueError, json.JSONDecodeError) as e:
@@ -4565,13 +4638,8 @@ def main():
             rewrite_raw = rewrite_msg.content[0].text.strip()
             try:
                 revised = parse_json_response(rewrite_raw)
-                revised_stories = []
-                for s in revised[:NUM_STORIES]:
-                    revised_stories.append({
-                        "title": s.get("title", "Untitled"),
-                        "text": s.get("text", ""),
-                        "subgenre": s.get("subgenre", "Sword & Sorcery"),
-                    })
+                revised_items = extract_story_items(revised) or []
+                revised_stories = [coerce_story_dict(s) for s in revised_items[:NUM_STORIES]]
                 if len(revised_stories) == len(stories):
                     stories = revised_stories
             except (ValueError, json.JSONDecodeError) as e:
@@ -4594,13 +4662,8 @@ def main():
         rename_raw = rename_msg.content[0].text.strip()
         try:
             revised = parse_json_response(rename_raw)
-            revised_stories = []
-            for s in revised[:NUM_STORIES]:
-                revised_stories.append({
-                    "title": s.get("title", "Untitled"),
-                    "text": s.get("text", ""),
-                    "subgenre": s.get("subgenre", "Sword & Sorcery"),
-                })
+            revised_items = extract_story_items(revised) or []
+            revised_stories = [coerce_story_dict(s) for s in revised_items[:NUM_STORIES]]
             if len(revised_stories) == len(stories):
                 stories = revised_stories
                 print("\u2713 Renamed accidental canon collisions")
@@ -4625,13 +4688,8 @@ def main():
             revision_raw = revision_message.content[0].text.strip()
             try:
                 revised = parse_json_response(revision_raw)
-                revised_stories = []
-                for s in revised[:NUM_STORIES]:
-                    revised_stories.append({
-                        "title": s.get("title", "Untitled"),
-                        "text": s.get("text", ""),
-                        "subgenre": s.get("subgenre", "Sword & Sorcery"),
-                    })
+                revised_items = extract_story_items(revised) or []
+                revised_stories = [coerce_story_dict(s) for s in revised_items[:NUM_STORIES]]
                 if len(revised_stories) == len(stories):
                     stories = revised_stories
                     print("\u2713 Revised stories for canon consistency")
@@ -4664,15 +4722,10 @@ def main():
                     print("\u2713 Canon checker: no issues reported")
 
                 if CANON_CHECKER_MODE != "report":
-                    revised = check_result.get("stories") if isinstance(check_result, dict) else None
-                    if isinstance(revised, list) and revised:
-                        revised_stories = []
-                        for s in revised[:NUM_STORIES]:
-                            revised_stories.append({
-                                "title": s.get("title", "Untitled"),
-                                "text": s.get("text", ""),
-                                "subgenre": s.get("subgenre", "Sword & Sorcery"),
-                            })
+                    revised_any = check_result.get("stories") if isinstance(check_result, dict) else None
+                    revised_items = extract_story_items(revised_any) or []
+                    if revised_items:
+                        revised_stories = [coerce_story_dict(s) for s in revised_items[:NUM_STORIES]]
                         if len(revised_stories) == len(stories):
                             stories = revised_stories
                             print("\u2713 Applied canon-safe rewrites")
