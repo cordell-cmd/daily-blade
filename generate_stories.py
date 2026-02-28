@@ -2074,8 +2074,10 @@ Hard requirement:
 - If a story mentions a named language/dialect/script (e.g. "Old Tongue"), include it under "lore" with category "language".
 
 Classification guidance:
-- flora_fauna is for SPECIES or NATURAL organisms that exist independently in the world (e.g. wyverns, dire wolves, blood-orchids). Do NOT list ordinary animals (crows, horses, rats) that appear only as a character's magical disguise, familiar form, or shapeshifted body. Instead, note the transformation ability under "magic" (as a spell/technique) or mention it in the character's bio.
-- If a creature is mundane and common in any real-world setting (crow, wolf, horse), it should only appear in flora_fauna if the story presents it as a distinct magical species or world-specific variant (e.g. "shadow-crow", "iron wolf"). An ordinary crow used as a witch's scrying form is a magical ability, not a creature entry.
+- flora_fauna is for species or organisms that exist in the world. Ordinary real-world animals (crows, horses, wolves) MAY be included, but must be clearly distinguished from magical variants:
+  - If an animal appears only as a character's magical disguise, familiar form, or shapeshifted body, file the transformation ability under "magic" (as a spell/technique) or mention it in the character's bio. Do NOT list it as flora_fauna.
+  - If an ordinary animal also exists naturally in this world (e.g. crows roost on Pelimor's rooftops), it CAN be flora_fauna with rarity "common" and type "creature" (not "spirit" or "familiar").
+  - Magical or world-specific variants (e.g. "shadow-crow", "iron wolf", "wyvern") are always flora_fauna with appropriate rarity ("rare" or "legendary").
 
 Respond with ONLY valid JSON in this exact structure (use empty arrays if nothing new was found):
 {{
