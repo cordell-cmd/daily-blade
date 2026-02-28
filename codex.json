@@ -239,6 +239,12 @@
           "note": "Varek initiates a partnership with Sorceress Kira after she successfully reverse-engineers and counters his demon-collection method.",
           "evidence": "Kira steals back years Varek collected and takes his certainty as fee; 'Varek watched from elsewhere, impressed by her ingenuity. A partnership began that morning.' This formalizes Kira as a co-collector alongside Mel."
         }
+      ],
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "aliases": [
+        "Varek the demon"
       ]
     },
     {
@@ -313,23 +319,35 @@
     {
       "name": "Malachar the Betrayer",
       "tagline": "Defiant. Damned. Redeemed.",
-      "role": "Conqueror",
-      "status": "Dead",
+      "role": "Lich-King, Necromancer",
+      "status": "dead",
       "world": "The Known World",
-      "bio": "A fallen warrior who sold his soul to daemon-priests for power, conquering kingdoms for three decades. When they came to collect, he denied them by driving his own blade through his heart.",
+      "bio": "A lich-king or powerful undead entity whose gold coins carry supernatural debts. Though apparently dead, Malachar's will persists through his collectors\u2014neither living nor dead entities that enforce eternal debts upon those who possess his coins.",
       "traits": [
-        "Defiant",
-        "Fallen",
-        "Desperate"
+        "undead",
+        "creditor",
+        "vengeful",
+        "eternal"
       ],
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Crimson Covenant of Vex-Karthul"
+        },
+        {
+          "date": "2026-02-28",
+          "title": "The Lich-King's Collectors"
         }
+      ],
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "aliases": [
+        "Malachar"
       ]
     },
     {
@@ -923,23 +941,34 @@
     {
       "name": "Vex the Shade-Merchant",
       "tagline": "Shadow-trafficker. Unknowing pawn. Possessed.",
-      "role": "Merchant, Shadow-dealer",
-      "status": "cursed / possessed / unknown",
+      "role": "Merchant / Thief",
+      "status": "cursed",
       "world": "The Known World",
-      "bio": "A merchant of shadows in Pelimor's night markets who buys and sells secrets without names. Vex purchased what he believed was a powerful shadow, unaware the cloaked woman had stolen his own shadow months prior and was now selling it back to him. By dawn, he fled east through the blasted lands, driven by a will not his own.",
+      "bio": "A merchant and thief who stole a fortune in shadows from a dying sorcerer's vault and attempted to sell them in Pelimor's night markets. He was outwitted by a cloaked woman who had purchased back his own shadow\u2014worn by a malevolent entity tracking his crimes\u2014and was compelled northward and eastward into unknown wastes.",
       "traits": [
-        "sharp",
-        "ambitious",
-        "manipulated"
+        "clever",
+        "criminal",
+        "doomed"
       ],
       "first_story": "Shadows for Sale",
       "first_date": "2026-02-26",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-26",
           "title": "Shadows for Sale"
+        },
+        {
+          "date": "2026-02-28",
+          "title": "The Shade-Merchant's Gambit"
         }
+      ],
+      "travel_scope": "regional",
+      "home_place": "Pelimor",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "aliases": [
+        "Vex"
       ]
     },
     {
@@ -1032,24 +1061,35 @@
     {
       "name": "Naresh the Bone Carver",
       "tagline": "Master. Sacrificed. Hollow.",
-      "role": "Sorceress / Bone Carver",
+      "role": "Bone Carver, Ritualist",
       "status": "cursed",
       "world": "The Known World",
-      "bio": "A master bone carver who spent thirty years perfecting her art, inscribing power into bone and marrow. On the night of the blue eclipse, she carved and animated a full skeletal servant, but the spell's cost was her humanity itself\u2014paid incrementally as sensation, taste, and need for sleep fled her body.",
+      "bio": "Naresh spent twenty years perfecting the art of animating the dead through bone carving. On the night of a blue eclipse, she performed a ritual that created a truly sentient skeleton\u2014but at the cost of her own humanity. She sacrificed her memories, emotions, and capacity for joy to give her creation life.",
       "traits": [
-        "perfectionist",
-        "ambitious",
-        "willing to sacrifice",
-        "now emotionless"
+        "obsessive",
+        "self-sacrificing",
+        "hollow",
+        "purposeful"
       ],
       "first_story": "The Bone Carver's Apotheosis",
       "first_date": "2026-02-26",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-26",
           "title": "The Bone Carver's Apotheosis"
+        },
+        {
+          "date": "2026-02-28",
+          "title": "The Carver's Final Work"
         }
+      ],
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "aliases": [
+        "Naresh"
       ]
     },
     {
@@ -1573,15 +1613,15 @@
         "Varak"
       ],
       "tagline": "Conquered. Consumed. Possessed.",
-      "role": "Warlord, General",
+      "role": "Warlord / General",
       "status": "cursed",
       "travel_scope": "unknown",
       "home_place": "unknown",
       "home_region": "unknown",
       "home_realm": "unknown",
       "status_history": [],
-      "world": "known_world",
-      "bio": "Varak Ironhelm led eight hundred warriors to breach the Ossuary's gates in an attempt at conquest. He alone reached the throne room, where the living fortress chose him as its vessel. His consciousness remains trapped inside his own body as the Ossuary pilots his flesh like a glove.",
+      "world": "The Known World",
+      "bio": "A general who led eight hundred warriors to breach the Ossuary's gates in what he believed would be a conquest. Instead, the fortress chose him as a vessel, wearing his flesh like a glove while his consciousness remained trapped within. His final act was to turn his sword against his own surviving soldiers.",
       "traits": [
         "ambitious",
         "doomed",
@@ -1594,6 +1634,369 @@
         {
           "date": "2026-02-28",
           "title": "The Bone Citadel's Hunger"
+        }
+      ]
+    },
+    {
+      "name": "Torvin",
+      "aliases": [],
+      "tagline": "Desperate. Hollow. Aging.",
+      "role": "Merchant",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A merchant who bargained five years of his life to a demon named Varek to save his daughter from illness. Though his life was restored through Kira's ritual magic, he was left hollow-eyed and eternally stripped of the certainty that his daughter truly loves him.",
+      "traits": [
+        "desperate",
+        "sacrificial",
+        "cursed-by-doubt"
+      ],
+      "first_story": "The Weight of Stolen Years",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Weight of Stolen Years"
+        }
+      ]
+    },
+    {
+      "name": "Kira",
+      "aliases": [
+        "Sorceress Kira"
+      ],
+      "tagline": "Cunning. Ingenious. Merciless.",
+      "role": "Sorceress",
+      "status": "active",
+      "travel_scope": "interrealm",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A sorceress who followed Varek to intercept a demonic bargain and reverse-engineered his method of stealing time itself. She performs a ritual to restore Torvin's years but exacts a terrible price: his certainty. She forms a partnership with the impressed demon Varek.",
+      "traits": [
+        "ingenious",
+        "merciless",
+        "calculating"
+      ],
+      "first_story": "The Weight of Stolen Years",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Weight of Stolen Years"
+        }
+      ]
+    },
+    {
+      "name": "Naresh's Skeleton",
+      "aliases": [
+        "The Skeleton",
+        "Naresh's Creation"
+      ],
+      "tagline": "Sentient. Weeping. Yearning.",
+      "role": "Animated Construct, Undead",
+      "status": "active",
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "Created by Naresh through a ritual on the night of the blue eclipse, this skeleton is the first of its kind\u2014truly alive, capable of learning, yearning, and growth. It was carved with lungs that breathe, a heart-bone that beats, and an ivory mind that *wants* beyond mere compulsion. Upon drawing its first breath, it wept and asked its creator what joy is.",
+      "traits": [
+        "sentient",
+        "curious",
+        "sorrowful",
+        "innocent"
+      ],
+      "first_story": "",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Kestran",
+      "aliases": [],
+      "tagline": "Haunted. Penitent. Redeemed.",
+      "role": "Blademaster, Warrior",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A deadly swordsman who killed forty men in single combat, Kestran swore no oaths to his victims and carried the weight of his blood-debts as abstract guilt. When the ghosts of his kills began manifesting, he was forced to acknowledge each death with genuine contrition and belated oaths of release. After weeks of spectral combat and accumulated remorse, he sheathed his sword forever.",
+      "traits": [
+        "skilled",
+        "haunted",
+        "remorseful",
+        "disciplined"
+      ],
+      "first_story": "The Blademaster's Last Duel",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Blademaster's Last Duel"
+        }
+      ]
+    },
+    {
+      "name": "Soroth",
+      "aliases": [
+        "the Brigand"
+      ],
+      "tagline": "Damned. Aged. Enslaved.",
+      "role": "Brigand, Warlord, Collector",
+      "status": "cursed",
+      "travel_scope": "regional",
+      "home_place": "Crimson Vale",
+      "home_region": "Crimson Vale",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A brigand who found three hundred pieces of Malachar's gold in a tomb and used them to establish himself as warlord of the Crimson Vale. When supernatural collectors arrived to collect Malachar's eternal debt, Soroth aged rapidly as they extracted years from his life. Faced with the choice of death or damnation, he accepted servitude as one of their agents, collecting debts from others in the living world.",
+      "traits": [
+        "ambitious",
+        "cursed",
+        "enslaved",
+        "corrupted"
+      ],
+      "first_story": "The Lich-King's Collectors",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Lich-King's Collectors"
+        }
+      ]
+    },
+    {
+      "name": "Lead Collector",
+      "aliases": [
+        "The Lead Collector",
+        "Malachar's Lead Collector"
+      ],
+      "tagline": "Gray. Hollow-eyed. Merciless.",
+      "role": "Collector, Undead Agent",
+      "status": "active",
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "The primary collector who negotiated with Soroth. Neither living nor dead, this entity wears nobility like ill-fitting clothes. It offered Soroth a choice: death now or eternal servitude as a collector in the living world. It has empty eyes and laughs at the notion of paying Malachar's debts in gold.",
+      "traits": [
+        "merciless",
+        "inhuman",
+        "authoritative",
+        "patient"
+      ],
+      "first_story": "The Lich-King's Collectors",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Lich-King's Collectors"
+        }
+      ]
+    },
+    {
+      "name": "Prince Aldren",
+      "aliases": [
+        "Aldren"
+      ],
+      "tagline": "Dutiful. Negotiator. Sacrifice.",
+      "role": "Prince, Dragon's Consort",
+      "status": "active",
+      "travel_scope": "realmwide",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "Prince Aldren rode to meet the dragon Skyrakis expecting death, but was offered a choice: wed the dragon's daughter and rule in the crystal halls beneath the world, or see his kingdom burn. He accepted and negotiated a counter-oath ensuring his future children could choose their own path. He now dwells in the crystal halls, having traded his human kingdom for a life of honor and duty.",
+      "traits": [
+        "honorable",
+        "negotiator",
+        "self-sacrificing",
+        "dutiful"
+      ],
+      "first_story": "The Dragon's Bargain",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Dragon's Bargain"
+        }
+      ]
+    },
+    {
+      "name": "Skyrakis the Wound-Wing",
+      "aliases": [
+        "Skyrakis"
+      ],
+      "tagline": "Ancient. Terrible. Honorable.",
+      "role": "Dragon, Oath-Keeper",
+      "status": "active",
+      "travel_scope": "realmwide",
+      "home_place": "crystal halls",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A great dragon whose grandmother made an ancient blood-marriage oath with Prince Aldren's family. When Aldren's father broke this oath, Skyrakis sought redress, threatening to burn the kingdom unless a prince would wed his daughter and rule in the crystal halls beneath the world. She respects negotiation and honor.",
+      "traits": [
+        "ancient",
+        "patient",
+        "terrible",
+        "oath-bound",
+        "respects courage"
+      ],
+      "first_story": "The Dragon's Bargain",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Dragon's Bargain"
+        }
+      ]
+    },
+    {
+      "name": "Mira the Shadow-Dancer",
+      "aliases": [
+        "Mira"
+      ],
+      "tagline": "Cunning. Reckless. Reformed.",
+      "role": "Thief",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "Pelimor",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "Mira is a legendary thief with a unique problem: her own shadow betrayed her in daylight. She bought a replacement shadow in Pelimor's night markets\u2014a merchant's stolen shadow\u2014and used it for three months until the shadow's own will and grief manifested, nearly forcing her to betray a robbery. She burned the shadow to escape its compulsion and learned that shadows carry memory and cannot be truly owned.",
+      "traits": [
+        "skilled",
+        "cunning",
+        "resourceful",
+        "haunted",
+        "reformed"
+      ],
+      "first_story": "The Thief's Shadow",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Thief's Shadow"
+        }
+      ]
+    },
+    {
+      "name": "Tormund",
+      "aliases": [],
+      "tagline": "Oath-Breaker. Hollow. Redeemed.",
+      "role": "King",
+      "status": "dead",
+      "travel_scope": "realmwide",
+      "home_place": "throne room",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "Tormund was a careless king who broke oaths repeatedly\u2014promising lands not his to give, betraying allies, dishonoring marriages. A curse took from him one irreplaceable thing per broken oath: taste, laughter, memory of his son. By his twentieth broken oath, he was a hollow ghost. He sought the cursewright's heir in the wastelands, who told him the curse could not be bought away but only undone through keeping new oaths. He spent his final years keeping small promises to small people and died in peace.",
+      "traits": [
+        "reckless",
+        "oath-breaker",
+        "hollow",
+        "penitent",
+        "haunted"
+      ],
+      "first_story": "The Oath-Breaker's Curse",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Oath-Breaker's Curse"
+        }
+      ]
+    },
+    {
+      "name": "the cursewright's heir",
+      "aliases": [
+        "cursewright's heir"
+      ],
+      "tagline": "Wise. Hermitic. Teacher.",
+      "role": "Hermit, Wise Woman",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "wastelands",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A young woman living as a hermit in the wastelands, she is the heir to the cursewright who placed the elegant curse upon King Tormund. She refused to lift his curse but instead taught him that oaths are not chains but bonds forged with others, and that redemption comes through keeping new promises.",
+      "traits": [
+        "wise",
+        "compassionate",
+        "teacher",
+        "patient"
+      ],
+      "first_story": "The Oath-Breaker's Curse",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Oath-Breaker's Curse"
+        }
+      ]
+    },
+    {
+      "name": "Lyssa",
+      "aliases": [],
+      "tagline": "Archaeologist. Consumed. Transformed.",
+      "role": "Archaeologist",
+      "status": "cursed",
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "An archaeologist who discovered the ruins of Aethermarch and was drawn into its memory-stones. Over weeks of mapping and touching the walls, she absorbed vast archives of ancient knowledge but at the cost of her own identity. She escaped the city's call but was fundamentally altered, her mind partially replaced by the memories of dead architects.",
+      "traits": [
+        "curious",
+        "scholarly",
+        "mentally fragmented",
+        "haunted",
+        "resistant"
+      ],
+      "first_story": "The City That Remembers",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The City That Remembers"
         }
       ]
     }
@@ -2844,7 +3247,7 @@
       "region": "unknown",
       "district": "unknown",
       "atmosphere": "A breathing, peristaltic structure that moves with terrible purpose and hunger, devouring those who enter.",
-      "description": "The Ossuary is a living fortress with walls of calcium that split and swallow men whole. Towers bend like intestines in rhythmic, predatory motion. Corridors rearrange themselves around intruders, creating an ever-shifting labyrinth. The structure possesses a form of consciousness and agency, choosing whom to consume and whom to possess. It has a throne room at its heart.",
+      "description": "An impossible fortress whose walls are made of living calcium that split and swallow warriors whole. Its towers bend like intestines in peristaltic waves. The corridors rearrange themselves around intruders. It possesses agency and deliberately chose Varak Ironhelm as a vessel. Upon sating itself, it settles into patient stillness.",
       "status": "active",
       "first_story": "The Bone Citadel's Hunger",
       "first_date": "2026-02-28",
@@ -2853,6 +3256,210 @@
         {
           "date": "2026-02-28",
           "title": "The Bone Citadel's Hunger"
+        }
+      ]
+    },
+    {
+      "name": "merchant's house",
+      "tagline": "Bargain. Shadow. Ritual.",
+      "place_type": "dwelling",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A site of demonic contract and magical counter-ritual, where fate turns in a single night.",
+      "description": "The house where Torvin made his demonic bargain with Varek and where Kira performed her counter-ritual to reverse the theft of his years. The ritual burned through the night.",
+      "status": "active",
+      "first_story": "The Weight of Stolen Years",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Weight of Stolen Years"
+        }
+      ]
+    },
+    {
+      "name": "Wasteland",
+      "tagline": "Desolate. Empty. Unknown.",
+      "place_type": "wilderness",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A desolate, empty expanse where Naresh walks as a hollow shell.",
+      "description": "An unmapped wasteland into which Naresh walked after sacrificing her humanity. Whether she walks still or has a destination is unknown.",
+      "status": "active",
+      "first_story": "The Carver's Final Work",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Carver's Final Work"
+        }
+      ]
+    },
+    {
+      "name": "Crimson Vale",
+      "tagline": "Warlord-ruled. Corrupted. Cursed.",
+      "place_type": "region",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Crimson Vale",
+      "district": "unknown",
+      "atmosphere": "A region of ambition and prosperity turned to despair by supernatural debt collection.",
+      "description": "A territory that Soroth established as warlord after finding Malachar's gold. For three months it flourished under his rule with hired soldiers and horses, then the collectors arrived. Now it is the domain of a cursed warlord-collector.",
+      "status": "cursed",
+      "first_story": "The Lich-King's Collectors",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Lich-King's Collectors"
+        }
+      ]
+    },
+    {
+      "name": "Tomb",
+      "tagline": "Ancient. Gold-laden. Cursed.",
+      "place_type": "ruin",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A burial place containing wealth and supernatural obligation.",
+      "description": "An ancient tomb where Soroth discovered three hundred pieces of Malachar's gold stamped with a skeletal crown. The tomb's location and other contents are unspecified.",
+      "status": "active",
+      "first_story": "The Lich-King's Collectors",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Lich-King's Collectors"
+        }
+      ]
+    },
+    {
+      "name": "crystal halls",
+      "tagline": "Subterranean. Wondrous. Dragon-ruled.",
+      "place_type": "palace / underground complex",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A wondrous realm of crystalline beauty hidden beneath the world, ruled by dragons and their chosen consorts.",
+      "description": "The crystal halls lie beneath the world and serve as the seat of Skyrakis the Wound-Wing and her dynasty. Prince Aldren now dwells here as the consort of Skyrakis's daughter, ruling at her side and fathering wyvern-blooded heirs.",
+      "status": "active",
+      "first_story": "The Dragon's Bargain",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Dragon's Bargain"
+        }
+      ]
+    },
+    {
+      "name": "wastelands",
+      "tagline": "Barren. Remote. Hermitic.",
+      "place_type": "wilderness",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A desolate, remote expanse where wise hermits dwell far from the reach of kings and courts.",
+      "description": "The wastelands are a harsh, empty region where the cursewright's heir dwells as a hermit, removed from civilization. King Tormund traveled here seeking redemption.",
+      "status": "active",
+      "first_story": "The Oath-Breaker's Curse",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Oath-Breaker's Curse"
+        }
+      ]
+    },
+    {
+      "name": "throne room",
+      "tagline": "Regal. Hollow. Cursed.",
+      "place_type": "palace / seat of power",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "The seat of King Tormund's power, where he moved like a ghost bound to flesh, unable to taste poison, laugh at jests, or remember his own children.",
+      "description": "King Tormund's throne room was the place where he conducted his cursed reign, slowly hollowed by oath-breaking. Ministers joked and served him wine, unaware of the curse that had stripped his senses.",
+      "status": "active",
+      "first_story": "The Bone Citadel's Hunger",
+      "first_date": "2026-02-28",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Bone Citadel's Hunger"
+        },
+        {
+          "date": "2026-02-28",
+          "title": "The Oath-Breaker's Curse"
+        }
+      ]
+    },
+    {
+      "name": "Aethermarch",
+      "tagline": "Dreaming. Ancient. Consuming.",
+      "place_type": "ruin",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A city trapped between life and death, suffused with the echoing thoughts and emotions of ten thousand years of inhabitants.",
+      "description": "The ruins of Aethermarch retain the memories of their inhabitants within stone and architecture. Libraries hold ghost-echoes of scholars' debates; temples thrummed with prayers of forgotten worshippers. Walking through the plaza allows one to feel the footsteps of merchants, children, and lovers across millennia. The city itself is sentient in some manner, dreaming and calling out to those who touch its memory-stones.",
+      "status": "ruins",
+      "first_story": "The City That Remembers",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The City That Remembers"
         }
       ]
     }
@@ -3637,6 +4244,65 @@
           "title": "The Scarlet Merchant"
         }
       ]
+    },
+    {
+      "name": "The Blue Eclipse",
+      "tagline": "Celestial. Transformative. Singular.",
+      "event_type": "celestial phenomenon",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "At least wide enough to reach Naresh's location",
+      "participants": [
+        "Naresh the Bone Carver"
+      ],
+      "outcome": "A night when moonlight was stained indigo, enabling Naresh to complete her ritual of creating a truly sentient skeleton.",
+      "significance": "The blue eclipse appears to be a rare celestial event enabling major magical workings. It may recur or be tied to other significant events.",
+      "first_story": "The Carver's Final Work",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Carver's Final Work"
+        }
+      ]
+    },
+    {
+      "name": "the Dragon's Bargain",
+      "tagline": "Negotiation. Sacrifice. Redemption.",
+      "event_type": "ritual / diplomatic accord",
+      "scope": "realmwide",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "crystal halls"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "Unknown, but affects an entire kingdom and royal family.",
+      "participants": [
+        "Prince Aldren",
+        "Skyrakis the Wound-Wing",
+        "the merchant's daughter (bride-to-be)",
+        "Aldren's father (oath-breaker)"
+      ],
+      "outcome": "Aldren accepted Skyrakis's bargain and wed the dragon's daughter in the crystal halls. He negotiated a counter-oath ensuring his future wyvern-blooded children could choose their own path. The kingdom was spared from dragon fire.",
+      "significance": "This event resolved an ancient blood-marriage oath sworn by Aldren's grandmother to Skyrakis's grandmother, prevented the kingdom's destruction, and created a new dynasty of hybrid heirs with free will.",
+      "first_story": "The Dragon's Bargain",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Dragon's Bargain"
+        }
+      ]
     }
   ],
   "rituals": [
@@ -3660,6 +4326,27 @@
         }
       ],
       "notes": "Performed to dismiss Velgrim the Terrible's ghost without granting his demanded massacre."
+    },
+    {
+      "name": "Oath-Breaker's Curse",
+      "tagline": "Punishment. Erosion. Teaching.",
+      "first_story": "The Oath-Breaker's Curse",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Oath-Breaker's Curse"
+        }
+      ],
+      "ritual_type": "curse",
+      "performed_by": [
+        "the cursewright (original caster)"
+      ],
+      "requirements": "Unknown; cast in response to Tormund's repeated oath-breaking.",
+      "effect": "Each oath Tormund breaks steals something irreplaceable: first taste, then laughter, then memory of his firstborn son. By the twentieth oath, he is hollow.",
+      "cost": "The curse is irreversible and permanent. It cannot be lifted\u2014only borne and transformed through new honor.",
+      "notes": "The cursewright designed this curse to teach that oaths are bonds, not chains. It is elegant in its mechanism: loss is cumulative and specific to each oath."
     }
   ],
   "weapons": [
@@ -4015,6 +4702,42 @@
       "first_date": "2026-02-28",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "stolen shadows",
+      "tagline": "Illicit. Dangerous. Cursed.",
+      "artifact_type": "shadow / magical goods",
+      "origin": "Liberated by Vex from a dying sorcerer's vault.",
+      "powers": "Unknown, but they are priceless and untraceable. They can be stored in clay jars. Some shadows are inhabited by malevolent entities and can be weaponized against their original owners.",
+      "last_known_holder": "Sold by morning after Vex's capture, distributed to highest bidders.",
+      "status": "lost / circulating",
+      "first_story": "The Shade-Merchant's Gambit",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Shade-Merchant's Gambit"
+        }
+      ]
+    },
+    {
+      "name": "Malachar's Gold",
+      "tagline": "Cursed. Tempting. Eternal.",
+      "artifact_type": "currency / relic",
+      "origin": "Minted or created by Malachar, marked with a skeletal crown.",
+      "powers": "Each coin carries a supernatural debt that compels the holder into service of Malachar's collectors. The debt compounds daily in blood, loyalty, and life-years extracted. Gold cannot pay the debt\u2014only service can.",
+      "last_known_holder": "Soroth",
+      "status": "active",
+      "first_story": "The Lich-King's Collectors",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Lich-King's Collectors"
+        }
+      ]
     }
   ],
   "factions": [
@@ -5056,6 +5779,54 @@
           "title": "The Scarlet Merchant"
         }
       ]
+    },
+    {
+      "name": "Some Shadows Bite Back",
+      "tagline": "Warning. Vendetta. Justice.",
+      "category": "legend",
+      "source": "Merchants in Pelimor's night markets whisper this warning after Vex's capture.",
+      "status": "confirmed",
+      "first_story": "The Shade-Merchant's Gambit",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Shade-Merchant's Gambit"
+        }
+      ]
+    },
+    {
+      "name": "Shadows Retain Memory",
+      "tagline": "Haunting. Sentient. Irredeemable.",
+      "category": "legend / lore",
+      "source": "Discovered by Mira the Shadow-Dancer in Pelimor.",
+      "status": "confirmed",
+      "first_story": "The Thief's Shadow",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Thief's Shadow"
+        }
+      ]
+    },
+    {
+      "name": "Memory-Stones",
+      "tagline": "Living. Recording. Dangerous.",
+      "category": "history",
+      "source": "Discovered by Lyssa in Aethermarch",
+      "status": "confirmed",
+      "first_story": "The City That Remembers",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The City That Remembers"
+        }
+      ]
     }
   ],
   "flora_fauna": [
@@ -5179,6 +5950,23 @@
         {
           "date": "2026-02-28",
           "title": "The Bone Citadel's Hunger"
+        }
+      ]
+    },
+    {
+      "name": "wyvern",
+      "tagline": "Hybrid. Dragon-blooded. Choice.",
+      "type": "creature",
+      "rarity": "rare",
+      "habitat": "crystal halls",
+      "status": "thriving",
+      "first_story": "The Dragon's Bargain",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Dragon's Bargain"
         }
       ]
     }
@@ -6264,6 +7052,40 @@
           "title": "The Bone Citadel's Hunger"
         }
       ]
+    },
+    {
+      "name": "Malachar's Gold",
+      "tagline": "Skeletal-crowned. Cursed. Binding.",
+      "origin": "Minted or enchanted by Malachar, a dead lich-king or necromancer.",
+      "power": "Each coin carries an autonomous supernatural debt that compels the holder into eventual servitude to Malachar's collectors. The debt compounds in blood, loyalty, and life-years daily.",
+      "curse": "Possession of even one coin triggers supernatural debt collection. The collectors will take soldiers sworn to the holder, then horses/resources, then extract life-years from the holder themselves. The only escape is to accept servitude as a collector enforcing the same debt on others. The debt is eternal and cannot be repaid in gold.",
+      "status": "active",
+      "first_story": "The Lich-King's Collectors",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Lich-King's Collectors"
+        }
+      ]
+    },
+    {
+      "name": "merchant's shadow",
+      "tagline": "Stolen. Haunted. Avenging.",
+      "origin": "Stolen years before the story from an unnamed merchant in Pelimor.",
+      "power": "Allows the wearer to move through daylight without shadow-betrayal. However, the shadow retains the memory and grief of its original owner.",
+      "curse": "The shadow's retained memories and desire for revenge manifest involuntarily, forcing the wearer's body toward the shadow's enemies. It demands vengeance and cannot be controlled.",
+      "status": "destroyed (burned by Mira)",
+      "first_story": "The Thief's Shadow",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Thief's Shadow"
+        }
+      ]
     }
   ],
   "regions": [
@@ -6495,6 +7317,64 @@
       "province": "unknown",
       "region": "Sapphire Deep",
       "district": "unknown"
+    },
+    {
+      "name": "Crimson Vale",
+      "tagline": "Warlord-ruled. Prosperous. Cursed.",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "ruler": "",
+      "function": "A territory capable of supporting a warlord's personal dominion with hired soldiers and horses. Now serves as a locus for Malachar's curse collection.",
+      "status": "cursed",
+      "notes": "Established as Soroth's domain after he found Malachar's gold. Prospered for three months before collectors arrived. Now ruled by the cursed warlord Soroth who collects debts from others.",
+      "first_story": "The Lich-King's Collectors",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Lich-King's Collectors"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Crimson Vale",
+      "district": "unknown"
+    },
+    {
+      "name": "Pelimor",
+      "tagline": "Criminal. Shadowed. Mercantile.",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "urban",
+      "ruler": "",
+      "function": "A criminal underworld center and night market hub where stolen goods\u2014including shadows\u2014are bought, sold, and stored in vaults. A place where thieves of high caliber operate.",
+      "status": "active",
+      "notes": "Pelimor's night markets and vaults are integral to the shadow-theft economy. Mira operated here for years.",
+      "first_story": "The Shade-Merchant's Gambit",
+      "first_date": "2026-02-28",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Shade-Merchant's Gambit"
+        },
+        {
+          "date": "2026-02-28",
+          "title": "The Thief's Shadow"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Pelimor",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -6688,6 +7568,42 @@
         {
           "date": "2026-02-26",
           "title": "The Scarlet Merchant"
+        }
+      ]
+    },
+    {
+      "name": "stolen shadows",
+      "tagline": "Illicit. Priceless. Dangerous.",
+      "type": "magical commodity / shadow",
+      "rarity": "rare",
+      "properties": "Unknown magical properties; untraced and untraceable; can be stored in clay jars; some are inhabited by malevolent entities.",
+      "use": "Traded in night markets as high-value illicit goods. Can be weaponized against their original owners if inhabited by malevolent forces.",
+      "status": "unknown",
+      "first_story": "The Shade-Merchant's Gambit",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Shade-Merchant's Gambit"
+        }
+      ]
+    },
+    {
+      "name": "Malachar's Gold",
+      "tagline": "Cursed. Marked. Autonomous.",
+      "type": "enchanted metal / currency",
+      "rarity": "rare",
+      "properties": "Stamped with a skeletal crown. Carries autonomous supernatural debt. Compels holder into servitude.",
+      "use": "Intended as currency or treasure, but functions as a curse-delivery mechanism. Cannot be safely used as currency due to debt activation.",
+      "status": "unknown",
+      "first_story": "The Lich-King's Collectors",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Lich-King's Collectors"
         }
       ]
     }
