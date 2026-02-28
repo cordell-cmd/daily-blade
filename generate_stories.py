@@ -1055,6 +1055,14 @@ def build_lore_extraction_prompt(stories, existing_lore):
             r"|\b[A-Z][\w’'\-]{2,}\b"
         )
 
+        # Catch important object phrases that often appear with a lowercase common noun
+        # but should still be treated as named artifacts/relics (e.g., "the idol of Khar-Zul").
+        # Keep the surface form from the story as closely as possible.
+        object_of_re = re.compile(
+            r"\b(?:the\s+)?(idol|crown|throne|blade|dagger|ring|tome|amulet|chalice|mask|orb|eye|eyes)\s+of\s+"
+            r"([A-Z][\w’'\-]+(?:[ \t\-]+[A-Z][\w’'\-]+){0,4})\b"
+        )
+
         candidates = []
         seen = set()
         for s in stories or []:
@@ -1063,6 +1071,20 @@ def build_lore_extraction_prompt(stories, existing_lore):
             for chunk in [title] + (text.splitlines() if text else []):
                 if not chunk.strip():
                     continue
+
+                for m in object_of_re.finditer(chunk):
+                    cand = (m.group(0) or "").strip()
+                    if not cand:
+                        continue
+                    cand_norm = " ".join(cand.split())
+                    key = cand_norm.lower()
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    candidates.append(cand_norm)
+                    if len(candidates) >= max_candidates:
+                        return candidates
+
                 for m in cand_re.finditer(chunk):
                     cand = (m.group(0) or "").strip()
                     if not cand:
@@ -1144,6 +1166,7 @@ Coverage checklist (per story):
 - Do NOT classify a realm's rulership institution as a Faction unless it is explicitly a distinct factional group.
 - Ensure each named thing is represented in at least one output category.
 - Treat patterns like "X of Y" and "The X of Y" as likely names; include them when they read like a title, place, or event.
+- Treat important objects described as "the <object> of <ProperName>" (even if <object> is lowercase) as named artifacts/relics and include them (e.g., "the idol of Khar-Zul").
 
 Naming rules:
 - The `name` field MUST match the surface form used in the story text as closely as possible.
