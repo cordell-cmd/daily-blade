@@ -3787,10 +3787,6 @@ def extract_story_items(obj: object, _depth: int = 0):
                 if isinstance(found, list) and found:
                     return found
 
-        # A single story object.
-        if _looks_like_story_dict(obj):
-            return [obj]
-
         # A dict keyed by numeric/story_* keys.
         values = list(obj.values())
         if values and all(isinstance(v, dict) for v in values):
@@ -3801,6 +3797,10 @@ def extract_story_items(obj: object, _depth: int = 0):
             ordered = [obj[k] for k in sorted(obj.keys(), key=_k)]
             if any(_looks_like_story_dict(v) for v in ordered):
                 return ordered
+
+        # A single story object.
+        if _looks_like_story_dict(obj):
+            return [obj]
 
     return None
 
@@ -3817,6 +3817,43 @@ def coerce_story_dict(obj: object) -> dict:
 
     subgenre = obj.get("subgenre") or obj.get("genre") or obj.get("sub_genre") or "Sword & Sorcery"
     return {"title": title, "text": text, "subgenre": subgenre}
+
+
+def build_story_json_reformat_prompt(raw_response_text: str, num_stories: int = NUM_STORIES) -> str:
+    return f"""You previously generated sword-and-sorcery stories, but the JSON shape may be wrapped or inconsistent.
+
+Task:
+- Output ONLY valid JSON.
+- The JSON must be a single array of exactly {int(num_stories)} objects.
+- Each object must have: title (string), text (string), subgenre (string).
+- If the previous response contains fewer than {int(num_stories)} stories, invent additional stories to reach {int(num_stories)}.
+
+Here is the prior response (verbatim):
+---
+{raw_response_text}
+---
+"""
+
+
+def build_missing_stories_prompt(today_str: str, lore: dict, missing: int, existing_titles=None) -> str:
+    existing_titles = existing_titles or []
+    lore_context = build_generation_lore_context(lore, seed_text=today_str)
+    world_events_section = build_world_event_arcs_section(today_str, lore)
+    avoid = "\n".join(f"- {t}" for t in existing_titles if t)
+    avoid_section = f"\nDo not reuse these existing titles:\n{avoid}\n" if avoid else ""
+    return f"""Generate {int(missing)} additional sword-and-sorcery stories for the issue dated {today_str}.
+
+Format rules:
+- Output ONLY valid JSON.
+- The JSON must be a single array of exactly {int(missing)} objects.
+- Each object must have: title (string), text (string), subgenre (string).
+{avoid_section}
+Canon guidance:
+{world_events_section}
+
+Existing lore context (use as inspiration; do not contradict):
+{lore_context}
+"""
 
 
 def normalize_extracted_lore(extracted):
@@ -4577,9 +4614,55 @@ def main():
         print(f"Parsed type: {type(stories_raw)}", file=sys.stderr)
         sys.exit(1)
 
-    stories = []
-    for s in story_items[:NUM_STORIES]:
-        stories.append(coerce_story_dict(s))
+    stories = [coerce_story_dict(s) for s in story_items[:NUM_STORIES]]
+
+    # If we didn't get all expected stories, try a lightweight repair:
+    # 1) Ask Claude to reformat the prior response into an exact JSON array.
+    # 2) If still short, ask for only the missing number of additional stories.
+    if len(stories) < NUM_STORIES:
+        print(
+            f"WARNING: Only parsed {len(stories)}/{NUM_STORIES} stories; attempting JSON repair.",
+            file=sys.stderr,
+        )
+        try:
+            repair_msg = client.messages.create(
+                model=MODEL,
+                max_tokens=4096,
+                messages=[{"role": "user", "content": build_story_json_reformat_prompt(raw, NUM_STORIES)}],
+            )
+            repair_raw = repair_msg.content[0].text.strip()
+            repaired = parse_json_response(repair_raw)
+            repaired_items = extract_story_items(repaired) or []
+            repaired_stories = [coerce_story_dict(s) for s in repaired_items[:NUM_STORIES]]
+            if len(repaired_stories) >= len(stories):
+                stories = repaired_stories
+        except Exception as e:
+            print(f"WARNING: JSON repair attempt failed: {e}", file=sys.stderr)
+
+    if len(stories) < NUM_STORIES:
+        missing = NUM_STORIES - len(stories)
+        print(f"WARNING: Still missing {missing} story(ies); generating extras.", file=sys.stderr)
+        try:
+            extra_msg = client.messages.create(
+                model=MODEL,
+                max_tokens=4096,
+                messages=[{
+                    "role": "user",
+                    "content": build_missing_stories_prompt(today_str, lore, missing, existing_titles=[s.get("title") for s in stories if isinstance(s, dict)]),
+                }],
+            )
+            extra_raw = extra_msg.content[0].text.strip()
+            extra_parsed = parse_json_response(extra_raw)
+            extra_items = extract_story_items(extra_parsed) or []
+            extras = [coerce_story_dict(s) for s in extra_items[:missing]]
+            stories.extend(extras)
+        except Exception as e:
+            print(f"WARNING: Extra-story generation failed: {e}", file=sys.stderr)
+
+    if len(stories) < NUM_STORIES:
+        print(f"ERROR: Only {len(stories)}/{NUM_STORIES} stories available; aborting.", file=sys.stderr)
+        sys.exit(1)
+
     print(f"\u2713 Generated {len(stories)} stories")
 
     # ── Optional: Content guardrail (block child death/targeted harm) ───
@@ -4810,7 +4893,7 @@ def main():
     # ── Save today's stories.json ─────────────────────────────────────────
     output = {
         "date":         date_key,
-        "generated_at": today.strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generated_at": issue_now.astimezone(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "stories":      stories
     }
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
