@@ -93,6 +93,11 @@ ENABLE_EXISTING_CHARACTER_UPDATES = os.environ.get(
     "1",
 ).strip().lower() in {"1", "true", "yes", "y"}
 
+# Lore extraction: batch stories to avoid truncated output.
+# Haiku 3.5 max output is 8192 tokens; a single call can't cover 10 stories × 20 categories.
+EXTRACTION_BATCH_SIZE = int(os.environ.get("EXTRACTION_BATCH_SIZE", "3"))
+EXTRACTION_MAX_TOKENS = int(os.environ.get("EXTRACTION_MAX_TOKENS", "8192"))
+
 # Prompt size controls (do not limit lore growth; only limit what we *send* each run).
 # Set to 0 to disable that section.
 LORE_SPOTLIGHT_MAX_PER_CATEGORY = int(os.environ.get("LORE_SPOTLIGHT_MAX_PER_CATEGORY", "0"))
@@ -4048,6 +4053,120 @@ def normalize_extracted_lore(extracted):
     return dict(empty)
 
 
+def _merge_extracted_batches(batches: list[dict]) -> dict:
+    """Merge multiple extraction batch dicts into a single combined dict.
+
+    Each batch is a normalized dict-of-arrays (from normalize_extracted_lore).
+    We simply concatenate the arrays for each category.
+    """
+    expected_keys = [
+        "characters", "places", "events", "rituals", "weapons",
+        "deities_and_entities", "artifacts", "factions", "lore",
+        "flora_fauna", "magic", "relics", "regions", "realms",
+        "continents", "subcontinents", "hemispheres", "provinces",
+        "districts", "substances", "polities",
+    ]
+    merged: dict = {k: [] for k in expected_keys}
+    for batch in batches:
+        if not isinstance(batch, dict):
+            continue
+        for k in expected_keys:
+            arr = batch.get(k)
+            if isinstance(arr, list):
+                merged[k].extend(arr)
+    return merged
+
+
+def _extract_lore_batched(client, stories: list[dict], lore: dict) -> dict:
+    """Extract lore from stories in batches to avoid output-token truncation.
+
+    Splits the story list into batches of EXTRACTION_BATCH_SIZE, calls the
+    extraction prompt for each batch, and merges all results.
+    """
+    batch_size = max(1, EXTRACTION_BATCH_SIZE)
+    max_tokens = max(2048, EXTRACTION_MAX_TOKENS)
+
+    # Split stories into batches
+    batches_of_stories: list[list[dict]] = []
+    for i in range(0, len(stories), batch_size):
+        batches_of_stories.append(stories[i : i + batch_size])
+
+    total_batches = len(batches_of_stories)
+    if total_batches > 1:
+        print(f"  Splitting {len(stories)} stories into {total_batches} extraction batches of ≤{batch_size}…")
+
+    extracted_batches: list[dict] = []
+
+    for batch_idx, batch_stories in enumerate(batches_of_stories, 1):
+        batch_label = f"batch {batch_idx}/{total_batches}" if total_batches > 1 else "extraction"
+        titles = [s.get("title", "?") for s in batch_stories]
+        if total_batches > 1:
+            print(f"  [{batch_label}] Extracting from: {', '.join(titles)}")
+
+        try:
+            msg = client.messages.create(
+                model=MODEL,
+                max_tokens=max_tokens,
+                messages=[{
+                    "role": "user",
+                    "content": build_lore_extraction_prompt(batch_stories, lore),
+                }],
+            )
+
+            raw_text = msg.content[0].text.strip()
+            stop = msg.stop_reason
+
+            # Detect truncation
+            if stop == "max_tokens":
+                print(
+                    f"  ⚠ [{batch_label}] Response truncated (hit {max_tokens} token limit). "
+                    f"Attempting to parse partial output…",
+                    file=sys.stderr,
+                )
+
+            parsed = parse_json_response(raw_text)
+            normalized = normalize_extracted_lore(parsed)
+            extracted_batches.append(normalized)
+
+            cat_counts = {
+                k: len(v) for k, v in normalized.items()
+                if isinstance(v, list) and v
+            }
+            total_entities = sum(cat_counts.values())
+            if total_batches > 1:
+                print(f"  [{batch_label}] Extracted {total_entities} entities across {len(cat_counts)} categories")
+            if total_entities == 0:
+                print(
+                    f"  ⚠ [{batch_label}] Zero entities extracted — possible output issue",
+                    file=sys.stderr,
+                )
+
+        except (ValueError, json.JSONDecodeError) as e:
+            print(
+                f"  ⚠ [{batch_label}] Could not parse extraction JSON: {e}",
+                file=sys.stderr,
+            )
+            print(
+                f"  Skipping this batch; other batches will still be merged.",
+                file=sys.stderr,
+            )
+
+    if not extracted_batches:
+        print("WARNING: All extraction batches failed; no new lore extracted.", file=sys.stderr)
+        return {k: [] for k in [
+            "characters", "places", "events", "rituals", "weapons",
+            "deities_and_entities", "artifacts", "factions", "lore",
+            "flora_fauna", "magic", "relics", "regions", "realms",
+            "continents", "subcontinents", "hemispheres", "provinces",
+            "districts", "substances", "polities",
+        ]}
+
+    merged = _merge_extracted_batches(extracted_batches)
+    total = sum(len(v) for v in merged.values() if isinstance(v, list))
+    print(f"  ✓ Total extracted across all batches: {total} entities")
+    return merged
+
+
 def _signature_key_for_name(name: str) -> str:
     """Create a lightweight search key for detecting entity mentions."""
     if not name:
@@ -4847,48 +4966,34 @@ def main():
                 print(f"WARNING: Could not parse existing-character updates JSON: {e}", file=sys.stderr)
                 print("Continuing without character status updates.", file=sys.stderr)
 
-    # ── CALL 2: Extract new lore from generated stories ──────────────────
+    # ── CALL 2: Extract new lore from generated stories (batched) ───────
     print("Calling Claude to extract lore from new stories...")
-    lore_message = client.messages.create(
-        model=MODEL,
-        max_tokens=4096,
-        messages=[{
-            "role": "user",
-            "content": build_lore_extraction_prompt(stories, lore)
-        }]
+    new_lore = _extract_lore_batched(client, stories, lore)
+    new_lore = filter_lore_to_stories(new_lore, stories)
+    new_lore = ensure_named_leaders_present(new_lore, stories)
+    for char in new_lore.get("characters", []):
+        if not isinstance(char, dict):
+            continue
+        nm = (char.get("name") or "").strip()
+        if not nm:
+            continue
+        nm_low = nm.lower()
+        for s in stories:
+            title_low = (s.get("title", "") or "").lower()
+            text_low = (s.get("text", "") or "").lower()
+            if nm_low in text_low or nm_low in title_low:
+                char["first_story"] = s.get("title", "")
+                break
+    lore = merge_lore(lore, new_lore, date_key)
+    warn_polity_conflicts(lore)
+    print(
+        f"\u2713 Extracted "
+        f"{len(new_lore.get('characters', []))} chars, "
+        f"{len(new_lore.get('places', []))} places, "
+        f"{len(new_lore.get('events', []))} events, "
+        f"{len(new_lore.get('weapons', []))} weapons, "
+        f"{len(new_lore.get('artifacts', []))} artifacts"
     )
-    lore_raw = lore_message.content[0].text.strip()
-    try:
-        new_lore_raw = parse_json_response(lore_raw)
-        new_lore = normalize_extracted_lore(new_lore_raw)
-        new_lore = filter_lore_to_stories(new_lore, stories)
-        new_lore = ensure_named_leaders_present(new_lore, stories)
-        for char in new_lore.get("characters", []):
-            if not isinstance(char, dict):
-                continue
-            nm = (char.get("name") or "").strip()
-            if not nm:
-                continue
-            nm_low = nm.lower()
-            for s in stories:
-                title_low = (s.get("title", "") or "").lower()
-                text_low = (s.get("text", "") or "").lower()
-                if nm_low in text_low or nm_low in title_low:
-                    char["first_story"] = s.get("title", "")
-                    break
-        lore = merge_lore(lore, new_lore, date_key)
-        warn_polity_conflicts(lore)
-        print(
-            f"\u2713 Extracted "
-            f"{len(new_lore.get('characters', []))} chars, "
-            f"{len(new_lore.get('places', []))} places, "
-            f"{len(new_lore.get('events', []))} events, "
-            f"{len(new_lore.get('weapons', []))} weapons, "
-            f"{len(new_lore.get('artifacts', []))} artifacts"
-        )
-    except (ValueError, json.JSONDecodeError) as e:
-        print(f"WARNING: Could not parse lore extraction JSON: {e}", file=sys.stderr)
-        print("Continuing without updating lore.", file=sys.stderr)
 
     # ── Save today's stories.json ─────────────────────────────────────────
     output = {

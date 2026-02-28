@@ -112,7 +112,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Audit a single story and merge extracted lore into codex.json")
     parser.add_argument("--date", required=True, help="Story issue date (YYYY-MM-DD)")
     parser.add_argument("--title", required=True, help="Exact story title")
-    parser.add_argument("--max-tokens", type=int, default=4096, help="Max tokens for the audit extraction call")
+    parser.add_argument("--max-tokens", type=int, default=8192, help="Max tokens for the audit extraction call")
     args = parser.parse_args()
 
     # Reuse generator logic for prompt + merge.
