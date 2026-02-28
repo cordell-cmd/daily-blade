@@ -4428,8 +4428,19 @@ def main():
         sys.exit(1)
 
     # Attach sub-genre labels
+    if isinstance(stories_raw, dict) and isinstance(stories_raw.get("stories"), list):
+        story_items = stories_raw.get("stories") or []
+    else:
+        story_items = stories_raw
+    if not isinstance(story_items, list):
+        print("ERROR: Parsed story JSON was not a list (or a dict with a 'stories' list).", file=sys.stderr)
+        print(f"Parsed type: {type(stories_raw)}", file=sys.stderr)
+        sys.exit(1)
+
     stories = []
-    for i, s in enumerate(stories_raw[:NUM_STORIES]):
+    for i, s in enumerate(story_items[:NUM_STORIES]):
+        if not isinstance(s, dict):
+            continue
         stories.append({
             "title":    s.get("title",    "Untitled"),
             "text":     s.get("text",     ""),
