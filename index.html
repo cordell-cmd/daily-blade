@@ -474,7 +474,7 @@ const ARCHIVE_URL    = (date) => `./archive/${date}.json`;
 const CODEX_URL      = './codex.json';
 const DEFAULT_GITHUB_REPO = { owner: 'cordell-cmd', repo: 'daily-blade' };
 const AUDIT_WORKFLOW_FILE = 'audit.yml';
-const AUDIT_PROXY_DEFAULT_URL = ''; // optional: set to your deployed proxy endpoint (e.g. https://<worker>.workers.dev/audit)
+const AUDIT_PROXY_DEFAULT_URL = 'https://daily-blade-audit-proxy.cordell-97f.workers.dev/audit'; // deployed Cloudflare Worker proxy
 
 function isDeveloperMode() {
   const host = String(window.location.hostname || '').toLowerCase();

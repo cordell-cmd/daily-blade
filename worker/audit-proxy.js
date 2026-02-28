@@ -35,7 +35,7 @@ export default {
     // Basic CORS (tighten this for your domain if desired)
     const corsHeaders = {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST,OPTIONS',
+      'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type,X-Dev-Auth',
     };
 
@@ -43,7 +43,36 @@ export default {
       return new Response(null, { status: 204, headers: corsHeaders });
     }
 
-    if (request.method !== 'POST' || url.pathname.replace(/\/+$/, '') !== '/audit') {
+    // Helpful root/health response (prevents "Not found" confusion in the browser)
+    const normalizedPath = url.pathname.replace(/\/+$/, '') || '/';
+    if (request.method === 'GET' && (normalizedPath === '/' || normalizedPath === '/health')) {
+      const owner = cleanText(env.GH_OWNER);
+      const repo = cleanText(env.GH_REPO);
+      const workflowInput = cleanText(env.GH_WORKFLOW_FILE) || 'audit.yml';
+      const workflow = workflowInput
+        .replace(/^\s*\.?\/?\.github\/workflows\//, '')
+        .replace(/^\/+/, '')
+        .trim();
+      const ref = cleanText(env.GH_REF) || 'main';
+
+      return new Response(
+        JSON.stringify({
+          ok: true,
+          service: 'daily-blade-audit-proxy',
+          endpoints: { audit: 'POST /audit' },
+          configured: {
+            GH_TOKEN: !!env.GH_TOKEN,
+            GH_OWNER: !!owner,
+            GH_REPO: !!repo,
+          },
+          config: { owner: owner || null, repo: repo || null, workflow, ref },
+          auth: env.DEV_AUTH_TOKEN ? 'X-Dev-Auth required' : 'none',
+        }),
+        { status: 200, headers: { 'Content-Type': 'application/json', ...corsHeaders } }
+      );
+    }
+
+    if (request.method !== 'POST' || normalizedPath !== '/audit') {
       return new Response(JSON.stringify({ error: 'Not found' }), {
         status: 404,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
