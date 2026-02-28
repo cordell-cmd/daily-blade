@@ -26,6 +26,43 @@ ARCHIVE_DIR = "archive"
 CODEX_FILE = "codex.json"
 
 
+def _story_key(date_key: str, title: str) -> tuple[str, str]:
+    return (str(date_key or "").strip(), str(title or "").strip())
+
+
+def _iter_named_entities(payload: Any):
+    """Yield (category, name) pairs from an extracted lore payload."""
+    if not isinstance(payload, dict):
+        return
+    for cat, arr in payload.items():
+        if not isinstance(arr, list):
+            continue
+        for obj in arr:
+            if not isinstance(obj, dict):
+                continue
+            name = str(obj.get("name", "")).strip()
+            if not name:
+                continue
+            yield str(cat), name
+
+
+def _has_story_appearance(entry: Any, date_key: str, title: str) -> bool:
+    if not isinstance(entry, dict):
+        return False
+    want_date, want_title = _story_key(date_key, title)
+    sa = entry.get("story_appearances")
+    if not isinstance(sa, list):
+        return False
+    for it in sa:
+        if not isinstance(it, dict):
+            continue
+        d = str(it.get("date", "")).strip()
+        t = str(it.get("title", "")).strip()
+        if d == want_date and t == want_title:
+            return True
+    return False
+
+
 def _load_json(path: str) -> Any:
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -111,6 +148,53 @@ def main() -> int:
 
     # Merge into codex.json (writes the file).
     gs.update_codex_file(lore, date_key=date_key, stories=[story], assume_all_from_stories=True)
+
+    # Tiny coverage sanity-check: if the model extracted entities but none got linked to
+    # this audited story, fail fast (prevents silent no-op audits).
+    try:
+        updated = _load_json(CODEX_FILE) if os.path.exists(CODEX_FILE) else {}
+    except Exception as e:
+        print(f"ERROR: Could not reload {CODEX_FILE} for coverage check: {e}", file=sys.stderr)
+        return 3
+
+    extracted_named = list(_iter_named_entities(lore))
+    extracted_count = 0
+    linked_count = 0
+    for cat, nm in extracted_named:
+        arr = updated.get(cat)
+        if not isinstance(arr, list):
+            continue
+        extracted_count += 1
+        found = None
+        want = nm.casefold()
+        for it in arr:
+            if not isinstance(it, dict):
+                continue
+            if str(it.get("name", "")).strip().casefold() == want:
+                found = it
+                break
+        if found and _has_story_appearance(found, date_key, title):
+            linked_count += 1
+
+    if extracted_count > 0 and linked_count == 0:
+        print(
+            "ERROR: Audit extracted entities, but none were linked to the audited story. "
+            "This likely indicates a story_appearances regression.",
+            file=sys.stderr,
+        )
+        print(
+            json.dumps(
+                {
+                    "date": date_key,
+                    "title": title,
+                    "extracted_entities": extracted_count,
+                    "linked_entities": linked_count,
+                },
+                ensure_ascii=False,
+            ),
+            file=sys.stderr,
+        )
+        return 4
 
     print(f"✓ Audit merged for {date_key} / {title}")
     return 0

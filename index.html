@@ -863,6 +863,10 @@ let CODEX_ENTITY_INDEX = new Map(); // key (normalized lower) -> [{ type, obj }]
 let CODEX_ENTITY_REGEX = null;
 let CODEX_DATA_PROMISE = null;
 
+// Story -> entities index (built from codex story_appearances)
+// key: "YYYY-MM-DD::lower(title)" -> Map(type -> Map(entityKey -> {key,type,name}))
+let CODEX_STORY_ENTITY_INDEX = new Map();
+
 // Cache for day story payloads used by the story modal.
 // key: date string (YYYY-MM-DD), value: { date, stories: [...] }
 const STORY_DAY_CACHE = new Map();
@@ -908,6 +912,13 @@ function normalizeEntityKey(name) {
     .toLowerCase()
     .replace(/[\u2018\u2019]/g, "'")
     .replace(/\s+/g, ' ');
+}
+
+function normalizeStoryKey(date, title) {
+  const d = String(date || '').trim();
+  const t = String(title || '').trim().toLowerCase();
+  if (!d || !t) return '';
+  return `${d}::${t}`;
 }
 
 function stripTrailingParenthetical(name) {
@@ -993,11 +1004,26 @@ function buildCodexEntityIndex(data) {
   ];
   const index = new Map();
   const names = [];
+  const storyIndex = new Map();
 
   const addToIndex = (key, type, obj) => {
     if (!key || key.length < 3) return;
     if (!index.has(key)) index.set(key, []);
     index.get(key).push({ type, obj });
+  };
+
+  const addToStoryIndex = (date, title, type, entityName) => {
+    const storyKey = normalizeStoryKey(date, title);
+    if (!storyKey) return;
+    const nm = String(entityName || '').trim();
+    if (!nm) return;
+    const ek = normalizeEntityKey(nm);
+    if (!ek) return;
+    if (!storyIndex.has(storyKey)) storyIndex.set(storyKey, new Map());
+    const byType = storyIndex.get(storyKey);
+    if (!byType.has(type)) byType.set(type, new Map());
+    const bucket = byType.get(type);
+    if (!bucket.has(ek)) bucket.set(ek, { key: ek, type, name: nm });
   };
 
   categories.forEach(type => {
@@ -1008,6 +1034,22 @@ function buildCodexEntityIndex(data) {
       const key = normalizeEntityKey(nm);
       if (!key) return;
       addToIndex(key, type, obj);
+
+      // Index story appearances so story cards can show linked entities even
+      // when the prose doesn't include the exact canonical name.
+      const apps = obj && Array.isArray(obj.story_appearances) ? obj.story_appearances : [];
+      apps.forEach(a => {
+        if (!a || typeof a !== 'object') return;
+        const ad = String(a.date || '').trim();
+        const at = String(a.title || '').trim();
+        if (!ad || !at) return;
+        addToStoryIndex(ad, at, type, nm);
+      });
+      if (obj && obj.first_story) {
+        const fd = String(obj.first_date || '').trim();
+        const ft = String(obj.first_story || '').trim();
+        if (fd && ft) addToStoryIndex(fd, ft, type, nm);
+      }
 
       // Explicit aliases from the data model.
       if (obj && Array.isArray(obj.aliases)) {
@@ -1078,6 +1120,7 @@ function buildCodexEntityIndex(data) {
     .map(n => escapeRegexPiece(n))
     .join('|');
   CODEX_ENTITY_INDEX = index;
+  CODEX_STORY_ENTITY_INDEX = storyIndex;
   if (!alts) {
     CODEX_ENTITY_REGEX = null;
     return;
@@ -1089,6 +1132,37 @@ function buildCodexEntityIndex(data) {
   } catch (e) {
     CODEX_ENTITY_REGEX = new RegExp(`(^|[^A-Za-z0-9])((?:the\\s+)?)(${alts})(?=$|[^A-Za-z0-9])`, 'gi');
   }
+}
+
+function entitiesFromStoryIndex(storyDate, storyTitle) {
+  const k = normalizeStoryKey(storyDate, storyTitle);
+  if (!k || !CODEX_STORY_ENTITY_INDEX || CODEX_STORY_ENTITY_INDEX.size === 0) return new Map();
+  const byType = CODEX_STORY_ENTITY_INDEX.get(k);
+  if (!byType) return new Map();
+  // Clone so callers can merge without mutating the index.
+  const out = new Map();
+  for (const [type, bucket] of byType.entries()) {
+    out.set(type, new Map(bucket));
+  }
+  return out;
+}
+
+function mergeEntitiesByType(a, b) {
+  const out = new Map();
+  const addAll = (m) => {
+    if (!m || !(m instanceof Map)) return;
+    for (const [type, bucket] of m.entries()) {
+      if (!bucket || !(bucket instanceof Map) || bucket.size === 0) continue;
+      if (!out.has(type)) out.set(type, new Map());
+      const ob = out.get(type);
+      for (const [k, v] of bucket.entries()) {
+        if (!ob.has(k)) ob.set(k, v);
+      }
+    }
+  };
+  addAll(a);
+  addAll(b);
+  return out;
 }
 
 async function ensureCodexDataLoaded() {
@@ -1307,7 +1381,9 @@ function enhanceStoryEntityBadges() {
       storyTitle: card.dataset.titleRaw || '',
       storyDate: card.dataset.date || '',
     });
-    renderEntityBadges(box, entities);
+
+    const linked = entitiesFromStoryIndex(card.dataset.date || '', card.dataset.titleRaw || '');
+    renderEntityBadges(box, mergeEntitiesByType(entities, linked));
     box.dataset.enhanced = '1';
   });
 
@@ -1318,7 +1394,9 @@ function enhanceStoryEntityBadges() {
       storyTitle: modalText.dataset.storyTitle || '',
       storyDate: modalText.dataset.storyDate || '',
     });
-    renderEntityBadges(modalBox, entities);
+
+    const linked = entitiesFromStoryIndex(modalText.dataset.storyDate || '', modalText.dataset.storyTitle || '');
+    renderEntityBadges(modalBox, mergeEntitiesByType(entities, linked));
   }
 }
 
@@ -2427,11 +2505,11 @@ function renderCodex(data) {
         <span class="badge badge-place">${escHtml(p.place_type || 'Location')}</span>
         ${p.status ? `<span class="badge badge-status-default">${escHtml(p.status)}</span>` : ''}
       </div>
+      ${buildMostSpecificLocationLine(p, { includePlace: false })}
+      ${buildEntityParentChain(p, { hidePlaceRow: true })}
       <hr class="codex-divider" />
       ${p.atmosphere ? `<div class="place-atmosphere">${escHtml(p.atmosphere)}</div>` : ''}
-      ${buildMostSpecificLocationLine(p, { includePlace: false })}
       <div class="codex-body">${escHtml(p.description || '')}</div>
-      ${buildEntityParentChain(p, { hidePlaceRow: true })}
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${p.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(p.first_story)}</span>` : ''}
@@ -2456,10 +2534,10 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(h.climate || 'Hemisphere')}</span>
         ${h.status ? `<span class="badge badge-status-default">${escHtml(h.status)}</span>` : ''}
       </div>
-      <hr class="codex-divider" />
       ${buildMostSpecificLocationLine(h)}
-      <div class="codex-body">${escHtml(h.description || '')}</div>
       ${buildEntityParentChain(h)}
+      <hr class="codex-divider" />
+      <div class="codex-body">${escHtml(h.description || '')}</div>
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${h.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(h.first_story)}</span>` : ''}
@@ -2484,10 +2562,10 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(cn.climate || 'Continent')}</span>
         ${cn.status ? `<span class="badge badge-status-default">${escHtml(cn.status)}</span>` : ''}
       </div>
-      <hr class="codex-divider" />
       ${buildMostSpecificLocationLine(cn)}
-      <div class="codex-body">${escHtml(cn.description || '')}</div>
       ${buildEntityParentChain(cn)}
+      <hr class="codex-divider" />
+      <div class="codex-body">${escHtml(cn.description || '')}</div>
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${cn.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(cn.first_story)}</span>` : ''}
@@ -2512,10 +2590,10 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(sc.climate || 'Subcontinent')}</span>
         ${sc.status ? `<span class="badge badge-status-default">${escHtml(sc.status)}</span>` : ''}
       </div>
-      <hr class="codex-divider" />
       ${buildMostSpecificLocationLine(sc)}
-      <div class="codex-body">${escHtml(sc.description || '')}</div>
       ${buildEntityParentChain(sc)}
+      <hr class="codex-divider" />
+      <div class="codex-body">${escHtml(sc.description || '')}</div>
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${sc.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(sc.first_story)}</span>` : ''}
@@ -2540,10 +2618,10 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(rm.climate || 'Realm')}</span>
         ${rm.status ? `<span class="badge badge-status-default">${escHtml(rm.status)}</span>` : ''}
       </div>
-      <hr class="codex-divider" />
       ${buildMostSpecificLocationLine(rm)}
-      <div class="codex-body">${escHtml(rm.description || '')}</div>
       ${buildEntityParentChain(rm)}
+      <hr class="codex-divider" />
+      <div class="codex-body">${escHtml(rm.description || '')}</div>
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${rm.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(rm.first_story)}</span>` : ''}
@@ -2568,10 +2646,10 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(pv.climate || 'Province')}</span>
         ${pv.status ? `<span class="badge badge-status-default">${escHtml(pv.status)}</span>` : ''}
       </div>
-      <hr class="codex-divider" />
       ${buildMostSpecificLocationLine(pv)}
-      <div class="codex-body">${escHtml(pv.description || '')}</div>
       ${buildEntityParentChain(pv)}
+      <hr class="codex-divider" />
+      <div class="codex-body">${escHtml(pv.description || '')}</div>
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${pv.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(pv.first_story)}</span>` : ''}
@@ -2596,10 +2674,10 @@ function renderCodex(data) {
         <span class="badge badge-region">${escHtml(dt.climate || 'District')}</span>
         ${dt.status ? `<span class="badge badge-status-default">${escHtml(dt.status)}</span>` : ''}
       </div>
-      <hr class="codex-divider" />
       ${buildMostSpecificLocationLine(dt)}
-      <div class="codex-body">${escHtml(dt.description || '')}</div>
       ${buildEntityParentChain(dt)}
+      <hr class="codex-divider" />
+      <div class="codex-body">${escHtml(dt.description || '')}</div>
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${dt.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(dt.first_story)}</span>` : ''}
@@ -2624,12 +2702,12 @@ function renderCodex(data) {
       <div class="codex-card-badges">
         <span class="badge badge-event">${escHtml(e.event_type || 'Event')}</span>
       </div>
+      ${buildMostSpecificLocationLine(e)}
+      ${buildEntityParentChain(e)}
       <hr class="codex-divider" />
       ${participants ? `<div class="event-participants"><strong>Participants:</strong>${participants}</div>` : ''}
       <div class="codex-body">${escHtml(e.outcome || '')}</div>
       ${e.significance ? `<div class="event-significance">${escHtml(e.significance)}</div>` : ''}
-      ${buildMostSpecificLocationLine(e)}
-      ${buildEntityParentChain(e)}
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${e.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(e.first_story)}</span>` : ''}
@@ -2654,14 +2732,14 @@ function renderCodex(data) {
       <div class="codex-card-badges">
         <span class="badge badge-ritual">${escHtml(r.ritual_type || 'Ritual')}</span>
       </div>
+      ${buildMostSpecificLocationLine(r)}
+      ${buildEntityParentChain(r)}
       <hr class="codex-divider" />
       ${performers ? `<div class="event-participants"><strong>Performed by:</strong>${performers}</div>` : ''}
       ${r.requirements ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Requirements:</em> ${escHtml(r.requirements)}</div>` : ''}
       ${r.effect ? `<div class="codex-body">${escHtml(r.effect)}</div>` : ''}
       ${r.cost ? `<div class="event-significance">Cost: ${escHtml(r.cost)}</div>` : ''}
       ${r.notes ? `<div class="event-significance">${escHtml(r.notes)}</div>` : ''}
-      ${buildMostSpecificLocationLine(r)}
-      ${buildEntityParentChain(r)}
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${r.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(r.first_story)}</span>` : ''}
@@ -2686,12 +2764,12 @@ function renderCodex(data) {
         <span class="badge badge-weapon">${escHtml(w.weapon_type || 'Weapon')}</span>
         ${w.status ? `<span class="badge badge-status-default">${escHtml(w.status)}</span>` : ''}
       </div>
+      ${buildMostSpecificLocationLine(w)}
+      ${buildEntityParentChain(w)}
       <hr class="codex-divider" />
       ${w.origin ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Origin:</em> ${escHtml(w.origin)}</div>` : ''}
       <div class="codex-body">${escHtml(w.powers || '')}</div>
       ${w.last_known_holder ? `<div class="weapon-holder">Last held by: ${escHtml(w.last_known_holder)}</div>` : ''}
-      ${buildMostSpecificLocationLine(w)}
-      ${buildEntityParentChain(w)}
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${w.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(w.first_story)}</span>` : ''}
@@ -2716,12 +2794,12 @@ function renderCodex(data) {
         <span class="badge badge-artifact">${escHtml(a.artifact_type || 'Artifact')}</span>
         ${a.status ? `<span class="badge badge-status-default">${escHtml(a.status)}</span>` : ''}
       </div>
+      ${buildMostSpecificLocationLine(a)}
+      ${buildEntityParentChain(a)}
       <hr class="codex-divider" />
       ${a.origin ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Origin:</em> ${escHtml(a.origin)}</div>` : ''}
       <div class="codex-body">${escHtml(a.powers || '')}</div>
       ${a.last_known_holder ? `<div class="artifact-holder">Last held by: ${escHtml(a.last_known_holder)}</div>` : ''}
-      ${buildMostSpecificLocationLine(a)}
-      ${buildEntityParentChain(a)}
       <div class="codex-card-footer">
         <span class="codex-appearances">${appearances}</span>
         ${a.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(a.first_story)}</span>` : ''}
@@ -2755,13 +2833,13 @@ function renderCodex(data) {
           ${p.status ? `<span class="badge badge-status-default">${escHtml(p.status)}</span>` : ''}
         </div>
       </div>
+      ${buildMostSpecificLocationLine({ ...p, place: seat }, { includePlace: true })}
+      ${buildEntityParentChain({ ...p, place: seat })}
       <hr class="codex-divider" />
       ${sovereigns ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Sovereign:</em> ${escHtml(sovereigns)}</div>` : ''}
       ${claimants ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Claimants:</em> ${escHtml(claimants)}</div>` : ''}
       ${seat ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Seat:</em> ${escHtml(seat)}</div>` : ''}
       <div class="codex-body">${escHtml(p.description || '')}</div>
-      ${buildMostSpecificLocationLine({ ...p, place: seat }, { includePlace: true })}
-      ${buildEntityParentChain({ ...p, place: seat })}
       <div class="codex-meta">
         <span>${appearances}</span>
         ${p.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(p.first_story)}</span>` : ''}
@@ -2787,12 +2865,12 @@ function renderCodex(data) {
           ${f.status ? `<span class="badge badge-status-default">${escHtml(f.status)}</span>` : ''}
         </div>
       </div>
+      ${buildMostSpecificLocationLine(f)}
+      ${buildEntityParentChain(f)}
       <hr class="codex-divider" />
       ${f.leader ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Leader:</em> ${escHtml(f.leader)}</div>` : ''}
       <div class="codex-body">${escHtml(f.description || '')}</div>
       ${f.goals ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Goals:</em> ${escHtml(f.goals)}</div>` : ''}
-      ${buildMostSpecificLocationLine(f)}
-      ${buildEntityParentChain(f)}
       <div class="codex-meta">
         <span>${appearances}</span>
         ${f.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(f.first_story)}</span>` : ''}
@@ -2818,11 +2896,11 @@ function renderCodex(data) {
           ${l.status ? `<span class="badge badge-status-default">${escHtml(l.status)}</span>` : ''}
         </div>
       </div>
+      ${buildMostSpecificLocationLine(l)}
+      ${buildEntityParentChain(l)}
       <hr class="codex-divider" />
       ${l.source ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Source:</em> ${escHtml(l.source)}</div>` : ''}
       <div class="codex-body">${escHtml(l.description || '')}</div>
-      ${buildMostSpecificLocationLine(l)}
-      ${buildEntityParentChain(l)}
       <div class="codex-meta">
         <span>${appearances}</span>
         ${l.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(l.first_story)}</span>` : ''}
@@ -2848,11 +2926,11 @@ function renderCodex(data) {
           ${ff.status ? `<span class="badge badge-status-default">${escHtml(ff.status)}</span>` : ''}
         </div>
       </div>
+      ${buildMostSpecificLocationLine(ff)}
+      ${buildEntityParentChain(ff)}
       <hr class="codex-divider" />
       ${ff.habitat ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Habitat:</em> ${escHtml(ff.habitat)}</div>` : ''}
       <div class="codex-body">${escHtml(ff.description || '')}</div>
-      ${buildMostSpecificLocationLine(ff)}
-      ${buildEntityParentChain(ff)}
       ${ff.rarity ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Rarity:</em> ${escHtml(ff.rarity)}</div>` : ''}
       <div class="codex-meta">
         <span>${appearances}</span>
@@ -2879,11 +2957,11 @@ function renderCodex(data) {
           ${m.status ? `<span class="badge badge-status-default">${escHtml(m.status)}</span>` : ''}
         </div>
       </div>
+      ${buildMostSpecificLocationLine(m)}
+      ${buildEntityParentChain(m)}
       <hr class="codex-divider" />
       ${m.element ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Element:</em> ${escHtml(m.element)}</div>` : ''}
       <div class="codex-body">${escHtml(m.description || '')}</div>
-      ${buildMostSpecificLocationLine(m)}
-      ${buildEntityParentChain(m)}
       ${m.difficulty ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Difficulty:</em> ${escHtml(m.difficulty)}</div>` : ''}
       <div class="codex-meta">
         <span>${appearances}</span>
@@ -2910,11 +2988,11 @@ function renderCodex(data) {
           ${r.status ? `<span class="badge badge-status-default">${escHtml(r.status)}</span>` : ''}
         </div>
       </div>
+      ${buildMostSpecificLocationLine(r)}
+      ${buildEntityParentChain(r)}
       <hr class="codex-divider" />
       ${r.curse ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Curse:</em> ${escHtml(r.curse)}</div>` : ''}
       <div class="codex-body">${escHtml(r.description || '')}</div>
-      ${buildMostSpecificLocationLine(r)}
-      ${buildEntityParentChain(r)}
       ${r.power ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Power:</em> ${escHtml(r.power)}</div>` : ''}
       <div class="codex-meta">
         <span>${appearances}</span>
@@ -2941,11 +3019,11 @@ function renderCodex(data) {
           ${reg.status ? `<span class="badge badge-status-default">${escHtml(reg.status)}</span>` : ''}
         </div>
       </div>
+      ${buildMostSpecificLocationLine(reg)}
+      ${buildEntityParentChain(reg)}
       <hr class="codex-divider" />
       ${reg.ruler ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Ruler:</em> ${escHtml(reg.ruler)}</div>` : ''}
       <div class="codex-body">${escHtml(reg.description || '')}</div>
-      ${buildMostSpecificLocationLine(reg)}
-      ${buildEntityParentChain(reg)}
       ${reg.terrain ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Terrain:</em> ${escHtml(reg.terrain)}</div>` : ''}
       <div class="codex-meta">
         <span>${appearances}</span>
@@ -2972,11 +3050,11 @@ function renderCodex(data) {
           ${sub.status ? `<span class="badge badge-status-default">${escHtml(sub.status)}</span>` : ''}
         </div>
       </div>
+      ${buildMostSpecificLocationLine(sub)}
+      ${buildEntityParentChain(sub)}
       <hr class="codex-divider" />
       ${sub.properties ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Properties:</em> ${escHtml(sub.properties)}</div>` : ''}
       <div class="codex-body">${escHtml(sub.description || '')}</div>
-      ${buildMostSpecificLocationLine(sub)}
-      ${buildEntityParentChain(sub)}
       ${sub.use ? `<div class="codex-body" style="margin-bottom:.3rem"><em style="color:var(--muted);font-size:.78rem">Use:</em> ${escHtml(sub.use)}</div>` : ''}
       <div class="codex-meta">
         <span>${appearances}</span>
