@@ -1,18 +1,17 @@
 {
-  "last_updated": "2026-02-27",
+  "last_updated": "2026-02-28",
   "characters": [
     {
       "name": "Vraxen the Knife",
       "tagline": "Audacious. Cursed. Hunted.",
-      "role": "Thief",
+      "role": "Thief / Cursed Rogue",
       "status": "cursed",
-      "world": "known_world",
-      "bio": "A renowned thief who has robbed a hundred merchant princes, Vraxen the Knife attempted the ultimate heist: stealing the emerald eyes of the idol of Khar-Zul from its temple. He succeeded in claiming six of the nine gems but incurred a terrible curse in the process\u2014a shadow wearing his own face now follows him, patient and inexorable.",
+      "world": "The Known World",
+      "bio": "A master thief who has robbed a hundred merchant princes. Attempted to rob the idol of Khar-Zul in its inner temple, prying six of nine emerald eyes free before the shadows came alive. Escaped with six gems but gained a new companion: a shadow wearing his own face, patient as carved stone, crouching beside him at dawn. His fate thereafter is unknown.",
       "traits": [
         "audacious",
-        "skilled",
-        "desperate",
-        "cursed"
+        "calculating",
+        "now-haunted"
       ],
       "first_story": "The Thief of Khar-Zul",
       "first_date": "2026-02-25",
@@ -23,7 +22,7 @@
           "title": "The Thief of Khar-Zul"
         }
       ],
-      "travel_scope": "realmwide",
+      "travel_scope": "unknown",
       "home_place": "unknown",
       "home_region": "unknown",
       "home_realm": "unknown",
@@ -51,7 +50,8 @@
           "date": "2026-02-25",
           "title": "Blood-Price of the Caravan"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "Aldric",
@@ -73,7 +73,8 @@
           "date": "2026-02-25",
           "title": "Blood-Price of the Caravan"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "Malachite Doss",
@@ -95,7 +96,8 @@
           "date": "2026-02-25",
           "title": "The Lamp of Suroth"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "Kael Bloodhorn",
@@ -107,10 +109,7 @@
       "traits": [
         "stubborn valor",
         "grief-driven",
-        "relentless",
-        "honorable",
-        "protective",
-        "self-denying"
+        "relentless"
       ],
       "first_story": "Siege of the Bone Citadel",
       "first_date": "2026-02-25",
@@ -124,7 +123,8 @@
           "date": "2026-02-26",
           "title": "The Warlord's Last Stand"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "Tessaly Dorn",
@@ -146,7 +146,8 @@
           "date": "2026-02-25",
           "title": "The Curse of Yarithax's Gold"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "Pieter Vane",
@@ -168,7 +169,8 @@
           "date": "2026-02-25",
           "title": "The Oath-Breaker's Due"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "Conjuress Mel",
@@ -194,7 +196,8 @@
           "date": "2026-02-26",
           "title": "The Conjuress and the Year-Thief"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "Varek",
@@ -210,7 +213,7 @@
       ],
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -219,6 +222,22 @@
         {
           "date": "2026-02-26",
           "title": "The Conjuress and the Year-Thief"
+        },
+        {
+          "date": "2026-02-28",
+          "title": "The Weight of Stolen Years"
+        }
+      ],
+      "travel_scope": "interrealm",
+      "status_history": [
+        {
+          "date": "2026-02-28",
+          "from_status": "active \u2014 partnered with Conjuress Mel",
+          "to_status": "active \u2014 partnered with Conjuress Mel",
+          "type": "other",
+          "story_title": "The Weight of Stolen Years",
+          "note": "Varek initiates a partnership with Sorceress Kira after she successfully reverse-engineers and counters his demon-collection method.",
+          "evidence": "Kira steals back years Varek collected and takes his certainty as fee; 'Varek watched from elsewhere, impressed by her ingenuity. A partnership began that morning.' This formalizes Kira as a co-collector alongside Mel."
         }
       ]
     },
@@ -242,7 +261,8 @@
           "date": "2026-02-25",
           "title": "The Barbarian's Mercy"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "Cassia Vorn",
@@ -264,7 +284,8 @@
           "date": "2026-02-25",
           "title": "The Last Thief of Crimson Gate"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "King Aldous III",
@@ -286,7 +307,8 @@
           "date": "2026-02-25",
           "title": "The Plague-Bringer's Crown"
         }
-      ]
+      ],
+      "travel_scope": "unknown"
     },
     {
       "name": "Malachar the Betrayer",
@@ -504,16 +526,14 @@
     {
       "name": "Kael the Nameless",
       "tagline": "Shadow-broker. Identity-thief. Consumed.",
-      "role": "Shadow-broker, Identity Thief",
-      "status": "cursed",
-      "world": "known_world",
-      "bio": "Kael the Nameless was a shadow-broker operating in the gambling dens of Xul'thyris, trading in stolen identities and borrowed faces. Hired to sever the High Magistrate's shadow, he succeeded but triggered a curse: the severed shadow hunted him, consuming his stolen identities and memories until it wore him instead. By the story's end, he has become a hollow vessel\u2014darkness wearing skin.",
+      "role": "Shadow-Broker",
+      "status": "dead",
+      "world": "The Known World",
+      "bio": "A shadow-broker who dealt in stolen identities and borrowed faces in the gambling dens of Xul'thyris. Hired to sever the High Magistrate's shadow from light and stone, Kael discovered that shadows hunger and remember their owners. He was consumed by his own theft, becoming nothing but darkness wearing skin.",
       "traits": [
-        "shadow-broker",
-        "identity-thief",
-        "cursed",
-        "increasingly hollow",
-        "skilled at theft"
+        "skilled at deception",
+        "mercenary",
+        "haunted by stolen lives"
       ],
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
@@ -552,7 +572,11 @@
           "date": "2026-02-27",
           "title": "The Bone-Carver's Last Commission"
         }
-      ]
+      ],
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "Yareth",
@@ -574,7 +598,11 @@
           "date": "2026-02-27",
           "title": "The Steppe-Rider's Bargain"
         }
-      ]
+      ],
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "the blasted steppes",
+      "home_realm": "unknown"
     },
     {
       "name": "Caros the Fortunate",
@@ -596,7 +624,11 @@
           "date": "2026-02-27",
           "title": "The Collector's Due"
         }
-      ]
+      ],
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "Lich-King Morthaxes",
@@ -647,7 +679,11 @@
           "date": "2026-02-27",
           "title": "The Tomb-Keeper's Vigil"
         }
-      ]
+      ],
+      "travel_scope": "local",
+      "home_place": "Tomb of Shard-V\u00eal",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "Sister Kess",
@@ -669,7 +705,11 @@
           "date": "2026-02-27",
           "title": "The Witch-Price of Mercy"
         }
-      ]
+      ],
+      "travel_scope": "local",
+      "home_place": "convent",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "Kessara",
@@ -691,7 +731,11 @@
           "date": "2026-02-27",
           "title": "The Warlord's Widow"
         }
-      ]
+      ],
+      "travel_scope": "regional",
+      "home_place": "Sunken Marches",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown"
     },
     {
       "name": "Master Lethyn",
@@ -713,7 +757,11 @@
           "date": "2026-02-27",
           "title": "The Alchemist's Appetite"
         }
-      ]
+      ],
+      "travel_scope": "local",
+      "home_place": "tower",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "Thorne",
@@ -735,7 +783,11 @@
           "date": "2026-02-27",
           "title": "The Broken Oath"
         }
-      ]
+      ],
+      "travel_scope": "local",
+      "home_place": "Grimmholt",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "The Rot-King",
@@ -784,7 +836,11 @@
           "date": "2026-02-27",
           "title": "The Tide-Thief's Escape"
         }
-      ]
+      ],
+      "travel_scope": "interrealm",
+      "home_place": "unknown",
+      "home_region": "Sapphire Deep",
+      "home_realm": "unknown"
     },
     {
       "name": "Velgrim the Terrible",
@@ -806,7 +862,11 @@
           "date": "2026-02-27",
           "title": "The Warlord's Widow"
         }
-      ]
+      ],
+      "travel_scope": "local",
+      "home_place": "Sunken Marches",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown"
     },
     {
       "name": "Witch of Ravenmoor",
@@ -1174,7 +1234,12 @@
       "first_story": "The Barbarian's Mercy",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Barbarian's Mercy"
+        }
+      ]
     },
     {
       "name": "The Tax Collector's Daughter",
@@ -1190,7 +1255,12 @@
       "first_story": "The Barbarian's Mercy",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Barbarian's Mercy"
+        }
+      ]
     },
     {
       "name": "Thysara",
@@ -1458,7 +1528,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Young Woman (Unknown)",
@@ -1500,8 +1575,8 @@
       "place_type": "temple / tomb / sentient structure",
       "world": "The Known World",
       "atmosphere": "The tomb is a fused amalgamation of stone and flesh, aware and aware, with an insatiable hunger for those who guard it.",
-      "description": "A structure that grew rather than was built, with stone and flesh fused together centuries ago into something breathing and aware. It houses something that slumbers within its burial chamber. Skeletal servants and bound ghosts serve as its first defense. The walls communicate through trembling stone. It gradually consumes its tomb-keepers as payment for guarding what lies within.",
-      "status": "active / sealed",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
       "first_story": "The Tomb-Keeper's Vigil",
       "first_date": "2026-02-27",
       "appearances": 1,
@@ -1510,7 +1585,14 @@
           "date": "2026-02-27",
           "title": "The Tomb-Keeper's Vigil"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Carrion's Rest",
@@ -1528,7 +1610,14 @@
           "date": "2026-02-27",
           "title": "The Witch-Price of Mercy"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Ravenmoor",
@@ -1546,7 +1635,14 @@
           "date": "2026-02-27",
           "title": "The Witch-Price of Mercy"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Sunken Marches",
@@ -1554,8 +1650,8 @@
       "place_type": "region",
       "world": "The Known World",
       "atmosphere": "Ruled by the will of a dead warlord, eternally caught between the living and dead.",
-      "description": "A kingdom ruled by Kessara as regent, though true control lies with the ghost of her dead husband Velgrim. The land itself belongs to the dead. The realm prospers under the ghost-king's eternal rule after Kessara's departure.",
-      "status": "active",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
       "appearances": 1,
@@ -1564,7 +1660,14 @@
           "date": "2026-02-27",
           "title": "The Warlord's Widow"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Sunken Marches",
+      "district": "unknown"
     },
     {
       "name": "Blackthorn",
@@ -1586,7 +1689,14 @@
           "date": "2026-02-27",
           "title": "The Warlord's Widow"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Master Lethyn's Tower",
@@ -1599,7 +1709,19 @@
       "first_story": "The Alchemist's Appetite",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Alchemist's Appetite"
+        }
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Grimmholt",
@@ -1607,8 +1729,8 @@
       "place_type": "fortress",
       "world": "The Known World",
       "atmosphere": "A place of duty and desperation, where oath-magic burned as fiercely as the stone itself.",
-      "description": "A border fortress held by Thorne for five years against the Rot-King's forces, then sealed and defended against both invaders and the Crown's own armies for two years. The fortress ultimately fell when betrayed from within, its ramparts burning as Thorne made his final stand.",
-      "status": "ruins",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
       "appearances": 1,
@@ -1617,7 +1739,14 @@
           "date": "2026-02-27",
           "title": "The Broken Oath"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Sapphire Deep",
@@ -1635,7 +1764,14 @@
           "date": "2026-02-27",
           "title": "The Tide-Thief's Escape"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Vel-Karsh",
@@ -1653,7 +1789,14 @@
           "date": "2026-02-27",
           "title": "The Tide-Thief's Escape"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Tomb of Karesh",
@@ -1686,11 +1829,11 @@
       "place_type": "city",
       "world": "The Known World",
       "atmosphere": "A place where unnamed merchants make dark bargains with the desperate.",
-      "description": "Pelimor is a city where merchants, including those who deal in cursed artifacts, conduct business. It is a place Harrow the Copper-Fingered reached after stealing the Crown of Karesh, seeking to sell his cursed prize.",
+      "description": "A city with functioning night markets where unusual commodities \u2014 including stolen shadows \u2014 are bought and sold by buyers who never give their names.",
       "status": "active",
       "first_story": "The Copper Thief",
       "first_date": "2026-02-26",
-      "appearances": 3,
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-02-26",
@@ -1703,6 +1846,14 @@
         {
           "date": "2026-02-25",
           "title": "Blood-Price of the Caravan"
+        },
+        {
+          "date": "2026-02-28",
+          "title": "The Shade-Merchant's Gambit"
+        },
+        {
+          "date": "2026-02-28",
+          "title": "The Thief's Shadow"
         }
       ],
       "hemisphere": "unknown",
@@ -1733,7 +1884,14 @@
           "date": "2026-02-25",
           "title": "Siege of the Bone Citadel"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "the steppe",
@@ -1755,7 +1913,14 @@
           "date": "2026-02-26",
           "title": "The Warlord's Last Stand"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "The Blasted Lands",
@@ -1773,7 +1938,14 @@
           "date": "2026-02-26",
           "title": "Shadows for Sale"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Morne's Tomb",
@@ -1791,7 +1963,14 @@
           "date": "2026-02-26",
           "title": "The Oath-Breaker's Reckoning"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Coastal Kingdoms",
@@ -1809,7 +1988,14 @@
           "date": "2026-02-26",
           "title": "The Oath-Breaker's Reckoning"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Vetch's Tower",
@@ -1822,7 +2008,19 @@
       "first_story": "The Living Garden",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        }
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "the Ashen Wastes",
@@ -1844,7 +2042,14 @@
           "date": "2026-02-25",
           "title": "Blood-Price of the Caravan"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Sunken Ziggurat of Yeng",
@@ -1852,8 +2057,8 @@
       "place_type": "ruin",
       "world": "The Known World",
       "atmosphere": "Timeless, suffocating, thick with the weight of centuries and forgotten knowledge.",
-      "description": "A vast subterranean ziggurat containing sealed chambers filled with mysterious artifacts. Below its main levels lies a chamber where the Lamp of Suroth rests in a niche, with inscription promising truth at the cost of lies lived by.",
-      "status": "active",
+      "description": "An ancient subterranean ruin where the air tastes of centuries. Houses the Lamp of Suroth in a sealed chamber. Multiple sealed doors hint at further depths and further lamps \u2014 or worse.",
+      "status": "partially explored",
       "first_story": "The Lamp of Suroth",
       "first_date": "2026-02-25",
       "appearances": 1,
@@ -1862,7 +2067,14 @@
           "date": "2026-02-25",
           "title": "The Lamp of Suroth"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "dockside tavern",
@@ -1880,7 +2092,14 @@
           "date": "2026-02-25",
           "title": "The Oath-Breaker's Due"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "north road",
@@ -1898,7 +2117,14 @@
           "date": "2026-02-25",
           "title": "The Oath-Breaker's Due"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Amrath",
@@ -1906,8 +2132,8 @@
       "place_type": "city",
       "world": "The Known World",
       "atmosphere": "A location of such dire straits that even sorcerers resort to demon-summoning.",
-      "description": "A city under siege where Conjuress Mel, in desperation, summoned the demon Varek to cast three spells that shifted the outcome or her survival.",
-      "status": "active",
+      "description": "A city that survived a siege \u2014 the Siege of Amrath \u2014 during which Conjuress Mel made her desperate three-favor pact with Varek. Its current condition after the siege is unspecified.",
+      "status": "post-siege",
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
       "appearances": 1,
@@ -1916,7 +2142,14 @@
           "date": "2026-02-25",
           "title": "The Sorcerer's Debt"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Crimson Gate",
@@ -1924,7 +2157,7 @@
       "place_type": "city",
       "world": "The Known World",
       "atmosphere": "A place of ash and memory, destroyed utterly.",
-      "description": "A city destroyed by arson, three thousand people killed in the conflagration. It is the homeland of Cassia Vorn and the catalyst for her vendetta.",
+      "description": "A city burned with three thousand people inside by a man whose identity Cassia Vorn traded her certainty to learn. Now ruins.",
       "status": "ruins",
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
@@ -1934,7 +2167,14 @@
           "date": "2026-02-25",
           "title": "The Last Thief of Crimson Gate"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Ostern",
@@ -1942,8 +2182,8 @@
       "place_type": "fortress",
       "world": "The Known World",
       "atmosphere": "A place of ancient containment and scholarly caution.",
-      "description": "A fortress containing sealed vaults beneath it, including the vault that housed the Plague-Bringer's Crown. It is a site of scholarly study and reliquary of dangerous artifacts.",
-      "status": "active",
+      "description": "A kingdom ruled by King Aldous III until his death. Home to the sealed vault beneath the city that housed the Plague-Bringer's Crown. After Aldous's death, the Crown was returned and a deeper vault was built.",
+      "status": "active \u2014 under new rule",
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
       "appearances": 1,
@@ -1952,7 +2192,14 @@
           "date": "2026-02-25",
           "title": "The Plague-Bringer's Crown"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "obsidian temple",
@@ -1970,7 +2217,14 @@
           "date": "2026-02-25",
           "title": "The Crimson Covenant of Vex-Karthul"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Scorched Wastes",
@@ -1988,7 +2242,14 @@
           "date": "2026-02-25",
           "title": "Shara of the Scorched Wastes"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Thysara's palace",
@@ -2001,7 +2262,19 @@
       "first_story": "Shara of the Scorched Wastes",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Shara of the Scorched Wastes"
+        }
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Blackmark",
@@ -2019,7 +2292,14 @@
           "date": "2026-02-25",
           "title": "The Hunger of Grell Ironhand"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Singing Catacombs",
@@ -2037,7 +2317,14 @@
           "date": "2026-02-25",
           "title": "The Hunger of Grell Ironhand"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Shattered Provinces",
@@ -2055,7 +2342,14 @@
           "date": "2026-02-25",
           "title": "The Hunger of Grell Ironhand"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Wastes of Ashemark",
@@ -2073,7 +2367,14 @@
           "date": "2026-02-25",
           "title": "Zareth Among the Stellar Stones"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Sunken Caverns",
@@ -2091,7 +2392,14 @@
           "date": "2026-02-25",
           "title": "The Lamia's Pearl"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Northlands",
@@ -2109,7 +2417,14 @@
           "date": "2026-02-25",
           "title": "Morgath's Resurrection"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Kalthara",
@@ -2127,7 +2442,14 @@
           "date": "2026-02-25",
           "title": "The Stone Woman of Kalthara"
         }
-      ]
+      ],
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Xul'thyris",
@@ -2142,8 +2464,8 @@
       "region": "unknown",
       "district": "unknown",
       "atmosphere": "A city of vice and shadow-trade, where fortunes are gambled and dark dealings flourish in the gambling dens.",
-      "description": "Xul'thyris is a gambling hub where shadow-brokers like Kael operate, trading in stolen identities and borrowed shadows. It contains gambling dens and at least one magistrate's villa.",
-      "status": "active",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
       "notes": "",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
@@ -2373,6 +2695,111 @@
           "title": "The Scarlet Merchant"
         }
       ]
+    },
+    {
+      "name": "Temple of Khar-Zul",
+      "tagline": "",
+      "place_type": "temple",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "An inner-dark temple housing the idol of Khar-Zul, a god with nine emerald eyes worth more than most kingdoms. The shadows within are alive \u2014 by the third stolen gem they move; by the sixth they have teeth. The temple itself screamed in a voice of grinding granite when the god was robbed.",
+      "status": "active \u2014 and aware",
+      "first_story": "",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Ashen Wastes",
+      "tagline": "",
+      "place_type": "",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Bone Citadel",
+      "tagline": "",
+      "place_type": "fortress",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "A living fortress of bone-white stone on the steppe. Towers breathe. Gates digest. The heart is a pulsing white chamber fed by roots spreading under the whole steppe. It absorbed 100 Veth warriors into its walls \u2014 alive, preserved, visible beneath the surface like insects in amber. Screamed for three days after Kael's assault, then went silent.",
+      "status": "unknown \u2014 silent after the assault",
+      "first_story": "The Bone Citadel's Hunger",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Bone Citadel's Hunger"
+        }
+      ]
+    },
+    {
+      "name": "convent",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "first_story": "",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "tower",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "first_story": "",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "events": [
@@ -2449,7 +2876,12 @@
       "first_story": "The Alchemist's Appetite",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Alchemist's Appetite"
+        }
+      ]
     },
     {
       "name": "Siege of Grimmholt (Rebellion)",
@@ -2465,8 +2897,13 @@
       "significance": "Demonstrates the collision between oath-magic and crown authority, and the cost of defiance. Thorne's sacrifice suggests that ancient oaths can supersede royal decree.",
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
-      "appearances": 3,
-      "story_appearances": []
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Broken Oath"
+        }
+      ]
     },
     {
       "name": "Merfolk Pursuit of Nara",
@@ -2481,7 +2918,12 @@
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Tide-Thief's Escape"
+        }
+      ]
     },
     {
       "name": "Theft of the Crown of Karesh",
@@ -2495,7 +2937,12 @@
       "first_story": "The Copper Thief",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        }
+      ]
     },
     {
       "name": "Siege of the Bone Citadel",
@@ -2531,7 +2978,12 @@
       "first_story": "Shadows for Sale",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        }
+      ]
     },
     {
       "name": "The Life-Theft of Meredith the Red",
@@ -2547,7 +2999,12 @@
       "first_story": "The Debt Keeper's Price",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Debt Keeper's Price"
+        }
+      ]
     },
     {
       "name": "Kesh's Debt Collection",
@@ -2562,7 +3019,12 @@
       "first_story": "The Debt Keeper's Price",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Debt Keeper's Price"
+        }
+      ]
     },
     {
       "name": "Night of the Blue Eclipse",
@@ -2596,7 +3058,12 @@
       "first_story": "The Oath-Breaker's Reckoning",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        }
+      ]
     },
     {
       "name": "Vetch's Garden Awakening",
@@ -2611,7 +3078,12 @@
       "first_story": "The Living Garden",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        }
+      ]
     },
     {
       "name": "Tess's Drowning",
@@ -2627,7 +3099,12 @@
       "first_story": "The Collector's Daughter",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Collector's Daughter"
+        }
+      ]
     },
     {
       "name": "Pieter Vane's Oath-Breaking",
@@ -2642,7 +3119,12 @@
       "first_story": "The Oath-Breaker's Due",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Oath-Breaker's Due"
+        }
+      ]
     },
     {
       "name": "Tessaly Dorn's Debt Binding",
@@ -2658,7 +3140,12 @@
       "first_story": "The Curse of Yarithax's Gold",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Curse of Yarithax's Gold"
+        }
+      ]
     },
     {
       "name": "Siege of Amrath",
@@ -2693,7 +3180,12 @@
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Sorcerer's Debt"
+        }
+      ]
     },
     {
       "name": "Burning of Crimson Gate",
@@ -2708,7 +3200,12 @@
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Last Thief of Crimson Gate"
+        }
+      ]
     },
     {
       "name": "War Won by the Plague-Bringer's Crown",
@@ -2723,7 +3220,12 @@
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Plague-Bringer's Crown"
+        }
+      ]
     },
     {
       "name": "The Crimson Covenant",
@@ -2759,7 +3261,12 @@
       "first_story": "Shara of the Scorched Wastes",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Shara of the Scorched Wastes"
+        }
+      ]
     },
     {
       "name": "Magic Plague in the Shattered Provinces",
@@ -2774,7 +3281,12 @@
       "first_story": "The Hunger of Grell Ironhand",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
     },
     {
       "name": "Grell's Descent into the Singing Catacombs",
@@ -2790,7 +3302,12 @@
       "first_story": "The Hunger of Grell Ironhand",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
     },
     {
       "name": "Zareth's Communion with the Elder Stones",
@@ -2806,7 +3323,12 @@
       "first_story": "Zareth Among the Stellar Stones",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Zareth Among the Stellar Stones"
+        }
+      ]
     },
     {
       "name": "The Quest for the Lamia's Pearl",
@@ -2822,7 +3344,12 @@
       "first_story": "The Lamia's Pearl",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
     },
     {
       "name": "Vex's Curse Revelation",
@@ -2837,7 +3364,12 @@
       "first_story": "Vex the Curse-Bearer",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Vex the Curse-Bearer"
+        }
+      ]
     },
     {
       "name": "Morgath's Resurrection",
@@ -2892,7 +3424,12 @@
       "first_story": "The Stone Woman of Kalthara",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Stone Woman of Kalthara"
+        }
+      ]
     },
     {
       "name": "War for the Sunken Wells",
@@ -2999,7 +3536,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Theron's Redemption",
@@ -3013,7 +3555,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Young Woman's Suicide and Curse Invocation",
@@ -3029,7 +3576,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     }
   ],
   "rituals": [
@@ -3085,7 +3637,12 @@
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        }
+      ]
     },
     {
       "name": "Kael's enchanted blade",
@@ -3098,7 +3655,12 @@
       "first_story": "The Stone Woman of Kalthara",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Stone Woman of Kalthara"
+        }
+      ]
     }
   ],
   "artifacts": [
@@ -3113,7 +3675,12 @@
       "first_story": "The Witch-Price of Mercy",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Witch-Price of Mercy"
+        }
+      ]
     },
     {
       "name": "Tear of the Sapphire Deep",
@@ -3162,7 +3729,12 @@
       "first_story": "The Warlord's Last Stand",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        }
+      ]
     },
     {
       "name": "Morne's Signet Ring",
@@ -3207,7 +3779,7 @@
       "origin": "Unknown; rests in the Sunken Ziggurat of Yeng in a niche with an ancient inscription.",
       "powers": "When lit, it burns with black flame and forces the lighter to face one profound personal truth while consuming a corresponding lie they have lived by. The exchange appears to be balanced but transformative.",
       "last_known_holder": "Malachite Doss",
-      "status": "active",
+      "status": "used once \u2014 may be refillable",
       "first_story": "The Lamp of Suroth",
       "first_date": "2026-02-25",
       "appearances": 1,
@@ -3283,7 +3855,12 @@
       "first_story": "The Lamia's Pearl",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
     },
     {
       "name": "Stone Seals of Kalthara",
@@ -3296,7 +3873,12 @@
       "first_story": "The Stone Woman of Kalthara",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Stone Woman of Kalthara"
+        }
+      ]
     },
     {
       "name": "Emerald Eyes of Khar-Zul",
@@ -3309,7 +3891,12 @@
       "first_story": "The Thief of Khar-Zul",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Thief of Khar-Zul"
+        }
+      ]
     },
     {
       "name": "Idol of Khar-Zul",
@@ -3347,6 +3934,32 @@
           "title": "The Collector's Due"
         }
       ]
+    },
+    {
+      "name": "The Plague-Bringer's Crown",
+      "tagline": "",
+      "artifact_type": "",
+      "origin": "",
+      "powers": "",
+      "last_known_holder": "",
+      "status": "sealed in deeper vault",
+      "first_story": "",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "The Six Emerald Eyes of Khar-Zul",
+      "tagline": "",
+      "artifact_type": "",
+      "origin": "",
+      "powers": "",
+      "last_known_holder": "",
+      "status": "loose in the world",
+      "first_story": "",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "factions": [
@@ -3594,7 +4207,12 @@
       "first_story": "The Tomb-Keeper's Vigil",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Tomb-Keeper's Vigil"
+        }
+      ]
     },
     {
       "name": "Truth Curse of Mercy",
@@ -3605,7 +4223,12 @@
       "first_story": "The Witch-Price of Mercy",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Witch-Price of Mercy"
+        }
+      ]
     },
     {
       "name": "Ritual of Dismissal",
@@ -3648,7 +4271,12 @@
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Broken Oath"
+        }
+      ]
     },
     {
       "name": "Magic Theft from Merfolk",
@@ -3659,7 +4287,12 @@
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Tide-Thief's Escape"
+        }
+      ]
     },
     {
       "name": "Unpayable Debt Settlement",
@@ -3670,7 +4303,12 @@
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Tide-Thief's Escape"
+        }
+      ]
     },
     {
       "name": "Curse of Artifact Theft",
@@ -3681,7 +4319,12 @@
       "first_story": "The Copper Thief",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        }
+      ]
     },
     {
       "name": "Living Fortress Magic",
@@ -3692,7 +4335,12 @@
       "first_story": "The Warlord's Last Stand",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        }
+      ]
     },
     {
       "name": "Shadow-Memory Magic",
@@ -3703,7 +4351,12 @@
       "first_story": "Shadows for Sale",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        }
+      ]
     },
     {
       "name": "Demon-Binding via Summoning Scroll",
@@ -3714,7 +4367,12 @@
       "first_story": "The Debt Keeper's Price",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Debt Keeper's Price"
+        }
+      ]
     },
     {
       "name": "The Unpayable Debt of Demon-Summoning",
@@ -3725,7 +4383,12 @@
       "first_story": "The Debt Keeper's Price",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Debt Keeper's Price"
+        }
+      ]
     },
     {
       "name": "Bone Carving Artistry",
@@ -3736,7 +4399,12 @@
       "first_story": "The Bone Carver's Apotheosis",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Bone Carver's Apotheosis"
+        }
+      ]
     },
     {
       "name": "Oath-Binding Magic",
@@ -3747,7 +4415,12 @@
       "first_story": "The Oath-Breaker's Reckoning",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        }
+      ]
     },
     {
       "name": "Shade Manifestation",
@@ -3758,7 +4431,12 @@
       "first_story": "The Oath-Breaker's Reckoning",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        }
+      ]
     },
     {
       "name": "Garden Consciousness Sorcery",
@@ -3769,7 +4447,12 @@
       "first_story": "The Living Garden",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        }
+      ]
     },
     {
       "name": "Yarithax's Debt-Magic",
@@ -3780,7 +4463,12 @@
       "first_story": "The Collector's Daughter",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Collector's Daughter"
+        }
+      ]
     },
     {
       "name": "The Inscription of the Lamp of Suroth",
@@ -3791,7 +4479,12 @@
       "first_story": "The Lamp of Suroth",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamp of Suroth"
+        }
+      ]
     },
     {
       "name": "Oath-Enforcement by the Dead",
@@ -3802,7 +4495,12 @@
       "first_story": "The Oath-Breaker's Due",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Oath-Breaker's Due"
+        }
+      ]
     },
     {
       "name": "Lich-King Yarithax",
@@ -3813,7 +4511,12 @@
       "first_story": "The Curse of Yarithax's Gold",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Curse of Yarithax's Gold"
+        }
+      ]
     },
     {
       "name": "Demon-Binding via Contract",
@@ -3824,7 +4527,12 @@
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Sorcerer's Debt"
+        }
+      ]
     },
     {
       "name": "Mercenary Codes and Honor",
@@ -3835,7 +4543,12 @@
       "first_story": "The Barbarian's Mercy",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Barbarian's Mercy"
+        }
+      ]
     },
     {
       "name": "Demon Pact for Certainty",
@@ -3846,7 +4559,12 @@
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Last Thief of Crimson Gate"
+        }
+      ]
     },
     {
       "name": "Lore of the Plague-Bringer's Crown",
@@ -3857,7 +4575,12 @@
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Plague-Bringer's Crown"
+        }
+      ]
     },
     {
       "name": "daemon-binding via blood-parchment contract",
@@ -3868,7 +4591,12 @@
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        }
+      ]
     },
     {
       "name": "nomadic cantrips of sand and sun",
@@ -3879,7 +4607,12 @@
       "first_story": "Shara of the Scorched Wastes",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Shara of the Scorched Wastes"
+        }
+      ]
     },
     {
       "name": "blood-sorcery for eternal youth",
@@ -3890,7 +4623,12 @@
       "first_story": "Shara of the Scorched Wastes",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Shara of the Scorched Wastes"
+        }
+      ]
     },
     {
       "name": "The Cosmic Cycle of Stellar Death and Rebirth",
@@ -3901,7 +4639,12 @@
       "first_story": "Zareth Among the Stellar Stones",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Zareth Among the Stellar Stones"
+        }
+      ]
     },
     {
       "name": "Languages Predating Humanity in the Singing Catacombs",
@@ -3912,7 +4655,12 @@
       "first_story": "The Hunger of Grell Ironhand",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
     },
     {
       "name": "The Doctrine of the Curse as Gift",
@@ -3923,7 +4671,12 @@
       "first_story": "Vex the Curse-Bearer",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Vex the Curse-Bearer"
+        }
+      ]
     },
     {
       "name": "The Lamia's Centuries of Solitude",
@@ -3934,7 +4687,12 @@
       "first_story": "The Lamia's Pearl",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
     },
     {
       "name": "Curse of Refused Love",
@@ -3945,7 +4703,12 @@
       "first_story": "The Stone Woman of Kalthara",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Stone Woman of Kalthara"
+        }
+      ]
     },
     {
       "name": "World Cleansing Cycle",
@@ -3956,7 +4719,12 @@
       "first_story": "Morgath's Resurrection",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Morgath's Resurrection"
+        }
+      ]
     },
     {
       "name": "Powers Not Meant to be Freed",
@@ -3967,7 +4735,12 @@
       "first_story": "The Stone Woman of Kalthara",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Stone Woman of Kalthara"
+        }
+      ]
     },
     {
       "name": "Old Tongue",
@@ -4083,7 +4856,12 @@
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Shadow-Broker's Debt"
+        }
+      ]
     },
     {
       "name": "Curse of the Merchant Poisoner",
@@ -4105,7 +4883,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Divine Forgiveness vs. Curse Breaking",
@@ -4116,7 +4899,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Curse Magic of Consequence",
@@ -4127,7 +4915,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Curse Breaking Through Restitution",
@@ -4138,7 +4931,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Curse Magic of Reflection",
@@ -4149,7 +4947,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Blood-Rust Phenomenon",
@@ -4160,7 +4963,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Dying Accusation Curse",
@@ -4171,7 +4979,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Scarlet Powders",
@@ -4182,7 +4995,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     }
   ],
   "flora_fauna": [
@@ -4304,7 +5122,12 @@
       "first_story": "The Witch-Price of Mercy",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Witch-Price of Mercy"
+        }
+      ]
     },
     {
       "name": "Tomb Sentience / Living Stone",
@@ -4316,7 +5139,12 @@
       "first_story": "The Tomb-Keeper's Vigil",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Tomb-Keeper's Vigil"
+        }
+      ]
     },
     {
       "name": "Forced Truthfulness",
@@ -4328,7 +5156,12 @@
       "first_story": "The Witch-Price of Mercy",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Witch-Price of Mercy"
+        }
+      ]
     },
     {
       "name": "Dismissal Ritual",
@@ -4340,7 +5173,12 @@
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Warlord's Widow"
+        }
+      ]
     },
     {
       "name": "Alchemical Transformation",
@@ -4352,7 +5190,12 @@
       "first_story": "The Alchemist's Appetite",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Alchemist's Appetite"
+        }
+      ]
     },
     {
       "name": "Water-Magic Theft",
@@ -4364,7 +5207,12 @@
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Tide-Thief's Escape"
+        }
+      ]
     },
     {
       "name": "Oath-Binding Magic",
@@ -4376,7 +5224,12 @@
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Broken Oath"
+        }
+      ]
     },
     {
       "name": "Flood Summoning Ritual",
@@ -4388,7 +5241,12 @@
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Tide-Thief's Escape"
+        }
+      ]
     },
     {
       "name": "Curse Magic of Karesh",
@@ -4400,7 +5258,12 @@
       "first_story": "The Copper Thief",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        }
+      ]
     },
     {
       "name": "Citadel Dominion Magic",
@@ -4412,7 +5275,12 @@
       "first_story": "The Warlord's Last Stand",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        }
+      ]
     },
     {
       "name": "Shadow-Theft",
@@ -4424,7 +5292,12 @@
       "first_story": "Shadows for Sale",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        }
+      ]
     },
     {
       "name": "Shadow-Possession",
@@ -4436,7 +5309,12 @@
       "first_story": "Shadows for Sale",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        }
+      ]
     },
     {
       "name": "Life-Force Theft via Demon-Binding",
@@ -4448,7 +5326,12 @@
       "first_story": "The Debt Keeper's Price",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Debt Keeper's Price"
+        }
+      ]
     },
     {
       "name": "Skeletal Animation",
@@ -4460,7 +5343,12 @@
       "first_story": "The Bone Carver's Apotheosis",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Bone Carver's Apotheosis"
+        }
+      ]
     },
     {
       "name": "Oath-Enforcement Magic",
@@ -4472,7 +5360,12 @@
       "first_story": "The Oath-Breaker's Reckoning",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        }
+      ]
     },
     {
       "name": "Consciousness Gifting",
@@ -4484,7 +5377,12 @@
       "first_story": "The Living Garden",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        }
+      ]
     },
     {
       "name": "Compounding Debt Magic",
@@ -4496,7 +5394,12 @@
       "first_story": "The Collector's Daughter",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Collector's Daughter"
+        }
+      ]
     },
     {
       "name": "Lamp Truth Burning",
@@ -4508,7 +5411,12 @@
       "first_story": "The Lamp of Suroth",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamp of Suroth"
+        }
+      ]
     },
     {
       "name": "Debt-Compounding Magic",
@@ -4520,7 +5428,12 @@
       "first_story": "The Curse of Yarithax's Gold",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Curse of Yarithax's Gold"
+        }
+      ]
     },
     {
       "name": "Oath-Binding and Enforcement",
@@ -4532,7 +5445,12 @@
       "first_story": "The Oath-Breaker's Due",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Oath-Breaker's Due"
+        }
+      ]
     },
     {
       "name": "Demon Summoning",
@@ -4544,7 +5462,12 @@
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Sorcerer's Debt"
+        }
+      ]
     },
     {
       "name": "Contract Magic",
@@ -4556,7 +5479,12 @@
       "first_story": "The Sorcerer's Debt",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Sorcerer's Debt"
+        }
+      ]
     },
     {
       "name": "Demon Binding via Pact",
@@ -4568,7 +5496,12 @@
       "first_story": "The Last Thief of Crimson Gate",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Last Thief of Crimson Gate"
+        }
+      ]
     },
     {
       "name": "Shadow Inversion Curse",
@@ -4580,7 +5513,12 @@
       "first_story": "The Plague-Bringer's Crown",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Plague-Bringer's Crown"
+        }
+      ]
     },
     {
       "name": "blood-parchment soul-binding",
@@ -4592,7 +5530,12 @@
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        }
+      ]
     },
     {
       "name": "cantrips of sand and sun",
@@ -4621,7 +5564,12 @@
       "first_story": "Shara of the Scorched Wastes",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Shara of the Scorched Wastes"
+        }
+      ]
     },
     {
       "name": "Restoration Hunger Magic",
@@ -4633,7 +5581,12 @@
       "first_story": "The Hunger of Grell Ironhand",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
     },
     {
       "name": "Stellar Communion",
@@ -4645,7 +5598,12 @@
       "first_story": "Zareth Among the Stellar Stones",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Zareth Among the Stellar Stones"
+        }
+      ]
     },
     {
       "name": "Water Magic Control",
@@ -4657,7 +5615,12 @@
       "first_story": "The Lamia's Pearl",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
     },
     {
       "name": "Curse Magic of Consequence",
@@ -4668,8 +5631,13 @@
       "status": "known",
       "first_story": "Vex the Curse-Bearer",
       "first_date": "2026-02-25",
-      "appearances": 2,
-      "story_appearances": []
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Vex the Curse-Bearer"
+        }
+      ]
     },
     {
       "name": "Necromancy",
@@ -4715,7 +5683,12 @@
       "first_story": "Morgath's Resurrection",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Morgath's Resurrection"
+        }
+      ]
     },
     {
       "name": "Curse Magic of Artifact Binding",
@@ -4727,7 +5700,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Shadow Curse Manifestation",
@@ -4739,7 +5717,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Temple Screaming",
@@ -4816,7 +5799,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Curse Breaking Through Restitution",
@@ -4840,7 +5828,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Restitution Curse Breaking",
@@ -4852,7 +5845,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Reflection Curse",
@@ -4864,7 +5862,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Blood-Rust Phenomenon",
@@ -4876,7 +5879,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     }
   ],
   "relics": [
@@ -4924,7 +5932,12 @@
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Broken Oath"
+        }
+      ]
     },
     {
       "name": "Crown of Karesh",
@@ -4953,7 +5966,12 @@
       "first_story": "The Warlord's Last Stand",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        }
+      ]
     },
     {
       "name": "Naresh's Skeletal Servant",
@@ -4965,7 +5983,12 @@
       "first_story": "The Bone Carver's Apotheosis",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Bone Carver's Apotheosis"
+        }
+      ]
     },
     {
       "name": "Morne's Shade",
@@ -5134,7 +6157,12 @@
       "first_story": "Morgath's Resurrection",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Morgath's Resurrection"
+        }
+      ]
     },
     {
       "name": "Shadow of the High Magistrate",
@@ -5153,10 +6181,10 @@
     {
       "name": "Sunken Marches",
       "tagline": "Waterlogged. Ghost-ruled. Eternal.",
-      "climate": "temperate",
-      "terrain": "wetlands / marshes",
+      "climate": "unknown",
+      "terrain": "unknown",
       "ruler": "Velgrim the Terrible (ghost-king)",
-      "status": "active",
+      "status": "unknown",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
       "appearances": 1,
@@ -5165,7 +6193,17 @@
           "date": "2026-02-27",
           "title": "The Warlord's Widow"
         }
-      ]
+      ],
+      "continent": "unknown",
+      "realm": "unknown",
+      "function": "Auto-added from character home_region.",
+      "notes": "",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Sunken Marches",
+      "district": "unknown"
     },
     {
       "name": "Border Lands",
@@ -5177,7 +6215,20 @@
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Broken Oath"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Border Lands",
+      "district": "unknown"
     },
     {
       "name": "the Ashen Wastes",
@@ -5198,7 +6249,15 @@
           "date": "2026-02-25",
           "title": "Blood-Price of the Caravan"
         }
-      ]
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "the Ashen Wastes",
+      "district": "unknown"
     },
     {
       "name": "the Steppe",
@@ -5219,7 +6278,15 @@
           "date": "2026-02-26",
           "title": "The Warlord's Last Stand"
         }
-      ]
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "the Steppe",
+      "district": "unknown"
     },
     {
       "name": "Scorched Wastes",
@@ -5236,7 +6303,15 @@
           "date": "2026-02-25",
           "title": "Shara of the Scorched Wastes"
         }
-      ]
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Scorched Wastes",
+      "district": "unknown"
     },
     {
       "name": "Shattered Provinces",
@@ -5253,7 +6328,15 @@
           "date": "2026-02-25",
           "title": "The Hunger of Grell Ironhand"
         }
-      ]
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Shattered Provinces",
+      "district": "unknown"
     },
     {
       "name": "Torven's Coastal Village",
@@ -5265,7 +6348,64 @@
       "first_story": "The Lamia's Pearl",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Torven's Coastal Village",
+      "district": "unknown"
+    },
+    {
+      "name": "the blasted steppes",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "ruler": "",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "the blasted steppes",
+      "district": "unknown"
+    },
+    {
+      "name": "Sapphire Deep",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "ruler": "",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "",
+      "first_date": "2026-02-28",
+      "appearances": 1,
+      "story_appearances": [],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Sapphire Deep",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -5298,7 +6438,12 @@
       "first_story": "The Alchemist's Appetite",
       "first_date": "2026-02-27",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Alchemist's Appetite"
+        }
+      ]
     },
     {
       "name": "Stolen Water-Magic",
@@ -5329,7 +6474,12 @@
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        }
+      ]
     },
     {
       "name": "Grafted Metal",
@@ -5342,7 +6492,12 @@
       "first_story": "The Hunger of Grell Ironhand",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Hunger of Grell Ironhand"
+        }
+      ]
     },
     {
       "name": "Lamia's Tears",
@@ -5355,7 +6510,12 @@
       "first_story": "The Lamia's Pearl",
       "first_date": "2026-02-25",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        }
+      ]
     },
     {
       "name": "Emerald of Khar-Zul",
@@ -5381,7 +6541,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Vision Oils",
@@ -5394,7 +6559,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Slow-Acting Saps",
@@ -5407,7 +6577,12 @@
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Blood-Rust",
