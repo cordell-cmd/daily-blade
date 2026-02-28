@@ -75,8 +75,9 @@ EVENT_ARC_DOSSIER_MAX_CHARS_PER_STORY = int(os.environ.get("EVENT_ARC_DOSSIER_MA
 EVENT_ARC_DOSSIER_MAX_TOKENS = int(os.environ.get("EVENT_ARC_DOSSIER_MAX_TOKENS", "1500"))
 
 # Entity directory: compact one-line summaries of codex entities injected into the generation prompt.
-# Caps per category prevent prompt bloat as the codex grows (thousands of entities by end of year).
-ENTITY_DIR_MAX_PER_CATEGORY = int(os.environ.get("ENTITY_DIR_MAX_PER_CATEGORY", "40"))
+# Uses a total character budget rather than per-category caps.  In early months every entity fits;
+# once the codex outgrows the budget, only the oldest/rarest entities are dropped.
+ENTITY_DIR_MAX_CHARS = int(os.environ.get("ENTITY_DIR_MAX_CHARS", "400000"))  # ~100K tokens
 
 # Subgenres are generated dynamically by the AI for each story
 
@@ -1039,7 +1040,10 @@ def build_generation_lore_context(lore, seed_text: str):
     # ── Compact entity directory from the codex ──
     # Goal: the model knows WHO and WHAT exists so it can weave a living world.
     # Each entity gets a one-line summary (name + key trait/role/location).
-    # Capped at ENTITY_DIR_MAX_PER_CATEGORY per category, prioritized by recency.
+    # Uses a total character budget (ENTITY_DIR_MAX_CHARS) rather than per-category
+    # caps.  All categories are included, sorted by recency.  In early months every
+    # entity fits; once the world outgrows the budget, only the oldest/rarest entities
+    # are dropped.
     codex = load_codex_file()
     if isinstance(codex, dict):
         _dir_sections = [
@@ -1049,31 +1053,49 @@ def build_generation_lore_context(lore, seed_text: str):
             ("regions", "KNOWN REGIONS", lambda it: _compact_generic_line(it)),
             ("polities", "KNOWN POLITIES", lambda it: _compact_generic_line(it)),
             ("artifacts", "KNOWN ARTIFACTS", lambda it: _compact_generic_line(it)),
+            ("relics", "KNOWN RELICS", lambda it: _compact_generic_line(it)),
             ("flora_fauna", "KNOWN CREATURES & FLORA", lambda it: _compact_generic_line(it)),
             ("magic", "KNOWN MAGIC TYPES", lambda it: _compact_generic_line(it)),
+            ("events", "KNOWN EVENTS", lambda it: _compact_generic_line(it)),
+            ("lore", "KNOWN LORE", lambda it: _compact_generic_line(it)),
+            ("substances", "KNOWN SUBSTANCES", lambda it: _compact_generic_line(it)),
+            ("rituals", "KNOWN RITUALS", lambda it: _compact_generic_line(it)),
+            ("weapons", "KNOWN WEAPONS", lambda it: _compact_generic_line(it)),
         ]
-        cap = max(1, ENTITY_DIR_MAX_PER_CATEGORY)
+        budget = max(1000, ENTITY_DIR_MAX_CHARS)
+        budget_used = 0
+        budget_exhausted = False
         for cat, header, formatter in _dir_sections:
+            if budget_exhausted:
+                break
             items = codex.get(cat, [])
             if not isinstance(items, list) or not items:
                 continue
             # Sort by most recent story appearance (most recently used first).
             items_sorted = sorted(items, key=_entity_last_appearance_sort_key, reverse=True)
             total_count = len(items_sorted)
-            shown = items_sorted[:cap]
             lines = []
-            for it in shown:
+            for it in items_sorted:
                 if not isinstance(it, dict):
                     continue
                 line = formatter(it)
-                if line:
-                    lines.append(line)
+                if not line:
+                    continue
+                line_cost = len(line) + 1  # +1 for newline
+                if budget_used + line_cost > budget:
+                    budget_exhausted = True
+                    break
+                lines.append(line)
+                budget_used += line_cost
             if lines:
-                parts.append("")
-                if total_count > cap:
-                    parts.append(f"=== {header} (showing {len(lines)} most recent of {total_count}) ===")
+                hdr_line = ""
+                if len(lines) < total_count:
+                    hdr_line = f"=== {header} (showing {len(lines)} most recent of {total_count}) ==="
                 else:
-                    parts.append(f"=== {header} ({len(lines)} entries) ===")
+                    hdr_line = f"=== {header} ({len(lines)} entries) ==="
+                budget_used += len(hdr_line) + 2  # header + blank line
+                parts.append("")
+                parts.append(hdr_line)
                 parts.extend(lines)
 
     return "\n".join([p for p in parts if p is not None]).strip()
