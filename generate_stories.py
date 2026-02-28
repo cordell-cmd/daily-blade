@@ -2522,7 +2522,15 @@ def merge_lore(existing_lore, new_lore, date_key):
                         continue
                     if v is None:
                         continue
-                    if k not in target or target.get(k) in {"", [], {}, None, "unknown"}:
+                    existing_v = target.get(k)
+                    if (
+                        k not in target
+                        or existing_v is None
+                        or existing_v == ""
+                        or (isinstance(existing_v, str) and existing_v.strip().lower() == "unknown")
+                        or existing_v == []
+                        or existing_v == {}
+                    ):
                         target[k] = v
         else:
             existing_names = {
