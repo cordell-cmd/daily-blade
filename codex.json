@@ -1,17 +1,18 @@
 {
-  "last_updated": "2026-02-26",
+  "last_updated": "2026-02-25",
   "characters": [
     {
       "name": "Vraxen the Knife",
       "tagline": "Audacious. Cursed. Hunted.",
-      "role": "Thief / Cursed Rogue",
+      "role": "Thief",
       "status": "cursed",
-      "world": "The Known World",
-      "bio": "A master thief who has robbed a hundred merchant princes. Attempted to rob the idol of Khar-Zul in its inner temple, prying six of nine emerald eyes free before the shadows came alive. Escaped with six gems but gained a new companion: a shadow wearing his own face, patient as carved stone, crouching beside him at dawn. His fate thereafter is unknown.",
+      "world": "known_world",
+      "bio": "Vraxen the Knife is a celebrated thief who has robbed merchant princes across the realm. His greatest theft\u2014the emerald eyes of the idol of Khar-Zul\u2014resulted in a curse: a shadow bearing his own face now follows him, patient and inexorable.",
       "traits": [
         "audacious",
-        "calculating",
-        "now-haunted"
+        "skilled",
+        "haunted",
+        "desperate"
       ],
       "first_story": "The Thief of Khar-Zul",
       "first_date": "2026-02-25",
@@ -21,6 +22,13 @@
           "date": "2026-02-25",
           "title": "The Thief of Khar-Zul"
         }
+      ],
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "aliases": [
+        "Vraxen"
       ]
     },
     {
@@ -2153,6 +2161,31 @@
       "first_date": "2026-02-27",
       "story_appearances": [],
       "appearances": 1
+    },
+    {
+      "name": "Khar-Zul",
+      "tagline": "Sacred. Cursed. Jealous.",
+      "place_type": "temple",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place of grinding stone and living shadow, where the divine broods in emerald-eyed darkness.",
+      "description": "An ancient temple housing an idol with nine emerald eyes of immense value. The temple itself appears sentient or divinely guarded\u2014its shadows possess teeth and agency, and the structure screams in a voice of grinding granite when violated.",
+      "status": "active",
+      "first_story": "The Thief of Khar-Zul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Thief of Khar-Zul"
+        }
+      ]
     }
   ],
   "events": [
@@ -2861,6 +2894,21 @@
       "first_date": "2026-02-26",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "Theft of the Emerald Eyes of Khar-Zul",
+      "tagline": "Sacrilege. Flight. Curse.",
+      "event_type": "theft / curse-trigger",
+      "participants": [
+        "Vraxen the Knife",
+        "Khar-Zul (idol or entity)"
+      ],
+      "outcome": "Vraxen successfully stole six of nine emeralds and fled the temple at dawn. The temple's curse manifested: a shadow bearing Vraxen's own face now shadows him, patient and carved-stone still.",
+      "significance": "This theft violated a sacred place and invoked a supernatural punishment that may be inescapable. The curse suggests that theft from the divine carries metaphysical consequences.",
+      "first_story": "",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "rituals": [
@@ -3156,6 +3204,24 @@
         {
           "date": "2026-02-25",
           "title": "The Stone Woman of Kalthara"
+        }
+      ]
+    },
+    {
+      "name": "Emerald Eyes of Khar-Zul",
+      "tagline": "Precious. Sacred. Cursed.",
+      "artifact_type": "idol eyes / gemstones",
+      "origin": "The idol of Khar-Zul, a sacred temple object.",
+      "powers": "Unknown. They are described as obscenely warm to the touch and of immense monetary value (worth kingdoms). Their theft invoked a curse.",
+      "last_known_holder": "Vraxen the Knife (six eyes); three remain in the idol.",
+      "status": "stolen / dispersed",
+      "first_story": "The Thief of Khar-Zul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Thief of Khar-Zul"
         }
       ]
     }
@@ -3961,6 +4027,28 @@
       "first_date": "2026-02-26",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "Curse of Divine Theft",
+      "tagline": "Sacrilege. Shadow. Consequence.",
+      "category": "legend",
+      "source": "The idol of Khar-Zul's response to Vraxen's robbery",
+      "status": "confirmed",
+      "first_story": "",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Shadow Manifestation",
+      "tagline": "Living. Conscious. Relentless.",
+      "category": "legend",
+      "source": "The idol of Khar-Zul's curse upon Vraxen the Knife",
+      "status": "confirmed",
+      "first_story": "",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "flora_fauna": [
@@ -4685,6 +4773,30 @@
       "first_date": "2026-02-26",
       "appearances": 1,
       "story_appearances": []
+    },
+    {
+      "name": "Shadow Curse Manifestation",
+      "tagline": "Sentient. Pursuing. Inexorable.",
+      "type": "curse",
+      "element": "shadow",
+      "difficulty": "forbidden",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Temple Screaming",
+      "tagline": "Architectural. Sentient. Wrathful.",
+      "type": "manifestation",
+      "element": "stone / divine",
+      "difficulty": "forbidden",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "relics": [
@@ -4988,6 +5100,23 @@
           "title": "Morgath's Resurrection"
         }
       ]
+    },
+    {
+      "name": "Idol of Khar-Zul",
+      "tagline": "Sacred. Sentient. Wrathful.",
+      "origin": "Ancient, housed in the temple of Khar-Zul; origin predates recorded history.",
+      "power": "Commands shadow-guardians, animates its temple, and curses thieves with shadow-doubles that wear the thief's face.",
+      "curse": "Theft from the idol invokes a shadow-curse\u2014an autonomous shadow bearing the thief's visage that pursues them indefinitely.",
+      "status": "active",
+      "first_story": "The Thief of Khar-Zul",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Thief of Khar-Zul"
+        }
+      ]
     }
   ],
   "regions": [
@@ -5235,6 +5364,19 @@
           "title": "The Lamia's Pearl"
         }
       ]
+    },
+    {
+      "name": "Emerald of Khar-Zul",
+      "tagline": "Precious. Warm. Cursed.",
+      "type": "gemstone / mineral",
+      "rarity": "legendary",
+      "properties": "The emeralds are obscenely warm to the touch and of immense monetary value\u2014worth kingdoms. They may conduct or store magical energy.",
+      "use": "Sacred artifact components; possibly currency or wealth. Unknown practical magical use.",
+      "status": "unknown",
+      "first_story": "",
+      "first_date": "2026-02-25",
+      "appearances": 1,
+      "story_appearances": []
     }
   ],
   "hemispheres": [],
