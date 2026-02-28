@@ -2247,36 +2247,9 @@ function buildStoryLinks(appearances, firstStory, firstDate) {
 }
 
 function attachStoryLinkListeners(card) {
-  card.querySelectorAll('.codex-story-link').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const d = btn.dataset.date;
-      const t = btn.dataset.title || btn.textContent || '';
-
-      const normalizeTitleKey = (s) => {
-        const raw = String(s || '').trim().toLowerCase();
-        if (!raw) return '';
-        return raw
-          .replace(/\u2019|\u2018/g, "'")
-          .replace(/\u2011/g, '-')
-          .replace(/[’']/g, '')
-          .replace(/[^a-z0-9]+/g, ' ')
-          .replace(/\s+/g, ' ')
-          .trim();
-      };
-
-      let appearances = [];
-      try {
-        const wrap = btn.closest('.codex-story-links');
-        const raw = wrap && wrap.dataset && wrap.dataset.appearances ? wrap.dataset.appearances : '';
-        if (raw) appearances = JSON.parse(decodeURIComponent(raw));
-      } catch (e) { appearances = []; }
-      appearances = normalizeAppearances(appearances);
-      const wantKey = normalizeTitleKey(t);
-      const idx = appearances.findIndex(a => (a.date || '') === (d || '') && normalizeTitleKey(a.title || '') === wantKey);
-
-      openStoryModalByAppearance(d, t, { appearances, index: idx >= 0 ? idx : 0 });
-    });
-  });
+  // No-op: codex story links are handled via a single delegated click handler
+  // so every card type works even if rendered dynamically.
+  return;
 }
 
 // ── Geography helpers (place hierarchy) ─────────────────────────────
@@ -3339,6 +3312,39 @@ document.addEventListener('click', (e) => {
   if (!key) return;
   const typeHint = btn.dataset.entityType || '';
   openCodexEntryByKey(key, typeHint);
+});
+
+// Codex "Appears in" story links (event delegation)
+document.addEventListener('click', (e) => {
+  const btn = e.target && e.target.closest ? e.target.closest('.codex-story-link') : null;
+  if (!btn) return;
+
+  const d = btn.dataset.date;
+  const t = btn.dataset.title || btn.textContent || '';
+
+  const normalizeTitleKey = (s) => {
+    const raw = String(s || '').trim().toLowerCase();
+    if (!raw) return '';
+    return raw
+      .replace(/\u2019|\u2018/g, "'")
+      .replace(/\u2011/g, '-')
+      .replace(/[’']/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+  };
+
+  let appearances = [];
+  try {
+    const wrap = btn.closest('.codex-story-links');
+    const raw = wrap && wrap.dataset && wrap.dataset.appearances ? wrap.dataset.appearances : '';
+    if (raw) appearances = JSON.parse(decodeURIComponent(raw));
+  } catch (err) { appearances = []; }
+
+  appearances = normalizeAppearances(appearances);
+  const wantKey = normalizeTitleKey(t);
+  const idx = appearances.findIndex(a => (a.date || '') === (d || '') && normalizeTitleKey(a.title || '') === wantKey);
+  openStoryModalByAppearance(d, t, { appearances, index: idx >= 0 ? idx : 0 });
 });
 
 // Escape key: close story modal first, otherwise close archive drawer.
