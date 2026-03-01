@@ -2934,7 +2934,24 @@
     }
   ],
   "weapons": [],
-  "factions": [],
+  "factions": [
+    {
+      "name": "Seelie Court",
+      "tagline": "A fae faction seeking to destabilize the human kingdom",
+      "type": "Fae Court",
+      "status": "active",
+      "description": "A court of fae-born entities that employs changelings as agents of sabotage within human kingdoms. The Seelie Court places magical compulsions on their servants to ensure loyalty, and orchestrates long-term schemes to weaken rival realms through infiltration and counsel.",
+      "first_story": "The Courtier's Secret",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Courtier's Secret"
+        }
+      ]
+    }
+  ],
   "lore": [
     {
       "id": "shadows_bite_back",
