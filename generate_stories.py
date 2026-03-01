@@ -96,6 +96,10 @@ CHILD_HARM_MAX_REWRITES = int(os.environ.get("CHILD_HARM_MAX_REWRITES", "2"))
 ENABLE_SEXUAL_CONTENT_GUARD = os.environ.get("ENABLE_SEXUAL_CONTENT_GUARD", "1").strip().lower() in {"1", "true", "yes", "y"}
 SEXUAL_CONTENT_MAX_REWRITES = int(os.environ.get("SEXUAL_CONTENT_MAX_REWRITES", "2"))
 
+# Continuity check: catch character-trait swaps (e.g. oath assigned to wrong character).
+ENABLE_CONTINUITY_CHECK = os.environ.get("ENABLE_CONTINUITY_CHECK", "1").strip().lower() in {"1", "true", "yes", "y"}
+CONTINUITY_MAX_REWRITES = int(os.environ.get("CONTINUITY_MAX_REWRITES", "1"))
+
 # Existing-entity updates: extract updates for ALREADY KNOWN entities referenced today.
 # This is how we can learn status changes (dead -> reanimated, etc.) even though the "NEW lore" extractor skips known names.
 ENABLE_EXISTING_CHARACTER_UPDATES = os.environ.get(
@@ -1846,6 +1850,13 @@ HOMONYMS / CONTEXTUAL NAMING (important for UI + canon clarity):
     - Use the canonical capitalization ONLY when you mean the proper noun/place.
 - Avoid using existing place/realm names as common nouns for unrelated things (materials, adjectives) unless you explicitly mean the place.
 
+CHARACTER-TRAIT CONTINUITY (within each story):
+- When you introduce a named character with a specific trait (oath, profession, magical ability, curse, bond, nickname, weapon, title), that trait MUST stay with that character for the entire story.
+- Do NOT accidentally swap traits between characters. For example:
+    - If Kovin is introduced as "bound by oath", it is Kovin (not another character) who is later "freed from his oath".
+    - If Gareth is introduced as "a locksmith", he is the one who picks locks — not someone else.
+- Before finalizing each story, mentally verify: every trait mentioned in the resolution matches the character it was introduced with.
+
 COHESION / CONSEQUENCES:
 - Ensure the ending reflects the consequences of major actions earlier in the story.
     - If a ritual of dismissal releases a ghost, the ghost cannot still be ruling in the final lines unless you explicitly state the rite failed or was subverted.
@@ -2204,6 +2215,146 @@ def sanitize_story_for_sexual_content(story: dict) -> dict:
         new_story["text"] = _fallback_safe_story_text(title)
 
     return new_story
+
+
+# ── Character-trait continuity check ────────────────────────────────
+# Catches when a trait introduced for one character is later applied to a
+# different character (e.g. Kovin is "bound by oath" but Gareth gets
+# "freed from his oath").
+
+_INTRO_PATTERN = re.compile(
+    r"\b([A-Z][a-z]+(?:\s+(?:the\s+)?[A-Z][a-z]+)?)\s*"      # character name
+    r"\(([^)]{4,80})\)",                                        # parenthetical trait
+    re.UNICODE,
+)
+
+_TRAIT_KEYWORDS = re.compile(
+    r"\b(oath|bound|sworn|locksmith|thief|scout|sellsword|sorcerer|sorceres|alchemist|"
+    r"priest|druid|ranger|knight|captain|healer|blacksmith|merchant|assassin|"
+    r"spy|bard|navigator|pilot|berserker|archer|mage|wizard|shaman|monk|"
+    r"cursed|blessed|exiled|banished|blinded|mute|crippled|immortal|undead|"
+    r"fae.blood|half.blood|dragon.blood|were.wolf|shape.shift|"
+    r"freed?\s+from\s+(?:his|her|their)\s+oath|cut\s+\w+\s+free)\b",
+    re.IGNORECASE,
+)
+
+
+def _extract_character_traits(text):
+    """Extract character -> set-of-traits from parenthetical introductions.
+
+    Returns dict: { 'Gareth': {'dwarf locksmith', 'worked the deepvault'}, ... }
+    """
+    chars = {}  # type: dict[str, set]
+    for m in _INTRO_PATTERN.finditer(text):
+        name = m.group(1).strip()
+        trait = m.group(2).strip().lower()
+        chars.setdefault(name, set()).add(trait)
+    return chars
+
+
+def _find_trait_swap_candidates(text):
+    """Heuristic: detect when a trait word introduced near one character
+    appears later near a different character.
+
+    Returns list of dicts describing suspected swaps.
+    """
+    char_traits = _extract_character_traits(text)
+    if len(char_traits) < 2:
+        return []
+
+    suspects = []
+    sentences = re.split(r'(?<=[.!?])\s+', text)
+
+    for sent in sentences:
+        # Find character names mentioned in this sentence.
+        names_in_sent = []
+        for name in char_traits:
+            if re.search(r'\b' + re.escape(name) + r'\b', sent):
+                names_in_sent.append(name)
+
+        if len(names_in_sent) != 1:
+            continue  # ambiguous or no character — skip
+        active_name = names_in_sent[0]
+
+        # Check if this sentence applies a trait-keyword that was introduced for
+        # a DIFFERENT character.
+        for other_name, other_traits in char_traits.items():
+            if other_name == active_name:
+                continue
+            for trait in other_traits:
+                # Check trait keywords appear in this sentence.
+                trait_words = set(re.findall(r'\b\w{4,}\b', trait))
+                for tw in trait_words:
+                    if re.search(r'\b' + re.escape(tw) + r'\b', sent, re.IGNORECASE):
+                        suspects.append({
+                            "active_char": active_name,
+                            "trait_owner": other_name,
+                            "trait": trait,
+                            "keyword": tw,
+                            "sentence": sent.strip()[:200],
+                        })
+                        break
+    return suspects
+
+
+def find_continuity_issues(stories):
+    """Run the character-trait swap heuristic on each story.
+
+    Returns list of { index, title, suspects: [...] } for stories with issues.
+    """
+    out = []
+    for i, s in enumerate(stories or []):
+        if not isinstance(s, dict):
+            continue
+        text = (s.get("text") or "").strip()
+        if not text:
+            continue
+        suspects = _find_trait_swap_candidates(text)
+        if suspects:
+            out.append({
+                "index": i,
+                "title": s.get("title", "Untitled"),
+                "suspects": suspects,
+            })
+    return out
+
+
+def build_continuity_rewrite_prompt(stories, issues):
+    """Build an LLM prompt to fix character-trait swap issues."""
+    problems = []
+    for iss in issues:
+        idx = iss.get("index", 0)
+        title = iss.get("title", "Untitled")
+        for s in iss.get("suspects", []):
+            problems.append(
+                f"- Story #{idx+1} \"{title}\": The trait \"{s['trait']}\" was introduced "
+                f"for {s['trait_owner']}, but sentence near {s['active_char']} uses "
+                f"keyword \"{s['keyword']}\". Possible swap."
+            )
+
+    payload = json.dumps(stories, ensure_ascii=False, indent=2)
+    return f"""You are editing a list of 10 original pulp fantasy stories.
+
+Goal: Fix character-trait continuity errors where a trait, role, or oath
+introduced for one named character is accidentally applied to a different
+character later in the same story.
+
+SUSPECTED ISSUES:
+{chr(10).join(problems)}
+
+EDITING INSTRUCTIONS:
+- For each flagged story, re-read it carefully. If a trait (oath, profession,
+  curse, bond, etc.) introduced for Character A is later applied to Character B,
+  fix it so the trait stays with the correct character throughout.
+- If the heuristic flagged a false positive (no actual error), leave that story unchanged.
+- Do NOT change stories that have no issues.
+- Preserve the overall tone and ~120-160 word length per story.
+- Keep JSON structure identical: a list of 10 objects with keys title/subgenre/text.
+- Respond with ONLY valid JSON; no prose.
+
+STORIES JSON INPUT:
+{payload}
+"""
 
 
 def find_canon_collisions(stories, lore, allowed_names_lower):
@@ -5433,6 +5584,42 @@ def main():
             except (ValueError, json.JSONDecodeError) as e:
                 print(f"WARNING: Could not parse sexual-safety rewrite JSON: {e}", file=sys.stderr)
                 print("Continuing to next rewrite attempt with original stories.", file=sys.stderr)
+
+    # ── Character-trait continuity check ─────────────────────────────────
+    if ENABLE_CONTINUITY_CHECK:
+        for attempt in range(max(0, CONTINUITY_MAX_REWRITES) + 1):
+            issues = find_continuity_issues(stories)
+            if not issues:
+                if attempt == 0:
+                    print("\u2713 Continuity check: no character-trait swaps detected")
+                break
+            if attempt >= max(0, CONTINUITY_MAX_REWRITES):
+                total_suspects = sum(len(i.get("suspects", [])) for i in issues)
+                print(f"WARNING: Continuity check found {total_suspects} suspected trait swap(s) after {attempt} rewrite(s); proceeding anyway.", file=sys.stderr)
+                for iss in issues:
+                    for s in iss.get("suspects", []):
+                        print(f"  - Story #{iss['index']+1} \"{iss['title']}\": "
+                              f"trait \"{s['trait']}\" ({s['trait_owner']}) used near {s['active_char']}",
+                              file=sys.stderr)
+                break
+            total_suspects = sum(len(i.get("suspects", [])) for i in issues)
+            print(f"\u26a0\ufe0f Continuity check: {total_suspects} suspected trait swap(s); rewriting (attempt {attempt+1}/{CONTINUITY_MAX_REWRITES})...")
+            rewrite_msg = client.messages.create(
+                model=MODEL,
+                max_tokens=4096,
+                messages=[{"role": "user", "content": build_continuity_rewrite_prompt(stories, issues)}],
+            )
+            rewrite_raw = rewrite_msg.content[0].text.strip()
+            try:
+                revised = parse_json_response(rewrite_raw)
+                revised_items = extract_story_items(revised) or []
+                revised_stories = [coerce_story_dict(s) for s in revised_items[:NUM_STORIES]]
+                if len(revised_stories) == len(stories):
+                    stories = revised_stories
+                    print("\u2713 Continuity rewrite applied")
+            except (ValueError, json.JSONDecodeError) as e:
+                print(f"WARNING: Could not parse continuity rewrite JSON: {e}", file=sys.stderr)
+                print("Continuing with original stories.", file=sys.stderr)
 
     # ── Collision renamer: prevent accidental canon name reuse ───────────
     collisions = find_canon_collisions(stories, lore, allowed_names_lower)
