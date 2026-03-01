@@ -492,7 +492,7 @@
       ]
     },
     {
-      "name": "Vex the Curse-Bearer",
+      "name": "Vex the Shade-Merchant",
       "tagline": "Cursed. Brutal. Alone.",
       "role": "Mercenary",
       "status": "Active",
@@ -509,7 +509,7 @@
       ],
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
-      "appearances": 3,
+      "appearances": 4,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -522,10 +522,15 @@
         {
           "date": "2026-02-26",
           "title": "Shadows for Sale"
+        },
+        {
+          "date": "2026-02-28",
+          "title": "The Shade-Merchant's Gambit"
         }
       ],
       "aliases": [
-        "Vex"
+        "Vex",
+        "Vex the Curse-Bearer"
       ]
     },
     {
@@ -987,8 +992,16 @@
       ],
       "first_story": "Shadows for Sale",
       "first_date": "2026-02-26",
-      "appearances": 2,
+      "appearances": 4,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Crimson Covenant of Vex-Karthul"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "Vex the Curse-Bearer"
+        },
         {
           "date": "2026-02-26",
           "title": "Shadows for Sale"
@@ -2436,8 +2449,16 @@
       ],
       "first_story": "The Sea-Debt",
       "first_date": "2026-03-01",
-      "appearances": 1,
+      "appearances": 3,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        },
+        {
+          "date": "2026-02-27",
+          "title": "The Tide-Thief's Escape"
+        },
         {
           "date": "2026-03-01",
           "title": "The Sea-Debt"
@@ -2927,7 +2948,7 @@
       "district": "unknown"
     },
     {
-      "name": "Bone Citadel",
+      "name": "The Bone Citadel",
       "tagline": "Living. Breathing. Predatory.",
       "place_type": "fortress",
       "world": "The Known World",
@@ -2936,15 +2957,19 @@
       "status": "active",
       "first_story": "The Warlord's Last Stand",
       "first_date": "2026-02-26",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Siege of the Bone Citadel"
+        },
         {
           "date": "2026-02-26",
           "title": "The Warlord's Last Stand"
         },
         {
-          "date": "2026-02-25",
-          "title": "Siege of the Bone Citadel"
+          "date": "2026-02-28",
+          "title": "The Bone Citadel's Hunger"
         }
       ],
       "hemisphere": "unknown",
@@ -2953,7 +2978,10 @@
       "realm": "unknown",
       "province": "unknown",
       "region": "unknown",
-      "district": "unknown"
+      "district": "unknown",
+      "aliases": [
+        "Bone Citadel"
+      ]
     },
     {
       "name": "the steppe",
@@ -3094,15 +3122,19 @@
       "status": "active",
       "first_story": "The Living Garden",
       "first_date": "2026-02-26",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Blood-Price of the Caravan"
+        },
         {
           "date": "2026-02-26",
           "title": "The Living Garden"
         },
         {
-          "date": "2026-02-25",
-          "title": "Blood-Price of the Caravan"
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
         }
       ],
       "hemisphere": "unknown",
@@ -3783,7 +3815,7 @@
       "story_appearances": []
     },
     {
-      "name": "Ashen Wastes",
+      "name": "the Ashen Wastes",
       "tagline": "",
       "place_type": "",
       "world": "The Known World",
@@ -3799,12 +3831,23 @@
       "status": "active",
       "first_story": "The Crown-Thief of Ashen Wastes",
       "first_date": "2026-02-28",
-      "appearances": 1,
+      "appearances": 3,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Blood-Price of the Caravan"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        },
         {
           "date": "2026-03-01",
           "title": "The Crown-Thief of Ashen Wastes"
         }
+      ],
+      "aliases": [
+        "Ashen Wastes"
       ]
     },
     {
@@ -3824,8 +3867,16 @@
       "status": "unknown \u2014 silent after the assault",
       "first_story": "The Bone Citadel's Hunger",
       "first_date": "2026-02-28",
-      "appearances": 1,
+      "appearances": 3,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Siege of the Bone Citadel"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Warlord's Last Stand"
+        },
         {
           "date": "2026-02-28",
           "title": "The Bone Citadel's Hunger"
@@ -3873,7 +3924,7 @@
       "story_appearances": []
     },
     {
-      "name": "the Ossuary",
+      "name": "Ossuary (as Living Entity)",
       "tagline": "Living. Hungry. Consuming.",
       "place_type": "fortress",
       "world": "known_world",
@@ -3895,6 +3946,9 @@
           "date": "2026-02-28",
           "title": "The Bone Citadel's Hunger"
         }
+      ],
+      "aliases": [
+        "the Ossuary"
       ]
     },
     {
@@ -5304,7 +5358,7 @@
       ]
     },
     {
-      "name": "Lamp of Suroth",
+      "name": "The Lamp of Suroth",
       "tagline": "Iron. Truth-bringer. Costly.",
       "artifact_type": "lamp",
       "origin": "Unknown; rests in the Sunken Ziggurat of Yeng in a niche with an ancient inscription.",
@@ -5319,10 +5373,13 @@
           "date": "2026-02-25",
           "title": "The Lamp of Suroth"
         }
+      ],
+      "aliases": [
+        "Lamp of Suroth"
       ]
     },
     {
-      "name": "Plague-Bringer's Crown",
+      "name": "The Plague-Bringer's Crown",
       "tagline": "Deadly. Transformative. Sealed.",
       "artifact_type": "crown",
       "origin": "Ancient origin; sealed in vault beneath Ostern.",
@@ -5337,6 +5394,9 @@
           "date": "2026-02-25",
           "title": "The Plague-Bringer's Crown"
         }
+      ],
+      "aliases": [
+        "Plague-Bringer's Crown"
       ]
     },
     {
@@ -5358,7 +5418,7 @@
       ]
     },
     {
-      "name": "Lamia's Pearl",
+      "name": "The Lamia's Pearl",
       "tagline": "Legendary. Sought. Untaken.",
       "artifact_type": "pearl",
       "origin": "Guarded by the Lamia in the Sunken Caverns since ancient times.",
@@ -5373,6 +5433,9 @@
           "date": "2026-02-25",
           "title": "The Lamia's Pearl"
         }
+      ],
+      "aliases": [
+        "Lamia's Pearl"
       ]
     },
     {
@@ -5477,7 +5540,12 @@
       "first_story": "",
       "first_date": "2026-02-28",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Plague-Bringer's Crown"
+        }
+      ]
     },
     {
       "name": "The Six Emerald Eyes of Khar-Zul",
@@ -5883,7 +5951,7 @@
       ]
     },
     {
-      "name": "Curse of Artifact Theft",
+      "name": "Curse of Artifact Theft (The Crown of Karesh)",
       "tagline": "Sacred. Ancient. Inescapable.",
       "category": "history",
       "source": "Evidenced by the Crown of Karesh and the Bone Citadel's crown.",
@@ -5896,6 +5964,9 @@
           "date": "2026-02-26",
           "title": "The Copper Thief"
         }
+      ],
+      "aliases": [
+        "Curse of Artifact Theft"
       ]
     },
     {
@@ -5986,11 +6057,15 @@
       "status": "confirmed",
       "first_story": "The Oath-Breaker's Reckoning",
       "first_date": "2026-02-26",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-26",
           "title": "The Oath-Breaker's Reckoning"
+        },
+        {
+          "date": "2026-02-27",
+          "title": "The Broken Oath"
         }
       ]
     },
@@ -6340,7 +6415,12 @@
       "first_story": "",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        }
+      ]
     },
     {
       "name": "Merchant Networks Dealing in Forbidden Goods",
@@ -6486,8 +6566,12 @@
       "status": "confirmed",
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Vex the Curse-Bearer"
+        },
         {
           "date": "2026-02-26",
           "title": "The Scarlet Merchant"
@@ -6723,7 +6807,7 @@
       ]
     },
     {
-      "name": "Merfolk",
+      "name": "merfolk",
       "tagline": "Aquatic. Shape-shifting. Guardians.",
       "type": "creature / spirit",
       "rarity": "rare",
@@ -6731,16 +6815,23 @@
       "status": "active",
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamia's Pearl"
+        },
         {
           "date": "2026-02-27",
           "title": "The Tide-Thief's Escape"
         },
         {
-          "date": "2026-02-25",
-          "title": "The Lamia's Pearl"
+          "date": "2026-03-01",
+          "title": "The Sea-Debt"
         }
+      ],
+      "aliases": [
+        "Merfolk"
       ]
     },
     {
@@ -6761,7 +6852,7 @@
       ]
     },
     {
-      "name": "Lamia",
+      "name": "The Lamia",
       "tagline": "Ancient. Beautiful. Terrible.",
       "type": "creature",
       "rarity": "legendary",
@@ -6783,6 +6874,9 @@
           "date": "2026-03-01",
           "title": "The Sea-Debt"
         }
+      ],
+      "aliases": [
+        "Lamia"
       ]
     },
     {
@@ -6820,7 +6914,7 @@
       ]
     },
     {
-      "name": "wolf-spirit",
+      "name": "Wolf-spirit",
       "tagline": "Antlered. Terrible. Ancient.",
       "type": "spirit / beast",
       "rarity": "legendary",
@@ -6834,6 +6928,9 @@
           "date": "2026-03-01",
           "title": "The Bone-Singer's Lament"
         }
+      ],
+      "aliases": [
+        "wolf-spirit"
       ]
     }
   ],
@@ -6949,8 +7046,12 @@
       "status": "known",
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        },
         {
           "date": "2026-02-27",
           "title": "The Broken Oath"
@@ -7357,11 +7458,15 @@
       "status": "known",
       "first_story": "Vex the Curse-Bearer",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "Vex the Curse-Bearer"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
         }
       ]
     },
@@ -7542,7 +7647,12 @@
       "first_story": "",
       "first_date": "2026-02-26",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
     },
     {
       "name": "Dying Accusation Curse",
@@ -7810,15 +7920,19 @@
       "status": "active",
       "first_story": "Siege of the Bone Citadel",
       "first_date": "2026-02-25",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Siege of the Bone Citadel"
+        },
         {
           "date": "2026-02-26",
           "title": "The Warlord's Last Stand"
         },
         {
-          "date": "2026-02-25",
-          "title": "Siege of the Bone Citadel"
+          "date": "2026-02-28",
+          "title": "The Bone Citadel's Hunger"
         }
       ]
     },
@@ -7840,7 +7954,7 @@
       ]
     },
     {
-      "name": "Plague-Bringer's Crown",
+      "name": "The Plague-Bringer's Crown",
       "tagline": "Ancient. Corrupting. Sealed.",
       "origin": "Unknown antiquity; sealed in vault beneath Ostern.",
       "power": "Grants overwhelming presence and power, enabling victory in desperate circumstances. Causes the wearer to become a figure of absolute dread.",
@@ -7854,6 +7968,9 @@
           "date": "2026-02-25",
           "title": "The Plague-Bringer's Crown"
         }
+      ],
+      "aliases": [
+        "Plague-Bringer's Crown"
       ]
     },
     {
@@ -7937,7 +8054,7 @@
       "story_appearances": []
     },
     {
-      "name": "the Ossuary",
+      "name": "Ossuary (as Living Entity)",
       "tagline": "Living. Hungry. Unkillable.",
       "origin": "Unknown; exists as a natural or magically-created entity",
       "power": "Sentient fortress capable of devouring warriors en masse, rearranging its internal architecture in real-time, and possessing living vessels to pilot as extensions of its will.",
@@ -7951,6 +8068,9 @@
           "date": "2026-02-28",
           "title": "The Bone Citadel's Hunger"
         }
+      ],
+      "aliases": [
+        "the Ossuary"
       ]
     },
     {
@@ -8050,15 +8170,19 @@
       "status": "cursed",
       "first_story": "The Living Garden",
       "first_date": "2026-02-26",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Blood-Price of the Caravan"
+        },
         {
           "date": "2026-02-26",
           "title": "The Living Garden"
         },
         {
-          "date": "2026-02-25",
-          "title": "Blood-Price of the Caravan"
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
         }
       ],
       "world": "The Known World",
@@ -8071,7 +8195,7 @@
       "district": "unknown"
     },
     {
-      "name": "the Steppe",
+      "name": "the steppe",
       "tagline": "Vast. Ancient. Root-bound.",
       "climate": "temperate / arid",
       "terrain": "plains / grassland",
@@ -8097,7 +8221,10 @@
       "realm": "unknown",
       "province": "unknown",
       "region": "the Steppe",
-      "district": "unknown"
+      "district": "unknown",
+      "aliases": [
+        "the Steppe"
+      ]
     },
     {
       "name": "Scorched Wastes",
@@ -8210,7 +8337,12 @@
       "first_story": "",
       "first_date": "2026-02-28",
       "appearances": 1,
-      "story_appearances": [],
+      "story_appearances": [
+        {
+          "date": "2026-02-27",
+          "title": "The Tide-Thief's Escape"
+        }
+      ],
       "world": "The Known World",
       "hemisphere": "unknown",
       "subcontinent": "unknown",
@@ -8258,8 +8390,20 @@
       "notes": "Pelimor's night markets and vaults are integral to the shadow-theft economy. Mira operated here for years.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 2,
+      "appearances": 5,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Blood-Price of the Caravan"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Copper Thief"
+        },
         {
           "date": "2026-02-28",
           "title": "The Shade-Merchant's Gambit"

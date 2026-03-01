@@ -2850,6 +2850,146 @@ def _resolve_character_target(existing_chars: list, incoming_name: str):
     return None
 
 
+# ── Cross-category entity sync ────────────────────────────────────────────
+_ARTICLE_RE = re.compile(r'^(the|a|an)\s+', re.IGNORECASE)
+
+
+def _strip_articles(name: str) -> str:
+    """Strip leading articles for fuzzy cross-category matching."""
+    return _ARTICLE_RE.sub('', name).strip()
+
+
+def sync_cross_category_appearances(codex: dict) -> int:
+    """Sync story_appearances & name across entries that represent the same entity
+    in different codex categories.
+
+    Matching heuristic (must match on *all* of):
+      1. Article-stripped, casefolded name  (e.g. "The Lamia" ↔ "Lamia")
+      2. OR explicit alias overlap.
+
+    When a match is found:
+      • The union of all story_appearances is pushed to every matching entry.
+      • The "canonical" name (longest / most specific) is adopted everywhere.
+      • The appearances count is recomputed.
+
+    Returns the number of entries that were updated.
+    """
+    if not isinstance(codex, dict):
+        return 0
+
+    # Categories that hold named entities with story_appearances.
+    ENTITY_CATS = [
+        "characters", "places", "events", "rituals", "weapons",
+        "artifacts", "factions", "lore", "flora_fauna", "magic",
+        "relics", "regions", "substances", "polities",
+        "hemispheres", "continents", "subcontinents", "realms",
+        "provinces", "districts",
+    ]
+
+    # Build a map: normalised-key → [(category, entry), ...]
+    groups = {}  # type: dict[str, list[tuple[str, dict]]]
+
+    for cat in ENTITY_CATS:
+        items = codex.get(cat)
+        if not isinstance(items, list):
+            continue
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            raw_name = (item.get("name") or "").strip()
+            if not raw_name:
+                continue
+            # Primary key: article-stripped + casefolded
+            key = _strip_articles(_norm_entity_key(raw_name))
+            if not key:
+                continue
+            groups.setdefault(key, []).append((cat, item))
+
+            # Also index by each alias so "The Lamia" alias on characters
+            # links to "Lamia" in flora_fauna.
+            for alias in (item.get("aliases") or []):
+                akey = _strip_articles(_norm_entity_key(alias))
+                if akey and akey != key:
+                    groups.setdefault(akey, []).append((cat, item))
+
+    updated_count = 0
+
+    for key, members in groups.items():
+        if len(members) < 2:
+            continue
+
+        # De-dup (same object can appear under multiple keys).
+        seen_ids = set()
+        unique = []
+        for cat, entry in members:
+            eid = id(entry)
+            if eid not in seen_ids:
+                seen_ids.add(eid)
+                unique.append((cat, entry))
+        if len(unique) < 2:
+            continue
+
+        # ── Union story_appearances across all entries ──────────────
+        all_apps = {}  # (date, title) → dict
+        for _cat, entry in unique:
+            for app in (entry.get("story_appearances") or []):
+                if not isinstance(app, dict):
+                    continue
+                d = str(app.get("date", "") or "").strip()
+                t = str(app.get("title", "") or "").strip()
+                if d and t:
+                    all_apps[(d, t)] = {"date": d, "title": t}
+
+        if not all_apps:
+            continue
+
+        merged_apps = sorted(all_apps.values(), key=lambda a: (a["date"], a["title"]))
+
+        # ── Pick canonical name (longest form, preferring explicit articles) ─
+        names = [(entry.get("name") or "").strip() for _c, entry in unique]
+        canonical = max(names, key=len) if names else ""
+
+        # ── Push updates to each entry ──────────────────────────────
+        for _cat, entry in unique:
+            old_apps = entry.get("story_appearances") or []
+            old_name = (entry.get("name") or "").strip()
+
+            changed = False
+
+            # Sync story_appearances
+            if len(merged_apps) != len(old_apps):
+                entry["story_appearances"] = list(merged_apps)
+                entry["appearances"] = len(merged_apps)
+                changed = True
+            else:
+                # Same length but maybe different content
+                old_set = {(str(a.get("date", "")), str(a.get("title", "")))
+                           for a in old_apps if isinstance(a, dict)}
+                new_set = {(a["date"], a["title"]) for a in merged_apps}
+                if old_set != new_set:
+                    entry["story_appearances"] = list(merged_apps)
+                    entry["appearances"] = len(merged_apps)
+                    changed = True
+
+            # Sync name to canonical form
+            if canonical and old_name != canonical:
+                # Keep the old name as an alias
+                aliases = entry.get("aliases")
+                if not isinstance(aliases, list):
+                    aliases = []
+                if old_name and old_name not in aliases and old_name != canonical:
+                    aliases.append(old_name)
+                # Also add canonical to aliases if not already present
+                entry["aliases"] = aliases
+                entry["name"] = canonical
+                changed = True
+
+            if changed:
+                updated_count += 1
+
+    return updated_count
+
+
 def merge_lore(existing_lore, new_lore, date_key):
     """Merge newly extracted lore into the existing lore, skipping duplicates by name."""
     for category in [
@@ -4023,6 +4163,11 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
     # meaningful hierarchy even when some levels are unknown.
     ensure_place_parent_chain(codex)
     enforce_continent_limit(codex)
+
+    # Sync story_appearances & names across categories for the same entity.
+    synced = sync_cross_category_appearances(codex)
+    if synced:
+        print(f"\u2713 Cross-category sync: updated {synced} entries")
 
     codex["last_updated"] = date_key
     with open(CODEX_FILE, "w", encoding="utf-8") as f:
