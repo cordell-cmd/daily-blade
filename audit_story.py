@@ -149,7 +149,7 @@ def main() -> int:
 
     # Merge into lore.json (same as daily generation and backfill).
     existing_lore = gs.load_lore()
-    gs.merge_lore(lore, existing_lore)
+    gs.merge_lore(existing_lore, lore, date_key)
     gs.save_lore(existing_lore, date_key)
 
     # Merge into codex.json (writes the file).
