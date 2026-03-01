@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-28",
+  "last_updated": "2026-03-01",
   "characters": [
     {
       "name": "Vraxen the Knife",
@@ -395,26 +395,35 @@
       ]
     },
     {
-      "name": "Zareth",
+      "name": "Zareth the Astronomer-Prince",
       "tagline": "Scholarly. Visionary. Defiant.",
-      "role": "Astronomer-Prince",
-      "status": "Active",
+      "role": "Astronomer-Prince, Ritualist",
+      "status": "alive but memory-stripped",
       "world": "The Known World",
-      "bio": "A scholarly prince who studied dying stars and communed with the Elder Stones. Rejected cosmic fatalism and vowed to build observatories so mankind could read the new heavens.",
+      "bio": "Zareth spent his life reading the stars until the Violet Conjunction revealed to him that all stars were dying. He swore an oath to find and master the Stellar Rite, spending seven years traveling the known world learning from elders, druids, bone-carvers, and fae-touched hermits. On the night of the next Conjunction, he performed the Rite, sacrificing every joyful memory to birth new stars and save the world.",
       "traits": [
-        "Scholarly",
-        "Visionary",
-        "Defiant"
+        "scholarly",
+        "determined",
+        "self-sacrificing",
+        "star-touched"
       ],
       "first_story": "Zareth Among the Stellar Stones",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "Zareth Among the Stellar Stones"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
         }
-      ]
+      ],
+      "travel_scope": "interrealm",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "Kessa the Thief",
@@ -555,11 +564,15 @@
       ],
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-27",
           "title": "The Shadow-Broker's Debt"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Thief-Lord's Daughter"
         }
       ],
       "travel_scope": "local",
@@ -651,22 +664,27 @@
     {
       "name": "Lich-King Morthaxes",
       "tagline": "Ancient. Patient. Avaricious.",
-      "role": "Lich-King",
-      "status": "undead",
+      "role": "Undead Monarch; Collector",
+      "status": "active",
       "world": "The Known World",
-      "bio": "A long-dead lich-king whose visage is stamped on a cursed hoard of gold. Through a compounding debt-curse and an agent called the Collector, Morthaxes's treasure ruins those who take it and returns to claim what cannot be paid.",
+      "bio": "A powerful undead ruler whose collectors actively seek cursed and magical crowns, including the Crown of Karesh. The Lich-King's interest in the Crown of Karesh motivated the merchant-prince to hide it and hire Tory's crew to secure it.",
       "traits": [
-        "ancient",
-        "patient",
-        "avaricious"
+        "undead",
+        "powerful",
+        "ambitious",
+        "mysterious"
       ],
       "first_story": "The Collector's Due",
       "first_date": "2026-02-27",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-27",
           "title": "The Collector's Due"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
         }
       ],
       "travel_scope": "unknown",
@@ -674,7 +692,8 @@
       "home_region": "unknown",
       "home_realm": "unknown",
       "aliases": [
-        "Morthaxes"
+        "Morthaxes",
+        "Lich-King"
       ]
     },
     {
@@ -810,29 +829,44 @@
     {
       "name": "The Rot-King",
       "tagline": "Decaying sovereign. Unseen. Relentless.",
-      "role": "Warlord / Plague-Lord",
-      "status": "active",
+      "role": "Plague-bearer, Antagonist",
+      "status": "defeated",
       "world": "The Known World",
-      "bio": "A feared warlord whose campaigns spread rot and famine along the borderlands. His forces press against Grimmholt and the Crown's weakening frontiers, turning sieges into slow epidemics of hunger, disease, and despair.",
+      "bio": "The Rot-King is the source or vector of a septic plague that threatened to blacken and destroy the village of Drowned Hollows. The plague was lifted through Kess's bargain with the wolf-spirit, but the Rot-King's nature and current state remain mysterious.",
       "traits": [
-        "patient",
-        "relentless",
-        "necrotic influence",
-        "expansionist"
+        "pestilential",
+        "corrupting",
+        "lethal"
       ],
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
-      "appearances": 1,
+      "appearances": 4,
       "story_appearances": [
         {
           "date": "2026-02-27",
           "title": "The Broken Oath"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Courtier's Secret"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Goblin-King's Mercy"
         }
       ],
       "aliases": [
         "Rot-King",
         "the Rot-King"
-      ]
+      ],
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "Nara the Tide-Thief",
@@ -1351,25 +1385,41 @@
     {
       "name": "The Lamia",
       "tagline": "Ancient. Lonely. Powerful.",
-      "role": "Creature of Power",
+      "role": "Spirit-sovereign, Guardian",
       "status": "active",
       "world": "The Known World",
-      "bio": "An ancient, beautiful creature of incomparable power who guarded the Sunken Caverns for centuries in isolation. Her loneliness had endured for so long that her name was forgotten. She offered Torven tears of luminescent power that could grant control over water, and was freed from her solitude by his compassion.",
+      "bio": "The Lamia is a guardian spirit of the Sunken Caverns, coiled around a throne of bone. For centuries she was known only as a monster to be feared, watched only by the dead. Mardoc's arrival transformed her perception: by offering her eternal witness through his maps and inscribing her true name in silver leaf, he gave her sovereignty and choice. She now appears in taverns across the world not as a monster but as a sovereign.",
       "traits": [
         "ancient",
         "lonely",
-        "powerful",
-        "emotionally vulnerable",
-        "capable of great magic"
+        "proud",
+        "laughing (like breaking glass and singing whales)",
+        "now-witnessed"
       ],
       "first_story": "The Lamia's Pearl",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Lamia's Pearl"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Cartographer's Gambit"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Sea-Debt"
         }
+      ],
+      "travel_scope": "local",
+      "home_place": "Sunken Caverns",
+      "home_region": "Sunken Caverns",
+      "home_realm": "unknown",
+      "aliases": [
+        "the Lamia",
+        "Lamia"
       ]
     },
     {
@@ -1998,6 +2048,584 @@
         {
           "date": "2026-02-28",
           "title": "The City That Remembers"
+        }
+      ]
+    },
+    {
+      "name": "Kess",
+      "aliases": [
+        "Kess of the Drowned Hollows"
+      ],
+      "tagline": "Silent. Sacrifice. Songkeeper.",
+      "role": "Bone-singer",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "Drowned Hollows",
+      "home_region": "Drowned Hollows",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "Kess is a bone-singer of the Drowned Hollows who preserved her village from the Rot-King's plague by bargaining with a wolf-spirit\u2014trading her voice for the lives of her people. She now teaches the old songs through gesture and hand-craft, her throat burned by ancient magic. Her sacrifice transformed her from a keeper of tradition into a living testament to the cost of salvation.",
+      "traits": [
+        "silent",
+        "self-sacrificial",
+        "ritualist",
+        "keeper-of-old-ways",
+        "mute-but-eloquent"
+      ],
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        }
+      ]
+    },
+    {
+      "name": "Mardoc the Cartographer",
+      "aliases": [
+        "Mardoc"
+      ],
+      "tagline": "Curious. Chronicler. Diplomat.",
+      "role": "Cartographer",
+      "status": "active",
+      "travel_scope": "interrealm",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "Mardoc is a renowned cartographer who has mapped half the Known World and descended into the Sunken Caverns to map the Lamia's realm. Rather than confront the Lamia with steel, he offered her something more valuable: eternal witness through his maps and her true name inscribed in silver leaf. His success transformed him into a legend and reshaped how the world perceives the Lamia.",
+      "traits": [
+        "curious",
+        "clever-tongued",
+        "fearless",
+        "diplomatic",
+        "ambitious"
+      ],
+      "first_story": "The Cartographer's Gambit",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Cartographer's Gambit"
+        }
+      ]
+    },
+    {
+      "name": "Silene",
+      "aliases": [
+        "Silene the Bright"
+      ],
+      "tagline": "Forger. Thief. Reborn.",
+      "role": "Shadow-broker, Steel-forger",
+      "status": "active",
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "Silene is the daughter of Kael the Nameless, a legendary shadow-broker. Rejecting her father's path of shadow-trading, she was forced to enter that world when threatened with her master's burning. She stole a shadow from the Collectors themselves using steel and cunning, bound it into her father's ledger, and forged her own identity as Silene the Bright\u2014a shadow-broker who deals in truth rather than darkness.",
+      "traits": [
+        "resourceful",
+        "defiant",
+        "steel-crafted",
+        "truth-seeker",
+        "clever"
+      ],
+      "first_story": "The Thief-Lord's Daughter",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Thief-Lord's Daughter"
+        }
+      ]
+    },
+    {
+      "name": "Wolf-spirit",
+      "aliases": [],
+      "tagline": "Antlered. Bargaining. Merciful.",
+      "role": "Spirit, Covenant-maker",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "deep forest",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "The wolf-spirit is an ancient being of the deep forest, antlered and terrible in appearance, that emerged from shadow to bargain with Kess. It offered her the lifting of the Rot-King's plague in exchange for her voice\u2014a debt paid in silence. The spirit represents the old magic that predates kingdoms.",
+      "traits": [
+        "ancient",
+        "merciful",
+        "bargain-keeper",
+        "antlered",
+        "shadowy"
+      ],
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        }
+      ]
+    },
+    {
+      "name": "Lady Thressa",
+      "aliases": [
+        "Thressa"
+      ],
+      "tagline": "Voiceless. Grieving. Resolute.",
+      "role": "Widow; Sacrifice",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A widow at twenty-three whose husband fell to rot-plague, Thressa made a bargain with the Emperor's alchemist: her tongue in exchange for restoration honey to resurrect him. She drank the elixir without hesitation, watching her husband rise as an undead, ravenous thing. When his hunger became unbearable, she burned his portrait and wrote his name in her own blood across his grave, shattering the alchemy\u2014but losing her voice forever.",
+      "traits": [
+        "selfless",
+        "silent",
+        "determined",
+        "tragic"
+      ],
+      "first_story": "The Widow's Bargain",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Widow's Bargain"
+        }
+      ]
+    },
+    {
+      "name": "Emperor's alchemist",
+      "aliases": [],
+      "tagline": "Cunning. Manipulative. Practical.",
+      "role": "Alchemist; Schemer",
+      "status": "active",
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "An alchemist in service to the Emperor who offers Thressa restoration honey\u2014a potion capable of undoing death itself. The alchemist's price is her tongue, claiming that names anchor the living to the world and must be removed for the magic to hold true. The alchemist's true goal is to use Thressa as an unwitting test subject to prove the resurrection magic works.",
+      "traits": [
+        "cunning",
+        "callous",
+        "knowledgeable",
+        "manipulative"
+      ],
+      "first_story": "The Widow's Bargain",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Widow's Bargain"
+        }
+      ]
+    },
+    {
+      "name": "Tory the Redhand",
+      "aliases": [
+        "Tory"
+      ],
+      "tagline": "Cunning. Ruthless. Pragmatic.",
+      "role": "Thief; Crew Leader",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "Ashen Wastes",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A thief and crew leader who led an expedition across the Scorched Flats to recover the Crown of Karesh from the Ruins of Old Keth. Motivated by a merchant-prince's promise of one million gold pieces, Tory assembled a skilled crew and successfully breached the crown-vault, but abandoned her teammate Gareth when the curse began to seep into his blood, sending him north with the crown while she vanished into the wastes.",
+      "traits": [
+        "bold",
+        "ruthless",
+        "practical",
+        "decisive"
+      ],
+      "first_story": "The Crown-Thief of Ashen Wastes",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
+        }
+      ]
+    },
+    {
+      "name": "Gareth",
+      "aliases": [],
+      "tagline": "Skilled. Cursed. Doomed.",
+      "role": "Locksmith; Dwarf",
+      "status": "cursed",
+      "travel_scope": "regional",
+      "home_place": "Deepvault",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A dwarf locksmith who worked the Deepvault and was recruited by Tory to breach the crown-vault at the Ruins of Old Keth. Gareth successfully used meteor-iron lockpicks to open the vault, but proximity to the Crown of Karesh caused its curse to seep into his blood. Released from his oath by Tory, he limped northward carrying the crown-wrapped bundle, tasked with breaking the curse however he could.",
+      "traits": [
+        "skilled",
+        "weakening",
+        "determined",
+        "doomed"
+      ],
+      "first_story": "The Crown-Thief of Ashen Wastes",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
+        }
+      ]
+    },
+    {
+      "name": "Mell",
+      "aliases": [],
+      "tagline": "Fae-blooded. Sharp-eyed. Loyal.",
+      "role": "Scout; Fae-touched",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "Ashen Wastes",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A scout with fae-blood who could see in starlight and sense magical dangers. Recruited by Tory for the crown-vault expedition, Mell used her fae-sight to navigate around the vault's animate statues and facilitate the successful theft of the Crown of Karesh. She escaped with Tory into the Scorched Flats after the heist.",
+      "traits": [
+        "perceptive",
+        "magical",
+        "skilled",
+        "loyal"
+      ],
+      "first_story": "The Crown-Thief of Ashen Wastes",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
+        }
+      ]
+    },
+    {
+      "name": "Kovin",
+      "aliases": [],
+      "tagline": "Bound. Skilled. Oathsworn.",
+      "role": "Sellsword; Oathbound",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "Ashen Wastes",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A sellsword bound to Tory by oath who participated in the crown-vault heist. Kovin helped breach the Ruins of Old Keth and escape with the Crown of Karesh, vanishing into the Scorched Flats with Tory and Mell after abandoning Gareth.",
+      "traits": [
+        "oathbound",
+        "skilled",
+        "loyal",
+        "pragmatic"
+      ],
+      "first_story": "The Crown-Thief of Ashen Wastes",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
+        }
+      ]
+    },
+    {
+      "name": "merchant-prince",
+      "aliases": [],
+      "tagline": "Wealthy. Cautious. Secretive.",
+      "role": "Noble; Collector",
+      "status": "active",
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A merchant-prince who hid the Crown of Karesh not to wear it himself but to keep it from the Lich-King's collectors. He offered one million gold pieces to any crew that could retrieve the crown from the Ruins of Old Keth within the new moon, hiring Tory and her team for the job.",
+      "traits": [
+        "wealthy",
+        "cautious",
+        "secretive",
+        "political"
+      ],
+      "first_story": "The Crown-Thief of Ashen Wastes",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
+        }
+      ]
+    },
+    {
+      "name": "Captain Nerida",
+      "aliases": [
+        "Nerida"
+      ],
+      "tagline": "Defiant. Transformed. Bound.",
+      "role": "Captain; Merfolk-bound",
+      "status": "active",
+      "travel_scope": "interrealm",
+      "home_place": "port",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A sea captain who stole a pearl from the Lamia's vault twenty years ago as proof of survival, incurring a magical debt with the merfolk. When the merfolk came to collect, Nerida dove into the sea before they could choose her crew's fate, accepting transformation into a merfolk form with gills and enhanced deep-sight. She now captains a deep-navy vessel for the merfolk, bound by magic and debt, but surfaces near her old crew's port monthly to leave carved coral messages.",
+      "traits": [
+        "defiant",
+        "selfless",
+        "transformed",
+        "bound"
+      ],
+      "first_story": "The Sea-Debt",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Sea-Debt"
+        }
+      ]
+    },
+    {
+      "name": "merfolk",
+      "aliases": [],
+      "tagline": "Sleek. Terrible. Magical.",
+      "role": "Aquatic People; Sentient",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "Sunken Caverns",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "Sentient aquatic beings who dwell in cities of coral and shell beneath the sea. The merfolk maintain vaults, command deep-navies, and enforce magical debts through summoned storms. They offered Nerida a bargain: her crew's service for a season or her own life, slowly drowned. Instead, Nerida dove and was transformed into a merfolk form, becoming a captain in their deep-navy.",
+      "traits": [
+        "magical",
+        "ancient",
+        "just",
+        "formidable"
+      ],
+      "first_story": "The Sea-Debt",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Sea-Debt"
+        }
+      ]
+    },
+    {
+      "name": "Lord Caevan",
+      "aliases": [
+        "Caevan"
+      ],
+      "tagline": "Changeling. Betrayer. Redeemed.",
+      "role": "Advisor, Court Strategist",
+      "status": "active",
+      "travel_scope": "realmwide",
+      "home_place": "Queen's Court",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A fae-born changeling sworn to the Seelie Court, Caevan served as the Queen's closest advisor for fifteen years while sabotaging her kingdom from within. When the Rot-King's forces threatened the realm, magical chains compelled him to counsel surrender, but he broke free by biting his own tongue nearly in half. He confessed his true nature and betrayal to the Queen, and was offered redemption through honest service.",
+      "traits": [
+        "fae-born",
+        "changeling",
+        "conflicted",
+        "strategist",
+        "redeemed"
+      ],
+      "first_story": "The Courtier's Secret",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Courtier's Secret"
+        }
+      ]
+    },
+    {
+      "name": "The Queen",
+      "aliases": [],
+      "tagline": "Merciful. Strategic. Betrayed.",
+      "role": "Monarch, Ruler",
+      "status": "active",
+      "travel_scope": "realmwide",
+      "home_place": "Queen's Court",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "An unnamed Queen who trusted Lord Caevan as her closest advisor for fifteen years, unaware of his fae-born nature and hidden allegiance to the Seelie Court. Upon his confession of betrayal, she chose mercy over execution, offering him redemption and enlisting him to help wage war against the Rot-King's forces.",
+      "traits": [
+        "merciful",
+        "strategic",
+        "perceptive",
+        "regal"
+      ],
+      "first_story": "The Courtier's Secret",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Courtier's Secret"
+        }
+      ]
+    },
+    {
+      "name": "Bryn the Dwarven Smith",
+      "aliases": [
+        "Bryn"
+      ],
+      "tagline": "Mastercrafter. Lonely. Loved.",
+      "role": "Blacksmith, Weaponsmith",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "Her forge",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A Dwarven smith who had forged weapons for three kingdoms and sworn an oath to her craft, believing love would dull her focus. When Ashara the Archer arrived with a broken bow, Bryn deliberately delayed repairs to extend their time together, eventually admitting her deception and feelings.",
+      "traits": [
+        "dwarven",
+        "mastercrafter",
+        "sworn to craft",
+        "lonely",
+        "devoted"
+      ],
+      "first_story": "The Forge-Witch's Test",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Forge-Witch's Test"
+        }
+      ]
+    },
+    {
+      "name": "Ashara the Archer",
+      "aliases": [
+        "Ashara"
+      ],
+      "tagline": "Grieving. Skilled. Chose love.",
+      "role": "Archer, Warrior",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "An archer who lost her partner in the Siege of Blackthorn and had sworn never to attach herself to another. She brought her broken bow to Bryn for repair and, over weeks of work, fell in love. She had deliberately re-damaged her bow to return to the forge, mirroring Bryn's deception.",
+      "traits": [
+        "archer",
+        "grieving",
+        "skilled",
+        "lonely",
+        "cautious"
+      ],
+      "first_story": "The Forge-Witch's Test",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Forge-Witch's Test"
+        }
+      ]
+    },
+    {
+      "name": "Mogrul",
+      "aliases": [],
+      "tagline": "Tyrant. Desperate. Changed.",
+      "role": "Goblin-King, Ruler of the Warrens",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "Spire of Blackstone",
+      "home_region": "unknown",
+      "home_realm": "Goblin Warrens",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "The iron-fisted ruler of the goblin warrens beneath the Spire of Blackstone, who had conquered underground kingdoms through war and enslaved whole clans. When the Rot-King's plague devastated his people, he sought aid from Aeleth the Veilwright and agreed to transform his empire into a fellowship of free peoples.",
+      "traits": [
+        "goblin",
+        "tyrant",
+        "cunning",
+        "desperate",
+        "transformed"
+      ],
+      "first_story": "The Goblin-King's Mercy",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Goblin-King's Mercy"
+        }
+      ]
+    },
+    {
+      "name": "Aeleth the Veilwright",
+      "aliases": [],
+      "tagline": "Wise. Hermit. Healer.",
+      "role": "Wise-woman, Healer, Shaman",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "The deepest warren sanctuary",
+      "home_region": "Grey Reaches",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A hermit wise-woman dwelling in the Grey Reaches who possessed knowledge of the old songs that could turn back plague-rot. She agreed to teach Mogrul's shamans in exchange for his kingdom becoming a free confederation, and later built a sanctuary in the deepest warren where goblin and human healers work together.",
+      "traits": [
+        "wise",
+        "hermit",
+        "healer",
+        "compassionate",
+        "powerful"
+      ],
+      "first_story": "The Goblin-King's Mercy",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Goblin-King's Mercy"
         }
       ]
     }
@@ -2741,15 +3369,19 @@
       "place_type": "ruin / dungeon",
       "world": "The Known World",
       "atmosphere": "An ancient, haunted labyrinth where corpses sing and forgotten languages echo from stone.",
-      "description": "A vast catacomb system beneath the earth where corpses hang from chains singing mournfully. The catacombs whisper in languages predating humanity and house the corpse of Vulgrim the Damned at their deepest levels.",
-      "status": "active / cursed",
+      "description": "The Singing Catacombs contain a cave wall inscribed in languages predating humanity itself. Within these inscriptions lies the knowledge of the Stellar Rite, which Zareth discovered and copied during his seven-year quest.",
+      "status": "active",
       "first_story": "The Hunger of Grell Ironhand",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Hunger of Grell Ironhand"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
         }
       ],
       "hemisphere": "unknown",
@@ -3165,10 +3797,15 @@
       "atmosphere": "",
       "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
       "status": "active",
-      "first_story": "",
+      "first_story": "The Crown-Thief of Ashen Wastes",
       "first_date": "2026-02-28",
       "appearances": 1,
-      "story_appearances": []
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
+        }
+      ]
     },
     {
       "name": "The Bone Citadel",
@@ -3461,6 +4098,31 @@
         {
           "date": "2026-02-28",
           "title": "The City That Remembers"
+        }
+      ]
+    },
+    {
+      "name": "Mountain",
+      "tagline": "High. Star-touched. Ritual-site.",
+      "place_type": "mountain",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A high elevation beneath the stars, where the sky blazes with cosmic power.",
+      "description": "A mountain where Zareth climbed to perform the Stellar Rite on the night of the Violet Conjunction, ultimately birthing new stars and sacrificing his memories.",
+      "status": "active",
+      "first_story": "The Starfall Oath",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
         }
       ]
     }
@@ -4304,6 +4966,61 @@
           "title": "The Dragon's Bargain"
         }
       ]
+    },
+    {
+      "name": "Violet Conjunction",
+      "tagline": "Celestial. Prophetic. World-altering.",
+      "event_type": "celestial event / prophecy",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "global; visible across the known world",
+      "participants": [
+        "Zareth the Astronomer-Prince",
+        "the stars"
+      ],
+      "outcome": "The stars spoke to Zareth, revealing their imminent death. This triggered Zareth's oath to find and perform the Stellar Rite.",
+      "significance": "The Violet Conjunction represents the moment of cosmic revelation that set the entire narrative in motion; without it, the world would eventually fall into endless night.",
+      "first_story": "The Starfall Oath",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
+        }
+      ]
+    },
+    {
+      "name": "The Starfall Oath",
+      "tagline": "Sworn. Cosmic. Unbreakable.",
+      "event_type": "oath / ritual",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "global",
+      "participants": [
+        "Zareth the Astronomer-Prince"
+      ],
+      "outcome": "Zareth swore to find the Stellar Rite, master it, or die trying. He subsequently spent seven years seeking knowledge and ultimately performed the Rite successfully.",
+      "significance": "This oath commits Zareth to the fate of all stars and the world itself, placing him at the center of cosmic salvation.",
+      "first_story": "The Starfall Oath",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
+        }
+      ]
     }
   ],
   "rituals": [
@@ -4348,6 +5065,27 @@
       "effect": "Each oath Tormund breaks steals something irreplaceable: first taste, then laughter, then memory of his firstborn son. By the twentieth oath, he is hollow.",
       "cost": "The curse is irreversible and permanent. It cannot be lifted\u2014only borne and transformed through new honor.",
       "notes": "The cursewright designed this curse to teach that oaths are bonds, not chains. It is elegant in its mechanism: loss is cumulative and specific to each oath."
+    },
+    {
+      "name": "Stellar Rite",
+      "tagline": "Star-birthing. Memory-sacrificial. Ancient.",
+      "first_story": "The Starfall Oath",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
+        }
+      ],
+      "ritual_type": "sacrifice / binding / summoning",
+      "performed_by": [
+        "Zareth the Astronomer-Prince"
+      ],
+      "requirements": "Knowledge of ancient languages predating humanity; performance beneath the Violet Conjunction; a mountain or high location beneath the stars.",
+      "effect": "Births new stars from the ashes of dying ones, preventing the world from falling into endless night and extending the world's lifespan by ten thousand years.",
+      "cost": "The caster must sacrifice every moment of joy, every love, every triumph, and every small beauty\u2014effectively stripping them of all positive memories.",
+      "notes": "The Rite was discovered inscribed in the Singing Catacombs in languages predating humanity. Zareth learned it through seven years of study with druids, bone-carvers, and fae-touched hermits."
     }
   ],
   "weapons": [
@@ -5828,6 +6566,22 @@
           "title": "The City That Remembers"
         }
       ]
+    },
+    {
+      "name": "Old Magic",
+      "tagline": "Prediluvian. Powerful. Forgotten.",
+      "category": "history / magic",
+      "source": "Ancient inscriptions in the Singing Catacombs and teachings from druids, bone-carvers, and fae-touched hermits",
+      "status": "partially confirmed",
+      "first_story": "The Starfall Oath",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
+        }
+      ]
     }
   ],
   "flora_fauna": [
@@ -6727,6 +7481,23 @@
         {
           "date": "2026-02-26",
           "title": "The Scarlet Merchant"
+        }
+      ]
+    },
+    {
+      "name": "Stellar Rite",
+      "tagline": "Star-birthing. Memory-consuming. World-saving.",
+      "type": "ritual",
+      "element": "stellar / cosmic",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "The Starfall Oath",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
         }
       ]
     }
