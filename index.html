@@ -284,6 +284,12 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .story-modal-text { font-size: .92rem; color: var(--aged); line-height: 1.75; text-align: justify; hyphens: auto; margin-top: .75rem; white-space: pre-wrap; }
 .story-modal-text::first-letter { float: left; font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 3.1rem; line-height: .75; padding-right: .12em; color: var(--gold); text-shadow: 2px 2px 4px rgba(0,0,0,.7); }
 
+/* Highlight-to-categorize floating button (dev mode) */
+.categorize-fab { position: absolute; z-index: 200; display: none; padding: .32rem .7rem; font-family: 'Cinzel', serif; font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; background: var(--blood); color: var(--parchment); border: 1px solid var(--gold); border-radius: 3px; cursor: pointer; box-shadow: 0 4px 14px rgba(0,0,0,.6); white-space: nowrap; transition: opacity .15s, background .15s; }
+.categorize-fab:hover { background: var(--gold); color: var(--ink); }
+.categorize-fab.visible { display: block; }
+.categorize-fab:disabled { opacity: .5; cursor: wait; }
+
 /* Codex modal body should not inherit story typography */
 .codex-modal-body { margin-top: .75rem; }
 .codex-modal-body .codex-card:hover { transform: none; box-shadow: 0 3px 16px rgba(0,0,0,.45); }
@@ -338,6 +344,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 <div class="story-modal-overlay" id="story-modal-overlay" aria-hidden="true"></div>
 <div class="story-modal" id="story-modal" role="dialog" aria-label="Story preview" aria-modal="true">
   <div class="story-modal-panel" id="story-modal-panel">
+    <button class="categorize-fab" id="categorize-fab" title="Categorize highlighted text into codex">⚔ Categorize</button>
     <div class="story-modal-top">
       <div>
         <div class="story-modal-title" id="story-modal-title">—</div>
@@ -1957,6 +1964,9 @@ function closeStoryModal() {
     delete t.dataset.storyTitle;
     delete t.dataset.storyDate;
   }
+  // Hide categorize button
+  const fab = document.getElementById('categorize-fab');
+  if (fab) fab.classList.remove('visible');
 }
 
 function openStoryModalSkeleton() {
@@ -3379,6 +3389,122 @@ document.addEventListener('keydown', (e) => {
     openStoryModalByAppearance(app.date, app.title, { appearances: STORY_MODAL_APPEARANCES, index: nextIdx });
   }
 });
+
+// ── Highlight-to-Categorize (dev mode) ──────────────────────────────
+async function dispatchExtractViaProxy(dateKey, title, highlightedText) {
+  let proxyUrl = getDevAuditProxyUrl();
+  if (!proxyUrl) throw new Error('Audit proxy not configured');
+  // Convert /audit URL to /extract
+  proxyUrl = proxyUrl.replace(/\/audit\/?$/, '/extract');
+
+  const headers = { 'Content-Type': 'application/json' };
+  const auth = getDevAuditProxyAuth();
+  if (auth) headers['X-Dev-Auth'] = auth;
+
+  const res = await fetch(proxyUrl, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ date: dateKey, title: title, text: highlightedText }),
+  });
+  if (!res.ok) {
+    let msg = '';
+    try { const j = await res.json(); msg = j && (j.error || j.message) ? String(j.error || j.message) : ''; } catch (e) { msg = ''; }
+    throw new Error(`Extract proxy ${res.status}${msg ? `: ${msg}` : ''}`);
+  }
+  return true;
+}
+
+// Show/hide "Categorize" FAB when user selects text in the story modal (dev mode only).
+(function initCategorizeFab() {
+  const fab = document.getElementById('categorize-fab');
+  const panel = document.getElementById('story-modal-panel');
+  const textEl = document.getElementById('story-modal-text');
+  if (!fab || !panel || !textEl) return;
+
+  let pendingSelection = '';
+
+  function hideIfEmpty() {
+    const sel = window.getSelection();
+    const txt = sel ? String(sel.toString()).trim() : '';
+    if (!txt) { fab.classList.remove('visible'); pendingSelection = ''; }
+  }
+
+  // On mouseup inside the story text, check for selection.
+  panel.addEventListener('mouseup', (e) => {
+    if (!isDeveloperMode()) return;
+    // Small delay to let the selection finalize.
+    setTimeout(() => {
+      const sel = window.getSelection();
+      const txt = sel ? String(sel.toString()).trim() : '';
+      if (!txt || txt.length < 2) { fab.classList.remove('visible'); pendingSelection = ''; return; }
+
+      // Position the FAB near the end of the selection.
+      const range = sel.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      const panelRect = panel.getBoundingClientRect();
+
+      fab.style.top = (rect.bottom - panelRect.top + panel.scrollTop + 6) + 'px';
+      fab.style.left = Math.min(
+        Math.max(rect.left - panelRect.left, 8),
+        panelRect.width - 140
+      ) + 'px';
+
+      pendingSelection = txt;
+      fab.disabled = false;
+      fab.textContent = '\u2694 Categorize';
+      fab.classList.add('visible');
+    }, 10);
+  });
+
+  // Hide when clicking elsewhere or scrolling.
+  document.addEventListener('mousedown', (e) => {
+    if (e.target === fab) return;
+    // Don't immediately hide — let mouseup handler decide.
+    setTimeout(hideIfEmpty, 120);
+  });
+
+  // Handle the categorize click.
+  fab.addEventListener('click', async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const highlighted = pendingSelection;
+    if (!highlighted) return;
+
+    const storyDate = textEl.dataset.storyDate || '';
+    const storyTitle = textEl.dataset.storyTitle || '';
+    if (!storyDate || !storyTitle) {
+      fab.textContent = '\u2717 No story context';
+      setTimeout(() => { fab.classList.remove('visible'); }, 1500);
+      return;
+    }
+
+    fab.disabled = true;
+    fab.textContent = '\u231B Queuing\u2026';
+
+    try {
+      await dispatchExtractViaProxy(storyDate, storyTitle, highlighted);
+      fab.textContent = '\u2713 Queued!';
+      setTimeout(() => {
+        fab.classList.remove('visible');
+        // Refresh codex after ~8s to show the new entity.
+        setTimeout(async () => {
+          try {
+            invalidateCodexCache();
+            await ensureCodexDataLoaded();
+            if (codexLoaded) await loadCodex(true);
+            enhanceStoryEntityBadges();
+          } catch (_) { /* non-fatal */ }
+        }, 8000);
+      }, 1800);
+    } catch (err) {
+      console.error('Extract failed:', err);
+      fab.textContent = '\u2717 ' + ((err && err.message) ? String(err.message).slice(0, 40) : 'Failed');
+      setTimeout(() => { fab.classList.remove('visible'); }, 3000);
+    } finally {
+      pendingSelection = '';
+    }
+  });
+})();
 
 // ── Boot ─────────────────────────────────────────────────────────────
 document.getElementById('today-date').textContent = formatDate(todayStr());

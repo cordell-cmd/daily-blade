@@ -4,6 +4,9 @@
  * POST /audit
  * Body: { "date": "YYYY-MM-DD", "title": "Story Title" }
  *
+ * POST /extract
+ * Body: { "date": "YYYY-MM-DD", "title": "Story Title", "text": "Highlighted text" }
+ *
  * Required:
  *  - GH_TOKEN (secret)
  *  - GH_OWNER (var)
@@ -59,7 +62,7 @@ export default {
         JSON.stringify({
           ok: true,
           service: 'daily-blade-audit-proxy',
-          endpoints: { audit: 'POST /audit' },
+          endpoints: { audit: 'POST /audit', extract: 'POST /extract' },
           configured: {
             GH_TOKEN: !!env.GH_TOKEN,
             GH_OWNER: !!owner,
@@ -72,13 +75,18 @@ export default {
       );
     }
 
-    if (request.method !== 'POST' || normalizedPath !== '/audit') {
+    // ── Supported POST routes ──────────────────────────────────────
+    const isAudit   = request.method === 'POST' && normalizedPath === '/audit';
+    const isExtract = request.method === 'POST' && normalizedPath === '/extract';
+
+    if (!isAudit && !isExtract) {
       return new Response(JSON.stringify({ error: 'Not found' }), {
         status: 404,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
       });
     }
 
+    // ── Auth check ────────────────────────────────────────────────
     if (env.DEV_AUTH_TOKEN) {
       const got = request.headers.get('X-Dev-Auth') || '';
       if (got !== env.DEV_AUTH_TOKEN) {
@@ -96,8 +104,9 @@ export default {
       body = null;
     }
 
-    const date = String(body && body.date ? body.date : '').trim();
+    const date  = String(body && body.date  ? body.date  : '').trim();
     const title = String(body && body.title ? body.title : '').trim();
+    const text  = String(body && body.text  ? body.text  : '').trim();
 
     if (!date || !title) {
       return new Response(JSON.stringify({ error: 'Missing date/title' }), {
@@ -106,14 +115,25 @@ export default {
       });
     }
 
+    if (isExtract && !text) {
+      return new Response(JSON.stringify({ error: 'Missing text (highlighted text to categorize)' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
+      });
+    }
+
+    // ── Resolve config ────────────────────────────────────────────
     const owner = cleanText(env.GH_OWNER);
     const repo = cleanText(env.GH_REPO);
-    const workflowInput = cleanText(env.GH_WORKFLOW_FILE) || 'audit.yml';
-    const workflow = workflowInput
-      .replace(/^\s*\.?\/?\.github\/workflows\//, '')
-      .replace(/^\/+/, '')
-      .trim();
     const ref = cleanText(env.GH_REF) || 'main';
+
+    // Pick the workflow file: extract.yml for /extract, audit.yml for /audit.
+    const workflowFile = isExtract
+      ? 'extract.yml'
+      : (cleanText(env.GH_WORKFLOW_FILE) || 'audit.yml')
+          .replace(/^\s*\.?\/?\.github\/workflows\//, '')
+          .replace(/^\/+/, '')
+          .trim();
 
     if (!env.GH_TOKEN || !owner || !repo) {
       return new Response(
@@ -132,7 +152,12 @@ export default {
       );
     }
 
-    const apiUrl = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/actions/workflows/${encodeURIComponent(workflow)}/dispatches`;
+    // ── Build inputs ──────────────────────────────────────────────
+    const inputs = isExtract
+      ? { date, title, text }
+      : { date, title };
+
+    const apiUrl = `https://api.github.com/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/actions/workflows/${encodeURIComponent(workflowFile)}/dispatches`;
 
     const ghRes = await fetch(apiUrl, {
       method: 'POST',
@@ -143,10 +168,7 @@ export default {
         'Authorization': `Bearer ${env.GH_TOKEN}`,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        ref,
-        inputs: { date, title },
-      }),
+      body: JSON.stringify({ ref, inputs }),
     });
 
     if (!ghRes.ok) {
@@ -166,12 +188,7 @@ export default {
         message: msg,
         request_id: requestId,
         raw: raw ? raw.slice(0, 2000) : '',
-        config: {
-          owner,
-          repo,
-          workflow,
-          ref,
-        }
+        config: { owner, repo, workflow: workflowFile, ref },
       }), {
         status: 502,
         headers: { 'Content-Type': 'application/json', ...corsHeaders },
