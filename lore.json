@@ -1314,9 +1314,10 @@
     },
     {
       "id": "kess_drowned_hollows",
-      "name": "Kess",
+      "name": "Kess of the Drowned Hollows",
       "aliases": [
-        "Kess of the Drowned Hollows"
+        "Kess of the Drowned Hollows",
+        "Kess"
       ],
       "tagline": "Silent. Sacrifice. Songkeeper.",
       "role": "Bone-singer",
@@ -1344,7 +1345,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "mardoc_cartographer",
@@ -2559,6 +2560,46 @@
       "notes": "This mountain is significant as the epicenter of the Stellar Rite working.",
       "first_date": "2026-03-01",
       "appearances": 1
+    },
+    {
+      "id": "drowned_hollows",
+      "name": "Drowned Hollows",
+      "tagline": "Silent. Plagued. Mourning.",
+      "place_type": "village",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A community devastated by plague, saved at great cost through an ancient bargain.",
+      "description": "A village where the Rot-King's plague spread, blackening its people with septic rot. It was saved when Kess of the Drowned Hollows bargained with a wolf-spirit in the deep forest, lifting the plague by dawn but at the cost of her voice.",
+      "status": "active",
+      "notes": "The survivors of the plague live here. Kess returned silent to teach them the old songs through gesture.",
+      "first_date": "2026-03-01",
+      "appearances": 1
+    },
+    {
+      "id": "deep_forest",
+      "name": "deep forest",
+      "tagline": "Ancient. Sacred. Wild.",
+      "place_type": "wilderness",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A primal wilderness where ancient magic dwells and beast-spirits emerge from shadow.",
+      "description": "A deep forest where beast-spirits dwell and languages predating kingdoms are sung. It is the home of the wolf-spirit that Kess bargained with\u2014a creature antlered and terrible, the size of a war-horse.",
+      "status": "active",
+      "notes": "Contains old magic and spirits. The tongue sung here predates kingdoms.",
+      "first_date": "2026-03-01",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -2640,6 +2681,39 @@
       "status": "active",
       "notes": "She is capable of threatening kingdoms with fire and honors those who negotiate with courage.",
       "first_date": "2026-02-28",
+      "appearances": 1
+    },
+    {
+      "id": "wolf_spirit_drowned_hollows",
+      "name": "wolf-spirit",
+      "type": "spirit / beast-spirit",
+      "world": "known_world",
+      "description": "A terrible antlered creature the size of a war-horse, dwelling in the deep forest where beast-spirits reside. It emerged from shadow to negotiate Kess's bargain, accepting her voice as payment to lift the plague.",
+      "status": "active",
+      "notes": "A being of the old world, responsive to songs in the ancient tongue. Its bargain was honored\u2014the plague lifted by dawn. Its form is neither fully wolf nor fully natural.",
+      "first_date": "2026-03-01",
+      "appearances": 1
+    },
+    {
+      "id": "rot_king",
+      "name": "Rot-King",
+      "type": "entity / plague-bringer",
+      "world": "known_world",
+      "description": "An entity or force that spreads plague, including the septic rot that blackened the Drowned Hollows. No physical form described, but its plague manifests as blackening septic rot in victims.",
+      "status": "active",
+      "notes": "Plague lifted by Kess's bargain; status after unknown. May be a person, a spirit, or a force.",
+      "first_date": "2026-03-01",
+      "appearances": 1
+    },
+    {
+      "id": "the_crown",
+      "name": "the Crown",
+      "type": "polity / institution",
+      "world": "known_world",
+      "description": "A governing authority that sent a priest to the Drowned Hollows offering divine mercy to the plague-stricken. Kess refused its aid.",
+      "status": "active",
+      "notes": "Represents institutional divine/temporal authority. Kess's refusal of its mercy suggests she valued the old ways over modern governance.",
+      "first_date": "2026-03-01",
       "appearances": 1
     }
   ],
@@ -2873,6 +2947,39 @@
       "notes": "Old Magic predates gods and kingdoms. The Stellar Rite is an example of this primordial power.",
       "first_date": "2026-03-01",
       "appearances": 1
+    },
+    {
+      "id": "tongue_predating_kingdoms",
+      "name": "tongue that predated kingdoms",
+      "tagline": "Primal. Ancient. Powerful.",
+      "category": "legend / language",
+      "source": "Beast-spirits and old places like the deep forest",
+      "status": "confirmed",
+      "notes": "Kess sang the names of the dead in this tongue to call the wolf-spirit. It holds power over nature and spirits.",
+      "first_date": "2026-03-01",
+      "appearances": 1
+    },
+    {
+      "id": "old_songs_singers_dreams",
+      "name": "singing only in dreams",
+      "tagline": "Silent. Sacrifice. Spirit-Touched.",
+      "category": "legend / magic",
+      "source": "The wolf-spirit's bargain with Kess",
+      "status": "confirmed",
+      "notes": "Kess's voice was taken; she now sings the old songs only in dreams. Her throat is burned with ancient magic, rendering her permanently mute.",
+      "first_date": "2026-03-01",
+      "appearances": 1
+    },
+    {
+      "id": "debts_paid_silence",
+      "name": "some debts are paid in silence",
+      "tagline": "Sacrifice. Sacred. Permanent.",
+      "category": "legend / wisdom",
+      "source": "The outcome of Kess's bargain",
+      "status": "confirmed",
+      "notes": "A philosophical reflection on Kess's choice. Suggests that some prices cannot be measured in gold or common currency.",
+      "first_date": "2026-03-01",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -2887,6 +2994,18 @@
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
       "appearances": 1
+    },
+    {
+      "id": "wolf_spirit_beast",
+      "name": "wolf-spirit",
+      "tagline": "Antlered. Terrible. Ancient.",
+      "type": "spirit / beast",
+      "rarity": "legendary",
+      "habitat": "deep forest",
+      "status": "active",
+      "notes": "A creature the size of a war-horse, antlered and terrible, dwelling in the deep forest. Emerged from shadow to bargain with Kess. A being of old magic, responsive to the ancient tongue.",
+      "first_date": "2026-03-01",
+      "appearances": 1
     }
   ],
   "magic": [
@@ -2899,6 +3018,18 @@
       "difficulty": "forbidden",
       "status": "known",
       "notes": "A working of old magic that births new stars. Requires sacrifice of all joyful memories from the caster.",
+      "first_date": "2026-03-01",
+      "appearances": 1
+    },
+    {
+      "id": "throat_burned_ancient_magic",
+      "name": "throat burned with ancient magic",
+      "tagline": "Silent. Permanent. Sacred.",
+      "type": "passive / curse / transformation",
+      "element": "old magic / void",
+      "difficulty": "forbidden",
+      "status": "known",
+      "notes": "A magical mark placed on Kess's throat as payment for the wolf-spirit's bargain. Renders her permanently mute. She can no longer speak or sing aloud, only in dreams.",
       "first_date": "2026-03-01",
       "appearances": 1
     }
@@ -3029,6 +3160,26 @@
       "province": "unknown",
       "region": "Pelimor",
       "district": "unknown"
+    },
+    {
+      "id": "drowned_hollows_region",
+      "name": "Drowned Hollows",
+      "tagline": "Silent. Rural. Plagued.",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "temperate",
+      "terrain": "forest / village",
+      "function": "A rural community rooted in the old ways and knowledge of ancient songs. Center of the Rot-King's plague.",
+      "status": "active",
+      "notes": "Home to Kess and survivors of the plague. The village still practices bone-singing and old magic traditions.",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Drowned Hollows",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -3054,6 +3205,18 @@
       "use": "Intended as currency or treasure, but functions as a curse-delivery mechanism. Cannot be safely used as currency due to debt activation.",
       "notes": "The gold itself is real and valuable, but the curse outweighs its worth. The curse activates regardless of the holder's knowledge or intent.",
       "first_date": "2026-02-28",
+      "appearances": 1
+    },
+    {
+      "id": "septic_rot",
+      "name": "septic rot",
+      "tagline": "Blackening. Plague. Deadly.",
+      "type": "plague / sickness",
+      "rarity": "rare",
+      "properties": "A manifestation of plague that blackens the skin of victims. Caused by the Rot-King. Spreads through a village rapidly.",
+      "use": "A curse or plague weapon; not used intentionally by mortals.",
+      "notes": "Lifted from the Drowned Hollows by Kess's bargain. The mechanism of transmission or cure is unknown.",
+      "first_date": "2026-03-01",
       "appearances": 1
     }
   ],
@@ -3085,6 +3248,24 @@
       "effect": "Births new stars from the ashes of dying ones, preventing the world from falling into endless night and extending the world's lifespan by ten thousand years.",
       "cost": "The caster must sacrifice every moment of joy, every love, every triumph, and every small beauty\u2014effectively stripping them of all positive memories.",
       "notes": "The Rite was discovered inscribed in the Singing Catacombs in languages predating humanity. Zareth learned it through seven years of study with druids, bone-carvers, and fae-touched hermits.",
+      "first_date": "2026-03-01",
+      "appearances": 1
+    }
+  ],
+  "polities": [
+    {
+      "id": "the_crown",
+      "name": "the Crown",
+      "tagline": "Divine. Institutional. Merciful.",
+      "polity_type": "monarchy / crown",
+      "realm": "unknown",
+      "region": "unknown",
+      "seat": "unknown",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "active",
+      "description": "A governing authority that offers divine mercy through priests. It extended mercy to the Drowned Hollows during the plague, but Kess refused its aid in favor of bargaining with ancient spirits.",
+      "notes": "Represents institutional power separate from and opposed to old magic traditions.",
       "first_date": "2026-03-01",
       "appearances": 1
     }

@@ -2052,26 +2052,26 @@
       ]
     },
     {
-      "name": "Kess",
+      "name": "Kess of the Drowned Hollows",
       "aliases": [
         "Kess of the Drowned Hollows"
       ],
       "tagline": "Silent. Sacrifice. Songkeeper.",
-      "role": "Bone-singer",
+      "role": "Bone-Singer",
       "status": "active",
       "travel_scope": "local",
       "home_place": "Drowned Hollows",
-      "home_region": "Drowned Hollows",
+      "home_region": "unknown",
       "home_realm": "unknown",
       "status_history": [],
-      "world": "The Known World",
-      "bio": "Kess is a bone-singer of the Drowned Hollows who preserved her village from the Rot-King's plague by bargaining with a wolf-spirit\u2014trading her voice for the lives of her people. She now teaches the old songs through gesture and hand-craft, her throat burned by ancient magic. Her sacrifice transformed her from a keeper of tradition into a living testament to the cost of salvation.",
+      "world": "known_world",
+      "bio": "Kess was a bone-singer of the Drowned Hollows, keeper of old songs that bound stone and root together. When the Rot-King's plague blackened her village, she refused divine mercy and instead bargained with a wolf-spirit of the deep forest, trading her voice for the plague's lifting. She now teaches the old songs through gesture and hand, her throat burned with ancient magic.",
       "traits": [
         "silent",
-        "self-sacrificial",
-        "ritualist",
-        "keeper-of-old-ways",
-        "mute-but-eloquent"
+        "sacrificial",
+        "keeper of old knowledge",
+        "bone-singer",
+        "mute"
       ],
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
@@ -4125,6 +4125,56 @@
           "title": "The Starfall Oath"
         }
       ]
+    },
+    {
+      "name": "Drowned Hollows",
+      "tagline": "Silent. Plagued. Mourning.",
+      "place_type": "village",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A community devastated by plague, saved at great cost through an ancient bargain.",
+      "description": "A village where the Rot-King's plague spread, blackening its people with septic rot. It was saved when Kess of the Drowned Hollows bargained with a wolf-spirit in the deep forest, lifting the plague by dawn but at the cost of her voice.",
+      "status": "active",
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        }
+      ]
+    },
+    {
+      "name": "deep forest",
+      "tagline": "Ancient. Sacred. Wild.",
+      "place_type": "wilderness",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A primal wilderness where ancient magic dwells and beast-spirits emerge from shadow.",
+      "description": "A deep forest where beast-spirits dwell and languages predating kingdoms are sung. It is the home of the wolf-spirit that Kess bargained with\u2014a creature antlered and terrible, the size of a war-horse.",
+      "status": "active",
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        }
+      ]
     }
   ],
   "events": [
@@ -5621,17 +5671,17 @@
     {
       "name": "The Crown",
       "tagline": "Authoritative. Pragmatic. Distant.",
-      "polity_type": "monarchy",
+      "polity_type": "monarchy / crown",
       "realm": "unknown",
-      "region": "unknown (controls border region including Grimmholt)",
+      "region": "unknown",
       "seat": "unknown",
       "sovereigns": [],
       "claimants": [],
-      "status": "stable",
-      "description": "A centralized monarchy that issues orders through sealed letters. Willing to abandon strategic fortresses for reasons unstated, and willing to commit royal armies to reclaim control from rebellious wardens. Rules through absolute authority but faces tension with oath-bound warriors whose magical bonds supersede its decrees.",
+      "status": "active",
+      "description": "A governing authority that offers divine mercy through priests. It extended mercy to the Drowned Hollows during the plague, but Kess refused its aid in favor of bargaining with ancient spirits.",
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-02-27",
@@ -5652,8 +5702,13 @@
         {
           "date": "2026-02-25",
           "title": "The Plague-Bringer's Crown"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
         }
-      ]
+      ],
+      "notes": "Represents institutional power separate from and opposed to old magic traditions."
     },
     {
       "name": "The Empire",
@@ -6582,6 +6637,54 @@
           "title": "The Starfall Oath"
         }
       ]
+    },
+    {
+      "name": "tongue that predated kingdoms",
+      "tagline": "Primal. Ancient. Powerful.",
+      "category": "legend / language",
+      "source": "Beast-spirits and old places like the deep forest",
+      "status": "confirmed",
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        }
+      ]
+    },
+    {
+      "name": "singing only in dreams",
+      "tagline": "Silent. Sacrifice. Spirit-Touched.",
+      "category": "legend / magic",
+      "source": "The wolf-spirit's bargain with Kess",
+      "status": "confirmed",
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        }
+      ]
+    },
+    {
+      "name": "some debts are paid in silence",
+      "tagline": "Sacrifice. Sacred. Permanent.",
+      "category": "legend / wisdom",
+      "source": "The outcome of Kess's bargain",
+      "status": "confirmed",
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        }
+      ]
     }
   ],
   "flora_fauna": [
@@ -6705,6 +6808,23 @@
         {
           "date": "2026-02-28",
           "title": "The Dragon's Bargain"
+        }
+      ]
+    },
+    {
+      "name": "wolf-spirit",
+      "tagline": "Antlered. Terrible. Ancient.",
+      "type": "spirit / beast",
+      "rarity": "legendary",
+      "habitat": "deep forest",
+      "status": "active",
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
         }
       ]
     }
@@ -7500,6 +7620,23 @@
           "title": "The Starfall Oath"
         }
       ]
+    },
+    {
+      "name": "throat burned with ancient magic",
+      "tagline": "Silent. Permanent. Sacred.",
+      "type": "passive / curse / transformation",
+      "element": "old magic / void",
+      "difficulty": "forbidden",
+      "status": "known",
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        }
+      ]
     }
   ],
   "relics": [
@@ -8130,6 +8267,33 @@
       "province": "unknown",
       "region": "Pelimor",
       "district": "unknown"
+    },
+    {
+      "name": "Drowned Hollows",
+      "tagline": "Silent. Rural. Plagued.",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "temperate",
+      "terrain": "forest / village",
+      "ruler": "",
+      "function": "A rural community rooted in the old ways and knowledge of ancient songs. Center of the Rot-King's plague.",
+      "status": "active",
+      "notes": "Home to Kess and survivors of the plague. The village still practices bone-singing and old magic traditions.",
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Drowned Hollows",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -8359,6 +8523,24 @@
         {
           "date": "2026-02-28",
           "title": "The Lich-King's Collectors"
+        }
+      ]
+    },
+    {
+      "name": "septic rot",
+      "tagline": "Blackening. Plague. Deadly.",
+      "type": "plague / sickness",
+      "rarity": "rare",
+      "properties": "A manifestation of plague that blackens the skin of victims. Caused by the Rot-King. Spreads through a village rapidly.",
+      "use": "A curse or plague weapon; not used intentionally by mortals.",
+      "status": "unknown",
+      "first_story": "The Bone-Singer's Lament",
+      "first_date": "2026-03-01",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Bone-Singer's Lament"
         }
       ]
     }
