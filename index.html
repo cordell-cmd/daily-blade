@@ -3642,6 +3642,59 @@ function noisyContinent(cx, cy, baseR, points, seedOff, amp1, amp2) {
   return pts;
 }
 
+// Utility: generate custom continent polygon from base shape + noise wobble
+function shapedContinent(basePoints, seedOff, amp) {
+  const cx = basePoints.reduce((s,p)=>s+p[0],0)/basePoints.length;
+  const cy = basePoints.reduce((s,p)=>s+p[1],0)/basePoints.length;
+  // Interpolate between base points to get smooth high-res polygon, then add noise
+  const out = [];
+  const n = basePoints.length;
+  const subDiv = 8; // subdivisions between each base point
+  for (let i = 0; i < n; i++) {
+    const [x0,y0] = basePoints[i];
+    const [x1,y1] = basePoints[(i+1)%n];
+    for (let s = 0; s < subDiv; s++) {
+      const t = s / subDiv;
+      const bx = x0 + (x1-x0)*t;
+      const by = y0 + (y1-y0)*t;
+      // Distance from center for scaling noise
+      const dist = Math.sqrt((bx-cx)**2+(by-cy)**2);
+      const idx = i*subDiv+s;
+      const n1 = _sn.noise2D(idx*0.15+seedOff, seedOff*0.7) * (amp||6);
+      const n2 = _sn.noise2D(idx*0.4+seedOff*2, seedOff*1.3) * (amp||6)*0.3;
+      out.push([bx+n1+n2, by+n1*0.6+n2]);
+    }
+  }
+  return out;
+}
+
+// Utility: draw island chain between two points
+function drawIslandChain(svg, rc, x1, y1, x2, y2, count, avgSize, seedOff, opts) {
+  const ink = (opts && opts.ink) || 'rgba(60,40,15,.65)';
+  const fill = (opts && opts.fill) || 'rgba(170,155,120,.12)';
+  const fogFill = (opts && opts.fog) || null;
+  for (let i = 0; i < count; i++) {
+    const t = (i + 0.5) / count;
+    const bx = x1 + (x2-x1)*t + _sn.noise2D(i*2.3+seedOff, seedOff)*12;
+    const by = y1 + (y2-y1)*t + _sn.noise2D(seedOff, i*2.3+seedOff)*10;
+    const sz = avgSize * (0.6 + _sn.noise2D(i*3+seedOff, i)*0.5);
+    const pts = noisyContinent(bx, by, sz, 40, seedOff+i*7, .25, .1);
+    if (rc) {
+      svg.appendChild(rc.polygon(pts, {
+        stroke: ink, strokeWidth: .8, fill: fill,
+        fillStyle: 'solid', roughness: 1.0, bowing: 1.2
+      }));
+    } else {
+      const d = 'M'+pts.map(p=>p.join(',')).join(' L')+' Z';
+      svg.appendChild(svgEl('path', { d, fill, stroke:ink, 'stroke-width':.8 }));
+    }
+    if (fogFill) {
+      const d = 'M'+pts.map(p=>p.join(',')).join(' L')+' Z';
+      svg.appendChild(svgEl('path', { d, fill:fogFill, stroke:'none', opacity:.5 }));
+    }
+  }
+}
+
 // Utility: draw Tolkien-style mountain glyph
 function drawMountain(svg, x, y, size, ink) {
   const s = size;
@@ -3814,15 +3867,59 @@ function renderWorldMap(svg) {
   ];
   for (const wz of waveZones) drawWaves(svg, wz.x, wz.y, wz.n, wz.s, 8);
 
-  // Continent shapes — noisy + hand-drawn via Rough.js
-  const continentDefs = {
-    valdris:     { cx:320, cy:280, r:150, seed:1, amp1:.20, amp2:.07, pts:200 },
-    keth_morath: { cx:700, cy:250, r:110, seed:5, amp1:.18, amp2:.06, pts:180 },
-    thul_ashara: { cx:540, cy:490, r:100, seed:9, amp1:.16, amp2:.05, pts:170 },
-    drakmere:    { cx:195, cy:530, r:80,  seed:13, amp1:.17, amp2:.06, pts:150 },
-    sundral:     { cx:740, cy:570, r:75,  seed:17, amp1:.15, amp2:.05, pts:140 },
-    frostholme:  { cx:460, cy:55,  r:55,  seed:21, amp1:.12, amp2:.04, pts:120, scaleX:2.8, scaleY:.6 },
-    ashenveil:   { cx:460, cy:650, r:45,  seed:25, amp1:.10, amp2:.04, pts:110, scaleX:3.2, scaleY:.5 }
+  // Continent shapes — custom polygons + noise wobble via Rough.js
+  // Valdris: matches the detailed Valdris view outline, scaled to world map
+  const valdrisBase = [
+    [220,180],[250,155],[290,135],[330,125],[370,122],[410,130],[440,145],
+    [460,165],[475,190],[482,220],[485,255],[480,290],[470,325],[455,355],
+    [435,380],[410,405],[380,425],[345,435],[310,438],[275,430],[245,415],
+    [220,395],[200,370],[185,340],[175,310],[170,275],[172,245],[180,215]
+  ];
+  // Keth-Morath: broad north, elongated peninsula to the south
+  const kethBase = [
+    [640,170],[670,155],[710,150],[750,155],[785,170],[805,190],[815,215],
+    [810,245],[800,270],[785,295],[770,320],[755,350],[745,380],[740,410],
+    [735,435],[725,455],[710,465],[695,455],[685,435],[680,410],[675,385],
+    [670,355],[660,325],[648,300],[640,275],[635,250],[632,225],[635,195]
+  ];
+  // Thul-Ashara: wide equatorial landmass
+  const thulBase = [
+    [460,435],[490,425],[525,420],[560,420],[595,425],[625,435],[650,450],
+    [665,470],[670,495],[665,520],[650,540],[625,555],[595,565],[560,568],
+    [525,568],[490,562],[460,550],[440,535],[430,515],[428,495],[432,470],[443,450]
+  ];
+  // Drakmere: compact, rough
+  const drakmereBase = [
+    [140,470],[165,455],[195,450],[225,455],[250,470],[265,490],[268,515],
+    [260,540],[245,560],[222,575],[195,580],[168,575],[145,560],[130,540],
+    [125,515],[128,490]
+  ];
+  // Sundral: eastern blob
+  const sundralBase = [
+    [680,510],[710,500],[745,500],[775,510],[795,530],[800,555],[795,580],
+    [780,600],[755,612],[730,615],[705,608],[685,592],[672,570],[668,545],[670,525]
+  ];
+  // Frostholme: elongated arctic strip
+  const frostholmeBase = [
+    [300,42],[340,32],[390,26],[440,24],[490,24],[540,26],[580,32],[610,42],
+    [625,55],[618,68],[590,76],[550,80],[500,82],[450,82],[400,80],[360,76],
+    [325,68],[305,58]
+  ];
+  // Ashenveil: elongated southern strip
+  const ashenveilBase = [
+    [270,640],[320,632],[380,628],[440,626],[500,626],[560,628],[610,632],
+    [650,640],[660,652],[648,662],[610,668],[560,670],[500,672],[440,672],
+    [380,670],[330,666],[290,658],[272,650]
+  ];
+
+  const continentBases = {
+    valdris: { pts: valdrisBase, seed: 1, amp: 5 },
+    keth_morath: { pts: kethBase, seed: 5, amp: 5 },
+    thul_ashara: { pts: thulBase, seed: 9, amp: 4 },
+    drakmere: { pts: drakmereBase, seed: 13, amp: 4 },
+    sundral: { pts: sundralBase, seed: 17, amp: 4 },
+    frostholme: { pts: frostholmeBase, seed: 21, amp: 3 },
+    ashenveil: { pts: ashenveilBase, seed: 25, amp: 3 }
   };
 
   const continents = mapGeo.continents || [];
@@ -3831,18 +3928,10 @@ function renderWorldMap(svg) {
   const fogFill = { rumored:'rgba(180,160,120,.25)', legendary:'rgba(170,150,110,.4)', mythical:'rgba(160,140,100,.55)' };
 
   for (const c of continents) {
-    const def = continentDefs[c.id];
-    if (!def) continue;
+    const base = continentBases[c.id];
+    if (!base) continue;
     const status = c.status || 'mythical';
-    let pts = noisyContinent(def.cx, def.cy, def.r, def.pts||180, def.seed, def.amp1, def.amp2);
-
-    // Apply scaling for elongated continents (Frostholme, Ashenveil)
-    if (def.scaleX || def.scaleY) {
-      pts = pts.map(([x,y]) => [
-        def.cx + (x - def.cx) * (def.scaleX || 1),
-        def.cy + (y - def.cy) * (def.scaleY || 1)
-      ]);
-    }
+    const pts = shapedContinent(base.pts, base.seed, base.amp);
 
     if (rc) {
       // Rough.js hand-drawn polygon
@@ -3884,10 +3973,16 @@ function renderWorldMap(svg) {
     }
   }
 
+  // Island chain: Keth-Morath peninsula tip → Thul-Ashara (rumored stepping stones)
+  drawIslandChain(svg, rc, 715, 470, 660, 435, 5, 8, 50, {
+    ink: 'rgba(60,40,15,.5)', fill: 'rgba(170,155,120,.1)',
+    fog: 'rgba(170,150,110,.3)'
+  });
+
   // Continent labels
   const labelPos = {
-    valdris:    {x:320,y:285}, keth_morath:{x:700,y:255}, thul_ashara:{x:540,y:495},
-    drakmere:   {x:195,y:535}, sundral:    {x:740,y:575}, frostholme: {x:460,y:58}, ashenveil:{x:460,y:652}
+    valdris:    {x:330,y:285}, keth_morath:{x:720,y:280}, thul_ashara:{x:555,y:495},
+    drakmere:   {x:195,y:520}, sundral:    {x:740,y:560}, frostholme: {x:460,y:55}, ashenveil:{x:460,y:652}
   };
   for (const c of continents) {
     const pos = labelPos[c.id]; if (!pos) continue;
@@ -3961,13 +4056,16 @@ function renderValdrisMap(svg) {
   ];
   for (const wz of waveZones) drawWaves(svg, wz.x, wz.y, wz.n, wz.s, 7);
 
-  // Continent outline — noisy and hand-drawn
-  const coastPts = noisyContinent(390, 300, 250, 280, 3, .16, .055);
-  // Scale to fit: elliptical continent
-  const coastScaled = coastPts.map(([x,y]) => [
-    390 + (x-390)*1.05,
-    300 + (y-300)*0.88
-  ]);
+  // Continent outline — shaped to match world map Valdris, scaled up to detail view
+  const valdrisDetailBase = [
+    [120,105],[165,70],[225,42],[295,30],[370,28],[440,38],[500,58],
+    [550,88],[585,125],[610,170],[625,220],[630,275],[625,330],[610,385],
+    [585,430],[550,470],[505,502],[455,525],[395,538],[335,542],[275,535],
+    [220,518],[175,492],[138,458],[108,418],[85,372],[72,322],[68,270],
+    [72,218],[85,170],[100,138]
+  ];
+  const coastPts = shapedContinent(valdrisDetailBase, 3, 4);
+  const coastScaled = coastPts; // already positioned for 800x600
 
   const coastD = 'M' + coastScaled.map(p => p.join(',')).join(' L') + ' Z';
 
