@@ -759,7 +759,7 @@
       "role": "Warlord / Regent",
       "status": "alive",
       "world": "The Known World",
-      "bio": "A widow who ruled the Sunken Marches in name only while her dead husband Velgrim the Terrible held true power as a practical, vengeful ghost. Rather than submit to his demands for massacre, Kessara performed a ritual of dismissal, sacrificing her claim to the land itself to release his spirit. She departed as a wanderer, leaving the Marches to her husband's eternal rule.",
+      "bio": "A widow who ruled the Sunken Marches in name only while her dead husband Velgrim the Terrible held true power as a practical, vengeful ghost. Rather than submit to his demands for massacre, Kessara performed a ritual of dismissal, sacrificing her claim to the land itself to release his spirit. With Velgrim at peace, she departed as a wanderer, leaving the Marches leaderless and haunted.",
       "traits": [
         "strategic",
         "willing to sacrifice",
@@ -4313,8 +4313,8 @@
         "Kessara",
         "Velgrim the Terrible"
       ],
-      "outcome": "Kessara surrendered her title, land, and crown to satisfy Velgrim's ghost, which departed to the peaceful dead. The Sunken Marches fell under eternal ghost-king rule.",
-      "significance": "A unique solution to the problem of a tyrannical ghost, achieved through self-sacrifice rather than combat. Established the Sunken Marches as a realm ruled by the undead.",
+      "outcome": "Kessara surrendered her title, land, and crown to satisfy Velgrim's ghost, which departed to the peaceful dead. The Sunken Marches were left without a ruler.",
+      "significance": "A unique solution to the problem of a tyrannical ghost, achieved through self-sacrifice rather than combat. Left the Sunken Marches leaderless and vulnerable.",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
       "appearances": 1,
@@ -5764,19 +5764,15 @@
   "polities": [
     {
       "name": "The Regency of the Sunken Marches",
-      "tagline": "Ghost-ruled. Eternal. Practical.",
-      "polity_type": "regency / ghost-monarchy",
+      "tagline": "Vacant. Haunted. Leaderless.",
+      "polity_type": "regency / former ghost-monarchy",
       "realm": "Sunken Marches",
       "region": "Sunken Marches",
       "seat": "unknown",
-      "sovereigns": [
-        "Velgrim the Terrible (ghost-king)"
-      ],
-      "claimants": [
-        "Kessara (former regent, abdicated)"
-      ],
-      "status": "active",
-      "description": "A regency originally ruled by Kessara on behalf of her dead husband Velgrim. The ghost-king exercised practical control through appearances at war councils, rampart inspections, and demands for loyalty and blood-oath. After Kessara's abdication, the Sunken Marches became a realm ruled eternally by the ghost-king, with no mortal regent.",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "vacant",
+      "description": "A regency originally ruled by Kessara on behalf of her dead husband Velgrim the Terrible. The ghost-king exercised practical control through war councils and blood-oaths. When he demanded massacre of a surrendering garrison, Kessara performed a ritual of dismissal — sacrificing her title, land, and crown to release Velgrim to peaceful death. She departed as a wanderer. The Sunken Marches now stand without a ruler, their throne empty and their future uncertain.",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
       "appearances": 1,
@@ -7837,11 +7833,11 @@
     },
     {
       "name": "Velgrim's Ghost",
-      "tagline": "Tyrannical. Practical. Bound.",
+      "tagline": "Tyrannical. Practical. Dismissed.",
       "origin": "The shade of the dead warlord Velgrim the Terrible",
-      "power": "Manifests physically; commands armies; enforces loyalty; appears at war councils and ramparts; collects tribute in coin and blood-oath.",
-      "curse": "Binds the Sunken Marches to his will; prevents mortal rule; demands continuous warfare and absolute obedience.",
-      "status": "active",
+      "power": "Manifested physically; commanded armies; enforced loyalty; appeared at war councils and ramparts; collected tribute in coin and blood-oath.",
+      "curse": "Bound the Sunken Marches to his will and demanded continuous warfare, until Kessara's ritual of dismissal released him to peaceful death.",
+      "status": "destroyed",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
       "appearances": 1,
@@ -8171,11 +8167,11 @@
   "regions": [
     {
       "name": "Sunken Marches",
-      "tagline": "Waterlogged. Ghost-ruled. Eternal.",
+      "tagline": "Waterlogged. Leaderless. Haunted.",
       "climate": "unknown",
       "terrain": "unknown",
-      "ruler": "Velgrim the Terrible (ghost-king)",
-      "status": "unknown",
+      "ruler": "none (formerly Velgrim the Terrible, now released to peaceful death)",
+      "status": "vacant",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
       "appearances": 1,
