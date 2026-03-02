@@ -4001,91 +4001,183 @@ function renderWorldMap(svg) {
   ];
   for (const wz of waveZones) drawWaves(svg, wz.x, wz.y, wz.n, wz.s, 8);
 
-  // Continent shapes — custom polygons with Earth-like irregularity + noise wobble
-  // Valdris (explored): Europe-inspired — irregular coast, NW peninsula, southern boot,
-  //   deep eastern gulf, NE hook. Centered ~330,280
+  // Continent shapes — custom polygons with deeply irregular coastlines
+  // Inspired by reference maps: deep bays, jutting headlands, narrow straits, offshore islands
+  // Valdris (explored): Cactani-style — large central mass with deep western bay,
+  //   NW peninsula, southern cape, deep eastern gulf cutting inland, NE headland.
+  //   Centered ~330,280 in 960×700 viewport
   const valdrisBase = [
-    [250,168],[262,155],[280,142],[305,132],[325,128],[348,126],[368,128],
-    [385,135],[398,145],[408,140],[420,142],[435,152],[445,168],[452,185],
-    [458,175],[468,178],[478,188],[485,205],[488,225],[490,248],[488,268],
-    [482,285],[478,298],[480,315],[475,332],[465,348],[458,358],[462,372],
-    [455,388],[442,400],[425,408],[420,418],[410,428],[395,435],[378,438],
-    [360,435],[348,425],[338,430],[322,438],[305,440],[288,435],[275,425],
-    [262,412],[255,398],[248,385],[238,378],[228,370],[218,355],[212,338],
-    [208,320],[205,302],[198,288],[192,275],[188,258],[185,242],[182,225],
-    [185,210],[190,198],[198,188],[208,180],[218,175],[232,170]
+    // NW peninsula jutting out
+    [195,185],[202,172],[215,160],[230,152],[242,148],[255,155],[262,148],
+    [270,140],[285,132],[302,128],[318,125],[335,122],[352,124],[368,128],
+    // N coast with headland
+    [382,132],[395,138],[402,132],[412,128],[425,132],[438,140],[448,150],
+    // NE headland juts out then hooks south
+    [458,142],[470,138],[482,142],[490,155],[492,170],[488,182],
+    // E coast — deep gulf cutting inland (like a fjord)
+    [492,195],[488,210],[490,225],[495,238],[492,252],[485,262],
+    [478,270],[472,280],[468,275],[462,268],[458,275],[462,285],
+    [468,295],[472,308],[478,318],[482,330],[478,342],
+    // SE bulge with small bay
+    [472,355],[465,365],[470,378],[468,390],[460,398],
+    // S coast — boot/cape extending south
+    [450,405],[442,415],[435,425],[425,432],[418,440],[408,445],
+    [395,442],[388,448],[378,445],[368,440],[358,438],
+    // SW — deep indentation (Abysmal Gulf analog)
+    [348,435],[338,430],[330,438],[322,445],[312,442],[302,435],
+    [292,428],[285,418],[278,408],
+    // W coast — deep western bay carving inland
+    [270,398],[262,388],[255,380],[248,372],[240,365],
+    [232,358],[225,348],[218,340],[210,345],[205,338],[210,328],
+    [215,318],[208,308],[200,298],[195,288],[198,278],
+    // NW bay / indent
+    [195,268],[190,258],[185,248],[182,238],[178,228],
+    [175,218],[178,208],[182,198],[188,192]
   ];
-  // Keth-Morath (rumored): Africa-inspired — broad north with horn, pinched waist,
-  //   wider south, then tapering peninsula. Centered ~720,310
+  // Keth-Morath (rumored): massive eastern continent with deep strait between
+  //   north and south lobes, horn jutting NE, island-fringed west coast
   const kethBase = [
-    [668,165],[682,155],[700,148],[720,145],[742,148],[760,155],[775,165],
-    [788,178],[798,195],[808,205],[818,198],[828,202],[832,215],[825,228],
-    [815,238],[808,252],[802,268],[798,282],[795,295],[798,305],[802,312],
-    [795,325],[788,338],[782,348],[778,362],[772,378],[768,395],[765,412],
-    [762,428],[758,442],[752,455],[745,465],[738,472],[730,462],[722,455],
-    [715,448],[708,455],[700,462],[692,458],[685,448],[678,435],[672,418],
-    [665,402],[660,388],[655,372],[650,358],[648,342],[645,325],[642,308],
-    [640,292],[638,275],[640,258],[642,242],[648,228],[652,215],[658,202],
-    [662,190],[665,178]
+    // NW coast
+    [645,178],[655,168],[670,158],[688,150],[705,148],[722,145],[740,148],
+    // N coast with protruding horn
+    [755,152],[768,158],[778,150],[788,145],[798,148],[808,155],
+    [815,165],[820,178],[828,172],[835,178],[838,192],[832,205],
+    // NE — cuts in (strait/bay between sections)
+    [825,215],[815,222],[808,232],[802,245],[798,258],
+    // Deep E bay cutting inland (creates narrow neck)
+    [792,268],[785,275],[778,268],[772,258],[768,262],[772,275],
+    [778,288],[782,300],[778,310],
+    // SE widening lobe
+    [775,322],[778,335],[782,348],[785,360],[780,375],
+    [775,388],[770,400],[765,412],[760,425],
+    // S peninsula tapering
+    [755,438],[748,448],[742,458],[735,465],[728,468],[720,462],
+    // SW coast curving back
+    [712,455],[705,448],[698,455],[690,458],[682,452],[675,442],
+    [668,428],[662,415],[658,400],
+    // W coast — bays and headlands
+    [655,385],[650,372],[648,358],[652,345],[648,332],[642,322],
+    [638,308],[635,295],[638,282],[640,268],[642,255],[645,242],
+    [648,228],[650,215],[648,198],[645,188]
   ];
-  // Thul-Ashara (rumored): South America-inspired — wide tropical north, tapering south,
-  //   big eastern bay, western bulge. Centered ~555,490
+  // Thul-Ashara (rumored): broad equatorial landmass with deep northern gulf,
+  //   western peninsula, archipelago fringe on east
   const thulBase = [
-    [485,428],[498,422],[515,418],[535,415],[555,412],[575,415],[592,418],
-    [608,422],[622,430],[635,440],[645,452],[652,465],[650,478],[655,488],
-    [658,502],[655,515],[648,528],[642,538],[648,548],[645,558],[635,565],
-    [620,570],[605,572],[588,568],[575,565],[565,570],[552,575],[538,578],
-    [522,575],[508,568],[498,558],[490,545],[485,530],[482,515],[478,502],
-    [475,488],[472,475],[475,462],[478,448],[480,438]
+    [478,430],[490,425],[505,420],[518,415],[530,412],
+    // N coast — deep gulf cuts in
+    [542,415],[552,418],[558,412],[565,408],[575,412],[585,415],
+    [592,410],[600,412],[610,418],[618,425],
+    // NE headland
+    [628,432],[638,440],[645,450],[648,462],[645,472],
+    // E coast with bays
+    [648,482],[652,495],[648,508],[652,518],[648,528],
+    [642,538],[638,548],[645,555],[642,562],
+    // SE cape
+    [632,568],[620,572],[608,570],[598,575],[588,572],
+    // S coast — undulating
+    [578,568],[568,572],[558,578],[548,580],[535,578],
+    [522,575],[510,570],[498,565],
+    // SW peninsula jutting out
+    [488,558],[478,552],[472,545],[468,535],[465,522],
+    // W coast back up
+    [468,510],[472,498],[470,488],[465,478],[462,468],
+    [465,458],[468,448],[472,440],[475,435]
   ];
-  // Drakmere (legendary): British Isles-inspired — elongated N-S, jagged western coast,
-  //   eastern bays, a protruding NW headland. Centered ~190,520
+  // Drakmere (legendary): jagged volcanic archipelago-continent with deep bays,
+  //   separated by narrow strait from coast
   const drakmereBase = [
-    [168,462],[175,455],[185,448],[198,445],[210,448],[222,455],[232,462],
-    [238,472],[244,465],[252,468],[258,478],[262,492],[260,505],[265,515],
-    [262,528],[255,540],[260,548],[258,558],[250,568],[242,575],[230,580],
-    [218,582],[205,578],[195,572],[185,575],[175,570],[165,562],[158,552],
-    [152,540],[148,528],[145,515],[142,502],[140,488],[142,478],[148,470],
-    [155,465]
+    // N coast — irregular headlands
+    [155,455],[162,448],[172,442],[185,438],[198,440],[208,445],
+    [218,440],[228,442],[238,448],[248,455],
+    // E coast — deep bay
+    [255,462],[262,470],[268,478],[272,488],[268,498],
+    [262,505],[268,515],[272,525],[268,535],
+    // SE cape
+    [260,545],[252,555],[245,562],[238,568],[228,575],
+    // S coast — wide bay
+    [218,580],[208,582],[198,585],[188,582],[178,578],
+    [168,572],[160,565],[152,558],
+    // SW headland
+    [148,548],[142,538],[138,528],[135,518],
+    // W coast — fjord-like indent
+    [132,508],[128,498],[125,488],[128,478],
+    [132,468],[138,462],[145,458]
   ];
-  // Sundral (rumored): India-inspired — triangular, broad north, pointed south cape,
-  //   eastern coastal shelf, small western bay. Centered ~738,555
+  // Sundral (rumored): triangular with deeply notched west coast,
+  //   creating a major bay
   const sundralBase = [
-    [700,505],[712,498],[728,495],[745,492],[762,495],[778,502],[790,512],
-    [798,525],[800,538],[795,552],[798,562],[792,575],[782,588],[770,598],
-    [758,608],[748,618],[740,625],[732,618],[722,608],[712,598],[702,585],
-    [695,572],[690,558],[685,545],[682,530],[688,518],[695,510]
+    [700,505],[712,498],[725,494],[738,492],[752,494],[765,498],
+    [778,505],[788,515],[795,528],
+    // E coast curving
+    [798,540],[795,552],[790,562],[782,572],[775,582],
+    // SE — narrows
+    [768,592],[760,600],[752,608],[745,615],[740,622],
+    // S cape
+    [735,628],[728,622],[722,612],[718,602],
+    // SW — deep western bay
+    [712,592],[705,582],[698,575],[692,568],[688,558],
+    [685,548],[682,538],[678,528],[675,518],
+    // W coast indent
+    [678,510],[682,502],[688,498],[695,502]
   ];
-  // Frostholme (legendary): Greenland-inspired — irregular, wider east lobe,
-  //   narrower western neck, deep southern bays. Centered ~460,52
+  // Frostholme (legendary): broken polar landmass — two lobes connected by
+  //   narrow land bridge, deep bays, small islands
   const frostholmeBase = [
-    [310,52],[318,42],[332,35],[350,30],[368,28],[388,25],[410,24],
-    [432,23],[452,22],[472,22],[492,24],[512,25],[530,28],[545,32],
-    [558,38],[572,42],[585,48],[598,55],[608,62],[612,72],[605,78],
-    [592,82],[578,84],[562,82],[548,78],[535,82],[520,85],[502,86],
-    [485,86],[468,88],[450,86],[432,85],[415,82],[398,80],[382,78],
-    [368,82],[352,78],[338,72],[325,68],[315,62]
+    // Western lobe
+    [298,55],[305,45],[318,38],[335,32],[352,28],[365,25],
+    [375,30],[382,25],[388,30],[395,38],
+    // Narrow neck
+    [405,42],[412,38],[420,35],[430,38],[438,42],
+    // Deep bay between lobes
+    [445,48],[450,55],[448,62],[442,58],[438,52],[442,48],
+    [448,45],[455,42],
+    // Eastern lobe — wider
+    [465,38],[478,32],[492,28],[508,25],[525,28],[540,32],
+    [555,38],[568,42],[580,48],[592,55],[600,62],[608,68],
+    [612,75],[608,82],
+    // S coast east — with bays
+    [598,85],[588,82],[578,85],[568,88],[558,85],[548,82],
+    [538,85],[528,88],[518,85],[508,82],
+    // S coast west — bays
+    [498,85],[488,88],[478,85],[468,82],[458,85],
+    [448,82],[438,78],[428,82],[418,85],
+    [408,82],[398,78],[388,75],[378,78],
+    [368,82],[358,78],[348,75],[338,72],[328,68],[318,62],[308,58]
   ];
-  // Ashenveil (mythical): Antarctica-inspired — irregular southern mass, wide bays,
-  //   protruding ice shelves. Centered ~460,655
+  // Ashenveil (mythical): Antarctica-like polar fragments with deep indentations,
+  //   ice-shelf peninsulas
   const ashenveilBase = [
-    [285,645],[298,638],[315,632],[335,628],[355,625],[372,628],[388,625],
-    [405,622],[422,625],[440,624],[458,625],[475,624],[492,625],[510,624],
-    [528,626],[545,628],[560,625],[578,628],[595,632],[612,638],[628,645],
-    [638,652],[642,660],[635,668],[622,672],[605,670],[590,675],[572,672],
-    [555,668],[540,672],[522,675],[505,672],[488,675],[470,672],[452,675],
-    [435,672],[418,668],[402,672],[385,668],[368,665],[352,668],[338,665],
-    [322,660],[308,655],[295,652]
+    [280,648],[295,640],[312,635],[328,630],[342,628],
+    // Deep bay
+    [352,632],[358,638],[362,632],[368,625],[378,622],
+    // Central mass
+    [392,625],[405,622],[418,625],[432,624],[445,622],
+    [458,625],[472,622],[485,625],[498,622],
+    // Deep eastern inlet
+    [508,625],[515,630],[522,625],[530,622],[542,625],
+    [555,628],[568,632],[578,628],[590,632],
+    // NE shelf
+    [602,635],[615,640],[625,645],[635,650],
+    // S coast — fragmented
+    [640,658],[638,665],[630,670],[618,672],[605,668],
+    [595,672],[582,675],[568,672],[555,668],
+    // Deep S bay
+    [545,672],[538,678],[528,675],[518,672],[508,675],
+    [498,678],[488,675],[478,672],[468,678],
+    // SW fragments
+    [455,675],[442,672],[428,668],[415,672],[402,668],
+    [388,665],[375,668],[362,665],[348,662],
+    [335,658],[322,655],[308,652],[295,650]
   ];
 
   const continentBases = {
-    valdris: { pts: valdrisBase, seed: 1, amp: 4 },
-    keth_morath: { pts: kethBase, seed: 5, amp: 4 },
-    thul_ashara: { pts: thulBase, seed: 9, amp: 3 },
-    drakmere: { pts: drakmereBase, seed: 13, amp: 3 },
-    sundral: { pts: sundralBase, seed: 17, amp: 3 },
-    frostholme: { pts: frostholmeBase, seed: 21, amp: 2 },
-    ashenveil: { pts: ashenveilBase, seed: 25, amp: 2 }
+    valdris: { pts: valdrisBase, seed: 1, amp: 3 },
+    keth_morath: { pts: kethBase, seed: 5, amp: 3 },
+    thul_ashara: { pts: thulBase, seed: 9, amp: 2 },
+    drakmere: { pts: drakmereBase, seed: 13, amp: 2 },
+    sundral: { pts: sundralBase, seed: 17, amp: 2 },
+    frostholme: { pts: frostholmeBase, seed: 21, amp: 1.5 },
+    ashenveil: { pts: ashenveilBase, seed: 25, amp: 1.5 }
   };
 
   const continents = mapGeo.continents || [];
@@ -4140,15 +4232,15 @@ function renderWorldMap(svg) {
   }
 
   // Island chain: Keth-Morath peninsula tip → Thul-Ashara (rumored stepping stones)
-  drawIslandChain(svg, rc, 730, 465, 655, 440, 5, 8, 50, {
+  drawIslandChain(svg, rc, 720, 465, 648, 440, 5, 8, 50, {
     ink: 'rgba(60,40,15,.5)', fill: 'rgba(170,155,120,.1)',
     fog: 'rgba(170,150,110,.3)'
   });
 
   // Continent labels
   const labelPos = {
-    valdris:    {x:335,y:290}, keth_morath:{x:730,y:285}, thul_ashara:{x:560,y:495},
-    drakmere:   {x:200,y:520}, sundral:    {x:742,y:555}, frostholme: {x:460,y:56}, ashenveil:{x:460,y:652}
+    valdris:    {x:335,y:290}, keth_morath:{x:730,y:285}, thul_ashara:{x:562,y:498},
+    drakmere:   {x:198,y:518}, sundral:    {x:738,y:558}, frostholme: {x:460,y:56}, ashenveil:{x:460,y:652}
   };
   for (const c of continents) {
     const pos = labelPos[c.id]; if (!pos) continue;
@@ -4167,11 +4259,11 @@ function renderWorldMap(svg) {
   }
 
   // Scatter a few mountains on Valdris to hint at detail
-  const vMtns = [[260,240],[280,250],[300,260],[340,230],[355,245]];
+  const vMtns = [[250,195],[270,210],[295,225],[330,200],[350,215]];
   for (const [mx,my] of vMtns) drawMountain(svg, mx, my, 10, 'rgba(60,40,15,.35)');
 
   // Trees on explored continent
-  const vTrees = [[220,310],[240,330],[360,340],[380,320]];
+  const vTrees = [[210,290],[230,310],[350,320],[370,300]];
   for (const [tx,ty] of vTrees) drawTree(svg, tx, ty, 8, 'rgba(40,60,20,.25)');
 
   // Compass rose
@@ -4222,21 +4314,40 @@ function renderValdrisMap(svg) {
   ];
   for (const wz of waveZones) drawWaves(svg, wz.x, wz.y, wz.n, wz.s, 7);
 
-  // Continent outline — same Europe-like profile as world map valdrisBase, scaled
-  // from world coords (x:182-490, y:126-440) → detail coords (x:70-630, y:30-540)
+  // Continent outline — Valdris with deeply irregular coastline
+  // Deep western bay, NW peninsula, NE headland, eastern gulf, southern cape,
+  // matching the world-map shape but scaled up to 800×600
   const valdrisDetailBase = [
-    [194,98],[215,77],[248,56],[294,40],[330,33],[372,30],[408,33],
-    [439,45],[463,61],[481,53],[503,56],[530,72],[548,98],[561,126],
-    [572,110],[590,114],[608,131],[621,158],[626,191],[630,228],[626,261],
-    [615,288],[608,309],[612,337],[603,365],[585,391],[572,407],[579,430],
-    [566,456],[543,475],[512,488],[503,504],[485,520],[457,532],[426,537],
-    [394,532],[372,516],[354,524],[325,537],[294,540],[263,532],[239,516],
-    [215,495],[203,472],[190,451],[172,439],[154,426],[135,402],[125,374],
-    [117,345],[112,316],[99,293],[88,272],[81,244],[76,218],[70,191],
-    [76,166],[85,147],[99,131],[117,118],[135,110],[161,101]
+    // NW peninsula
+    [85,215],[92,195],[105,178],[122,162],[138,152],[152,148],[168,155],
+    [178,148],[188,138],[205,128],[225,118],[248,112],[272,108],[295,105],
+    [318,102],[342,100],[365,105],
+    // N coast with headland
+    [382,108],[398,115],[408,108],[422,102],[438,108],[455,118],[468,132],
+    // NE headland juts out then hooks south
+    [482,122],[498,115],[515,122],[525,138],[528,158],[522,175],
+    // E coast — deep gulf cutting inland
+    [528,195],[522,215],[525,235],[532,252],[528,272],[518,285],
+    [508,295],[498,308],[492,302],[485,292],[478,302],[485,318],
+    [492,332],[498,348],[508,362],[515,378],[508,395],
+    // SE bulge with bay
+    [498,412],[488,425],[495,442],[492,458],[482,468],
+    // S coast — boot/cape extending south
+    [468,478],[458,492],[448,502],[435,510],[425,518],[412,525],
+    [395,522],[385,530],[372,525],[358,518],[345,515],
+    // SW — Abysmal Gulf analog
+    [332,512],[318,505],[308,515],[295,525],[282,522],[268,512],
+    [255,502],[245,488],[235,475],
+    // W coast — deep bay carving inland
+    [222,462],[212,448],[202,438],[192,428],[182,418],
+    [172,408],[162,395],[152,385],[142,392],[135,382],[142,368],
+    [148,355],[138,342],[128,328],[122,312],[125,298],
+    // NW bay / indent
+    [122,282],[115,268],[108,255],[105,242],[100,228],
+    [95,215],[100,205],[105,195]
   ];
-  const coastPts = shapedContinent(valdrisDetailBase, 3, 4);
-  const coastScaled = coastPts; // already positioned for 800x600
+  const coastPts = shapedContinent(valdrisDetailBase, 3, 3);
+  const coastScaled = coastPts;
 
   const coastD = 'M' + coastScaled.map(p => p.join(',')).join(' L') + ' Z';
 
@@ -4259,15 +4370,15 @@ function renderValdrisMap(svg) {
   // Coastline depth line (subtle inner shore line)
   svg.appendChild(svgEl('path', { d: coastD, fill:'none', stroke:'rgba(80,100,130,.12)', 'stroke-width':5, 'pointer-events':'none' }));
 
-  // Region zones — subtle territorial boundaries
+  // Region zones — subtle territorial boundaries (fitted to new coastline)
   const regions = mapGeo.macro_regions || [];
   const regionShapes = {
-    steppe_marches:  'M160,80 C220,55 350,40 450,55 C510,65 560,85 580,120 C600,150 585,180 550,195 C490,215 380,220 280,210 C200,200 145,175 130,145 C120,120 135,95 160,80 Z',
-    shattered_west:  'M80,140 C100,115 135,100 170,95 C210,92 250,110 270,140 C290,170 290,210 275,250 C260,290 230,325 195,345 C165,360 125,355 100,330 C75,305 60,265 60,225 C60,185 65,158 80,140 Z',
-    sunken_marches:  'M70,340 C90,310 130,295 170,300 C210,306 240,330 245,370 C250,405 235,445 210,475 C185,500 145,510 115,495 C85,478 60,445 55,410 C50,380 55,355 70,340 Z',
-    hearthlands:     'M270,190 C310,175 370,170 430,180 C480,190 520,215 535,250 C550,290 540,340 515,375 C490,405 445,420 395,425 C345,428 295,415 260,385 C230,358 215,320 215,280 C215,240 235,210 270,190 Z',
-    ashen_reach:     'M530,120 C560,105 600,105 630,120 C665,140 690,180 700,230 C710,290 700,355 680,400 C660,435 620,460 575,465 C535,468 500,448 480,415 C460,380 455,335 460,290 C465,245 485,190 505,155 C515,135 520,128 530,120 Z',
-    iron_coast:      'M140,470 C185,455 250,445 330,440 C400,436 470,445 530,465 C575,480 600,505 590,535 C575,560 530,575 470,580 C400,583 310,575 240,555 C185,538 140,515 120,495 C108,482 115,478 140,470 Z'
+    steppe_marches:  'M168,155 C225,118 310,102 400,108 C440,112 468,128 475,150 C480,170 470,188 445,200 C400,215 320,218 250,210 C195,202 160,185 150,168 C148,162 155,158 168,155 Z',
+    shattered_west:  'M92,195 C115,172 148,155 168,155 C190,155 210,165 225,180 C240,200 242,225 235,250 C225,280 210,310 195,335 C180,355 160,375 148,385 C138,370 128,342 122,315 C118,290 110,265 105,240 C100,220 92,208 92,195 Z',
+    sunken_marches:  'M142,385 C160,395 175,410 188,425 C200,440 212,452 225,465 C235,478 245,488 255,498 C240,505 222,495 205,485 C188,475 172,462 162,448 C150,432 142,415 138,400 C136,392 138,388 142,385 Z',
+    hearthlands:     'M225,180 C270,165 330,158 390,165 C440,172 478,190 490,215 C500,245 498,280 490,310 C482,340 468,368 450,390 C430,412 405,425 375,430 C340,435 305,430 275,418 C248,405 230,385 218,360 C208,335 205,305 210,275 C215,245 218,210 225,180 Z',
+    ashen_reach:     'M498,155 C515,140 525,145 530,165 C532,185 530,210 532,240 C530,265 525,285 518,305 C512,320 505,338 498,355 C492,370 495,390 500,405 C505,415 498,425 490,420 C478,405 468,385 462,365 C458,340 460,310 465,280 C470,250 478,220 485,195 C490,175 495,162 498,155 Z',
+    iron_coast:      'M255,498 C275,510 305,518 340,520 C375,525 410,525 440,515 C460,505 475,492 482,475 C485,465 488,450 490,435 C480,445 465,458 448,468 C430,478 408,488 385,492 C360,495 330,498 305,500 C280,500 265,500 255,498 Z'
   };
 
   for (const r of regions) {
@@ -4307,33 +4418,38 @@ function renderValdrisMap(svg) {
   const features = mapGeo.natural_features || [];
   for (const f of features) {
     if (f.type === 'mountain_range' && f.id === 'ironspine_mountains') {
-      // Peaks along the N-S spine
+      // Peaks along the N-S spine — fitted to new coastline (east interior)
       const spinePts = [
-        [492,105],[495,130],[498,155],[500,180],[502,205],[504,230],
-        [506,255],[507,280],[508,305],[507,330],[505,355],[503,380],
-        [500,405],[498,430],[496,455],[494,470]
+        [482,135],[484,158],[486,180],[488,200],[490,222],[491,245],
+        [492,268],[493,290],[494,312],[493,335],[492,358],[490,380],
+        [488,400],[486,420],[484,442],[482,458]
       ];
       for (let i = 0; i < spinePts.length; i++) {
         const [mx,my] = spinePts[i];
-        const sz = 9 + Math.sin(i*.6)*3; // vary peak sizes
+        const sz = 9 + Math.sin(i*.6)*3;
         drawMountain(svg, mx, my, sz);
-        // Foothills flanking main peaks
         if (i % 2 === 0) {
           drawMountain(svg, mx - 14 + _sn.noise2D(i*2, 0)*5, my + 4, sz*.55, 'rgba(60,40,15,.4)');
-          drawMountain(svg, mx + 14 + _sn.noise2D(i*2, 1)*5, my + 3, sz*.5, 'rgba(60,40,15,.4)');
+          drawMountain(svg, mx + 12 + _sn.noise2D(i*2, 1)*4, my + 3, sz*.5, 'rgba(60,40,15,.4)');
         }
       }
-      // Mountain range label (rotated along spine)
+      // Mountain range label
       const ml = svgEl('text', {
-        x: 520, y: 285, fill:'rgba(70,50,20,.4)', 'font-size':7,
+        x: 510, y: 285, fill:'rgba(70,50,20,.4)', 'font-size':7,
         'letter-spacing':'.15em', 'font-style':'italic',
-        transform: 'rotate(-85, 520, 285)', 'font-family': "'IM Fell English', serif"
+        transform: 'rotate(-85, 510, 285)', 'font-family': "'IM Fell English', serif"
       });
       ml.textContent = 'Ironspine Mountains'; svg.appendChild(ml);
     }
   }
 
-  // ── Rivers (wobbly, tapering) ──────────────────
+  // ── Rivers (wobbly, tapering) — Realistic hydrology ──────────────
+  // All rivers originate in the Ironspine Mountains or interior highlands
+  // and flow downhill to the nearest coast in dendritic patterns.
+  // Ironspine spine: x≈482-494, y≈135-458  (continental divide)
+  // West coast / Vael Ocean: x≈85-168       South coast / Sapphire Sea: y≈468-530
+  // North coast / Bitter Sea: y≈100-155      East coast / Ashen Reach: x≈498-532
+
   function wobblyRiverPath(points, seedOff) {
     let d = `M${points[0][0]},${points[0][1]}`;
     for (let i = 1; i < points.length; i++) {
@@ -4346,47 +4462,6 @@ function renderValdrisMap(svg) {
     return d;
   }
 
-  for (const f of features) {
-    if (f.type === 'river' && f.id === 'pelimor_river') {
-      const pts = [[470,200],[460,235],[448,270],[435,310],[418,350],[400,390],[380,430],[360,465],[345,495],[335,525]];
-      const d = wobblyRiverPath(pts, 100);
-      if (rc) {
-        const node = rc.path(d, { stroke:'rgba(50,70,110,.55)', strokeWidth:1.8, fill:'none', roughness:.8, bowing:1.5 });
-        svg.appendChild(node);
-      } else {
-        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.55)', 'stroke-width':1.8, fill:'none' }));
-      }
-      // River label
-      const rl = svgEl('text', { x:410, y:340, fill:'rgba(50,70,110,.35)', 'font-size':6.5, 'font-style':'italic', transform:'rotate(-60,410,340)' });
-      rl.textContent = 'Pelimor R.'; svg.appendChild(rl);
-    }
-    if (f.type === 'river' && f.id === 'ashwater') {
-      const pts = [[580,235],[574,265],[570,295],[572,330],[576,365],[580,395],[583,415]];
-      const d = wobblyRiverPath(pts, 200);
-      if (rc) {
-        const node = rc.path(d, { stroke:'rgba(50,70,110,.4)', strokeWidth:1.2, fill:'none', roughness:.7 });
-        svg.appendChild(node);
-      } else {
-        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.4)', 'stroke-width':1.2, fill:'none' }));
-      }
-      const rl = svgEl('text', { x:592, y:330, fill:'rgba(50,70,110,.3)', 'font-size':5.5, 'font-style':'italic', transform:'rotate(-80,592,330)' });
-      rl.textContent = 'Ashwater'; svg.appendChild(rl);
-    }
-    if (f.type === 'river' && f.id === 'greymist_river') {
-      const pts = [[130,355],[148,375],[170,395],[195,418],[220,442],[250,468],[275,490],[290,510]];
-      const d = wobblyRiverPath(pts, 300);
-      if (rc) {
-        const node = rc.path(d, { stroke:'rgba(50,70,110,.4)', strokeWidth:1.1, fill:'none', roughness:.7 });
-        svg.appendChild(node);
-      } else {
-        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.4)', 'stroke-width':1.1, fill:'none' }));
-      }
-      const rl = svgEl('text', { x:175, y:425, fill:'rgba(50,70,110,.3)', 'font-size':5.5, 'font-style':'italic', transform:'rotate(-45,175,425)' });
-      rl.textContent = 'Greymist R.'; svg.appendChild(rl);
-    }
-  }
-
-  // ── Additional river systems ────────────────────────
   // Helper to draw a river with optional label
   function drawRiver(pts, seedOff, width, opacity, label, labelPos, labelAngle) {
     const d = wobblyRiverPath(pts, seedOff);
@@ -4406,41 +4481,141 @@ function renderValdrisMap(svg) {
     }
   }
 
-  // (a) The Northmere — branches from Pelimor River at Pelimor, flows NW toward Steppe Marches
-  drawRiver(
-    [[385,280],[368,255],[350,230],[335,205],[322,180],[312,155],[305,130],[298,105],[292,80]],
-    400, 1.3, .45, 'Northmere R.', [320,170], -70
-  );
+  // ────────────────────────────────────────────────────
+  // WEST-FLOWING SYSTEM (Ironspine → Hearthlands → coasts)
+  // ────────────────────────────────────────────────────
 
-  // (b) The Ironbrook — mountain-fed, flows W from Ironspine foothills to join Pelimor River
-  drawRiver(
-    [[492,220],[478,225],[462,232],[448,240],[435,250],[422,258],[410,265],[400,272],[390,278]],
-    450, 1.0, .4, 'Ironbrook', [450,222], -8
-  );
+  // (1) PELIMOR RIVER — the great trunk river of Valdris
+  //     Rises in central Ironspine (~y:240), flows SW through Hearthlands,
+  //     empties into the Sapphire Sea at the south coast
+  for (const f of features) {
+    if (f.type === 'river' && f.id === 'pelimor_river') {
+      const pts = [
+        [480,240],[468,255],[455,272],[440,290],[425,310],
+        [408,332],[392,355],[375,378],[360,400],[348,422],
+        [340,445],[338,465],[342,482],[348,498],[352,515]
+      ];
+      const d = wobblyRiverPath(pts, 100);
+      if (rc) {
+        const node = rc.path(d, { stroke:'rgba(50,70,110,.55)', strokeWidth:2.0, fill:'none', roughness:.8, bowing:1.5 });
+        svg.appendChild(node);
+      } else {
+        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.55)', 'stroke-width':2.0, fill:'none' }));
+      }
+      const rl = svgEl('text', { x:398, y:345, fill:'rgba(50,70,110,.35)', 'font-size':6.5, 'font-style':'italic', transform:'rotate(-55,398,345)' });
+      rl.textContent = 'Pelimor R.'; svg.appendChild(rl);
+    }
+  }
 
-  // (c) Shattered West rivers
-  // The Wychflow — main river, flows S through the dark forests to the western coast
-  drawRiver(
-    [[200,140],[195,165],[188,190],[180,218],[175,248],[172,278],[168,305],[162,330],[155,355],[148,380]],
-    500, 1.3, .42, 'Wychflow R.', [157,260], -82
-  );
-  // The Coldvein — smaller tributary, flows SE from highlands to join Wychflow
-  drawRiver(
-    [[145,175],[155,192],[168,210],[178,228],[185,245]],
-    550, .9, .35, 'Coldvein', [142,195], -55
-  );
-  // The Thornwater — flows E from Shattered West into the Hearthlands (joins Pelimor system)
-  drawRiver(
-    [[210,280],[228,278],[248,275],[268,272],[288,268],[308,265],[328,262],[348,260]],
-    600, 1.0, .38, 'Thornwater', [268,262], -4
-  );
+  // (2) IRONBROOK — mountain torrent, flows W from N Ironspine foothills
+  //     to join Pelimor River at ~(440,290)
+  for (const f of features) {
+    if (f.type === 'river' && f.id === 'ironbrook') {
+      drawRiver(
+        [[486,205],[472,212],[458,222],[445,235],[435,250],[428,268],[435,282],[440,290]],
+        450, 1.0, .4, 'Ironbrook', [460,215], -20
+      );
+    }
+  }
+
+  // (3) THORNWATER — rises in western Hearthlands hills, flows S/SE
+  //     to join Pelimor at ~(375,378)
+  for (const f of features) {
+    if (f.type === 'river' && f.id === 'thornwater') {
+      drawRiver(
+        [[310,280],[318,298],[328,315],[338,332],[348,350],[358,365],[368,375],[375,378]],
+        600, 1.0, .38, 'Thornwater', [322,310], -65
+      );
+    }
+  }
+
+  // ────────────────────────────────────────────────────
+  // NORTH-FLOWING SYSTEM (Ironspine → Bitter Sea)
+  // ────────────────────────────────────────────────────
+
+  // (4) NORTHMERE RIVER — rises in N Ironspine, flows NW across
+  //     Steppe Marches to the Bitter Sea (north coast)
+  for (const f of features) {
+    if (f.type === 'river' && f.id === 'northmere_river') {
+      drawRiver(
+        [[478,165],[460,155],[440,145],[418,138],[395,132],[370,125],[345,118],[320,112]],
+        400, 1.3, .45, 'Northmere R.', [410,128], -10
+      );
+    }
+  }
+
+  // ────────────────────────────────────────────────────
+  // SHATTERED WEST SYSTEM (highlands → Vael Ocean)
+  // ────────────────────────────────────────────────────
+
+  // (5) WYCHFLOW — main western river, rises in central highlands
+  //     where Ironspine foothills meet Shattered West,
+  //     flows W/SW through dark forests to Vael Ocean (west coast)
+  for (const f of features) {
+    if (f.type === 'river' && f.id === 'wychflow') {
+      drawRiver(
+        [[280,210],[260,225],[242,238],[225,255],[210,275],[198,295],
+         [185,318],[172,342],[162,365],[152,385]],
+        500, 1.4, .42, 'Wychflow R.', [195,280], -60
+      );
+    }
+  }
+
+  // (6) COLDVEIN — smaller tributary, rises in NW highlands,
+  //     flows SE to join Wychflow at ~(225,255)
+  for (const f of features) {
+    if (f.type === 'river' && f.id === 'coldvein') {
+      drawRiver(
+        [[172,175],[182,192],[195,210],[210,228],[220,245],[225,255]],
+        550, .9, .35, 'Coldvein', [180,195], -55
+      );
+    }
+  }
+
+  // ────────────────────────────────────────────────────
+  // SUNKEN MARCHES DRAINAGE (lowlands → south/SW coast)
+  // ────────────────────────────────────────────────────
+
+  // (7) GREYMIST RIVER — drains the Sunken Marches, flows S/SW
+  //     to the coast where S and W coasts meet
+  for (const f of features) {
+    if (f.type === 'river' && f.id === 'greymist_river') {
+      drawRiver(
+        [[175,395],[185,412],[198,428],[212,442],[228,455],[242,468],[252,480],[260,495]],
+        300, 1.1, .4, 'Greymist R.', [195,430], -50
+      );
+    }
+  }
+
+  // ────────────────────────────────────────────────────
+  // EAST-FLOWING SYSTEM (Ironspine → Ashen Reach coast)
+  // ────────────────────────────────────────────────────
+
+  // (8) ASHWATER — rises in E Ironspine, flows E/SE through the
+  //     blighted Ashen Reach to the eastern sea
+  for (const f of features) {
+    if (f.type === 'river' && f.id === 'ashwater') {
+      const pts = [
+        [494,260],[502,278],[508,298],[512,318],[515,340],[518,362],[520,382],[518,398],[512,410]
+      ];
+      const d = wobblyRiverPath(pts, 200);
+      if (rc) {
+        const node = rc.path(d, { stroke:'rgba(50,70,110,.4)', strokeWidth:1.2, fill:'none', roughness:.7 });
+        svg.appendChild(node);
+      } else {
+        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.4)', 'stroke-width':1.2, fill:'none' }));
+      }
+      const rl = svgEl('text', { x:525, y:330, fill:'rgba(50,70,110,.3)', 'font-size':5.5, 'font-style':'italic', transform:'rotate(-80,525,330)' });
+      rl.textContent = 'Ashwater'; svg.appendChild(rl);
+    }
+  }
 
   // ── Scattered trees (forest hints) ──────────────
   const forestZones = [
-    {x:200,y:190,n:6,spread:25}, // Shattered West forests
-    {x:350,y:280,n:8,spread:30}, // Hearthlands
-    {x:160,y:380,n:5,spread:20}, // Sunken Marches
-    {x:300,y:490,n:4,spread:22}, // Iron Coast
+    {x:195,y:240,n:6,spread:22}, // Shattered West forests
+    {x:340,y:290,n:8,spread:28}, // Hearthlands
+    {x:175,y:395,n:5,spread:18}, // Sunken Marches
+    {x:350,y:470,n:4,spread:20}, // Iron Coast
   ];
   for (const fz of forestZones) {
     for (let fi = 0; fi < fz.n; fi++) {

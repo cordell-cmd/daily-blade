@@ -204,22 +204,22 @@
       "id": "ashwater",
       "name": "The Ashwater",
       "type": "river",
-      "description": "A seasonal river in the Ashen Reach, often reduced to a dry riverbed. When it flows, it carries ashen silt from the Scorched Flats.",
+      "description": "A seasonal river rising on the eastern slopes of the Ironspine Mountains. It flows east and southeast through the Ashen Reach, often reduced to a dry bed in summer. When it flows, it carries ashen silt from the Scorched Flats to the eastern coast.",
       "flows_through": ["ashen_reach"]
     },
     {
       "id": "greymist_river",
       "name": "The Greymist River",
       "type": "river",
-      "description": "A slow, fog-shrouded river that drains the Sunken Marches. Its waters are said to carry whispers of the drowned dead.",
-      "flows_through": ["sunken_marches", "iron_coast"]
+      "description": "A slow, fog-shrouded river that drains the Sunken Marches, flowing south and southwest to meet the coast where the Vael Ocean and Sapphire Sea merge. Its waters are said to carry whispers of the drowned dead.",
+      "flows_through": ["sunken_marches"]
     },
     {
       "id": "northmere_river",
       "name": "The Northmere",
       "type": "river",
-      "description": "A broad, cold river that branches from the Pelimor at the city of Pelimor and flows northwest into the Steppe Marches. Frozen solid for three months each winter; the rest of the year it carries furs and grain south.",
-      "flows_through": ["hearthlands", "steppe_marches"]
+      "description": "A broad, cold river that rises in the northern Ironspine and flows northwest across the Steppe Marches to empty into the Bitter Sea. Frozen solid for three months each winter; the rest of the year it carries furs and grain toward the coast.",
+      "flows_through": ["steppe_marches"]
     },
     {
       "id": "ironbrook",
@@ -232,7 +232,7 @@
       "id": "wychflow",
       "name": "The Wychflow",
       "type": "river",
-      "description": "The main river of the Shattered West. It winds south through dark forests and ruined provinces to empty into the Vael Ocean. Witch-lights dance on its surface at night.",
+      "description": "The main river of the Shattered West. It rises where the Ironspine foothills meet the western highlands, then winds west and southwest through dark forests and ruined provinces to empty into the Vael Ocean. Witch-lights dance on its surface at night.",
       "flows_through": ["shattered_west"]
     },
     {
@@ -246,8 +246,8 @@
       "id": "thornwater",
       "name": "The Thornwater",
       "type": "river",
-      "description": "A sluggish, briar-choked river that flows east from the Shattered West into the Hearthlands, eventually feeding the Pelimor system. Its banks are tangled with witch-thorn.",
-      "flows_through": ["shattered_west", "hearthlands"]
+      "description": "A sluggish, briar-choked river that rises in the western Hearthlands hills, flowing south and southeast to join the Pelimor River. Its banks are tangled with witch-thorn.",
+      "flows_through": ["hearthlands"]
     }
   ],
   "place_assignments": [
