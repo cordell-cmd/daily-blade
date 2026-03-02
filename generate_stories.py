@@ -218,6 +218,15 @@ def build_geography_context(geo):
         if known:
             for c in known:
                 lines.append(f"Known Continent: {c['name']} — {c.get('description', '')[:150]}")
+                gdim = c.get("geo_dimensions", {})
+                if gdim:
+                    lines.append(
+                        f"  Scale: ~{gdim.get('width_miles', '?')} miles wide × "
+                        f"~{gdim.get('height_miles', '?')} miles tall "
+                        f"(roughly the size of Australia). "
+                        f"Use realistic travel times: a horse covers ~30 mi/day, "
+                        f"a caravan ~15 mi/day, a ship ~100 mi/day."
+                    )
         if other:
             other_names = ", ".join(
                 f"{c['name']} ({c.get('status', 'unknown')})"
@@ -272,8 +281,13 @@ def build_geography_context(geo):
     if routes:
         lines.append("Known Routes:")
         for rt in routes:
+            dist = rt.get('distance_miles')
+            travel = rt.get('travel_note', '')
+            dist_str = f", ~{dist} mi" if dist else ""
+            travel_str = f" — {travel}" if travel else ""
             lines.append(
-                f"• {rt['name']}: {rt.get('from_place', '?')} → {rt.get('to_place', '?')} ({rt.get('type', 'road')})"
+                f"• {rt['name']}: {rt.get('from_place', '?')} → {rt.get('to_place', '?')} "
+                f"({rt.get('type', 'road')}{dist_str}){travel_str}"
             )
         lines.append("")
 
@@ -282,6 +296,9 @@ def build_geography_context(geo):
     lines.append("- Respect established place→region assignments listed above.")
     lines.append("- New places should fit logically into the existing geographic framework.")
     lines.append("- Mention terrain, climate, or landmarks that match the region's description.")
+    lines.append("- Use realistic distances and travel times consistent with the continent's scale.")
+    lines.append("  E.g. Pelimor to the Ashen Wastes is ~600 miles (3-4 weeks by caravan).")
+    lines.append("  Crossing Valdris coast-to-coast is ~2500 miles — a journey of many months.")
 
     return "\n".join(lines).strip()
 

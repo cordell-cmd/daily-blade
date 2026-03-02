@@ -351,6 +351,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 .map-tooltip .tt-name { font-family: 'Cinzel', serif; font-weight: 700; color: #c9922a; font-size: .8rem; }
 .map-tooltip .tt-region { font-size: .68rem; color: #bfa878; margin-top: .15rem; }
 .map-tooltip .tt-conf { font-size: .6rem; color: #8a6d3b; margin-top: .15rem; font-style: italic; }
+.map-tooltip .tt-dist { font-size: .58rem; color: #a8926a; margin-top: .2rem; font-style: italic; letter-spacing: .02em; }
 .map-legend { display: flex; justify-content: center; gap: 1.2rem; margin-top: .8rem; flex-wrap: wrap; }
 .map-legend-item { display: flex; align-items: center; gap: .35rem; font-size: .65rem; color: var(--muted); letter-spacing: .08em; }
 .map-legend-swatch { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(201,146,42,.4); }
@@ -4351,6 +4352,68 @@ function renderValdrisMap(svg) {
   // Compass rose
   drawCompass(svg, W-60, 55, 20);
 
+  // ── Scale system ──────────────────────────────────
+  // Valdris ≈ Australia: 2500 mi wide × 1830 mi tall
+  // Usable viewport: 750 × 550 px (25 px padding each side)
+  const VALDRIS_WIDTH_MI  = 2500;
+  const VALDRIS_HEIGHT_MI = 1830;
+  const MAP_PX_W = 750, MAP_PX_H = 550, MAP_PAD = 25;
+  const MI_PER_PX = VALDRIS_WIDTH_MI / MAP_PX_W; // ≈ 3.33
+
+  // Expose helper for tooltips
+  window._valdrisScale = {
+    miPerPx: MI_PER_PX,
+    pxToMi: (px) => Math.round(px * MI_PER_PX),
+    distMi: (x1,y1,x2,y2) => Math.round(Math.sqrt((x2-x1)**2 + (y2-y1)**2) * MI_PER_PX),
+    assignments: assignments
+  };
+
+  // ── Scale bar (Tolkien-style) ─────────────────────
+  {
+    const barX = 60, barY = H - 45;
+    const segMi = 200;  // each segment = 200 miles
+    const segPx = segMi / MI_PER_PX; // ≈ 60 px
+    const segs = 3; // 0 — 200 — 400 — 600 miles
+
+    // Bar background (subtle parchment strip)
+    svg.appendChild(svgEl('rect', {
+      x: barX - 8, y: barY - 14, width: segPx * segs + 16, height: 28,
+      fill: 'rgba(212,197,160,.6)', rx: 2, 'pointer-events':'none'
+    }));
+
+    for (let i = 0; i <= segs; i++) {
+      const x = barX + i * segPx;
+      // Tick mark
+      svg.appendChild(svgEl('line', {
+        x1: x, y1: barY - 5, x2: x, y2: barY + 5,
+        stroke: 'rgba(50,30,10,.7)', 'stroke-width': i === 0 || i === segs ? 1.2 : .7
+      }));
+      // Label
+      const lbl = svgEl('text', {
+        x: x, y: barY + 14, 'text-anchor': 'middle',
+        fill: 'rgba(50,30,10,.6)', 'font-size': 6,
+        'font-family': "'IM Fell English', serif"
+      });
+      lbl.textContent = String(i * segMi); svg.appendChild(lbl);
+    }
+    // Horizontal bar segments (alternating fill for readability)
+    for (let i = 0; i < segs; i++) {
+      const x = barX + i * segPx;
+      svg.appendChild(svgEl('rect', {
+        x, y: barY - 3, width: segPx, height: 6,
+        fill: i % 2 === 0 ? 'rgba(50,30,10,.55)' : 'rgba(50,30,10,.15)',
+        stroke: 'rgba(50,30,10,.6)', 'stroke-width': .5
+      }));
+    }
+    // "miles" label
+    const miLbl = svgEl('text', {
+      x: barX + segPx * segs + 10, y: barY + 4, 'text-anchor': 'start',
+      fill: 'rgba(50,30,10,.5)', 'font-size': 7, 'font-style': 'italic',
+      'font-family': "'IM Fell English', serif"
+    });
+    miLbl.textContent = 'miles'; svg.appendChild(miLbl);
+  }
+
   // Age vignette
   svg.appendChild(svgEl('rect', { x:0, y:0, width:W, height:H, fill:'url(#age-vignette-v)', 'pointer-events':'none' }));
 
@@ -4365,10 +4428,36 @@ function showPlaceTooltip(e, assignment) {
   const regionName = getRegionDisplayName(assignment.macro_region);
   const conf = (assignment.confidence||'unknown').toLowerCase();
   const confLabel = conf === 'high' ? '⬤ Confirmed' : conf === 'medium' ? '◐ Reported' : '○ Uncertain';
+
+  // Distance to nearest notable places
+  let distHtml = '';
+  if (window._valdrisScale) {
+    const sc = window._valdrisScale;
+    const ax = (assignment.position_pct.x / 100) * 750 + 25;
+    const ay = (assignment.position_pct.y / 100) * 550 + 25;
+    const nearby = [];
+    for (const other of sc.assignments) {
+      if (other.place_name === assignment.place_name) continue;
+      if ((other.confidence||'').toLowerCase() === 'low') continue;
+      const bx = (other.position_pct.x / 100) * 750 + 25;
+      const by = (other.position_pct.y / 100) * 550 + 25;
+      const d = sc.distMi(ax, ay, bx, by);
+      if (d > 0 && d < 1200) nearby.push({ name: other.place_name, d });
+    }
+    nearby.sort((a,b) => a.d - b.d);
+    const top3 = nearby.slice(0, 3);
+    if (top3.length) {
+      distHtml = '<div class="tt-dist">' + top3.map(
+        n => `${escHtml(n.name)}: ~${n.d} mi`
+      ).join(' · ') + '</div>';
+    }
+  }
+
   tooltip.innerHTML = `
     <div class="tt-name">${escHtml(assignment.place_name)}</div>
     <div class="tt-region">${escHtml(regionName)}</div>
     <div class="tt-conf">${confLabel}</div>
+    ${distHtml}
   `;
   const rect = container.getBoundingClientRect();
   tooltip.style.left = (e.clientX - rect.left + 14) + 'px';

@@ -40,7 +40,13 @@
       "hemispheres": ["northern", "western"],
       "status": "explored",
       "climate_zones": ["temperate", "arid", "subarctic", "coastal-maritime"],
-      "svg_bounds": { "x": 120, "y": 100, "w": 380, "h": 350 }
+      "svg_bounds": { "x": 120, "y": 100, "w": 380, "h": 350 },
+      "geo_dimensions": {
+        "width_miles": 2500,
+        "height_miles": 1830,
+        "approx_area_sq_miles": 2900000,
+        "scale_note": "Roughly the size of Australia. The detail-map viewport (800×600 SVG units, with 25 px padding) maps to this physical area. 1 SVG unit ≈ 3.33 miles ≈ 5.37 km."
+      }
     },
     {
       "id": "keth_morath",
@@ -708,6 +714,8 @@
       "from_place": "Pelimor",
       "to_place": "the Ashen Wastes",
       "type": "trade_road",
+      "distance_miles": 600,
+      "travel_note": "Three to four weeks by laden caravan; ten days hard ride.",
       "description": "The great caravan road connecting Pelimor's markets to the Ashen Wastes. Bandits, toll-lords, and spice merchants ply this route.",
       "passes_through": ["The Blasted Lands"]
     },
@@ -717,6 +725,8 @@
       "from_place": "Pelimor",
       "to_place": "Northlands",
       "type": "highway",
+      "distance_miles": 450,
+      "travel_note": "Two weeks by horse, longer in winter when snow closes the passes.",
       "description": "The main highway running north from Pelimor through the Hearthlands and into the Steppe Marches. Pieter Vane fled three provinces along it.",
       "passes_through": ["Grimmholt"]
     },
@@ -726,6 +736,8 @@
       "from_place": "port",
       "to_place": "Sapphire Deep",
       "type": "sea_route",
+      "distance_miles": 350,
+      "travel_note": "Four to six days by merchant galley; faster with tide-magic.",
       "description": "Coastal and deep-sea shipping lanes along the Iron Coast. Connects port cities to the merfolk realm.",
       "passes_through": ["Sunken Caverns"]
     }
