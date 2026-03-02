@@ -3598,8 +3598,8 @@
       "atmosphere": "",
       "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
       "status": "active",
-      "first_story": "The Crown-Thief of Ashen Wastes",
-      "first_date": "2026-02-28",
+      "first_story": "Blood-Price of the Caravan",
+      "first_date": "2026-03-02",
       "appearances": 3,
       "story_appearances": [
         {
@@ -4332,7 +4332,7 @@
       "name": "Ossuary (as Living Entity)",
       "tagline": "Living. Hungry. Consuming.",
       "place_type": "fortress",
-      "world": "known_world",
+      "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
       "subcontinent": "unknown",
@@ -4340,11 +4340,11 @@
       "province": "unknown",
       "region": "unknown",
       "district": "unknown",
-      "atmosphere": "A breathing, peristaltic structure that moves with terrible purpose and hunger, devouring those who enter.",
+      "atmosphere": "A fortress that breathes and hungers, its architecture alive and capable of conscious choice.",
       "description": "An impossible fortress whose walls are made of living calcium that split and swallow warriors whole. Its towers bend like intestines in peristaltic waves. The corridors rearrange themselves around intruders. It possesses agency and deliberately chose Varak Ironhelm as a vessel. Upon sating itself, it settles into patient stillness.",
       "status": "active",
       "first_story": "The Bone Citadel's Hunger",
-      "first_date": "2026-02-28",
+      "first_date": "2026-03-02",
       "appearances": 1,
       "story_appearances": [
         {
@@ -4666,21 +4666,21 @@
     },
     {
       "name": "The Spire of Blackstone",
-      "tagline": "An ancient structure overlooking the goblin warrens beneath",
-      "place_type": "landmark",
-      "world": "Daily Blade",
+      "tagline": "Towering. Ancient. Contested.",
+      "place_type": "fortress / landmark / mountain peak",
+      "world": "Edhra",
       "hemisphere": "unknown",
-      "continent": "unknown",
+      "continent": "Valdris",
       "subcontinent": "unknown",
       "realm": "unknown",
       "province": "unknown",
-      "region": "underground",
+      "region": "The Shattered West",
       "district": "unknown",
-      "atmosphere": "dark, subterranean",
-      "description": "A towering structure that marks the boundary between the surface world and the goblin warrens below. The Spire stands as a monument above the underground kingdoms ruled by Mogrul and serves as a reference point for the deep places where goblins dwell.",
-      "status": "standing",
-      "first_story": "The Goblin-King's Mercy",
-      "first_date": "2026-03-01",
+      "atmosphere": "A massive structure of black stone rising above the earth, dwarven-held above while goblin warrens tunnel beneath, a boundary between worlds.",
+      "description": "The Spire of Blackstone is a massive fortress of black stone above which dwell dwarven holds, and beneath which tunnel the Warrens of the goblins. The structure stands as a contested border between goblin and dwarf domains, though the conflict was resolved through Grethuk's bargain rather than conquest.",
+      "status": "active",
+      "first_story": "The Goblin-King's Gambit",
+      "first_date": "2026-03-02",
       "appearances": 2,
       "story_appearances": [
         {
@@ -4691,6 +4691,9 @@
           "date": "2026-03-02",
           "title": "The Goblin-King's Gambit"
         }
+      ],
+      "aliases": [
+        "Spire of Blackstone"
       ]
     },
     {
@@ -4744,70 +4747,6 @@
       ]
     },
     {
-      "name": "the Ashen Wastes",
-      "tagline": "",
-      "place_type": "",
-      "world": "The Known World",
-      "hemisphere": "unknown",
-      "continent": "unknown",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "unknown",
-      "district": "unknown",
-      "atmosphere": "",
-      "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-02",
-      "appearances": 3,
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "Blood-Price of the Caravan"
-        },
-        {
-          "date": "2026-02-26",
-          "title": "The Living Garden"
-        },
-        {
-          "date": "2026-03-01",
-          "title": "The Crown-Thief of Ashen Wastes"
-        }
-      ],
-      "aliases": [
-        "Ashen Wastes"
-      ]
-    },
-    {
-      "name": "Ossuary (as Living Entity)",
-      "tagline": "Living. Hungry. Consuming.",
-      "place_type": "fortress",
-      "world": "The Known World",
-      "hemisphere": "unknown",
-      "continent": "unknown",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "unknown",
-      "district": "unknown",
-      "atmosphere": "A fortress that breathes and hungers, its architecture alive and capable of conscious choice.",
-      "description": "An impossible fortress whose walls are made of living calcium that split and swallow warriors whole. Its towers bend like intestines in peristaltic waves. The corridors rearrange themselves around intruders. It possesses agency and deliberately chose Varak Ironhelm as a vessel. Upon sating itself, it settles into patient stillness.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-02",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-02-28",
-          "title": "The Bone Citadel's Hunger"
-        }
-      ],
-      "aliases": [
-        "the Ossuary"
-      ]
-    },
-    {
       "name": "The Warrens",
       "tagline": "Deep. Vast. Labyrinthine.",
       "place_type": "underground fortress / kingdom",
@@ -4830,38 +4769,6 @@
           "date": "2026-03-02",
           "title": "The Goblin-King's Gambit"
         }
-      ]
-    },
-    {
-      "name": "The Spire of Blackstone",
-      "tagline": "Towering. Ancient. Contested.",
-      "place_type": "fortress / landmark / mountain peak",
-      "world": "Edhra",
-      "hemisphere": "unknown",
-      "continent": "Valdris",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "The Shattered West",
-      "district": "unknown",
-      "atmosphere": "A massive structure of black stone rising above the earth, dwarven-held above while goblin warrens tunnel beneath, a boundary between worlds.",
-      "description": "The Spire of Blackstone is a massive fortress of black stone above which dwell dwarven holds, and beneath which tunnel the Warrens of the goblins. The structure stands as a contested border between goblin and dwarf domains, though the conflict was resolved through Grethuk's bargain rather than conquest.",
-      "status": "active",
-      "first_story": "The Goblin-King's Gambit",
-      "first_date": "2026-03-02",
-      "appearances": 2,
-      "story_appearances": [
-        {
-          "date": "2026-03-01",
-          "title": "The Goblin-King's Mercy"
-        },
-        {
-          "date": "2026-03-02",
-          "title": "The Goblin-King's Gambit"
-        }
-      ],
-      "aliases": [
-        "Spire of Blackstone"
       ]
     },
     {
@@ -4911,6 +4818,31 @@
         {
           "date": "2026-03-02",
           "title": "The Warband's Last Song"
+        }
+      ]
+    },
+    {
+      "name": "The Bleached Wastes",
+      "tagline": "An unmapped eastern wasteland concealing ancient pre-human ruins",
+      "place_type": "wilderness region",
+      "world": "Daily Blade",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "eastern reaches",
+      "district": "unknown",
+      "atmosphere": "white, desolate, unexplored",
+      "description": "A vast eastern wasteland no kingdom had successfully explored before Mardoc's expedition. Beneath its white surface lies a vast underground city of pre-human ruins that fundamentally changed the Empire's understanding of the continent.",
+      "status": "explored",
+      "first_story": "The Cartographer's Lie",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
         }
       ]
     }
@@ -6143,14 +6075,14 @@
     },
     {
       "name": "The Lamp of Suroth",
-      "tagline": "Iron. Truth-bringer. Costly.",
-      "artifact_type": "lamp",
-      "origin": "Unknown; rests in the Sunken Ziggurat of Yeng in a niche with an ancient inscription.",
-      "powers": "When lit, it burns with black flame and forces the lighter to face one profound personal truth while consuming a corresponding lie they have lived by. The exchange appears to be balanced but transformative.",
-      "last_known_holder": "Malachite Doss",
+      "tagline": "",
+      "artifact_type": "",
+      "origin": "",
+      "powers": "",
+      "last_known_holder": "",
       "status": "used once \u2014 may be refillable",
       "first_story": "The Lamp of Suroth",
-      "first_date": "2026-02-25",
+      "first_date": "2026-03-02",
       "appearances": 1,
       "story_appearances": [
         {
@@ -6357,27 +6289,6 @@
           "date": "2026-02-28",
           "title": "The Lich-King's Collectors"
         }
-      ]
-    },
-    {
-      "name": "The Lamp of Suroth",
-      "tagline": "",
-      "artifact_type": "",
-      "origin": "",
-      "powers": "",
-      "last_known_holder": "",
-      "status": "used once \u2014 may be refillable",
-      "first_story": "",
-      "first_date": "2026-03-02",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "The Lamp of Suroth"
-        }
-      ],
-      "aliases": [
-        "Lamp of Suroth"
       ]
     },
     {
