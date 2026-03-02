@@ -562,6 +562,8 @@ const CODEX_URL      = './codex.json';
 const GEOGRAPHY_URL  = './geography.json';
 const DEFAULT_GITHUB_REPO = { owner: 'cordell-cmd', repo: 'daily-blade' };
 const AUDIT_WORKFLOW_FILE = 'audit.yml';
+const AUDIT_ENTITY_WORKFLOW_FILE = 'audit-entity.yml';
+const AUDIT_ENTITY_RESULT_URL = './audit-entity-result.json';
 const AUDIT_PROXY_DEFAULT_URL = 'https://daily-blade-audit-proxy.cordell-97f.workers.dev/audit'; // deployed Cloudflare Worker proxy
 
 function isDeveloperMode() {
@@ -3297,42 +3299,9 @@ async function auditCodexEntity(cardEl, statusEl) {
   const entityName = (cardEl.querySelector('.codex-card-name') || {}).textContent || '';
   if (!entityType || !entityName) throw new Error('Cannot identify entity from card.');
 
-  // Look up the full entity object from CODEX_DATA_CACHE
-  const entityKey = normalizeEntityKey(entityName);
-  const arr = CODEX_DATA_CACHE && Array.isArray(CODEX_DATA_CACHE[entityType]) ? CODEX_DATA_CACHE[entityType] : [];
-  const entity = arr.find(e => normalizeEntityKey(e.name) === entityKey);
-  if (!entity) throw new Error(`Entity "${entityName}" not found in codex cache.`);
+  statusEl.textContent = 'Dispatching audit…';
 
-  // Collect all story appearances
-  const apps = [];
-  if (Array.isArray(entity.story_appearances)) {
-    entity.story_appearances.forEach(a => {
-      if (a && a.date && a.title) apps.push({ date: a.date, title: a.title });
-    });
-  }
-  if (apps.length === 0 && entity.first_story && entity.first_date) {
-    apps.push({ date: entity.first_date, title: entity.first_story });
-  }
-  if (apps.length === 0) throw new Error('No story appearances to audit against.');
-
-  // Fetch all story texts
-  statusEl.textContent = `Fetching ${apps.length} stor${apps.length === 1 ? 'y' : 'ies'}…`;
-  const stories = [];
-  for (const app of apps) {
-    try {
-      const day = await fetchDayStories(app.date);
-      const story = findStoryInDay(day, app.title);
-      if (story) {
-        stories.push({ date: app.date, title: story.title || app.title, text: story.text || '' });
-      }
-    } catch (e) {
-      console.warn(`Could not fetch story ${app.date}/${app.title}:`, e);
-    }
-  }
-  if (stories.length === 0) throw new Error('Could not fetch any story texts.');
-
-  // Call the audit-entity proxy endpoint
-  statusEl.textContent = 'Auditing via Haiku…';
+  // Dispatch via proxy -> GitHub Actions
   let proxyUrl = getDevAuditProxyUrl();
   if (!proxyUrl) throw new Error('Audit proxy not configured');
   proxyUrl = proxyUrl.replace(/\/audit\/?$/, '/audit-entity');
@@ -3344,7 +3313,7 @@ async function auditCodexEntity(cardEl, statusEl) {
   const res = await fetch(proxyUrl, {
     method: 'POST',
     headers,
-    body: JSON.stringify({ entity, stories }),
+    body: JSON.stringify({ entity_name: entityName, entity_type: entityType }),
   });
   if (!res.ok) {
     let msg = '';
@@ -3352,9 +3321,92 @@ async function auditCodexEntity(cardEl, statusEl) {
     throw new Error(`Audit proxy ${res.status}${msg ? `: ${msg}` : ''}`);
   }
 
-  const result = await res.json();
-  statusEl.textContent = '';
-  showAuditResults(entityName, entityType, result);
+  // Poll the GitHub Actions workflow for completion
+  statusEl.textContent = 'Audit queued — waiting for GitHub Actions…';
+  const { owner, repo } = getGitHubRepoInfo();
+  const startedAt = Date.now();
+
+  const pollResult = await pollWorkflowRun(owner, repo, AUDIT_ENTITY_WORKFLOW_FILE, startedAt, {
+    timeoutMs: 180000,
+    intervalMs: 4000,
+    onTick: (elapsed) => {
+      const secs = Math.round(elapsed / 1000);
+      statusEl.textContent = `Audit running… (${secs}s)`;
+    },
+  });
+
+  if (pollResult.status === 'completed' && pollResult.conclusion === 'success') {
+    statusEl.textContent = 'Fetching results…';
+    // Fetch the committed result file (bust cache)
+    const resultUrl = AUDIT_ENTITY_RESULT_URL + '?t=' + Date.now();
+    try {
+      const rr = await fetch(resultUrl);
+      if (rr.ok) {
+        const result = await rr.json();
+        // Verify it's for the right entity
+        if (result.entity_name && normalizeEntityKey(result.entity_name) === normalizeEntityKey(entityName)) {
+          statusEl.textContent = '';
+          showAuditResults(entityName, entityType, result);
+          return;
+        }
+      }
+    } catch (e) {
+      console.warn('Could not fetch audit-entity-result.json:', e);
+    }
+    statusEl.textContent = 'Audit complete (could not load results — try refreshing).';
+  } else if (pollResult.status === 'completed') {
+    statusEl.textContent = `Audit finished with: ${pollResult.conclusion || 'unknown'}`;
+  } else if (pollResult.status === 'timeout') {
+    statusEl.textContent = 'Audit still running — check GitHub Actions for results.';
+  } else {
+    statusEl.textContent = 'Audit dispatched (status unavailable).';
+  }
+}
+
+async function pollWorkflowRun(owner, repo, workflowFile, startedAtMs, opts = {}) {
+  const timeoutMs = Number.isFinite(opts.timeoutMs) ? opts.timeoutMs : 180000;
+  const intervalMs = Number.isFinite(opts.intervalMs) ? opts.intervalMs : 4000;
+  const onTick = typeof opts.onTick === 'function' ? opts.onTick : () => {};
+  const deadline = Date.now() + timeoutMs;
+
+  // We need a GitHub token to poll workflow runs
+  const token = getDevGitHubToken();
+  if (!token) {
+    // No token: just wait a reasonable time and try to fetch results
+    await sleep(25000);
+    return { run: null, status: 'completed', conclusion: 'success' };
+  }
+
+  while (Date.now() < deadline) {
+    onTick(Date.now() - startedAtMs);
+    try {
+      const data = await githubApiRequest(
+        `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/actions/workflows/${encodeURIComponent(workflowFile)}/runs?event=workflow_dispatch&per_page=10`
+      );
+      const runs = (data && Array.isArray(data.workflow_runs)) ? data.workflow_runs : [];
+      const run = runs.find(r => {
+        const created = r && r.created_at ? Date.parse(r.created_at) : 0;
+        return created && created >= (startedAtMs - 30000);
+      }) || runs[0];
+
+      if (run) {
+        const status = String(run.status || '').toLowerCase();
+        const conclusion = String(run.conclusion || '').toLowerCase();
+        if (status === 'completed') {
+          return { run, status, conclusion };
+        }
+      }
+    } catch (e) {
+      // If we can't read Actions, fall back to timer
+      if (isGitHubAuthError(e)) {
+        await sleep(25000);
+        return { run: null, status: 'completed', conclusion: 'success' };
+      }
+    }
+    await sleep(intervalMs);
+  }
+
+  return { run: null, status: 'timeout', conclusion: '' };
 }
 
 function showAuditResults(name, type, result) {
