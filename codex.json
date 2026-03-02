@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-01",
+  "last_updated": "2026-03-02",
   "characters": [
     {
       "name": "Vraxen the Knife",
@@ -409,7 +409,7 @@
       ],
       "first_story": "Zareth Among the Stellar Stones",
       "first_date": "2026-02-25",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -418,12 +418,19 @@
         {
           "date": "2026-03-01",
           "title": "The Starfall Oath"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Starfall Ritual"
         }
       ],
       "travel_scope": "interrealm",
-      "home_place": "unknown",
+      "home_place": "Peak of Aethros",
       "home_region": "unknown",
-      "home_realm": "unknown"
+      "home_realm": "unknown",
+      "aliases": [
+        "Zareth"
+      ]
     },
     {
       "name": "Kessa the Thief",
@@ -472,40 +479,45 @@
     {
       "name": "Torven",
       "tagline": "Brave. Compassionate. Savior.",
-      "role": "Pearl Diver",
-      "status": "Active",
-      "world": "The Known World",
-      "bio": "A pearl diver who ventured into the Sunken Caverns to save his drowning village. Instead of taking the Lamia's Pearl, he accepted the Lamia's tears and brought her into the light.",
+      "role": "Pearl-diver / Mystic",
+      "status": "active",
+      "world": "Edhra",
+      "bio": "Torven was a pearl-diver in the Sapphire Deep who was shown a magnificent pearl by the sea-kind in exchange for finding a match. In the Sunken Caverns, he discovered the pearl was the Vespera's heart\u2014given away when she loved a mortal prince centuries ago. Rather than steal it, Torven chose compassion, asking the Vespera the prince's name so she could finally weep and heal.",
       "traits": [
-        "Brave",
-        "Compassionate",
-        "Resourceful"
+        "compassionate",
+        "humble",
+        "curious",
+        "selfless"
       ],
       "first_story": "The Lamia's Pearl",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Lamia's Pearl"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Merchant's Pearl"
         }
-      ]
+      ],
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "Vex the Shade-Merchant",
       "tagline": "Cursed. Brutal. Alone.",
-      "role": "Mercenary",
-      "status": "Active",
+      "role": "Merchant / Thief",
+      "status": "cursed",
       "world": "The Known World",
-      "bio": "A woman born with a curse that twisted every kindness she performed into catastrophe, causing collateral deaths and plague. She became a mercenary to align her curse with violence, believing this gave it purpose. After killing a sorcerer who claimed to have lifted the curse, she realized her curse was a gift teaching that intention and consequence are never simple.",
+      "bio": "A merchant and thief who stole a fortune in shadows from a dying sorcerer's vault and attempted to sell them in Pelimor's night markets. He was outwitted by a cloaked woman who had purchased back his own shadow\u2014worn by a malevolent entity tracking his crimes\u2014and was compelled northward and eastward into unknown wastes.",
       "traits": [
-        "Cursed",
-        "Brutal",
-        "Isolated",
-        "violent",
-        "philosophical",
-        "self-aware",
-        "seeks solitude"
+        "clever",
+        "criminal",
+        "doomed"
       ],
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
@@ -531,7 +543,11 @@
       "aliases": [
         "Vex",
         "Vex the Curse-Bearer"
-      ]
+      ],
+      "travel_scope": "regional",
+      "home_place": "Pelimor",
+      "home_region": "unknown",
+      "home_realm": "unknown"
     },
     {
       "name": "Morgath",
@@ -1288,66 +1304,102 @@
     {
       "name": "The Emperor",
       "tagline": "Distant. Demanding. Unaware.",
-      "role": "Ruler",
+      "role": "Emperor, Sovereign",
       "status": "active",
-      "world": "The Known World",
-      "bio": "An emperor who hired Urgha the Unmoved to collect taxes or retrieve punishment, apparently unaware that his tax collector had spent funds on his daughter's medical care.",
+      "world": "Edhra",
+      "bio": "The Emperor sits in judgment when Lady Vessa confesses to poisoning her husband. Intrigued by her honesty and ruthlessness, he offers her a choice: death or service as his Executioner. He grants her a pension and respect after five years of dirty work.",
       "traits": [
-        "authoritarian",
-        "bureaucratic",
-        "removed from consequences"
+        "intrigued",
+        "pragmatic",
+        "respects competence",
+        "powerful"
       ],
       "first_story": "The Barbarian's Mercy",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Barbarian's Mercy"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Widow's Vengeance"
         }
+      ],
+      "travel_scope": "realmwide",
+      "home_place": "great hall",
+      "home_region": "unknown",
+      "home_realm": "Empire",
+      "aliases": [
+        "Emperor"
       ]
     },
     {
       "name": "The Tax Collector",
       "tagline": "Desperate. Compassionate. Powerless.",
-      "role": "Bureaucrat",
+      "role": "Imperial Official, Auditor",
       "status": "active",
-      "world": "The Known World",
-      "bio": "A small, weeping imperial tax collector who spent his collection on physicians to save his daughter's life. He faced brutal punishment from the emperor's hired mercenary.",
+      "world": "Edhra",
+      "bio": "The Tax Collector's auditors caught Mardoc selling false maps in a dockside tavern in Pelimor. Rather than execute a crippled old mapmaker, the Tax Collector allowed himself to be persuaded by his own clever daughter to hire Mardoc as an expedition guide into the Bleached Wastes.",
       "traits": [
-        "loving",
-        "principled",
-        "vulnerable"
+        "judicial",
+        "pragmatic",
+        "authoritative"
       ],
       "first_story": "The Barbarian's Mercy",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Barbarian's Mercy"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
         }
+      ],
+      "travel_scope": "regional",
+      "home_place": "Pelimor",
+      "home_region": "unknown",
+      "home_realm": "Empire",
+      "aliases": [
+        "Tax Collector"
       ]
     },
     {
       "name": "The Tax Collector's Daughter",
       "tagline": "Young. Fevered. Innocent.",
-      "role": "Child",
+      "role": "Diplomat, Negotiator",
       "status": "active",
-      "world": "The Known World",
-      "bio": "A six-year-old girl burning with fever whose illness drove her father to spend his tax collection on physicians. Her humanity moved Urgha to mercy.",
+      "world": "Edhra",
+      "bio": "The Tax Collector's clever and curious daughter haggled on Mardoc's behalf when her father's auditors found him in a dockside tavern. By month's end, she had helped secure not just a pardon but a full expedition into the unmapped Bleached Wastes under Mardoc's guidance.",
       "traits": [
-        "innocent",
-        "universally sympathetic"
+        "clever",
+        "curious",
+        "persuasive",
+        "skilled negotiator"
       ],
       "first_story": "The Barbarian's Mercy",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "The Barbarian's Mercy"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
         }
+      ],
+      "travel_scope": "regional",
+      "home_place": "Pelimor",
+      "home_region": "unknown",
+      "home_realm": "Empire",
+      "aliases": [
+        "Tax Collector's daughter"
       ]
     },
     {
@@ -1679,9 +1731,9 @@
       "tagline": "Conquered. Consumed. Possessed.",
       "role": "Warlord / General",
       "status": "cursed",
-      "travel_scope": "unknown",
+      "travel_scope": "regional",
       "home_place": "unknown",
-      "home_region": "unknown",
+      "home_region": "Sunken Marches",
       "home_realm": "unknown",
       "status_history": [],
       "world": "The Known World",
@@ -2067,32 +2119,38 @@
     {
       "name": "Kess of the Drowned Hollows",
       "aliases": [
-        "Kess of the Drowned Hollows"
+        "Kess of the Drowned Hollows",
+        "Kess",
+        "the Bone-Singer",
+        "Kess of the Tidelands"
       ],
       "tagline": "Silent. Sacrifice. Songkeeper.",
-      "role": "Bone-Singer",
-      "status": "active",
-      "travel_scope": "local",
-      "home_place": "Drowned Hollows",
-      "home_region": "unknown",
+      "role": "Bone-Singer / Ritual Caster",
+      "status": "cursed",
+      "travel_scope": "regional",
+      "home_place": "Tidelands",
+      "home_region": "Sunken Marches",
       "home_realm": "unknown",
       "status_history": [],
-      "world": "known_world",
-      "bio": "Kess was a bone-singer of the Drowned Hollows, keeper of old songs that bound stone and root together. When the Rot-King's plague blackened her village, she refused divine mercy and instead bargained with a wolf-spirit of the deep forest, trading her voice for the plague's lifting. She now teaches the old songs through gesture and hand, her throat burned with ancient magic.",
+      "world": "Edhra",
+      "bio": "Kess of the Tidelands possessed the rare gift of singing bones back to life\u2014not as servants, but as witnesses to truth. When the warlord Varak brought her a skeleton claiming it was his rival, she discovered it was actually his own father, whom Varak had murdered. She bound Varak with his father's oath-magic, but at great cost: she sang a counter-ritual to silence the bones and lost her voice permanently, now hearing only whispers of the dead.",
       "traits": [
-        "silent",
-        "sacrificial",
-        "keeper of old knowledge",
         "bone-singer",
-        "mute"
+        "truthseeker",
+        "mute",
+        "cursed"
       ],
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-01",
           "title": "The Bone-Singer's Lament"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Bone-Singer's Choice"
         }
       ]
     },
@@ -2105,9 +2163,9 @@
       "role": "Cartographer",
       "status": "active",
       "travel_scope": "interrealm",
-      "home_place": "unknown",
+      "home_place": "Pelimor",
       "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_realm": "Empire",
       "status_history": [],
       "world": "The Known World",
       "bio": "Mardoc is a renowned cartographer who has mapped half the Known World and descended into the Sunken Caverns to map the Lamia's realm. Rather than confront the Lamia with steel, he offered her something more valuable: eternal witness through his maps and her true name inscribed in silver leaf. His success transformed him into a legend and reshaped how the world perceives the Lamia.",
@@ -2120,11 +2178,15 @@
       ],
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-01",
           "title": "The Cartographer's Gambit"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
         }
       ]
     },
@@ -2404,21 +2466,20 @@
         "Captain of the Vengeful Tide"
       ],
       "tagline": "Defiant. Transformed. Bound.",
-      "role": "Ship captain, deep-navy commander",
-      "status": "Alive, transformed into merfolk",
-      "travel_scope": "Merfolk cities and deep ocean; surfaces near her old crew's port monthly",
-      "home_place": "Merfolk cities of coral and shell",
+      "role": "Captain; Merfolk-bound",
+      "status": "active",
+      "travel_scope": "interrealm",
+      "home_place": "port",
       "home_region": "unknown",
       "home_realm": "The deep ocean",
       "status_history": [],
-      "world": "Daily Blade",
-      "bio": "Once captain of the Vengeful Tide, Nerida stole a pearl from the Lamia's vault twenty years prior as proof of surviving the Sunken Caverns. When the merfolk came to collect their debt, she sacrificed herself to spare her crew, diving into the summoned storm. Rather than drown, she was magically transformed into a merfolk with gills and enhanced vision. She now serves as a captain of the merfolk deep-navy, bound by magic and debt, and surfaces each new moon to leave messages carved in coral for her old crew.",
+      "world": "The Known World",
+      "bio": "A sea captain who stole a pearl from the Lamia's vault twenty years ago as proof of survival, incurring a magical debt with the merfolk. When the merfolk came to collect, Nerida dove into the sea before they could choose her crew's fate, accepting transformation into a merfolk form with gills and enhanced deep-sight. She now captains a deep-navy vessel for the merfolk, bound by magic and debt, but surfaces near her old crew's port monthly to leave carved coral messages.",
       "traits": [
-        "prideful",
+        "defiant",
         "selfless",
-        "daring",
-        "bound by magic",
-        "transformed"
+        "transformed",
+        "bound"
       ],
       "first_story": "The Sea-Debt",
       "first_date": "2026-03-01",
@@ -2569,7 +2630,7 @@
       "role": "Archer, Warrior",
       "status": "active",
       "travel_scope": "regional",
-      "home_place": "unknown",
+      "home_place": "Blackthorn",
       "home_region": "unknown",
       "home_realm": "unknown",
       "status_history": [],
@@ -2584,11 +2645,15 @@
       ],
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-01",
           "title": "The Forge-Witch's Test"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Archer's Vigil"
         }
       ]
     },
@@ -2649,6 +2714,401 @@
         {
           "date": "2026-03-01",
           "title": "The Goblin-King's Mercy"
+        }
+      ]
+    },
+    {
+      "name": "Thera the Falconer",
+      "aliases": [
+        "Thera"
+      ],
+      "tagline": "Negotiator. Courageous. Pragmatic.",
+      "role": "Falconer, Negotiator",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "The Steppe Marches",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "Thera the Falconer rode north seeking the wyvern Keth-Vex after it took a merchant's daughter. Rather than fight, she discovered the creature was bound by ancient dragon-law and negotiated the girl's release by retrieving an oath-scroll from the merchant's vault. She left with the merchant's gratitude and a deeper understanding of obligation.",
+      "traits": [
+        "negotiator",
+        "brave",
+        "pragmatic",
+        "skilled tracker"
+      ],
+      "first_story": "The Wyvern's Ransom",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Wyvern's Ransom"
+        }
+      ]
+    },
+    {
+      "name": "Keth-Vex",
+      "aliases": [],
+      "tagline": "Ancient. Bound. Honorable.",
+      "role": "Wyvern, Collector of Debts",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "wyvern eyrie",
+      "home_region": "The Steppe Marches",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "Keth-Vex is a wyvern who took a merchant's daughter not out of cruelty but because her grandmother swore an oath to Keth-Vex's sire generations past. The creature operates under dragon-law older than kingdoms and collects debts through binding obligation rather than violence.",
+      "traits": [
+        "ancient",
+        "honorable",
+        "bound by oath",
+        "articulate"
+      ],
+      "first_story": "The Wyvern's Ransom",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Wyvern's Ransom"
+        }
+      ]
+    },
+    {
+      "name": "Lady Vessa",
+      "aliases": [
+        "Vessa"
+      ],
+      "tagline": "Poisoner. Honest. Ruthless.",
+      "role": "Poisoner, Imperial Executioner",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "great hall",
+      "home_region": "unknown",
+      "home_realm": "Empire",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "Lady Vessa poisoned her husband over three years using rare herbs before walking into the Emperor's great hall to confess. Rather than hang, she accepted the Emperor's bargain: become his Executioner. For five years she carried out the Empire's dark work, and when challenged, she walked free with a pension and the Emperor's respect.",
+      "traits": [
+        "poisoner",
+        "honest",
+        "ruthless",
+        "skilled assassin",
+        "pragmatic"
+      ],
+      "first_story": "The Widow's Vengeance",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Widow's Vengeance"
+        }
+      ]
+    },
+    {
+      "name": "Merchant's Daughter",
+      "aliases": [],
+      "tagline": "Taken. Protected. Innocent.",
+      "role": "Captive",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "The Steppe Marches",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "The merchant's daughter was taken by the wyvern Keth-Vex not to devour her but to keep her, cradled in a nest of silk and gold as payment for an oath sworn by her grandmother to Keth-Vex's sire. She was released unharmed after Thera the Falconer retrieved the oath-scroll from her father's vault.",
+      "traits": [
+        "innocent",
+        "protected"
+      ],
+      "first_story": "The Wyvern's Ransom",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Wyvern's Ransom"
+        }
+      ]
+    },
+    {
+      "name": "Syleth",
+      "aliases": [],
+      "tagline": "Fae-marked. Thief. Defiant.",
+      "role": "Thief",
+      "status": "active",
+      "travel_scope": "interrealm",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "Syleth was stolen by the Twilight Court at age seven and lived among the fae for three seasons before returning to the mortal world\u2014only to discover a hundred years had passed. She became a thief, stealing mortal objects for the joy of reclaiming agency over her own choices. When caught stealing the Emerald Eyes of Vex-Khal, she rejected the Twilight Court's claim over her, declaring her mortal status freed her from their bargains.",
+      "traits": [
+        "fae-marked",
+        "defiant",
+        "mortal-hearted",
+        "thief"
+      ],
+      "first_story": "The Fae-Touched Thief",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Fae-Touched Thief"
+        }
+      ]
+    },
+    {
+      "name": "Vespera",
+      "aliases": [
+        "the Vespera",
+        "spirit-sovereign"
+      ],
+      "tagline": "Spirit-sovereign. Grieving. Awakened.",
+      "role": "Spirit-Sovereign / Entity",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "Sunken Caverns",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "The Vespera is a spirit-sovereign beautiful and terrible, guardian of a pearl that is her own heart. Centuries ago, she gave her heart to a mortal prince who died, leaving her alone and grieving. When Torven showed her compassion and brought news of a shrine erected in the prince's memory by his descendants, the Vespera emerged from her waters to walk the shore again, awakening from a thousand-year solitude.",
+      "traits": [
+        "spirit-sovereign",
+        "immortal",
+        "grieving",
+        "merciful"
+      ],
+      "first_story": "The Merchant's Pearl",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Merchant's Pearl"
+        }
+      ]
+    },
+    {
+      "name": "sea-kind",
+      "aliases": [],
+      "tagline": "Ocean-dwelling. Enigmatic. Wish-granters.",
+      "role": "Collective Entity / Mystical Race",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "Sapphire Deep",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "The sea-kind are ocean-dwelling entities who revealed a massive pearl to Torven and offered him three wishes in exchange for finding a matching pearl. They are enigmatic beings with command over the deep waters.",
+      "traits": [
+        "aquatic",
+        "enigmatic",
+        "wish-granters"
+      ],
+      "first_story": "The Merchant's Pearl",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Merchant's Pearl"
+        }
+      ]
+    },
+    {
+      "name": "Grethuk",
+      "aliases": [
+        "Goblin-King",
+        "Goblin-King of the Warrens"
+      ],
+      "tagline": "Silent. Sacrificial. Visionary.",
+      "role": "Goblin-King, Ruler",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "The Warrens",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "Grethuk is the Goblin-King of the Warrens beneath the Spire of Blackstone, a ruler who chose to sacrifice his people's collective memory to preserve their freedom from dwarven conquest. Rather than accept slavery or exile when threatened with invasion, he bargained with an ancient entity dwelling in stone itself. After paying the price of a thousand years of goblin history, he rebuilt his culture from nothing, teaching new songs and creating free identity unbound by ancient debt.",
+      "traits": [
+        "sacrificial",
+        "visionary",
+        "pragmatic",
+        "haunted"
+      ],
+      "first_story": "The Goblin-King's Gambit",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Goblin-King's Gambit"
+        }
+      ]
+    },
+    {
+      "name": "Sellsword",
+      "aliases": [
+        "the sellsword"
+      ],
+      "tagline": "Mercenary. Oath-bound. Freed.",
+      "role": "Sellsword",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "The Shattered West",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "One of five companions bound by a fellowship-oath sworn twenty years prior. The sellsword was part of a final hunt to the Echoing Vaults, where the warband faced the choice to renew their binding or unbind themselves. Ultimately chose freedom over compulsion.",
+      "traits": [
+        "mercenary",
+        "loyal to chosen bonds",
+        "accepting of mortality"
+      ],
+      "first_story": "The Warband's Last Song",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
+        }
+      ]
+    },
+    {
+      "name": "Bone-Carver",
+      "aliases": [
+        "the bone-carver"
+      ],
+      "tagline": "Craftsman. Death-touched. Unbound.",
+      "role": "Bone-Carver",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "The Shattered West",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "One of five oath-bound companions; a craftsman of bone. Shared the final hunt and participated in the decision to unbind rather than renew their compelled fellowship. Cut oath-cords with the others in the Echoing Vaults.",
+      "traits": [
+        "craftsman",
+        "meditative",
+        "skilled in death-craft"
+      ],
+      "first_story": "The Warband's Last Song",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
+        }
+      ]
+    },
+    {
+      "name": "Shadow-Broker",
+      "aliases": [
+        "the shadow-broker"
+      ],
+      "tagline": "Trader. Shadowed. Liberated.",
+      "role": "Shadow-Broker",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "The Shattered West",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "One of five oath-bound companions; a broker of shadows and hidden dealings. Participated in the final hunt to the Echoing Vaults and voted to unbind rather than renew the fellowship-oath.",
+      "traits": [
+        "trader",
+        "shadow-touched",
+        "pragmatic"
+      ],
+      "first_story": "The Warband's Last Song",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
+        }
+      ]
+    },
+    {
+      "name": "Druid",
+      "aliases": [
+        "the druid"
+      ],
+      "tagline": "Nature-speaker. Wise. Liberator.",
+      "role": "Druid",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "The Shattered West",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "One of five oath-bound companions; a druid with connection to nature and ancient wisdom. After three days of silence in the Echoing Vaults, spoke the words that freed the warband: 'Let us unbind.' Initiated the ritual dissolution of oath-cords.",
+      "traits": [
+        "nature-touched",
+        "wise",
+        "meditative",
+        "voice of freedom"
+      ],
+      "first_story": "The Warband's Last Song",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
+        }
+      ]
+    },
+    {
+      "name": "Dwarf",
+      "aliases": [
+        "the dwarf"
+      ],
+      "tagline": "Stout. Stone-hearted. Unbound.",
+      "role": "Dwarf",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "The Shattered West",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "One of five oath-bound companions; a dwarf of the warband. Shared the twenty-year fellowship and participated in the final hunt to the Echoing Vaults, where the warband chose unbinding over renewed compulsion.",
+      "traits": [
+        "dwarven",
+        "loyal",
+        "steadfast"
+      ],
+      "first_story": "The Goblin-King's Gambit",
+      "first_date": "2026-03-02",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Goblin-King's Gambit"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
         }
       ]
     }
@@ -2760,11 +3220,11 @@
       "place_type": "fortress",
       "world": "The Known World",
       "atmosphere": "A fortress under relentless siege, its garrison finally broken after prolonged assault.",
-      "description": "A garrison fortress besieged by Velgrim's forces. The garrison held for an extended period before finally breaking and offering surrender. Velgrim demanded massacre rather than mercy.",
+      "description": "Blackthorn is a fortress held alone by Ashara the Archer for forty days against a surrounding warlord's army. Rather than fall, it became a site of ritual honor-combat, where fallen champions were buried with ceremony at its gates, ultimately leading to the warlord's transformation from enemy to sworn companion.",
       "status": "active",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-02-27",
@@ -2773,10 +3233,14 @@
         {
           "date": "2026-02-27",
           "title": "The Warlord's Widow"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Archer's Vigil"
         }
       ],
       "hemisphere": "unknown",
-      "continent": "unknown",
+      "continent": "Valdris",
       "subcontinent": "unknown",
       "realm": "unknown",
       "province": "unknown",
@@ -2843,11 +3307,15 @@
       "status": "active",
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-27",
           "title": "The Tide-Thief's Escape"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Merchant's Pearl"
         }
       ],
       "hemisphere": "unknown",
@@ -2918,7 +3386,7 @@
       "status": "active",
       "first_story": "The Copper Thief",
       "first_date": "2026-02-26",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-02-26",
@@ -2939,6 +3407,10 @@
         {
           "date": "2026-02-28",
           "title": "The Thief's Shadow"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
         }
       ],
       "hemisphere": "unknown",
@@ -4105,11 +4577,15 @@
       "status": "active",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-01",
           "title": "The Starfall Oath"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Wyvern's Ransom"
         }
       ]
     },
@@ -4205,11 +4681,15 @@
       "status": "standing",
       "first_story": "The Goblin-King's Mercy",
       "first_date": "2026-03-01",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-01",
           "title": "The Goblin-King's Mercy"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Goblin-King's Gambit"
         }
       ]
     },
@@ -4260,6 +4740,177 @@
         {
           "date": "2026-03-01",
           "title": "The Goblin-King's Mercy"
+        }
+      ]
+    },
+    {
+      "name": "the Ashen Wastes",
+      "tagline": "",
+      "place_type": "",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-03-02",
+      "appearances": 3,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Blood-Price of the Caravan"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
+        }
+      ],
+      "aliases": [
+        "Ashen Wastes"
+      ]
+    },
+    {
+      "name": "Ossuary (as Living Entity)",
+      "tagline": "Living. Hungry. Consuming.",
+      "place_type": "fortress",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A fortress that breathes and hungers, its architecture alive and capable of conscious choice.",
+      "description": "An impossible fortress whose walls are made of living calcium that split and swallow warriors whole. Its towers bend like intestines in peristaltic waves. The corridors rearrange themselves around intruders. It possesses agency and deliberately chose Varak Ironhelm as a vessel. Upon sating itself, it settles into patient stillness.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Bone Citadel's Hunger"
+        }
+      ],
+      "aliases": [
+        "the Ossuary"
+      ]
+    },
+    {
+      "name": "The Warrens",
+      "tagline": "Deep. Vast. Labyrinthine.",
+      "place_type": "underground fortress / kingdom",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Shattered West",
+      "district": "unknown",
+      "atmosphere": "Ancient tunnels thrumming with goblin song and footsteps, resonant with ten thousand years of history\u2014now newer, rebuilding, free.",
+      "description": "The Warrens are an expansive underground kingdom beneath the Spire of Blackstone, inhabited by goblins for ten thousand years. They are so vast and strange that dwarven invaders deemed them unconquerable. The Warrens exist in a delicate state of renewal after Grethuk's sacrifice of collective memory allowed them to endure and be reborn as free culture.",
+      "status": "active",
+      "first_story": "The Goblin-King's Gambit",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Goblin-King's Gambit"
+        }
+      ]
+    },
+    {
+      "name": "The Spire of Blackstone",
+      "tagline": "Towering. Ancient. Contested.",
+      "place_type": "fortress / landmark / mountain peak",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Shattered West",
+      "district": "unknown",
+      "atmosphere": "A massive structure of black stone rising above the earth, dwarven-held above while goblin warrens tunnel beneath, a boundary between worlds.",
+      "description": "The Spire of Blackstone is a massive fortress of black stone above which dwell dwarven holds, and beneath which tunnel the Warrens of the goblins. The structure stands as a contested border between goblin and dwarf domains, though the conflict was resolved through Grethuk's bargain rather than conquest.",
+      "status": "active",
+      "first_story": "The Goblin-King's Gambit",
+      "first_date": "2026-03-02",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Goblin-King's Mercy"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Goblin-King's Gambit"
+        }
+      ],
+      "aliases": [
+        "Spire of Blackstone"
+      ]
+    },
+    {
+      "name": "Peak of Aethros",
+      "tagline": "Cosmic. Emptying. Reborn.",
+      "place_type": "mountain peak / ritual site",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A high summit where the night sky hangs close and the stars respond to ritual, a place where memory and identity unwind.",
+      "description": "The Peak of Aethros is a mountain summit where Zareth the Astronomer-Prince performed the Celestial Rite during the Violet Conjunction. The ritual stripped him of all memory but fundamentally changed the stars themselves, subtly and forever altering the sky.",
+      "status": "active",
+      "first_story": "The Starfall Ritual",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Starfall Ritual"
+        }
+      ]
+    },
+    {
+      "name": "Echoing Vaults",
+      "tagline": "Ancient. Oath-bound. Transformative.",
+      "place_type": "ruin / vault",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Shattered West",
+      "district": "unknown",
+      "atmosphere": "A place of ancient silence where the oldest oaths can be renewed or severed.",
+      "description": "A legendary vault said to hold the power to renew oaths sworn long ago. The warband discovered that rather than offering renewal, the vaults presented a choice: unbind or bind anew. Within its chambers, they spent three days in silence before choosing freedom.",
+      "status": "active",
+      "first_story": "The Warband's Last Song",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
         }
       ]
     }
@@ -5124,11 +5775,15 @@
       "significance": "The Violet Conjunction represents the moment of cosmic revelation that set the entire narrative in motion; without it, the world would eventually fall into endless night.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-01",
           "title": "The Starfall Oath"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Starfall Ritual"
         }
       ]
     },
@@ -5156,6 +5811,81 @@
         {
           "date": "2026-03-01",
           "title": "The Starfall Oath"
+        }
+      ]
+    },
+    {
+      "name": "The Warband's Last Song",
+      "tagline": "Fellowship. Dissolution. Rebirth.",
+      "event_type": "ritual / journey / farewell",
+      "scope": "regional",
+      "epicenter_place": "Echoing Vaults",
+      "epicenter_region": "The Shattered West",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Echoing Vaults",
+        "Shattered West"
+      ],
+      "affected_regions": [
+        "The Shattered West"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "across the Shattered West; journey from crossroads to vaults",
+      "participants": [
+        "Sellsword",
+        "Bone-Carver",
+        "Shadow-Broker",
+        "Druid",
+        "Dwarf"
+      ],
+      "outcome": "The five companions cut their oath-cords, unbinding themselves from the compulsion of the fellowship-oath sworn twenty years prior. They wept, laughed, and embraced as free mortals before departing separately. The bond remained but transformed from magical compulsion to chosen affection.",
+      "significance": "A meditation on the nature of loyalty, freedom, and fellowship. Demonstrates that the strongest bonds are those freely chosen rather than magically enforced.",
+      "first_story": "The Warband's Last Song",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
+        }
+      ]
+    },
+    {
+      "name": "Fellowship-Oath (swearing)",
+      "tagline": "Blood. Song. Twenty years.",
+      "event_type": "oath / ritual",
+      "scope": "regional",
+      "epicenter_place": "unknown",
+      "epicenter_region": "The Shattered West",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "unknown"
+      ],
+      "affected_regions": [
+        "The Shattered West"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "unknown",
+      "participants": [
+        "Sellsword",
+        "Bone-Carver",
+        "Shadow-Broker",
+        "Druid",
+        "Dwarf"
+      ],
+      "outcome": "Five companions were bound together in blood and song for twenty years, creating a magical compulsion that kept them together.",
+      "significance": "Established the magical bond that defines the warband; its erosion over time is the central tension of their final hunt.",
+      "first_story": "The Warband's Last Song",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
         }
       ]
     }
@@ -5223,6 +5953,27 @@
       "effect": "Births new stars from the ashes of dying ones, preventing the world from falling into endless night and extending the world's lifespan by ten thousand years.",
       "cost": "The caster must sacrifice every moment of joy, every love, every triumph, and every small beauty\u2014effectively stripping them of all positive memories.",
       "notes": "The Rite was discovered inscribed in the Singing Catacombs in languages predating humanity. Zareth learned it through seven years of study with druids, bone-carvers, and fae-touched hermits."
+    },
+    {
+      "name": "Celestial Rite",
+      "tagline": "Stars. Memory. Transformation.",
+      "first_story": "The Starfall Ritual",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Starfall Ritual"
+        }
+      ],
+      "ritual_type": "cosmic alignment / fate-binding",
+      "performed_by": [
+        "Zareth the Astronomer-Prince"
+      ],
+      "requirements": "Performance on the Peak of Aethros during the Violet Conjunction. Requires instinctual knowledge and alignment with cosmic timing.",
+      "effect": "Aligns the world's fate with the death and rebirth of the stars themselves. The ritual causes the stars to respond directly, subtly and permanently changing the sky and cosmic order. The performer gains temporary comprehensive understanding of all cosmic knowledge\u2014the shape of future empires, names of forgotten gods, the price the stars demand at their death.",
+      "cost": "Complete erasure of the performer's personal memory and identity. Zareth lost all knowledge of his past while gaining cosmic knowledge, then lost the cosmic knowledge when the vision departed, leaving him blank and whole and new.",
+      "notes": "This ritual appears to be unique or extraordinarily rare. The Sovereign's decision to assign the memory-stripped Zareth to records suggests either containment of a dangerous secret or preservation of a cosmic witness. Future attempts to perform this ritual or recover Zareth's lost knowledge may be significant."
     }
   ],
   "weapons": [
@@ -5607,6 +6358,45 @@
           "title": "The Lich-King's Collectors"
         }
       ]
+    },
+    {
+      "name": "The Lamp of Suroth",
+      "tagline": "",
+      "artifact_type": "",
+      "origin": "",
+      "powers": "",
+      "last_known_holder": "",
+      "status": "used once \u2014 may be refillable",
+      "first_story": "",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamp of Suroth"
+        }
+      ],
+      "aliases": [
+        "Lamp of Suroth"
+      ]
+    },
+    {
+      "name": "Goblin Memory",
+      "tagline": "Erased. Imprisoned. Sealed.",
+      "artifact_type": "collective memory / immaterial relic",
+      "origin": "The collective history, songs, genealogy, and bloodright of goblin civilization accumulated over ten thousand years.",
+      "powers": "Holds the identity, cultural knowledge, and spiritual continuity of goblin civilization. Contains the names and bloodlines of ten thousand years of goblin history.",
+      "last_known_holder": "Ancient Stone Entity (dwelling in the deepest chamber beneath the Spire of Blackstone)",
+      "status": "sealed",
+      "first_story": "The Goblin-King's Gambit",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Goblin-King's Gambit"
+        }
+      ]
     }
   ],
   "factions": [
@@ -5772,7 +6562,7 @@
       "sovereigns": [],
       "claimants": [],
       "status": "vacant",
-      "description": "A regency originally ruled by Kessara on behalf of her dead husband Velgrim the Terrible. The ghost-king exercised practical control through war councils and blood-oaths. When he demanded massacre of a surrendering garrison, Kessara performed a ritual of dismissal — sacrificing her title, land, and crown to release Velgrim to peaceful death. She departed as a wanderer. The Sunken Marches now stand without a ruler, their throne empty and their future uncertain.",
+      "description": "A regency originally ruled by Kessara on behalf of her dead husband Velgrim the Terrible. The ghost-king exercised practical control through war councils and blood-oaths. When he demanded massacre of a surrendering garrison, Kessara performed a ritual of dismissal \u2014 sacrificing her title, land, and crown to release Velgrim to peaceful death. She departed as a wanderer. The Sunken Marches now stand without a ruler, their throne empty and their future uncertain.",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
       "appearances": 1,
@@ -5877,6 +6667,56 @@
       "status": "active",
       "description": "The legal authority governing Xul'thyris, represented by the High Magistrate. Its authority is challenged by shadow-brokers and underground gambling operations.",
       "notes": "Vulnerable to shadow-trade and underground vice; current magistrate's death may destabilize governance."
+    },
+    {
+      "name": "Dwarven Holds",
+      "tagline": "Territorial. Pragmatic. Withdrawn.",
+      "first_story": "The Goblin-King's Gambit",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Goblin-King's Gambit"
+        }
+      ],
+      "polity_type": "confederation / alliance",
+      "realm": "unknown",
+      "region": "The Shattered West",
+      "seat": "Spire of Blackstone",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "active",
+      "description": "The dwarven holds are a confederation dwelling above the Spire of Blackstone. They issued an ultimatum to the Warrens to seal the tunnels or face invasion, but withdrew when Grethuk caused them to dream of the Warrens' vast, unconquerable scale.",
+      "notes": "The dwarves' retreat was accomplished through magical influence (the stone entity's dreams) rather than military defeat. They may return or harbor resentment, or may maintain a tense but stable coexistence with the goblins."
+    },
+    {
+      "name": "The Sovereign",
+      "tagline": "Distant. Mystical. Record-keeping.",
+      "first_story": "The Cartographer's Lie",
+      "first_date": "2026-03-02",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Starfall Ritual"
+        }
+      ],
+      "polity_type": "monarchy / singular rulership",
+      "realm": "unknown",
+      "region": "unknown",
+      "seat": "unknown",
+      "sovereigns": [
+        "The Sovereign"
+      ],
+      "claimants": [],
+      "status": "active",
+      "description": "A singular ruler or governing authority who assigned Zareth the Astronomer-Prince to records after he was found emptied of memory on the Peak of Aethros. The Sovereign's motivations\u2014whether to contain, preserve, or study Zareth\u2014are unknown.",
+      "notes": "The Sovereign's identity, realm, and seat are all unknown. Their role in cosmic or astronomical governance is undefined. They may be a local lord, a distant emperor, or a mystical authority tied to the stars themselves."
     }
   ],
   "lore": [
@@ -6808,6 +7648,22 @@
           "title": "The Courtier's Secret"
         }
       ]
+    },
+    {
+      "name": "Oath-Magic",
+      "tagline": "Binding. Transformative. Inviolable.",
+      "category": "legend",
+      "source": "The story of Ashara the Archer and the warlord",
+      "status": "confirmed",
+      "first_story": "The Bone-Singer's Choice",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Bone-Singer's Choice"
+        }
+      ]
     }
   ],
   "flora_fauna": [
@@ -6944,11 +7800,15 @@
       "status": "thriving",
       "first_story": "The Dragon's Bargain",
       "first_date": "2026-02-28",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-28",
           "title": "The Dragon's Bargain"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Wyvern's Ransom"
         }
       ]
     },
@@ -8171,7 +9031,7 @@
       "climate": "unknown",
       "terrain": "unknown",
       "ruler": "none (formerly Velgrim the Terrible, now released to peaceful death)",
-      "status": "vacant",
+      "status": "unknown",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
       "appearances": 1,
@@ -8392,11 +9252,15 @@
       "notes": "",
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-28",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-27",
           "title": "The Tide-Thief's Escape"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Merchant's Pearl"
         }
       ],
       "world": "The Known World",
@@ -8446,7 +9310,7 @@
       "notes": "Pelimor's night markets and vaults are integral to the shadow-theft economy. Mira operated here for years.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -8467,6 +9331,10 @@
         {
           "date": "2026-02-28",
           "title": "The Thief's Shadow"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
         }
       ],
       "world": "The Known World",
@@ -8501,6 +9369,33 @@
       "subcontinent": "unknown",
       "province": "unknown",
       "region": "Drowned Hollows",
+      "district": "unknown"
+    },
+    {
+      "name": "The Shattered West",
+      "tagline": "Fractured. Ancient. Underground.",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "climate": "temperate / underground",
+      "terrain": "mountains / caverns / broken stone",
+      "ruler": "",
+      "function": "A region of broken terrain and mountain ranges, home to both dwarven holds and goblin warrens in a complex negotiation of coexistence. The Shattered West serves as a frontier of underground civilization and surface strongholds.",
+      "status": "contested",
+      "notes": "The Spire of Blackstone and the Warrens represent a delicate balance in this region. Further conflicts or alliances may reshape the Shattered West's political and physical landscape.",
+      "first_story": "The Warband's Last Song",
+      "first_date": "2026-03-02",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "The Shattered West",
       "district": "unknown"
     }
   ],
