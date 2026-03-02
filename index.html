@@ -290,6 +290,30 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .categorize-fab.visible { display: block; }
 .categorize-fab:disabled { opacity: .5; cursor: wait; }
 
+/* Codex card audit button (dev mode) */
+.codex-audit-btn { display: inline-block; margin-top: .45rem; padding: .2rem .55rem; font-family: 'Cinzel', serif; font-size: .55rem; letter-spacing: .16em; text-transform: uppercase; background: transparent; border: 1px solid rgba(201,146,42,.35); color: var(--gold); border-radius: 2px; cursor: pointer; transition: background .15s, color .15s; opacity: .7; }
+.codex-audit-btn:hover { background: var(--gold); color: var(--ink); opacity: 1; }
+.codex-audit-btn:disabled { opacity: .4; cursor: wait; }
+.codex-audit-status { font-family: 'Cinzel', serif; font-size: .52rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(226,208,168,.55); margin-left: .4rem; }
+
+/* Audit results overlay */
+.audit-overlay { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; background: rgba(0,0,0,.7); opacity: 0; pointer-events: none; transition: opacity .2s ease; padding: 1rem; }
+.audit-overlay.open { opacity: 1; pointer-events: all; }
+.audit-panel { width: min(720px, 94vw); max-height: min(82vh, 750px); overflow: auto; background: linear-gradient(160deg, #1e0e06 0%, #130b04 100%); border: 1px solid rgba(201,146,42,.45); border-top: 3px solid var(--gold); border-radius: 4px; box-shadow: 0 14px 55px rgba(0,0,0,.75); padding: 1.25rem 1.35rem 1.35rem; }
+.audit-panel h3 { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--parchment); margin: 0 0 .35rem; }
+.audit-panel .audit-summary { font-size: .82rem; color: var(--aged); line-height: 1.6; margin-bottom: .75rem; }
+.audit-panel .audit-pct { font-family: 'Cinzel', serif; font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; }
+.audit-panel .audit-finding { background: rgba(201,146,42,.06); border-left: 3px solid var(--blood); padding: .45rem .65rem; margin-bottom: .45rem; border-radius: 0 3px 3px 0; }
+.audit-panel .audit-finding-field { font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+.audit-panel .audit-finding-issue { display: inline-block; font-size: .58rem; letter-spacing: .1em; text-transform: uppercase; padding: .1rem .35rem; border-radius: 2px; margin-left: .35rem; }
+.audit-panel .audit-finding-issue.missing { background: rgba(180,40,40,.35); color: #e88; }
+.audit-panel .audit-finding-issue.incorrect { background: rgba(180,120,40,.35); color: #ec8; }
+.audit-panel .audit-finding-issue.incomplete { background: rgba(100,100,180,.3); color: #aaf; }
+.audit-panel .audit-finding-issue.stale { background: rgba(120,80,160,.3); color: #c8a; }
+.audit-panel .audit-finding-detail { font-size: .8rem; color: var(--aged); line-height: 1.55; margin-top: .2rem; }
+.audit-panel .audit-close { margin-top: .75rem; }
+.audit-panel .audit-perfect { font-family: 'Cinzel', serif; font-size: .82rem; color: #6d8; text-align: center; padding: .75rem; }
+
 /* Codex modal body should not inherit story typography */
 .codex-modal-body { margin-top: .75rem; }
 .codex-modal-body .codex-card:hover { transform: none; box-shadow: 0 3px 16px rgba(0,0,0,.45); }
@@ -3232,8 +3256,163 @@ function renderCodex(data) {
     grid.appendChild(card);
   });
 
+  // ── Dev-mode: inject audit buttons on every card ───────────────
+  if (isDeveloperMode()) {
+    grid.querySelectorAll('.codex-card').forEach(card => {
+      const wrapper = document.createElement('div');
+      wrapper.style.cssText = 'display:flex;align-items:center;gap:.35rem;flex-wrap:wrap;';
+      const btn = document.createElement('button');
+      btn.className = 'codex-audit-btn';
+      btn.textContent = '\u2694 Audit';
+      btn.title = 'Dev: check this entry against all story appearances via Haiku';
+      const statusSpan = document.createElement('span');
+      statusSpan.className = 'codex-audit-status';
+      wrapper.appendChild(btn);
+      wrapper.appendChild(statusSpan);
+      card.appendChild(wrapper);
+
+      btn.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        btn.disabled = true;
+        statusSpan.textContent = 'Gathering stories…';
+        try {
+          await auditCodexEntity(card, statusSpan);
+        } catch (err) {
+          console.error(err);
+          statusSpan.textContent = (err && err.message) ? err.message : 'Audit failed.';
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    });
+  }
+
   refreshCodexLabelOptions();
   applyCodexFilter(activeCodexType);
+}
+
+// ── Codex Entity Audit (dev mode) ───────────────────────────────────
+async function auditCodexEntity(cardEl, statusEl) {
+  const entityType = cardEl.dataset.entityType;
+  const entityName = (cardEl.querySelector('.codex-card-name') || {}).textContent || '';
+  if (!entityType || !entityName) throw new Error('Cannot identify entity from card.');
+
+  // Look up the full entity object from CODEX_DATA_CACHE
+  const entityKey = normalizeEntityKey(entityName);
+  const arr = CODEX_DATA_CACHE && Array.isArray(CODEX_DATA_CACHE[entityType]) ? CODEX_DATA_CACHE[entityType] : [];
+  const entity = arr.find(e => normalizeEntityKey(e.name) === entityKey);
+  if (!entity) throw new Error(`Entity "${entityName}" not found in codex cache.`);
+
+  // Collect all story appearances
+  const apps = [];
+  if (Array.isArray(entity.story_appearances)) {
+    entity.story_appearances.forEach(a => {
+      if (a && a.date && a.title) apps.push({ date: a.date, title: a.title });
+    });
+  }
+  if (apps.length === 0 && entity.first_story && entity.first_date) {
+    apps.push({ date: entity.first_date, title: entity.first_story });
+  }
+  if (apps.length === 0) throw new Error('No story appearances to audit against.');
+
+  // Fetch all story texts
+  statusEl.textContent = `Fetching ${apps.length} stor${apps.length === 1 ? 'y' : 'ies'}…`;
+  const stories = [];
+  for (const app of apps) {
+    try {
+      const day = await fetchDayStories(app.date);
+      const story = findStoryInDay(day, app.title);
+      if (story) {
+        stories.push({ date: app.date, title: story.title || app.title, text: story.text || '' });
+      }
+    } catch (e) {
+      console.warn(`Could not fetch story ${app.date}/${app.title}:`, e);
+    }
+  }
+  if (stories.length === 0) throw new Error('Could not fetch any story texts.');
+
+  // Call the audit-entity proxy endpoint
+  statusEl.textContent = 'Auditing via Haiku…';
+  let proxyUrl = getDevAuditProxyUrl();
+  if (!proxyUrl) throw new Error('Audit proxy not configured');
+  proxyUrl = proxyUrl.replace(/\/audit\/?$/, '/audit-entity');
+
+  const headers = { 'Content-Type': 'application/json' };
+  const auth = getDevAuditProxyAuth();
+  if (auth) headers['X-Dev-Auth'] = auth;
+
+  const res = await fetch(proxyUrl, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({ entity, stories }),
+  });
+  if (!res.ok) {
+    let msg = '';
+    try { const j = await res.json(); msg = j && (j.error || j.message) ? String(j.error || j.message) : ''; } catch (_) { msg = ''; }
+    throw new Error(`Audit proxy ${res.status}${msg ? `: ${msg}` : ''}`);
+  }
+
+  const result = await res.json();
+  statusEl.textContent = '';
+  showAuditResults(entityName, entityType, result);
+}
+
+function showAuditResults(name, type, result) {
+  // Remove any existing overlay
+  const old = document.getElementById('audit-entity-overlay');
+  if (old) old.remove();
+
+  const findings = Array.isArray(result.findings) ? result.findings : [];
+  const summary = result.summary || '';
+  const pct = result.completeness_pct;
+
+  const overlay = document.createElement('div');
+  overlay.id = 'audit-entity-overlay';
+  overlay.className = 'audit-overlay open';
+
+  const typeLabelMap = {
+    characters: 'Character', places: 'Place', hemispheres: 'Hemisphere', continents: 'Continent',
+    subcontinents: 'Subcontinent', realms: 'Realm', polities: 'Polity', provinces: 'Province',
+    districts: 'District', events: 'Event', rituals: 'Ritual', weapons: 'Weapon',
+    artifacts: 'Artifact', factions: 'Faction', lore: 'Lore', flora_fauna: 'Flora/Fauna',
+    magic: 'Magic', relics: 'Relic', regions: 'Region', substances: 'Substance',
+  };
+  const typeLabel = typeLabelMap[type] || type;
+
+  let findingsHtml = '';
+  if (findings.length === 0) {
+    findingsHtml = '<div class="audit-perfect">\u2714 Card is complete — no issues found.</div>';
+  } else {
+    findingsHtml = findings.map(f => {
+      const issueClass = (f.issue || 'missing').toLowerCase();
+      return `<div class="audit-finding">
+        <span class="audit-finding-field">${escHtml(f.field || '?')}</span>
+        <span class="audit-finding-issue ${escHtml(issueClass)}">${escHtml(f.issue || 'issue')}</span>
+        <div class="audit-finding-detail">${escHtml(f.detail || f.suggestion || '')}</div>
+      </div>`;
+    }).join('');
+  }
+
+  const panel = document.createElement('div');
+  panel.className = 'audit-panel';
+  panel.innerHTML = `
+    <h3>\u2694 Audit: ${escHtml(name)}</h3>
+    <div style="font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem">${escHtml(typeLabel)}</div>
+    ${pct != null ? `<div class="audit-pct">Completeness: ${pct}%</div>` : ''}
+    ${summary ? `<div class="audit-summary">${escHtml(summary)}</div>` : ''}
+    ${findingsHtml}
+    <button class="btn audit-close">Close</button>
+  `;
+
+  overlay.appendChild(panel);
+  document.body.appendChild(overlay);
+
+  // Close handlers
+  panel.querySelector('.audit-close').addEventListener('click', () => overlay.remove());
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+  document.addEventListener('keydown', function esc(e) {
+    if (e.key === 'Escape') { overlay.remove(); document.removeEventListener('keydown', esc); }
+  });
 }
 
 // ── Fetch Codex ──────────────────────────────────────────────────────
