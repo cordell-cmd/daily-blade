@@ -53,6 +53,7 @@ ARCHIVE_IDX     = "archive/index.json"
 LORE_FILE       = "lore.json"
 CHARACTERS_FILE = "characters.json"
 CODEX_FILE      = "codex.json"
+GEOGRAPHY_FILE  = "geography.json"
 
 # Issue date/timezone: used for archive filenames and 'already generated' checks.
 # Default matches the previous workflow's intended schedule (US/Eastern).
@@ -182,6 +183,107 @@ def load_lore():
         "regions": [],
         "substances": []
     }
+
+
+def load_geography():
+    """Load the geography file, or return an empty skeleton."""
+    if os.path.exists(GEOGRAPHY_FILE):
+        with open(GEOGRAPHY_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+
+def build_geography_context(geo):
+    """Build a concise geography summary for the generation prompt.
+
+    Gives the model spatial awareness of the world: continents, macro-regions,
+    natural features, and established place→region assignments so it can write
+    geographically consistent stories.
+    """
+    if not geo or not isinstance(geo, dict):
+        return ""
+
+    lines = []
+    planet = geo.get("planet", {})
+    if planet.get("name"):
+        lines.append(f"=== GEOGRAPHY OF {planet['name'].upper()} ===")
+        lines.append(f"Planet: {planet['name']} — {planet.get('description', '')[:200]}")
+        lines.append("")
+
+    # Continents summary
+    continents = geo.get("continents", [])
+    if continents:
+        known = [c for c in continents if c.get("status") == "explored"]
+        other = [c for c in continents if c.get("status") != "explored"]
+        if known:
+            for c in known:
+                lines.append(f"Known Continent: {c['name']} — {c.get('description', '')[:150]}")
+        if other:
+            other_names = ", ".join(
+                f"{c['name']} ({c.get('status', 'unknown')})"
+                for c in other
+            )
+            lines.append(f"Other continents (mostly unexplored): {other_names}")
+        lines.append("")
+
+    # Macro-regions on the known continent
+    regions = geo.get("macro_regions", [])
+    if regions:
+        lines.append("Macro-Regions of the known continent (use these for geographic placement):")
+        for r in regions:
+            lines.append(
+                f"• {r['name']} — {r.get('climate', '?')}. "
+                f"{r.get('description', '')[:120]}"
+            )
+        lines.append("")
+
+    # Natural features
+    features = geo.get("natural_features", [])
+    if features:
+        lines.append("Key Natural Features:")
+        for f in features:
+            ftype = f.get("type", "feature")
+            lines.append(f"• {f['name']} ({ftype}) — {f.get('description', '')[:100]}")
+        lines.append("")
+
+    # Place→region assignments (only high/medium confidence)
+    assignments = geo.get("place_assignments", [])
+    if assignments:
+        region_map = {}
+        for a in assignments:
+            conf = (a.get("confidence") or "").lower()
+            if conf not in {"high", "medium"}:
+                continue
+            rname = a.get("macro_region", "unknown")
+            pname = a.get("place_name", "")
+            if pname:
+                region_map.setdefault(rname, []).append(pname)
+        if region_map:
+            # Look up region display names
+            region_display = {r["id"]: r["name"] for r in regions}
+            lines.append("Established Place → Region assignments (respect these):")
+            for rid, places in sorted(region_map.items()):
+                display = region_display.get(rid, rid)
+                lines.append(f"• {display}: {', '.join(places)}")
+            lines.append("")
+
+    # Routes
+    routes = geo.get("routes", [])
+    if routes:
+        lines.append("Known Routes:")
+        for rt in routes:
+            lines.append(
+                f"• {rt['name']}: {rt.get('from_place', '?')} → {rt.get('to_place', '?')} ({rt.get('type', 'road')})"
+            )
+        lines.append("")
+
+    lines.append("GEOGRAPHIC RULES:")
+    lines.append("- When placing a story, specify which macro-region it occurs in when feasible.")
+    lines.append("- Respect established place→region assignments listed above.")
+    lines.append("- New places should fit logically into the existing geographic framework.")
+    lines.append("- Mention terrain, climate, or landmarks that match the region's description.")
+
+    return "\n".join(lines).strip()
 
 
 def _truthy_non_unknown(val: str) -> bool:
@@ -1870,6 +1972,14 @@ SOVEREIGNTY / CROWN CONSISTENCY:
 
     if world_events_section.strip():
         lore_section = (lore_section or "") + "\n\n" + world_events_section + "\n"
+
+    # ── Geography context ──
+    geo = load_geography()
+    geo_section = ""
+    geo_ctx = build_geography_context(geo)
+    if geo_ctx.strip():
+        geo_section = f"\n{geo_ctx}\n"
+
     return f"""You are a pulp fantasy writer in the tradition of Robert E. Howard, Clark Ashton Smith, and Fritz Leiber.
 Generate exactly 10 original short sword-and-sorcery stories.
 Each story should be vivid, action-packed, and around 120–160 words long.
@@ -1881,6 +1991,7 @@ ORIGINALITY / COPYRIGHT SAFETY:
 
 Today's date is {today_str}. Use this as subtle creative inspiration if you like.
 {lore_section}
+{geo_section}
 {reuse_section}
 {recent_themes_section}
 Respond with ONLY valid JSON — no prose before or after — matching this exact structure:
@@ -2606,9 +2717,11 @@ EXISTING CANON (reference only; non-exhaustive; ok to repeat):
 - Substances & Materials: {_known_summary(existing_substances)}
 
 GEOGRAPHY CONSTRAINTS:
-- We are grounding this universe on ONE main planet/world.
+- We are grounding this universe on ONE main planet/world named Edhra.
+- The known continent is Valdris. Its macro-regions are: The Steppe Marches (north), The Shattered West (northwest), The Sunken Marches (west), The Hearthlands (center), The Ashen Reach (east), The Iron Coast (south).
 - The number of continents must remain low and bounded. Maximum continents: {MAX_CONTINENTS}.
 - Prefer to assign new places to an existing continent/realm/region when plausible.
+- When extracting places, assign the "region" field to the most fitting Valdris macro-region name if possible.
 - You MAY create a new continent only if truly necessary, and you must not exceed the maximum.
 
 STORIES TO ANALYZE:

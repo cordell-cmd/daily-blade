@@ -333,6 +333,43 @@ footer { text-align: center; padding: 2rem 1rem; border-top: 3px double rgba(201
 footer strong { color: var(--gold); font-style: normal; font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; letter-spacing: .15em; }
 footer a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted rgba(201,146,42,.55); }
 footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
+
+/* ── Map View ─────────────────────────────────────────────────────── */
+#map-view { display: none; padding-top: 1.2rem; }
+.map-header { text-align: center; margin-bottom: 1rem; }
+.map-header h2 { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 1.6rem; color: var(--gold); letter-spacing: .12em; }
+.map-header p { font-size: .82rem; color: var(--aged); margin-top: .3rem; font-style: italic; }
+.map-controls { display: flex; justify-content: center; gap: .5rem; margin-bottom: .8rem; flex-wrap: wrap; }
+.map-control-btn { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.3); color: var(--muted); padding: .3rem .7rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.map-control-btn:hover { border-color: var(--gold); color: var(--aged); }
+.map-control-btn.active { background: rgba(201,146,42,.15); border-color: var(--gold); color: var(--gold); }
+.map-container { position: relative; width: 100%; max-width: 1000px; margin: 0 auto; background: rgba(30,18,8,.6); border: 2px solid rgba(201,146,42,.2); border-radius: 4px; overflow: hidden; }
+.map-svg { width: 100%; height: auto; display: block; }
+.map-svg text { font-family: 'Cinzel', serif; pointer-events: none; }
+.map-svg .continent-shape { stroke: rgba(201,146,42,.5); stroke-width: 1.5; transition: opacity .25s; cursor: default; }
+.map-svg .continent-shape.explored { fill: rgba(162,130,80,.18); }
+.map-svg .continent-shape.rumored { fill: rgba(100,85,65,.1); }
+.map-svg .continent-shape.legendary { fill: rgba(80,65,50,.08); }
+.map-svg .continent-shape.mythical { fill: rgba(60,50,40,.06); }
+.map-svg .fog-overlay { fill: rgba(26,13,5,.55); pointer-events: none; transition: opacity .25s; }
+.map-svg .region-zone { stroke: rgba(201,146,42,.25); stroke-width: 1; stroke-dasharray: 4 3; fill-opacity: .12; transition: fill-opacity .2s; cursor: pointer; }
+.map-svg .region-zone:hover { fill-opacity: .25; }
+.map-svg .region-label { fill: var(--aged); font-size: 9px; letter-spacing: .12em; text-anchor: middle; opacity: .7; }
+.map-svg .feature-line { stroke: rgba(70,130,180,.5); stroke-width: 1.5; fill: none; }
+.map-svg .feature-line.mountain { stroke: rgba(160,140,110,.5); stroke-dasharray: 3 2; }
+.map-svg .place-dot { r: 3.5; fill: var(--gold); stroke: var(--ink); stroke-width: 1; cursor: pointer; transition: r .15s, fill .15s; }
+.map-svg .place-dot:hover { r: 5.5; fill: var(--parchment); }
+.map-svg .place-dot.low-conf { fill: rgba(201,146,42,.45); r: 2.5; }
+.map-svg .place-label { fill: var(--parchment); font-size: 7px; opacity: .8; pointer-events: none; }
+.map-svg .continent-label { fill: var(--gold); font-size: 14px; letter-spacing: .2em; text-anchor: middle; opacity: .35; font-style: italic; }
+.map-svg .continent-label.explored { opacity: .8; font-size: 16px; }
+.map-tooltip { position: absolute; display: none; background: rgba(26,13,5,.92); border: 1px solid var(--gold); color: var(--parchment); padding: .5rem .75rem; border-radius: 3px; font-size: .75rem; max-width: 260px; pointer-events: none; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,.6); }
+.map-tooltip .tt-name { font-family: 'Cinzel', serif; font-weight: 700; color: var(--gold); font-size: .8rem; }
+.map-tooltip .tt-region { font-size: .68rem; color: var(--aged); margin-top: .15rem; }
+.map-tooltip .tt-conf { font-size: .6rem; color: var(--muted); margin-top: .15rem; font-style: italic; }
+.map-legend { display: flex; justify-content: center; gap: 1.2rem; margin-top: .8rem; flex-wrap: wrap; }
+.map-legend-item { display: flex; align-items: center; gap: .35rem; font-size: .65rem; color: var(--muted); letter-spacing: .08em; }
+.map-legend-swatch { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(201,146,42,.4); }
 </style>
 </head>
 <body>
@@ -402,6 +439,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
   <nav class="main-nav" aria-label="Main sections">
     <button class="main-tab active" id="tab-tales" aria-selected="true">⚔ Tales</button>
     <button class="main-tab" id="tab-characters" aria-selected="false">📖 Codex</button>
+    <button class="main-tab" id="tab-map" aria-selected="false">🗺 Map</button>
     <div class="main-nav-right">
       <button class="btn" id="archive-btn" aria-label="Browse the archive">📜 Archive</button>
     </div>
@@ -468,6 +506,28 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <div class="char-grid" id="char-grid" style="display:none;"></div>
   </div>
 
+  <!-- ── Map View ─────────────────────────────────────────────── -->
+  <div id="map-view">
+    <div class="map-header">
+      <h2>The World of Edhra</h2>
+      <p>A cartographer's rendering of the known world — much remains shrouded in mystery</p>
+    </div>
+    <div class="map-controls" id="map-controls">
+      <button class="map-control-btn active" data-zoom="world">🌍 World</button>
+      <button class="map-control-btn" data-zoom="valdris">⚔ Valdris</button>
+    </div>
+    <div class="map-container" id="map-container">
+      <svg class="map-svg" id="map-svg" viewBox="0 0 960 700" preserveAspectRatio="xMidYMid meet"></svg>
+      <div class="map-tooltip" id="map-tooltip"></div>
+    </div>
+    <div class="map-legend" id="map-legend">
+      <div class="map-legend-item"><div class="map-legend-swatch" style="background:var(--gold)"></div> Confirmed Place</div>
+      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(201,146,42,.45)"></div> Uncertain</div>
+      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(70,130,180,.5)"></div> Water</div>
+      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(160,140,110,.5)"></div> Mountains</div>
+    </div>
+  </div>
+
   <footer>
     <strong>The Daily Blade</strong> &nbsp;·&nbsp; Stories generated by <strong>Claude</strong> AI &nbsp;·&nbsp; New tales conjured each dawn &nbsp;·&nbsp; All characters, sorceries &amp; kingdoms are entirely fictitious &nbsp;·&nbsp; Dedicated to the public domain under <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0 1.0</a>
   </footer>
@@ -479,6 +539,7 @@ const STORIES_URL    = './stories.json';
 const ARCHIVE_IDX_URL = './archive/index.json';
 const ARCHIVE_URL    = (date) => `./archive/${date}.json`;
 const CODEX_URL      = './codex.json';
+const GEOGRAPHY_URL  = './geography.json';
 const DEFAULT_GITHUB_REPO = { owner: 'cordell-cmd', repo: 'daily-blade' };
 const AUDIT_WORKFLOW_FILE = 'audit.yml';
 const AUDIT_PROXY_DEFAULT_URL = 'https://daily-blade-audit-proxy.cordell-97f.workers.dev/audit'; // deployed Cloudflare Worker proxy
@@ -3216,23 +3277,28 @@ function switchTab(tab) {
   currentTab = tab;
   const talesView = document.getElementById('tales-view');
   const charView  = document.getElementById('char-view');
+  const mapView   = document.getElementById('map-view');
   const tabTales  = document.getElementById('tab-tales');
   const tabChars  = document.getElementById('tab-characters');
+  const tabMap    = document.getElementById('tab-map');
+  const allTabs = [tabTales, tabChars, tabMap];
+  const allViews = { tales: talesView, characters: charView, map: mapView };
+  allTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+  Object.values(allViews).forEach(v => { if (v) v.style.display = 'none'; });
   if (tab === 'tales') {
     talesView.style.display = '';
-    charView.style.display  = 'none';
     tabTales.classList.add('active');
     tabTales.setAttribute('aria-selected', 'true');
-    tabChars.classList.remove('active');
-    tabChars.setAttribute('aria-selected', 'false');
-  } else {
-    talesView.style.display = 'none';
-    charView.style.display  = 'block';
+  } else if (tab === 'characters') {
+    charView.style.display = 'block';
     tabChars.classList.add('active');
     tabChars.setAttribute('aria-selected', 'true');
-    tabTales.classList.remove('active');
-    tabTales.setAttribute('aria-selected', 'false');
     loadCodex(true);
+  } else if (tab === 'map') {
+    mapView.style.display = 'block';
+    tabMap.classList.add('active');
+    tabMap.setAttribute('aria-selected', 'true');
+    initMap();
   }
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -3294,6 +3360,7 @@ async function loadArchiveIndex() {
 // ── Event Listeners ──────────────────────────────────────────────────
 document.getElementById('tab-tales').addEventListener('click', () => switchTab('tales'));
 document.getElementById('tab-characters').addEventListener('click', () => switchTab('characters'));
+document.getElementById('tab-map').addEventListener('click', () => switchTab('map'));
 document.querySelectorAll('.codex-filter-btn').forEach(btn => {
   btn.addEventListener('click', () => applyCodexFilter(btn.dataset.type));
 });
@@ -3505,6 +3572,353 @@ async function dispatchExtractViaProxy(dateKey, title, highlightedText) {
     }
   });
 })();
+
+// ── Map Rendering ──────────────────────────────────────────────────
+let mapGeo = null;
+let mapInited = false;
+let mapZoom = 'world';
+
+async function initMap() {
+  if (mapInited) return;
+  try {
+    const res = await fetch(GEOGRAPHY_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    mapGeo = await res.json();
+    mapInited = true;
+    renderMap();
+    // Wire zoom controls
+    document.querySelectorAll('.map-control-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.map-control-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        mapZoom = btn.dataset.zoom;
+        renderMap();
+      });
+    });
+  } catch (err) {
+    console.error('Map load error:', err);
+    document.getElementById('map-svg').innerHTML =
+      '<text x="480" y="350" text-anchor="middle" fill="#c9922a" font-size="14">Could not load geography data.</text>';
+  }
+}
+
+function renderMap() {
+  if (!mapGeo) return;
+  const svg = document.getElementById('map-svg');
+  if (mapZoom === 'valdris') {
+    renderValdrisMap(svg);
+  } else {
+    renderWorldMap(svg);
+  }
+}
+
+function svgEl(tag, attrs) {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+  for (const [k, v] of Object.entries(attrs || {})) el.setAttribute(k, v);
+  return el;
+}
+
+// ── World View ──────────────────────────────────────────────────
+function renderWorldMap(svg) {
+  svg.setAttribute('viewBox', '0 0 960 700');
+  svg.innerHTML = '';
+
+  // Parchment background
+  const defs = svgEl('defs', {});
+  defs.innerHTML = `
+    <filter id="parchment-noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grey"/>
+      <feBlend mode="multiply" in="SourceGraphic" in2="grey"/>
+    </filter>
+    <radialGradient id="vignette" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(26,13,5,.4)"/>
+    </radialGradient>`;
+  svg.appendChild(defs);
+
+  // Ocean background
+  svg.appendChild(svgEl('rect', { x: 0, y: 0, width: 960, height: 700, fill: 'rgba(25,40,55,.35)', rx: 4 }));
+
+  // Grid lines (subtle)
+  for (let y = 0; y <= 700; y += 100) {
+    svg.appendChild(svgEl('line', { x1: 0, y1: y, x2: 960, y2: y, stroke: 'rgba(201,146,42,.06)', 'stroke-width': .5 }));
+  }
+  for (let x = 0; x <= 960; x += 100) {
+    svg.appendChild(svgEl('line', { x1: x, y1: 0, x2: x, y2: 700, stroke: 'rgba(201,146,42,.06)', 'stroke-width': .5 }));
+  }
+  // Equator
+  svg.appendChild(svgEl('line', { x1: 0, y1: 350, x2: 960, y2: 350, stroke: 'rgba(201,146,42,.12)', 'stroke-width': 1, 'stroke-dasharray': '8 4' }));
+  const eqLabel = svgEl('text', { x: 945, y: 345, fill: 'rgba(201,146,42,.2)', 'font-size': 8, 'text-anchor': 'end' });
+  eqLabel.textContent = 'Equator'; svg.appendChild(eqLabel);
+
+  // Continent shapes
+  const continentPaths = {
+    valdris:    'M160,180 C180,140 280,100 360,120 C420,135 460,160 480,200 C500,250 490,310 470,360 C450,400 380,430 320,440 C260,445 200,420 170,380 C140,340 130,280 140,240 C145,210 150,195 160,180 Z',
+    keth_morath: 'M580,150 C620,130 700,140 760,160 C810,180 840,220 830,270 C820,320 780,360 740,370 C700,375 640,360 600,330 C570,305 555,260 560,220 C565,185 570,165 580,150 Z',
+    thul_ashara: 'M420,420 C460,405 530,400 590,415 C640,425 680,450 690,485 C695,510 680,540 650,560 C610,575 550,580 490,570 C440,558 400,530 390,495 C385,465 395,440 420,420 Z',
+    drakmere:   'M110,460 C140,440 190,435 240,450 C280,462 310,490 305,530 C300,565 270,600 230,615 C190,625 145,610 120,580 C100,555 95,515 100,490 C105,470 108,465 110,460 Z',
+    sundral:    'M640,500 C680,485 740,490 790,510 C830,525 860,560 850,600 C840,635 800,660 760,665 C720,668 670,650 645,620 C625,595 620,555 625,530 C630,510 635,505 640,500 Z',
+    frostholme: 'M290,30 C350,20 450,18 530,25 C590,32 640,50 630,72 C620,90 560,95 490,90 C420,88 340,80 300,68 C270,58 275,40 290,30 Z',
+    ashenveil:  'M230,635 C300,625 440,620 560,625 C640,630 700,640 690,655 C680,668 610,675 520,672 C430,670 320,665 260,660 C225,655 220,645 230,635 Z'
+  };
+
+  const continents = mapGeo.continents || [];
+  for (const c of continents) {
+    const pathD = continentPaths[c.id];
+    if (!pathD) continue;
+    const status = c.status || 'mythical';
+    const shape = svgEl('path', { d: pathD, class: `continent-shape ${status}` });
+    svg.appendChild(shape);
+    // Fog for unexplored continents
+    if (status !== 'explored') {
+      const fog = svgEl('path', { d: pathD, class: 'fog-overlay' });
+      svg.appendChild(fog);
+    }
+  }
+
+  // Continent labels
+  const labelPositions = {
+    valdris:    { x: 320, y: 290 },
+    keth_morath: { x: 700, y: 265 },
+    thul_ashara: { x: 545, y: 500 },
+    drakmere:   { x: 200, y: 535 },
+    sundral:    { x: 740, y: 580 },
+    frostholme: { x: 460, y: 58 },
+    ashenveil:  { x: 460, y: 652 }
+  };
+  for (const c of continents) {
+    const pos = labelPositions[c.id];
+    if (!pos) continue;
+    const cls = c.status === 'explored' ? 'continent-label explored' : 'continent-label';
+    const label = svgEl('text', { x: pos.x, y: pos.y, class: cls });
+    label.textContent = c.name;
+    svg.appendChild(label);
+    if (c.status !== 'explored') {
+      const sub = svgEl('text', { x: pos.x, y: pos.y + 16, class: 'continent-label', 'font-size': 8 });
+      sub.textContent = `(${c.status})`;
+      svg.appendChild(sub);
+    }
+  }
+
+  // Compass rose (simple)
+  const cx = 895, cy = 60;
+  svg.appendChild(svgEl('circle', { cx, cy, r: 22, fill: 'none', stroke: 'rgba(201,146,42,.25)', 'stroke-width': 1 }));
+  for (const [dir, dx, dy] of [['N',0,-18],['S',0,18],['E',18,0],['W',-18,0]]) {
+    const t = svgEl('text', { x: cx + dx, y: cy + dy + 3, fill: 'rgba(201,146,42,.5)', 'font-size': 9, 'text-anchor': 'middle' });
+    t.textContent = dir; svg.appendChild(t);
+  }
+
+  // Vignette overlay
+  svg.appendChild(svgEl('rect', { x: 0, y: 0, width: 960, height: 700, fill: 'url(#vignette)', 'pointer-events': 'none' }));
+
+  // Title cartouche
+  const titleBg = svgEl('rect', { x: 340, y: 8, width: 280, height: 28, rx: 3, fill: 'rgba(26,13,5,.7)', stroke: 'rgba(201,146,42,.3)', 'stroke-width': 1 });
+  svg.appendChild(titleBg);
+  const title = svgEl('text', { x: 480, y: 27, 'text-anchor': 'middle', fill: '#c9922a', 'font-size': 13, 'letter-spacing': '.2em' });
+  title.textContent = 'THE WORLD OF EDHRA'; svg.appendChild(title);
+}
+
+// ── Valdris Detailed View ──────────────────────────────────────
+function renderValdrisMap(svg) {
+  svg.setAttribute('viewBox', '0 0 800 600');
+  svg.innerHTML = '';
+
+  const defs = svgEl('defs', {});
+  defs.innerHTML = `
+    <radialGradient id="vignette-v" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
+      <stop offset="100%" stop-color="rgba(26,13,5,.35)"/>
+    </radialGradient>`;
+  svg.appendChild(defs);
+
+  // Ocean
+  svg.appendChild(svgEl('rect', { x: 0, y: 0, width: 800, height: 600, fill: 'rgba(25,40,55,.3)', rx: 4 }));
+
+  // Continent outline
+  const outline = 'M100,100 C130,60 260,30 380,45 C470,55 560,80 620,130 C670,175 700,240 690,320 C680,390 640,450 580,500 C510,545 400,560 300,550 C210,540 140,500 100,440 C65,385 50,310 55,240 C60,175 75,130 100,100 Z';
+  svg.appendChild(svgEl('path', { d: outline, fill: 'rgba(120,100,70,.12)', stroke: 'rgba(201,146,42,.4)', 'stroke-width': 2 }));
+
+  // Coastline detail (inner line for depth)
+  svg.appendChild(svgEl('path', { d: outline, fill: 'none', stroke: 'rgba(70,130,180,.15)', 'stroke-width': 6 }));
+
+  // Macro-region zones
+  const regions = mapGeo.macro_regions || [];
+  const regionShapes = {
+    steppe_marches:  'M160,80 C220,55 350,40 450,55 C510,65 560,85 580,120 C600,150 585,180 550,195 C490,215 380,220 280,210 C200,200 145,175 130,145 C120,120 135,95 160,80 Z',
+    shattered_west:  'M80,140 C100,115 135,100 170,95 C210,92 250,110 270,140 C290,170 290,210 275,250 C260,290 230,325 195,345 C165,360 125,355 100,330 C75,305 60,265 60,225 C60,185 65,158 80,140 Z',
+    sunken_marches:  'M70,340 C90,310 130,295 170,300 C210,306 240,330 245,370 C250,405 235,445 210,475 C185,500 145,510 115,495 C85,478 60,445 55,410 C50,380 55,355 70,340 Z',
+    hearthlands:     'M270,190 C310,175 370,170 430,180 C480,190 520,215 535,250 C550,290 540,340 515,375 C490,405 445,420 395,425 C345,428 295,415 260,385 C230,358 215,320 215,280 C215,240 235,210 270,190 Z',
+    ashen_reach:     'M530,120 C560,105 600,105 630,120 C665,140 690,180 700,230 C710,290 700,355 680,400 C660,435 620,460 575,465 C535,468 500,448 480,415 C460,380 455,335 460,290 C465,245 485,190 505,155 C515,135 520,128 530,120 Z',
+    iron_coast:      'M140,470 C185,455 250,445 330,440 C400,436 470,445 530,465 C575,480 600,505 590,535 C575,560 530,575 470,580 C400,583 310,575 240,555 C185,538 140,515 120,495 C108,482 115,478 140,470 Z'
+  };
+  for (const r of regions) {
+    const shape = regionShapes[r.id];
+    if (!shape) continue;
+    const zone = svgEl('path', { d: shape, class: 'region-zone', fill: r.color || 'rgba(160,130,80,.2)' });
+    zone.addEventListener('mouseenter', () => showRegionTooltip(r));
+    zone.addEventListener('mouseleave', hideTooltip);
+    svg.appendChild(zone);
+  }
+  // Region labels
+  for (const r of regions) {
+    const cx = r.center_pct ? (r.center_pct.x / 100) * 750 + 25 : 400;
+    const cy = r.center_pct ? (r.center_pct.y / 100) * 550 + 25 : 300;
+    const label = svgEl('text', { x: cx, y: cy, class: 'region-label' });
+    label.textContent = r.name;
+    svg.appendChild(label);
+  }
+
+  // Natural features
+  const features = mapGeo.natural_features || [];
+  for (const f of features) {
+    if (f.type === 'mountain_range' && f.id === 'ironspine_mountains') {
+      // N-S mountain spine between Hearthlands and Ashen Reach
+      svg.appendChild(svgEl('path', {
+        d: 'M490,110 C495,150 500,200 505,260 C508,300 510,350 505,400 C502,430 498,450 495,465',
+        class: 'feature-line mountain', 'stroke-width': 2.5
+      }));
+      const mt = svgEl('text', { x: 510, y: 285, fill: 'rgba(160,140,110,.5)', 'font-size': 7, transform: 'rotate(-80, 510, 285)' });
+      mt.textContent = 'Ironspine Mountains'; svg.appendChild(mt);
+    }
+    if (f.type === 'river' && f.id === 'pelimor_river') {
+      svg.appendChild(svgEl('path', {
+        d: 'M470,200 C460,240 440,280 420,320 C400,360 380,400 360,440 C345,470 335,500 330,530',
+        class: 'feature-line', 'stroke-width': 1.5
+      }));
+    }
+    if (f.type === 'river' && f.id === 'ashwater') {
+      svg.appendChild(svgEl('path', {
+        d: 'M580,240 C570,270 565,300 570,340 C575,370 580,390 585,410',
+        class: 'feature-line', 'stroke-width': 1, 'stroke-dasharray': '4 3'
+      }));
+    }
+    if (f.type === 'river' && f.id === 'greymist_river') {
+      svg.appendChild(svgEl('path', {
+        d: 'M130,360 C150,380 180,400 210,430 C240,460 270,480 290,510',
+        class: 'feature-line', 'stroke-width': 1
+      }));
+    }
+  }
+
+  // Sea labels
+  const seaLabels = [
+    { text: 'The Bitter Sea', x: 400, y: 25, size: 10 },
+    { text: 'The Sapphire Sea', x: 400, y: 590, size: 10 },
+    { text: 'The Vael Ocean', x: 30, y: 300, size: 10, rotate: -90 },
+  ];
+  for (const sl of seaLabels) {
+    const t = svgEl('text', {
+      x: sl.x, y: sl.y, fill: 'rgba(70,130,180,.4)', 'font-size': sl.size,
+      'text-anchor': 'middle', 'font-style': 'italic', 'letter-spacing': '.15em',
+      ...(sl.rotate ? { transform: `rotate(${sl.rotate}, ${sl.x}, ${sl.y})` } : {})
+    });
+    t.textContent = sl.text; svg.appendChild(t);
+  }
+
+  // Place dots
+  const assignments = mapGeo.place_assignments || [];
+  const tooltip = document.getElementById('map-tooltip');
+  for (const a of assignments) {
+    const px = (a.position_pct.x / 100) * 750 + 25;
+    const py = (a.position_pct.y / 100) * 550 + 25;
+    const conf = (a.confidence || '').toLowerCase();
+    const dot = svgEl('circle', {
+      cx: px, cy: py,
+      class: conf === 'low' ? 'place-dot low-conf' : 'place-dot'
+    });
+    dot.addEventListener('mouseenter', (e) => showPlaceTooltip(e, a));
+    dot.addEventListener('mouseleave', hideTooltip);
+    svg.appendChild(dot);
+    // Label for high-confidence named places
+    if (conf === 'high' && a.place_name && !a.place_name.match(/^(the |a |dry |deep )/i)) {
+      const lbl = svgEl('text', { x: px + 6, y: py + 3, class: 'place-label' });
+      lbl.textContent = a.place_name;
+      svg.appendChild(lbl);
+    }
+  }
+
+  // Routes (subtle dotted lines)
+  const routes = mapGeo.routes || [];
+  const placePos = {};
+  for (const a of assignments) {
+    placePos[a.place_name] = { x: (a.position_pct.x / 100) * 750 + 25, y: (a.position_pct.y / 100) * 550 + 25 };
+  }
+  for (const rt of routes) {
+    const from = placePos[rt.from_place];
+    const to = placePos[rt.to_place];
+    if (from && to) {
+      svg.appendChild(svgEl('line', {
+        x1: from.x, y1: from.y, x2: to.x, y2: to.y,
+        stroke: 'rgba(201,146,42,.15)', 'stroke-width': 1, 'stroke-dasharray': '3 4'
+      }));
+    }
+  }
+
+  // Vignette
+  svg.appendChild(svgEl('rect', { x: 0, y: 0, width: 800, height: 600, fill: 'url(#vignette-v)', 'pointer-events': 'none' }));
+
+  // Title cartouche
+  const tbg = svgEl('rect', { x: 280, y: 6, width: 240, height: 26, rx: 3, fill: 'rgba(26,13,5,.7)', stroke: 'rgba(201,146,42,.3)', 'stroke-width': 1 });
+  svg.appendChild(tbg);
+  const tt = svgEl('text', { x: 400, y: 23, 'text-anchor': 'middle', fill: '#c9922a', 'font-size': 12, 'letter-spacing': '.18em' });
+  tt.textContent = 'VALDRIS — THE KNOWN CONTINENT'; svg.appendChild(tt);
+
+  // Compass
+  const ccx = 745, ccy = 50;
+  svg.appendChild(svgEl('circle', { cx: ccx, cy: ccy, r: 18, fill: 'none', stroke: 'rgba(201,146,42,.25)', 'stroke-width': 1 }));
+  for (const [dir, dx, dy] of [['N',0,-14],['S',0,14],['E',14,0],['W',-14,0]]) {
+    const t = svgEl('text', { x: ccx + dx, y: ccy + dy + 3, fill: 'rgba(201,146,42,.5)', 'font-size': 8, 'text-anchor': 'middle' });
+    t.textContent = dir; svg.appendChild(t);
+  }
+}
+
+function showPlaceTooltip(e, assignment) {
+  const tooltip = document.getElementById('map-tooltip');
+  const container = document.getElementById('map-container');
+  const regionName = getRegionDisplayName(assignment.macro_region);
+  tooltip.innerHTML = `
+    <div class="tt-name">${escHtml(assignment.place_name)}</div>
+    <div class="tt-region">${escHtml(regionName)}</div>
+    <div class="tt-conf">Confidence: ${escHtml(assignment.confidence || 'unknown')}</div>
+  `;
+  const rect = container.getBoundingClientRect();
+  const ex = e.clientX - rect.left;
+  const ey = e.clientY - rect.top;
+  tooltip.style.left = (ex + 12) + 'px';
+  tooltip.style.top = (ey - 10) + 'px';
+  tooltip.style.display = 'block';
+}
+
+function showRegionTooltip(region) {
+  const tooltip = document.getElementById('map-tooltip');
+  tooltip.innerHTML = `
+    <div class="tt-name">${escHtml(region.name)}</div>
+    <div class="tt-region">${escHtml(region.climate || '')} · ${escHtml(region.terrain || '')}</div>
+  `;
+  // Position near cursor via mousemove (updated below)
+  tooltip.style.display = 'block';
+}
+
+function hideTooltip() {
+  document.getElementById('map-tooltip').style.display = 'none';
+}
+
+// Track mouse for region tooltips
+document.getElementById('map-container').addEventListener('mousemove', (e) => {
+  const tooltip = document.getElementById('map-tooltip');
+  if (tooltip.style.display !== 'block') return;
+  const container = document.getElementById('map-container');
+  const rect = container.getBoundingClientRect();
+  tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
+  tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+});
+
+function getRegionDisplayName(regionId) {
+  if (!mapGeo || !mapGeo.macro_regions) return regionId;
+  const r = mapGeo.macro_regions.find(r => r.id === regionId);
+  return r ? r.name : regionId;
+}
 
 // ── Boot ─────────────────────────────────────────────────────────────
 document.getElementById('today-date').textContent = formatDate(todayStr());
