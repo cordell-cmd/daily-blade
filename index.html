@@ -337,40 +337,25 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 /* ── Map View ─────────────────────────────────────────────────────── */
 #map-view { display: none; padding-top: 1.2rem; }
 .map-header { text-align: center; margin-bottom: 1rem; }
+/* ── Tolkien Map ─────────────────────────────────────────────── */
 .map-header h2 { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 1.6rem; color: var(--gold); letter-spacing: .12em; }
 .map-header p { font-size: .82rem; color: var(--aged); margin-top: .3rem; font-style: italic; }
 .map-controls { display: flex; justify-content: center; gap: .5rem; margin-bottom: .8rem; flex-wrap: wrap; }
 .map-control-btn { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .15em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.3); color: var(--muted); padding: .3rem .7rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
 .map-control-btn:hover { border-color: var(--gold); color: var(--aged); }
 .map-control-btn.active { background: rgba(201,146,42,.15); border-color: var(--gold); color: var(--gold); }
-.map-container { position: relative; width: 100%; max-width: 1000px; margin: 0 auto; background: rgba(30,18,8,.6); border: 2px solid rgba(201,146,42,.2); border-radius: 4px; overflow: hidden; }
+.map-container { position: relative; width: 100%; max-width: 1000px; margin: 0 auto; background: #d4c5a0; border: 3px double rgba(90,60,20,.6); border-radius: 2px; overflow: hidden; box-shadow: inset 0 0 60px rgba(80,50,10,.3), 0 8px 32px rgba(0,0,0,.7); }
 .map-svg { width: 100%; height: auto; display: block; }
-.map-svg text { font-family: 'Cinzel', serif; pointer-events: none; }
-.map-svg .continent-shape { stroke: rgba(201,146,42,.5); stroke-width: 1.5; transition: opacity .25s; cursor: default; }
-.map-svg .continent-shape.explored { fill: rgba(162,130,80,.18); }
-.map-svg .continent-shape.rumored { fill: rgba(100,85,65,.1); }
-.map-svg .continent-shape.legendary { fill: rgba(80,65,50,.08); }
-.map-svg .continent-shape.mythical { fill: rgba(60,50,40,.06); }
-.map-svg .fog-overlay { fill: rgba(26,13,5,.55); pointer-events: none; transition: opacity .25s; }
-.map-svg .region-zone { stroke: rgba(201,146,42,.25); stroke-width: 1; stroke-dasharray: 4 3; fill-opacity: .12; transition: fill-opacity .2s; cursor: pointer; }
-.map-svg .region-zone:hover { fill-opacity: .25; }
-.map-svg .region-label { fill: var(--aged); font-size: 9px; letter-spacing: .12em; text-anchor: middle; opacity: .7; }
-.map-svg .feature-line { stroke: rgba(70,130,180,.5); stroke-width: 1.5; fill: none; }
-.map-svg .feature-line.mountain { stroke: rgba(160,140,110,.5); stroke-dasharray: 3 2; }
-.map-svg .place-dot { r: 3.5; fill: var(--gold); stroke: var(--ink); stroke-width: 1; cursor: pointer; transition: r .15s, fill .15s; }
-.map-svg .place-dot:hover { r: 5.5; fill: var(--parchment); }
-.map-svg .place-dot.low-conf { fill: rgba(201,146,42,.45); r: 2.5; }
-.map-svg .place-label { fill: var(--parchment); font-size: 7px; opacity: .8; pointer-events: none; }
-.map-svg .continent-label { fill: var(--gold); font-size: 14px; letter-spacing: .2em; text-anchor: middle; opacity: .35; font-style: italic; }
-.map-svg .continent-label.explored { opacity: .8; font-size: 16px; }
-.map-tooltip { position: absolute; display: none; background: rgba(26,13,5,.92); border: 1px solid var(--gold); color: var(--parchment); padding: .5rem .75rem; border-radius: 3px; font-size: .75rem; max-width: 260px; pointer-events: none; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,.6); }
-.map-tooltip .tt-name { font-family: 'Cinzel', serif; font-weight: 700; color: var(--gold); font-size: .8rem; }
-.map-tooltip .tt-region { font-size: .68rem; color: var(--aged); margin-top: .15rem; }
-.map-tooltip .tt-conf { font-size: .6rem; color: var(--muted); margin-top: .15rem; font-style: italic; }
+.map-svg text { font-family: 'IM Fell English', 'Cinzel', serif; pointer-events: none; }
+.map-tooltip { position: absolute; display: none; background: rgba(40,28,12,.95); border: 1px solid rgba(160,120,50,.7); color: #e8dcc0; padding: .55rem .8rem; border-radius: 2px; font-size: .75rem; max-width: 260px; pointer-events: none; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,.6); font-family: 'IM Fell English', serif; }
+.map-tooltip .tt-name { font-family: 'Cinzel', serif; font-weight: 700; color: #c9922a; font-size: .8rem; }
+.map-tooltip .tt-region { font-size: .68rem; color: #bfa878; margin-top: .15rem; }
+.map-tooltip .tt-conf { font-size: .6rem; color: #8a6d3b; margin-top: .15rem; font-style: italic; }
 .map-legend { display: flex; justify-content: center; gap: 1.2rem; margin-top: .8rem; flex-wrap: wrap; }
 .map-legend-item { display: flex; align-items: center; gap: .35rem; font-size: .65rem; color: var(--muted); letter-spacing: .08em; }
 .map-legend-swatch { width: 10px; height: 10px; border-radius: 50%; border: 1px solid rgba(201,146,42,.4); }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/roughjs@4.6.6/bundled/rough.min.js"></script>
 </head>
 <body>
 
@@ -521,10 +506,11 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
       <div class="map-tooltip" id="map-tooltip"></div>
     </div>
     <div class="map-legend" id="map-legend">
-      <div class="map-legend-item"><div class="map-legend-swatch" style="background:var(--gold)"></div> Confirmed Place</div>
-      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(201,146,42,.45)"></div> Uncertain</div>
-      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(70,130,180,.5)"></div> Water</div>
-      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(160,140,110,.5)"></div> Mountains</div>
+      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(50,30,10,.85)"></div> Confirmed</div>
+      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(80,55,20,.6)"></div> Reported</div>
+      <div class="map-legend-item"><div class="map-legend-swatch" style="background:none;border:1px dashed rgba(80,55,20,.4)"></div> Uncertain</div>
+      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(50,70,110,.5);border-radius:1px"></div> Water</div>
+      <div class="map-legend-item"><div class="map-legend-swatch" style="background:rgba(60,40,15,.55);clip-path:polygon(50% 0%,0% 100%,100% 100%);border:none"></div> Mountains</div>
     </div>
   </div>
 
@@ -3573,7 +3559,36 @@ async function dispatchExtractViaProxy(dateKey, title, highlightedText) {
   });
 })();
 
-// ── Map Rendering ──────────────────────────────────────────────────
+// ── Simplex Noise (compact 2D implementation) ──────────────────────
+const _sn = (() => {
+  const F2 = .5*(Math.sqrt(3)-1), G2 = (3-Math.sqrt(3))/6;
+  const grad = [[1,1],[-1,1],[1,-1],[-1,-1],[1,0],[-1,0],[0,1],[0,-1]];
+  let perm, pg;
+  function seed(s) {
+    const p = new Uint8Array(256);
+    let v = s|0;
+    for (let i=0;i<256;i++){v=((v*1664525)+1013904223)&0xffffffff;p[i]=((v>>>16)^v)&255;}
+    perm = new Uint8Array(512); pg = new Uint8Array(512);
+    for (let i=0;i<512;i++){perm[i]=p[i&255];pg[i]=perm[i]%8;}
+  }
+  seed(42);
+  function noise2D(x,y) {
+    const s=(x+y)*F2, i=Math.floor(x+s), j=Math.floor(y+s);
+    const t=(i+j)*G2, X0=i-t, Y0=j-t, x0=x-X0, y0=y-Y0;
+    const i1=x0>y0?1:0, j1=x0>y0?0:1;
+    const x1=x0-i1+G2, y1=y0-j1+G2, x2=x0-1+2*G2, y2=y0-1+2*G2;
+    const ii=i&255, jj=j&255;
+    let n0=0,n1=0,n2=0;
+    let t0=.5-x0*x0-y0*y0; if(t0>=0){t0*=t0;const g=grad[pg[ii+perm[jj]]];n0=t0*t0*(g[0]*x0+g[1]*y0);}
+    let t1=.5-x1*x1-y1*y1; if(t1>=0){t1*=t1;const g=grad[pg[ii+i1+perm[jj+j1]]];n1=t1*t1*(g[0]*x1+g[1]*y1);}
+    let t2=.5-x2*x2-y2*y2; if(t2>=0){t2*=t2;const g=grad[pg[ii+1+perm[jj+1]]];n2=t2*t2*(g[0]*x2+g[1]*y2);}
+    return 70*(n0+n1+n2);
+  }
+  return { seed, noise2D };
+})();
+_sn.seed(7913); // deterministic seed for map
+
+// ── Map Rendering (Tolkien Style) ──────────────────────────────────
 let mapGeo = null;
 let mapInited = false;
 let mapZoom = 'world';
@@ -3586,7 +3601,6 @@ async function initMap() {
     mapGeo = await res.json();
     mapInited = true;
     renderMap();
-    // Wire zoom controls
     document.querySelectorAll('.map-control-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.map-control-btn').forEach(b => b.classList.remove('active'));
@@ -3598,18 +3612,15 @@ async function initMap() {
   } catch (err) {
     console.error('Map load error:', err);
     document.getElementById('map-svg').innerHTML =
-      '<text x="480" y="350" text-anchor="middle" fill="#c9922a" font-size="14">Could not load geography data.</text>';
+      '<text x="480" y="350" text-anchor="middle" fill="#5a3a14" font-size="14" font-family="IM Fell English, serif">Could not load geography data.</text>';
   }
 }
 
 function renderMap() {
   if (!mapGeo) return;
   const svg = document.getElementById('map-svg');
-  if (mapZoom === 'valdris') {
-    renderValdrisMap(svg);
-  } else {
-    renderWorldMap(svg);
-  }
+  if (mapZoom === 'valdris') renderValdrisMap(svg);
+  else renderWorldMap(svg);
 }
 
 function svgEl(tag, attrs) {
@@ -3618,131 +3629,368 @@ function svgEl(tag, attrs) {
   return el;
 }
 
-// ── World View ──────────────────────────────────────────────────
-function renderWorldMap(svg) {
-  svg.setAttribute('viewBox', '0 0 960 700');
-  svg.innerHTML = '';
+// Utility: generate a noisy closed polygon from polar coords
+function noisyContinent(cx, cy, baseR, points, seedOff, amp1, amp2) {
+  const pts = [];
+  for (let i = 0; i < points; i++) {
+    const t = (i / points) * Math.PI * 2;
+    const n1 = _sn.noise2D(Math.cos(t)*0.9 + seedOff, Math.sin(t)*0.9 + seedOff);
+    const n2 = _sn.noise2D(Math.cos(t)*2.8 + seedOff*2, Math.sin(t)*2.8 + seedOff*2);
+    const r = baseR * (1 + (amp1||.18)*n1 + (amp2||.06)*n2);
+    pts.push([cx + Math.cos(t)*r, cy + Math.sin(t)*r]);
+  }
+  return pts;
+}
 
-  // Parchment background
+// Utility: draw Tolkien-style mountain glyph
+function drawMountain(svg, x, y, size, ink) {
+  const s = size;
+  const col = ink || 'rgba(60,40,15,.7)';
+  // Main peak
+  const peak = svgEl('path', {
+    d: `M${x-s*.55},${y+s*.4} L${x-s*.08},${y-s*.45} L${x+s*.08},${y-s*.4} L${x+s*.55},${y+s*.4}`,
+    stroke: col, 'stroke-width': 1.2, fill: 'none', 'stroke-linecap': 'round'
+  });
+  svg.appendChild(peak);
+  // Shading hatches on right slope
+  for (let h = 0; h < 3; h++) {
+    const frac = .2 + h*.22;
+    const hx = x + s*.08 + (s*.47)*frac;
+    const hy = y - s*.4 + (s*.8)*frac;
+    svg.appendChild(svgEl('line', {
+      x1: hx, y1: hy - s*.1, x2: hx + s*.06, y2: hy + s*.1,
+      stroke: col, 'stroke-width': .6, opacity: .5
+    }));
+  }
+}
+
+// Utility: draw a tiny tree glyph
+function drawTree(svg, x, y, size, ink) {
+  const s = size;
+  const col = ink || 'rgba(40,60,20,.5)';
+  svg.appendChild(svgEl('line', { x1: x, y1: y, x2: x, y2: y + s*.5, stroke: col, 'stroke-width': .8 }));
+  svg.appendChild(svgEl('path', {
+    d: `M${x-s*.3},${y+s*.15} Q${x},${y-s*.5} ${x+s*.3},${y+s*.15}`,
+    stroke: col, 'stroke-width': .8, fill: 'none'
+  }));
+}
+
+// Utility: sea wave curls
+function drawWaves(svg, x, y, count, spacing, size) {
+  for (let i = 0; i < count; i++) {
+    const wx = x + i * spacing;
+    svg.appendChild(svgEl('path', {
+      d: `M${wx},${y} Q${wx+size*.4},${y-size*.6} ${wx+size*.8},${y}`,
+      stroke: 'rgba(60,80,110,.25)', 'stroke-width': .8, fill: 'none'
+    }));
+  }
+}
+
+// Utility: ornate compass rose
+function drawCompass(svg, cx, cy, r) {
+  const ink = 'rgba(80,55,20,.7)';
+  const faint = 'rgba(80,55,20,.35)';
+  // Outer ring
+  svg.appendChild(svgEl('circle', { cx, cy, r, fill:'none', stroke:ink, 'stroke-width':1.2 }));
+  svg.appendChild(svgEl('circle', { cx, cy, r:r*.75, fill:'none', stroke:faint, 'stroke-width':.6 }));
+  // Cardinal points (diamond shapes)
+  const dirs = [{d:'N',a:-Math.PI/2},{d:'S',a:Math.PI/2},{d:'E',a:0},{d:'W',a:Math.PI}];
+  for (const {d, a} of dirs) {
+    const len = r * 1.25;
+    const w = r * .2;
+    const tip = [cx+Math.cos(a)*len, cy+Math.sin(a)*len];
+    const l = [cx+Math.cos(a-Math.PI/2)*w, cy+Math.sin(a-Math.PI/2)*w];
+    const rr = [cx+Math.cos(a+Math.PI/2)*w, cy+Math.sin(a+Math.PI/2)*w];
+    // Filled half
+    svg.appendChild(svgEl('path', {
+      d: `M${cx},${cy} L${l[0]},${l[1]} L${tip[0]},${tip[1]} Z`,
+      fill: ink, stroke: 'none'
+    }));
+    // Open half
+    svg.appendChild(svgEl('path', {
+      d: `M${cx},${cy} L${rr[0]},${rr[1]} L${tip[0]},${tip[1]} Z`,
+      fill: 'none', stroke: ink, 'stroke-width': .8
+    }));
+    // Letter
+    const lOff = r * 1.6;
+    const t = svgEl('text', {
+      x: cx+Math.cos(a)*lOff, y: cy+Math.sin(a)*lOff+4,
+      fill: ink, 'font-size': r*.45, 'text-anchor':'middle',
+      'font-family': "'Cinzel', serif", 'font-weight': '700'
+    });
+    t.textContent = d; svg.appendChild(t);
+  }
+  // Inter-cardinal ticks
+  for (let i = 0; i < 8; i++) {
+    const a = i * Math.PI/4 + Math.PI/8;
+    svg.appendChild(svgEl('line', {
+      x1: cx+Math.cos(a)*r*.75, y1: cy+Math.sin(a)*r*.75,
+      x2: cx+Math.cos(a)*r, y2: cy+Math.sin(a)*r,
+      stroke: faint, 'stroke-width': .8
+    }));
+  }
+  // Center dot
+  svg.appendChild(svgEl('circle', { cx, cy, r: 2, fill: ink }));
+}
+
+// Utility: decorative border frame
+function drawBorder(svg, w, h) {
+  const ink = 'rgba(80,55,20,.5)';
+  const m = 12; // margin
+  // Double border lines
+  svg.appendChild(svgEl('rect', { x:m, y:m, width:w-m*2, height:h-m*2, fill:'none', stroke:ink, 'stroke-width':2 }));
+  svg.appendChild(svgEl('rect', { x:m+4, y:m+4, width:w-m*2-8, height:h-m*2-8, fill:'none', stroke:ink, 'stroke-width':.6 }));
+  // Corner flourishes
+  const cs = 18;
+  const corners = [[m,m],[w-m,m],[m,h-m],[w-m,h-m]];
+  for (const [cx, cy] of corners) {
+    const sx = cx===m?1:-1, sy = cy===m?1:-1;
+    svg.appendChild(svgEl('path', {
+      d: `M${cx+sx*2},${cy+sy*cs} Q${cx+sx*2},${cy+sy*2} ${cx+sx*cs},${cy+sy*2}`,
+      stroke: ink, 'stroke-width': 1.5, fill: 'none'
+    }));
+    svg.appendChild(svgEl('circle', { cx: cx+sx*3, cy: cy+sy*3, r: 1.5, fill: ink }));
+  }
+}
+
+// Utility: title cartouche with scroll shape
+function drawCartouche(svg, cx, cy, text, fontSize, w, h) {
+  const ink = 'rgba(80,55,20,.65)';
+  // Scroll shape background
+  const x = cx - w/2, y = cy - h/2;
+  svg.appendChild(svgEl('rect', { x, y, width: w, height: h, rx: 2, fill: 'rgba(212,197,160,.85)', stroke: ink, 'stroke-width': 1.2 }));
+  // Decorative lines above and below text
+  svg.appendChild(svgEl('line', { x1: x+12, y1: y+3, x2: x+w-12, y2: y+3, stroke: ink, 'stroke-width': .5 }));
+  svg.appendChild(svgEl('line', { x1: x+12, y1: y+h-3, x2: x+w-12, y2: y+h-3, stroke: ink, 'stroke-width': .5 }));
+  // Curl accents at left and right
+  svg.appendChild(svgEl('path', { d: `M${x-5},${cy-4} Q${x-8},${cy} ${x-5},${cy+4}`, stroke: ink, 'stroke-width': 1, fill:'none' }));
+  svg.appendChild(svgEl('path', { d: `M${x+w+5},${cy-4} Q${x+w+8},${cy} ${x+w+5},${cy+4}`, stroke: ink, 'stroke-width': 1, fill:'none' }));
+  // Title text
+  const t = svgEl('text', {
+    x: cx, y: cy + fontSize*.35, 'text-anchor': 'middle', fill: 'rgba(60,35,10,.9)',
+    'font-size': fontSize, 'letter-spacing': '.18em', 'font-family': "'Cinzel Decorative', 'Cinzel', serif"
+  });
+  t.textContent = text; svg.appendChild(t);
+}
+
+// ── World View (Tolkien Style) ──────────────────────────────────
+function renderWorldMap(svg) {
+  const W = 960, H = 700;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.innerHTML = '';
+  const rc = typeof rough !== 'undefined' ? rough.svg(svg) : null;
+
+  // Defs: parchment texture + vignette
   const defs = svgEl('defs', {});
   defs.innerHTML = `
-    <filter id="parchment-noise">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="4" result="noise"/>
+    <filter id="parchment-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="4" seed="2" result="noise"/>
       <feColorMatrix type="saturate" values="0" in="noise" result="grey"/>
       <feBlend mode="multiply" in="SourceGraphic" in2="grey"/>
     </filter>
-    <radialGradient id="vignette" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
-      <stop offset="100%" stop-color="rgba(26,13,5,.4)"/>
-    </radialGradient>`;
+    <radialGradient id="age-vignette" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="rgba(212,197,160,0)"/>
+      <stop offset="85%" stop-color="rgba(160,130,80,.15)"/>
+      <stop offset="100%" stop-color="rgba(80,50,15,.45)"/>
+    </radialGradient>
+    <filter id="ink-blur"><feGaussianBlur stdDeviation="0.4"/></filter>`;
   svg.appendChild(defs);
 
-  // Ocean background
-  svg.appendChild(svgEl('rect', { x: 0, y: 0, width: 960, height: 700, fill: 'rgba(25,40,55,.35)', rx: 4 }));
+  // Parchment background
+  svg.appendChild(svgEl('rect', { x:0, y:0, width:W, height:H, fill:'#d4c5a0' }));
+  svg.appendChild(svgEl('rect', { x:0, y:0, width:W, height:H, fill:'#c9b88a', opacity:.3, filter:'url(#parchment-grain)' }));
 
-  // Grid lines (subtle)
-  for (let y = 0; y <= 700; y += 100) {
-    svg.appendChild(svgEl('line', { x1: 0, y1: y, x2: 960, y2: y, stroke: 'rgba(201,146,42,.06)', 'stroke-width': .5 }));
-  }
-  for (let x = 0; x <= 960; x += 100) {
-    svg.appendChild(svgEl('line', { x1: x, y1: 0, x2: x, y2: 700, stroke: 'rgba(201,146,42,.06)', 'stroke-width': .5 }));
-  }
-  // Equator
-  svg.appendChild(svgEl('line', { x1: 0, y1: 350, x2: 960, y2: 350, stroke: 'rgba(201,146,42,.12)', 'stroke-width': 1, 'stroke-dasharray': '8 4' }));
-  const eqLabel = svgEl('text', { x: 945, y: 345, fill: 'rgba(201,146,42,.2)', 'font-size': 8, 'text-anchor': 'end' });
-  eqLabel.textContent = 'Equator'; svg.appendChild(eqLabel);
+  // Border frame
+  drawBorder(svg, W, H);
 
-  // Continent shapes
-  const continentPaths = {
-    valdris:    'M160,180 C180,140 280,100 360,120 C420,135 460,160 480,200 C500,250 490,310 470,360 C450,400 380,430 320,440 C260,445 200,420 170,380 C140,340 130,280 140,240 C145,210 150,195 160,180 Z',
-    keth_morath: 'M580,150 C620,130 700,140 760,160 C810,180 840,220 830,270 C820,320 780,360 740,370 C700,375 640,360 600,330 C570,305 555,260 560,220 C565,185 570,165 580,150 Z',
-    thul_ashara: 'M420,420 C460,405 530,400 590,415 C640,425 680,450 690,485 C695,510 680,540 650,560 C610,575 550,580 490,570 C440,558 400,530 390,495 C385,465 395,440 420,420 Z',
-    drakmere:   'M110,460 C140,440 190,435 240,450 C280,462 310,490 305,530 C300,565 270,600 230,615 C190,625 145,610 120,580 C100,555 95,515 100,490 C105,470 108,465 110,460 Z',
-    sundral:    'M640,500 C680,485 740,490 790,510 C830,525 860,560 850,600 C840,635 800,660 760,665 C720,668 670,650 645,620 C625,595 620,555 625,530 C630,510 635,505 640,500 Z',
-    frostholme: 'M290,30 C350,20 450,18 530,25 C590,32 640,50 630,72 C620,90 560,95 490,90 C420,88 340,80 300,68 C270,58 275,40 290,30 Z',
-    ashenveil:  'M230,635 C300,625 440,620 560,625 C640,630 700,640 690,655 C680,668 610,675 520,672 C430,670 320,665 260,660 C225,655 220,645 230,635 Z'
+  // Sea areas — subtle blue-grey wash
+  svg.appendChild(svgEl('rect', { x:14, y:14, width:W-28, height:H-28, fill:'rgba(120,140,155,.08)', rx:1 }));
+
+  // Sea wave curls scattered in ocean areas
+  const waveZones = [
+    {x:40,y:120,n:6,s:14},{x:750,y:420,n:5,s:13},{x:80,y:550,n:4,s:12},
+    {x:650,y:600,n:5,s:11},{x:800,y:180,n:4,s:13},{x:400,y:640,n:7,s:12},
+    {x:40,y:350,n:3,s:12},{x:860,y:530,n:4,s:11}
+  ];
+  for (const wz of waveZones) drawWaves(svg, wz.x, wz.y, wz.n, wz.s, 8);
+
+  // Continent shapes — noisy + hand-drawn via Rough.js
+  const continentDefs = {
+    valdris:     { cx:320, cy:280, r:150, seed:1, amp1:.20, amp2:.07, pts:200 },
+    keth_morath: { cx:700, cy:250, r:110, seed:5, amp1:.18, amp2:.06, pts:180 },
+    thul_ashara: { cx:540, cy:490, r:100, seed:9, amp1:.16, amp2:.05, pts:170 },
+    drakmere:    { cx:195, cy:530, r:80,  seed:13, amp1:.17, amp2:.06, pts:150 },
+    sundral:     { cx:740, cy:570, r:75,  seed:17, amp1:.15, amp2:.05, pts:140 },
+    frostholme:  { cx:460, cy:55,  r:55,  seed:21, amp1:.12, amp2:.04, pts:120, scaleX:2.8, scaleY:.6 },
+    ashenveil:   { cx:460, cy:650, r:45,  seed:25, amp1:.10, amp2:.04, pts:110, scaleX:3.2, scaleY:.5 }
   };
 
   const continents = mapGeo.continents || [];
+  const landInk = 'rgba(60,40,15,.85)';
+  const landFill = { explored:'rgba(190,170,130,.35)', rumored:'rgba(170,155,120,.15)', legendary:'rgba(150,135,110,.08)', mythical:'rgba(140,125,105,.05)' };
+  const fogFill = { rumored:'rgba(180,160,120,.25)', legendary:'rgba(170,150,110,.4)', mythical:'rgba(160,140,100,.55)' };
+
   for (const c of continents) {
-    const pathD = continentPaths[c.id];
-    if (!pathD) continue;
+    const def = continentDefs[c.id];
+    if (!def) continue;
     const status = c.status || 'mythical';
-    const shape = svgEl('path', { d: pathD, class: `continent-shape ${status}` });
-    svg.appendChild(shape);
-    // Fog for unexplored continents
+    let pts = noisyContinent(def.cx, def.cy, def.r, def.pts||180, def.seed, def.amp1, def.amp2);
+
+    // Apply scaling for elongated continents (Frostholme, Ashenveil)
+    if (def.scaleX || def.scaleY) {
+      pts = pts.map(([x,y]) => [
+        def.cx + (x - def.cx) * (def.scaleX || 1),
+        def.cy + (y - def.cy) * (def.scaleY || 1)
+      ]);
+    }
+
+    if (rc) {
+      // Rough.js hand-drawn polygon
+      const node = rc.polygon(pts, {
+        stroke: landInk,
+        strokeWidth: status === 'explored' ? 1.8 : 1,
+        fill: landFill[status] || landFill.mythical,
+        fillStyle: status === 'explored' ? 'cross-hatch' : 'solid',
+        fillWeight: .3,
+        hachureGap: 8,
+        roughness: status === 'explored' ? 1.3 : .8,
+        bowing: 1.2
+      });
+      svg.appendChild(node);
+    } else {
+      // Fallback: plain SVG polygon
+      const d = 'M' + pts.map(p => p.join(',')).join(' L') + ' Z';
+      svg.appendChild(svgEl('path', { d, fill: landFill[status] || landFill.mythical, stroke: landInk, 'stroke-width': status==='explored'?1.8:1 }));
+    }
+
+    // Fog overlay for unexplored continents — stipple effect
     if (status !== 'explored') {
-      const fog = svgEl('path', { d: pathD, class: 'fog-overlay' });
-      svg.appendChild(fog);
+      const d = 'M' + pts.map(p => p.join(',')).join(' L') + ' Z';
+      svg.appendChild(svgEl('path', { d, fill: fogFill[status] || fogFill.mythical, stroke:'none', opacity:.7, 'pointer-events':'none' }));
+      // Stipple dots inside fog
+      const bounds = { minX:Infinity,minY:Infinity,maxX:-Infinity,maxY:-Infinity };
+      for (const [px,py] of pts) { bounds.minX=Math.min(bounds.minX,px);bounds.minY=Math.min(bounds.minY,py);bounds.maxX=Math.max(bounds.maxX,px);bounds.maxY=Math.max(bounds.maxY,py); }
+      const clipId = 'fog-clip-'+c.id;
+      const clipEl = svgEl('clipPath', { id: clipId });
+      clipEl.appendChild(svgEl('path', { d }));
+      defs.appendChild(clipEl);
+      const stippleG = svgEl('g', { 'clip-path': `url(#${clipId})`, opacity: '.3' });
+      for (let si = 0; si < 40; si++) {
+        const sx = bounds.minX + Math.random()*(bounds.maxX-bounds.minX);
+        const sy = bounds.minY + Math.random()*(bounds.maxY-bounds.minY);
+        stippleG.appendChild(svgEl('circle', { cx:sx, cy:sy, r:.8, fill:'rgba(60,40,15,.4)' }));
+      }
+      svg.appendChild(stippleG);
     }
   }
 
   // Continent labels
-  const labelPositions = {
-    valdris:    { x: 320, y: 290 },
-    keth_morath: { x: 700, y: 265 },
-    thul_ashara: { x: 545, y: 500 },
-    drakmere:   { x: 200, y: 535 },
-    sundral:    { x: 740, y: 580 },
-    frostholme: { x: 460, y: 58 },
-    ashenveil:  { x: 460, y: 652 }
+  const labelPos = {
+    valdris:    {x:320,y:285}, keth_morath:{x:700,y:255}, thul_ashara:{x:540,y:495},
+    drakmere:   {x:195,y:535}, sundral:    {x:740,y:575}, frostholme: {x:460,y:58}, ashenveil:{x:460,y:652}
   };
   for (const c of continents) {
-    const pos = labelPositions[c.id];
-    if (!pos) continue;
-    const cls = c.status === 'explored' ? 'continent-label explored' : 'continent-label';
-    const label = svgEl('text', { x: pos.x, y: pos.y, class: cls });
-    label.textContent = c.name;
-    svg.appendChild(label);
-    if (c.status !== 'explored') {
-      const sub = svgEl('text', { x: pos.x, y: pos.y + 16, class: 'continent-label', 'font-size': 8 });
-      sub.textContent = `(${c.status})`;
-      svg.appendChild(sub);
+    const pos = labelPos[c.id]; if (!pos) continue;
+    const explored = c.status === 'explored';
+    const t = svgEl('text', {
+      x: pos.x, y: pos.y, 'text-anchor':'middle',
+      fill: explored ? 'rgba(60,35,10,.8)' : 'rgba(80,55,20,.35)',
+      'font-size': explored ? 16 : 11, 'font-style':'italic',
+      'letter-spacing': '.2em', 'font-family': "'Cinzel Decorative', 'Cinzel', serif"
+    });
+    t.textContent = c.name; svg.appendChild(t);
+    if (!explored) {
+      const sub = svgEl('text', { x: pos.x, y: pos.y+14, 'text-anchor':'middle', fill:'rgba(80,55,20,.25)', 'font-size':7, 'font-style':'italic' });
+      sub.textContent = `( ${c.status} )`; svg.appendChild(sub);
     }
   }
 
-  // Compass rose (simple)
-  const cx = 895, cy = 60;
-  svg.appendChild(svgEl('circle', { cx, cy, r: 22, fill: 'none', stroke: 'rgba(201,146,42,.25)', 'stroke-width': 1 }));
-  for (const [dir, dx, dy] of [['N',0,-18],['S',0,18],['E',18,0],['W',-18,0]]) {
-    const t = svgEl('text', { x: cx + dx, y: cy + dy + 3, fill: 'rgba(201,146,42,.5)', 'font-size': 9, 'text-anchor': 'middle' });
-    t.textContent = dir; svg.appendChild(t);
-  }
+  // Scatter a few mountains on Valdris to hint at detail
+  const vMtns = [[260,240],[280,250],[300,260],[340,230],[355,245]];
+  for (const [mx,my] of vMtns) drawMountain(svg, mx, my, 10, 'rgba(60,40,15,.35)');
 
-  // Vignette overlay
-  svg.appendChild(svgEl('rect', { x: 0, y: 0, width: 960, height: 700, fill: 'url(#vignette)', 'pointer-events': 'none' }));
+  // Trees on explored continent
+  const vTrees = [[220,310],[240,330],[360,340],[380,320]];
+  for (const [tx,ty] of vTrees) drawTree(svg, tx, ty, 8, 'rgba(40,60,20,.25)');
+
+  // Compass rose
+  drawCompass(svg, W-70, 65, 22);
+
+  // Age vignette
+  svg.appendChild(svgEl('rect', { x:0, y:0, width:W, height:H, fill:'url(#age-vignette)', 'pointer-events':'none' }));
 
   // Title cartouche
-  const titleBg = svgEl('rect', { x: 340, y: 8, width: 280, height: 28, rx: 3, fill: 'rgba(26,13,5,.7)', stroke: 'rgba(201,146,42,.3)', 'stroke-width': 1 });
-  svg.appendChild(titleBg);
-  const title = svgEl('text', { x: 480, y: 27, 'text-anchor': 'middle', fill: '#c9922a', 'font-size': 13, 'letter-spacing': '.2em' });
-  title.textContent = 'THE WORLD OF EDHRA'; svg.appendChild(title);
+  drawCartouche(svg, W/2, 24, 'THE WORLD OF EDHRA', 12, 260, 26);
 }
 
-// ── Valdris Detailed View ──────────────────────────────────────
+// ── Valdris Detailed View (Tolkien Style) ──────────────────────────
 function renderValdrisMap(svg) {
-  svg.setAttribute('viewBox', '0 0 800 600');
+  const W = 800, H = 600;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.innerHTML = '';
+  const rc = typeof rough !== 'undefined' ? rough.svg(svg) : null;
 
   const defs = svgEl('defs', {});
   defs.innerHTML = `
-    <radialGradient id="vignette-v" cx="50%" cy="50%" r="55%">
-      <stop offset="0%" stop-color="rgba(0,0,0,0)"/>
-      <stop offset="100%" stop-color="rgba(26,13,5,.35)"/>
+    <filter id="parchment-grain-v">
+      <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="4" seed="5" result="noise"/>
+      <feColorMatrix type="saturate" values="0" in="noise" result="grey"/>
+      <feBlend mode="multiply" in="SourceGraphic" in2="grey"/>
+    </filter>
+    <radialGradient id="age-vignette-v" cx="50%" cy="50%" r="58%">
+      <stop offset="0%" stop-color="rgba(212,197,160,0)"/>
+      <stop offset="80%" stop-color="rgba(160,130,80,.12)"/>
+      <stop offset="100%" stop-color="rgba(80,50,15,.4)"/>
     </radialGradient>`;
   svg.appendChild(defs);
 
-  // Ocean
-  svg.appendChild(svgEl('rect', { x: 0, y: 0, width: 800, height: 600, fill: 'rgba(25,40,55,.3)', rx: 4 }));
+  // Parchment background
+  svg.appendChild(svgEl('rect', { x:0, y:0, width:W, height:H, fill:'#d4c5a0' }));
+  svg.appendChild(svgEl('rect', { x:0, y:0, width:W, height:H, fill:'#c9b88a', opacity:.3, filter:'url(#parchment-grain-v)' }));
 
-  // Continent outline
-  const outline = 'M100,100 C130,60 260,30 380,45 C470,55 560,80 620,130 C670,175 700,240 690,320 C680,390 640,450 580,500 C510,545 400,560 300,550 C210,540 140,500 100,440 C65,385 50,310 55,240 C60,175 75,130 100,100 Z';
-  svg.appendChild(svgEl('path', { d: outline, fill: 'rgba(120,100,70,.12)', stroke: 'rgba(201,146,42,.4)', 'stroke-width': 2 }));
+  // Border frame
+  drawBorder(svg, W, H);
 
-  // Coastline detail (inner line for depth)
-  svg.appendChild(svgEl('path', { d: outline, fill: 'none', stroke: 'rgba(70,130,180,.15)', 'stroke-width': 6 }));
+  // Sea background wash
+  svg.appendChild(svgEl('rect', { x:14, y:14, width:W-28, height:H-28, fill:'rgba(120,140,155,.06)', rx:1 }));
 
-  // Macro-region zones
+  // Sea waves
+  const waveZones = [
+    {x:30,y:80,n:5,s:13},{x:660,y:120,n:4,s:12},{x:30,y:440,n:4,s:11},
+    {x:620,y:500,n:5,s:12},{x:350,y:570,n:6,s:11},{x:30,y:260,n:3,s:12}
+  ];
+  for (const wz of waveZones) drawWaves(svg, wz.x, wz.y, wz.n, wz.s, 7);
+
+  // Continent outline — noisy and hand-drawn
+  const coastPts = noisyContinent(390, 300, 250, 280, 3, .16, .055);
+  // Scale to fit: elliptical continent
+  const coastScaled = coastPts.map(([x,y]) => [
+    390 + (x-390)*1.05,
+    300 + (y-300)*0.88
+  ]);
+
+  const coastD = 'M' + coastScaled.map(p => p.join(',')).join(' L') + ' Z';
+
+  if (rc) {
+    const coastNode = rc.polygon(coastScaled, {
+      stroke: 'rgba(50,30,10,.9)',
+      strokeWidth: 2,
+      fill: 'rgba(195,178,140,.25)',
+      fillStyle: 'cross-hatch',
+      fillWeight: .2,
+      hachureGap: 12,
+      roughness: 1.4,
+      bowing: 1.3
+    });
+    svg.appendChild(coastNode);
+  } else {
+    svg.appendChild(svgEl('path', { d: coastD, fill:'rgba(195,178,140,.25)', stroke:'rgba(50,30,10,.9)', 'stroke-width':2 }));
+  }
+
+  // Coastline depth line (subtle inner shore line)
+  svg.appendChild(svgEl('path', { d: coastD, fill:'none', stroke:'rgba(80,100,130,.12)', 'stroke-width':5, 'pointer-events':'none' }));
+
+  // Region zones — subtle territorial boundaries
   const regions = mapGeo.macro_regions || [];
   const regionShapes = {
     steppe_marches:  'M160,80 C220,55 350,40 450,55 C510,65 560,85 580,120 C600,150 585,180 550,195 C490,215 380,220 280,210 C200,200 145,175 130,145 C120,120 135,95 160,80 Z',
@@ -3752,141 +4000,244 @@ function renderValdrisMap(svg) {
     ashen_reach:     'M530,120 C560,105 600,105 630,120 C665,140 690,180 700,230 C710,290 700,355 680,400 C660,435 620,460 575,465 C535,468 500,448 480,415 C460,380 455,335 460,290 C465,245 485,190 505,155 C515,135 520,128 530,120 Z',
     iron_coast:      'M140,470 C185,455 250,445 330,440 C400,436 470,445 530,465 C575,480 600,505 590,535 C575,560 530,575 470,580 C400,583 310,575 240,555 C185,538 140,515 120,495 C108,482 115,478 140,470 Z'
   };
+
   for (const r of regions) {
     const shape = regionShapes[r.id];
     if (!shape) continue;
-    const zone = svgEl('path', { d: shape, class: 'region-zone', fill: r.color || 'rgba(160,130,80,.2)' });
-    zone.addEventListener('mouseenter', () => showRegionTooltip(r));
-    zone.addEventListener('mouseleave', hideTooltip);
-    svg.appendChild(zone);
+    if (rc) {
+      // Parse path to polygon points for Rough.js (approximate — use SVG path as fallback outline)
+      const zone = svgEl('path', {
+        d: shape, fill: r.color || 'rgba(160,130,80,.08)',
+        stroke: 'rgba(80,55,20,.2)', 'stroke-width': .8, 'stroke-dasharray': '6 4',
+        cursor: 'pointer', 'fill-opacity': '.12'
+      });
+      zone.addEventListener('mouseenter', () => { zone.style.fillOpacity='.22'; showRegionTooltip(r); });
+      zone.addEventListener('mouseleave', () => { zone.style.fillOpacity='.12'; hideTooltip(); });
+      svg.appendChild(zone);
+    } else {
+      const zone = svgEl('path', { d: shape, fill: r.color||'rgba(160,130,80,.08)', stroke:'rgba(80,55,20,.2)', 'stroke-width':.8, 'stroke-dasharray':'6 4', cursor:'pointer', 'fill-opacity':'.12' });
+      zone.addEventListener('mouseenter', () => { zone.style.fillOpacity='.22'; showRegionTooltip(r); });
+      zone.addEventListener('mouseleave', () => { zone.style.fillOpacity='.12'; hideTooltip(); });
+      svg.appendChild(zone);
+    }
   }
-  // Region labels
+
+  // Region labels — italic, aged ink
   for (const r of regions) {
     const cx = r.center_pct ? (r.center_pct.x / 100) * 750 + 25 : 400;
     const cy = r.center_pct ? (r.center_pct.y / 100) * 550 + 25 : 300;
-    const label = svgEl('text', { x: cx, y: cy, class: 'region-label' });
-    label.textContent = r.name;
-    svg.appendChild(label);
+    const t = svgEl('text', {
+      x: cx, y: cy, 'text-anchor':'middle',
+      fill: 'rgba(70,45,15,.45)', 'font-size': 9, 'letter-spacing': '.14em',
+      'font-style': 'italic', 'font-family': "'Cinzel', serif"
+    });
+    t.textContent = r.name; svg.appendChild(t);
   }
 
-  // Natural features
+  // ── Ironspine Mountains (glyph row) ──────────────
   const features = mapGeo.natural_features || [];
   for (const f of features) {
     if (f.type === 'mountain_range' && f.id === 'ironspine_mountains') {
-      // N-S mountain spine between Hearthlands and Ashen Reach
-      svg.appendChild(svgEl('path', {
-        d: 'M490,110 C495,150 500,200 505,260 C508,300 510,350 505,400 C502,430 498,450 495,465',
-        class: 'feature-line mountain', 'stroke-width': 2.5
-      }));
-      const mt = svgEl('text', { x: 510, y: 285, fill: 'rgba(160,140,110,.5)', 'font-size': 7, transform: 'rotate(-80, 510, 285)' });
-      mt.textContent = 'Ironspine Mountains'; svg.appendChild(mt);
-    }
-    if (f.type === 'river' && f.id === 'pelimor_river') {
-      svg.appendChild(svgEl('path', {
-        d: 'M470,200 C460,240 440,280 420,320 C400,360 380,400 360,440 C345,470 335,500 330,530',
-        class: 'feature-line', 'stroke-width': 1.5
-      }));
-    }
-    if (f.type === 'river' && f.id === 'ashwater') {
-      svg.appendChild(svgEl('path', {
-        d: 'M580,240 C570,270 565,300 570,340 C575,370 580,390 585,410',
-        class: 'feature-line', 'stroke-width': 1, 'stroke-dasharray': '4 3'
-      }));
-    }
-    if (f.type === 'river' && f.id === 'greymist_river') {
-      svg.appendChild(svgEl('path', {
-        d: 'M130,360 C150,380 180,400 210,430 C240,460 270,480 290,510',
-        class: 'feature-line', 'stroke-width': 1
-      }));
+      // Peaks along the N-S spine
+      const spinePts = [
+        [492,105],[495,130],[498,155],[500,180],[502,205],[504,230],
+        [506,255],[507,280],[508,305],[507,330],[505,355],[503,380],
+        [500,405],[498,430],[496,455],[494,470]
+      ];
+      for (let i = 0; i < spinePts.length; i++) {
+        const [mx,my] = spinePts[i];
+        const sz = 9 + Math.sin(i*.6)*3; // vary peak sizes
+        drawMountain(svg, mx, my, sz);
+        // Foothills flanking main peaks
+        if (i % 2 === 0) {
+          drawMountain(svg, mx - 14 + _sn.noise2D(i*2, 0)*5, my + 4, sz*.55, 'rgba(60,40,15,.4)');
+          drawMountain(svg, mx + 14 + _sn.noise2D(i*2, 1)*5, my + 3, sz*.5, 'rgba(60,40,15,.4)');
+        }
+      }
+      // Mountain range label (rotated along spine)
+      const ml = svgEl('text', {
+        x: 520, y: 285, fill:'rgba(70,50,20,.4)', 'font-size':7,
+        'letter-spacing':'.15em', 'font-style':'italic',
+        transform: 'rotate(-85, 520, 285)', 'font-family': "'IM Fell English', serif"
+      });
+      ml.textContent = 'Ironspine Mountains'; svg.appendChild(ml);
     }
   }
 
-  // Sea labels
+  // ── Rivers (wobbly, tapering) ──────────────────
+  function wobblyRiverPath(points, seedOff) {
+    let d = `M${points[0][0]},${points[0][1]}`;
+    for (let i = 1; i < points.length; i++) {
+      const [px, py] = points[i];
+      const wobX = _sn.noise2D(i * 1.4 + seedOff, 0) * 4;
+      const wobY = _sn.noise2D(0, i * 1.4 + seedOff) * 3;
+      if (i === 1) d += ` Q${(points[0][0]+px)/2+wobX},${(points[0][1]+py)/2+wobY} ${px+wobX},${py+wobY}`;
+      else d += ` T${px+wobX},${py+wobY}`;
+    }
+    return d;
+  }
+
+  for (const f of features) {
+    if (f.type === 'river' && f.id === 'pelimor_river') {
+      const pts = [[470,200],[460,235],[448,270],[435,310],[418,350],[400,390],[380,430],[360,465],[345,495],[335,525]];
+      const d = wobblyRiverPath(pts, 100);
+      if (rc) {
+        const node = rc.path(d, { stroke:'rgba(50,70,110,.55)', strokeWidth:1.8, fill:'none', roughness:.8, bowing:1.5 });
+        svg.appendChild(node);
+      } else {
+        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.55)', 'stroke-width':1.8, fill:'none' }));
+      }
+      // River label
+      const rl = svgEl('text', { x:410, y:340, fill:'rgba(50,70,110,.35)', 'font-size':6.5, 'font-style':'italic', transform:'rotate(-60,410,340)' });
+      rl.textContent = 'Pelimor R.'; svg.appendChild(rl);
+    }
+    if (f.type === 'river' && f.id === 'ashwater') {
+      const pts = [[580,235],[574,265],[570,295],[572,330],[576,365],[580,395],[583,415]];
+      const d = wobblyRiverPath(pts, 200);
+      if (rc) {
+        const node = rc.path(d, { stroke:'rgba(50,70,110,.4)', strokeWidth:1.2, fill:'none', roughness:.7 });
+        svg.appendChild(node);
+      } else {
+        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.4)', 'stroke-width':1.2, fill:'none' }));
+      }
+      const rl = svgEl('text', { x:592, y:330, fill:'rgba(50,70,110,.3)', 'font-size':5.5, 'font-style':'italic', transform:'rotate(-80,592,330)' });
+      rl.textContent = 'Ashwater'; svg.appendChild(rl);
+    }
+    if (f.type === 'river' && f.id === 'greymist_river') {
+      const pts = [[130,355],[148,375],[170,395],[195,418],[220,442],[250,468],[275,490],[290,510]];
+      const d = wobblyRiverPath(pts, 300);
+      if (rc) {
+        const node = rc.path(d, { stroke:'rgba(50,70,110,.4)', strokeWidth:1.1, fill:'none', roughness:.7 });
+        svg.appendChild(node);
+      } else {
+        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.4)', 'stroke-width':1.1, fill:'none' }));
+      }
+      const rl = svgEl('text', { x:175, y:425, fill:'rgba(50,70,110,.3)', 'font-size':5.5, 'font-style':'italic', transform:'rotate(-45,175,425)' });
+      rl.textContent = 'Greymist R.'; svg.appendChild(rl);
+    }
+  }
+
+  // ── Scattered trees (forest hints) ──────────────
+  const forestZones = [
+    {x:200,y:190,n:6,spread:25}, // Shattered West forests
+    {x:350,y:280,n:8,spread:30}, // Hearthlands
+    {x:160,y:380,n:5,spread:20}, // Sunken Marches
+    {x:300,y:490,n:4,spread:22}, // Iron Coast
+  ];
+  for (const fz of forestZones) {
+    for (let fi = 0; fi < fz.n; fi++) {
+      const tx = fz.x + _sn.noise2D(fi*3.1, fz.y*.01)*fz.spread;
+      const ty = fz.y + _sn.noise2D(fz.x*.01, fi*3.1)*fz.spread*.7;
+      drawTree(svg, tx, ty, 6 + Math.random()*3);
+    }
+  }
+
+  // ── Sea labels (italic, spaced) ──────────────────
   const seaLabels = [
-    { text: 'The Bitter Sea', x: 400, y: 25, size: 10 },
-    { text: 'The Sapphire Sea', x: 400, y: 590, size: 10 },
-    { text: 'The Vael Ocean', x: 30, y: 300, size: 10, rotate: -90 },
+    { text:'T h e   B i t t e r   S e a', x:390, y:30, size:10 },
+    { text:'T h e   S a p p h i r e   S e a', x:390, y:585, size:10 },
+    { text:'T h e   V a e l   O c e a n', x:32, y:300, size:10, rotate:-90 },
   ];
   for (const sl of seaLabels) {
     const t = svgEl('text', {
-      x: sl.x, y: sl.y, fill: 'rgba(70,130,180,.4)', 'font-size': sl.size,
-      'text-anchor': 'middle', 'font-style': 'italic', 'letter-spacing': '.15em',
+      x: sl.x, y: sl.y, fill:'rgba(60,80,110,.3)', 'font-size': sl.size,
+      'text-anchor':'middle', 'font-style':'italic',
+      'font-family': "'IM Fell English', serif",
       ...(sl.rotate ? { transform: `rotate(${sl.rotate}, ${sl.x}, ${sl.y})` } : {})
     });
     t.textContent = sl.text; svg.appendChild(t);
   }
 
-  // Place dots
+  // ── Place markers (confidence-based styling) ──────
   const assignments = mapGeo.place_assignments || [];
-  const tooltip = document.getElementById('map-tooltip');
   for (const a of assignments) {
     const px = (a.position_pct.x / 100) * 750 + 25;
     const py = (a.position_pct.y / 100) * 550 + 25;
     const conf = (a.confidence || '').toLowerCase();
-    const dot = svgEl('circle', {
-      cx: px, cy: py,
-      class: conf === 'low' ? 'place-dot low-conf' : 'place-dot'
-    });
-    dot.addEventListener('mouseenter', (e) => showPlaceTooltip(e, a));
-    dot.addEventListener('mouseleave', hideTooltip);
-    svg.appendChild(dot);
-    // Label for high-confidence named places
+
+    if (conf === 'high') {
+      // Solid ink dot + crosshair
+      svg.appendChild(svgEl('circle', { cx:px, cy:py, r:3, fill:'rgba(50,30,10,.85)', stroke:'rgba(50,30,10,.5)', 'stroke-width':.8, cursor:'pointer' }));
+      // Tiny crosshairs
+      svg.appendChild(svgEl('line', { x1:px-5,y1:py, x2:px+5,y2:py, stroke:'rgba(50,30,10,.25)', 'stroke-width':.4 }));
+      svg.appendChild(svgEl('line', { x1:px,y1:py-5, x2:px,y2:py+5, stroke:'rgba(50,30,10,.25)', 'stroke-width':.4 }));
+    } else if (conf === 'medium') {
+      // Smaller dot, lighter
+      svg.appendChild(svgEl('circle', { cx:px, cy:py, r:2.2, fill:'rgba(80,55,20,.6)', stroke:'none', cursor:'pointer' }));
+    } else {
+      // Faded stipple dot
+      svg.appendChild(svgEl('circle', { cx:px, cy:py, r:1.8, fill:'none', stroke:'rgba(80,55,20,.35)', 'stroke-width':.8, 'stroke-dasharray':'1 1.5', cursor:'pointer' }));
+    }
+
+    // Interactive tooltip area (invisible larger hit target)
+    const hitTarget = svgEl('circle', { cx:px, cy:py, r:8, fill:'transparent', cursor:'pointer' });
+    hitTarget.addEventListener('mouseenter', (e) => showPlaceTooltip(e, a));
+    hitTarget.addEventListener('mouseleave', hideTooltip);
+    svg.appendChild(hitTarget);
+
+    // Label for high-confidence places
     if (conf === 'high' && a.place_name && !a.place_name.match(/^(the |a |dry |deep )/i)) {
-      const lbl = svgEl('text', { x: px + 6, y: py + 3, class: 'place-label' });
-      lbl.textContent = a.place_name;
-      svg.appendChild(lbl);
+      const lbl = svgEl('text', {
+        x: px + 7, y: py + 3, fill: 'rgba(50,30,10,.65)', 'font-size': 6.5,
+        'font-family': "'IM Fell English', serif", 'pointer-events':'none'
+      });
+      lbl.textContent = a.place_name; svg.appendChild(lbl);
+    } else if (conf === 'medium' && a.place_name && a.place_name.length < 16) {
+      const lbl = svgEl('text', {
+        x: px + 5, y: py + 2.5, fill: 'rgba(70,50,20,.35)', 'font-size': 5.5,
+        'font-family': "'IM Fell English', serif", 'font-style':'italic', 'pointer-events':'none'
+      });
+      lbl.textContent = a.place_name; svg.appendChild(lbl);
     }
   }
 
-  // Routes (subtle dotted lines)
+  // ── Routes (hand-drawn dotted lines) ──────────────
   const routes = mapGeo.routes || [];
   const placePos = {};
   for (const a of assignments) {
-    placePos[a.place_name] = { x: (a.position_pct.x / 100) * 750 + 25, y: (a.position_pct.y / 100) * 550 + 25 };
+    placePos[a.place_name] = { x: (a.position_pct.x/100)*750+25, y: (a.position_pct.y/100)*550+25 };
   }
   for (const rt of routes) {
-    const from = placePos[rt.from_place];
-    const to = placePos[rt.to_place];
-    if (from && to) {
+    const from = placePos[rt.from_place], to = placePos[rt.to_place];
+    if (!from || !to) continue;
+    if (rc) {
+      const node = rc.line(from.x, from.y, to.x, to.y, {
+        stroke:'rgba(80,55,20,.2)', strokeWidth:.8, roughness:1.2
+      });
+      svg.appendChild(node);
+    } else {
       svg.appendChild(svgEl('line', {
-        x1: from.x, y1: from.y, x2: to.x, y2: to.y,
-        stroke: 'rgba(201,146,42,.15)', 'stroke-width': 1, 'stroke-dasharray': '3 4'
+        x1:from.x, y1:from.y, x2:to.x, y2:to.y,
+        stroke:'rgba(80,55,20,.2)', 'stroke-width':.8, 'stroke-dasharray':'3 4'
       }));
     }
   }
 
-  // Vignette
-  svg.appendChild(svgEl('rect', { x: 0, y: 0, width: 800, height: 600, fill: 'url(#vignette-v)', 'pointer-events': 'none' }));
+  // Compass rose
+  drawCompass(svg, W-60, 55, 20);
+
+  // Age vignette
+  svg.appendChild(svgEl('rect', { x:0, y:0, width:W, height:H, fill:'url(#age-vignette-v)', 'pointer-events':'none' }));
 
   // Title cartouche
-  const tbg = svgEl('rect', { x: 280, y: 6, width: 240, height: 26, rx: 3, fill: 'rgba(26,13,5,.7)', stroke: 'rgba(201,146,42,.3)', 'stroke-width': 1 });
-  svg.appendChild(tbg);
-  const tt = svgEl('text', { x: 400, y: 23, 'text-anchor': 'middle', fill: '#c9922a', 'font-size': 12, 'letter-spacing': '.18em' });
-  tt.textContent = 'VALDRIS — THE KNOWN CONTINENT'; svg.appendChild(tt);
-
-  // Compass
-  const ccx = 745, ccy = 50;
-  svg.appendChild(svgEl('circle', { cx: ccx, cy: ccy, r: 18, fill: 'none', stroke: 'rgba(201,146,42,.25)', 'stroke-width': 1 }));
-  for (const [dir, dx, dy] of [['N',0,-14],['S',0,14],['E',14,0],['W',-14,0]]) {
-    const t = svgEl('text', { x: ccx + dx, y: ccy + dy + 3, fill: 'rgba(201,146,42,.5)', 'font-size': 8, 'text-anchor': 'middle' });
-    t.textContent = dir; svg.appendChild(t);
-  }
+  drawCartouche(svg, W/2, 24, 'VALDRIS — THE KNOWN CONTINENT', 10, 280, 24);
 }
 
+// ── Map Tooltips ───────────────────────────────────────────────────
 function showPlaceTooltip(e, assignment) {
   const tooltip = document.getElementById('map-tooltip');
   const container = document.getElementById('map-container');
   const regionName = getRegionDisplayName(assignment.macro_region);
+  const conf = (assignment.confidence||'unknown').toLowerCase();
+  const confLabel = conf === 'high' ? '⬤ Confirmed' : conf === 'medium' ? '◐ Reported' : '○ Uncertain';
   tooltip.innerHTML = `
     <div class="tt-name">${escHtml(assignment.place_name)}</div>
     <div class="tt-region">${escHtml(regionName)}</div>
-    <div class="tt-conf">Confidence: ${escHtml(assignment.confidence || 'unknown')}</div>
+    <div class="tt-conf">${confLabel}</div>
   `;
   const rect = container.getBoundingClientRect();
-  const ex = e.clientX - rect.left;
-  const ey = e.clientY - rect.top;
-  tooltip.style.left = (ex + 12) + 'px';
-  tooltip.style.top = (ey - 10) + 'px';
+  tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+  tooltip.style.top = (e.clientY - rect.top - 12) + 'px';
   tooltip.style.display = 'block';
 }
 
@@ -3894,9 +4245,8 @@ function showRegionTooltip(region) {
   const tooltip = document.getElementById('map-tooltip');
   tooltip.innerHTML = `
     <div class="tt-name">${escHtml(region.name)}</div>
-    <div class="tt-region">${escHtml(region.climate || '')} · ${escHtml(region.terrain || '')}</div>
+    <div class="tt-region">${escHtml(region.climate || '')}${region.climate && region.terrain ? ' · ' : ''}${escHtml(region.terrain || '')}</div>
   `;
-  // Position near cursor via mousemove (updated below)
   tooltip.style.display = 'block';
 }
 
@@ -3904,14 +4254,13 @@ function hideTooltip() {
   document.getElementById('map-tooltip').style.display = 'none';
 }
 
-// Track mouse for region tooltips
 document.getElementById('map-container').addEventListener('mousemove', (e) => {
   const tooltip = document.getElementById('map-tooltip');
   if (tooltip.style.display !== 'block') return;
   const container = document.getElementById('map-container');
   const rect = container.getBoundingClientRect();
-  tooltip.style.left = (e.clientX - rect.left + 12) + 'px';
-  tooltip.style.top = (e.clientY - rect.top - 10) + 'px';
+  tooltip.style.left = (e.clientX - rect.left + 14) + 'px';
+  tooltip.style.top = (e.clientY - rect.top - 12) + 'px';
 });
 
 function getRegionDisplayName(regionId) {
