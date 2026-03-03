@@ -193,6 +193,62 @@ def _build_token_uniqueness(codex: dict, entity_type: str) -> dict[str, int]:
     return counts
 
 
+def _role_signals(entity: dict) -> set[str]:
+    """Extract a small set of role keywords used for disambiguation."""
+    signals: set[str] = set()
+
+    role = str(entity.get("role", "") or "").strip().casefold()
+    status = str(entity.get("status", "") or "").strip().casefold()
+
+    # Split on non-letters to get words.
+    for w in re.split(r"[^a-z]+", role):
+        if w:
+            signals.add(w)
+    for w in re.split(r"[^a-z]+", status):
+        if w:
+            signals.add(w)
+
+    # A few common lore roles that tend to appear in prose.
+    # (We keep this list short to avoid accidental matches.)
+    keep = {
+        "demon",
+        "warlord",
+        "general",
+        "commander",
+        "captain",
+        "merchant",
+        "sorcerer",
+        "sorceress",
+        "conjuress",
+        "collector",
+        "brigand",
+        "thief",
+        "prince",
+        "king",
+        "queen",
+        "lich",
+        "dragon",
+        "wyvern",
+    }
+    return {s for s in signals if s in keep}
+
+
+def _negative_signals_for(entity_signals: set[str]) -> set[str]:
+    """Signals that *contradict* an entity's role, used to avoid false links."""
+    neg: set[str] = set()
+    if "demon" in entity_signals:
+        neg |= {"warlord", "general", "commander", "captain"}
+    if "warlord" in entity_signals or "general" in entity_signals:
+        neg |= {"demon", "collector"}
+    return neg
+
+
+def _context_window(text: str, start: int, end: int, radius: int = 80) -> str:
+    lo = max(0, start - radius)
+    hi = min(len(text), end + radius)
+    return text[lo:hi]
+
+
 def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[dict], token_counts: dict[str, int]):
     """Return (exact_matches, possible_matches).
 
@@ -208,16 +264,15 @@ def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[d
     safe_aliases = [a for a in aliases if len(a.split()) >= 2]
     safe_aliases_cf = [a.casefold() for a in safe_aliases]
 
-    # Single-token aliases are only safe if that token is unique among the entity_type.
-    single_aliases = [a for a in aliases if len(a.split()) == 1]
-    safe_single_aliases: list[str] = []
-    for a in single_aliases:
-        tok = a.strip().casefold()
-        if not tok:
-            continue
-        if token_counts.get(tok, 0) == 1:
-            safe_single_aliases.append(a.strip())
-    safe_single_aliases_re = [re.compile(rf"\b{re.escape(a)}\b", re.IGNORECASE) for a in safe_single_aliases]
+    # Single-token aliases can be ambiguous (especially across roles like demon vs warlord).
+    # We only auto-link them when either:
+    #  - the token is unique across the entity_type, AND context does not contradict the role, OR
+    #  - the context contains a role signal (e.g. "warlord Varak") and does not contradict.
+    single_aliases = [a.strip() for a in aliases if len(str(a).strip().split()) == 1 and str(a).strip()]
+    single_aliases_re = [re.compile(rf"\b{re.escape(a)}\b", re.IGNORECASE) for a in single_aliases]
+
+    pos_signals = _role_signals(entity)
+    neg_signals = _negative_signals_for(pos_signals)
 
     exact: list[dict] = []
     possible: list[dict] = []
@@ -237,14 +292,37 @@ def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[d
             exact.append({**s, "match": f"alias:{hit_alias}"})
             continue
 
-        # Safe single-token alias match (unique token)
-        hit_single = None
-        for a, rx in zip(safe_single_aliases, safe_single_aliases_re):
-            if rx.search(text):
-                hit_single = a
+        # Single-token alias match with disambiguation
+        single_hit = None
+        single_kind = None
+        for a, rx in zip(single_aliases, single_aliases_re):
+            for m in rx.finditer(text):
+                ctx = _context_window(text, m.start(), m.end())
+                ctx_cf = ctx.casefold()
+
+                # If the nearby context contradicts this entity's role, don't auto-link.
+                if any(re.search(rf"\b{re.escape(ns)}\b", ctx_cf) for ns in neg_signals):
+                    single_kind = f"alias_token_conflict:{a}"
+                    continue
+
+                tok = a.casefold()
+                unique = token_counts.get(tok, 0) == 1
+                has_role_hint = any(re.search(rf"\b{re.escape(ps)}\b", ctx_cf) for ps in pos_signals) if pos_signals else False
+
+                if unique or has_role_hint:
+                    single_hit = a
+                    single_kind = f"alias_token:{a}" + (":unique" if unique else ":role")
+                    break
+                # Otherwise keep as a possible mention, but not exact.
+                single_kind = f"alias_token_weak:{a}"
+            if single_hit:
                 break
-        if hit_single:
-            exact.append({**s, "match": f"alias_token:{hit_single}"})
+
+        if single_hit:
+            exact.append({**s, "match": single_kind})
+            continue
+        elif single_kind and (single_kind.startswith("alias_token_weak") or single_kind.startswith("alias_token_conflict")):
+            possible.append({**s, "match": single_kind})
             continue
 
         if first_re and first_re.search(text):
