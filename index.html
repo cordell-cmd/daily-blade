@@ -3347,6 +3347,22 @@ async function auditCodexEntity(cardEl, statusEl) {
         if (result.entity_name && normalizeEntityKey(result.entity_name) === normalizeEntityKey(entityName)) {
           statusEl.textContent = '';
           showAuditResults(entityName, entityType, result);
+
+          // If the audit workflow patched codex.json (e.g., added missing story_appearances),
+          // refresh the codex cache so the card reflects it immediately.
+          if (result && result.codex_updated) {
+            const addedCount = Number(result.story_appearances_added_count || 0);
+            statusEl.textContent = `Refreshing Codex…${addedCount ? ` (+${addedCount} appearance${addedCount === 1 ? '' : 's'})` : ''}`;
+            try {
+              invalidateCodexCache();
+              await ensureCodexDataLoaded();
+              if (codexLoaded) await loadCodex(true);
+              enhanceStoryEntityBadges();
+            } catch (e) {
+              // best-effort
+            }
+            statusEl.textContent = '';
+          }
           return;
         }
       }

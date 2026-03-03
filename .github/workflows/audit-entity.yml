@@ -79,7 +79,7 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add audit-entity-result.json
+          git add audit-entity-result.json codex.json
           git commit -m "Audit entity: ${{ inputs.entity_name }} (${{ inputs.entity_type }})"
           for attempt in 1 2 3 4 5; do
             echo "Push attempt $attempt..."

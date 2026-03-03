@@ -19,7 +19,9 @@ import argparse
 import datetime
 import json
 import os
+import re
 import sys
+from glob import glob
 
 import anthropic
 
@@ -75,6 +77,126 @@ def get_story_appearances(entity: dict) -> list[dict]:
                 "title": str(entity["first_story"]).strip(),
             })
     return apps
+
+
+def _iter_all_stories() -> list[dict]:
+    """Load all stories from archive/*.json (excluding index.json) plus stories.json."""
+    out: list[dict] = []
+
+    # archive payloads
+    archive_paths = sorted(glob(os.path.join(ARCHIVE_DIR, "*.json")))
+    for path in archive_paths:
+        if os.path.basename(path) == "index.json":
+            continue
+        try:
+            day = _load_json(path)
+        except Exception:
+            continue
+        if not isinstance(day, dict):
+            continue
+        date_key = str(day.get("date") or os.path.splitext(os.path.basename(path))[0]).strip()
+        stories = day.get("stories", [])
+        if not isinstance(stories, list):
+            continue
+        for s in stories:
+            if not isinstance(s, dict):
+                continue
+            out.append({
+                "date": date_key,
+                "title": str(s.get("title", "")).strip(),
+                "text": str(s.get("text", "")),
+            })
+
+    # current stories.json (may contain an un-archived date during local dev)
+    if os.path.exists(STORIES_FILE):
+        try:
+            day = _load_json(STORIES_FILE)
+            if isinstance(day, dict) and isinstance(day.get("stories"), list):
+                date_key = str(day.get("date") or "").strip()
+                for s in day.get("stories", []):
+                    if not isinstance(s, dict):
+                        continue
+                    out.append({
+                        "date": date_key,
+                        "title": str(s.get("title", "")).strip(),
+                        "text": str(s.get("text", "")),
+                    })
+        except Exception:
+            pass
+
+    # De-dup by date+title
+    seen = set()
+    deduped: list[dict] = []
+    for s in out:
+        k = (str(s.get("date", "")).strip(), _normalize_key(s.get("title", "")))
+        if k in seen:
+            continue
+        seen.add(k)
+        deduped.append(s)
+    return deduped
+
+
+def _extract_aliases(entity: dict) -> list[str]:
+    aliases: list[str] = []
+    for key in ("aliases", "alias", "aka", "epithets", "titles"):
+        val = entity.get(key)
+        if isinstance(val, list):
+            for it in val:
+                s = str(it or "").strip()
+                if s:
+                    aliases.append(s)
+        elif isinstance(val, str):
+            s = val.strip()
+            if s:
+                aliases.append(s)
+    # unique, stable order
+    seen = set()
+    out: list[str] = []
+    for a in aliases:
+        k = _normalize_key(a)
+        if k in seen:
+            continue
+        seen.add(k)
+        out.append(a)
+    return out
+
+
+def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[dict]):
+    """Return (exact_matches, possible_matches).
+
+    exact_matches: stories where full name or a safe multi-word alias appears in text.
+    possible_matches: stories where only the first token appears (not safe to auto-link).
+    """
+    full = str(entity_name or "").strip()
+    full_cf = full.casefold()
+    first = (full.split() or [""])[0]
+    first_re = re.compile(rf"\b{re.escape(first)}\b", re.IGNORECASE) if first else None
+
+    aliases = _extract_aliases(entity)
+    safe_aliases = [a for a in aliases if len(a.split()) >= 2]
+    safe_aliases_cf = [a.casefold() for a in safe_aliases]
+
+    exact: list[dict] = []
+    possible: list[dict] = []
+
+    for s in all_stories:
+        text = str(s.get("text", ""))
+        text_cf = text.casefold()
+        if full and full_cf in text_cf:
+            exact.append({**s, "match": "full_name"})
+            continue
+        hit_alias = None
+        for a_cf, a in zip(safe_aliases_cf, safe_aliases):
+            if a_cf and a_cf in text_cf:
+                hit_alias = a
+                break
+        if hit_alias:
+            exact.append({**s, "match": f"alias:{hit_alias}"})
+            continue
+        if first_re and first_re.search(text):
+            possible.append({**s, "match": "first_token"})
+
+    return exact, possible
 
 
 def load_story_text(date_key: str, title: str):
@@ -172,6 +294,47 @@ def main() -> int:
         )
         return 1
 
+    # Discover missing story appearances by scanning the archive for exact full-name mentions.
+    # This is intentionally conservative: only exact full-name (or safe multi-word alias) matches
+    # will be auto-linked into story_appearances.
+    all_stories = _iter_all_stories()
+    exact_matches, possible_matches = _discover_story_mentions(args.entity_name, entity, all_stories)
+
+    existing_keys = set()
+    sa_existing = entity.get("story_appearances")
+    if isinstance(sa_existing, list):
+        for it in sa_existing:
+            if isinstance(it, dict) and it.get("date") and it.get("title"):
+                existing_keys.add((str(it["date"]).strip(), _normalize_key(it["title"])))
+
+    added = []
+    for s in exact_matches:
+        date_key = str(s.get("date", "")).strip()
+        title = str(s.get("title", "")).strip()
+        if not date_key or not title:
+            continue
+        k = (date_key, _normalize_key(title))
+        if k in existing_keys:
+            continue
+        added.append({"date": date_key, "title": title, "match": s.get("match")})
+        existing_keys.add(k)
+
+    codex_updated = False
+    if added:
+        sa = entity.get("story_appearances")
+        if not isinstance(sa, list):
+            sa = []
+            entity["story_appearances"] = sa
+        for it in added:
+            sa.append({"date": it["date"], "title": it["title"]})
+
+        # Keep 'appearances' consistent if present.
+        if isinstance(entity.get("appearances"), int):
+            entity["appearances"] = len([x for x in sa if isinstance(x, dict)])
+
+        _save_json(CODEX_FILE, codex)
+        codex_updated = True
+
     # Gather story appearances
     apps = get_story_appearances(entity)
     if not apps:
@@ -206,8 +369,15 @@ def main() -> int:
     # Call Anthropic Haiku
     prompt = build_audit_prompt(entity, stories)
     client = anthropic.Anthropic(api_key=api_key)
+    # Use the same model as the daily generator unless overridden.
+    import generate_stories as gs  # local import; keeps this script aligned with repo config
+
+    model = (os.environ.get("ANTHROPIC_MODEL") or getattr(gs, "MODEL", "")).strip()
+    if not model:
+        model = "claude-haiku-4-5-20251001"
+
     resp = client.messages.create(
-        model="claude-3-5-haiku-latest",
+        model=model,
         max_tokens=int(args.max_tokens),
         messages=[{"role": "user", "content": prompt}],
     )
@@ -230,6 +400,14 @@ def main() -> int:
     result["entity_name"] = args.entity_name
     result["entity_type"] = args.entity_type
     result["stories_checked"] = len(stories)
+    result["story_appearances_added"] = added
+    result["story_appearances_added_count"] = len(added)
+    # Only include a small sample of possible (first-token-only) matches to avoid noise.
+    result["possible_story_mentions_sample"] = [
+        {"date": s.get("date"), "title": s.get("title"), "match": s.get("match")}
+        for s in possible_matches[:10]
+    ]
+    result["codex_updated"] = bool(codex_updated)
     result["timestamp"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
     # Write result
