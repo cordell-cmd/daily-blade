@@ -1,0 +1,35 @@
+{
+  "findings": [
+    {
+      "field": "status_history",
+      "issue": "incomplete",
+      "detail": "status_history is an empty array, but should document the progression from 'alive/general' to 'possessed/cursed' with date 2026-02-28"
+    },
+    {
+      "field": "home_place",
+      "issue": "incomplete",
+      "detail": "Listed as 'unknown' but story establishes he commanded from somewhere in the Sunken Marches region; home base/command location should be determinable"
+    },
+    {
+      "field": "home_realm",
+      "issue": "incomplete",
+      "detail": "Listed as 'unknown' but should be inferable as part of The Known World's political structure; story implies he was a regional warlord with territorial holdings"
+    }
+  ],
+  "summary": "The codex entry accurately captures the core narrative arc and key details from 'The Bone Citadel's Hunger,' including Varak's possession by the Ossuary and his tragic final act. However, three fields remain unnecessarily vague: status_history is empty despite a clear status change event, and home_place/home_realm are marked unknown when the regional setting (Sunken Marches) and world context provide enough information to establish more specific details. The story material supports all claims made in the bio, traits, and tagline, making this a substantively accurate but administratively incomplete entry.",
+  "completeness_pct": 82,
+  "entity_name": "Varak Ironhelm",
+  "entity_type": "characters",
+  "stories_checked": 1,
+  "story_appearances_added": [],
+  "story_appearances_added_count": 0,
+  "possible_story_mentions_sample": [
+    {
+      "date": "2026-03-02",
+      "title": "The Bone-Singer's Choice",
+      "match": "first_token"
+    }
+  ],
+  "codex_updated": false,
+  "timestamp": "2026-03-03T00:42:43.981861+00:00"
+}
