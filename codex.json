@@ -3169,12 +3169,43 @@
       "home_realm": "unknown",
       "status_history": [],
       "world": "Edhra",
-      "bio": "A dwarven forge-master who has guarded the Deepvault forges for sixty winters without striking a false blow. He possesses deep knowledge of stonecraft magic and the old songs, and uses forge-oaths to bind others to his service. When Kess arrives marked by a demon, Korgan transfers the binding to himself, offering her seven years of servitude in exchange for freedom from the demonic compulsion.",
+      "bio": "A dwarven forge-master who has guarded the Deepvault forges for sixty winters without striking a false blow. He possesses deep knowledge of stonecraft magic and the old songs, and uses forge-oaths to bind others to his service. When Brinna arrives marked by a demon, Korgan transfers the binding to himself, offering her seven years of servitude in exchange for freedom from the demonic compulsion.",
       "traits": [
         "steadfast",
         "protective",
         "ancient-magic-knowledgeable",
         "masterful-craftsman"
+      ],
+      "first_story": "The Warden's Forge",
+      "first_date": "2026-03-03",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-03",
+          "title": "The Warden's Forge"
+        }
+      ]
+    },
+    {
+      "name": "Brinna",
+      "aliases": [
+        "Brinna"
+      ],
+      "tagline": "Marked. Freed. Forged.",
+      "role": "Thief / Forge-Apprentice",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "Deepvault",
+      "home_region": "The Hearthlands",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "A young thief from the upper world who descended into Deepvault with stolen blueprints while bound by a demon's mark. Korgan Ironfoot transferred the binding to himself and replaced it with a forge-oath, freeing her will in exchange for seven years of service learning the old songs and the rhythm of the hammer.",
+      "traits": [
+        "resourceful",
+        "trembling-but-determined",
+        "marked-by-demons",
+        "forge-apprentice"
       ],
       "first_story": "The Warden's Forge",
       "first_date": "2026-03-03",
@@ -10451,7 +10482,7 @@
     {
       "name": "Korgan's Silver Rune",
       "tagline": "Marking. Protective. Freeing.",
-      "origin": "Created by Korgan Ironfoot through stonecraft binding magic; inscribed on Kess's palm.",
+      "origin": "Created by Korgan Ironfoot through stonecraft binding magic; inscribed on Brinna's palm.",
       "power": "Replaces and overwrites demonic bindings with forge-oath service; unbreakable for the duration of service (e.g., seven years); after dissolution, protects the bound party from reclamation by the original binding entity.",
       "curse": "Commits the bearer to seven years of service in the forges; failure to complete service would presumably result in the binding's failure and return of the original curse.",
       "status": "active",
@@ -10468,7 +10499,7 @@
     {
       "name": "Demon's Mark",
       "tagline": "Burning. Hungry. Compulsive.",
-      "origin": "Inscribed on Kess's palm by an unnamed demon as a binding curse.",
+      "origin": "Inscribed on Brinna's palm by an unnamed demon as a binding curse.",
       "power": "Compels the bearer to steal the Heartstone of Vulgrim; thrums with hunger; enforces obedience through ancient, cruel magic.",
       "curse": "Devours free will; forces the bearer into theft and service to the demon; cannot be broken by force alone.",
       "status": "replaced",
