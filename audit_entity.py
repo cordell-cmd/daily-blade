@@ -249,6 +249,48 @@ def _context_window(text: str, start: int, end: int, radius: int = 80) -> str:
     return text[lo:hi]
 
 
+def _edit_distance_leq1(a: str, b: str) -> bool:
+    """Return True if Levenshtein distance between a and b is <= 1.
+
+    Used only for conservative, role-prefixed name variants (e.g. Varak/Varek).
+    """
+    a = a.casefold()
+    b = b.casefold()
+    if a == b:
+        return True
+    la = len(a)
+    lb = len(b)
+    if abs(la - lb) > 1:
+        return False
+
+    # Same length: at most one substitution.
+    if la == lb:
+        diffs = 0
+        for ca, cb in zip(a, b):
+            if ca != cb:
+                diffs += 1
+                if diffs > 1:
+                    return False
+        return True
+
+    # Length differs by 1: at most one insertion/deletion.
+    if la > lb:
+        a, b = b, a
+        la, lb = lb, la
+    i = j = 0
+    edits = 0
+    while i < la and j < lb:
+        if a[i] == b[j]:
+            i += 1
+            j += 1
+        else:
+            edits += 1
+            if edits > 1:
+                return False
+            j += 1
+    return True
+
+
 def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[dict], token_counts: dict[str, int]):
     """Return (exact_matches, possible_matches).
 
@@ -269,6 +311,7 @@ def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[d
     #  - the token is unique across the entity_type, AND context does not contradict the role, OR
     #  - the context contains a role signal (e.g. "warlord Varak") and does not contradict.
     single_aliases = [a.strip() for a in aliases if len(str(a).strip().split()) == 1 and str(a).strip()]
+    single_aliases_cf = [a.casefold() for a in single_aliases]
     single_aliases_re = [re.compile(rf"\b{re.escape(a)}\b", re.IGNORECASE) for a in single_aliases]
 
     pos_signals = _role_signals(entity)
@@ -290,6 +333,34 @@ def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[d
                 break
         if hit_alias:
             exact.append({**s, "match": f"alias:{hit_alias}"})
+            continue
+
+        # Role-prefixed *fuzzy* single-name match (handles minor spelling variants like Varak/Varek)
+        # Only triggers when a strong role prefix is present in the prose.
+        fuzzy_prefixes = sorted({s for s in pos_signals if s in {"warlord", "general", "demon", "commander", "captain"}})
+        did_fuzzy = False
+        if fuzzy_prefixes and single_aliases:
+            rx = re.compile(rf"\\b({'|'.join(map(re.escape, fuzzy_prefixes))})\\s+([A-Za-z][A-Za-z'\-]{{2,}})\\b", re.IGNORECASE)
+            for m in rx.finditer(text):
+                seen = m.group(2)
+                seen_cf = seen.casefold()
+                ctx = _context_window(text, m.start(2), m.end(2))
+                ctx_cf = ctx.casefold()
+                if any(re.search(rf"\b{re.escape(ns)}\b", ctx_cf) for ns in neg_signals):
+                    continue
+
+                for alias_cf, alias in zip(single_aliases_cf, single_aliases):
+                    if len(alias_cf) < 4 or len(seen_cf) < 4:
+                        continue
+                    if _edit_distance_leq1(seen_cf, alias_cf):
+                        tok_unique = token_counts.get(alias_cf, 0) == 1
+                        exact.append({**s, "match": f"role_token_fuzzy:{m.group(1)}:{seen}->{alias}" + (":unique" if tok_unique else "")})
+                        did_fuzzy = True
+                        break
+                if did_fuzzy:
+                    break
+
+        if did_fuzzy:
             continue
 
         # Single-token alias match with disambiguation
