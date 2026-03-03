@@ -1,35 +1,55 @@
 {
   "findings": [
     {
+      "field": "bio",
+      "issue": "missing",
+      "detail": "Story 2 reveals Varak murdered his own father to claim his title; this fundamental character motivation is absent from the bio"
+    },
+    {
+      "field": "bio",
+      "issue": "missing",
+      "detail": "Story 2 reveals Varak was bound by oath-magic/curse from his father's bones after being exposed by Kess; this is a major status change not mentioned"
+    },
+    {
+      "field": "bio",
+      "issue": "missing",
+      "detail": "Story 2 reveals Varak walked into the Tidelands and became half-alive, speaking prophecy; his location and condition changed significantly from Story 1"
+    },
+    {
       "field": "status_history",
       "issue": "incomplete",
-      "detail": "status_history is an empty array, but should document the progression from 'alive/general' to 'possessed/cursed' with date 2026-02-28"
+      "detail": "status_history array is empty but should document progression: 'possessed' (Story 1) → 'cursed by father's oath-magic' (Story 2) → 'half-alive in Tidelands speaking prophecy' (Story 2)"
     },
     {
       "field": "home_place",
-      "issue": "incomplete",
-      "detail": "Listed as 'unknown' but story establishes he commanded from somewhere in the Sunken Marches region; home base/command location should be determinable"
+      "issue": "stale",
+      "detail": "Listed as 'unknown' but Story 2 indicates Varak is now in the Tidelands; this should be updated to reflect his current location"
     },
     {
-      "field": "home_realm",
+      "field": "traits",
+      "issue": "missing",
+      "detail": "Story 2 reveals 'patricide' or 'kinslayer' as a core trait/sin, motivating the curse; 'ambitious' alone does not capture this"
+    },
+    {
+      "field": "bio",
       "issue": "incomplete",
-      "detail": "Listed as 'unknown' but should be inferable as part of The Known World's political structure; story implies he was a regional warlord with territorial holdings"
+      "detail": "Bio mentions he turned his sword on survivors but does not clarify whether he was still possessed by the Ossuary during Story 2 events or if the father's curse superseded/replaced that possession"
     }
   ],
-  "summary": "The codex entry accurately captures the core narrative arc and key details from 'The Bone Citadel's Hunger,' including Varak's possession by the Ossuary and his tragic final act. However, three fields remain unnecessarily vague: status_history is empty despite a clear status change event, and home_place/home_realm are marked unknown when the regional setting (Sunken Marches) and world context provide enough information to establish more specific details. The story material supports all claims made in the bio, traits, and tagline, making this a substantively accurate but administratively incomplete entry.",
-  "completeness_pct": 82,
+  "summary": "The codex entry captures Varak's initial possession by the Ossuary but fails to document the significant developments in Story 2, where his true crime (patricide) is revealed and he becomes bound by his father's curse instead. His location has changed from the Ossuary to the Tidelands, his status has evolved beyond simple possession, and critical character motivation (murdering his father for the title) is entirely missing. The status_history field is unused despite multiple status changes across the two stories.",
+  "completeness_pct": 62,
   "entity_name": "Varak Ironhelm",
   "entity_type": "characters",
-  "stories_checked": 1,
-  "story_appearances_added": [],
-  "story_appearances_added_count": 0,
-  "possible_story_mentions_sample": [
+  "stories_checked": 2,
+  "story_appearances_added": [
     {
       "date": "2026-03-02",
       "title": "The Bone-Singer's Choice",
-      "match": "first_token"
+      "match": "alias_token:Varak:unique"
     }
   ],
-  "codex_updated": false,
-  "timestamp": "2026-03-03T00:42:43.981861+00:00"
+  "story_appearances_added_count": 1,
+  "possible_story_mentions_sample": [],
+  "codex_updated": true,
+  "timestamp": "2026-03-03T00:56:36.200861+00:00"
 }
