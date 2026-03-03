@@ -2717,6 +2717,14 @@ def find_canon_collisions(stories, lore, allowed_names_lower):
                 bad.append(it)
         if bad:
             collisions[cat] = bad
+
+    # Also catch partial-name collisions for characters (e.g., story uses "Kess"
+    # when canon has "Kess of the Drowned Hollows"). These are not detectable
+    # by signature-key matching.
+    first_tok_bad = _find_first_token_character_collisions(stories, lore, allowed)
+    if first_tok_bad:
+        collisions.setdefault("characters", [])
+        collisions["characters"].extend(first_tok_bad)
     return collisions
 
 
@@ -3336,15 +3344,99 @@ def _resolve_character_target(existing_chars: list, incoming_name: str):
     if inc_key in by_key:
         return by_key[inc_key]
 
-    # If incoming is a single token, map to the ONLY existing multi-word name that shares it.
-    # This avoids creating a second entry for "Kael" when "Kael the Nameless" already exists.
-    if " " not in inc_key:
-        bucket = first_token_buckets.get(inc_key) or []
-        multi = [c for c in bucket if isinstance(c.get("name"), str) and len(c.get("name").split()) >= 2]
-        if len(multi) == 1:
-            return multi[0]
-
     return None
+
+
+def _first_token_collision_candidates(lore: dict) -> dict:
+    """Return mapping of unique first-name tokens -> canonical character entry.
+
+    We only include tokens that map to exactly one canonical character to reduce
+    false positives. This supports catching stories that introduce a new
+    character with the same first name as an existing canon character.
+    """
+    out = {}
+    if not isinstance(lore, dict):
+        return out
+    chars = lore.get("characters") or []
+    if not isinstance(chars, list) or not chars:
+        return out
+
+    buckets = {}
+    for c in chars:
+        if not isinstance(c, dict):
+            continue
+        nm = str(c.get("name") or "").strip()
+        if not nm:
+            continue
+        key = _norm_entity_key(nm)
+        if not key:
+            continue
+        tok = key.split(" ")[0]
+        if not tok or tok in {"the", "a", "an"}:
+            continue
+        if len(tok) < 3:
+            continue
+        buckets.setdefault(tok, []).append(c)
+
+    for tok, items in buckets.items():
+        if len({id(x) for x in items}) == 1:
+            out[tok] = items[0]
+    return out
+
+
+def _find_first_token_character_collisions(stories: list, lore: dict, allowed_names_lower: set) -> list:
+    """Detect unique canon first-name tokens used without the full canonical name.
+
+    Example: if canon has "Kess of the Drowned Hollows" and a new story uses
+    "Kess" (but not the full canonical name), we treat "Kess" as an accidental
+    canon name collision and ask the rename pass to rename it.
+    """
+    if not isinstance(stories, list) or not stories:
+        return []
+
+    allowed = allowed_names_lower or set()
+    tok_to_char = _first_token_collision_candidates(lore)
+    if not tok_to_char:
+        return []
+
+    collisions = []
+    for s in stories:
+        if not isinstance(s, dict):
+            continue
+        blob = str((s.get("title") or "").strip()) + "\n" + str((s.get("text") or "").strip())
+        if not blob.strip():
+            continue
+        blob_norm = _norm_text_for_matching(blob)
+
+        for tok, canon in tok_to_char.items():
+            canon_name = str((canon or {}).get("name") or "").strip()
+            display_tok = (canon_name.split()[0] if canon_name and canon_name.split() else tok)
+            if canon_name and canon_name.casefold() in allowed:
+                continue
+            if canon_name and entity_name_mentioned_in_text(canon_name, blob):
+                continue
+            aliases = (canon or {}).get("aliases")
+            if isinstance(aliases, list):
+                if any(entity_name_mentioned_in_text(str(a or "").strip(), blob) for a in aliases if str(a or "").strip()):
+                    continue
+
+            if re.search(r"(?<![a-z0-9])" + re.escape(tok) + r"(?![a-z0-9])", blob_norm):
+                collisions.append({
+                    "name": display_tok,
+                    "canon": canon_name,
+                    "reason": "used unique canon first-name token without full canonical name",
+                })
+
+    # Deduplicate by collision name.
+    seen = set()
+    out = []
+    for it in collisions:
+        nm = str(it.get("name") or "")
+        key = nm.casefold() if nm else ""
+        if nm and key not in seen:
+            out.append(it)
+            seen.add(key)
+    return out
 
 
 # ── Cross-category entity sync ────────────────────────────────────────────
@@ -4024,14 +4116,6 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
             base = key[:the_idx].strip()
             if base in existing_map:
                 return existing_map[base]
-        # Single-token -> match exactly one multi-word canonical name.
-        if " " not in key:
-            candidates = []
-            for k, obj in existing_map.items():
-                if k.split(" ")[0] == key and " " in k:
-                    candidates.append(obj)
-            if len({id(x) for x in candidates}) == 1:
-                return candidates[0]
         return None
 
     # ── Merge characters ─────────────────────────────────────────────────
