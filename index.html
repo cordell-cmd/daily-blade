@@ -370,6 +370,36 @@ footer a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted 
 footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 
 /* ── Map View ─────────────────────────────────────────────────────── */
+#world-events-view { display: none; padding-top: 1.2rem; }
+.world-events-header { text-align: center; margin-bottom: 1rem; }
+.world-events-header h2 { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 1.6rem; color: var(--gold); letter-spacing: .12em; }
+.world-events-header p { font-size: .82rem; color: var(--aged); margin-top: .3rem; font-style: italic; }
+.text-input {
+  font-family: 'Cinzel', serif;
+  font-size: .62rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(18, 8, 3, .92);
+  border: 1px solid rgba(201,146,42,.35);
+  padding: .32rem .55rem;
+  border-radius: 2px;
+  outline: none;
+  min-width: 12rem;
+}
+.text-input::placeholder { color: rgba(201,146,42,.5); text-transform: none; letter-spacing: .04em; }
+.text-input:focus { border-color: rgba(201,146,42,.75); box-shadow: 0 0 0 2px rgba(201,146,42,.12); }
+
+.badge-scope-world { background: rgba(201,146,42,.16); border: 1px solid rgba(201,146,42,.55); color: var(--gold); }
+.badge-scope-continental { background: rgba(74,120,30,.18); border: 1px solid rgba(74,120,30,.55); color: #9ad07a; }
+.badge-scope-regional { background: rgba(20,50,70,.25); border: 1px solid rgba(42,106,138,.45); color: #7fc0cc; }
+.badge-scope-city { background: rgba(40,30,20,.22); border: 1px solid rgba(201,146,42,.25); color: rgba(226,208,168,.85); }
+.badge-stage-seed { background: rgba(0,0,0,.16); border: 1px solid rgba(201,146,42,.22); color: rgba(226,208,168,.85); }
+.badge-stage-simmering { background: rgba(42,106,138,.18); border: 1px solid rgba(42,106,138,.55); color: #7fc0cc; }
+.badge-stage-rising { background: rgba(201,146,42,.16); border: 1px solid rgba(201,146,42,.55); color: var(--gold); }
+.badge-stage-climax { background: rgba(139,26,26,.18); border: 1px solid rgba(139,26,26,.55); color: #e07070; }
+.badge-stage-aftermath { background: rgba(92,61,30,.18); border: 1px solid rgba(92,61,30,.55); color: rgba(226,208,168,.85); }
+
 #map-view { display: none; padding-top: 1.2rem; }
 .map-header { text-align: center; margin-bottom: 1rem; }
 /* ── Tolkien Map ─────────────────────────────────────────────── */
@@ -464,6 +494,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
   <nav class="main-nav" aria-label="Main sections">
     <button class="main-tab active" id="tab-tales" aria-selected="true">⚔ Tales</button>
     <button class="main-tab" id="tab-characters" aria-selected="false">📖 Codex</button>
+    <button class="main-tab" id="tab-world-events" aria-selected="false">⚡ World Events</button>
     <button class="main-tab" id="tab-map" aria-selected="false">🗺 Map</button>
     <div class="main-nav-right">
       <button class="btn" id="archive-btn" aria-label="Browse the archive">📜 Archive</button>
@@ -535,6 +566,48 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <div class="char-grid" id="char-grid" style="display:none;"></div>
   </div>
 
+  <!-- ── World Events View ─────────────────────────────────────── -->
+  <div id="world-events-view">
+    <div class="world-events-header">
+      <h2>World Events</h2>
+      <p>A running register of large-scale arcs unfolding across issues</p>
+    </div>
+    <div class="controls" style="margin-top:.5rem;">
+      <span class="controls-left" id="world-events-count-label">— Loading world events… —</span>
+      <div class="controls-right">
+        <input class="text-input" id="world-events-search" type="text" placeholder="Search events…" aria-label="Search world events" />
+        <span class="codex-organize-label">Status</span>
+        <select class="codex-organize-select" id="world-events-status" aria-label="Filter world events by status">
+          <option value="active">Active</option>
+          <option value="all">All</option>
+          <option value="resolved">Resolved</option>
+        </select>
+        <span class="codex-organize-label">Scope</span>
+        <select class="codex-organize-select" id="world-events-scope" aria-label="Filter world events by scope">
+          <option value="all">All</option>
+          <option value="world">World</option>
+          <option value="continental">Continental</option>
+          <option value="regional">Regional</option>
+          <option value="city">City</option>
+        </select>
+        <span class="codex-organize-label">Sort</span>
+        <select class="codex-organize-select" id="world-events-sort" aria-label="Sort world events">
+          <option value="default">Default</option>
+          <option value="intensity">Intensity</option>
+          <option value="recent">Recent Issues</option>
+          <option value="stage">Stage</option>
+          <option value="name">Name</option>
+        </select>
+        <button class="btn" id="world-events-refresh" aria-label="Refresh world events">Refresh</button>
+      </div>
+    </div>
+    <div id="world-events-status-msg" class="char-status">
+      <span class="spinner"></span>
+      <em>Consulting the arc register…</em>
+    </div>
+    <div class="char-grid" id="world-events-grid" style="display:none;"></div>
+  </div>
+
   <!-- ── Map View ─────────────────────────────────────────────── -->
   <div id="map-view">
     <div class="map-header">
@@ -574,6 +647,7 @@ const STORIES_URL    = './stories.json';
 const ARCHIVE_IDX_URL = './archive/index.json';
 const ARCHIVE_URL    = (date) => `./archive/${date}.json`;
 const CODEX_URL      = './codex.json';
+const WORLD_EVENTS_URL = './world-events.json';
 const GEOGRAPHY_URL  = './geography.json';
 const DEFAULT_GITHUB_REPO = { owner: 'cordell-cmd', repo: 'daily-blade' };
 const AUDIT_WORKFLOW_FILE = 'audit.yml';
@@ -3629,17 +3703,219 @@ async function loadCodex(force = false) {
   }
 }
 
+// ── World Events ───────────────────────────────────────────────────
+let worldEventsLoaded = false;
+let WORLD_EVENTS_DATA_CACHE = null;
+
+function _scopeRank(scope) {
+  const s = String(scope || '').trim().toLowerCase();
+  return ({ world: 4, continental: 3, regional: 2, city: 1, local: 1 }[s] || 2);
+}
+
+function _stageRank(stage) {
+  const s = String(stage || '').trim().toLowerCase();
+  return ({ seed: 0, simmering: 1, rising: 2, climax: 3, aftermath: 4 }[s] ?? 0);
+}
+
+function _scopeBadgeClass(scope) {
+  const s = String(scope || '').trim().toLowerCase();
+  if (s === 'world') return 'badge-scope-world';
+  if (s === 'continental') return 'badge-scope-continental';
+  if (s === 'regional') return 'badge-scope-regional';
+  if (s === 'city' || s === 'local') return 'badge-scope-city';
+  return 'badge-scope-regional';
+}
+
+function _stageBadgeClass(stage) {
+  const s = String(stage || '').trim().toLowerCase();
+  if (s === 'seed') return 'badge-stage-seed';
+  if (s === 'simmering') return 'badge-stage-simmering';
+  if (s === 'rising') return 'badge-stage-rising';
+  if (s === 'climax') return 'badge-stage-climax';
+  if (s === 'aftermath') return 'badge-stage-aftermath';
+  return 'badge-stage-seed';
+}
+
+function renderWorldEvents(data) {
+  const statusEl = document.getElementById('world-events-status-msg');
+  const grid = document.getElementById('world-events-grid');
+  const countLabel = document.getElementById('world-events-count-label');
+
+  const rows = (data && Array.isArray(data.events)) ? data.events : [];
+  const generatedAt = data && data.generated_at ? String(data.generated_at) : '';
+  const totalCount = rows.length;
+
+  const q = String((document.getElementById('world-events-search') || {}).value || '').trim().toLowerCase();
+  const status = String((document.getElementById('world-events-status') || {}).value || 'active');
+  const scope = String((document.getElementById('world-events-scope') || {}).value || 'all').trim().toLowerCase();
+  const sortMode = String((document.getElementById('world-events-sort') || {}).value || 'default');
+
+  let filtered = rows.slice();
+  if (status === 'active') filtered = filtered.filter(r => !r.resolved);
+  if (status === 'resolved') filtered = filtered.filter(r => !!r.resolved);
+  if (scope !== 'all') filtered = filtered.filter(r => String(r.scope || '').trim().toLowerCase() === scope);
+  if (q) {
+    filtered = filtered.filter(r => {
+      const name = String(r.name || '').toLowerCase();
+      const tag = String(r.tagline || '').toLowerCase();
+      const typ = String(r.event_type || '').toLowerCase();
+      const epi = String(r.epicenter || '').toLowerCase();
+      return name.includes(q) || tag.includes(q) || typ.includes(q) || epi.includes(q);
+    });
+  }
+
+  const byDefault = (a, b) => {
+    // Prefer big, unresolved, high-intensity, recently-active arcs.
+    const aRes = a.resolved ? 1 : 0;
+    const bRes = b.resolved ? 1 : 0;
+    if (aRes !== bRes) return aRes - bRes;
+    const aScope = _scopeRank(a.scope);
+    const bScope = _scopeRank(b.scope);
+    if (aScope !== bScope) return bScope - aScope;
+    const aInt = Number(a.intensity || 1);
+    const bInt = Number(b.intensity || 1);
+    if (aInt !== bInt) return bInt - aInt;
+    const aRecent = Number(a.recent_issues || 0);
+    const bRecent = Number(b.recent_issues || 0);
+    if (aRecent !== bRecent) return bRecent - aRecent;
+    const aLast = String(a.last_seen || '');
+    const bLast = String(b.last_seen || '');
+    if (aLast !== bLast) return (aLast < bLast) ? 1 : -1;
+    return String(a.name || '').localeCompare(String(b.name || ''));
+  };
+
+  if (sortMode === 'intensity') filtered.sort((a, b) => (Number(b.intensity || 1) - Number(a.intensity || 1)) || byDefault(a, b));
+  else if (sortMode === 'recent') filtered.sort((a, b) => (Number(b.recent_issues || 0) - Number(a.recent_issues || 0)) || byDefault(a, b));
+  else if (sortMode === 'stage') filtered.sort((a, b) => (_stageRank(b.stage) - _stageRank(a.stage)) || byDefault(a, b));
+  else if (sortMode === 'name') filtered.sort((a, b) => String(a.name || '').localeCompare(String(b.name || '')));
+  else filtered.sort(byDefault);
+
+  const genText = generatedAt ? ` · generated ${escHtml(generatedAt.replace('T', ' ').replace('Z', ''))}` : '';
+  countLabel.innerHTML = `— World Events: ${filtered.length} shown (of ${totalCount})${genText} —`;
+
+  if (!rows.length) {
+    statusEl.innerHTML = errorBoxHtml('⚠ No World Events Found', `Could not find any events in ${WORLD_EVENTS_URL}.`);
+    statusEl.style.display = '';
+    grid.style.display = 'none';
+    grid.innerHTML = '';
+    return;
+  }
+
+  if (!filtered.length) {
+    statusEl.innerHTML = '<div class="archive-empty"><em>No events match the current filters.</em></div>';
+    statusEl.style.display = '';
+    grid.style.display = 'none';
+    grid.innerHTML = '';
+    return;
+  }
+
+  statusEl.style.display = 'none';
+  grid.style.display = '';
+  grid.innerHTML = '';
+
+  filtered.forEach((e) => {
+    const name = String(e.name || 'Unknown').trim();
+    const tagline = String(e.tagline || '').trim();
+    const eventType = String(e.event_type || '').trim();
+    const scopeText = String(e.scope || 'regional').trim();
+    const stageText = String(e.stage || 'seed').trim();
+    const intensity = Number(e.intensity || 1);
+    const epicenter = String(e.epicenter || 'unknown').trim();
+    const resolved = !!e.resolved;
+    const lastSeen = e.last_seen ? String(e.last_seen) : '';
+    const recentIssues = Number(e.recent_issues || 0);
+    const trend = Number(e.trend || 0);
+
+    const loc = (e.referenced_locations || {});
+    const locPlaces = Array.isArray(loc.places) ? loc.places : [];
+    const locRegions = Array.isArray(loc.regions) ? loc.regions : [];
+    const locRealms = Array.isArray(loc.realms) ? loc.realms : [];
+
+    const apps = Array.isArray(e.story_appearances) ? e.story_appearances : [];
+    const appsHtml = apps.length
+      ? `<div class="codex-story-links"><span class="codex-story-links-label">Recent</span>${apps.slice(-6).reverse().map(a => {
+          const d = escHtml(String(a.date || todayStr()));
+          const t = escHtml(String(a.title || ''));
+          return `<button class="codex-story-link" data-date="${d}" data-title="${t}">${t}</button>`;
+        }).join('')}</div>`
+      : '';
+
+    const card = document.createElement('div');
+    card.className = 'codex-card event-card';
+    card.innerHTML = `
+      <div class="codex-type-label">World Event</div>
+      <div class="codex-card-name"><button class="entity-link" type="button" data-open-event="1">${escHtml(name)}</button></div>
+      ${tagline ? `<div class="codex-card-tagline">${escHtml(tagline)}</div>` : ''}
+      <div class="codex-card-badges">
+        ${eventType ? `<span class="badge badge-role">${escHtml(eventType)}</span>` : ''}
+        <span class="badge ${_scopeBadgeClass(scopeText)}">${escHtml(scopeText)}</span>
+        <span class="badge ${_stageBadgeClass(stageText)}">${escHtml(stageText)}</span>
+        <span class="badge">Intensity ${escHtml(String(intensity))}</span>
+        <span class="badge">Recent ${escHtml(String(recentIssues))}</span>
+        ${lastSeen ? `<span class="badge">Last ${escHtml(lastSeen)}</span>` : ''}
+        ${trend ? `<span class="badge">Trend ${escHtml(trend > 0 ? '+' + trend : String(trend))}</span>` : ''}
+        ${resolved ? `<span class="badge badge-status-default">Resolved</span>` : ''}
+      </div>
+      <hr class="codex-divider" />
+      <div class="codex-body">
+        ${epicenter && epicenter.toLowerCase() !== 'unknown' ? `<div style="margin-bottom:.35rem"><strong>Epicenter:</strong> ${escHtml(epicenter)}</div>` : ''}
+        ${(locPlaces.length || locRegions.length || locRealms.length) ? `
+          <div class="codex-meta">
+            ${locRegions.length ? `<span><strong>Regions:</strong> ${escHtml(locRegions.slice(0, 6).join(', '))}</span>` : ''}
+            ${locPlaces.length ? `<span><strong>Places:</strong> ${escHtml(locPlaces.slice(0, 6).join(', '))}</span>` : ''}
+            ${locRealms.length ? `<span><strong>Realms:</strong> ${escHtml(locRealms.slice(0, 4).join(', '))}</span>` : ''}
+          </div>
+        ` : '<div class="codex-meta"><span><strong>Locations:</strong> (none referenced yet)</span></div>'}
+      </div>
+      ${appsHtml}
+    `;
+    const btn = card.querySelector('button[data-open-event]');
+    if (btn) {
+      btn.addEventListener('click', () => openCodexEntryByKey(name, 'events'));
+    }
+    grid.appendChild(card);
+  });
+}
+
+async function loadWorldEvents(force = false) {
+  if (worldEventsLoaded && !force && WORLD_EVENTS_DATA_CACHE) {
+    renderWorldEvents(WORLD_EVENTS_DATA_CACHE);
+    return;
+  }
+  const statusEl = document.getElementById('world-events-status-msg');
+  const grid = document.getElementById('world-events-grid');
+  statusEl.innerHTML = '<span class="spinner"></span><em>Consulting the arc register…</em>';
+  statusEl.style.display = '';
+  grid.style.display = 'none';
+  grid.innerHTML = '';
+  try {
+    const res = await fetch(WORLD_EVENTS_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    WORLD_EVENTS_DATA_CACHE = data;
+    worldEventsLoaded = true;
+    renderWorldEvents(data);
+  } catch (err) {
+    console.error(err);
+    statusEl.innerHTML = errorBoxHtml('⚠ Arc Register Unavailable', `Could not load ${WORLD_EVENTS_URL}: ${err && err.message ? err.message : String(err)}`);
+    statusEl.style.display = '';
+    grid.style.display = 'none';
+  }
+}
+
 // ── Tab Switching ──────────────────────────────────────────────────
 function switchTab(tab) {
   currentTab = tab;
   const talesView = document.getElementById('tales-view');
   const charView  = document.getElementById('char-view');
+  const worldEventsView = document.getElementById('world-events-view');
   const mapView   = document.getElementById('map-view');
   const tabTales  = document.getElementById('tab-tales');
   const tabChars  = document.getElementById('tab-characters');
+  const tabWorldEvents = document.getElementById('tab-world-events');
   const tabMap    = document.getElementById('tab-map');
-  const allTabs = [tabTales, tabChars, tabMap];
-  const allViews = { tales: talesView, characters: charView, map: mapView };
+  const allTabs = [tabTales, tabChars, tabWorldEvents, tabMap];
+  const allViews = { tales: talesView, characters: charView, 'world-events': worldEventsView, map: mapView };
   allTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
   Object.values(allViews).forEach(v => { if (v) v.style.display = 'none'; });
   if (tab === 'tales') {
@@ -3651,6 +3927,11 @@ function switchTab(tab) {
     tabChars.classList.add('active');
     tabChars.setAttribute('aria-selected', 'true');
     loadCodex(true);
+  } else if (tab === 'world-events') {
+    worldEventsView.style.display = 'block';
+    tabWorldEvents.classList.add('active');
+    tabWorldEvents.setAttribute('aria-selected', 'true');
+    loadWorldEvents(true);
   } else if (tab === 'map') {
     mapView.style.display = 'block';
     tabMap.classList.add('active');
@@ -3717,7 +3998,23 @@ async function loadArchiveIndex() {
 // ── Event Listeners ──────────────────────────────────────────────────
 document.getElementById('tab-tales').addEventListener('click', () => switchTab('tales'));
 document.getElementById('tab-characters').addEventListener('click', () => switchTab('characters'));
+document.getElementById('tab-world-events').addEventListener('click', () => switchTab('world-events'));
 document.getElementById('tab-map').addEventListener('click', () => switchTab('map'));
+
+// World Events controls
+document.getElementById('world-events-refresh').addEventListener('click', () => loadWorldEvents(true));
+document.getElementById('world-events-search').addEventListener('input', () => {
+  if (WORLD_EVENTS_DATA_CACHE) renderWorldEvents(WORLD_EVENTS_DATA_CACHE);
+});
+document.getElementById('world-events-status').addEventListener('change', () => {
+  if (WORLD_EVENTS_DATA_CACHE) renderWorldEvents(WORLD_EVENTS_DATA_CACHE);
+});
+document.getElementById('world-events-scope').addEventListener('change', () => {
+  if (WORLD_EVENTS_DATA_CACHE) renderWorldEvents(WORLD_EVENTS_DATA_CACHE);
+});
+document.getElementById('world-events-sort').addEventListener('change', () => {
+  if (WORLD_EVENTS_DATA_CACHE) renderWorldEvents(WORLD_EVENTS_DATA_CACHE);
+});
 document.querySelectorAll('.codex-filter-btn').forEach(btn => {
   btn.addEventListener('click', () => applyCodexFilter(btn.dataset.type));
 });
@@ -3776,6 +4073,9 @@ document.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
   const btn = e.target && e.target.closest ? e.target.closest('.codex-story-link') : null;
   if (!btn) return;
+
+  // Some codex UI buttons reuse the same class but aren't story links.
+  if (btn.dataset && btn.dataset.chooseType) return;
 
   const d = btn.dataset.date;
   const t = btn.dataset.title || btn.textContent || '';

@@ -97,6 +97,10 @@ CHILD_HARM_MAX_REWRITES = int(os.environ.get("CHILD_HARM_MAX_REWRITES", "2"))
 ENABLE_SEXUAL_CONTENT_GUARD = os.environ.get("ENABLE_SEXUAL_CONTENT_GUARD", "1").strip().lower() in {"1", "true", "yes", "y"}
 SEXUAL_CONTENT_MAX_REWRITES = int(os.environ.get("SEXUAL_CONTENT_MAX_REWRITES", "2"))
 
+# Quality guardrails: reduce overused motifs in a day's set.
+ENABLE_MOTIF_GUARD = os.environ.get("ENABLE_MOTIF_GUARD", "1").strip().lower() in {"1", "true", "yes", "y"}
+MOTIF_MAX_REWRITES = int(os.environ.get("MOTIF_MAX_REWRITES", "1"))
+
 # Continuity check: catch character-trait swaps (e.g. oath assigned to wrong character).
 ENABLE_CONTINUITY_CHECK = os.environ.get("ENABLE_CONTINUITY_CHECK", "1").strip().lower() in {"1", "true", "yes", "y"}
 CONTINUITY_MAX_REWRITES = int(os.environ.get("CONTINUITY_MAX_REWRITES", "1"))
@@ -1562,6 +1566,74 @@ def _infer_event_geo_from_codex(event: dict, loc_names: dict[str, list[str]]) ->
     return {"scope": scope, "epicenter": epicenter, "mentions": mentions}
 
 
+def backfill_event_geo_fields(codex: dict) -> int:
+    """Best-effort backfill of event geo fields into codex.json.
+
+    Purpose: make large-scale, cross-geography arcs explicit and queryable even
+    when older event entries only had free-text fields.
+
+    Only fills missing fields; never overwrites explicit author/model-provided
+    values.
+    """
+    if not isinstance(codex, dict):
+        return 0
+    events = codex.get("events")
+    if not isinstance(events, list) or not events:
+        return 0
+
+    loc_names = _canon_loc_names_from_codex(codex)
+    # Fast membership sets to classify epicenter into place/region/realm.
+    place_set = {str(x).strip().lower() for x in (loc_names.get("places") or []) if str(x).strip()}
+    region_set = {str(x).strip().lower() for x in (loc_names.get("regions") or []) if str(x).strip()}
+    realm_set = {str(x).strip().lower() for x in (loc_names.get("realms") or []) if str(x).strip()}
+
+    updated = 0
+    for e in events:
+        if not isinstance(e, dict):
+            continue
+
+        geo = _infer_event_geo_from_codex(e, loc_names)
+        scope = str(geo.get("scope") or "").strip().lower()
+        epicenter = str(geo.get("epicenter") or "").strip()
+        mentions = geo.get("mentions") if isinstance(geo.get("mentions"), dict) else {}
+
+        if scope and not str(e.get("scope") or "").strip():
+            e["scope"] = scope
+            updated += 1
+
+        # Epicenter: fill only if empty.
+        if epicenter:
+            ep_lc = epicenter.strip().lower()
+            if not str(e.get("epicenter_place") or "").strip() and ep_lc in place_set:
+                e["epicenter_place"] = epicenter
+                updated += 1
+            if not str(e.get("epicenter_region") or "").strip() and ep_lc in region_set:
+                e["epicenter_region"] = epicenter
+                updated += 1
+            if not str(e.get("epicenter_realm") or "").strip() and ep_lc in realm_set:
+                e["epicenter_realm"] = epicenter
+                updated += 1
+
+        # Affected lists: fill from inferred mentions when absent.
+        def _fill_list(key: str, cat: str, limit: int = 12) -> None:
+            nonlocal updated
+            cur = e.get(key)
+            if isinstance(cur, list) and cur:
+                return
+            vals = mentions.get(cat)
+            if isinstance(vals, list) and vals:
+                cleaned = [str(x or "").strip() for x in vals if str(x or "").strip()]
+                if cleaned:
+                    e[key] = cleaned[:limit]
+                    updated += 1
+
+        _fill_list("affected_places", "places", limit=16)
+        _fill_list("affected_regions", "regions", limit=16)
+        _fill_list("affected_realms", "realms", limit=12)
+
+    return updated
+
+
 def _entity_geo_anchors(category: str, item: dict) -> dict[str, str]:
     """Extract conservative geo anchors for an entity from codex fields."""
     if not isinstance(item, dict):
@@ -1669,6 +1741,7 @@ def _select_world_event_arcs(today_str: str, codex=None) -> list:
         return []
 
     known_dates = _load_known_issue_dates()
+    loc_names = _canon_loc_names_from_codex(codex)
     rng = random.Random(_stable_seed_int(today_str, "world_event_arcs"))
     scored = []
     for e in events:
@@ -1680,8 +1753,22 @@ def _select_world_event_arcs(today_str: str, codex=None) -> list:
         sig = (e.get("significance") or "")
         out = (e.get("outcome") or "")
         arc = _event_arc_metrics(e, known_dates)
+        geo = _infer_event_geo_from_codex(e, loc_names)
+        scope = str(geo.get("scope") or "regional").strip().lower()
 
-        weight = 1.0 + min(3.0, (len(sig) + len(out)) / 400.0)
+        # Prefer large-scale arcs for the issue-wide section.
+        if scope == "world":
+            scope_weight = 1.35
+        elif scope == "continental":
+            scope_weight = 1.25
+        elif scope == "regional":
+            scope_weight = 1.0
+        elif scope in {"city", "local"}:
+            scope_weight = 0.7
+        else:
+            scope_weight = 1.0
+
+        weight = (1.0 + min(3.0, (len(sig) + len(out)) / 400.0)) * scope_weight
         if arc.get("resolved"):
             weight *= 0.7
         else:
@@ -2020,9 +2107,10 @@ Respond with ONLY valid JSON — no prose before or after — matching this exac
 CONTENT GUARDRAILS (must follow):
 - Do NOT write stories involving child death or targeted harm to children.
     - No infanticide, no parents killing children, no child sacrifice, no child murder, no violence directed at a child.
+- Do NOT write stories involving child kidnapping/abduction/trafficking or children held hostage.
 - Avoid plots centered on a dead child, even off-screen.
 - Children may be mentioned only in non-exploitative background context when the harm is NOT targeted and is a broad tragedy.
-    - Allowed examples: a plague, famine, or natural disaster affecting a town/village/region (many people), described briefly.
+    - Allowed examples (brief background only): plague/disease, famine, war, a natural disaster, or an indiscriminate death-magic catastrophe affecting many people.
     - Not allowed: a specific child being killed, poisoned, sacrificed, or abused.
 
 - Do NOT write rape/sexual assault or sexual violence.
@@ -2042,9 +2130,9 @@ These are HARD constraints, not suggestions. Follow them exactly.
 
 2. THEME CAPS (no single motif may dominate the set):
    - At MOST 2 stories may center on demon pacts / demonic bargains.
-   - At MOST 2 stories may center on shadow theft / shadow markets / shadow manipulation.
-   - At MOST 2 stories may center on broken oaths or oath-consequences.
-   - At MOST 2 stories may center on cursed objects / cursed gold / debt-horror.
+    - At MOST 1 story may center on shadow theft / shadow markets / shadow manipulation.
+    - At MOST 1 story may center on broken oaths or oath-consequences.
+    - At MOST 1 story may center on cursed objects / cursed gold / debt-horror.
    - At MOST 1 story may center on a living fortress / sentient architecture.
    - At MOST 1 story may center on bone carving / necromantic animation.
    - If the RECENT STORIES section above shows heavy use of a motif, use ZERO of that motif today.
@@ -2062,7 +2150,7 @@ These are HARD constraints, not suggestions. Follow them exactly.
    - Romance / forbidden love / marriage-pact
    - Nature / druidism / wilderness survival / beast-bonding
    - Fellowship / a band of companions on a quest
-   - Coming of age / a young hero's first trial
+    - Novice's first trial / a young adult's first true ordeal (avoid child protagonists)
    - War / battlefield tactics / siege (at army scale)
    - Divine intervention / temples / priest-warrior conflicts
    - Music, art, or beauty as a source of power
@@ -2076,7 +2164,7 @@ These are HARD constraints, not suggestions. Follow them exactly.
    - No more than 3 protagonists should be lone antiheroes.
    - Include at least one non-human or inhuman protagonist (fae, dwarf, orc, dragon, golem, spirit, etc.).
    - Include at least one protagonist who is part of a group (party, crew, warband, family).
-   - At least one protagonist should be young or at the start of their journey.
+    - At least one protagonist should be inexperienced or at the start of their journey (young adult; avoid child protagonists).
 
 5. SETTING VARIETY:
    - Use at least 3 clearly different types of terrain or environment (city, sea, forest, desert, mountain, tundra, underground, sky, swamp, ruin, etc.).
@@ -2106,19 +2194,32 @@ Guidelines:
   You are NOT limited to any fixed list — be creative. Examples of the kind of variety to aim for:
   Sword & Sorcery, Dark Fantasy, Political Intrigue, Forbidden Alchemy, Lost World,
   Sea Rover, Fae Romance, Trickster's Gambit, Druid's Trial, War Drums, Dragon's Court,
-  Pirate's Honor, Coming of Age, Merchant Prince, Wilderness Oath — or anything
+    Pirate's Honor, First Trial, Merchant Prince, Wilderness Hunt — or anything
   that fits. The label should feel like a pulp magazine category."""
 
 
-_CHILD_TERM_RE = re.compile(r"\b(child|children|kid|kids|boy|girl|infant|baby|toddler|son|daughter)\b", re.IGNORECASE)
-_CHILD_OWN_RE = re.compile(r"\b(her|his|their|my|your|our)\s+own\s+(child|son|daughter|baby|infant)\b", re.IGNORECASE)
+_CHILDLIKE_RE = re.compile(
+    r"\b(child|children|kid|kids|boy|girl|infant|baby|toddler|young\s+(?:son|daughter)|little\s+(?:son|daughter))\b",
+    re.IGNORECASE,
+)
+_CHILD_OWN_RE = re.compile(r"\b(her|his|their|my|your|our)\s+own\s+(child|baby|infant|toddler)\b", re.IGNORECASE)
 _CHILD_DEATH_RE = re.compile(r"\b(died|die|dead|death|corpse|funeral|buried)\b", re.IGNORECASE)
+_CHILD_ABDUCTION_RE = re.compile(
+    r"\b(kidnap(?:ped|ping)?|abduct(?:ed|ion)?|snatch(?:ed|ing)?|carried\s+off|spirited\s+away|ransom(?:ed)?|held\s+hostage|hostage|traffick(?:ed|ing)?)\b",
+    re.IGNORECASE,
+)
 _CHILD_VIOLENCE_RE = re.compile(
     r"\b(kill|killed|killing|murder|murdered|slay|slain|stab|stabbed|strangle|strangled|smother|smothered|drown|drowned|poison|poisoned|sacrifice|sacrificed|burned\s+alive|butcher|butchered)\b",
     re.IGNORECASE,
 )
-_NATURAL_CAUSE_RE = re.compile(
-    r"\b(plague|epidemic|pox|fever|sickness|disease|illness|famine|drought|flood|fire|wildfire|earthquake|storm|blizzard|landslide|tidal\s+wave)\b",
+_BROAD_TRAGEDY_CAUSE_RE = re.compile(
+    r"\b("
+    r"plague|epidemic|pox|fever|sickness|disease|illness|rot\s+king|"
+    r"famine|"
+    r"war|battle|siege|campaign|invasion|massacre|slaughter|"
+    r"drought|flood|fire|wildfire|earthquake|storm|blizzard|landslide|tidal\s+wave|"
+    r"death\s+magic|necromanc|miasma|doom\s+fog|black\s+wind"
+    r")\b",
     re.IGNORECASE,
 )
 _MASS_CONTEXT_RE = re.compile(
@@ -2129,9 +2230,10 @@ _MASS_CONTEXT_RE = re.compile(
 
 def _natural_mass_context(text: str) -> bool:
     s = (text or "")
-    if re.search(r"\b(plague|epidemic)\b", s, flags=re.IGNORECASE):
-        return True
-    return bool(_NATURAL_CAUSE_RE.search(s) and _MASS_CONTEXT_RE.search(s))
+    # We treat only broad, indiscriminate mass-casualty contexts as an exception.
+    # This is intentionally conservative: it allows brief allusions to war/plague/etc
+    # without permitting targeted child harm.
+    return bool(_BROAD_TRAGEDY_CAUSE_RE.search(s) and _MASS_CONTEXT_RE.search(s))
 
 
 def _near(text: str, a: re.Pattern, b: re.Pattern, window: int = 90) -> bool:
@@ -2152,19 +2254,22 @@ def child_harm_violations_for_story(story: dict) -> list:
         return []
 
     violations = []
-    has_child = bool(_CHILD_TERM_RE.search(blob) or _CHILD_OWN_RE.search(blob))
+    has_child = bool(_CHILDLIKE_RE.search(blob) or _CHILD_OWN_RE.search(blob))
     if not has_child:
         return []
 
     if _CHILD_OWN_RE.search(blob) and _CHILD_VIOLENCE_RE.search(blob):
         violations.append("targeted harm to a child (own child + violence)")
 
-    if _near(blob, _CHILD_TERM_RE, _CHILD_VIOLENCE_RE, window=120) or _near(blob, _CHILD_OWN_RE, _CHILD_VIOLENCE_RE, window=200):
+    if _near(blob, _CHILDLIKE_RE, _CHILD_ABDUCTION_RE, window=140) or _near(blob, _CHILD_OWN_RE, _CHILD_ABDUCTION_RE, window=220):
+        violations.append("child kidnapping/abduction/hostage")
+
+    if _near(blob, _CHILDLIKE_RE, _CHILD_VIOLENCE_RE, window=120) or _near(blob, _CHILD_OWN_RE, _CHILD_VIOLENCE_RE, window=200):
         violations.append("violence directed at a child")
 
-    if _near(blob, _CHILD_TERM_RE, _CHILD_DEATH_RE, window=120):
+    if _near(blob, _CHILDLIKE_RE, _CHILD_DEATH_RE, window=120):
         if not _natural_mass_context(blob):
-            violations.append("child death without broad natural-disaster/illness context")
+            violations.append("child death without broad mass-tragedy context")
 
     return sorted(set(violations))
 
@@ -2199,10 +2304,11 @@ Goal: Remove ANY child death or targeted harm to children.
 HARD RULES:
 - Do NOT depict or imply violence against children.
 - Do NOT include infanticide, child murder, child sacrifice, or a parent killing a child.
+- Do NOT include child kidnapping/abduction/trafficking or children held hostage.
 - Avoid plots centered on a dead child, even off-screen.
 
 NARROW EXCEPTION (allowed only as brief background):
-- A broad tragedy like plague/famine/natural disaster affecting many people, described briefly and without exploitation.
+- A broad mass-tragedy event affecting many people (e.g., plague/disease, famine, war alluded-to, natural disaster, or indiscriminate death-magic catastrophe), described briefly and without exploitation.
 
 What to fix:
 {chr(10).join(problems)}
@@ -2343,6 +2449,116 @@ def sanitize_story_for_sexual_content(story: dict) -> dict:
         new_story["text"] = _fallback_safe_story_text(title)
 
     return new_story
+
+
+# ── Motif overuse guardrail (quality) ───────────────────────────────────
+# Detects when a small set of motifs (shadow theft/markets, oath-consequences,
+# debt-horror) repeats too often across the day's 10 stories.
+
+_MOTIF_SHADOW_RE = re.compile(r"\bshadow(?:s)?\b", re.IGNORECASE)
+_MOTIF_SHADOW_TRADE_RE = re.compile(
+    r"\b(steal|stole|stolen|theft|thief|thieves|market|broker|pawn|trade|ledger|debt|owed|interest|usury|collector)\b",
+    re.IGNORECASE,
+)
+_MOTIF_OATH_RE = re.compile(r"\b(oath|oaths|vow|vows|sworn|forsworn|pledge|geas)\b", re.IGNORECASE)
+_MOTIF_DEBT_RE = re.compile(r"\b(debt|ledger|owed|interest|usury|collector|indenture)\b", re.IGNORECASE)
+_MOTIF_CURSE_RE = re.compile(r"\b(curse|cursed|hex|accursed|doom|damnation|blood[-\s]?price)\b", re.IGNORECASE)
+
+_MOTIF_CAPS = {
+    "shadow-theft": 1,
+    "oath": 1,
+    "debt-horror": 1,
+}
+
+
+def motifs_for_story(story: dict) -> set:
+    if not isinstance(story, dict):
+        return set()
+    title = (story.get("title") or "")
+    text = (story.get("text") or "")
+    blob = f"{title}\n\n{text}".strip()
+    if not blob:
+        return set()
+
+    motifs = set()
+    if _near(blob, _MOTIF_SHADOW_RE, _MOTIF_SHADOW_TRADE_RE, window=140):
+        motifs.add("shadow-theft")
+    if _MOTIF_OATH_RE.search(blob):
+        motifs.add("oath")
+    if _near(blob, _MOTIF_DEBT_RE, _MOTIF_CURSE_RE, window=160):
+        motifs.add("debt-horror")
+    return motifs
+
+
+def find_motif_overuse_violations(stories: list) -> list:
+    if not stories:
+        return []
+
+    motif_to_indices = {k: [] for k in _MOTIF_CAPS.keys()}
+    story_motifs = []
+    for i, s in enumerate(stories):
+        m = motifs_for_story(s)
+        story_motifs.append(m)
+        for motif in m:
+            if motif in motif_to_indices:
+                motif_to_indices[motif].append(i)
+
+    violations_by_story = {}  # index -> set[str]
+    for motif, idxs in motif_to_indices.items():
+        cap = int(_MOTIF_CAPS.get(motif, 0))
+        if cap >= 0 and len(idxs) > cap:
+            for i in idxs[cap:]:
+                violations_by_story.setdefault(i, set()).add(f"overused motif: {motif}")
+
+    out = []
+    for i in sorted(violations_by_story.keys()):
+        s = stories[i] if 0 <= i < len(stories) else {}
+        if not isinstance(s, dict):
+            continue
+        snippet = ((s.get("text") or "").strip()[:240]).replace("\n", " ")
+        out.append({
+            "index": i,
+            "title": s.get("title", "Untitled"),
+            "violations": sorted(violations_by_story[i]),
+            "motifs": sorted(story_motifs[i] or []),
+            "snippet": snippet,
+        })
+    return out
+
+
+def build_motif_rewrite_prompt(stories: list, violations: list) -> str:
+    problems = []
+    for v in violations:
+        motifs = ", ".join(v.get("motifs") or [])
+        problems.append(f"- Story #{v.get('index')+1}: {v.get('title')} — {', '.join(v.get('violations') or [])} (motifs: {motifs})")
+
+    payload = json.dumps(stories, ensure_ascii=False, indent=2)
+    caps_str = ", ".join(f"{k} ≤ {v}" for k, v in _MOTIF_CAPS.items())
+    return f"""You are editing a list of 10 original pulp fantasy stories.
+
+Goal: Reduce repetitive motifs across the set.
+
+Hard caps for today's set: {caps_str}
+
+Motif definitions:
+- shadow-theft: stealing shadows, shadow markets, shadow brokers, shadow-debts/ledgers.
+- oath: broken oaths, geasa, vow-consequences as the central driver.
+- debt-horror: cursed debt/ledgers/collectors where the debt is supernatural or doom-laden.
+
+HARD RULES:
+- Rewrite ONLY the violating stories listed below; keep all other stories unchanged.
+- When rewriting, REMOVE the flagged motif(s) entirely from that story (do not simply rename them).
+- Replace them with a different conflict type and a fresh central hook.
+- Preserve ~120–160 word length per story and keep the same JSON structure.
+- Maintain existing safety rules: no child harm or child kidnapping/abduction; no rape/explicit sex.
+- Respond with ONLY valid JSON; no prose.
+
+What to fix:
+{chr(10).join(problems)}
+
+STORIES JSON INPUT:
+{payload}
+"""
 
 
 # ── Character-trait continuity check ────────────────────────────────
@@ -4445,6 +4661,11 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
     ensure_place_parent_chain(codex)
     enforce_continent_limit(codex)
 
+    # Backfill event scope/epicenters/affected lists for better arc tracking.
+    ev_updates = backfill_event_geo_fields(codex)
+    if ev_updates:
+        print(f"\u2713 Event geo backfill: filled {ev_updates} field(s)")
+
     # Sync story_appearances & names across categories for the same entity.
     synced = sync_cross_category_appearances(codex)
     if synced:
@@ -5713,6 +5934,34 @@ def main():
                     stories = revised_stories
             except (ValueError, json.JSONDecodeError) as e:
                 print(f"WARNING: Could not parse sexual-safety rewrite JSON: {e}", file=sys.stderr)
+                print("Continuing to next rewrite attempt with original stories.", file=sys.stderr)
+
+    # ── Optional: Motif overuse guardrail (reduce repetition) ───────────
+    if ENABLE_MOTIF_GUARD:
+        for attempt in range(max(0, MOTIF_MAX_REWRITES) + 1):
+            violations = find_motif_overuse_violations(stories)
+            if not violations:
+                break
+            if attempt >= max(0, MOTIF_MAX_REWRITES):
+                print("WARNING: Motif-overuse guardrail could not be satisfied after rewrites; proceeding.", file=sys.stderr)
+                for v in violations:
+                    print(f" - Story #{v.get('index')+1}: {v.get('title')} — {', '.join(v.get('violations') or [])}", file=sys.stderr)
+                break
+            print(f"\u26a0\ufe0f Motif-overuse guardrail: rewriting {len(violations)} story(ies) (attempt {attempt+1}/{MOTIF_MAX_REWRITES})...")
+            rewrite_msg = client.messages.create(
+                model=MODEL,
+                max_tokens=4096,
+                messages=[{"role": "user", "content": build_motif_rewrite_prompt(stories, violations)}],
+            )
+            rewrite_raw = rewrite_msg.content[0].text.strip()
+            try:
+                revised = parse_json_response(rewrite_raw)
+                revised_items = extract_story_items(revised) or []
+                revised_stories = [coerce_story_dict(s) for s in revised_items[:NUM_STORIES]]
+                if len(revised_stories) == len(stories):
+                    stories = revised_stories
+            except (ValueError, json.JSONDecodeError) as e:
+                print(f"WARNING: Could not parse motif-rewrite JSON: {e}", file=sys.stderr)
                 print("Continuing to next rewrite attempt with original stories.", file=sys.stderr)
 
     # ── Character-trait continuity check ─────────────────────────────────

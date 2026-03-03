@@ -85,13 +85,17 @@ jobs:
           ISSUE_TIMEZONE: America/New_York
         run: python generate_stories.py
 
+      - name: Generate world event arcs summary
+        if: steps.gate.outputs.run == 'true'
+        run: python audit_world_events.py
+
 
       - name: Commit and push stories
         if: steps.gate.outputs.run == 'true'
         run: |
           git config user.name  "Daily Blade Bot"
           git config user.email "actions@github.com"
-          git add stories.json archive/ lore.json characters.json codex.json
+          git add stories.json archive/ lore.json characters.json codex.json world-events.json
           # Only commit if something actually changed
           git diff --cached --quiet || git commit -m "🗡️ Daily stories — $(date -u '+%Y-%m-%d')"
           git push
