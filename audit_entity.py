@@ -161,7 +161,39 @@ def _extract_aliases(entity: dict) -> list[str]:
     return out
 
 
-def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[dict]):
+def _build_token_uniqueness(codex: dict, entity_type: str) -> dict[str, int]:
+    """Return a map of token(casefold) -> number of entities that claim it.
+
+    We consider tokens from an entity's name and aliases.
+    Used to decide whether a single-token alias is safe to auto-link.
+    """
+    counts: dict[str, int] = {}
+    arr = codex.get(entity_type, [])
+    if not isinstance(arr, list):
+        return counts
+
+    for entry in arr:
+        if not isinstance(entry, dict):
+            continue
+        tokens: set[str] = set()
+
+        name = str(entry.get("name", "")).strip()
+        for t in name.split():
+            if t:
+                tokens.add(t.casefold())
+
+        for a in _extract_aliases(entry):
+            for t in str(a).strip().split():
+                if t:
+                    tokens.add(t.casefold())
+
+        for t in tokens:
+            counts[t] = counts.get(t, 0) + 1
+
+    return counts
+
+
+def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[dict], token_counts: dict[str, int]):
     """Return (exact_matches, possible_matches).
 
     exact_matches: stories where full name or a safe multi-word alias appears in text.
@@ -175,6 +207,17 @@ def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[d
     aliases = _extract_aliases(entity)
     safe_aliases = [a for a in aliases if len(a.split()) >= 2]
     safe_aliases_cf = [a.casefold() for a in safe_aliases]
+
+    # Single-token aliases are only safe if that token is unique among the entity_type.
+    single_aliases = [a for a in aliases if len(a.split()) == 1]
+    safe_single_aliases: list[str] = []
+    for a in single_aliases:
+        tok = a.strip().casefold()
+        if not tok:
+            continue
+        if token_counts.get(tok, 0) == 1:
+            safe_single_aliases.append(a.strip())
+    safe_single_aliases_re = [re.compile(rf"\b{re.escape(a)}\b", re.IGNORECASE) for a in safe_single_aliases]
 
     exact: list[dict] = []
     possible: list[dict] = []
@@ -193,6 +236,17 @@ def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[d
         if hit_alias:
             exact.append({**s, "match": f"alias:{hit_alias}"})
             continue
+
+        # Safe single-token alias match (unique token)
+        hit_single = None
+        for a, rx in zip(safe_single_aliases, safe_single_aliases_re):
+            if rx.search(text):
+                hit_single = a
+                break
+        if hit_single:
+            exact.append({**s, "match": f"alias_token:{hit_single}"})
+            continue
+
         if first_re and first_re.search(text):
             possible.append({**s, "match": "first_token"})
 
@@ -298,7 +352,8 @@ def main() -> int:
     # This is intentionally conservative: only exact full-name (or safe multi-word alias) matches
     # will be auto-linked into story_appearances.
     all_stories = _iter_all_stories()
-    exact_matches, possible_matches = _discover_story_mentions(args.entity_name, entity, all_stories)
+    token_counts = _build_token_uniqueness(codex, args.entity_type)
+    exact_matches, possible_matches = _discover_story_mentions(args.entity_name, entity, all_stories, token_counts)
 
     existing_keys = set()
     sa_existing = entity.get("story_appearances")
