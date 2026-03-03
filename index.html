@@ -3326,57 +3326,89 @@ async function auditCodexEntity(cardEl, statusEl) {
   const { owner, repo } = getGitHubRepoInfo();
   const startedAt = Date.now();
 
-  const pollResult = await pollWorkflowRun(owner, repo, AUDIT_ENTITY_WORKFLOW_FILE, startedAt, {
+  // If a developer token is present, we can poll the workflow run status.
+  // If not, we still can (and should) poll the committed result file directly.
+  const token = getDevGitHubToken();
+  let pollResult = null;
+  if (token) {
+    pollResult = await pollWorkflowRun(owner, repo, AUDIT_ENTITY_WORKFLOW_FILE, startedAt, {
+      timeoutMs: 180000,
+      intervalMs: 4000,
+      onTick: (elapsed) => {
+        const secs = Math.round(elapsed / 1000);
+        statusEl.textContent = `Audit running… (${secs}s)`;
+      },
+    });
+  } else {
+    statusEl.textContent = 'Audit running…';
+  }
+
+  // Always attempt to load the result file with retries (this works in proxy mode too).
+  const result = await waitForEntityAuditResult(entityName, startedAt, {
     timeoutMs: 180000,
-    intervalMs: 4000,
+    intervalMs: 3500,
     onTick: (elapsed) => {
       const secs = Math.round(elapsed / 1000);
-      statusEl.textContent = `Audit running… (${secs}s)`;
+      statusEl.textContent = `Fetching results… (${secs}s)`;
     },
   });
 
-  if (pollResult.status === 'completed' && pollResult.conclusion === 'success') {
-    statusEl.textContent = 'Fetching results…';
-    // Fetch the committed result file (bust cache)
-    const resultUrl = AUDIT_ENTITY_RESULT_URL + '?t=' + Date.now();
+  if (result) {
+    statusEl.textContent = '';
+    showAuditResults(entityName, entityType, result);
+
+    if (result && result.codex_updated) {
+      const addedCount = Number(result.story_appearances_added_count || 0);
+      statusEl.textContent = `Refreshing Codex…${addedCount ? ` (+${addedCount} appearance${addedCount === 1 ? '' : 's'})` : ''}`;
+      try {
+        invalidateCodexCache();
+        await ensureCodexDataLoaded();
+        if (codexLoaded) await loadCodex(true);
+        enhanceStoryEntityBadges();
+      } catch (e) {
+        // best-effort
+      }
+      statusEl.textContent = '';
+    }
+    return;
+  }
+
+  if (pollResult && pollResult.status === 'completed' && pollResult.conclusion && pollResult.conclusion !== 'success') {
+    statusEl.textContent = `Audit finished with: ${pollResult.conclusion}`;
+    return;
+  }
+
+  statusEl.textContent = 'Audit complete (results not found yet — wait a minute and try again).';
+}
+
+async function waitForEntityAuditResult(entityName, startedAtMs, opts = {}) {
+  const timeoutMs = Number.isFinite(opts.timeoutMs) ? opts.timeoutMs : 180000;
+  const intervalMs = Number.isFinite(opts.intervalMs) ? opts.intervalMs : 3500;
+  const onTick = typeof opts.onTick === 'function' ? opts.onTick : () => {};
+  const deadline = Date.now() + timeoutMs;
+  const wantKey = normalizeEntityKey(entityName);
+
+  while (Date.now() < deadline) {
+    onTick(Date.now() - startedAtMs);
     try {
-      const rr = await fetch(resultUrl);
+      const rr = await fetch(AUDIT_ENTITY_RESULT_URL + '?t=' + Date.now());
       if (rr.ok) {
         const result = await rr.json();
-        // Verify it's for the right entity
-        if (result.entity_name && normalizeEntityKey(result.entity_name) === normalizeEntityKey(entityName)) {
-          statusEl.textContent = '';
-          showAuditResults(entityName, entityType, result);
-
-          // If the audit workflow patched codex.json (e.g., added missing story_appearances),
-          // refresh the codex cache so the card reflects it immediately.
-          if (result && result.codex_updated) {
-            const addedCount = Number(result.story_appearances_added_count || 0);
-            statusEl.textContent = `Refreshing Codex…${addedCount ? ` (+${addedCount} appearance${addedCount === 1 ? '' : 's'})` : ''}`;
-            try {
-              invalidateCodexCache();
-              await ensureCodexDataLoaded();
-              if (codexLoaded) await loadCodex(true);
-              enhanceStoryEntityBadges();
-            } catch (e) {
-              // best-effort
-            }
-            statusEl.textContent = '';
+        const gotName = result && result.entity_name ? String(result.entity_name) : '';
+        if (gotName && normalizeEntityKey(gotName) === wantKey) {
+          // If timestamp exists, ensure it's fresh enough to belong to this run.
+          const ts = result && result.timestamp ? Date.parse(String(result.timestamp)) : NaN;
+          if (!Number.isFinite(ts) || ts >= (startedAtMs - 60000)) {
+            return result;
           }
-          return;
         }
       }
     } catch (e) {
-      console.warn('Could not fetch audit-entity-result.json:', e);
+      // ignore and retry
     }
-    statusEl.textContent = 'Audit complete (could not load results — try refreshing).';
-  } else if (pollResult.status === 'completed') {
-    statusEl.textContent = `Audit finished with: ${pollResult.conclusion || 'unknown'}`;
-  } else if (pollResult.status === 'timeout') {
-    statusEl.textContent = 'Audit still running — check GitHub Actions for results.';
-  } else {
-    statusEl.textContent = 'Audit dispatched (status unavailable).';
+    await sleep(intervalMs);
   }
+  return null;
 }
 
 async function pollWorkflowRun(owner, repo, workflowFile, startedAtMs, opts = {}) {
