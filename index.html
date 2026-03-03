@@ -152,6 +152,16 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .codex-filter-btn:hover { border-color: var(--gold); color: var(--aged); }
 .codex-filter-btn.active { background: rgba(201,146,42,.15); border-color: var(--gold); color: var(--gold); }
 
+/* ── Codex Alphabet Bar ───────────────────────────────────────── */
+.codex-alpha-bar { display: flex; flex-wrap: nowrap; gap: .35rem; padding: .65rem 0 .65rem; border-bottom: 1px solid rgba(201,146,42,.12); margin: -.25rem 0 .65rem; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(201,146,42,.35) rgba(0,0,0,0); }
+.codex-alpha-bar::-webkit-scrollbar { height: 8px; }
+.codex-alpha-bar::-webkit-scrollbar-thumb { background: rgba(201,146,42,.22); border-radius: 2px; }
+.codex-alpha-bar::-webkit-scrollbar-track { background: rgba(0,0,0,0); }
+.codex-alpha-btn { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.28); color: var(--muted); padding: .24rem .5rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; min-width: 1.85rem; text-align: center; flex: 0 0 auto; }
+.codex-alpha-btn:hover { border-color: var(--gold); color: var(--aged); }
+.codex-alpha-btn.active { background: rgba(201,146,42,.15); border-color: var(--gold); color: var(--gold); }
+.codex-alpha-btn[data-letter="all"] { min-width: 3.6rem; }
+
 /* ── Codex Grid ───────────────────────────────────────────────── */
 .char-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
 @media (max-width: 400px) { .char-grid { grid-template-columns: 1fr; } }
@@ -161,6 +171,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .codex-card:hover { transform: translateY(-2px); box-shadow: 0 7px 24px rgba(0,0,0,.6); }
 .codex-card.hidden { display: none; }
 .codex-card.hidden-org { display: none; }
+.codex-card.hidden-alpha { display: none; }
 .codex-type-label { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .58rem; letter-spacing: .15em; text-transform: uppercase; color: rgba(201,146,42,.4); position: absolute; top: .6rem; right: .8rem; }
 .codex-card-name { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 1.05rem; font-weight: 700; color: var(--parchment); line-height: 1.2; text-shadow: 1px 1px 3px rgba(0,0,0,.5); padding-right: 5.5rem; overflow-wrap: anywhere; word-break: break-word; }
 .codex-card-tagline { font-style: italic; color: var(--gold); font-size: .85rem; letter-spacing: .04em; margin: .3rem 0 .5rem; opacity: .9; }
@@ -513,6 +524,10 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
         </select>
       </div>
     </div>
+
+    <!-- Alphabet filter (shows for a specific category) -->
+    <div class="codex-alpha-bar" id="codex-alpha-bar" role="group" aria-label="Filter codex entries by first letter" style="display:none;"></div>
+
     <div id="char-status-msg" class="char-status">
       <span class="spinner"></span>
       <em>Consulting the lore scrolls…</em>
@@ -942,6 +957,9 @@ let currentTab      = 'tales';
 let activeGenre     = 'all';
 let codexLoaded     = false;
 let activeCodexType = 'all';
+
+// Per-category alphabet filtering (keyed by codex entity type)
+let activeCodexLetterByType = {};
 
 let activeCodexOrganizeMode = 'default';
 let activeCodexOrganizeLabel = 'all';
@@ -1673,7 +1691,7 @@ function stampCodexCardMeta(card, entityType, name, primaryLabelTokens) {
 
 function visibleCodexCards() {
   return Array.from(document.querySelectorAll('.codex-card'))
-    .filter(c => !c.classList.contains('hidden') && !c.classList.contains('hidden-org'));
+    .filter(c => !c.classList.contains('hidden') && !c.classList.contains('hidden-org') && !c.classList.contains('hidden-alpha'));
 }
 
 function updateCodexCountLabel() {
@@ -1731,7 +1749,8 @@ function applyCodexOrganization() {
     return;
   }
 
-  const base = Array.from(grid.querySelectorAll('.codex-card')).filter(c => !c.classList.contains('hidden'));
+  const base = Array.from(grid.querySelectorAll('.codex-card'))
+    .filter(c => !c.classList.contains('hidden') && !c.classList.contains('hidden-alpha'));
 
   // Special case: when viewing "All Entries", grouping-by-label isn't meaningful.
   // In this case we interpret "By Label" as "By Category" and hide the label filter.
@@ -1810,7 +1829,7 @@ function applyCodexOrganization() {
   });
 
   // Append hidden (by type) cards after, preserving them in DOM.
-  const hiddenCards = Array.from(grid.querySelectorAll('.codex-card')).filter(c => c.classList.contains('hidden') || c.classList.contains('hidden-org'));
+  const hiddenCards = Array.from(grid.querySelectorAll('.codex-card')).filter(c => c.classList.contains('hidden') || c.classList.contains('hidden-org') || c.classList.contains('hidden-alpha'));
   hiddenCards.forEach(c => frag.appendChild(c));
   grid.innerHTML = '';
   grid.appendChild(frag);
@@ -1821,7 +1840,8 @@ function applyCodexOrganization() {
 function refreshCodexLabelOptions() {
   const labelSelect = document.getElementById('codex-organize-label');
   if (!labelSelect) return;
-  const cards = Array.from(document.querySelectorAll('.codex-card')).filter(c => !c.classList.contains('hidden'));
+  const cards = Array.from(document.querySelectorAll('.codex-card'))
+    .filter(c => !c.classList.contains('hidden') && !c.classList.contains('hidden-alpha'));
   const tokens = new Set();
   cards.forEach(c => {
     String(c.dataset.primaryLabels || '')
@@ -1900,6 +1920,62 @@ function applyGenreFilter(genre) {
   }
 }
 
+function codexAlphaLetters() {
+  const letters = [];
+  for (let i = 0; i < 26; i++) letters.push(String.fromCharCode(65 + i));
+  return ['all', ...letters, '#'];
+}
+
+function codexAlphaForCard(card) {
+  const key = String(card && card.dataset ? (card.dataset.nameSort || '') : '').trim();
+  if (!key) return '#';
+  const ch = key[0].toUpperCase();
+  return (ch >= 'A' && ch <= 'Z') ? ch : '#';
+}
+
+function renderCodexAlphaBar() {
+  const bar = document.getElementById('codex-alpha-bar');
+  if (!bar) return;
+  if (!codexLoaded || activeCodexType === 'all') {
+    bar.style.display = 'none';
+    return;
+  }
+
+  const active = (activeCodexLetterByType[activeCodexType] || 'all');
+  const buttons = codexAlphaLetters().map((l) => {
+    const label = (l === 'all') ? 'All' : l;
+    const cls = 'codex-alpha-btn' + (l === active ? ' active' : '');
+    return `<button type="button" class="${cls}" data-letter="${escHtml(l)}">${escHtml(label)}</button>`;
+  }).join('');
+  bar.innerHTML = buttons;
+  bar.style.display = '';
+}
+
+function applyCodexAlphaFilter(type) {
+  const t = String(type || activeCodexType || 'all');
+  const cards = document.querySelectorAll('.codex-card');
+
+  if (t === 'all') {
+    cards.forEach(c => c.classList.remove('hidden-alpha'));
+    renderCodexAlphaBar();
+    updateCodexCountLabel();
+    return;
+  }
+
+  const want = (activeCodexLetterByType[t] || 'all');
+  cards.forEach(card => {
+    if (String(card.dataset.entityType || '') !== t) {
+      card.classList.remove('hidden-alpha');
+      return;
+    }
+    const match = (want === 'all') || (codexAlphaForCard(card) === want);
+    card.classList.toggle('hidden-alpha', !match);
+  });
+
+  renderCodexAlphaBar();
+  updateCodexCountLabel();
+}
+
 // ── Codex Filter ─────────────────────────────────────────────────────
 function applyCodexFilter(type) {
   activeCodexType = type;
@@ -1911,6 +1987,12 @@ function applyCodexFilter(type) {
     const match = type === 'all' || card.dataset.entityType === type;
     card.classList.toggle('hidden', !match);
   });
+
+  // Apply per-category alphabet filtering after type filter.
+  if (activeCodexType !== 'all' && !activeCodexLetterByType[activeCodexType]) {
+    activeCodexLetterByType[activeCodexType] = 'all';
+  }
+  applyCodexAlphaFilter(activeCodexType);
 
   refreshCodexLabelOptions();
   applyCodexOrganization();
@@ -3639,6 +3721,24 @@ document.getElementById('tab-map').addEventListener('click', () => switchTab('ma
 document.querySelectorAll('.codex-filter-btn').forEach(btn => {
   btn.addEventListener('click', () => applyCodexFilter(btn.dataset.type));
 });
+
+// Alphabet bar click (event delegation)
+{
+  const alphaBar = document.getElementById('codex-alpha-bar');
+  if (alphaBar) {
+    alphaBar.addEventListener('click', (e) => {
+      const btn = e.target && e.target.closest ? e.target.closest('.codex-alpha-btn') : null;
+      if (!btn) return;
+      if (!codexLoaded) return;
+      if (!activeCodexType || activeCodexType === 'all') return;
+      const letter = String(btn.dataset.letter || 'all');
+      activeCodexLetterByType[activeCodexType] = letter;
+      applyCodexAlphaFilter(activeCodexType);
+      refreshCodexLabelOptions();
+      applyCodexOrganization();
+    });
+  }
+}
 
 // Codex organize controls
 document.getElementById('codex-organize-mode').addEventListener('change', (e) => {
