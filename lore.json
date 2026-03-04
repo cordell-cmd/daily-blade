@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-03",
+  "last_updated": "2026-03-04",
   "worlds": [
     {
       "id": "known_world",
@@ -925,7 +925,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "naresh_the_bone_carver",
@@ -1345,7 +1345,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "mardoc_cartographer",
@@ -1380,7 +1380,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "silene",
@@ -1955,7 +1955,7 @@
       "world": "known_world",
       "status": "active",
       "home_place": "Blackthorn",
-      "home_region": "unknown",
+      "home_region": "The Ashen Reach",
       "home_realm": "unknown",
       "travel_scope": "regional",
       "bio": "An archer who lost her partner in the Siege of Blackthorn and had sworn never to attach herself to another. She brought her broken bow to Bryn for repair and, over weeks of work, fell in love. She had deliberately re-damaged her bow to return to the forge, mirroring Bryn's deception.",
@@ -1977,7 +1977,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "mogrul",
@@ -2079,7 +2079,7 @@
       "notes": "Zareth completed the Stellar Rite but lost all memory of joy, love, and beauty in the process. The consequences of his sacrifice and whether he survives remain unclear.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 4
+      "appearances": 6
     },
     {
       "id": "thera_the_falconer",
@@ -2944,7 +2944,7 @@
       "home_place": "spire in the Blasted Lands",
       "home_region": "The Blasted Steppes",
       "home_realm": "unknown",
-      "travel_scope": "local",
+      "travel_scope": "regional",
       "bio": "The heir of The Sorcerer, raised in isolation within a hidden spire. They discovered their master's final journal and came to understand that their isolation was protection, not punishment. They are now preparing themselves to maintain the renewed cosmos.",
       "traits": [
         "isolated",
@@ -2955,11 +2955,14 @@
       "known_locations": [
         "spire hidden among the Blasted Lands"
       ],
-      "affiliations": [],
-      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.",
+      "affiliations": [
+        "Elder Mage (deceased master)"
+      ],
+      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.\nThe Young Sorcerer has begun to venture beyond the Spire in response to the Stellar Rite's cosmic changes. They are discovering that the age of their master has truly ended and they must navigate a fundamentally rewritten magical world.",
       "first_story": "The Sorcerer's Heir",
       "first_date": "2026-03-03",
-      "appearances": 1
+      "appearances": 3,
+      "travel_notes": "[2026-03-04] Story shows Young Sorcerer emerging from the Spire to observe the transformed world, indicating at least limited travel beyond their isolated home."
     },
     {
       "id": "malla",
@@ -2992,6 +2995,197 @@
       "notes": "Her visions mention a blank-faced archivist, a shadow-merchant, sea-folk rising from the deep, and stars that cast no shadows. Unresolved: what does she ultimately discover?",
       "first_story": "The Chorus of Altered Fates",
       "first_date": "2026-03-03",
+      "appearances": 1
+    },
+    {
+      "id": "captain_merra",
+      "name": "Captain Merra",
+      "aliases": [
+        "Merra"
+      ],
+      "tagline": "Smuggler. Reluctant. Haunted.",
+      "role": "Ship Captain, Smuggler",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Iron Coast ports",
+      "home_region": "Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Captain Merra smuggles contraband and forbidden cargo across coastal waters, from plague-victims to stolen shadows. She is drawn into a deeper bargain when transporting a living oath-thing to the Sapphire Deep, gaining safe harbor but at the price of delivering further oath-things before the year's end. Her shadow has darkened, marking her as bound to the sea's memory.",
+      "traits": [
+        "resourceful",
+        "reluctant",
+        "haunted by oaths",
+        "steady-handed despite fear"
+      ],
+      "known_locations": [
+        "Iron Coast",
+        "Sapphire Deep",
+        "wind-haunted ports"
+      ],
+      "affiliations": [
+        "her crew",
+        "deepkin (through contract)"
+      ],
+      "notes": "Bound by a living contract to the deepkin; must find and transport one more oath-thing before year's end or face unknown consequences.",
+      "first_story": "The Lamplighter's Accord",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "kael_stormbreaker",
+      "name": "Kael Stormbreaker",
+      "aliases": [
+        "Kael"
+      ],
+      "tagline": "Ambitious. Defiant. Falling.",
+      "role": "Warlord, Mountain Lord, Warrior",
+      "world": "known_world",
+      "status": "dead",
+      "home_place": "mountain fastness",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Kael Stormbreaker rules his mountain fastness with iron will and martial prowess, bending rival lords through strategy and strength for decades. When the new stars alter the world's power structure, a rival warlord launches an assault. Though his advantages diminish, Kael fights masterfully to allow his people to escape into the high passes before falling to the enemy.",
+      "traits": [
+        "ambitious",
+        "masterful tactician",
+        "defiant",
+        "strong-willed",
+        "warrior"
+      ],
+      "known_locations": [
+        "mountain fastness",
+        "high passes",
+        "gates"
+      ],
+      "affiliations": [
+        "his soldiers",
+        "his people"
+      ],
+      "notes": "Kael dies watching the new stars, wondering what the cosmic shift means for the world he leaves behind. His final moments reflect genuine defiance rather than inevitable conquest.",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "isenna",
+      "name": "Isenna",
+      "aliases": [
+        "Isenna, seer of Keth'moris"
+      ],
+      "tagline": "Cursed. Prophetic. Burdened.",
+      "role": "Seer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Keth'moris",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Isenna is a seer whose life has been defined by visions\u2014fragmentary glimpses of possible futures that more often mislead than clarify. Since the Conjunction, the nature of prophecy itself has changed, granting her true foresight. She reads the palm of a merchant seeking trade advice and sees caravans vanishing into the Scorched Reach and merchants transformed into neither living nor dead.",
+      "traits": [
+        "prophetic",
+        "burden-bearer",
+        "truth-seeker"
+      ],
+      "known_locations": [
+        "Keth'moris",
+        "Scorched Reach"
+      ],
+      "affiliations": [],
+      "notes": "Has begun receiving true prophecies following the Conjunction event. Warns of something awakening in the bleached lands. May hold crucial information about the Stellar Rite's consequences.",
+      "first_story": "The Seer's New Vision",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "elder_mage",
+      "name": "Elder Mage",
+      "aliases": [
+        "the Elder Mage"
+      ],
+      "tagline": "Dead. Wise. Gone.",
+      "role": "Sorcerer",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "Spire",
+      "home_region": "The Blasted Lands",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "The Elder Mage is a now-deceased master of sorcery who left behind the Codex containing knowledge of the Stellar Rite. They documented the terrible price the ritual would exact: the performer would be stripped of memory, joy, self, and everything that makes them human.",
+      "traits": [
+        "scholarly",
+        "powerful",
+        "prophetic"
+      ],
+      "known_locations": [
+        "Spire"
+      ],
+      "affiliations": [
+        "Young Sorcerer (heir)"
+      ],
+      "notes": "Dead before the story begins. Their Codex holds crucial lore about the Stellar Rite and its cost. The Young Sorcerer is their heir.",
+      "first_story": "The Young Sorcerer's Inheritance",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "sylas_the_deepwarden",
+      "name": "Sylas the Deepwarden",
+      "aliases": [
+        "Sylas",
+        "the Deepwarden"
+      ],
+      "tagline": "Ancient. Vigilant. Awakened.",
+      "role": "Warden of the Deepkin",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Cerulean Trench",
+      "home_region": "unknown",
+      "home_realm": "the deep ocean",
+      "travel_scope": "realmwide",
+      "bio": "Sylas is an ancient deepkin warden who dwells in the Cerulean Trench, the deepest place in the known oceans. Since the Violet Conjunction, Sylas has felt cosmic disturbance like a wound in the water itself. She gathers a council of elder deepkin and sends scouts to investigate strange currents and humming in the deep.",
+      "traits": [
+        "ancient",
+        "watchful",
+        "diplomatic"
+      ],
+      "known_locations": [
+        "Cerulean Trench"
+      ],
+      "affiliations": [
+        "elder deepkin (council)"
+      ],
+      "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
+      "first_story": "The Drowned Prince's Vigil",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "old_ranger",
+      "name": "Old Ranger",
+      "aliases": [],
+      "tagline": "Weathered. Knowing. Urgent.",
+      "role": "Ranger",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "An experienced ranger passing through Blackthorn Holdfast on her way south. She warns Ashara that the new stars have kindled something ancient in the desert stones, and that the boundaries between the deep Wastes and civilized lands will begin to blur within a year or two.",
+      "traits": [
+        "knowledgeable",
+        "urgent",
+        "cryptic"
+      ],
+      "known_locations": [
+        "Blackthorn Holdfast"
+      ],
+      "affiliations": [],
+      "notes": "The source of the warning about the Wastes awakening. Her departure leaves Ashara to ponder alone what is stirring in the desert.",
+      "first_story": "The Blackthorn Holdfast's Shadow",
+      "first_date": "2026-03-04",
       "appearances": 1
     }
   ],
@@ -3030,7 +3224,8 @@
       "district": "unknown",
       "place": "",
       "parent_place": "",
-      "place_type": ""
+      "place_type": "",
+      "appearances": 2
     },
     {
       "id": "pelimor",
@@ -3499,7 +3694,7 @@
       "status": "active",
       "notes": "The survivors of the plague live here. Kess returned silent to teach them the old songs through gesture.",
       "first_date": "2026-03-01",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "deep_forest",
@@ -3769,7 +3964,7 @@
       "parent_place": "Bleached Wastes",
       "first_story": "The Cartographer's Lie",
       "first_date": "2026-03-02",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-02",
@@ -4027,7 +4222,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-03",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "imperial_archives",
@@ -4107,7 +4302,7 @@
       "status": "contested",
       "notes": "This region exemplifies how the cosmic renewal has begun to physically reshape the world. Trade disruption here is affecting imperial commerce and stability.",
       "first_date": "2026-03-03",
-      "appearances": 1
+      "appearances": 4
     },
     {
       "id": "cerulean_trench",
@@ -4127,7 +4322,7 @@
       "status": "active",
       "notes": "The Cerulean Trench is the seat of sea-folk power and knowledge. Nerys dispatches swimmers from here to seek information about the Astronomer-Prince and the cosmic working.",
       "first_date": "2026-03-03",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "thornholt",
@@ -4147,7 +4342,7 @@
       "status": "active",
       "notes": "The humming walls suggest the fortress itself has been marked by the Celestial Binding; Ashara's sanctuary mission is ongoing.",
       "first_date": "2026-03-03",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "blasted_lands",
@@ -4167,7 +4362,7 @@
       "status": "active",
       "notes": "The hidden spire may serve as a repository of lore about the Celestial Binding and its effects on the Art.",
       "first_date": "2026-03-03",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "spire_blasted_lands",
@@ -4207,6 +4402,226 @@
       "status": "active",
       "notes": "Center of prophetic activity during the Crimson Convergence; likely a major location for understanding the fracturing of foresight.",
       "first_date": "2026-03-03",
+      "appearances": 2
+    },
+    {
+      "id": "peak_of_wind_scoured_outcrop",
+      "name": "Peak of wind-scoured outcrop",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Pallid Wastes",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "imperial_city",
+      "name": "Imperial city",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "Empire",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "spire_in_the_blasted_lands",
+      "name": "spire in the Blasted Lands",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Blasted Steppes",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "iron_coast",
+      "name": "Iron Coast",
+      "tagline": "Smuggling. Windswept. Maritime.",
+      "place_type": "coastal region",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "Wind-haunted ports filled with smugglers, forbidden trade, and maritime secrets.",
+      "description": "The Iron Coast is a region of wind-haunted ports where smugglers like Captain Merra conduct illicit trade. It serves as a hub for contraband\u2014plague-victims, forbidden scrolls, stolen shadows, and living oaths. The sea remembers debts here, and coastal magic runs deep.",
+      "status": "active",
+      "notes": "Center of smuggling operations and coastal magical practices; deepkin have connections to this region.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "sovereigns_archives",
+      "name": "Sovereign's Archives",
+      "tagline": "Ledgers. Secrets. Institutional.",
+      "place_type": "library / archive",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A vast repository of ledgers and records, where history is filed and secrets hide in forgotten corners.",
+      "description": "The Sovereign's Archives is a sprawling institution housing ledgers, manifests, and customs records. Zareth works here as a record-keeper, cataloging shipment data and historical records. The archives contain forgotten journals and traces of past events\u2014including records of the Conjunction and the Scorched Reach's closure.",
+      "status": "active",
+      "notes": "Contains Zareth's own lost journal filled with star-sketches and ritual maps; may hold other hidden records of major events.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "vethrim",
+      "name": "Vethrim",
+      "tagline": "Nocturnal. Markets. Mercurial.",
+      "place_type": "city",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A city of night markets where cloaked merchants conduct magical trade under shifting starlight.",
+      "description": "Vethrim is a city known for its night markets, where merchants like Vex conduct magical transactions. The markets are places of whisper-soft movement and shadowed dealings, where curses can be lifted and prices are steep but fair.",
+      "status": "active",
+      "notes": "Hub of magical commerce; affected by changes in stellar light from the Stellar Rite.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "bleached_wastes",
+      "name": "Bleached Wastes",
+      "tagline": "Ancient. Glowing. Awakening.",
+      "place_type": "wilderness",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A desolate expanse hiding pre-human ruins that glow with inner light when the new stars are visible.",
+      "description": "The Bleached Wastes span vast territories and contain pre-human ruins arranged in configurations that mirror the new constellation. Since the Violet Conjunction, these ruins have begun to glow faintly at night with light emanating from within the stone itself, and their inscriptions shimmer when the new stars are visible.",
+      "status": "active",
+      "notes": "Evidence suggests the pre-human builders anticipated the cosmic shift and arranged their cities to align with the new stellar configuration.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "mountain_fastness",
+      "name": "mountain fastness",
+      "tagline": "Fortified. Defiant. Fallen.",
+      "place_type": "fortress",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A high mountain stronghold ruled with iron will, now besieged and defending its people in the face of rival assault.",
+      "description": "Kael Stormbreaker's mountain fortress, held through decades of martial dominion. It is besieged by a rival warlord's forces, and Kael commands his soldiers from its gates.",
+      "status": "contested",
+      "notes": "The gates were held long enough for Kael's people to escape into the high passes before the fortress fell to siege.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "high_passes",
+      "name": "high passes",
+      "tagline": "Refuge. Remote. Escape.",
+      "place_type": "wilderness",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Mountain passes providing escape and refuge for Kael's people during the siege.",
+      "description": "High mountain passes that provide refuge and escape routes from Kael's fortress. Kael allowed his people to escape into these passes before facing the final assault.",
+      "status": "active",
+      "notes": "Served as the escape route for Kael's remaining population during the warlord's final stand.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "spire",
+      "name": "Spire",
+      "tagline": "Arcane. Towering. Ancient.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A structure of immense magical power where ancient knowledge is guarded in the depths. Wards once inviolable now flicker with uncertainty.",
+      "description": "A great structure in the Blasted Lands containing the Elder Mage's Codex in its depths. The Young Sorcerer's home and seat of learning. Wards have become unstable following the Stellar Rite.",
+      "status": "active",
+      "notes": "Contains the Elder Mage's Codex with lore about the Stellar Rite. Lines of power flowing through it have been redrawn. The Young Sorcerer must learn to navigate this transformed place.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "blackthorn_holdfast",
+      "name": "Blackthorn Holdfast",
+      "tagline": "Fortified. Watchful. Ancient.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A stronghold of stone and resolve, now receiving refugees and standing watchful against a stirring desert threat.",
+      "description": "A fortified hold with multiple towers, including a highest tower from which the Ashen Wastes can be observed. Ashara has defended it in the past and now tends to it as fortress keeper, fortifying it further as refugees arrive.",
+      "status": "active",
+      "notes": "Ashara's domain and base of operations. The highest tower offers a vantage point for observing the Wastes and studying new constellations.",
+      "first_date": "2026-03-04",
       "appearances": 1
     }
   ],
@@ -4345,6 +4760,39 @@
       "notes": "This entity moves through the world touching those affected by the Binding, whispering to shadow-merchants, sea-folk, hermits, archers, the grieving, and the guilty. Its true nature and goals remain unclear.",
       "first_date": "2026-03-03",
       "appearances": 1
+    },
+    {
+      "id": "oath_thing",
+      "name": "oath-thing",
+      "type": "entity / curse-given-flesh",
+      "world": "Edhra",
+      "description": "A creature formed by coastal magic from a merchant's broken oath. It is pale, with eyes like old coin, and speaks in the voice of the man who failed to pay. It manifests as a living contract demanding passage and payment.",
+      "status": "active",
+      "notes": "Dissolved into salt-foam when delivered to the deepkin in the Sapphire Deep; appears to be a mechanism of debt-settlement in coastal magical practice.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "deepkin",
+      "name": "deepkin",
+      "type": "entity / race",
+      "world": "Edhra",
+      "description": "Aquatic beings dwelling in the Sapphire Deep who remember old debts and sing melodies of accounting. They do not attack but rise to settle oaths through song, causing oath-things to dissolve into salt-foam.",
+      "status": "active",
+      "notes": "Appear to be custodians or judges of maritime debts and broken oaths; their song carries magical power of dissolution and settlement.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "decay_lord",
+      "name": "Decay-Lord",
+      "type": "entity",
+      "world": "known_world",
+      "description": "A plague-bringing entity whose plague once swept through the living and dead alike in the Drowned Hollows, causing septic rot and widespread death.",
+      "status": "defeated",
+      "notes": "The septic rot from the Decay-Lord's plague has been purged from the Drowned Hollows, but the dead still do not rest easily.",
+      "first_date": "2026-03-04",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -4413,7 +4861,7 @@
       "status": "lost / circulating",
       "notes": "Vex's entire stock was stolen shadows. One of them\u2014his own\u2014was worn by a malevolent entity and used as a trap. This suggests shadows have value beyond mere magic and can be cursed.",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "malachars_gold",
@@ -4482,6 +4930,19 @@
       "notes": "The hermit woman seeks these journals as one of three key threads that will tangle together. Their contents are crucial to understanding the cosmic shift.",
       "first_date": "2026-03-03",
       "appearances": 1
+    },
+    {
+      "id": "elder_mages_codex",
+      "name": "Elder Mage's Codex",
+      "tagline": "Wisdom. Warning. Lost.",
+      "artifact_type": "tome",
+      "origin": "Written by the Elder Mage, a master sorcerer of the Spire.",
+      "powers": "Contains knowledge and warnings about the Stellar Rite, including the terrible price it demands. Holds the master's assessment of what saving the stars would cost.",
+      "last_known_holder": "Young Sorcerer (retrieved from the Spire's depths)",
+      "status": "active",
+      "notes": "The Young Sorcerer discovers a reference to the Stellar Rite in these pages and learns for the first time the full scope of what has been done. Critical for understanding the ritual's cost.",
+      "first_date": "2026-03-04",
+      "appearances": 1
     }
   ],
   "hemispheres": [],
@@ -4547,6 +5008,27 @@
       "hemisphere": "unknown",
       "subcontinent": "unknown",
       "realm": "Goblin Warrens",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
+    },
+    {
+      "id": "sea_folk_realms",
+      "name": "Sea-folk realms",
+      "tagline": "",
+      "continent": "unknown",
+      "capital": "unknown",
+      "function": "Auto-added from character home_realm.",
+      "taxation": "unknown",
+      "military": "unknown",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-04",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "realm": "Sea-folk realms",
       "province": "unknown",
       "region": "unknown",
       "district": "unknown"
@@ -4625,7 +5107,7 @@
       "significance": "The Violet Conjunction represents the moment of cosmic revelation that set the entire narrative in motion; without it, the world would eventually fall into endless night.",
       "notes": "The Conjunction recurs (at least once more during the story). Its exact periodicity is unknown.",
       "first_date": "2026-03-01",
-      "appearances": 2
+      "appearances": 4
     },
     {
       "id": "starfall_oath",
@@ -4803,6 +5285,67 @@
       "notes": "The exact nature of the convergence (astronomical alignment, curse activation, etc.) is unclear.",
       "first_date": "2026-03-03",
       "appearances": 1
+    },
+    {
+      "id": "the_stellar_rite",
+      "name": "Stellar Rite",
+      "tagline": "Cosmic. Rewriting. Catastrophic.",
+      "event_type": "ritual / cosmic event",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Vethrim",
+        "Scorched Reach",
+        "Sapphire Deep"
+      ],
+      "affected_regions": [
+        "Scorched Reach"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "worldwide",
+      "participants": [
+        "unknown performers",
+        "Vex",
+        "Zareth"
+      ],
+      "outcome": "New stars were born, brighter than the old ones. Reality appears to have been subtly rewritten. Merchants in the Scorched Reach were transformed or disappeared. Zareth's memory was erased. Vex's memory became fragmented.",
+      "significance": "A world-altering event that changed celestial arrangements, affected multiple regions, and left all who witnessed it with fragmented or stolen memories.",
+      "notes": "May be tied to the Conjunction; caused lasting changes to starlight and human consciousness; consequences still unfolding.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "the_conjunction",
+      "name": "Conjunction",
+      "tagline": "Celestial. Closing. Mysterious.",
+      "event_type": "celestial event / boundary shift",
+      "scope": "regional",
+      "epicenter_place": "Scorched Reach",
+      "epicenter_region": "Scorched Reach",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Scorched Reach"
+      ],
+      "affected_regions": [
+        "Scorched Reach"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "Scorched Reach and immediate surroundings",
+      "participants": [
+        "merchants",
+        "unknown celestial forces"
+      ],
+      "outcome": "The Scorched Reach was sealed or closed. Merchants who ventured there afterward returned changed or disappeared. Shipment discrepancies suggest continued hidden trade.",
+      "significance": "A boundary-defining event that locked down an entire region and transformed those who entered it.",
+      "notes": "Occurred before the Stellar Rite; may be related to or a precursor of the Stellar Rite; caused the closure of the Scorched Reach.",
+      "first_date": "2026-03-04",
+      "appearances": 2
     }
   ],
   "weapons": [],
@@ -4914,6 +5457,18 @@
       "notes": "Dwell in borderlands near Thornholt; consulted by Ashara about the cosmic wound and the earth's grief.",
       "first_date": "2026-03-03",
       "appearances": 1
+    },
+    {
+      "id": "deepkin",
+      "name": "deepkin",
+      "tagline": "Aquatic. Accounting. Maritime.",
+      "alignment": "neutral",
+      "goals": "Settle debts and broken oaths; maintain memory of maritime obligations; judge and dissolve oath-things.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Appear to operate as an enforcement mechanism for oath-magic in coastal waters; non-violent but inexorable.",
+      "first_date": "2026-03-04",
+      "appearances": 2
     }
   ],
   "lore": [
@@ -5133,6 +5688,39 @@
       "notes": "A prophetic image of stars burning so brightly they cast no shadows. Meaning unclear\u2014could relate to revelation or annihilation.",
       "first_date": "2026-03-03",
       "appearances": 1
+    },
+    {
+      "id": "coastal_magic",
+      "name": "coastal magic",
+      "tagline": "Oceanic. Oath-binding. Living.",
+      "category": "magic / practice",
+      "source": "Maritime cultures and deepkin traditions",
+      "status": "confirmed",
+      "notes": "Allows formation of oath-things from broken promises; deepkin practice memory and settlement of debts; appears to be an ancient system of magical accountability.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "curse_bearer",
+      "name": "Curse-bearer",
+      "tagline": "Marked. Enduring. Guided.",
+      "category": "ability",
+      "source": "Kess of the Drowned Hollows",
+      "status": "confirmed",
+      "notes": "Curse-bearers possess cursed hands that can carve rune-marks into stone with strange certainty, as though guided by forces beyond their understanding.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "stellar_magic",
+      "name": "Stellar Magic",
+      "tagline": "Cosmic. Transformative. Mysterious.",
+      "category": "legend",
+      "source": "The Violet Conjunction and Stellar Rite",
+      "status": "confirmed",
+      "notes": "The new stars have brought stellar magic into the world, fundamentally altering the relationship between living and dead, the nature of power, and awakening ancient structures. The dead now know something of the working that saved the world.",
+      "first_date": "2026-03-04",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -5177,6 +5765,18 @@
           "title": "The Starfall Oath"
         }
       ]
+    },
+    {
+      "id": "deepkin_creature",
+      "name": "deepkin",
+      "tagline": "Aquatic. Intelligent. Singing.",
+      "type": "creature / race",
+      "rarity": "rare",
+      "habitat": "Sapphire Deep and surrounding ocean waters",
+      "status": "thriving",
+      "notes": "Sentient aquatic beings capable of song and speech; appear to be guardians or judges of maritime oaths.",
+      "first_date": "2026-03-04",
+      "appearances": 1
     }
   ],
   "magic": [
@@ -5190,7 +5790,7 @@
       "status": "known",
       "notes": "A working of old magic that births new stars. Requires sacrifice of all joyful memories from the caster.",
       "first_date": "2026-03-01",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "throat_burned_ancient_magic",
@@ -5226,6 +5826,30 @@
       "status": "known",
       "notes": "A broad category of magic practiced by sorcerers and other practitioners. The Celestial Binding's ripples affect all practitioners, especially young ones without shielding techniques.",
       "first_date": "2026-03-03",
+      "appearances": 1
+    },
+    {
+      "id": "prophecy_true_sight",
+      "name": "True Prophecy",
+      "tagline": "Unveiling. Crushing. Real.",
+      "type": "passive",
+      "element": "divination",
+      "difficulty": "master",
+      "status": "known",
+      "notes": "Since the Conjunction, prophecy has become true sight rather than cryptic misdirection. Isenna now sees with clarity but finds the burden almost unbearable.",
+      "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "lines_of_power",
+      "name": "Lines of Power",
+      "tagline": "Visible. Redrawn. Shifting.",
+      "type": "passive",
+      "element": "cosmic / arcane",
+      "difficulty": "adept",
+      "status": "known",
+      "notes": "Flows of magical force visible to those with eyes to see. Have been fundamentally redrawn by the Stellar Rite. Their reshuffling affects every magical current in the world.",
+      "first_date": "2026-03-04",
       "appearances": 1
     }
   ],
@@ -5392,7 +6016,7 @@
       "status": "active",
       "notes": "Home to Kess and survivors of the plague. The village still practices bone-singing and old magic traditions.",
       "first_date": "2026-03-01",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "subcontinent": "unknown",
@@ -5552,7 +6176,7 @@
       "status": "contested",
       "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
       "first_date": "2026-03-03",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "subcontinent": "unknown",
@@ -5579,6 +6203,66 @@
       "province": "unknown",
       "region": "Borderlands",
       "district": "unknown"
+    },
+    {
+      "id": "the_pallid_wastes",
+      "name": "The Pallid Wastes",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-04",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "The Pallid Wastes",
+      "district": "unknown"
+    },
+    {
+      "id": "iron_coast_region",
+      "name": "Iron Coast",
+      "tagline": "Maritime. Smuggling. Windswept.",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "climate": "temperate maritime",
+      "terrain": "rocky coast, ports, sea",
+      "function": "Macro-region of Valdris; hub of maritime trade, smuggling, and coastal magic; center of deepkin interaction with human civilization.",
+      "status": "active",
+      "notes": "Wind-haunted ports suggest volatile weather; active smuggling routes; deepkin maintain presence in nearby waters.",
+      "first_date": "2026-03-04",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown"
+    },
+    {
+      "id": "bleached_wastes_region",
+      "name": "Bleached Wastes",
+      "tagline": "Desolate. Ancient. Glowing.",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "climate": "arid, harsh",
+      "terrain": "wastes, ruins",
+      "function": "An exploration and cartography zone containing pre-human ruins that are awakening under the new stellar influence. A region of scholarly interest and cosmic mystery.",
+      "status": "active",
+      "notes": "The pre-human ruins now glow with inner light and their inscriptions shimmer, suggesting they were built in anticipation of the current cosmic moment.",
+      "first_date": "2026-03-04",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Bleached Wastes",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -5592,7 +6276,7 @@
       "use": "Traded in night markets as high-value illicit goods. Can be weaponized against their original owners if inhabited by malevolent forces.",
       "notes": "Vex stole a fortune of these from a dying sorcerer's vault. They are valuable enough to attract multiple buyers in a single night. Some circulate the markets with hidden agendas.",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "malachars_gold_substance",
@@ -5633,6 +6317,18 @@
           "title": "The Widow's Bargain"
         }
       ]
+    },
+    {
+      "id": "salt_foam",
+      "name": "salt-foam",
+      "tagline": "Dissolution. Oceanic. Final.",
+      "type": "substance / residue",
+      "rarity": "common (in deep waters)",
+      "properties": "Byproduct of oath-thing dissolution when brought to deepkin; appears to be the final state of consumed oaths.",
+      "use": "Indicator of oath settlement; ritual remainder; oceanic magic residue",
+      "notes": "Forms when oath-things are sung to dissolution by deepkin; may have magical properties unknown.",
+      "first_date": "2026-03-04",
+      "appearances": 1
     }
   ],
   "rituals": [
@@ -5664,7 +6360,7 @@
       "cost": "The caster must sacrifice every moment of joy, every love, every triumph, and every small beauty\u2014effectively stripping them of all positive memories.",
       "notes": "The Rite was discovered inscribed in the Singing Catacombs in languages predating humanity. Zareth learned it through seven years of study with druids, bone-carvers, and fae-touched hermits.",
       "first_date": "2026-03-01",
-      "appearances": 1
+      "appearances": 4
     },
     {
       "id": "celestial_rite",
@@ -5762,7 +6458,7 @@
       "description": "A singular ruler or governing authority who assigned Zareth the Astronomer-Prince to records after he was found emptied of memory on the Peak of Aethros. The Sovereign's motivations\u2014whether to contain, preserve, or study Zareth\u2014are unknown.",
       "notes": "The Sovereign's identity, realm, and seat are all unknown. Their role in cosmic or astronomical governance is undefined. They may be a local lord, a distant emperor, or a mystical authority tied to the stars themselves.",
       "first_date": "2026-03-02",
-      "appearances": 2
+      "appearances": 4
     },
     {
       "id": "empire",
