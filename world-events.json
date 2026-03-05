@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-04T11:24:49.562896+00:00",
+  "generated_at": "2026-03-05T11:25:57.534431+00:00",
   "source": "codex.json",
   "count": 50,
   "events": [
@@ -95,12 +95,12 @@
       "event_type": "ritual",
       "scope": "world",
       "epicenter": "unknown",
-      "stage": "rising",
-      "intensity": 3,
+      "stage": "climax",
+      "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-03-03",
-      "recent_issues": 1,
-      "trend": 1,
+      "last_seen": "2026-03-05",
+      "recent_issues": 2,
+      "trend": 2,
       "referenced_locations": {
         "places": [
           "Thornholt",
@@ -127,53 +127,145 @@
         {
           "date": "2026-03-03",
           "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Wound-Keeper's Vigil"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Cartographer's Burden"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Young Sorcerer's Inheritance"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Tax Collector's Question"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Bone-Singer's Lament"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Collector's New Ledger"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Hermit's Census"
         }
       ]
     },
     {
-      "name": "The Crimson Convergence",
-      "tagline": "Stellar. Transformative. Witnessed.",
-      "event_type": "celestial event",
+      "name": "Stellar Working",
+      "tagline": "Planned. Performed. Prophetic.",
+      "event_type": "ritual",
       "scope": "world",
       "epicenter": "unknown",
       "stage": "rising",
       "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-03",
+      "last_seen": "2026-03-05",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-05",
+          "title": "The Cartographer's Burden"
+        }
+      ]
+    },
+    {
+      "name": "The Hermit's Census",
+      "tagline": "Counting. Revelation. Warning.",
+      "event_type": "discovery / revelation / catastrophe",
+      "scope": "world",
+      "epicenter": "Ashen Wastes",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-03-05",
       "recent_issues": 1,
       "trend": 1,
       "referenced_locations": {
         "places": [
-          "all"
+          "Pelimor",
+          "Iron Coast",
+          "Keth'moris",
+          "unknown others"
         ],
         "regions": [
-          "all"
+          "The Ashen Reach",
+          "The Iron Coast",
+          "unknown"
         ],
         "realms": [
-          "all"
+          "unknown"
         ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-03-03",
-          "title": "The Starfall Debt"
-        },
+          "date": "2026-03-05",
+          "title": "The Hermit's Census"
+        }
+      ]
+    },
+    {
+      "name": "The Blue Eclipse",
+      "tagline": "Celestial. Transformative. Singular.",
+      "event_type": "celestial phenomenon",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-02-28",
+      "recent_issues": 1,
+      "trend": -1,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
         {
-          "date": "2026-03-03",
-          "title": "The Merfolk's Remembrance"
-        },
+          "date": "2026-02-28",
+          "title": "The Carver's Final Work"
+        }
+      ]
+    },
+    {
+      "name": "The Starfall Oath",
+      "tagline": "Sworn. Cosmic. Unbreakable.",
+      "event_type": "oath / ritual",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-01",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
         {
-          "date": "2026-03-03",
-          "title": "The Sorcerer's Heir"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Ghost of the Stellar Rite"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Chorus of Altered Fates"
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
         }
       ]
     },
@@ -183,8 +275,8 @@
       "event_type": "catastrophe / celestial event",
       "scope": "world",
       "epicenter": "Peak of Aethros",
-      "stage": "rising",
-      "intensity": 3,
+      "stage": "simmering",
+      "intensity": 2,
       "resolved": false,
       "last_seen": "2026-03-03",
       "recent_issues": 1,
@@ -227,52 +319,114 @@
       ]
     },
     {
-      "name": "The Blue Eclipse",
-      "tagline": "Celestial. Transformative. Singular.",
-      "event_type": "celestial phenomenon",
+      "name": "The Crimson Convergence",
+      "tagline": "Starfall. Upheaval. Transformation.",
+      "event_type": "catastrophe / celestial event",
       "scope": "world",
-      "epicenter": "unknown",
+      "epicenter": "Peak of Aethros",
       "stage": "simmering",
       "intensity": 2,
       "resolved": false,
-      "last_seen": "2026-02-28",
+      "last_seen": "2026-03-03",
       "recent_issues": 1,
       "trend": 1,
       "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
+        "places": [
+          "Pelimor",
+          "Imperial archives",
+          "trade cities"
+        ],
+        "regions": [
+          "The Hearthlands"
+        ],
+        "realms": [
+          "Empire"
+        ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-02-28",
-          "title": "The Carver's Final Work"
+          "date": "2026-03-03",
+          "title": "The Chorus of Altered Fates"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Merfolk's Remembrance"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Sorcerer's Heir"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
         }
       ]
     },
     {
-      "name": "The Starfall Oath",
-      "tagline": "Sworn. Cosmic. Unbreakable.",
-      "event_type": "oath / ritual",
-      "scope": "world",
+      "name": "The Celestial Binding",
+      "tagline": "Cosmic. Transformative. Shattering.",
+      "event_type": "ritual",
+      "scope": "regional",
       "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
+      "stage": "climax",
+      "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-03-01",
-      "recent_issues": 1,
-      "trend": 1,
+      "last_seen": "2026-03-05",
+      "recent_issues": 2,
+      "trend": 2,
       "referenced_locations": {
-        "places": [],
+        "places": [
+          "Thornholt"
+        ],
         "regions": [],
         "realms": [],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-03-01",
-          "title": "The Starfall Oath"
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Warden's Sorrow"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Bone-Singer's Lament"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Cartographer's Burden"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Collector's New Ledger"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Hermit's Census"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Tax Collector's Question"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Wound-Keeper's Vigil"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Young Sorcerer's Inheritance"
         }
       ]
     },
@@ -885,7 +1039,9 @@
           "The Blasted Lands",
           "Blasted Lands"
         ],
-        "regions": [],
+        "regions": [
+          "The Blasted Lands"
+        ],
         "realms": [],
         "continents": []
       },
@@ -1342,89 +1498,6 @@
         {
           "date": "2026-03-04",
           "title": "The Drowned Prince's Vigil"
-        }
-      ]
-    },
-    {
-      "name": "Burning of Crimson Gate",
-      "tagline": "Arson. Catastrophe. Three thousand.",
-      "event_type": "catastrophe",
-      "scope": "city",
-      "epicenter": "Crimson Gate",
-      "stage": "aftermath",
-      "intensity": 1,
-      "resolved": true,
-      "last_seen": "2026-02-25",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "Crimson Gate"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "The Last Thief of Crimson Gate"
-        }
-      ]
-    },
-    {
-      "name": "Grell's Descent into the Singing Catacombs",
-      "tagline": "Quest. Horror. Sacrifice.",
-      "event_type": "quest / trial",
-      "scope": "city",
-      "epicenter": "Singing Catacombs",
-      "stage": "aftermath",
-      "intensity": 1,
-      "resolved": true,
-      "last_seen": "2026-02-25",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "Singing Catacombs"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "The Hunger of Grell Ironhand"
-        }
-      ]
-    },
-    {
-      "name": "Plague Wars",
-      "tagline": "Epidemic. Catastrophic. Ended.",
-      "event_type": "war / plague / catastrophe",
-      "scope": "city",
-      "epicenter": "Tomb of Shard-V\u00eal",
-      "stage": "aftermath",
-      "intensity": 1,
-      "resolved": true,
-      "last_seen": "2026-02-27",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "Tomb of Shard-V\u00eal",
-          "Carrion's Rest",
-          "Tomb"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-27",
-          "title": "The Tomb-Keeper's Vigil"
         }
       ]
     }
