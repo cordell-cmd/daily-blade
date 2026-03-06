@@ -292,6 +292,14 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 /* Codex modal sits above the story modal when both are open */
 #codex-modal-overlay { z-index: 130; }
 #codex-modal { z-index: 131; }
+
+/* Stacked modals: when a story is opened from inside Codex, keep Codex visible underneath */
+#codex-modal-panel { transition: transform .22s ease; }
+body.stacked-codex-under-story #codex-modal-overlay { z-index: 118; }
+body.stacked-codex-under-story #codex-modal { z-index: 119; }
+body.stacked-codex-under-story #codex-modal-overlay.open { opacity: 0; pointer-events: none; }
+body.stacked-codex-under-story #codex-modal.open { pointer-events: none; }
+body.stacked-codex-under-story #codex-modal-panel { transform: translate(10px, 14px); }
 .story-modal-panel { width: min(860px, 96vw); max-height: min(88vh, 860px); overflow: auto; background: linear-gradient(160deg, #1e0e06 0%, #130b04 100%); border: 1px solid rgba(201,146,42,.45); border-top: 3px solid var(--blood); border-radius: 4px; box-shadow: 0 14px 55px rgba(0,0,0,.75); padding: 1.25rem 1.35rem 1.35rem; position: relative; }
 .story-modal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .5rem; }
 .story-modal-title { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 1.15rem; font-weight: 700; color: var(--parchment); line-height: 1.25; text-shadow: 1px 1px 4px rgba(0,0,0,.7); }
@@ -1652,7 +1660,24 @@ function isCodexModalOpen() {
   return document.getElementById('codex-modal').classList.contains('open');
 }
 
+function setStackedCodexUnderStory(enabled) {
+  try {
+    document.body && document.body.classList && document.body.classList.toggle('stacked-codex-under-story', !!enabled);
+  } catch (e) {
+    // ignore
+  }
+}
+
+function isStackedCodexUnderStory() {
+  try {
+    return !!(document.body && document.body.classList && document.body.classList.contains('stacked-codex-under-story'));
+  } catch (e) {
+    return false;
+  }
+}
+
 function closeCodexModal() {
+  setStackedCodexUnderStory(false);
   document.getElementById('codex-modal-overlay').classList.remove('open');
   document.getElementById('codex-modal').classList.remove('open');
   document.getElementById('codex-modal-overlay').setAttribute('aria-hidden', 'true');
@@ -2254,6 +2279,7 @@ function renderStories(data) {
 
 // ── Story Modal (single-story preview) ─────────────────────────────
 function closeStoryModal() {
+  setStackedCodexUnderStory(false);
   document.getElementById('story-modal-overlay').classList.remove('open');
   document.getElementById('story-modal').classList.remove('open');
   document.getElementById('story-modal-title').textContent = '—';
@@ -4222,18 +4248,9 @@ document.addEventListener('click', (e) => {
   const wantKey = normalizeTitleKey(t);
   const idx = appearances.findIndex(a => (a.date || '') === (d || '') && normalizeTitleKey(a.title || '') === wantKey);
 
-  // If the codex modal is open, the story modal would open "behind" it.
-  // Close codex first so the newly opened story is visible (especially on mobile).
-  const codexModalEl = document.getElementById('codex-modal');
-  const codexIsOpen = !!(codexModalEl && codexModalEl.classList && codexModalEl.classList.contains('open'));
-  if (codexIsOpen) {
-    closeCodexModal();
-    window.setTimeout(() => {
-      openStoryModalByAppearance(d, t, { appearances, index: idx >= 0 ? idx : 0 });
-    }, 30);
-    return;
-  }
-
+  // If Codex is open, keep it visible underneath (stacked papers) so users can
+  // back out step-by-step without losing context.
+  setStackedCodexUnderStory(isCodexModalOpen());
   openStoryModalByAppearance(d, t, { appearances, index: idx >= 0 ? idx : 0 });
 });
 
@@ -4241,8 +4258,10 @@ document.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   const modalOpen = document.getElementById('story-modal').classList.contains('open');
   const codexOpen = document.getElementById('codex-modal').classList.contains('open');
+  const stacked = isStackedCodexUnderStory();
 
   if (e.key === 'Escape') {
+    if (stacked && modalOpen) { closeStoryModal(); return; }
     if (codexOpen) { closeCodexModal(); return; }
     if (modalOpen) { closeStoryModal(); return; }
     closeArchive();
