@@ -32,6 +32,10 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .masthead-title { font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: clamp(2.4rem, 7vw, 5rem); font-weight: 700; color: var(--parchment); text-shadow: 3px 3px 0 var(--blood), 5px 5px 10px rgba(0,0,0,.7); line-height: 1.1; letter-spacing: .03em; }
 .masthead-sub { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .8rem; letter-spacing: .25em; color: var(--aged); margin-top: .6rem; }
 .masthead-date { margin-top: .8rem; font-style: italic; font-size: .85rem; color: var(--gold); }
+.masthead-share { margin-top: .5rem; font-size: .78rem; color: rgba(226,208,168,.78); font-style: italic; }
+.masthead-share-label { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(201,146,42,.75); font-style: normal; margin-right: .45rem; }
+.masthead-share a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted rgba(201,146,42,.55); }
+.masthead-share a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 
 /* ── Main Nav Tabs ────────────────────────────────────────────── */
 .main-nav { display: flex; align-items: center; gap: 0; padding: 1.5rem 0 0; border-bottom: 2px solid rgba(201,146,42,.25); }
@@ -488,6 +492,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <h1 class="masthead-title">The Daily Blade</h1>
     <p class="masthead-sub">An Ever-Expanding World — Ten Tales Fresh Each Dawn</p>
     <p class="masthead-date" id="today-date"></p>
+    <p class="masthead-share"><span class="masthead-share-label">Share</span><a id="share-url" href="#" rel="noopener">—</a></p>
   </header>
 
   <!-- ── Main Nav ─────────────────────────────────────────────── -->
@@ -523,6 +528,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
       <button class="codex-filter-btn active" data-type="all">All Entries</button>
       <button class="codex-filter-btn" data-type="characters">⚔ Characters</button>
       <button class="codex-filter-btn" data-type="places">🏰 Places</button>
+      <button class="codex-filter-btn" data-type="deities_and_entities">👁 Entities</button>
       <button class="codex-filter-btn" data-type="hemispheres">🌗 Hemispheres</button>
       <button class="codex-filter-btn" data-type="continents">🧭 Continents</button>
       <button class="codex-filter-btn" data-type="subcontinents">🗺 Subcontinents</button>
@@ -708,6 +714,32 @@ async function copyToClipboard(text) {
     // ignore
   }
   return false;
+}
+
+function canonicalShareUrl() {
+  try {
+    const url = new URL(String(window.location.href || ''));
+    url.search = '';
+    url.hash = '';
+    url.pathname = String(url.pathname || '').replace(/index\.html$/i, '');
+    return url.toString();
+  } catch (e) {
+    return String(window.location.origin || '') + String(window.location.pathname || '');
+  }
+}
+
+function pagesShareUrl() {
+  const info = getGitHubRepoInfo();
+  const owner = String(info && info.owner || '').trim();
+  const repo = String(info && info.repo || '').trim();
+  if (!owner || !repo) return canonicalShareUrl();
+  return `https://${owner}.github.io/${repo}/`;
+}
+
+function getShareUrl() {
+  const host = String(window.location.hostname || '').toLowerCase();
+  if (host.endsWith('.github.io')) return canonicalShareUrl();
+  return pagesShareUrl();
 }
 
 function getDevGitHubToken() {
@@ -1130,6 +1162,7 @@ function codexTypeLabel(type) {
   return {
     characters: 'Characters',
     places: 'Places',
+    deities_and_entities: 'Entities',
     hemispheres: 'Hemispheres',
     continents: 'Continents',
     subcontinents: 'Subcontinents',
@@ -1155,6 +1188,7 @@ function badgeClassForEntityType(type) {
   return {
     characters: 'badge-role',
     places: 'badge-place',
+    deities_and_entities: 'badge-magic',
     hemispheres: 'badge-region',
     continents: 'badge-region',
     subcontinents: 'badge-region',
@@ -1182,7 +1216,7 @@ function buildCodexEntityIndex(data) {
 
   const categories = [
     'characters','places','hemispheres','continents','subcontinents','realms','provinces','regions','districts',
-    'polities','events','rituals','weapons','artifacts','factions','lore','flora_fauna','magic','relics','substances'
+    'polities','events','rituals','weapons','artifacts','factions','lore','flora_fauna','magic','relics','substances','deities_and_entities'
   ];
   const index = new Map();
   const names = [];
@@ -1236,6 +1270,13 @@ function buildCodexEntityIndex(data) {
       // Explicit aliases from the data model.
       if (obj && Array.isArray(obj.aliases)) {
         obj.aliases.forEach(a => {
+          // Avoid indexing very generic aliases that will cause false-positive linking.
+          // Example: indexing "a presence" would match almost any story with that phrase.
+          const akNorm = normalizeEntityKey(a);
+          const isWeak = (type === 'deities_and_entities') && (
+            akNorm === 'a presence' || akNorm === 'the presence' || akNorm === 'presence'
+          );
+          if (isWeak) return;
           const ak = normalizeEntityKey(a);
           if (ak && ak !== key) addToIndex(ak, type, obj);
         });
@@ -1517,7 +1558,7 @@ function renderEntityBadges(containerEl, entitiesByType) {
   }
 
   const typeOrder = [
-    'characters', 'places', 'polities', 'events', 'rituals', 'factions', 'magic', 'relics', 'artifacts', 'weapons', 'lore', 'flora_fauna', 'substances',
+    'characters', 'places', 'polities', 'events', 'rituals', 'factions', 'magic', 'deities_and_entities', 'relics', 'artifacts', 'weapons', 'lore', 'flora_fauna', 'substances',
     'regions', 'districts', 'provinces', 'realms', 'subcontinents', 'continents', 'hemispheres'
   ];
   const types = Array.from(entitiesByType.keys());
@@ -1744,6 +1785,7 @@ function _primaryLabelTokensForEntity(type, obj) {
   if (type === 'lore') return pick(o.category, 'Lore');
   if (type === 'flora_fauna') return pick(o.type, 'Flora');
   if (type === 'magic') return pick(o.type, 'Magic');
+  if (type === 'deities_and_entities') return pick(o.type, 'Entity');
   if (type === 'relics') return pick(o.origin, 'Relic');
   if (type === 'substances') return pick(o.rarity, 'Substance');
   if (['hemispheres','continents','subcontinents','realms','provinces','districts','regions'].includes(type)) {
@@ -1778,6 +1820,7 @@ function updateCodexCountLabel() {
   const typeLabel = {
     characters: 'Characters',
     places: 'Places',
+    deities_and_entities: 'Entities',
     hemispheres: 'Hemispheres',
     continents: 'Continents',
     subcontinents: 'Subcontinents',
@@ -1872,6 +1915,7 @@ function applyCodexOrganization() {
     lore: 'Lore',
     flora_fauna: 'Flora & Fauna',
     magic: 'Magic',
+    deities_and_entities: 'Entities',
     relics: 'Relics',
     substances: 'Substances',
   };
@@ -2719,6 +2763,7 @@ function renderCodex(data) {
   // Default Codex ordering: alphabetical within each category.
   const characters = [...(data.characters || [])].sort(byName);
   const places     = [...(data.places     || [])].sort(byName);
+  const deities_and_entities = [...(data.deities_and_entities || [])].sort(byName);
   // Build place-type lookup for labeling parent places.
   PLACE_TYPE_BY_NAME = new Map();
   places.forEach(p => {
@@ -2747,7 +2792,7 @@ function renderCodex(data) {
   const regions     = [...(data.regions     || [])].sort(byName);
   const substances  = [...(data.substances  || [])].sort(byName);
 
-  const total = characters.length + places.length + hemispheres.length + continents.length + subcontinents.length + realms.length + polities.length + provinces.length + districts.length + events.length + rituals.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
+  const total = characters.length + places.length + deities_and_entities.length + hemispheres.length + continents.length + subcontinents.length + realms.length + polities.length + provinces.length + districts.length + events.length + rituals.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
 
   if (total === 0) {
     statusEl.innerHTML = '<em>The codex is empty. Return after the backfill workflow completes.</em>';
@@ -2836,6 +2881,39 @@ function renderCodex(data) {
         ${p.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(p.first_story)}</span>` : ''}
       </div>
       ${buildStoryLinks(p.story_appearances, p.first_story, p.first_date)}
+    `;
+    attachStoryLinkListeners(card);
+    grid.appendChild(card);
+  });
+
+  // ─── Entities / Deities ───────────────────────────────────────────
+  deities_and_entities.forEach(ent => {
+    const card = document.createElement('div');
+    card.className = 'codex-card magic-card';
+    stampCodexCardMeta(card, 'deities_and_entities', ent.name, _primaryLabelTokensForEntity('deities_and_entities', ent));
+    const appearances = ent.appearances > 1 ? `${ent.appearances} appearances` : 'First appearance';
+    const knownAs = (Array.isArray(ent.aliases) ? ent.aliases : [])
+      .map(a => String(a || '').trim())
+      .filter(a => a && a.toLowerCase() !== String(ent.name || '').trim().toLowerCase());
+    card.innerHTML = `
+      <span class="codex-type-label">Entity</span>
+      <div class="codex-card-name">${escHtml(ent.name)}</div>
+      ${ent.tagline ? `<div class="codex-card-tagline">${escHtml(ent.tagline)}</div>` : ''}
+      ${knownAs.length ? `<div class="codex-meta"><span><strong>Known as:</strong> ${escHtml(knownAs.join(', '))}</span></div>` : ''}
+      <div class="codex-card-badges">
+        <span class="badge badge-magic">${escHtml(ent.type || 'Entity')}</span>
+        ${ent.status ? `<span class="badge ${statusBadgeClass(ent.status)}">${escHtml(ent.status)}</span>` : ''}
+      </div>
+      ${buildMostSpecificLocationLine(ent)}
+      ${buildEntityParentChain(ent)}
+      <hr class="codex-divider" />
+      <div class="codex-body">${escHtml(ent.description || '')}</div>
+      ${ent.notes ? `<div class="codex-meta"><span><strong>Notes:</strong> ${escHtml(ent.notes)}</span></div>` : ''}
+      <div class="codex-card-footer">
+        <span class="codex-appearances">${appearances}</span>
+        ${ent.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(ent.first_story)}</span>` : ''}
+      </div>
+      ${buildStoryLinks(ent.story_appearances, ent.first_story, ent.first_date)}
     `;
     attachStoryLinkListeners(card);
     grid.appendChild(card);
@@ -3631,7 +3709,7 @@ function showAuditResults(name, type, result) {
     subcontinents: 'Subcontinent', realms: 'Realm', polities: 'Polity', provinces: 'Province',
     districts: 'District', events: 'Event', rituals: 'Ritual', weapons: 'Weapon',
     artifacts: 'Artifact', factions: 'Faction', lore: 'Lore', flora_fauna: 'Flora/Fauna',
-    magic: 'Magic', relics: 'Relic', regions: 'Region', substances: 'Substance',
+    magic: 'Magic', relics: 'Relic', regions: 'Region', substances: 'Substance', deities_and_entities: 'Entity',
   };
   const typeLabel = typeLabelMap[type] || type;
 
@@ -4000,6 +4078,17 @@ document.getElementById('tab-tales').addEventListener('click', () => switchTab('
 document.getElementById('tab-characters').addEventListener('click', () => switchTab('characters'));
 document.getElementById('tab-world-events').addEventListener('click', () => switchTab('world-events'));
 document.getElementById('tab-map').addEventListener('click', () => switchTab('map'));
+
+{
+  const shareUrlEl = document.getElementById('share-url');
+  if (shareUrlEl) {
+    const shareUrl = getShareUrl();
+    shareUrlEl.href = shareUrl;
+    shareUrlEl.target = '_blank';
+    shareUrlEl.textContent = String(shareUrl || '').replace(/^https?:\/\//i, '');
+    shareUrlEl.title = shareUrl;
+  }
+}
 
 // World Events controls
 document.getElementById('world-events-refresh').addEventListener('click', () => loadWorldEvents(true));
