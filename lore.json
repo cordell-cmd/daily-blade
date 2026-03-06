@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-05",
+  "last_updated": "2026-03-06",
   "worlds": [
     {
       "id": "known_world",
@@ -772,7 +772,10 @@
       "notes": "Water-magic is bound to ocean and death. Debts to merfolk scale across continents. Sometimes debts are best settled by changing the world itself.",
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
-      "appearances": 1
+      "appearances": 2,
+      "aliases": [
+        "Nara"
+      ]
     },
     {
       "id": "velgrim_the_terrible",
@@ -1179,7 +1182,7 @@
       "notes": "Her grandmother swore the original blood-marriage oath with Aldren's family generations ago. She has a daughter coming of age.",
       "first_story": "The Dragon's Bargain",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "mira_the_shadow_dancer",
@@ -1358,7 +1361,7 @@
       "world": "known_world",
       "status": "active",
       "home_place": "Pelimor",
-      "home_region": "unknown",
+      "home_region": "The Ashen Reach",
       "home_realm": "Empire",
       "travel_scope": "interrealm",
       "bio": "Mardoc is a renowned cartographer who has mapped half the Known World and descended into the Sunken Caverns to map the Lamia's realm. Rather than confront the Lamia with steel, he offered her something more valuable: eternal witness through his maps and her true name inscribed in silver leaf. His success transformed him into a legend and reshaped how the world perceives the Lamia.",
@@ -1377,10 +1380,21 @@
       "affiliations": [
         "the Lamia (diplomatic ally)"
       ],
-      "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?",
+      "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 4
+      "appearances": 5,
+      "status_history": [
+        {
+          "date": "2026-03-06",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Starlight Cartographer's Reckoning",
+          "note": "Mardoc discovers his maps are self-rewriting and that pre-human ruins are communicating through the new stars, projecting images of an ancient catastrophe.",
+          "evidence": "Maps begin to shift on their own, ink rearranging to show unrecorded ruins; expedition team reports ruins singing at dusk with distant humming from beneath the earth."
+        }
+      ]
     },
     {
       "id": "silene",
@@ -2079,7 +2093,7 @@
       "notes": "Zareth completed the Stellar Rite but lost all memory of joy, love, and beauty in the process. The consequences of his sacrifice and whether he survives remain unclear.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "thera_the_falconer",
@@ -2178,10 +2192,21 @@
         "Tax Collector's daughter",
         "Mardoc the Cartographer"
       ],
-      "notes": "Represents imperial authority that can be swayed by pragmatism and his daughter's negotiation. His choice to hire Mardoc leads to the discovery of pre-human ruins.\nThe Tax Collector's role expands: his aide reports widespread trade disruption, warehouses burning, and merfolk activity in markets. He is now mapping chaos across the Empire's districts and trade posts, preparing for potential economic and political upheaval.\nNew story 'The Tax Collector's Question' confirms his expanded role investigating reality-fraying and cosmic damage across the Empire's districts, consistent with his prior arc of mapping chaos.",
+      "notes": "Represents imperial authority that can be swayed by pragmatism and his daughter's negotiation. His choice to hire Mardoc leads to the discovery of pre-human ruins.\nThe Tax Collector's role expands: his aide reports widespread trade disruption, warehouses burning, and merfolk activity in markets. He is now mapping chaos across the Empire's districts and trade posts, preparing for potential economic and political upheaval.\nNew story 'The Tax Collector's Question' confirms his expanded role investigating reality-fraying and cosmic damage across the Empire's districts, consistent with his prior arc of mapping chaos.\nThe Empire's fiscal certainty has fractured; the Tax Collector's role expands to navigating post-Ascension economic chaos and potential collapse of imperial order.",
       "first_story": "The Cartographer's Lie",
       "first_date": "2026-03-02",
-      "appearances": 3
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-03-06",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Tax Collector's Reckoning",
+          "note": "Levian the auditor (representing imperial tax authority) discovers the Empire's wealth is partially invested in Zareth's Ascension and must navigate destabilized regions and economic collapse.",
+          "evidence": "Merchants vanished, trade caravans report missing weeks, Zareth borrowed heavily against the Sovereign's treasury; Levian commissioned to catalog losses and determine if Empire can salvage control."
+        }
+      ]
     },
     {
       "id": "tax_collector_daughter",
@@ -2801,10 +2826,21 @@
       "affiliations": [
         "forest-keepers"
       ],
-      "notes": "Her quest to connect the Astronomer-Prince, the Sorcerer's journals, and the Shade-Merchant suggests these three threads are keys to understanding the renewed stars and an imminent cosmic reckoning.\nHer quest to contact three key figures (seer, merchant, mage) has now expanded to include a grim census of thousands touched by the Binding\u2014a new understanding of the Celestial Working's true scope.",
+      "notes": "Her quest to connect the Astronomer-Prince, the Sorcerer's journals, and the Shade-Merchant suggests these three threads are keys to understanding the renewed stars and an imminent cosmic reckoning.\nHer quest to contact three key figures (seer, merchant, mage) has now expanded to include a grim census of thousands touched by the Binding\u2014a new understanding of the Celestial Working's true scope.\nHer discovery suggests Zareth's sacrifice was not payment but a *key*, and something far older is waking to use what he unlocked. Reality itself has been fundamentally rewritten.",
       "first_date": "2026-03-03",
-      "appearances": 2,
-      "travel_notes": "[2026-03-05] Story 'The Hermit's Census' shows her emerging from isolation and actively seeking out Ashara, Vex, and the hedge-mage across multiple locations, confirming realmwide travel."
+      "appearances": 3,
+      "travel_notes": "[2026-03-05] Story 'The Hermit's Census' shows her emerging from isolation and actively seeking out Ashara, Vex, and the hedge-mage across multiple locations, confirming realmwide travel.",
+      "status_history": [
+        {
+          "date": "2026-03-06",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Hermit Woman's New Census",
+          "note": "The Hermit discovers her census of the living and dead is corrupted by the Ascension; reality has been subtly rewritten, and people exist in places she never traveled.",
+          "evidence": "Some counted people are now 'not'\u2014erased by the Ascension; others occupy lives they shouldn't have; her gift to remember every soul has become a curse of impossible contradiction."
+        }
+      ]
     },
     {
       "id": "shade_merchant",
@@ -2959,11 +2995,22 @@
       "affiliations": [
         "Elder Mage (deceased master)"
       ],
-      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.\nThe Young Sorcerer has begun to venture beyond the Spire in response to the Stellar Rite's cosmic changes. They are discovering that the age of their master has truly ended and they must navigate a fundamentally rewritten magical world.\nThe hedge-mage protagonist in 'The Young Sorcerer's Inheritance' appears to be a distinct character from the Young Sorcerer (who remains isolated in the Spire), though both are navigating magical instability post-Binding.",
+      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.\nThe Young Sorcerer has begun to venture beyond the Spire in response to the Stellar Rite's cosmic changes. They are discovering that the age of their master has truly ended and they must navigate a fundamentally rewritten magical world.\nThe hedge-mage protagonist in 'The Young Sorcerer's Inheritance' appears to be a distinct character from the Young Sorcerer (who remains isolated in the Spire), though both are navigating magical instability post-Binding.\nThe apprentice's entire education was preparation not just for power inheritance but for surviving the Ascension's aftermath. Now faces decision whether to share dangerous knowledge with fractured kingdoms.",
       "first_story": "The Sorcerer's Heir",
       "first_date": "2026-03-03",
-      "appearances": 4,
-      "travel_notes": "[2026-03-04] Story shows Young Sorcerer emerging from the Spire to observe the transformed world, indicating at least limited travel beyond their isolated home.\n[2026-03-05] Story 'The Young Sorcerer's Inheritance' depicts hedge-mage discovering grimoire rewriting in Vaulted Tombs; consistent with regional travel beyond isolated Spire."
+      "appearances": 5,
+      "travel_notes": "[2026-03-04] Story shows Young Sorcerer emerging from the Spire to observe the transformed world, indicating at least limited travel beyond their isolated home.\n[2026-03-05] Story 'The Young Sorcerer's Inheritance' depicts hedge-mage discovering grimoire rewriting in Vaulted Tombs; consistent with regional travel beyond isolated Spire.",
+      "status_history": [
+        {
+          "date": "2026-03-06",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Young Sorcerer's New Inheritance",
+          "note": "The apprentice discovers hidden texts revealing the Ascension was not the first such working; previous civilizations performed similar rituals that left voids collapsing inward.",
+          "evidence": "Ancient texts now readable under new starlight describe the Ascension in detail and suggest previous similar rituals consumed everything; Master deliberately obscured this knowledge during the apprentice's education."
+        }
+      ]
     },
     {
       "id": "malla",
@@ -3454,6 +3501,406 @@
       "first_story": "The Hermit's Census",
       "first_date": "2026-03-05",
       "appearances": 1
+    },
+    {
+      "id": "vex_the_echo_merchant",
+      "name": "Vex the Echo-Merchant",
+      "aliases": [
+        "Vex"
+      ],
+      "tagline": "Cursed. Fragmented. Desperate.",
+      "role": "Merchant",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "Anthrim",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Vex the Echo-Merchant trades in fragments in the shadow-markets of Anthrim. Since the Celestial Ascension, the fragments she deals in have become unstable\u2014some echoing the cosmic working, others dissolving into smoke. Cursed with fragmented memory, she suspects she witnessed the Ascension itself, though her mind refuses to hold the knowledge. She ventures into the Sunburned Reach seeking a fragment that might restore stolen memories, wondering if her curse is punishment or mercy.",
+      "traits": [
+        "haunted",
+        "fragmented",
+        "desperate",
+        "cursed",
+        "introspective"
+      ],
+      "known_locations": [
+        "Anthrim",
+        "shadow-markets of Anthrim",
+        "Sunburned Reach"
+      ],
+      "affiliations": [
+        "shadow-markets"
+      ],
+      "notes": "Central to understanding Ascension consequences. Her curse may be protective rather than punitive. Unresolved: what did she witness during the Ascension? What memories are stolen?",
+      "first_story": "Vex's Fragment Market in Collapse",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "deepkin_captain",
+      "name": "Deepkin Captain",
+      "aliases": [
+        "scarred captain"
+      ],
+      "tagline": "Predatory. Patient. Cruel.",
+      "role": "Military Leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Vel-Karsh harbor",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A scarred deepkin captain with pearls for teeth who commands singers in Vel-Karsh harbor. She corners Nara the Tide-Thief and offers her a choice: gallows or enslavement. She coerces Nara into stealing the Stellar Charts from the High Observatory of Karethil within one moon, demonstrating the deepkin's command of both nautical power and sophisticated manipulation.",
+      "traits": [
+        "scarred",
+        "commanding",
+        "intelligent",
+        "predatory",
+        "relentless"
+      ],
+      "known_locations": [
+        "Vel-Karsh harbor"
+      ],
+      "affiliations": [
+        "deepkin"
+      ],
+      "notes": "Represents deepkin military authority. Her singers use acoustic magic to drown and command. Unresolved: what is the deepkin's interest in the Stellar Charts?",
+      "first_story": "The Tide-Thief's Gambit",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "warden_sylas",
+      "name": "Warden Sylas",
+      "aliases": [
+        "Sylas"
+      ],
+      "tagline": "Duty-bound. Descending. Desperate.",
+      "role": "Deepkin Warden / Leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Council of Depths",
+      "home_region": "unknown",
+      "home_realm": "Deepkin Realms",
+      "travel_scope": "realmwide",
+      "bio": "Warden of the deepkin who receives reports of scouts returning changed from the Cerulean Trench. Sylas convenes the Council of Depths to address the catastrophic fracturing of the barrier between surface and Abyss. Choosing the hardest path, Sylas descends into the Trench himself to seek answers before war becomes inevitable.",
+      "traits": [
+        "resolute",
+        "duty-bound",
+        "willing to sacrifice"
+      ],
+      "known_locations": [
+        "Cerulean Trench",
+        "Council of Depths"
+      ],
+      "affiliations": [
+        "Deepkin",
+        "Council of Depths"
+      ],
+      "notes": "Currently descended into the Cerulean Trench seeking answers; outcome unknown.",
+      "first_story": "The Deepwarden's Vigil",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "kess_of_the_sunken_hollows",
+      "name": "Kess of the Sunken Hollows",
+      "aliases": [
+        "Kess"
+      ],
+      "tagline": "Cursed. Singing. Isolated.",
+      "role": "Bone-Singer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sunken Hollows",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A bone-singer cursed to sing laments for every death she witnesses, Kess has isolated herself in the ruins of the Sunken Hollows since a plague devastated her village. The Celestial Ascension has changed the fundamental agreement between the living and the dead, causing corpses she spent years lulling to stillness to stir and resonate with cosmic arrangement. Now refugees bearing plague-marks and star-scars arrive seeking her aid.",
+      "traits": [
+        "cursed",
+        "isolated",
+        "bone-singer",
+        "lament-keeper"
+      ],
+      "known_locations": [
+        "Sunken Hollows",
+        "Sunburned Reach"
+      ],
+      "affiliations": [
+        "Deepkin",
+        "Dead (the)"
+      ],
+      "notes": "Curse now carries new weight with the changed cosmic arrangement; must sing to keep both recent and ancient dead at peace or risk a necropolis awakening.",
+      "first_story": "The Bone-Singer's Dirge",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "apprentice_sorcerer",
+      "name": "The Apprentice Sorcerer",
+      "aliases": [
+        "Apprentice"
+      ],
+      "tagline": "Inheriting. Hunted. Desperate.",
+      "role": "Sorcerer / Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "An apprentice sorcerer who receives word from the Master Mage's scattered adherents that ancient texts hidden in the Tower are now readable under new starlight. These texts reveal knowledge the Master deliberately obscured\u2014that the Celestial Ascension was not the first such working and that previous civilizations' rituals left voids that collapsed inward, consuming everything. The Master knew, and the apprentice's entire education was preparation for surviving the aftermath.",
+      "traits": [
+        "scholarly",
+        "burdened",
+        "conflicted"
+      ],
+      "known_locations": [
+        "Tower",
+        "Sunburned Reach"
+      ],
+      "affiliations": [
+        "Master Mage",
+        "Master Mage's adherents"
+      ],
+      "notes": "Must decide whether to hide or share dangerous knowledge about the Celestial Ascension's destructive pattern; refugees are fleeing as omens darken.",
+      "first_story": "The Young Sorcerer's New Inheritance",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "master_mage",
+      "name": "Master Mage",
+      "aliases": [
+        "The Master"
+      ],
+      "tagline": "Wise. Prescient. Dead.",
+      "role": "Sorcerer / Master Scholar",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "A powerful mage who possessed knowledge of the Celestial Ascension and deliberately obscured texts describing it. The Master knew that previous civilizations had performed similar workings and left behind destructive voids. Their entire education of the apprentice was preparation for surviving the aftermath.",
+      "traits": [
+        "secretive",
+        "prescient",
+        "protective"
+      ],
+      "known_locations": [
+        "Tower"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "Deceased; their scattered adherents now communicate with the apprentice.",
+      "first_story": "The Young Sorcerer's New Inheritance",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "commodore_vesta",
+      "name": "Commodore Vesta",
+      "aliases": [
+        "Vesta"
+      ],
+      "tagline": "Smuggler. Pragmatic. Burdened.",
+      "role": "Commodore / Smuggler",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Jade Coast",
+      "home_region": "Iron Coast",
+      "home_realm": "The Empire",
+      "travel_scope": "realmwide",
+      "bio": "A pragmatic commodore operating from the Jade Coast who agrees to smuggle a young archivist carrying a cursed ledger to safety. As her crew begins experiencing stolen memories of cosmic workings and sacrifice, Vesta must navigate treacherous waters\u2014both literal and metaphysical\u2014questioning whether the knowledge granted is gift or poison.",
+      "traits": [
+        "pragmatic",
+        "protective",
+        "burdened by knowledge",
+        "maritime expertise"
+      ],
+      "known_locations": [
+        "Jade Coast",
+        "Sunburned Reach"
+      ],
+      "affiliations": [
+        "her crew"
+      ],
+      "notes": "Discovers that the ledger grants those who read it fragments of Zareth's stolen memories; must decide whether to keep or destroy it.",
+      "first_story": "The Refugee Caravan's Price",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "levian_the_auditor",
+      "name": "Levian",
+      "aliases": [
+        "Levian the auditor"
+      ],
+      "tagline": "Bureaucrat. Accountant. Shaken.",
+      "role": "Auditor / Tax Collector",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Imperial City",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "realmwide",
+      "bio": "An imperial auditor sent to catalog the fiscal chaos wrought by the Celestial Ascension. Upon learning that Zareth invested the Sovereign's own treasury in his seven-year cosmic working, Levian accepts a new commission to determine whether the Empire can maintain control or must adapt to a world where order is no longer guaranteed.",
+      "traits": [
+        "meticulous",
+        "cautious",
+        "increasingly disillusioned",
+        "thorough"
+      ],
+      "known_locations": [
+        "Imperial City",
+        "provincial towns",
+        "Sunburned Reach"
+      ],
+      "affiliations": [
+        "The Empire",
+        "Empire's High Steward"
+      ],
+      "notes": "Discovers the Empire's wealth is partially invested in the Ascension; tasked with cataloging what was lost and salvaging control.",
+      "first_story": "The Tax Collector's Reckoning",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "hermit_woman_of_grey_wastes",
+      "name": "The Hermit Woman of the Grey Wastes",
+      "aliases": [
+        "Hermit Woman",
+        "the hermit"
+      ],
+      "tagline": "Cursed. Counting. Unraveling.",
+      "role": "Mystic / Census-Keeper",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Grey Wastes",
+      "home_region": "Grey Reaches",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A mystical figure who maintains an endless tally of the living and the dead, her gift now corrupted by the Celestial Ascension. As she discovers that reality itself has been rewritten\u2014with people erased and others existing in impossible lives\u2014she seeks the deep reaches of the wastes to understand what layer of existence Zareth's sacrifice unlocked.",
+      "traits": [
+        "obsessive",
+        "haunted",
+        "perceptive",
+        "increasingly aware"
+      ],
+      "known_locations": [
+        "Grey Wastes"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "Her ledgers reveal the Ascension rewrote reality itself; discovering that Zareth's sacrifice was a key for something far older awakening.",
+      "first_story": "The Hermit Woman's New Census",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "young_archivist",
+      "name": "Young Archivist",
+      "aliases": [
+        "the archivist"
+      ],
+      "tagline": "Refugee. Keeper. Hunted.",
+      "role": "Archivist / Record-Keeper",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sunburned Reach",
+      "home_region": "The Ashen Reach",
+      "home_realm": "The Empire",
+      "travel_scope": "realmwide",
+      "bio": "A young archivist among refugees fleeing the transformed Sunburned Reach who carries a single ledger containing records of the Sovereign's dealings with Zareth before the Ascension. The ledger is cursed, imparting fragments of Zareth's stolen memories to anyone who reads it.",
+      "traits": [
+        "keeper of secrets",
+        "hunted",
+        "reluctant bearer",
+        "knowledgeable"
+      ],
+      "known_locations": [
+        "Sunburned Reach"
+      ],
+      "affiliations": [
+        "refugees",
+        "Commodore Vesta"
+      ],
+      "notes": "Sought by unknown parties for the ledger; memories recorded within are not their own.",
+      "first_story": "The Refugee Caravan's Price",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "empire_high_steward",
+      "name": "Empire's High Steward",
+      "aliases": [
+        "High Steward"
+      ],
+      "tagline": "Administrator. Secretive. Burdened.",
+      "role": "High Administrator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Imperial City",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "realmwide",
+      "bio": "A high-ranking imperial official who meets with Levian to reveal that Zareth borrowed heavily against the Sovereign's treasury before performing the Ascension, making the Empire's wealth partially invested in cosmic working.",
+      "traits": [
+        "secretive",
+        "official",
+        "conflicted",
+        "informative"
+      ],
+      "known_locations": [
+        "Imperial City"
+      ],
+      "affiliations": [
+        "The Empire",
+        "The Sovereign"
+      ],
+      "notes": "Entrusts Levian with a dangerous commission after revealing state secrets; concerned about cascading consequences.",
+      "first_story": "The Tax Collector's Reckoning",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "skarath",
+      "name": "Skarath",
+      "aliases": [
+        "the wyvern"
+      ],
+      "tagline": "Ancient. Debt-keeper. Fractured.",
+      "role": "Wyvern, Oath-Enforcer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "cavern halls",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Skarath is an ancient wyvern who collects debts and promises across ages. He descends to the cavern halls seeking understanding of cosmic shifts caused by the Ascension. He undertakes unprecedented negotiations with starborn entities to maintain the old powers' place in the world's evolving hierarchy.",
+      "traits": [
+        "debt-collector",
+        "ancient",
+        "pragmatic",
+        "hierarchical"
+      ],
+      "known_locations": [
+        "cavern halls"
+      ],
+      "affiliations": [
+        "Skyrakis",
+        "dragons",
+        "wyverns"
+      ],
+      "notes": "His ability to track and enforce ancient oaths is fracturing due to the Ascension. Seeks to negotiate with conscious stars themselves.",
+      "first_story": "The Wyvern's Starborn Debt",
+      "first_date": "2026-03-06",
+      "appearances": 1
     }
   ],
   "places": [
@@ -3701,7 +4148,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "grimmholt",
@@ -4589,7 +5036,7 @@
       "status": "active",
       "notes": "The Cerulean Trench is the seat of sea-folk power and knowledge. Nerys dispatches swimmers from here to seek information about the Astronomer-Prince and the cosmic working.",
       "first_date": "2026-03-03",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "thornholt",
@@ -4930,6 +5377,246 @@
       "notes": "Represents the institutional collapse spreading through the Empire as cosmic damage affects reality itself.",
       "first_date": "2026-03-05",
       "appearances": 1
+    },
+    {
+      "id": "vel_karsh_harbor",
+      "name": "Vel-Karsh harbor",
+      "tagline": "Seaside. Dangerous. Hunted.",
+      "place_type": "port",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A bustling harbor where deepkin singers rise from the depths and cornered thieves make desperate choices.",
+      "description": "Vel-Karsh harbor is a coastal settlement where the deepkin captain corners Nara the Tide-Thief. Webbed-handed singers emerge from the depths, their voices carrying a drowning, disorienting quality. The harbor is a place of danger, surveillance, and maritime power.",
+      "status": "active",
+      "notes": "Site of Nara's capture and coercion into the theft quest. The deepkin maintain active presence here.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "high_observatory_of_karethil",
+      "name": "High Observatory of Karethil",
+      "tagline": "Celestial. Fortified. Guarded.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "the Empire",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place of astronomical study and sovereign power, guarded by imperial mages and stellar knowledge-keepers.",
+      "description": "The High Observatory of Karethil is a fortified structure housing the Stellar Charts\u2014ancient star maps or records. It is guarded by the Sovereign's own mages, making it an extraordinarily difficult target for theft. Its elevation and isolation suggest it sits in high territory, possibly mountainous.",
+      "status": "active",
+      "notes": "Quest objective for Nara. Guarded by imperial mages. The Stellar Charts kept here are of sufficient value to the deepkin to coerce a skilled thief.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "sunken_well",
+      "name": "Sunken Well",
+      "tagline": "Abyssal. Terrifying. Eternal.",
+      "place_type": "abyss",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A terrible punishment reserved for those who fail the deepkin\u2014a drowning that never ends, a transformation into something other.",
+      "description": "The Sunken Well is the deepkin's ultimate threat\u2014a place of transformation and enslavement where failed thieves are cast to become singers themselves, learning to harmonize with the deep forever. It represents the deepkin's alternative to the gallows.",
+      "status": "active",
+      "notes": "Threat condition for Nara's quest. Unclear whether this is a place or a curse-state; possibly both.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "bone_wastes",
+      "name": "Bone Wastes",
+      "tagline": "Ancient. Singing. Haunted.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A desolate expanse where pre-human ruins now sing at dusk, their voices harmonizing with distant humming from beneath the earth.",
+      "description": "The Bone Wastes are an expedition site where Mardoc's team discovered ruins that vocalize at dusk. The ruins communicate through singing and appear to harmonize with subterranean presences. Pre-human structures here have become active since the Celestial Ascension.",
+      "status": "active",
+      "notes": "Site of post-Ascension anomalies. The singing ruins suggest intelligent pre-human presence. Subterranean humming indicates deeper mysteries.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "anthrim",
+      "name": "Anthrim",
+      "tagline": "Shadowed. Chaotic. Unstable.",
+      "place_type": "city",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A city of shadow-markets in chaos since the Celestial Ascension, where fragments dissolve and reality has become unstable.",
+      "description": "Anthrim is home to shadow-markets where Vex trades in fragments. Since the Celestial Ascension, these markets have fallen into chaos as fragments become unstable\u2014some carrying echoes of the cosmic working, others dissolving entirely. The city itself seems to be struggling against post-Ascension instability.",
+      "status": "active",
+      "notes": "Hub of fragment trade and shadow economy. Post-Ascension chaos is centered here. Vex's home base.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "sunburned_reach",
+      "name": "Sunburned Reach",
+      "tagline": "Desolate. Dangerous. Changed.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A scorched, transformed landscape where merchants vanished and the Ascension's consequences burned deepest.",
+      "description": "The Sunburned Reach is a region where the deepest consequences of the Celestial Ascension manifested. Merchants who ventured here have vanished. The landscape bears the scars of the cosmic working. It is a place where reality itself seems wounded, and memory may be found\u2014or lost forever.",
+      "status": "active",
+      "notes": "Quest destination for Vex. Dangerous and transformed. Rumored to contain fragments that restore stolen memories. Possibly tied to ground zero of Ascension effects.",
+      "first_date": "2026-03-06",
+      "appearances": 3
+    },
+    {
+      "id": "sunken_hollows",
+      "name": "Sunken Hollows",
+      "tagline": "Plague-haunted. Bone-resonant. Isolated.",
+      "place_type": "ruins",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Sunken Marches",
+      "district": "unknown",
+      "atmosphere": "Silent, haunted by plague and the bones of the dead humming with new cosmic resonance.",
+      "description": "A ruined settlement where Kess of the Sunken Hollows has kept to herself since a plague devastated her village. She has spent years singing to keep the dead at rest. The Celestial Ascension has changed the fundamental agreement between the living and dead; the corpses and ancient sepulchres now resonate with the new starlight. Refugees fleeing the Sunburned Reach seek her aid.",
+      "status": "ruins / active (as a place of refuge)",
+      "notes": "At risk of becoming a necropolis if Kess fails to sing the dead back to rest. Ancient sepulchres are now resonating with starlight.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "council_of_depths",
+      "name": "Council of Depths",
+      "tagline": "Convening. Deciding. Desperate.",
+      "place_type": "hall / council chamber",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "Deepkin Realms",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A solemn gathering place where the deepkin face impossible choices.",
+      "description": "The governing council of the deepkin where Warden Sylas convenes the leadership. Here they learn a terrible truth: the Celestial Ascension's magic has fractured the barrier between surface world and Abyss Below. The council debates three terrible options: sealing themselves away completely, risking catastrophic war with surface dwellers, or undertaking an expedition to understand what awakens beneath.",
+      "status": "active",
+      "notes": "Currently debating the deepkin's response to the fracturing of the Abyss barrier.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "jade_coast",
+      "name": "Jade Coast",
+      "tagline": "Harbor. Smuggler's haven. Transformed.",
+      "place_type": "coastal_settlement",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A pragmatic maritime hub where smugglers and merchants operate with tacit understanding.",
+      "description": "A coastal haven where Commodore Vesta operates, receiving refugees from the transformed Sunburned Reach and conducting smuggling operations.",
+      "status": "active",
+      "notes": "Key hub for the Refugee Caravan story; serves as point of refuge and departure for those fleeing the Ascension's aftermath.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "grey_wastes",
+      "name": "Grey Wastes",
+      "tagline": "Desolate. Corrupted. Revealing.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Grey Reaches",
+      "district": "unknown",
+      "atmosphere": "A bleak, desolate expanse where reality's corruption is most obvious, inhabited only by the Hermit Woman and her ledgers.",
+      "description": "An expansive wasteland where the Hermit Woman of the Grey Wastes walks with her ledgers, seeking the edges where reality's rewrite is most pronounced. Her tally of the living and dead is corrupted here.",
+      "status": "cursed",
+      "notes": "Key location for understanding reality's rewrite; deep reaches contain evidence of Zareth's working; something ancient may be awakening here.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "provincial_towns",
+      "name": "Provincial Towns",
+      "tagline": "Scattered. Chaotic. Disrupted.",
+      "place_type": "settlement",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Outposts of imperial order now fractured by the Ascension's consequences, where merchants vanish and certainty dissolves.",
+      "description": "Various towns throughout the Empire's territories where Levian expects to find order but instead discovers chaos: missing merchants, erased weeks, and disappeared tax revenues.",
+      "status": "contested",
+      "notes": "Sites of investigation for Levian's commission; represent the Ascension's ripple effects across the realm.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "cavern_halls",
+      "name": "cavern halls",
+      "tagline": "Deep. Underground. Ancient.",
+      "place_type": "fortress / cavern",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Deep underground chambers where ancient dragons and wyverns dwell, suffused with cosmic significance.",
+      "description": "A series of cavern halls inhabited by dragons and wyverns, serving as a seat of counsel for the older powers of the world. Skarath descends here to consult with Skyrakis on matters of cosmic consequence.",
+      "status": "active",
+      "notes": "Home to at least Skarath and Skyrakis; likely repository of ancient knowledge.",
+      "first_date": "2026-03-06",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -5088,7 +5775,7 @@
       "status": "active",
       "notes": "Appear to be custodians or judges of maritime debts and broken oaths; their song carries magical power of dissolution and settlement.",
       "first_date": "2026-03-04",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "decay_lord",
@@ -5121,6 +5808,39 @@
       "status": "active",
       "notes": "Ambiguous whether it is malevolent, indifferent, or unknowable. Central mystery of Story 2 and the Collector's true nature.",
       "first_date": "2026-03-05",
+      "appearances": 1
+    },
+    {
+      "id": "abyss_below",
+      "name": "Abyss Below",
+      "type": "realm / entity",
+      "world": "Edhra",
+      "description": "A fundamental realm or dimension sealed away from the surface world. The barrier between the surface and the Abyss Below has been fractured by the Celestial Ascension's magic. Something vast is stirring in the trenches of the Abyss\u2014something pre-human civilizations sealed away millennia ago.",
+      "status": "active / stirring",
+      "notes": "Pre-human seals are failing. Contains entities older than the deepkin kingdoms. The Cerulean Trench is the primary breach point.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "skyrakis_the_wound_wing",
+      "name": "Skyrakis",
+      "type": "dragon",
+      "world": "Edhra",
+      "description": "An ancient dragon of cosmic significance, consulted by Skarath regarding the Ascension and the nature of starborn entities.",
+      "status": "active",
+      "notes": "Also known as 'the wound-wing' per existing canon. Possesses knowledge of celestial matters.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "starborn_entities",
+      "name": "starborn entities",
+      "type": "celestial beings",
+      "world": "Edhra",
+      "description": "Newly formed conscious stars created by the Ascension. They are alive, aware, and operate under obligations that predate knowledge of the older powers. Operate independently of traditional cosmic agreements.",
+      "status": "active",
+      "notes": "These entities represent a new force in the world's hierarchy. Skarath must negotiate with them directly.",
+      "first_date": "2026-03-06",
       "appearances": 1
     }
   ],
@@ -5311,6 +6031,19 @@
       "notes": "Its transformation mirrors the larger instability of magic. Using it risks spiraling spells into vastness and uncontrollability.",
       "first_date": "2026-03-05",
       "appearances": 1
+    },
+    {
+      "id": "stellar_charts",
+      "name": "Stellar Charts",
+      "tagline": "Celestial. Stolen. Powerful.",
+      "artifact_type": "tome",
+      "origin": "High Observatory of Karethil; created by sovereign mages",
+      "powers": "Records star positions and/or celestial mechanics. Of sufficient importance to the deepkin that they would coerce a skilled thief and risk imperial wrath.",
+      "last_known_holder": "High Observatory of Karethil",
+      "status": "guarded",
+      "notes": "Quest object for Nara. Its exact nature and power are unclear, but it is valuable enough that the deepkin would demand its theft. May relate to navigation, prophecy, or understanding the Celestial Ascension.",
+      "first_date": "2026-03-06",
+      "appearances": 1
     }
   ],
   "hemispheres": [],
@@ -5413,7 +6146,7 @@
       "status": "active",
       "notes": "Ruled by the Emperor; contains the Imperial Archives and is home to the secret council. Grappling with the implications of the Celestial Binding.",
       "first_date": "2026-03-05",
-      "appearances": 1,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "subcontinent": "unknown",
@@ -5817,6 +6550,72 @@
       "notes": "The Hermit's message suggests that healing or repair will require approaches beyond conventional magical or martial solutions. The true scope of the Binding's effects has been hidden until now.",
       "first_date": "2026-03-05",
       "appearances": 1
+    },
+    {
+      "id": "celestial_ascension",
+      "name": "Celestial Ascension",
+      "tagline": "Reality. Rewritten. Catastrophic.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Anthrim",
+        "Sunburned Reach",
+        "Bone Wastes",
+        "High Observatory of Karethil"
+      ],
+      "affected_regions": [
+        "The Ashen Reach",
+        "The Iron Coast"
+      ],
+      "affected_realms": [
+        "the Empire"
+      ],
+      "radius": "world-wide",
+      "participants": [
+        "unknown cosmic forces",
+        "pre-human structures",
+        "deepkin",
+        "merchants",
+        "cartographers"
+      ],
+      "outcome": "Reality was fundamentally altered. Maps rearrange themselves. Fragments become unstable. Pre-human ruins awaken and sing. A new constellation blazes in the sky, brighter and hotter than before. Merchants vanish. Memory is stolen or transformed.",
+      "significance": "The Celestial Ascension is a world-altering event that has broken normal reality. It was supposed to be a solution or ending, but instead opened something far larger. It affects magic, memory, geography, and celestial mechanics.",
+      "notes": "Core mystery of all three stories. Unresolved: what caused it? Was it intentional? What was it supposed to accomplish? Why did it fail or transform into something else?",
+      "first_date": "2026-03-06",
+      "appearances": 2
+    },
+    {
+      "id": "the_ascension",
+      "name": "The Ascension",
+      "tagline": "Stars. Born. Changed.",
+      "event_type": "catastrophe / cosmic event",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "cavern halls"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "world-wide; affects the cosmic order itself",
+      "participants": [
+        "Skarath",
+        "Skyrakis",
+        "starborn entities"
+      ],
+      "outcome": "A new constellation was created with a new debt paid by unknown powers. The agreement between sky and earth was ruptured. Ancient oath-tracking abilities fracture. New stars prove to be conscious entities with their own obligations.",
+      "significance": "Fundamentally alters the cosmic order and the hierarchies of power that governed the world. The old pacts between sky and earth are no longer sufficient.",
+      "notes": "Requires renegotiation of all ancient pacts. Starborn entities are now conscious actors in the world's politics.",
+      "first_date": "2026-03-06",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -5939,7 +6738,19 @@
       "status": "active",
       "notes": "Appear to operate as an enforcement mechanism for oath-magic in coastal waters; non-violent but inexorable.",
       "first_date": "2026-03-04",
-      "appearances": 2
+      "appearances": 4
+    },
+    {
+      "id": "dragons_and_wyverns",
+      "name": "dragons and wyverns",
+      "tagline": "Ancient. Hierarchical. Pact-bound.",
+      "alignment": "neutral",
+      "goals": "Maintain their place in the world's power hierarchy through debt-keeping and oath-enforcement.",
+      "leader": "unknown (Skyrakis and Skarath are senior members)",
+      "status": "active",
+      "notes": "Their traditional power structure is threatened by the Ascension and the independence of starborn entities.",
+      "first_date": "2026-03-06",
+      "appearances": 1
     }
   ],
   "lore": [
@@ -6214,6 +7025,72 @@
       "notes": "Zareth speaks in languages not in any known archive. These languages turn ink to ash and produce visions of an ancient, strange cosmos when recorded or listened to.",
       "first_date": "2026-03-05",
       "appearances": 1
+    },
+    {
+      "id": "celestial_ascension_cosmology",
+      "name": "The Celestial Ascension (Lore)",
+      "tagline": "Reality. Rewritten. Mysterious.",
+      "category": "history",
+      "source": "Mardoc the Cartographer's observations; Vex's fragmented memory",
+      "status": "confirmed",
+      "notes": "The Celestial Ascension was supposed to be an ending or solution, but instead opened something vast and terrible. A new constellation blazes overhead, brighter and hotter than natural stars. Pre-human structures have awakened and begun communicating through the stars themselves. The event has stolen memories, destabilized reality, and caused widespread chaos. Unresolved: what is the nature of the structures' communication? What catastrophe are they warning of?",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "pre_human_structures",
+      "name": "Pre-Human Structures (Lore)",
+      "tagline": "Ancient. Awakening. Communicating.",
+      "category": "history",
+      "source": "Mardoc's expedition findings; rearranging maps",
+      "status": "confirmed",
+      "notes": "Pre-human ruins exist throughout the world, notably in the Bone Wastes. Since the Celestial Ascension, these structures have become active\u2014singing at dusk and harmonizing with distant subterranean humming. They communicate through the stars themselves, projecting images of catastrophes predating recorded history. Unresolved: who built them? What are they warning about?",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "cosmic_working",
+      "name": "The Cosmic Working (Lore)",
+      "tagline": "Cataclysmic. Unknown. Echoing.",
+      "category": "history",
+      "source": "Vex's fragmented memory; unstable fragments in shadow-markets",
+      "status": "confirmed",
+      "notes": "An event or ritual of cosmic scale that Vex suspects she witnessed. Echoes of the working persist in unstable fragments throughout the shadow-markets. Some fragments carry explicit echoes of the working; others dissolve into smoke. Vex's curse may be a protective mechanism to prevent her from consciously remembering the working. Unresolved: what was the working? Did it cause the Ascension, or are they related?",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "zareth_working",
+      "name": "Zareth's Working",
+      "tagline": "Recent. Catastrophic. Reality-altering.",
+      "category": "history / event",
+      "source": "Master Mage's hidden texts; celestial observation.",
+      "status": "confirmed",
+      "notes": "Zareth performed the most recent Celestial Ascension ritual. This working has fractured barriers, changed fundamental agreements between realms, caused refugees to flee, and made previously obscured texts legible under new starlight. It is part of a repeating pattern of civilization-ending catastrophes.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "cosmic_working",
+      "name": "Cosmic Working",
+      "tagline": "Ancient. Sacrifice. Reality-bending.",
+      "category": "magic / history",
+      "source": "Fragments in the Sovereign's ledger; visions experienced by Vesta's crew; the Hermit Woman's understanding.",
+      "status": "confirmed",
+      "notes": "Zareth performed this working; it killed or transformed the stars; it rewrote reality itself; the Hermit Woman believes something ancient was awakened by it.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "agreement_between_sky_and_earth",
+      "name": "The agreement between the sky and the earth",
+      "tagline": "Ancient. Foundational. Broken.",
+      "category": "legend",
+      "source": "Traditional cosmic law understood by dragons and wyverns",
+      "status": "confirmed",
+      "notes": "A foundational pact between celestial and terrestrial powers has been ruptured by the Ascension. Its terms and original signatories are ancient beyond current memory.",
+      "first_date": "2026-03-06",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -6227,7 +7104,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "wolf_spirit_beast",
@@ -6269,6 +7146,18 @@
       "status": "thriving",
       "notes": "Sentient aquatic beings capable of song and speech; appear to be guardians or judges of maritime oaths.",
       "first_date": "2026-03-04",
+      "appearances": 1
+    },
+    {
+      "id": "dragon",
+      "name": "dragon",
+      "tagline": "Ancient. Cosmic. Wise.",
+      "type": "creature",
+      "rarity": "legendary",
+      "habitat": "cavern halls and skies",
+      "status": "thriving",
+      "notes": "Dragons possess cosmic knowledge and counsel other ancient powers. Skyrakis is known as 'the wound-wing.'",
+      "first_date": "2026-03-06",
       "appearances": 1
     }
   ],
@@ -6840,6 +7729,26 @@
       "province": "unknown",
       "region": "The Iron Coast",
       "district": "unknown"
+    },
+    {
+      "id": "hearthlands",
+      "name": "Hearthlands",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "the Empire",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-06",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Hearthlands",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -6917,6 +7826,30 @@
       "use": "Contraband; possibly related to memory magic or binding rituals",
       "notes": "Vesta smuggles these as part of her forbidden cargo trade. Their exact properties and origin remain unclear.",
       "first_date": "2026-03-05",
+      "appearances": 1
+    },
+    {
+      "id": "starlight",
+      "name": "New Starlight",
+      "tagline": "Revealing. Altering. Cosmic.",
+      "type": "energy / stellar phenomenon",
+      "rarity": "rare",
+      "properties": "The light of the new stars created by the Celestial Ascension. Makes previously unreadable texts legible. Causes corpses to resonate and awaken. Transforms some beings into living light.",
+      "use": "Illuminates hidden knowledge; causes transformation and awakening effects; resonates with magic and the dead.",
+      "notes": "Appears to be the direct manifestation of the Celestial Ascension's reality-altering magic in the physical world.",
+      "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "stolen_memories",
+      "name": "Stolen Memories",
+      "tagline": "Fragmented. Invasive. Haunting.",
+      "type": "curse / essence / information",
+      "rarity": "rare",
+      "properties": "Fragments of Zareth's memories and experiences; visions of cosmic working and sacrifice; impressions of stars dying and being reborn; experiences that don't belong to the reader.",
+      "use": "Encoded into the Sovereign's ledger; imparted upon reading; cannot be unlearned; alters perception and identity of those exposed.",
+      "notes": "May be gift or poison; unclear if intentional encoding by Zareth or accidental consequence of the Ascension; dangerous knowledge.",
+      "first_date": "2026-03-06",
       "appearances": 1
     }
   ],
@@ -7026,6 +7959,22 @@
       "notes": "Performed at the Peak of Aethros. The mechanism, intent, and full scope remain mysterious. May still be ongoing or having cascading effects.",
       "first_date": "2026-03-05",
       "appearances": 1
+    },
+    {
+      "id": "celestial_ascension",
+      "name": "Celestial Ascension",
+      "tagline": "Reality-altering. Catastrophic. Repeating.",
+      "ritual_type": "stellar working / cosmic alignment",
+      "performed_by": [
+        "Zareth",
+        "Previous civilizations"
+      ],
+      "requirements": "Specific stellar alignment and cosmic arrangement; involves celestial entities and forces.",
+      "effect": "Alters the fundamental structure of reality. Changes the stars themselves. Fractures barriers between realms (surface and Abyss Below). Changes the agreement between living and dead. Renders some texts readable under new starlight. Transforms some beings into living light.",
+      "cost": "Previous civilizations that performed similar workings left behind destructive voids that eventually collapsed inward, consuming everything. The current Celestial Ascension is creating refugee crises, destabilizing ancient seals, and forcing the deepkin to choose between isolation, war, or investigation.",
+      "notes": "Zareth is identified as the performer of the most recent working. The texts in the Tower suggest this is a pattern\u2014multiple civilizations have performed similar rituals, each leaving behind catastrophic consequences.",
+      "first_date": "2026-03-06",
+      "appearances": 2
     }
   ],
   "polities": [
@@ -7077,7 +8026,7 @@
       "description": "A singular ruler or governing authority who assigned Zareth the Astronomer-Prince to records after he was found emptied of memory on the Peak of Aethros. The Sovereign's motivations\u2014whether to contain, preserve, or study Zareth\u2014are unknown.",
       "notes": "The Sovereign's identity, realm, and seat are all unknown. Their role in cosmic or astronomical governance is undefined. They may be a local lord, a distant emperor, or a mystical authority tied to the stars themselves.",
       "first_date": "2026-03-02",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "empire",
@@ -7093,7 +8042,25 @@
       "description": "A vast imperial government built on certainty, order, and commerce. Trade routes are its lifeblood. It collects taxes and maintains stability through information and control. The Treasurer strategically gathers intelligence to manage disruptions. However, the Empire's architecture of order and certainty is being tested by the cosmic changes.",
       "notes": "The Empire is struggling to maintain control and stability as the cosmic changes disrupt trade, drive people to madness, and cause physical land shifts. The Treasurer's aide questions whether the Empire can survive.",
       "first_date": "2026-03-03",
-      "appearances": 3
+      "appearances": 4
+    },
+    {
+      "id": "council_of_depths_governance",
+      "name": "Council of Depths",
+      "tagline": "Deliberating. Deciding. Desperate.",
+      "polity_type": "council",
+      "realm": "Deepkin Realms",
+      "region": "unknown",
+      "seat": "Council of Depths",
+      "sovereigns": [
+        "Warden Sylas"
+      ],
+      "claimants": [],
+      "status": "active",
+      "description": "The governing council of the deepkin who convene to address the fracturing of the barrier between surface and Abyss Below. They debate three options: sealing themselves away completely, risking catastrophic war with surface dwellers, or undertaking an expedition to understand what awakens beneath.",
+      "notes": "Currently in crisis deliberation mode. Warden Sylas has chosen the hardest path and descended into the Cerulean Trench.",
+      "first_date": "2026-03-06",
+      "appearances": 1
     }
   ]
 }
