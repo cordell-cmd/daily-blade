@@ -59,7 +59,9 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 
 /* ── Controls ─────────────────────────────────────────────────── */
 .controls { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding: .6rem 0 .5rem; margin-bottom: .4rem; }
+.controls-left-wrap { display: flex; flex-direction: column; gap: .15rem; min-width: 0; }
 .controls-left { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .72rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
+.controls-left-sub { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(201,146,42,.68); display: none; }
 .controls-right { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; justify-content: flex-end; }
 
 .codex-organize-label { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(201,146,42,.65); }
@@ -529,7 +531,10 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <div class="genre-bar" id="genre-bar" role="group" aria-label="Filter by genre">
     </div>
     <div class="controls">
-      <span class="controls-left" id="story-count-label">— Loading today's tales… —</span>
+      <div class="controls-left-wrap" aria-label="Current issue label">
+        <div class="controls-left" id="story-count-label">— Loading today's tales… —</div>
+        <div class="controls-left-sub" id="issue-label"></div>
+      </div>
     </div>
     <div id="status-msg">
       <span class="spinner"></span>
@@ -1094,6 +1099,8 @@ async function automatedAuditStory(dateKey, title, ui = {}) {
 // ── State ───────────────────────────────────────────────────────────
 let currentDate     = null;
 let archiveLoaded   = false;
+let ARCHIVE_INDEX_CACHE = null;
+let ARCHIVE_INDEX_PROMISE = null;
 let currentTab      = 'tales';
 let activeGenre     = 'all';
 let codexLoaded     = false;
@@ -2087,6 +2094,63 @@ function applyGenreFilter(genre) {
       : '— Ten tales, conjured this very dawn —';
   } else {
     label.textContent = `— ${visible} tale${visible !== 1 ? 's' : ''} of ${genre} —`;
+  }
+
+  // Best-effort: show Issue number beneath archived day labels.
+  updateIssueLabel();
+}
+
+async function getArchiveIndex() {
+  if (ARCHIVE_INDEX_CACHE) return ARCHIVE_INDEX_CACHE;
+  if (ARCHIVE_INDEX_PROMISE) return ARCHIVE_INDEX_PROMISE;
+  ARCHIVE_INDEX_PROMISE = (async () => {
+    const res = await fetch(ARCHIVE_IDX_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const idx = await res.json();
+    ARCHIVE_INDEX_CACHE = idx;
+    archiveLoaded = true;
+    return idx;
+  })();
+  try {
+    return await ARCHIVE_INDEX_PROMISE;
+  } finally {
+    ARCHIVE_INDEX_PROMISE = null;
+  }
+}
+
+function issueNumberForDate(idx, date) {
+  const dates = (idx && Array.isArray(idx.dates)) ? idx.dates : [];
+  if (!date || dates.length === 0) return null;
+  const i = dates.indexOf(date);
+  if (i < 0) return null;
+  return dates.length - i;
+}
+
+async function updateIssueLabel() {
+  const el = document.getElementById('issue-label');
+  if (!el) return;
+
+  const d = String(currentDate || '').trim();
+  const shouldShow = !!d && d !== todayStr() && activeGenre === 'all';
+  if (!shouldShow) {
+    el.textContent = '';
+    el.style.display = 'none';
+    return;
+  }
+
+  try {
+    const idx = await getArchiveIndex();
+    const issueNum = issueNumberForDate(idx, d);
+    if (!issueNum) {
+      el.textContent = '';
+      el.style.display = 'none';
+      return;
+    }
+    el.textContent = `Issue ${String(issueNum).padStart(3, '0')}`;
+    el.style.display = 'block';
+  } catch (e) {
+    el.textContent = '';
+    el.style.display = 'none';
   }
 }
 
@@ -4097,6 +4161,7 @@ async function loadArchiveIndex() {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const idx = await res.json();
     archiveLoaded = true;
+    ARCHIVE_INDEX_CACHE = idx;
     const today = todayStr();
     const dates = idx.dates || [];
     if (dates.length === 0) {
