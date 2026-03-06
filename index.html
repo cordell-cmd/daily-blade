@@ -32,10 +32,6 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .masthead-title { font-family: 'Cinzel Decorative', 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: clamp(2.4rem, 7vw, 5rem); font-weight: 700; color: var(--parchment); text-shadow: 3px 3px 0 var(--blood), 5px 5px 10px rgba(0,0,0,.7); line-height: 1.1; letter-spacing: .03em; }
 .masthead-sub { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .8rem; letter-spacing: .25em; color: var(--aged); margin-top: .6rem; }
 .masthead-date { margin-top: .8rem; font-style: italic; font-size: .85rem; color: var(--gold); }
-.masthead-share { margin-top: .5rem; font-size: .78rem; color: rgba(226,208,168,.78); font-style: italic; }
-.masthead-share-label { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(201,146,42,.75); font-style: normal; margin-right: .45rem; }
-.masthead-share a { color: var(--gold); text-decoration: none; border-bottom: 1px dotted rgba(201,146,42,.55); }
-.masthead-share a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 
 /* ── Main Nav Tabs ────────────────────────────────────────────── */
 .main-nav { display: flex; align-items: center; gap: 0; padding: 1.5rem 0 0; border-bottom: 2px solid rgba(201,146,42,.25); }
@@ -492,7 +488,6 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <h1 class="masthead-title">The Daily Blade</h1>
     <p class="masthead-sub">An Ever-Expanding World — Ten Tales Fresh Each Dawn</p>
     <p class="masthead-date" id="today-date"></p>
-    <p class="masthead-share"><span class="masthead-share-label">Share</span><a id="share-url" href="https://cordell-cmd.github.io/daily-blade/" rel="noopener" target="_blank">cordell-cmd.github.io/daily-blade/</a></p>
   </header>
 
   <!-- ── Main Nav ─────────────────────────────────────────────── -->
@@ -4097,17 +4092,6 @@ document.getElementById('tab-tales').addEventListener('click', () => switchTab('
 document.getElementById('tab-characters').addEventListener('click', () => switchTab('characters'));
 document.getElementById('tab-world-events').addEventListener('click', () => switchTab('world-events'));
 document.getElementById('tab-map').addEventListener('click', () => switchTab('map'));
-
-{
-  const shareUrlEl = document.getElementById('share-url');
-  if (shareUrlEl) {
-    const shareUrl = getShareUrl();
-    shareUrlEl.href = shareUrl;
-    shareUrlEl.target = '_blank';
-    shareUrlEl.textContent = String(shareUrl || '').replace(/^https?:\/\//i, '');
-    shareUrlEl.title = shareUrl;
-  }
-}
 
 {
   const shareBtn = document.getElementById('share-btn');
