@@ -295,11 +295,13 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 
 /* Stacked modals: when a story is opened from inside Codex, keep Codex visible underneath */
 #codex-modal-panel { transition: transform .22s ease; }
+#story-modal-panel { transition: transform .22s ease; }
 body.stacked-codex-under-story #codex-modal-overlay { z-index: 118; }
 body.stacked-codex-under-story #codex-modal { z-index: 119; }
 body.stacked-codex-under-story #codex-modal-overlay.open { opacity: 0; pointer-events: none; }
 body.stacked-codex-under-story #codex-modal.open { pointer-events: none; }
-body.stacked-codex-under-story #codex-modal-panel { transform: translate(10px, 14px); }
+body.stacked-codex-under-story #codex-modal-panel { transform: translate(14px, 18px) scale(1.01); }
+body.stacked-codex-under-story #story-modal-panel { transform: scale(0.985); }
 .story-modal-panel { width: min(860px, 96vw); max-height: min(88vh, 860px); overflow: auto; background: linear-gradient(160deg, #1e0e06 0%, #130b04 100%); border: 1px solid rgba(201,146,42,.45); border-top: 3px solid var(--blood); border-radius: 4px; box-shadow: 0 14px 55px rgba(0,0,0,.75); padding: 1.25rem 1.35rem 1.35rem; position: relative; }
 .story-modal-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .5rem; }
 .story-modal-title { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: 1.15rem; font-weight: 700; color: var(--parchment); line-height: 1.25; text-shadow: 1px 1px 4px rgba(0,0,0,.7); }
