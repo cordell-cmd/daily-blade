@@ -2279,7 +2279,7 @@ function renderStories(data) {
 
 // ── Story Modal (single-story preview) ─────────────────────────────
 function closeStoryModal() {
-  setStackedCodexUnderStory(false);
+  const wasStacked = isStackedCodexUnderStory();
   document.getElementById('story-modal-overlay').classList.remove('open');
   document.getElementById('story-modal').classList.remove('open');
   document.getElementById('story-modal-title').textContent = '—';
@@ -2301,6 +2301,11 @@ function closeStoryModal() {
   // Hide categorize button
   const fab = document.getElementById('categorize-fab');
   if (fab) fab.classList.remove('visible');
+
+  // Let the story modal finish fading out before restoring Codex to the top.
+  if (wasStacked) {
+    window.setTimeout(() => setStackedCodexUnderStory(false), 230);
+  }
 }
 
 function openStoryModalSkeleton() {
