@@ -4221,6 +4221,19 @@ document.addEventListener('click', (e) => {
   appearances = normalizeAppearances(appearances);
   const wantKey = normalizeTitleKey(t);
   const idx = appearances.findIndex(a => (a.date || '') === (d || '') && normalizeTitleKey(a.title || '') === wantKey);
+
+  // If the codex modal is open, the story modal would open "behind" it.
+  // Close codex first so the newly opened story is visible (especially on mobile).
+  const codexModalEl = document.getElementById('codex-modal');
+  const codexIsOpen = !!(codexModalEl && codexModalEl.classList && codexModalEl.classList.contains('open'));
+  if (codexIsOpen) {
+    closeCodexModal();
+    window.setTimeout(() => {
+      openStoryModalByAppearance(d, t, { appearances, index: idx >= 0 ? idx : 0 });
+    }, 30);
+    return;
+  }
+
   openStoryModalByAppearance(d, t, { appearances, index: idx >= 0 ? idx : 0 });
 });
 
