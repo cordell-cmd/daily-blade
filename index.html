@@ -503,6 +503,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <button class="main-tab" id="tab-map" aria-selected="false">🗺 Map</button>
     <div class="main-nav-right">
       <button class="btn" id="archive-btn" aria-label="Browse the archive">📜 Archive</button>
+      <button class="btn" id="share-btn" aria-label="Copy shareable link">Share</button>
     </div>
   </nav>
 
@@ -710,6 +711,24 @@ async function copyToClipboard(text) {
   }
   try {
     window.prompt('Copy these Audit inputs (paste into the workflow form):', t);
+  } catch (e) {
+    // ignore
+  }
+  return false;
+}
+
+async function copyShareUrlToClipboard(text) {
+  const t = String(text || '');
+  try {
+    if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(t);
+      return true;
+    }
+  } catch (e) {
+    // ignore and fall back
+  }
+  try {
+    window.prompt('Copy share link:', t);
   } catch (e) {
     // ignore
   }
@@ -4087,6 +4106,22 @@ document.getElementById('tab-map').addEventListener('click', () => switchTab('ma
     shareUrlEl.target = '_blank';
     shareUrlEl.textContent = String(shareUrl || '').replace(/^https?:\/\//i, '');
     shareUrlEl.title = shareUrl;
+  }
+}
+
+{
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      const shareUrl = getShareUrl();
+      const label = String(shareBtn.textContent || 'Share');
+      shareBtn.title = shareUrl;
+      const ok = await copyShareUrlToClipboard(shareUrl);
+      if (ok) {
+        shareBtn.textContent = 'Copied';
+        window.setTimeout(() => { shareBtn.textContent = label; }, 1200);
+      }
+    });
   }
 }
 
