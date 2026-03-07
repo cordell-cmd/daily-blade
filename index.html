@@ -22,6 +22,25 @@
   --darkgold: #7a4f0d;
   --shadow: #2a1505;
   --muted: #5c3d1e;
+
+  /* Codex category card tints (keep subdued; referenced by card classes below). */
+  --card-flora-bg-a: #0f170a;
+  --card-flora-bg-b: #070d05;
+  --card-flora-border: rgba(74,120,30,.30);
+  --card-flora-top: #3a7a1a;
+
+  --card-magic-bg-a: #12061a;
+  --card-magic-bg-b: #080313;
+  --card-magic-border: rgba(122,58,154,.30);
+  --card-magic-top: #7a3a9a;
+
+  --card-relic-bg-a: #160707;
+  --card-relic-bg-b: #0d0404;
+  --card-relic-border: rgba(139,26,26,.28);
+
+  --card-substance-bg-a: #171104;
+  --card-substance-bg-b: #0c0802;
+  --card-substance-border: rgba(201,146,42,.28);
 }
 html { scroll-behavior: smooth; }
 body { background: var(--ink); color: var(--parchment); font-family: 'IM Fell English', Georgia, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; min-height: 100vh; line-height: 1.7; }
@@ -233,6 +252,9 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .badge-place { background: rgba(74,120,30,.15); border: 1px solid rgba(74,120,30,.5); color: #7abb50; }
 .place-atmosphere { font-style: italic; color: rgba(226,208,168,.7); font-size: .85rem; margin-bottom: .6rem; }
 
+/* ── Flora & Fauna Cards ─────────────────────────────────────────── */
+.flora-card { background: linear-gradient(160deg, var(--card-flora-bg-a) 0%, var(--card-flora-bg-b) 100%); border: 1px solid var(--card-flora-border); border-top: 3px solid var(--card-flora-top); }
+
 /* ── Geography (place cards) ───────────────────────────────────── */
 .codex-geo-details { margin-top: .55rem; }
 .codex-geo-details summary {
@@ -272,6 +294,9 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .event-participants strong { font-style: normal; color: rgba(176,122,204,.7); font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .6rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .3rem; }
 .event-significance { font-size: .82rem; color: rgba(176,122,204,.65); font-style: italic; margin-top: .3rem; }
 
+/* ── Magic Cards ────────────────────────────────────────────────── */
+.magic-card { background: linear-gradient(160deg, var(--card-magic-bg-a) 0%, var(--card-magic-bg-b) 100%); border: 1px solid var(--card-magic-border); border-top: 3px solid var(--card-magic-top); }
+
 /* ── Weapon Cards ───────────────────────────────────────────────── */
 .weapon-card { background: linear-gradient(160deg, #130a0a 0%, #0e0707 100%); border: 1px solid rgba(160,80,30,.3); border-top: 3px solid #9a4a1a; }
 .badge-weapon { background: rgba(160,80,30,.15); border: 1px solid rgba(160,80,30,.5); color: #d0844a; }
@@ -281,6 +306,12 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .artifact-card { background: linear-gradient(160deg, #0e0d14 0%, #090810 100%); border: 1px solid rgba(80,100,180,.3); border-top: 3px solid #4a5aaa; }
 .badge-artifact { background: rgba(80,100,180,.15); border: 1px solid rgba(80,100,180,.5); color: #8090dd; }
 .artifact-holder { font-size: .8rem; color: var(--muted); font-style: italic; margin-top: .3rem; }
+
+/* ── Relic Cards ────────────────────────────────────────────────── */
+.relic-card { background: linear-gradient(160deg, var(--card-relic-bg-a) 0%, var(--card-relic-bg-b) 100%); border: 1px solid var(--card-relic-border); border-top: 3px solid var(--blood); }
+
+/* ── Substance Cards ────────────────────────────────────────────── */
+.substance-card { background: linear-gradient(160deg, var(--card-substance-bg-a) 0%, var(--card-substance-bg-b) 100%); border: 1px solid var(--card-substance-border); border-top: 3px solid var(--gold); }
 
 /* ── Story Links (codex cards) ──────────────────────────────────── */
 .codex-story-links { margin-top: .8rem; display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; border-top: 1px solid rgba(201,146,42,.15); padding-top: .8rem; }
