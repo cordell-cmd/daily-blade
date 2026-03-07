@@ -4812,6 +4812,263 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
             }
     codex["substances"] = list(existing_substances.values())
 
+    # ── Backstop: ensure character home_* geo anchors exist ─────────────
+    # Motivation: The extractor often captures a character's home_place/home_region/home_realm,
+    # but fails to emit the corresponding place/region/realm entry. Since story badges and
+    # codex browsing rely on the entity lists (not embedded strings inside character bios),
+    # we create minimal placeholders here.
+    def _uniq_story_apps(apps):
+        if not isinstance(apps, list):
+            return []
+        out = []
+        seen = set()
+        for a in apps:
+            if not isinstance(a, dict):
+                continue
+            d = str(a.get("date", "") or "").strip() or str(date_key)
+            t = str(a.get("title", "") or "").strip()
+            if not t:
+                continue
+            key = (d, t)
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append({"date": d, "title": t})
+        return out
+
+    def _ensure_home_geo_from_characters(codex: dict):
+        if not isinstance(codex, dict):
+            return
+
+        realms = codex.get("realms")
+        if not isinstance(realms, list):
+            realms = []
+            codex["realms"] = realms
+        regions = codex.get("regions")
+        if not isinstance(regions, list):
+            regions = []
+            codex["regions"] = regions
+        places = codex.get("places")
+        if not isinstance(places, list):
+            places = []
+            codex["places"] = places
+
+        realm_by_name = {
+            str(r.get("name") or "").strip().lower(): r
+            for r in realms
+            if isinstance(r, dict) and str(r.get("name") or "").strip()
+        }
+        region_by_name = {
+            str(r.get("name") or "").strip().lower(): r
+            for r in regions
+            if isinstance(r, dict) and str(r.get("name") or "").strip()
+        }
+        place_by_name = {
+            str(p.get("name") or "").strip().lower(): p
+            for p in places
+            if isinstance(p, dict) and str(p.get("name") or "").strip()
+        }
+
+        for c in codex.get("characters", []) or []:
+            if not isinstance(c, dict):
+                continue
+            story_apps = _uniq_story_apps(c.get("story_appearances"))
+            first_story = str(c.get("first_story") or "").strip()
+            first_date = str(c.get("first_date") or "").strip() or str(date_key)
+            if first_story and not story_apps:
+                story_apps = [{"date": first_date, "title": first_story}]
+
+            home_realm = str(c.get("home_realm") or "").strip()
+            home_region = str(c.get("home_region") or "").strip()
+            home_place = str(c.get("home_place") or "").strip()
+
+            if _truthy_non_unknown(home_realm) and home_realm.lower() not in realm_by_name:
+                realm_by_name[home_realm.lower()] = {
+                    "name": home_realm,
+                    "tagline": "",
+                    "continent": "unknown",
+                    "capital": "unknown",
+                    "function": "Auto-added from character home_realm.",
+                    "taxation": "unknown",
+                    "military": "unknown",
+                    "status": "unknown",
+                    "notes": "",
+                    "first_story": story_apps[0]["title"] if story_apps else "",
+                    "first_date": story_apps[0]["date"] if story_apps else first_date,
+                    "story_appearances": story_apps,
+                    "appearances": max(1, len(story_apps) or 1),
+                }
+
+            if _truthy_non_unknown(home_region) and home_region.lower() not in region_by_name:
+                region_by_name[home_region.lower()] = {
+                    "name": home_region,
+                    "tagline": "",
+                    "continent": "unknown",
+                    "realm": home_realm if _truthy_non_unknown(home_realm) else "unknown",
+                    "climate": "",
+                    "terrain": "",
+                    "ruler": "",
+                    "function": "Auto-added from character home_region.",
+                    "status": "unknown",
+                    "notes": "",
+                    "first_story": story_apps[0]["title"] if story_apps else "",
+                    "first_date": story_apps[0]["date"] if story_apps else first_date,
+                    "story_appearances": story_apps,
+                    "appearances": max(1, len(story_apps) or 1),
+                }
+
+            if _truthy_non_unknown(home_place) and home_place.lower() not in place_by_name:
+                place_by_name[home_place.lower()] = {
+                    "name": home_place,
+                    "tagline": "",
+                    "place_type": "unknown",
+                    "world": "The Known World",
+                    "parent_place": "",
+                    "hemisphere": "unknown",
+                    "continent": "unknown",
+                    "realm": home_realm if _truthy_non_unknown(home_realm) else "unknown",
+                    "province": "unknown",
+                    "region": home_region if _truthy_non_unknown(home_region) else "unknown",
+                    "district": "unknown",
+                    "atmosphere": "",
+                    "description": "Auto-added from character home_place.",
+                    "status": "unknown",
+                    "notes": "",
+                    "first_story": story_apps[0]["title"] if story_apps else "",
+                    "first_date": story_apps[0]["date"] if story_apps else first_date,
+                    "story_appearances": story_apps,
+                    "appearances": max(1, len(story_apps) or 1),
+                }
+
+        codex["realms"] = list(realm_by_name.values())
+        codex["regions"] = list(region_by_name.values())
+        codex["places"] = list(place_by_name.values())
+
+    _ensure_home_geo_from_characters(codex)
+
+    # ── Backstop: place-like surface phrases in today's stories ─────────
+    # Motivation: Even with a "completeness" prompt, the extractor can miss
+    # institutional places like "Vault Archives". We add a minimal placeholder
+    # when we see a strong surface-form phrase.
+    def _ensure_place_like_phrases(codex: dict, stories: list[dict]):
+        if not isinstance(codex, dict):
+            return
+        if not isinstance(stories, list) or not stories:
+            return
+
+        places = codex.get("places")
+        if not isinstance(places, list):
+            places = []
+            codex["places"] = places
+
+        place_by_name = {
+            str(p.get("name") or "").strip().lower(): p
+            for p in places
+            if isinstance(p, dict) and str(p.get("name") or "").strip()
+        }
+
+        # Strong signals only — avoid adding generic titlecase phrases.
+        KEYWORDS = {
+            "archive": "library / archive",
+            "archives": "library / archive",
+            "vault": "vault",
+            "vaults": "vault",
+            "market": "market",
+            "markets": "market",
+            "temple": "temple",
+            "shrine": "shrine",
+            "tower": "tower",
+            "keep": "fortress",
+            "citadel": "fortress",
+            "castle": "fortress",
+        }
+        KEYWORD_PRIORITY = [
+            "archives",
+            "archive",
+            "market",
+            "markets",
+            "vault",
+            "vaults",
+            "temple",
+            "shrine",
+            "citadel",
+            "castle",
+            "keep",
+            "tower",
+        ]
+        STOP_PREFIXES = {"the ", "a ", "an "}
+        STOP_PHRASES = {
+            "the known world",
+            "the known lands",
+        }
+
+        phrase_re = re.compile(r"\b[A-Z][A-Za-z0-9’'\-]+(?:\s+[A-Z][A-Za-z0-9’'\-]+){1,3}\b")
+
+        added = 0
+        for s in stories:
+            if not isinstance(s, dict):
+                continue
+            title = str(s.get("title") or "").strip()
+            text = str(s.get("text") or "")
+            if not title and not text:
+                continue
+
+            blob = (title + "\n" + text)
+            for m in phrase_re.finditer(blob):
+                phrase = str(m.group(0) or "").strip()
+                if not phrase:
+                    continue
+                pl = phrase.strip().lower()
+                if pl in STOP_PHRASES:
+                    continue
+                if any(pl.startswith(pfx) for pfx in STOP_PREFIXES):
+                    # We already index "the X" as an alias in the UI; keep canonical name clean.
+                    continue
+                if pl in place_by_name:
+                    continue
+
+                words = [w.strip("\"“”‘’'()[]{}.,!?;:") for w in phrase.split() if w.strip()]
+                wl = [w.lower() for w in words]
+                hint = None
+                for w in KEYWORD_PRIORITY:
+                    if w in wl:
+                        hint = KEYWORDS[w]
+                        break
+                if not hint:
+                    continue
+
+                # Minimal placeholder with appearance linking for this story.
+                place_by_name[pl] = {
+                    "name": phrase,
+                    "tagline": "",
+                    "place_type": hint,
+                    "world": "The Known World",
+                    "parent_place": "",
+                    "hemisphere": "unknown",
+                    "continent": "unknown",
+                    "realm": "unknown",
+                    "province": "unknown",
+                    "region": "unknown",
+                    "district": "unknown",
+                    "atmosphere": "",
+                    "description": "Auto-added from story surface phrase.",
+                    "status": "unknown",
+                    "notes": "",
+                    "first_story": title,
+                    "first_date": date_key,
+                    "story_appearances": [{"date": date_key, "title": title}] if title else [],
+                    "appearances": 1,
+                }
+                added += 1
+                if added >= 25:
+                    break
+            if added >= 25:
+                break
+
+        codex["places"] = list(place_by_name.values())
+
+    _ensure_place_like_phrases(codex, stories)
+
     # ── Normalize story appearances (fallback to first_story/first_date) ──
     def ensure_story_appearances(items):
         for item in items:
