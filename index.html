@@ -1132,6 +1132,7 @@ async function automatedAuditStory(dateKey, title, ui = {}) {
 // ── State ───────────────────────────────────────────────────────────
 let currentDate     = null;
 let archiveLoaded   = false;
+let archiveDrawerRendered = false;
 let ARCHIVE_INDEX_CACHE = null;
 let ARCHIVE_INDEX_PROMISE = null;
 let currentTab      = 'tales';
@@ -2124,8 +2125,9 @@ async function fetchJsonWithTimeout(url, opts = {}) {
     }
   }, timeoutMs);
 
+  let timeoutId = null;
   const timeoutP = new Promise((_, reject) => {
-    setTimeout(() => reject(new Error('Request timed out')), timeoutMs);
+    timeoutId = setTimeout(() => reject(new Error('Request timed out')), timeoutMs);
   });
   try {
     // Some browsers (especially older Safari/WebView) may not support AbortController
@@ -2148,6 +2150,7 @@ async function fetchJsonWithTimeout(url, opts = {}) {
       fetchP.catch(() => {});
       throw e;
     }
+    if (timeoutId) clearTimeout(timeoutId);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
   } catch (e) {
@@ -2157,6 +2160,7 @@ async function fetchJsonWithTimeout(url, opts = {}) {
     throw e;
   } finally {
     clearTimeout(id);
+    if (timeoutId) clearTimeout(timeoutId);
   }
 }
 
@@ -4305,7 +4309,9 @@ function openArchive() {
   document.getElementById('archive-drawer').classList.add('open');
   document.getElementById('archive-overlay').classList.add('open');
   document.getElementById('archive-overlay').setAttribute('aria-hidden', 'false');
-  if (!archiveLoaded) loadArchiveIndex();
+  // Note: archive index may be fetched earlier (for issue labels), but the drawer
+  // list still needs to be rendered on first open.
+  if (!archiveDrawerRendered) loadArchiveIndex();
 }
 function closeArchive() {
   document.getElementById('archive-drawer').classList.remove('open');
@@ -4321,6 +4327,7 @@ async function loadArchiveIndex() {
     const dates = idx.dates || [];
     if (dates.length === 0) {
       listEl.innerHTML = '<div class="archive-empty"><em>The vault is empty.<br>Return tomorrow.</em></div>';
+      archiveDrawerRendered = true;
       return;
     }
     listEl.innerHTML = '';
@@ -4345,10 +4352,12 @@ async function loadArchiveIndex() {
       listEl.appendChild(btn);
       issueNum--;
     });
+    archiveDrawerRendered = true;
   } catch (err) {
     console.error(err);
     const msg = (err && err.message) ? String(err.message) : String(err);
     listEl.innerHTML = errorBoxHtml('⚠ Could not open the vault', `Could not load ${ARCHIVE_IDX_URL}: ${msg}`);
+    archiveDrawerRendered = false;
   }
 }
 
