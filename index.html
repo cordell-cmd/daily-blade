@@ -2114,10 +2114,26 @@ function errorBoxHtml(title, message) {
 
 async function fetchJsonWithTimeout(url, opts = {}) {
   const timeoutMs = Number.isFinite(opts.timeoutMs) ? opts.timeoutMs : 9000;
-  const controller = new AbortController();
-  const id = setTimeout(() => controller.abort(), timeoutMs);
+  const canAbort = (typeof AbortController !== 'undefined');
+  const controller = canAbort ? new AbortController() : null;
+  const id = setTimeout(() => {
+    try {
+      if (controller && controller.abort) controller.abort();
+    } catch (e) {
+      // ignore
+    }
+  }, timeoutMs);
   try {
-    const res = await fetch(url, { cache: 'no-store', signal: controller.signal });
+    // Some browsers (especially older Safari/WebView) may not support AbortController
+    // or certain fetch() init options (like cache/signal). Use a conservative fallback.
+    let res;
+    try {
+      const init = { cache: 'no-store' };
+      if (controller) init.signal = controller.signal;
+      res = await fetch(url, init);
+    } catch (e) {
+      res = await fetch(url);
+    }
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
   } catch (e) {
