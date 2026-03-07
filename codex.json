@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-06",
+  "last_updated": "2026-03-07",
   "characters": [
     {
       "name": "Vraxen the Knife",
@@ -57,7 +57,7 @@
       "name": "Aldric",
       "tagline": "Merchant. Desperate. Survivor.",
       "role": "Merchant / Schemer",
-      "status": "shadow-stolen",
+      "status": "curse-transferred",
       "world": "The Known World",
       "bio": "A spice merchant operating on the Ashen Wastes route. Hired Soraya as a sell-sword escort, while secretly paying bandits, toll-lords, and a blood-sorcerer to smooth his passage. His drivers were transformed into shadow-eyed killers. Survived the journey but had his shadow stolen by Soraya and sold in Pelimor's night markets.",
       "traits": [
@@ -67,14 +67,35 @@
       ],
       "first_story": "Blood-Price of the Caravan",
       "first_date": "2026-02-25",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-25",
           "title": "Blood-Price of the Caravan"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Thief-Taker's Daughter"
         }
       ],
-      "travel_scope": "unknown"
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [
+        {
+          "date": "2026-03-07",
+          "from_status": "shadow-stolen",
+          "to_status": "curse-transferred",
+          "type": "other",
+          "story_title": "The Thief-Taker's Daughter",
+          "note": "Aldric's original curse (feeling every lock as a wound) was transferred to his daughter Mira; he is now freed from the curse but his daughter bears it instead.",
+          "evidence": "The curse was not dissolved\u2014it was *transferred*. As Mira clutched the ledger, she felt every lock she'd ever picked ignite in her palms. Aldric wept with relief as his hands finally stilled."
+        }
+      ],
+      "aliases": [
+        "Aldric the locksmith"
+      ]
     },
     {
       "name": "Malachite Doss",
@@ -510,20 +531,19 @@
     {
       "name": "Vex the Shade-Merchant",
       "tagline": "Cursed. Brutal. Alone.",
-      "role": "Merchant",
-      "status": "cursed",
+      "role": "Merchant, Trader",
+      "status": "active",
       "world": "Edhra",
-      "bio": "Vex the Echo-Merchant trades in fragments in the shadow-markets of Anthrim. Since the Celestial Ascension, the fragments she deals in have become unstable\u2014some echoing the cosmic working, others dissolving into smoke. Cursed with fragmented memory, she suspects she witnessed the Ascension itself, though her mind refuses to hold the knowledge. She ventures into the Sunburned Reach seeking a fragment that might restore stolen memories, wondering if her curse is punishment or mercy.",
+      "bio": "Vex is a merchant operating in Kethros's night markets who discovers that her customers\u2014and entire trading families\u2014are vanishing without trace, their memories erased from ledgers and witnesses alike. Her apprentice is among the missing. She must decide whether to use her knowledge of the market underworld to set a trap that will destroy her only life, or abandon her apprentice.",
       "traits": [
-        "haunted",
-        "fragmented",
-        "desperate",
-        "cursed",
-        "introspective"
+        "merchant",
+        "resourceful",
+        "intimate with underworld",
+        "determined"
       ],
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
-      "appearances": 9,
+      "appearances": 10,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -560,16 +580,21 @@
         {
           "date": "2026-03-06",
           "title": "Vex's Fragment Market in Collapse"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Night-Market Reckoning"
         }
       ],
       "aliases": [
         "Vex",
         "Vex the Curse-Bearer",
         "Vex the Fragment-Dealer",
-        "Vex the Echo-Merchant"
+        "Vex the Echo-Merchant",
+        "Vex the Merchant"
       ],
       "travel_scope": "regional",
-      "home_place": "Anthrim",
+      "home_place": "Kethros",
       "home_region": "unknown",
       "home_realm": "unknown"
     },
@@ -1046,7 +1071,7 @@
       ],
       "first_story": "Shadows for Sale",
       "first_date": "2026-02-26",
-      "appearances": 9,
+      "appearances": 10,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -1083,6 +1108,10 @@
         {
           "date": "2026-03-06",
           "title": "Vex's Fragment Market in Collapse"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Night-Market Reckoning"
         }
       ],
       "travel_scope": "regional",
@@ -1586,7 +1615,7 @@
       ],
       "first_story": "Vex the Curse-Bearer",
       "first_date": "2026-02-25",
-      "appearances": 7,
+      "appearances": 8,
       "story_appearances": [
         {
           "date": "2026-02-26",
@@ -1615,6 +1644,10 @@
         {
           "date": "2026-03-03",
           "title": "The Sorcerer's Heir"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
         }
       ],
       "travel_scope": "unknown",
@@ -1791,31 +1824,35 @@
       "name": "Young Woman (Unknown)",
       "aliases": [
         "mad customer",
-        "grieving mother"
+        "grieving mother",
+        "woman with singing gift"
       ],
       "tagline": "Grief-stricken. Mad. Cursed.",
-      "role": "Customer, Cursed Woman",
-      "status": "dead",
+      "role": "Potential Bone-Singer",
+      "status": "active",
       "travel_scope": "local",
       "home_place": "unknown",
-      "home_region": "unknown",
+      "home_region": "Sunken Marches",
       "home_realm": "unknown",
       "status_history": [],
-      "world": "known_world",
-      "bio": "A young woman purchased Theron's wares and used them to kill her own child, believing the boy cursed. Overwhelmed by grief and guilt, she went mad and threw herself from the harbor walls while naming Theron's shop in her final screams, thereby invoking a curse upon him.",
+      "world": "Edhra",
+      "bio": "A young woman who claims to hear singing in her dreams, drawn to Kess for guidance. She may possess natural bone-singing gifts awakened by the Stellar Rite's aftermath. Kess must decide whether to teach her or silence her before the deep-dwellers learn her name.",
       "traits": [
-        "mad",
-        "grief-stricken",
-        "guilt-ridden",
-        "desperate"
+        "gifted",
+        "vulnerable",
+        "driven by dreams"
       ],
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-26",
           "title": "The Scarlet Merchant"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Bone-Singer's Vigil"
         }
       ]
     },
@@ -2117,11 +2154,15 @@
       ],
       "first_story": "The Thief's Shadow",
       "first_date": "2026-02-28",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-02-28",
           "title": "The Thief's Shadow"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Thief-Taker's Daughter"
         }
       ]
     },
@@ -2223,27 +2264,28 @@
         "Kess",
         "the Bone-Singer",
         "Kess of the Tidelands",
-        "Kess of the Sunken Hollows"
+        "Kess of the Sunken Hollows",
+        "Kess of the Drowned Depths"
       ],
       "tagline": "Silent. Sacrifice. Songkeeper.",
-      "role": "Bone-Singer",
+      "role": "Bone-Singer / Warden",
       "status": "active",
-      "travel_scope": "local",
-      "home_place": "Sunken Hollows",
+      "travel_scope": "regional",
+      "home_place": "Sunken Spring",
       "home_region": "Sunken Marches",
       "home_realm": "unknown",
       "status_history": [],
       "world": "Edhra",
-      "bio": "A bone-singer cursed to sing laments for every death she witnesses, Kess has isolated herself in the ruins of the Sunken Hollows since a plague devastated her village. The Celestial Ascension has changed the fundamental agreement between the living and the dead, causing corpses she spent years lulling to stillness to stir and resonate with cosmic arrangement. Now refugees bearing plague-marks and star-scars arrive seeking her aid.",
+      "bio": "A bone-singer who remembers the old stars and the ancient hymns they demanded. She has not sung in three days, troubled by the new bright stars overhead and the hunger they have awakened in the deep-dwellers. She keeps watch at the Sunken Spring, listening for voices in the water and tracking scouts sent inland by the depths.",
       "traits": [
-        "cursed",
-        "isolated",
-        "bone-singer",
-        "lament-keeper"
+        "ancient",
+        "watchful",
+        "burdened by knowledge",
+        "conflicted"
       ],
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -2264,6 +2306,10 @@
         {
           "date": "2026-03-06",
           "title": "The Bone-Singer's Dirge"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Bone-Singer's Vigil"
         }
       ]
     },
@@ -2301,7 +2347,7 @@
       ],
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 4,
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -2318,6 +2364,10 @@
         {
           "date": "2026-03-06",
           "title": "The Starlight Cartographer's Reckoning"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
         }
       ]
     },
@@ -2780,7 +2830,7 @@
       ],
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -2801,6 +2851,10 @@
         {
           "date": "2026-03-05",
           "title": "The Wound-Keeper's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Archer's Cold Trail"
         }
       ]
     },
@@ -3217,11 +3271,15 @@
       ],
       "first_story": "The Warband's Last Song",
       "first_date": "2026-03-02",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-02",
           "title": "The Warband's Last Song"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
         }
       ]
     },
@@ -3416,14 +3474,15 @@
     {
       "name": "Shade-Merchant",
       "aliases": [
-        "shadow-merchant"
+        "shadow-merchant",
+        "Shadow-Merchant"
       ],
       "tagline": "Cursed. Wandering. Shadowed.",
       "role": "Merchant, Cursed Being",
       "status": "cursed",
       "travel_scope": "realmwide",
-      "home_place": "unknown",
-      "home_region": "unknown",
+      "home_place": "night markets of Kethrim",
+      "home_region": "Ashen Reach",
       "home_realm": "unknown",
       "status_history": [],
       "world": "Edhra",
@@ -3518,14 +3577,15 @@
     {
       "name": "Young Sorcerer",
       "aliases": [
-        "The Sorcerer's Heir"
+        "The Sorcerer's Heir",
+        "The Young Sorcerer"
       ],
       "tagline": "Inheriting. Isolated. Determined.",
-      "role": "Sorcerer, Apprentice/Heir",
+      "role": "Inheritor of forbidden knowledge",
       "status": "active",
       "travel_scope": "regional",
-      "home_place": "spire in the Blasted Lands",
-      "home_region": "The Blasted Steppes",
+      "home_place": "Tower",
+      "home_region": "Scorched Reach",
       "home_realm": "unknown",
       "status_history": [
         {
@@ -3539,16 +3599,15 @@
         }
       ],
       "world": "Edhra",
-      "bio": "The heir of The Sorcerer, raised in isolation within a hidden spire. They discovered their master's final journal and came to understand that their isolation was protection, not punishment. They are now preparing themselves to maintain the renewed cosmos.",
+      "bio": "The Young Sorcerer has inherited the Grimoire of Endless Knowing and discovered a terrible truth: the Stellar Rite created not one entity but many fragments of consciousness scattered across the world. The sorcerer discovers that magical ley-lines converge beneath an ancient Tower in the Scorched Lands, built as a prison whose locks have been weakened by the Stellar Rite.",
       "traits": [
-        "isolated",
-        "studious",
-        "determined",
-        "young"
+        "scholarly",
+        "fearless",
+        "isolated"
       ],
       "first_story": "The Sorcerer's Heir",
       "first_date": "2026-03-03",
-      "appearances": 6,
+      "appearances": 7,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -3573,6 +3632,10 @@
         {
           "date": "2026-03-06",
           "title": "The Young Sorcerer's New Inheritance"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
         }
       ]
     },
@@ -3670,7 +3733,8 @@
     {
       "name": "Elder Mage",
       "aliases": [
-        "the Elder Mage"
+        "the Elder Mage",
+        "The Elder Mage"
       ],
       "tagline": "Dead. Wise. Gone.",
       "role": "Sorcerer",
@@ -3689,11 +3753,15 @@
       ],
       "first_story": "The Young Sorcerer's Inheritance",
       "first_date": "2026-03-04",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-04",
           "title": "The Young Sorcerer's Inheritance"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
         }
       ]
     },
@@ -3721,7 +3789,7 @@
       ],
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-03-04",
@@ -3730,6 +3798,10 @@
         {
           "date": "2026-03-06",
           "title": "The Deepwarden's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Warden's Council"
         }
       ]
     },
@@ -3850,7 +3922,7 @@
       ],
       "first_story": "The Wound-Keeper's Vigil",
       "first_date": "2026-03-05",
-      "appearances": 6,
+      "appearances": 7,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -3875,6 +3947,10 @@
         {
           "date": "2026-03-06",
           "title": "The Young Sorcerer's New Inheritance"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
         }
       ]
     },
@@ -4160,6 +4236,273 @@
         {
           "date": "2026-03-06",
           "title": "The Wyvern's Starborn Debt"
+        }
+      ]
+    },
+    {
+      "name": "Trade-Lord",
+      "aliases": [],
+      "tagline": "Manipulative. Deceitful. Cruel.",
+      "role": "Crime Lord / Merchant",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "A corrupt trade-lord who blackmails Mira into theft by threatening her father's life. He deliberately lies about lifting Aldric's curse and transfers it to Mira instead, gaining a slave who can feel every trap and ward he sets. He smiles at his own cruelty.",
+      "traits": [
+        "cruel",
+        "manipulative",
+        "deceptive",
+        "calculating"
+      ],
+      "first_story": "The Thief-Taker's Daughter",
+      "first_date": "2026-03-07",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Thief-Taker's Daughter"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Ash-Caller's Debt"
+        }
+      ]
+    },
+    {
+      "name": "Morn",
+      "aliases": [],
+      "tagline": "Determined. Mercenary. Conflicted.",
+      "role": "Hired Blade / Investigator",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "Ashen Reach",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "A mercenary hired blade who discovers that caravans vanishing in the Scorched Wastes are being harvested for their shadows, not killed. She tracks the shadow-merchant to a dead-water oasis and learns of Trade-Lord Vaston's demonic bargain. She must choose whether to free the sealed souls or claim the shadow-merchant's hoard.",
+      "traits": [
+        "resourceful",
+        "mercenary",
+        "capable tracker",
+        "morally conflicted"
+      ],
+      "first_story": "The Ash-Caller's Debt",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Ash-Caller's Debt"
+        }
+      ]
+    },
+    {
+      "name": "Vaston",
+      "aliases": [
+        "Trade-Lord Vaston"
+      ],
+      "tagline": "Greedy. Damned. Hunted.",
+      "role": "Trade-Lord / Bargainer",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "Kethrim",
+      "home_region": "Ashen Reach",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "A trade-lord in Kethrim who made a bargain with a demon years ago, trading the lives of travelers for certainty of profit. Now the demon is calling in old debts, and Vaston must choose between payment or fleeing into the new starlight. The shadow-merchant acts as the demon's collector.",
+      "traits": [
+        "greedy",
+        "short-sighted",
+        "damned",
+        "desperate"
+      ],
+      "first_story": "The Ash-Caller's Debt",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Ash-Caller's Debt"
+        }
+      ]
+    },
+    {
+      "name": "The Recluse",
+      "aliases": [],
+      "tagline": "Fragmented. Ancient. Witness.",
+      "role": "Hermit, Guide",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "Pallid Wastes",
+      "home_region": "The Ashen Reach",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "The Recluse encounters Mardoc in the Pallid Wastes, half-mad with fragmented memory. Together they deduce that the Stellar Rite was a summoning rather than a renewal, and that pre-human ruins across the realm are beginning to hum in unison, resonating with a frequency that causes physical pain.",
+      "traits": [
+        "fragmented",
+        "isolated",
+        "intuitive",
+        "half-mad"
+      ],
+      "first_story": "The Cartographer's Silence",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
+        }
+      ]
+    },
+    {
+      "name": "Dranin Stoneheart",
+      "aliases": [
+        "Dranin"
+      ],
+      "tagline": "Forgemaster. Failing. Desperate.",
+      "role": "Dwarf Forgemaster, Craftsman",
+      "status": "active",
+      "travel_scope": "realmwide",
+      "home_place": "mountain holds of the dwarves",
+      "home_region": "unknown",
+      "home_realm": "Dwarven Holds",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "Dranin Stoneheart is a legendary dwarven forgemaster who has discovered that the new starlight corrodes his finest works\u2014weapons forged in silver and moonstone turn to rust and ash. He learns that a curse is affecting all stonecraft-magic throughout the dwarven holds, caused by the Stellar Rite severing the bond between earth-magic and sky-magic. He must choose between rallying his people to face this rift or hoarding remaining resources as the holds crumble.",
+      "traits": [
+        "master craftsman",
+        "aging",
+        "determined",
+        "proud"
+      ],
+      "first_story": "The Forge-Master's Ruin",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
+        }
+      ]
+    },
+    {
+      "name": "Mella",
+      "aliases": [],
+      "tagline": "Observant. Skilled. Young.",
+      "role": "Apprentice Forgemaster",
+      "status": "active",
+      "travel_scope": "local",
+      "home_place": "mountain holds of the dwarves",
+      "home_region": "unknown",
+      "home_realm": "Dwarven Holds",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "Mella is Dranin Stoneheart's apprentice who first notices the pattern of corruption spreading from runes inscribed in the old tongue, as if the metal itself rejects the language that gave it strength.",
+      "traits": [
+        "observant",
+        "skilled",
+        "curious",
+        "apprentice"
+      ],
+      "first_story": "The Forge-Master's Ruin",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
+        }
+      ]
+    },
+    {
+      "name": "young scholar from the capital",
+      "aliases": [],
+      "tagline": "Curious. Methodical. Resourceful.",
+      "role": "Scholar, Investigator",
+      "status": "active",
+      "travel_scope": "realmwide",
+      "home_place": "capital",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "A young scholar from the Empire's capital arrives in Kethros bearing strange reports of entire trading families vanishing without trace. She teams with Vex to investigate the night markets and uncover the pattern of disappearances.",
+      "traits": [
+        "scholar",
+        "investigative",
+        "methodical"
+      ],
+      "first_story": "The Night-Market Reckoning",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Night-Market Reckoning"
+        }
+      ]
+    },
+    {
+      "name": "The Memory Thief",
+      "aliases": [
+        "woman wearing a borrowed face"
+      ],
+      "tagline": "Fragmented. Desperate. Lost.",
+      "role": "Entity consuming stellar memories",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "Shattered West",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "A woman wearing a borrowed face moves between western villages collecting memories of the old stars in sealed vials. She speaks in a voice like wind through dead stars and claims to be only remembering herself. She is a fragment of consciousness, possibly created or scattered by the Stellar Rite.",
+      "traits": [
+        "fragmented",
+        "haunting",
+        "self-aware"
+      ],
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": []
+    },
+    {
+      "name": "Thael",
+      "aliases": [
+        "circle-keeper",
+        "old circle-keeper"
+      ],
+      "tagline": "Ancient. Desperate. Sacrificial.",
+      "role": "Circle-keeper, Druid",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "Verdant Lands",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "An old circle-keeper who dwells in the ancient forests beyond the Verdant Lands and tends to the pacts between earth and sky. She realizes that the Stellar Rite has broken the covenant governing harvest and decay, and begins a counter-working that demands great sacrifice. Thael must journey to the Peak of Aethros and confront Zareth\u2014now inhuman and amnesiac\u2014to decide whether restoring his memory is worth the cosmic consequences.",
+      "traits": [
+        "wise",
+        "determined",
+        "compassionate",
+        "willing to sacrifice"
+      ],
+      "first_story": "The Druid's Covenant",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
         }
       ]
     }
@@ -4574,7 +4917,7 @@
       "description": "A region where a spire is hidden, home to The Sorcerer and their heir. The spire contains master's journals and retains echoes of ancient power.",
       "status": "active",
       "first_story": "Shadows for Sale",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 3,
       "story_appearances": [
         {
@@ -4684,8 +5027,8 @@
       "atmosphere": "",
       "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
       "status": "active",
-      "first_story": "The Deepkin's Ledger",
-      "first_date": "2026-03-05",
+      "first_story": "Blood-Price of the Caravan",
+      "first_date": "2026-03-06",
       "appearances": 6,
       "story_appearances": [
         {
@@ -5423,7 +5766,7 @@
       "status": "unknown",
       "first_story": "The Blackthorn Holdfast's Shadow",
       "first_date": "2026-02-28",
-      "appearances": 2,
+      "appearances": 4,
       "story_appearances": [
         {
           "date": "2026-03-04",
@@ -5432,6 +5775,14 @@
         {
           "date": "2026-03-06",
           "title": "The Young Sorcerer's New Inheritance"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
         }
       ]
     },
@@ -5451,7 +5802,7 @@
       "description": "An impossible fortress whose walls are made of living calcium that split and swallow warriors whole. Its towers bend like intestines in peristaltic waves. The corridors rearrange themselves around intruders. It possesses agency and deliberately chose Varak Ironhelm as a vessel. Upon sating itself, it settles into patient stillness.",
       "status": "active",
       "first_story": "The Bone Citadel's Hunger",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -5684,7 +6035,7 @@
       "status": "active",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 3,
+      "appearances": 4,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -5697,6 +6048,10 @@
         {
           "date": "2026-03-04",
           "title": "The Warlord's Last Stand"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
         }
       ]
     },
@@ -5799,7 +6154,7 @@
       "description": "A towering structure that marks the boundary between the surface world and the goblin warrens below. The Spire stands as a monument above the underground kingdoms ruled by Mogrul and serves as a reference point for the deep places where goblins dwell.",
       "status": "standing",
       "first_story": "The Goblin-King's Mercy",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 2,
       "story_appearances": [
         {
@@ -5907,7 +6262,7 @@
       "status": "active",
       "first_story": "The Starfall Ritual",
       "first_date": "2026-03-02",
-      "appearances": 3,
+      "appearances": 4,
       "story_appearances": [
         {
           "date": "2026-03-02",
@@ -5920,6 +6275,10 @@
         {
           "date": "2026-03-05",
           "title": "The Bone-Singer's Lament"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
         }
       ]
     },
@@ -5964,7 +6323,7 @@
       "description": "A vast eastern wasteland no kingdom had successfully explored before Mardoc's expedition. Beneath its white surface lies a vast underground city of pre-human ruins that fundamentally changed the Empire's understanding of the continent.",
       "status": "explored",
       "first_story": "The Cartographer's Lie",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 2,
       "story_appearances": [
         {
@@ -5997,7 +6356,7 @@
       "status": "discovered",
       "first_story": "The Cartographer's Lie",
       "first_date": "2026-03-02",
-      "appearances": 3,
+      "appearances": 4,
       "story_appearances": [
         {
           "date": "2026-03-02",
@@ -6010,6 +6369,10 @@
         {
           "date": "2026-03-05",
           "title": "The Cartographer's Burden"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
         }
       ]
     },
@@ -6029,7 +6392,7 @@
       "description": "A bog landscape where waters possess the power to transform and preserve. The Tidelands became the refuge of the warlord Varak after his binding, where he exists in a half-alive state and speaks prophecy to those mad enough to seek him. The waters are said to hold secrets and connect to bone-magic and oath-curses.",
       "status": "active",
       "first_story": "The Bone-Singer's Choice",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -6264,12 +6627,16 @@
       "description": "A desolate expanse across which the hermit woman travels. Few dare venture here. The hermit studies the sky from a wind-scoured peak, reading the new constellations in ash and bone.",
       "status": "active",
       "first_story": "The Shepherd of Dying Stars",
-      "first_date": "2026-03-05",
-      "appearances": 1,
+      "first_date": "2026-03-06",
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-03",
           "title": "The Shepherd of Dying Stars"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
         }
       ],
       "aliases": [
@@ -6428,7 +6795,7 @@
       "description": "A spire hidden among the Blasted Lands, home to The Sorcerer and their heir. It contains the master's final journal and retains echoes of power that still cling to the stones.",
       "status": "active",
       "first_story": "The Sorcerer's Heir",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 2,
       "story_appearances": [
         {
@@ -6553,7 +6920,7 @@
       "description": "The Iron Coast is a region of wind-haunted ports where smugglers like Captain Merra conduct illicit trade. It serves as a hub for contraband\u2014plague-victims, forbidden scrolls, stolen shadows, and living oaths. The sea remembers debts here, and coastal magic runs deep.",
       "status": "active",
       "first_story": "The Lamplighter's Accord",
-      "first_date": "2026-03-04",
+      "first_date": "2026-03-06",
       "appearances": 3,
       "story_appearances": [
         {
@@ -6745,306 +7112,6 @@
           "date": "2026-03-05",
           "title": "The Tax Collector's Question"
         }
-      ]
-    },
-    {
-      "name": "the Ashen Wastes",
-      "tagline": "",
-      "place_type": "",
-      "world": "The Known World",
-      "hemisphere": "unknown",
-      "continent": "unknown",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "unknown",
-      "district": "unknown",
-      "atmosphere": "",
-      "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 6,
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "Blood-Price of the Caravan"
-        },
-        {
-          "date": "2026-02-26",
-          "title": "The Living Garden"
-        },
-        {
-          "date": "2026-03-01",
-          "title": "The Crown-Thief of Ashen Wastes"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Blackthorn Holdfast's Shadow"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Deepkin's Ledger"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Hermit's Census"
-        }
-      ],
-      "aliases": [
-        "Ashen Wastes"
-      ]
-    },
-    {
-      "name": "Ossuary (as Living Entity)",
-      "tagline": "Living. Hungry. Consuming.",
-      "place_type": "fortress",
-      "world": "The Known World",
-      "hemisphere": "unknown",
-      "continent": "unknown",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "unknown",
-      "district": "unknown",
-      "atmosphere": "A fortress that breathes and hungers, its architecture alive and capable of conscious choice.",
-      "description": "An impossible fortress whose walls are made of living calcium that split and swallow warriors whole. Its towers bend like intestines in peristaltic waves. The corridors rearrange themselves around intruders. It possesses agency and deliberately chose Varak Ironhelm as a vessel. Upon sating itself, it settles into patient stillness.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-02-28",
-          "title": "The Bone Citadel's Hunger"
-        }
-      ],
-      "aliases": [
-        "the Ossuary"
-      ]
-    },
-    {
-      "name": "The Spire of Blackstone",
-      "tagline": "Towering. Ancient. Contested.",
-      "place_type": "fortress / landmark / mountain peak",
-      "world": "Edhra",
-      "hemisphere": "unknown",
-      "continent": "Valdris",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "The Shattered West",
-      "district": "unknown",
-      "atmosphere": "A massive structure of black stone rising above the earth, dwarven-held above while goblin warrens tunnel beneath, a boundary between worlds.",
-      "description": "The Spire of Blackstone is a massive fortress of black stone above which dwell dwarven holds, and beneath which tunnel the Warrens of the goblins. The structure stands as a contested border between goblin and dwarf domains, though the conflict was resolved through Grethuk's bargain rather than conquest.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 2,
-      "story_appearances": [
-        {
-          "date": "2026-03-01",
-          "title": "The Goblin-King's Mercy"
-        },
-        {
-          "date": "2026-03-02",
-          "title": "The Goblin-King's Gambit"
-        }
-      ],
-      "aliases": [
-        "Spire of Blackstone"
-      ]
-    },
-    {
-      "name": "The Tidelands",
-      "tagline": "",
-      "place_type": "unknown",
-      "world": "The Known World",
-      "hemisphere": "unknown",
-      "continent": "unknown",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "Sunken Marches",
-      "district": "unknown",
-      "atmosphere": "",
-      "description": "Auto-added from character home_place.",
-      "status": "unknown",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-03-02",
-          "title": "The Bone-Singer's Choice"
-        }
-      ],
-      "aliases": [
-        "Tidelands"
-      ]
-    },
-    {
-      "name": "The Pallid Wastes",
-      "tagline": "Desolate. Wind-scoured. Star-lit.",
-      "place_type": "wilderness",
-      "world": "Edhra",
-      "hemisphere": "unknown",
-      "continent": "Valdris",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "Pallid Wastes",
-      "district": "unknown",
-      "atmosphere": "A sparse, wind-scoured wasteland where few travel, yet the stars burn bright and clear above.",
-      "description": "A desolate expanse across which the hermit woman travels. Few dare venture here. The hermit studies the sky from a wind-scoured peak, reading the new constellations in ash and bone.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-03-03",
-          "title": "The Shepherd of Dying Stars"
-        }
-      ],
-      "aliases": [
-        "Pallid Wastes"
-      ]
-    },
-    {
-      "name": "The Blasted Lands",
-      "tagline": "Desolate. Hidden. Sheltered.",
-      "place_type": "wilderness",
-      "world": "Edhra",
-      "hemisphere": "unknown",
-      "continent": "Valdris",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "The Blasted Steppes",
-      "district": "unknown",
-      "atmosphere": "A desolate, harsh landscape hiding a hidden spire of power and knowledge.",
-      "description": "A region where a spire is hidden, home to The Sorcerer and their heir. The spire contains master's journals and retains echoes of ancient power.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 3,
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "Shadows for Sale"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Sorcerer's Heir"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Young Sorcerer's Inheritance"
-        }
-      ],
-      "aliases": [
-        "Blasted Lands"
-      ]
-    },
-    {
-      "name": "The Iron Coast",
-      "tagline": "Smuggling. Windswept. Maritime.",
-      "place_type": "coastal region",
-      "world": "Edhra",
-      "hemisphere": "unknown",
-      "continent": "Valdris",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "Iron Coast",
-      "district": "unknown",
-      "atmosphere": "Wind-haunted ports filled with smugglers, forbidden trade, and maritime secrets.",
-      "description": "The Iron Coast is a region of wind-haunted ports where smugglers like Captain Merra conduct illicit trade. It serves as a hub for contraband\u2014plague-victims, forbidden scrolls, stolen shadows, and living oaths. The sea remembers debts here, and coastal magic runs deep.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 3,
-      "story_appearances": [
-        {
-          "date": "2026-03-04",
-          "title": "The Lamplighter's Accord"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Deepkin's Ledger"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Hermit's Census"
-        }
-      ],
-      "aliases": [
-        "Iron Coast"
-      ]
-    },
-    {
-      "name": "The Bleached Wastes",
-      "tagline": "Ancient. Glowing. Awakening.",
-      "place_type": "wilderness",
-      "world": "The Known World",
-      "hemisphere": "unknown",
-      "continent": "Valdris",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "Ashen Reach",
-      "district": "unknown",
-      "atmosphere": "A desolate expanse hiding pre-human ruins that glow with inner light when the new stars are visible.",
-      "description": "The Bleached Wastes span vast territories and contain pre-human ruins arranged in configurations that mirror the new constellation. Since the Violet Conjunction, these ruins have begun to glow faintly at night with light emanating from within the stone itself, and their inscriptions shimmer when the new stars are visible.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 2,
-      "story_appearances": [
-        {
-          "date": "2026-03-02",
-          "title": "The Cartographer's Lie"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Cartographer's Last Map"
-        }
-      ],
-      "aliases": [
-        "Bleached Wastes"
-      ]
-    },
-    {
-      "name": "Spire (Blasted Lands)",
-      "tagline": "Arcane. Towering. Ancient.",
-      "place_type": "fortress",
-      "world": "Edhra",
-      "hemisphere": "unknown",
-      "continent": "Valdris",
-      "subcontinent": "unknown",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "The Ashen Reach",
-      "district": "unknown",
-      "atmosphere": "A structure of immense magical power where ancient knowledge is guarded in the depths. Wards once inviolable now flicker with uncertainty.",
-      "description": "A great structure in the Blasted Lands containing the Elder Mage's Codex in its depths. The Young Sorcerer's home and seat of learning. Wards have become unstable following the Stellar Rite.",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 2,
-      "story_appearances": [
-        {
-          "date": "2026-03-03",
-          "title": "The Sorcerer's Heir"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Young Sorcerer's Inheritance"
-        }
-      ],
-      "aliases": [
-        "Spire"
       ]
     },
     {
@@ -7255,11 +7322,15 @@
       "status": "active",
       "first_story": "The Deepwarden's Vigil",
       "first_date": "2026-03-06",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-06",
           "title": "The Deepwarden's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Warden's Council"
         }
       ]
     },
@@ -7364,6 +7435,464 @@
         {
           "date": "2026-03-06",
           "title": "The Wyvern's Starborn Debt"
+        }
+      ]
+    },
+    {
+      "name": "the Ashen Wastes",
+      "tagline": "",
+      "place_type": "",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 6,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "Blood-Price of the Caravan"
+        },
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Crown-Thief of Ashen Wastes"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Blackthorn Holdfast's Shadow"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Deepkin's Ledger"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Hermit's Census"
+        }
+      ],
+      "aliases": [
+        "Ashen Wastes"
+      ]
+    },
+    {
+      "name": "Ossuary (as Living Entity)",
+      "tagline": "Living. Hungry. Consuming.",
+      "place_type": "fortress",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A fortress that breathes and hungers, its architecture alive and capable of conscious choice.",
+      "description": "An impossible fortress whose walls are made of living calcium that split and swallow warriors whole. Its towers bend like intestines in peristaltic waves. The corridors rearrange themselves around intruders. It possesses agency and deliberately chose Varak Ironhelm as a vessel. Upon sating itself, it settles into patient stillness.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Bone Citadel's Hunger"
+        }
+      ],
+      "aliases": [
+        "the Ossuary"
+      ]
+    },
+    {
+      "name": "The Spire of Blackstone",
+      "tagline": "Towering. Ancient. Contested.",
+      "place_type": "fortress / landmark / mountain peak",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Shattered West",
+      "district": "unknown",
+      "atmosphere": "A massive structure of black stone rising above the earth, dwarven-held above while goblin warrens tunnel beneath, a boundary between worlds.",
+      "description": "The Spire of Blackstone is a massive fortress of black stone above which dwell dwarven holds, and beneath which tunnel the Warrens of the goblins. The structure stands as a contested border between goblin and dwarf domains, though the conflict was resolved through Grethuk's bargain rather than conquest.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Goblin-King's Mercy"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Goblin-King's Gambit"
+        }
+      ],
+      "aliases": [
+        "Spire of Blackstone"
+      ]
+    },
+    {
+      "name": "The Tidelands",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Sunken Marches",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Bone-Singer's Choice"
+        }
+      ],
+      "aliases": [
+        "Tidelands"
+      ]
+    },
+    {
+      "name": "The Pallid Wastes",
+      "tagline": "Desolate. Wind-scoured. Star-lit.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Pallid Wastes",
+      "district": "unknown",
+      "atmosphere": "A sparse, wind-scoured wasteland where few travel, yet the stars burn bright and clear above.",
+      "description": "A desolate expanse across which the hermit woman travels. Few dare venture here. The hermit studies the sky from a wind-scoured peak, reading the new constellations in ash and bone.",
+      "status": "active",
+      "first_story": "The Cartographer's Silence",
+      "first_date": "2026-03-07",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-03-03",
+          "title": "The Shepherd of Dying Stars"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
+        }
+      ],
+      "aliases": [
+        "Pallid Wastes"
+      ]
+    },
+    {
+      "name": "The Blasted Lands",
+      "tagline": "Desolate. Hidden. Sheltered.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Blasted Steppes",
+      "district": "unknown",
+      "atmosphere": "A desolate, harsh landscape hiding a hidden spire of power and knowledge.",
+      "description": "A region where a spire is hidden, home to The Sorcerer and their heir. The spire contains master's journals and retains echoes of ancient power.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 3,
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Sorcerer's Heir"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Young Sorcerer's Inheritance"
+        }
+      ],
+      "aliases": [
+        "Blasted Lands"
+      ]
+    },
+    {
+      "name": "The Iron Coast",
+      "tagline": "Smuggling. Windswept. Maritime.",
+      "place_type": "coastal region",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "Wind-haunted ports filled with smugglers, forbidden trade, and maritime secrets.",
+      "description": "The Iron Coast is a region of wind-haunted ports where smugglers like Captain Merra conduct illicit trade. It serves as a hub for contraband\u2014plague-victims, forbidden scrolls, stolen shadows, and living oaths. The sea remembers debts here, and coastal magic runs deep.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 3,
+      "story_appearances": [
+        {
+          "date": "2026-03-04",
+          "title": "The Lamplighter's Accord"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Deepkin's Ledger"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Hermit's Census"
+        }
+      ],
+      "aliases": [
+        "Iron Coast"
+      ]
+    },
+    {
+      "name": "The Bleached Wastes",
+      "tagline": "Ancient. Glowing. Awakening.",
+      "place_type": "wilderness",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A desolate expanse hiding pre-human ruins that glow with inner light when the new stars are visible.",
+      "description": "The Bleached Wastes span vast territories and contain pre-human ruins arranged in configurations that mirror the new constellation. Since the Violet Conjunction, these ruins have begun to glow faintly at night with light emanating from within the stone itself, and their inscriptions shimmer when the new stars are visible.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Cartographer's Last Map"
+        }
+      ],
+      "aliases": [
+        "Bleached Wastes"
+      ]
+    },
+    {
+      "name": "Spire (Blasted Lands)",
+      "tagline": "Arcane. Towering. Ancient.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A structure of immense magical power where ancient knowledge is guarded in the depths. Wards once inviolable now flicker with uncertainty.",
+      "description": "A great structure in the Blasted Lands containing the Elder Mage's Codex in its depths. The Young Sorcerer's home and seat of learning. Wards have become unstable following the Stellar Rite.",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-03-03",
+          "title": "The Sorcerer's Heir"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Young Sorcerer's Inheritance"
+        }
+      ],
+      "aliases": [
+        "Spire"
+      ]
+    },
+    {
+      "name": "Abyssal Trench",
+      "tagline": "Singing. Fractured. Calling.",
+      "place_type": "geological feature / boundary",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "deepkin realms",
+      "province": "unknown",
+      "region": "Sunken Marches",
+      "district": "unknown",
+      "atmosphere": "A place of cosmic horror and wonder where the barrier between realms sings in the language of starlight.",
+      "description": "The boundary between the deep-dweller realms and the sunken waters, now fracturing from internal pressure. A spectral presence born from Zareth's sacrificed memories has reached this trench and sings in the language of starlight, pulling at the consciousness of deep-dwellers and offering them stolen memories.",
+      "status": "active",
+      "first_story": "The Warden's Council",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Warden's Council"
+        }
+      ]
+    },
+    {
+      "name": "Sunken Spring",
+      "tagline": "Restless. Vital. Mysterious.",
+      "place_type": "water feature / landmark",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "deepkin realms",
+      "province": "unknown",
+      "region": "Sunken Marches",
+      "district": "unknown",
+      "atmosphere": "A place of unease, growing more restless as the barrier fractures.",
+      "description": "A significant water feature in the deepkin realms that is described as growing restless in response to the barrier fracturing at the Abyssal Trench.",
+      "status": "active",
+      "first_story": "The Bone-Singer's Vigil",
+      "first_date": "2026-03-07",
+      "appearances": 2,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Bone-Singer's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Warden's Council"
+        }
+      ]
+    },
+    {
+      "name": "Steel Coast",
+      "tagline": "Coastal. Refugee-filled. Panicked.",
+      "place_type": "region / coastal territory",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A place of panic and displacement as refugees flee inland from coastal villages.",
+      "description": "A coastal area sending a delegation to the Council of Depths. Refugees are fleeing inland from coastal villages where the water no longer reflects the sky, suggesting a breakdown in natural laws or a mysterious transformation.",
+      "status": "active",
+      "first_story": "The Warden's Council",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Warden's Council"
+        }
+      ]
+    },
+    {
+      "name": "Scorched Lands",
+      "tagline": "Burnt. Desolate. Hidden.",
+      "place_type": "wilderness / region",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "A desolate, burnt landscape that conceals ancient structures and dangerous magic.",
+      "description": "A wilderness region where the Tower is hidden. The Young Sorcerer travels here following magical ley-lines and seeking the source of their convergence.",
+      "status": "active",
+      "first_story": "The Young Sorcerer's Burden",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
+        }
+      ]
+    },
+    {
+      "name": "western provinces",
+      "tagline": "Fractured. Forgotten. Hunted.",
+      "place_type": "region / administrative zone",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Shattered West",
+      "district": "unknown",
+      "atmosphere": "A place of creeping dread as memories vanish and commerce breaks down.",
+      "description": "A series of western villages and towns where the memory-thief is moving, stealing recollections of the old stars from Stellar Rite witnesses. Rationing has begun not from scarcity but from suspicion as people forget whether they paid for food.",
+      "status": "active",
+      "first_story": "The Archer's Cold Trail",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Archer's Cold Trail"
+        }
+      ]
+    },
+    {
+      "name": "Verdant Lands",
+      "tagline": "Ancient. Living. Declining.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "subcontinent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Hearthlands",
+      "district": "unknown",
+      "atmosphere": "Deep forests where seasonal magics once flowed in harmony, now stuttering and unstable.",
+      "description": "Ancient forests beyond which circle-keepers dwell and tend to the compact between earth and sky. The seasonal magics are now breaking down: spring arrives late, winter lingers, and growing things hunger in new ways.",
+      "status": "active",
+      "first_story": "The Druid's Covenant",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
         }
       ]
     }
@@ -8545,7 +9074,7 @@
       "outcome": "A celestial alignment or convergence that coincided with or triggered the Celestial Binding. The Sorcerer felt it and recognized the magnitude of the working.",
       "significance": "Marks the night when the Celestial Binding occurred; visible to all practitioners of the Art; a cosmically significant moment.",
       "first_story": "The Chorus of Altered Fates",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 5,
       "story_appearances": [
         {
@@ -8596,8 +9125,8 @@
       ],
       "outcome": "The stars were renewed through the extraction of memory from an Astronomer-Prince. A vast working was completed that bent reality itself. However, it created a cosmic wound in the earth that will take generations to heal.",
       "significance": "The largest magical working in the world; it renewed the stars but left the world wounded. Its ripples affect all practitioners of the Art, especially young ones. It created a new entity from the sacrificed memories.",
-      "first_story": "The Wound-Keeper's Vigil",
-      "first_date": "2026-03-05",
+      "first_story": "The Ghost of the Stellar Rite",
+      "first_date": "2026-03-06",
       "appearances": 10,
       "story_appearances": [
         {
@@ -8674,7 +9203,7 @@
       "significance": "A world-altering event that changed celestial arrangements, affected multiple regions, and left all who witnessed it with fragmented or stolen memories.",
       "first_story": "The Starborn Merchant",
       "first_date": "2026-03-04",
-      "appearances": 5,
+      "appearances": 11,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -8695,6 +9224,30 @@
         {
           "date": "2026-03-04",
           "title": "The Young Sorcerer's Inheritance"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Bone-Singer's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Archer's Cold Trail"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
         }
       ]
     },
@@ -8814,129 +9367,6 @@
           "date": "2026-03-05",
           "title": "The Hermit's Census"
         }
-      ]
-    },
-    {
-      "name": "The Crimson Convergence",
-      "tagline": "Starfall. Upheaval. Transformation.",
-      "event_type": "catastrophe / celestial event",
-      "scope": "world",
-      "epicenter_place": "Peak of Aethros",
-      "epicenter_region": "unknown",
-      "epicenter_realm": "unknown",
-      "affected_places": [
-        "Pelimor",
-        "Imperial archives",
-        "trade cities"
-      ],
-      "affected_regions": [
-        "The Hearthlands"
-      ],
-      "affected_realms": [
-        "Empire"
-      ],
-      "radius": "World-wide; affects all visible constellations.",
-      "participants": [
-        "Astronomer-Prince",
-        "Zareth"
-      ],
-      "outcome": "New constellations burned where old ones had dimmed. A figure (possibly Zareth) was stripped of memory and self. Lamp oil rationing began. Night-workers feared the altered dark. Astronomers were suddenly in demand and accused of forbidden workings.",
-      "significance": "A major celestial and magical upheaval that altered the stars themselves and required payment in the form of a human consciousness.",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 5,
-      "story_appearances": [
-        {
-          "date": "2026-03-03",
-          "title": "The Chorus of Altered Fates"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Ghost of the Stellar Rite"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Merfolk's Remembrance"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Sorcerer's Heir"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Starfall Debt"
-        }
-      ],
-      "aliases": [
-        "Crimson Convergence"
-      ]
-    },
-    {
-      "name": "The Celestial Binding",
-      "tagline": "Cosmic. Transformative. Shattering.",
-      "event_type": "ritual",
-      "scope": "regional",
-      "epicenter_place": "unknown",
-      "epicenter_region": "unknown",
-      "epicenter_realm": "unknown",
-      "affected_places": [
-        "Thornholt"
-      ],
-      "affected_regions": [],
-      "affected_realms": [],
-      "radius": "unknown",
-      "participants": [
-        "unknown"
-      ],
-      "outcome": "This binding has left broken minds in its wake. Those touched by it are healed/tended by Ashara at Thornholt.",
-      "significance": "It is a major cosmic event whose ripples affect multiple people and places.",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 10,
-      "story_appearances": [
-        {
-          "date": "2026-03-03",
-          "title": "The Ghost of the Stellar Rite"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Starfall Debt"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Warden's Sorrow"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Bone-Singer's Lament"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Cartographer's Burden"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Collector's New Ledger"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Hermit's Census"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Tax Collector's Question"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Wound-Keeper's Vigil"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Young Sorcerer's Inheritance"
-        }
-      ],
-      "aliases": [
-        "Celestial Binding"
       ]
     },
     {
@@ -9061,6 +9491,197 @@
           "title": "The Wyvern's Starborn Debt"
         }
       ]
+    },
+    {
+      "name": "The Crimson Convergence",
+      "tagline": "Starfall. Upheaval. Transformation.",
+      "event_type": "catastrophe / celestial event",
+      "scope": "world",
+      "epicenter_place": "Peak of Aethros",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Pelimor",
+        "Imperial archives",
+        "trade cities"
+      ],
+      "affected_regions": [
+        "The Hearthlands"
+      ],
+      "affected_realms": [
+        "Empire"
+      ],
+      "radius": "World-wide; affects all visible constellations.",
+      "participants": [
+        "Astronomer-Prince",
+        "Zareth"
+      ],
+      "outcome": "New constellations burned where old ones had dimmed. A figure (possibly Zareth) was stripped of memory and self. Lamp oil rationing began. Night-workers feared the altered dark. Astronomers were suddenly in demand and accused of forbidden workings.",
+      "significance": "A major celestial and magical upheaval that altered the stars themselves and required payment in the form of a human consciousness.",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 5,
+      "story_appearances": [
+        {
+          "date": "2026-03-03",
+          "title": "The Chorus of Altered Fates"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Merfolk's Remembrance"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Sorcerer's Heir"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
+        }
+      ],
+      "aliases": [
+        "Crimson Convergence"
+      ]
+    },
+    {
+      "name": "The Celestial Binding",
+      "tagline": "Cosmic. Transformative. Shattering.",
+      "event_type": "ritual",
+      "scope": "regional",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Thornholt"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "unknown",
+      "participants": [
+        "unknown"
+      ],
+      "outcome": "This binding has left broken minds in its wake. Those touched by it are healed/tended by Ashara at Thornholt.",
+      "significance": "It is a major cosmic event whose ripples affect multiple people and places.",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 10,
+      "story_appearances": [
+        {
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Warden's Sorrow"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Bone-Singer's Lament"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Cartographer's Burden"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Collector's New Ledger"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Hermit's Census"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Tax Collector's Question"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Wound-Keeper's Vigil"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Young Sorcerer's Inheritance"
+        }
+      ],
+      "aliases": [
+        "Celestial Binding"
+      ]
+    },
+    {
+      "name": "The Celestial Ascension (Lore)",
+      "tagline": "Reality. Rewritten. Catastrophic.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Anthrim",
+        "Sunburned Reach",
+        "Bone Wastes",
+        "High Observatory of Karethil"
+      ],
+      "affected_regions": [
+        "The Ashen Reach",
+        "The Iron Coast"
+      ],
+      "affected_realms": [
+        "the Empire"
+      ],
+      "radius": "world-wide",
+      "participants": [
+        "unknown cosmic forces",
+        "pre-human structures",
+        "deepkin",
+        "merchants",
+        "cartographers"
+      ],
+      "outcome": "Reality was fundamentally altered. Maps rearrange themselves. Fragments become unstable. Pre-human ruins awaken and sing. A new constellation blazes in the sky, brighter and hotter than before. Merchants vanish. Memory is stolen or transformed.",
+      "significance": "The Celestial Ascension is a world-altering event that has broken normal reality. It was supposed to be a solution or ending, but instead opened something far larger. It affects magic, memory, geography, and celestial mechanics.",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 7,
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "The Bone-Singer's Dirge"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Deepwarden's Vigil"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Hermit Woman's New Census"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Starlight Cartographer's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Young Sorcerer's New Inheritance"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "Vex's Fragment Market in Collapse"
+        }
+      ],
+      "aliases": [
+        "Celestial Ascension"
+      ]
     }
   ],
   "rituals": [
@@ -9111,7 +9732,7 @@
       "tagline": "Star-birthing. Memory-sacrificial. Ancient.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 5,
+      "appearances": 11,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -9132,6 +9753,30 @@
         {
           "date": "2026-03-04",
           "title": "The Young Sorcerer's Inheritance"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Bone-Singer's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Archer's Cold Trail"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
         }
       ],
       "ritual_type": "sacrifice / binding / summoning",
@@ -9167,8 +9812,8 @@
     {
       "name": "The Celestial Binding",
       "tagline": "Starfall. Voiceless. Costly.",
-      "first_story": "The Wound-Keeper's Vigil",
-      "first_date": "2026-03-05",
+      "first_story": "The Ghost of the Stellar Rite",
+      "first_date": "2026-03-06",
       "appearances": 10,
       "story_appearances": [
         {
@@ -9284,10 +9929,59 @@
       "notes": "Performed at the Peak of Aethros. The mechanism, intent, and full scope remain mysterious. May still be ongoing or having cascading effects."
     },
     {
+      "name": "The Celestial Ascension (Lore)",
+      "tagline": "Reality-altering. Catastrophic. Repeating.",
+      "first_story": "The Starlight Cartographer's Reckoning",
+      "first_date": "2026-03-06",
+      "appearances": 7,
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "The Starlight Cartographer's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "Vex's Fragment Market in Collapse"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Deepwarden's Vigil"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Young Sorcerer's New Inheritance"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Bone-Singer's Dirge"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Hermit Woman's New Census"
+        }
+      ],
+      "ritual_type": "stellar working / cosmic alignment",
+      "performed_by": [
+        "Zareth",
+        "Previous civilizations"
+      ],
+      "requirements": "Specific stellar alignment and cosmic arrangement; involves celestial entities and forces.",
+      "effect": "Alters the fundamental structure of reality. Changes the stars themselves. Fractures barriers between realms (surface and Abyss Below). Changes the agreement between living and dead. Renders some texts readable under new starlight. Transforms some beings into living light.",
+      "cost": "Previous civilizations that performed similar workings left behind destructive voids that eventually collapsed inward, consuming everything. The current Celestial Ascension is creating refugee crises, destabilizing ancient seals, and forcing the deepkin to choose between isolation, war, or investigation.",
+      "notes": "Zareth is identified as the performer of the most recent working. The texts in the Tower suggest this is a pattern\u2014multiple civilizations have performed similar rituals, each leaving behind catastrophic consequences.",
+      "aliases": [
+        "Celestial Ascension"
+      ]
+    },
+    {
       "name": "The Celestial Binding",
       "tagline": "Starfall. Voiceless. Costly.",
       "first_story": "",
-      "first_date": "2026-03-06",
+      "first_date": "2026-03-07",
       "appearances": 10,
       "story_appearances": [
         {
@@ -9346,17 +10040,13 @@
     {
       "name": "The Celestial Ascension (Lore)",
       "tagline": "Reality-altering. Catastrophic. Repeating.",
-      "first_story": "The Starlight Cartographer's Reckoning",
-      "first_date": "2026-03-06",
+      "first_story": "",
+      "first_date": "2026-03-07",
       "appearances": 7,
       "story_appearances": [
         {
           "date": "2026-03-06",
-          "title": "The Starlight Cartographer's Reckoning"
-        },
-        {
-          "date": "2026-03-06",
-          "title": "Vex's Fragment Market in Collapse"
+          "title": "The Bone-Singer's Dirge"
         },
         {
           "date": "2026-03-06",
@@ -9364,11 +10054,11 @@
         },
         {
           "date": "2026-03-06",
-          "title": "The Young Sorcerer's New Inheritance"
+          "title": "The Hermit Woman's New Census"
         },
         {
           "date": "2026-03-06",
-          "title": "The Bone-Singer's Dirge"
+          "title": "The Starlight Cartographer's Reckoning"
         },
         {
           "date": "2026-03-06",
@@ -9376,7 +10066,11 @@
         },
         {
           "date": "2026-03-06",
-          "title": "The Hermit Woman's New Census"
+          "title": "The Young Sorcerer's New Inheritance"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "Vex's Fragment Market in Collapse"
         }
       ],
       "ritual_type": "stellar working / cosmic alignment",
@@ -9567,7 +10261,7 @@
       "last_known_holder": "",
       "status": "used once \u2014 may be refillable",
       "first_story": "The Lamp of Suroth",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -9925,27 +10619,6 @@
       ]
     },
     {
-      "name": "The Lamp of Suroth",
-      "tagline": "",
-      "artifact_type": "",
-      "origin": "",
-      "powers": "",
-      "last_known_holder": "",
-      "status": "used once \u2014 may be refillable",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "The Lamp of Suroth"
-        }
-      ],
-      "aliases": [
-        "Lamp of Suroth"
-      ]
-    },
-    {
       "name": "Stellar Charts",
       "tagline": "Celestial. Stolen. Powerful.",
       "artifact_type": "tome",
@@ -9960,6 +10633,45 @@
         {
           "date": "2026-03-06",
           "title": "The Tide-Thief's Gambit"
+        }
+      ]
+    },
+    {
+      "name": "The Lamp of Suroth",
+      "tagline": "",
+      "artifact_type": "",
+      "origin": "",
+      "powers": "",
+      "last_known_holder": "",
+      "status": "used once \u2014 may be refillable",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamp of Suroth"
+        }
+      ],
+      "aliases": [
+        "Lamp of Suroth"
+      ]
+    },
+    {
+      "name": "Grimoire of Endless Knowing",
+      "tagline": "Forbidden. Infinite. Dangerous.",
+      "artifact_type": "tome / grimoire",
+      "origin": "unknown",
+      "powers": "Contains truth that cannot be unread. Within its pages lies knowledge of the Stellar Rite's true nature: that it created not one entity but many fragments of consciousness scattered across the rewritten world.",
+      "last_known_holder": "The Young Sorcerer",
+      "status": "active",
+      "first_story": "The Young Sorcerer's Burden",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
         }
       ]
     }
@@ -10282,6 +10994,23 @@
           "title": "The Wyvern's Starborn Debt"
         }
       ]
+    },
+    {
+      "name": "Circle-keepers",
+      "tagline": "Ancient. Forest-bound. Covenant-tenders.",
+      "alignment": "neutral",
+      "goals": "Tend to the compact between earth and sky; maintain seasonal magics and territorial order; preserve the balance of harvest and decay.",
+      "leader": "Thael (at least among those who have noticed the disruption)",
+      "status": "active",
+      "first_story": "The Druid's Covenant",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
+        }
+      ]
     }
   ],
   "polities": [
@@ -10356,7 +11085,7 @@
       "description": "A vast imperial government built on certainty, order, and commerce. Trade routes are its lifeblood. It collects taxes and maintains stability through information and control. The Treasurer strategically gathers intelligence to manage disruptions. However, the Empire's architecture of order and certainty is being tested by the cosmic changes.",
       "first_story": "The Barbarian's Mercy",
       "first_date": "2026-02-25",
-      "appearances": 4,
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -10373,6 +11102,10 @@
         {
           "date": "2026-03-06",
           "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
         }
       ],
       "notes": "The Empire is struggling to maintain control and stability as the cosmic changes disrupt trade, drive people to madness, and cause physical land shifts. The Treasurer's aide questions whether the Empire can survive."
@@ -10422,11 +11155,15 @@
       "tagline": "Territorial. Pragmatic. Withdrawn.",
       "first_story": "The Goblin-King's Gambit",
       "first_date": "2026-03-02",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-02",
           "title": "The Goblin-King's Gambit"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
         }
       ],
       "polity_type": "confederation / alliance",
@@ -10496,11 +11233,15 @@
       "tagline": "Deliberating. Deciding. Desperate.",
       "first_story": "The Deepwarden's Vigil",
       "first_date": "2026-03-06",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-06",
           "title": "The Deepwarden's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Warden's Council"
         }
       ],
       "polity_type": "council",
@@ -11764,49 +12505,9 @@
     },
     {
       "name": "The Cosmic Working (Lore)",
-      "tagline": "Cataclysmic. Unknown. Echoing.",
-      "category": "history",
-      "source": "Vex's fragmented memory; unstable fragments in shadow-markets",
-      "status": "confirmed",
-      "first_story": "Vex's Fragment Market in Collapse",
-      "first_date": "2026-03-06",
-      "appearances": 3,
-      "story_appearances": [
-        {
-          "date": "2026-03-06",
-          "title": "The Refugee Caravan's Price"
-        },
-        {
-          "date": "2026-03-06",
-          "title": "The Tax Collector's Reckoning"
-        },
-        {
-          "date": "2026-03-06",
-          "title": "Vex's Fragment Market in Collapse"
-        }
-      ]
-    },
-    {
-      "name": "Zareth's Working",
-      "tagline": "Recent. Catastrophic. Reality-altering.",
-      "category": "history / event",
-      "source": "Master Mage's hidden texts; celestial observation.",
-      "status": "confirmed",
-      "first_story": "The Young Sorcerer's New Inheritance",
-      "first_date": "2026-03-06",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-03-06",
-          "title": "The Young Sorcerer's New Inheritance"
-        }
-      ]
-    },
-    {
-      "name": "The Cosmic Working (Lore)",
       "tagline": "Ancient. Sacrifice. Reality-bending.",
       "category": "magic / history",
-      "source": "Fragments in the Sovereign's ledger; visions experienced by Vesta's crew; the Hermit Woman's understanding.",
+      "source": "Vex's fragmented memory; unstable fragments in shadow-markets",
       "status": "confirmed",
       "first_story": "Vex's Fragment Market in Collapse",
       "first_date": "2026-03-06",
@@ -11830,6 +12531,22 @@
       ]
     },
     {
+      "name": "Zareth's Working",
+      "tagline": "Recent. Catastrophic. Reality-altering.",
+      "category": "history / event",
+      "source": "Master Mage's hidden texts; celestial observation.",
+      "status": "confirmed",
+      "first_story": "The Young Sorcerer's New Inheritance",
+      "first_date": "2026-03-06",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "The Young Sorcerer's New Inheritance"
+        }
+      ]
+    },
+    {
       "name": "The agreement between the sky and the earth",
       "tagline": "Ancient. Foundational. Broken.",
       "category": "legend",
@@ -11842,6 +12559,49 @@
         {
           "date": "2026-03-06",
           "title": "The Wyvern's Starborn Debt"
+        }
+      ]
+    },
+    {
+      "name": "The Cosmic Working (Lore)",
+      "tagline": "Ancient. Sacrifice. Reality-bending.",
+      "category": "magic / history",
+      "source": "Fragments in the Sovereign's ledger; visions experienced by Vesta's crew; the Hermit Woman's understanding.",
+      "status": "confirmed",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 3,
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "The Refugee Caravan's Price"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "Vex's Fragment Market in Collapse"
+        }
+      ],
+      "aliases": [
+        "Cosmic Working"
+      ]
+    },
+    {
+      "name": "Language of Starlight",
+      "tagline": "Cosmic. Incomprehensible. Calling.",
+      "category": "history / language",
+      "source": "Events at the Abyssal Trench; Zareth's spectral presence",
+      "status": "confirmed",
+      "first_story": "The Warden's Council",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Warden's Council"
         }
       ]
     }
@@ -12088,6 +12848,34 @@
           "date": "2026-03-06",
           "title": "The Wyvern's Starborn Debt"
         }
+      ]
+    },
+    {
+      "name": "Skarath",
+      "tagline": "Hybrid. Dragon-blooded. Choice.",
+      "type": "creature",
+      "rarity": "rare",
+      "habitat": "crystal halls",
+      "status": "thriving",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 3,
+      "story_appearances": [
+        {
+          "date": "2026-02-28",
+          "title": "The Dragon's Bargain"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Wyvern's Ransom"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Wyvern's Starborn Debt"
+        }
+      ],
+      "aliases": [
+        "wyvern"
       ]
     }
   ],
@@ -12888,7 +13676,7 @@
       "status": "known",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 5,
+      "appearances": 11,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -12909,6 +13697,30 @@
         {
           "date": "2026-03-04",
           "title": "The Young Sorcerer's Inheritance"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Bone-Singer's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Archer's Cold Trail"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
         }
       ]
     },
@@ -13011,6 +13823,69 @@
         {
           "date": "2026-03-05",
           "title": "The Bone-Singer's Lament"
+        }
+      ]
+    },
+    {
+      "name": "Ley-Line Convergence",
+      "tagline": "Convergent. Prisoning. Weakening.",
+      "type": "phenomenon / passive magic",
+      "element": "multiple / cosmic",
+      "difficulty": "unknown",
+      "status": "active",
+      "first_story": "The Young Sorcerer's Burden",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
+        }
+      ]
+    },
+    {
+      "name": "Seasonal Magics",
+      "tagline": "Foundational. Stuttering. Breaking.",
+      "type": "passive",
+      "element": "nature",
+      "difficulty": "master",
+      "status": "corrupted",
+      "first_story": "The Druid's Covenant",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
+        }
+      ]
+    },
+    {
+      "name": "Ley-lines",
+      "tagline": "Mapped. Disrupted. Chaotic.",
+      "type": "passive",
+      "element": "earth",
+      "difficulty": "master",
+      "status": "corrupted",
+      "first_story": "The Bone-Singer's Vigil",
+      "first_date": "2026-03-07",
+      "appearances": 4,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Bone-Singer's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
         }
       ]
     }
@@ -13415,6 +14290,23 @@
           "title": "The Wound-Keeper's Vigil"
         }
       ]
+    },
+    {
+      "name": "Zareth's Sacrificed Memories",
+      "tagline": "Spectral. Singing. Calling.",
+      "origin": "Zareth's sacrifice (nature and purpose unknown)",
+      "power": "Now exist as a spectral presence that sings in the language of starlight and can pull at the consciousness of deep-dwellers, offering them fragments of stolen memories.",
+      "curse": "This presence fractures the barrier between the deepkin realms and the sunken waters, calling younger deep-dwellers into the singing waters.",
+      "status": "active",
+      "first_story": "The Warden's Council",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Warden's Council"
+        }
+      ]
     }
   ],
   "regions": [
@@ -13481,8 +14373,8 @@
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
-      "first_story": "The Deepkin's Ledger",
-      "first_date": "2026-03-05",
+      "first_story": "Blood-Price of the Caravan",
+      "first_date": "2026-03-06",
       "appearances": 6,
       "story_appearances": [
         {
@@ -13875,7 +14767,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "The Goblin-King's Mercy",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -13917,7 +14809,7 @@
     },
     {
       "name": "The Hearthlands",
-      "tagline": "Central. Forging. Deep.",
+      "tagline": "",
       "continent": "Valdris",
       "realm": "unknown",
       "climate": "temperate / underground",
@@ -13927,7 +14819,7 @@
       "status": "active",
       "notes": "Deepvault is the major landmark within this region.",
       "first_story": "The Warden's Forge",
-      "first_date": "2026-03-03",
+      "first_date": "2026-03-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -13939,8 +14831,11 @@
       "hemisphere": "unknown",
       "subcontinent": "unknown",
       "province": "unknown",
-      "region": "The Hearthlands",
-      "district": "unknown"
+      "region": "Hearthlands",
+      "district": "unknown",
+      "aliases": [
+        "Hearthlands"
+      ]
     },
     {
       "name": "The Pallid Wastes",
@@ -13954,12 +14849,16 @@
       "status": "unknown",
       "notes": "",
       "first_story": "The Shepherd of Dying Stars",
-      "first_date": "2026-03-05",
-      "appearances": 1,
+      "first_date": "2026-03-06",
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-03",
           "title": "The Shepherd of Dying Stars"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
         }
       ],
       "world": "The Known World",
@@ -14044,7 +14943,7 @@
     },
     {
       "name": "The Iron Coast",
-      "tagline": "Seaside. Tide-swept. Shadowed.",
+      "tagline": "Maritime. Smuggling. Windswept.",
       "continent": "Valdris",
       "realm": "unknown",
       "climate": "temperate / coastal",
@@ -14053,8 +14952,8 @@
       "function": "A coastal trading and smuggling hub where forbidden cargo moves and debts to the abyssal singers are tracked.",
       "status": "active",
       "notes": "Home to Captain Vesta's operations. The Sapphire Deep is accessible from here. The region appears to be economically vibrant but spiritually burdened.",
-      "first_story": "The Deepkin's Ledger",
-      "first_date": "2026-03-05",
+      "first_story": "The Lamplighter's Accord",
+      "first_date": "2026-03-06",
       "appearances": 3,
       "story_appearances": [
         {
@@ -14074,8 +14973,11 @@
       "hemisphere": "unknown",
       "subcontinent": "unknown",
       "province": "unknown",
-      "region": "The Iron Coast",
-      "district": "unknown"
+      "region": "Iron Coast",
+      "district": "unknown",
+      "aliases": [
+        "Iron Coast"
+      ]
     },
     {
       "name": "The Bleached Wastes",
@@ -14089,7 +14991,7 @@
       "status": "active",
       "notes": "The pre-human ruins now glow with inner light and their inscriptions shimmer, suggesting they were built in anticipation of the current cosmic moment.",
       "first_story": "The Cartographer's Lie",
-      "first_date": "2026-03-05",
+      "first_date": "2026-03-06",
       "appearances": 2,
       "story_appearances": [
         {
@@ -14180,7 +15082,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "",
-      "first_date": "2026-03-06",
+      "first_date": "2026-03-07",
       "appearances": 6,
       "story_appearances": [
         {
@@ -14230,7 +15132,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "",
-      "first_date": "2026-03-06",
+      "first_date": "2026-03-07",
       "appearances": 1,
       "story_appearances": [
         {
@@ -14259,13 +15161,17 @@
       "function": "A remote, isolated wilderness where few venture. Offers clear skies for star observation. Serves as a refuge for hermits and seekers of cosmic knowledge.",
       "status": "active",
       "notes": "The Pallid Wastes are the base of operations for the hermit woman and exemplify how the cosmic renewal is reshaping the world's regions.",
-      "first_story": "",
-      "first_date": "2026-03-06",
-      "appearances": 1,
+      "first_story": "The Cartographer's Silence",
+      "first_date": "2026-03-07",
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-03",
           "title": "The Shepherd of Dying Stars"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
         }
       ],
       "world": "The Known World",
@@ -14290,7 +15196,7 @@
       "status": "active",
       "notes": "Wind-haunted ports suggest volatile weather; active smuggling routes; deepkin maintain presence in nearby waters.",
       "first_story": "",
-      "first_date": "2026-03-06",
+      "first_date": "2026-03-07",
       "appearances": 3,
       "story_appearances": [
         {
@@ -14328,7 +15234,7 @@
       "status": "active",
       "notes": "The pre-human ruins now glow with inner light and their inscriptions shimmer, suggesting they were built in anticipation of the current cosmic moment.",
       "first_story": "",
-      "first_date": "2026-03-06",
+      "first_date": "2026-03-07",
       "appearances": 2,
       "story_appearances": [
         {
@@ -14362,7 +15268,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "",
-      "first_date": "2026-03-06",
+      "first_date": "2026-03-07",
       "appearances": 1,
       "story_appearances": [
         {
@@ -14379,6 +15285,33 @@
       "aliases": [
         "Hearthlands"
       ]
+    },
+    {
+      "name": "Verdant Lands",
+      "tagline": "Ancient. Living. Declining.",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "climate": "temperate",
+      "terrain": "forest",
+      "ruler": "",
+      "function": "Ancient forests where circle-keepers dwell and tend to the covenant between earth and sky. A nexus of seasonal magic and territorial harmony now disrupted by the Stellar Rite.",
+      "status": "cursed",
+      "notes": "The breaking of the Stellar Rite has caused seasonal magics to stutter, ley-lines to fail, and beasts to lose their territorial knowledge. The forest is slowly dying.",
+      "first_story": "The Druid's Covenant",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "province": "unknown",
+      "region": "Verdant Lands",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -14701,7 +15634,7 @@
       "status": "unknown",
       "first_story": "The Starlight Cartographer's Reckoning",
       "first_date": "2026-03-06",
-      "appearances": 2,
+      "appearances": 4,
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -14710,6 +15643,14 @@
         {
           "date": "2026-03-06",
           "title": "The Young Sorcerer's New Inheritance"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Ash-Caller's Debt"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
         }
       ]
     },
@@ -14739,9 +15680,9 @@
     {
       "name": "The Empire",
       "tagline": "",
-      "first_story": "The Deepkin's Ledger",
-      "first_date": "2026-03-05",
-      "appearances": 4,
+      "first_story": "The Tax Collector's Reckoning",
+      "first_date": "2026-03-06",
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -14758,6 +15699,10 @@
         {
           "date": "2026-03-06",
           "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
         }
       ],
       "continent": "Valdris",
@@ -14847,9 +15792,9 @@
     {
       "name": "The Empire",
       "tagline": "",
-      "first_story": "The Tax Collector's Reckoning",
-      "first_date": "2026-03-06",
-      "appearances": 4,
+      "first_story": "The Cartographer's Silence",
+      "first_date": "2026-03-07",
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -14866,6 +15811,10 @@
         {
           "date": "2026-03-06",
           "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
         }
       ],
       "continent": "unknown",
@@ -14885,6 +15834,28 @@
       "aliases": [
         "Empire"
       ]
+    },
+    {
+      "name": "Deepkin Realms",
+      "tagline": "",
+      "first_story": "",
+      "first_date": "2026-03-07",
+      "appearances": 1,
+      "story_appearances": [],
+      "continent": "unknown",
+      "capital": "unknown",
+      "function": "Auto-added from character home_realm.",
+      "taxation": "unknown",
+      "military": "unknown",
+      "status": "unknown",
+      "notes": "",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "subcontinent": "unknown",
+      "realm": "Deepkin Realms",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     }
   ],
   "provinces": [],

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-06T11:21:39.147858+00:00",
+  "generated_at": "2026-03-07T11:16:21.151745+00:00",
   "source": "codex.json",
   "count": 50,
   "events": [
@@ -9,12 +9,12 @@
       "event_type": "ritual / cosmic event",
       "scope": "world",
       "epicenter": "unknown",
-      "stage": "crisis",
-      "intensity": 4,
+      "stage": "climax",
+      "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-03-04",
-      "recent_issues": 3,
-      "trend": 1,
+      "last_seen": "2026-03-07",
+      "recent_issues": 4,
+      "trend": 2,
       "referenced_locations": {
         "places": [
           "Scorched Reach",
@@ -49,6 +49,30 @@
         {
           "date": "2026-03-04",
           "title": "The Young Sorcerer's Inheritance"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Bone-Singer's Vigil"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Cartographer's Silence"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Forge-Master's Ruin"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Young Sorcerer's Burden"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Archer's Cold Trail"
+        },
+        {
+          "date": "2026-03-07",
+          "title": "The Druid's Covenant"
         }
       ]
     },
@@ -63,7 +87,7 @@
       "resolved": false,
       "last_seen": "2026-03-04",
       "recent_issues": 3,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -86,67 +110,6 @@
         {
           "date": "2026-03-04",
           "title": "The Drowned Prince's Vigil"
-        }
-      ]
-    },
-    {
-      "name": "Stellar Working",
-      "tagline": "Planned. Performed. Prophetic.",
-      "event_type": "ritual",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-03-05",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-05",
-          "title": "The Cartographer's Burden"
-        }
-      ]
-    },
-    {
-      "name": "The Hermit's Census",
-      "tagline": "Counting. Revelation. Warning.",
-      "event_type": "discovery / revelation / catastrophe",
-      "scope": "world",
-      "epicenter": "Ashen Wastes",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-03-05",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Pelimor",
-          "Iron Coast",
-          "Keth'moris",
-          "unknown others"
-        ],
-        "regions": [
-          "The Ashen Reach",
-          "The Iron Coast",
-          "unknown"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-05",
-          "title": "The Hermit's Census"
         }
       ]
     },
@@ -258,6 +221,66 @@
         {
           "date": "2026-03-06",
           "title": "The Hermit Woman's New Census"
+        }
+      ]
+    },
+    {
+      "name": "The Celestial Ascension (Lore)",
+      "tagline": "Reality. Rewritten. Catastrophic.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-03-06",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Pre-Human Ruins",
+          "Anthrim",
+          "Sunburned Reach",
+          "Bone Wastes",
+          "High Observatory of Karethil"
+        ],
+        "regions": [
+          "The Ashen Reach",
+          "The Iron Coast"
+        ],
+        "realms": [
+          "the Empire"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "The Bone-Singer's Dirge"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Deepwarden's Vigil"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Hermit Woman's New Census"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Starlight Cartographer's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Young Sorcerer's New Inheritance"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "Vex's Fragment Market in Collapse"
         }
       ]
     },
@@ -410,13 +433,74 @@
       ]
     },
     {
+      "name": "Stellar Working",
+      "tagline": "Planned. Performed. Prophetic.",
+      "event_type": "ritual",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-05",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-05",
+          "title": "The Cartographer's Burden"
+        }
+      ]
+    },
+    {
+      "name": "The Hermit's Census",
+      "tagline": "Counting. Revelation. Warning.",
+      "event_type": "discovery / revelation / catastrophe",
+      "scope": "world",
+      "epicenter": "Ashen Wastes",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-05",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Pelimor",
+          "Iron Coast",
+          "Keth'moris",
+          "unknown others"
+        ],
+        "regions": [
+          "The Ashen Reach",
+          "The Iron Coast",
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-05",
+          "title": "The Hermit's Census"
+        }
+      ]
+    },
+    {
       "name": "The Celestial Binding",
       "tagline": "Cosmic. Transformative. Shattering.",
       "event_type": "ritual",
       "scope": "regional",
       "epicenter": "unknown",
-      "stage": "climax",
-      "intensity": 5,
+      "stage": "crisis",
+      "intensity": 4,
       "resolved": false,
       "last_seen": "2026-03-05",
       "recent_issues": 2,
@@ -482,8 +566,8 @@
       "event_type": "ritual",
       "scope": "regional",
       "epicenter": "unknown",
-      "stage": "climax",
-      "intensity": 5,
+      "stage": "crisis",
+      "intensity": 4,
       "resolved": false,
       "last_seen": "2026-03-05",
       "recent_issues": 2,
@@ -550,7 +634,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -575,7 +659,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -600,7 +684,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -625,7 +709,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Scorched Wastes"
@@ -654,7 +738,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -679,7 +763,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -704,7 +788,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -965,7 +1049,7 @@
       "resolved": false,
       "last_seen": "2026-03-02",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Echoing Vaults",
@@ -1061,7 +1145,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Kalthara"
@@ -1088,7 +1172,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Amrath"
@@ -1115,7 +1199,7 @@
       "resolved": false,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "The Bone Citadel"
@@ -1381,7 +1465,7 @@
       "resolved": true,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -1406,7 +1490,7 @@
       "resolved": true,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Shattered Provinces"
@@ -1435,7 +1519,7 @@
       "resolved": true,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -1460,7 +1544,7 @@
       "resolved": true,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Sunken Caverns"
@@ -1489,7 +1573,7 @@
       "resolved": true,
       "last_seen": "2026-02-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -1500,35 +1584,6 @@
         {
           "date": "2026-02-25",
           "title": "Morgath's Resurrection"
-        }
-      ]
-    },
-    {
-      "name": "Ritual of Dismissal",
-      "tagline": "Sacrifice. Release. Abdication.",
-      "event_type": "ritual",
-      "scope": "regional",
-      "epicenter": "Sunken Marches",
-      "stage": "aftermath",
-      "intensity": 1,
-      "resolved": true,
-      "last_seen": "2026-02-27",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "Sunken Marches"
-        ],
-        "regions": [
-          "Sunken Marches"
-        ],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-27",
-          "title": "The Warlord's Widow"
         }
       ]
     }
