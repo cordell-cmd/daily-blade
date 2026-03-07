@@ -2123,16 +2123,30 @@ async function fetchJsonWithTimeout(url, opts = {}) {
       // ignore
     }
   }, timeoutMs);
+
+  const timeoutP = new Promise((_, reject) => {
+    setTimeout(() => reject(new Error('Request timed out')), timeoutMs);
+  });
   try {
     // Some browsers (especially older Safari/WebView) may not support AbortController
     // or certain fetch() init options (like cache/signal). Use a conservative fallback.
+    const fetchP = (async () => {
+      try {
+        const init = { cache: 'no-store' };
+        if (controller) init.signal = controller.signal;
+        return await fetch(url, init);
+      } catch (e) {
+        return await fetch(url);
+      }
+    })();
+
     let res;
     try {
-      const init = { cache: 'no-store' };
-      if (controller) init.signal = controller.signal;
-      res = await fetch(url, init);
+      res = await Promise.race([fetchP, timeoutP]);
     } catch (e) {
-      res = await fetch(url);
+      // If we timed out, ensure late fetch rejections don't become unhandled.
+      fetchP.catch(() => {});
+      throw e;
     }
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return await res.json();
