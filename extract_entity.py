@@ -32,7 +32,7 @@ ARCHIVE_DIR = "archive"
 CODEX_CATEGORIES = [
     "characters", "places", "events", "rituals", "weapons", "artifacts",
     "factions", "lore", "flora_fauna", "magic", "relics", "regions",
-    "substances", "polities", "hemispheres", "continents", "subcontinents",
+    "substances", "polities", "hemispheres", "continents",
     "realms", "provinces", "districts",
 ]
 
@@ -100,7 +100,7 @@ Your task: Determine the BEST codex category for the highlighted text and produc
 
 AVAILABLE CATEGORIES:
 - characters: Named people/beings (fields: name, tagline, role, status, world, bio, traits[], travel_scope, home_place, home_region, home_realm, aliases[])
-- places: Named locations (fields: name, tagline, place_type, world, hemisphere, continent, subcontinent, realm, province, region, district, atmosphere, description, status, parent_place)
+- places: Named locations (fields: name, tagline, place_type, world, hemisphere, continent, realm, province, region, district, atmosphere, description, status, parent_place)
 - events: Named events (fields: name, tagline, participants[], outcome)
 - rituals: Named rituals (fields: name, tagline, type, description, cost)
 - weapons: Named weapons (fields: name, tagline, type, description, status)
@@ -111,6 +111,11 @@ AVAILABLE CATEGORIES:
 - magic: Named spells/magic systems (fields: name, tagline, type, description, status)
 - relics: Ancient objects of power (fields: name, tagline, type, description, status)
 - regions: Named geographic regions (fields: name, tagline, description, status)
+- districts: Named intra-city wards/quarters/neighborhoods (fields: name, tagline, description, parent_place, province, region, function, status, notes)
+- provinces: Named provinces (fields: name, tagline, description, realm, region, function, status, notes)
+- realms: Named realms (fields: name, tagline, description, continent, capital, function, taxation, military, status, notes)
+- continents: Continents (fields: name, tagline, description, hemispheres[], climate_zones[], function, status, notes)
+- hemispheres: Hemispheres (fields: name, tagline, description, function, status, notes)
 - substances: Named materials/substances (fields: name, tagline, type, description, status)
 - polities: Kingdoms/empires/nations (fields: name, tagline, type, status, description, seat, realm, region)
 

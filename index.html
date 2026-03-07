@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Cache-Control" content="no-store, max-age=0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <title>The Daily Blade — Pulp Fantasy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -553,7 +556,6 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
       <button class="codex-filter-btn" data-type="deities_and_entities">👁 Entities</button>
       <button class="codex-filter-btn" data-type="hemispheres">🌗 Hemispheres</button>
       <button class="codex-filter-btn" data-type="continents">🧭 Continents</button>
-      <button class="codex-filter-btn" data-type="subcontinents">🗺 Subcontinents</button>
       <button class="codex-filter-btn" data-type="realms">🏛 Realms</button>
       <button class="codex-filter-btn" data-type="polities">👑 Polities</button>
       <button class="codex-filter-btn" data-type="provinces">🏷 Provinces</button>
@@ -1207,7 +1209,6 @@ function codexTypeLabel(type) {
     deities_and_entities: 'Entities',
     hemispheres: 'Hemispheres',
     continents: 'Continents',
-    subcontinents: 'Subcontinents',
     realms: 'Realms',
     polities: 'Polities',
     provinces: 'Provinces',
@@ -1233,7 +1234,6 @@ function badgeClassForEntityType(type) {
     deities_and_entities: 'badge-magic',
     hemispheres: 'badge-region',
     continents: 'badge-region',
-    subcontinents: 'badge-region',
     realms: 'badge-region',
     polities: 'badge-polity',
     provinces: 'badge-region',
@@ -1257,7 +1257,7 @@ function buildCodexEntityIndex(data) {
   if (!d) return;
 
   const categories = [
-    'characters','places','hemispheres','continents','subcontinents','realms','provinces','regions','districts',
+    'characters','places','hemispheres','continents','realms','provinces','regions','districts',
     'polities','events','rituals','weapons','artifacts','factions','lore','flora_fauna','magic','relics','substances','deities_and_entities'
   ];
   const index = new Map();
@@ -1440,6 +1440,7 @@ async function ensureCodexDataLoaded() {
     CODEX_DATA_CACHE = data;
     codexDataLoaded = true;
     buildCodexEntityIndex(data);
+    clearTalesNonBlockingStatus();
     return data;
   })();
   try {
@@ -1601,7 +1602,7 @@ function renderEntityBadges(containerEl, entitiesByType) {
 
   const typeOrder = [
     'characters', 'places', 'polities', 'events', 'rituals', 'factions', 'magic', 'deities_and_entities', 'relics', 'artifacts', 'weapons', 'lore', 'flora_fauna', 'substances',
-    'regions', 'districts', 'provinces', 'realms', 'subcontinents', 'continents', 'hemispheres'
+    'regions', 'districts', 'provinces', 'realms', 'continents', 'hemispheres'
   ];
   const types = Array.from(entitiesByType.keys());
   types.sort((a, b) => {
@@ -1847,7 +1848,7 @@ function _primaryLabelTokensForEntity(type, obj) {
   if (type === 'deities_and_entities') return pick(o.type, 'Entity');
   if (type === 'relics') return pick(o.origin, 'Relic');
   if (type === 'substances') return pick(o.rarity, 'Substance');
-  if (['hemispheres','continents','subcontinents','realms','provinces','districts','regions'].includes(type)) {
+  if (['hemispheres','continents','realms','provinces','districts','regions'].includes(type)) {
     return pick(o.climate, type.slice(0,1).toUpperCase() + type.slice(1, -1));
   }
   return ['Unknown'];
@@ -1882,7 +1883,6 @@ function updateCodexCountLabel() {
     deities_and_entities: 'Entities',
     hemispheres: 'Hemispheres',
     continents: 'Continents',
-    subcontinents: 'Subcontinents',
     realms: 'Realms',
     polities: 'Polities',
     provinces: 'Provinces',
@@ -1960,7 +1960,6 @@ function applyCodexOrganization() {
     places: 'Places',
     hemispheres: 'Hemispheres',
     continents: 'Continents',
-    subcontinents: 'Subcontinents',
     realms: 'Realms',
     provinces: 'Provinces',
     regions: 'Regions',
@@ -2040,6 +2039,23 @@ function setStatus(html) {
   msg.innerHTML = html;
   msg.style.display = '';
   grid.style.display = 'none';
+}
+
+function setTalesNonBlockingStatus(html) {
+  const msg = document.getElementById('status-msg');
+  if (!msg) return;
+  msg.innerHTML = html;
+  msg.style.display = '';
+  msg.dataset.nonblocking = '1';
+}
+
+function clearTalesNonBlockingStatus() {
+  const msg = document.getElementById('status-msg');
+  if (!msg) return;
+  if (msg.dataset.nonblocking !== '1') return;
+  msg.innerHTML = '';
+  msg.style.display = 'none';
+  delete msg.dataset.nonblocking;
 }
 
 function hostingHintHtml() {
@@ -2311,7 +2327,10 @@ function renderStories(data) {
   // Fetch codex in the background and add entity badges under each story.
   ensureCodexDataLoaded()
     .then(() => enhanceStoryEntityBadges())
-    .catch(() => {/* non-fatal */});
+    .catch((err) => {
+      console.error(err);
+      setTalesNonBlockingStatus(errorBoxHtml('⚠ Entity badges unavailable', `Could not load ${CODEX_URL}: ${err && err.message ? err.message : String(err)}`));
+    });
 
   // Build genre filter buttons
   const genreBar = document.getElementById('genre-bar');
@@ -2555,7 +2574,15 @@ async function openStoryModalByAppearance(date, title, opts = {}) {
     // Show entity badges once codex data is ready.
     ensureCodexDataLoaded()
       .then(() => enhanceStoryEntityBadges())
-      .catch(() => {/* non-fatal */});
+      .catch((err) => {
+        console.error(err);
+        const modalBox = document.getElementById('story-modal-entities');
+        if (modalBox) {
+          modalBox.innerHTML = errorBoxHtml('⚠ Entity badges unavailable', `Could not load ${CODEX_URL}: ${err && err.message ? err.message : String(err)}`);
+          modalBox.style.display = '';
+          modalBox.dataset.enhanced = '1';
+        }
+      });
   } catch (err) {
     console.error(err);
     document.getElementById('story-modal-title').textContent = '⚠ Could not open story';
@@ -2769,10 +2796,9 @@ function buildMostSpecificLocationLine(e, opts = {}) {
     { label: 'Place', value: includePlace ? e.place : '', skipIfSameName: true },
     { label: parentLabel, value: (!includePlace && parentPlace) ? parentPlace : '' },
     { label: 'District', value: e.district },
-    { label: 'Region', value: e.region },
     { label: 'Province', value: e.province },
+    { label: 'Region', value: e.region },
     { label: 'Realm', value: e.realm },
-    { label: 'Subcontinent', value: e.subcontinent },
     { label: 'Continent', value: e.continent },
     { label: 'Hemisphere', value: e.hemisphere },
   ];
@@ -2794,7 +2820,6 @@ function buildPlaceParentChain(p) {
   const world = truthyNonUnknown(p.world) ? p.world : '';
   const hemisphere = truthyNonUnknown(p.hemisphere) ? p.hemisphere : '';
   const continent = truthyNonUnknown(p.continent) ? p.continent : '';
-  const subcontinent = truthyNonUnknown(p.subcontinent) ? p.subcontinent : '';
   const realm = truthyNonUnknown(p.realm) ? p.realm : '';
   const province = truthyNonUnknown(p.province) ? p.province : '';
   const region = truthyNonUnknown(p.region) ? p.region : '';
@@ -2803,17 +2828,16 @@ function buildPlaceParentChain(p) {
   const parentType = parentPlace ? (PLACE_TYPE_BY_NAME.get(String(parentPlace).toLowerCase()) || '') : '';
   const parentRowLabel = parentType && String(parentType).toLowerCase() === 'city' ? 'City' : 'Within';
 
-  const hasOther = hemisphere || continent || subcontinent || realm || province || region || district || parentPlace;
+  const hasOther = hemisphere || continent || realm || province || region || district || parentPlace;
   const worldVal = world || 'The Known World';
 
   const rows = [];
   rows.push(`<div class="geo-row"><strong>World</strong><span>${escHtml(worldVal)}</span></div>`);
   if (hemisphere) rows.push(`<div class="geo-row"><strong>Hemisphere</strong><span>${escHtml(hemisphere)}</span></div>`);
   if (continent) rows.push(`<div class="geo-row"><strong>Continent</strong><span>${escHtml(continent)}</span></div>`);
-  if (subcontinent) rows.push(`<div class="geo-row"><strong>Subcontinent</strong><span>${escHtml(subcontinent)}</span></div>`);
   if (realm) rows.push(`<div class="geo-row"><strong>Realm</strong><span>${escHtml(realm)}</span></div>`);
-  if (province) rows.push(`<div class="geo-row"><strong>Province</strong><span>${escHtml(province)}</span></div>`);
   if (region) rows.push(`<div class="geo-row"><strong>Region</strong><span>${escHtml(region)}</span></div>`);
+  if (province) rows.push(`<div class="geo-row"><strong>Province</strong><span>${escHtml(province)}</span></div>`);
   if (district) rows.push(`<div class="geo-row"><strong>District</strong><span>${escHtml(district)}</span></div>`);
   if (parentPlace && (!p.name || parentPlace.toLowerCase() !== String(p.name).toLowerCase())) rows.push(`<div class="geo-row"><strong>${escHtml(parentRowLabel)}</strong><span>${escHtml(parentPlace)}</span></div>`);
   if (!hasOther) rows.push(`<div class="geo-row"><strong>Hierarchy</strong><span>Unknown</span></div>`);
@@ -2831,7 +2855,6 @@ function buildEntityParentChain(e, opts = {}) {
   const world = truthyNonUnknown(e.world) ? e.world : '';
   const hemisphere = truthyNonUnknown(e.hemisphere) ? e.hemisphere : '';
   const continent = truthyNonUnknown(e.continent) ? e.continent : '';
-  const subcontinent = truthyNonUnknown(e.subcontinent) ? e.subcontinent : '';
   const realm = truthyNonUnknown(e.realm) ? e.realm : '';
   const province = truthyNonUnknown(e.province) ? e.province : '';
   const region = truthyNonUnknown(e.region) ? e.region : '';
@@ -2841,17 +2864,16 @@ function buildEntityParentChain(e, opts = {}) {
   const parentRowLabel = parentType && String(parentType).toLowerCase() === 'city' ? 'City' : 'Within';
   const place = !hidePlaceRow && truthyNonUnknown(e.place) ? e.place : '';
 
-  const hasOther = hemisphere || continent || subcontinent || realm || province || region || district || parentPlace || place;
+  const hasOther = hemisphere || continent || realm || province || region || district || parentPlace || place;
   const worldVal = world || 'The Known World';
 
   const rows = [];
   rows.push(`<div class="geo-row"><strong>World</strong><span>${escHtml(worldVal)}</span></div>`);
   if (hemisphere) rows.push(`<div class="geo-row"><strong>Hemisphere</strong><span>${escHtml(hemisphere)}</span></div>`);
   if (continent) rows.push(`<div class="geo-row"><strong>Continent</strong><span>${escHtml(continent)}</span></div>`);
-  if (subcontinent) rows.push(`<div class="geo-row"><strong>Subcontinent</strong><span>${escHtml(subcontinent)}</span></div>`);
   if (realm) rows.push(`<div class="geo-row"><strong>Realm</strong><span>${escHtml(realm)}</span></div>`);
-  if (province) rows.push(`<div class="geo-row"><strong>Province</strong><span>${escHtml(province)}</span></div>`);
   if (region) rows.push(`<div class="geo-row"><strong>Region</strong><span>${escHtml(region)}</span></div>`);
+  if (province) rows.push(`<div class="geo-row"><strong>Province</strong><span>${escHtml(province)}</span></div>`);
   if (district) rows.push(`<div class="geo-row"><strong>District</strong><span>${escHtml(district)}</span></div>`);
   if (parentPlace && (!e.name || parentPlace.toLowerCase() !== String(e.name).toLowerCase())) rows.push(`<div class="geo-row"><strong>${escHtml(parentRowLabel)}</strong><span>${escHtml(parentPlace)}</span></div>`);
   if (place && (!e.name || place.toLowerCase() !== String(e.name).toLowerCase())) rows.push(`<div class="geo-row"><strong>Place</strong><span>${escHtml(place)}</span></div>`);
@@ -2897,7 +2919,6 @@ function renderCodex(data) {
 
   const hemispheres = [...(data.hemispheres || [])].sort(byName);
   const continents  = [...(data.continents  || [])].sort(byName);
-  const subcontinents = [...(data.subcontinents || [])].sort(byName);
   const realms      = [...(data.realms      || [])].sort(byName);
   const polities    = [...(data.polities    || [])].sort(byName);
   const provinces   = [...(data.provinces   || [])].sort(byName);
@@ -2914,7 +2935,7 @@ function renderCodex(data) {
   const regions     = [...(data.regions     || [])].sort(byName);
   const substances  = [...(data.substances  || [])].sort(byName);
 
-  const total = characters.length + places.length + deities_and_entities.length + hemispheres.length + continents.length + subcontinents.length + realms.length + polities.length + provinces.length + districts.length + events.length + rituals.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
+  const total = characters.length + places.length + deities_and_entities.length + hemispheres.length + continents.length + realms.length + polities.length + provinces.length + districts.length + events.length + rituals.length + weapons.length + artifacts.length + factions.length + lore.length + flora_fauna.length + magic.length + relics.length + regions.length + substances.length;
 
   if (total === 0) {
     statusEl.innerHTML = '<em>The codex is empty. Return after the backfill workflow completes.</em>';
@@ -3094,35 +3115,6 @@ function renderCodex(data) {
         ${cn.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(cn.first_story)}</span>` : ''}
       </div>
       ${buildStoryLinks(cn.story_appearances, cn.first_story, cn.first_date)}
-    `;
-    attachStoryLinkListeners(card);
-    grid.appendChild(card);
-  });
-
-  // ── Subcontinents ─────────────────────────────────────────────
-  subcontinents.forEach(sc => {
-    const card = document.createElement('div');
-    card.className = 'codex-card geo-card';
-    stampCodexCardMeta(card, 'subcontinents', sc.name, _primaryLabelTokensForEntity('subcontinents', sc));
-    const scGeo = { ...sc, subcontinent: sc.name };
-    const appearances = sc.appearances > 1 ? `${sc.appearances} appearances` : 'First appearance';
-    card.innerHTML = `
-      <span class="codex-type-label">Subcontinent</span>
-      <div class="codex-card-name">${escHtml(sc.name)}</div>
-      ${sc.tagline ? `<div class="codex-card-tagline">${escHtml(sc.tagline)}</div>` : ''}
-      <div class="codex-card-badges">
-        <span class="badge badge-region">${escHtml(sc.climate || 'Subcontinent')}</span>
-        ${sc.status ? `<span class="badge badge-status-default">${escHtml(sc.status)}</span>` : ''}
-      </div>
-      ${buildMostSpecificLocationLine(scGeo)}
-      ${buildEntityParentChain(scGeo)}
-      <hr class="codex-divider" />
-      <div class="codex-body">${escHtml(sc.description || '')}</div>
-      <div class="codex-card-footer">
-        <span class="codex-appearances">${appearances}</span>
-        ${sc.first_story ? `<span style="font-size:.72rem;color:var(--muted)">First: ${escHtml(sc.first_story)}</span>` : ''}
-      </div>
-      ${buildStoryLinks(sc.story_appearances, sc.first_story, sc.first_date)}
     `;
     attachStoryLinkListeners(card);
     grid.appendChild(card);
@@ -3828,7 +3820,7 @@ function showAuditResults(name, type, result) {
 
   const typeLabelMap = {
     characters: 'Character', places: 'Place', hemispheres: 'Hemisphere', continents: 'Continent',
-    subcontinents: 'Subcontinent', realms: 'Realm', polities: 'Polity', provinces: 'Province',
+    realms: 'Realm', polities: 'Polity', provinces: 'Province',
     districts: 'District', events: 'Event', rituals: 'Ritual', weapons: 'Weapon',
     artifacts: 'Artifact', factions: 'Faction', lore: 'Lore', flora_fauna: 'Flora/Fauna',
     magic: 'Magic', relics: 'Relic', regions: 'Region', substances: 'Substance', deities_and_entities: 'Entity',
@@ -3896,6 +3888,7 @@ async function loadCodex(force = false) {
     }
     codexLoaded = true;
     renderCodex(data);
+    applyCodexFilter(activeCodexType || 'all');
   } catch (err) {
     console.error(err);
     statusEl.innerHTML = errorBoxHtml('⚠ The Codex is Lost', `Could not load: ${err && err.message ? err.message : String(err)}`);

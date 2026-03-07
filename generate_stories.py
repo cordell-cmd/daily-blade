@@ -162,13 +162,15 @@ def load_lore():
     """Load the existing lore bible, or return a minimal skeleton."""
     if os.path.exists(LORE_FILE):
         with open(LORE_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
+            lore = json.load(f)
+            if isinstance(lore, dict):
+                lore.pop("subcontinents", None)
+            return lore
     return {
         "version": "1.0",
         "worlds": [],
         "hemispheres": [],
         "continents": [],
-        "subcontinents": [],
         "realms": [],
         "polities": [],
         "provinces": [],
@@ -195,6 +197,113 @@ def load_geography():
         with open(GEOGRAPHY_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     return {}
+
+
+def seed_geo_entities_from_geography(lore: dict, geo: dict) -> dict:
+    """Seed hemisphere/continent entities into lore from geography.json.
+
+    Purpose: Continents/hemispheres are canonical facts and should exist in the
+    codex even if today's stories don't explicitly name them.
+    """
+    if not isinstance(lore, dict) or not isinstance(geo, dict):
+        return lore
+
+    lore.setdefault("hemispheres", [])
+    lore.setdefault("continents", [])
+
+    hemispheres = geo.get("hemispheres")
+    continents = geo.get("continents")
+    if not isinstance(hemispheres, list):
+        hemispheres = []
+    if not isinstance(continents, list):
+        continents = []
+
+    # Index existing lore entities by name (case-insensitive).
+    hemi_by_name = {
+        str(h.get("name") or "").strip().lower(): h
+        for h in (lore.get("hemispheres") or [])
+        if isinstance(h, dict) and str(h.get("name") or "").strip()
+    }
+    cont_by_name = {
+        str(c.get("name") or "").strip().lower(): c
+        for c in (lore.get("continents") or [])
+        if isinstance(c, dict) and str(c.get("name") or "").strip()
+    }
+
+    hemi_name_by_id = {
+        str(h.get("id") or "").strip(): str(h.get("name") or "").strip()
+        for h in hemispheres
+        if isinstance(h, dict) and str(h.get("id") or "").strip() and str(h.get("name") or "").strip()
+    }
+
+    def _fill_missing(target: dict, key: str, value):
+        if value in (None, "", [], {}):
+            return
+        if key not in target or target.get(key) in (None, "", [], {}):
+            target[key] = value
+
+    # Seed hemispheres
+    for h in hemispheres:
+        if not isinstance(h, dict):
+            continue
+        name = str(h.get("name") or "").strip()
+        if not name:
+            continue
+        entry = hemi_by_name.get(name.lower())
+        if entry is None:
+            entry = {
+                "id": str(h.get("id") or _make_snake_id(name)),
+                "name": name,
+                "tagline": "",
+                "description": str(h.get("description") or "").strip(),
+                "function": "Global climate/season logic.",
+                "status": "known",
+                "notes": "",
+            }
+            lore["hemispheres"].append(entry)
+            hemi_by_name[name.lower()] = entry
+
+        _fill_missing(entry, "id", str(h.get("id") or _make_snake_id(name)))
+        _fill_missing(entry, "description", str(h.get("description") or "").strip())
+        climate_band = str(h.get("climate_band") or "").strip()
+        if climate_band:
+            _fill_missing(entry, "notes", f"Climate band: {climate_band}.")
+
+    # Seed continents (bounded)
+    max_n = max(0, int(MAX_CONTINENTS or 0))
+    for c in continents[:max_n] if max_n else continents:
+        if not isinstance(c, dict):
+            continue
+        name = str(c.get("name") or "").strip()
+        if not name:
+            continue
+
+        entry = cont_by_name.get(name.lower())
+        if entry is None:
+            entry = {
+                "id": str(c.get("id") or _make_snake_id(name)),
+                "name": name,
+                "tagline": "",
+                "description": str(c.get("description") or "").strip(),
+                "hemispheres": [hemi_name_by_id.get(hid, hid) for hid in (c.get("hemispheres") or []) if str(hid or "").strip()],
+                "climate_zones": c.get("climate_zones", []) if isinstance(c.get("climate_zones"), list) else [],
+                "function": "Macro-biome and travel logic.",
+                "status": str(c.get("status") or "unknown").strip() or "unknown",
+                "notes": "",
+            }
+            lore["continents"].append(entry)
+            cont_by_name[name.lower()] = entry
+
+        _fill_missing(entry, "id", str(c.get("id") or _make_snake_id(name)))
+        _fill_missing(entry, "description", str(c.get("description") or "").strip())
+        _fill_missing(entry, "status", str(c.get("status") or "unknown").strip() or "unknown")
+        hz = [hemi_name_by_id.get(hid, hid) for hid in (c.get("hemispheres") or []) if str(hid or "").strip()]
+        if hz:
+            _fill_missing(entry, "hemispheres", hz)
+        cz = c.get("climate_zones") if isinstance(c.get("climate_zones"), list) else []
+        if cz:
+            _fill_missing(entry, "climate_zones", cz)
+    return lore
 
 
 def build_geography_context(geo):
@@ -408,7 +517,6 @@ def ensure_home_location_entities_exist(lore, date_key: str):
                 "world": "known_world",
                 "hemisphere": "unknown",
                 "continent": "unknown",
-                "subcontinent": "unknown",
                 "realm": home_realm if _truthy_non_unknown(home_realm) else "unknown",
                 "province": "unknown",
                 "region": home_region if _truthy_non_unknown(home_region) else "unknown",
@@ -433,7 +541,7 @@ def ensure_place_parent_chain(lore: dict):
 
     Applies to:
     - places (parents only)
-    - regions/districts/provinces/realms/subcontinents/continents/hemispheres
+    - regions/districts/provinces/realms/continents/hemispheres
     
     Notes:
     - We don't force a specific 'world' name; we only ensure the field exists.
@@ -448,7 +556,6 @@ def ensure_place_parent_chain(lore: dict):
             obj["world"] = "The Known World"
         obj.setdefault("hemisphere", "unknown")
         obj.setdefault("continent", "unknown")
-        obj.setdefault("subcontinent", "unknown")
         obj.setdefault("realm", "unknown")
         obj.setdefault("province", "unknown")
         obj.setdefault("region", "unknown")
@@ -465,7 +572,6 @@ def ensure_place_parent_chain(lore: dict):
     self_field_by_cat = {
         "hemispheres": "hemisphere",
         "continents": "continent",
-        "subcontinents": "subcontinent",
         "realms": "realm",
         "provinces": "province",
         "districts": "district",
@@ -1313,7 +1419,7 @@ def _canon_loc_names_from_codex(codex: dict) -> dict[str, list[str]]:
     if not isinstance(codex, dict):
         return {}
     out: dict[str, list[str]] = {}
-    for cat in ["places", "districts", "provinces", "regions", "realms", "subcontinents", "continents", "hemispheres", "worlds", "polities"]:
+    for cat in ["places", "districts", "provinces", "regions", "realms", "continents", "hemispheres", "worlds", "polities"]:
         items = codex.get(cat, [])
         if not isinstance(items, list):
             continue
@@ -1494,7 +1600,6 @@ def _infer_event_geo_from_codex(event: dict, loc_names: dict[str, list[str]]) ->
         ("provinces", "province"),
         ("regions", "region"),
         ("realms", "realm"),
-        ("subcontinents", "subcontinent"),
         ("continents", "continent"),
         ("worlds", "world"),
     ]
@@ -1556,7 +1661,7 @@ def _infer_event_geo_from_codex(event: dict, loc_names: dict[str, list[str]]) ->
         scope = "regional"
         if mentions.get("worlds"):
             scope = "world"
-        elif mentions.get("continents") or mentions.get("subcontinents"):
+        elif mentions.get("continents"):
             scope = "continental"
         elif mentions.get("realms") or mentions.get("regions"):
             scope = "regional"
@@ -1646,7 +1751,6 @@ def _entity_geo_anchors(category: str, item: dict) -> dict[str, str]:
         "world": _get("world"),
         "hemisphere": _get("hemisphere"),
         "continent": _get("continent"),
-        "subcontinent": _get("subcontinent"),
         "realm": _get("realm"),
         "province": _get("province"),
         "region": _get("region"),
@@ -1659,7 +1763,7 @@ def _entity_geo_anchors(category: str, item: dict) -> dict[str, str]:
         anchors["region"] = _get("home_region") or anchors.get("region", "")
         anchors["realm"] = _get("home_realm") or anchors.get("realm", "")
 
-    if category in {"places", "districts", "provinces", "regions", "realms", "continents", "subcontinents", "hemispheres", "worlds"}:
+    if category in {"places", "districts", "provinces", "regions", "realms", "continents", "hemispheres", "worlds"}:
         nm = _get("name")
         if nm:
             if category == "places":
@@ -1674,8 +1778,6 @@ def _entity_geo_anchors(category: str, item: dict) -> dict[str, str]:
                 anchors["realm"] = anchors.get("realm") or nm
             elif category == "continents":
                 anchors["continent"] = anchors.get("continent") or nm
-            elif category == "subcontinents":
-                anchors["subcontinent"] = anchors.get("subcontinent") or nm
             elif category == "hemispheres":
                 anchors["hemisphere"] = anchors.get("hemisphere") or nm
             elif category == "worlds":
@@ -1715,7 +1817,6 @@ def _in_event_scope(entity_anchors: dict[str, str], event_geo: dict) -> bool:
     if scope == "continental":
         return (
             ("continent" in entity_anchors and _has("continents", entity_anchors["continent"]))
-            or ("subcontinent" in entity_anchors and _has("subcontinents", entity_anchors["subcontinent"]))
             or ("realm" in entity_anchors and _has("realms", entity_anchors["realm"]))
             or ("region" in entity_anchors and _has("regions", entity_anchors["region"]))
         )
@@ -1857,7 +1958,7 @@ def build_world_event_arcs_section(today_str: str, lore: dict, event_arc_dossier
             lines.append("   Visibility: travel and trade disruptions; neighboring places feel second-order effects.")
         elif scope_lc in {"realm", "kingdom", "nation"}:
             lines.append("   Visibility: policy/edicts, taxes, conscription, border controls; distant places feel price shocks.")
-        elif scope_lc in {"continent", "subcontinent"}:
+        elif scope_lc in {"continent"}:
             lines.append("   Visibility: multi-region instability; supply chains fracture; refugees and mercenary work surge.")
         elif scope_lc in {"hemisphere", "world"}:
             lines.append("   Visibility: widespread scarcity and fear; even unrelated stories should carry a trace (rumor, shortages, omens).")
@@ -2169,6 +2270,14 @@ These are HARD constraints, not suggestions. Follow them exactly.
 5. SETTING VARIETY:
    - Use at least 3 clearly different types of terrain or environment (city, sea, forest, desert, mountain, tundra, underground, sky, swamp, ruin, etc.).
    - Not every location needs to be cursed or sinister. Some should feel wondrous, beautiful, or alive.
+
+CITY DISTRICTS (important for codex depth):
+- If a story is set in a city (even briefly), name the specific district/ward/quarter/neighborhood (e.g., "Ropewalk Quarter", "Saltward", "Old Wall", "Lantern Market").
+- Districts are intra-city areas; treat them as quarters/wards within a city, not provinces.
+
+MYTH-MAKING WEAPONS (rare, but memorable):
+- In 1–2 stories today, feature a NAMED weapon (blade/axe/spear/bow/etc.) that feels storied and strange — magic that is internal/psychic/binding, not just glowing fire.
+- If a weapon is named, hint at its origin or cost (a forge-cult, a vow, a curse, a sentient hunger).
 
 FANTASY TOOLBOX (use the full range — these are NOT a limit; invent freely):
 - Non-human peoples (elves, dwarves, goblin-kind, smallfolk, orcs/ogres/trolls — or wholly new lineages).
@@ -2888,7 +2997,6 @@ def build_lore_extraction_prompt(stories, existing_lore):
     existing_realms       = {r["name"].lower() for r in existing_lore.get("realms",       []) if isinstance(r, dict) and r.get("name")}
     existing_provinces    = {p["name"].lower() for p in existing_lore.get("provinces",    []) if isinstance(p, dict) and p.get("name")}
     existing_districts    = {d["name"].lower() for d in existing_lore.get("districts",    []) if isinstance(d, dict) and d.get("name")}
-    existing_subcontinents = {s["name"].lower() for s in existing_lore.get("subcontinents", []) if isinstance(s, dict) and s.get("name")}
     existing_hemispheres  = {h["name"].lower() for h in existing_lore.get("hemispheres",  []) if isinstance(h, dict) and h.get("name")}
 
     def _known_summary(items, limit=50):
@@ -2909,7 +3017,11 @@ def build_lore_extraction_prompt(stories, existing_lore):
     candidates_block = "\n".join([f"- {c}" for c in name_candidates]) if name_candidates else "- (none)"
 
     return f"""You are a lore archivist for a sword-and-sorcery story universe.
-Analyze the following stories and extract lore elements — characters, places, events, weapons, artifacts, factions, polities (governments/crowns/thrones), lore, flora/fauna, magic, relics, regions, substances, and geo hierarchy entries (hemisphere/continent/subcontinent/realm/province/district) — that appear in these stories.
+Analyze the following stories and extract lore elements — characters, places, events, weapons, artifacts, factions, polities (governments/crowns/thrones), lore, flora/fauna, magic, relics, regions, substances, and geo hierarchy entries (hemisphere/continent/realm/province/region/district) — that appear in these stories.
+
+Important note on districts:
+- Districts are named intra-city areas (wards/quarters/neighborhoods) within a city.
+- If a city appears, extract any named district/ward/quarter mentioned.
 
 Priority: COMPLETENESS over novelty.
 - It is OK if you re-extract something that already exists; the merge step will deduplicate.
@@ -2950,7 +3062,6 @@ EXISTING CANON (reference only; non-exhaustive; ok to repeat):
 - Relics & Cursed Items: {_known_summary(existing_relics)}
 - Continents: {_known_summary(existing_continents)}
 - Hemispheres: {_known_summary(existing_hemispheres)}
-- Subcontinents: {_known_summary(existing_subcontinents)}
 - Realms: {_known_summary(existing_realms)}
 - Provinces: {_known_summary(existing_provinces)}
 - Regions: {_known_summary(existing_regions)}
@@ -3011,11 +3122,11 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "id": "snake_case_id",
       "name": "Place Name",
       "tagline": "Three evocative words describing this place.",
-      "place_type": "city / fortress / ruin / temple / wilderness / etc",
+            "place_type": "city / village / fortress / ruin / temple / wilderness / etc",
       "world": "known_world",
+                        "parent_place": "Name of the immediate containing place (e.g. a city for a district; a district for a neighborhood) or 'unknown'",
             "hemisphere": "Name or 'unknown'",
             "continent": "Name or 'unknown'",
-            "subcontinent": "Name or 'unknown'",
             "realm": "Name or 'unknown'",
             "province": "Name or 'unknown'",
             "region": "Name or 'unknown'",
@@ -3190,6 +3301,7 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
             "id": "snake_case_id",
             "name": "Realm Name",
             "tagline": "Three evocative words.",
+            "description": "1–2 sentence description.",
             "continent": "Name or 'unknown'",
             "capital": "Capital city or 'unknown'",
             "function": "What this realm IS for (sovereignty, law, diplomacy, taxes).",
@@ -3204,19 +3316,9 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
             "id": "snake_case_id",
             "name": "Continent Name",
             "tagline": "Three evocative words.",
+            "description": "1–2 sentence description.",
             "function": "What this continent IS for (macro-biomes, cultural sphere, long-distance travel logic).",
             "status": "stable / fragmented / unknown",
-            "notes": "Any hooks."
-        }}
-    ],
-    "subcontinents": [
-        {{
-            "id": "snake_case_id",
-            "name": "Subcontinent Name",
-            "tagline": "Three evocative words.",
-            "continent": "Name or 'unknown'",
-            "function": "What this subcontinent IS for (trade zone, shared language sphere, coast vs interior).",
-            "status": "stable / contested / unknown",
             "notes": "Any hooks."
         }}
     ],
@@ -3225,6 +3327,7 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
             "id": "snake_case_id",
             "name": "Hemisphere Name",
             "tagline": "Three evocative words.",
+            "description": "1–2 sentence description.",
             "function": "What this hemisphere IS for (climate/season logic at global scale).",
             "status": "known / unknown",
             "notes": "Any hooks."
@@ -3235,6 +3338,7 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
             "id": "snake_case_id",
             "name": "Province / Territory Name",
             "tagline": "Three evocative words.",
+            "description": "1–2 sentence description.",
             "realm": "Realm Name or 'unknown'",
             "region": "Region Name or 'unknown'",
             "function": "What this province IS for (tax zone, administration, logistics).",
@@ -3247,9 +3351,11 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
             "id": "snake_case_id",
             "name": "District Name",
             "tagline": "Three evocative words.",
+            "description": "1–2 sentence description.",
+            "parent_place": "City/Place that contains this district, or 'unknown'",
             "province": "Province Name or 'unknown'",
             "region": "Region Name or 'unknown'",
-            "function": "What this district IS for (military defense zone, patrol boundary, terrain management).",
+            "function": "What this district IS for (ward/quarter/neighborhood, docks, market, temple row, etc).",
             "status": "stable / contested / unknown",
             "notes": "Any hooks."
         }}
@@ -3471,7 +3577,7 @@ def sync_cross_category_appearances(codex: dict) -> int:
         "characters", "places", "events", "rituals", "weapons",
         "artifacts", "factions", "lore", "flora_fauna", "magic",
         "relics", "regions", "substances", "polities",
-        "hemispheres", "continents", "subcontinents", "realms",
+        "hemispheres", "continents", "realms",
         "provinces", "districts",
     ]
 
@@ -3584,7 +3690,6 @@ def merge_lore(existing_lore, new_lore, date_key):
     for category in [
         "hemispheres",
         "continents",
-        "subcontinents",
         "realms",
         "polities",
         "provinces",
@@ -3954,7 +4059,6 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
         "last_updated": date_key,
         "hemispheres": [],
         "continents": [],
-        "subcontinents": [],
         "realms": [],
         "polities": [],
         "provinces": [],
@@ -3964,6 +4068,7 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
         "events": [],
         "rituals": [],
         "weapons": [],
+        "deities_and_entities": [],
         "artifacts": [],
         "factions": [],
         "lore": [],
@@ -3977,6 +4082,9 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
         try:
             with open(CODEX_FILE, "r", encoding="utf-8") as f:
                 codex = json.load(f)
+            if isinstance(codex, dict):
+                codex.pop("subcontinents", None)
+                codex.setdefault("deities_and_entities", [])
         except (json.JSONDecodeError, IOError):
             pass
 
@@ -4033,6 +4141,16 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
 
     def merge_named_category(cat_key: str, field_keys: list):
         existing = {i.get("name", "").lower(): i for i in codex.get(cat_key, []) if isinstance(i, dict) and i.get("name")}
+
+        def _should_overwrite(v) -> bool:
+            if v is None:
+                return False
+            if isinstance(v, str):
+                return _truthy_non_unknown(v)
+            if isinstance(v, (list, dict)):
+                return len(v) > 0
+            return True
+
         for item in lore.get(cat_key, []) or []:
             if not isinstance(item, dict):
                 continue
@@ -4044,7 +4162,7 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
             if name_low in existing:
                 ex = existing[name_low]
                 for k in field_keys:
-                    if k in item and (item.get(k) is not None):
+                    if k in item and _should_overwrite(item.get(k)):
                         ex[k] = item.get(k)
                 prior = ex.get("story_appearances", [])
                 new_ones = [a for a in today_apps if not any(p["date"] == a["date"] and p["title"] == a["title"] for p in prior)]
@@ -4235,13 +4353,15 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
     codex["characters"] = uniq
 
     # ── Geo hierarchy categories ─────────────────────────────────────────
-    merge_named_category("hemispheres", ["function", "status", "notes"]) 
-    merge_named_category("continents", ["function", "status", "notes"]) 
-    merge_named_category("subcontinents", ["continent", "function", "status", "notes"]) 
-    merge_named_category("realms", ["continent", "capital", "function", "taxation", "military", "status", "notes"]) 
+    merge_named_category("hemispheres", ["tagline", "description", "function", "status", "notes"]) 
+    merge_named_category("continents", ["tagline", "description", "hemispheres", "climate_zones", "function", "status", "notes"]) 
+    merge_named_category("realms", ["tagline", "description", "continent", "capital", "function", "taxation", "military", "status", "notes"]) 
     merge_named_category("polities", ["polity_type", "realm", "region", "seat", "sovereigns", "claimants", "status", "description", "notes"]) 
-    merge_named_category("provinces", ["realm", "region", "function", "status", "notes"]) 
-    merge_named_category("districts", ["province", "region", "function", "status", "notes"]) 
+    merge_named_category("provinces", ["tagline", "description", "realm", "region", "function", "status", "notes"]) 
+    merge_named_category("districts", ["tagline", "description", "parent_place", "province", "region", "function", "status", "notes"]) 
+
+    # ── Deities / Entities ───────────────────────────────────────────────
+    merge_named_category("deities_and_entities", ["type", "world", "tagline", "description", "status", "notes", "aliases"]) 
 
     # ── Rituals ─────────────────────────────────────────────────────────
     merge_named_category("rituals", ["ritual_type", "performed_by", "requirements", "effect", "cost", "notes"])
@@ -4254,13 +4374,19 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
         today_appearances = stories_for(name)
         if name_low in existing_places:
             ex = existing_places[name_low]
-            ex["hemisphere"] = p.get("hemisphere", ex.get("hemisphere", "unknown"))
-            ex["continent"] = p.get("continent", ex.get("continent", "unknown"))
-            ex["subcontinent"] = p.get("subcontinent", ex.get("subcontinent", "unknown"))
-            ex["realm"] = p.get("realm", ex.get("realm", "unknown"))
-            ex["province"] = p.get("province", ex.get("province", "unknown"))
-            ex["region"] = p.get("region", ex.get("region", "unknown"))
-            ex["district"] = p.get("district", ex.get("district", "unknown"))
+            incoming_parent_place = str(p.get("parent_place") or "").strip()
+            if _truthy_non_unknown(incoming_parent_place):
+                ex["parent_place"] = incoming_parent_place
+
+            # Only allow non-unknown incoming geo fields to overwrite existing ones.
+            for k in ["hemisphere", "continent", "realm", "province", "region", "district"]:
+                incoming = str(p.get(k) or "").strip()
+                if _truthy_non_unknown(incoming):
+                    ex[k] = incoming
+                else:
+                    if k not in ex or ex.get(k) in (None, ""):
+                        ex[k] = "unknown"
+
             ex["description"] = p.get("description", ex.get("description", ""))
             ex["status"]      = p.get("status",      ex.get("status",      "unknown"))
             if p.get("tagline") and not ex.get("tagline"):
@@ -4282,9 +4408,9 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
                 "tagline":           p.get("tagline", ""),
                 "place_type":        p.get("place_type", ""),
                 "world":             resolve_world(p.get("world", "")),
+                "parent_place":      p.get("parent_place", ""),
                 "hemisphere":        p.get("hemisphere", "unknown"),
                 "continent":         p.get("continent", "unknown"),
-                "subcontinent":      p.get("subcontinent", "unknown"),
                 "realm":             p.get("realm", "unknown"),
                 "province":          p.get("province", "unknown"),
                 "region":            p.get("region", "unknown"),
@@ -4298,6 +4424,10 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
                 "story_appearances": today_appearances,
             }
     codex["places"] = list(existing_places.values())
+
+    for p in codex.get("places", []) or []:
+        if isinstance(p, dict):
+            p.pop("subcontinent", None)
 
     # ── Merge events ─────────────────────────────────────────────────────
     existing_events = {e["name"].lower(): e for e in codex.get("events", [])}
@@ -4729,6 +4859,7 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
         "events",
         "rituals",
         "weapons",
+        "deities_and_entities",
         "artifacts",
         "factions",
         "lore",
@@ -5021,7 +5152,6 @@ def normalize_extracted_lore(extracted):
         "regions",
         "realms",
         "continents",
-        "subcontinents",
         "hemispheres",
         "provinces",
         "districts",
@@ -5200,7 +5330,7 @@ def _merge_extracted_batches(batches: list[dict]) -> dict:
         "characters", "places", "events", "rituals", "weapons",
         "deities_and_entities", "artifacts", "factions", "lore",
         "flora_fauna", "magic", "relics", "regions", "realms",
-        "continents", "subcontinents", "hemispheres", "provinces",
+        "continents", "hemispheres", "provinces",
         "districts", "substances", "polities",
     ]
     merged: dict = {k: [] for k in expected_keys}
@@ -5294,7 +5424,7 @@ def _extract_lore_batched(client, stories: list[dict], lore: dict) -> dict:
             "characters", "places", "events", "rituals", "weapons",
             "deities_and_entities", "artifacts", "factions", "lore",
             "flora_fauna", "magic", "relics", "regions", "realms",
-            "continents", "subcontinents", "hemispheres", "provinces",
+            "continents", "hemispheres", "provinces",
             "districts", "substances", "polities",
         ]}
 
@@ -5723,6 +5853,8 @@ def main():
 
     # ── Load existing lore ────────────────────────────────────────────────
     lore = load_lore()
+    geo = load_geography()
+    lore = seed_geo_entities_from_geography(lore, geo)
     ensure_place_parent_chain(lore)
     enforce_continent_limit(lore)
     print(f"\u2713 Loaded lore ({len(lore.get('characters', []))} characters, "
