@@ -2112,6 +2112,24 @@ function errorBoxHtml(title, message) {
   return `<div class="error-box"><strong>${escHtml(title)}</strong> ${escHtml(message)}${hintHtml}</div>`;
 }
 
+async function fetchJsonWithTimeout(url, opts = {}) {
+  const timeoutMs = Number.isFinite(opts.timeoutMs) ? opts.timeoutMs : 9000;
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetch(url, { cache: 'no-store', signal: controller.signal });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    return await res.json();
+  } catch (e) {
+    if (e && String(e.name || '') === 'AbortError') {
+      throw new Error('Request timed out');
+    }
+    throw e;
+  } finally {
+    clearTimeout(id);
+  }
+}
+
 // ── Genre Filter ─────────────────────────────────────────────────────
 function applyGenreFilter(genre) {
   activeGenre = genre;
@@ -2151,9 +2169,7 @@ async function getArchiveIndex() {
   if (ARCHIVE_INDEX_CACHE) return ARCHIVE_INDEX_CACHE;
   if (ARCHIVE_INDEX_PROMISE) return ARCHIVE_INDEX_PROMISE;
   ARCHIVE_INDEX_PROMISE = (async () => {
-    const res = await fetch(ARCHIVE_IDX_URL + '?t=' + Date.now());
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const idx = await res.json();
+    const idx = await fetchJsonWithTimeout(ARCHIVE_IDX_URL + '?t=' + Date.now(), { timeoutMs: 9000 });
     ARCHIVE_INDEX_CACHE = idx;
     archiveLoaded = true;
     return idx;
@@ -2662,9 +2678,7 @@ async function loadArchiveDate(date) {
   closeArchive();
   setStatus('<span class="spinner"></span><em>Retrieving tales from the vault…</em>');
   try {
-    const res = await fetch(ARCHIVE_URL(date) + '?t=' + Date.now());
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
+    const data = await fetchJsonWithTimeout(ARCHIVE_URL(date) + '?t=' + Date.now(), { timeoutMs: 12000 });
     if (!data.stories || data.stories.length === 0) throw new Error('No stories in archive entry.');
     renderStories(data);
   } catch (err) {
@@ -4303,7 +4317,8 @@ async function loadArchiveIndex() {
     });
   } catch (err) {
     console.error(err);
-    listEl.innerHTML = `<div class="archive-empty"><em>Could not open the vault.<br>${escHtml(err.message)}</em></div>`;
+    const msg = (err && err.message) ? String(err.message) : String(err);
+    listEl.innerHTML = errorBoxHtml('⚠ Could not open the vault', `Could not load ${ARCHIVE_IDX_URL}: ${msg}`);
   }
 }
 

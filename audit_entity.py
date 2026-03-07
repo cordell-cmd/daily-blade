@@ -47,6 +47,23 @@ def _normalize_key(name: str) -> str:
     return str(name or "").strip().casefold()
 
 
+def _normalize_search_text(text: str) -> str:
+    """Normalize text for substring-style mention detection.
+
+    Unifies common Unicode punctuation so names like "Khar‑Zul" and
+    "Khar-Zul" can match.
+    """
+    s = str(text or "").casefold()
+    # apostrophes / quotes
+    s = s.replace("\u2018", "'").replace("\u2019", "'").replace("\u2032", "'")
+    # hyphens/dashes (hyphen, non-breaking hyphen, figure dash, en/em dash, minus)
+    for ch in ("\u2010", "\u2011", "\u2012", "\u2013", "\u2014", "\u2212"):
+        s = s.replace(ch, "-")
+    # collapse whitespace
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
 def find_entity(codex: dict, entity_type: str, entity_name: str):
     """Find an entity in the codex by type and name."""
     arr = codex.get(entity_type, [])
@@ -298,13 +315,13 @@ def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[d
     possible_matches: stories where only the first token appears (not safe to auto-link).
     """
     full = str(entity_name or "").strip()
-    full_cf = full.casefold()
+    full_cf = _normalize_search_text(full)
     first = (full.split() or [""])[0]
     first_re = re.compile(rf"\b{re.escape(first)}\b", re.IGNORECASE) if first else None
 
     aliases = _extract_aliases(entity)
     safe_aliases = [a for a in aliases if len(a.split()) >= 2]
-    safe_aliases_cf = [a.casefold() for a in safe_aliases]
+    safe_aliases_cf = [_normalize_search_text(a) for a in safe_aliases]
 
     # Single-token aliases can be ambiguous (especially across roles like demon vs warlord).
     # We only auto-link them when either:
@@ -322,8 +339,8 @@ def _discover_story_mentions(entity_name: str, entity: dict, all_stories: list[d
 
     for s in all_stories:
         text = str(s.get("text", ""))
-        text_cf = text.casefold()
-        if full and full_cf in text_cf:
+        text_cf = _normalize_search_text(text)
+        if full and full_cf and full_cf in text_cf:
             exact.append({**s, "match": "full_name"})
             continue
         hit_alias = None
@@ -477,11 +494,6 @@ def main() -> int:
     parser.add_argument("--max-tokens", type=int, default=2048)
     args = parser.parse_args()
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("ERROR: ANTHROPIC_API_KEY not set.", file=sys.stderr)
-        return 2
-
     # Load codex and find entity
     if not os.path.exists(CODEX_FILE):
         print(f"ERROR: {CODEX_FILE} not found.", file=sys.stderr)
@@ -542,8 +554,30 @@ def main() -> int:
     # Gather story appearances
     apps = get_story_appearances(entity)
     if not apps:
-        print(f"ERROR: No story appearances found for '{args.entity_name}'.", file=sys.stderr)
-        return 1
+        # Don't hard-fail: write a result payload so the UI (or CLI user) gets a useful explanation.
+        result = {
+            "entity_name": args.entity_name,
+            "entity_type": args.entity_type,
+            "stories_checked": 0,
+            "findings": [],
+            "summary": (
+                "No story appearances are linked for this entity, and no safe full-name/alias mentions were found "
+                "when scanning story text. Audit skipped. If you believe it appears in a story, check spelling/punctuation "
+                "(especially hyphens/apostrophes) or run a Story Audit for the relevant tale to re-extract links."
+            ),
+            "completeness_pct": None,
+            "story_appearances_added": added,
+            "story_appearances_added_count": len(added),
+            "possible_story_mentions_sample": [
+                {"date": s.get("date"), "title": s.get("title"), "match": s.get("match")}
+                for s in possible_matches[:10]
+            ],
+            "codex_updated": bool(codex_updated),
+            "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        }
+        _save_json(RESULT_FILE, result)
+        print(f"Result written to {RESULT_FILE}")
+        return 0
 
     # Load all story texts
     stories: list[dict] = []
@@ -562,13 +596,35 @@ def main() -> int:
             )
 
     if not stories:
-        print("ERROR: Could not load any story texts.", file=sys.stderr)
-        return 1
+        result = {
+            "entity_name": args.entity_name,
+            "entity_type": args.entity_type,
+            "stories_checked": 0,
+            "findings": [],
+            "summary": "Story appearances exist, but none of the referenced story payloads could be loaded from archive/ or stories.json. Audit skipped.",
+            "completeness_pct": None,
+            "story_appearances_added": added,
+            "story_appearances_added_count": len(added),
+            "possible_story_mentions_sample": [
+                {"date": s.get("date"), "title": s.get("title"), "match": s.get("match")}
+                for s in possible_matches[:10]
+            ],
+            "codex_updated": bool(codex_updated),
+            "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        }
+        _save_json(RESULT_FILE, result)
+        print(f"Result written to {RESULT_FILE}")
+        return 0
 
     print(
         f"Auditing '{args.entity_name}' ({args.entity_type}) "
         f"against {len(stories)} stor{'y' if len(stories) == 1 else 'ies'}…"
     )
+
+    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    if not api_key:
+        print("ERROR: ANTHROPIC_API_KEY not set.", file=sys.stderr)
+        return 2
 
     # Call Anthropic Haiku
     prompt = build_audit_prompt(entity, stories)
