@@ -89,6 +89,89 @@ def main() -> int:
             "story_appearances": story_apps[-12:],
         })
 
+    # De-dupe by (name, event_type). This protects against codex merge mishaps
+    # (e.g., whitespace variants) while preserving useful continuity signals.
+    def _norm(s: str) -> str:
+        return str(s or "").strip().lower()
+
+    def _uniq_story_apps(apps):
+        if not isinstance(apps, list):
+            return []
+        out = []
+        seen = set()
+        for a in apps:
+            if not isinstance(a, dict):
+                continue
+            d = str(a.get("date") or "").strip()
+            t = str(a.get("title") or "").strip()
+            if not t:
+                continue
+            k = (d, t)
+            if k in seen:
+                continue
+            seen.add(k)
+            out.append({"date": d, "title": t})
+        return out
+
+    def _uniq_list(a, b, limit=None):
+        a = a if isinstance(a, list) else []
+        b = b if isinstance(b, list) else []
+        out = list(a)
+        seen = {str(x).strip().lower() for x in a if str(x).strip()}
+        for x in b:
+            k = str(x).strip().lower()
+            if not k or k in seen:
+                continue
+            seen.add(k)
+            out.append(x)
+            if isinstance(limit, int) and len(out) >= limit:
+                break
+        return out
+
+    merged: dict[tuple[str, str], dict] = {}
+    for r in rows:
+        if not isinstance(r, dict):
+            continue
+        k = (_norm(r.get("name")), _norm(r.get("event_type")))
+        if not any(k):
+            continue
+
+        if k not in merged:
+            merged[k] = r
+            continue
+
+        ex = merged[k]
+        # Prefer richer metadata.
+        if not ex.get("tagline") and r.get("tagline"):
+            ex["tagline"] = r.get("tagline")
+        if not ex.get("epicenter") or str(ex.get("epicenter") or "").strip().lower() == "unknown":
+            if r.get("epicenter") and str(r.get("epicenter") or "").strip().lower() != "unknown":
+                ex["epicenter"] = r.get("epicenter")
+
+        # Keep strongest arc signals.
+        ex["resolved"] = bool(ex.get("resolved")) and bool(r.get("resolved"))
+        ex["intensity"] = max(int(ex.get("intensity") or 1), int(r.get("intensity") or 1))
+        ex["recent_issues"] = max(int(ex.get("recent_issues") or 0), int(r.get("recent_issues") or 0))
+        ex["trend"] = max(int(ex.get("trend") or 0), int(r.get("trend") or 0), key=abs)
+        ex["last_seen"] = max(str(ex.get("last_seen") or ""), str(r.get("last_seen") or "")) or None
+
+        # Merge location references.
+        ex_loc = ex.get("referenced_locations") if isinstance(ex.get("referenced_locations"), dict) else {}
+        r_loc = r.get("referenced_locations") if isinstance(r.get("referenced_locations"), dict) else {}
+        ex["referenced_locations"] = {
+            "places": _uniq_list(ex_loc.get("places"), r_loc.get("places"), limit=12),
+            "regions": _uniq_list(ex_loc.get("regions"), r_loc.get("regions"), limit=12),
+            "realms": _uniq_list(ex_loc.get("realms"), r_loc.get("realms"), limit=12),
+            "continents": _uniq_list(ex_loc.get("continents"), r_loc.get("continents"), limit=8),
+        }
+
+        # Merge story appearances and keep the last 12.
+        ex_apps = _uniq_story_apps(ex.get("story_appearances"))
+        r_apps = _uniq_story_apps(r.get("story_appearances"))
+        ex["story_appearances"] = (ex_apps + [a for a in r_apps if a not in ex_apps])[-12:]
+
+    rows = list(merged.values())
+
     def _scope_rank(scope: str) -> int:
         s = (scope or "").strip().lower()
         return {"world": 4, "continental": 3, "regional": 2, "city": 1}.get(s, 2)

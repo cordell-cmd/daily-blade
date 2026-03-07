@@ -2134,6 +2134,18 @@ async function getArchiveIndex() {
   }
 }
 
+function runWhenIdle(fn) {
+  try {
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      window.requestIdleCallback(() => fn(), { timeout: 900 });
+      return;
+    }
+  } catch (e) {
+    // ignore
+  }
+  setTimeout(() => fn(), 0);
+}
+
 function issueNumberForDate(idx, date) {
   const dates = (idx && Array.isArray(idx.dates)) ? idx.dates : [];
   if (!date || dates.length === 0) return null;
@@ -2326,7 +2338,7 @@ function renderStories(data) {
 
   // Fetch codex in the background and add entity badges under each story.
   ensureCodexDataLoaded()
-    .then(() => enhanceStoryEntityBadges())
+    .then(() => runWhenIdle(() => enhanceStoryEntityBadges()))
     .catch((err) => {
       console.error(err);
       setTalesNonBlockingStatus(errorBoxHtml('⚠ Entity badges unavailable', `Could not load ${CODEX_URL}: ${err && err.message ? err.message : String(err)}`));
@@ -3934,7 +3946,86 @@ function renderWorldEvents(data) {
   const grid = document.getElementById('world-events-grid');
   const countLabel = document.getElementById('world-events-count-label');
 
-  const rows = (data && Array.isArray(data.events)) ? data.events : [];
+  const rowsRaw = (data && Array.isArray(data.events)) ? data.events : [];
+
+  function norm(s) { return String(s || '').trim().toLowerCase(); }
+  function uniqStoryApps(apps) {
+    if (!Array.isArray(apps)) return [];
+    const out = [];
+    const seen = new Set();
+    apps.forEach(a => {
+      if (!a) return;
+      const d = String(a.date || '').trim();
+      const t = String(a.title || '').trim();
+      if (!t) return;
+      const k = `${d}::${t}`;
+      if (seen.has(k)) return;
+      seen.add(k);
+      out.push({ date: d, title: t });
+    });
+    return out;
+  }
+  function uniqList(a, b, limit) {
+    a = Array.isArray(a) ? a : [];
+    b = Array.isArray(b) ? b : [];
+    const out = a.slice();
+    const seen = new Set(a.map(x => norm(x)).filter(Boolean));
+    for (const x of b) {
+      const k = norm(x);
+      if (!k || seen.has(k)) continue;
+      seen.add(k);
+      out.push(x);
+      if (Number.isFinite(limit) && out.length >= limit) break;
+    }
+    return out;
+  }
+  function mergeEvent(ex, r) {
+    if (!ex.tagline && r.tagline) ex.tagline = r.tagline;
+    if (!ex.event_type && r.event_type) ex.event_type = r.event_type;
+    if (!ex.epicenter || norm(ex.epicenter) === 'unknown') {
+      if (r.epicenter && norm(r.epicenter) !== 'unknown') ex.epicenter = r.epicenter;
+    }
+    ex.resolved = !!ex.resolved && !!r.resolved;
+    ex.intensity = Math.max(Number(ex.intensity || 1), Number(r.intensity || 1));
+    ex.recent_issues = Math.max(Number(ex.recent_issues || 0), Number(r.recent_issues || 0));
+    const exTrend = Number(ex.trend || 0);
+    const rTrend = Number(r.trend || 0);
+    ex.trend = (Math.abs(rTrend) > Math.abs(exTrend)) ? rTrend : exTrend;
+    ex.last_seen = (String(ex.last_seen || '') > String(r.last_seen || '')) ? ex.last_seen : (r.last_seen || ex.last_seen);
+
+    const exLoc = (ex.referenced_locations && typeof ex.referenced_locations === 'object') ? ex.referenced_locations : {};
+    const rLoc = (r.referenced_locations && typeof r.referenced_locations === 'object') ? r.referenced_locations : {};
+    ex.referenced_locations = {
+      places: uniqList(exLoc.places, rLoc.places, 12),
+      regions: uniqList(exLoc.regions, rLoc.regions, 12),
+      realms: uniqList(exLoc.realms, rLoc.realms, 12),
+      continents: uniqList(exLoc.continents, rLoc.continents, 8),
+    };
+
+    const exApps = uniqStoryApps(ex.story_appearances);
+    const rApps = uniqStoryApps(r.story_appearances);
+    const seen = new Set(exApps.map(a => `${a.date}::${a.title}`));
+    rApps.forEach(a => {
+      const k = `${a.date}::${a.title}`;
+      if (!seen.has(k)) { seen.add(k); exApps.push(a); }
+    });
+    ex.story_appearances = exApps.slice(-12);
+    return ex;
+  }
+
+  // De-dupe rows by (name, event_type).
+  const merged = new Map();
+  rowsRaw.forEach((r) => {
+    if (!r) return;
+    const key = `${norm(r.name)}::${norm(r.event_type)}`;
+    if (!key || key === '::') return;
+    if (!merged.has(key)) {
+      merged.set(key, { ...r });
+      return;
+    }
+    merged.set(key, mergeEvent(merged.get(key), r));
+  });
+  const rows = Array.from(merged.values());
   const generatedAt = data && data.generated_at ? String(data.generated_at) : '';
   const totalCount = rows.length;
 
@@ -4150,11 +4241,7 @@ async function loadArchiveIndex() {
   const listEl = document.getElementById('archive-list');
   listEl.innerHTML = '<div class="archive-loading"><span class="spinner"></span> Consulting the grimoire…</div>';
   try {
-    const res = await fetch(ARCHIVE_IDX_URL + '?t=' + Date.now());
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const idx = await res.json();
-    archiveLoaded = true;
-    ARCHIVE_INDEX_CACHE = idx;
+    const idx = await getArchiveIndex();
     const today = todayStr();
     const dates = idx.dates || [];
     if (dates.length === 0) {

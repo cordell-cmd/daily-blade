@@ -4430,10 +4430,105 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
             p.pop("subcontinent", None)
 
     # ── Merge events ─────────────────────────────────────────────────────
-    existing_events = {e["name"].lower(): e for e in codex.get("events", [])}
+    def _norm_key(s: str) -> str:
+        return str(s or "").strip().lower()
+
+    def _dedupe_story_appearances(apps: list[dict]) -> list[dict]:
+        if not isinstance(apps, list):
+            return []
+        out = []
+        seen = set()
+        for a in apps:
+            if not isinstance(a, dict):
+                continue
+            d = str(a.get("date") or "").strip()
+            t = str(a.get("title") or "").strip()
+            if not t:
+                continue
+            k = (d, t)
+            if k in seen:
+                continue
+            seen.add(k)
+            out.append({"date": d, "title": t})
+        return out
+
+    def _merge_unique_list(a, b) -> list:
+        a = a if isinstance(a, list) else []
+        b = b if isinstance(b, list) else []
+        out = list(a)
+        seen = {str(x).strip().lower() for x in a if str(x).strip()}
+        for x in b:
+            k = str(x).strip().lower()
+            if not k or k in seen:
+                continue
+            seen.add(k)
+            out.append(x)
+        return out
+
+    def _merge_event(ex: dict, incoming: dict) -> dict:
+        if not isinstance(ex, dict):
+            ex = {}
+        if not isinstance(incoming, dict):
+            return ex
+
+        # Prefer existing, fill blanks from incoming.
+        for k in ["tagline", "event_type", "outcome", "significance"]:
+            if (not ex.get(k)) and incoming.get(k):
+                ex[k] = incoming.get(k)
+
+        for k in [
+            "scope",
+            "epicenter_place",
+            "epicenter_region",
+            "epicenter_realm",
+            "radius",
+        ]:
+            if (ex.get(k) in (None, "", [], {})) and (incoming.get(k) not in (None, "", [], {})):
+                ex[k] = incoming.get(k)
+
+        # Merge list fields (stable).
+        for k in ["participants", "affected_places", "affected_regions", "affected_realms", "aliases"]:
+            ex[k] = _merge_unique_list(ex.get(k), incoming.get(k))
+
+        # Merge story appearances and keep counts coherent.
+        prior = _dedupe_story_appearances(ex.get("story_appearances") or [])
+        inc = _dedupe_story_appearances(incoming.get("story_appearances") or [])
+        ex["story_appearances"] = _dedupe_story_appearances(prior + inc)
+
+        # Preserve first_story/first_date if present; otherwise backfill.
+        if not ex.get("first_story") and incoming.get("first_story"):
+            ex["first_story"] = incoming.get("first_story")
+        if not ex.get("first_date") and incoming.get("first_date"):
+            ex["first_date"] = incoming.get("first_date")
+
+        # Keep the highest known appearance count, but never below unique story appearances.
+        try:
+            ex_app = int(ex.get("appearances") or 0)
+        except Exception:
+            ex_app = 0
+        try:
+            in_app = int(incoming.get("appearances") or 0)
+        except Exception:
+            in_app = 0
+        ex["appearances"] = max(ex_app, in_app, len(ex.get("story_appearances") or []), 1)
+
+        return ex
+
+    existing_events: dict[str, dict] = {}
+    for e in codex.get("events", []) or []:
+        if not isinstance(e, dict):
+            continue
+        k = _norm_key(e.get("name"))
+        if not k:
+            continue
+        if k in existing_events:
+            existing_events[k] = _merge_event(existing_events[k], e)
+        else:
+            existing_events[k] = e
+
     for e in lore.get("events", []):
-        name = e.get("name", "Unknown")
-        name_low = name.lower()
+        name = str(e.get("name", "Unknown") or "Unknown").strip() or "Unknown"
+        name_low = _norm_key(name)
         today_appearances = stories_for(name)
         if name_low in existing_events:
             ex = existing_events[name_low]
@@ -4490,6 +4585,15 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
                 "appearances":       len(today_appearances) or 1,
                 "story_appearances": today_appearances,
             }
+    # Final pass: ensure story_appearances are de-duped for all merged events.
+    for ex in existing_events.values():
+        if isinstance(ex, dict) and "story_appearances" in ex:
+            ex["story_appearances"] = _dedupe_story_appearances(ex.get("story_appearances") or [])
+            try:
+                ex["appearances"] = max(int(ex.get("appearances") or 1), len(ex["story_appearances"]) or 1)
+            except Exception:
+                ex["appearances"] = len(ex["story_appearances"]) or 1
+
     codex["events"] = list(existing_events.values())
 
     # ── Merge weapons ────────────────────────────────────────────────────
