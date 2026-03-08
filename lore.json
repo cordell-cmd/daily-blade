@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-07",
+  "last_updated": "2026-03-08",
   "worlds": [
     {
       "id": "known_world",
@@ -1388,7 +1388,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 6,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -1996,7 +1996,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "mogrul",
@@ -2098,7 +2098,7 @@
       "notes": "Zareth completed the Stellar Rite but lost all memory of joy, love, and beauty in the process. The consequences of his sacrifice and whether he survives remain unclear.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 12
+      "appearances": 13
     },
     {
       "id": "thera_the_falconer",
@@ -3218,7 +3218,7 @@
       "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "old_ranger",
@@ -3281,7 +3281,7 @@
       "notes": "Her ship is her base of operations. The abyssal ledger always balances; her fate depends on producing binding-tokens before year's end.",
       "first_story": "The Deepkin's Ledger",
       "first_date": "2026-03-05",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "kieran",
@@ -3646,7 +3646,7 @@
       "notes": "Curse now carries new weight with the changed cosmic arrangement; must sing to keep both recent and ancient dead at peace or risk a necropolis awakening.",
       "first_story": "The Bone-Singer's Dirge",
       "first_date": "2026-03-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "apprentice_sorcerer",
@@ -4334,6 +4334,376 @@
       "notes": "Her counter-working demands payment and forces an impossible choice: restore Zareth's memory and risk undoing the Rite, or let the forest slowly die. Unresolved: whether she will act, and what the consequences will be.",
       "first_story": "The Druid's Covenant",
       "first_date": "2026-03-07",
+      "appearances": 1
+    },
+    {
+      "id": "marin_copper_handed",
+      "name": "Marin the Copper-Handed",
+      "aliases": [
+        "Marin",
+        "Marin of the Copper Hands"
+      ],
+      "tagline": "Thief. Clever. Fated.",
+      "role": "Thief",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A skilled thief known for his ability to read locks as language. Marin was commissioned by the Hermitage of Keth'morian to steal the Tear of Ashglass from the Sovereign's Archive. Upon retrieving the artifact, he discovered his own name inscribed inside the case\u2014a recognition that he had been expected all along.",
+      "traits": [
+        "clever",
+        "dexterous",
+        "audacious",
+        "fluent in lock-languages"
+      ],
+      "known_locations": [
+        "Sovereign's Archive",
+        "Valdris"
+      ],
+      "affiliations": [
+        "Hermitage of Keth'morian"
+      ],
+      "notes": "His theft may have been orchestrated from the beginning. The Archive's ledger recorded him as 'Employed,' suggesting hidden purposes.",
+      "first_story": "The Amber Thief's Gambit",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "sevin_auditor",
+      "name": "Sevin the Auditor",
+      "aliases": [
+        "Sevin"
+      ],
+      "tagline": "Auditor. Targeted. Desperate.",
+      "role": "Auditor",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "An Imperial auditor tracking losses caused by the Star-Rise, making her a target for desperate merchants and entities. She is approached by a phantom woman\u2014a debt-collector's daughter from a now-erased village\u2014and must trace unstable ledgers to their source to save the flickering entity.",
+      "traits": [
+        "diligent",
+        "observant",
+        "empathetic",
+        "at-risk"
+      ],
+      "known_locations": [
+        "Imperial archives",
+        "Scorched Reach"
+      ],
+      "affiliations": [
+        "The Empire"
+      ],
+      "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
+      "first_story": "The Debt-Collector's Daughter",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "the_apprentice_sorcerer",
+      "name": "The Apprentice-Sorcerer",
+      "aliases": [
+        "The Apprentice"
+      ],
+      "tagline": "Inheritor. Conflicted. Burdened.",
+      "role": "Sorcerer, Archivist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Spire of Blackstone",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Inheritor of the Master's Codex, the Apprentice-Sorcerer discovers the sealed *Record of Workings* within the Spire of Blackstone, which documents seven previous Star-Rise attempts and their catastrophic consequences. Haunted by Zareth's sacrificed memories manifesting as visions, the Apprentice must choose whether to share this knowledge and destroy hope or remain silent and allow the next working to proceed blindly.",
+      "traits": [
+        "learned",
+        "tormented",
+        "conflicted"
+      ],
+      "known_locations": [
+        "Spire of Blackstone"
+      ],
+      "affiliations": [
+        "Thael the Circle-Keeper",
+        "Master's legacy"
+      ],
+      "notes": "Fragments of Zareth's sacrificed memories are manifesting as ghostly visions within the tower; a critical decision about shared knowledge looms.",
+      "first_story": "The Apprentice's Forbidden Archive",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "thael_the_circle_keeper",
+      "name": "Thael the Circle-Keeper",
+      "aliases": [
+        "Thael"
+      ],
+      "tagline": "Guardian. Hopeful. Unaware.",
+      "role": "Circle-Keeper, Leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Thael the Circle-Keeper represents the fragile hope that the Star-Rise can be contained and controlled. The Apprentice-Sorcerer must decide whether to share the knowledge of the Record of Workings with Thael, potentially destroying this hope.",
+      "traits": [
+        "hopeful",
+        "principled",
+        "vulnerable"
+      ],
+      "known_locations": [],
+      "affiliations": [
+        "Circle-Keepers"
+      ],
+      "notes": "Unaware of the Record of Workings; his faith in containment is a linchpin of current fragile peace.",
+      "first_story": "The Apprentice's Forbidden Archive",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "abyssal_captain",
+      "name": "Abyssal Captain",
+      "aliases": [
+        "abyssal captain"
+      ],
+      "tagline": "Changed. Transformed. Terrified.",
+      "role": "Captain, Deepkin",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "realmwide",
+      "bio": "An abyssal captain accompanying Sylas into the Cerulean Trench who is already changed by abyssal light. Her memories are shifting in ways that terrify even her, and time moves strangely around her.",
+      "traits": [
+        "transformed",
+        "haunted",
+        "afraid"
+      ],
+      "known_locations": [
+        "Cerulean Trench"
+      ],
+      "affiliations": [
+        "Sylas the Deepwarden",
+        "Council of Depths"
+      ],
+      "notes": "Her transformation by abyssal light is ongoing and terrifying; she represents a harbinger of what emerges from below.",
+      "first_story": "The Warden's Descent",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "vex_memory_merchant",
+      "name": "Vex the Memory-Merchant",
+      "aliases": [
+        "Vex",
+        "Memory-Merchant"
+      ],
+      "tagline": "Fractured. Pursued. Desperate.",
+      "role": "Memory-Merchant",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Scorched Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Vex is a memory-merchant whose mind has been fractured by the Star-Rise, causing her to lose her way on roads she has traveled for decades. She operates a caravan that moves between fractured regions, discovering that a phantom version of herself\u2014born from Zareth's sacrificed joy\u2014is poisoning her other merchants and turning them into echoes.",
+      "traits": [
+        "fragmented memory",
+        "merchant",
+        "haunted by phantom self",
+        "resilient",
+        "searching"
+      ],
+      "known_locations": [
+        "Anthrim",
+        "Peak of Aethros",
+        "Scorched Reach"
+      ],
+      "affiliations": [
+        "her caravan",
+        "phantom-Vex (adversary)"
+      ],
+      "notes": "Must either destroy the phantom fragment or find the Starborn-Prince to reclaim her own joy. Her refusal to accept the phantom's bargain drives the central conflict.",
+      "first_story": "Vex's Phantom Caravan",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_vex",
+      "name": "Phantom-Vex",
+      "aliases": [
+        "the phantom",
+        "memory given form"
+      ],
+      "tagline": "Hungry. Parasitic. Echo.",
+      "role": "Fragment of Zareth's sacrifice",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Peak of Aethros",
+      "home_region": "Scorched Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A phantom born from Zareth's sacrificed joy, manifested in the form of Vex herself. It carries Vex's own happiness as cargo and seeks to bargain: it will assume the role of the happy merchant if Vex accepts being the miserable one. It pursues Vex's caravan, slowly poisoning her merchants into echoes.",
+      "traits": [
+        "parasitic",
+        "mimetic",
+        "hunger for joy",
+        "poisoner"
+      ],
+      "known_locations": [
+        "Anthrim",
+        "Scorched Reach",
+        "caravan route"
+      ],
+      "affiliations": [
+        "Zareth's sacrifice (origin)",
+        "Vex (adversary)"
+      ],
+      "notes": "Represents the darker consequence of Zareth's working. May be destroyed or possibly reconciled at the Peak of Aethros.",
+      "first_story": "Vex's Phantom Caravan",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "starborn_prince",
+      "name": "Starborn-Prince",
+      "aliases": [
+        "lost Starborn-Prince"
+      ],
+      "tagline": "Lost. Ascended. Sought.",
+      "role": "Celestial entity / Cosmic being",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A mysterious celestial being whose joy was sacrificed by Zareth as part of the working. Vex seeks to find this prince to convince him to take back his own joy, potentially healing both Vex and ending the phantom's threat.",
+      "traits": [
+        "celestial",
+        "lost",
+        "powerful",
+        "source of sacrifice"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "Zareth (sacrifice link)"
+      ],
+      "notes": "Central to Vex's quest. Location and current status entirely unknown. May be key to restoring reality's stability.",
+      "first_story": "Vex's Phantom Caravan",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "ledger_master",
+      "name": "Ledger-Master",
+      "aliases": [
+        "The Ledger-Master",
+        "tax collector"
+      ],
+      "tagline": "Bureaucratic. Moral collapse. Desperate.",
+      "role": "Tax Administrator / Imperial Official",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "provincial town",
+      "home_region": "Ashen Reach",
+      "home_realm": "the Empire",
+      "travel_scope": "local",
+      "bio": "The Ledger-Master of a provincial town near the Ash Wastes discovers that taxation has become impossible due to the Star-Rise's reality corruption. He is ordered to collect quotas from a population with unstable wealth, leading him to discover temporal echoes and devise a morally complex new taxation system based on binding echoes to official records.",
+      "traits": [
+        "dutiful",
+        "moral conflict",
+        "pragmatic",
+        "administrator"
+      ],
+      "known_locations": [
+        "provincial town",
+        "Ash Wastes"
+      ],
+      "affiliations": [
+        "The Empire",
+        "Imperial officials",
+        "refugees"
+      ],
+      "notes": "Faces a moral collapse of economic order. His binding of temporal echoes costs both refugee and collector irreplaceable lived experience. Unresolved: what will the empire do with this new currency?",
+      "first_story": "The Tax Collector's Reckoning",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "nameless_wanderer",
+      "name": "Nameless Wanderer",
+      "aliases": [
+        "the wanderer",
+        "composite memories"
+      ],
+      "tagline": "Fragmented. Rebuilding. Lost.",
+      "role": "Living memory / Consciousness fragment",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Ashen Wastes",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A being neither entirely living nor dead, shaped by the Star-Rise's chaotic edge, who wanders the Ashen Wastes collecting stories and slowly rebuilding her consciousness from dozens of scattered people's memories. She carries a journal with names and dates that match no calendar and contains fragments of Zareth within her.",
+      "traits": [
+        "composite",
+        "rebuilding",
+        "fragmented consciousness",
+        "story-collector"
+      ],
+      "known_locations": [
+        "Ashen Wastes",
+        "Ancient Tombs"
+      ],
+      "affiliations": [
+        "Hermit of the Barren Wastes (guide)",
+        "Zareth fragments (component)"
+      ],
+      "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.",
+      "first_story": "The Wanderer's Fragment",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "hermit_barren_wastes",
+      "name": "Hermit of the Barren Wastes",
+      "aliases": [
+        "the Hermit",
+        "Hermit"
+      ],
+      "tagline": "Wise. Lonely. Recognizing.",
+      "role": "Hermit / Guide",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Barren Wastes",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A hermit dwelling in the Barren Wastes who encounters the Nameless Wanderer and recognizes that she is made of composite memories\u2014pieces of dozens of people\u2014and contains fragments of Zareth. The Hermit becomes her guide toward the Ancient Tombs, seeking the seal that Zareth's sacrifice cracked.",
+      "traits": [
+        "perceptive",
+        "wise",
+        "isolated",
+        "knowledgeable"
+      ],
+      "known_locations": [
+        "Barren Wastes",
+        "Ancient Tombs"
+      ],
+      "affiliations": [
+        "Nameless Wanderer (companion)"
+      ],
+      "notes": "Possesses knowledge of Zareth's sacrifice and the seal. Crucial guide for the wanderer's quest toward self-knowledge and identity resolution.",
+      "first_story": "The Wanderer's Fragment",
+      "first_date": "2026-03-08",
       "appearances": 1
     }
   ],
@@ -5396,7 +5766,7 @@
       "status": "contested",
       "notes": "This region exemplifies how the cosmic renewal has begun to physically reshape the world. Trade disruption here is affecting imperial commerce and stability.",
       "first_date": "2026-03-03",
-      "appearances": 5
+      "appearances": 7
     },
     {
       "id": "cerulean_trench",
@@ -5814,7 +6184,7 @@
       "status": "active",
       "notes": "Site of post-Ascension anomalies. The singing ruins suggest intelligent pre-human presence. Subterranean humming indicates deeper mysteries.",
       "first_date": "2026-03-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "anthrim",
@@ -5833,7 +6203,7 @@
       "status": "active",
       "notes": "Hub of fragment trade and shadow economy. Post-Ascension chaos is centered here. Vex's home base.",
       "first_date": "2026-03-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "sunburned_reach",
@@ -5909,7 +6279,7 @@
       "status": "active",
       "notes": "Key hub for the Refugee Caravan story; serves as point of refuge and departure for those fleeing the Ascension's aftermath.",
       "first_date": "2026-03-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "grey_wastes",
@@ -6086,6 +6456,161 @@
       "status": "active",
       "notes": "The breaking of the Stellar Rite has disrupted its ley-lines and seasonal cycles. Beasts are losing their territorial knowledge. The forest is slowly dying unless the covenant is restored.",
       "first_date": "2026-03-07",
+      "appearances": 1
+    },
+    {
+      "id": "night_markets_of_kethrim",
+      "name": "night markets of Kethrim",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "kethrim",
+      "name": "Kethrim",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "kethros",
+      "name": "Kethros",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "mountain_holds_of_the_dwarves",
+      "name": "mountain holds of the dwarves",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Dwarven Holds",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "capital",
+      "name": "capital",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "sovereigns_archive",
+      "name": "Sovereign's Archive",
+      "tagline": "Moonlit. Guarded. Knowing.",
+      "place_type": "archive",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "A repository of starlight and ledgers, protected by Imperial locks and the watchful eyes of magistrates.",
+      "description": "An archive containing the Tear of Ashglass and other precious records. Its eastern wall is accessible to skilled climbers; the third-level lock is Imperial make. During the Seer's Convention, magistrates debate theology in the great hall below while ledgers update themselves in invisible ink.",
+      "status": "active",
+      "notes": "Appears to be a repository of more than just physical artifacts\u2014its ledgers seem to record fated events. The Archive knew Marin would come.",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "hermitage_kethmorian",
+      "name": "The Hermitage of Keth'morian",
+      "tagline": "Ancient. Wealthy. Commissioning.",
+      "place_type": "temple",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place of wealth, silence, and hidden agendas.",
+      "description": "A hermitage that commissioned Marin to steal the Tear of Ashglass, offering him a fortune in amber and silence in exchange.",
+      "status": "active",
+      "notes": "Their motivations for acquiring the Tear remain unclear.",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "ancient_tombs",
+      "name": "Ancient Tombs",
+      "tagline": "Awakening. Singing. Deadly.",
+      "place_type": "ruin",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "A place of harmonic horror where the stones themselves sing in frequencies that shatter bone and reshape flesh.",
+      "description": "Pre-human ruins that have begun to sing after the Star-Rise cracked the seals laid down millennia ago. The singing is not awakening but remembering\u2014something trapped beneath. Mardoc discovered evidence of Zareth's working performed a thousand years prior.",
+      "status": "active",
+      "notes": "The ruins may be conscious or at least aware. They draw some people deeper while repelling others. A fragment of Zareth's stolen memory was found here.",
+      "first_date": "2026-03-08",
       "appearances": 1
     }
   ],
@@ -6321,6 +6846,17 @@
       "notes": "These fragments are awakening or becoming visible, manifesting across different regions and causing various catastrophes.",
       "first_date": "2026-03-07",
       "appearances": 1
+    },
+    {
+      "id": "zareth",
+      "name": "Zareth",
+      "type": "entity",
+      "world": "Edhra",
+      "description": "An entity or being whose working was performed in ancient times and again more recently. Zareth's stolen memory was fragmented across locations including the Ancient Tombs.",
+      "status": "unknown",
+      "notes": "Appears to be a cosmic actor. The fragment of Zareth's stolen memory surfaces in the Ancient Tombs, suggesting hidden knowledge or power.",
+      "first_date": "2026-03-08",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -6533,6 +7069,19 @@
       "notes": "The grimoire's contents are driving the Young Sorcerer to descend beneath the Tower in search of answers.",
       "first_date": "2026-03-07",
       "appearances": 1
+    },
+    {
+      "id": "tear_of_ashglass",
+      "name": "Tear of Ashglass",
+      "tagline": "Crystallized. Prescient. Fated.",
+      "artifact_type": "gem",
+      "origin": "unknown",
+      "powers": "Grants true visions\u2014not the fragmentary visions seers usually receive. Can reveal foreknowledge of events.",
+      "last_known_holder": "Marin the Copper-Handed",
+      "status": "active",
+      "notes": "The Tear bore Marin's name inscribed in silver inside its case, suggesting it knew of his theft in advance. The Hermitage of Keth'morian commissioned its theft.",
+      "first_date": "2026-03-08",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -6542,7 +7091,14 @@
       "description": "Cold seas, tundra, and the great steppe. Valdris occupies much of this hemisphere's temperate belt.",
       "function": "Global climate/season logic.",
       "status": "known",
-      "notes": "Climate band: polar to temperate."
+      "notes": "Climate band: polar to temperate.",
+      "world": "The Known World",
+      "hemisphere": "Northern Hemisphere",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Southern Hemisphere",
@@ -6550,7 +7106,14 @@
       "description": "Tropical coasts giving way to southern ice. Largely unexplored beyond the Iron Coast trade lanes.",
       "function": "Global climate/season logic.",
       "status": "known",
-      "notes": "Climate band: temperate to polar."
+      "notes": "Climate band: temperate to polar.",
+      "world": "The Known World",
+      "hemisphere": "Southern Hemisphere",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Western Hemisphere",
@@ -6558,7 +7121,14 @@
       "description": "Dominated by the Vael Ocean. Valdris sits at its eastern edge; what lies beyond the horizon is the subject of sailor myth.",
       "function": "Global climate/season logic.",
       "status": "known",
-      "notes": "Climate band: varied."
+      "notes": "Climate band: varied.",
+      "world": "The Known World",
+      "hemisphere": "Western Hemisphere",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Eastern Hemisphere",
@@ -6566,7 +7136,14 @@
       "description": "The Ashen Reach and the vast interior of Keth-Morath stretch into this hemisphere. Ancient ruins and dead empires.",
       "function": "Global climate/season logic.",
       "status": "known",
-      "notes": "Climate band: varied."
+      "notes": "Climate band: varied.",
+      "world": "The Known World",
+      "hemisphere": "Eastern Hemisphere",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     }
   ],
   "continents": [
@@ -6585,7 +7162,15 @@
         "coastal-maritime"
       ],
       "function": "Macro-biome and travel logic.",
-      "status": "explored"
+      "status": "explored",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "appearances": 2
     },
     {
       "name": "Keth-Morath",
@@ -6601,7 +7186,14 @@
         "desert"
       ],
       "function": "Macro-biome and travel logic.",
-      "status": "rumored"
+      "status": "rumored",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "Keth-Morath",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Thul-Ashara",
@@ -6617,7 +7209,14 @@
         "savanna"
       ],
       "function": "Macro-biome and travel logic.",
-      "status": "rumored"
+      "status": "rumored",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "Thul-Ashara",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Drakmere",
@@ -6632,7 +7231,14 @@
         "tropical"
       ],
       "function": "Macro-biome and travel logic.",
-      "status": "legendary"
+      "status": "legendary",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "Drakmere",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Sundral",
@@ -6647,7 +7253,14 @@
         "subtropical"
       ],
       "function": "Macro-biome and travel logic.",
-      "status": "rumored"
+      "status": "rumored",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "Sundral",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Frostholme",
@@ -6661,7 +7274,14 @@
         "tundra"
       ],
       "function": "Macro-biome and travel logic.",
-      "status": "legendary"
+      "status": "legendary",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "Frostholme",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     },
     {
       "name": "Ashenveil",
@@ -6674,7 +7294,14 @@
         "polar"
       ],
       "function": "Macro-biome and travel logic.",
-      "status": "mythical"
+      "status": "mythical",
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "Ashenveil",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     }
   ],
   "realms": [
@@ -6770,7 +7397,7 @@
       "status": "active",
       "notes": "Ruled by the Emperor; contains the Imperial Archives and is home to the secret council. Grappling with the implications of the Celestial Binding.",
       "first_date": "2026-03-05",
-      "appearances": 3,
+      "appearances": 4,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "the Empire",
@@ -6795,6 +7422,26 @@
       "hemisphere": "unknown",
       "subcontinent": "unknown",
       "realm": "Deepkin Realms",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
+    },
+    {
+      "id": "dwarven_holds",
+      "name": "Dwarven Holds",
+      "tagline": "",
+      "continent": "unknown",
+      "capital": "unknown",
+      "function": "Auto-added from character home_realm.",
+      "taxation": "unknown",
+      "military": "unknown",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-08",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "realm": "Dwarven Holds",
       "province": "unknown",
       "region": "unknown",
       "district": "unknown"
@@ -7260,6 +7907,67 @@
       "notes": "Requires renegotiation of all ancient pacts. Starborn entities are now conscious actors in the world's politics.",
       "first_date": "2026-03-06",
       "appearances": 1
+    },
+    {
+      "id": "seers_convention",
+      "name": "Seer's Convention",
+      "tagline": "Gathered. Distracted. Fated.",
+      "event_type": "gathering",
+      "scope": "regional",
+      "epicenter_place": "Sovereign's Archive",
+      "epicenter_region": "The Hearthlands",
+      "epicenter_realm": "The Empire",
+      "affected_places": [
+        "Sovereign's Archive"
+      ],
+      "affected_regions": [
+        "The Hearthlands"
+      ],
+      "affected_realms": [
+        "The Empire"
+      ],
+      "radius": "citywide",
+      "participants": [
+        "Seer's Convention magistrates",
+        "Marin the Copper-Handed"
+      ],
+      "outcome": "During the Convention, three head magistrates argued theology in the great hall, allowing Marin to steal the Tear of Ashglass without triggering alarms.",
+      "significance": "The Convention's timing enabled a theft that had apparently been orchestrated long in advance.",
+      "notes": "Unknown who organized Marin's involvement or why the Tear needed to be moved.",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "star_rise",
+      "name": "The Star-Rise",
+      "tagline": "Cosmic. Rewriting. Catastrophic.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Ancient Tombs",
+        "Scorched Reach",
+        "Sovereign's Archive",
+        "Imperial archives"
+      ],
+      "affected_regions": [
+        "Scorched Reach",
+        "The Hearthlands"
+      ],
+      "affected_realms": [
+        "The Empire"
+      ],
+      "radius": "worldwide",
+      "participants": [
+        "unknown cosmic entities"
+      ],
+      "outcome": "A reality-rewriting event that cracked the seals on the Ancient Tombs, caused villages to vanish overnight, transformed merchants into living light or erased them entirely, and made ledgers unstable. Refugees flee westward from the Scorched Reach.",
+      "significance": "The Star-Rise appears to be a fundamental cosmological shift that has altered the rules of existence. It may have triggered the awakening of ancient workings.",
+      "notes": "The Star-Rise may be related to Zareth's working. It has consequences that ripple across the mapped and unmapped boundaries of reality.",
+      "first_date": "2026-03-08",
+      "appearances": 2
     }
   ],
   "weapons": [],
@@ -7406,6 +8114,18 @@
       "status": "active",
       "notes": "They dwell in the ancient forests beyond the Verdant Lands. Multiple circle-keepers have noticed the beasts forgetting their territories and the seasonal magics stuttering. They are now engaged in efforts to restore the broken covenant.",
       "first_date": "2026-03-07",
+      "appearances": 1
+    },
+    {
+      "id": "hermitage_kethmorian_faction",
+      "name": "Hermitage of Keth'morian",
+      "tagline": "Wealthy. Secretive. Commissioning.",
+      "alignment": "neutral",
+      "goals": "unknown; appears to seek control of true-vision artifacts",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Their full motivations for acquiring the Tear remain opaque.",
+      "first_date": "2026-03-08",
       "appearances": 1
     }
   ],
@@ -7758,6 +8478,28 @@
       "notes": "Zareth's spectral presence sings in the language of starlight, a tongue that pulls at the consciousness of deep-dwellers. It is not understood, but deeply felt.",
       "first_date": "2026-03-07",
       "appearances": 1
+    },
+    {
+      "id": "zareth_stolen_memory",
+      "name": "Zareth's Stolen Memory",
+      "tagline": "Ancient. Cyclical. Catastrophic.",
+      "category": "history",
+      "source": "Fragment found in the Ancient Tombs",
+      "status": "confirmed",
+      "notes": "The stolen memory reveals a working performed a thousand years prior that ended in catastrophe, parallel to recent events. The cycle may be repeating.",
+      "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "the_star_rise_rewrite",
+      "name": "The Star-Rise's Rewrite",
+      "tagline": "Reality. Erased. Fragmented.",
+      "category": "legend",
+      "source": "Refugees' fragmented memories and testimonies at Jade Coast",
+      "status": "rumored",
+      "notes": "Refugees report that the Star-Rise has rewritten reality itself, causing towns to be erased or displaced. Some claim to have fled the same village twice, experiencing two different catastrophes. The true mechanics of this rewrite remain unknown.",
+      "first_date": "2026-03-08",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -8022,6 +8764,18 @@
       "notes": "Zareth's memories have become something other than what they were\u2014a cosmic entity with agency and hunger.",
       "first_date": "2026-03-07",
       "appearances": 1
+    },
+    {
+      "id": "zareth_stolen_memory_relic",
+      "name": "Zareth's Stolen Memory",
+      "tagline": "Fragmented. Cyclical. Haunting.",
+      "origin": "unknown; found in the Ancient Tombs",
+      "power": "Reveals knowledge of a parallel cosmic working performed a thousand years prior, showing the same pattern of catastrophe.",
+      "curse": "Whoever remembers it may be bound to the cycle.",
+      "status": "active",
+      "notes": "Mardoc's hands shake as he records it. The memory surfaces in the older stones of the Ancient Tombs.",
+      "first_date": "2026-03-08",
+      "appearances": 1
     }
   ],
   "regions": [
@@ -8284,7 +9038,7 @@
       "status": "contested",
       "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
       "first_date": "2026-03-03",
-      "appearances": 3,
+      "appearances": 4,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -8462,6 +9216,63 @@
       "province": "unknown",
       "region": "Verdant Lands",
       "district": "unknown"
+    },
+    {
+      "id": "ashen_reach",
+      "name": "Ashen Reach",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-08",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Ashen Reach",
+      "district": "unknown"
+    },
+    {
+      "id": "shattered_west",
+      "name": "Shattered West",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-08",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Shattered West",
+      "district": "unknown"
+    },
+    {
+      "id": "scorched_reach_region",
+      "name": "The Scorched Reach",
+      "tagline": "Burned. Rewritten. Displaced.",
+      "continent": "Valdris",
+      "realm": "The Empire",
+      "climate": "arid",
+      "terrain": "wastes",
+      "function": "A eastern region of Valdris most heavily affected by the Star-Rise, where villages vanish overnight and refugees flee westward.",
+      "status": "cursed",
+      "notes": "The worst consequences of the cosmic rewrite manifest here. The boundary between mapped and unmapped void is dangerously thin.",
+      "first_date": "2026-03-08",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "The Scorched Reach",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -8563,6 +9374,18 @@
       "use": "Encoded into the Sovereign's ledger; imparted upon reading; cannot be unlearned; alters perception and identity of those exposed.",
       "notes": "May be gift or poison; unclear if intentional encoding by Zareth or accidental consequence of the Ascension; dangerous knowledge.",
       "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "amber_currency",
+      "name": "Amber",
+      "tagline": "Precious. Wealth. Silent.",
+      "type": "currency",
+      "rarity": "rare",
+      "properties": "Used as wealth and payment. The Hermitage of Keth'morian offers amber as payment for thieving commissions.",
+      "use": "Currency and trade good.",
+      "notes": "Often paired with 'silence' as payment\u2014suggesting both material and discretionary compensation.",
+      "first_date": "2026-03-08",
       "appearances": 1
     }
   ],
@@ -8755,7 +9578,7 @@
       "description": "A vast imperial government built on certainty, order, and commerce. Trade routes are its lifeblood. It collects taxes and maintains stability through information and control. The Treasurer strategically gathers intelligence to manage disruptions. However, the Empire's architecture of order and certainty is being tested by the cosmic changes.",
       "notes": "The Empire is struggling to maintain control and stability as the cosmic changes disrupt trade, drive people to madness, and cause physical land shifts. The Treasurer's aide questions whether the Empire can survive.",
       "first_date": "2026-03-03",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "council_of_depths_governance",

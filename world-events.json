@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-07T22:15:10.669728+00:00",
+  "generated_at": "2026-03-08T10:18:05.733233+00:00",
   "source": "codex.json",
   "count": 50,
   "events": [
@@ -14,14 +14,16 @@
       "resolved": false,
       "last_seen": "2026-03-07",
       "recent_issues": 4,
-      "trend": 2,
+      "trend": 0,
       "referenced_locations": {
         "places": [
-          "Scorched Reach",
+          "The Scorched Reach",
           "Vethrim",
+          "Scorched Reach",
           "Sapphire Deep"
         ],
         "regions": [
+          "The Scorched Reach",
           "Scorched Reach"
         ],
         "realms": [
@@ -114,113 +116,71 @@
       ]
     },
     {
-      "name": "The Ascension",
-      "tagline": "Stars. Born. Changed.",
-      "event_type": "catastrophe / cosmic event",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-03-06",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "cavern halls"
-        ],
-        "regions": [
-          "unknown"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-06",
-          "title": "Vex's Fragment Market in Collapse"
-        },
-        {
-          "date": "2026-03-06",
-          "title": "The Bone-Singer's Dirge"
-        },
-        {
-          "date": "2026-03-06",
-          "title": "The Refugee Caravan's Price"
-        },
-        {
-          "date": "2026-03-06",
-          "title": "The Tax Collector's Reckoning"
-        },
-        {
-          "date": "2026-03-06",
-          "title": "The Hermit Woman's New Census"
-        },
-        {
-          "date": "2026-03-06",
-          "title": "The Wyvern's Starborn Debt"
-        }
-      ]
-    },
-    {
-      "name": "The Celestial Ascension (Lore)",
-      "tagline": "Reality. Rewritten. Catastrophic.",
+      "name": "The Star-Rise",
+      "tagline": "Cosmic. Rewriting. Catastrophic.",
       "event_type": "catastrophe",
       "scope": "world",
       "epicenter": "unknown",
       "stage": "rising",
       "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-06",
+      "last_seen": "2026-03-08",
       "recent_issues": 1,
       "trend": 1,
       "referenced_locations": {
         "places": [
-          "Pre-Human Ruins",
-          "Anthrim",
-          "Sunburned Reach",
-          "Bone Wastes",
-          "High Observatory of Karethil"
+          "The Scorched Reach",
+          "Ancient Tombs",
+          "Scorched Reach",
+          "Sovereign's Archive",
+          "Imperial archives"
         ],
         "regions": [
-          "The Ashen Reach",
-          "The Iron Coast"
+          "The Scorched Reach",
+          "Scorched Reach",
+          "The Hearthlands"
         ],
         "realms": [
-          "the Empire"
+          "The Empire"
         ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-03-06",
-          "title": "The Starlight Cartographer's Reckoning"
+          "date": "2026-03-08",
+          "title": "The Singing Cartographer"
         },
         {
-          "date": "2026-03-06",
-          "title": "Vex's Fragment Market in Collapse"
+          "date": "2026-03-08",
+          "title": "The Debt-Collector's Daughter"
         },
         {
-          "date": "2026-03-06",
-          "title": "The Deepwarden's Vigil"
+          "date": "2026-03-08",
+          "title": "The Warden's Descent"
         },
         {
-          "date": "2026-03-06",
-          "title": "The Young Sorcerer's New Inheritance"
+          "date": "2026-03-08",
+          "title": "The Bone-Singer's Vigil"
         },
         {
-          "date": "2026-03-06",
-          "title": "The Bone-Singer's Dirge"
+          "date": "2026-03-08",
+          "title": "The Apprentice's Forbidden Archive"
         },
         {
-          "date": "2026-03-06",
+          "date": "2026-03-08",
+          "title": "Vex's Phantom Caravan"
+        },
+        {
+          "date": "2026-03-08",
           "title": "The Tax Collector's Reckoning"
         },
         {
-          "date": "2026-03-06",
-          "title": "The Hermit Woman's New Census"
+          "date": "2026-03-08",
+          "title": "The Wanderer's Fragment"
+        },
+        {
+          "date": "2026-03-08",
+          "title": "The Refuge at World's Edge"
         }
       ]
     },
@@ -285,7 +245,7 @@
       "resolved": false,
       "last_seen": "2026-03-03",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Pelimor",
@@ -385,17 +345,128 @@
       ]
     },
     {
+      "name": "The Ascension",
+      "tagline": "Stars. Born. Changed.",
+      "event_type": "catastrophe / cosmic event",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-06",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "cavern halls"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "Vex's Fragment Market in Collapse"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Bone-Singer's Dirge"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Refugee Caravan's Price"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Hermit Woman's New Census"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Wyvern's Starborn Debt"
+        }
+      ]
+    },
+    {
+      "name": "The Celestial Ascension (Lore)",
+      "tagline": "Reality. Rewritten. Catastrophic.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-06",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Pre-Human Ruins",
+          "Anthrim",
+          "Sunburned Reach",
+          "Bone Wastes",
+          "High Observatory of Karethil"
+        ],
+        "regions": [
+          "The Ashen Reach",
+          "The Iron Coast"
+        ],
+        "realms": [
+          "the Empire"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "The Starlight Cartographer's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "Vex's Fragment Market in Collapse"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Deepwarden's Vigil"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Young Sorcerer's New Inheritance"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Bone-Singer's Dirge"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Hermit Woman's New Census"
+        }
+      ]
+    },
+    {
       "name": "The Celestial Binding",
       "tagline": "Cosmic. Transformative. Shattering.",
       "event_type": "ritual",
       "scope": "regional",
       "epicenter": "unknown",
-      "stage": "crisis",
-      "intensity": 4,
+      "stage": "rising",
+      "intensity": 3,
       "resolved": false,
       "last_seen": "2026-03-05",
       "recent_issues": 2,
-      "trend": 2,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Thornholt"
@@ -448,6 +519,38 @@
         {
           "date": "2026-03-05",
           "title": "The Young Sorcerer's Inheritance"
+        }
+      ]
+    },
+    {
+      "name": "Seer's Convention",
+      "tagline": "Gathered. Distracted. Fated.",
+      "event_type": "gathering",
+      "scope": "regional",
+      "epicenter": "Sovereign's Archive",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-03-08",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "great hall",
+          "Sovereign's Archive"
+        ],
+        "regions": [
+          "The Hearthlands"
+        ],
+        "realms": [
+          "The Empire"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-08",
+          "title": "The Amber Thief's Gambit"
         }
       ]
     },
@@ -641,7 +744,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -666,7 +769,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -691,7 +794,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -716,7 +819,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -741,7 +844,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -766,7 +869,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Tomb of Karesh",
@@ -797,7 +900,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -1054,7 +1157,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "The Blasted Lands",
@@ -1084,7 +1187,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Vetch's Tower",
@@ -1112,7 +1215,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Theron's Shop",
@@ -1140,7 +1243,7 @@
       "resolved": false,
       "last_seen": "2026-02-26",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Theron's Shop",
@@ -1441,84 +1544,6 @@
         {
           "date": "2026-02-27",
           "title": "The Warlord's Widow"
-        }
-      ]
-    },
-    {
-      "name": "Fellowship-Oath (swearing)",
-      "tagline": "Blood. Song. Twenty years.",
-      "event_type": "oath / ritual",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "aftermath",
-      "intensity": 1,
-      "resolved": true,
-      "last_seen": "2026-03-02",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "unknown"
-        ],
-        "regions": [
-          "The Shattered West"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-02",
-          "title": "The Warband's Last Song"
-        }
-      ]
-    },
-    {
-      "name": "Conjunction",
-      "tagline": "Celestial. Closing. Mysterious.",
-      "event_type": "celestial event / boundary shift",
-      "scope": "regional",
-      "epicenter": "Scorched Reach",
-      "stage": "aftermath",
-      "intensity": 1,
-      "resolved": true,
-      "last_seen": "2026-03-04",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Scorched Reach"
-        ],
-        "regions": [
-          "Scorched Reach"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-04",
-          "title": "The Record-Keeper's Shadow"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Starborn Merchant"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Seer's New Vision"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Drowned Prince's Vigil"
         }
       ]
     }
