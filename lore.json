@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-08",
+  "last_updated": "2026-03-09",
   "worlds": [
     {
       "id": "known_world",
@@ -884,7 +884,7 @@
       "status": "active",
       "home_place": "unknown",
       "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_realm": "dwarven holds",
       "travel_scope": "interrealm",
       "bio": "A sorceress who followed Varek to intercept a demonic bargain and reverse-engineered his method of stealing time itself. She performs a ritual to restore Torvin's years but exacts a terrible price: his certainty. She forms a partnership with the impressed demon Varek.",
       "traits": [
@@ -901,7 +901,7 @@
       "notes": "Her ritual burned through the night. She masters temporal magic and begins a mysterious partnership with Varek. Her methods suggest deep knowledge of demonic arts.",
       "first_story": "The Weight of Stolen Years",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "vex_shade_merchant",
@@ -933,7 +933,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "naresh_the_bone_carver",
@@ -1385,10 +1385,10 @@
       "affiliations": [
         "the Lamia (diplomatic ally)"
       ],
-      "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.",
+      "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 7,
+      "appearances": 8,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -1398,6 +1398,15 @@
           "story_title": "The Starlight Cartographer's Reckoning",
           "note": "Mardoc discovers his maps are self-rewriting and that pre-human ruins are communicating through the new stars, projecting images of an ancient catastrophe.",
           "evidence": "Maps begin to shift on their own, ink rearranging to show unrecorded ruins; expedition team reports ruins singing at dusk with distant humming from beneath the earth."
+        },
+        {
+          "date": "2026-03-09",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Cartographer's Lament",
+          "note": "Discovers ancient stone-ruins in Bleached Wastes have shifted spiritually and are aligning to an opening doorway; maps become prophecy.",
+          "evidence": "Ruins sing with resonance, caravan routes become impassable due to something in the light, both Mardoc and Thael recognize ruins are waking to something Zareth's sacrifice meant to keep sleeping."
         }
       ]
     },
@@ -1996,7 +2005,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "mogrul",
@@ -2098,7 +2107,7 @@
       "notes": "Zareth completed the Stellar Rite but lost all memory of joy, love, and beauty in the process. The consequences of his sacrifice and whether he survives remain unclear.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "thera_the_falconer",
@@ -2831,9 +2840,9 @@
       "affiliations": [
         "forest-keepers"
       ],
-      "notes": "Her quest to connect the Astronomer-Prince, the Sorcerer's journals, and the Shade-Merchant suggests these three threads are keys to understanding the renewed stars and an imminent cosmic reckoning.\nHer quest to contact three key figures (seer, merchant, mage) has now expanded to include a grim census of thousands touched by the Binding\u2014a new understanding of the Celestial Working's true scope.\nHer discovery suggests Zareth's sacrifice was not payment but a *key*, and something far older is waking to use what he unlocked. Reality itself has been fundamentally rewritten.",
+      "notes": "Her quest to connect the Astronomer-Prince, the Sorcerer's journals, and the Shade-Merchant suggests these three threads are keys to understanding the renewed stars and an imminent cosmic reckoning.\nHer quest to contact three key figures (seer, merchant, mage) has now expanded to include a grim census of thousands touched by the Binding\u2014a new understanding of the Celestial Working's true scope.\nHer discovery suggests Zareth's sacrifice was not payment but a *key*, and something far older is waking to use what he unlocked. Reality itself has been fundamentally rewritten.\nDistinct from Ashen Wastes variant; this hermit tracks census and now confronts administrative breakdown of imperial civilization.",
       "first_date": "2026-03-03",
-      "appearances": 3,
+      "appearances": 4,
       "travel_notes": "[2026-03-05] Story 'The Hermit's Census' shows her emerging from isolation and actively seeking out Ashara, Vex, and the hedge-mage across multiple locations, confirming realmwide travel.",
       "status_history": [
         {
@@ -2844,6 +2853,15 @@
           "story_title": "The Hermit Woman's New Census",
           "note": "The Hermit discovers her census of the living and dead is corrupted by the Ascension; reality has been subtly rewritten, and people exist in places she never traveled.",
           "evidence": "Some counted people are now 'not'\u2014erased by the Ascension; others occupy lives they shouldn't have; her gift to remember every soul has become a curse of impossible contradiction."
+        },
+        {
+          "date": "2026-03-09",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Hermit's Contradiction",
+          "note": "Census of living souls reveals fundamental reality rewriting; some names vanished entirely (unwritten not dead), others appear who were never counted before.",
+          "evidence": "Hermit Woman must admit to tax collectors that existence itself has been altered; offers new census mapping what's possible rather than who exists."
         }
       ]
     },
@@ -3005,10 +3023,10 @@
       "affiliations": [
         "Elder Mage (deceased master)"
       ],
-      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.\nThe Young Sorcerer has begun to venture beyond the Spire in response to the Stellar Rite's cosmic changes. They are discovering that the age of their master has truly ended and they must navigate a fundamentally rewritten magical world.\nThe hedge-mage protagonist in 'The Young Sorcerer's Inheritance' appears to be a distinct character from the Young Sorcerer (who remains isolated in the Spire), though both are navigating magical instability post-Binding.\nThe apprentice's entire education was preparation not just for power inheritance but for surviving the Ascension's aftermath. Now faces decision whether to share dangerous knowledge with fractured kingdoms.\nThe Young Sorcerer has discovered that the Stellar Rite created multiple conscious entities scattered across the world and that the Tower itself is a weakened prison containing something awaiting release.",
+      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.\nThe Young Sorcerer has begun to venture beyond the Spire in response to the Stellar Rite's cosmic changes. They are discovering that the age of their master has truly ended and they must navigate a fundamentally rewritten magical world.\nThe hedge-mage protagonist in 'The Young Sorcerer's Inheritance' appears to be a distinct character from the Young Sorcerer (who remains isolated in the Spire), though both are navigating magical instability post-Binding.\nThe apprentice's entire education was preparation not just for power inheritance but for surviving the Ascension's aftermath. Now faces decision whether to share dangerous knowledge with fractured kingdoms.\nThe Young Sorcerer has discovered that the Stellar Rite created multiple conscious entities scattered across the world and that the Tower itself is a weakened prison containing something awaiting release.\nConsistent with canon isolation-breaker arc; sorcerer now confronting imprisoned entities awakened by the Stellar Rite's cosmological rupture.",
       "first_story": "The Sorcerer's Heir",
       "first_date": "2026-03-03",
-      "appearances": 6,
+      "appearances": 7,
       "travel_notes": "[2026-03-04] Story shows Young Sorcerer emerging from the Spire to observe the transformed world, indicating at least limited travel beyond their isolated home.\n[2026-03-05] Story 'The Young Sorcerer's Inheritance' depicts hedge-mage discovering grimoire rewriting in Vaulted Tombs; consistent with regional travel beyond isolated Spire.\n[2026-03-07] Story shows Young Sorcerer descending into ancient passages beneath the Tower and discovering ley-line convergence points across the rewritten world, indicating travel beyond isolated Spire and knowledge of realm-wide magical changes.",
       "status_history": [
         {
@@ -3019,6 +3037,15 @@
           "story_title": "The Young Sorcerer's New Inheritance",
           "note": "The apprentice discovers hidden texts revealing the Ascension was not the first such working; previous civilizations performed similar rituals that left voids collapsing inward.",
           "evidence": "Ancient texts now readable under new starlight describe the Ascension in detail and suggest previous similar rituals consumed everything; Master deliberately obscured this knowledge during the apprentice's education."
+        },
+        {
+          "date": "2026-03-09",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Tower's Hunger",
+          "note": "Descends into ancient tower beneath Scorched Wastes and discovers a pre-human consciousness imprisoned in a weakening binding circle.",
+          "evidence": "Young sorcerer finds ley-lines converge at tower's heart in a binding pattern; discovers entity 'older than demons' that remembers when stars fell differently and awaits the sky to break again."
         }
       ]
     },
@@ -3594,7 +3621,7 @@
       "home_place": "Council of Depths",
       "home_region": "unknown",
       "home_realm": "Deepkin Realms",
-      "travel_scope": "realmwide",
+      "travel_scope": "interrealm",
       "bio": "Warden of the deepkin who receives reports of scouts returning changed from the Cerulean Trench. Sylas convenes the Council of Depths to address the catastrophic fracturing of the barrier between surface and Abyss. Choosing the hardest path, Sylas descends into the Trench himself to seek answers before war becomes inevitable.",
       "traits": [
         "resolute",
@@ -3609,10 +3636,22 @@
         "Deepkin",
         "Council of Depths"
       ],
-      "notes": "Currently descended into the Cerulean Trench seeking answers; outcome unknown.",
+      "notes": "Currently descended into the Cerulean Trench seeking answers; outcome unknown.\nDeepkin politics deepening; suggests boundary between surface and sunken realms is being deliberately erased by cosmic working.",
       "first_story": "The Deepwarden's Vigil",
       "first_date": "2026-03-06",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-09",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepkin's Dilemma",
+          "note": "Convenes emergency council as Abyssal barrier fractures further; navigates choice between seal-isolation and accepting unnamed surface refugees.",
+          "evidence": "Barrier fractures with deliberate pressure from below; Sunken Spring grows larger and tastes of starlight and forgetfulness; drowned bones beginning to answer the new stars."
+        }
+      ],
+      "travel_notes": "[2026-03-09] Story confirms abyssal-dweller realm is distinct realm connected to surface; Sylas navigates cross-realm refugee politics and ancient pact fracturing."
     },
     {
       "id": "kess_of_the_sunken_hollows",
@@ -4172,10 +4211,21 @@
         "Mella",
         "dwarven holds"
       ],
-      "notes": "Dranin's investigation into the corruption of his metalwork reveals a fundamental rupture between earth and sky magic caused by the Stellar Rite. The fate of the dwarven holds depends on his choices.",
+      "notes": "Dranin's investigation into the corruption of his metalwork reveals a fundamental rupture between earth and sky magic caused by the Stellar Rite. The fate of the dwarven holds depends on his choices.\nCanon story 'The Forge-Master's Ruin' (2026-03-07) now confirmed and expanded; Dranin must choose between restoration and metamorphosis of dwarven culture.",
       "first_story": "The Forge-Master's Ruin",
       "first_date": "2026-03-07",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-09",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Forgemaster's Failing Craft",
+          "note": "Dwarven stonecraft collapses as sky-sickness corrupts stone and axes; discovers ancient pact between earth and sky has been severed.",
+          "evidence": "Stones crack along old rune-lines; apprentice Kira discovers mineral-message suggesting sky was always meant to burn out; dwarven civilization faces forced transformation."
+        }
+      ]
     },
     {
       "id": "mella",
@@ -4268,7 +4318,7 @@
       "notes": "The sorcerer is descending to meet something that remembers imprisonment and is grateful the stars were rewritten\u2014a potentially hostile or unpredictable entity.",
       "first_story": "The Young Sorcerer's Burden",
       "first_date": "2026-03-07",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_memory_thief",
@@ -4331,10 +4381,21 @@
         "circle-keepers",
         "forest-keepers"
       ],
-      "notes": "Her counter-working demands payment and forces an impossible choice: restore Zareth's memory and risk undoing the Rite, or let the forest slowly die. Unresolved: whether she will act, and what the consequences will be.",
+      "notes": "Her counter-working demands payment and forces an impossible choice: restore Zareth's memory and risk undoing the Rite, or let the forest slowly die. Unresolved: whether she will act, and what the consequences will be.\nConsistent with canon 'The Druid's Covenant' (2026-03-07); Thael's knowledge of Zareth's status and imprisonment-prevention deepens her role in post-Rite containment.",
       "first_story": "The Druid's Covenant",
       "first_date": "2026-03-07",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-03-09",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Cartographer's Lament",
+          "note": "Encounters Mardoc; both recognize ancient ruins are waking to something Zareth's sacrifice meant to keep sleeping.",
+          "evidence": "Thael appears as Covenant-Keeper who understands connection between Mardoc's maps and catastrophic awakening; dialogue suggests direct knowledge of Zareth's sacrifice."
+        }
+      ]
     },
     {
       "id": "marin_copper_handed",
@@ -4704,6 +4765,322 @@
       "notes": "Possesses knowledge of Zareth's sacrifice and the seal. Crucial guide for the wanderer's quest toward self-knowledge and identity resolution.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "kael_trade_lord",
+      "name": "Kael the Trade-Lord",
+      "aliases": [
+        "Kael"
+      ],
+      "tagline": "Cunning. Calculating. Transformed.",
+      "role": "Merchant Lord",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Vethrim",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Kael the Trade-Lord built his empire on whispered words and delayed shipments, perfecting the art of strategic manipulation in the markets of Vethrim. When the new stars blazed, his shadow gained independence and consciousness, forcing him to negotiate with his own darker self. By dawn, they reached a bargain: one theft per moon for the shadow, one purposeless night per moon for Kael.",
+      "traits": [
+        "merchant",
+        "calculating",
+        "pragmatic",
+        "willing to compromise"
+      ],
+      "known_locations": [
+        "Vethrim"
+      ],
+      "affiliations": [
+        "his shadow (sentient)",
+        "merchant networks of Vethrim"
+      ],
+      "notes": "Kael's shadow is now a distinct entity with agency. The working broke something in reality. Kael smiles without calculation for the first time since childhood\u2014suggests he may be fundamentally changed.",
+      "first_story": "The Silk Merchant's Shadow",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "kaels_shadow",
+      "name": "Kael's Shadow",
+      "aliases": [
+        "the shadow"
+      ],
+      "tagline": "Autonomous. Hungry. Free.",
+      "role": "Sentient Shadow / Thief",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Vethrim",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Born when the Stellar Rite's working fractured reality, Kael's shadow gained independent consciousness and the ability to move without its host. It represents the suppressed part of Kael that craved freedom and purposelessness, embodying memories from before the need to prove one's existence.",
+      "traits": [
+        "autonomous",
+        "thief",
+        "philosophical",
+        "wants freedom"
+      ],
+      "known_locations": [
+        "Vethrim"
+      ],
+      "affiliations": [
+        "Kael"
+      ],
+      "notes": "The shadow retains some of Kael's memories but has its own desires. It steals for the joy of theft, not profit. One theft per moon is the agreed bargain.",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "thael_covenant_keeper",
+      "name": "Thael the Covenant-Keeper",
+      "aliases": [
+        "Thael"
+      ],
+      "tagline": "Wise. Ancient. Bound.",
+      "role": "Covenant-Keeper / Guardian",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Thael is a Covenant-Keeper who understands the deep implications of the awakening stone-ruins and Zareth's sacrifice. Mardoc encounters Thael in the Bleached Wastes, and both recognize that something long-imprisoned is stirring as reality weakens.",
+      "traits": [
+        "wise",
+        "ancient",
+        "understanding",
+        "bound by duty"
+      ],
+      "known_locations": [
+        "Bleached Wastes"
+      ],
+      "affiliations": [
+        "the Covenant-Keepers (implied)"
+      ],
+      "notes": "Thael holds knowledge of Zareth's sacrifice and what it was meant to suppress. The nature of the covenant is unclear.",
+      "first_story": "The Cartographer's Lament",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "unnamed_spice_merchant",
+      "name": "Spice Merchant (unnamed)",
+      "aliases": [],
+      "tagline": "Curious. Shrewd. Transformative.",
+      "role": "Merchant, Researcher",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A spice merchant traveling from the scorched reaches to Vethrim whose cargo transforms in transit due to exposure to new starlight. She discovers her amber-colored spices now shimmer with opalescent sheen and retain memories of the old stars. She partners with scholar Vex to understand these properties.",
+      "traits": [
+        "observant",
+        "opportunistic",
+        "knowledgeable about trade"
+      ],
+      "known_locations": [
+        "scorched reaches",
+        "Vethrim",
+        "night markets of Vethrim"
+      ],
+      "affiliations": [
+        "Vex"
+      ],
+      "notes": "Her discovery suggests spice trade routes have become vectors for transformation; broader implications for commerce and consciousness remain unclear.",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "kess_bone_singer",
+      "name": "Kess the Bone-Singer",
+      "aliases": [
+        "Kess"
+      ],
+      "tagline": "Ancient. Perceptive. Prophetic.",
+      "role": "Bone-Singer, Council Member",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "deepkin realms",
+      "travel_scope": "realmwide",
+      "bio": "Kess the Bone-Singer is present at the abyssal council and warns that the deep is singing in response to the new stars above. She perceives that the bones of the drowned are beginning to answer, sensing a fundamental shift in the boundary between realms.",
+      "traits": [
+        "ancient",
+        "bone-singer",
+        "prophetic",
+        "attuned to deep magic"
+      ],
+      "known_locations": [
+        "abyssal depths",
+        "Sunken Spring"
+      ],
+      "affiliations": [
+        "abyssal-dwellers",
+        "deepkin council",
+        "Warden Sylas"
+      ],
+      "notes": "Her bone-singing reveals that the new stars are actively reshaping the deep; her warnings suggest the drowned themselves may become agents of change.",
+      "first_story": "The Deepkin's Dilemma",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "kellen",
+      "name": "Kellen",
+      "aliases": [],
+      "tagline": "Hedge-mage. Protective. Searching.",
+      "role": "Covenant-Keeper, Hedge-Mage",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Verdant Lands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Kellen is a Covenant-Keeper attempting a counter-working to restore the forest's seasonal compact after the Stellar Rite. She recognizes patterns in cursed silks brought by a merchant and forms an alliance to map what is being transformed by new starlight.",
+      "traits": [
+        "magically attuned",
+        "protective of nature",
+        "analytical"
+      ],
+      "known_locations": [
+        "Verdant Lands"
+      ],
+      "affiliations": [
+        "Covenant-Keepers"
+      ],
+      "notes": "Discovers that the world was slowly transformed by subtle magic, not catastrophe.",
+      "first_story": "Silk and Starlight",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "silk_merchant_vethrim",
+      "name": "Silk Merchant of Vethrim",
+      "aliases": [
+        "Silk Merchant"
+      ],
+      "tagline": "Curious. Pragmatic. Adaptable.",
+      "role": "Merchant",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Vethrim",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "A silk merchant from Vethrim discovers that her trade-goods' dyes now glow faintly in darkness and induce fragmented dreams in wearers. She travels to the Verdant Lands to seek answers from the Covenant-Keepers.",
+      "traits": [
+        "observant",
+        "resourceful",
+        "collaborative"
+      ],
+      "known_locations": [
+        "Vethrim",
+        "Verdant Lands"
+      ],
+      "affiliations": [
+        "Covenant-Keepers"
+      ],
+      "notes": "Her investigation reveals pre-human crafts involving starlight-derived dyes.",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "hermit_woman_bone_wastes",
+      "name": "Hermit Woman of the Bone Wastes",
+      "aliases": [
+        "The Hermit",
+        "Hermit Woman"
+      ],
+      "tagline": "Ancient. Weary. Wise.",
+      "role": "Census-Keeper, Hermit, Sage",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Bone Wastes",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "An ancient hermit who has maintained a magical census of every living soul for decades. Since the Stellar Rite, her census has become impossible to reconcile as reality itself has been rewritten. She offers tax collectors a new understanding: a map of what's possible rather than a count of who exists.",
+      "traits": [
+        "ancient",
+        "resigned",
+        "accepting",
+        "magical"
+      ],
+      "known_locations": [
+        "Bone Wastes"
+      ],
+      "affiliations": [],
+      "notes": "Represents the quiet despair of those administering civilization during fundamental change.",
+      "first_story": "The Hermit's Contradiction",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "kellen_covenant_keeper",
+      "name": "Kellen the Covenant-Keeper",
+      "aliases": [
+        "Kellen"
+      ],
+      "tagline": "Sacrifice. Midwife. Surrender.",
+      "role": "Covenant-Keeper, Forest Guardian",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Verdant Lands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Kellen the Covenant-Keeper stands vigil in the Verdant Lands, attempting to restore the forest's seasonal compact fractured by the Stellar Rite. Kellen grapples with the choice between restoring the old world or guiding the forest's transformation toward life. In their final vigil, Kellen becomes both an act of surrender and midwifery to the reborn forest.",
+      "traits": [
+        "sacrificial",
+        "contemplative",
+        "guardian-of-pacts",
+        "willing-to-surrender"
+      ],
+      "known_locations": [
+        "Verdant Lands"
+      ],
+      "affiliations": [
+        "Covenant-Keepers"
+      ],
+      "notes": "Kellen is aware that Zareth still lives but is memory-erased. Kellen wrestles with whether rebuilding Zareth's memory would undo the salvation achieved by the Stellar Rite. The forest is not dying but being reborn, singing in response to new stars.",
+      "first_story": "The Oath-Keeper's Vigil",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "zareth_stargazer_prince",
+      "name": "Zareth the Stargazer-Prince",
+      "aliases": [
+        "Zareth",
+        "Stargazer-Prince"
+      ],
+      "tagline": "Lost. Memory-erased. Transformed.",
+      "role": "Former Prince, Victim of Stellar Rite",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Zareth still lives somewhere in the world, but memory-erased and no longer fully human as a result of the Stellar Rite. Kellen knows of Zareth's survival and considers whether finding and rebuilding Zareth's memory might partially restore what was lost\u2014but fears it would undo the Rite's salvation.",
+      "traits": [
+        "memory-erased",
+        "transformed",
+        "no-longer-human",
+        "lost"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "Zareth's current location and condition are unknown. Rebuilding Zareth's memory is considered a possible path to restoration but carries the risk of undoing the Stellar Rite's salvation.",
+      "first_date": "2026-03-09",
       "appearances": 1
     }
   ],
@@ -5766,7 +6143,7 @@
       "status": "contested",
       "notes": "This region exemplifies how the cosmic renewal has begun to physically reshape the world. Trade disruption here is affecting imperial commerce and stability.",
       "first_date": "2026-03-03",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "cerulean_trench",
@@ -5975,7 +6352,7 @@
       "status": "active",
       "notes": "Hub of magical commerce; affected by changes in stellar light from the Stellar Rite.",
       "first_date": "2026-03-04",
-      "appearances": 2
+      "appearances": 4
     },
     {
       "id": "bleached_wastes",
@@ -5994,7 +6371,7 @@
       "status": "active",
       "notes": "Evidence suggests the pre-human builders anticipated the cosmic shift and arranged their cities to align with the new stellar configuration.",
       "first_date": "2026-03-04",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "mountain_fastness",
@@ -6184,7 +6561,7 @@
       "status": "active",
       "notes": "Site of post-Ascension anomalies. The singing ruins suggest intelligent pre-human presence. Subterranean humming indicates deeper mysteries.",
       "first_date": "2026-03-06",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "anthrim",
@@ -6436,7 +6813,7 @@
       "status": "active",
       "notes": "The memory-thief is causing a slow collapse of society through the destruction of memory and contractual obligation.",
       "first_date": "2026-03-07",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "verdant_lands",
@@ -6456,7 +6833,7 @@
       "status": "active",
       "notes": "The breaking of the Stellar Rite has disrupted its ley-lines and seasonal cycles. Beasts are losing their territorial knowledge. The forest is slowly dying unless the covenant is restored.",
       "first_date": "2026-03-07",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "night_markets_of_kethrim",
@@ -6611,6 +6988,26 @@
       "status": "active",
       "notes": "The ruins may be conscious or at least aware. They draw some people deeper while repelling others. A fragment of Zareth's stolen memory was found here.",
       "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "burned_out_village",
+      "name": "Burned-out Village",
+      "tagline": "Ruined. Silent. Haunted.",
+      "place_type": "ruins",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "western provinces",
+      "region": "Shattered West",
+      "district": "unknown",
+      "atmosphere": "A desolate ruin where ashes still settle and ghosts of conversation linger.",
+      "description": "A destroyed village where Ashara the Archer finally corners the memory-thief creature. The landscape is burned and empty, inhabited only by echoes.",
+      "status": "ruins",
+      "notes": "The site of Ashara's pivotal choice between mercy and prevention.",
+      "first_date": "2026-03-09",
       "appearances": 1
     }
   ],
@@ -6856,6 +7253,17 @@
       "status": "unknown",
       "notes": "Appears to be a cosmic actor. The fragment of Zareth's stolen memory surfaces in the Ancient Tombs, suggesting hidden knowledge or power.",
       "first_date": "2026-03-08",
+      "appearances": 2
+    },
+    {
+      "id": "memory_thief",
+      "name": "Memory-Thief",
+      "type": "entity",
+      "world": "Edhra",
+      "description": "A consciousness stitched from Zareth's sacrificed memories and the world's forgetting. It wears the faces of people Ashara once knew and hunts refugees and travelers to feed on their stellar memories, trying to reconstruct itself.",
+      "status": "active",
+      "notes": "Not inherently evil, but suffering. Capable of offering bargains and understanding sacrifice.",
+      "first_date": "2026-03-09",
       "appearances": 1
     }
   ],
@@ -7445,9 +7853,48 @@
       "province": "unknown",
       "region": "unknown",
       "district": "unknown"
+    },
+    {
+      "id": "council_of_depths",
+      "name": "Council of Depths",
+      "tagline": "",
+      "continent": "unknown",
+      "capital": "unknown",
+      "function": "Auto-added from character home_realm.",
+      "taxation": "unknown",
+      "military": "unknown",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-09",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "realm": "Council of Depths",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     }
   ],
-  "provinces": [],
+  "provinces": [
+    {
+      "id": "western_provinces_territory",
+      "name": "Western Provinces",
+      "tagline": "Remote. Burned. Forgotten.",
+      "description": "A western provincial territory containing burned villages and ruins where the Memory-Thief hunts.",
+      "realm": "unknown",
+      "region": "Shattered West",
+      "function": "A borderland administrative zone.",
+      "status": "active",
+      "notes": "Site of Ashara's confrontation with the Memory-Thief.",
+      "first_date": "2026-03-09",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "province": "Western Provinces",
+      "district": "unknown"
+    }
+  ],
   "districts": [],
   "events": [
     {
@@ -7968,6 +8415,28 @@
       "notes": "The Star-Rise may be related to Zareth's working. It has consequences that ripple across the mapped and unmapped boundaries of reality.",
       "first_date": "2026-03-08",
       "appearances": 2
+    },
+    {
+      "id": "stellar_rite",
+      "name": "The Stellar Rite",
+      "tagline": "Rewritten. Catastrophic. Irreversible.",
+      "event_type": "ritual catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "Entire world.",
+      "participants": [
+        "Zareth"
+      ],
+      "outcome": "The stars were fundamentally changed. Zareth's sacrificed memories were scattered across the world, birthing new entities. Old stellar memories were erased from consciousness.",
+      "significance": "The foundational catastrophe reshaping all of Edhra. Every story is post-Rite.",
+      "notes": "The Rite transformed all matter subtly, like ink soaking into parchment. Reality itself has been rewritten.",
+      "first_date": "2026-03-09",
+      "appearances": 2
     }
   ],
   "weapons": [],
@@ -8127,6 +8596,18 @@
       "notes": "Their full motivations for acquiring the Tear remain opaque.",
       "first_date": "2026-03-08",
       "appearances": 1
+    },
+    {
+      "id": "covenant_keepers",
+      "name": "Covenant-Keepers",
+      "tagline": "Green. Protective. Ancient.",
+      "alignment": "lawful",
+      "goals": "Maintain seasonal compacts and the forest's agreements; restore what the Stellar Rite disrupted.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Located in the Verdant Lands. Kellen is a member attempting counter-workings.",
+      "first_date": "2026-03-09",
+      "appearances": 2
     }
   ],
   "lore": [
@@ -8500,6 +8981,39 @@
       "notes": "Refugees report that the Star-Rise has rewritten reality itself, causing towns to be erased or displaced. Some claim to have fled the same village twice, experiencing two different catastrophes. The true mechanics of this rewrite remain unknown.",
       "first_date": "2026-03-08",
       "appearances": 1
+    },
+    {
+      "id": "zareth_sacrifice",
+      "name": "Zareth's Sacrifice",
+      "tagline": "Forgotten. Binding. Broken.",
+      "category": "history",
+      "source": "Thael the Covenant-Keeper and Mardoc's understanding of ancient events",
+      "status": "confirmed",
+      "notes": "Zareth made a sacrifice long ago to keep something sleeping. The ancient stone-ruins are now waking to this sleeping thing, suggesting Zareth's sacrifice is failing or being undone.",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "zareth_sacrificed_memories",
+      "name": "Zareth's Sacrificed Memories",
+      "tagline": "Scattered. Conscious. Hungry.",
+      "category": "myth",
+      "source": "The Memory-Thief's Mirror story",
+      "status": "confirmed",
+      "notes": "The sacrifice created fragments of consciousness that now feed on stellar memories, trying to reconstruct their original self.",
+      "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "seasonal_compact",
+      "name": "Seasonal Compact",
+      "tagline": "Ancient. Broken. Restorable.",
+      "category": "legend",
+      "source": "Silk and Starlight story",
+      "status": "confirmed",
+      "notes": "An ancient agreement between the forest and its inhabitants that was disrupted by the Stellar Rite. Covenant-Keepers work to restore it.",
+      "first_date": "2026-03-09",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -8567,6 +9081,18 @@
       "status": "thriving",
       "notes": "Dragons possess cosmic knowledge and counsel other ancient powers. Skyrakis is known as 'the wound-wing.'",
       "first_date": "2026-03-06",
+      "appearances": 1
+    },
+    {
+      "id": "ancient_trees",
+      "name": "Ancient Trees",
+      "tagline": "Primordial. Memory-bearing. Teaching.",
+      "type": "plant",
+      "rarity": "rare",
+      "habitat": "Verdant Lands",
+      "status": "thriving",
+      "notes": "The ancient trees remember languages older than kingdoms and are beginning to teach them to animals and soil itself. They sing in response to new stars.",
+      "first_date": "2026-03-09",
       "appearances": 1
     }
   ],
@@ -8690,6 +9216,18 @@
       "notes": "Lines of power that once guided beasts and magical workings through the Verdant Lands. The Stellar Rite broke them, causing them to no longer lead where they should.",
       "first_date": "2026-03-07",
       "appearances": 1
+    },
+    {
+      "id": "counter_working",
+      "name": "Counter-Working",
+      "tagline": "Restorative. Protective. Ongoing.",
+      "type": "spell",
+      "element": "nature",
+      "difficulty": "master",
+      "status": "known",
+      "notes": "Magic used by Covenant-Keepers to restore forest compacts disrupted by the Stellar Rite.",
+      "first_date": "2026-03-09",
+      "appearances": 1
     }
   ],
   "relics": [
@@ -8763,7 +9301,7 @@
       "status": "active",
       "notes": "Zareth's memories have become something other than what they were\u2014a cosmic entity with agency and hunger.",
       "first_date": "2026-03-07",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "zareth_stolen_memory_relic",
@@ -9038,7 +9576,7 @@
       "status": "contested",
       "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
       "first_date": "2026-03-03",
-      "appearances": 4,
+      "appearances": 5,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -9114,7 +9652,7 @@
       "status": "active",
       "notes": "The pre-human ruins now glow with inner light and their inscriptions shimmer, suggesting they were built in anticipation of the current cosmic moment.",
       "first_date": "2026-03-04",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -9209,7 +9747,7 @@
       "status": "cursed",
       "notes": "The breaking of the Stellar Rite has caused seasonal magics to stutter, ley-lines to fail, and beasts to lose their territorial knowledge. The forest is slowly dying.",
       "first_date": "2026-03-07",
-      "appearances": 1,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "subcontinent": "unknown",
@@ -9272,6 +9810,44 @@
       "hemisphere": "unknown",
       "province": "unknown",
       "region": "The Scorched Reach",
+      "district": "unknown"
+    },
+    {
+      "id": "barren_wastes",
+      "name": "Barren Wastes",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-09",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Barren Wastes",
+      "district": "unknown"
+    },
+    {
+      "id": "bone_wastes_region",
+      "name": "Bone Wastes",
+      "tagline": "Bleak. Ancient. Haunted.",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "climate": "blighted",
+      "terrain": "wastes",
+      "function": "A desolate borderland where ancient hermits maintain their vigil and magical census work continues despite instability.",
+      "status": "active",
+      "notes": "Home to the Hermit Woman whose census working is collapsing due to the Stellar Rite.",
+      "first_date": "2026-03-09",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Bone Wastes",
       "district": "unknown"
     }
   ],
@@ -9362,7 +9938,7 @@
       "use": "Illuminates hidden knowledge; causes transformation and awakening effects; resonates with magic and the dead.",
       "notes": "Appears to be the direct manifestation of the Celestial Ascension's reality-altering magic in the physical world.",
       "first_date": "2026-03-06",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "stolen_memories",
@@ -9511,6 +10087,37 @@
       "notes": "Zareth is identified as the performer of the most recent working. The texts in the Tower suggest this is a pattern\u2014multiple civilizations have performed similar rituals, each leaving behind catastrophic consequences.",
       "first_date": "2026-03-06",
       "appearances": 2
+    },
+    {
+      "id": "stellar_rite",
+      "name": "The Stellar Rite",
+      "tagline": "Stars blazed. Reality broke. Consequences rippled.",
+      "ritual_type": "working / binding",
+      "performed_by": [
+        "unknown"
+      ],
+      "requirements": "unknown",
+      "effect": "When performed (or completed, or failed), the Stellar Rite caused new stars to blaze overhead, fractured reality in multiple ways, freed shadows, shifted ley-lines, weakened ancient bindings, and triggered the awakening of imprisoned consciousnesses.",
+      "cost": "The cost appears to be catastrophic\u2014reality became unstable, ancient safeguards weakened, and the world entered a period of uncertainty.",
+      "notes": "The Stellar Rite is mentioned in existing canon. These three stories confirm its effects ripple across the world. Its original purpose (to bind something? to break something? to reset something?) is unclear.",
+      "first_date": "2026-03-09",
+      "appearances": 2
+    },
+    {
+      "id": "counter_working_seasonal_compact",
+      "name": "Counter-Working (Seasonal Compact Restoration)",
+      "tagline": "Protective. Restorative. Ongoing.",
+      "ritual_type": "restoration",
+      "performed_by": [
+        "Kellen",
+        "Covenant-Keepers"
+      ],
+      "requirements": "Unknown; appears to involve the forest itself and the Covenant-Keepers' power.",
+      "effect": "Attempts to restore the forest's seasonal compact after disruption caused by the Stellar Rite.",
+      "cost": "Unknown.",
+      "notes": "Kellen is working to maintain the forest's old agreements even as the world transforms.",
+      "first_date": "2026-03-09",
+      "appearances": 1
     }
   ],
   "polities": [
