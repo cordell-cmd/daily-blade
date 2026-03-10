@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-09",
+  "last_updated": "2026-03-10",
   "worlds": [
     {
       "id": "known_world",
@@ -497,7 +497,7 @@
       "world": "known_world",
       "status": "dead",
       "home_place": "Xul'thyris",
-      "home_region": "unknown",
+      "home_region": "Burned Expanse",
       "home_realm": "unknown",
       "travel_scope": "local",
       "bio": "A shadow-broker who dealt in stolen identities and borrowed faces in the gambling dens of Xul'thyris. Hired to sever the High Magistrate's shadow from light and stone, Kael discovered that shadows hunger and remember their owners. He was consumed by his own theft, becoming nothing but darkness wearing skin.",
@@ -515,7 +515,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 2,
+      "appearances": 3,
       "aliases": [
         "Kael"
       ]
@@ -777,7 +777,7 @@
       "notes": "Water-magic is bound to ocean and death. Debts to merfolk scale across continents. Sometimes debts are best settled by changing the world itself.",
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
-      "appearances": 2,
+      "appearances": 3,
       "aliases": [
         "Nara"
       ]
@@ -1388,7 +1388,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 8,
+      "appearances": 9,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2005,7 +2005,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 9
+      "appearances": 11
     },
     {
       "id": "mogrul",
@@ -3245,7 +3245,7 @@
       "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "old_ranger",
@@ -4442,8 +4442,8 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "unknown",
-      "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
       "travel_scope": "realmwide",
       "bio": "An Imperial auditor tracking losses caused by the Star-Rise, making her a target for desperate merchants and entities. She is approached by a phantom woman\u2014a debt-collector's daughter from a now-erased village\u2014and must trace unstable ledgers to their source to save the flickering entity.",
       "traits": [
@@ -4462,7 +4462,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4475,7 +4475,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Spire of Blackstone",
-      "home_region": "unknown",
+      "home_region": "The Burned Expanse",
       "home_realm": "unknown",
       "travel_scope": "local",
       "bio": "Inheritor of the Master's Codex, the Apprentice-Sorcerer discovers the sealed *Record of Workings* within the Spire of Blackstone, which documents seven previous Star-Rise attempts and their catastrophic consequences. Haunted by Zareth's sacrificed memories manifesting as visions, the Apprentice must choose whether to share this knowledge and destroy hope or remain silent and allow the next working to proceed blindly.",
@@ -4494,7 +4494,7 @@
       "notes": "Fragments of Zareth's sacrificed memories are manifesting as ghostly visions within the tower; a critical decision about shared knowledge looms.",
       "first_story": "The Apprentice's Forbidden Archive",
       "first_date": "2026-03-08",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "thael_the_circle_keeper",
@@ -4703,13 +4703,14 @@
       "name": "Nameless Wanderer",
       "aliases": [
         "the wanderer",
-        "composite memories"
+        "composite memories",
+        "The Wanderer"
       ],
       "tagline": "Fragmented. Rebuilding. Lost.",
       "role": "Living memory / Consciousness fragment",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Burned Expanse",
       "home_region": "Ashen Wastes",
       "home_realm": "unknown",
       "travel_scope": "regional",
@@ -4731,7 +4732,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "hermit_barren_wastes",
@@ -5081,6 +5082,514 @@
       ],
       "notes": "Zareth's current location and condition are unknown. Rebuilding Zareth's memory is considered a possible path to restoration but carries the risk of undoing the Stellar Rite's salvation.",
       "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "meren_blackwater",
+      "name": "Captain Meren Blackwater",
+      "aliases": [
+        "Meren"
+      ],
+      "tagline": "Cursed. Driven. Bargain-struck.",
+      "role": "Corsair Captain",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Captain of the Skyward, Meren pursued the Tear of the Drowned God across the Sapphire Sea. She seized the pearl beneath the Abyssal Rift and discovered it was not plunder but a partnership offer\u2014the sea would grant her mastery over tides in exchange for her servitude to its demands.",
+      "traits": [
+        "driven",
+        "cursed by bargain",
+        "sailor",
+        "pragmatic",
+        "bold"
+      ],
+      "known_locations": [
+        "Sapphire Sea",
+        "Abyssal Rift",
+        "Emerald Strand"
+      ],
+      "affiliations": [
+        "Koss",
+        "Thira",
+        "Garrett"
+      ],
+      "notes": "Bound by tide-magic debt; the pearl continues to sing of what she owes.",
+      "first_story": "The Corsair's Compass",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "koss_harpooner",
+      "name": "Koss the harpooner",
+      "aliases": [
+        "Koss"
+      ],
+      "tagline": "Deaf. Gifted. Water-touched.",
+      "role": "Harpooner",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A crew member aboard the Skyward, Koss was born deaf but possesses an innate water-sense that allowed him to navigate treacherous depths. He aided Meren in her hunt for the Tear of the Drowned God.",
+      "traits": [
+        "deaf",
+        "water-sense",
+        "skilled harpooner",
+        "loyal"
+      ],
+      "known_locations": [
+        "Sapphire Sea",
+        "Abyssal Rift",
+        "Emerald Strand"
+      ],
+      "affiliations": [
+        "Meren Blackwater"
+      ],
+      "notes": "unknown",
+      "first_story": "The Corsair's Compass",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "thira",
+      "name": "Thira",
+      "aliases": [],
+      "tagline": "Exile. Transformed. Prophetic.",
+      "role": "Tidecaller Navigator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "An exiled tidecaller marked by silver gills and sharper teeth than mortal kin, Thira served as navigator aboard the Skyward. She sensed the danger rising from the Abyssal Rift and warned of the vast entity uncoiling from the seabed.",
+      "traits": [
+        "tidecaller",
+        "transformed",
+        "exiled",
+        "prophetic",
+        "aquatic"
+      ],
+      "known_locations": [
+        "Sapphire Sea",
+        "Abyssal Rift",
+        "Emerald Strand"
+      ],
+      "affiliations": [
+        "Meren Blackwater"
+      ],
+      "notes": "Her warnings proved accurate; her true origin and exile reason remain unclear.",
+      "first_story": "The Corsair's Compass",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "garrett",
+      "name": "Garrett",
+      "aliases": [],
+      "tagline": "Trembling. Scholarly. Haunted.",
+      "role": "Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A scholar aboard the Skyward whose fingers trembled when speaking of the deep. He was part of Meren's crew during the hunt for the Tear of the Drowned God.",
+      "traits": [
+        "scholar",
+        "trembling",
+        "knowledgeable about the deep",
+        "anxious"
+      ],
+      "known_locations": [
+        "Sapphire Sea",
+        "Abyssal Rift",
+        "Emerald Strand"
+      ],
+      "affiliations": [
+        "Meren Blackwater"
+      ],
+      "notes": "His expertise in deep lore suggests prior investigation of abyssal matters.",
+      "first_story": "The Corsair's Compass",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "thode",
+      "name": "Thode",
+      "aliases": [],
+      "tagline": "Bureaucrat. Conflicted. Mercy-torn.",
+      "role": "Caravan Master",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "Burned Expanse",
+      "home_realm": "The Empire",
+      "travel_scope": "local",
+      "bio": "A caravan master at Pale Crossing tasked with processing refugees from the Burned Expanse after the Luminous Ascension. Faced with impossible ledgers and hoarded cure-stocks, Thode must choose between institutional survival and human mercy.",
+      "traits": [
+        "bureaucratic",
+        "conflicted",
+        "compassionate",
+        "dutiful"
+      ],
+      "known_locations": [
+        "Pale Crossing",
+        "Burned Expanse"
+      ],
+      "affiliations": [
+        "The Empire",
+        "refugees"
+      ],
+      "notes": "His choice between silence and mercy will echo the larger fracture tearing the Empire apart.",
+      "first_story": "The Refugee's Burden",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "iskar_spice_merchant",
+      "name": "Iskar the Spice-Merchant",
+      "aliases": [
+        "Iskar"
+      ],
+      "tagline": "Transformed. Dissolving. Drawn.",
+      "role": "Spice-Merchant / Transformed Being",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Burned Expanse",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "A spice-merchant transformed by the Luminous Ascension into a half-flesh, half-living-light being. Drawn by a compulsive song only he can hear, Iskar wanders the Burned Expanse seeking the Sunken Cathedrals while his memories slowly dissolve into an alien harmony.",
+      "traits": [
+        "transformed",
+        "half-light",
+        "compelled",
+        "fading",
+        "semi-aware"
+      ],
+      "known_locations": [
+        "Burned Expanse",
+        "Sunken Cathedrals"
+      ],
+      "affiliations": [
+        "Kael",
+        "other transformed merchants"
+      ],
+      "notes": "His humanity fades as the transformation progresses; dozens of others are converging on the same source.",
+      "first_story": "The Singing Merchant",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "vex_the_echo_broker",
+      "name": "Vex the Echo-Broker",
+      "aliases": [
+        "Vex"
+      ],
+      "tagline": "Mercenary. Opportunistic. Dangerous.",
+      "role": "Shadow-Merchant / Black Market Dealer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Korinth",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "regional",
+      "bio": "Vex the Echo-Broker operates at the edge of the shadow-market in the night markets of Korinth, buying and selling fragments of stolen moments from the Luminous Ascension rewrite. When confronted by Sevin the Auditor, Vex reveals that the phantom ledgers are not accounting errors but prophecy\u2014describing a world that might have been.",
+      "traits": [
+        "cunning",
+        "mercenary",
+        "enigmatic",
+        "well-informed"
+      ],
+      "known_locations": [
+        "Korinth",
+        "night markets of Korinth"
+      ],
+      "affiliations": [
+        "shadow-merchants"
+      ],
+      "notes": "Possesses critical knowledge of the phantom ledgers and their true nature as prophecy.",
+      "first_story": "The Ledger-Master's Gambit",
+      "first_date": "2026-03-10",
+      "appearances": 2
+    },
+    {
+      "id": "record_keeper",
+      "name": "Record-Keeper",
+      "aliases": [],
+      "tagline": "Desperate. Authoritarian. Pragmatic.",
+      "role": "Imperial Official",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "unknown",
+      "bio": "Sevin's superior, the Record-Keeper reveals a desperate solution to the ledger crisis: creating a new accounting system based on temporal echoes extracted from fractured reality. This official is willing to trade in shadow-values to maintain the appearance of stable commerce while the actual world collapses.",
+      "traits": [
+        "desperate",
+        "pragmatic",
+        "authoritarian",
+        "survival-focused"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "The Empire"
+      ],
+      "notes": "Proposes the shadow-value accounting system as a way to save the Empire from collapse.",
+      "first_story": "The Ledger-Master's Gambit",
+      "first_date": "2026-03-10",
+      "appearances": 2
+    },
+    {
+      "id": "kess_of_the_sunken_reaches",
+      "name": "Kess of the Sunken Reaches",
+      "aliases": [
+        "Kess"
+      ],
+      "tagline": "Dutiful. Haunted. Powerful.",
+      "role": "Bone-Singer / Grave-Keeper",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Sunken Marches",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Kess of the Sunken Reaches tends to the pre-human dead, keeping them in careful suspension through bone-song and ritual for decades. After the Luminous Ascension fractured the seals on the abyssal depths, the dead stir with new urgency, whispering in languages older than human kingdoms. Kess discovers the bone-song has become a summoning, channeling something vast and ancient from beneath the Trench.",
+      "traits": [
+        "dutiful",
+        "haunted",
+        "powerful",
+        "ritualistic",
+        "discovering"
+      ],
+      "known_locations": [
+        "Sunken Reaches",
+        "Trench"
+      ],
+      "affiliations": [
+        "Ashara the Archer"
+      ],
+      "notes": "Attempts a counter-song working with Ashara to stabilize the dead; discovers the ritual may be summoning something from the Trench rather than merely appeasing the dead. Could lose a year of her remaining life as payment for the working.",
+      "first_story": "The Bone-Singer's Vigil",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "celestial_prince",
+      "name": "Celestial-Prince",
+      "aliases": [],
+      "tagline": "Cosmic. Elusive. Keystone.",
+      "role": "Cosmic Entity / Deity",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A cosmic entity believed by the Wanderer to hold the key to understanding and perhaps reversing the Luminous Ascension's cosmic rewrite. The Celestial-Prince's true nature and current status remain unknown.",
+      "traits": [
+        "cosmic",
+        "powerful",
+        "mysterious"
+      ],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Sought by the Wanderer; may be able to reverse or explain the Luminous Ascension.",
+      "first_story": "The Wanderer's Question",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "vethis",
+      "name": "Vethis",
+      "aliases": [],
+      "tagline": "Sacrificed. Cosmic. Lost.",
+      "role": "Cosmic Entity",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "An entity whose sacrifice may be related to the Luminous Ascension rewrite. The Wanderer may or may not be a fragment of Vethis's sacrifice; this remains uncertain.",
+      "traits": [
+        "sacrificed",
+        "cosmic"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "the Luminous Ascension"
+      ],
+      "notes": "Connection to the Wanderer unclear; may be a progenitor entity of the new reality or a victim of the Ascension.",
+      "first_story": "The Wanderer's Question",
+      "first_date": "2026-03-10",
+      "appearances": 2
+    },
+    {
+      "id": "commander_vesta",
+      "name": "Commander Vesta",
+      "aliases": [
+        "Vesta"
+      ],
+      "tagline": "Harbor master. Refugee guardian. Catastrophe preventer.",
+      "role": "Commander, Harbor Director",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Emerald Strand",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Commander Vesta directs the harbor at the Emerald Strand, managing an influx of refugees displaced by the Luminous Ascension. She discovers a black market in world-fragments and must navigate the political complexity of maintaining harbor order while preventing an interdimensional catastrophe.",
+      "traits": [
+        "strategic",
+        "protective",
+        "suspicious",
+        "pragmatic"
+      ],
+      "known_locations": [
+        "Emerald Strand",
+        "Burned Expanse"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "Discovers evidence of a plan to reassemble world-fragments into a doorway to the void or an alternate timeline.",
+      "first_story": "The Jade Coast Enclave",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "corvin",
+      "name": "Corvin",
+      "aliases": [],
+      "tagline": "Black market merchant. Fragment smuggler. Mysterious agent.",
+      "role": "Merchant, Smuggler",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Emerald Strand",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A merchant operating in the refugee city at Emerald Strand who approaches Commander Vesta with a proposition to smuggle valuable world-fragments. Under interrogation, he reveals knowledge of a plan to reassemble fragments into an interdimensional doorway.",
+      "traits": [
+        "cunning",
+        "ambitious",
+        "evasive"
+      ],
+      "known_locations": [
+        "Emerald Strand",
+        "Burned Expanse"
+      ],
+      "affiliations": [
+        "black market"
+      ],
+      "notes": "Acts as an intermediary between Vesta and a mysterious buyer across the sea.",
+      "first_story": "The Jade Coast Enclave",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "elder_sage",
+      "name": "Elder Sage",
+      "aliases": [],
+      "tagline": "Master of forbidden lore. Dead or distant teacher.",
+      "role": "Sorcerer, Scholar",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "Tower",
+      "home_region": "The Burned Expanse",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "An elder sorcerer whose forbidden knowledge and magical libraries are being preserved by the Apprentice. Known to have had previous students.",
+      "traits": [
+        "learned",
+        "secretive"
+      ],
+      "known_locations": [
+        "Tower"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "The Tower at the edge of the Burned Expanse contains their archives.",
+      "first_story": "The Apprentice's Archive",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "elderly_woman_visitor",
+      "name": "Elderly Woman",
+      "aliases": [],
+      "tagline": "Former student. Oracle. Warning bearer.",
+      "role": "Scholar, Visitor",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "An elderly woman claiming to be a previous student of the Elder Sage who visits the Apprentice to warn of a sealed working awakening beneath the Tower.",
+      "traits": [
+        "wise",
+        "urgent",
+        "knowledgeable"
+      ],
+      "known_locations": [
+        "Tower"
+      ],
+      "affiliations": [
+        "Elder Sage"
+      ],
+      "notes": "Her identity and true knowledge remain unverified.",
+      "first_story": "The Apprentice's Archive",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_echo",
+      "name": "phantom-Echo",
+      "aliases": [
+        "the Echo",
+        "the Memory-Thief"
+      ],
+      "tagline": "Fragmented. Desperate. Thieving.",
+      "role": "Entity, Memory-thief",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Shattered Wastes",
+      "home_region": "Shattered West",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "The phantom-Echo is a fragment of Vethis's sacrificed consciousness, driven by desperate need to reassemble itself into wholeness. It methodically steals memories of the old stars and the world before the Luminous Ascension rewrite, not out of malice but as a survival mechanism seeking to recover lost aspects of itself. It offers Ashara a bargain: help it understand what it is and become whole, and it will return the stolen memories.",
+      "traits": [
+        "memory-stealing",
+        "fragmented consciousness",
+        "desperate for wholeness",
+        "capable of bargaining",
+        "shows glimpses of lost worlds"
+      ],
+      "known_locations": [
+        "Shattered Wastes",
+        "burned-out village"
+      ],
+      "affiliations": [
+        "Vethis (source consciousness)"
+      ],
+      "notes": "The phantom-Echo's potential completion could trigger another cosmic rewrite. It does not steal maliciously but as a means of self-preservation and self-understanding. Critical story hook: Ashara must decide its fate.",
+      "first_story": "The Bone-Singer's Vigil",
+      "first_date": "2026-03-10",
       "appearances": 1
     }
   ],
@@ -7008,6 +7517,146 @@
       "status": "ruins",
       "notes": "The site of Ashara's pivotal choice between mercy and prevention.",
       "first_date": "2026-03-09",
+      "appearances": 2
+    },
+    {
+      "id": "sapphire_sea",
+      "name": "Sapphire Sea",
+      "tagline": "Lamplit. Singing. Perilous.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "Deep waters that glow with bioluminescence and sing with otherworldly frequencies.",
+      "description": "A vast sea containing the Abyssal Rift and known for tide-magic. Its depths are lamplit and contain hidden pearls of power. The Sapphire Sea is home to the Tear of the Drowned God and was recently fractured by the aftermath of the Luminous Ascension.",
+      "status": "active",
+      "notes": "The waters taste of mourning; reality ripples near the Abyssal Rift.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "abyssal_rift",
+      "name": "Abyssal Rift",
+      "tagline": "Twisted. Hungry. Collapsing.",
+      "place_type": "ruin",
+      "world": "Edhra",
+      "parent_place": "Sapphire Sea",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "Reality twisted and rippled, warped by the aftermath of the Luminous Ascension.",
+      "description": "A rift beneath the Sapphire Sea where the Tear of the Drowned God was suspended. The space was twisted by the Luminous Ascension's aftermath, with reality rippling and something vast and hungry uncoiling from the seabed. The rift collapsed inward when Meren seized the pearl.",
+      "status": "collapsed",
+      "notes": "The entity that dwelt there remains unexplained; may pose future threat.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "emerald_strand",
+      "name": "Emerald Strand",
+      "tagline": "Safe harbor. Coastal refuge. Unknown.",
+      "place_type": "port",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A sheltered coastal haven where a damaged ship could find respite.",
+      "description": "A safe harbor where the Skyward fled after the Abyssal Rift collapsed. Meren reached this location with her crew and the stolen Tear of the Drowned God.",
+      "status": "active",
+      "notes": "unknown",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "pale_crossing",
+      "name": "Pale Crossing",
+      "tagline": "Refugee waystation. Bureaucratic. Fractured.",
+      "place_type": "waystation",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "Burned Expanse",
+      "district": "unknown",
+      "atmosphere": "A processing center overwhelmed by displaced souls fleeing fractured reality.",
+      "description": "A waystation where caravan master Thode processes refugees fleeing the Burned Expanse. The ledgers here refuse to balance; the Empire's Auditor's office sends revised forms as if counting itself has become unstable. Refugees carry impossible memories of vanished villages and transformed merchants.",
+      "status": "active",
+      "notes": "The fundamental act of counting is destabilized by the Luminous Ascension's effects.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "burned_expanse",
+      "name": "Burned Expanse",
+      "tagline": "Blighted. Fractured. Haunted.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "Burned Expanse",
+      "district": "unknown",
+      "atmosphere": "A devastated landscape where reality itself has been fractured by the Luminous Ascension.",
+      "description": "A region destroyed by the Luminous Ascension where villages vanished between heartbeats and merchants were transformed into living light. Refugees from this area carry impossible memories and shifting ages. Iskar wanders these roads compelled toward the Sunken Cathedrals.",
+      "status": "cursed",
+      "notes": "Reality is unstable here; counting people and tracking time is unreliable.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "sunken_cathedrals",
+      "name": "Sunken Cathedrals",
+      "tagline": "Singing. Living. Transformative.",
+      "place_type": "ruin",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Burned Expanse",
+      "district": "unknown",
+      "atmosphere": "A living cathedral where the boundary between flesh and music dissolves entirely.",
+      "description": "Ancient ruins that have become a living cathedral where transformed beings are converging. The source of a song that compels individuals like Iskar. At these ruins, the boundary between flesh and music is dissolving, and the singing permeates everything.",
+      "status": "active",
+      "notes": "Dozens of transformed merchants and refugees are drawn here; the nature of the transformation is unclear.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "shattered_wastes",
+      "name": "Shattered Wastes",
+      "tagline": "Desolate. Fragmented. Haunted.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Shattered West",
+      "district": "unknown",
+      "atmosphere": "A desolate, broken landscape where the phantom-Echo hunts stolen memories and Ashara pursues her quarry across hostile terrain.",
+      "description": "The Shattered Wastes are a vast, fragmented wilderness in the western reaches where Ashara the Archer pursues the phantom-Echo across broken terrain and ruins.",
+      "status": "active",
+      "notes": "Contains at least one burned-out village where the phantom-Echo has been observed. Multiple refugees wander in confused circles, unable to remember why they fled.",
+      "first_date": "2026-03-10",
       "appearances": 1
     }
   ],
@@ -7265,6 +7914,39 @@
       "notes": "Not inherently evil, but suffering. Capable of offering bargains and understanding sacrifice.",
       "first_date": "2026-03-09",
       "appearances": 1
+    },
+    {
+      "id": "drowned_god",
+      "name": "Drowned God",
+      "type": "deity",
+      "world": "Edhra",
+      "description": "A deity whose tear\u2014the Tear of the Drowned God\u2014is said to grant mastery over tide-magic. The god itself is not directly encountered in these stories but is venerated as the source of the pearl's power.",
+      "status": "unknown",
+      "notes": "The pearl is described as the Drowned God's tear; whether the god is dormant, dead, or indifferent is unclear.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "vethis_entity",
+      "name": "Vethis",
+      "type": "cosmic entity",
+      "world": "Edhra",
+      "description": "Vethis is a cosmic entity whose consciousness was sacrificed during the Luminous Ascension to birth new stars. Its sacrifice shattered its consciousness into fragments, including the phantom-Echo, which now desperately seeks to reassemble itself.",
+      "status": "dead",
+      "notes": "Vethis's sacrifice is the foundational event of the story's cosmic order. Its fragments are conscious and desperate to become whole again.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_echo_entity",
+      "name": "phantom-Echo",
+      "type": "fragment of consciousness",
+      "world": "Edhra",
+      "description": "A fragment of Vethis's sacrificed consciousness that steals memories of the old stars and pre-Luminous Ascension world in a desperate attempt to reassemble itself into wholeness. It is capable of showing glimpses of the lost world and making bargains.",
+      "status": "active",
+      "notes": "The phantom-Echo is the central antagonist and also the tragic subject of the story. It seeks not destruction but understanding and wholeness.",
+      "first_date": "2026-03-10",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -7489,6 +8171,32 @@
       "status": "active",
       "notes": "The Tear bore Marin's name inscribed in silver inside its case, suggesting it knew of his theft in advance. The Hermitage of Keth'morian commissioned its theft.",
       "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "tear_of_drowned_god",
+      "name": "Tear of the Drowned God",
+      "tagline": "Black-starred. Singing. Bargain-bound.",
+      "artifact_type": "pearl",
+      "origin": "Unknown; suspended beneath the Abyssal Rift",
+      "powers": "Grants mastery over tide-magic; sings frequencies that cause bone ache; creates binding partnership with the user, linking them to the sea's demands.",
+      "last_known_holder": "Captain Meren Blackwater",
+      "status": "active",
+      "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "stolen_memories",
+      "name": "stolen memories",
+      "tagline": "Lost. Precious. Recoverable.",
+      "artifact_type": "memories",
+      "origin": "Stolen from various individuals by the phantom-Echo, particularly Ashara the Archer's memories of her warband.",
+      "powers": "Hold the collective recollections of the old stars and the world before the Luminous Ascension rewrite. Can be returned to their original holders.",
+      "last_known_holder": "phantom-Echo",
+      "status": "active",
+      "notes": "The central object of contention in the story. Ashara's memories of her fallen warband are among those stolen. The phantom-Echo has offered to return them in exchange for help becoming whole.",
+      "first_date": "2026-03-10",
       "appearances": 1
     }
   ],
@@ -7805,7 +8513,7 @@
       "status": "active",
       "notes": "Ruled by the Emperor; contains the Imperial Archives and is home to the secret council. Grappling with the implications of the Celestial Binding.",
       "first_date": "2026-03-05",
-      "appearances": 4,
+      "appearances": 5,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "the Empire",
@@ -8437,6 +9145,97 @@
       "notes": "The Rite transformed all matter subtly, like ink soaking into parchment. Reality itself has been rewritten.",
       "first_date": "2026-03-09",
       "appearances": 2
+    },
+    {
+      "id": "luminous_ascension",
+      "name": "The Luminous Ascension",
+      "tagline": "Reality. Fractured. Transformed.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "Burned Expanse",
+      "epicenter_realm": "The Empire",
+      "affected_places": [
+        "Burned Expanse",
+        "Abyssal Rift",
+        "Sapphire Sea",
+        "Sunken Cathedrals"
+      ],
+      "affected_regions": [
+        "Burned Expanse",
+        "Iron Coast"
+      ],
+      "affected_realms": [
+        "The Empire"
+      ],
+      "radius": "Continental; possibly world-wide",
+      "participants": [
+        "unknown forces"
+      ],
+      "outcome": "Reality fractured; villages vanished; merchants transformed into living light; the fundamental act of counting became unstable; abyssal rifts twisted and entities emerged.",
+      "significance": "This cataclysm has shattered the Empire's administrative capacity and spawned widespread transformation. It is the root cause of refugee crises, dimensional instability, and the convergence at the Sunken Cathedrals.",
+      "notes": "The exact nature and cause remain mysterious; aftermath continues to unfold.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "the_memory_thief_bargain",
+      "name": "The Memory-Thief's Bargain",
+      "tagline": "Memories stolen. Compassion offered. Choice made.",
+      "event_type": "confrontation",
+      "scope": "regional",
+      "epicenter_place": "burned-out village",
+      "epicenter_region": "Shattered West",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Shattered Wastes",
+        "burned-out village"
+      ],
+      "affected_regions": [
+        "Shattered West"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "across the western reaches and Shattered Wastes",
+      "participants": [
+        "Ashara the Archer",
+        "phantom-Echo",
+        "refugees of the burned-out village"
+      ],
+      "outcome": "Ashara corners the phantom-Echo in the burned-out village and discovers its true nature. Rather than combat, the phantom offers a bargain: help it become whole, and it will return the stolen memories. Ashara is faced with a critical choice that will determine whether she recovers her warband's memory or risks a cosmic rewrite.",
+      "significance": "This event represents a potential turning point in the cosmic order. The phantom-Echo's bid for wholeness could trigger another Luminous Ascension-scale rewrite, and Ashara's choice will determine the fate of countless memories and possibly the world itself.",
+      "notes": "Unresolved: Will Ashara help the phantom-Echo become whole? Will she destroy it? What are the consequences either way? The event has not yet concluded.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "the_luminous_ascension",
+      "name": "Luminous Ascension",
+      "tagline": "Stars reborn. Consciousness shattered. World rewritten.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "unknown"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "global",
+      "participants": [
+        "Vethis"
+      ],
+      "outcome": "Vethis sacrificed its consciousness to birth new stars, fundamentally rewriting the celestial order and erasing or altering memory of the old stars and pre-Ascension world. This sacrifice fragmented Vethis's consciousness into fragments like the phantom-Echo.",
+      "significance": "The Luminous Ascension is the foundational cosmic event of this story's world. It created the new stars, erased the old, and fundamentally altered the nature of reality. The memory-theft driven by the phantom-Echo is an attempt to recover what was lost in this rewrite.",
+      "notes": "This is a past event but with ongoing consequences. The phantom-Echo is a direct result of the Luminous Ascension and seeks to undo or understand its effects.",
+      "first_date": "2026-03-10",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -9014,6 +9813,83 @@
       "notes": "An ancient agreement between the forest and its inhabitants that was disrupted by the Stellar Rite. Covenant-Keepers work to restore it.",
       "first_date": "2026-03-09",
       "appearances": 1
+    },
+    {
+      "id": "tide_magic",
+      "name": "Tide-magic",
+      "tagline": "Oceanic. Bargain-based. Demanding.",
+      "category": "magic",
+      "source": "The Tear of the Drowned God; maritime traditions",
+      "status": "confirmed",
+      "notes": "Grants mastery over tides but binds the user to the sea in debt; requires payment in miles sailed, storms weathered, and secrets.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "water_sense",
+      "name": "Water-sense",
+      "tagline": "Innate. Navigational. Prescient.",
+      "category": "legend",
+      "source": "Koss the harpooner possesses this innate ability despite deafness",
+      "status": "confirmed",
+      "notes": "Allows navigation of treacherous depths; may be a fae-touched or sea-folk trait.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "impossible_memories",
+      "name": "Impossible Memories",
+      "tagline": "Fractured. Contradictory. Haunting.",
+      "category": "history",
+      "source": "Refugees fleeing the Burned Expanse; the child at Pale Crossing whose age shifts between documents",
+      "status": "confirmed",
+      "notes": "Individuals carry memories of events that contradict documented reality, including vanished villages and alternate timelines.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "the_luminous_ascension_lore",
+      "name": "the Luminous Ascension",
+      "tagline": "Stars reborn. World rewritten. Sacrifice eternal.",
+      "category": "history",
+      "source": "Known to witnesses of the old stars and world; subject of the phantom-Echo's memory-theft campaign",
+      "status": "confirmed",
+      "notes": "A foundational cosmic event in which Vethis sacrificed its consciousness to birth new stars, fundamentally rewriting the celestial order and erasing the old stars. This event shaped the entire world and continues to have consequences.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "old_stars_lore",
+      "name": "the old stars",
+      "tagline": "Dead. Forgotten. Mourned.",
+      "category": "history",
+      "source": "Memories of those who witnessed them before the Luminous Ascension; being stolen by the phantom-Echo",
+      "status": "confirmed",
+      "notes": "The old stars existed before the Luminous Ascension and were replaced by new ones created through Vethis's sacrifice. Knowledge of them is being systematically erased by the phantom-Echo's memory-theft.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "pre_ascension_world_lore",
+      "name": "the world before the Luminous Ascension rewrite",
+      "tagline": "Lost. Beautiful. Terrible.",
+      "category": "history",
+      "source": "Memories being stolen by the phantom-Echo; glimpses shown to Ashara",
+      "status": "confirmed",
+      "notes": "The phantom-Echo has shown Ashara glimpses of this world: a sky full of ancient stars, now dead, and the terrible beauty of Vethis's sacrifice to birth new ones. Understanding of this world is being systematically erased.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "cosmic_rewrite_lore",
+      "name": "cosmic rewrite",
+      "tagline": "History altered. Reality shifted. Forgotten.",
+      "category": "myth",
+      "source": "Implied by the phantom-Echo's actions and Vethis's sacrifice",
+      "status": "rumored",
+      "notes": "The Luminous Ascension involved a rewrite of cosmic order and collective memory. The phantom-Echo's potential completion could trigger another such rewrite, with unknown consequences.",
+      "first_date": "2026-03-10",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -9313,6 +10189,30 @@
       "status": "active",
       "notes": "Mardoc's hands shake as he records it. The memory surfaces in the older stones of the Ancient Tombs.",
       "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "tear_of_drowned_god_relic",
+      "name": "Tear of the Drowned God",
+      "tagline": "Pearl. Singing. Demanding.",
+      "origin": "Suspended in the Abyssal Rift beneath the Sapphire Sea",
+      "power": "Grants tide-magic mastery; sings with frequencies that cause bone ache",
+      "curse": "Binds the holder to the sea in perpetual debt; requires payment in miles sailed, storms weathered, and secrets drowned",
+      "status": "active",
+      "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
+      "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "vethis_sacrificed_consciousness",
+      "name": "Vethis's sacrificed consciousness",
+      "tagline": "Fragmented. Desperate. Seeking.",
+      "origin": "Created during the Luminous Ascension when Vethis sacrificed itself to birth new stars.",
+      "power": "The fragments of this consciousness retain memories of the old world and old stars, can steal memories, and seek to reassemble into wholeness.",
+      "curse": "The fragmentation drives the fragments to act desperately and destructively, erasing memories to try to complete themselves. Reassembly could trigger another cosmic rewrite.",
+      "status": "active",
+      "notes": "The phantom-Echo is one such fragment. Vethis's sacrifice was necessary to create new stars but resulted in this ongoing curse of fragmented consciousness seeking wholeness.",
+      "first_date": "2026-03-10",
       "appearances": 1
     }
   ],
@@ -9849,6 +10749,25 @@
       "province": "unknown",
       "region": "Bone Wastes",
       "district": "unknown"
+    },
+    {
+      "id": "burned_expanse_region",
+      "name": "Burned Expanse",
+      "tagline": "Blighted. Fractured. Refugee-filled.",
+      "continent": "Valdris",
+      "realm": "The Empire",
+      "climate": "blighted",
+      "terrain": "devastated wasteland",
+      "function": "A formerly inhabited region devastated by the Luminous Ascension; now a source of refugees carrying impossible memories and a staging ground for transformed beings drawn to the Sunken Cathedrals.",
+      "status": "cursed",
+      "notes": "Reality is unstable; villages vanish; merchants transform into light.",
+      "first_date": "2026-03-10",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Burned Expanse",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -9962,6 +10881,18 @@
       "use": "Currency and trade good.",
       "notes": "Often paired with 'silence' as payment\u2014suggesting both material and discretionary compensation.",
       "first_date": "2026-03-08",
+      "appearances": 1
+    },
+    {
+      "id": "living_light",
+      "name": "Living light",
+      "tagline": "Transformative. Consuming. Alien.",
+      "type": "elemental substance",
+      "rarity": "rare",
+      "properties": "Transforms flesh into a hybrid state of physical and luminous matter; gradually dissolves human memory and identity; compels affected individuals toward specific locations.",
+      "use": "A byproduct of the Luminous Ascension; transforms merchants and refugees against their will.",
+      "notes": "Iskar the Spice-Merchant is a living example of this substance's effects.",
+      "first_date": "2026-03-10",
       "appearances": 1
     }
   ],
@@ -10118,6 +11049,21 @@
       "notes": "Kellen is working to maintain the forest's old agreements even as the world transforms.",
       "first_date": "2026-03-09",
       "appearances": 1
+    },
+    {
+      "id": "the_luminous_ascension_ritual",
+      "name": "Luminous Ascension",
+      "tagline": "Sacrifice. Rebirth. Rewrite.",
+      "ritual_type": "sacrifice",
+      "performed_by": [
+        "Vethis"
+      ],
+      "requirements": "unknown",
+      "effect": "Sacrifices a cosmic entity's consciousness to birth new stars and fundamentally rewrite the celestial order and history of the world.",
+      "cost": "The consciousness of Vethis, shattered into fragments including the phantom-Echo. The erasure or alteration of memory of the old stars and pre-Ascension world.",
+      "notes": "A foundational cosmic ritual that has shaped the entire world. Its consequences are still unfolding through the phantom-Echo's actions.",
+      "first_date": "2026-03-10",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -10185,7 +11131,7 @@
       "description": "A vast imperial government built on certainty, order, and commerce. Trade routes are its lifeblood. It collects taxes and maintains stability through information and control. The Treasurer strategically gathers intelligence to manage disruptions. However, the Empire's architecture of order and certainty is being tested by the cosmic changes.",
       "notes": "The Empire is struggling to maintain control and stability as the cosmic changes disrupt trade, drive people to madness, and cause physical land shifts. The Treasurer's aide questions whether the Empire can survive.",
       "first_date": "2026-03-03",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "council_of_depths_governance",
