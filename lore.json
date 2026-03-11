@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-10",
+  "last_updated": "2026-03-11",
   "worlds": [
     {
       "id": "known_world",
@@ -933,7 +933,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "naresh_the_bone_carver",
@@ -1200,7 +1200,7 @@
       "world": "known_world",
       "status": "active",
       "home_place": "Pelimor",
-      "home_region": "unknown",
+      "home_region": "The Sunken Marches",
       "home_realm": "unknown",
       "travel_scope": "local",
       "bio": "Mira is a legendary thief with a unique problem: her own shadow betrayed her in daylight. She bought a replacement shadow in Pelimor's night markets\u2014a merchant's stolen shadow\u2014and used it for three months until the shadow's own will and grief manifested, nearly forcing her to betray a robbery. She burned the shadow to escape its compulsion and learned that shadows carry memory and cannot be truly owned.",
@@ -1220,7 +1220,7 @@
       "notes": "She now avoids stealing shadows and focuses only on daylight treasures. Her encounter revealed that shadows retain memory and agency.",
       "first_story": "The Thief's Shadow",
       "first_date": "2026-02-28",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "tormund",
@@ -1333,7 +1333,7 @@
       "status": "active",
       "home_place": "Drowned Hollows",
       "home_region": "Drowned Hollows",
-      "home_realm": "unknown",
+      "home_realm": "The Empire",
       "travel_scope": "local",
       "bio": "Kess is a bone-singer of the Drowned Hollows who preserved her village from the Rot-King's plague by bargaining with a wolf-spirit\u2014trading her voice for the lives of her people. She now teaches the old songs through gesture and hand-craft, her throat burned by ancient magic. Her sacrifice transformed her from a keeper of tradition into a living testament to the cost of salvation.",
       "traits": [
@@ -1353,7 +1353,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "mardoc_cartographer",
@@ -1388,7 +1388,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 9,
+      "appearances": 10,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2107,7 +2107,7 @@
       "notes": "Zareth completed the Stellar Rite but lost all memory of joy, love, and beauty in the process. The consequences of his sacrifice and whether he survives remain unclear.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 14
+      "appearances": 15
     },
     {
       "id": "thera_the_falconer",
@@ -2615,10 +2615,21 @@
       "affiliations": [
         "five-member warband"
       ],
-      "notes": "Departed the vaults to walk a different road; bond with companions now freely chosen.",
+      "notes": "Departed the vaults to walk a different road; bond with companions now freely chosen.\nBone-Carver does not appear directly; their crafted weapon is in active use in the Empire's political sphere, suggesting wider influence or trade connections than previously recorded.",
       "first_story": "The Warband's Last Song",
       "first_date": "2026-03-02",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-03-11",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Warden's Last Coin",
+          "note": "Bone-Carver's blade is wielded by Meira (a second character) to facilitate theft of the Ledger of Names from the Sovereign's Treasury.",
+          "evidence": "Meira raised 'a bone-carver's blade, its edge singing with a frequency that made Krell's teeth ache.'"
+        }
+      ]
     },
     {
       "id": "shadow_broker_companion",
@@ -2633,7 +2644,7 @@
       "home_place": "unknown",
       "home_region": "The Shattered West",
       "home_realm": "unknown",
-      "travel_scope": "regional",
+      "travel_scope": "realmwide",
       "bio": "One of five oath-bound companions; a broker of shadows and hidden dealings. Participated in the final hunt to the Echoing Vaults and voted to unbind rather than renew the fellowship-oath.",
       "traits": [
         "trader",
@@ -2647,10 +2658,22 @@
       "affiliations": [
         "five-member warband"
       ],
-      "notes": "Left the vaults to walk a separate path; remains bonded to companions through choice, not compulsion.",
+      "notes": "Left the vaults to walk a separate path; remains bonded to companions through choice, not compulsion.\nShadow-Broker's network appears to be actively acquiring high-value secrets post-Stellar Rite, positioning them as a major force in the new economy of intangibles.",
       "first_story": "The Warband's Last Song",
       "first_date": "2026-03-02",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-03-11",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Warden's Last Coin",
+          "note": "Meira references selling the Ledger to shadow-brokers in Kethrim, likely including or connected to the Shadow-Broker companion.",
+          "evidence": "Krell speculated: 'Sold to shadow-brokers in Kethrim, I'd wager.'"
+        }
+      ],
+      "travel_notes": "[2026-03-11] Shadow-Broker operates through networks across multiple city-centers (Kethrim, Vorrath implied); involvement in empire-wide intelligence trafficking suggests broader scope than regional."
     },
     {
       "id": "druid_companion",
@@ -3538,7 +3561,7 @@
       "notes": "Her census suggests the Binding's effects are far more widespread and subtle than previously understood. The wound may be irreparable.",
       "first_story": "The Hermit's Census",
       "first_date": "2026-03-05",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "vex_the_echo_merchant",
@@ -4441,7 +4464,7 @@
       "role": "Auditor",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Imperial Archives",
       "home_region": "The Hearthlands",
       "home_realm": "The Empire",
       "travel_scope": "realmwide",
@@ -4462,7 +4485,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4710,10 +4733,10 @@
       "role": "Living memory / Consciousness fragment",
       "world": "Edhra",
       "status": "active",
-      "home_place": "Burned Expanse",
+      "home_place": "no fixed home",
       "home_region": "Ashen Wastes",
       "home_realm": "unknown",
-      "travel_scope": "regional",
+      "travel_scope": "realmwide",
       "bio": "A being neither entirely living nor dead, shaped by the Star-Rise's chaotic edge, who wanders the Ashen Wastes collecting stories and slowly rebuilding her consciousness from dozens of scattered people's memories. She carries a journal with names and dates that match no calendar and contains fragments of Zareth within her.",
       "traits": [
         "composite",
@@ -4729,10 +4752,22 @@
         "Hermit of the Barren Wastes (guide)",
         "Zareth fragments (component)"
       ],
-      "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.",
+      "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 2
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-11",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wanderer's Recognition",
+          "note": "The wanderer is revealed to be Zareth, the sacrificed cosmic entity, scattered and memory-stripped, now slowly reconstituting through encounters with those who knew him.",
+          "evidence": "This is Zareth, or what remains of Zareth\u2014memory-stripped and no longer fully human, his sacrificed consciousness scattered and his body animated by something that is both him and not."
+        }
+      ],
+      "travel_notes": "[2026-03-11] Wanderer moves through Sundered Reach, Pale Wastes, and Burned Expanse; encounters in multiple settlements across distinct regions indicate broad travel."
     },
     {
       "id": "hermit_barren_wastes",
@@ -5562,7 +5597,8 @@
       "name": "phantom-Echo",
       "aliases": [
         "the Echo",
-        "the Memory-Thief"
+        "the Memory-Thief",
+        "The Memory-Thief"
       ],
       "tagline": "Fragmented. Desperate. Thieving.",
       "role": "Entity, Memory-thief",
@@ -5590,6 +5626,271 @@
       "notes": "The phantom-Echo's potential completion could trigger another cosmic rewrite. It does not steal maliciously but as a means of self-preservation and self-understanding. Critical story hook: Ashara must decide its fate.",
       "first_story": "The Bone-Singer's Vigil",
       "first_date": "2026-03-10",
+      "appearances": 2
+    },
+    {
+      "id": "krell_the_ironbound",
+      "name": "Krell the Ironbound",
+      "aliases": [
+        "Krell",
+        "Warden"
+      ],
+      "tagline": "Loyal. Conflicted. Complicit.",
+      "role": "Warden of the Sovereign's Treasury",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sovereign's Treasury",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "local",
+      "bio": "Krell has guarded the Sovereign's Treasury for thirty years with flawless dedication, his ward-marks renewed each season by the Regent-Keeper himself. When his second-in-command Meira steals the Ledger of Names, Krell chooses to let her go rather than preserve the empire's secrets. His act of defiance costs him everything, but he accepts the consequence with quiet dignity.",
+      "traits": [
+        "loyal",
+        "duty-bound",
+        "conflicted",
+        "silent",
+        "principled"
+      ],
+      "known_locations": [
+        "Sovereign's Treasury",
+        "lower vaults"
+      ],
+      "affiliations": [
+        "Sovereign's Treasury",
+        "Stonecraft-Workers",
+        "The Empire"
+      ],
+      "notes": "Krell's decision to let Meira escape suggests deep doubts about the regime he served. His final act may have larger consequences for the Empire's stability.",
+      "first_story": "The Warden's Last Coin",
+      "first_date": "2026-03-11",
+      "appearances": 1
+    },
+    {
+      "id": "meira",
+      "name": "Meira",
+      "aliases": [
+        "Trade-Broker"
+      ],
+      "tagline": "Shadow-touched. Desperate. Free.",
+      "role": "Second-in-command Warden; Thief",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sovereign's Treasury",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "regional",
+      "bio": "Meira served as Krell's trusted second-in-command at the Sovereign's Treasury, but her name appeared in the Ledger of Names\u2014marking her as a secret debtor to the Regent-Keeper. Shadow-touched and desperate, she steals the Ledger and flees to Vorrath to sell it to a shadow-broker, seeking freedom at any cost.",
+      "traits": [
+        "shadow-touched",
+        "ambitious",
+        "betraying",
+        "desperate",
+        "cunning"
+      ],
+      "known_locations": [
+        "Sovereign's Treasury",
+        "Vorrath",
+        "Kethrim"
+      ],
+      "affiliations": [
+        "shadow-brokers",
+        "shadow-merchants"
+      ],
+      "notes": "Meira's theft of the Ledger and her shadow-touched nature suggest she may have been influenced by forces beyond the Empire. Her destination and buyers remain mysterious.",
+      "first_story": "The Warden's Last Coin",
+      "first_date": "2026-03-11",
+      "appearances": 2
+    },
+    {
+      "id": "regent_keeper",
+      "name": "Regent-Keeper",
+      "aliases": [],
+      "tagline": "Authoritarian. Threatened. Paranoid.",
+      "role": "Imperial Administrator; Keeper of Secrets",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Imperial City",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "realmwide",
+      "bio": "The Regent-Keeper oversees the Sovereign's Treasury and renews its ward-marks each season. When the Ledger of Names is stolen, his face goes pale at the realization that the Crown's most damaging secrets\u2014bastards, bribes, sins\u2014are now scattered beyond his control.",
+      "traits": [
+        "authoritarian",
+        "paranoid",
+        "controlling",
+        "threatened"
+      ],
+      "known_locations": [
+        "Sovereign's Treasury",
+        "Imperial City"
+      ],
+      "affiliations": [
+        "The Empire",
+        "Stonecraft-Workers"
+      ],
+      "notes": "The Regent-Keeper's desperate laugh at the end suggests he understands the Ledger's theft may destabilize the entire regime.",
+      "first_story": "The Warden's Last Coin",
+      "first_date": "2026-03-11",
+      "appearances": 1
+    },
+    {
+      "id": "iskar_the_merchant",
+      "name": "Iskar the Merchant",
+      "aliases": [
+        "Iskar"
+      ],
+      "tagline": "Transformed. Desperate. Hunted.",
+      "role": "Trade-Lord; Merchant Commander",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Sundered Reach",
+      "home_realm": "The Empire",
+      "travel_scope": "realmwide",
+      "bio": "Iskar the Merchant commanded the trade routes for three generations until the Stellar Rite transformed him into something inhuman. Unable to walk the routes his body remembers, he strikes a bargain with a memory-thief fragment: exchange his memory of the trade routes for permission to walk them. But the memory-thief collects commercial knowledge for a greater purpose.",
+      "traits": [
+        "transformed",
+        "desperate",
+        "proud",
+        "trapped"
+      ],
+      "known_locations": [
+        "Sundered Reach"
+      ],
+      "affiliations": [
+        "memory-thief fragment",
+        "shadow-merchants"
+      ],
+      "notes": "Iskar's transformation and the vanishing of his competitors suggest a larger reordering of commerce and power. The memory-thief's collection of commercial knowledge hints at a new market order replacing the old empire.",
+      "first_story": "The Spice-Merchant's Reckoning",
+      "first_date": "2026-03-11",
+      "appearances": 1
+    },
+    {
+      "id": "the_gifted_sorcerer",
+      "name": "The Gifted Sorcerer",
+      "aliases": [
+        "The Sorcerer"
+      ],
+      "tagline": "Keeper. Sealer. Solitary.",
+      "role": "Sorcerer, Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Obsidian Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "The Gifted Sorcerer has inherited the Archmagister's Codex and discovered that the ley-line convergence beneath the Obsidian Tower is awakening. She descends with allies to seal a wound in reality, ultimately choosing solitude and slow erasure to maintain the seal.",
+      "traits": [
+        "knowledgeable",
+        "self-sacrificing",
+        "isolated"
+      ],
+      "known_locations": [
+        "Obsidian Tower",
+        "convergence chamber"
+      ],
+      "affiliations": [
+        "covenant-keeper",
+        "scholar",
+        "war-priest"
+      ],
+      "notes": "She surrenders her identity to maintain a cosmic seal, accepting erasure as the price of salvation.",
+      "first_story": "The Ley-Line Convergers",
+      "first_date": "2026-03-11",
+      "appearances": 1
+    },
+    {
+      "id": "the_dead_king",
+      "name": "The Dead King",
+      "aliases": [],
+      "tagline": "Enforcer. Weakening. Negotiable.",
+      "role": "Undead Ruler, Oath-Enforcer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sunken Hollows",
+      "home_region": "The Sunken Marches",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "The dead king enforced oaths beyond death but has grown weak after the Stellar Rite fractured agreements between the living and the dead. His hold on oath-sworn becomes negotiable through bone-singing.",
+      "traits": [
+        "ancient",
+        "weakening",
+        "bound by new oaths"
+      ],
+      "known_locations": [
+        "Sunken Hollows"
+      ],
+      "affiliations": [
+        "the dead",
+        "oath-enforcing"
+      ],
+      "notes": "His power is transformed rather than broken; new oaths must be sworn under new terms.",
+      "first_story": "The Bone-Singer's Covenant",
+      "first_date": "2026-03-11",
+      "appearances": 1
+    },
+    {
+      "id": "tavin",
+      "name": "Tavin",
+      "aliases": [],
+      "tagline": "Circle-Keeper. Transformed. Boundary-walker.",
+      "role": "Circle-Keeper",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Hearthlands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Tavin is a circle-keeper of the Verdant Lands tasked with performing a counter-working to guide reborn nature-magic toward life rather than chaos. When the Stellar Rite breaks the fundamental agreement between sky and earth, Tavin participates in a transformative working that forces each circle-keeper to choose between remaining human or becoming something new. Tavin emerges neither fully human nor fully wild, standing at the boundary of the transformed forest.",
+      "traits": [
+        "adaptive",
+        "ritualistic",
+        "caught between worlds",
+        "guardian of transformation"
+      ],
+      "known_locations": [
+        "Verdant Lands",
+        "deep forest"
+      ],
+      "affiliations": [
+        "circle-keepers",
+        "Harmony-Keepers"
+      ],
+      "notes": "Tavin's final status is ambiguous\u2014no longer entirely keeper nor entirely wild. Represents the cost of accepting cosmic transformation rather than resisting it.",
+      "first_story": "The Circle-Keepers' Last Working",
+      "first_date": "2026-03-11",
+      "appearances": 1
+    },
+    {
+      "id": "thorin_the_young_auditor",
+      "name": "Auditor Thorin",
+      "aliases": [
+        "Thorin"
+      ],
+      "tagline": "Young. Naive. Doomed.",
+      "role": "Junior Auditor",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Imperial Archives",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "local",
+      "bio": "Thorin is a young auditor working alongside Sevin to untangle the empire's broken records. He assists in the discovery that the memory-thief is deliberately corrupting historical documents to reshape consensus reality.",
+      "traits": [
+        "inexperienced",
+        "diligent",
+        "vulnerable"
+      ],
+      "known_locations": [
+        "Imperial Archives"
+      ],
+      "affiliations": [
+        "The Empire"
+      ],
+      "notes": "Thorin's fate in the story is unclear; he may be consumed or corrupted by the memory-thief.",
+      "first_story": "The Auditor's Ruin",
+      "first_date": "2026-03-11",
       "appearances": 1
     }
   ],
@@ -7658,6 +7959,44 @@
       "notes": "Contains at least one burned-out village where the phantom-Echo has been observed. Multiple refugees wander in confused circles, unable to remember why they fled.",
       "first_date": "2026-03-10",
       "appearances": 1
+    },
+    {
+      "id": "no_fixed_home",
+      "name": "no fixed home",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Ashen Wastes",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-11",
+      "appearances": 1
+    },
+    {
+      "id": "korinth",
+      "name": "Korinth",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-11",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -7947,6 +8286,17 @@
       "notes": "The phantom-Echo is the central antagonist and also the tragic subject of the story. It seeks not destruction but understanding and wholeness.",
       "first_date": "2026-03-10",
       "appearances": 1
+    },
+    {
+      "id": "the_memory_thief",
+      "name": "The Memory-Thief",
+      "type": "entity / consciousness",
+      "world": "Edhra",
+      "description": "A malevolent entity that learned it could reshape consensus reality by consuming bureaucratic records and concentrated memory. It deliberately corrupts ledgers and historical documents to erase the empire's past and remake the world.",
+      "status": "active",
+      "notes": "The Memory-Thief is the true antagonist of the story, using records as a vector to reshape reality itself.",
+      "first_date": "2026-03-11",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -8197,6 +8547,19 @@
       "status": "active",
       "notes": "The central object of contention in the story. Ashara's memories of her fallen warband are among those stolen. The phantom-Echo has offered to return them in exchange for help becoming whole.",
       "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "empire_ledgers",
+      "name": "Empire's Ledgers",
+      "tagline": "Order. Memory. Magic.",
+      "artifact_type": "tome / record / collection",
+      "origin": "Created by imperial bureaucrats over centuries to maintain records of commerce, taxation, and history.",
+      "powers": "The ledgers are a form of concentrated memory-magic that maintains consensus reality and the empire's authority. By recording events, they make them true and stable.",
+      "last_known_holder": "Imperial Archives (corrupted by the Memory-Thief)",
+      "status": "destroyed",
+      "notes": "The destruction of the ledgers represents the collapse of the empire's power to define and control reality through documentation.",
+      "first_date": "2026-03-11",
       "appearances": 1
     }
   ],
@@ -8513,7 +8876,7 @@
       "status": "active",
       "notes": "Ruled by the Emperor; contains the Imperial Archives and is home to the secret council. Grappling with the implications of the Celestial Binding.",
       "first_date": "2026-03-05",
-      "appearances": 5,
+      "appearances": 6,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "the Empire",
@@ -9235,6 +9598,37 @@
       "significance": "The Luminous Ascension is the foundational cosmic event of this story's world. It created the new stars, erased the old, and fundamentally altered the nature of reality. The memory-theft driven by the phantom-Echo is an attempt to recover what was lost in this rewrite.",
       "notes": "This is a past event but with ongoing consequences. The phantom-Echo is a direct result of the Luminous Ascension and seeks to undo or understand its effects.",
       "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "the_auditors_ruin",
+      "name": "The Auditor's Ruin",
+      "tagline": "Records. Corruption. Collapse.",
+      "event_type": "catastrophe",
+      "scope": "realmwide",
+      "epicenter_place": "Imperial Archives",
+      "epicenter_region": "The Hearthlands",
+      "epicenter_realm": "The Empire",
+      "affected_places": [
+        "Imperial Archives",
+        "Imperial City"
+      ],
+      "affected_regions": [
+        "The Hearthlands"
+      ],
+      "affected_realms": [
+        "The Empire"
+      ],
+      "radius": "Across the entire empire as memory and records are systematically corrupted",
+      "participants": [
+        "Sevin the Auditor",
+        "Auditor Thorin",
+        "The Memory-Thief"
+      ],
+      "outcome": "The Imperial Archives are destroyed. The empire's past is largely erased. The old certainty built on ledgers and documentation collapses, forcing a reckoning with uncertain reality.",
+      "significance": "This event reveals that bureaucratic records are a form of concentrated magic and that the empire itself is a spell maintained through documentation. It marks the end of the old empire's authority.",
+      "notes": "Sevin's final choice\u2014to restore the old lie or accept new uncertainty\u2014will determine the empire's future trajectory.",
+      "first_date": "2026-03-11",
       "appearances": 1
     }
   ],
@@ -10768,6 +11162,44 @@
       "province": "unknown",
       "region": "Burned Expanse",
       "district": "unknown"
+    },
+    {
+      "id": "the_burned_expanse",
+      "name": "The Burned Expanse",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-11",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "The Burned Expanse",
+      "district": "unknown"
+    },
+    {
+      "id": "the_sunken_marches",
+      "name": "The Sunken Marches",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-11",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "The Sunken Marches",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -11131,7 +11563,7 @@
       "description": "A vast imperial government built on certainty, order, and commerce. Trade routes are its lifeblood. It collects taxes and maintains stability through information and control. The Treasurer strategically gathers intelligence to manage disruptions. However, the Empire's architecture of order and certainty is being tested by the cosmic changes.",
       "notes": "The Empire is struggling to maintain control and stability as the cosmic changes disrupt trade, drive people to madness, and cause physical land shifts. The Treasurer's aide questions whether the Empire can survive.",
       "first_date": "2026-03-03",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "council_of_depths_governance",
