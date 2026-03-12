@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-11T10:30:45.805839+00:00",
+  "generated_at": "2026-03-12T10:28:33.789294+00:00",
   "source": "codex.json",
   "count": 50,
   "events": [
@@ -14,7 +14,7 @@
       "resolved": false,
       "last_seen": "2026-03-11",
       "recent_issues": 6,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Vethrim",
@@ -171,7 +171,7 @@
       "resolved": false,
       "last_seen": "2026-03-04",
       "recent_issues": 3,
-      "trend": -2,
+      "trend": -1,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -194,6 +194,86 @@
         {
           "date": "2026-03-04",
           "title": "The Drowned Prince's Vigil"
+        }
+      ]
+    },
+    {
+      "name": "The Deepwarden's Binding",
+      "tagline": "Ritual. Revelation. Choice.",
+      "event_type": "ritual",
+      "scope": "world",
+      "epicenter": "Abyss-gate",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-03-12",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Abyss-gate"
+        ],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-12",
+          "title": "The Deepwarden's Binding"
+        }
+      ]
+    },
+    {
+      "name": "The Luminous Remaking",
+      "tagline": "Stars. Rewritten. Fractured.",
+      "event_type": "catastrophe / cosmic event",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-03-12",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Kathrim"
+        ],
+        "regions": [],
+        "realms": [
+          "the Empire"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-12",
+          "title": "The Ledger's Shadow"
+        },
+        {
+          "date": "2026-03-12",
+          "title": "The Merchant's Debt Recollection"
+        },
+        {
+          "date": "2026-03-12",
+          "title": "The Bone-Singer's Refrain"
+        },
+        {
+          "date": "2026-03-12",
+          "title": "The Corsair's Reckoning"
+        },
+        {
+          "date": "2026-03-12",
+          "title": "The Refugee's Echo"
+        },
+        {
+          "date": "2026-03-12",
+          "title": "The Apprentice's Archive"
+        },
+        {
+          "date": "2026-03-12",
+          "title": "The Deepwarden's Binding"
         }
       ]
     },
@@ -605,24 +685,24 @@
       ]
     },
     {
-      "name": "The Memory-Thief's Bargain",
-      "tagline": "Memories stolen. Compassion offered. Choice made.",
-      "event_type": "confrontation",
+      "name": "The Corsair's Reckoning",
+      "tagline": "Binding. Metamorphosis. Debt.",
+      "event_type": "personal quest / transformation",
       "scope": "regional",
-      "epicenter": "burned-out village",
+      "epicenter": "Abyss-gate",
       "stage": "rising",
       "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-10",
+      "last_seen": "2026-03-12",
       "recent_issues": 1,
       "trend": 1,
       "referenced_locations": {
         "places": [
-          "Burned-out Village",
-          "Shattered Wastes"
+          "Abyss-gate",
+          "the sea"
         ],
         "regions": [
-          "Shattered West"
+          "unknown"
         ],
         "realms": [
           "unknown"
@@ -631,189 +711,8 @@
       },
       "story_appearances": [
         {
-          "date": "2026-03-10",
-          "title": "The Memory-Thief's Bargain"
-        }
-      ]
-    },
-    {
-      "name": "Kesh's Debt Collection",
-      "tagline": "Aging. Vengeance. Destruction.",
-      "event_type": "curse activation / death",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Debt Keeper's Price"
-        }
-      ]
-    },
-    {
-      "name": "Night of the Blue Eclipse",
-      "tagline": "Awakening. Transformative. Cursed.",
-      "event_type": "ritual / catastrophe",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Bone Carver's Apotheosis"
-        }
-      ]
-    },
-    {
-      "name": "Saleth's Oath-Breaking",
-      "tagline": "Betrayal. Theft. Haunting.",
-      "event_type": "betrayal / curse-trigger",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Oath-Breaker's Reckoning"
-        }
-      ]
-    },
-    {
-      "name": "Tess's Drowning",
-      "tagline": "Despair. Surrender. Debt-enslavement.",
-      "event_type": "tragedy",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Collector's Daughter"
-        }
-      ]
-    },
-    {
-      "name": "The Life-Theft of Meredith the Red",
-      "tagline": "Summoning. Curse. Betrayal.",
-      "event_type": "magical attack / curse",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Debt Keeper's Price"
-        }
-      ]
-    },
-    {
-      "name": "Theft of the Crown of Karesh",
-      "tagline": "Audacious. Cursed. Fatal.",
-      "event_type": "theft / curse-trigger",
-      "scope": "regional",
-      "epicenter": "Tomb of Karesh",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Tomb of Karesh",
-          "Pelimor",
-          "Tomb"
-        ],
-        "regions": [
-          "Pelimor"
-        ],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Copper Thief"
-        }
-      ]
-    },
-    {
-      "name": "Theron's Redemption",
-      "tagline": "Restitution. Sacrifice. Release.",
-      "event_type": "redemption arc / curse-breaking",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Scarlet Merchant"
+          "date": "2026-03-12",
+          "title": "The Corsair's Reckoning"
         }
       ]
     },
@@ -883,7 +782,7 @@
       "resolved": false,
       "last_seen": "2026-03-02",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Echoing Vaults",
@@ -933,6 +832,38 @@
         {
           "date": "2026-03-08",
           "title": "The Amber Thief's Gambit"
+        }
+      ]
+    },
+    {
+      "name": "The Memory-Thief's Bargain",
+      "tagline": "Memories stolen. Compassion offered. Choice made.",
+      "event_type": "confrontation",
+      "scope": "regional",
+      "epicenter": "burned-out village",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-10",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Burned-out Village",
+          "Shattered Wastes"
+        ],
+        "regions": [
+          "Shattered West"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-10",
+          "title": "The Memory-Thief's Bargain"
         }
       ]
     },
@@ -1180,24 +1111,150 @@
       ]
     },
     {
-      "name": "The Shadow Exchange",
-      "tagline": "Transaction. Betrayal. Possession.",
-      "event_type": "transaction / curse activation",
-      "scope": "city",
-      "epicenter": "The Blasted Lands",
-      "stage": "simmering",
-      "intensity": 2,
+      "name": "Kesh's Debt Collection",
+      "tagline": "Aging. Vengeance. Destruction.",
+      "event_type": "curse activation / death",
+      "scope": "regional",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "intensity": 1,
       "resolved": false,
       "last_seen": "2026-02-26",
-      "recent_issues": 1,
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Debt Keeper's Price"
+        }
+      ]
+    },
+    {
+      "name": "Night of the Blue Eclipse",
+      "tagline": "Awakening. Transformative. Cursed.",
+      "event_type": "ritual / catastrophe",
+      "scope": "regional",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-02-26",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Bone Carver's Apotheosis"
+        }
+      ]
+    },
+    {
+      "name": "Saleth's Oath-Breaking",
+      "tagline": "Betrayal. Theft. Haunting.",
+      "event_type": "betrayal / curse-trigger",
+      "scope": "regional",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-02-26",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Oath-Breaker's Reckoning"
+        }
+      ]
+    },
+    {
+      "name": "Tess's Drowning",
+      "tagline": "Despair. Surrender. Debt-enslavement.",
+      "event_type": "tragedy",
+      "scope": "regional",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-02-26",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Collector's Daughter"
+        }
+      ]
+    },
+    {
+      "name": "The Life-Theft of Meredith the Red",
+      "tagline": "Summoning. Curse. Betrayal.",
+      "event_type": "magical attack / curse",
+      "scope": "regional",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-02-26",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Debt Keeper's Price"
+        }
+      ]
+    },
+    {
+      "name": "Theft of the Crown of Karesh",
+      "tagline": "Audacious. Cursed. Fatal.",
+      "event_type": "theft / curse-trigger",
+      "scope": "regional",
+      "epicenter": "Tomb of Karesh",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-02-26",
+      "recent_issues": 0,
       "trend": 0,
       "referenced_locations": {
         "places": [
-          "The Blasted Lands",
-          "Blasted Lands"
+          "Tomb of Karesh",
+          "Pelimor",
+          "Tomb"
         ],
         "regions": [
-          "The Blasted Lands"
+          "Pelimor"
         ],
         "realms": [],
         "continents": []
@@ -1205,83 +1262,24 @@
       "story_appearances": [
         {
           "date": "2026-02-26",
-          "title": "Shadows for Sale"
+          "title": "The Copper Thief"
         }
       ]
     },
     {
-      "name": "Vetch's Garden Awakening",
-      "tagline": "Creation. Betrayal. Catastrophe.",
-      "event_type": "catastrophe",
-      "scope": "city",
-      "epicenter": "Vetch's Tower",
-      "stage": "simmering",
-      "intensity": 2,
+      "name": "Theron's Redemption",
+      "tagline": "Restitution. Sacrifice. Release.",
+      "event_type": "redemption arc / curse-breaking",
+      "scope": "regional",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "intensity": 1,
       "resolved": false,
       "last_seen": "2026-02-26",
-      "recent_issues": 1,
+      "recent_issues": 0,
       "trend": 0,
       "referenced_locations": {
-        "places": [
-          "Vetch's Tower",
-          "tower"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Living Garden"
-        }
-      ]
-    },
-    {
-      "name": "Young Woman's Suicide and Curse",
-      "tagline": "Grief. Madness. Curse.",
-      "event_type": "tragedy / curse-initiation",
-      "scope": "city",
-      "epicenter": "Theron's Shop",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Theron's Shop",
-          "Harbor Walls"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Scarlet Merchant"
-        }
-      ]
-    },
-    {
-      "name": "Young Woman's Suicide and Curse Invocation",
-      "tagline": "Grief. Madness. Curse.",
-      "event_type": "catastrophe",
-      "scope": "city",
-      "epicenter": "Theron's Shop",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Theron's Shop",
-          "Harbor Walls"
-        ],
+        "places": [],
         "regions": [],
         "realms": [],
         "continents": []
@@ -1500,6 +1498,120 @@
       ]
     },
     {
+      "name": "The Shadow Exchange",
+      "tagline": "Transaction. Betrayal. Possession.",
+      "event_type": "transaction / curse activation",
+      "scope": "city",
+      "epicenter": "The Blasted Lands",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-02-26",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "The Blasted Lands",
+          "Blasted Lands"
+        ],
+        "regions": [
+          "The Blasted Lands"
+        ],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "Shadows for Sale"
+        }
+      ]
+    },
+    {
+      "name": "Vetch's Garden Awakening",
+      "tagline": "Creation. Betrayal. Catastrophe.",
+      "event_type": "catastrophe",
+      "scope": "city",
+      "epicenter": "Vetch's Tower",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-02-26",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "Vetch's Tower",
+          "tower"
+        ],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Living Garden"
+        }
+      ]
+    },
+    {
+      "name": "Young Woman's Suicide and Curse",
+      "tagline": "Grief. Madness. Curse.",
+      "event_type": "tragedy / curse-initiation",
+      "scope": "city",
+      "epicenter": "Theron's Shop",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-02-26",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "Theron's Shop",
+          "Harbor Walls"
+        ],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
+    },
+    {
+      "name": "Young Woman's Suicide and Curse Invocation",
+      "tagline": "Grief. Madness. Curse.",
+      "event_type": "catastrophe",
+      "scope": "city",
+      "epicenter": "Theron's Shop",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-02-26",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "Theron's Shop",
+          "Harbor Walls"
+        ],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-02-26",
+          "title": "The Scarlet Merchant"
+        }
+      ]
+    },
+    {
       "name": "Ritual of Dismissal",
       "tagline": "Sacrifice. Release. Abdication.",
       "event_type": "ritual",
@@ -1527,118 +1639,6 @@
         {
           "date": "2026-02-27",
           "title": "The Warlord's Widow"
-        }
-      ]
-    },
-    {
-      "name": "Fellowship-Oath (swearing)",
-      "tagline": "Blood. Song. Twenty years.",
-      "event_type": "oath / ritual",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "aftermath",
-      "intensity": 1,
-      "resolved": true,
-      "last_seen": "2026-03-02",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "unknown"
-        ],
-        "regions": [
-          "The Shattered West"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-02",
-          "title": "The Warband's Last Song"
-        }
-      ]
-    },
-    {
-      "name": "Conjunction",
-      "tagline": "Celestial. Closing. Mysterious.",
-      "event_type": "celestial event / boundary shift",
-      "scope": "regional",
-      "epicenter": "Scorched Reach",
-      "stage": "aftermath",
-      "intensity": 1,
-      "resolved": true,
-      "last_seen": "2026-03-04",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "The Scorched Reach",
-          "Scorched Reach"
-        ],
-        "regions": [
-          "The Scorched Reach",
-          "Scorched Reach"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-04",
-          "title": "The Record-Keeper's Shadow"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Starborn Merchant"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Seer's New Vision"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Drowned Prince's Vigil"
-        }
-      ]
-    },
-    {
-      "name": "The Auditor's Ruin",
-      "tagline": "Records. Corruption. Collapse.",
-      "event_type": "catastrophe",
-      "scope": "regional",
-      "epicenter": "Imperial Archives",
-      "stage": "aftermath",
-      "intensity": 1,
-      "resolved": true,
-      "last_seen": "2026-03-11",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Imperial archives",
-          "Imperial City"
-        ],
-        "regions": [
-          "The Hearthlands"
-        ],
-        "realms": [
-          "The Empire"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-11",
-          "title": "The Auditor's Ruin"
         }
       ]
     }

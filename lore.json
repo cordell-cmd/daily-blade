@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-11",
+  "last_updated": "2026-03-12",
   "worlds": [
     {
       "id": "known_world",
@@ -1220,7 +1220,7 @@
       "notes": "She now avoids stealing shadows and focuses only on daylight treasures. Her encounter revealed that shadows retain memory and agency.",
       "first_story": "The Thief's Shadow",
       "first_date": "2026-02-28",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "tormund",
@@ -1353,7 +1353,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "mardoc_cartographer",
@@ -3268,7 +3268,7 @@
       "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "old_ranger",
@@ -4755,7 +4755,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 3,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -5132,7 +5132,7 @@
       "home_place": "unknown",
       "home_region": "Iron Coast",
       "home_realm": "unknown",
-      "travel_scope": "realmwide",
+      "travel_scope": "interrealm",
       "bio": "Captain of the Skyward, Meren pursued the Tear of the Drowned God across the Sapphire Sea. She seized the pearl beneath the Abyssal Rift and discovered it was not plunder but a partnership offer\u2014the sea would grant her mastery over tides in exchange for her servitude to its demands.",
       "traits": [
         "driven",
@@ -5151,10 +5151,22 @@
         "Thira",
         "Garrett"
       ],
-      "notes": "Bound by tide-magic debt; the pearl continues to sing of what she owes.",
+      "notes": "Bound by tide-magic debt; the pearl continues to sing of what she owes.\nThe nature of her servitude has shifted from external compulsion to active partnership with a conscious entity. Her transformation is ongoing and deepening.",
       "first_story": "The Corsair's Compass",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-03-12",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Corsair's Reckoning",
+          "note": "Meren discovers the Tear of the Drowned God is a fragment of a conscious drowned god; her debt transforms her ship into something hybrid (starlight and abyss properties).",
+          "evidence": "The Tear compels Meren to gather a crew and sail toward the Abyss-gate, where creatures transformed by radiant light now dwell. Meren learns that her ship is becoming something not quite mortal, its hull taking on properties of starlight and abyss. The debt is not bondage\u2014it is transformation."
+        }
+      ],
+      "travel_notes": "[2026-03-12] Now sailing toward the Abyss-gate with a ship becoming something not quite mortal; the Tear compels her into cosmic-scale voyaging beyond standard realm boundaries."
     },
     {
       "id": "koss_harpooner",
@@ -5892,6 +5904,270 @@
       "first_story": "The Auditor's Ruin",
       "first_date": "2026-03-11",
       "appearances": 1
+    },
+    {
+      "id": "valorix",
+      "name": "Valorix",
+      "aliases": [
+        "the wyvern"
+      ],
+      "tagline": "Ancient. Guarded. Transformed.",
+      "role": "Wyvern, Peace-Broker",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "mountain eyrie",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "A centuries-old wyvern who hoarded gold and took human form to broker peace with the Twilight Syndicate. Possessed of obsidian will and keen intellect, Valorix learned to smile without menace and to guard those it loves as fiercely as treasure. Now dwells between the fae realm and mortal world with Mira, having found refuge in chosen family.",
+      "traits": [
+        "ancient",
+        "obsidian-willed",
+        "hoarder",
+        "protective",
+        "stoic"
+      ],
+      "known_locations": [
+        "mountain eyrie",
+        "Twilight Syndicate's crystalline border"
+      ],
+      "affiliations": [
+        "Twilight Syndicate (peace accord)",
+        "Mira the Shadow-Dancer"
+      ],
+      "notes": "Rarely takes human form; the binding with Mira appears permanent. Guards Mira and their shared hoard.",
+      "first_story": "The Wyvern's Dowry",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "merin_coldwater",
+      "name": "Merin Coldwater",
+      "aliases": [
+        "Merin"
+      ],
+      "tagline": "Curious. Conflicted. Dangerous.",
+      "role": "Auditor's Apprentice, Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Kathrim",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "An auditor's apprentice who discovers scattered pages of the Sovereign's Ledger of Names being reconstructed in hidden vaults throughout Kathrim. Her own family name appears three times in the ledger\u2014alive, dead, and never-born\u2014forcing her to choose between reporting to Imperial authority or smuggling the pages to understand what the Luminous Remaking truly cost.",
+      "traits": [
+        "inquisitive",
+        "conflicted",
+        "loyal",
+        "haunted"
+      ],
+      "known_locations": [
+        "Kathrim"
+      ],
+      "affiliations": [
+        "Imperial authority (tenuous)",
+        "Auditor's Ledger keepers"
+      ],
+      "notes": "The Ledger sings to her in the dark and remembers the world before the stars changed. Her family's triple-listing suggests she may not be who she thinks she is.",
+      "first_story": "The Ledger's Shadow",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "caravan_master_thorne",
+      "name": "Caravan Master Thorne",
+      "aliases": [
+        "Thorne"
+      ],
+      "tagline": "Pragmatic. Curious. Tested.",
+      "role": "Caravan Master, Guide, Investigator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing waystation",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A seasoned caravan master operating out of the Pale Crossing waystation who investigates reports of pre-human ruins breaching their seals beneath the Charred Expanse. When he visits the Sunken Cathedrals himself, he discovers merchants and pilgrims compelled eastward by singing stone, and must decide whether to guide refugees away or help them answer the call.",
+      "traits": [
+        "pragmatic",
+        "investigative",
+        "responsible",
+        "cautious"
+      ],
+      "known_locations": [
+        "Pale Crossing waystation",
+        "Charred Expanse",
+        "Sunken Cathedrals"
+      ],
+      "affiliations": [
+        "caravans",
+        "refugees (uncertain)"
+      ],
+      "notes": "Faces a moral choice that may bind him to something ancient and vast.",
+      "first_story": "The Singing Stones Awaken",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "vex_the_dusk_trader",
+      "name": "Vex the Dusk-Trader",
+      "aliases": [
+        "Vex"
+      ],
+      "tagline": "Survivor. Merchant. Hunted.",
+      "role": "Trader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Vex the Dusk-Trader survived the Luminous Remaking by fragmenting her business across hidden distribution networks. A curator backed by forces moving through rifts in reality has begun systematically acquiring every artifact Vex has ever traded. Now the phantom-shadow itself seeks restitution for the irreplaceable things Vex has stolen through her bargains.",
+      "traits": [
+        "cunning",
+        "resourceful",
+        "indebted"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "shadow-merchants"
+      ],
+      "notes": "Each bargain Vex made was a theft; each now demands recompense she cannot fathom or afford. Central to understanding the price of trade in this universe.",
+      "first_story": "The Merchant's Debt Recollection",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "sevin_the_reckoner",
+      "name": "Sevin the Reckoner",
+      "aliases": [
+        "Sevin"
+      ],
+      "tagline": "Auditor. Discoverer. Consequence-bearer.",
+      "role": "Ledger-Keeper, Archivist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Imperial archives",
+      "home_region": "Hearthlands",
+      "home_realm": "the empire",
+      "travel_scope": "realmwide",
+      "bio": "Sevin the Reckoner maps fractures in Imperial ledgers and discovers phantom ledgers that describe the world as experienced by beings who perceive time in reverse. Each entry written forward in the phantom ledgers appears as erasure in the true ledgers\u2014someone is rewriting history in real-time. Sevin must decide whether to help the phantom-shadow fragment complete the rewrite or risk a second catastrophic Remaking.",
+      "traits": [
+        "analytical",
+        "meticulous",
+        "weighted with impossible choice"
+      ],
+      "known_locations": [
+        "Imperial archives"
+      ],
+      "affiliations": [
+        "the empire"
+      ],
+      "notes": "Sevin's discovery reveals that the phantom-shadow fragment is the author of the rewrite. Her choice will determine whether reality bifurcates or consolidates.",
+      "first_story": "The Phantom Ledger",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "captain_meren_stormcaller",
+      "name": "Captain Meren Stormcaller",
+      "aliases": [
+        "Meren",
+        "Captain Meren"
+      ],
+      "tagline": "Bound. Transforming. Reckless.",
+      "role": "Corsair Captain",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "Captain Meren Stormcaller is bound to the sea by the mutual debt of the Tear of the Drowned God. She discovers the Tear is not merely an artifact but a fragment of a vast conscious entity\u2014a drowned god actively remaking the ocean. Her ship is becoming something neither wholly mortal nor wholly divine, its hull taking on properties of starlight and abyss.",
+      "traits": [
+        "bound by debt",
+        "transformed by radiant light",
+        "sailor",
+        "driven"
+      ],
+      "known_locations": [
+        "Abyss-gate"
+      ],
+      "affiliations": [
+        "The Drowned God",
+        "her crew"
+      ],
+      "notes": "The nature of her debt is transformation rather than bondage. Her crew and ship are also being remade.",
+      "first_story": "The Corsair's Reckoning",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "commander_vastel",
+      "name": "Commander Vastel",
+      "aliases": [
+        "Vastel"
+      ],
+      "tagline": "Dutiful. Conflicted. Investigating.",
+      "role": "Military Commander",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Emerald Strand",
+      "home_region": "unknown",
+      "home_realm": "The Empire",
+      "travel_scope": "regional",
+      "bio": "Commander Vastel manages the overflow of refugees at the Emerald Strand fleeing the Charred Expanse. She secretly tracks fragments being gathered by a mysterious buyer and learns the truth: someone is attempting to step back into the world as it existed before the Luminous Remaking. She must choose between her duty to the Empire and her certainty that the old world deserves to stay buried.",
+      "traits": [
+        "military officer",
+        "investigator",
+        "conflicted",
+        "perceptive"
+      ],
+      "known_locations": [
+        "Emerald Strand",
+        "Charred Expanse"
+      ],
+      "affiliations": [
+        "The Empire"
+      ],
+      "notes": "Her growing conviction that the old world should remain lost conflicts with her duty to the Empire.",
+      "first_story": "The Refugee's Echo",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "archivist_initiate",
+      "name": "The Archivist-Initiate",
+      "aliases": [
+        "Archivist-Initiate"
+      ],
+      "tagline": "Scholarly. Haunted. Deciding.",
+      "role": "Archivist, Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "The Archivist-Initiate catalogs magical libraries in the aftermath of the Luminous Remaking and uncovers evidence of thirteen previous Luminous Remaking attempts, each recorded in different hands, languages, and eras. She discovers that the world has been rewritten at least thirteen times, with fragments of memory encoded in runes, paintings, and songs. The Wanderer offers her a choice: prevent the fourteenth attempt or ensure it succeeds.",
+      "traits": [
+        "scholar",
+        "archivist",
+        "detective",
+        "burden-bearer"
+      ],
+      "known_locations": [
+        "magical libraries"
+      ],
+      "affiliations": [
+        "The Wanderer"
+      ],
+      "notes": "She discovers prevention and success of the fourteenth remaking might be the same thing.",
+      "first_story": "The Apprentice's Archive",
+      "first_date": "2026-03-12",
+      "appearances": 1
     }
   ],
   "places": [
@@ -6373,7 +6649,7 @@
       "status": "active",
       "notes": "The survivors of the plague live here. Kess returned silent to teach them the old songs through gesture.",
       "first_date": "2026-03-01",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "deep_forest",
@@ -7878,7 +8154,7 @@
       "status": "active",
       "notes": "unknown",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "pale_crossing",
@@ -7938,7 +8214,7 @@
       "status": "active",
       "notes": "Dozens of transformed merchants and refugees are drawn here; the nature of the transformation is unclear.",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "shattered_wastes",
@@ -7996,6 +8272,204 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-11",
+      "appearances": 1
+    },
+    {
+      "id": "sovereign_s_treasury",
+      "name": "Sovereign's Treasury",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "obsidian_tower",
+      "name": "Obsidian Tower",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "mountain_eyrie",
+      "name": "mountain eyrie",
+      "tagline": "Sacred. Liminal. Refuge.",
+      "place_type": "fortress / lair",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place between worlds, where the fae realm and mortal world meet in a mountain fortress.",
+      "description": "Valorix's hoard-lair, now shared with Mira. Sits at the crystalline border of the Twilight Syndicate's realm, between the fae and mortal worlds. A refuge that asks nothing of its inhabitants and takes only what is freely given.",
+      "status": "active",
+      "notes": "Home to the newly-bonded pair. May serve as a diplomatic anchor between the Twilight Syndicate and mortal realms.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "twilight_syndicate_crystalline_border",
+      "name": "Twilight Syndicate's crystalline border",
+      "tagline": "Bent. Fae. Transitional.",
+      "place_type": "border / threshold",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Twilight Syndicate",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place where reality bends, marking the threshold between the fae realm and the mortal world.",
+      "description": "The border of the Twilight Syndicate's territory, where reality itself grows thin and malleable. The binding ceremony of Valorix and Mira took place here, sealed by cold crystal and stranger music.",
+      "status": "active",
+      "notes": "Significant as the site of the peace accord between Valorix and the Twilight Syndicate.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "kathrim",
+      "name": "Kathrim",
+      "tagline": "Imperial. Fractured. Haunted.",
+      "place_type": "city",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "the Empire",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A city in the fractured days following the Luminous Remaking, where hidden vaults contain scattered pages of the Sovereign's Ledger of Names.",
+      "description": "An Imperial city where hidden vaults throughout its expanse are being used to reconstruct scattered pages of the Sovereign's Ledger of Names. Each name holds power; each page contains secrets the Imperial authority wishes buried.",
+      "status": "active",
+      "notes": "Kathrim may be an alternate spelling or title for Kethrim. Home base for Merin Coldwater's investigations.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "pale_crossing_waystation",
+      "name": "Pale Crossing waystation",
+      "tagline": "Refuge. Crossroads. Listening.",
+      "place_type": "waystation / settlement",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A neutral waystation where caravans rest and refugees gather, now the epicenter of strange compulsions.",
+      "description": "A waystation near the Charred Expanse where Caravan Master Thorne encounters refugees reporting that pre-human ruins beneath the Charred Expanse are breaching their seals and singing louder each night. The station has become a gathering point for those feeling the compulsion eastward.",
+      "status": "active",
+      "notes": "The refugees report a compulsion drawing them eastward toward the Sunken Cathedrals.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "charred_expanse",
+      "name": "Charred Expanse",
+      "tagline": "Blighted. Ancient. Alive.",
+      "place_type": "wilderness / blighted lands",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A scorched, desolate landscape hiding pre-human ruins beneath its surface, which are now actively breaching their seals.",
+      "description": "A blighted expanse beneath which pre-human ruins lie sealed. These ruins are now breaching their seals and emitting coherent singing that compels refugees eastward. The landscape is charred and inhospitable.",
+      "status": "active",
+      "notes": "The singing suggests an ancient work is incomplete and seeking witnesses or completion.",
+      "first_date": "2026-03-12",
+      "appearances": 2
+    },
+    {
+      "id": "trench",
+      "name": "Trench",
+      "tagline": "Deep. Singing. Haunted.",
+      "place_type": "wilderness / chasm",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Sunken Marches",
+      "district": "unknown",
+      "atmosphere": "A vast underwater chasm where intelligible singing echoes from the depths.",
+      "description": "A trench beneath the waters where pre-human civilization's singing has become intelligible. Kess discovered that the seals she maintained do not hold back but conduct the singing.",
+      "status": "active",
+      "notes": "The source of harmonic frequency shared with Sunken Cathedrals and Abyss-gate. A key location in understanding the pre-human working.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "abyss_gate",
+      "name": "Abyss-gate",
+      "tagline": "Threshold. Dark. Sealed.",
+      "place_type": "ruin / gateway",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A liminal space between worlds, resonating with pre-human frequency.",
+      "description": "A sealed gateway that emits the same harmonic frequency as the Trench and Singing Caverns. Part of the network through which pre-human civilization orchestrates its working.",
+      "status": "active",
+      "notes": "One of three harmonic resonance points; may be a direct conduit to pre-human realms.",
+      "first_date": "2026-03-12",
+      "appearances": 3
+    },
+    {
+      "id": "singing_caverns",
+      "name": "Singing Caverns",
+      "tagline": "Echoing. Harmonic. Alive.",
+      "place_type": "cave / ruin",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Caverns where pre-human voices resonate in intelligible song.",
+      "description": "Underground caverns that emit the same harmonic frequency as the Trench and Sunken Cathedrals. The pre-human civilization uses them as conduits for its working.",
+      "status": "active",
+      "notes": "One of three harmonic resonance points; directly connected to pre-human orchestration.",
+      "first_date": "2026-03-12",
       "appearances": 1
     }
   ],
@@ -8297,6 +8771,61 @@
       "notes": "The Memory-Thief is the true antagonist of the story, using records as a vector to reshape reality itself.",
       "first_date": "2026-03-11",
       "appearances": 1
+    },
+    {
+      "id": "the_twilight_syndicate",
+      "name": "Twilight Syndicate",
+      "type": "faction / polity",
+      "world": "Edhra",
+      "description": "A realm or faction that dwells at the crystalline border between the fae realm and the mortal world. They demanded a bride-price and peace bond from Valorix, which was fulfilled through the binding ceremony with Mira.",
+      "status": "active",
+      "notes": "Their territory and nature remain mysterious. They value formal bonds and may be fae-aligned or mixed-realm in nature.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_shadow",
+      "name": "phantom-shadow",
+      "type": "entity / fragment",
+      "world": "Edhra",
+      "description": "A phantom-shadow seeking restitution from Vex the Dusk-Trader for the irreplaceable things she has stolen through her bargains. Also identified as the author of the phantom ledgers\u2014a being or fragment that experiences time in reverse and is rewriting history in real-time.",
+      "status": "active",
+      "notes": "May be a fragment of consciousness created during the Luminous Remaking, or a being from the reversed-time realm. Central to both Vex's debt and the phantom ledger rewrite.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "pre_human_civilization",
+      "name": "Pre-human Civilization",
+      "type": "entity / collective",
+      "world": "Edhra",
+      "description": "An ancient civilization that predates current human kingdoms and is now orchestrating a working through the Trench, Sunken Cathedrals, Abyss-gate, and Singing Caverns. They use harmonic resonance and seals as conduits to conduct their singing and remaking.",
+      "status": "active",
+      "notes": "Not truly dead or trapped\u2014they are orchestrating a multi-millennial working. Their goals and the nature of their civilization remain largely unknown.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "curator_ancient",
+      "name": "Curator",
+      "type": "entity / being",
+      "world": "Edhra",
+      "description": "An ancient, patient being backed by forces moving through rifts in reality who is systematically acquiring every artifact Vex the Dusk-Trader has ever traded. Possibly connected to the phantom-shadow or the forces driving the phantom ledger rewrite.",
+      "status": "active",
+      "notes": "Motivations unclear. May be serving the phantom-shadow or pursuing independent goals related to artifact collection and cosmic balance.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "drowned_god",
+      "name": "The Drowned God",
+      "type": "deity / cosmic entity",
+      "world": "Edhra",
+      "description": "A vast and conscious entity that actively remakes the ocean in the chaos following the Luminous Remaking. The Tear of the Drowned God is revealed to be not an artifact but a fragment of this entity's consciousness. The god compels those bound to it (like Captain Meren) to serve its transformation agenda.",
+      "status": "active",
+      "notes": "The Drowned God's true nature and extent are unknown. It may be a pre-Remaking entity awakened by the transformation.",
+      "first_date": "2026-03-12",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -8534,7 +9063,7 @@
       "status": "active",
       "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "stolen_memories",
@@ -8560,6 +9089,45 @@
       "status": "destroyed",
       "notes": "The destruction of the ledgers represents the collapse of the empire's power to define and control reality through documentation.",
       "first_date": "2026-03-11",
+      "appearances": 1
+    },
+    {
+      "id": "sovereign_ledger_of_names",
+      "name": "Sovereign's Ledger of Names",
+      "tagline": "Powerful. Scattered. Singing.",
+      "artifact_type": "tome / ledger",
+      "origin": "Imperial archives of the Empire; pre-dates or survives the Luminous Remaking.",
+      "powers": "Each name in the ledger holds power. Each page contains secrets the Imperial authority wishes buried. The Ledger sings to those who listen and remembers the world before the stars changed. Scattered pages can be reconstructed in hidden vaults.",
+      "last_known_holder": "Merin Coldwater (investigating)",
+      "status": "active / fragmented",
+      "notes": "The Ledger's nature suggests it is sentient or semi-sentient. It actively calls to Merin in the dark. Pages are being reconstructed in hidden vaults throughout Kathrim.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "valorix_hoard",
+      "name": "Valorix's Hoard",
+      "tagline": "Gold. Ancient. Shared.",
+      "artifact_type": "treasure hoard",
+      "origin": "Accumulated by Valorix over three centuries.",
+      "powers": "Represents wealth, security, and Valorix's deep attachment to treasure. Upon the binding with Mira, it became shared property and a symbol of their covenant.",
+      "last_known_holder": "Valorix and Mira the Shadow-Dancer (shared)",
+      "status": "active",
+      "notes": "The hoard's transformation into a shared trust suggests deep change in Valorix's nature and values.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_ledgers",
+      "name": "Phantom Ledgers",
+      "tagline": "Reversed. Rewriting. Converging.",
+      "artifact_type": "tome / ledger",
+      "origin": "Created by the phantom-shadow fragment; authored by a being experiencing time in reverse.",
+      "powers": "Each entry written forward in the phantom ledgers appears as erasure in the true ledgers. They describe the world as experienced in reverse-time, and their convergence with the true ledgers triggers real-time history rewriting.",
+      "last_known_holder": "Sevin the Reckoner, in the Imperial archives",
+      "status": "active",
+      "notes": "The convergence of phantom and true ledgers threatens catastrophic Remaking. Sevin must choose whether to accelerate or prevent the convergence.",
+      "first_date": "2026-03-12",
       "appearances": 1
     }
   ],
@@ -8876,7 +9444,7 @@
       "status": "active",
       "notes": "Ruled by the Emperor; contains the Imperial Archives and is home to the secret council. Grappling with the implications of the Celestial Binding.",
       "first_date": "2026-03-05",
-      "appearances": 6,
+      "appearances": 9,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "the Empire",
@@ -8941,6 +9509,27 @@
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Council of Depths",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
+    },
+    {
+      "id": "twilight_syndicate_realm",
+      "name": "Twilight Syndicate",
+      "tagline": "Fae. Crystalline. Formal.",
+      "description": "A realm dwelling at the crystalline border between the fae realm and the mortal world. They rule through formal bonds, bride-prices, and binding oaths. They demanded peace from Valorix and received it.",
+      "continent": "unknown",
+      "capital": "Twilight Syndicate's crystalline border (or unknown)",
+      "function": "Rule through covenant and formal binding. Maintain the boundary between fae and mortal worlds.",
+      "taxation": "bride-prices, tribute, formal bonds",
+      "military": "unknown",
+      "status": "stable / powerful",
+      "notes": "The Syndicate's internal structure and full extent remain mysterious. They appear to value ceremony and binding oaths above all.",
+      "first_date": "2026-03-12",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "realm": "Twilight Syndicate",
       "province": "unknown",
       "region": "unknown",
       "district": "unknown"
@@ -9630,6 +10219,87 @@
       "notes": "Sevin's final choice\u2014to restore the old lie or accept new uncertainty\u2014will determine the empire's future trajectory.",
       "first_date": "2026-03-11",
       "appearances": 1
+    },
+    {
+      "id": "luminous_remaking",
+      "name": "Luminous Remaking",
+      "tagline": "Stars. Rewritten. Fractured.",
+      "event_type": "catastrophe / cosmic event",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Kathrim"
+      ],
+      "affected_regions": [],
+      "affected_realms": [
+        "the Empire"
+      ],
+      "radius": "worldwide",
+      "participants": [
+        "unknown"
+      ],
+      "outcome": "The stars and world were fundamentally rewritten. The Sovereign's Ledger of Names was scattered; Imperial authority fractured. Days following the remaking remain unstable.",
+      "significance": "A cosmic working that changed the fundamental nature of reality itself. The Ledger now remembers the world before the stars changed.",
+      "notes": "The exact nature and cause of the Luminous Remaking is unknown. Its consequences continue to unfold. May be connected to the pre-human work incomplete.",
+      "first_date": "2026-03-12",
+      "appearances": 3
+    },
+    {
+      "id": "the_corsairs_reckoning",
+      "name": "The Corsair's Reckoning",
+      "tagline": "Binding. Metamorphosis. Debt.",
+      "event_type": "personal quest / transformation",
+      "scope": "regional",
+      "epicenter_place": "Abyss-gate",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Abyss-gate",
+        "the sea"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "across the sea and into the abyss",
+      "participants": [
+        "Captain Meren Stormcaller",
+        "The Drowned God",
+        "Meren's crew"
+      ],
+      "outcome": "Meren discovers her debt to the Tear of the Drowned God is actually a transformation into something neither wholly mortal nor wholly divine. She is compelled to sail toward the Abyss-gate.",
+      "significance": "This reveals that the Tear is a fragment of a conscious entity actively remaking the ocean. The transformation of Meren and her crew suggests the Drowned God is reshaping reality in its domain.",
+      "notes": "The nature of Meren's transformation and whether it will be completed or reversed is unknown.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "the_deepwardens_binding",
+      "name": "The Deepwarden's Binding",
+      "tagline": "Ritual. Revelation. Choice.",
+      "event_type": "ritual",
+      "scope": "world",
+      "epicenter_place": "Abyss-gate",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Abyss-gate"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "unknown",
+      "participants": [
+        "Sylas the Deepwarden"
+      ],
+      "outcome": "Sylas discovers that the binding ritual is a conversation with a pre-human civilization attempting to communicate across time. The seals are translating, not weakening. The Luminous Remaking was imperfect, leaving something uncompleted.",
+      "significance": "The event reveals that finishing or preventing the Luminous Remaking may require repeating an ancient sacrifice. It suggests the Luminous Remaking was not the end of history but an incomplete rewrite.",
+      "notes": "Sylas faces a profound choice regarding the Luminous Remaking's completion or prevention.",
+      "first_date": "2026-03-12",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -9801,6 +10471,18 @@
       "notes": "Located in the Verdant Lands. Kellen is a member attempting counter-workings.",
       "first_date": "2026-03-09",
       "appearances": 2
+    },
+    {
+      "id": "twilight_syndicate",
+      "name": "Twilight Syndicate",
+      "tagline": "Fae-touched. Formal. Mysterious.",
+      "alignment": "neutral",
+      "goals": "Broker peace through formal bonding; maintain the border between fae and mortal worlds; exact tribute or alliance from neighboring powers.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "They successfully negotiated peace with Valorix through a bride-price and binding ceremony. Their realm dwells at the crystalline border between worlds.",
+      "first_date": "2026-03-12",
+      "appearances": 1
     }
   ],
   "lore": [
@@ -10284,6 +10966,40 @@
       "notes": "The Luminous Ascension involved a rewrite of cosmic order and collective memory. The phantom-Echo's potential completion could trigger another such rewrite, with unknown consequences.",
       "first_date": "2026-03-10",
       "appearances": 1
+    },
+    {
+      "id": "the_luminous_remaking_event",
+      "name": "The Luminous Remaking",
+      "tagline": "Stars. Rewritten. Broken.",
+      "category": "history / catastrophe",
+      "source": "Widespread knowledge in fractured times; the Sovereign's Ledger remembers the world before it.",
+      "status": "confirmed / unfolding",
+      "notes": "The exact nature and cause of the remaking remain unknown. It fundamentally altered the cosmos and the Ledger of Names. Its consequences continue to manifest.",
+      "first_date": "2026-03-12",
+      "appearances": 3
+    },
+    {
+      "id": "the_ledger_sings",
+      "name": "The Ledger Sings",
+      "tagline": "Memory. Voice. Sentience.",
+      "category": "legend / magic",
+      "source": "The Sovereign's Ledger of Names itself; heard by Merin Coldwater.",
+      "status": "confirmed",
+      "notes": "The Ledger possesses memory and voice. It remembers the world before the stars changed and sings to those who listen. It may be semi-sentient or a conduit for buried knowledge.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "pre_human_civilization_lore",
+      "name": "Pre-human Civilization",
+      "tagline": "Ancient. Sealed. Singing.",
+      "category": "legend / history",
+      "source": "Kess of the Drowned Hollows; seals and harmonic resonance",
+      "status": "confirmed",
+      "description": "An ancient civilization that predates current kingdoms and species. Not dead or imprisoned\u2014orchestrating a multi-millennial working through harmonic resonance. Their goals and the nature of their civilization remain unknown.",
+      "notes": "Kess's discovery that the seals conduct rather than contain them suggests a fundamental misunderstanding of the world's deep history. Their working may be the true force reshaping reality.",
+      "first_date": "2026-03-12",
+      "appearances": 2
     }
   ],
   "flora_fauna": [
@@ -10297,7 +11013,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "wolf_spirit_beast",
@@ -10595,7 +11311,7 @@
       "status": "active",
       "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "vethis_sacrificed_consciousness",
@@ -10607,6 +11323,18 @@
       "status": "active",
       "notes": "The phantom-Echo is one such fragment. Vethis's sacrifice was necessary to create new stars but resulted in this ongoing curse of fragmented consciousness seeking wholeness.",
       "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "miras_shadow",
+      "name": "Mira's Shadow",
+      "tagline": "Lost. Returned. Whole.",
+      "origin": "Sundered by Mira's void-theft; restored by the binding ceremony with Valorix.",
+      "power": "Represents Mira's selfhood and agency. When whole and unmarked, it appears to grant her true presence and autonomy.",
+      "curse": "While severed, Mira was incomplete and hidden. The restoration came at the cost of binding herself to Valorix and the Twilight Syndicate's peace accord.",
+      "status": "active",
+      "notes": "The shadow's restoration is thematically significant to Mira's character arc and suggests deep magical wounding.",
+      "first_date": "2026-03-12",
       "appearances": 1
     }
   ],
@@ -11200,6 +11928,44 @@
       "province": "unknown",
       "region": "The Sunken Marches",
       "district": "unknown"
+    },
+    {
+      "id": "sundered_reach",
+      "name": "Sundered Reach",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "The Empire",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-12",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Sundered Reach",
+      "district": "unknown"
+    },
+    {
+      "id": "charred_expanse_region",
+      "name": "Charred Expanse",
+      "tagline": "Blighted. Ancient. Rising.",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "climate": "blighted / volcanic",
+      "terrain": "scorched plains / ruins",
+      "function": "A blighted region containing pre-human ruins that are now actively breaching their seals and singing. May be tied to the Luminous Remaking or an older cataclysm.",
+      "status": "active / awakening",
+      "notes": "The pre-human structures beneath are compelling refugees and merchants eastward toward the Sunken Cathedrals. An ancient work seeks completion or witnesses.",
+      "first_date": "2026-03-12",
+      "appearances": 2,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Charred Expanse",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -11325,6 +12091,18 @@
       "use": "A byproduct of the Luminous Ascension; transforms merchants and refugees against their will.",
       "notes": "Iskar the Spice-Merchant is a living example of this substance's effects.",
       "first_date": "2026-03-10",
+      "appearances": 1
+    },
+    {
+      "id": "harmonic_frequency",
+      "name": "Harmonic Frequency",
+      "tagline": "Resonant. Unifying. Conducted.",
+      "type": "phenomenon / energy",
+      "rarity": "rare",
+      "properties": "A frequency of resonance that links the Trench, Sunken Cathedrals, Abyss-gate, and Singing Caverns. Emitted by pre-human sites and used to conduct their working across vast distances and possibly across time.",
+      "use": "Used by pre-human civilization to orchestrate their working. Can be sensed, conducted, and possibly amplified through seals and other artifacts.",
+      "notes": "The discovery of identical harmonic frequencies across multiple sites was key to understanding the unified nature of the pre-human working. May be a form of pre-human magic or language.",
+      "first_date": "2026-03-12",
       "appearances": 1
     }
   ],
@@ -11496,6 +12274,37 @@
       "notes": "A foundational cosmic ritual that has shaped the entire world. Its consequences are still unfolding through the phantom-Echo's actions.",
       "first_date": "2026-03-10",
       "appearances": 1
+    },
+    {
+      "id": "luminous_remaking_ritual",
+      "name": "Luminous Remaking",
+      "tagline": "Reality-breaking. Cyclical. Recursive.",
+      "ritual_type": "cosmic working / reality rewrite",
+      "performed_by": [
+        "unknown cosmic forces",
+        "previous archivists"
+      ],
+      "requirements": "unknown",
+      "effect": "Fundamentally rewrites reality, transforming the world and its inhabitants. At least thirteen previous iterations have been recorded, each overwriting the previous world while leaving fragments of memory encoded in runes, paintings, and songs.",
+      "cost": "The erasure and rewriting of entire worlds and timelines.",
+      "notes": "A fourteenth remaking may be in progress. Prevention and success might be the same outcome.",
+      "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "the_deepwardens_binding_ritual",
+      "name": "The Deepwarden's Binding",
+      "tagline": "Sealing. Translating. Communicating.",
+      "ritual_type": "binding",
+      "performed_by": [
+        "Sylas the Deepwarden"
+      ],
+      "requirements": "Performed at the Abyss-gate; involves connection to the seals that bind the pre-human civilization.",
+      "effect": "Intended to reseal the Abyss-gate. Instead becomes a conversation with the pre-human civilization, translating their message across time and reality.",
+      "cost": "Unknown; may require a sacrifice similar to that made by the pre-human civilization.",
+      "notes": "The ritual reveals that the seals were designed not merely to contain but to communicate. Finishing or preventing the Luminous Remaking may demand the same sacrifice.",
+      "first_date": "2026-03-12",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -11563,7 +12372,7 @@
       "description": "A vast imperial government built on certainty, order, and commerce. Trade routes are its lifeblood. It collects taxes and maintains stability through information and control. The Treasurer strategically gathers intelligence to manage disruptions. However, the Empire's architecture of order and certainty is being tested by the cosmic changes.",
       "notes": "The Empire is struggling to maintain control and stability as the cosmic changes disrupt trade, drive people to madness, and cause physical land shifts. The Treasurer's aide questions whether the Empire can survive.",
       "first_date": "2026-03-03",
-      "appearances": 7
+      "appearances": 10
     },
     {
       "id": "council_of_depths_governance",
@@ -11582,6 +12391,22 @@
       "notes": "Currently in crisis deliberation mode. Warden Sylas has chosen the hardest path and descended into the Cerulean Trench.",
       "first_date": "2026-03-06",
       "appearances": 2
+    },
+    {
+      "id": "twilight_syndicate_polity",
+      "name": "Twilight Syndicate",
+      "tagline": "Fae. Crystalline. Formal.",
+      "polity_type": "realm",
+      "realm": "Twilight Syndicate",
+      "region": "unknown",
+      "seat": "Twilight Syndicate's crystalline border",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "stable",
+      "description": "A realm or polity dwelling at the crystalline border between the fae realm and the mortal world. They rule through formal bonds, bride-prices, and covenants. They demanded peace from Valorix and received it through the binding with Mira.",
+      "notes": "Their internal structure and governance remain mysterious. They appear to value formal ceremony and binding oaths.",
+      "first_date": "2026-03-12",
+      "appearances": 1
     }
   ]
 }
