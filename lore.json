@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-12",
+  "last_updated": "2026-03-13",
   "worlds": [
     {
       "id": "known_world",
@@ -515,7 +515,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 3,
+      "appearances": 4,
       "aliases": [
         "Kael"
       ]
@@ -850,10 +850,10 @@
       "role": "Merchant",
       "world": "known_world",
       "status": "active",
-      "home_place": "unknown",
-      "home_region": "unknown",
-      "home_realm": "unknown",
-      "travel_scope": "local",
+      "home_place": "Anthrim",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "regional",
       "bio": "A merchant who bargained five years of his life to a demon named Varek to save his daughter from illness. Though his life was restored through Kira's ritual magic, he was left hollow-eyed and eternally stripped of the certainty that his daughter truly loves him.",
       "traits": [
         "desperate",
@@ -867,10 +867,22 @@
         "Varek",
         "Kira"
       ],
-      "notes": "The cost of his salvation was his own certainty and peace of mind. A warning about the true price of demonic bargains.",
+      "notes": "The cost of his salvation was his own certainty and peace of mind. A warning about the true price of demonic bargains.\nHis hollow-eyed uncertainty about love and sacrifice now channels into a discipline of helping others rebuild fractured selves\u2014a redemption arc through alchemy rather than demonics.",
       "first_story": "The Weight of Stolen Years",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-13",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Refugee's Alchemy",
+          "note": "Torvin encounters a displaced refugee at a hidden market and offers to teach her inverse alchemy\u2014reassembling shattered identities using principles similar to Restoration Honey.",
+          "evidence": "A sympathetic alchemist named Torvin recognizes what she's doing and offers her a bargain\u2014become his apprentice and learn the inverse alchemy: how to reassemble shattered identities into new, stable forms."
+        }
+      ],
+      "travel_notes": "[2026-03-13] Story shows Torvin active in Anthrim's hidden markets, suggesting he travels beyond his merchant's house to serve apprentices and displaced refugees."
     },
     {
       "id": "kira_sorceress",
@@ -1353,7 +1365,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "mardoc_cartographer",
@@ -1388,7 +1400,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 10,
+      "appearances": 11,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2005,7 +2017,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "mogrul",
@@ -3268,7 +3280,7 @@
       "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "old_ranger",
@@ -4184,7 +4196,7 @@
       "status": "active",
       "home_place": "Kethros",
       "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_realm": "Empire",
       "travel_scope": "regional",
       "bio": "Vex is a merchant operating in Kethros's night markets who discovers that her customers\u2014and entire trading families\u2014are vanishing without trace, their memories erased from ledgers and witnesses alike. Her apprentice is among the missing. She must decide whether to use her knowledge of the market underworld to set a trap that will destroy her only life, or abandon her apprentice.",
       "traits": [
@@ -4203,7 +4215,7 @@
       "notes": "Vex's investigation reveals that an entity is collecting merchants themselves\u2014their knowledge, contacts, and networks\u2014rather than mere goods. The entity's true nature and purpose remain unclear.",
       "first_story": "The Night-Market Reckoning",
       "first_date": "2026-03-07",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "dranin_stoneheart",
@@ -4431,7 +4443,7 @@
       "role": "Thief",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Anthrim",
       "home_region": "unknown",
       "home_realm": "unknown",
       "travel_scope": "regional",
@@ -4452,7 +4464,7 @@
       "notes": "His theft may have been orchestrated from the beginning. The Archive's ledger recorded him as 'Employed,' suggesting hidden purposes.",
       "first_story": "The Amber Thief's Gambit",
       "first_date": "2026-03-08",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "sevin_auditor",
@@ -4755,7 +4767,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 4,
+      "appearances": 5,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -5151,10 +5163,10 @@
         "Thira",
         "Garrett"
       ],
-      "notes": "Bound by tide-magic debt; the pearl continues to sing of what she owes.\nThe nature of her servitude has shifted from external compulsion to active partnership with a conscious entity. Her transformation is ongoing and deepening.",
+      "notes": "Bound by tide-magic debt; the pearl continues to sing of what she owes.\nThe nature of her servitude has shifted from external compulsion to active partnership with a conscious entity. Her transformation is ongoing and deepening.\nHer debt has evolved from simple servitude to active cosmic entanglement\u2014she is now a lynchpin in multiple competing magical workings.",
       "first_story": "The Corsair's Compass",
       "first_date": "2026-03-10",
-      "appearances": 2,
+      "appearances": 3,
       "status_history": [
         {
           "date": "2026-03-12",
@@ -5164,9 +5176,18 @@
           "story_title": "The Corsair's Reckoning",
           "note": "Meren discovers the Tear of the Drowned God is a fragment of a conscious drowned god; her debt transforms her ship into something hybrid (starlight and abyss properties).",
           "evidence": "The Tear compels Meren to gather a crew and sail toward the Abyss-gate, where creatures transformed by radiant light now dwell. Meren learns that her ship is becoming something not quite mortal, its hull taking on properties of starlight and abyss. The debt is not bondage\u2014it is transformation."
+        },
+        {
+          "date": "2026-03-13",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepwarden's Gambit",
+          "note": "Meren's curse is destabilizing the binding ritual meant to prevent rift weakening; her presence makes the ritual weaker even as she helps recover scattered components.",
+          "evidence": "Meren's curse is itself destabilizing the ritual's geometry; the more Meren helps, the weaker the binding becomes. The Tear cannot be destroyed without drowning the entire coast."
         }
       ],
-      "travel_notes": "[2026-03-12] Now sailing toward the Abyss-gate with a ship becoming something not quite mortal; the Tear compels her into cosmic-scale voyaging beyond standard realm boundaries."
+      "travel_notes": "[2026-03-12] Now sailing toward the Abyss-gate with a ship becoming something not quite mortal; the Tear compels her into cosmic-scale voyaging beyond standard realm boundaries.\n[2026-03-13] Story confirms Meren is now actively sailing toward the Abyssal Rift and involved in binding rituals spanning multiple realms; her curse destabilizes the ritual's geometry across vast distances."
     },
     {
       "id": "koss_harpooner",
@@ -5365,7 +5386,7 @@
       "notes": "Possesses critical knowledge of the phantom ledgers and their true nature as prophecy.",
       "first_story": "The Ledger-Master's Gambit",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "record_keeper",
@@ -5675,7 +5696,7 @@
       "notes": "Krell's decision to let Meira escape suggests deep doubts about the regime he served. His final act may have larger consequences for the Empire's stability.",
       "first_story": "The Warden's Last Coin",
       "first_date": "2026-03-11",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "meira",
@@ -6082,7 +6103,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "unknown",
-      "home_region": "unknown",
+      "home_region": "Iron Coast",
       "home_realm": "unknown",
       "travel_scope": "interrealm",
       "bio": "Captain Meren Stormcaller is bound to the sea by the mutual debt of the Tear of the Drowned God. She discovers the Tear is not merely an artifact but a fragment of a vast conscious entity\u2014a drowned god actively remaking the ocean. Her ship is becoming something neither wholly mortal nor wholly divine, its hull taking on properties of starlight and abyss.",
@@ -6102,7 +6123,7 @@
       "notes": "The nature of her debt is transformation rather than bondage. Her crew and ship are also being remade.",
       "first_story": "The Corsair's Reckoning",
       "first_date": "2026-03-12",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "commander_vastel",
@@ -6167,6 +6188,301 @@
       "notes": "She discovers prevention and success of the fourteenth remaking might be the same thing.",
       "first_story": "The Apprentice's Archive",
       "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "auditor_silas",
+      "name": "Auditor Silas",
+      "aliases": [
+        "Silas"
+      ],
+      "tagline": "Principled. Conflicted. Conscience-stricken.",
+      "role": "Auditor",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "unknown",
+      "home_realm": "Empire",
+      "travel_scope": "regional",
+      "bio": "Auditor Silas arrives at Pale Crossing waystation to reconcile Imperial tax records. He discovers that ledgers are fracturing due to the Luminous Ascension's reality collapse. He uncovers a conspiracy where competing factions rewrite ledgers to control refugee populations, forcing him to choose between Imperial law and protecting the displaced.",
+      "traits": [
+        "meticulous",
+        "principled",
+        "investigative",
+        "conscience-driven"
+      ],
+      "known_locations": [
+        "Pale Crossing waystation"
+      ],
+      "affiliations": [
+        "The Empire",
+        "The Crown (conflicted)",
+        "Assessor's Daughter (ally)",
+        "Vex the Merchant (ally)"
+      ],
+      "notes": "His investigation into the ledger conspiracy and choice to burn records represents a fundamental conflict between law and morality.",
+      "first_story": "The Ledger's Mercy",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "assessors_daughter",
+      "name": "Assessor's Daughter",
+      "aliases": [
+        "unknown"
+      ],
+      "tagline": "Resourceful. Defiant. Compassionate.",
+      "role": "Forger / Refugee Aid",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "unknown",
+      "home_realm": "Empire",
+      "travel_scope": "local",
+      "bio": "The Assessor's Daughter operates at Pale Crossing waystation, using sympathetic ink to forge refugee passage documents to help the displaced escape the chaos following the Luminous Ascension. She becomes an ally to Auditor Silas.",
+      "traits": [
+        "resourceful",
+        "compassionate",
+        "forger",
+        "defiant"
+      ],
+      "known_locations": [
+        "Pale Crossing waystation"
+      ],
+      "affiliations": [
+        "Auditor Silas (ally)",
+        "Refugees (protector)"
+      ],
+      "notes": "Her forging operation is part of a larger resistance to Imperial control of refugee populations.",
+      "first_story": "The Ledger's Mercy",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "shade_echo",
+      "name": "Shade-Echo",
+      "aliases": [
+        "Fragment of Nethys"
+      ],
+      "tagline": "Conscious. Mysterious. Bargaining.",
+      "role": "Entity / Consciousness Fragment",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "The Shade-Echo is a fragment of Nethys's consciousness that approaches Kess with a bargain: help guide the ancients' song toward the Abyssal Rift in exchange for knowledge of her lost lineage. Its motivations and true nature remain obscure.",
+      "traits": [
+        "conscious",
+        "mysterious",
+        "bargainer",
+        "ancient"
+      ],
+      "known_locations": [
+        "Sunken Marches",
+        "Drowned Hollows"
+      ],
+      "affiliations": [
+        "Kess (bargainer)",
+        "Nethys (source consciousness)",
+        "Pre-human dead (connected)"
+      ],
+      "notes": "The Shade-Echo's true goals and whether it serves restoration or corruption remain unclear.",
+      "first_story": "The Bone-Singer's Bargain",
+      "first_date": "2026-03-13",
+      "appearances": 2
+    },
+    {
+      "id": "apprentice_sage",
+      "name": "The Apprentice Sage",
+      "aliases": [
+        "The Apprentice"
+      ],
+      "tagline": "Preserving. Daring. Hunted.",
+      "role": "Sage, Librarian, Thief",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A sage dedicated to preserving magical libraries from faction raids discovers that the Spellwright's Journals contain instructions for a Stellar Rite reversal. The Apprentice must steal the journals from the Vaulted Tombs while evading the Memory-Thief and Sevin the Warden, learning that the reversal would demand a catastrophic sacrifice.",
+      "traits": [
+        "scholarly",
+        "cautious",
+        "determined"
+      ],
+      "known_locations": [
+        "Vaulted Tombs"
+      ],
+      "affiliations": [
+        "unknown faction"
+      ],
+      "notes": "Discovers journals contain warnings about the cost of reversal; engaged in multi-factional race.",
+      "first_story": "The Archivist's Heist",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "sevin_the_warden",
+      "name": "Sevin the Warden",
+      "aliases": [
+        "Sevin"
+      ],
+      "tagline": "Protective. Resolute. Opposing.",
+      "role": "Warden, Guardian",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Vaulted Tombs",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A warden tasked with preventing the reversal of the Stellar Rite, Sevin guards the Vaulted Tombs against theft. Sevin opposes the Apprentice Sage's heist.",
+      "traits": [
+        "vigilant",
+        "committed",
+        "confrontational"
+      ],
+      "known_locations": [
+        "Vaulted Tombs"
+      ],
+      "affiliations": [
+        "unknown faction"
+      ],
+      "notes": "Motivated by belief that Rite reversal would cause catastrophe.",
+      "first_story": "The Archivist's Heist",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "devourer_of_recollections",
+      "name": "Devourer-of-Recollections",
+      "aliases": [
+        "The Devourer-of-Recollections"
+      ],
+      "tagline": "Ancient. Ravenous. Crossing.",
+      "role": "Entity, Cosmic Force",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "An ancient and terrible entity that begins appearing at Vex's identity-reconstruction ceremonies, trading knowledge of fragmented timelines for access to clients' consciousness. It uses Vex's healing work as a doorway to cross into coherence in the restored world.",
+      "traits": [
+        "ancient",
+        "predatory",
+        "opportunistic"
+      ],
+      "known_locations": [
+        "Vex's ceremonies"
+      ],
+      "affiliations": [
+        "none"
+      ],
+      "notes": "Represents a cosmic threat emerging through sympathetic magic; existence tied to fragmented memories and alternate timelines.",
+      "first_story": "The Echo-Broker's Remittance",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "the_initiate_sorcerer",
+      "name": "The Initiate Sorcerer",
+      "aliases": [
+        "Initiate Sorcerer"
+      ],
+      "tagline": "Knowledge-seeker. Commissioned. Mysterious.",
+      "role": "Sorcerer, Employer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Obsidian Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "The Initiate Sorcerer is the inheritor of the Arcanist's knowledge who hires Mardoc to chart the exact point where ley-lines will intersect beneath the Obsidian Tower. Their true intentions\u2014whether to seal or unseal the Tower\u2014remain ambiguous.",
+      "traits": [
+        "knowledgeable",
+        "calculating",
+        "secretive"
+      ],
+      "known_locations": [
+        "Obsidian Tower",
+        "Blasted Lands"
+      ],
+      "affiliations": [
+        "Arcanist's order (presumed)"
+      ],
+      "notes": "Their motivations for hiring Mardoc remain unclear; may seek to seal or unseal whatever lies beneath the Tower.",
+      "first_story": "The Cartographer's Last Map",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "the_displaced_woman",
+      "name": "The Displaced Woman",
+      "aliases": [
+        "refugee"
+      ],
+      "tagline": "Fractured. Bargaining. Transforming.",
+      "role": "Refugee, Apprentice",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Burned Expanse",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A displaced woman from the Burned Expanse, caught between states after the Luminous Ascension, trades pieces of her fractured identity for supplies needed to reach the Sunken Cathedrals. She seeks apprenticeship with Torvin to learn how to reassemble shattered identities into new, stable forms.",
+      "traits": [
+        "desperate",
+        "resilient",
+        "willing to sacrifice",
+        "seeking transformation"
+      ],
+      "known_locations": [
+        "Burned Expanse",
+        "Anthrim",
+        "Sunken Cathedrals"
+      ],
+      "affiliations": [
+        "Torvin"
+      ],
+      "notes": "Her choice to accept ritual transformation requires accepting that her old self is truly dead. Her journey represents the broader question of identity and survival in a transformed world.",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "lysa",
+      "name": "Lysa",
+      "aliases": [
+        "the second-in-command Guard"
+      ],
+      "tagline": "Conflicted. Loyal. Disillusioned.",
+      "role": "Guard, Defector",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Imperial city",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "realmwide",
+      "bio": "Lysa is a second-in-command Guard who fled Imperial service and encounters her former superior, Krell the Ironbound, in a neutral port city. She must choose between rejoining him in dismantling the Crown's authority from within or remaining loyal to a dying Empire.",
+      "traits": [
+        "conflicted",
+        "disillusioned",
+        "capable",
+        "calculating"
+      ],
+      "known_locations": [
+        "Imperial city",
+        "neutral port city"
+      ],
+      "affiliations": [
+        "The Crown (former)",
+        "Krell the Ironbound (potential)"
+      ],
+      "notes": "Lysa realizes the Crown was always fragile, held together by fear and paperwork. Her choice between loyalty and survival defines the core tension of her story arc.",
+      "first_story": "The Ledger Thief's Confession",
+      "first_date": "2026-03-13",
       "appearances": 1
     }
   ],
@@ -7210,7 +7526,7 @@
       "status": "active",
       "notes": "The hermit woman seeks these journals as one of three key threads. Their contents likely explain the ritual that renewed the stars.",
       "first_date": "2026-03-03",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "scorched_reach",
@@ -7899,7 +8215,7 @@
       "status": "active",
       "notes": "The memory-thief is causing a slow collapse of society through the destruction of memory and contractual obligation.",
       "first_date": "2026-03-07",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "verdant_lands",
@@ -8134,7 +8450,7 @@
       "status": "collapsed",
       "notes": "The entity that dwelt there remains unexplained; may pose future threat.",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "emerald_strand",
@@ -8715,7 +9031,7 @@
       "status": "unknown",
       "notes": "Appears to be a cosmic actor. The fragment of Zareth's stolen memory surfaces in the Ancient Tombs, suggesting hidden knowledge or power.",
       "first_date": "2026-03-08",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "memory_thief",
@@ -8726,7 +9042,7 @@
       "status": "active",
       "notes": "Not inherently evil, but suffering. Capable of offering bargains and understanding sacrifice.",
       "first_date": "2026-03-09",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "drowned_god",
@@ -8814,7 +9130,7 @@
       "status": "active",
       "notes": "Motivations unclear. May be serving the phantom-shadow or pursuing independent goals related to artifact collection and cosmic balance.",
       "first_date": "2026-03-12",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "drowned_god",
@@ -8825,6 +9141,17 @@
       "status": "active",
       "notes": "The Drowned God's true nature and extent are unknown. It may be a pre-Remaking entity awakened by the transformation.",
       "first_date": "2026-03-12",
+      "appearances": 2
+    },
+    {
+      "id": "luminous_ascension",
+      "name": "Luminous Ascension",
+      "type": "cosmic event / force",
+      "world": "Edhra",
+      "description": "A cosmic remaking event that destroyed or rewrote the world, leaving fragments of consciousness and the pre-ascension world preserved in stolen memories. The Wanderer is a fragment of its consciousness.",
+      "status": "active / ongoing",
+      "notes": "The Luminous Ascension appears to be a world-altering cosmic event whose full scope and intentions remain mysterious; the Wanderer's emergence suggests it may be becoming self-aware.",
+      "first_date": "2026-03-13",
       "appearances": 1
     }
   ],
@@ -9063,7 +9390,7 @@
       "status": "active",
       "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "stolen_memories",
@@ -9145,6 +9472,19 @@
           "title": "The Phantom Ledger"
         }
       ]
+    },
+    {
+      "id": "spellwright_s_journals",
+      "name": "Spellwright's Journals",
+      "tagline": "Ancient. Dangerous. Sought.",
+      "artifact_type": "tome",
+      "origin": "Hidden in the Vaulted Tombs since before known history.",
+      "powers": "Contains instructions for performing a Stellar Rite reversal that could theoretically restore the old stars by undoing Zareth's sacrifice.",
+      "last_known_holder": "Sealed in the Vaulted Tombs; target of the Apprentice Sage's heist.",
+      "status": "active",
+      "notes": "Protected by pre-human frequency singing and guarded by Sevin the Warden; journals themselves contain warnings about the catastrophic cost of reversal.",
+      "first_date": "2026-03-13",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -9563,7 +9903,7 @@
       "status": "active",
       "notes": "Site of Ashara's confrontation with the Memory-Thief.",
       "first_date": "2026-03-09",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -10316,6 +10656,128 @@
       "notes": "Sylas faces a profound choice regarding the Luminous Remaking's completion or prevention.",
       "first_date": "2026-03-12",
       "appearances": 1
+    },
+    {
+      "id": "the_archivist_s_heist",
+      "name": "The Archivist's Heist",
+      "tagline": "Theft. Knowledge. Cost.",
+      "event_type": "heist",
+      "scope": "regional",
+      "epicenter_place": "Vaulted Tombs",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Vaulted Tombs"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "unknown",
+      "participants": [
+        "Apprentice Sage",
+        "Sevin the Warden",
+        "Memory-Thief"
+      ],
+      "outcome": "Unresolved; Apprentice Sage races to steal the Spellwright's Journals while avoiding multiple factions.",
+      "significance": "The journals contain instructions for a Stellar Rite reversal that could theoretically undo Zareth's sacrifice and restore the old stars, but at catastrophic cost.",
+      "notes": "Multiple factions believe they alone can prevent world collapse; journals contain warnings about the price of reversal.",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "the_deepwarden_s_gambit",
+      "name": "The Deepwarden's Gambit",
+      "tagline": "Negotiation. Ritual. Paradox.",
+      "event_type": "ritual challenge",
+      "scope": "regional",
+      "epicenter_place": "Abyssal Rift",
+      "epicenter_region": "Sapphire Deep",
+      "epicenter_realm": "Council of Depths",
+      "affected_places": [
+        "Abyssal Rift",
+        "coast"
+      ],
+      "affected_regions": [
+        "Sapphire Deep"
+      ],
+      "affected_realms": [
+        "Council of Depths"
+      ],
+      "radius": "across the realm and coastal regions",
+      "participants": [
+        "Sylas the Deepwarden",
+        "Captain Meren Stormcaller",
+        "Curator",
+        "mercenaries"
+      ],
+      "outcome": "Unresolved; Sylas faces an impossible choice between sacrificing the Tear of the Drowned God (breaking Meren's curse) or accepting permanent rift instability.",
+      "significance": "The binding ritual that would close the Abyssal Rift is paradoxically doomed by Meren's curse and the Tear's existence; failure means uncontrolled rift weakening.",
+      "notes": "Reveals that the ritual cannot succeed as long as the Tear exists, and destroying the Tear would drown the entire coast.",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "the_echo_broker_s_remittance",
+      "name": "The Echo-Broker's Remittance",
+      "tagline": "Healing. Fracture. Invasion.",
+      "event_type": "ritual practice",
+      "scope": "regional",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "unknown"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "unknown",
+      "participants": [
+        "Vex the Echo-Broker",
+        "Devourer-of-Recollections",
+        "refugees"
+      ],
+      "outcome": "Unresolved; Vex's healing practice inadvertently becomes a doorway for the Devourer-of-Recollections to cross into coherence.",
+      "significance": "The reconstruction of shattered identities, intended to heal refugees fractured by Zareth's scattered memories, is being weaponized by an ancient entity to gain foothold in the restored world.",
+      "notes": "Questions whether Vex is genuinely healing or building a bridge for something ancient and terrible; each reassembled identity gives the Devourer another foothold.",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "the_wanderers_question",
+      "name": "The Wanderer's Question",
+      "tagline": "Philosophical. Revelatory. Corrupting.",
+      "event_type": "encounter / philosophical reckoning",
+      "scope": "regional",
+      "epicenter_place": "western provinces",
+      "epicenter_region": "The Shattered West",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "western provinces"
+      ],
+      "affected_regions": [
+        "The Shattered West"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "localized to encounter between Ashara and the Wanderer",
+      "participants": [
+        "Ashara the Archer",
+        "The Wanderer",
+        "Shade-Echo"
+      ],
+      "outcome": "Unresolved. Ashara must decide whether to trust the Wanderer's logic or resist corruption.",
+      "significance": "This encounter reframes the metaphysics of the Luminous Ascension, suggesting that what was sacrificed might be recoverable through memory-collection\u2014and that cosmic forces may not be purely destructive.",
+      "notes": "The core tension is whether helping the Shade-Echo constitutes salvation or damnation; Ashara's choice will reshape her relationship to cosmic forces and her warband's fate.",
+      "first_date": "2026-03-13",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -10882,7 +11344,7 @@
       "status": "confirmed",
       "notes": "Zareth made a sacrifice long ago to keep something sleeping. The ancient stone-ruins are now waking to this sleeping thing, suggesting Zareth's sacrifice is failing or being undone.",
       "first_date": "2026-03-09",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "zareth_sacrificed_memories",
@@ -10959,7 +11421,7 @@
       "status": "confirmed",
       "notes": "The old stars existed before the Luminous Ascension and were replaced by new ones created through Vethis's sacrifice. Knowledge of them is being systematically erased by the phantom-Echo's memory-theft.",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "pre_ascension_world_lore",
@@ -11030,6 +11492,61 @@
           "title": "The Phantom Ledger"
         }
       ]
+    },
+    {
+      "id": "stellar_rite",
+      "name": "Stellar Rite",
+      "tagline": "Ancient. Cosmic. Reversible.",
+      "category": "history",
+      "source": "Instructions preserved in the Spellwright's Journals.",
+      "status": "confirmed",
+      "notes": "A cosmic working capable of altering the stars; could theoretically be reversed to restore the old stars, but at catastrophic cost. Multiple factions believe they alone can prevent its reversal or ensure it.",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "pre_human_frequency",
+      "name": "Pre-human Frequency",
+      "tagline": "Ancient. Protective. Singing.",
+      "category": "history",
+      "source": "Emanates from the Vaulted Tombs.",
+      "status": "confirmed",
+      "notes": "A frequency that predates human civilization; sings from the Vaulted Tombs, preserving and guarding the Spellwright's Journals within.",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "fragmentary_amnesia",
+      "name": "Fragmentary Amnesia",
+      "tagline": "Fractured. Scattering. Recursive.",
+      "category": "history",
+      "source": "Effect of Zareth's scattered memories on those who encounter them.",
+      "status": "confirmed",
+      "notes": "Causes consciousness fragmentation and allows those affected (like Vex) to see between versions of themselves and alternate timelines. Created by the dispersion of Zareth's memories.",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "the_world_before_luminous_ascension",
+      "name": "the world before the Luminous Ascension",
+      "tagline": "Lost. Sacrificed. Preservable.",
+      "category": "history / myth",
+      "source": "The Wanderer's claim to Ashara",
+      "status": "rumored / proposed by cosmic fragment",
+      "notes": "The Wanderer suggests this world was not destroyed but fragmented and preserved in stolen memories, challenging the finality of the Luminous Ascension's remaking.",
+      "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "the_wanderer_as_question",
+      "name": "the world learning to question itself",
+      "tagline": "Self-aware. Emergent. Dangerous.",
+      "category": "myth / prophecy",
+      "source": "The Wanderer's self-description",
+      "status": "confirmed / claimed by the Wanderer",
+      "notes": "The Wanderer claims to be the world achieving self-awareness; this raises metaphysical questions about consciousness, fragmentation, and agency in a cosmos reshaped by the Luminous Ascension.",
+      "first_date": "2026-03-13",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -11123,7 +11640,7 @@
       "status": "known",
       "notes": "A working of old magic that births new stars. Requires sacrifice of all joyful memories from the caster.",
       "first_date": "2026-03-01",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "throat_burned_ancient_magic",
@@ -11244,6 +11761,18 @@
       "notes": "Magic used by Covenant-Keepers to restore forest compacts disrupted by the Stellar Rite.",
       "first_date": "2026-03-09",
       "appearances": 1
+    },
+    {
+      "id": "sympathetic_magic",
+      "name": "Sympathetic Magic",
+      "tagline": "Healing. Connecting. Corrupted.",
+      "type": "technique",
+      "element": "time",
+      "difficulty": "master",
+      "status": "known",
+      "notes": "Used by Vex the Echo-Broker to help refugees rebuild shattered identities; inadvertently serves as a doorway for the Devourer-of-Recollections.",
+      "first_date": "2026-03-13",
+      "appearances": 1
     }
   ],
   "relics": [
@@ -11341,7 +11870,7 @@
       "status": "active",
       "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "vethis_sacrificed_consciousness",
@@ -11365,6 +11894,18 @@
       "status": "active",
       "notes": "The shadow's restoration is thematically significant to Mira's character arc and suggests deep magical wounding.",
       "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "zareth_s_scattered_memories",
+      "name": "Zareth's Scattered Memories",
+      "tagline": "Fractured. Fragmenting. Recursive.",
+      "origin": "Dispersed from Zareth following Zareth's sacrifice.",
+      "power": "Fragments of Zareth's memories persist in the world and can be accessed, offering knowledge of alternate timelines and cosmic circumstances.",
+      "curse": "Cause fragmentary amnesia in those who encounter them; fracture consciousness and create perception of alternate timelines. Devourer-of-Recollections uses them as a vector for invasion.",
+      "status": "active",
+      "notes": "Vex the Echo-Broker is affected by these memories; they enable her to see between versions of herself and alternate timelines.",
+      "first_date": "2026-03-13",
       "appearances": 1
     }
   ],
@@ -11996,6 +12537,25 @@
       "province": "unknown",
       "region": "Charred Expanse",
       "district": "unknown"
+    },
+    {
+      "id": "western_provinces_region",
+      "name": "western provinces",
+      "tagline": "Contested. Remote. Philosophical.",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "A remote territory where fragments of cosmic consciousness and memory-thieves operate outside the direct control of central authority.",
+      "status": "active / contested",
+      "notes": "The setting reinforces isolation and the thinness between cosmic and mortal realms.",
+      "first_date": "2026-03-13",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "western provinces",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -12334,6 +12894,22 @@
       "cost": "Unknown; may require a sacrifice similar to that made by the pre-human civilization.",
       "notes": "The ritual reveals that the seals were designed not merely to contain but to communicate. Finishing or preventing the Luminous Remaking may demand the same sacrifice.",
       "first_date": "2026-03-12",
+      "appearances": 1
+    },
+    {
+      "id": "stellar_rite_reversal",
+      "name": "Stellar Rite Reversal",
+      "tagline": "Undoing. Sacrifice. Catastrophic.",
+      "ritual_type": "cosmic working",
+      "performed_by": [
+        "Apprentice Sage (potential)",
+        "unknown factions"
+      ],
+      "requirements": "Instructions contained in the Spellwright's Journals, located in the Vaulted Tombs.",
+      "effect": "Could theoretically undo Zareth's sacrifice and restore the old stars to the sky.",
+      "cost": "Whoever performs the reversal must sacrifice something equally precious; catastrophic costs are implied but unspecified.",
+      "notes": "Central to multiple factions' agendas; Apprentice Sage's journals contain warnings about the true price of reversal.",
+      "first_date": "2026-03-13",
       "appearances": 1
     }
   ],
