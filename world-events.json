@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-14T10:19:51.984010+00:00",
+  "generated_at": "2026-03-15T10:21:16.375051+00:00",
   "source": "codex.json",
   "count": 50,
   "events": [
@@ -13,7 +13,7 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-03-13",
-      "recent_issues": 7,
+      "recent_issues": 6,
       "trend": 0,
       "referenced_locations": {
         "places": [
@@ -93,7 +93,7 @@
       "resolved": false,
       "last_seen": "2026-03-14",
       "recent_issues": 4,
-      "trend": 4,
+      "trend": 2,
       "referenced_locations": {
         "places": [
           "Sunken Cathedrals",
@@ -201,11 +201,11 @@
       "event_type": "celestial event / prophecy",
       "scope": "world",
       "epicenter": "unknown",
-      "stage": "crisis",
-      "intensity": 4,
+      "stage": "rising",
+      "intensity": 3,
       "resolved": false,
       "last_seen": "2026-03-04",
-      "recent_issues": 3,
+      "recent_issues": 2,
       "trend": 0,
       "referenced_locations": {
         "places": [],
@@ -233,27 +233,66 @@
       ]
     },
     {
-      "name": "The Starfall Oath",
-      "tagline": "Sworn. Cosmic. Unbreakable.",
-      "event_type": "oath / ritual",
+      "name": "Celestial Turning",
+      "tagline": "Stars-rewritten. Compacts-shattered. Reality-shifted.",
+      "event_type": "catastrophe / cosmic event",
       "scope": "world",
       "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
+      "stage": "rising",
+      "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-01",
+      "last_seen": "2026-03-15",
       "recent_issues": 1,
-      "trend": 0,
+      "trend": 1,
       "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
+        "places": [
+          "Spire (Blasted Lands)",
+          "Starfall Spire",
+          "Drowned Hollows",
+          "The Empire"
+        ],
+        "regions": [
+          "all known regions"
+        ],
+        "realms": [
+          "The Empire",
+          "deep-dweller realms",
+          "transformed realms"
+        ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-03-01",
-          "title": "The Starfall Oath"
+          "date": "2026-03-15",
+          "title": "The Thief of Starlight"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Rift-Keeper's Bargain"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Cartographer's Madness"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Bone-Singer's Compact"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Night-Market's Final Trade"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Druid Circle's Surrender"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Scattered Astronomer's Echo"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Refugee's Refuge"
         }
       ]
     },
@@ -317,7 +356,7 @@
       "resolved": false,
       "last_seen": "2026-03-05",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -342,7 +381,7 @@
       "resolved": false,
       "last_seen": "2026-03-05",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Pelimor",
@@ -626,6 +665,31 @@
       ]
     },
     {
+      "name": "The Starfall Oath",
+      "tagline": "Sworn. Cosmic. Unbreakable.",
+      "event_type": "oath / ritual",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-03-01",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
+        }
+      ]
+    },
+    {
       "name": "The Wanderer's Question",
       "tagline": "Philosophical. Revelatory. Corrupting.",
       "event_type": "encounter / philosophical reckoning",
@@ -671,7 +735,7 @@
       "resolved": false,
       "last_seen": "2026-03-05",
       "recent_issues": 2,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Thornholt"
@@ -724,100 +788,6 @@
         {
           "date": "2026-03-05",
           "title": "The Young Sorcerer's Inheritance"
-        }
-      ]
-    },
-    {
-      "name": "The Archivist's Heist",
-      "tagline": "Theft. Knowledge. Cost.",
-      "event_type": "heist",
-      "scope": "regional",
-      "epicenter": "Vaulted Tombs",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-03-13",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Vaulted Tombs"
-        ],
-        "regions": [
-          "unknown"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-13",
-          "title": "The Archivist's Heist"
-        }
-      ]
-    },
-    {
-      "name": "The Deepwarden's Gambit",
-      "tagline": "Negotiation. Ritual. Paradox.",
-      "event_type": "ritual challenge",
-      "scope": "regional",
-      "epicenter": "Abyssal Rift",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-03-13",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Abyssal Rift",
-          "coast"
-        ],
-        "regions": [
-          "Sapphire Deep"
-        ],
-        "realms": [
-          "Council of Depths"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-13",
-          "title": "The Deepwarden's Gambit"
-        }
-      ]
-    },
-    {
-      "name": "The Echo-Broker's Remittance",
-      "tagline": "Healing. Fracture. Invasion.",
-      "event_type": "ritual practice",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-03-13",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "unknown"
-        ],
-        "regions": [
-          "unknown"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-13",
-          "title": "The Echo-Broker's Remittance"
         }
       ]
     },
@@ -959,7 +929,7 @@
       "resolved": false,
       "last_seen": "2026-03-10",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Burned-out Village",
@@ -1009,6 +979,100 @@
         {
           "date": "2026-03-12",
           "title": "The Corsair's Reckoning"
+        }
+      ]
+    },
+    {
+      "name": "The Archivist's Heist",
+      "tagline": "Theft. Knowledge. Cost.",
+      "event_type": "heist",
+      "scope": "regional",
+      "epicenter": "Vaulted Tombs",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-13",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Vaulted Tombs"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-13",
+          "title": "The Archivist's Heist"
+        }
+      ]
+    },
+    {
+      "name": "The Deepwarden's Gambit",
+      "tagline": "Negotiation. Ritual. Paradox.",
+      "event_type": "ritual challenge",
+      "scope": "regional",
+      "epicenter": "Abyssal Rift",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-13",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Abyssal Rift",
+          "coast"
+        ],
+        "regions": [
+          "Sapphire Deep"
+        ],
+        "realms": [
+          "Council of Depths"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-13",
+          "title": "The Deepwarden's Gambit"
+        }
+      ]
+    },
+    {
+      "name": "The Echo-Broker's Remittance",
+      "tagline": "Healing. Fracture. Invasion.",
+      "event_type": "ritual practice",
+      "scope": "regional",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-13",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "unknown"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-13",
+          "title": "The Echo-Broker's Remittance"
         }
       ]
     },
@@ -1643,34 +1707,6 @@
         {
           "date": "2026-02-26",
           "title": "Shadows for Sale"
-        }
-      ]
-    },
-    {
-      "name": "Vetch's Garden Awakening",
-      "tagline": "Creation. Betrayal. Catastrophe.",
-      "event_type": "catastrophe",
-      "scope": "city",
-      "epicenter": "Vetch's Tower",
-      "stage": "seed",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Vetch's Tower",
-          "tower"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "The Living Garden"
         }
       ]
     }

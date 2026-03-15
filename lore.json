@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-14",
+  "last_updated": "2026-03-15",
   "worlds": [
     {
       "id": "known_world",
@@ -945,7 +945,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "naresh_the_bone_carver",
@@ -1365,7 +1365,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "mardoc_cartographer",
@@ -1400,7 +1400,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 11,
+      "appearances": 12,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -3303,7 +3303,7 @@
       "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "old_ranger",
@@ -4521,7 +4521,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -6664,8 +6664,8 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Pale Crossing waystation",
-      "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_region": "The Burned Expanse",
+      "home_realm": "The Empire",
       "travel_scope": "regional",
       "bio": "Caravan Master who brings word to Merrin that villages beyond the Scarred Expanse are still vanishing, alerting the scribe to the true nature of the ledger discrepancies.",
       "traits": [
@@ -6683,7 +6683,7 @@
       "notes": "His role in the larger conspiracy is unclear; he may be informant or unwitting herald.",
       "first_story": "The Refugee's Ledger",
       "first_date": "2026-03-14",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_faceless_wanderer",
@@ -6781,6 +6781,430 @@
       "notes": "Catalyst for the young warrior's quest; their liminal state defines the thematic heart of the story.",
       "first_story": "The Singing Scar",
       "first_date": "2026-03-14",
+      "appearances": 1
+    },
+    {
+      "id": "kael_the_faceless",
+      "name": "Kael the Faceless",
+      "aliases": [
+        "Kael"
+      ],
+      "tagline": "Thief. Rebellious. Remembered.",
+      "role": "Thief",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Valorun",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Kael is a faceless thief trained across three cities who orchestrated a heist into Valorun's Grand Archive to steal a vial of luminous essence. Unlike most people fractured by the Celestial Turning, Kael retained her full memories and remembers what was lost. She chose to scatter the luminous essence across the Sunlit Vale to restore what the Turning stole.",
+      "traits": [
+        "thief",
+        "memory-keeper",
+        "rebellious",
+        "precise",
+        "merciful"
+      ],
+      "known_locations": [
+        "Valorun",
+        "Lantern Quarter",
+        "Copper Gate",
+        "Sunlit Vale"
+      ],
+      "affiliations": [
+        "Morreck",
+        "fae-touched scout",
+        "merchant captain"
+      ],
+      "notes": "Kael's act of scattering luminous essence is framed as rebellion against the amnesia caused by the Celestial Turning. Her crew survived the heist. Motivation tied to restoring collective memory.",
+      "first_story": "The Thief of Starlight",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "morreck",
+      "name": "Morreck",
+      "aliases": [],
+      "tagline": "Dwarf. Lockpicker. Explosive.",
+      "role": "Lockpicking Dwarf",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Valorun",
+      "home_region": "unknown",
+      "home_realm": "Dwarven Holds",
+      "travel_scope": "regional",
+      "bio": "Morreck is a lockpicking dwarf who served as part of Kael's heist crew in Valorun. He specialized in breaching the Archive's vault doors and clearing the Copper Gate during their escape.",
+      "traits": [
+        "lockpicker",
+        "explosive-specialist",
+        "dwarven",
+        "loyal"
+      ],
+      "known_locations": [
+        "Valorun",
+        "Lantern Quarter",
+        "Copper Gate"
+      ],
+      "affiliations": [
+        "Kael the Faceless"
+      ],
+      "notes": "Successfully aided in the Archive heist. Fate after the escape unknown but implied to have escaped successfully.",
+      "first_story": "The Thief of Starlight",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "fae_touched_scout",
+      "name": "fae-touched scout",
+      "aliases": [],
+      "tagline": "Scout. Fae-touched. Moonlit.",
+      "role": "Scout",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Valorun",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A fae-touched scout with eyes that catch moonlight, part of Kael's heist crew. Waited in the Lantern Quarter during the Archive theft.",
+      "traits": [
+        "fae-touched",
+        "scout",
+        "moonlit-vision",
+        "loyal"
+      ],
+      "known_locations": [
+        "Valorun",
+        "Lantern Quarter"
+      ],
+      "affiliations": [
+        "Kael the Faceless"
+      ],
+      "notes": "Identity not fully revealed in story. Characteristics suggest fae ancestry or transformation.",
+      "first_story": "The Thief of Starlight",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "merchant_captain_old_woman",
+      "name": "merchant captain",
+      "aliases": [
+        "old woman"
+      ],
+      "tagline": "Captain. Grieving. Willing.",
+      "role": "Merchant Barge Captain",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Valorun",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "An old merchant barge captain who lost her entire crew to the Thought-Thief's passage during the Celestial Turning. She provided passage for Kael's crew down the river from Valorun after the Archive heist, listening to Kael's plan to scatter luminous essence.",
+      "traits": [
+        "captain",
+        "grieving",
+        "compassionate",
+        "river-wise"
+      ],
+      "known_locations": [
+        "Valorun",
+        "river"
+      ],
+      "affiliations": [
+        "Kael the Faceless"
+      ],
+      "notes": "Her crew was taken by the Turning's memory-thief. She appears to support Kael's rebellion against amnesia by facilitating their escape.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "thought_thief",
+      "name": "Thought-Thief",
+      "aliases": [
+        "memory-thief",
+        "Thought-Thief's"
+      ],
+      "tagline": "Thief. Scattering. Parasitic.",
+      "role": "Entity / Plague",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "A mysterious force or entity released or created by the Celestial Turning that steals consciousness and memory fragments from people. It passed through coastal settlements, leaving refugees and fragmentary records of its passage. It hunts knowledge-keepers and scatters consciousness fragments that now seek other minds.",
+      "traits": [
+        "ethereal",
+        "parasitic",
+        "knowledge-hunting",
+        "fragmented"
+      ],
+      "known_locations": [
+        "coastal settlements",
+        "deepkin sanctuaries"
+      ],
+      "affiliations": [
+        "fragments of consciousness"
+      ],
+      "notes": "Described as having 'scattered consciousness fragments.' The Thought-Thief appears to be a consequence of the Celestial Turning, not necessarily an independent entity. May be related to the Devourer-of-Recollections from canon.",
+      "first_story": "The Rift-Keeper's Bargain",
+      "first_date": "2026-03-15",
+      "appearances": 4
+    },
+    {
+      "id": "vallis",
+      "name": "Vallis",
+      "aliases": [],
+      "tagline": "Scholar-merchant. Ambitious. Desperate.",
+      "role": "Scholar-Merchant",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Vallis is a scholar-merchant who hired Mardoc the Cartographer to guide an expedition into the Chalked Wastes. She seeks to reach one of Mardoc's prophetic sites and offers gold and shelter as payment.",
+      "traits": [
+        "scholar",
+        "merchant",
+        "ambitious",
+        "pragmatic"
+      ],
+      "known_locations": [
+        "Chalked Wastes"
+      ],
+      "affiliations": [
+        "Mardoc the Cartographer"
+      ],
+      "notes": "Her motivations for seeking these prophetic sites are not fully explained. May be seeking knowledge, artifacts, or proof of Mardoc's visions.",
+      "first_story": "The Cartographer's Madness",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "kaelith_star_prince",
+      "name": "Kaelith",
+      "aliases": [
+        "Star-Prince"
+      ],
+      "tagline": "Star-Prince. Fragmented. Remaking.",
+      "role": "Celestial Entity / Star-Prince",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "Kaelith is a Star-Prince whose fragmented consciousness may be channeling through Mardoc the Cartographer, using his hands to draw maps that rewrite the world's physical geography to match the new celestial order established by the Celestial Turning.",
+      "traits": [
+        "celestial",
+        "star-prince",
+        "fragmented",
+        "reality-bending"
+      ],
+      "known_locations": [
+        "cosmically distributed",
+        "Chalked Wastes",
+        "villages"
+      ],
+      "affiliations": [
+        "Mardoc the Cartographer"
+      ],
+      "notes": "Identity and nature uncertain; Kaelith may be a star-entity created or altered by the Celestial Turning. Mardoc may be a willing or unwilling conduit for its will.",
+      "first_story": "The Cartographer's Madness",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "aldris",
+      "name": "Aldris",
+      "aliases": [],
+      "tagline": "Forger. Blood-ink scribe. Record-savior.",
+      "role": "Forger, Scribe",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "The Empire",
+      "travel_scope": "local",
+      "bio": "A young forger recruited by Sevin who can replicate records in a new medium\u2014blood-ink on preserved parchment\u2014making them resistant to the Thought-Thief's predation. Works frantically in hidden scriptoriums.",
+      "traits": [
+        "skilled",
+        "dedicated",
+        "innovative"
+      ],
+      "known_locations": [
+        "hidden scriptoriums"
+      ],
+      "affiliations": [
+        "Sevin the Auditor"
+      ],
+      "notes": "His relationship to the broader struggle for the Empire's fate is not fully explored.",
+      "first_story": "The Auditor's Last Ledger",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "the_apprentice_mage",
+      "name": "The Apprentice Mage",
+      "aliases": [
+        "The Apprentice"
+      ],
+      "tagline": "Mage-heir. Spire-descender. World-wound sealer.",
+      "role": "Mage, Sealer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Starfall Spire",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Inheritor of the Arch-Mage's forbidden grimoire, the Apprentice discovers that the ley-line convergence beneath the Starfall Spire is destabilizing due to the new stars. She descends into the depths with three companions to learn that the Spire contains a fragment of reality itself\u2014a wound in the world that the old stars helped cauterize. She must decide whether to attempt a new sealing at the cost of her own life-force and memory or allow the wound to fully open.",
+      "traits": [
+        "scholarly",
+        "courageous",
+        "conflicted",
+        "inheritor of forbidden knowledge"
+      ],
+      "known_locations": [
+        "Starfall Spire"
+      ],
+      "affiliations": [
+        "thief seeking redemption",
+        "bone-singer",
+        "scholar"
+      ],
+      "notes": "Unresolved: whether she seals the wound or allows transformation; the nature of the 'fragment of reality' and what lies beyond.",
+      "first_story": "The Sorcerer Descends",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "arch_mage",
+      "name": "Arch-Mage",
+      "aliases": [],
+      "tagline": "Forbidden. Ancient. Sealed.",
+      "role": "Mage, Predecessor",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "Starfall Spire",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Previous wielder of the forbidden grimoire that the Apprentice Mage now inherits. Limited details provided; presumably responsible for or knowledgeable about the Starfall Spire's sealing.",
+      "traits": [
+        "powerful",
+        "secretive"
+      ],
+      "known_locations": [
+        "Starfall Spire"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "Status and current location unknown.",
+      "first_story": "The Sorcerer Descends",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "lyra_covenant_keeper",
+      "name": "Lyra the Covenant-Keeper",
+      "aliases": [
+        "Lyra"
+      ],
+      "tagline": "Healer. Reluctant. Wise.",
+      "role": "Life-speaker, Circle Leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Verdant Lands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Lyra gathers the remaining life-speakers to formalize the surrender of the old compact between human civilization and the wild places after the Celestial Turning transformed most covenant-keepers into hybrid consciousnesses. She journeys through the Verdant Lands, witnessing different communities choose transformation in starkly different ways. Lyra must find a way to honor both past and future, creating a new covenant that acknowledges loss without denying growth.",
+      "traits": [
+        "compassionate",
+        "pragmatic",
+        "haunted",
+        "decisive"
+      ],
+      "known_locations": [
+        "Verdant Lands"
+      ],
+      "affiliations": [
+        "covenant-keepers",
+        "life-speakers",
+        "druid circles"
+      ],
+      "notes": "Lyra's greatest challenge is accepting the inevitability of transformation while preserving what can still be honored from the old ways.",
+      "first_story": "The Druid Circle's Surrender",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "merrick_scholar",
+      "name": "Merrick",
+      "aliases": [],
+      "tagline": "Obsessed. Cautious. Determined.",
+      "role": "Scholar, Investigator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "capital",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Merrick is a scholar tracking fragments of Kaelith the Star-Prince's consciousness across the transformed world, gathering testimony from those briefly possessed or influenced by Kaelith's fragments. He believes that if these fragments can be unified, Kaelith's original consciousness might be restored, though he suspects Kaelith may not want to be restored at all, preferring to remain scattered and free.",
+      "traits": [
+        "brilliant",
+        "thorough",
+        "suspicious",
+        "ethical"
+      ],
+      "known_locations": [
+        "capital",
+        "Blasted Lands",
+        "Scorched Reach"
+      ],
+      "affiliations": [
+        "scholars",
+        "unknown patrons"
+      ],
+      "notes": "Merrick's plan to bind Kaelith's fragments to his own mind carries significant personal risk and moral ambiguity.",
+      "first_story": "The Scattered Astronomer's Echo",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "kaelith_star_prince",
+      "name": "Kaelith the Star-Prince",
+      "aliases": [
+        "Kaelith",
+        "The Scattered Astronomer"
+      ],
+      "tagline": "Fragmented. Mysterious. Distributed.",
+      "role": "Celestial Entity, Executor of the Celestial Turning",
+      "world": "Edhra",
+      "status": "active (fragmented)",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Kaelith the Star-Prince's consciousness has been scattered across the transformed world into multiple fragments, each manifesting in borrowed voices and incomplete visions. Each fragment holds partial memories but none recalls executing the Celestial Turning. Fragments disagree on whether the Turning should be prevented, repeated, or reversed.",
+      "traits": [
+        "fragmented",
+        "mysterious",
+        "ambiguous",
+        "powerful"
+      ],
+      "known_locations": [
+        "Blasted Lands",
+        "Scorched Reach",
+        "capital"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "The question of whether Kaelith wishes to be restored to singular consciousness remains unresolved and may be answered in the negative.",
+      "first_story": "The Scattered Astronomer's Echo",
+      "first_date": "2026-03-15",
       "appearances": 1
     }
   ],
@@ -7263,7 +7687,7 @@
       "status": "active",
       "notes": "The survivors of the plague live here. Kess returned silent to teach them the old songs through gesture.",
       "first_date": "2026-03-01",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "deep_forest",
@@ -8788,7 +9212,7 @@
       "status": "active",
       "notes": "The fundamental act of counting is destabilized by the Luminous Ascension's effects.",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "burned_expanse",
@@ -8808,7 +9232,7 @@
       "status": "cursed",
       "notes": "Reality is unstable here; counting people and tracking time is unreliable.",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "sunken_cathedrals",
@@ -9124,6 +9548,85 @@
       "status": "active",
       "notes": "The location is not a gateway to elsewhere but a liminal space where transformation is eternal and unreachable. The warrior's quest reveals that the transformed do not go anywhere\u2014they arrive perpetually.",
       "first_date": "2026-03-14",
+      "appearances": 1
+    },
+    {
+      "id": "high_temple_of_vesh",
+      "name": "High Temple of Vesh",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "starfall_spire",
+      "name": "Starfall Spire",
+      "tagline": "Ancient. Sealing. Destabilizing.",
+      "place_type": "fortress / ruin / structure",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A vast structure of increasingly ancient architecture stretching deep underground, growing older the further one descends.",
+      "description": "A seal against imprisoned forces that has stood for centuries, now cracking due to ley-line convergence destabilization caused by the new stars. Contains a fragment of reality itself\u2014a wound in the world that the old stars helped cauterize.",
+      "status": "active",
+      "notes": "Unresolved: the true nature of what lies within the wound; consequences of potential reopening.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "hidden_scriptoriums",
+      "name": "hidden scriptoriums",
+      "tagline": "Records-preserving. Secretive. Last-stand.",
+      "place_type": "facility",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Frantic, urgent spaces where Sevin and Aldris work desperately to preserve the Empire's ledgers before corruption.",
+      "description": "Secret locations where Sevin the Auditor and the forger Aldris work to replicate the Empire's administrative records in blood-ink on preserved parchment, making them resistant to the Thought-Thief's predation.",
+      "status": "active",
+      "notes": "Location within the Empire unspecified; security status unknown.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "borderlands",
+      "name": "borderlands",
+      "tagline": "Fractured. Desperate. Lawless.",
+      "place_type": "region",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A frontier of chaos, where imperial authority weakens and shortages force hard choices.",
+      "description": "The area surrounding Pale Crossing, plagued by shortages of fresh water and grain. Imperial forces attempt conscription here to maintain order, though their reliability is questioned.",
+      "status": "contested",
+      "notes": "Trade routes have become unreliable, exacerbating rationing. Imperial authority is weakening in these regions.",
+      "first_date": "2026-03-15",
       "appearances": 1
     }
   ],
@@ -9524,6 +10027,17 @@
       "notes": "The Wanderer is both omniscient and melancholic, suggesting awareness of an inescapable loop.",
       "first_date": "2026-03-14",
       "appearances": 1
+    },
+    {
+      "id": "thought_thief_entity",
+      "name": "Thought-Thief",
+      "type": "spirit / entity / consciousness",
+      "world": "Edhra",
+      "description": "A fragmented consciousness capable of corrupting ledgers, devouring memories, and luring beings into dissolution through false visions of the past. It operates through multiple fragments that can act independently, seducing deep-dwellers with restored ancient memories.",
+      "status": "active",
+      "notes": "Unresolved: origin, nature of fragmentation, whether it has a true core, how to defeat it.",
+      "first_date": "2026-03-15",
+      "appearances": 2
     }
   ],
   "artifacts": [
@@ -10210,7 +10724,7 @@
       "status": "active",
       "notes": "Ruled by the Emperor; contains the Imperial Archives and is home to the secret council. Grappling with the implications of the Celestial Binding.",
       "first_date": "2026-03-05",
-      "appearances": 9,
+      "appearances": 11,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "the Empire",
@@ -11288,6 +11802,41 @@
       "notes": "The aftermath of this event is the central setting of the story. The nature and location of the Sunken Cathedrals remain mysterious.",
       "first_date": "2026-03-14",
       "appearances": 1
+    },
+    {
+      "id": "celestial_turning",
+      "name": "Celestial Turning",
+      "tagline": "Stars-rewritten. Compacts-shattered. Reality-shifted.",
+      "event_type": "catastrophe / cosmic event",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Drowned Hollows",
+        "Starfall Spire",
+        "The Empire"
+      ],
+      "affected_regions": [
+        "all known regions"
+      ],
+      "affected_realms": [
+        "The Empire",
+        "deep-dweller realms",
+        "transformed realms"
+      ],
+      "radius": "world-wide",
+      "participants": [
+        "celestial forces",
+        "humanity",
+        "transformed beings",
+        "deep-dwellers"
+      ],
+      "outcome": "The old spiritual compact between human and transformed was shattered; the new stars have shifted all ley-lines of power; the Starfall Spire began to crack; the Empire's administrative certainty collapsed.",
+      "significance": "Triggered the need for counter-workings, revealed that the Empire's power was built on written certainty, destabilized the Spire's seal on a reality-wound, and set the stage for potential transformation or restoration across all realms.",
+      "notes": "Unresolved: the ultimate nature and scope of the Turning; whether it can be reversed.",
+      "first_date": "2026-03-15",
+      "appearances": 2
     }
   ],
   "weapons": [],
@@ -11374,7 +11923,7 @@
       "status": "active",
       "notes": "Vex considers herself among them; possibly a loose collective rather than a formal organization.",
       "first_date": "2026-03-03",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "sea_folk",
@@ -11506,6 +12055,42 @@
       "status": "active",
       "notes": "The council discovers that Sylas's binding ritual will trap them in a permanent half-state, forcing them to reconsider the ritual's completion.",
       "first_date": "2026-03-14",
+      "appearances": 1
+    },
+    {
+      "id": "bone_singers",
+      "name": "bone-singers",
+      "tagline": "Spiritual. Sacrificial. Compact-keepers.",
+      "alignment": "lawful",
+      "goals": "Maintain the spiritual compact between human and transformed; prevent dissolution through false nostalgia; create buffers between realms.",
+      "leader": "Kess",
+      "status": "active",
+      "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "life_speakers",
+      "name": "life-speakers",
+      "tagline": "Vital. Balancing. Transformative.",
+      "alignment": "neutral",
+      "goals": "Work with bone-singers and oath-keepers to maintain the reforged spiritual compact.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Limited details provided; role in counter-workings not fully specified.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "deep_dwellers",
+      "name": "deep-dwellers",
+      "tagline": "Transformed. Migrating. Tempted.",
+      "alignment": "neutral",
+      "goals": "Originally unknown; driven inland by something rising from the deepest trenches; vulnerable to seduction by Thought-Thief's false memories.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Unresolved: what compels them inland; why they are susceptible to the Thought-Thief's promises.",
+      "first_date": "2026-03-15",
       "appearances": 1
     }
   ],
@@ -12103,7 +12688,7 @@
       "status": "confirmed",
       "notes": "A form of communication or magic where disparate entities\u2014the dead, the transformed, the deep-dwellers\u2014sing in unified response. It appears to be chosen and conscious rather than compelled.",
       "first_date": "2026-03-14",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "compartmentalized_truth",
@@ -12125,6 +12710,72 @@
       "status": "confirmed",
       "notes": "The transformed exist in a state of perpetual arrival\u2014always approaching but never reaching the other side. The scar does not lead anywhere; it is itself a liminal space of eternal becoming.",
       "first_date": "2026-03-14",
+      "appearances": 1
+    },
+    {
+      "id": "celestial_turning_lore",
+      "name": "Celestial Turning",
+      "tagline": "Stars-rewritten. Compact-shattered. World-changed.",
+      "category": "history / cosmic event",
+      "source": "The stories themselves; observed effects across Kess, Sevin, and the Apprentice's narratives",
+      "status": "confirmed",
+      "notes": "The nature of what caused the Turning and whether it can be reversed remain unknown.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "spiritual_compact_lore",
+      "name": "spiritual compact",
+      "tagline": "Human-transformed. Binding. Reforged.",
+      "category": "legend / history",
+      "source": "Kess's narrative; ancient agreement between human and transformed realms",
+      "status": "confirmed",
+      "notes": "The original compact was shattered by the Celestial Turning; Kess works to reforge it. The cost of counter-workings and consciousness-fragmentation is not fully understood.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "false_nostalgia_lore",
+      "name": "false nostalgia",
+      "tagline": "Memory-based. Seductive. Dissolution-causing.",
+      "category": "legend / prophecy",
+      "source": "Thought-Thief's fragments; visions of 'the world before the compact was first forged'",
+      "status": "confirmed",
+      "notes": "The Thought-Thief uses restored ancient memories to seduce deep-dwellers into dissolution. Whether these memories are genuine or fabricated is unclear.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "tally_working_lore",
+      "name": "tally-working",
+      "tagline": "Record-magic. Authority-binding. Certainty-dependent.",
+      "category": "history / magical practice",
+      "source": "Sevin's discovery in The Auditor's Last Ledger",
+      "status": "confirmed",
+      "notes": "Tally-working is a form of concentrated magic built into written administrative records. The certainty of written numbers enforces taxation, conscription, and tribute. The Celestial Turning shattered this certainty.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "ley_line_convergence_lore",
+      "name": "ley-line convergence",
+      "tagline": "Power-focusing. Destabilizing. Spire-threatening.",
+      "category": "history / magical practice",
+      "source": "Beneath the Starfall Spire; discovered by the Apprentice Mage",
+      "status": "confirmed",
+      "notes": "The new stars caused by the Celestial Turning have shifted all old lines of power. The convergence beneath the Spire is destabilizing, threatening the seal on a reality-wound.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "ley_line_disruptions",
+      "name": "ley-line disruptions",
+      "tagline": "Fractured. Magical. Catastrophic.",
+      "category": "history",
+      "source": "The Celestial Turning's aftermath",
+      "status": "confirmed",
+      "notes": "Caused by the Celestial Turning, these disruptions have made fresh water scarce in the borderlands and broader regions. They represent a break in the fundamental magical infrastructure of the world.",
+      "first_date": "2026-03-15",
       "appearances": 1
     }
   ],
@@ -12363,6 +13014,18 @@
       "status": "known",
       "notes": "Ledger-magic is a form of magical practice that allows entries in the Ledger of Names to function as prophecy, enabling slow restoration of order to fractured realms. It can also suppress knowledge and maintain false narratives.",
       "first_date": "2026-03-14",
+      "appearances": 1
+    },
+    {
+      "id": "tally_working_magic",
+      "name": "tally-working",
+      "tagline": "Record-enforcing. Authority-binding. Certainty-dependent.",
+      "type": "ritual / binding",
+      "element": "record / administration / certainty",
+      "difficulty": "master",
+      "status": "known",
+      "notes": "A form of concentrated magic built into written administrative records. Enforces taxation, conscription, and tribute through the certainty of written numbers. Shattered by the Celestial Turning.",
+      "first_date": "2026-03-15",
       "appearances": 1
     }
   ],
@@ -12608,7 +13271,7 @@
       "status": "active",
       "notes": "Home to Kess and survivors of the plague. The village still practices bone-singing and old magic traditions.",
       "first_date": "2026-03-01",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -13065,7 +13728,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-11",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -13327,6 +13990,42 @@
       "use": "The singing is not intentionally used but is a consequence of the Sunken Cathedrals' harmonic crescendo. It transforms those who hear it.",
       "notes": "The singing appears to be a form of magical or cosmic emanation tied to the damage to reality itself.",
       "first_date": "2026-03-14",
+      "appearances": 1
+    },
+    {
+      "id": "blood_ink",
+      "name": "blood-ink",
+      "tagline": "Record-preserving. Thought-resistant. Life-binding.",
+      "type": "ink / substance",
+      "rarity": "rare",
+      "properties": "Resistant to the Thought-Thief's predation on written records; allows for preservation of ledgers in a form that cannot be easily corrupted or rewritten.",
+      "use": "Applied to preserved parchment by the forger Aldris to create records that resist magical corruption; used in the hidden scriptoriums to preserve the Empire's ledgers.",
+      "notes": "Unresolved: the exact composition and preparation of blood-ink; its full resistance capabilities.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "fresh_water",
+      "name": "fresh water",
+      "tagline": "Scarce. Disrupted. Critical.",
+      "type": "resource / necessity",
+      "rarity": "rare",
+      "properties": "Essential for survival; scarcity forces rationing and desperation.",
+      "use": "Drinking, sustenance, basic survival.",
+      "notes": "Shortage in the borderlands caused by ley-line disruptions from the Celestial Turning. A key pressure point for refugees and settlements.",
+      "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "grain",
+      "name": "grain",
+      "tagline": "Rationed. Disrupted. Vital.",
+      "type": "resource / food",
+      "rarity": "rare",
+      "properties": "Primary food staple; subject to rationing due to unreliable trade routes.",
+      "use": "Food production, sustenance, trade.",
+      "notes": "Shortages in the borderlands are driven by disruptions to trade routes following the Celestial Turning.",
+      "first_date": "2026-03-15",
       "appearances": 1
     }
   ],
@@ -13591,6 +14290,23 @@
       "notes": "Ledger-magic is the mechanism by which the Crown maintains the Dominion's illusion of wholeness despite its fracturing.",
       "first_date": "2026-03-14",
       "appearances": 1
+    },
+    {
+      "id": "tally_working",
+      "name": "tally-working",
+      "tagline": "Record-enforcing. Authority-building. Census-binding.",
+      "ritual_type": "binding",
+      "performed_by": [
+        "The Empire",
+        "administrators",
+        "auditors"
+      ],
+      "requirements": "Written numbers and administrative records; certainty of tally; established ledgers.",
+      "effect": "Enforces taxation, conscription, and tribute across the Empire; a form of concentrated magic built into written administrative records.",
+      "cost": "Requires the certainty of written numbers; shattered by the Celestial Turning.",
+      "notes": "Unresolved: whether tally-working can be restored or reimagined in a new form.",
+      "first_date": "2026-03-15",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -13658,7 +14374,7 @@
       "description": "A vast imperial government built on certainty, order, and commerce. Trade routes are its lifeblood. It collects taxes and maintains stability through information and control. The Treasurer strategically gathers intelligence to manage disruptions. However, the Empire's architecture of order and certainty is being tested by the cosmic changes.",
       "notes": "The Empire is struggling to maintain control and stability as the cosmic changes disrupt trade, drive people to madness, and cause physical land shifts. The Treasurer's aide questions whether the Empire can survive.",
       "first_date": "2026-03-03",
-      "appearances": 10
+      "appearances": 12
     },
     {
       "id": "council_of_depths_governance",
