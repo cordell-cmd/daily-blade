@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-15",
+  "last_updated": "2026-03-16",
   "worlds": [
     {
       "id": "known_world",
@@ -745,10 +745,24 @@
         "Rot-King",
         "the Crown"
       ],
-      "notes": "Blood-oaths enforce themselves with magic; breaking them causes spiritual death. Sometimes honoring an oath requires breaking every law protecting it. His defiance satisfied the oath's hunger.",
+      "notes": "Blood-oaths enforce themselves with magic; breaking them causes spiritual death. Sometimes honoring an oath requires breaking every law protecting it. His defiance satisfied the oath's hunger.\nCanon shows Thorne died at Grimmholt fortress two years into rebellion. This story appears to predate that event or be an alternate timeline; the fortress mentioned here is a mountain fastness, not Grimmholt. Treat as separate arc or prequel unless explicitly connected.",
       "first_story": "The Broken Oath",
       "first_date": "2026-02-27",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-16",
+          "from_status": "dead",
+          "to_status": "dead",
+          "type": "prequel",
+          "story_title": "The Warlord's Last Laugh",
+          "note": "Story depicts Thorne ascending to rule the mountain fastness after slaying Kael, discovering the seat itself is cursed by blood-oath magic to resist any non-bloodline holder.",
+          "evidence": "Within days the warriors sense their new lord cannot move freely; walls resist him, forge-hearths gutter when he passes. Thorne realizes Kael's final gift is not a kingdom but a prison of stone and duty."
+        }
+      ],
+      "aliases": [
+        "the young challenger"
+      ]
     },
     {
       "id": "nara_tide_thief",
@@ -945,7 +959,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "naresh_the_bone_carver",
@@ -1365,7 +1379,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "mardoc_cartographer",
@@ -1400,7 +1414,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 12,
+      "appearances": 13,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2017,7 +2031,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "mogrul",
@@ -2119,7 +2133,7 @@
       "notes": "Zareth completed the Stellar Rite but lost all memory of joy, love, and beauty in the process. The consequences of his sacrifice and whether he survives remain unclear.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 15
+      "appearances": 16
     },
     {
       "id": "thera_the_falconer",
@@ -3081,10 +3095,10 @@
       "affiliations": [
         "Elder Mage (deceased master)"
       ],
-      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.\nThe Young Sorcerer has begun to venture beyond the Spire in response to the Stellar Rite's cosmic changes. They are discovering that the age of their master has truly ended and they must navigate a fundamentally rewritten magical world.\nThe hedge-mage protagonist in 'The Young Sorcerer's Inheritance' appears to be a distinct character from the Young Sorcerer (who remains isolated in the Spire), though both are navigating magical instability post-Binding.\nThe apprentice's entire education was preparation not just for power inheritance but for surviving the Ascension's aftermath. Now faces decision whether to share dangerous knowledge with fractured kingdoms.\nThe Young Sorcerer has discovered that the Stellar Rite created multiple conscious entities scattered across the world and that the Tower itself is a weakened prison containing something awaiting release.\nConsistent with canon isolation-breaker arc; sorcerer now confronting imprisoned entities awakened by the Stellar Rite's cosmological rupture.",
+      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.\nThe Young Sorcerer has begun to venture beyond the Spire in response to the Stellar Rite's cosmic changes. They are discovering that the age of their master has truly ended and they must navigate a fundamentally rewritten magical world.\nThe hedge-mage protagonist in 'The Young Sorcerer's Inheritance' appears to be a distinct character from the Young Sorcerer (who remains isolated in the Spire), though both are navigating magical instability post-Binding.\nThe apprentice's entire education was preparation not just for power inheritance but for surviving the Ascension's aftermath. Now faces decision whether to share dangerous knowledge with fractured kingdoms.\nThe Young Sorcerer has discovered that the Stellar Rite created multiple conscious entities scattered across the world and that the Tower itself is a weakened prison containing something awaiting release.\nConsistent with canon isolation-breaker arc; sorcerer now confronting imprisoned entities awakened by the Stellar Rite's cosmological rupture.\nConsistent with canon arc of sorcerer descending into Tower and discovering imprisoned pre-human consciousness. Now faces the choice of release and negotiation versus containment\u2014the ultimate test of inherited responsibility.",
       "first_story": "The Sorcerer's Heir",
       "first_date": "2026-03-03",
-      "appearances": 7,
+      "appearances": 9,
       "travel_notes": "[2026-03-04] Story shows Young Sorcerer emerging from the Spire to observe the transformed world, indicating at least limited travel beyond their isolated home.\n[2026-03-05] Story 'The Young Sorcerer's Inheritance' depicts hedge-mage discovering grimoire rewriting in Vaulted Tombs; consistent with regional travel beyond isolated Spire.\n[2026-03-07] Story shows Young Sorcerer descending into ancient passages beneath the Tower and discovering ley-line convergence points across the rewritten world, indicating travel beyond isolated Spire and knowledge of realm-wide magical changes.",
       "status_history": [
         {
@@ -3104,6 +3118,15 @@
           "story_title": "The Tower's Hunger",
           "note": "Descends into ancient tower beneath Scorched Wastes and discovers a pre-human consciousness imprisoned in a weakening binding circle.",
           "evidence": "Young sorcerer finds ley-lines converge at tower's heart in a binding pattern; discovers entity 'older than demons' that remembers when stars fell differently and awaits the sky to break again."
+        },
+        {
+          "date": "2026-03-16",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Young Sorcerer's Tower",
+          "note": "The Young Sorcerer stands at the Obsidian Tower's sealing-stone, confronting the imprisoned entity whose song is breaking the seal from within. They have discovered a Codex Primordial fragment describing a possible Stellar Rite reversal requiring another cosmic sacrifice.",
+          "evidence": "The young sorcerer discovers ley-line convergence is breaking the seal from inside; the imprisoned thing sings to be released. Archives contain fragments describing a reversal working that could undo Zareth's sacrifice but requires equal price: willing sacrifice of another cosmic entity."
         }
       ]
     },
@@ -3206,10 +3229,21 @@
         "his soldiers",
         "his people"
       ],
-      "notes": "Kael dies watching the new stars, wondering what the cosmic shift means for the world he leaves behind. His final moments reflect genuine defiance rather than inevitable conquest.",
+      "notes": "Kael dies watching the new stars, wondering what the cosmic shift means for the world he leaves behind. His final moments reflect genuine defiance rather than inevitable conquest.\nKael's death is consistent with canon status; new detail reveals the fastness is bound by generational blood-oath and will haunt whoever holds his seat. His strategic legacy is subtler than conquest.",
       "first_story": "The Warlord's Last Stand",
       "first_date": "2026-03-04",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-16",
+          "from_status": "dead",
+          "to_status": "dead",
+          "type": "other",
+          "story_title": "The Warlord's Last Laugh",
+          "note": "Kael dies in combat to challenger Thorne, but his true victory is binding the mountain fastness itself to his bloodline through blood-oath magic, cursing his successor with a prison of living architecture.",
+          "evidence": "Kael's blood-oath magic transfers to the victor; the fastness itself resists Thorne's command, and every stone, corridor, and torch-flame obeys only those of Kael's bloodright. The old warlord's final joke outlives him both."
+        }
+      ]
     },
     {
       "id": "isenna",
@@ -4521,7 +4555,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4791,7 +4825,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 5,
+      "appearances": 6,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -5419,7 +5453,7 @@
       "notes": "Possesses critical knowledge of the phantom ledgers and their true nature as prophecy.",
       "first_story": "The Ledger-Master's Gambit",
       "first_date": "2026-03-10",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "record_keeper",
@@ -6354,10 +6388,21 @@
         "Nethys (source consciousness)",
         "Pre-human dead (connected)"
       ],
-      "notes": "The Shade-Echo's true goals and whether it serves restoration or corruption remain unclear.",
+      "notes": "The Shade-Echo's true goals and whether it serves restoration or corruption remain unclear.\nDistinct from canon Shade-Echo (Nethys fragment approaching Kess). This story introduces a second Echo-entity showing different degradation patterns. Suggests multiple fragments are manifesting with varying degrees of coherence.",
       "first_story": "The Bone-Singer's Bargain",
       "first_date": "2026-03-13",
-      "appearances": 2
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-16",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Shade-Echo's Hunger",
+          "note": "A Void-Echo fragment inhabits a scholar's body, retaining enough personality to argue with itself between human memory and consuming hunger. It is disintegrating and may lose coherence entirely.",
+          "evidence": "The Echo wanders between Burned Expanse and Hearthlands, stealing and destroying memories in cycles of self-sabotage. It is half-human, half-hunger, and losing the balance that allows negotiation."
+        }
+      ]
     },
     {
       "id": "apprentice_sage",
@@ -7038,10 +7083,21 @@
       "affiliations": [
         "Sevin the Auditor"
       ],
-      "notes": "His relationship to the broader struggle for the Empire's fate is not fully explored.",
+      "notes": "His relationship to the broader struggle for the Empire's fate is not fully explored.\nCanon entry lists 'Aldris' but story text uses 'Caldris'\u2014possible name variant or distinct character. Function and role align; recommend verification of canonical spelling.",
       "first_story": "The Auditor's Last Ledger",
       "first_date": "2026-03-15",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-03-16",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Auditor's Last Ledger",
+          "note": "The forger is named Caldris (not Aldris as in canon). Working with Sevin the Auditor to inscribe blood-ink records resistant to the Thought-Thief's predation.",
+          "evidence": "Caldris is described as forger recruited by Sevin, replicating records in blood-ink on preserved parchment in hidden scriptoriums. Story parallels canon function but uses variant name."
+        }
+      ]
     },
     {
       "id": "the_apprentice_mage",
@@ -7205,6 +7261,344 @@
       "notes": "The question of whether Kaelith wishes to be restored to singular consciousness remains unresolved and may be answered in the negative.",
       "first_story": "The Scattered Astronomer's Echo",
       "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_wraith",
+      "name": "Shadow-Wraith",
+      "aliases": [
+        "the Wraith"
+      ],
+      "tagline": "Spreading. Parasitic. Multiplying.",
+      "role": "Entity, Curse-Vector",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "The Shadow-Wraith is a parasitic entity that uses proxies like Vex to spread across night-markets and shadow-spaces. It whispers false promises of forgiveness and restoration while fragmentizing its host's shadow into multiples.",
+      "traits": [
+        "parasitic",
+        "spreading",
+        "deceitful"
+      ],
+      "known_locations": [
+        "Korinth",
+        "night-markets",
+        "shadow-markets"
+      ],
+      "affiliations": [],
+      "notes": "Its true nature and goals remain unclear. It appears capable of duplicating itself through fragmented shadows.",
+      "first_story": "The Echo-Broker's Gambit",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "caldris",
+      "name": "Caldris",
+      "aliases": [],
+      "tagline": "Forger. Complicit. Unknown.",
+      "role": "Forger",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "hidden scriptorium",
+      "home_region": "unknown",
+      "home_realm": "the Empire",
+      "travel_scope": "unknown",
+      "bio": "Caldris is a forger working in the hidden scriptorium alongside Sevin the Auditor, tasked with falsifying the Empire's records to match the official narrative of the Luminous Ascension.",
+      "traits": [
+        "skilled forger"
+      ],
+      "known_locations": [
+        "hidden scriptorium"
+      ],
+      "affiliations": [
+        "the Empire",
+        "Sevin the Auditor"
+      ],
+      "notes": "His ultimate fate and alignment regarding Sevin's defection are unknown.",
+      "first_story": "The Auditor's Last Ledger",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "captain_veron_stormcaller",
+      "name": "Captain Veron Stormcaller",
+      "aliases": [
+        "Veron"
+      ],
+      "tagline": "Cursed. Defiant. Doomed.",
+      "role": "Corsair Captain, Naval Commander",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "Captain Veron Stormcaller is cursed by the sea and indebted to the Tear of the Drowned God. Conscripted by a faction seeking pre-Ascension world fragments, she discovers the Tear is singing with the harmonic resonance of the Sunken Cathedrals and is itself the old world compressed into an impossible artifact. She throws the Tear overboard to prevent its unsealing, an act her crew calls mutiny that will cost her life.",
+      "traits": [
+        "cursed",
+        "defiant",
+        "sacrificial"
+      ],
+      "known_locations": [
+        "treacherous waters",
+        "Sunken Cathedrals"
+      ],
+      "affiliations": [
+        "her crew",
+        "the faction seeking pre-Ascension fragments"
+      ],
+      "notes": "The curse tightens around her heart; she will die for refusing to deliver the Tear. Her choice prevents something worse from being unsealed.",
+      "first_story": "The Corsair's Confession",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "nethis",
+      "name": "Nethis",
+      "aliases": [],
+      "tagline": "Sacrificed. Stellar. Transformative.",
+      "role": "Pre-human or Celestial Entity",
+      "world": "Edhra",
+      "status": "deceased",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Nethis was sacrificed, and from that sacrifice a new constellation was born. The Tear of the Drowned God is revealed to be a fragment of Nethis itself, compressed into an impossible artifact, serving as a map or key to the pre-Ascension world.",
+      "traits": [
+        "sacrificial",
+        "cosmic scale"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "The nature of Nethis\u2014whether pre-human, celestial, or divine\u2014remains ambiguous. The sacrifice appears to have fundamentally altered reality.",
+      "first_story": "The Cartographer's Descent",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "the_archivist_keeper",
+      "name": "The Archivist-Keeper",
+      "aliases": [],
+      "tagline": "Authoritarian. Truth-rewriting. Institutional.",
+      "role": "Authority Figure, Archivist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "hidden scriptorium",
+      "home_region": "unknown",
+      "home_realm": "the Empire",
+      "travel_scope": "unknown",
+      "bio": "The Archivist-Keeper demands that Sevin continue rewriting the Empire's records, insisting she become a living archive of necessary fictions and that control over the written record is now control over truth itself.",
+      "traits": [
+        "authoritarian",
+        "corrupt",
+        "institutional"
+      ],
+      "known_locations": [
+        "hidden scriptorium"
+      ],
+      "affiliations": [
+        "the Empire"
+      ],
+      "notes": "Represents the corrupted institution of archival and record-keeping as a tool of oppression.",
+      "first_story": "The Auditor's Last Ledger",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "young_scholar",
+      "name": "Young Scholar",
+      "aliases": [],
+      "tagline": "Pursuer. Curious. Burdened.",
+      "role": "Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "An unnamed young scholar pursuing the Codex Primordial finds Mardoc delirious at a ruin-mouth in the Bleached Wastes. She listens to his warning that the ruins are being sung awake and receives a map showing the Obsidian Tower where ley-lines converge, though arriving there will cost her more than she can afford to pay.",
+      "traits": [
+        "scholarly",
+        "curious",
+        "burdened by knowledge"
+      ],
+      "known_locations": [
+        "Bleached Wastes",
+        "Obsidian Tower"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "She is left holding a dangerous map that shows both her destination and the price of reaching it.",
+      "first_story": "The Cartographer's Descent",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "the_lorekeeper",
+      "name": "Lorekeeper",
+      "aliases": [],
+      "tagline": "Ancient. Knowing. Tested.",
+      "role": "Keeper of Records",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A faction leader or entity approached by the Wanderer with personalized questions about the Luminous Ascension and restoration of the old stars.",
+      "traits": [
+        "knowledgeable",
+        "cautious"
+      ],
+      "known_locations": [
+        "Obsidian Tower"
+      ],
+      "affiliations": [
+        "Wanderer"
+      ],
+      "notes": "Role and allegiances unclear; keeper of cosmic or historical knowledge.",
+      "first_story": "The Wanderer's Question",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "auditors",
+      "name": "Auditors",
+      "aliases": [],
+      "tagline": "Systematic. Relentless. Impartial.",
+      "role": "Faction; Record-Keepers",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A faction approached by the Wanderer, dialoguing about the consequences of reversing cosmic workings and restoring erased history.",
+      "traits": [
+        "systematic",
+        "record-focused"
+      ],
+      "known_locations": [
+        "Obsidian Tower"
+      ],
+      "affiliations": [
+        "Wanderer"
+      ],
+      "notes": "Likely connected to the existing canon 'Auditors' faction but involvement here focuses on cosmic questions.",
+      "first_story": "The Wanderer's Question",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "spice_trader_scorched_reach",
+      "name": "The Spice Trader",
+      "aliases": [
+        "trader",
+        "transformed merchant"
+      ],
+      "tagline": "Doubled. Cursed. Remembering.",
+      "role": "Trader; Living Paradox",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Scorched Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A spice trader from the Scorched Reach transformed by the Stellar Rite rewrite, existing simultaneously in daylight and the liminal Wailing Fracture. Retains perfect memory of the pre-rewrite world but cannot prove it existed; knows the faces of the erased and languages that died. Offers others knowledge of their own erased pasts.",
+      "traits": [
+        "doubled existence",
+        "perfect memory",
+        "cursed",
+        "kind",
+        "vast"
+      ],
+      "known_locations": [
+        "Scorched Reach",
+        "Wailing Fracture",
+        "Sunken Cathedrals",
+        "market"
+      ],
+      "affiliations": [
+        "pre-human ritual seekers"
+      ],
+      "notes": "May be a vessel for Nethis or another cosmic presence. Offers knowledge of erased childhoods to those who bargain with him.",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "young_scribe",
+      "name": "Young Scribe",
+      "aliases": [],
+      "tagline": "Curious. Eager. Transformed.",
+      "role": "Scribe; Seeker",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A young scribe who encounters the transformed spice trader in a market existing in two places. She chooses to learn the location of a faction seeking to complete the pre-human ritual, and receives knowledge of her own erased childhood in exchange.",
+      "traits": [
+        "curious",
+        "eager",
+        "brave"
+      ],
+      "known_locations": [
+        "market",
+        "Scorched Reach"
+      ],
+      "affiliations": [
+        "spice trader"
+      ],
+      "notes": "Her erased childhood suggests she too was rewritten by the Stellar Rite. Possible pawn or ally in the pre-human ritual's completion.",
+      "first_story": "The Merchant's Transformation",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "void_echo_scholar",
+      "name": "Void-Echo",
+      "aliases": [
+        "the Echo",
+        "scholar-echo",
+        "fragment of Nethis's sacrificed consciousness"
+      ],
+      "tagline": "Fractured. Hungry. Conflicted.",
+      "role": "Entity; Consciousness Fragment",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "borderlands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A Void-Echo\u2014a fragment of Nethis's sacrificed consciousness\u2014inhabiting the body of a scholar meant to be a memory vessel. Unlike previous Echoes, it retains enough of the scholar's personality to argue with itself, remembering being human half the time while the other half hungers to consume memories. Wanders the borderlands between the Burned Expanse and Hearthlands, stealing and destroying moments in cycles of self-sabotage.",
+      "traits": [
+        "fragmented",
+        "hungry",
+        "self-aware",
+        "disintegrating",
+        "conflicted"
+      ],
+      "known_locations": [
+        "borderlands",
+        "Burned Expanse",
+        "Hearthlands"
+      ],
+      "affiliations": [
+        "Ashara the Archer"
+      ],
+      "notes": "Disintegrating; soon there will be no scholar left to negotiate with, only hunger. Ashara believes it can be reasoned with and may help recover her warband's erased names.",
+      "first_story": "The Echo-Broker's Gambit",
+      "first_date": "2026-03-16",
       "appearances": 1
     }
   ],
@@ -9252,7 +9646,7 @@
       "status": "active",
       "notes": "Dozens of transformed merchants and refugees are drawn here; the nature of the transformation is unclear.",
       "first_date": "2026-03-10",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "shattered_wastes",
@@ -9348,7 +9742,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-12",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "mountain_eyrie",
@@ -9627,6 +10021,65 @@
       "status": "contested",
       "notes": "Trade routes have become unreliable, exacerbating rationing. Imperial authority is weakening in these regions.",
       "first_date": "2026-03-15",
+      "appearances": 2
+    },
+    {
+      "id": "valorun",
+      "name": "Valorun",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "wailing_fracture",
+      "name": "Wailing Fracture",
+      "tagline": "Liminal. Perpetual. Doubled.",
+      "place_type": "liminal space / realm",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A liminal space existing between daylight world and perpetual twilight, where transformed beings exist simultaneously in multiple states of being.",
+      "description": "A liminal space into which the spice trader partially exists, existing simultaneously in both daylight and perpetual twilight. Connected to the Sunken Cathedrals and the aftermath of the Stellar Rite rewrite.",
+      "status": "active",
+      "notes": "Part of the cosmic damage wrought by the Stellar Rite. May be a wound in reality itself.",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "market_doubled",
+      "name": "market",
+      "tagline": "Doubled. Liminal. Trading.",
+      "place_type": "marketplace",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "A market existing simultaneously in two places at once, a space where daylight and liminal twilight overlap.",
+      "description": "A market existing in two places at once, where the young scribe encounters the spice trader. Part of the doubled reality created by the Stellar Rite's rewrite.",
+      "status": "active",
+      "notes": "A meeting point between the daylight world and the liminal Wailing Fracture.",
+      "first_date": "2026-03-16",
       "appearances": 1
     }
   ],
@@ -9872,7 +10325,7 @@
       "status": "unknown",
       "notes": "Appears to be a cosmic actor. The fragment of Zareth's stolen memory surfaces in the Ancient Tombs, suggesting hidden knowledge or power.",
       "first_date": "2026-03-08",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "memory_thief",
@@ -10038,6 +10491,39 @@
       "notes": "Unresolved: origin, nature of fragmentation, whether it has a true core, how to defeat it.",
       "first_date": "2026-03-15",
       "appearances": 2
+    },
+    {
+      "id": "nethis",
+      "name": "Nethis",
+      "type": "cosmic entity / sacrifice",
+      "world": "Edhra",
+      "description": "A cosmic entity that sacrificed its consciousness to perform the Stellar Rite, rewriting reality and erasing populations. Fragments of its consciousness persist as Void-Echoes inhabiting human vessels. May be present in the transformed spice trader's smile or communicating through the Wanderer.",
+      "status": "active (as fragments)",
+      "notes": "Nethis's sacrifice was the cost of the Stellar Rite. Its consciousness was fragmented; some fragments retain enough personality to argue with themselves. May be attempting to communicate something through liminal beings.",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_wraith",
+      "name": "Shadow-Wraith",
+      "type": "entity / unknown",
+      "world": "Edhra",
+      "description": "An entity mentioned in relation to the Wanderer; possibly the force that erased people from memory, or a guardian of that erasure. The Wanderer may be a fragment of Nethis attempting to communicate what the Shadow-Wraith did not allow it to express.",
+      "status": "unknown",
+      "notes": "May be incomplete or merciful in its erasures, allowing fragments like the Wanderer to persist.",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "imprisoned_entity",
+      "name": "Imprisoned Thing",
+      "type": "entity / demon / cosmic being",
+      "world": "Edhra",
+      "description": "A mysterious being imprisoned beneath the Obsidian Tower for centuries, sealed to contain it. It sings constantly, its song intensifying as ley-line convergence breaks the seal. It is the only available cosmic entity willing (or capable) of sacrificing its consciousness for the Stellar Rite reversal.",
+      "status": "imprisoned / awakening",
+      "notes": "The imprisoned thing's true nature is unknown\u2014it could be a cosmic entity capable of restoring the world, or a devouring force that consumes all. Its willingness to agree to the reversal sacrifice is uncertain.",
+      "first_date": "2026-03-16",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -10408,6 +10894,19 @@
       "status": "active",
       "notes": "The Ledger of Names is the mechanism by which the Crown maintains the Dominion's illusion of wholeness. Accepting its keeping is accepting eternal isolation.",
       "first_date": "2026-03-14",
+      "appearances": 1
+    },
+    {
+      "id": "codex_primordial",
+      "name": "Codex Primordial",
+      "tagline": "Ancient. Fragmentary. Forbidden.",
+      "artifact_type": "tome / grimoire",
+      "origin": "unknown; found in the Obsidian Tower's archives",
+      "powers": "Contains fragments describing the Stellar Rite reversal\u2014a working that could theoretically undo Zareth's sacrifice and restore the old world.",
+      "last_known_holder": "Young Sorcerer",
+      "status": "active",
+      "notes": "Only fragments of the Codex have been discovered; the complete text may contain additional information about the reversal or the imprisoned entity.",
+      "first_date": "2026-03-16",
       "appearances": 1
     }
   ],
@@ -11743,7 +12242,7 @@
       "significance": "This encounter reframes the metaphysics of the Luminous Ascension, suggesting that what was sacrificed might be recoverable through memory-collection\u2014and that cosmic forces may not be purely destructive.",
       "notes": "The core tension is whether helping the Shade-Echo constitutes salvation or damnation; Ashara's choice will reshape her relationship to cosmic forces and her warband's fate.",
       "first_date": "2026-03-13",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "the_auditor_secret",
@@ -11837,6 +12336,71 @@
       "notes": "Unresolved: the ultimate nature and scope of the Turning; whether it can be reversed.",
       "first_date": "2026-03-15",
       "appearances": 2
+    },
+    {
+      "id": "the_merchants_transformation",
+      "name": "The Merchant's Transformation",
+      "tagline": "Doubled. Cursed. Remembering.",
+      "event_type": "personal transformation / cosmic rewrite consequence",
+      "scope": "regional",
+      "epicenter_place": "Scorched Reach",
+      "epicenter_region": "Scorched Reach",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Scorched Reach",
+        "Wailing Fracture",
+        "Sunken Cathedrals"
+      ],
+      "affected_regions": [
+        "Scorched Reach"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "affects at least the Scorched Reach and liminal spaces",
+      "participants": [
+        "spice trader",
+        "young scribe"
+      ],
+      "outcome": "A spice trader becomes something between human and transformed, existing simultaneously in daylight and the Wailing Fracture. He retains perfect memory of the pre-rewrite world and offers knowledge of erased childhoods to those who bargain.",
+      "significance": "Demonstrates that the Stellar Rite rewrite is incomplete or imperfect, leaving fragments of the old world accessible to those who know how to look. Suggests a faction is seeking to complete the pre-human ritual.",
+      "notes": "The spice trader may be a vessel for Nethis or another cosmic presence. The young scribe's acceptance of erased childhood knowledge marks her as either a victim of the rewrite or a potential participant in reversing it.",
+      "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "the_shade_echos_hunger",
+      "name": "The Shade-Echo's Hunger",
+      "tagline": "Fractured. Hunted. Tragic.",
+      "event_type": "personal / spiritual crisis",
+      "scope": "regional",
+      "epicenter_place": "borderlands",
+      "epicenter_region": "borderlands",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "borderlands",
+        "Burned Expanse",
+        "Hearthlands"
+      ],
+      "affected_regions": [
+        "borderlands",
+        "Burned Expanse",
+        "Hearthlands"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "borderlands between the Burned Expanse and Hearthlands",
+      "participants": [
+        "Void-Echo",
+        "Ashara the Archer",
+        "scholar-vessel"
+      ],
+      "outcome": "A Void-Echo inhabiting a scholar's body wanders the borderlands stealing and destroying moments, disintegrating as the scholar's consciousness fades. Ashara tracks it, attempting to negotiate before it becomes only hunger.",
+      "significance": "Demonstrates both the tragedy of the Stellar Rite rewrite and the possibility of reaching fragments of Nethis's consciousness for aid in recovering erased memories.",
+      "notes": "Ashara must choose between allowing the Echo peace through forgetting or preserving memories that no longer exist in the rewritten world. Resolution may impact her ability to recover her warband's names.",
+      "first_date": "2026-03-16",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -12091,6 +12655,18 @@
       "status": "active",
       "notes": "Unresolved: what compels them inland; why they are susceptible to the Thought-Thief's promises.",
       "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "faction_seeking_prehumanritual",
+      "name": "faction seeking to complete the pre-human ritual",
+      "tagline": "Ancient. Ambitious. Hidden.",
+      "alignment": "unknown",
+      "goals": "To locate and complete the pre-human ritual, possibly to reverse or undo the Stellar Rite rewrite and restore the old stars and erased people.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Their location is known to the spice trader and has been given to the young scribe as payment. Their success or failure may determine whether the old world can be restored.",
+      "first_date": "2026-03-16",
       "appearances": 1
     }
   ],
@@ -12475,7 +13051,7 @@
       "status": "confirmed",
       "notes": "Zareth made a sacrifice long ago to keep something sleeping. The ancient stone-ruins are now waking to this sleeping thing, suggesting Zareth's sacrifice is failing or being undone.",
       "first_date": "2026-03-09",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "zareth_sacrificed_memories",
@@ -12777,6 +13353,17 @@
       "notes": "Caused by the Celestial Turning, these disruptions have made fresh water scarce in the borderlands and broader regions. They represent a break in the fundamental magical infrastructure of the world.",
       "first_date": "2026-03-15",
       "appearances": 1
+    },
+    {
+      "id": "old_world",
+      "name": "The Old World",
+      "tagline": "Lost. Restorable. Forbidden.",
+      "category": "history / myth",
+      "source": "Implied by the Stellar Rite reversal working",
+      "status": "rumored",
+      "notes": "The old world allegedly existed before Zareth's sacrifice. The Stellar Rite reversal could theoretically restore it, though the consequences are unknown.",
+      "first_date": "2026-03-16",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -12870,7 +13457,7 @@
       "status": "known",
       "notes": "A working of old magic that births new stars. Requires sacrifice of all joyful memories from the caster.",
       "first_date": "2026-03-01",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "throat_burned_ancient_magic",
@@ -12954,7 +13541,7 @@
       "status": "active",
       "notes": "Magical ley-lines converge at a single point beneath the Tower in the Scorched Lands. The Stellar Rite has weakened the magical locks maintaining this convergence.",
       "first_date": "2026-03-07",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "seasonal_magics",
@@ -13026,6 +13613,18 @@
       "status": "known",
       "notes": "A form of concentrated magic built into written administrative records. Enforces taxation, conscription, and tribute through the certainty of written numbers. Shattered by the Celestial Turning.",
       "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "stellar_rite_rewrite_magic",
+      "name": "Stellar Rite rewrite",
+      "tagline": "Cosmic. Destructive. Reality-Altering.",
+      "type": "ritual",
+      "element": "stellar / void",
+      "difficulty": "forbidden",
+      "status": "completed",
+      "notes": "A cosmic working that erased populations and rewrote reality. Cost the consciousness of Nethis to perform.",
+      "first_date": "2026-03-16",
       "appearances": 1
     }
   ],
@@ -13423,7 +14022,7 @@
       "status": "contested",
       "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
       "first_date": "2026-03-03",
-      "appearances": 5,
+      "appearances": 6,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -13575,7 +14174,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-06",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -13709,7 +14308,7 @@
       "status": "cursed",
       "notes": "Reality is unstable; villages vanish; merchants transform into light.",
       "first_date": "2026-03-10",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -14058,7 +14657,7 @@
       "cost": "The caster must sacrifice every moment of joy, every love, every triumph, and every small beauty\u2014effectively stripping them of all positive memories.",
       "notes": "The Rite was discovered inscribed in the Singing Catacombs in languages predating humanity. Zareth learned it through seven years of study with druids, bone-carvers, and fae-touched hermits.",
       "first_date": "2026-03-01",
-      "appearances": 6
+      "appearances": 8
     },
     {
       "id": "celestial_rite",
@@ -14243,7 +14842,7 @@
       "cost": "Whoever performs the reversal must sacrifice something equally precious; catastrophic costs are implied but unspecified.",
       "notes": "Central to multiple factions' agendas; Apprentice Sage's journals contain warnings about the true price of reversal.",
       "first_date": "2026-03-13",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "bone_song",
@@ -14306,6 +14905,23 @@
       "cost": "Requires the certainty of written numbers; shattered by the Celestial Turning.",
       "notes": "Unresolved: whether tally-working can be restored or reimagined in a new form.",
       "first_date": "2026-03-15",
+      "appearances": 1
+    },
+    {
+      "id": "pre_human_ritual",
+      "name": "pre-human ritual",
+      "tagline": "Ancient. Powerful. Incomplete.",
+      "ritual_type": "cosmic restoration / reality rewriting",
+      "performed_by": [
+        "faction seeking completion",
+        "spice trader",
+        "young scribe"
+      ],
+      "requirements": "Knowledge of pre-human civilization, access to liminal spaces, possibly completion or reversal of the Stellar Rite",
+      "effect": "Unknown but implied to be a major cosmic working capable of restoring or reversing the Stellar Rite rewrite, possibly restoring the old stars or the people erased by the rewrite.",
+      "cost": "unknown",
+      "notes": "A faction is actively seeking to complete this ritual. The spice trader may know its location or requirements. The young scribe has been given this knowledge as payment for her erased childhood memory.",
+      "first_date": "2026-03-16",
       "appearances": 1
     }
   ],

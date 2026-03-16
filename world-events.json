@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-15T10:21:16.375051+00:00",
+  "generated_at": "2026-03-16T10:39:31.535087+00:00",
   "source": "codex.json",
   "count": 50,
   "events": [
@@ -12,9 +12,9 @@
       "stage": "climax",
       "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-03-13",
-      "recent_issues": 6,
-      "trend": 0,
+      "last_seen": "2026-03-16",
+      "recent_issues": 7,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Vethrim",
@@ -32,18 +32,6 @@
         "continents": []
       },
       "story_appearances": [
-        {
-          "date": "2026-03-09",
-          "title": "The Hermit's Contradiction"
-        },
-        {
-          "date": "2026-03-09",
-          "title": "The Oath-Keeper's Vigil"
-        },
-        {
-          "date": "2026-03-09",
-          "title": "The Tower's Hunger"
-        },
         {
           "date": "2026-03-11",
           "title": "The Auditor's Ruin"
@@ -79,6 +67,18 @@
         {
           "date": "2026-03-13",
           "title": "The Archivist's Heist"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Bone-Singer's Pilgrimage"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Merchant's Transformation"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Young Sorcerer's Tower"
         }
       ]
     },
@@ -91,9 +91,9 @@
       "stage": "climax",
       "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-03-14",
-      "recent_issues": 4,
-      "trend": 2,
+      "last_seen": "2026-03-16",
+      "recent_issues": 5,
+      "trend": 1,
       "referenced_locations": {
         "places": [
           "Sunken Cathedrals",
@@ -114,10 +114,6 @@
         "continents": []
       },
       "story_appearances": [
-        {
-          "date": "2026-03-11",
-          "title": "The Warden's Last Coin"
-        },
         {
           "date": "2026-03-13",
           "title": "The Ledger's Mercy"
@@ -155,11 +151,15 @@
           "title": "The Singing Scar"
         },
         {
-          "date": "2026-03-10",
-          "title": "The Singing Merchant"
+          "date": "2026-03-16",
+          "title": "The Echo-Broker's Gambit"
         },
         {
-          "date": "2026-03-10",
+          "date": "2026-03-16",
+          "title": "The Auditor's Last Ledger"
+        },
+        {
+          "date": "2026-03-16",
           "title": "The Wanderer's Question"
         }
       ]
@@ -170,8 +170,8 @@
       "event_type": "ritual",
       "scope": "world",
       "epicenter": "Abyss-gate",
-      "stage": "climax",
-      "intensity": 5,
+      "stage": "crisis",
+      "intensity": 4,
       "resolved": false,
       "last_seen": "2026-03-14",
       "recent_issues": 2,
@@ -192,43 +192,6 @@
         {
           "date": "2026-03-14",
           "title": "The Deepwarden's Binding"
-        }
-      ]
-    },
-    {
-      "name": "Violet Conjunction",
-      "tagline": "Celestial. Prophetic. World-altering.",
-      "event_type": "celestial event / prophecy",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-03-04",
-      "recent_issues": 2,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-01",
-          "title": "The Starfall Oath"
-        },
-        {
-          "date": "2026-03-02",
-          "title": "The Starfall Ritual"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Drowned Prince's Vigil"
         }
       ]
     },
@@ -346,6 +309,43 @@
       ]
     },
     {
+      "name": "Violet Conjunction",
+      "tagline": "Celestial. Prophetic. World-altering.",
+      "event_type": "celestial event / prophecy",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-04",
+      "recent_issues": 1,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Starfall Ritual"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Drowned Prince's Vigil"
+        }
+      ]
+    },
+    {
       "name": "Stellar Working",
       "tagline": "Planned. Performed. Prophetic.",
       "event_type": "ritual",
@@ -417,7 +417,7 @@
       "resolved": false,
       "last_seen": "2026-03-06",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "cavern halls"
@@ -468,7 +468,7 @@
       "resolved": false,
       "last_seen": "2026-03-06",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Pre-Human Ruins",
@@ -698,9 +698,9 @@
       "stage": "climax",
       "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-03-14",
-      "recent_issues": 2,
-      "trend": 2,
+      "last_seen": "2026-03-16",
+      "recent_issues": 3,
+      "trend": 3,
       "referenced_locations": {
         "places": [
           "western provinces"
@@ -720,6 +720,10 @@
         },
         {
           "date": "2026-03-14",
+          "title": "The Wanderer's Question"
+        },
+        {
+          "date": "2026-03-16",
           "title": "The Wanderer's Question"
         }
       ]
@@ -792,24 +796,25 @@
       ]
     },
     {
-      "name": "Sunken Cathedrals' Harmonic Crescendo",
-      "tagline": "Reality shattered. Singing unleashed. Transformation began.",
-      "event_type": "catastrophe / planar rupture",
+      "name": "The Merchant's Transformation",
+      "tagline": "Doubled. Cursed. Remembering.",
+      "event_type": "personal transformation / cosmic rewrite consequence",
       "scope": "regional",
-      "epicenter": "Sunken Cathedrals",
+      "epicenter": "Scorched Reach",
       "stage": "rising",
       "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-14",
+      "last_seen": "2026-03-16",
       "recent_issues": 1,
       "trend": 1,
       "referenced_locations": {
         "places": [
-          "Sunken Cathedrals",
-          "Singing Scar"
+          "Wailing Fracture",
+          "Scorched Reach",
+          "Sunken Cathedrals"
         ],
         "regions": [
-          "unknown"
+          "Scorched Reach"
         ],
         "realms": [
           "unknown"
@@ -818,61 +823,33 @@
       },
       "story_appearances": [
         {
-          "date": "2026-03-14",
-          "title": "The Singing Scar"
+          "date": "2026-03-16",
+          "title": "The Merchant's Transformation"
         }
       ]
     },
     {
-      "name": "The Auditor's Secret",
-      "tagline": "Revealed. Suppressed. Eternal.",
-      "event_type": "discovery / ritual acceptance",
+      "name": "The Shade-Echo's Hunger",
+      "tagline": "Fractured. Hunted. Tragic.",
+      "event_type": "personal / spiritual crisis",
       "scope": "regional",
-      "epicenter": "unknown",
+      "epicenter": "borderlands",
       "stage": "rising",
       "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-14",
+      "last_seen": "2026-03-16",
       "recent_issues": 1,
       "trend": 1,
       "referenced_locations": {
         "places": [
-          "The Dominion"
+          "borderlands",
+          "Burned Expanse",
+          "Hearthlands"
         ],
         "regions": [
-          "unknown"
-        ],
-        "realms": [
-          "The Dominion"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-14",
-          "title": "The Auditor's Secret"
-        }
-      ]
-    },
-    {
-      "name": "The Warband's Last Song",
-      "tagline": "Fellowship. Dissolution. Rebirth.",
-      "event_type": "ritual / journey / farewell",
-      "scope": "regional",
-      "epicenter": "Echoing Vaults",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-03-02",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Echoing Vaults",
-          "Shattered West"
-        ],
-        "regions": [
-          "The Shattered West"
+          "borderlands",
+          "Burned Expanse",
+          "Hearthlands"
         ],
         "realms": [
           "unknown"
@@ -881,8 +858,8 @@
       },
       "story_appearances": [
         {
-          "date": "2026-03-02",
-          "title": "The Warband's Last Song"
+          "date": "2026-03-16",
+          "title": "The Shade-Echo's Hunger"
         }
       ]
     },
@@ -1073,6 +1050,69 @@
         {
           "date": "2026-03-13",
           "title": "The Echo-Broker's Remittance"
+        }
+      ]
+    },
+    {
+      "name": "Sunken Cathedrals' Harmonic Crescendo",
+      "tagline": "Reality shattered. Singing unleashed. Transformation began.",
+      "event_type": "catastrophe / planar rupture",
+      "scope": "regional",
+      "epicenter": "Sunken Cathedrals",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-14",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Sunken Cathedrals",
+          "Singing Scar"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-14",
+          "title": "The Singing Scar"
+        }
+      ]
+    },
+    {
+      "name": "The Auditor's Secret",
+      "tagline": "Revealed. Suppressed. Eternal.",
+      "event_type": "discovery / ritual acceptance",
+      "scope": "regional",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-14",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "The Dominion"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "The Dominion"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-14",
+          "title": "The Auditor's Secret"
         }
       ]
     },
@@ -1556,6 +1596,38 @@
       ]
     },
     {
+      "name": "The Warband's Last Song",
+      "tagline": "Fellowship. Dissolution. Rebirth.",
+      "event_type": "ritual / journey / farewell",
+      "scope": "regional",
+      "epicenter": "Echoing Vaults",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-03-02",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "Echoing Vaults",
+          "Shattered West"
+        ],
+        "regions": [
+          "The Shattered West"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-02",
+          "title": "The Warband's Last Song"
+        }
+      ]
+    },
+    {
       "name": "Harrow's Theft of the Crown of Karesh",
       "tagline": "Bold. Cursed. Irreversible.",
       "event_type": "theft",
@@ -1650,63 +1722,6 @@
         {
           "date": "2026-02-25",
           "title": "The Sorcerer's Debt"
-        }
-      ]
-    },
-    {
-      "name": "Siege of the Bone Citadel",
-      "tagline": "Devastating. One-sided. Transformative.",
-      "event_type": "battle / siege",
-      "scope": "city",
-      "epicenter": "The Bone Citadel",
-      "stage": "seed",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": "2026-02-25",
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "The Bone Citadel"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "Siege of the Bone Citadel"
-        }
-      ]
-    },
-    {
-      "name": "The Shadow Exchange",
-      "tagline": "Transaction. Betrayal. Possession.",
-      "event_type": "transaction / curse activation",
-      "scope": "city",
-      "epicenter": "The Blasted Lands",
-      "stage": "seed",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": "2026-02-26",
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "The Blasted Lands",
-          "Blasted Lands"
-        ],
-        "regions": [
-          "The Blasted Lands"
-        ],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-26",
-          "title": "Shadows for Sale"
         }
       ]
     }
