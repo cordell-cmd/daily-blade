@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-16T10:39:31.535087+00:00",
+  "generated_at": "2026-03-17T10:33:38.634735+00:00",
   "source": "codex.json",
   "count": 50,
   "events": [
@@ -13,8 +13,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-03-16",
-      "recent_issues": 7,
-      "trend": -1,
+      "recent_issues": 6,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Vethrim",
@@ -170,12 +170,12 @@
       "event_type": "ritual",
       "scope": "world",
       "epicenter": "Abyss-gate",
-      "stage": "crisis",
-      "intensity": 4,
+      "stage": "rising",
+      "intensity": 3,
       "resolved": false,
       "last_seen": "2026-03-14",
       "recent_issues": 2,
-      "trend": 2,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Abyss-gate"
@@ -196,115 +196,88 @@
       ]
     },
     {
-      "name": "Celestial Turning",
-      "tagline": "Stars-rewritten. Compacts-shattered. Reality-shifted.",
-      "event_type": "catastrophe / cosmic event",
+      "name": "Starborn Ascension",
+      "tagline": "Transformative. Bureaucratic. Cascading.",
+      "event_type": "magical event / transformation",
       "scope": "world",
       "epicenter": "unknown",
       "stage": "rising",
       "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-15",
+      "last_seen": "2026-03-17",
       "recent_issues": 1,
       "trend": 1,
       "referenced_locations": {
         "places": [
-          "Spire (Blasted Lands)",
-          "Starfall Spire",
-          "Drowned Hollows",
-          "The Empire"
+          "Sunken Cathedrals",
+          "Emerald Strand",
+          "three provinces with assessors"
         ],
         "regions": [
-          "all known regions"
+          "unknown"
         ],
         "realms": [
-          "The Empire",
-          "deep-dweller realms",
-          "transformed realms"
+          "The Hegemony"
         ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-03-15",
-          "title": "The Thief of Starlight"
+          "date": "2026-03-17",
+          "title": "The Refugee's Ledger"
         },
         {
-          "date": "2026-03-15",
-          "title": "The Rift-Keeper's Bargain"
+          "date": "2026-03-17",
+          "title": "The Echo-Broker's Fracture"
         },
         {
-          "date": "2026-03-15",
-          "title": "The Cartographer's Madness"
+          "date": "2026-03-17",
+          "title": "The Bone-Singer's Pact"
         },
         {
-          "date": "2026-03-15",
-          "title": "The Bone-Singer's Compact"
+          "date": "2026-03-17",
+          "title": "The Sorcerer's Unfinished Work"
         },
         {
-          "date": "2026-03-15",
-          "title": "The Night-Market's Final Trade"
+          "date": "2026-03-17",
+          "title": "The Harbor Master's Deficit"
         },
         {
-          "date": "2026-03-15",
-          "title": "The Druid Circle's Surrender"
-        },
-        {
-          "date": "2026-03-15",
-          "title": "The Scattered Astronomer's Echo"
-        },
-        {
-          "date": "2026-03-15",
-          "title": "The Refugee's Refuge"
+          "date": "2026-03-17",
+          "title": "The Tax Collector's Mutation"
         }
       ]
     },
     {
-      "name": "The Crimson Convergence",
-      "tagline": "Starfall. Upheaval. Transformation.",
-      "event_type": "catastrophe / celestial event",
+      "name": "The Wanderer's Next Riddle",
+      "tagline": "Breaking. Cascading. Convergent.",
+      "event_type": "ritual / convergence / apocalyptic catalyst",
       "scope": "world",
-      "epicenter": "Peak of Aethros",
-      "stage": "simmering",
-      "intensity": 2,
+      "epicenter": "Thornwick",
+      "stage": "rising",
+      "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-03",
+      "last_seen": "2026-03-17",
       "recent_issues": 1,
-      "trend": 0,
+      "trend": 1,
       "referenced_locations": {
         "places": [
-          "Pelimor",
-          "Imperial archives",
-          "trade cities"
+          "Starfire Citadel",
+          "Thornwick",
+          "three other locations (unspecified)"
         ],
         "regions": [
-          "The Hearthlands"
+          "unknown"
         ],
         "realms": [
-          "Empire"
+          "unknown"
         ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-03-03",
-          "title": "The Chorus of Altered Fates"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Ghost of the Stellar Rite"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Merfolk's Remembrance"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Sorcerer's Heir"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Starfall Debt"
+          "date": "2026-03-17",
+          "title": "The Wanderer's Next Riddle"
         }
       ]
     },
@@ -597,7 +570,7 @@
       "resolved": false,
       "last_seen": "2026-03-12",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Kathrim"
@@ -636,6 +609,70 @@
         {
           "date": "2026-03-12",
           "title": "The Deepwarden's Binding"
+        }
+      ]
+    },
+    {
+      "name": "Celestial Turning",
+      "tagline": "Stars-rewritten. Compacts-shattered. Reality-shifted.",
+      "event_type": "catastrophe / cosmic event",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-15",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Spire (Blasted Lands)",
+          "Starfall Spire",
+          "Drowned Hollows",
+          "The Empire"
+        ],
+        "regions": [
+          "all known regions"
+        ],
+        "realms": [
+          "The Empire",
+          "deep-dweller realms",
+          "transformed realms"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-15",
+          "title": "The Thief of Starlight"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Rift-Keeper's Bargain"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Cartographer's Madness"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Bone-Singer's Compact"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Night-Market's Final Trade"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Druid Circle's Surrender"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Scattered Astronomer's Echo"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Refugee's Refuge"
         }
       ]
     },
@@ -690,6 +727,55 @@
       ]
     },
     {
+      "name": "The Crimson Convergence",
+      "tagline": "Starfall. Upheaval. Transformation.",
+      "event_type": "catastrophe / celestial event",
+      "scope": "world",
+      "epicenter": "Peak of Aethros",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-03-03",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "Pelimor",
+          "Imperial archives",
+          "trade cities"
+        ],
+        "regions": [
+          "The Hearthlands"
+        ],
+        "realms": [
+          "Empire"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-03",
+          "title": "The Chorus of Altered Fates"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Merfolk's Remembrance"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Sorcerer's Heir"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
+        }
+      ]
+    },
+    {
       "name": "The Wanderer's Question",
       "tagline": "Philosophical. Revelatory. Corrupting.",
       "event_type": "encounter / philosophical reckoning",
@@ -725,73 +811,6 @@
         {
           "date": "2026-03-16",
           "title": "The Wanderer's Question"
-        }
-      ]
-    },
-    {
-      "name": "The Celestial Binding",
-      "tagline": "Cosmic. Transformative. Shattering.",
-      "event_type": "ritual",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-03-05",
-      "recent_issues": 2,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Thornholt"
-        ],
-        "regions": [
-          "all known"
-        ],
-        "realms": [
-          "all known"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-03",
-          "title": "The Ghost of the Stellar Rite"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Starfall Debt"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Warden's Sorrow"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Bone-Singer's Lament"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Cartographer's Burden"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Collector's New Ledger"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Hermit's Census"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Tax Collector's Question"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Wound-Keeper's Vigil"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Young Sorcerer's Inheritance"
         }
       ]
     },
@@ -860,6 +879,73 @@
         {
           "date": "2026-03-16",
           "title": "The Shade-Echo's Hunger"
+        }
+      ]
+    },
+    {
+      "name": "The Celestial Binding",
+      "tagline": "Cosmic. Transformative. Shattering.",
+      "event_type": "ritual",
+      "scope": "regional",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-05",
+      "recent_issues": 1,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "Thornholt"
+        ],
+        "regions": [
+          "all known"
+        ],
+        "realms": [
+          "all known"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Warden's Sorrow"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Bone-Singer's Lament"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Cartographer's Burden"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Collector's New Ledger"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Hermit's Census"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Tax Collector's Question"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Wound-Keeper's Vigil"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Young Sorcerer's Inheritance"
         }
       ]
     },
@@ -938,7 +1024,7 @@
       "resolved": false,
       "last_seen": "2026-03-12",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Abyss-gate",
@@ -1185,7 +1271,7 @@
       "tagline": "Betrayal. Twenty pieces. Consequence.",
       "event_type": "oath-breaking",
       "scope": "regional",
-      "epicenter": "unknown",
+      "epicenter": "Three Provinces (Hegemony)",
       "stage": "seed",
       "intensity": 1,
       "resolved": false,
@@ -1194,7 +1280,9 @@
       "trend": 0,
       "referenced_locations": {
         "places": [],
-        "regions": [],
+        "regions": [
+          "Three Provinces (Hegemony)"
+        ],
         "realms": [],
         "continents": []
       },
@@ -1272,7 +1360,8 @@
           "Scorched Wastes"
         ],
         "regions": [
-          "Scorched Wastes"
+          "Scorched Wastes",
+          "Wastes"
         ],
         "realms": [],
         "continents": []
@@ -1670,60 +1759,6 @@
         "continents": []
       },
       "story_appearances": []
-    },
-    {
-      "name": "Kael's Oath of Guardianship",
-      "tagline": "Sacrifice. Sealing. Eternal.",
-      "event_type": "ritual",
-      "scope": "city",
-      "epicenter": "Kalthara",
-      "stage": "seed",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": "2026-02-25",
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Kalthara"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "The Stone Woman of Kalthara"
-        }
-      ]
-    },
-    {
-      "name": "Siege of Amrath",
-      "tagline": "Desperate. Summoned. Costly.",
-      "event_type": "siege",
-      "scope": "city",
-      "epicenter": "Amrath",
-      "stage": "seed",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": "2026-02-25",
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Amrath"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "The Sorcerer's Debt"
-        }
-      ]
     }
   ]
 }

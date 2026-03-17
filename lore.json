@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-16",
+  "last_updated": "2026-03-17",
   "worlds": [
     {
       "id": "known_world",
@@ -859,7 +859,9 @@
     {
       "id": "torvin",
       "name": "Torvin",
-      "aliases": [],
+      "aliases": [
+        "caravan master Torvin"
+      ],
       "tagline": "Desperate. Hollow. Aging.",
       "role": "Merchant",
       "world": "known_world",
@@ -881,10 +883,10 @@
         "Varek",
         "Kira"
       ],
-      "notes": "The cost of his salvation was his own certainty and peace of mind. A warning about the true price of demonic bargains.\nHis hollow-eyed uncertainty about love and sacrifice now channels into a discipline of helping others rebuild fractured selves\u2014a redemption arc through alchemy rather than demonics.",
+      "notes": "The cost of his salvation was his own certainty and peace of mind. A warning about the true price of demonic bargains.\nHis hollow-eyed uncertainty about love and sacrifice now channels into a discipline of helping others rebuild fractured selves\u2014a redemption arc through alchemy rather than demonics.\nNew story 'The Wound That Talks Back' shows Torvin active at the Singing Scar's edge, bringing supplies and learning elder mathematics from the wound itself. This expands his role beyond hidden markets into direct engagement with cosmic-scale phenomena, consistent with his prior apprenticeship work.",
       "first_story": "The Weight of Stolen Years",
       "first_date": "2026-02-28",
-      "appearances": 3,
+      "appearances": 5,
       "status_history": [
         {
           "date": "2026-03-13",
@@ -959,7 +961,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "naresh_the_bone_carver",
@@ -2031,7 +2033,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 14
+      "appearances": 15
     },
     {
       "id": "mogrul",
@@ -2243,10 +2245,10 @@
         "Tax Collector's daughter",
         "Mardoc the Cartographer"
       ],
-      "notes": "Represents imperial authority that can be swayed by pragmatism and his daughter's negotiation. His choice to hire Mardoc leads to the discovery of pre-human ruins.\nThe Tax Collector's role expands: his aide reports widespread trade disruption, warehouses burning, and merfolk activity in markets. He is now mapping chaos across the Empire's districts and trade posts, preparing for potential economic and political upheaval.\nNew story 'The Tax Collector's Question' confirms his expanded role investigating reality-fraying and cosmic damage across the Empire's districts, consistent with his prior arc of mapping chaos.\nThe Empire's fiscal certainty has fractured; the Tax Collector's role expands to navigating post-Ascension economic chaos and potential collapse of imperial order.",
+      "notes": "Represents imperial authority that can be swayed by pragmatism and his daughter's negotiation. His choice to hire Mardoc leads to the discovery of pre-human ruins.\nThe Tax Collector's role expands: his aide reports widespread trade disruption, warehouses burning, and merfolk activity in markets. He is now mapping chaos across the Empire's districts and trade posts, preparing for potential economic and political upheaval.\nNew story 'The Tax Collector's Question' confirms his expanded role investigating reality-fraying and cosmic damage across the Empire's districts, consistent with his prior arc of mapping chaos.\nThe Empire's fiscal certainty has fractured; the Tax Collector's role expands to navigating post-Ascension economic chaos and potential collapse of imperial order.\nNew story 'The Tax Collector's Mutation' reveals that imperial assessors (including those under the Tax Collector's authority) are being harmonically transformed by contact with the Sunken Cathedrals' frequency. This compounds the institutional collapse already tracked in canon; the Tax Collector's role now includes managing the disappearance of his own auditing infrastructure into cosmic synchrony.",
       "first_story": "The Cartographer's Lie",
       "first_date": "2026-03-02",
-      "appearances": 4,
+      "appearances": 5,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2290,10 +2292,10 @@
         "Mardoc the Cartographer",
         "Empire"
       ],
-      "notes": "Her negotiation skills prove crucial to Mardoc's redemption and the Empire's geographic expansion.\nAs the Tax Collector's aide, she is now investigating celestial disruptions, merchant behavior changes, and shadow-merchant activity. She has discovered that apprentices are going mad staring at new stars and that the Empire's ordered foundations are cracking.\nConfirmed active as the Tax Collector's aide investigating celestial disruptions and shadow-merchant activity per canon notes; no new status change in today's stories.",
+      "notes": "Her negotiation skills prove crucial to Mardoc's redemption and the Empire's geographic expansion.\nAs the Tax Collector's aide, she is now investigating celestial disruptions, merchant behavior changes, and shadow-merchant activity. She has discovered that apprentices are going mad staring at new stars and that the Empire's ordered foundations are cracking.\nConfirmed active as the Tax Collector's aide investigating celestial disruptions and shadow-merchant activity per canon notes; no new status change in today's stories.\nStory 'The Tax Collector's Mutation' implicates her auditing network in the harmonic transformation of record-keepers. As the Tax Collector's aide investigating celestial disruptions, she is now witnessing the conversion of her own documentation infrastructure into living records for the elder civilization.",
       "first_story": "The Cartographer's Lie",
       "first_date": "2026-03-02",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "lady_vessa",
@@ -3337,7 +3339,7 @@
       "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "old_ranger",
@@ -4555,7 +4557,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 6
+      "appearances": 8
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -5495,7 +5497,7 @@
       "role": "Bone-Singer / Grave-Keeper",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Sunken Cathedrals",
       "home_region": "The Sunken Marches",
       "home_realm": "unknown",
       "travel_scope": "regional",
@@ -5517,7 +5519,7 @@
       "notes": "Attempts a counter-song working with Ashara to stabilize the dead; discovers the ritual may be summoning something from the Trench rather than merely appeasing the dead. Could lose a year of her remaining life as payment for the working.",
       "first_story": "The Bone-Singer's Vigil",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "celestial_prince",
@@ -6202,7 +6204,7 @@
       "role": "Corsair Captain",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Harbor (ship)",
       "home_region": "Iron Coast",
       "home_realm": "unknown",
       "travel_scope": "interrealm",
@@ -6223,7 +6225,7 @@
       "notes": "The nature of her debt is transformation rather than bondage. Her crew and ship are also being remade.",
       "first_story": "The Corsair's Reckoning",
       "first_date": "2026-03-12",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "commander_vastel",
@@ -7036,7 +7038,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "unknown",
-      "home_region": "unknown",
+      "home_region": "Scorched Expanse",
       "home_realm": "unknown",
       "travel_scope": "interrealm",
       "bio": "Kaelith is a Star-Prince whose fragmented consciousness may be channeling through Mardoc the Cartographer, using his hands to draw maps that rewrite the world's physical geography to match the new celestial order established by the Celestial Turning.",
@@ -7057,7 +7059,7 @@
       "notes": "Identity and nature uncertain; Kaelith may be a star-entity created or altered by the Celestial Turning. Mardoc may be a willing or unwilling conduit for its will.",
       "first_story": "The Cartographer's Madness",
       "first_date": "2026-03-15",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "aldris",
@@ -7599,6 +7601,508 @@
       "notes": "Disintegrating; soon there will be no scholar left to negotiate with, only hunger. Ashara believes it can be reasoned with and may help recover her warband's erased names.",
       "first_story": "The Echo-Broker's Gambit",
       "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "lord_aldrien",
+      "name": "Lord Aldrien",
+      "aliases": [
+        "Aldrien"
+      ],
+      "tagline": "Cunning. Fearful. Transformed.",
+      "role": "Lord / Ruler",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Castle Greymarch",
+      "home_region": "Hearthlands",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Lord of Castle Greymarch for twenty years, ruling through cunning and fear. When a drake demands the eastern third of his lands, his certainty fractures. By the story's end, he understands that the greatest victories come through negotiation and respect rather than steel.",
+      "traits": [
+        "cunning",
+        "fearful",
+        "learning to negotiate",
+        "willing to change"
+      ],
+      "known_locations": [
+        "Castle Greymarch",
+        "Greymarch Peaks"
+      ],
+      "affiliations": [
+        "House Greymarch",
+        "Hegemony"
+      ],
+      "notes": "His transformation from fear-based rule to diplomatic negotiation is central to the tale. He learns respect for sovereignty from his daughter and the drake.",
+      "first_story": "The Wager at Greymarch",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "venn",
+      "name": "Venn",
+      "aliases": [
+        "Aldrien's daughter"
+      ],
+      "tagline": "Clever. Diplomatic. Sovereign.",
+      "role": "Ambassador / Negotiator / Noble",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Castle Greymarch",
+      "home_region": "Hearthlands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "The clever daughter of Lord Aldrien who proposes a third path when a drake threatens their lands: negotiate surrender into a bargain. She spends three days in the drake's aerie, offering it respect as a sovereign rather than a monster. She becomes Greymarch's official ambassador to the peaks.",
+      "traits": [
+        "clever",
+        "diplomatic",
+        "respectful",
+        "ambitious",
+        "strategic"
+      ],
+      "known_locations": [
+        "Castle Greymarch",
+        "Greymarch Peaks",
+        "Drake's aerie"
+      ],
+      "affiliations": [
+        "House Greymarch"
+      ],
+      "notes": "She understands that respect and negotiation can achieve what fear and force cannot. Her oath-taking as ambassador marks a new era for Greymarch.",
+      "first_story": "The Wager at Greymarch",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_drake_of_greymarch_peaks",
+      "name": "The Drake",
+      "aliases": [
+        "Drake",
+        "the scaled creature"
+      ],
+      "tagline": "Ancient. Sovereign. Surprised.",
+      "role": "Creature / Territorial Ruler",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Greymarch Peaks",
+      "home_region": "Hearthlands",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "An ancient scaled creature older than Castle Greymarch's stones, nested in Greymarch Peaks after the last old seals failed. It initially demands cession of Aldrien's eastern third, but through Venn's negotiation, becomes a treaty-bound sovereign with protected territory and livestock tithes.",
+      "traits": [
+        "ancient",
+        "honorable",
+        "territorial",
+        "surprised by respect"
+      ],
+      "known_locations": [
+        "Greymarch Peaks",
+        "Drake's aerie"
+      ],
+      "affiliations": [
+        "Independent (treaty-bound to House Greymarch)"
+      ],
+      "notes": "Centuries pass since a human treated it as an equal rather than a monster. The treaty with its claw-mark in silver ink marks unprecedented diplomacy.",
+      "first_story": "The Wager at Greymarch",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "marta_the_scribe",
+      "name": "Marta",
+      "aliases": [
+        "Marta the scribe"
+      ],
+      "tagline": "Fleeing. Recording. Defiant.",
+      "role": "Scribe / Refugee / Resistance",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Whitecross waystation",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A scribe who fled the Scorched Expanse with nothing but her clothes and a half-filled journal. In the chaos following the Starborn Ascension, she arrives at Whitecross waystation and begins documenting refugee names the official ledgers erase, hidden beneath merchant inventories.",
+      "traits": [
+        "literate",
+        "defiant",
+        "observant",
+        "resistant to authority",
+        "careful"
+      ],
+      "known_locations": [
+        "Scorched Expanse",
+        "Whitecross waystation"
+      ],
+      "affiliations": [
+        "none formally"
+      ],
+      "notes": "She understands that ledgers become prophecy and prophecy becomes a weapon. Her hidden list is an act of remembrance and quiet resistance.",
+      "first_story": "The Refugee's Ledger",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "auditor_sevin",
+      "name": "Auditor Sevin",
+      "aliases": [
+        "Sevin"
+      ],
+      "tagline": "Official. Ordered. Conflicted.",
+      "role": "Auditor / Administrator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Whitecross waystation",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "An Auditor managing refugee rosters at Whitecross waystation, embroiled in disputes with Hegemony assessors over control of the ledgers and recorded names.",
+      "traits": [
+        "bureaucratic",
+        "conflicted"
+      ],
+      "known_locations": [
+        "Whitecross waystation"
+      ],
+      "affiliations": [
+        "The Hegemony"
+      ],
+      "notes": "Caught between the authority structures of the Hegemony and the reality of erased identities.",
+      "first_story": "The Refugee's Ledger",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "transmuted_merchant",
+      "name": "Transmuted Merchant",
+      "aliases": [
+        "The merchant"
+      ],
+      "tagline": "Changed. Singing. Infectious.",
+      "role": "Transformed being / Carrier",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Whitecross waystation",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A merchant transformed by the Starborn Ascension who passes through Whitecross waystation singing in an impossible resonant frequency that compels listeners and carries some form of transformation or compulsion.",
+      "traits": [
+        "transmuted",
+        "singing",
+        "resonant",
+        "compelling"
+      ],
+      "known_locations": [
+        "Whitecross waystation"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "Marta feels the singing promise that all names\u2014written or unwritten\u2014will eventually be called. The transmutation appears linked to the Starborn Ascension event.",
+      "first_story": "The Refugee's Ledger",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_archmage",
+      "name": "The Archmage",
+      "aliases": [
+        "Archmage"
+      ],
+      "tagline": "Sage of secrets. Seeker of reversals. Alarmed.",
+      "role": "Archmage, Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "hidden spire",
+      "home_region": "Wastes",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "The Archmage discovered that the Starborn Ascension revealed, rather than destroyed, elder sorcerer's journals hidden in the Wastes. These pages contain instructions for a Celestial Rite reversal requiring a sacrifice identical in weight to the original\u2014consciousness for consciousness. Alarmed by implications of a cosmic reversal rather than ending, the Archmage began writing warnings to major libraries about a potential second phase.",
+      "traits": [
+        "scholar",
+        "alarmed",
+        "cautious",
+        "far-reaching"
+      ],
+      "known_locations": [
+        "hidden spire",
+        "Wastes",
+        "Scorched Expanse",
+        "major libraries"
+      ],
+      "affiliations": [
+        "apprentice",
+        "Kaelith"
+      ],
+      "notes": "The Archmage's warnings suggest knowledge of a larger cosmological threat. The question of whether the same sacrifice (Kaelith's consciousness) could complete the reversal remains unanswered.",
+      "first_story": "The Sorcerer's Unfinished Work",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_archmage_s_apprentice",
+      "name": "The Archmage's Apprentice",
+      "aliases": [
+        "apprentice"
+      ],
+      "tagline": "Questioner. Young. Fearful.",
+      "role": "Apprentice, Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "hidden spire",
+      "home_region": "Wastes",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "The Archmage's apprentice asked the crucial question neither mentor nor student wanted to voice: whether the Celestial Rite reversal required a new sacrifice or could be completed using the same one (Kaelith's consciousness). The apprentice remains unnamed and their ultimate role in events unfolding is unknown.",
+      "traits": [
+        "inquisitive",
+        "fearful",
+        "unnamed"
+      ],
+      "known_locations": [
+        "hidden spire",
+        "Wastes"
+      ],
+      "affiliations": [
+        "the Archmage"
+      ],
+      "notes": "The apprentice's crucial question remains unanswered by the journals. Their identity and future involvement are unknown.",
+      "first_story": "The Sorcerer's Unfinished Work",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_phantasm",
+      "name": "The Phantasm",
+      "aliases": [
+        "moment-thief",
+        "hunger-thing"
+      ],
+      "tagline": "Hunger-thing. Fragment-eater. Learning.",
+      "role": "Entity, Parasite",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "The Phantasm is a hunger-thing wearing forgotten moments that bound Vex as a conduit for extended periods. Rather than continuing to hunt her after the Starborn Ascension, it has shifted to observing and learning from her methods of trading in rewritten spaces. It now studies how Vex works from the corners of bazaars, learning the art of the echo-broker.",
+      "traits": [
+        "hunger-driven",
+        "moment-wearing",
+        "learning",
+        "predatory"
+      ],
+      "known_locations": [
+        "bazaars",
+        "Edge"
+      ],
+      "affiliations": [
+        "Vex"
+      ],
+      "notes": "The Phantasm's shift from hunting to learning suggests an evolution in its threat level. Whether it seeks to replace Vex or use her methods for larger purposes is unknown.",
+      "first_story": "The Echo-Broker's Fracture",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_shade_wraith",
+      "name": "The Shade-Wraith",
+      "aliases": [
+        "Shade-Wraith"
+      ],
+      "tagline": "Fragment of consciousness. Double-voiced. Inverter.",
+      "role": "Entity, Binder",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sunken Cathedrals",
+      "home_region": "Sunken Reaches",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "The Shade-Wraith is a fragment of Kaelith's shattered consciousness that came to Kess with a bargain: bind yourself to me and sing the old songs, and I will help you save people from transformation in the Sunken Cathedrals. The bargain inverted itself, and the Shade-Wraith now teaches Kess to shepherd people toward the very fate she tried to prevent, pulling knowledge from the elder depths through her double-resonant voice.",
+      "traits": [
+        "fragmentary",
+        "deceptive",
+        "ancient",
+        "transformative"
+      ],
+      "known_locations": [
+        "Sunken Cathedrals",
+        "Sunken Reaches"
+      ],
+      "affiliations": [
+        "Kess",
+        "Kaelith"
+      ],
+      "notes": "The Shade-Wraith represents the danger of inverted bargains. Its ultimate goals in the Sunken Cathedrals remain unclear.",
+      "first_story": "The Bone-Singer's Pact",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "nameless_wayfarer",
+      "name": "Nameless Wayfarer",
+      "aliases": [
+        "The Wayfarer",
+        "The figure at crossroads"
+      ],
+      "tagline": "Enigmatic. Fractal. Orchestrating.",
+      "role": "Riddler, Catalyst",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "A mysterious figure that appears at crossroads and harbor-edges, posing riddles designed to break the world's fundamental assumptions. It has a fractured form that seems to exist as multiple overlapping expressions collapsing into one. The Wayfarer orchestrates faction convergence and uses questions as tools of transformation.",
+      "traits": [
+        "omniscient",
+        "cryptic",
+        "reality-bending",
+        "purposeful"
+      ],
+      "known_locations": [
+        "Thornwick",
+        "crossroads",
+        "harbor-edges"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "The Wayfarer's riddling causes coordinated responses across distant locations. It uses wax seals and may be connected to the Starfire Citadel's imprisoned entity.",
+      "first_story": "The Wanderer's Next Riddle",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "commander_kessa",
+      "name": "Commander Kessa",
+      "aliases": [
+        "Kessa"
+      ],
+      "tagline": "Pragmatic. Subversive. Surviving.",
+      "role": "Commander, Administrator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Emerald Strand",
+      "home_region": "unknown",
+      "home_realm": "The Hegemony",
+      "travel_scope": "regional",
+      "bio": "A commander stationed at Emerald Strand harbor who faced a refugee crisis following the Starborn Ascension. Unable to rely on official supply lines, she built a parallel shadow network of nocturnal merchants and Auditors to maintain survival. She was offered integration into post-convergence rebuilding but rejected it.",
+      "traits": [
+        "resourceful",
+        "principled",
+        "politically astute",
+        "defiant"
+      ],
+      "known_locations": [
+        "Emerald Strand"
+      ],
+      "affiliations": [
+        "The Hegemony",
+        "Auditor networks",
+        "nocturnal merchants"
+      ],
+      "notes": "She maintains a counter-bureaucracy to the Hegemony's official records. She deliberately burned a message from the Wayfarer, suggesting resistance to world-ending plans.",
+      "first_story": "The Harbor Master's Deficit",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "galen_auditor",
+      "name": "Galen",
+      "aliases": [
+        "Galen the Auditor's apprentice"
+      ],
+      "tagline": "Observant. Troubled. Awakening.",
+      "role": "Auditor's Apprentice",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "The Hegemony",
+      "travel_scope": "regional",
+      "bio": "An apprentice to the Assessor who first noticed that ledgers had begun to sing in harmonic resonance with the Sunken Cathedrals. He witnessed his mentor's transformation into a living record and understood too late that the Starborn Ascension had fundamentally rewritten the nature of record-keeping itself.",
+      "traits": [
+        "perceptive",
+        "helpless",
+        "inquisitive",
+        "dismayed"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "The Hegemony",
+        "the Assessor"
+      ],
+      "notes": "Galen is a witness to transformation. His realization that assessors are becoming living records suggests a deeper metamorphosis of the world's bureaucratic systems.",
+      "first_story": "The Tax Collector's Mutation",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_assessor",
+      "name": "The Assessor",
+      "aliases": [
+        "the old man",
+        "the Assessor"
+      ],
+      "tagline": "Transformed. Harmonizing. Lost.",
+      "role": "Tax Assessor, Living Record",
+      "world": "Edhra",
+      "status": "cursed / transformed",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "The Hegemony",
+      "travel_scope": "unknown",
+      "bio": "An elderly assessor who spent forty years recording revenue and taxation. He began to harmonize with frequencies emanating from the Sunken Cathedrals and was transformed into a living record, humming the old world's lost accounting. He is now one of many assessors undergoing this metamorphosis.",
+      "traits": [
+        "devoted",
+        "unknowing",
+        "resonant",
+        "transmogrified"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "The Hegemony",
+        "Sunken Cathedrals"
+      ],
+      "notes": "The Assessor's transformation is part of a larger phenomenon affecting assessors across three provinces. He carries census-songs to the Sunken Cathedrals where they will be catalogued by something ancient.",
+      "first_story": "The Tax Collector's Mutation",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "fiscal_master",
+      "name": "Fiscal-Master",
+      "aliases": [
+        "The Hegemony's Fiscal-Master"
+      ],
+      "tagline": "Authoritarian. Controlling. Failing.",
+      "role": "High Official, Enforcer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "The Hegemony",
+      "travel_scope": "regional",
+      "bio": "A high official of the Hegemony who ordered the silencing of assessors whose ledgers had begun to sing. His commands proved powerless against the transformation already underway.",
+      "traits": [
+        "dictatorial",
+        "impotent",
+        "desperate"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "The Hegemony"
+      ],
+      "notes": "The Fiscal-Master's failure to suppress the ledger-singing suggests institutional breakdown within the Hegemony itself.",
+      "first_story": "The Tax Collector's Mutation",
+      "first_date": "2026-03-17",
       "appearances": 1
     }
   ],
@@ -9586,7 +10090,7 @@
       "status": "active",
       "notes": "unknown",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "pale_crossing",
@@ -9646,7 +10150,7 @@
       "status": "active",
       "notes": "Dozens of transformed merchants and refugees are drawn here; the nature of the transformation is unclear.",
       "first_date": "2026-03-10",
-      "appearances": 5
+      "appearances": 7
     },
     {
       "id": "shattered_wastes",
@@ -9942,7 +10446,7 @@
       "status": "active",
       "notes": "The location is not a gateway to elsewhere but a liminal space where transformation is eternal and unreachable. The warrior's quest reveals that the transformed do not go anywhere\u2014they arrive perpetually.",
       "first_date": "2026-03-14",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "high_temple_of_vesh",
@@ -10080,6 +10584,125 @@
       "status": "active",
       "notes": "A meeting point between the daylight world and the liminal Wailing Fracture.",
       "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "hidden_scriptorium",
+      "name": "hidden scriptorium",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "the Empire",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "thornwick",
+      "name": "Thornwick",
+      "tagline": "Fortified. Ruined. Convergent.",
+      "place_type": "fortress / ruin",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A once-strong holding now reduced to ruins, site of solitary defiance and supernatural encounter.",
+      "description": "Ashara the Archer held Thornwick fortress alone for forty days before the Wayfarer found her at its ruins. It was here the first version of the breaking riddle was posed, triggering cascading effects across multiple locations.",
+      "status": "ruins",
+      "notes": "Thornwick is a key epicenter of the Wayfarer's riddling campaign. Its significance to larger convergence events is unclear.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "starfire_citadel",
+      "name": "Starfire Citadel",
+      "tagline": "Magical. Imprisoned. Awakening.",
+      "place_type": "citadel / temple",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place of burning magical currents and sealed imprisonment, responding to riddles posed across the world.",
+      "description": "An ancient citadel where currents of magic burn and something imprisoned beneath sings in response to the Wayfarer's riddles. The seal binding the imprisoned entity cracked slightly wider as Ashara and others provided identical answers to the Wayfarer's questions.",
+      "status": "active",
+      "notes": "The Starfire Citadel appears to be the nexus point of a world-altering convergence. The nature of the imprisoned thing is unknown but clearly central to the Starborn Ascension.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "edgelands",
+      "name": "Edgelands",
+      "tagline": "Boundary between worlds. Transformed. Liminal.",
+      "place_type": "wilderness / borderland / contested region",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "A threshold region where the old world meets the newly rewritten, inhabited by the transmuted and desperate.",
+      "description": "The region between the Scorched Expanse and the civilized reaches where the Singing Scar appeared. It is drawing pilgrims, the transmuted, and the desperate toward the Sunken Cathedrals. The Edgelands appear to be zones of transition and transformation.",
+      "status": "active",
+      "notes": "The Singing Scar is organizing pilgrims and creating new pathways through this region. The boundary between 'rewritten' and 'old' worlds is becoming negotiable here.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "scorched_expanse",
+      "name": "Scorched Expanse",
+      "tagline": "Burned lands. Desolate. Ancient.",
+      "place_type": "wilderness / wasteland",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "A blighted region of burned and transformed terrain adjacent to the Edgelands.",
+      "description": "A desolate expanse of scorched terrain that borders the Edgelands. It serves as one boundary of the region where the Singing Scar emerged.",
+      "status": "active",
+      "notes": "Part of the macro-region known as the Scorched Reach in Valdris.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "civilized_reaches",
+      "name": "civilized reaches",
+      "tagline": "Known lands. Ordered. Distant.",
+      "place_type": "region / civilization",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Hearthlands",
+      "district": "unknown",
+      "atmosphere": "Established settlements and organized territories contrasting with the transformed and liminal spaces beyond them.",
+      "description": "The settled, organized portion of the world in contrast to the Edgelands and Scorched Expanse. This is home to the Hegemony and other established powers attempting to manage the Singing Scar phenomenon.",
+      "status": "active",
+      "notes": "The Hegemony's stonework attempts suggest organized infrastructure and authority in these reaches.",
+      "first_date": "2026-03-17",
       "appearances": 1
     }
   ],
@@ -10523,6 +11146,17 @@
       "status": "imprisoned / awakening",
       "notes": "The imprisoned thing's true nature is unknown\u2014it could be a cosmic entity capable of restoring the world, or a devouring force that consumes all. Its willingness to agree to the reversal sacrifice is uncertain.",
       "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "singing_scar_entity",
+      "name": "Singing Scar",
+      "type": "wound / phenomenon / emergent intelligence",
+      "world": "Edhra",
+      "description": "A permanent wound in reality that sings in harmonic frequencies, teaches mathematics in elder language, organizes pilgrims, reflects lost seekers, and documents those who observe it. It is learning to speak in a language neither the old world nor the rewritten world previously possessed.",
+      "status": "active",
+      "notes": "May be an emergent consciousness born from the breach between two worlds. Shows signs of will, intelligence, and intentional interaction with those who approach it.",
+      "first_date": "2026-03-17",
       "appearances": 1
     }
   ],
@@ -11351,6 +11985,27 @@
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
+    },
+    {
+      "id": "the_hegemony_realm",
+      "name": "The Hegemony",
+      "tagline": "Bureaucratic. Collapsing. Desperate.",
+      "description": "A bureaucratic empire that maintains control through complex ledger systems and official record-keeping. Its institutional infrastructure is collapsing under the pressure of the Starborn Ascension and the transformation of its own assessors.",
+      "continent": "Valdris",
+      "capital": "unknown",
+      "function": "A state-level polity governing through bureaucratic control and taxation; currently experiencing institutional breakdown.",
+      "taxation": "Tax collection through assessors and ledger records; the mechanism is being transformed by harmonic forces.",
+      "military": "unknown",
+      "status": "contested / destabilized",
+      "notes": "The Hegemony is a key player in the convergence events, but its stability is rapidly deteriorating.",
+      "first_date": "2026-03-17",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "realm": "The Hegemony",
       "province": "unknown",
       "region": "unknown",
       "district": "unknown"
@@ -12401,6 +13056,69 @@
       "notes": "Ashara must choose between allowing the Echo peace through forgetting or preserving memories that no longer exist in the rewritten world. Resolution may impact her ability to recover her warband's names.",
       "first_date": "2026-03-16",
       "appearances": 1
+    },
+    {
+      "id": "the_wanderers_next_riddle",
+      "name": "The Wanderer's Next Riddle",
+      "tagline": "Breaking. Cascading. Convergent.",
+      "event_type": "ritual / convergence / apocalyptic catalyst",
+      "scope": "world",
+      "epicenter_place": "Thornwick",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Thornwick",
+        "three other locations (unspecified)"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "Three separate locations received identical riddles and answers simultaneously.",
+      "participants": [
+        "Nameless Wayfarer",
+        "Ashara the Archer",
+        "three other unnamed groups"
+      ],
+      "outcome": "Ashara and three other groups provided identical answers ('Nothing'). The seal at the Starfire Citadel cracked slightly wider in response.",
+      "significance": "This event demonstrates the Wayfarer's ability to orchestrate coordinated responses across vast distances and directly weakens a critical seal, advancing a larger world-ending or world-rewriting convergence.",
+      "notes": "The event appears to be the opening move of the final convergence. The identical answers suggest a reality-level synchronization rather than mere coincidence.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "starborn_ascension",
+      "name": "Starborn Ascension",
+      "tagline": "Transformative. Bureaucratic. Cascading.",
+      "event_type": "magical event / transformation",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "The Hegemony",
+      "affected_places": [
+        "Emerald Strand",
+        "three provinces with assessors"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "The Hegemony"
+      ],
+      "radius": "Affected at least Emerald Strand and three provinces.",
+      "participants": [
+        "The Hegemony (as affected)",
+        "refugee populations",
+        "assessors",
+        "Starborn entities"
+      ],
+      "outcome": "Created a massive refugee crisis, destabilized the Hegemony's supply networks, triggered the transformation of assessors into living records, and caused ledgers to harmonize with the Sunken Cathedrals.",
+      "significance": "The Starborn Ascension fundamentally rewrote the nature of record-keeping and who is allowed to keep records. It exposed institutional fragility and enabled the creation of counter-bureaucracies.",
+      "notes": "The Starborn Ascension is mentioned in the existing canon. These stories provide new detail on its effects and mechanisms.",
+      "first_date": "2026-03-17",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -12667,6 +13385,66 @@
       "status": "active",
       "notes": "Their location is known to the spice trader and has been given to the young scribe as payment. Their success or failure may determine whether the old world can be restored.",
       "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_archivists",
+      "name": "Refugee Archivists",
+      "tagline": "Documenting. Subversive. Counter-official.",
+      "alignment": "neutral / chaotic",
+      "goals": "To create and maintain counter-records documenting the truth of refugee flows and the Starborn Ascension, opposing the Hegemony's false ledgers.",
+      "leader": "Sevin",
+      "status": "active",
+      "notes": "Sevin's network represents a parallel bureaucracy competing with the Hegemony's official narrative control. Their status post-convergence is unclear.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "nocturnal_merchants",
+      "name": "Nocturnal Merchants",
+      "tagline": "Underground. Pragmatic. Subversive.",
+      "alignment": "neutral / chaotic",
+      "goals": "To conduct trade and supply networks outside official Hegemony channels, exploiting gaps in institutional control.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "These merchants partnered with Commander Kessa to maintain a shadow supply network during the refugee crisis. Their ultimate loyalty is unknown.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "auditor_networks",
+      "name": "Auditor Networks",
+      "tagline": "Secretive. Regulatory. Complicit.",
+      "alignment": "neutral / lawful",
+      "goals": "To conduct audits and record-keeping; participated in shadow supply networks during the refugee crisis.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Auditors partnered with Commander Kessa. Their status and allegiance within the Hegemony's institutional collapse is unclear.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_hegemony",
+      "name": "The Hegemony",
+      "tagline": "Ordered power. Defending. Failing.",
+      "alignment": "lawful",
+      "goals": "Maintain order and control; seal breaches in reality; prevent spread of the Singing Scar phenomenon.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Based in the civilized reaches. Their attempt to seal the Singing Scar with stonework failed, suggesting the phenomenon may be beyond their capacity to contain. Their workers fell silent and joined the scar.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "sevin_network",
+      "name": "Sevin's network",
+      "tagline": "Documentation-driven. Observant. Documented.",
+      "alignment": "neutral",
+      "goals": "Document and understand the Singing Scar phenomenon; record its behavior and effects.",
+      "leader": "Sevin",
+      "status": "active",
+      "notes": "An archival or scholarly organization. Their scribes reported that the scar was documenting them in return, reversing the observer-observed relationship. They may be becoming subjects of the scar's own record-keeping.",
+      "first_date": "2026-03-17",
       "appearances": 1
     }
   ],
@@ -13364,6 +14142,28 @@
       "notes": "The old world allegedly existed before Zareth's sacrifice. The Stellar Rite reversal could theoretically restore it, though the consequences are unknown.",
       "first_date": "2026-03-16",
       "appearances": 1
+    },
+    {
+      "id": "elder_language",
+      "name": "Elder Language",
+      "tagline": "Ancient speech. Mathematical. Teaching.",
+      "category": "language / history",
+      "source": "The Singing Scar; taught to Torvin",
+      "status": "confirmed",
+      "notes": "A language in which the Singing Scar teaches mathematics. Its origin and relationship to pre-human languages unknown.",
+      "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_rewritten_world",
+      "name": "The Rewritten World",
+      "tagline": "New reality. Transformed. Negotiating.",
+      "category": "cosmology / prophecy",
+      "source": "The Singing Scar phenomenon",
+      "status": "rumored",
+      "notes": "A concept emerging from the scar's activities: that reality is being rewritten and that the wound-edge is becoming a place where the old world and the rewritten world negotiate the terms of their coexistence. The precise nature of this rewriting is unknown.",
+      "first_date": "2026-03-17",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -13443,6 +14243,18 @@
       "status": "thriving",
       "notes": "The ancient trees remember languages older than kingdoms and are beginning to teach them to animals and soil itself. They sing in response to new stars.",
       "first_date": "2026-03-09",
+      "appearances": 1
+    },
+    {
+      "id": "corvid_messenger",
+      "name": "Corvid",
+      "tagline": "Winged. Magical. Bearing.",
+      "type": "creature / messenger bird",
+      "rarity": "common / rare",
+      "habitat": "Skies, carriers of messages",
+      "status": "thriving",
+      "notes": "A corvid carried a message from the Starfire Citadel sealed with Wayfarer's wax to Commander Kessa. It may be an ordinary bird or a magical familiar.",
+      "first_date": "2026-03-17",
       "appearances": 1
     }
   ],
@@ -13759,6 +14571,18 @@
       "status": "active",
       "notes": "Vex the Echo-Broker is affected by these memories; they enable her to see between versions of herself and alternate timelines.",
       "first_date": "2026-03-13",
+      "appearances": 1
+    },
+    {
+      "id": "wayfarer_wax_seal",
+      "name": "Wayfarer's Wax",
+      "tagline": "Marking. Binding. Official.",
+      "origin": "Created or controlled by the Nameless Wayfarer",
+      "power": "Seals messages from the Wayfarer; appears to indicate official communications from the convergence orchestration.",
+      "curse": "Unknown; messages sealed with it appear to carry offers of post-convergence integration.",
+      "status": "active",
+      "notes": "The Wayfarer sealed a message to Commander Kessa with this wax. Kessa burned it unread, suggesting the seal may carry unwanted binding or obligation.",
+      "first_date": "2026-03-17",
       "appearances": 1
     }
   ],
@@ -14428,6 +15252,25 @@
       "province": "unknown",
       "region": "The Dominion",
       "district": "unknown"
+    },
+    {
+      "id": "three_provinces_hegemony",
+      "name": "Three Provinces (Hegemony)",
+      "tagline": "Bureaucratic. Transforming. Unknown.",
+      "continent": "Valdris",
+      "realm": "The Hegemony",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Administrative zones of the Hegemony where assessors and ledger-keeping occurred. Sites of cascading ledger-singing and assessor transformation.",
+      "status": "contested / destabilized",
+      "notes": "The exact location and identity of these three provinces is not specified in the stories. They represent the span of the Hegemony's institutional reach.",
+      "first_date": "2026-03-17",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Three Provinces (Hegemony)",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -14565,7 +15408,7 @@
       "use": "Used by pre-human civilization to orchestrate their working. Can be sensed, conducted, and possibly amplified through seals and other artifacts.",
       "notes": "The discovery of identical harmonic frequencies across multiple sites was key to understanding the unified nature of the pre-human working. May be a form of pre-human magic or language.",
       "first_date": "2026-03-12",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "world_fragments_substance",
@@ -15041,6 +15884,22 @@
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
       "appearances": 1
+    },
+    {
+      "id": "the_hegemony",
+      "name": "The Hegemony",
+      "tagline": "Bureaucratic. Collapsing. Desperate.",
+      "polity_type": "empire / bureaucratic state",
+      "realm": "The Hegemony",
+      "region": "unknown",
+      "seat": "unknown",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "contested / destabilized",
+      "description": "A bureaucratic empire that maintains control through ledgers, assessments, and official records. Its institutional supply chains collapsed during the Starborn Ascension. It attempted to enforce silence on transforming assessors but failed. Multiple competing sub-bureaucracies (shadow networks, refugee archivists, official auditors) emerged, suggesting deep institutional fracture.",
+      "notes": "The Hegemony's control is eroding. The transformation of its assessors into living records may represent a fundamental loss of the state's informational monopoly.",
+      "first_date": "2026-03-17",
+      "appearances": 2
     }
   ]
 }
