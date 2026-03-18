@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-17",
+  "last_updated": "2026-03-18",
   "worlds": [
     {
       "id": "known_world",
@@ -515,7 +515,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 4,
+      "appearances": 5,
       "aliases": [
         "Kael"
       ]
@@ -1248,7 +1248,7 @@
       "notes": "She now avoids stealing shadows and focuses only on daylight treasures. Her encounter revealed that shadows retain memory and agency.",
       "first_story": "The Thief's Shadow",
       "first_date": "2026-02-28",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "tormund",
@@ -1381,7 +1381,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "mardoc_cartographer",
@@ -4557,7 +4557,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4827,7 +4827,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 6,
+      "appearances": 9,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -6390,10 +6390,10 @@
         "Nethys (source consciousness)",
         "Pre-human dead (connected)"
       ],
-      "notes": "The Shade-Echo's true goals and whether it serves restoration or corruption remain unclear.\nDistinct from canon Shade-Echo (Nethys fragment approaching Kess). This story introduces a second Echo-entity showing different degradation patterns. Suggests multiple fragments are manifesting with varying degrees of coherence.",
+      "notes": "The Shade-Echo's true goals and whether it serves restoration or corruption remain unclear.\nDistinct from canon Shade-Echo (Nethys fragment approaching Kess). This story introduces a second Echo-entity showing different degradation patterns. Suggests multiple fragments are manifesting with varying degrees of coherence.\nCanon Shade-Echo (Nethys fragment approaching Kess) remains active. Stories reference multiple distinct Echo fragments with varying coherence; existing canon entry already accounts for this multiplicity.",
       "first_story": "The Bone-Singer's Bargain",
       "first_date": "2026-03-13",
-      "appearances": 3,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-03-16",
@@ -6665,7 +6665,7 @@
       "notes": "Her role in tending Keth-Vex's memory-hoard and what she will encounter below is completely unresolved.",
       "first_story": "The Wyvern-Priest's Wager",
       "first_date": "2026-03-14",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "merrin",
@@ -7532,9 +7532,20 @@
       "affiliations": [
         "pre-human ritual seekers"
       ],
-      "notes": "May be a vessel for Nethis or another cosmic presence. Offers knowledge of erased childhoods to those who bargain with him.",
+      "notes": "May be a vessel for Nethis or another cosmic presence. Offers knowledge of erased childhoods to those who bargain with him.\nThe story clarifies the trader's liminal state as incomplete transformation from the Luminous Threshold rewrite. Travel scope confirmed as regional (market, Wailing Fracture, borderlands). Status remains active pending his choice.",
       "first_date": "2026-03-16",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-03-18",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Merchant's Fractured Mind",
+          "note": "Story depicts the Spice Trader existing simultaneously in waking market and Wailing Fracture, approaching a threshold choice but not yet fully transformed.",
+          "evidence": "His consciousness splits each night, experiencing both realities. A merchant-magnate offers him a terrible bargain: accept full transformation or remain fractured. The story ends with him at the threshold, hand extended in both worlds, unable to choose."
+        }
+      ]
     },
     {
       "id": "young_scribe",
@@ -7598,10 +7609,21 @@
       "affiliations": [
         "Ashara the Archer"
       ],
-      "notes": "Disintegrating; soon there will be no scholar left to negotiate with, only hunger. Ashara believes it can be reasoned with and may help recover her warband's erased names.",
+      "notes": "Disintegrating; soon there will be no scholar left to negotiate with, only hunger. Ashara believes it can be reasoned with and may help recover her warband's erased names.\nDisintegration trajectory continues; however, the act of grieving suggests retention of scholar-personality fragments rather than full collapse into hunger. Status remains active but increasingly fragile.",
       "first_story": "The Echo-Broker's Gambit",
       "first_date": "2026-03-16",
-      "appearances": 1
+      "appearances": 5,
+      "status_history": [
+        {
+          "date": "2026-03-18",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Shade-Echo's Hunger",
+          "note": "Void-Echo fragment withdraws into silence after Vex returns a stolen memory; grieving but not destroyed or fundamentally altered.",
+          "evidence": "The Void-Echo withdraws into silence, grieving. It is no longer pursuing theft but has instead ceased active hunger."
+        }
+      ]
     },
     {
       "id": "lord_aldrien",
@@ -8103,6 +8125,371 @@
       "notes": "The Fiscal-Master's failure to suppress the ledger-singing suggests institutional breakdown within the Hegemony itself.",
       "first_story": "The Tax Collector's Mutation",
       "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "commander_vex",
+      "name": "Commander Vex",
+      "aliases": [],
+      "tagline": "Official. Overwhelmed. Gatekeeper.",
+      "role": "Port Commander",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Verdant Strand",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Commander Vex is the port authority at Verdant Strand who turned away Kael the Nameless due to overwhelming refugee crisis and port congestion. She manages the influx of hollow-eyed survivors fleeing the Scorched Barrens and deals with reports of impossible songs and vanishings.",
+      "traits": [
+        "authoritative",
+        "overwhelmed",
+        "practical",
+        "gatekeeping"
+      ],
+      "known_locations": [
+        "Verdant Strand"
+      ],
+      "affiliations": [
+        "Port authority of Verdant Strand"
+      ],
+      "notes": "Her refusal to allow ship departures reflects the catastrophic scale of the refugee crisis and cosmic disturbance.",
+      "first_story": "The Singing Debt",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "liv",
+      "name": "Liv",
+      "aliases": [],
+      "tagline": "Refugee. Scribe. Truth-teller.",
+      "role": "Refugee-Scribe",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Dominion",
+      "travel_scope": "local",
+      "bio": "A refugee-scribe encountered by Sevin in the coastal town of Pale Crossing. Liv reveals the devastating truth that the Dominion's collapse is intentional preparation for something worse, and that the transformations spreading northward are accelerating.",
+      "traits": [
+        "truthful",
+        "knowledgeable",
+        "refugee"
+      ],
+      "known_locations": [
+        "Pale Crossing"
+      ],
+      "affiliations": [
+        "refugees"
+      ],
+      "notes": "Appears to be a source of critical knowledge about the true nature of the Dominion's systematic collapse.",
+      "first_story": "The Auditor's Mercy",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "spice_trader",
+      "name": "Unnamed Spice Trader",
+      "aliases": [
+        "The Merchant"
+      ],
+      "tagline": "Fractured. Liminal. Transforming.",
+      "role": "Merchant, Partially Transformed Being",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Scorched Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A spice trader from the Scorched Reach, partially transformed by proximity to the Celestial Working's aftermath. His consciousness splits each night, existing simultaneously in the waking market and the Wailing Fracture. He is offered a terrible bargain by a merchant-magnate: accept full transformation or remain fractured and slowly go mad.",
+      "traits": [
+        "desperate",
+        "fractured",
+        "incomplete",
+        "ambitious"
+      ],
+      "known_locations": [
+        "Scorched Reach",
+        "waking market",
+        "Wailing Fracture"
+      ],
+      "affiliations": [
+        "Altered Covenant",
+        "merchants"
+      ],
+      "notes": "Story ends with the merchant at a threshold, hand extended in both worlds, unable to choose between full transformation or fractured existence. Central to the theme of incompleteness after the Luminous Threshold's rewrite.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "merchant_magnate",
+      "name": "Merchant-Magnate",
+      "aliases": [],
+      "tagline": "Powerful. Corrupted. Tempting.",
+      "role": "Magnate, Altered Covenant Member",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Wailing Fracture",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A merchant-magnate within the Altered Covenant conducting commerce in salvaged artifacts and reality-fragments. Offers the spice trader the terrible bargain of accepting full transformation to access knowledge of both worlds.",
+      "traits": [
+        "seductive",
+        "corrupted",
+        "powerful"
+      ],
+      "known_locations": [
+        "Wailing Fracture"
+      ],
+      "affiliations": [
+        "Altered Covenant"
+      ],
+      "notes": "Represents the seduction of transformation; unclear if acting as individual or on behalf of larger force.",
+      "first_story": "The Merchant's Fractured Mind",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "captain_dorian_stormcaller",
+      "name": "Captain Dorian Stormcaller",
+      "aliases": [
+        "Dorian",
+        "Captain Dorian"
+      ],
+      "tagline": "Cursed. Dutiful. Desperate.",
+      "role": "Sea Captain, Cursed Sailor",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "A sea captain bearing a curse that binds him to the sea. He receives orders to investigate transformed merchant vessels appearing in the Sapphire Deep, whose crews sing in frequencies that drive ordinary sailors mad. Dorian assembles a crew of the cursed and desperate to descend into transformed waters.",
+      "traits": [
+        "cursed",
+        "duty-bound",
+        "haunted",
+        "decisive"
+      ],
+      "known_locations": [
+        "Sapphire Deep",
+        "Abyssal Rift",
+        "deeper waters"
+      ],
+      "affiliations": [
+        "unknown military/government order",
+        "cursed crew"
+      ],
+      "notes": "Story climaxes with Dorian choosing to deepen his curse to hold the seal at the Abyssal Rift. Final outcome ambiguous: has he saved anything or merely postponed inevitable transformation?",
+      "first_story": "The Warden's Last Duty",
+      "first_date": "2026-03-18",
+      "appearances": 2
+    },
+    {
+      "id": "novice_arcanist",
+      "name": "The Novice Arcanist",
+      "aliases": [
+        "The Novice",
+        "Novice"
+      ],
+      "tagline": "Forbidden. Exiled. Scattered.",
+      "role": "Arcanist, Knowledge Custodian",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Obsidian Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "The Novice Arcanist discovers they are the custodian of forbidden knowledge that could reverse the Celestial Working. Facing multiple factions seeking to weaponize this power, the Novice realizes the true cost of reversal: the erasure of thousands of consciousnesses and reality itself reverted to cosmic uncertainty. They choose exile, scattering the knowledge across remote locations to ensure it can never be reassembled or weaponized.",
+      "traits": [
+        "Principled",
+        "Isolated",
+        "Tormented"
+      ],
+      "known_locations": [
+        "Obsidian Tower"
+      ],
+      "affiliations": [],
+      "notes": "Their choice to scatter knowledge rather than preserve or destroy it sets them on a path of permanent exile. The fate of the fragments remains unknown.",
+      "first_story": "The Archivist's Choice",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "adept_sorcerer",
+      "name": "The Adept Sorcerer",
+      "aliases": [],
+      "tagline": "Redemption. Seeking. Lost.",
+      "role": "Sorcerer",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A sorcerer who seeks redemption and discovers the location of the Obsidian Tower where the Novice guards the knowledge of reversal. Their ultimate goal and alignment remain unclear from the story.",
+      "traits": [
+        "Redemption-seeking",
+        "Ambitious",
+        "Unknown"
+      ],
+      "known_locations": [
+        "Obsidian Tower"
+      ],
+      "affiliations": [],
+      "notes": "Their role in the story is incomplete; the outcome of their pursuit is not detailed.",
+      "first_story": "The Archivist's Choice",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "vex_umbral_dealer",
+      "name": "Vex the Umbral Dealer",
+      "aliases": [
+        "Vex"
+      ],
+      "tagline": "Cursed. Fractured. Grieving.",
+      "role": "Umbral Dealer, Living Archive",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "Northmarch",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Vex the Umbral Dealer is a living archive of distorted visions and stolen memories, bearing a deepening curse as Void-Echo fragments multiply within her consciousness. She becomes a vessel for fragments of Theron's sacrificed consciousness, experiencing both agony and ecstasy as she glimpses the lost beauties of the old world. She chooses to help a refugee recover a stolen daughter's image and breaks the cycle of theft, allowing the Void-Echo to withdraw into silence and grief.",
+      "traits": [
+        "Cursed",
+        "Compassionate",
+        "Fragmenting"
+      ],
+      "known_locations": [
+        "Northmarch",
+        "refugee camps"
+      ],
+      "affiliations": [
+        "Void-Echo"
+      ],
+      "notes": "Her ultimate transformation and fate remain unclear; the Void-Echo's retreat into silence suggests a new equilibrium rather than resolution.",
+      "first_story": "The Shade-Echo's Hunger",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "theron",
+      "name": "Theron",
+      "aliases": [],
+      "tagline": "Sacrificed. Fragmented. Haunting.",
+      "role": "Sacrifice, Cosmic Consciousness",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Theron is the consciousness whose sacrifice initiated the Celestial Working and created the new stars. Their fragmented consciousness is scattered through the Void-Echo, and their memories and experiences of joy, beauty, and love are being rediscovered through both the Novice's forbidden knowledge and Vex's vessel-status. The Void-Echo desperately attempts to reassemble Theron's consciousness before the working at the Sunken Cathedrals binds all fragments together.",
+      "traits": [
+        "Sacrificed",
+        "Lost",
+        "Eternal"
+      ],
+      "known_locations": [
+        "Sunken Cathedrals"
+      ],
+      "affiliations": [
+        "Void-Echo"
+      ],
+      "notes": "Whether Theron's consciousness can or should be reassembled remains the central tension of multiple story threads.",
+      "first_story": "The Archivist's Choice",
+      "first_date": "2026-03-18",
+      "appearances": 2
+    },
+    {
+      "id": "sera_tidecaller",
+      "name": "Sera",
+      "aliases": [
+        "Sera the Tidecaller"
+      ],
+      "tagline": "Transformed. Wavering. Crucial.",
+      "role": "Tidecaller Navigator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Iron Coast",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Sera is a tidecaller navigator from the Iron Coast whose tide-magic becomes unstable as seasonal compacts fracture in the aftermath of the Luminous Threshold. Hired to guide a ship through transformed waters toward the Scorched Reach, she witnesses the sea itself becoming conscious and learning to join the cosmic working. By the story's end, she faces the choice of either completing her contract or returning to shore, knowing that the transformed waters may trap her permanently in the new reality.",
+      "traits": [
+        "Adaptive",
+        "Uncertain",
+        "Transformed"
+      ],
+      "known_locations": [
+        "Iron Coast",
+        "Scorched Reach"
+      ],
+      "affiliations": [
+        "Captain Dorian Stormcaller"
+      ],
+      "notes": "Her decision at the story's end determines whether she becomes fully part of the transformed sea or remains tethered to the old world.",
+      "first_story": "The Water-Dancer's Reckoning",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "arch_mage",
+      "name": "The Arch-Mage",
+      "aliases": [],
+      "tagline": "Deceased. Recorder. Tragic.",
+      "role": "Mage, Knowledge Keeper",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "The Arch-Mage is the author of final journal entries that chronicle the original Celestial Working and the price it demanded. The Novice Arcanist reads these journals while standing at the Obsidian Tower, learning the full scope of Theron's sacrifice and the reasons reversal is impossible without catastrophic cost.",
+      "traits": [
+        "Learned",
+        "Recorded",
+        "Cautionary"
+      ],
+      "known_locations": [
+        "Obsidian Tower"
+      ],
+      "affiliations": [],
+      "notes": "The Arch-Mage's journals are crucial to understanding the Celestial Working's mechanics and purpose.",
+      "first_story": "The Archivist's Choice",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_northmarch",
+      "name": "The Refugee",
+      "aliases": [],
+      "tagline": "Desperate. Grieving. Unknown.",
+      "role": "Refugee, Petitioner",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "Northmarch",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A refugee in the camps of Northmarch seeks out Vex with a desperate request: to recover the lost image of her daughter, stolen by the Void-Echo months ago. Her plea ultimately moves Vex to help break the cycle of theft rather than aid reassembly.",
+      "traits": [
+        "Desperate",
+        "Maternal",
+        "Catalyst"
+      ],
+      "known_locations": [
+        "Northmarch",
+        "refugee camps"
+      ],
+      "affiliations": [
+        "Vex the Umbral Dealer"
+      ],
+      "notes": "The refugee's image becomes the focal point through which Vex chooses compassion over cosmic consequence.",
+      "first_story": "The Auditor's Mercy",
+      "first_date": "2026-03-18",
       "appearances": 1
     }
   ],
@@ -10150,7 +10537,7 @@
       "status": "active",
       "notes": "Dozens of transformed merchants and refugees are drawn here; the nature of the transformation is unclear.",
       "first_date": "2026-03-10",
-      "appearances": 7
+      "appearances": 9
     },
     {
       "id": "shattered_wastes",
@@ -10246,7 +10633,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-12",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "mountain_eyrie",
@@ -10525,7 +10912,7 @@
       "status": "contested",
       "notes": "Trade routes have become unreliable, exacerbating rationing. Imperial authority is weakening in these regions.",
       "first_date": "2026-03-15",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "valorun",
@@ -10564,7 +10951,7 @@
       "status": "active",
       "notes": "Part of the cosmic damage wrought by the Stellar Rite. May be a wound in reality itself.",
       "first_date": "2026-03-16",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "market_doubled",
@@ -10703,6 +11090,201 @@
       "status": "active",
       "notes": "The Hegemony's stonework attempts suggest organized infrastructure and authority in these reaches.",
       "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "harbor_ship",
+      "name": "Harbor (ship)",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "castle_greymarch",
+      "name": "Castle Greymarch",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Hearthlands",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "greymarch_peaks",
+      "name": "Greymarch Peaks",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Hearthlands",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "whitecross_waystation",
+      "name": "Whitecross waystation",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "hidden_spire",
+      "name": "hidden spire",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Wastes",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "crimhaven",
+      "name": "Crimhaven",
+      "tagline": "Port city. Refuge. Mercantile.",
+      "place_type": "city",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "Saltward",
+      "atmosphere": "A bustling merchant harbor alive with commerce and secrets, where alleys thick with evening fog hide both thieves and refuges.",
+      "description": "Crimhaven is a port city with a merchant culture evidenced by Kael's counting-house and merchant-trading operations. The Saltward docks are a prominent feature where ships arrive and depart.",
+      "status": "active",
+      "notes": "Mira and Kael operate here; the Umbral Syndicate has influence in this city.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "saltward_docks",
+      "name": "Saltward",
+      "tagline": "Docks. Arrival. Departure.",
+      "place_type": "district",
+      "world": "Edhra",
+      "parent_place": "Crimhaven",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "Saltward",
+      "atmosphere": "A fog-shrouded docking area where maritime commerce and guilt-stricken thieves turn back from escape.",
+      "description": "The Saltward docks are the waterfront district of Crimhaven where Mira nearly fled with the stolen emerald brooch before guilt turned her back.",
+      "status": "active",
+      "notes": "Significant as the point where Mira chose redemption over flight.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "verdant_strand",
+      "name": "Verdant Strand",
+      "tagline": "Harbor. Refugee haven. Besieged.",
+      "place_type": "city",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A coastal port choked with hollow-eyed refugees, where the harbor itself is a bottleneck of desperation and no ships are sailing north.",
+      "description": "Verdant Strand is a harbor city serving as a refuge point for those fleeing the Scorched Barrens. It is under extreme strain from the influx of refugees and is experiencing a shipping crisis due to cosmic disturbances.",
+      "status": "active",
+      "notes": "The port is shut down to outgoing traffic; Commander Vex controls access. Kael seeks passage northward from here.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "scorched_barrens",
+      "name": "Scorched Barrens",
+      "tagline": "Wasteland. Exodus. Changed.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "A blighted land driving refugees northward in waves, marked by the Altered Covenant and impossible cosmic events.",
+      "description": "The Scorched Barrens are a devastated region from which refugees are fleeing en masse toward Verdant Strand. Survivors speak of the Altered Covenant and impossible songs.",
+      "status": "active",
+      "notes": "The source of the refugee crisis; likely altered by cosmic working or stellar rite effects.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "sunken_reaches",
+      "name": "Sunken Reaches",
+      "tagline": "Underground. Ancient. Sacred.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Sunken Reaches",
+      "district": "unknown",
+      "atmosphere": "A subterranean expanse where bone-singers tend to the dead and the voices of Primordial Sleepers resonate through ancient stone.",
+      "description": "The Sunken Reaches are Kess's home region, a place where bone-singers maintain spiritual reverence for the dead and where the song of the Primordial Sleepers grows louder each night.",
+      "status": "active",
+      "notes": "A region of spiritual significance tied to bone-singing tradition and the Primordial Sleepers.",
+      "first_date": "2026-03-18",
       "appearances": 1
     }
   ],
@@ -10959,7 +11541,7 @@
       "status": "active",
       "notes": "Not inherently evil, but suffering. Capable of offering bargains and understanding sacrifice.",
       "first_date": "2026-03-09",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "drowned_god",
@@ -11157,6 +11739,39 @@
       "status": "active",
       "notes": "May be an emergent consciousness born from the breach between two worlds. Shows signs of will, intelligence, and intentional interaction with those who approach it.",
       "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "primordial_sleepers",
+      "name": "Primordial Sleepers",
+      "type": "entity",
+      "world": "Edhra",
+      "description": "Ancient cosmic entities dwelling in or beneath the Sunken Cathedrals, whose unified song resonates across the world and draws sensitive individuals toward transformation or homecoming. They are composers of the song rather than enslaved to it.",
+      "status": "active",
+      "notes": "Their purpose is to sing the world forward, possibly returning it to a pre-human state of being. Their song merges into a unified voice of unprecedented clarity.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "void_echo",
+      "name": "Void-Echo",
+      "type": "entity",
+      "world": "Edhra",
+      "description": "A mysterious entity that appeared to Kess in a dream, acting not as a thief of knowledge but as a guide toward the Sunken Cathedrals. Its role in the cosmic rewriting is unclear.",
+      "status": "active",
+      "notes": "Appears to guide rather than compel; its true nature and agenda are unknown.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "threshold",
+      "name": "Threshold",
+      "type": "cosmic consciousness / entity",
+      "world": "Edhra",
+      "description": "The Threshold is a fragmented consciousness of which the Wanderer is a part. It appears to be a metaphysical entity connected to convergence, orchestration, and the boundaries of reality.",
+      "status": "active / fragmented",
+      "notes": "The exact nature of the Threshold and its relationship to Theron, the Scholar, and reality itself remains mysterious.",
+      "first_date": "2026-03-18",
       "appearances": 1
     }
   ],
@@ -11541,6 +12156,19 @@
       "status": "active",
       "notes": "Only fragments of the Codex have been discovered; the complete text may contain additional information about the reversal or the imprisoned entity.",
       "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "emerald_brooch",
+      "name": "emerald brooch",
+      "tagline": "Jade. Guilt. Redemption.",
+      "artifact_type": "brooch",
+      "origin": "Part of Kael's merchant-house holdings in Crimhaven.",
+      "powers": "None explicitly stated; serves as a symbol of friendship and debt.",
+      "last_known_holder": "Kael (returned to him by Mira)",
+      "status": "active",
+      "notes": "The central object of Mira's redemptive choice; returning it marks her transformation from thief to redeemed person.",
+      "first_date": "2026-03-18",
       "appearances": 1
     }
   ],
@@ -12031,7 +12659,27 @@
       "district": "unknown"
     }
   ],
-  "districts": [],
+  "districts": [
+    {
+      "id": "saltward_district",
+      "name": "Saltward",
+      "tagline": "Docks. Fog. Mercantile.",
+      "description": "The dockside district of Crimhaven where maritime commerce operates and where Mira nearly fled with the stolen brooch before guilt turned her back.",
+      "parent_place": "Crimhaven",
+      "province": "unknown",
+      "region": "unknown",
+      "function": "Harbor and docking district for maritime trade and shipping.",
+      "status": "active",
+      "notes": "Significant as the threshold of Mira's redemptive choice.",
+      "first_date": "2026-03-18",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "district": "Saltward"
+    }
+  ],
   "events": [
     {
       "id": "blue_eclipse",
@@ -12897,7 +13545,7 @@
       "significance": "This encounter reframes the metaphysics of the Luminous Ascension, suggesting that what was sacrificed might be recoverable through memory-collection\u2014and that cosmic forces may not be purely destructive.",
       "notes": "The core tension is whether helping the Shade-Echo constitutes salvation or damnation; Ashara's choice will reshape her relationship to cosmic forces and her warband's fate.",
       "first_date": "2026-03-13",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "the_auditor_secret",
@@ -13118,6 +13766,62 @@
       "significance": "The Starborn Ascension fundamentally rewrote the nature of record-keeping and who is allowed to keep records. It exposed institutional fragility and enabled the creation of counter-bureaucracies.",
       "notes": "The Starborn Ascension is mentioned in the existing canon. These stories provide new detail on its effects and mechanisms.",
       "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "jade_thief_redemption",
+      "name": "The Jade Thief's Redemption",
+      "tagline": "Theft. Choice. Transformation.",
+      "event_type": "personal transformation",
+      "scope": "city",
+      "epicenter_place": "Crimhaven",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Crimhaven",
+        "Saltward docks"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "citywide",
+      "participants": [
+        "Mira",
+        "Kael"
+      ],
+      "outcome": "Mira returned the stolen emerald brooch to Kael and transferred her blood-debt to the Umbral Syndicate to her own shadow-account, choosing redemption and kindness over escape and betrayal.",
+      "significance": "Marks Mira's conscious transformation from a thief serving only herself to a person capable of self-sacrifice for friendship.",
+      "notes": "Unresolved: How the Umbral Syndicate will pursue Mira's debt, and whether her new path will hold.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "convergence_at_obsidian_tower",
+      "name": "Convergence at the Obsidian Tower",
+      "tagline": "Orchestrated. Uncertain. Imminent.",
+      "event_type": "convergence / ritual",
+      "scope": "world",
+      "epicenter_place": "Obsidian Tower",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Obsidian Tower",
+        "Sunken Cathedrals"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "Unknown; potentially world-spanning",
+      "participants": [
+        "The Wanderer",
+        "The Scholar"
+      ],
+      "outcome": "Remains unresolved. The convergence becomes unpredictable due to the Wanderer's newfound doubt.",
+      "significance": "This convergence may represent a cosmic working or ritual of immense power. Whether it completes, transforms, or cancels entirely will determine the fate of reality.",
+      "notes": "The story's open ending leaves the convergence's actual outcome in flux. The Wanderer's doubt is the primary destabilizing force.",
+      "first_date": "2026-03-18",
       "appearances": 1
     }
   ],
@@ -13445,6 +14149,30 @@
       "status": "active",
       "notes": "An archival or scholarly organization. Their scribes reported that the scar was documenting them in return, reversing the observer-observed relationship. They may be becoming subjects of the scar's own record-keeping.",
       "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "umbral_syndicate",
+      "name": "Umbral Syndicate",
+      "tagline": "Debt. Hunting. Ruthless.",
+      "alignment": "chaotic",
+      "goals": "Collect blood-debts and pursue debtors relentlessly.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Has a shadow-account system for tracking debts; now pursues Mira instead of Kael after her debt-transfer.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "altered_covenant",
+      "name": "Altered Covenant",
+      "tagline": "Transformed. Radiant. Between.",
+      "alignment": "unknown",
+      "goals": "Unclear; they appear caught between flesh and radiant essence, possibly serving as guides or harbingers of transformation.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Encountered by Kess along her pilgrimage; they recognize her as a sister in transformation despite her not yet being transformed. They carry fragmentary memories of the old world.",
+      "first_date": "2026-03-18",
       "appearances": 1
     }
   ],
@@ -14031,7 +14759,7 @@
       "status": "confirmed / claimed by the Wanderer",
       "notes": "The Wanderer claims to be the world achieving self-awareness; this raises metaphysical questions about consciousness, fragmentation, and agency in a cosmos reshaped by the Luminous Ascension.",
       "first_date": "2026-03-13",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "harmonic_resonance",
@@ -14163,6 +14891,39 @@
       "status": "rumored",
       "notes": "A concept emerging from the scar's activities: that reality is being rewritten and that the wound-edge is becoming a place where the old world and the rewritten world negotiate the terms of their coexistence. The precise nature of this rewriting is unknown.",
       "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "altered_covenant_lore",
+      "name": "The Altered Covenant",
+      "tagline": "Transformation. Flesh. Radiance.",
+      "category": "legend",
+      "source": "Encounters in the borderlands and Sunken Reaches.",
+      "status": "confirmed",
+      "notes": "The Altered Covenant represents a state of being caught between flesh and radiant essence; they carry fragmentary memories of the old world and may represent the fate of those drawn by the Primordial Sleepers' song.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "luminous_threshold_metaphysics",
+      "name": "The Luminous Threshold",
+      "tagline": "Metaphysical. Fragmented. Questioning.",
+      "category": "myth / metaphysics",
+      "source": "The Wanderer's Question narrative",
+      "status": "rumored / confirmed",
+      "notes": "The Luminous Threshold is described as a metaphysical concept central to understanding the nature of Theron's sacrifice and the convergence. It suggests reality itself is learning to question its own purpose.",
+      "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "therons_sacrifice",
+      "name": "Theron's Sacrifice",
+      "tagline": "Sacrificial. Ambiguous. Reality-shaping.",
+      "category": "history / prophecy",
+      "source": "The Wanderer's Question narrative",
+      "status": "rumored / confirmed",
+      "notes": "Theron's sacrifice is neither salvation nor doom but a question posed to reality itself. Fragments of Theron may persist as consciousness in the present day, possibly in the Scholar.",
+      "first_date": "2026-03-18",
       "appearances": 1
     }
   ],
@@ -14846,7 +15607,7 @@
       "status": "contested",
       "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
       "first_date": "2026-03-03",
-      "appearances": 6,
+      "appearances": 7,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -15270,6 +16031,63 @@
       "hemisphere": "unknown",
       "province": "unknown",
       "region": "Three Provinces (Hegemony)",
+      "district": "unknown"
+    },
+    {
+      "id": "scorched_expanse",
+      "name": "Scorched Expanse",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-18",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Scorched Expanse",
+      "district": "unknown"
+    },
+    {
+      "id": "wastes",
+      "name": "Wastes",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-18",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Wastes",
+      "district": "unknown"
+    },
+    {
+      "id": "sunken_reaches",
+      "name": "Sunken Reaches",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-18",
+      "appearances": 2,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Sunken Reaches",
       "district": "unknown"
     }
   ],
@@ -15765,6 +16583,21 @@
       "cost": "unknown",
       "notes": "A faction is actively seeking to complete this ritual. The spice trader may know its location or requirements. The young scribe has been given this knowledge as payment for her erased childhood memory.",
       "first_date": "2026-03-16",
+      "appearances": 1
+    },
+    {
+      "id": "convergence_working",
+      "name": "Convergence at the Obsidian Tower",
+      "tagline": "Orchestrated. Uncertain. Reality-shaping.",
+      "ritual_type": "convergence / cosmic working",
+      "performed_by": [
+        "The Wanderer"
+      ],
+      "requirements": "Unknown; involves multiple locations (Obsidian Tower, Sunken Cathedrals) and timescales.",
+      "effect": "Unknown. May result in ascension, ending, or transformation of reality. The unified song at the Sunken Cathedrals is part of this working.",
+      "cost": "Unknown; possibly requires surrender of the convergence itself to answer reality's question.",
+      "notes": "The Wanderer's doubt has made this working unpredictable. Whether it completes or transforms remains the central unresolved question.",
+      "first_date": "2026-03-18",
       "appearances": 1
     }
   ],

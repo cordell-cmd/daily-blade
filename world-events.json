@@ -1,87 +1,8 @@
 {
-  "generated_at": "2026-03-17T10:33:38.634735+00:00",
+  "generated_at": "2026-03-18T10:34:40.317515+00:00",
   "source": "codex.json",
   "count": 50,
   "events": [
-    {
-      "name": "The Stellar Rite",
-      "tagline": "Cosmic. Rewriting. Catastrophic.",
-      "event_type": "ritual / cosmic event",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "climax",
-      "intensity": 5,
-      "resolved": false,
-      "last_seen": "2026-03-16",
-      "recent_issues": 6,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Vethrim",
-          "Scorched Reach",
-          "Sapphire Deep",
-          "The Scorched Reach"
-        ],
-        "regions": [
-          "Scorched Reach",
-          "The Scorched Reach"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-11",
-          "title": "The Auditor's Ruin"
-        },
-        {
-          "date": "2026-03-11",
-          "title": "The Bone-Singer's Covenant"
-        },
-        {
-          "date": "2026-03-11",
-          "title": "The Cartographer's Daughter"
-        },
-        {
-          "date": "2026-03-11",
-          "title": "The Circle-Keepers' Last Working"
-        },
-        {
-          "date": "2026-03-11",
-          "title": "The Ley-Line Convergers"
-        },
-        {
-          "date": "2026-03-11",
-          "title": "The Memory-Thief's Hunger"
-        },
-        {
-          "date": "2026-03-11",
-          "title": "The Spice-Merchant's Reckoning"
-        },
-        {
-          "date": "2026-03-11",
-          "title": "The Wanderer's Champion"
-        },
-        {
-          "date": "2026-03-13",
-          "title": "The Archivist's Heist"
-        },
-        {
-          "date": "2026-03-16",
-          "title": "The Bone-Singer's Pilgrimage"
-        },
-        {
-          "date": "2026-03-16",
-          "title": "The Merchant's Transformation"
-        },
-        {
-          "date": "2026-03-16",
-          "title": "The Young Sorcerer's Tower"
-        }
-      ]
-    },
     {
       "name": "The Luminous Ascension",
       "tagline": "Reality. Fractured. Transformed.",
@@ -93,7 +14,7 @@
       "resolved": false,
       "last_seen": "2026-03-16",
       "recent_issues": 5,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Sunken Cathedrals",
@@ -161,6 +82,85 @@
         {
           "date": "2026-03-16",
           "title": "The Wanderer's Question"
+        }
+      ]
+    },
+    {
+      "name": "The Stellar Rite",
+      "tagline": "Cosmic. Rewriting. Catastrophic.",
+      "event_type": "ritual / cosmic event",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "climax",
+      "intensity": 5,
+      "resolved": false,
+      "last_seen": "2026-03-16",
+      "recent_issues": 5,
+      "trend": -2,
+      "referenced_locations": {
+        "places": [
+          "Vethrim",
+          "Scorched Reach",
+          "Sapphire Deep",
+          "The Scorched Reach"
+        ],
+        "regions": [
+          "Scorched Reach",
+          "The Scorched Reach"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-11",
+          "title": "The Auditor's Ruin"
+        },
+        {
+          "date": "2026-03-11",
+          "title": "The Bone-Singer's Covenant"
+        },
+        {
+          "date": "2026-03-11",
+          "title": "The Cartographer's Daughter"
+        },
+        {
+          "date": "2026-03-11",
+          "title": "The Circle-Keepers' Last Working"
+        },
+        {
+          "date": "2026-03-11",
+          "title": "The Ley-Line Convergers"
+        },
+        {
+          "date": "2026-03-11",
+          "title": "The Memory-Thief's Hunger"
+        },
+        {
+          "date": "2026-03-11",
+          "title": "The Spice-Merchant's Reckoning"
+        },
+        {
+          "date": "2026-03-11",
+          "title": "The Wanderer's Champion"
+        },
+        {
+          "date": "2026-03-13",
+          "title": "The Archivist's Heist"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Bone-Singer's Pilgrimage"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Merchant's Transformation"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Young Sorcerer's Tower"
         }
       ]
     },
@@ -282,39 +282,35 @@
       ]
     },
     {
-      "name": "Violet Conjunction",
-      "tagline": "Celestial. Prophetic. World-altering.",
-      "event_type": "celestial event / prophecy",
+      "name": "Convergence at the Obsidian Tower",
+      "tagline": "Orchestrated. Uncertain. Imminent.",
+      "event_type": "convergence / ritual",
       "scope": "world",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
+      "epicenter": "Obsidian Tower",
+      "stage": "rising",
+      "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-04",
+      "last_seen": "2026-03-18",
       "recent_issues": 1,
-      "trend": 0,
+      "trend": 1,
       "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
+        "places": [
+          "tower",
+          "Obsidian Tower",
+          "Sunken Cathedrals"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-03-01",
-          "title": "The Starfall Oath"
-        },
-        {
-          "date": "2026-03-02",
-          "title": "The Starfall Ritual"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Drowned Prince's Vigil"
+          "date": "2026-03-18",
+          "title": "The Wanderer's Question"
         }
       ]
     },
@@ -501,7 +497,7 @@
       "resolved": false,
       "last_seen": "2026-03-08",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "The Scorched Reach",
@@ -776,6 +772,43 @@
       ]
     },
     {
+      "name": "Violet Conjunction",
+      "tagline": "Celestial. Prophetic. World-altering.",
+      "event_type": "celestial event / prophecy",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-03-04",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Starfall Ritual"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Drowned Prince's Vigil"
+        }
+      ]
+    },
+    {
       "name": "The Wanderer's Question",
       "tagline": "Philosophical. Revelatory. Corrupting.",
       "event_type": "encounter / philosophical reckoning",
@@ -784,9 +817,9 @@
       "stage": "climax",
       "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-03-16",
-      "recent_issues": 3,
-      "trend": 3,
+      "last_seen": "2026-03-18",
+      "recent_issues": 4,
+      "trend": 2,
       "referenced_locations": {
         "places": [
           "western provinces"
@@ -811,39 +844,10 @@
         {
           "date": "2026-03-16",
           "title": "The Wanderer's Question"
-        }
-      ]
-    },
-    {
-      "name": "The Merchant's Transformation",
-      "tagline": "Doubled. Cursed. Remembering.",
-      "event_type": "personal transformation / cosmic rewrite consequence",
-      "scope": "regional",
-      "epicenter": "Scorched Reach",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-03-16",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Wailing Fracture",
-          "Scorched Reach",
-          "Sunken Cathedrals"
-        ],
-        "regions": [
-          "Scorched Reach"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
+        },
         {
-          "date": "2026-03-16",
-          "title": "The Merchant's Transformation"
+          "date": "2026-03-18",
+          "title": "The Wanderer's Question"
         }
       ]
     },
@@ -853,12 +857,12 @@
       "event_type": "personal / spiritual crisis",
       "scope": "regional",
       "epicenter": "borderlands",
-      "stage": "rising",
-      "intensity": 3,
+      "stage": "climax",
+      "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-03-16",
-      "recent_issues": 1,
-      "trend": 1,
+      "last_seen": "2026-03-18",
+      "recent_issues": 2,
+      "trend": 2,
       "referenced_locations": {
         "places": [
           "borderlands",
@@ -878,6 +882,10 @@
       "story_appearances": [
         {
           "date": "2026-03-16",
+          "title": "The Shade-Echo's Hunger"
+        },
+        {
+          "date": "2026-03-18",
           "title": "The Shade-Echo's Hunger"
         }
       ]
@@ -960,7 +968,7 @@
       "resolved": false,
       "last_seen": "2026-03-08",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "great hall",
@@ -1056,7 +1064,7 @@
       "resolved": false,
       "last_seen": "2026-03-13",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Vaulted Tombs"
@@ -1087,7 +1095,7 @@
       "resolved": false,
       "last_seen": "2026-03-13",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Abyssal Rift",
@@ -1119,7 +1127,7 @@
       "resolved": false,
       "last_seen": "2026-03-13",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "unknown"
@@ -1199,6 +1207,39 @@
         {
           "date": "2026-03-14",
           "title": "The Auditor's Secret"
+        }
+      ]
+    },
+    {
+      "name": "The Merchant's Transformation",
+      "tagline": "Doubled. Cursed. Remembering.",
+      "event_type": "personal transformation / cosmic rewrite consequence",
+      "scope": "regional",
+      "epicenter": "Scorched Reach",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-16",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Wailing Fracture",
+          "Scorched Reach",
+          "Sunken Cathedrals"
+        ],
+        "regions": [
+          "Scorched Reach"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-16",
+          "title": "The Merchant's Transformation"
         }
       ]
     },
@@ -1731,28 +1772,6 @@
       "referenced_locations": {
         "places": [
           "Tomb"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": []
-    },
-    {
-      "name": "Theft of the Emerald Eyes of Khar-Zul",
-      "tagline": "Sacrilege. Flight. Curse.",
-      "event_type": "theft / curse-trigger",
-      "scope": "city",
-      "epicenter": "Khar-Zul",
-      "stage": "seed",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": null,
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Khar-Zul"
         ],
         "regions": [],
         "realms": [],
