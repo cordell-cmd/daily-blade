@@ -154,6 +154,99 @@ OPEN THREADS:
 """
 
 
+def _build_fallback_arc_summary(event_row: dict) -> str:
+    """Deterministic fallback summary when the LLM summary is unavailable.
+
+    This keeps the UI usable even before the first LLM-enabled run.
+    """
+    name = str(event_row.get("name") or "(unnamed event)").strip()
+    event_type = str(event_row.get("event_type") or "").strip() or "event"
+    scope = str(event_row.get("scope") or "").strip()
+    epicenter = str(event_row.get("epicenter") or "").strip()
+    stage = str(event_row.get("stage") or "").strip()
+    intensity = event_row.get("intensity")
+    resolved = bool(event_row.get("resolved"))
+    last_seen = str(event_row.get("last_seen") or "").strip()
+    recent_issues = event_row.get("recent_issues")
+    trend = event_row.get("trend")
+    tagline = str(event_row.get("tagline") or "").strip()
+
+    apps = event_row.get("story_appearances") if isinstance(event_row.get("story_appearances"), list) else []
+    apps = [a for a in apps if isinstance(a, dict) and str(a.get("title") or "").strip()]
+    apps_sorted = sorted(
+        apps,
+        key=lambda a: (
+            str(a.get("date") or ""),
+            str(a.get("title") or ""),
+        ),
+    )
+
+    first_date = str(apps_sorted[0].get("date") or "").strip() if apps_sorted else ""
+    last_date = str(apps_sorted[-1].get("date") or "").strip() if apps_sorted else ""
+    first_title = str(apps_sorted[0].get("title") or "").strip() if apps_sorted else ""
+    last_title = str(apps_sorted[-1].get("title") or "").strip() if apps_sorted else ""
+    n_apps = len(apps_sorted)
+
+    parts: list[str] = []
+    parts.append("SUMMARY:")
+    if tagline:
+        parts.append(f"{name} — {tagline}")
+    else:
+        parts.append(f"{name} is a running {event_type}.")
+
+    details: list[str] = []
+    if scope:
+        details.append(f"Scope: {scope}")
+    if epicenter:
+        details.append(f"Epicenter: {epicenter}")
+    if stage:
+        details.append(f"Stage: {stage}")
+    if intensity is not None:
+        details.append(f"Intensity: {intensity}")
+    if details:
+        parts.append(". ".join(details) + ".")
+
+    if n_apps:
+        if first_date and last_date and first_date != last_date:
+            parts.append(f"Appears in {n_apps} recorded tales from {first_date} through {last_date}.")
+        elif last_date:
+            parts.append(f"Appears in {n_apps} recorded tales; last seen {last_date}.")
+        else:
+            parts.append(f"Appears in {n_apps} recorded tales.")
+
+        if first_title and first_date:
+            parts.append(f"First noted in: {first_title} ({first_date}).")
+        if last_title and last_date:
+            parts.append(f"Most recently: {last_title} ({last_date}).")
+    elif last_seen:
+        parts.append(f"Last seen: {last_seen}.")
+
+    parts.append("")
+    parts.append("CURRENT STATE:")
+    parts.append(f"- Resolved: {'yes' if resolved else 'no'}")
+    if stage:
+        parts.append(f"- Stage: {stage}")
+    if intensity is not None:
+        parts.append(f"- Intensity: {intensity}")
+    if last_seen:
+        parts.append(f"- Last seen: {last_seen}")
+    if recent_issues is not None:
+        parts.append(f"- Recent issues: {recent_issues}")
+    if trend is not None:
+        parts.append(f"- Trend: {trend}")
+
+    parts.append("")
+    parts.append("OPEN THREADS:")
+    if not resolved:
+        parts.append("- The arc remains unresolved.")
+    if epicenter.lower() in {"", "unknown"}:
+        parts.append("- The epicenter is not yet identified.")
+    if not n_apps:
+        parts.append("- No recorded story appearances are linked yet.")
+
+    return "\n".join(parts).strip() + "\n"
+
+
 def _load_json(path: str):
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -350,6 +443,8 @@ def main() -> int:
         prev_summary = str(prev.get("arc_summary") or "").strip()
         prev_last = str(prev.get("arc_summary_last_seen") or "").strip()
         prev_fp = str(prev.get("arc_summary_fingerprint") or "").strip()
+        prev_model = str(prev.get("arc_summary_model") or "").strip()
+        prev_is_fallback = prev_model.startswith("fallback")
         want_last = _pick_latest_seen(r)
 
         full_apps = r.get("story_appearances_all") if isinstance(r.get("story_appearances_all"), list) else r.get("story_appearances")
@@ -357,7 +452,7 @@ def main() -> int:
         full_apps = _uniq_story_apps(full_apps)
         want_fp = _appearance_fingerprint(full_apps)
 
-        if prev_summary and prev_fp and want_fp and prev_fp == want_fp:
+        if prev_summary and prev_fp and want_fp and prev_fp == want_fp and (not prev_is_fallback or client is None):
             r["arc_summary"] = prev_summary
             r["arc_summary_last_seen"] = prev_last or want_last
             r["arc_summary_fingerprint"] = prev_fp
@@ -382,10 +477,20 @@ def main() -> int:
             if prev_summary:
                 r["arc_summary"] = prev_summary
                 r["arc_summary_last_seen"] = prev_last or want_last
+                if prev_fp:
+                    r["arc_summary_fingerprint"] = prev_fp
                 if prev.get("arc_summary_updated_at"):
                     r["arc_summary_updated_at"] = prev.get("arc_summary_updated_at")
                 if prev.get("arc_summary_model"):
                     r["arc_summary_model"] = prev.get("arc_summary_model")
+            else:
+                # Ensure the UI has something to show even before LLM summaries exist.
+                r["arc_summary"] = _build_fallback_arc_summary(r)
+                r["arc_summary_last_seen"] = want_last
+                # Deliberately avoid setting a fingerprint for fallback so an LLM
+                # run can replace it later even if appearances haven't changed.
+                r["arc_summary_updated_at"] = datetime.now(timezone.utc).isoformat()
+                r["arc_summary_model"] = "fallback-v1"
             continue
 
         selected_apps = _select_story_appearances_for_summary(full_apps, max_tales)
@@ -428,6 +533,11 @@ def main() -> int:
                     r["arc_summary_updated_at"] = prev.get("arc_summary_updated_at")
                 if prev.get("arc_summary_model"):
                     r["arc_summary_model"] = prev.get("arc_summary_model")
+            else:
+                r["arc_summary"] = _build_fallback_arc_summary(r)
+                r["arc_summary_last_seen"] = want_last
+                r["arc_summary_updated_at"] = datetime.now(timezone.utc).isoformat()
+                r["arc_summary_model"] = "fallback-v1"
             print(f"WARNING: summary build failed for {r.get('name')}: {e}")
 
     # Strip internal-only fields before writing.
