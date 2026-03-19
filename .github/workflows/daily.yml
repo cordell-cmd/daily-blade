@@ -30,6 +30,10 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ github.token }}
+          persist-credentials: true
+          fetch-depth: 0
 
 
       - name: Set up Python
@@ -87,16 +91,23 @@ jobs:
 
       - name: Generate world event arcs summary
         if: steps.gate.outputs.run == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ENABLE_WORLD_EVENT_SUMMARIES: "1"
+          WORLD_EVENT_SUMMARY_MAX_UPDATES: "50"
         run: python audit_world_events.py
 
 
       - name: Commit and push stories
         if: steps.gate.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           git config user.name  "Daily Blade Bot"
           git config user.email "actions@github.com"
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add stories.json archive/ lore.json characters.json codex.json world-events.json
           # Only commit if something actually changed
           git diff --cached --quiet || git commit -m "🗡️ Daily stories — $(date -u '+%Y-%m-%d')"
-          git push
+          git push origin "HEAD:${GITHUB_REF_NAME}"
 

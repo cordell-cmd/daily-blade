@@ -14,11 +14,144 @@ from __future__ import annotations
 
 import json
 import os
+import hashlib
 from datetime import datetime, timezone
+
+import anthropic
 
 
 CODEX_FILE = "codex.json"
 OUTPUT_FILE = "world-events.json"
+
+
+def _norm(s: str) -> str:
+    return str(s or "").strip().lower()
+
+
+def _load_previous_summaries(path: str) -> dict[tuple[str, str], dict]:
+    """Return a mapping (name_lc, event_type_lc) -> prior event dict."""
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        events = data.get("events", []) if isinstance(data, dict) else []
+        if not isinstance(events, list):
+            return {}
+        out: dict[tuple[str, str], dict] = {}
+        for e in events:
+            if not isinstance(e, dict):
+                continue
+            k = (_norm(e.get("name")), _norm(e.get("event_type")))
+            if not any(k):
+                continue
+            out[k] = e
+        return out
+    except Exception:
+        return {}
+
+
+def _pick_latest_seen(row: dict) -> str:
+    """Pick the best 'last seen' marker for summary caching."""
+    last_seen = str(row.get("last_seen") or "").strip()
+    if last_seen:
+        return last_seen
+    apps = row.get("story_appearances") if isinstance(row.get("story_appearances"), list) else []
+    best = ""
+    for a in apps:
+        if not isinstance(a, dict):
+            continue
+        d = str(a.get("date") or "").strip()
+        if d and d > best:
+            best = d
+    return best
+
+
+def _select_story_appearances_for_summary(apps: list, max_tales: int) -> list:
+    """Select appearances for summarization.
+
+    When capped, include both the beginning and the most recent chunk so the
+    summary can cover "from the start" without requiring the full history.
+    """
+    if not isinstance(apps, list):
+        return []
+    max_tales = int(max_tales or 0)
+    if max_tales <= 0 or len(apps) <= max_tales:
+        return apps
+
+    # Keep ~1/3 from the start, ~2/3 from the end.
+    start_n = max(3, max_tales // 3)
+    end_n = max(1, max_tales - start_n)
+    head = apps[:start_n]
+    tail = apps[-end_n:]
+
+    # Avoid duplication if the arc is short.
+    seen = set()
+    out = []
+    for a in head + tail:
+        if not isinstance(a, dict):
+            continue
+        d = str(a.get("date") or "").strip()
+        t = str(a.get("title") or "").strip()
+        k = (d, t)
+        if k in seen:
+            continue
+        seen.add(k)
+        out.append(a)
+    return out
+
+
+def _appearance_fingerprint(apps: list) -> str:
+    """Stable fingerprint of (date,title) pairs for cache invalidation."""
+    if not isinstance(apps, list) or not apps:
+        return ""
+    parts: list[str] = []
+    for a in apps:
+        if not isinstance(a, dict):
+            continue
+        d = str(a.get("date") or "").strip()
+        t = str(a.get("title") or "").strip()
+        if not t:
+            continue
+        parts.append(f"{d}::{t}")
+    raw = "\n".join(parts)
+    return hashlib.sha1(raw.encode("utf-8"), usedforsecurity=False).hexdigest() if raw else ""
+
+
+def _build_event_arc_summary_prompt(event_row: dict, prior_tales: list) -> str:
+    """Reader-facing summary prompt for a world event arc."""
+    name = str(event_row.get("name") or "unnamed event").strip()
+    canon_json = json.dumps(event_row, ensure_ascii=False, sort_keys=True)
+    tales_payload = json.dumps(prior_tales or [], ensure_ascii=False, indent=2)
+    return f"""You are an archivist writing a reader-facing summary of a running world event in a sword-and-sorcery universe.
+
+Event name: {name}
+
+AUTHORITATIVE EVENT DATA (JSON):
+{canon_json}
+
+RELATED TALES IN CHRONOLOGICAL ORDER ({len(prior_tales or [])} tales):
+{tales_payload}
+
+Task: Summarize the event from its beginning to the current stage.
+
+Constraints:
+- Only include facts supported by the JSON and/or the tales.
+- Preserve chronology (what happened first, then what, then what).
+- Emphasize cause/effect, escalation, and turning points.
+- End with the current state and what remains unresolved.
+- Keep it concise and readable for a casual reader.
+
+Return ONLY plain text in this format:
+SUMMARY:
+(4-10 sentences)
+
+CURRENT STATE:
+- (1-4 bullets)
+
+OPEN THREADS:
+- (bullets)
+"""
 
 
 def _load_json(path: str):
@@ -45,6 +178,20 @@ def main() -> int:
 
     loc_names = gs._canon_loc_names_from_codex(codex)  # type: ignore[attr-defined]
     known_dates = gs._load_known_issue_dates()  # type: ignore[attr-defined]
+
+    prev_by_key = _load_previous_summaries(OUTPUT_FILE)
+
+    enable_summaries = (os.environ.get("ENABLE_WORLD_EVENT_SUMMARIES", "1").strip().lower() in {"1", "true", "yes", "y"})
+    max_updates = int(os.environ.get("WORLD_EVENT_SUMMARY_MAX_UPDATES", "50") or 50)
+    max_tales = int(os.environ.get("WORLD_EVENT_SUMMARY_MAX_TALES", "24") or 24)
+    max_chars_per_story = int(os.environ.get("WORLD_EVENT_SUMMARY_MAX_CHARS_PER_STORY", "2000") or 2000)
+    max_total_chars = int(os.environ.get("WORLD_EVENT_SUMMARY_MAX_TOTAL_INPUT_CHARS", "80000") or 80000)
+    max_tokens = int(os.environ.get("WORLD_EVENT_SUMMARY_MAX_TOKENS", "1200") or 1200)
+
+    api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
+    client = None
+    if enable_summaries and api_key:
+        client = anthropic.Anthropic(api_key=api_key)
 
     rows = []
     for e in events:
@@ -87,13 +234,11 @@ def main() -> int:
                 "continents": mentioned_continents[:8],
             },
             "story_appearances": story_apps[-12:],
+            "story_appearances_all": story_apps,
         })
 
     # De-dupe by (name, event_type). This protects against codex merge mishaps
     # (e.g., whitespace variants) while preserving useful continuity signals.
-    def _norm(s: str) -> str:
-        return str(s or "").strip().lower()
-
     def _uniq_story_apps(apps):
         if not isinstance(apps, list):
             return []
@@ -170,6 +315,11 @@ def main() -> int:
         r_apps = _uniq_story_apps(r.get("story_appearances"))
         ex["story_appearances"] = (ex_apps + [a for a in r_apps if a not in ex_apps])[-12:]
 
+        # Also merge the full story history for summarization (not written to output).
+        ex_all = _uniq_story_apps(ex.get("story_appearances_all"))
+        r_all = _uniq_story_apps(r.get("story_appearances_all"))
+        ex["story_appearances_all"] = (ex_all + [a for a in r_all if a not in ex_all])
+
     rows = list(merged.values())
 
     def _scope_rank(scope: str) -> int:
@@ -191,6 +341,100 @@ def main() -> int:
     # Keep the file compact but useful.
     top = rows[:50]
 
+    # Attach (cached or freshly generated) reader-facing arc summaries.
+    # We only regenerate when the event has new story appearances since the last summary.
+    updates_done = 0
+    for r in top:
+        k = (_norm(r.get("name")), _norm(r.get("event_type")))
+        prev = prev_by_key.get(k) or {}
+        prev_summary = str(prev.get("arc_summary") or "").strip()
+        prev_last = str(prev.get("arc_summary_last_seen") or "").strip()
+        prev_fp = str(prev.get("arc_summary_fingerprint") or "").strip()
+        want_last = _pick_latest_seen(r)
+
+        full_apps = r.get("story_appearances_all") if isinstance(r.get("story_appearances_all"), list) else r.get("story_appearances")
+        full_apps = full_apps if isinstance(full_apps, list) else []
+        full_apps = _uniq_story_apps(full_apps)
+        want_fp = _appearance_fingerprint(full_apps)
+
+        if prev_summary and prev_fp and want_fp and prev_fp == want_fp:
+            r["arc_summary"] = prev_summary
+            r["arc_summary_last_seen"] = prev_last or want_last
+            r["arc_summary_fingerprint"] = prev_fp
+            if prev.get("arc_summary_updated_at"):
+                r["arc_summary_updated_at"] = prev.get("arc_summary_updated_at")
+            if prev.get("arc_summary_model"):
+                r["arc_summary_model"] = prev.get("arc_summary_model")
+            continue
+
+        # Back-compat: older cached files may not have a fingerprint yet.
+        if prev_summary and (not prev_fp) and prev_last and want_last and prev_last >= want_last:
+            r["arc_summary"] = prev_summary
+            r["arc_summary_last_seen"] = prev_last
+            if prev.get("arc_summary_updated_at"):
+                r["arc_summary_updated_at"] = prev.get("arc_summary_updated_at")
+            if prev.get("arc_summary_model"):
+                r["arc_summary_model"] = prev.get("arc_summary_model")
+            continue
+
+        # If we can't (or shouldn't) regenerate, keep the prior summary if present.
+        if not enable_summaries or client is None or updates_done >= max_updates or not want_last:
+            if prev_summary:
+                r["arc_summary"] = prev_summary
+                r["arc_summary_last_seen"] = prev_last or want_last
+                if prev.get("arc_summary_updated_at"):
+                    r["arc_summary_updated_at"] = prev.get("arc_summary_updated_at")
+                if prev.get("arc_summary_model"):
+                    r["arc_summary_model"] = prev.get("arc_summary_model")
+            continue
+
+        selected_apps = _select_story_appearances_for_summary(full_apps, max_tales)
+
+        canon_for_prompt = dict(r)
+        canon_for_prompt["story_appearances"] = selected_apps
+        canon_for_prompt.pop("story_appearances_all", None)
+
+        prior_tales = gs.gather_prior_tales_for_entity(
+            canon_for_prompt,
+            max_appearances=0,
+            max_chars_per_story=max_chars_per_story,
+            max_total_chars=max_total_chars,
+        )
+        if not prior_tales:
+            continue
+
+        prompt = _build_event_arc_summary_prompt(canon_for_prompt, prior_tales)
+        try:
+            msg = client.messages.create(
+                model=getattr(gs, "MODEL", "claude-haiku-4-5-20251001"),
+                max_tokens=max_tokens,
+                messages=[{"role": "user", "content": prompt}],
+            )
+            text = (msg.content[0].text or "").strip()
+            if text:
+                r["arc_summary"] = text
+                r["arc_summary_last_seen"] = want_last
+                r["arc_summary_fingerprint"] = want_fp
+                r["arc_summary_updated_at"] = datetime.now(timezone.utc).isoformat()
+                r["arc_summary_model"] = getattr(gs, "MODEL", "claude-haiku-4-5-20251001")
+                updates_done += 1
+        except Exception as e:
+            if prev_summary:
+                r["arc_summary"] = prev_summary
+                r["arc_summary_last_seen"] = prev_last or want_last
+                if prev_fp:
+                    r["arc_summary_fingerprint"] = prev_fp
+                if prev.get("arc_summary_updated_at"):
+                    r["arc_summary_updated_at"] = prev.get("arc_summary_updated_at")
+                if prev.get("arc_summary_model"):
+                    r["arc_summary_model"] = prev.get("arc_summary_model")
+            print(f"WARNING: summary build failed for {r.get('name')}: {e}")
+
+    # Strip internal-only fields before writing.
+    for r in top:
+        if isinstance(r, dict):
+            r.pop("story_appearances_all", None)
+
     out = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": CODEX_FILE,
@@ -198,7 +442,13 @@ def main() -> int:
         "events": top,
     }
     _write_json(OUTPUT_FILE, out)
-    print(f"✓ Wrote {OUTPUT_FILE} ({len(top)} events)")
+    msg = f"✓ Wrote {OUTPUT_FILE} ({len(top)} events)"
+    if enable_summaries:
+        if not api_key:
+            msg += " (summaries enabled, but ANTHROPIC_API_KEY not set — using cached summaries only)"
+        else:
+            msg += f" (summary updates: {updates_done})"
+    print(msg)
     return 0
 
 

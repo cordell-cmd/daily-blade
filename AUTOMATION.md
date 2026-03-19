@@ -6,6 +6,9 @@ This repo includes a generator that creates 10 new stories per day and writes:
 - `archive/index.json`
 - plus lore outputs (`lore.json`, `characters.json`, `codex.json`)
 
+It also maintains a World Events register:
+- `world-events.json` (top active arcs + rolling summaries)
+
 This repo is designed to run automatically via GitHub Actions (recommended), keeping a single live source of truth.
 
 ## Option A: GitHub Actions (runs on GitHub)
@@ -20,6 +23,7 @@ Requirements:
 Notes:
 - If the workflow fails (missing secret, API error), nothing is generated/pushed.
 - If you want it to run at “dawn” in your local timezone, edit the cron expression.
+- This workflow currently **triggers hourly** and then decides in-job whether to actually generate (it only generates on scheduled runs after ~06:00 America/New_York). This is intentional to be DST-safe and to “catch up” quickly if a run is missed.
 
 ## Make the site live (recommended: GitHub Pages)
 
@@ -41,6 +45,15 @@ Checklist:
 - Ensure the repo secret `ANTHROPIC_API_KEY` is set (Settings → Secrets and variables → Actions).
 - Check **Actions → Generate Daily Stories** for green runs.
 - When Actions commits new JSON, the Pages site updates automatically.
+
+## World Event arc summaries
+
+`audit_world_events.py` can optionally generate/update a short reader-facing summary per displayed World Event by asking Haiku to summarize the event across its related stories.
+
+Tuning (via env vars in the workflow):
+- `ENABLE_WORLD_EVENT_SUMMARIES=1|0` (enable/disable)
+- `WORLD_EVENT_SUMMARY_MAX_UPDATES` (max events to re-summarize per run)
+- `WORLD_EVENT_SUMMARY_MAX_TALES` (caps how many tales are fed to the model; uses a “start + recent” sample so summaries still cover the beginning)
 
 Why this avoids “two versions”:
 - You never run the generator locally.
