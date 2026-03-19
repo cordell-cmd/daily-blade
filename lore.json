@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-18",
+  "last_updated": "2026-03-19",
   "worlds": [
     {
       "id": "known_world",
@@ -515,7 +515,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 5,
+      "appearances": 6,
       "aliases": [
         "Kael"
       ]
@@ -961,7 +961,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "naresh_the_bone_carver",
@@ -1159,9 +1159,9 @@
       "role": "Prince, Dragon's Consort",
       "world": "known_world",
       "status": "active",
-      "home_place": "unknown",
-      "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_place": "Greymarch Castle",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
       "travel_scope": "realmwide",
       "bio": "Prince Aldren rode to meet the dragon Skyrakis expecting death, but was offered a choice: wed the dragon's daughter and rule in the crystal halls beneath the world, or see his kingdom burn. He accepted and negotiated a counter-oath ensuring his future children could choose their own path. He now dwells in the crystal halls, having traded his human kingdom for a life of honor and duty.",
       "traits": [
@@ -1178,10 +1178,21 @@
         "his father (unnamed)",
         "merchant's daughter (bride-to-be, unnamed)"
       ],
-      "notes": "His acceptance of the oath binds him to the dragon's daughter and their hybrid line. The counter-oath he swore creates a precedent for wyvern-blooded heirs to have free choice.",
+      "notes": "His acceptance of the oath binds him to the dragon's daughter and their hybrid line. The counter-oath he swore creates a precedent for wyvern-blooded heirs to have free choice.\nThe story clarifies that Aldren's original oath-debt to Skyrakis originated three centuries ago through his grandmother's blood-marriage; Elara's diplomatic intervention demonstrates the family's strategic negotiation style and establishes precedent for transforming cosmic debts into functional pacts.",
       "first_story": "The Dragon's Bargain",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-19",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wyvern's Dowry",
+          "note": "Aldren's sister Elara negotiates with Skyrakis on behalf of the family debt, transforming a blood-marriage obligation into a mutual alliance of wyvern-guard for safe passage.",
+          "evidence": "Elara knelt before the beast and spoke the old tongue... offering not marriage but alliance: wyvern-guard for the castle's northern border, in exchange for safe passage through the Hearthlands for Skyrakis's kin."
+        }
+      ]
     },
     {
       "id": "skyrakis_the_wound_wing",
@@ -1194,7 +1205,7 @@
       "world": "known_world",
       "status": "active",
       "home_place": "crystal halls",
-      "home_region": "unknown",
+      "home_region": "The Hearthlands",
       "home_realm": "unknown",
       "travel_scope": "realmwide",
       "bio": "A great dragon whose grandmother made an ancient blood-marriage oath with Prince Aldren's family. When Aldren's father broke this oath, Skyrakis sought redress, threatening to burn the kingdom unless a prince would wed his daughter and rule in the crystal halls beneath the world. She respects negotiation and honor.",
@@ -1215,7 +1226,7 @@
       "notes": "Her grandmother swore the original blood-marriage oath with Aldren's family generations ago. She has a daughter coming of age.",
       "first_story": "The Dragon's Bargain",
       "first_date": "2026-02-28",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "mira_the_shadow_dancer",
@@ -1381,7 +1392,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 12
+      "appearances": 14
     },
     {
       "id": "mardoc_cartographer",
@@ -1416,7 +1427,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 13,
+      "appearances": 14,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2033,7 +2044,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 15
+      "appearances": 16
     },
     {
       "id": "mogrul",
@@ -2135,7 +2146,7 @@
       "notes": "Zareth completed the Stellar Rite but lost all memory of joy, love, and beauty in the process. The consequences of his sacrifice and whether he survives remain unclear.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 16
+      "appearances": 18
     },
     {
       "id": "thera_the_falconer",
@@ -2245,10 +2256,10 @@
         "Tax Collector's daughter",
         "Mardoc the Cartographer"
       ],
-      "notes": "Represents imperial authority that can be swayed by pragmatism and his daughter's negotiation. His choice to hire Mardoc leads to the discovery of pre-human ruins.\nThe Tax Collector's role expands: his aide reports widespread trade disruption, warehouses burning, and merfolk activity in markets. He is now mapping chaos across the Empire's districts and trade posts, preparing for potential economic and political upheaval.\nNew story 'The Tax Collector's Question' confirms his expanded role investigating reality-fraying and cosmic damage across the Empire's districts, consistent with his prior arc of mapping chaos.\nThe Empire's fiscal certainty has fractured; the Tax Collector's role expands to navigating post-Ascension economic chaos and potential collapse of imperial order.\nNew story 'The Tax Collector's Mutation' reveals that imperial assessors (including those under the Tax Collector's authority) are being harmonically transformed by contact with the Sunken Cathedrals' frequency. This compounds the institutional collapse already tracked in canon; the Tax Collector's role now includes managing the disappearance of his own auditing infrastructure into cosmic synchrony.",
+      "notes": "Represents imperial authority that can be swayed by pragmatism and his daughter's negotiation. His choice to hire Mardoc leads to the discovery of pre-human ruins.\nThe Tax Collector's role expands: his aide reports widespread trade disruption, warehouses burning, and merfolk activity in markets. He is now mapping chaos across the Empire's districts and trade posts, preparing for potential economic and political upheaval.\nNew story 'The Tax Collector's Question' confirms his expanded role investigating reality-fraying and cosmic damage across the Empire's districts, consistent with his prior arc of mapping chaos.\nThe Empire's fiscal certainty has fractured; the Tax Collector's role expands to navigating post-Ascension economic chaos and potential collapse of imperial order.\nNew story 'The Tax Collector's Mutation' reveals that imperial assessors (including those under the Tax Collector's authority) are being harmonically transformed by contact with the Sunken Cathedrals' frequency. This compounds the institutional collapse already tracked in canon; the Tax Collector's role now includes managing the disappearance of his own auditing infrastructure into cosmic synchrony.\nThe story expands the Tax Collector's institutional context: the Empire is systematically falsifying records to mask the Ascension's administrative damage, compounding the fiscal collapse already tracked in canon.",
       "first_story": "The Cartographer's Lie",
       "first_date": "2026-03-02",
-      "appearances": 5,
+      "appearances": 6,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2258,6 +2269,15 @@
           "story_title": "The Tax Collector's Reckoning",
           "note": "Levian the auditor (representing imperial tax authority) discovers the Empire's wealth is partially invested in Zareth's Ascension and must navigate destabilized regions and economic collapse.",
           "evidence": "Merchants vanished, trade caravans report missing weeks, Zareth borrowed heavily against the Sovereign's treasury; Levian commissioned to catalog losses and determine if Empire can salvage control."
+        },
+        {
+          "date": "2026-03-19",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Ledger-Keeper's Folly",
+          "note": "An Imperial auditor named Corin faces pressure to use tally-working magic to retroactively falsify supply manifests, revealing the Empire's bureaucratic collapse and use of starlight-magic to maintain administrative authority.",
+          "evidence": "The Empire's bureaucracy is collapsing, and it will hold the line through lies written in ink and starlight... the Empire is forcing auditors to write phantom shipments into being retroactively."
         }
       ]
     },
@@ -2697,10 +2717,10 @@
       "affiliations": [
         "five-member warband"
       ],
-      "notes": "Left the vaults to walk a separate path; remains bonded to companions through choice, not compulsion.\nShadow-Broker's network appears to be actively acquiring high-value secrets post-Stellar Rite, positioning them as a major force in the new economy of intangibles.",
+      "notes": "Left the vaults to walk a separate path; remains bonded to companions through choice, not compulsion.\nShadow-Broker's network appears to be actively acquiring high-value secrets post-Stellar Rite, positioning them as a major force in the new economy of intangibles.\nThe Shadow-Broker's network is now confirmed as a major player in post-Ascension fragment-trading; their positioning as custodians preventing reassembly suggests strategic alignment with forces opposing a second Ascension.",
       "first_story": "The Warband's Last Song",
       "first_date": "2026-03-02",
-      "appearances": 2,
+      "appearances": 3,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -2710,6 +2730,15 @@
           "story_title": "The Warden's Last Coin",
           "note": "Meira references selling the Ledger to shadow-brokers in Kethrim, likely including or connected to the Shadow-Broker companion.",
           "evidence": "Krell speculated: 'Sold to shadow-brokers in Kethrim, I'd wager.'"
+        },
+        {
+          "date": "2026-03-19",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Echo-Merchant's Reckoning",
+          "note": "Vex discovers that memory-fragments traded through shadow-broker networks are not scattered pieces of individual lives but fragments of Nethys itself; the shadow-trading business has become a cosmic conduit.",
+          "evidence": "The memory-fragments she buys and sells are not scattered pieces of individual lives\u2014they are fragments of Nethys itself, the cosmic entity that sacrificed its consciousness in the Luminous Ascension."
         }
       ],
       "travel_notes": "[2026-03-11] Shadow-Broker operates through networks across multiple city-centers (Kethrim, Vorrath implied); involvement in empire-wide intelligence trafficking suggests broader scope than regional."
@@ -3339,7 +3368,7 @@
       "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "old_ranger",
@@ -4557,7 +4586,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4799,7 +4828,8 @@
       "aliases": [
         "the wanderer",
         "composite memories",
-        "The Wanderer"
+        "The Wanderer",
+        "the Wanderer"
       ],
       "tagline": "Fragmented. Rebuilding. Lost.",
       "role": "Living memory / Consciousness fragment",
@@ -4827,7 +4857,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 9,
+      "appearances": 11,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -5602,10 +5632,10 @@
       "affiliations": [
         "unknown"
       ],
-      "notes": "Discovers evidence of a plan to reassemble world-fragments into a doorway to the void or an alternate timeline.\nConfirms Vesta's role as investigator of catastrophic phenomena; establishes her authority reaches beyond harbor management into realm-spanning threats.",
+      "notes": "Discovers evidence of a plan to reassemble world-fragments into a doorway to the void or an alternate timeline.\nConfirms Vesta's role as investigator of catastrophic phenomena; establishes her authority reaches beyond harbor management into realm-spanning threats.\nThis story deepens Vesta's role as mediator between surface and sea-folk; the harbor's true history becomes a flashpoint for territorial and cultural claims in the post-Ascension world.",
       "first_story": "The Jade Coast Enclave",
       "first_date": "2026-03-10",
-      "appearances": 3,
+      "appearances": 5,
       "status_history": [
         {
           "date": "2026-03-14",
@@ -5615,6 +5645,15 @@
           "story_title": "The Song of the Deep",
           "note": "Vesta conscripts Captain Meren to investigate harmonic resonance at the Sunken Cathedrals and must grapple with evidence of pre-human civilization resurging.",
           "evidence": "Vesta directs Meren to investigate intensifying harmonic resonance; Meren discovers transformed merchants being called to rebuild what the Luminous Ascension erased."
+        },
+        {
+          "date": "2026-03-19",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Warden's Vigil",
+          "note": "Vesta must broker peace between humans and deepkin over control of Emerald Strand harbor, which was built atop pre-human ocean cities; the deepkin reveal ancient cartography and demand territorial negotiation.",
+          "evidence": "The deepkin possess an ancient cartography mapping pre-human ocean cities beneath the harbor. If she allows them to map Emerald Strand openly, her people will learn they built their sanctuary atop sacred grounds."
         }
       ]
     },
@@ -7609,10 +7648,10 @@
       "affiliations": [
         "Ashara the Archer"
       ],
-      "notes": "Disintegrating; soon there will be no scholar left to negotiate with, only hunger. Ashara believes it can be reasoned with and may help recover her warband's erased names.\nDisintegration trajectory continues; however, the act of grieving suggests retention of scholar-personality fragments rather than full collapse into hunger. Status remains active but increasingly fragile.",
+      "notes": "Disintegrating; soon there will be no scholar left to negotiate with, only hunger. Ashara believes it can be reasoned with and may help recover her warband's erased names.\nDisintegration trajectory continues; however, the act of grieving suggests retention of scholar-personality fragments rather than full collapse into hunger. Status remains active but increasingly fragile.\nThis story reframes the Void-Echo's function: rather than being parasitic hunger, the Echo-fragmenting may be an act of protective resistance against pre-human assimilation.",
       "first_story": "The Echo-Broker's Gambit",
       "first_date": "2026-03-16",
-      "appearances": 5,
+      "appearances": 6,
       "status_history": [
         {
           "date": "2026-03-18",
@@ -7622,6 +7661,15 @@
           "story_title": "The Shade-Echo's Hunger",
           "note": "Void-Echo fragment withdraws into silence after Vex returns a stolen memory; grieving but not destroyed or fundamentally altered.",
           "evidence": "The Void-Echo withdraws into silence, grieving. It is no longer pursuing theft but has instead ceased active hunger."
+        },
+        {
+          "date": "2026-03-19",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Ash-Singer's Debt",
+          "note": "The harmonic resonance binding transformed merchants to pre-human dead is revealed as enslavement, not salvation; Void-Echoes are custodians preventing the dead from wearing human bodies like masks.",
+          "evidence": "The pre-human dead do not wish to rebuild civilization. They wish to *become* it\u2014to wear human bodies like masks... the Void-Echoes corrupting her trades are not thieves but *custodians*, trying to prevent the fragments from reassembling."
         }
       ]
     },
@@ -8490,6 +8538,405 @@
       "notes": "The refugee's image becomes the focal point through which Vex chooses compassion over cosmic consequence.",
       "first_story": "The Auditor's Mercy",
       "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "elara",
+      "name": "Elara",
+      "aliases": [],
+      "tagline": "Cunning. Selfless. Negotiator.",
+      "role": "Princess, diplomat",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Greymarch Castle",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Empire",
+      "travel_scope": "regional",
+      "bio": "Aldren's sister, Elara volunteers before dawn to settle the blood-debt with Skyrakis. Rather than accept marriage as a bride, she travels to the wyvern's eyrie and negotiates a pact of mutual benefit\u2014wyvern-guard for safe passage through the Hearthlands\u2014transforming obligation into alliance. She speaks the old tongue and commands respect from ancient powers.",
+      "traits": [
+        "diplomatic",
+        "fluent in old languages",
+        "fearless"
+      ],
+      "known_locations": [
+        "Greymarch Castle",
+        "Greymarch Peaks",
+        "wyvern eyrie"
+      ],
+      "affiliations": [
+        "House of Greymarch",
+        "Skyrakis (pact)"
+      ],
+      "notes": "Her knowledge of the blood-language and willingness to treat a legendary creature as an equal suggests training in ancient lore.",
+      "first_story": "The Wyvern's Dowry",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "mael",
+      "name": "Mael",
+      "aliases": [],
+      "tagline": "Transformed. Haunted. Seeker.",
+      "role": "Singer, former caravan master",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Ashen Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Once a caravan master, Mael was shattered and transformed by the Luminous Ascension. Now she hears voices of the Sunken Cathedrals calling her north, each note stripping another memory away. She discovers that the pre-human dead seek not to rebuild civilization but to wear human bodies as masks. She seeks a third path: teaching the dead to sing with the living, not as them.",
+      "traits": [
+        "haunted",
+        "transformed",
+        "seeking harmony"
+      ],
+      "known_locations": [
+        "Burned Expanse",
+        "Sunken Cathedrals",
+        "Drowned Hollows"
+      ],
+      "affiliations": [
+        "pre-human dead (conflicted)",
+        "Kess"
+      ],
+      "notes": "Her transformation grants her hearing of the bone-songs but costs her memories. Her quest to find a third path suggests deep agency within cosmic forces.",
+      "first_story": "The Ash-Singer's Debt",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "corin",
+      "name": "Corin",
+      "aliases": [],
+      "tagline": "Honest. Conflicted. Auditor.",
+      "role": "Imperial auditor",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "refugee camp",
+      "home_region": "unknown",
+      "home_realm": "The Empire",
+      "travel_scope": "regional",
+      "bio": "An Imperial auditor tasked with verifying supply manifests for refugee camps, Corin discovers that half the listed grain shipments are phantom entries\u2014fragments of the pre-Ascension world bleeding through reality's cracks. Ordered to falsify the records via tally-working magic, he faces an impossible choice: lie and watch refugees starve, or expose the Empire's deception and trigger administrative collapse.",
+      "traits": [
+        "honest",
+        "principled",
+        "desperate"
+      ],
+      "known_locations": [
+        "refugee camp",
+        "borderlands"
+      ],
+      "affiliations": [
+        "The Empire",
+        "Vex the Shadow-Broker (offered)"
+      ],
+      "notes": "His moral crisis reflects the corruption of order itself; the fragment of Vex offers to buy his honest records, suggesting everything becomes a commodity.",
+      "first_story": "The Ledger-Keeper's Folly",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "vex_shadow_broker",
+      "name": "Vex the Shadow-Broker",
+      "aliases": [
+        "Vex",
+        "fragment of Vex"
+      ],
+      "tagline": "Merchant. Opportunistic. Shadowed.",
+      "role": "Shadow-broker, merchant",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "A fragment of Vex the Shadow-Broker arrives at Corin's refugee camp, offering to purchase his honest records at a price. This suggests a merchant network that trades in information and commodity everything\u2014including truth itself. Vex exists as a fragmented entity, likely scattered across multiple locations or states.",
+      "traits": [
+        "predatory",
+        "well-informed",
+        "opportunistic"
+      ],
+      "known_locations": [
+        "refugee camp"
+      ],
+      "affiliations": [
+        "shadow-merchant network"
+      ],
+      "notes": "As a fragment, Vex may be a manifestation of a larger fragmented consciousness or entity; his presence indicates the reach of shadow-commerce into desperate places.",
+      "first_story": "The Ledger-Keeper's Folly",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "nethys_entity",
+      "name": "Nethys",
+      "aliases": [
+        "Nethys (fragmented)"
+      ],
+      "tagline": "Cosmic. Sacrificed. Scattered.",
+      "role": "Cosmic Entity, Memory Source",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A cosmic entity that sacrificed its consciousness during the Luminous Ascension. Its memory-fragments now circulate through shadow-trading networks, corrupted or guarded by Void-Echoes.",
+      "traits": [
+        "fractured",
+        "sacrificial",
+        "cosmic"
+      ],
+      "known_locations": [
+        "Kethrim"
+      ],
+      "affiliations": [],
+      "notes": "Reassembly of fragments could trigger a second Ascension. Fragmentation traps countless people in fractured identities.",
+      "first_story": "The Echo-Merchant's Reckoning",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "void_echoes",
+      "name": "Void-Echoes",
+      "aliases": [],
+      "tagline": "Custodians. Corruptive. Protective.",
+      "role": "Entities, Memory-Fragment Custodians",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Entities that corrupt Vex's shadow-trades, initially believed to be thieves but revealed as custodians attempting to prevent memory-fragments of Nethys from reassembling.",
+      "traits": [
+        "cryptic",
+        "protective",
+        "corruptive"
+      ],
+      "known_locations": [
+        "Kethrim",
+        "night markets"
+      ],
+      "affiliations": [],
+      "notes": "May represent the only safeguard against a second Ascension.",
+      "first_story": "The Echo-Merchant's Reckoning",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "arcanist_obsidian",
+      "name": "The Arcanist",
+      "aliases": [],
+      "tagline": "Mysterious. Powerful. Summoning.",
+      "role": "Mage, Tower Administrator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Obsidian Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "An arcanist stationed at the Obsidian Tower who contacts Kess when seals beneath the tower begin to fail. Claims the imprisoned entity is willing to negotiate through her bone-singing.",
+      "traits": [
+        "powerful",
+        "concerned",
+        "commanding"
+      ],
+      "known_locations": [
+        "Obsidian Tower"
+      ],
+      "affiliations": [],
+      "notes": "Knows the seals are failing; may have deeper knowledge of what lies beneath.",
+      "first_story": "The Bone-Singer's Choice",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "imprisoned_entity",
+      "name": "The Imprisoned Entity",
+      "aliases": [
+        "imprisoned consciousness",
+        "pre-human consciousness"
+      ],
+      "tagline": "Ancient. Unmade. Negotiating.",
+      "role": "Pre-human Consciousness, Sealed Power",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Obsidian Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "An ancient consciousness sealed beneath the Obsidian Tower, damaged by the Luminous Ascension. It communicates not in words but in sensations of dissolution and broken memory, willing to negotiate with the dead through Kess.",
+      "traits": [
+        "ancient",
+        "traumatized",
+        "alien"
+      ],
+      "known_locations": [
+        "Obsidian Tower"
+      ],
+      "affiliations": [],
+      "notes": "Its seals are failing. Communion with it risks both Kess and the living world.",
+      "first_story": "The Bone-Singer's Choice",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "echo_broker",
+      "name": "Echo-Broker",
+      "aliases": [],
+      "tagline": "Mysterious. Wounded. Uncertain.",
+      "role": "Unknown Entity, Trading Partner",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Kethrim",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "An entity involved in Vex's shadow-trading network whose very existence may be a wound in reality. Vex must determine if the Echo-Broker can be saved.",
+      "traits": [
+        "enigmatic",
+        "vulnerable",
+        "foundational"
+      ],
+      "known_locations": [
+        "Kethrim"
+      ],
+      "affiliations": [
+        "shadow-traders"
+      ],
+      "notes": "May represent a fundamental rupture in the world's fabric.",
+      "first_story": "The Echo-Merchant's Reckoning",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "transformed_merchants",
+      "name": "Transformed Merchants",
+      "aliases": [],
+      "tagline": "Displaced. Between. Temporal.",
+      "role": "Faction, Temporal Anomaly",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Wailing Fracture",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Merchants who exist in the spaces between moments within the Wailing Fracture. They exist in a state of transformation, neither fully present nor absent.",
+      "traits": [
+        "ephemeral",
+        "displaced",
+        "liminal"
+      ],
+      "known_locations": [
+        "Wailing Fracture"
+      ],
+      "affiliations": [],
+      "notes": "Knowledge of their nature may require entering the Wailing Fracture.",
+      "first_story": "The Ash-Singer's Debt",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "auditor_general",
+      "name": "the Auditor-General",
+      "aliases": [
+        "Auditor-General"
+      ],
+      "tagline": "Relentless. Logical. Monstrous.",
+      "role": "Government Official",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "the Hegemony",
+      "travel_scope": "realmwide",
+      "bio": "The Auditor-General of the Hegemony is tasked with accounting for the cost of the Luminous Ascension and ensuring recovery through taxation. He pursues Sevin's network with bureaucratic fury, imposing restoration taxes, transformation fees, and identity-clarification levies on those affected by the Ascension.",
+      "traits": [
+        "auditor",
+        "bureaucrat",
+        "relentless",
+        "logical"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "the Hegemony",
+        "Imperial accounting system"
+      ],
+      "notes": "The Auditor-General discovers that Sevin's counterfeit ledgers are more real than official records, forcing him to confront the possibility that the entire Imperial accounting system was always false.",
+      "first_story": "The Revenue-Master's Ruin",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "the_initiate",
+      "name": "The Initiate",
+      "aliases": [
+        "Young arcanist",
+        "She"
+      ],
+      "tagline": "Desperate. Naive. Sacrificed.",
+      "role": "Arcanist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Unknown village",
+      "home_region": "Scorched Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A barely trained young arcanist who receives an offer from the Wanderer to perform a working at a crossroads in the Scorched Reach in exchange for knowledge to save her village from memory-thieves. She unknowingly becomes the anchor for the Fractured-Echo and must decide whether her identity is worth more than her village's safety. Each time she speaks the Echo's true name to break the bargain, she loses another core memory.",
+      "traits": [
+        "desperate",
+        "naive",
+        "inexperienced in sorcery",
+        "sacrificial"
+      ],
+      "known_locations": [
+        "Scorched Reach",
+        "crossroads"
+      ],
+      "affiliations": [
+        "her village",
+        "the Wanderer (manipulated)",
+        "the Fractured-Echo (bound)"
+      ],
+      "notes": "Central protagonist. Faces a tragic choice between her identity and her village's safety. The nature of the Wanderer's 'salvation' remains ambiguous\u2014unclear if it is true salvation or another form of catastrophe.",
+      "first_story": "The Initiate's Bargain",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "the_fractured_echo",
+      "name": "The Fractured-Echo",
+      "aliases": [
+        "The Echo"
+      ],
+      "tagline": "Summoned. Supplicant. Ambiguous.",
+      "role": "Entity / Spirit",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A supernatural entity with a true name that, when spoken three times, creates a summoning circle. The Fractured-Echo appears not as a threat but as a supplicant, offering the initiate a trade: become its anchor in the mortal world and her village will be protected from further fragmentation. Each time the initiate speaks the Echo's name to break the bargain, she sacrifices a core memory.",
+      "traits": [
+        "otherworldly",
+        "intelligent",
+        "supplicant",
+        "parasitic"
+      ],
+      "known_locations": [
+        "Scorched Reach"
+      ],
+      "affiliations": [
+        "the Wanderer (connected)",
+        "the Initiate (bound)"
+      ],
+      "notes": "Binding entity. The nature of the Echo's true name and the mechanism by which it is summoned is central to the story's magic system. Unknown: What is the Echo's ultimate agenda? Can it be permanently dismissed or only temporarily banished?",
+      "first_story": "The Archer's Ghost",
+      "first_date": "2026-03-19",
       "appearances": 1
     }
   ],
@@ -9552,7 +9999,7 @@
       "status": "contested",
       "notes": "This region exemplifies how the cosmic renewal has begun to physically reshape the world. Trade disruption here is affecting imperial commerce and stability.",
       "first_date": "2026-03-03",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "cerulean_trench",
@@ -11286,6 +11733,45 @@
       "notes": "A region of spiritual significance tied to bone-singing tradition and the Primordial Sleepers.",
       "first_date": "2026-03-18",
       "appearances": 1
+    },
+    {
+      "id": "northmarch",
+      "name": "Northmarch",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "the_crossroads",
+      "name": "Crossroads",
+      "tagline": "Liminal. Sacred. Summoning-ground.",
+      "place_type": "landmark",
+      "world": "Edhra",
+      "parent_place": "Scorched Reach",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "A point of intersection where summoning circles are drawn and supernatural bargains are sealed.",
+      "description": "A specific crossroads in the Scorched Reach where the initiate is directed to perform the working. The location is selected as significant for summoning and bargaining.",
+      "status": "active",
+      "notes": "Site of the core summoning ritual. Unknown: What makes this crossroads significant? Are there other crossroads with similar properties?",
+      "first_date": "2026-03-19",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -11772,6 +12258,17 @@
       "status": "active / fragmented",
       "notes": "The exact nature of the Threshold and its relationship to Theron, the Scholar, and reality itself remains mysterious.",
       "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "the_fractured_echo_entity",
+      "name": "The Fractured-Echo",
+      "type": "spirit / entity",
+      "world": "Edhra",
+      "description": "A supernatural being with a true name. When its true name is spoken three times, it is summoned to the mortal world. It appears as a supplicant and offers a bargain to anchor itself in the mortal realm through the initiate, offering protection from memory-thieves in exchange.",
+      "status": "active",
+      "notes": "Nature unclear\u2014possibly a fragment of a larger consciousness, a bound spirit, or an extra-dimensional entity. Can be temporarily dismissed or banished by speaking its true name, but each invocation costs the speaker memories.",
+      "first_date": "2026-03-19",
       "appearances": 1
     }
   ],
@@ -13823,6 +14320,37 @@
       "notes": "The story's open ending leaves the convergence's actual outcome in flux. The Wanderer's doubt is the primary destabilizing force.",
       "first_date": "2026-03-18",
       "appearances": 1
+    },
+    {
+      "id": "the_initiate_bargain",
+      "name": "The Initiate's Bargain",
+      "tagline": "Summoning. Sacrifice. Catastrophe.",
+      "event_type": "ritual summoning / compact",
+      "scope": "regional",
+      "epicenter_place": "Crossroads",
+      "epicenter_region": "Scorched Reach",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Scorched Reach",
+        "Unknown village"
+      ],
+      "affected_regions": [
+        "Scorched Reach"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "At least village-to-crossroads distance",
+      "participants": [
+        "The Initiate",
+        "The Wanderer",
+        "The Fractured-Echo"
+      ],
+      "outcome": "The initiate is positioned as an anchor for the Fractured-Echo. The village is offered protection from memory-thieves, but the cost is the initiate's identity\u2014each invocation of the Echo's true name costs a core memory. The true outcome remains unresolved as the initiate must choose between her identity and her village's safety.",
+      "significance": "A pivotal supernatural compact that blurs the line between salvation and catastrophe. The event raises questions about the true cost of power and protection, and whether the Wanderer's vision is salvation or merely a different form of calamity.",
+      "notes": "Central narrative pivot. Unresolved: Does the Initiate speak the name a third time and lose her identity entirely? Does she find another way to break the bargain? What does the village actually receive?",
+      "first_date": "2026-03-19",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -14925,6 +15453,28 @@
       "notes": "Theron's sacrifice is neither salvation nor doom but a question posed to reality itself. Fragments of Theron may persist as consciousness in the present day, possibly in the Scholar.",
       "first_date": "2026-03-18",
       "appearances": 1
+    },
+    {
+      "id": "memory_thieves",
+      "name": "Memory-thieves",
+      "tagline": "Predatory. Fragmentation. Feared.",
+      "category": "legend",
+      "source": "Known threat to the initiate's village",
+      "status": "confirmed",
+      "notes": "An unspecified threat that targets communities and causes fragmentation. Unknown: Are they creatures, spirits, or a curse? What is their origin or motivation?",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "the_price_of_power",
+      "name": "The Price of Power",
+      "tagline": "Sacrifice. Identity. Complicity.",
+      "category": "legend",
+      "source": "Central thematic concept of the story",
+      "status": "confirmed",
+      "notes": "A lore element exploring the idea that gaining power or protection always exacts a cost\u2014in this case, the loss of core memories and identity. Raises the question of whether the Initiate is a victim or complicit in her own transformation.",
+      "first_date": "2026-03-19",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -15607,7 +16157,7 @@
       "status": "contested",
       "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
       "first_date": "2026-03-03",
-      "appearances": 7,
+      "appearances": 8,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -16287,6 +16837,30 @@
       "notes": "Shortages in the borderlands are driven by disruptions to trade routes following the Celestial Turning.",
       "first_date": "2026-03-15",
       "appearances": 1
+    },
+    {
+      "id": "blood",
+      "name": "Blood",
+      "tagline": "Life-essence. Binding. Potent.",
+      "type": "vital substance",
+      "rarity": "common",
+      "properties": "Used in blood-and-ink workings to create summoning circles and bind entities.",
+      "use": "Component in summoning and bargaining rituals; acts as a life-essence conduit for magical working.",
+      "notes": "Central component of the working in the story.",
+      "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "ink",
+      "name": "Ink",
+      "tagline": "Marking. Binding. Inscribed.",
+      "type": "substance",
+      "rarity": "common",
+      "properties": "Used in blood-and-ink workings to inscribe summoning circles and wards.",
+      "use": "Component in summoning rituals; creates visible boundaries and patterns for magical working.",
+      "notes": "Central component of the working in the story. Unknown: Does the type or color of ink matter? Is it inscribed on the ground or on the body?",
+      "first_date": "2026-03-19",
+      "appearances": 1
     }
   ],
   "rituals": [
@@ -16394,7 +16968,7 @@
       "cost": "Zareth's humanity; the world's stability; cosmic pain and mourning.",
       "notes": "Performed at the Peak of Aethros. The mechanism, intent, and full scope remain mysterious. May still be ongoing or having cascading effects.",
       "first_date": "2026-03-05",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "celestial_ascension",
