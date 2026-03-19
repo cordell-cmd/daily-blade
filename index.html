@@ -4199,9 +4199,15 @@ function renderWorldEvents(data) {
     const locRegions = Array.isArray(loc.regions) ? loc.regions : [];
     const locRealms = Array.isArray(loc.realms) ? loc.realms : [];
 
-    const apps = Array.isArray(e.story_appearances) ? e.story_appearances : [];
+    const appsRaw = Array.isArray(e.story_appearances) ? e.story_appearances : [];
+    const apps = uniqStoryApps(appsRaw).sort((a, b) => {
+      const ad = String(a.date || '');
+      const bd = String(b.date || '');
+      if (ad !== bd) return ad.localeCompare(bd);
+      return String(a.title || '').localeCompare(String(b.title || ''));
+    });
     const appsHtml = apps.length
-      ? `<div class="codex-story-links"><span class="codex-story-links-label">Recent</span>${apps.slice(-6).reverse().map(a => {
+      ? `<div class="codex-story-links"><span class="codex-story-links-label">Recent</span>${apps.slice().reverse().map(a => {
           const d = escHtml(String(a.date || todayStr()));
           const t = escHtml(String(a.title || ''));
           return `<button class="codex-story-link" data-date="${d}" data-title="${t}">${t}</button>`;

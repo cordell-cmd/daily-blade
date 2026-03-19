@@ -54,6 +54,7 @@ Tuning (via env vars in the workflow):
 - `ENABLE_WORLD_EVENT_SUMMARIES=1|0` (enable/disable)
 - `WORLD_EVENT_SUMMARY_MAX_UPDATES` (max events to re-summarize per run)
 - `WORLD_EVENT_SUMMARY_MAX_TALES` (caps how many tales are fed to the model; uses a “start + recent” sample so summaries still cover the beginning)
+- `WORLD_EVENT_SUMMARY_FORCE_REGEN=1|0` (when set, bypasses cache and regenerates summaries even if story appearances haven’t changed)
 
 Why this avoids “two versions”:
 - You never run the generator locally.

@@ -139,8 +139,10 @@ Constraints:
 - Only include facts supported by the JSON and/or the tales.
 - Preserve chronology (what happened first, then what, then what).
 - Emphasize cause/effect, escalation, and turning points.
+- Write the SUMMARY as a single narrative paragraph with a light, story-like chronicle tone (no purple prose).
 - End with the current state and what remains unresolved.
 - Keep it concise and readable for a casual reader.
+- If helpful, weave in 1–3 tale titles as turning points (do not invent events outside the tales).
 
 Return ONLY plain text in this format:
 SUMMARY:
@@ -275,6 +277,7 @@ def main() -> int:
     prev_by_key = _load_previous_summaries(OUTPUT_FILE)
 
     enable_summaries = (os.environ.get("ENABLE_WORLD_EVENT_SUMMARIES", "1").strip().lower() in {"1", "true", "yes", "y"})
+    force_regen = (os.environ.get("WORLD_EVENT_SUMMARY_FORCE_REGEN", "0").strip().lower() in {"1", "true", "yes", "y"})
     max_updates = int(os.environ.get("WORLD_EVENT_SUMMARY_MAX_UPDATES", "50") or 50)
     max_tales = int(os.environ.get("WORLD_EVENT_SUMMARY_MAX_TALES", "24") or 24)
     max_chars_per_story = int(os.environ.get("WORLD_EVENT_SUMMARY_MAX_CHARS_PER_STORY", "2000") or 2000)
@@ -450,9 +453,16 @@ def main() -> int:
         full_apps = r.get("story_appearances_all") if isinstance(r.get("story_appearances_all"), list) else r.get("story_appearances")
         full_apps = full_apps if isinstance(full_apps, list) else []
         full_apps = _uniq_story_apps(full_apps)
+        full_apps = sorted(
+            full_apps,
+            key=lambda a: (
+                str(a.get("date") or ""),
+                str(a.get("title") or ""),
+            ),
+        )
         want_fp = _appearance_fingerprint(full_apps)
 
-        if prev_summary and prev_fp and want_fp and prev_fp == want_fp and (not prev_is_fallback or client is None):
+        if (not force_regen) and prev_summary and prev_fp and want_fp and prev_fp == want_fp and (not prev_is_fallback or client is None):
             r["arc_summary"] = prev_summary
             r["arc_summary_last_seen"] = prev_last or want_last
             r["arc_summary_fingerprint"] = prev_fp
@@ -463,8 +473,7 @@ def main() -> int:
             continue
 
         # Back-compat: older cached files may not have a fingerprint yet.
-        # Do NOT let fallback summaries block an LLM-enabled refresh.
-        if prev_summary and (not prev_fp) and prev_last and want_last and prev_last >= want_last and (not prev_is_fallback):
+        if (not force_regen) and prev_summary and (not prev_fp) and prev_last and want_last and prev_last >= want_last:
             r["arc_summary"] = prev_summary
             r["arc_summary_last_seen"] = prev_last
             if prev.get("arc_summary_updated_at"):
@@ -507,6 +516,22 @@ def main() -> int:
             max_total_chars=max_total_chars,
         )
         if not prior_tales:
+            # If we can't load tale texts (e.g., missing archive entries), keep
+            # the prior summary if any; otherwise, fall back deterministically.
+            if prev_summary:
+                r["arc_summary"] = prev_summary
+                r["arc_summary_last_seen"] = prev_last or want_last
+                if prev_fp:
+                    r["arc_summary_fingerprint"] = prev_fp
+                if prev.get("arc_summary_updated_at"):
+                    r["arc_summary_updated_at"] = prev.get("arc_summary_updated_at")
+                if prev.get("arc_summary_model"):
+                    r["arc_summary_model"] = prev.get("arc_summary_model")
+            else:
+                r["arc_summary"] = _build_fallback_arc_summary(r)
+                r["arc_summary_last_seen"] = want_last
+                r["arc_summary_updated_at"] = datetime.now(timezone.utc).isoformat()
+                r["arc_summary_model"] = "fallback-v1"
             continue
 
         prompt = _build_event_arc_summary_prompt(canon_for_prompt, prior_tales)
