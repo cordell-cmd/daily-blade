@@ -10,7 +10,13 @@ on:
 
 
   # Also allows you to run it manually from the GitHub Actions tab
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      refresh_world_event_summaries:
+        description: Regenerate world-event summaries (even if today's stories already exist)
+        required: false
+        default: false
+        type: boolean
 
 
 concurrency:
@@ -49,6 +55,8 @@ jobs:
 
       - name: Decide whether to generate
         id: gate
+        env:
+          FORCE_SUMMARY_REFRESH: ${{ github.event.inputs.refresh_world_event_summaries }}
         run: |
           python - <<'PY'
           import json
@@ -58,6 +66,7 @@ jobs:
 
           NUM_STORIES = 10
           event_name = os.environ.get("GITHUB_EVENT_NAME", "")
+          force_summary_refresh = str(os.environ.get("FORCE_SUMMARY_REFRESH", "") or "").strip().lower() in {"1", "true", "yes", "y"}
           now = datetime.now(ZoneInfo("America/New_York"))
           date_key = now.strftime("%Y-%m-%d")
 
@@ -76,21 +85,24 @@ jobs:
             already = False
 
           should_run = allowed_by_time and (not already)
+          should_run_stories = should_run
+          should_run_summaries = should_run or (event_name == "workflow_dispatch" and force_summary_refresh)
           print(f"Event={event_name} now_ET={now.isoformat()} date_key={date_key} allowed_by_time={allowed_by_time} already={already} should_run={should_run}")
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
             f.write(f"date_key={date_key}\n")
-            f.write(f"run={'true' if should_run else 'false'}\n")
+            f.write(f"run_stories={'true' if should_run_stories else 'false'}\n")
+            f.write(f"run_summaries={'true' if should_run_summaries else 'false'}\n")
           PY
 
       - name: Generate stories
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run_stories == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ISSUE_TIMEZONE: America/New_York
         run: python generate_stories.py
 
       - name: Generate world event arcs summary
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run_summaries == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ENABLE_WORLD_EVENT_SUMMARIES: "1"
@@ -99,7 +111,7 @@ jobs:
 
 
       - name: Commit and push stories
-        if: steps.gate.outputs.run == 'true'
+        if: steps.gate.outputs.run_stories == 'true' || steps.gate.outputs.run_summaries == 'true'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
