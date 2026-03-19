@@ -463,7 +463,8 @@ def main() -> int:
             continue
 
         # Back-compat: older cached files may not have a fingerprint yet.
-        if prev_summary and (not prev_fp) and prev_last and want_last and prev_last >= want_last:
+        # Do NOT let fallback summaries block an LLM-enabled refresh.
+        if prev_summary and (not prev_fp) and prev_last and want_last and prev_last >= want_last and (not prev_is_fallback):
             r["arc_summary"] = prev_summary
             r["arc_summary_last_seen"] = prev_last
             if prev.get("arc_summary_updated_at"):
