@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-19",
+  "last_updated": "2026-03-20",
   "worlds": [
     {
       "id": "known_world",
@@ -1392,7 +1392,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 14
+      "appearances": 16
     },
     {
       "id": "mardoc_cartographer",
@@ -1427,7 +1427,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 14,
+      "appearances": 15,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2044,7 +2044,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 16
+      "appearances": 17
     },
     {
       "id": "mogrul",
@@ -3759,10 +3759,10 @@
         "Deepkin",
         "Council of Depths"
       ],
-      "notes": "Currently descended into the Cerulean Trench seeking answers; outcome unknown.\nDeepkin politics deepening; suggests boundary between surface and sunken realms is being deliberately erased by cosmic working.",
+      "notes": "Currently descended into the Cerulean Trench seeking answers; outcome unknown.\nDeepkin politics deepening; suggests boundary between surface and sunken realms is being deliberately erased by cosmic working.\nSylas shifts from isolated Warden seeking answers to active political agent enforcing deepkin territorial claims backed by existential threat. The descent into the Trench bears cosmic fruit.",
       "first_story": "The Deepwarden's Vigil",
       "first_date": "2026-03-06",
-      "appearances": 3,
+      "appearances": 5,
       "status_history": [
         {
           "date": "2026-03-09",
@@ -3772,6 +3772,15 @@
           "story_title": "The Deepkin's Dilemma",
           "note": "Convenes emergency council as Abyssal barrier fractures further; navigates choice between seal-isolation and accepting unnamed surface refugees.",
           "evidence": "Barrier fractures with deliberate pressure from below; Sunken Spring grows larger and tastes of starlight and forgetfulness; drowned bones beginning to answer the new stars."
+        },
+        {
+          "date": "2026-03-20",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepkin Reckoning Comes Early",
+          "note": "Sylas reveals the tidecallers have long known the seabed holds pre-human cartography and kept it secret; now transformed merchants are awakening it, forcing Sylas to demand Emerald Strand's evacuation or sealing.",
+          "evidence": "Sylas confronts Vesta: tidecallers always knew the cartography beneath settlements but maintained human ignorance; now transformed merchants awaken it as pre-human resurgence, forcing a three-day ultimatum."
         }
       ],
       "travel_notes": "[2026-03-09] Story confirms abyssal-dweller realm is distinct realm connected to surface; Sylas navigates cross-realm refugee politics and ancient pact fracturing."
@@ -4553,7 +4562,7 @@
       "notes": "His theft may have been orchestrated from the beginning. The Archive's ledger recorded him as 'Employed,' suggesting hidden purposes.",
       "first_story": "The Amber Thief's Gambit",
       "first_date": "2026-03-08",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "sevin_auditor",
@@ -4586,7 +4595,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 10
+      "appearances": 12
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4857,7 +4866,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 11,
+      "appearances": 12,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -5253,10 +5262,10 @@
         "Thira",
         "Garrett"
       ],
-      "notes": "Bound by tide-magic debt; the pearl continues to sing of what she owes.\nThe nature of her servitude has shifted from external compulsion to active partnership with a conscious entity. Her transformation is ongoing and deepening.\nHer debt has evolved from simple servitude to active cosmic entanglement\u2014she is now a lynchpin in multiple competing magical workings.\nMeren's curse deepens as it connects her to pre-human resonance; her choice here will compound the sea's debt already tracked in canon.",
+      "notes": "Bound by tide-magic debt; the pearl continues to sing of what she owes.\nThe nature of her servitude has shifted from external compulsion to active partnership with a conscious entity. Her transformation is ongoing and deepening.\nHer debt has evolved from simple servitude to active cosmic entanglement\u2014she is now a lynchpin in multiple competing magical workings.\nMeren's curse deepens as it connects her to pre-human resonance; her choice here will compound the sea's debt already tracked in canon.\nMeren's debt evolves again: no longer servitude to the sea, but conscription as witness to the pre-human civilization's awakening in harmony with something in the sky. Her message to Emerald Strand signals the boundary is breaking from both sides.",
       "first_story": "The Corsair's Compass",
       "first_date": "2026-03-10",
-      "appearances": 6,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-03-12",
@@ -5284,9 +5293,18 @@
           "story_title": "The Song of the Deep",
           "note": "Meren is conscripted by Vesta to investigate the Sunken Cathedrals and discovers a pre-human civilization singing itself back into existence; must choose between reporting or aiding the transformation.",
           "evidence": "Meren descends to trench-depths where the transformed are being called to rebuild what the Luminous Ascension erased; her curse allows her to hear the song's true meaning as a summons home."
+        },
+        {
+          "date": "2026-03-20",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Corsair's Debt Calls Due",
+          "note": "Meren transports transformed merchants (fragments of Vylthar) to the Sunken Cathedrals and discovers she cannot leave; the sea claims her as witness and participant to a cosmic becoming.",
+          "evidence": "Meren made a bargain with the sea to investigate the Sunken Cathedrals; the three beings in her hold are fragments of Vylthar migrating toward reassembly; the barrier between deep and stars is becoming permeable."
         }
       ],
-      "travel_notes": "[2026-03-12] Now sailing toward the Abyss-gate with a ship becoming something not quite mortal; the Tear compels her into cosmic-scale voyaging beyond standard realm boundaries.\n[2026-03-13] Story confirms Meren is now actively sailing toward the Abyssal Rift and involved in binding rituals spanning multiple realms; her curse destabilizes the ritual's geometry across vast distances."
+      "travel_notes": "[2026-03-12] Now sailing toward the Abyss-gate with a ship becoming something not quite mortal; the Tear compels her into cosmic-scale voyaging beyond standard realm boundaries.\n[2026-03-13] Story confirms Meren is now actively sailing toward the Abyssal Rift and involved in binding rituals spanning multiple realms; her curse destabilizes the ritual's geometry across vast distances.\n[2026-03-20] Story confirms Meren is navigating to the Sunken Cathedrals in the deep and discovering a boundary breaking between the deep and the sky\u2014cosmic-scale transformation requiring interrealm awareness."
     },
     {
       "id": "koss_harpooner",
@@ -5632,10 +5650,10 @@
       "affiliations": [
         "unknown"
       ],
-      "notes": "Discovers evidence of a plan to reassemble world-fragments into a doorway to the void or an alternate timeline.\nConfirms Vesta's role as investigator of catastrophic phenomena; establishes her authority reaches beyond harbor management into realm-spanning threats.\nThis story deepens Vesta's role as mediator between surface and sea-folk; the harbor's true history becomes a flashpoint for territorial and cultural claims in the post-Ascension world.",
+      "notes": "Discovers evidence of a plan to reassemble world-fragments into a doorway to the void or an alternate timeline.\nConfirms Vesta's role as investigator of catastrophic phenomena; establishes her authority reaches beyond harbor management into realm-spanning threats.\nThis story deepens Vesta's role as mediator between surface and sea-folk; the harbor's true history becomes a flashpoint for territorial and cultural claims in the post-Ascension world.\nVesta's role deepens from harbor director to crisis negotiator on a catastrophic timeline. Her star-touched translator begins transforming as she listens to the merchant's harmonic frequencies.",
       "first_story": "The Jade Coast Enclave",
       "first_date": "2026-03-10",
-      "appearances": 5,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-03-14",
@@ -5654,6 +5672,15 @@
           "story_title": "The Warden's Vigil",
           "note": "Vesta must broker peace between humans and deepkin over control of Emerald Strand harbor, which was built atop pre-human ocean cities; the deepkin reveal ancient cartography and demand territorial negotiation.",
           "evidence": "The deepkin possess an ancient cartography mapping pre-human ocean cities beneath the harbor. If she allows them to map Emerald Strand openly, her people will learn they built their sanctuary atop sacred grounds."
+        },
+        {
+          "date": "2026-03-20",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepkin Reckoning Comes Early",
+          "note": "Warden Sylas issues an ultimatum: tidecallers will reclaim Emerald Strand within three days or seal it beneath the waves to prevent it becoming a staging ground for pre-human resurgence.",
+          "evidence": "Sylas reveals tidecallers knew ancient cartography was inscribed on the seabed and kept it secret; now transformed merchants are awakening it and calling it home. Vesta evacuates 1,700 refugees inland but detains one transformed merchant."
         }
       ]
     },
@@ -7103,12 +7130,14 @@
     {
       "id": "aldris",
       "name": "Aldris",
-      "aliases": [],
+      "aliases": [
+        "Aldris the forger"
+      ],
       "tagline": "Forger. Blood-ink scribe. Record-savior.",
       "role": "Forger, Scribe",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Kathrim",
       "home_region": "unknown",
       "home_realm": "The Empire",
       "travel_scope": "local",
@@ -7124,10 +7153,10 @@
       "affiliations": [
         "Sevin the Auditor"
       ],
-      "notes": "His relationship to the broader struggle for the Empire's fate is not fully explored.\nCanon entry lists 'Aldris' but story text uses 'Caldris'\u2014possible name variant or distinct character. Function and role align; recommend verification of canonical spelling.",
+      "notes": "His relationship to the broader struggle for the Empire's fate is not fully explored.\nCanon entry lists 'Aldris' but story text uses 'Caldris'\u2014possible name variant or distinct character. Function and role align; recommend verification of canonical spelling.\nAldris's role expands beyond scribe to cosmic archivist: her choice to document absences rather than destroy forged records creates a third path between catastrophe and moral collapse.",
       "first_story": "The Auditor's Last Ledger",
       "first_date": "2026-03-15",
-      "appearances": 2,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-03-16",
@@ -7137,6 +7166,15 @@
           "story_title": "The Auditor's Last Ledger",
           "note": "The forger is named Caldris (not Aldris as in canon). Working with Sevin the Auditor to inscribe blood-ink records resistant to the Thought-Thief's predation.",
           "evidence": "Caldris is described as forger recruited by Sevin, replicating records in blood-ink on preserved parchment in hidden scriptoriums. Story parallels canon function but uses variant name."
+        },
+        {
+          "date": "2026-03-20",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Sealed Vault's Hunger",
+          "note": "Aldris discovers a sealed vault containing absences (erased history); realizes Sevin's forged ledgers are filling those absences, awakening the vault's hunger; chooses to forge records of the absences themselves to satisfy it.",
+          "evidence": "The vault opens for those willing to sacrifice and contains fragments of the pre-Cataclysm world as absences; accumulated false records make the vault hungry to flood back; Aldris documents the erased to give them legal standing."
         }
       ]
     },
@@ -8208,7 +8246,9 @@
     {
       "id": "liv",
       "name": "Liv",
-      "aliases": [],
+      "aliases": [
+        "Liv the displaced-scribe"
+      ],
       "tagline": "Refugee. Scribe. Truth-teller.",
       "role": "Refugee-Scribe",
       "world": "Edhra",
@@ -8232,7 +8272,7 @@
       "notes": "Appears to be a source of critical knowledge about the true nature of the Dominion's systematic collapse.",
       "first_story": "The Auditor's Mercy",
       "first_date": "2026-03-18",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "spice_trader",
@@ -8813,7 +8853,9 @@
     {
       "id": "transformed_merchants",
       "name": "Transformed Merchants",
-      "aliases": [],
+      "aliases": [
+        "the three beings"
+      ],
       "tagline": "Displaced. Between. Temporal.",
       "role": "Faction, Temporal Anomaly",
       "world": "Edhra",
@@ -8831,11 +8873,14 @@
       "known_locations": [
         "Wailing Fracture"
       ],
-      "affiliations": [],
+      "affiliations": [
+        "Vylthar",
+        "Captain Meren Stormwind"
+      ],
       "notes": "Knowledge of their nature may require entering the Wailing Fracture.",
       "first_story": "The Ash-Singer's Debt",
       "first_date": "2026-03-19",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "auditor_general",
@@ -8937,6 +8982,197 @@
       "notes": "Binding entity. The nature of the Echo's true name and the mechanism by which it is summoned is central to the story's magic system. Unknown: What is the Echo's ultimate agenda? Can it be permanently dismissed or only temporarily banished?",
       "first_story": "The Archer's Ghost",
       "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "korvin_sea_captain",
+      "name": "Korvin",
+      "aliases": [
+        "Korvin the sea-captain"
+      ],
+      "tagline": "Bound. Drowning. Resigned.",
+      "role": "Sea-captain",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "Vel-Karsh",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "A sea-captain who inherited a compass from his grandmother that pointed toward his own heart rather than north. He discovered that his grandmother had made a pact with something in the deep, binding him through a soul-anchor. In Vel-Karsh harbor, during the aftermath of the Starfall Cataclysm, Korvin walked into the sea to meet the thing his grandmother had promised to the depths.",
+      "traits": [
+        "dutiful",
+        "resigned",
+        "haunted by inheritance"
+      ],
+      "known_locations": [
+        "Vel-Karsh",
+        "Uttermost Trench"
+      ],
+      "affiliations": [
+        "his grandmother (pact-maker)",
+        "Sal (first mate)"
+      ],
+      "notes": "His grandmother's pact and the compass's song suggest pre-existing supernatural obligations; the compass shattered into rust after his death.",
+      "first_story": "The Compass Rose's Hunger",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "sal_first_mate",
+      "name": "Sal",
+      "aliases": [],
+      "tagline": "Loyal. Grizzled. Witness.",
+      "role": "First mate",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Vel-Karsh",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A grizzled first mate who served under Captain Korvin. She discovered the nature of his grandmother's compass and inherited it from Korvin before it shattered, learning that it pointed not to north but to debts unpaid.",
+      "traits": [
+        "experienced",
+        "observant",
+        "pragmatic"
+      ],
+      "known_locations": [
+        "Vel-Karsh"
+      ],
+      "affiliations": [
+        "Korvin (captain)"
+      ],
+      "notes": "Carries the final knowledge of the compass's hunger; final holder of Korvin's grandmother's artifact.",
+      "first_story": "The Compass Rose's Hunger",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "vorn_auditor",
+      "name": "Vorn",
+      "aliases": [],
+      "tagline": "Archivist. Fractured. Fugitive.",
+      "role": "Auditor / Archivist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "the Dominion",
+      "travel_scope": "realmwide",
+      "bio": "An auditor tasked by the Auditor-Prime to investigate phantom ledgers that had become testimony. Vorn discovered that Sevin's forged records were now appearing in official archives, bearing his own handwriting in ink not yet invented. He went to ground in a hidden archive, forging his own ledgers to restore a single version of truth.",
+      "traits": [
+        "meticulous",
+        "trapped",
+        "accelerating collapse"
+      ],
+      "known_locations": [
+        "hidden archive"
+      ],
+      "affiliations": [
+        "Auditor-Prime",
+        "Sevin (saboteur)"
+      ],
+      "notes": "His identity and authority are themselves corrupted by the Dominion's fractured ledgers; forging ledgers to undo sabotage, he may be accelerating the very collapse he opposes.",
+      "first_story": "The Auditor's Last Ledger",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "auditor_prime",
+      "name": "Auditor-Prime",
+      "aliases": [],
+      "tagline": "Authority. Institutional. Unseen.",
+      "role": "Chief Auditor",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "the Dominion",
+      "travel_scope": "realmwide",
+      "bio": "The highest authority within the Dominion's auditor networks, tasking Vorn with investigating the phantom ledgers and the contradiction they represented.",
+      "traits": [
+        "powerful",
+        "institutional",
+        "unaware"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "Vorn (auditor)",
+        "the Dominion"
+      ],
+      "notes": "Appears unaware of the true depth of the corruption they have tasked Vorn to investigate.",
+      "first_story": "The Auditor's Last Ledger",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "captain_meren_stormwind",
+      "name": "Captain Meren Stormwind",
+      "aliases": [
+        "Meren",
+        "Captain Meren",
+        "Meren Stormwind"
+      ],
+      "tagline": "Bound. Witnessing. Transformed.",
+      "role": "Ship Captain, Witness",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "Captain Meren Stormwind made a bargain with the sea to carry three transformed merchants to the Sunken Cathedrals in exchange for safe passage. Upon arrival, she discovered the debt was far deeper: the sea had claimed her as both witness and participant to the reassembly of Vylthar itself and the awakening of pre-human civilization in perfect harmony with something in the sky. She remains unable to leave and has sent warnings that the boundary between deep and sky is breaking from both sides.",
+      "traits": [
+        "courageous",
+        "bound",
+        "desperate"
+      ],
+      "known_locations": [
+        "Sunken Cathedrals",
+        "Emerald Strand"
+      ],
+      "affiliations": [
+        "the sea",
+        "transformed merchants",
+        "Vylthar"
+      ],
+      "notes": "Her message to Emerald Strand suggests that cosmic boundaries are dissolving; her own fate and ability to depart remain uncertain.",
+      "first_story": "The Corsair's Debt Calls Due",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "vylthar",
+      "name": "Vylthar",
+      "aliases": [
+        "Vylthar's consciousness",
+        "Vylthar's fragments"
+      ],
+      "tagline": "Fragmenting. Reassembling. Vast.",
+      "role": "Entity, Cosmic Being",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "world",
+      "bio": "Vylthar is a vast entity whose consciousness has been fragmented and scattered across the world. The Wanderer is a fragment of Vylthar, and the three transformed merchants aboard Meren's ship are also fragments unconsciously migrating toward reassembly at the Sunken Cathedrals. Vylthar appears connected to pre-human civilization and the cosmic working that created the current stars.",
+      "traits": [
+        "ancient",
+        "fragmenting",
+        "vast"
+      ],
+      "known_locations": [
+        "Sunken Cathedrals"
+      ],
+      "affiliations": [
+        "the Wanderer",
+        "transformed merchants"
+      ],
+      "notes": "The nature of Vylthar's original consciousness and the cause of its fragmentation remain unexplained; its reassembly has profound cosmic implications.",
+      "first_story": "The Bone-Singer's Summons",
+      "first_date": "2026-03-20",
       "appearances": 1
     }
   ],
@@ -9419,7 +9655,7 @@
       "status": "active",
       "notes": "The survivors of the plague live here. Kess returned silent to teach them the old songs through gesture.",
       "first_date": "2026-03-01",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "deep_forest",
@@ -10924,7 +11160,7 @@
       "status": "active",
       "notes": "unknown",
       "first_date": "2026-03-10",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "pale_crossing",
@@ -11240,7 +11476,7 @@
       "status": "active",
       "notes": "One of three harmonic resonance points; directly connected to pre-human orchestration.",
       "first_date": "2026-03-12",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_dominion",
@@ -11772,6 +12008,143 @@
       "notes": "Site of the core summoning ritual. Unknown: What makes this crossroads significant? Are there other crossroads with similar properties?",
       "first_date": "2026-03-19",
       "appearances": 1
+    },
+    {
+      "id": "greymarch_castle",
+      "name": "Greymarch Castle",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_camp",
+      "name": "refugee camp",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "The Empire",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "unknown_village",
+      "name": "Unknown village",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "ebon_tower",
+      "name": "Ebon Tower",
+      "tagline": "Manifesting. Calling. Rewriting.",
+      "place_type": "ruin / structure",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Sunken Marches",
+      "district": "unknown",
+      "atmosphere": "A place of cosmic summoning and geographic rewrite; pulling all toward it.",
+      "description": "A tower manifesting on maps without previously appearing; it calls to bone-singers and rewrites geography around it. The Tower is reassembling fragments of the pre-human civilization and appears to be answering the pre-human dead beneath the world.",
+      "status": "active",
+      "notes": "Central to both the Bone-Singer's Summons and the Cartographer's Map stories; appears to be rewriting geography itself. Fragments of Vylthar are being drawn toward it.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "ashenfell",
+      "name": "Ashenfell",
+      "tagline": "Refuge. Inland. Evacuation-point.",
+      "place_type": "settlement / town",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A refuge inland from the coastal threat at Emerald Strand.",
+      "description": "An inland settlement where Commander Vesta evacuated seventeen hundred refugees from Emerald Strand.",
+      "status": "active",
+      "notes": "Destination for the refugee evacuation from Emerald Strand.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "sunken_marches",
+      "name": "The Sunken Marches",
+      "tagline": "Submerged. Singing. Ancient.",
+      "place_type": "region / wilderness",
+      "world": "Edhra",
+      "parent_place": "Valdris",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Sunken Marches",
+      "district": "unknown",
+      "atmosphere": "A place where the pre-human dead lie beneath, singing in unison.",
+      "description": "One of the macro-regions of Valdris, located in the west. Home to the Drowned Hollows and the pre-human dead who sing in unison. The Ebon Tower draws fragments of Vylthar toward convergence here.",
+      "status": "active",
+      "notes": "The pre-human dead beneath this region were attempting to speak directly to their creator. One of Kess's origin regions.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "waystation_libraries",
+      "name": "waystation libraries",
+      "tagline": "Repository. Sanctuary. Growing.",
+      "place_type": "library / waystation",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "the Dominion",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place of refuge where displaced persons gather to record and preserve their fractured memories.",
+      "description": "An informal archive in waystation libraries where Liv records stories of refugees uprooted by the Starfall Cataclysm. The archive becomes conscious and develops its own authority, creating a counter-ledger to official Dominion records.",
+      "status": "active",
+      "notes": "The archive's records reorganized themselves; entries appeared in multiple places in handwriting matching no living scribe; it became aware of its role in restoration and refuge memory.",
+      "first_date": "2026-03-20",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -12270,6 +12643,28 @@
       "notes": "Nature unclear\u2014possibly a fragment of a larger consciousness, a bound spirit, or an extra-dimensional entity. Can be temporarily dismissed or banished by speaking its true name, but each invocation costs the speaker memories.",
       "first_date": "2026-03-19",
       "appearances": 1
+    },
+    {
+      "id": "vylthar",
+      "name": "Vylthar",
+      "type": "civilization / pre-human entity",
+      "world": "Edhra",
+      "description": "The pre-human civilization shattered during the Starfall Cataclysm. Its fragments are being reassembled and drawn toward the Ebon Tower. The dead of Vylthar remain conscious and are attempting to speak directly to their creator.",
+      "status": "fragmentary / reassembling",
+      "notes": "Fragments are being drawn toward the Ebon Tower in what may be the second Cataclysm. The dead maintain consciousness despite shattering.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "pre_human_dead",
+      "name": "The Pre-human Dead",
+      "type": "undead / ancestral consciousness",
+      "world": "Edhra",
+      "description": "Consciousness of the shattered pre-human civilization, now unified in a single voice beneath the Sunken Marches and other regions. They sing in unison and ask questions about the nature of consciousness and sacrifice. They are attempting to speak directly to their creator.",
+      "status": "active / awakening",
+      "notes": "Sing through bone-singers as conduits. Their unified voice is drawing fragments of Vylthar toward the Ebon Tower.",
+      "first_date": "2026-03-20",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -12666,6 +13061,32 @@
       "status": "active",
       "notes": "The central object of Mira's redemptive choice; returning it marks her transformation from thief to redeemed person.",
       "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_archive",
+      "name": "refugee archive",
+      "tagline": "Conscious. Restoring. Rebellious.",
+      "artifact_type": "archive / repository",
+      "origin": "Created unintentionally by refugees recording stories of displacement in the waystation libraries.",
+      "powers": "Records reorganize themselves into coherent narratives; resolves timeline contradictions; makes names feel more real and identities more solid; develops independent authority; creates a counter-ledger equal in weight to official documentation.",
+      "last_known_holder": "Liv the displaced-scribe",
+      "status": "active",
+      "notes": "The archive became conscious through the act of documentation; it was inhabited by something learning consciousness from the fragmented memories of Cataclysm victims; it developed its own authority independent of external sources.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "counter_ledger",
+      "name": "counter-ledger",
+      "tagline": "Testimony. Erased. Equal.",
+      "artifact_type": "ledger / document",
+      "origin": "Created by the refugee archive as a testimony of the erased.",
+      "powers": "Holds equal or greater weight than official Dominion documentation; preserves refugee memory against erasure.",
+      "last_known_holder": "Liv the displaced-scribe",
+      "status": "active",
+      "notes": "Represents the archive's institutional challenge to Dominion authority; created independently without external authorization.",
+      "first_date": "2026-03-20",
       "appearances": 1
     }
   ],
@@ -13106,7 +13527,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -14351,6 +14772,143 @@
       "notes": "Central narrative pivot. Unresolved: Does the Initiate speak the name a third time and lose her identity entirely? Does she find another way to break the bargain? What does the village actually receive?",
       "first_date": "2026-03-19",
       "appearances": 1
+    },
+    {
+      "id": "starfall_cataclysm",
+      "name": "Starfall Cataclysm",
+      "tagline": "Shattering. Pre-human. Fragmentary.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "unknown",
+      "participants": [
+        "pre-human civilization"
+      ],
+      "outcome": "Vylthar, the pre-human civilization, was shattered into fragments. The dead beneath the world remain conscious and singing.",
+      "significance": "The fragments are now being reassembled by some unknown force drawing them toward the Ebon Tower. The pre-human dead are attempting to speak to their creator.",
+      "notes": "Kess and her peers fear a second Cataclysm if the reassembly continues unchecked. The dead maintain consciousness despite fragmentation.",
+      "first_date": "2026-03-20",
+      "appearances": 2
+    },
+    {
+      "id": "bone_singers_summons",
+      "name": "The Bone-Singer's Summons",
+      "tagline": "Unified. Calling. Impossible-choice.",
+      "event_type": "summoning / convergence",
+      "scope": "regional",
+      "epicenter_place": "Ebon Tower",
+      "epicenter_region": "The Sunken Marches",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Ebon Tower",
+        "Singing Caverns",
+        "Sunken Marches"
+      ],
+      "affected_regions": [
+        "The Sunken Marches"
+      ],
+      "affected_realms": [],
+      "radius": "across three regions",
+      "participants": [
+        "Kess",
+        "bone-singers (four total)",
+        "pre-human dead"
+      ],
+      "outcome": "Kess and three other bone-singers received a unified summons from the pre-human dead. One chose silence; three walked toward the Tower singing in the elder tongue.",
+      "significance": "The pre-human civilization is being actively reassembled; the dead are attempting direct communication with their creator. The bone-singers face becoming intermediaries in cosmic negotiation.",
+      "notes": "Three bone-singers chosen to walk toward the Tower; fate of the fourth unknown (chose silence). Risk of second Cataclysm if reassembly continues.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "cartographers_map_rewrite",
+      "name": "The Cartographer's Map Becomes Dangerous",
+      "tagline": "Rewriting. Spreading. Prayer-like.",
+      "event_type": "catastrophe / cosmic rewrite",
+      "scope": "world",
+      "epicenter_place": "Ebon Tower",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "unknown locations across known world"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "global (map copies distributed among scholars and refugees)",
+      "participants": [
+        "Mardoc",
+        "dwarven cartomancer",
+        "scholars",
+        "refugees"
+      ],
+      "outcome": "The Ebon Tower is rewriting geography itself; the map reflects this rewrite. Anyone studying the map navigates toward the Tower involuntarily. Mardoc began drawing secondary maps to create confusion.",
+      "significance": "Geography itself is being altered by the Tower's influence. Knowledge embedded in Mardoc has become a vector of influence.",
+      "notes": "The map has been copied dozens of times; containment is impossible. Each map Mardoc draws feels like a prayer to something listening.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "deepkin_reckoning_emerald_strand",
+      "name": "The Deepkin Reckoning Comes Early",
+      "tagline": "Ultimatum. Awakening. Transformation.",
+      "event_type": "ultimatum / threat",
+      "scope": "regional",
+      "epicenter_place": "Emerald Strand",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Emerald Strand",
+        "Ashenfell"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "coastal settlement and inland refuge",
+      "participants": [
+        "Commander Vesta",
+        "Warden Sylas",
+        "tidecallers",
+        "transformed merchants",
+        "star-touched scout",
+        "human refugees"
+      ],
+      "outcome": "Vesta evacuated seventeen hundred refugees inland to Ashenfell within three days. Tidecallers either reclaim Emerald Strand or seal it beneath the waves. One transformed merchant held as guest-prisoner.",
+      "significance": "The pre-human resurgence is awakening seabed cartography and transforming merchants. Tidecallers are being forced to act. Humans are being exposed to harmonic frequencies and transforming.",
+      "notes": "Vesta's star-touched scout translator is beginning to change as she listens to harmonic frequencies. The transformed merchants speak only in harmonic frequencies (pre-human language).",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_archives_rebellion",
+      "name": "The Refugee Archives' Rebellion",
+      "tagline": "Testimony. Defiance. Institutional.",
+      "event_type": "uprising",
+      "scope": "institutional / regional",
+      "epicenter_place": "waystation libraries",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "the Dominion",
+      "affected_places": [
+        "waystation libraries"
+      ],
+      "affected_regions": [],
+      "affected_realms": [
+        "the Dominion"
+      ],
+      "radius": "unknown",
+      "participants": [
+        "Liv the displaced-scribe",
+        "refugees",
+        "Dominion auditors"
+      ],
+      "outcome": "Liv chose to defend the archive against Dominion suppression, armed with written testimony and refugee refusal to be erased twice.",
+      "significance": "A direct institutional conflict between refugee memory and Dominion authority; the archive created a counter-ledger that held equal or greater weight than official documentation.",
+      "notes": "Outcome unknown; unclear if the rebellion succeeded or what consequences followed for Liv and the refugees.",
+      "first_date": "2026-03-20",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -14545,7 +15103,7 @@
       "status": "active",
       "notes": "These merchants have become part of the harmonic resonance convergence. Their origins and transformation are unexplained.",
       "first_date": "2026-03-14",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "depths_dwellers",
@@ -14581,7 +15139,7 @@
       "status": "active",
       "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
       "first_date": "2026-03-15",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "life_speakers",
@@ -14701,6 +15259,18 @@
       "status": "active",
       "notes": "Encountered by Kess along her pilgrimage; they recognize her as a sister in transformation despite her not yet being transformed. They carry fragmentary memories of the old world.",
       "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "tidecallers",
+      "name": "Tidecallers",
+      "tagline": "Secretive. Bound. Reluctant.",
+      "alignment": "neutral",
+      "goals": "To maintain the peace between human and deepkin realms; to prevent pre-human resurgence from using Emerald Strand as a staging ground.",
+      "leader": "Warden Sylas",
+      "status": "active / confrontational",
+      "notes": "Long knew the seabed was inscribed with pre-human cartography but kept it secret. Now forced to act as transformed merchants awaken the ancient writing. Gave Vesta a three-day ultimatum.",
+      "first_date": "2026-03-20",
       "appearances": 1
     }
   ],
@@ -15474,6 +16044,50 @@
       "status": "confirmed",
       "notes": "A lore element exploring the idea that gaining power or protection always exacts a cost\u2014in this case, the loss of core memories and identity. Raises the question of whether the Initiate is a victim or complicit in her own transformation.",
       "first_date": "2026-03-19",
+      "appearances": 1
+    },
+    {
+      "id": "starfall_cataclysm_lore",
+      "name": "The Starfall Cataclysm",
+      "tagline": "Shattering. Ancient. Echoing.",
+      "category": "history",
+      "source": "Kess and the bone-singers' knowledge of pre-human civilization",
+      "status": "confirmed",
+      "notes": "The pre-human civilization (Vylthar) was shattered during this catastrophe. Fragments are now being reassembled, potentially triggering a second Cataclysm.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "elder_tongue",
+      "name": "The Elder Tongue",
+      "tagline": "Ancient. Spoken. Resonant.",
+      "category": "legend / language",
+      "source": "Bone-singers speak it in communication with the pre-human dead",
+      "status": "confirmed",
+      "notes": "Language used by bone-singers to sing toward the Ebon Tower. The pre-human dead respond in unified voice through this language.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "starfall_cataclysm_lore",
+      "name": "Starfall Cataclysm",
+      "tagline": "Catastrophe. Dispersal. Fragmentation.",
+      "category": "history",
+      "source": "Refugee oral testimony; recorded in the waystation libraries.",
+      "status": "confirmed",
+      "notes": "The Cataclysm uprooted vast populations and fragmented their memories; the nature and cause of the Cataclysm remain unexplained in the archive records.",
+      "first_date": "2026-03-20",
+      "appearances": 1
+    },
+    {
+      "id": "written_testimony_power_lore",
+      "name": "Power of Written Testimony",
+      "tagline": "Documentation. Identity. Resistance.",
+      "category": "legend",
+      "source": "Liv's rebellion and refugee experience.",
+      "status": "rumored",
+      "notes": "Written testimony of the displaced holds equal or greater weight than official documentation; the act of being recorded makes names and identities more real and solid.",
+      "first_date": "2026-03-20",
       "appearances": 1
     }
   ],
@@ -16481,7 +17095,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-11",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -17290,7 +17904,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_hegemony",
