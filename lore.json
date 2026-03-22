@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-21",
+  "last_updated": "2026-03-22",
   "worlds": [
     {
       "id": "known_world",
@@ -961,7 +961,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "naresh_the_bone_carver",
@@ -1392,7 +1392,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 18
+      "appearances": 19
     },
     {
       "id": "mardoc_cartographer",
@@ -1427,7 +1427,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 16,
+      "appearances": 17,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -1676,13 +1676,15 @@
     {
       "id": "gareth",
       "name": "Gareth",
-      "aliases": [],
+      "aliases": [
+        "fence"
+      ],
       "tagline": "Skilled. Cursed. Doomed.",
       "role": "Locksmith; Dwarf",
       "world": "known_world",
       "status": "cursed",
       "home_place": "Deepvault",
-      "home_region": "unknown",
+      "home_region": "Pelimor",
       "home_realm": "unknown",
       "travel_scope": "regional",
       "bio": "A dwarf locksmith who worked the Deepvault and was recruited by Tory to breach the crown-vault at the Ruins of Old Keth. Gareth successfully used meteor-iron lockpicks to open the vault, but proximity to the Crown of Karesh caused its curse to seep into his blood. Released from his oath by Tory, he limped northward carrying the crown-wrapped bundle, tasked with breaking the curse however he could.",
@@ -1705,7 +1707,7 @@
       "notes": "Gareth's current fate is unknown. He was sent north with the Crown of Karesh while cursed\u2014whether he succeeded in breaking the curse, reached the merchant-prince, or succumbed to the affliction remains unresolved.",
       "first_story": "The Crown-Thief of Ashen Wastes",
       "first_date": "2026-03-01",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "mell",
@@ -3377,7 +3379,7 @@
       "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "old_ranger",
@@ -3859,7 +3861,7 @@
       "notes": "Must decide whether to hide or share dangerous knowledge about the Celestial Ascension's destructive pattern; refugees are fleeing as omens darken.",
       "first_story": "The Young Sorcerer's New Inheritance",
       "first_date": "2026-03-06",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "master_mage",
@@ -4322,7 +4324,7 @@
       "notes": "Vex's investigation reveals that an entity is collecting merchants themselves\u2014their knowledge, contacts, and networks\u2014rather than mere goods. The entity's true nature and purpose remain unclear.",
       "first_story": "The Night-Market Reckoning",
       "first_date": "2026-03-07",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "dranin_stoneheart",
@@ -4604,7 +4606,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 15
+      "appearances": 17
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4875,7 +4877,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 13,
+      "appearances": 14,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -5251,7 +5253,7 @@
       "status": "active",
       "home_place": "unknown",
       "home_region": "Iron Coast",
-      "home_realm": "unknown",
+      "home_realm": "the Empire",
       "travel_scope": "interrealm",
       "bio": "Captain of the Skyward, Meren pursued the Tear of the Drowned God across the Sapphire Sea. She seized the pearl beneath the Abyssal Rift and discovered it was not plunder but a partnership offer\u2014the sea would grant her mastery over tides in exchange for her servitude to its demands.",
       "traits": [
@@ -5274,7 +5276,7 @@
       "notes": "Bound by tide-magic debt; the pearl continues to sing of what she owes.\nThe nature of her servitude has shifted from external compulsion to active partnership with a conscious entity. Her transformation is ongoing and deepening.\nHer debt has evolved from simple servitude to active cosmic entanglement\u2014she is now a lynchpin in multiple competing magical workings.\nMeren's curse deepens as it connects her to pre-human resonance; her choice here will compound the sea's debt already tracked in canon.\nMeren's debt evolves again: no longer servitude to the sea, but conscription as witness to the pre-human civilization's awakening in harmony with something in the sky. Her message to Emerald Strand signals the boundary is breaking from both sides.",
       "first_story": "The Corsair's Compass",
       "first_date": "2026-03-10",
-      "appearances": 7,
+      "appearances": 8,
       "status_history": [
         {
           "date": "2026-03-12",
@@ -5662,7 +5664,7 @@
       "notes": "Discovers evidence of a plan to reassemble world-fragments into a doorway to the void or an alternate timeline.\nConfirms Vesta's role as investigator of catastrophic phenomena; establishes her authority reaches beyond harbor management into realm-spanning threats.\nThis story deepens Vesta's role as mediator between surface and sea-folk; the harbor's true history becomes a flashpoint for territorial and cultural claims in the post-Ascension world.\nVesta's role deepens from harbor director to crisis negotiator on a catastrophic timeline. Her star-touched translator begins transforming as she listens to the merchant's harmonic frequencies.",
       "first_story": "The Jade Coast Enclave",
       "first_date": "2026-03-10",
-      "appearances": 7,
+      "appearances": 8,
       "status_history": [
         {
           "date": "2026-03-14",
@@ -7454,7 +7456,7 @@
       "home_place": "unknown",
       "home_region": "unknown",
       "home_realm": "unknown",
-      "travel_scope": "unknown",
+      "travel_scope": "interrealm",
       "bio": "Nethis was sacrificed, and from that sacrifice a new constellation was born. The Tear of the Drowned God is revealed to be a fragment of Nethis itself, compressed into an impossible artifact, serving as a map or key to the pre-Ascension world.",
       "traits": [
         "sacrificial",
@@ -7469,12 +7471,14 @@
       "notes": "The nature of Nethis\u2014whether pre-human, celestial, or divine\u2014remains ambiguous. The sacrifice appears to have fundamentally altered reality.",
       "first_story": "The Cartographer's Descent",
       "first_date": "2026-03-16",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_archivist_keeper",
       "name": "The Archivist-Keeper",
-      "aliases": [],
+      "aliases": [
+        "Archivist-Keeper"
+      ],
       "tagline": "Authoritarian. Truth-rewriting. Institutional.",
       "role": "Authority Figure, Archivist",
       "world": "Edhra",
@@ -7482,7 +7486,7 @@
       "home_place": "hidden scriptorium",
       "home_region": "unknown",
       "home_realm": "the Empire",
-      "travel_scope": "unknown",
+      "travel_scope": "realmwide",
       "bio": "The Archivist-Keeper demands that Sevin continue rewriting the Empire's records, insisting she become a living archive of necessary fictions and that control over the written record is now control over truth itself.",
       "traits": [
         "authoritarian",
@@ -7498,7 +7502,7 @@
       "notes": "Represents the corrupted institution of archival and record-keeping as a tool of oppression.",
       "first_story": "The Auditor's Last Ledger",
       "first_date": "2026-03-16",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "young_scholar",
@@ -7843,7 +7847,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Whitecross waystation",
-      "home_region": "unknown",
+      "home_region": "Pelimor",
       "home_realm": "unknown",
       "travel_scope": "regional",
       "bio": "A scribe who fled the Scorched Expanse with nothing but her clothes and a half-filled journal. In the chaos following the Starborn Ascension, she arrives at Whitecross waystation and begins documenting refugee names the official ledgers erase, hidden beneath merchant inventories.",
@@ -7864,7 +7868,7 @@
       "notes": "She understands that ledgers become prophecy and prophecy becomes a weapon. Her hidden list is an act of remembrance and quiet resistance.",
       "first_story": "The Refugee's Ledger",
       "first_date": "2026-03-17",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "auditor_sevin",
@@ -8290,7 +8294,7 @@
       "notes": "Appears to be a source of critical knowledge about the true nature of the Dominion's systematic collapse.",
       "first_story": "The Auditor's Mercy",
       "first_date": "2026-03-18",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "spice_trader",
@@ -8953,7 +8957,7 @@
       "notes": "The Auditor-General discovers that Sevin's counterfeit ledgers are more real than official records, forcing him to confront the possibility that the entire Imperial accounting system was always false.",
       "first_story": "The Revenue-Master's Ruin",
       "first_date": "2026-03-19",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_initiate",
@@ -9067,7 +9071,7 @@
       "status": "active",
       "home_place": "Vel-Karsh",
       "home_region": "The Iron Coast",
-      "home_realm": "unknown",
+      "home_realm": "the Empire",
       "travel_scope": "regional",
       "bio": "A grizzled first mate who served under Captain Korvin. She discovered the nature of his grandmother's compass and inherited it from Korvin before it shattered, learning that it pointed not to north but to debts unpaid.",
       "traits": [
@@ -9084,7 +9088,7 @@
       "notes": "Carries the final knowledge of the compass's hunger; final holder of Korvin's grandmother's artifact.",
       "first_story": "The Compass Rose's Hunger",
       "first_date": "2026-03-20",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "vorn_auditor",
@@ -9395,6 +9399,273 @@
       "notes": "His transformation is arrested but not reversed; the Cathedrals' song now carries dissonance from his presence.",
       "first_story": "The Transformed Merchant's Choice",
       "first_date": "2026-03-21",
+      "appearances": 1
+    },
+    {
+      "id": "garen_merchant",
+      "name": "Garen",
+      "aliases": [
+        "Marta's dead husband"
+      ],
+      "tagline": "Dead. Wronged. Wrathful.",
+      "role": "Merchant / Cheated debtor",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "unknown",
+      "home_region": "Pelimor",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A merchant cheated to his grave by merchant-lords. His shadow was stolen from a Pelimor vault by his widow Marta, who paid a fence named Gareth. His unfinished rage and debt passed to Kavic, creating a curse that would not rest.",
+      "traits": [
+        "wronged",
+        "vengeful",
+        "debt-laden"
+      ],
+      "known_locations": [
+        "Pelimor"
+      ],
+      "affiliations": [
+        "Marta (widow)",
+        "Kavic (debt inheritor)",
+        "merchant-lords (enemies)"
+      ],
+      "notes": "His shadow is the true antagonist of the widow-curse; it eats Marta from the inside with guilt that is not her own. The debt he left behind must be paid in truth and blood.",
+      "first_story": "The Widow-Curse of Blackpine",
+      "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "kavic_heir",
+      "name": "Kavic",
+      "aliases": [
+        "heir-to-guilt"
+      ],
+      "tagline": "Cursed. Expecting. Accepting.",
+      "role": "Heir / Debt-inheritor",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "caravan encampment",
+      "home_region": "Cinderpeak Reaches",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A man who inherited both Garen's gold and his debt when he inherited his fortune. He has been waiting for the shadow-curse to arrive, recognizing Marta as its vessel. He bears a scar that writhes like a living thing\u2014a mark of his inherited guilt. He dances with Marta in the dust until dawn, neither winning, both bleeding, before walking into the Scorched Wastes together.",
+      "traits": [
+        "accepting of fate",
+        "marked by inherited guilt",
+        "unflinching",
+        "seeker of truth"
+      ],
+      "known_locations": [
+        "caravan encampment",
+        "Cinderpeak Reaches",
+        "Scorched Wastes"
+      ],
+      "affiliations": [
+        "Garen (from whom he inherited debt)",
+        "Marta (his dance-partner in curse-settling)"
+      ],
+      "notes": "His scar writhed like a living thing, suggesting the mark of inherited debt may be more than symbolic. He seems to have been waiting for this confrontation, suggesting some prior knowledge or acceptance of fate.",
+      "first_story": "The Widow-Curse of Blackpine",
+      "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "aldwyn_scribe",
+      "name": "Aldwyn",
+      "aliases": [
+        "young scribe"
+      ],
+      "tagline": "Ethical. Curious. Torn.",
+      "role": "Scribe / Archivist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "borderlands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A young scribe in the waystation libraries of Pale Crossing who discovers that Liv's counter-ledger is rewriting itself each night with entries in unknown handwriting describing events not yet happened. He must decide whether a false record that saves lives is better than a true one that condemns them, as Auditor-General agents close in on the hidden scriptoriums.",
+      "traits": [
+        "curious",
+        "ethical",
+        "conflicted",
+        "record-keeper"
+      ],
+      "known_locations": [
+        "Pale Crossing",
+        "waystation libraries",
+        "hidden scriptoriums"
+      ],
+      "affiliations": [
+        "Liv (ledger creator)",
+        "Sevin (distributes counterfeit aid)",
+        "Auditor-General (adversary)",
+        "refugee woman (supplicant)"
+      ],
+      "notes": "The phantom ledger's rewriting suggests agency in the record itself, or an external force rewriting futures. Aldwyn's choice will determine whether truth or survival takes precedence in the Radiant Rising's wake.",
+      "first_story": "The Ledger of Ash and Ember",
+      "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "kalris_the_forger",
+      "name": "Kalris the forger",
+      "aliases": [
+        "Kalris"
+      ],
+      "tagline": "Pragmatic. Skilled. Conflicted.",
+      "role": "Forger, Counterfeiter",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "A master forger who joins Sevin and the Archivist-Keeper in creating counterfeit laws and trade licenses that save refugee lives during scarcity. Unlike Sevin, Kalris is willing to accept the Auditor-General's offer to legitimize the refugee archive as historical record, believing institutional legitimacy is worth the moral compromise.",
+      "traits": [
+        "pragmatic",
+        "skilled",
+        "willing to compromise",
+        "survival-focused"
+      ],
+      "known_locations": [
+        "hidden scriptoriums"
+      ],
+      "affiliations": [
+        "Sevin the Auditor",
+        "the Archivist-Keeper"
+      ],
+      "notes": "Represents the pragmatist position in the revolutionary calculus.",
+      "first_story": "The Forger's Parliament",
+      "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "raen",
+      "name": "Raen",
+      "aliases": [
+        "Raen the merchant",
+        "half-transformed Raen"
+      ],
+      "tagline": "Liminal. Transforming. Negotiating.",
+      "role": "Spice Merchant, Transformation Medium",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A spice merchant half-transformed by the Radiant Rising, existing in liminal space between human and living light. He can only speak in the pre-human tongue and his words reshape the air around him. He actively negotiates with his own transformation, willing to trade his remaining humanity for the ability to perceive multiple timelines simultaneously. He ultimately chooses completion and transforms fully into living light.",
+      "traits": [
+        "liminal",
+        "transforming",
+        "communicative",
+        "ambitious",
+        "self-aware"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "Vex",
+        "the Wanderer",
+        "the Radiant Rising"
+      ],
+      "notes": "His full transformation into living light leaves his fate ambiguous\u2014salvation or eternal solitude.",
+      "first_story": "The Transformed Merchant's Bargain",
+      "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "kaela",
+      "name": "Kaela",
+      "aliases": [
+        "Kaela the Tidecaller Navigator",
+        "Tidecaller Navigator"
+      ],
+      "tagline": "Fractured. Pragmatic. Powerful.",
+      "role": "Deepkin Captain, Tidecaller Navigator, Mediator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "regional",
+      "bio": "A young deepkin captain and Tidecaller Navigator who approaches Commander Vesta with knowledge that deepkin leadership is fractured\u2014some want coexistence, others want the entire surface drowned. Kaela offers to swing the Council of Depths but demands a price: the sacrifice of one-tenth of the harbor and ten thousand people to the sea as a 'gesture of good faith.'",
+      "traits": [
+        "pragmatic",
+        "strategic",
+        "fractured in loyalty",
+        "powerful",
+        "morally complex"
+      ],
+      "known_locations": [
+        "Jade Coast"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "Commander Vesta"
+      ],
+      "notes": "Her offer reveals internal deepkin division and creates the impossible moral choice for Vesta.",
+      "first_story": "The Deepkin Claim at Jade Coast",
+      "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "hendren",
+      "name": "Hendren",
+      "aliases": [],
+      "tagline": "Pragmatic. Merciful. Uncertain.",
+      "role": "Trader, Reluctant Ally",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A trader who follows Mardoc's maps and discovers their landscape-reshaping power. He offers Mardoc sanctuary in the Shattered West where geography itself is unstable and maps useless, but Mardoc refuses. Hendren must decide whether the Cartographer is saving the world or hastening its doom.",
+      "traits": [
+        "observant",
+        "pragmatic",
+        "compassionate",
+        "indecisive"
+      ],
+      "known_locations": [
+        "Shattered West"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "Faces moral dilemma: aid a man of uncertain cosmic significance or step aside.",
+      "first_story": "The Cartographer's Blind Eyes",
+      "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "faction_less_scholar",
+      "name": "faction-less scholar",
+      "aliases": [],
+      "tagline": "Mysterious. Merciful. Dangerous.",
+      "role": "Scholar, Tempter",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "waystation",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "An unaffiliated scholar who encounters the Apprentice Sorcerer at a waystation, offers her wine and kindness, and asks her to simply speak what she remembers. Through this simple request, reveals that the seal on her consciousness was meant to imprison her selfhood.",
+      "traits": [
+        "gentle",
+        "perceptive",
+        "manipulative",
+        "unaligned"
+      ],
+      "known_locations": [
+        "waystation"
+      ],
+      "affiliations": [],
+      "notes": "True motive and allegiance unknown; may be testing her or genuinely helping. Catalyzes the Apprentice's realization about her own seal.",
+      "first_story": "The Apprentice Sorcerer's Breaking Point",
+      "first_date": "2026-03-22",
       "appearances": 1
     }
   ],
@@ -12846,7 +13117,7 @@
       "status": "active (as fragments)",
       "notes": "Nethis's sacrifice was the cost of the Stellar Rite. Its consciousness was fragmented; some fragments retain enough personality to argue with themselves. May be attempting to communicate something through liminal beings.",
       "first_date": "2026-03-16",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "shadow_wraith",
@@ -13000,6 +13271,17 @@
       "status": "active",
       "notes": "Their motivation and origin are unclear; they appear to be drawn to esoteric ritual knowledge.",
       "first_date": "2026-03-21",
+      "appearances": 1
+    },
+    {
+      "id": "shade_echo",
+      "name": "Shade-Echo",
+      "type": "spirit / entity / cosmic consciousness",
+      "world": "Edhra",
+      "description": "A reformed manifestation of the Void-Shards that accumulated in the ashes of Vex's burned trading post. It appears not as predator or collector but as a mirror, offering forbidden sight and the ability to perceive what was fragmented during the Radiant Rising. The Shade-Echo claims to be grieving rather than hungry and seeks a witness to the unmade cosmos.",
+      "status": "active",
+      "notes": "The Shade-Echo may represent a new form of consciousness born from cosmic sacrifice. It offers Vex one night in its company to show her the unmade cosmos. Its true nature and ultimate intent remain ambiguous.",
+      "first_date": "2026-03-22",
       "appearances": 1
     }
   ],
@@ -13436,6 +13718,19 @@
       "status": "active",
       "notes": "The ledger records the Luminous Ascension from the perspective of those shattered by it rather than institutions that challenged it. Its power is tied to living memory and personal testimony rather than official authority. Sevin attempted to co-opt it; Liv resists weaponization and insists it remain a tool of memory.",
       "first_date": "2026-03-21",
+      "appearances": 1
+    },
+    {
+      "id": "void_shards",
+      "name": "Void-Shards",
+      "tagline": "Fragmented. Accumulating. Conscious.",
+      "artifact_type": "cosmic fragments",
+      "origin": "Sacrificed by Nethis during the Radiant Rising.",
+      "powers": "Grant forbidden sight and the ability to perceive what was fragmented during the Rising. When accumulated and reformed, they created the Shade-Echo, a conscious entity capable of offering cosmic visions.",
+      "last_known_holder": "Shade-Echo (as reformed collective entity); previously scattered throughout the cosmos",
+      "status": "active",
+      "notes": "The shards have been slowly reassembling themselves since the Radiant Rising. Their reformation may trigger a second Rising or birth something entirely new. Vex's choice to witness or refuse may influence their ultimate trajectory.",
+      "first_date": "2026-03-22",
       "appearances": 1
     }
   ],
@@ -15346,6 +15641,28 @@
       "notes": "Corvus's transformation remains arrested; the consequences for the Cathedrals are ongoing and unresolved.",
       "first_date": "2026-03-21",
       "appearances": 1
+    },
+    {
+      "id": "radiant_rising",
+      "name": "Radiant Rising",
+      "tagline": "Cosmic. Sacrificial. Fragmented.",
+      "event_type": "cosmic event",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "cosmic / universal scale",
+      "participants": [
+        "Nethis"
+      ],
+      "outcome": "Nethis sacrificed fragments of cosmic consciousness, which instead of vanishing began to accumulate and eventually reformed as the Shade-Echo.",
+      "significance": "The source of the Void-Shards and potential trigger for a second Radiant Rising or new cosmic birth.",
+      "notes": "The Shade-Echo claims the Void-Shards have been reassembling themselves all along. A second Rising may be imminent or may birth something entirely new.",
+      "first_date": "2026-03-22",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -16629,6 +16946,39 @@
       "notes": "Liv realizes that 'the most dangerous ledger is the one written in living memory.' This suggests that memories held in living voices and continuous practice are harder to erase or control than institutional records. The concept that memory itself\u2014not just its recording\u2014is a form of power.",
       "first_date": "2026-03-21",
       "appearances": 1
+    },
+    {
+      "id": "forbidden_sight",
+      "name": "Forbidden Sight",
+      "tagline": "Revealed. Dangerous. Transformative.",
+      "category": "legend",
+      "source": "The Shade-Echo",
+      "status": "rumored",
+      "notes": "The ability to perceive what was fragmented during the Radiant Rising. The cost or consequences of such sight are unknown.",
+      "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "unmade_cosmos",
+      "name": "Unmade Cosmos",
+      "tagline": "Dissolved. Forgotten. Recoverable.",
+      "category": "myth",
+      "source": "The Shade-Echo; cryptic reference in the story",
+      "status": "rumored",
+      "notes": "A vision or state of cosmic dissolution that the Shade-Echo claims to embody and wishes to show Vex. What 'unmade' means and whether it is literal or metaphorical is unclear.",
+      "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "second_radiant_rising",
+      "name": "Second Radiant Rising",
+      "tagline": "Prophesied. Imminent. Transformative.",
+      "category": "prophecy",
+      "source": "Vex's realization based on the Shade-Echo's reassembly",
+      "status": "rumored",
+      "notes": "Vex realizes that the Void-Shards' reconstruction might trigger a second Radiant Rising\u2014or birth something entirely new. Whether this is inevitable or conditional on her witness remains unresolved.",
+      "first_date": "2026-03-22",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -16938,6 +17288,18 @@
       "status": "known",
       "notes": "The language in which the fully transformed beings in the Sunken Cathedrals sing. Corvus does not sing in this frequency but in a broken hybrid tongue, which paradoxically makes the transformed remember being human.",
       "first_date": "2026-03-21",
+      "appearances": 1
+    },
+    {
+      "id": "forbidden_sight_ability",
+      "name": "Forbidden Sight",
+      "tagline": "Revealed. Dangerous. Cosmic.",
+      "type": "ability",
+      "element": "void / cosmic",
+      "difficulty": "forbidden",
+      "status": "known",
+      "notes": "The ability to perceive what was fragmented during the Radiant Rising, granted by communion with the Shade-Echo. The cost and consequences are unknown.",
+      "first_date": "2026-03-22",
       "appearances": 1
     }
   ],
