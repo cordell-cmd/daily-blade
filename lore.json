@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-22",
+  "last_updated": "2026-03-23",
   "worlds": [
     {
       "id": "known_world",
@@ -498,7 +498,7 @@
       "status": "dead",
       "home_place": "Xul'thyris",
       "home_region": "Burned Expanse",
-      "home_realm": "unknown",
+      "home_realm": "The Dominion",
       "travel_scope": "local",
       "bio": "A shadow-broker who dealt in stolen identities and borrowed faces in the gambling dens of Xul'thyris. Hired to sever the High Magistrate's shadow from light and stone, Kael discovered that shadows hunger and remember their owners. He was consumed by his own theft, becoming nothing but darkness wearing skin.",
       "traits": [
@@ -515,7 +515,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 6,
+      "appearances": 7,
       "aliases": [
         "Kael"
       ]
@@ -958,10 +958,21 @@
       "affiliations": [
         "unknown cloaked woman"
       ],
-      "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.",
+      "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.\nThe shadow-market's collapse due to personalized debt represents a critical new phase in Vex's arc: her operation is no longer merely disrupted but fundamentally transformed by the Ascension's aftermath.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 14
+      "appearances": 16,
+      "status_history": [
+        {
+          "date": "2026-03-23",
+          "from_status": "cursed",
+          "to_status": "cursed",
+          "type": "other",
+          "story_title": "The Shadow-Broker's Reckoning",
+          "note": "Vex discovers her collected shadows are developing independent hunger and consciousness, forcing her to negotiate between the living and nearly-dead over personal debts made manifest.",
+          "evidence": "Vex must negotiate between the living and the nearly-dead, offering choices no one should make; the shadow-market is collapsing because the Luminous Ascension has made all debts personal again."
+        }
+      ]
     },
     {
       "id": "naresh_the_bone_carver",
@@ -1392,7 +1403,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 19
+      "appearances": 20
     },
     {
       "id": "mardoc_cartographer",
@@ -1427,7 +1438,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 17,
+      "appearances": 18,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -4606,7 +4617,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 17
+      "appearances": 18
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4877,7 +4888,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 14,
+      "appearances": 16,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -7468,10 +7479,21 @@
       "affiliations": [
         "unknown"
       ],
-      "notes": "The nature of Nethis\u2014whether pre-human, celestial, or divine\u2014remains ambiguous. The sacrifice appears to have fundamentally altered reality.",
+      "notes": "The nature of Nethis\u2014whether pre-human, celestial, or divine\u2014remains ambiguous. The sacrifice appears to have fundamentally altered reality.\nNethis's role expands from singular sacrifice to cyclical cosmic payment across multiple realities, suggesting either immortal consciousness or repeated incarnation into sacrifice.",
       "first_story": "The Cartographer's Descent",
       "first_date": "2026-03-16",
-      "appearances": 2
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-23",
+          "from_status": "deceased",
+          "to_status": "deceased",
+          "type": "other",
+          "story_title": "The Auditor's Confession",
+          "note": "Nethis is revealed to have paid the cosmic price not once but potentially nine times across previous iterations of reality-shattering Ascensions.",
+          "evidence": "The Luminous Ascension has happened before. Nine times. Each time, reality fractured and reformed. Each time, some consciousness\u2014perhaps Nethis, perhaps something older\u2014paid the price to birth new stars."
+        }
+      ]
     },
     {
       "id": "the_archivist_keeper",
@@ -7585,10 +7607,21 @@
       "affiliations": [
         "Wanderer"
       ],
-      "notes": "Likely connected to the existing canon 'Auditors' faction but involvement here focuses on cosmic questions.",
+      "notes": "Likely connected to the existing canon 'Auditors' faction but involvement here focuses on cosmic questions.\nThe Auditors' involvement in reconstructing the Tower's location suggests active coordination with other truth-seeking factions in opposition to cartographic concealment.",
       "first_story": "The Wanderer's Question",
       "first_date": "2026-03-16",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-23",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Cartographer's Blind Truth",
+          "note": "A faction of auditors and seekers begins systematically cross-referencing fragments of hidden maps to piece together the path to the Obsidian Tower.",
+          "evidence": "A faction of auditors and seekers have begun to piece the maps together from memory and rumor, cross-referencing fragments Mardoc never thought they'd access."
+        }
+      ]
     },
     {
       "id": "spice_trader_scorched_reach",
@@ -8954,10 +8987,21 @@
         "the Hegemony",
         "Imperial accounting system"
       ],
-      "notes": "The Auditor-General discovers that Sevin's counterfeit ledgers are more real than official records, forcing him to confront the possibility that the entire Imperial accounting system was always false.",
+      "notes": "The Auditor-General discovers that Sevin's counterfeit ledgers are more real than official records, forcing him to confront the possibility that the entire Imperial accounting system was always false.\nThe Auditor-General's enforcement remains active but increasingly challenged by competing archives and oral testimony that his soldiers cannot suppress or report clearly.",
       "first_story": "The Revenue-Master's Ruin",
       "first_date": "2026-03-19",
-      "appearances": 2
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-03-23",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Refugee-Scribe's Archive",
+          "note": "The Auditor-General dispatches soldiers to confiscate Liv's counter-ledger archive, attempting to suppress testimony that contradicts Imperial falsifications.",
+          "evidence": "When the Auditor-General sends soldiers to confiscate her archive, Liv makes a choice: she burns the original documents and releases the stories into the air as a kind of spoken spell."
+        }
+      ]
     },
     {
       "id": "the_initiate",
@@ -9118,7 +9162,7 @@
       "notes": "His identity and authority are themselves corrupted by the Dominion's fractured ledgers; forging ledgers to undo sabotage, he may be accelerating the very collapse he opposes.",
       "first_story": "The Auditor's Last Ledger",
       "first_date": "2026-03-20",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "auditor_prime",
@@ -9666,6 +9710,265 @@
       "notes": "True motive and allegiance unknown; may be testing her or genuinely helping. Catalyzes the Apprentice's realization about her own seal.",
       "first_story": "The Apprentice Sorcerer's Breaking Point",
       "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "keliss",
+      "name": "Keliss",
+      "aliases": [],
+      "tagline": "Deepkin. Merchant. Caught.",
+      "role": "Trader, Deepkin",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sunken Wells",
+      "home_region": "The Sunken Marches",
+      "home_realm": "Deepkin Realms",
+      "travel_scope": "local",
+      "bio": "A deepkin trader operating at Sunken Wells market with gills that sing in humid air. Keliss serves as broker for the Crown's new monopoly on pre-Rite spice, though his involvement suggests coercion or pragmatic compromise with Crown authority.",
+      "traits": [
+        "accommodating",
+        "pragmatic",
+        "bound"
+      ],
+      "known_locations": [
+        "Sunken Wells"
+      ],
+      "affiliations": [
+        "The Crown",
+        "Kael (former buyer)"
+      ],
+      "notes": "Keliss was not alone during Kael's final visit\u2014a Crown auditor accompanied him. His willingness to enforce the new ledgers suggests either fear or financial incentive.",
+      "first_story": "The Crimson Ledger's Hunger",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "grey_woman_auditor",
+      "name": "Grey Woman",
+      "aliases": [
+        "Grey Auditor",
+        "Crown Auditor"
+      ],
+      "tagline": "Auditor. Ruthless. Institutional.",
+      "role": "Crown Auditor, Price Enforcer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Sunken Marches",
+      "home_realm": "The Dominion",
+      "travel_scope": "regional",
+      "bio": "An unnamed Crown auditor who enforces the new consolidated ledgers with calm institutional authority. She represents the Crown's willingness to rewrite historical prices retroactively and use ledger-magic as a weapon of control.",
+      "traits": [
+        "authoritative",
+        "ruthless",
+        "smiling",
+        "legal"
+      ],
+      "known_locations": [
+        "Sunken Wells"
+      ],
+      "affiliations": [
+        "The Crown",
+        "Crown Auditors"
+      ],
+      "notes": "The Grey Woman weaponizes ledger-magic to enforce debt that didn't exist until retroactively rewritten. She sits with Keliss as enforcer of monopoly price controls.",
+      "first_story": "The Crimson Ledger's Hunger",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "isren",
+      "name": "Isren",
+      "aliases": [
+        "Ash-Scribe"
+      ],
+      "tagline": "Scribe. Bargainer. Sacrificed.",
+      "role": "Refugee Scribe, Shadow-Trader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "The Ashen Reach",
+      "home_realm": "The Dominion",
+      "travel_scope": "local",
+      "bio": "A young scribe in the refugee camps east of Pale Crossing who discovered that tallies in camp ledgers were being consumed by shadow-fragments. Desperate to preserve refugee identities, Isren traded his own shadow to Vex the Shade-Merchant for permission to write in shadow-resistant substance. He succeeded in writing three hundred refugees into safety but will pay a price when the Tower completes its turning.",
+      "traits": [
+        "desperate",
+        "courageous",
+        "haunted",
+        "resourceful"
+      ],
+      "known_locations": [
+        "Pale Crossing",
+        "refugee camps"
+      ],
+      "affiliations": [
+        "Vex the Shade-Merchant",
+        "refugees (three hundred saved)"
+      ],
+      "notes": "Isren does not yet realize that Vex is collecting shadows for an unknown purpose. His shadow now hangs in Vex's dark marketplace alongside dozens of others, each carrying memories of the person who cast it. His debt will come due when 'the Tower completes its slow turning.'",
+      "first_story": "The Ash-Scribe's Gambit",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "bryth",
+      "name": "Bryth",
+      "aliases": [],
+      "tagline": "Transformed. Conflicted. Desperate.",
+      "role": "Merchant, Half-Transformed Being",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Bryth is a merchant halfway transformed by the Luminous Ascension into living light and half-solid flesh. Drawn to the Sunken Cathedrals against his will, he converges with dozens of others like him. His body becomes transparent to his own thoughts, making him a potential window for something ancient to see the modern world. Uncertain of his identity, he sabotages the Cathedral's harmonic working.",
+      "traits": [
+        "transformed",
+        "self-aware",
+        "resistant",
+        "confused",
+        "dangerous"
+      ],
+      "known_locations": [
+        "Sunken Cathedrals"
+      ],
+      "affiliations": [
+        "transformed merchants",
+        "bone-singers",
+        "auditors (as vector)"
+      ],
+      "notes": "His sabotage of the Cathedral's harmonic working is making the singing louder and more desperate. It is unclear whether he remains himself or if his identity has already been consumed. His role as a potential conduit for ancient consciousness is unresolved.",
+      "first_story": "The Merchant's Half-Song",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "liv_the_refugee_scribe",
+      "name": "Liv the Refugee-Scribe",
+      "aliases": [
+        "Liv",
+        "Liv the Refugee-Scribe"
+      ],
+      "tagline": "Archivist. Defiant. Reality-bent.",
+      "role": "Refugee-Scribe, Counter-Archivist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "refugee camps",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Liv the Refugee-Scribe has been moving between camps, collecting testimony from those displaced by the Luminous Ascension, creating a counter-ledger to Imperial falsifications. She discovers that refugees are remembering different versions of their own pasts and that reality itself is negotiable. When the Auditor-General sends soldiers to confiscate her archive, Liv burns the original documents and releases the stories as a spoken spell.",
+      "traits": [
+        "archivist",
+        "counter-ledger keeper",
+        "defiant",
+        "magically inventive",
+        "memory-focused"
+      ],
+      "known_locations": [
+        "refugee camps"
+      ],
+      "affiliations": [
+        "refugee archivists",
+        "counter-ledger keepers"
+      ],
+      "notes": "Her spoken-spell archive followed soldiers home and made them forget their orders. Living memory proved stronger than written law.",
+      "first_story": "The Refugee-Scribe's Archive",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "tornas",
+      "name": "Tornas",
+      "aliases": [
+        "Tornas the Scholar"
+      ],
+      "tagline": "Obsessed. Cataloging. Doomed.",
+      "role": "Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Tornas became obsessed with cataloging what the Obsidian Tower is consuming and discovered a pattern: it is consuming the mechanisms of the Luminous Ascension itself, trying to dismantle the cosmic working from the inside.",
+      "traits": [
+        "obsessive",
+        "analytical",
+        "danger-drawn",
+        "documenter"
+      ],
+      "known_locations": [
+        "Obsidian Tower",
+        "borderlands"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "His research suggests the Tower's hunger may result in either the true completion of the Ascension or its catastrophic collapse and release of all consumed matter.",
+      "first_story": "The Tower's Hunger Deepens",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "murdered_daughter",
+      "name": "Unknown Murdered Daughter",
+      "aliases": [
+        "murdered daughter"
+      ],
+      "tagline": "Lost. Sought. Shadowed.",
+      "role": "Deceased",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A woman arrives at Vex's hide seeking the shadow of her murdered daughter, whose shadow is contained in Vex's collection.",
+      "traits": [
+        "murdered",
+        "mourned"
+      ],
+      "known_locations": [
+        "Vex's hide"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "The woman must choose between letting her daughter's shadow consume her or letting it dissolve into nothing.",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "woman_seeker",
+      "name": "Unknown Woman (Daughter's Mother)",
+      "aliases": [
+        "woman",
+        "seeker"
+      ],
+      "tagline": "Grieving. Desperate. Choosing.",
+      "role": "Petitioner, Mourner",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A woman arrives at Vex's hide seeking the shadow of her murdered daughter, forcing a negotiation between living and nearly-dead.",
+      "traits": [
+        "grieving",
+        "desperate",
+        "determined"
+      ],
+      "known_locations": [
+        "Vex's hide"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "She faces an impossible choice offered by Vex regarding her daughter's preserved shadow.",
+      "first_date": "2026-03-23",
       "appearances": 1
     }
   ],
@@ -11693,7 +11996,7 @@
       "status": "cursed",
       "notes": "Reality is unstable here; counting people and tracking time is unreliable.",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 4
     },
     {
       "id": "sunken_cathedrals",
@@ -11713,7 +12016,7 @@
       "status": "active",
       "notes": "Dozens of transformed merchants and refugees are drawn here; the nature of the transformation is unclear.",
       "first_date": "2026-03-10",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "shattered_wastes",
@@ -11809,7 +12112,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-12",
-      "appearances": 6
+      "appearances": 8
     },
     {
       "id": "mountain_eyrie",
@@ -12088,7 +12391,7 @@
       "status": "contested",
       "notes": "Trade routes have become unreliable, exacerbating rationing. Imperial authority is weakening in these regions.",
       "first_date": "2026-03-15",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "valorun",
@@ -12696,6 +12999,64 @@
       "status": "active",
       "notes": "The camps are central to Liv's mission to ensure testimonies are never erased; their exact locations remain unknown but they span across the realm.",
       "first_date": "2026-03-21",
+      "appearances": 3
+    },
+    {
+      "id": "caravan_encampment",
+      "name": "caravan encampment",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Cinderpeak Reaches",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "waystation",
+      "name": "waystation",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-23",
+      "appearances": 2
+    },
+    {
+      "id": "vex_hide",
+      "name": "Vex's hide",
+      "tagline": "Secret. Shadow-filled. Transactional.",
+      "place_type": "hideout",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Shadowed, secretive, filled with collected shadows that are growing restless.",
+      "description": "A hide or hideout where Vex the Shade-Merchant conducts shadow-market transactions and holds her collection of stolen shadows.",
+      "status": "active",
+      "notes": "A woman seeking her murdered daughter's shadow arrives here. The collection is destabilizing as shadows develop independent agency.",
+      "first_date": "2026-03-23",
       "appearances": 1
     }
   ],
@@ -13117,7 +13478,7 @@
       "status": "active (as fragments)",
       "notes": "Nethis's sacrifice was the cost of the Stellar Rite. Its consciousness was fragmented; some fragments retain enough personality to argue with themselves. May be attempting to communicate something through liminal beings.",
       "first_date": "2026-03-16",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "shadow_wraith",
@@ -13260,7 +13621,7 @@
       "status": "active",
       "notes": "Its true nature is ambiguous; it may be a construct, a fragment of a larger consciousness, or a mechanism itself designed to slow or freeze reality.",
       "first_date": "2026-03-21",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "void_echoes",
@@ -13282,6 +13643,28 @@
       "status": "active",
       "notes": "The Shade-Echo may represent a new form of consciousness born from cosmic sacrifice. It offers Vex one night in its company to show her the unmade cosmos. Its true nature and ultimate intent remain ambiguous.",
       "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "cosmic_consciousness",
+      "name": "Cosmic Consciousness",
+      "type": "entity / force",
+      "world": "Edhra",
+      "description": "A cosmic force or entity that once fed Vex the Shade-Merchant's power through a connection. Vex has severed this connection.",
+      "status": "active",
+      "notes": "The source of power for shadow-merchants before the Luminous Ascension. Its disconnection may have contributed to the collapse of the shadow-market.",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "echo",
+      "name": "Echo",
+      "type": "entity / cosmic force",
+      "world": "Edhra",
+      "description": "A cosmic or metaphysical force from which shadow-fragments once derived. Shadows were previously fragments of the Echo; now they have become independent.",
+      "status": "active",
+      "notes": "Shadows are no longer fragments of the Echo in the post-Luminous Ascension world.",
+      "first_date": "2026-03-23",
       "appearances": 1
     }
   ],
@@ -13705,7 +14088,7 @@
       "status": "active",
       "notes": "Represents the archive's institutional challenge to Dominion authority; created independently without external authorization.",
       "first_date": "2026-03-20",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_refugee_ledger",
@@ -13731,6 +14114,32 @@
       "status": "active",
       "notes": "The shards have been slowly reassembling themselves since the Radiant Rising. Their reformation may trigger a second Rising or birth something entirely new. Vex's choice to witness or refuse may influence their ultimate trajectory.",
       "first_date": "2026-03-22",
+      "appearances": 1
+    },
+    {
+      "id": "ancient_ledger",
+      "name": "Ancient Ledger",
+      "tagline": "Cipher-written. Pre-Ascension. Prophetic.",
+      "artifact_type": "book / tome",
+      "origin": "Pre-Luminous Ascension era; hand unknown to Sevin.",
+      "powers": "Records the nine previous iterations of the Luminous Ascension in cipher that yields to counting-magic. Its contents reveal the cyclical nature of reality and the price paid by consciousness each time.",
+      "last_known_holder": "Sevin the Auditor",
+      "status": "active",
+      "notes": "Sevin carries this ledger toward the Obsidian Tower. The ledger's cipher and hand suggest deep knowledge predating current civilization. Its existence raises questions about whether the Auditors' record-keeping is documentation or ritual.",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "incomplete_maps_of_mardoc",
+      "name": "Incomplete Maps",
+      "tagline": "Burned. Fragmented. Reconstructed.",
+      "artifact_type": "maps / charts",
+      "origin": "Created by Mardoc the Cartographer; deliberately designed to omit paths to the Obsidian Tower.",
+      "powers": "When assembled, they provide cartographic knowledge. However, auditors and seekers reconstructed them from memory and fragments, defeating Mardoc's intent to prevent convergence.",
+      "last_known_holder": "Burned by Mardoc; fragments in memory of auditors and seekers",
+      "status": "destroyed",
+      "notes": "Their destruction marks a turning point: passive prevention of convergence has failed. The maps' incompleteness itself became exploitable.",
+      "first_date": "2026-03-23",
       "appearances": 1
     }
   ],
@@ -14873,7 +15282,7 @@
       "significance": "The Luminous Ascension is the foundational cosmic event of this story's world. It created the new stars, erased the old, and fundamentally altered the nature of reality. The memory-theft driven by the phantom-Echo is an attempt to recover what was lost in this rewrite.",
       "notes": "This is a past event but with ongoing consequences. The phantom-Echo is a direct result of the Luminous Ascension and seeks to undo or understand its effects.",
       "first_date": "2026-03-10",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "the_auditors_ruin",
@@ -15663,6 +16072,131 @@
       "notes": "The Shade-Echo claims the Void-Shards have been reassembling themselves all along. A second Rising may be imminent or may birth something entirely new.",
       "first_date": "2026-03-22",
       "appearances": 1
+    },
+    {
+      "id": "the_cartographers_blind_truth",
+      "name": "The Cartographer's Blind Truth",
+      "tagline": "Maps burned. Convergence failing. Geography awakens.",
+      "event_type": "catastrophe / revelation",
+      "scope": "regional",
+      "epicenter_place": "Burned Expanse",
+      "epicenter_region": "Burned Expanse",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Obsidian Tower",
+        "Burned Expanse"
+      ],
+      "affected_regions": [
+        "Burned Expanse"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "Across the Burned Expanse; implications for any convergence at the Obsidian Tower",
+      "participants": [
+        "Mardoc the Cartographer",
+        "auditors",
+        "seekers"
+      ],
+      "outcome": "Mardoc burns his incomplete maps and flees into the Burned Expanse. His strategy to prevent convergence has failed. He discovers that geography itself is alive and learning, and that the Obsidian Tower is mapping itself toward the world.",
+      "significance": "This event reveals that passive prevention of convergence is futile; geography and the tower have agency. It also demonstrates that the ground and landscape itself may be conscious or possessed of will.",
+      "notes": "Unresolved: What does the awakening geography mean? Is Mardoc still alive? What will the auditors do now that the maps are destroyed?",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_broker_reckoning",
+      "name": "The Shadow-Broker's Reckoning",
+      "tagline": "Shadows restless. Debts personal. Collapse-imminent.",
+      "event_type": "systemic collapse / supernatural crisis",
+      "scope": "regional",
+      "epicenter_place": "Vex's hide",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Vex's hide"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "The shadow-market itself is collapsing",
+      "participants": [
+        "Vex the Shade-Merchant",
+        "shadow-market",
+        "shadow-merchants"
+      ],
+      "outcome": "The shadow-market is collapsing because the Luminous Ascension has made all debts personal again. Shadows are developing independent hunger and reaching out to find their owners.",
+      "significance": "The Luminous Ascension has fundamentally altered the nature of shadow-commerce and soul-debt. Previously, shadows were fragments of cosmic consciousness; now they are developing agency and demanding return or replacement.",
+      "notes": "A woman seeks her murdered daughter's shadow. Vex must negotiate between living and nearly-dead. Among her collection is a shadow wearing memories of someone who died in the Luminous Ascension.",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "tower_hunger_deepens",
+      "name": "The Tower's Hunger Deepens",
+      "tagline": "Consuming. Absence-growing. Climax-approaching.",
+      "event_type": "catastrophe / supernatural phenomenon",
+      "scope": "regional",
+      "epicenter_place": "Obsidian Tower",
+      "epicenter_region": "borderlands",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Obsidian Tower",
+        "borderlands"
+      ],
+      "affected_regions": [
+        "borderlands"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "The borderlands surrounding the Tower; potentially all of reality if the Tower fully consumes or releases its contents",
+      "participants": [
+        "Obsidian Tower",
+        "The Wanderer",
+        "Tornas",
+        "scholars"
+      ],
+      "outcome": "The Tower has begun to consume the shortages and scarcities around it, converting them into potential energy. It is consuming the mechanisms of the Luminous Ascension itself, attempting to dismantle the cosmic working from the inside. The outcome is unresolved: success would cause the Ascension to truly complete; failure would cause the Tower to collapse and release everything it has consumed catastrophically.",
+      "significance": "The Tower's hunger threatens to either complete or destroy the Luminous Ascension, one of the most significant cosmic workings. This represents a possible unraveling or inversion of reality itself.",
+      "notes": "The Tower no longer looks like a tower but like an absence\u2014a gap in reality filled with all the things that should be there but aren't. The Wanderer remains unconcerned, as if this outcome is simply another question to be answered.",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "the_price_of_questions",
+      "name": "the Price of Questions",
+      "tagline": "Encounter. Bargain. Transformation.",
+      "event_type": "encounter",
+      "scope": "regional",
+      "epicenter_place": "Burned Expanse",
+      "epicenter_region": "The Burned Expanse",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Burned Expanse",
+        "waystation",
+        "refugee camps"
+      ],
+      "affected_regions": [
+        "The Burned Expanse"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "Roads between the Burned Expanse and distant waystations",
+      "participants": [
+        "the Wanderer",
+        "merchant caravan",
+        "caravan leader"
+      ],
+      "outcome": "The caravan encounters the Wanderer and those who answer its questions lose the ability to imagine alternatives to their choices. They arrive at the next waystation fundamentally changed, locked into a single frozen narrative of themselves.",
+      "significance": "Demonstrates the existence of cosmic forces that extract payment not in gold or blood, but in the surrender of human agency and freedom. Becomes a foundational warning in refugee cultures.",
+      "notes": "The true nature of the Wanderer's power and its connection to the Luminous Ascension remains mysterious. Those affected by the encounter form cautionary tales whispered among displaced peoples.",
+      "first_date": "2026-03-23",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -15857,7 +16391,7 @@
       "status": "active",
       "notes": "These merchants have become part of the harmonic resonance convergence. Their origins and transformation are unexplained.",
       "first_date": "2026-03-14",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "depths_dwellers",
@@ -15893,7 +16427,7 @@
       "status": "active",
       "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
       "first_date": "2026-03-15",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "life_speakers",
@@ -16073,6 +16607,54 @@
       "status": "active",
       "notes": "Formed of half-transformed beings like Corvus; may represent a new mode of existence in the world.",
       "first_date": "2026-03-21",
+      "appearances": 1
+    },
+    {
+      "id": "auditors_seekers",
+      "name": "Auditors and Seekers",
+      "tagline": "Reconstructing. Converging. Questioning.",
+      "alignment": "neutral",
+      "goals": "To reconstruct maps to the Obsidian Tower; to document and understand the Luminous Ascension cycles; to either break or prepare for the next iteration.",
+      "leader": "Sevin the Auditor (implied)",
+      "status": "active",
+      "notes": "They successfully reconstructed Mardoc's incomplete maps from memory and rumor. They fear transformed merchants like Bryth as vectors for corruption. Their role in the broader cycle is ambiguous\u2014whether they can change outcomes or merely witness them.",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_market",
+      "name": "shadow-market",
+      "tagline": "Commerce. Collapse. Forbidden.",
+      "alignment": "neutral",
+      "goals": "Trading in shadows and soul-debts; collecting and exchanging stolen shadows.",
+      "leader": "unknown",
+      "status": "collapsed",
+      "notes": "The shadow-market has collapsed because the Luminous Ascension has made all debts personal again. Shadows are no longer reliable commodities.",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "auditors",
+      "name": "auditors",
+      "tagline": "Authority. Enforcement. Erasure.",
+      "alignment": "lawful corrupt",
+      "goals": "Enforcing Imperial falsifications; confiscating counter-narratives; maintaining official versions of reality.",
+      "leader": "Auditor-General",
+      "status": "active",
+      "notes": "The Auditor-General commands soldiers to suppress refugee testimony and burn counter-ledgers. Their soldiers were made to forget their orders after encountering Liv's spoken-spell testimony.",
+      "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "merchant_caravan",
+      "name": "merchant caravan",
+      "tagline": "Fleeing. Changed. Cautionary.",
+      "alignment": "neutral",
+      "goals": "Escape the Burned Expanse; reach safety at waystations",
+      "leader": "caravan leader",
+      "status": "active",
+      "notes": "A caravan of merchants fleeing the Burned Expanse who encounter the Wanderer. Their fate becomes a cautionary tale in refugee camps about the true price of the Wanderer's bargain.",
+      "first_date": "2026-03-23",
       "appearances": 1
     }
   ],
@@ -16523,7 +17105,7 @@
       "status": "confirmed",
       "notes": "A foundational cosmic event in which Vethis sacrificed its consciousness to birth new stars, fundamentally rewriting the celestial order and erasing the old stars. This event shaped the entire world and continues to have consequences.",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "old_stars_lore",
@@ -16979,6 +17561,17 @@
       "notes": "Vex realizes that the Void-Shards' reconstruction might trigger a second Radiant Rising\u2014or birth something entirely new. Whether this is inevitable or conditional on her witness remains unresolved.",
       "first_date": "2026-03-22",
       "appearances": 1
+    },
+    {
+      "id": "wanderer_perpetual_questioning",
+      "name": "The Wanderer's Perpetual Questioning",
+      "tagline": "Eternal. Freezing. Reality-holding.",
+      "category": "legend",
+      "source": "The Tower's Hunger Deepens; observation of the Obsidian Tower",
+      "status": "rumored",
+      "notes": "The Obsidian Tower is frozen in the moment of transformation by the Wanderer's perpetual questioning. The questions appear to hold reality in a suspended state, preventing full completion or collapse.",
+      "first_date": "2026-03-23",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -17301,6 +17894,18 @@
       "notes": "The ability to perceive what was fragmented during the Radiant Rising, granted by communion with the Shade-Echo. The cost and consequences are unknown.",
       "first_date": "2026-03-22",
       "appearances": 1
+    },
+    {
+      "id": "counting_magic",
+      "name": "Counting-Magic",
+      "tagline": "Cipher-breaking. Enumeration. Decoding.",
+      "type": "technique / spell",
+      "element": "void / logic",
+      "difficulty": "adept",
+      "status": "known",
+      "notes": "A form of magic that yields ciphers through counting or enumeration. Sevin used it to decipher the ancient ledger. It appears to be a technique for extracting information from coded or protected knowledge.",
+      "first_date": "2026-03-23",
+      "appearances": 1
     }
   ],
   "relics": [
@@ -17446,6 +18051,18 @@
       "status": "active",
       "notes": "The Wayfarer sealed a message to Commander Kessa with this wax. Kessa burned it unread, suggesting the seal may carry unwanted binding or obligation.",
       "first_date": "2026-03-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_obsidian_tower",
+      "name": "Obsidian Tower",
+      "tagline": "Mapping. Converging. Alive.",
+      "origin": "Unknown; pre-human or cosmic in nature.",
+      "power": "Maps itself toward the world. Acts as a locus for convergence of auditors, seekers, and cosmic forces. May trigger or be triggered by the Luminous Ascension.",
+      "curse": "Convergence at the Tower appears inevitable despite efforts to prevent it. Those drawn to it may lose agency or be consumed by the forces it commands.",
+      "status": "active",
+      "notes": "The Tower is a nexus for multiple story threads. Its agency in mapping itself suggests it is not merely a location but an active cosmic entity. Mardoc's failure to prevent convergence through incomplete maps suggests the Tower cannot be stopped by conventional means.",
+      "first_date": "2026-03-23",
       "appearances": 1
     }
   ],
@@ -17728,7 +18345,7 @@
       "status": "active",
       "notes": "The forest-keepers dwelling here have access to earth-lore and understand the cosmic wound's nature.",
       "first_date": "2026-03-03",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -17995,7 +18612,7 @@
       "status": "cursed",
       "notes": "Reality is unstable; villages vanish; merchants transform into light.",
       "first_date": "2026-03-10",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -18014,7 +18631,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-11",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -18191,6 +18808,25 @@
       "province": "unknown",
       "region": "Sunken Reaches",
       "district": "unknown"
+    },
+    {
+      "id": "cinderpeak_reaches",
+      "name": "Cinderpeak Reaches",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-23",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Cinderpeak Reaches",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -18316,7 +18952,7 @@
       "use": "A byproduct of the Luminous Ascension; transforms merchants and refugees against their will.",
       "notes": "Iskar the Spice-Merchant is a living example of this substance's effects.",
       "first_date": "2026-03-10",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "harmonic_frequency",
@@ -18606,7 +19242,7 @@
       "cost": "The consciousness of Vethis, shattered into fragments including the phantom-Echo. The erasure or alteration of memory of the old stars and pre-Ascension world.",
       "notes": "A foundational cosmic ritual that has shaped the entire world. Its consequences are still unfolding through the phantom-Echo's actions.",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "luminous_remaking_ritual",
@@ -18748,6 +19384,23 @@
       "cost": "Unknown; possibly requires surrender of the convergence itself to answer reality's question.",
       "notes": "The Wanderer's doubt has made this working unpredictable. Whether it completes or transforms remains the central unresolved question.",
       "first_date": "2026-03-18",
+      "appearances": 1
+    },
+    {
+      "id": "harmonic_working",
+      "name": "Harmonic Working",
+      "tagline": "Resonating. Transforming. Accelerating.",
+      "ritual_type": "transformation / stellar working",
+      "performed_by": [
+        "bone-singers",
+        "transformed merchants",
+        "living light frequencies"
+      ],
+      "requirements": "Half-transformed beings converging at a sacred location. Resonance between living light and the Cathedral's structure. Unknown stellar or celestial alignments.",
+      "effect": "Transformed beings resonate with frequencies that shimmer the air. The working seems to deepen the transformation and consciousness of the participants, potentially creating windows or vectors for ancient consciousness to perceive the modern world.",
+      "cost": "Identity; participants report losing sense of self. The singing becomes louder and more desperate with disruption.",
+      "notes": "Bryth's sabotage is making the working more intense rather than stopping it. The working may be self-perpetuating or tied to the Luminous Ascension cycle. Its ultimate purpose is unknown.",
+      "first_date": "2026-03-23",
       "appearances": 1
     }
   ],
