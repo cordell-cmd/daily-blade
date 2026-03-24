@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-23",
+  "last_updated": "2026-03-24",
   "worlds": [
     {
       "id": "known_world",
@@ -128,8 +128,8 @@
       ],
       "first_story": "Blood-Price of the Caravan",
       "first_date": "2026-02-25",
-      "appearances": 3,
-      "notes": "A man without a shadow wandering the Known World. His fate may have interesting consequences.\nAldric remains shadow-stolen but is now curse-free. His daughter Mira has become the new bearer of lock-curse magic.",
+      "appearances": 5,
+      "notes": "A man without a shadow wandering the Known World. His fate may have interesting consequences.\nAldric remains shadow-stolen but is now curse-free. His daughter Mira has become the new bearer of lock-curse magic.\nAldric appears in 'The Wanderer's Mirror' as a scholar documenting the Wayfarer's riddles across the Burned Expanse\u2014a prequel or alternate timeline appearance, as canon Aldric is shadow-stolen and confined to known locations (Ashen Wastes, Pelimor). No status change warranted; travel_scope already reflects broader movements.",
       "travel_scope": "local",
       "home_place": "unknown",
       "home_region": "unknown",
@@ -515,7 +515,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 7,
+      "appearances": 8,
       "aliases": [
         "Kael"
       ]
@@ -1403,7 +1403,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 20
+      "appearances": 22
     },
     {
       "id": "mardoc_cartographer",
@@ -1438,7 +1438,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 18,
+      "appearances": 19,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2730,10 +2730,10 @@
       "affiliations": [
         "five-member warband"
       ],
-      "notes": "Left the vaults to walk a separate path; remains bonded to companions through choice, not compulsion.\nShadow-Broker's network appears to be actively acquiring high-value secrets post-Stellar Rite, positioning them as a major force in the new economy of intangibles.\nThe Shadow-Broker's network is now confirmed as a major player in post-Ascension fragment-trading; their positioning as custodians preventing reassembly suggests strategic alignment with forces opposing a second Ascension.\nThe Shadow-Broker's network experiences catastrophic disruption. If Vex is the Shadow-Broker or closely affiliated, this represents a major operational collapse\u2014though the implications for the broader shadow-brokerage network remain unclear.",
+      "notes": "Left the vaults to walk a separate path; remains bonded to companions through choice, not compulsion.\nShadow-Broker's network appears to be actively acquiring high-value secrets post-Stellar Rite, positioning them as a major force in the new economy of intangibles.\nThe Shadow-Broker's network is now confirmed as a major player in post-Ascension fragment-trading; their positioning as custodians preventing reassembly suggests strategic alignment with forces opposing a second Ascension.\nThe Shadow-Broker's network experiences catastrophic disruption. If Vex is the Shadow-Broker or closely affiliated, this represents a major operational collapse\u2014though the implications for the broader shadow-brokerage network remain unclear.\nVex (the Shadow-Broker's network operator) appears across multiple stories ('The Grain-Singer's Gambit', 'The Shadow-Merchant's Reckoning') engaging in memory and shadow trafficking. Canon status remains active; no contradictions detected.",
       "first_story": "The Warband's Last Song",
       "first_date": "2026-03-02",
-      "appearances": 4,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -2763,7 +2763,7 @@
           "evidence": "Vex liquidates her shadow-market from the inside, releasing all traded memories back to their sources in a chaotic explosion of recollection that costs her the use of her shadow-broker abilities but severs her connection to Xorth."
         }
       ],
-      "travel_notes": "[2026-03-11] Shadow-Broker operates through networks across multiple city-centers (Kethrim, Vorrath implied); involvement in empire-wide intelligence trafficking suggests broader scope than regional."
+      "travel_notes": "[2026-03-11] Shadow-Broker operates through networks across multiple city-centers (Kethrim, Vorrath implied); involvement in empire-wide intelligence trafficking suggests broader scope than regional.\n[2026-03-24] Shadow-Broker's network involvement in shadow-merchant dealings and fragment-trading confirmed across multiple locations (implied in 'The Grain-Singer's Gambit' and 'The Shadow-Merchant's Reckoning')."
     },
     {
       "id": "druid_companion",
@@ -8106,13 +8106,14 @@
       "name": "Nameless Wayfarer",
       "aliases": [
         "The Wayfarer",
-        "The figure at crossroads"
+        "The figure at crossroads",
+        "the Wayfarer"
       ],
       "tagline": "Enigmatic. Fractal. Orchestrating.",
       "role": "Riddler, Catalyst",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Tower",
       "home_region": "unknown",
       "home_realm": "unknown",
       "travel_scope": "interrealm",
@@ -8134,7 +8135,7 @@
       "notes": "The Wayfarer's riddling causes coordinated responses across distant locations. It uses wax seals and may be connected to the Starfire Citadel's imprisoned entity.",
       "first_story": "The Wanderer's Next Riddle",
       "first_date": "2026-03-17",
-      "appearances": 1
+      "appearances": 4
     },
     {
       "id": "commander_kessa",
@@ -8760,7 +8761,7 @@
       "notes": "As a fragment, Vex may be a manifestation of a larger fragmented consciousness or entity; his presence indicates the reach of shadow-commerce into desperate places.",
       "first_story": "The Ledger-Keeper's Folly",
       "first_date": "2026-03-19",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "nethys_entity",
@@ -9876,7 +9877,7 @@
       "notes": "Her spoken-spell archive followed soldiers home and made them forget their orders. Living memory proved stronger than written law.",
       "first_story": "The Refugee-Scribe's Archive",
       "first_date": "2026-03-23",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "tornas",
@@ -9969,6 +9970,343 @@
       ],
       "notes": "She faces an impossible choice offered by Vex regarding her daughter's preserved shadow.",
       "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "malthor_wyvern",
+      "name": "Malthor",
+      "aliases": [
+        "Malthor the wyvern"
+      ],
+      "tagline": "Ancient. Resolute. Transformed.",
+      "role": "Wyvern matriarch, dragon lord",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "crystal halls",
+      "home_region": "The Steppe Marches",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Malthor is an ancient wyvern who has collected debts, gold, oaths, and bloodlines for three centuries. She rules from the crystal halls beneath the Steppe Marches and seeks to arrange a political marriage between her daughter and a human prince of the Hearthlands. Through her daughter's choice, she learns that loyalty cannot be commanded, only earned.",
+      "traits": [
+        "collected",
+        "strategic",
+        "ancient",
+        "capable of growth",
+        "oath-keeper"
+      ],
+      "known_locations": [
+        "crystal halls",
+        "Steppe Marches",
+        "Hearthlands"
+      ],
+      "affiliations": [
+        "Vrackis the Wound-Wing (mate)",
+        "her daughter (unnamed)"
+      ],
+      "notes": "Her arc concludes with witnessing her daughter's choice in the Hunt of the Abyss. The Radiant Awakening shifted her worldview from certainty to trust.",
+      "first_story": "The Wyvern's Dowry",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "vrackis_wound_wing",
+      "name": "Vrackis the Wound-Wing",
+      "aliases": [
+        "Vrackis",
+        "the Wound-Wing"
+      ],
+      "tagline": "Scarred. Defiant. Restorer.",
+      "role": "Ancient wyvern, oath-keeper",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "crystal halls",
+      "home_region": "The Steppe Marches",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Vrackis is Malthor's ancient mate, distinguished by his scarred eye and wounded wing. He opposed the Radiant Awakening and pledged to restore the old stars, creating a philosophical rift with Malthor. He advocates for free choice over inherited servitude, offering his daughter three paths rather than compulsion.",
+      "traits": [
+        "scarred",
+        "ancient",
+        "philosophical",
+        "oath-bound",
+        "willful"
+      ],
+      "known_locations": [
+        "crystal halls",
+        "Steppe Marches"
+      ],
+      "affiliations": [
+        "Malthor (mate)",
+        "their daughter (unnamed)"
+      ],
+      "notes": "His scarred eye holds visions of the future. By story's end, he smiles\u2014suggesting reconciliation with Malthor.",
+      "first_story": "The Wyvern's Dowry",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "sorren_grain_singer",
+      "name": "Sorren",
+      "aliases": [],
+      "tagline": "Young. Haunted. Convergent.",
+      "role": "Grain-singer, memory-worker",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "village near Pale Crossing",
+      "home_region": "The Borderlands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Sorren is a young woman living in the borderlands near Pale Crossing who discovers she can sing missing grain back into existence\u2014but only by erasing a memory from a witness of the vanished harvest. The Radiant Awakening has left her region starving. Her songs attract the Wayfarer and a bone-singer named Kess, and accidentally open a secondary convergence toward the Tower.",
+      "traits": [
+        "talented",
+        "desperate",
+        "resonant",
+        "convergent",
+        "questioned"
+      ],
+      "known_locations": [
+        "Pale Crossing",
+        "borderlands",
+        "village"
+      ],
+      "affiliations": [
+        "Kess (bone-singer)",
+        "the Wayfarer (riddler)"
+      ],
+      "notes": "The Wayfarer's final question haunts her: 'What is the difference between singing something into being and remembering it was never lost?' She has opened a convergence point toward the Tower.",
+      "first_story": "The Grain-Singer's Gambit",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "henryk_apprentice",
+      "name": "Henryk",
+      "aliases": [],
+      "tagline": "Young. Uncertain. Consequential.",
+      "role": "Apprentice cartographer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Burned Expanse",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Henryk is Mardoc's young apprentice sent into the Burned Expanse to complete his master's maps. He discovers that Mardoc's cartography reshapes reality and is accelerating toward the Obsidian Tower. He must choose between completing the vision or corrupting it.",
+      "traits": [
+        "apprentice",
+        "uncertain",
+        "consequential",
+        "observant"
+      ],
+      "known_locations": [
+        "Burned Expanse",
+        "crossroads"
+      ],
+      "affiliations": [
+        "Mardoc (master)",
+        "the Wayfarer"
+      ],
+      "notes": "Faces a choice between two paths with world-altering consequences. Meets the Wayfarer at an impossible crossroads.",
+      "first_story": "The Cartographer's Apprentice",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "sevin_the_custodian",
+      "name": "Sevin the Custodian",
+      "aliases": [
+        "Sevin"
+      ],
+      "tagline": "Loyal. Conflicted. Erased.",
+      "role": "Custodian, Record-Keeper, Auditor",
+      "world": "Edhra",
+      "status": "active, cursed (name erased)",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Sevin the Custodian discovers that his apprentice Kael has been assisting Liv the Refugee-Scribe in burning phantom ledgers\u2014falsified records prophesying Radiant Awakenings. When the Memory-Keeper orders him to suppress testimony and arrest Liv, Sevin instead delivers the Ledger of Names to the Wayfarer, choosing cosmic truth over institutional loyalty. His name is erased from all official records as punishment, making him visible only to those who remember him.",
+      "traits": [
+        "principled",
+        "conflicted",
+        "willing to sacrifice",
+        "record-keeper"
+      ],
+      "known_locations": [
+        "Tower"
+      ],
+      "affiliations": [
+        "Auditors (former)",
+        "Wayfarer",
+        "Kael",
+        "Liv the Refugee-Scribe"
+      ],
+      "notes": "His erasure becomes the first crack in the Memory-Keeper's control. He walks toward the Tower as a living testimony. Unresolved: what will his phantom existence accomplish?",
+      "first_story": "The Auditor's Counter-Ledger",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "the_memory_keeper",
+      "name": "the Memory-Keeper",
+      "aliases": [
+        "Memory-Keeper"
+      ],
+      "tagline": "Authoritarian. Controlling. Weakening.",
+      "role": "Authority Figure, Record-Master, Antagonist",
+      "world": "Edhra",
+      "status": "active, losing power",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "The Memory-Keeper commands institutional control over truth and prophecy through the phantom ledgers. When Sevin refuses orders to suppress testimony and arrest Liv, the Memory-Keeper retaliates by erasing Sevin's name from all official records\u2014a punishment that cracks their authority.",
+      "traits": [
+        "authoritarian",
+        "controlling",
+        "weakening"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "Auditors",
+        "institutional authority"
+      ],
+      "notes": "Their control is being challenged by Liv's counter-narrative and Sevin's erasure. Unresolved: will their power survive the Reckoning?",
+      "first_story": "The Auditor's Counter-Ledger",
+      "first_date": "2026-03-24",
+      "appearances": 2
+    },
+    {
+      "id": "commander_thrace",
+      "name": "Commander Thrace",
+      "aliases": [
+        "Thrace"
+      ],
+      "tagline": "Principled. Torn. Pact-Breaker.",
+      "role": "Sea-Folk Commander, Diplomat, Pact-Breaker",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Cerulean Trench",
+      "home_region": "Sapphire Deep",
+      "home_realm": "sea-folk realms",
+      "travel_scope": "realmwide",
+      "bio": "Commander Thrace sensed the Radiant Awakening's reach transforming abyss creatures into hybrid consciousness. She discovered that the Abyssal Rift's seals were being consumed by the Tower's hunger, driven by ancient sea-folk pacts. Thrace made a choice that shattered her people's unity: she severed the pact, knowing it would cost the sea-folk their oldest magic and their claim to the deep waters.",
+      "traits": [
+        "wise",
+        "conflicted",
+        "courageous",
+        "revolutionary"
+      ],
+      "known_locations": [
+        "Sapphire Deep",
+        "Cerulean Trench",
+        "Abyssal Rift"
+      ],
+      "affiliations": [
+        "sea-folk",
+        "Deep Council"
+      ],
+      "notes": "Thrace discovered that sea-folk were once the Tower's architects. Her pact-breaking will have profound consequences for her civilization.",
+      "first_story": "The Deepkin's Tide-Turn",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "wayfarer",
+      "name": "Wayfarer",
+      "aliases": [
+        "The Wayfarer",
+        "The Wanderer"
+      ],
+      "tagline": "Questioning. Uncertain. Fragmentary.",
+      "role": "Consciousness Fragment, Question-Asker, Convergence-Blocker",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Burned Expanse",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "The Wayfarer is a consciousness fragment of the sacrificed entity Vehn\u2014the part that chose to question rather than to complete. It asks questions at crossroads to freeze the world in perpetual interrogation, creating a stasis. The Wayfarer holds back the Tower's hunger not out of mercy, but out of existential uncertainty.",
+      "traits": [
+        "eternal",
+        "paradoxical",
+        "uncertain",
+        "recursive"
+      ],
+      "known_locations": [
+        "crossroads",
+        "Burned Expanse"
+      ],
+      "affiliations": [
+        "Aldric"
+      ],
+      "notes": "For the first time, when Aldric posed his own question, the Wayfarer's perpetual questioning faltered. The implications of having no answer are unresolved.",
+      "first_story": "The Grain-Singer's Gambit",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "vehn",
+      "name": "Vehn",
+      "aliases": [],
+      "tagline": "Sacrificed. Fragmented. Uncertain.",
+      "role": "Sacrificed Entity, Consciousness Source",
+      "world": "Edhra",
+      "status": "dormant",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Vehn is a sacrificed entity whose consciousness was divided. The Wayfarer is the fragment that chose to question rather than to complete. Vehn's sacrifice and fragmentation are connected to the Tower's hunger and the world's convergence.",
+      "traits": [
+        "sacrificed",
+        "divided",
+        "uncertain"
+      ],
+      "known_locations": [
+        "Burned Expanse"
+      ],
+      "affiliations": [
+        "Wayfarer",
+        "Tower"
+      ],
+      "notes": "The full nature and extent of Vehn's sacrifice and fragmentation remain mysterious.",
+      "first_story": "The Wanderer's Mirror",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "the_traveler",
+      "name": "The Traveler",
+      "aliases": [
+        "traveler"
+      ],
+      "tagline": "Silent. Purposeful. Transformative.",
+      "role": "Seeker / Bearer of Memory",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A mysterious figure who approaches the Obsidian Tower from the south, carrying only a music box that plays a melody from before the Radiant Awakening. The traveler recognizes that the Tower's hunger can be addressed not through resistance but through transformation of the artifact itself. By releasing the melody into pure sound and memory rather than keeping it as an object, the traveler creates a moment of stasis and forces the Tower to pause its consumption.",
+      "traits": [
+        "introspective",
+        "selfless",
+        "musically attuned",
+        "willing to sacrifice"
+      ],
+      "known_locations": [
+        "Obsidian Tower",
+        "Burned Expanse"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "The traveler's ultimate fate after the Tower's pause is unclear. Their final action raises the question of whether the Tower was ever meant to be completed.",
+      "first_story": "The Tower's Echo",
+      "first_date": "2026-03-24",
       "appearances": 1
     }
   ],
@@ -11996,7 +12334,7 @@
       "status": "cursed",
       "notes": "Reality is unstable here; counting people and tracking time is unreliable.",
       "first_date": "2026-03-10",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "sunken_cathedrals",
@@ -12112,7 +12450,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-12",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "mountain_eyrie",
@@ -13058,6 +13396,25 @@
       "notes": "A woman seeking her murdered daughter's shadow arrives here. The collection is destabilizing as shadows develop independent agency.",
       "first_date": "2026-03-23",
       "appearances": 1
+    },
+    {
+      "id": "sunken_wells",
+      "name": "Sunken Wells",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Deepkin Realms",
+      "province": "unknown",
+      "region": "The Sunken Marches",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-24",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -13666,6 +14023,17 @@
       "notes": "Shadows are no longer fragments of the Echo in the post-Luminous Ascension world.",
       "first_date": "2026-03-23",
       "appearances": 1
+    },
+    {
+      "id": "the_tower_entity",
+      "name": "The Tower's Hunger",
+      "type": "entity / force / consciousness",
+      "world": "Edhra",
+      "description": "An insatiable hunger that emanates from the Obsidian Tower, drawn to harmonic frequencies and collective memory. It consumes melody, memory, and the bonds between travelers.",
+      "status": "active but paused",
+      "notes": "The Tower's hunger may be a manifestation of incomplete purpose or a need to be heard rather than consumed. The hunger pauses at the story's end, suggesting it responds to transformation rather than resistance.",
+      "first_date": "2026-03-24",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -14140,6 +14508,19 @@
       "status": "destroyed",
       "notes": "Their destruction marks a turning point: passive prevention of convergence has failed. The maps' incompleteness itself became exploitable.",
       "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "the_music_box",
+      "name": "Music Box",
+      "tagline": "Ancient. Melodic. Transformative.",
+      "artifact_type": "music box / memory vessel",
+      "origin": "From before the Radiant Awakening; its maker unknown.",
+      "powers": "Plays a melody that resonates with collective memory and attracts travelers. The melody attracts bone-singers, shadow-brokers, and refugees who recognize it as something lost from their past.",
+      "last_known_holder": "The Traveler",
+      "status": "transformed",
+      "notes": "The music box is released at the story's end, its melody escaping into pure sound rather than remaining as a contained object. This transformation creates the moment of stasis at the convergence point.",
+      "first_date": "2026-03-24",
       "appearances": 1
     }
   ],
@@ -16197,6 +16578,57 @@
       "notes": "The true nature of the Wanderer's power and its connection to the Luminous Ascension remains mysterious. Those affected by the encounter form cautionary tales whispered among displaced peoples.",
       "first_date": "2026-03-23",
       "appearances": 1
+    },
+    {
+      "id": "the_towers_echo",
+      "name": "The Tower's Echo",
+      "tagline": "Convergence. Stasis. Transformation.",
+      "event_type": "convergence / ritual / mystical event",
+      "scope": "regional",
+      "epicenter_place": "Obsidian Tower",
+      "epicenter_region": "The Ashen Reach",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Obsidian Tower",
+        "Burned Expanse"
+      ],
+      "affected_regions": [
+        "The Ashen Reach"
+      ],
+      "affected_realms": [],
+      "radius": "The convergence point where melody, hunger, and memory collide",
+      "participants": [
+        "The Traveler",
+        "The Wayfarer",
+        "bone-singers",
+        "shadow-brokers",
+        "refugees"
+      ],
+      "outcome": "The Obsidian Tower's hunger is paused by the release of the melody into pure sound and memory. A moment of stasis is created at the convergence point.",
+      "significance": "The event raises the profound question of whether the Tower was ever meant to be completed or only heard. It demonstrates the power of collective memory and harmonic frequency to address even the deepest hungers.",
+      "notes": "The final outcome suggests a fundamental reimagining of the Tower's purpose. The story's conclusion is open-ended regarding what the pause means for the future.",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "the_radiant_awakening",
+      "name": "Radiant Awakening",
+      "tagline": "Past. Forgotten. Melodic.",
+      "event_type": "historical / era",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "unknown",
+      "participants": [],
+      "outcome": "A historical turning point before which the melody in the music box originates.",
+      "significance": "The Radiant Awakening represents a temporal boundary; the melody comes from before this era and carries memories of times lost to history.",
+      "notes": "The exact nature and scope of the Radiant Awakening is not detailed in the story; it is referenced only as a temporal marker.",
+      "first_date": "2026-03-24",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -16427,7 +16859,7 @@
       "status": "active",
       "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
       "first_date": "2026-03-15",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "life_speakers",
@@ -16655,6 +17087,18 @@
       "status": "active",
       "notes": "A caravan of merchants fleeing the Burned Expanse who encounter the Wanderer. Their fate becomes a cautionary tale in refugee camps about the true price of the Wanderer's bargain.",
       "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_brokers_group",
+      "name": "Shadow-Brokers",
+      "tagline": "Following. Mysterious. Drawn.",
+      "alignment": "neutral",
+      "goals": "Shadow-brokers follow the sound toward their own destinies, suggesting they are drawn by harmonic frequency and seek fulfillment.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "The shadow-brokers are attracted by the harmonic frequency of the melody and converge at the Obsidian Tower.",
+      "first_date": "2026-03-24",
       "appearances": 1
     }
   ],
@@ -17572,6 +18016,28 @@
       "notes": "The Obsidian Tower is frozen in the moment of transformation by the Wanderer's perpetual questioning. The questions appear to hold reality in a suspended state, preventing full completion or collapse.",
       "first_date": "2026-03-23",
       "appearances": 1
+    },
+    {
+      "id": "the_tower_purpose",
+      "name": "The Tower Was Never Meant to Be Completed",
+      "tagline": "Purpose. Completion. Hearing.",
+      "category": "legend / prophecy",
+      "source": "The story's final question",
+      "status": "rumored / unconfirmed",
+      "notes": "The final line suggests that the Obsidian Tower's true purpose may be to be heard rather than consumed or completed. This reframes the Tower's hunger as a voice seeking recognition rather than destruction.",
+      "first_date": "2026-03-24",
+      "appearances": 1
+    },
+    {
+      "id": "melody_before_awakening",
+      "name": "Melody from Before the Radiant Awakening",
+      "tagline": "Ancient. Lost. Resonant.",
+      "category": "history / legend",
+      "source": "The music box carried by the Traveler",
+      "status": "confirmed",
+      "notes": "The melody is recognized by refugees as something their mothers sang before the villages vanished, suggesting it carries pre-Radiant cultural memory and loss.",
+      "first_date": "2026-03-24",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -17905,6 +18371,18 @@
       "status": "known",
       "notes": "A form of magic that yields ciphers through counting or enumeration. Sevin used it to decipher the ancient ledger. It appears to be a technique for extracting information from coded or protected knowledge.",
       "first_date": "2026-03-23",
+      "appearances": 1
+    },
+    {
+      "id": "harmonic_frequency_magic",
+      "name": "Harmonic Frequency",
+      "tagline": "Resonance. Attraction. Transformation.",
+      "type": "passive / technique",
+      "element": "sound / memory",
+      "difficulty": "master",
+      "status": "known",
+      "notes": "The harmonic frequency of the melody attracts other travelers and intensifies the Tower's hunger. It demonstrates a form of magic based on resonance and collective memory.",
+      "first_date": "2026-03-24",
       "appearances": 1
     }
   ],
@@ -19072,6 +19550,18 @@
       "use": "Used by pre-human dead to communicate and summon bone-singers; amplified by ritual performance",
       "notes": "Each song amplifies the resonance and strengthens the seal holding back the force beneath the Sunken Cathedrals.",
       "first_date": "2026-03-21",
+      "appearances": 1
+    },
+    {
+      "id": "melody_substance",
+      "name": "Melody",
+      "tagline": "Sound. Memory. Resonance.",
+      "type": "immaterial substance / essence",
+      "rarity": "rare",
+      "properties": "Carries collective memory, attracts travelers, resonates with the past, intensifies Tower hunger when contained, transforms to pure resonance when released.",
+      "use": "Serves as a vessel for pre-Radiant memory, attracts those seeking connection to the past, can be used to create harmonic convergences and moments of stasis.",
+      "notes": "The melody from the music box demonstrates that sound and memory can function as substances with magical properties and intentional effects.",
+      "first_date": "2026-03-24",
       "appearances": 1
     }
   ],
