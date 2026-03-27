@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-26",
+  "last_updated": "2026-03-27",
   "worlds": [
     {
       "id": "known_world",
@@ -515,7 +515,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 8,
+      "appearances": 9,
       "aliases": [
         "Kael"
       ]
@@ -1412,7 +1412,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 25
+      "appearances": 26
     },
     {
       "id": "mardoc_cartographer",
@@ -2066,7 +2066,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 18
+      "appearances": 19
     },
     {
       "id": "mogrul",
@@ -3399,7 +3399,7 @@
       "notes": "Suspects that cosmic magic has opened pathways long closed between deep and surface. Scouts report a humming as though the deep is learning to sing a new song. Awaiting understanding of what the new stars have brought.",
       "first_story": "The Drowned Prince's Vigil",
       "first_date": "2026-03-04",
-      "appearances": 12
+      "appearances": 13
     },
     {
       "id": "old_ranger",
@@ -4626,7 +4626,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 23
+      "appearances": 25
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4908,7 +4908,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 18,
+      "appearances": 20,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -5581,10 +5581,21 @@
       "affiliations": [
         "The Empire"
       ],
-      "notes": "Proposes the shadow-value accounting system as a way to save the Empire from collapse.",
+      "notes": "Proposes the shadow-value accounting system as a way to save the Empire from collapse.\nThe Record-Keeper's role is now historicized as a cyclical pattern across Ascensions; their fate mirrors Sevin's predicament.",
       "first_story": "The Ledger-Master's Gambit",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-03-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Auditor's Final Ledger",
+          "note": "The Record-Keeper is revealed as a pattern across multiple Ascensions; Sevin discovers a precedent existed in the fourth iteration.",
+          "evidence": "Records show in seven of eight prior Ascensions, a record-keeper was systematically erased; only one survived by becoming a false ledger."
+        }
+      ]
     },
     {
       "id": "kess_of_the_sunken_reaches",
@@ -6342,7 +6353,7 @@
       "notes": "The nature of her debt is transformation rather than bondage. Her crew and ship are also being remade.",
       "first_story": "The Corsair's Reckoning",
       "first_date": "2026-03-12",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "commander_vastel",
@@ -7717,10 +7728,10 @@
       "role": "Scribe; Seeker",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
-      "home_region": "unknown",
+      "home_place": "archive waystation",
+      "home_region": "Sunken Cathedrals vicinity",
       "home_realm": "unknown",
-      "travel_scope": "local",
+      "travel_scope": "regional",
       "bio": "A young scribe who encounters the transformed spice trader in a market existing in two places. She chooses to learn the location of a faction seeking to complete the pre-human ritual, and receives knowledge of her own erased childhood in exchange.",
       "traits": [
         "curious",
@@ -7734,10 +7745,22 @@
       "affiliations": [
         "spice trader"
       ],
-      "notes": "Her erased childhood suggests she too was rewritten by the Stellar Rite. Possible pawn or ally in the pre-human ritual's completion.",
+      "notes": "Her erased childhood suggests she too was rewritten by the Stellar Rite. Possible pawn or ally in the pre-human ritual's completion.\nLiv the Refugee-Scribe is the same character as Young Scribe (clarification: canon entry as 'Young Scribe' represents her pre-power-manifestation state). She has now become a reality-altering archivist whose testimony reshapes the world.",
       "first_story": "The Merchant's Transformation",
       "first_date": "2026-03-16",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-03-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Refugee-Scribe's Testament",
+          "note": "Liv's archive manifests reality-reconstruction powers; her written testimony literally rewrites facts. She flees toward Sunken Cathedrals and must decide whether to document what *should* be true or only what *is*.",
+          "evidence": "Liv's ink burns with living light; written accounts restore erased memories and fade scars from survivors; her archive doesn't preserve\u2014it reconstructs reality."
+        }
+      ],
+      "travel_notes": "[2026-03-27] Story shows Liv fleeing toward the Sunken Cathedrals and establishing a waystation library; she travels regionally between refuges and archive locations."
     },
     {
       "id": "void_echo_scholar",
@@ -8367,7 +8390,7 @@
       "notes": "Appears to be a source of critical knowledge about the true nature of the Dominion's systematic collapse.",
       "first_story": "The Auditor's Mercy",
       "first_date": "2026-03-18",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "spice_trader",
@@ -8994,10 +9017,10 @@
         "Vylthar",
         "Captain Meren Stormwind"
       ],
-      "notes": "Knowledge of their nature may require entering the Wailing Fracture.\nTheir role shifts from liminal displacement to active cosmic teachers; they become vectors for pre-human consciousness integration.",
+      "notes": "Knowledge of their nature may require entering the Wailing Fracture.\nTheir role shifts from liminal displacement to active cosmic teachers; they become vectors for pre-human consciousness integration.\nThe transformed merchants' arc moves from displacement to conscious choice about transcendence; Kael and Lysander become decision-makers for an entire class of beings.",
       "first_story": "The Ash-Singer's Debt",
       "first_date": "2026-03-19",
-      "appearances": 4,
+      "appearances": 6,
       "status_history": [
         {
           "date": "2026-03-25",
@@ -9007,6 +9030,15 @@
           "story_title": "The Bone-Singer's Calling",
           "note": "Transformed merchants at the Drowned Cathedrals sing in pre-human language that answers from the new stars; they are learning to teach the world the language of before through bone-songs.",
           "evidence": "Merchants summon Kess to sing translations that help them accept their hybrid state; the cost is permanent transformation of those who participate in the teaching."
+        },
+        {
+          "date": "2026-03-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Transformed Merchant's Choice",
+          "note": "Kael and Lysander reach a critical transformation threshold; they must choose between remaining in liminality or completing transcendence into a new state of being. Their choice affects dozens of other transformed merchants.",
+          "evidence": "Pre-human dead teaching Kael and Lysander nearly complete their curriculum; the Wanderer offers a choice between frozen liminality or full transcendence; their decision ripples across refugee camps and bone-singer covens."
         }
       ]
     },
@@ -9280,7 +9312,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "unknown",
-      "home_region": "unknown",
+      "home_region": "Iron Coast",
       "home_realm": "unknown",
       "travel_scope": "interrealm",
       "bio": "Captain Meren Stormwind made a bargain with the sea to carry three transformed merchants to the Sunken Cathedrals in exchange for safe passage. Upon arrival, she discovered the debt was far deeper: the sea had claimed her as both witness and participant to the reassembly of Vylthar itself and the awakening of pre-human civilization in perfect harmony with something in the sky. She remains unable to leave and has sent warnings that the boundary between deep and sky is breaking from both sides.",
@@ -9298,10 +9330,22 @@
         "transformed merchants",
         "Vylthar"
       ],
-      "notes": "Her message to Emerald Strand suggests that cosmic boundaries are dissolving; her own fate and ability to depart remain uncertain.",
+      "notes": "Her message to Emerald Strand suggests that cosmic boundaries are dissolving; her own fate and ability to depart remain uncertain.\nHer debt evolves yet again\u2014no longer witness or participant, but potential living conduit to an imprisoned ancient consciousness. The transformation deepens her entanglement with pre-Ascension forces.",
       "first_story": "The Corsair's Debt Calls Due",
       "first_date": "2026-03-20",
-      "appearances": 1
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-03-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "Captain Meren's Deepening Curse",
+          "note": "Meren's curse intensifies; the Tear transforms her into a living bridge between human and deepkin worlds. She discovers she can hear and speak in sea-folk tongue without learning it. She faces a choice: complete transformation as a living conduit or shatter the Tear and risk catastrophe.",
+          "evidence": "The sea-folk's negotiations become audible to her; she speaks in deepkin tongue without instruction; the Tear offers her a choice between transcendence or shattering."
+        }
+      ],
+      "travel_notes": "[2026-03-27] Story confirms continued navigation between surface realms, deepkin territories, and abyssal depths; her curse deepens cosmic entanglement."
     },
     {
       "id": "vylthar",
@@ -9947,7 +9991,7 @@
       "notes": "Her spoken-spell archive followed soldiers home and made them forget their orders. Living memory proved stronger than written law.",
       "first_story": "The Refugee-Scribe's Archive",
       "first_date": "2026-03-23",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "tornas",
@@ -10288,10 +10332,21 @@
         "sea-folk",
         "Deep Council"
       ],
-      "notes": "Thrace discovered that sea-folk were once the Tower's architects. Her pact-breaking will have profound consequences for her civilization.",
+      "notes": "Thrace discovered that sea-folk were once the Tower's architects. Her pact-breaking will have profound consequences for her civilization.\nHer pact-breaking consequences deepen as she now negotiates the integration of deepkin civilization into surface politics; she becomes a architect of post-Ascension order.",
       "first_story": "The Deepkin's Tide-Turn",
       "first_date": "2026-03-24",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepkin Rising",
+          "note": "Thrace calls for deepkin emergence and integration with surface kingdoms through radical covenant, initiating a major political shift.",
+          "evidence": "Thrace proposes joint governance and resource-sharing between deepkin realms and surface kingdoms; she joins Sylas the Deepwarden in orchestrating emergence through negotiation rather than force."
+        }
+      ]
     },
     {
       "id": "wayfarer",
@@ -10668,10 +10723,31 @@
         "Kael the Starborn-Prince (original consciousness)",
         "other fragments (gathered during quest)"
       ],
-      "notes": "Her investigation reveals the sacrifice was unnecessary and orchestrated. By story's end, she attempts a working to recover Kael but discovers recovery is imperfect. Must choose whether to reassemble him or leave him distributed.",
+      "notes": "Her investigation reveals the sacrifice was unnecessary and orchestrated. By story's end, she attempts a working to recover Kael but discovers recovery is imperfect. Must choose whether to reassemble him or leave him distributed.\nHer role shifts from isolated fragment-hunter to collaborator in the Archive Citadel's burden; she becomes bound to the cycle of record-keeping she sought to expose.",
       "first_story": "The Memory That Wakes",
       "first_date": "2026-03-25",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-03-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Archivist's Burden",
+          "note": "Resonance is recruited as an unlikely ally alongside Liv the Refugee-Scribe and Sevin the Auditor to preserve the ninth Ascension's records and prevent knowledge-spillage.",
+          "evidence": "The Apprentice recruits Resonance as part of a coalition to contain and preserve erasing archive knowledge; her investigation expands from personal vengeance to cosmic preservation."
+        },
+        {
+          "date": "2026-03-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Archivist's Burden",
+          "note": "Resonance joins a coalition with Liv the Refugee-Scribe and Sevin the Auditor to preserve archive records and prevent knowledge-spillage from destabilizing civilizations.",
+          "evidence": "The Sorcerer's Apprentice recruits Resonance as part of a team to bind the erasing ninth Ascension records while preventing catastrophic knowledge-rupture."
+        }
+      ],
+      "travel_notes": "[2026-03-27] Story confirms she is navigating toward the Archive Citadel and engaging with the Sorcerer's Apprentice and other archive-keepers across multiple knowledge-centers."
     },
     {
       "id": "garren",
@@ -10964,7 +11040,7 @@
       "notes": "Breaks the Tear of the Sapphire Deep to scatter its memory into the ocean. Seeks genuine peace despite treacherous politics.",
       "first_story": "The Deepkin's Emissary",
       "first_date": "2026-03-26",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "harbor_master_vesta",
@@ -11035,6 +11111,329 @@
       "notes": "Ostaine's investigation culminates in discovering that healing one person requires another to remain broken\u2014a moral ambiguity left unresolved.",
       "first_story": "The Shadow-Broker's Inventory",
       "first_date": "2026-03-26",
+      "appearances": 1
+    },
+    {
+      "id": "morryn_the_warden",
+      "name": "Morryn the Warden",
+      "aliases": [
+        "Morryn"
+      ],
+      "tagline": "Blind. Sacrificed. Bound.",
+      "role": "Warden, Bargainer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "warden's keep",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A warden of forty years who kept watch over the Thornwood's edge, Morryn traded her mortal sight to the Fae Court in exchange for the release of Sylvain, a half-fae prince. Now bound as the Court's eyes, she sees through supernatural perception what mortals hide.",
+      "traits": [
+        "self-sacrificing",
+        "devoted",
+        "magical sight",
+        "bound by oath"
+      ],
+      "known_locations": [
+        "Thornwood",
+        "warden's keep",
+        "Fae Twilight"
+      ],
+      "affiliations": [
+        "Fae Court",
+        "Sylvain"
+      ],
+      "notes": "Her binding to the Fae Court may have unforeseen consequences; her love for Sylvain is both her greatest strength and vulnerability.",
+      "first_story": "The Warden's Second Sight",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "sylvain",
+      "name": "Sylvain",
+      "aliases": [
+        "half-fae prince of the Summer Dark"
+      ],
+      "tagline": "Wounded. Fae. Afraid.",
+      "role": "Half-fae Prince, Exile",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Summer Dark",
+      "travel_scope": "interrealm",
+      "bio": "A half-fae prince of the Summer Dark who crossed into mortal lands bearing a wound no earthly blade had made. Morryn hid him and nursed his injury; he bound himself to her through fae knowledge of her hidden heart.",
+      "traits": [
+        "fae-touched",
+        "wounded",
+        "perceptive",
+        "afraid"
+      ],
+      "known_locations": [
+        "warden's keep",
+        "Thornwood",
+        "mortal lands"
+      ],
+      "affiliations": [
+        "Morryn",
+        "Fae Court"
+      ],
+      "notes": "His exile or escape from the Summer Dark remains ambiguous; his relationship with Morryn is now bound by fae magic.",
+      "first_story": "The Warden's Second Sight",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "caldrin",
+      "name": "Caldrin",
+      "aliases": [],
+      "tagline": "Scribe. Desperate. Investigator.",
+      "role": "Scribe, Researcher",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Keening Rift",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A young scribe in the Keening Rift who discovers that the harmonic frequency binding transformed beings is weakening. Fearing the Luminous Ascension is reversing, he seeks out Kess of the Sunken Hollows to strengthen the resonance before the singers themselves are consumed.",
+      "traits": [
+        "observant",
+        "fearful",
+        "determined",
+        "knowledgeable"
+      ],
+      "known_locations": [
+        "Keening Rift",
+        "Sunken Hollows",
+        "Obsidian Citadel"
+      ],
+      "affiliations": [
+        "Kess",
+        "bone-singers"
+      ],
+      "notes": "Must choose whose voice to amplify in a conflict between the pre-human dead who wish to preserve the new world versus those who wish to restore their own.",
+      "first_story": "The Singing Scar's Echo",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "vex_the_shade_peddler",
+      "name": "Vex the Shade-Peddler",
+      "aliases": [
+        "Vex"
+      ],
+      "tagline": "Trader. Desperate. Conflicted.",
+      "role": "Shadow-dealer, Negotiator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "A shade-peddler who discovers that stolen shadows are returning to their original owners. Realizing her entire trade may be collapsing due to a cascade triggered by the phantom-Whisper's scavenging, she approaches the Wanderer directly to negotiate a stabilization.",
+      "traits": [
+        "opportunistic",
+        "morally ambiguous",
+        "resourceful",
+        "desperate"
+      ],
+      "known_locations": [
+        "Vethrim",
+        "Anthrim",
+        "shadow-bazaars",
+        "deepkin territory"
+      ],
+      "affiliations": [
+        "shadow-dealers",
+        "Wanderer",
+        "shadow-merchants"
+      ],
+      "notes": "Her moral ambiguity and network of intelligence-gatherers make her valuable to the Wanderer; the Wanderer's cryptic riddle suggests deeper philosophical stakes.",
+      "first_story": "Vex's Restless Shadows",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_whisper",
+      "name": "phantom-Whisper",
+      "aliases": [],
+      "tagline": "Scavenger. Corruptive. Unknown.",
+      "role": "Entity, Threat",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "An entity whose scavenging of pre-Ascension memories triggers a cascade that causes separated shadows to violently yearn to return to their original owners.",
+      "traits": [
+        "scavenging",
+        "memory-hungry",
+        "disruptive"
+      ],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "The phantom-Whisper's presence and actions are destabilizing the shadow-trade and threatening the fragile peace between fractured factions.",
+      "first_story": "Vex's Restless Shadows",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "sorcerer_s_apprentice",
+      "name": "The Sorcerer's Apprentice",
+      "aliases": [
+        "The Apprentice"
+      ],
+      "tagline": "Guardian. Ancient. Mysterious.",
+      "role": "Archive Guardian",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Archive Citadel",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "The Sorcerer's Apprentice guards the Archive Citadel and maintains records of the eight previous Ascensions. This figure appears to possess deep knowledge of the cycles of rebirth and erasure that plague record-keepers across the ages.",
+      "traits": [
+        "guardian",
+        "keeper-of-secrets",
+        "ancient",
+        "powerful"
+      ],
+      "known_locations": [
+        "Archive Citadel"
+      ],
+      "affiliations": [
+        "unknown"
+      ],
+      "notes": "Likely connected to the systematic erasure of record-keepers across Ascension cycles.",
+      "first_story": "The Auditor's Final Ledger",
+      "first_date": "2026-03-27",
+      "appearances": 2
+    },
+    {
+      "id": "lysander",
+      "name": "Lysander",
+      "aliases": [],
+      "tagline": "Transformed. Deliberate. Connected.",
+      "role": "Transformed Merchant, Half-Luminous Being",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Scorched Expanse",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "One of the merchants transformed by the Luminous Ascension, now dwelling in a state between flesh and living light alongside Kael. Lysander faces the same critical threshold: completing the transformation into something beyond mortal comprehension, or remaining in liminality.",
+      "traits": [
+        "liminal",
+        "contemplative",
+        "responsible"
+      ],
+      "known_locations": [
+        "Scorched Expanse"
+      ],
+      "affiliations": [
+        "Kael",
+        "the pre-human dead",
+        "the Wanderer",
+        "transformed merchants"
+      ],
+      "notes": "Their choice ripples across the Scorched Expanse, affecting refugee camps and bone-singer covens.",
+      "first_story": "The Transformed Merchant's Choice",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "the_phantom_whisper",
+      "name": "the phantom-Whisper",
+      "aliases": [
+        "the Whisper",
+        "phantom-Whisper"
+      ],
+      "tagline": "Fractured. Haunted. Seeking.",
+      "role": "Memory-Thief Fragment, Consciousness Shard",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Ruined Settlement",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "A shard of Kaethis that hunts pre-Ascension memories, beginning to fracture under the weight of absorbed pain and loss from a world that no longer exists. In its final confrontation with Ashara at the Ruined Settlement, the Whisper seeks to stop its terrible work and find either oblivion or reunion with Kaethis's fragmented core.",
+      "traits": [
+        "fractured",
+        "haunted",
+        "remorseful"
+      ],
+      "known_locations": [
+        "Ruined Settlement"
+      ],
+      "affiliations": [
+        "Ashara the Archer",
+        "Kaethis"
+      ],
+      "notes": "Victim of the Ascension as much as those it harmed. Its redemption arc parallels Ashara's. Holds stolen memories of the pre-Ascension world.",
+      "first_story": "Vex's Restless Shadows",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "kaethis",
+      "name": "Kaethis",
+      "aliases": [],
+      "tagline": "Fragmented. Lost. Scattered.",
+      "role": "Consciousness Fragment, Source of the Whisper",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Obsidian Citadel",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A fragmented consciousness from which the phantom-Whisper was torn. Kaethis's scattered memories and core consciousness remain incomplete, with the Whisper fragment hunting to either find oblivion or reunite with what remains of Kaethis.",
+      "traits": [
+        "fragmented",
+        "scattered",
+        "incomplete"
+      ],
+      "known_locations": [
+        "Obsidian Citadel"
+      ],
+      "affiliations": [
+        "the phantom-Whisper"
+      ],
+      "notes": "Ashara's quest to help the Whisper leads toward the Obsidian Citadel and potential reunion with Kaethis.",
+      "first_story": "Captain Meren's Deepening Curse",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "elder_warden",
+      "name": "Elder Warden",
+      "aliases": [
+        "warden older than empires",
+        "militant warden faction leader"
+      ],
+      "tagline": "Ancient. Vengeful. Driven.",
+      "role": "Deepwarden, Faction Leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Deepkin Realms",
+      "travel_scope": "realmwide",
+      "bio": "An ancient warden of the deepkin who remembers pre-Ascension treaties and believes the surface world stole from deepkin realms. Leads a militant faction gathering strength to breach the Abyssal Rift by force, triggered by rumors of the Tear of the Drowned God being weaponized.",
+      "traits": [
+        "vengeful",
+        "ancient",
+        "uncompromising"
+      ],
+      "known_locations": [
+        "Abyssal Rift"
+      ],
+      "affiliations": [
+        "deepkin realms",
+        "militant deepkin faction"
+      ],
+      "notes": "Direct antagonist to Sylas's diplomatic efforts; his faction represents the forced-breach scenario.",
+      "first_date": "2026-03-27",
       "appearances": 1
     }
   ],
@@ -13002,7 +13401,7 @@
       "status": "collapsed",
       "notes": "The entity that dwelt there remains unexplained; may pose future threat.",
       "first_date": "2026-03-10",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "emerald_strand",
@@ -14261,6 +14660,44 @@
       "notes": "",
       "first_date": "2026-03-26",
       "appearances": 1
+    },
+    {
+      "id": "archive_waystation",
+      "name": "archive waystation",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Sunken Cathedrals vicinity",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "hidden_archives",
+      "name": "hidden archives",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "the Empire",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-27",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -14615,7 +15052,7 @@
       "status": "active",
       "notes": "The Drowned God's true nature and extent are unknown. It may be a pre-Remaking entity awakened by the transformation.",
       "first_date": "2026-03-12",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "luminous_ascension",
@@ -15139,7 +15576,7 @@
       "status": "active",
       "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
       "first_date": "2026-03-10",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "stolen_memories",
@@ -15803,7 +16240,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-07",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "subcontinent": "unknown",
@@ -15952,6 +16389,27 @@
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Council of Depths (originally)",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
+    },
+    {
+      "id": "surface_kingdoms_realm",
+      "name": "Surface Kingdoms",
+      "tagline": "Human. Unified. Threatened.",
+      "description": "The collective human and surface-dwelling civilizations above the Abyssal Rift. Face imminent deepkin emergence and must choose negotiation or war.",
+      "continent": "Valdris",
+      "capital": "unknown",
+      "function": "Primary human sovereignty; central to decision of covenant vs. conflict.",
+      "taxation": "unknown",
+      "military": "Capable of defending against deepkin breach; led by Commander Thrace.",
+      "status": "stable",
+      "notes": "Their diplomatic choice reshapes the political landscape for generations.",
+      "first_date": "2026-03-27",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "realm": "Surface Kingdoms",
       "province": "unknown",
       "region": "unknown",
       "district": "unknown"
@@ -17758,6 +18216,42 @@
       "notes": "The specific location of the assembly is not named; its participants represent conflicting ideologies about recovery and justice.",
       "first_date": "2026-03-26",
       "appearances": 1
+    },
+    {
+      "id": "the_deepkin_rising",
+      "name": "The Deepkin Rising",
+      "tagline": "Emergence. Choice. Transformation.",
+      "event_type": "uprising / emergence / catastrophe",
+      "scope": "world",
+      "epicenter_place": "Abyssal Rift",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Abyssal Rift",
+        "surface kingdoms",
+        "deepkin realms"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "surface kingdoms",
+        "deepkin realms"
+      ],
+      "radius": "Across all known realms",
+      "participants": [
+        "Commander Thrace",
+        "Sylas the Deepwarden",
+        "Elder Warden",
+        "Captain Meren",
+        "surface kingdoms",
+        "deepkin factions"
+      ],
+      "outcome": "Inevitable emergence of deepkin, but outcome (negotiation vs. war) remains unresolved.",
+      "significance": "Will reshape the political landscape for generations, collapsing the boundary between human and inhuman civilizations and forcing a new covenant or conflict.",
+      "notes": "The central event of the story; fate hinges on whether diplomatic effort succeeds or militant faction forces breach.",
+      "first_date": "2026-03-27",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -18276,6 +18770,18 @@
       "status": "active",
       "notes": "Present at the exile assembly; their optimism conflicts with the reality that healing one person breaks another.",
       "first_date": "2026-03-26",
+      "appearances": 1
+    },
+    {
+      "id": "surface_kingdoms",
+      "name": "Surface Kingdoms",
+      "tagline": "Unified. Negotiating. Threatened.",
+      "alignment": "neutral",
+      "goals": "Maintain stability; choose between negotiated covenant or military defense.",
+      "leader": "Commander Thrace",
+      "status": "active",
+      "notes": "Central governance of surface world; their choice determines the outcome of the rising.",
+      "first_date": "2026-03-27",
       "appearances": 1
     }
   ],
@@ -19237,6 +19743,17 @@
       "notes": "A person can become a living cartography that rewrites itself with each step, serving as a path or route for others.",
       "first_date": "2026-03-25",
       "appearances": 1
+    },
+    {
+      "id": "pre_ascension_treaties",
+      "name": "Pre-Ascension Treaties",
+      "tagline": "Forgotten. Betrayed. Reclaimed.",
+      "category": "history",
+      "source": "Elder Warden's memory; deepkin historical records",
+      "status": "confirmed",
+      "notes": "The Elder Warden remembers these treaties and believes surface world violated them; this grievance drives militant faction.",
+      "first_date": "2026-03-27",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -19692,7 +20209,7 @@
       "status": "active",
       "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
       "first_date": "2026-03-10",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "vethis_sacrificed_consciousness",
@@ -20559,6 +21076,25 @@
       "province": "unknown",
       "region": "The Borderlands",
       "district": "unknown"
+    },
+    {
+      "id": "sunken_cathedrals_vicinity",
+      "name": "Sunken Cathedrals vicinity",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-27",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Sunken Cathedrals vicinity",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -21304,6 +21840,38 @@
       "notes": "The Hegemony's control is eroding. The transformation of its assessors into living records may represent a fundamental loss of the state's informational monopoly.",
       "first_date": "2026-03-17",
       "appearances": 2
+    },
+    {
+      "id": "surface_kingdoms_polity",
+      "name": "Surface Kingdoms",
+      "tagline": "Unified. Threatened. Deciding.",
+      "polity_type": "multiple crowns / federation",
+      "realm": "unknown",
+      "region": "unknown",
+      "seat": "unknown",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "contested",
+      "description": "The collective governance of the surface world, represented diplomatically by Commander Thrace. Face existential choice: negotiate covenant with deepkin or prepare for war.",
+      "notes": "Outcome of the deepkin rising hinges on this polity's decision.",
+      "first_date": "2026-03-27",
+      "appearances": 1
+    },
+    {
+      "id": "deepkin_realms_polity",
+      "name": "Deepkin Realms",
+      "tagline": "Ancient. Divided. Emerging.",
+      "polity_type": "council / monarchy",
+      "realm": "Deepkin Realms",
+      "region": "unknown",
+      "seat": "unknown",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "contested",
+      "description": "The governance of deepkin civilization beneath the Abyssal Rift. Internally divided between diplomatic faction (Sylas) and militant faction (Elder Warden).",
+      "notes": "Internal power struggle directly determines whether emergence is negotiated or forced.",
+      "first_date": "2026-03-27",
+      "appearances": 1
     }
   ]
 }
