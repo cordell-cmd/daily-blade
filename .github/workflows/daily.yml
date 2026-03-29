@@ -57,6 +57,11 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
+      - name: Smoke-check generator scripts
+        run: |
+          python -m py_compile generate_stories.py
+          python -m py_compile audit_world_events.py
+
       - name: Decide whether to generate
         id: gate
         env:
