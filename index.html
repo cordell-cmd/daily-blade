@@ -459,6 +459,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 .badge-stage-seed { background: rgba(0,0,0,.16); border: 1px solid rgba(201,146,42,.22); color: rgba(226,208,168,.85); }
 .badge-stage-simmering { background: rgba(42,106,138,.18); border: 1px solid rgba(42,106,138,.55); color: #7fc0cc; }
 .badge-stage-rising { background: rgba(201,146,42,.16); border: 1px solid rgba(201,146,42,.55); color: var(--gold); }
+.badge-stage-crisis { background: rgba(139,70,26,.18); border: 1px solid rgba(189,110,48,.58); color: #f1b26c; }
 .badge-stage-climax { background: rgba(139,26,26,.18); border: 1px solid rgba(139,26,26,.55); color: #e07070; }
 .badge-stage-aftermath { background: rgba(92,61,30,.18); border: 1px solid rgba(92,61,30,.55); color: rgba(226,208,168,.85); }
 .badge-intensity-max { background: rgba(139,26,26,.18); border: 1px solid rgba(187,48,48,.72); color: #ff9b9b; box-shadow: 0 0 0 1px rgba(187,48,48,.18) inset; }
@@ -4021,6 +4022,7 @@ function _stageBadgeClass(stage) {
   if (s === 'seed') return 'badge-stage-seed';
   if (s === 'simmering') return 'badge-stage-simmering';
   if (s === 'rising') return 'badge-stage-rising';
+  if (s === 'crisis') return 'badge-stage-crisis';
   if (s === 'climax') return 'badge-stage-climax';
   if (s === 'aftermath') return 'badge-stage-aftermath';
   return 'badge-stage-seed';
