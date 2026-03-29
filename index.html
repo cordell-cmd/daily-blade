@@ -461,6 +461,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 .badge-stage-rising { background: rgba(201,146,42,.16); border: 1px solid rgba(201,146,42,.55); color: var(--gold); }
 .badge-stage-climax { background: rgba(139,26,26,.18); border: 1px solid rgba(139,26,26,.55); color: #e07070; }
 .badge-stage-aftermath { background: rgba(92,61,30,.18); border: 1px solid rgba(92,61,30,.55); color: rgba(226,208,168,.85); }
+.badge-intensity-max { background: rgba(139,26,26,.18); border: 1px solid rgba(187,48,48,.72); color: #ff9b9b; box-shadow: 0 0 0 1px rgba(187,48,48,.18) inset; }
 
 #map-view { display: none; padding-top: 1.2rem; }
 .map-header { text-align: center; margin-bottom: 1rem; }
@@ -4110,6 +4111,10 @@ function renderWorldEvents(data) {
     merged.set(key, mergeEvent(merged.get(key), r));
   });
   const rows = Array.from(merged.values());
+  const configuredIntensityMax = (() => {
+    const value = Number(data && data.intensity_max);
+    return Number.isFinite(value) && value >= 1 ? value : 5;
+  })();
   const generatedAt = data && data.generated_at ? String(data.generated_at) : '';
   const totalCount = rows.length;
 
@@ -4188,6 +4193,7 @@ function renderWorldEvents(data) {
     const scopeText = String(e.scope || 'regional').trim();
     const stageText = String(e.stage || 'seed').trim();
     const intensity = Number(e.intensity || 1);
+    const intensityClass = intensity >= configuredIntensityMax ? ' badge-intensity-max' : '';
     const epicenter = String(e.epicenter || 'unknown').trim();
     const resolved = !!e.resolved;
     const lastSeen = e.last_seen ? String(e.last_seen) : '';
@@ -4244,7 +4250,7 @@ function renderWorldEvents(data) {
         ${eventType ? `<span class="badge badge-role">${escHtml(eventType)}</span>` : ''}
         <span class="badge ${_scopeBadgeClass(scopeText)}">${escHtml(scopeText)}</span>
         <span class="badge ${_stageBadgeClass(stageText)}">${escHtml(stageText)}</span>
-        <span class="badge">Intensity ${escHtml(String(intensity))}</span>
+        <span class="badge${intensityClass}">Intensity ${escHtml(String(intensity))}</span>
         <span class="badge">Recent ${escHtml(String(recentIssues))}</span>
         ${lastSeen ? `<span class="badge">Last ${escHtml(lastSeen)}</span>` : ''}
         ${trend ? `<span class="badge">Trend ${escHtml(trend > 0 ? '+' + trend : String(trend))}</span>` : ''}

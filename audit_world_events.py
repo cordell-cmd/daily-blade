@@ -139,6 +139,8 @@ Constraints:
 - Only include facts supported by the JSON and/or the tales.
 - Preserve chronology (what happened first, then what, then what).
 - Emphasize cause/effect, escalation, and turning points.
+- Treat the authoritative stage/intensity in the JSON as canonical. Use this scale when describing the arc: 1=seed, 2=simmering, 3=rising, 4=crisis, 5=climax; resolved events should read as aftermath.
+- Match the prose energy to the stage: simmering should feel early and partial, rising/crisis should feel increasingly disruptive, and climax should feel like a breaking point or peak pressure.
 - Write the SUMMARY as a single narrative paragraph with a light, story-like chronicle tone (no purple prose).
 - End with the current state and what remains unresolved.
 - Keep it concise and readable for a casual reader.
@@ -574,6 +576,8 @@ def main() -> int:
     out = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "source": CODEX_FILE,
+        "intensity_min": 1,
+        "intensity_max": int(getattr(gs, "WORLD_EVENT_ARC_INTENSITY_MAX", 5) or 5),
         "count": len(top),
         "events": top,
     }

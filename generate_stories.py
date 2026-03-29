@@ -1913,6 +1913,7 @@ def build_world_event_arcs_section(today_str: str, lore: dict, event_arc_dossier
     lines.append("- You may let minor characters cross paths across stories due to these pressures, but do NOT reuse the same protagonist or primary location.")
     lines.append("- If you organically introduce a NEW large-scale event, let it persist across future issues: escalate from hints → consequences → turning points → aftermath, then either resolve it or let it cool into lasting scars.")
     lines.append("- Arc pacing mechanic (organic):")
+    lines.append(f"  - Canonical intensity scale is 1-{int(WORLD_EVENT_ARC_INTENSITY_MAX or 5)}: 1=seed, 2=simmering, 3=rising, 4=crisis, 5=climax. Resolved events read as aftermath.")
     lines.append("  - seed/simmering: subtle signs, rumors, odd shortages, new cult whispers; easy to miss.")
     lines.append("  - rising/crisis: unmistakable consequences, travel disruption, faction moves, villains/saints emerging.")
     lines.append("  - climax/aftermath: a breaking point or a scar; show what changed and what remains unresolved.")
