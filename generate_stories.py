@@ -5975,7 +5975,7 @@ def ensure_named_leaders_present(lore: dict, stories: list[dict]) -> dict:
                 aliases.append(base)
 
         lore["characters"].append({
-            "id": to_snake_case(leader),
+            "id": _make_snake_id(leader),
             "name": leader,
             "aliases": aliases,
             "tagline": "Named. Threatening. Looming.",
