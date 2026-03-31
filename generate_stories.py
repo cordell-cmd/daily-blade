@@ -3416,6 +3416,64 @@ def _character_alias_keys(name: str) -> set:
     return {x for x in out if x and len(x) >= 2}
 
 
+def _is_descriptor_placeholder_character_name(name: str) -> bool:
+    """Return True for generic role labels like 'Young Scholar'."""
+    raw = str(name or "").strip()
+    if not raw:
+        return False
+    tokens = re.findall(r"[A-Za-z][A-Za-z'\-]*", raw.replace("’", "'"))
+    if not tokens:
+        return False
+
+    descriptor_words = {
+        "young", "old", "aged", "ancient", "displaced", "junior", "senior",
+        "nameless", "faceless", "scarred", "cursed", "transformed", "hidden",
+        "wandering", "lost", "last", "unknown", "mysterious", "refugee",
+        "scholar", "scribe", "merchant", "widow", "captain", "commander",
+        "auditor", "apprentice", "keeper", "warden", "sorcerer", "forger",
+        "cartographer", "alchemist", "thief", "broker", "trader", "woman",
+        "man", "child", "girl", "boy", "prince", "princess", "lord", "lady",
+        "king", "queen", "emperor", "empress", "warrior", "hunter", "archer",
+        "initiate", "merchant-prince", "bone-singer", "shade-merchant",
+        "deepkin", "sailor", "diplomat", "network", "voice",
+    }
+    stop_words = {"the", "a", "an", "of", "and", "from", "to", "for", "in", "on", "at"}
+    content = [t.casefold() for t in tokens if t.casefold() not in stop_words]
+    if not content:
+        return False
+    return all(t in descriptor_words for t in content)
+
+
+def _looks_like_specific_character_name(name: str) -> bool:
+    """Return True for names that look more specific than role placeholders."""
+    raw = str(name or "").strip()
+    if not raw:
+        return False
+    if _is_descriptor_placeholder_character_name(raw):
+        return False
+    tokens = re.findall(r"[A-Za-z][A-Za-z'\-]*", raw.replace("’", "'"))
+    if not tokens:
+        return False
+    first = tokens[0]
+    return first[:1].isupper()
+
+
+def _should_promote_character_name(existing_name: str, incoming_name: str) -> bool:
+    """Return True when the incoming character name should become canonical."""
+    exk = _norm_entity_key(existing_name)
+    ink = _norm_entity_key(incoming_name)
+    if not exk or not ink or exk == ink:
+        return False
+
+    if (" the " in ink or "," in ink) and (" the " not in exk and "," not in exk) and ink.split(" ")[0] == exk.split(" ")[0]:
+        return True
+
+    if _is_descriptor_placeholder_character_name(existing_name) and _looks_like_specific_character_name(incoming_name):
+        return True
+
+    return False
+
+
 def _resolve_character_target(existing_chars: list, incoming_name: str):
     """Resolve an incoming character name to an existing canonical entry when safe.
 
@@ -3427,13 +3485,15 @@ def _resolve_character_target(existing_chars: list, incoming_name: str):
         return None
 
     by_key = {}
-    first_token_buckets = {}
+    alias_hits = []
     for c in existing_chars or []:
         if not isinstance(c, dict):
             continue
         nm = (c.get("name") or "").strip()
         if not nm:
             continue
+        if _norm_entity_key(nm) == inc_key:
+            return c
         for k in _character_alias_keys(nm):
             by_key.setdefault(k, c)
 
@@ -3443,10 +3503,11 @@ def _resolve_character_target(existing_chars: list, incoming_name: str):
                 ak = _norm_entity_key(a)
                 if ak:
                     by_key.setdefault(ak, c)
+                    if ak == inc_key:
+                        alias_hits.append(c)
 
-        tok = _norm_entity_key(nm).split(" ")[0] if _norm_entity_key(nm) else ""
-        if tok:
-            first_token_buckets.setdefault(tok, []).append(c)
+    if len({id(x) for x in alias_hits}) == 1 and alias_hits:
+        return alias_hits[0]
 
     if inc_key in by_key:
         return by_key[inc_key]
@@ -3604,6 +3665,8 @@ def sync_cross_category_appearances(codex: dict) -> int:
             # Also index by each alias so "The Lamia" alias on characters
             # links to "Lamia" in flora_fauna.
             for alias in (item.get("aliases") or []):
+                if cat == "characters" and _is_descriptor_placeholder_character_name(alias):
+                    continue
                 akey = _strip_articles(_norm_entity_key(alias))
                 if akey and akey != key:
                     groups.setdefault(akey, []).append((cat, item))
@@ -3743,8 +3806,8 @@ def merge_lore(existing_lore, new_lore, date_key):
                     exk = _norm_entity_key(existing_name)
                     ink = _norm_entity_key(incoming_name)
                     if exk and ink and exk != ink:
-                        # Upgrade if incoming looks like a more complete epithet/title form.
-                        if (" the " in ink or "," in ink) and (" the " not in exk and "," not in exk) and ink.split(" ")[0] == exk.split(" ")[0]:
+                        # Upgrade if incoming is more specific than the existing canonical form.
+                        if _should_promote_character_name(existing_name, incoming_name):
                             # Preserve old as alias
                             aliases = target.get("aliases")
                             if not isinstance(aliases, list):
@@ -4221,11 +4284,30 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
         key = _norm_entity_key(incoming_name)
         if not key:
             return None
+
+        exact_alias_hits = []
+        for obj in existing_chars_list:
+            if not isinstance(obj, dict):
+                continue
+            nm = (obj.get("name") or "").strip()
+            if nm and _norm_entity_key(nm) == key:
+                return obj
+            aliases = obj.get("aliases")
+            if isinstance(aliases, list):
+                for alias in aliases:
+                    if _norm_entity_key(alias) == key:
+                        exact_alias_hits.append(obj)
+                        break
+        if len({id(x) for x in exact_alias_hits}) == 1 and exact_alias_hits:
+            return exact_alias_hits[0]
+
         if key in existing_map:
             return existing_map[key]
         # Try explicit aliases provided by lore.
         if isinstance(incoming_aliases, list):
             for a in incoming_aliases:
+                if _is_descriptor_placeholder_character_name(a):
+                    continue
                 ak = _norm_entity_key(a)
                 if ak and ak in existing_map:
                     return existing_map[ak]
@@ -4291,7 +4373,7 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
             exk = _norm_entity_key(ex_name)
             ink = _norm_entity_key(name)
             if exk and ink and exk != ink:
-                if (" the " in ink or "," in ink) and (" the " not in exk and "," not in exk) and ink.split(" ")[0] == exk.split(" ")[0]:
+                if _should_promote_character_name(ex_name, name):
                     _merge_aliases(ex, [ex_name])
                     ex["name"] = name
                 else:
@@ -5935,11 +6017,11 @@ def _extract_named_character_mentions(stories: list[dict]) -> list[dict]:
         return []
 
     pattern_named = re.compile(
-        r"\b(?:a|an|the)\s+([a-z][a-z'\-]*(?:\s+[a-z][a-z'\-]*){0,5})\s+named\s+"
-        r"([A-Z][\w’'\-]+(?:\s+[A-Z][\w’'\-]+){0,3})\b"
+        r"\b(?:(?i:a|an|the))[ \t]+([A-Za-z][A-Za-z'\-]*(?:[ \t]+[A-Za-z][A-Za-z'\-]*){0,5})[ \t]+(?i:named)[ \t]+"
+        r"([A-Z][\w’'\-]+(?:[ \t]+[A-Z][\w’'\-]+){0,3})\b"
     )
     pattern_appositive = re.compile(
-        r"\b([A-Z][\w’'\-]+(?:\s+[A-Z][\w’'\-]+){0,3}),\s+(?:a|an|the)\s+([^,.;:!?\n]{3,80})"
+        r"\b([A-Z][\w’'\-]+(?:[ \t]+[A-Z][\w’'\-]+){0,3}),[ \t]+(?:(?i:a|an|the))[ \t]+([^,.;:!?\n]{3,80})"
     )
     bad_appositive_names = {
         "After", "Before", "But", "Later", "Meanwhile", "Now", "Soon",
@@ -5952,39 +6034,42 @@ def _extract_named_character_mentions(stories: list[dict]) -> list[dict]:
         if not isinstance(story, dict):
             continue
         story_title = str(story.get("title") or "").strip()
-        blob = str(story.get("text") or "")
+        chunks = []
         if story_title:
-            blob = story_title + "\n" + blob
-        if not blob.strip():
-            continue
+            chunks.append(story_title)
+        chunks.extend(str(story.get("text") or "").splitlines())
 
-        for match in pattern_named.finditer(blob):
-            descriptor = " ".join((match.group(1) or "").split()).strip()
-            name = " ".join((match.group(2) or "").split()).strip()
-            key = _descriptor_key(descriptor)
-            if not name or not key:
+        for chunk in chunks:
+            if not chunk.strip():
                 continue
-            seen_key = (name.casefold(), key)
-            if seen_key in seen:
-                continue
-            found.append({"name": name, "descriptor": descriptor, "descriptor_key": key, "story": story_title})
-            seen.add(seen_key)
 
-        for match in pattern_appositive.finditer(blob):
-            name = " ".join((match.group(1) or "").split()).strip()
-            descriptor = " ".join((match.group(2) or "").split()).strip()
-            key = _descriptor_key(descriptor)
-            if not name or not key:
-                continue
-            if name in bad_appositive_names:
-                continue
-            if " named " in f" {descriptor.casefold()} ":
-                continue
-            seen_key = (name.casefold(), key)
-            if seen_key in seen:
-                continue
-            found.append({"name": name, "descriptor": descriptor, "descriptor_key": key, "story": story_title})
-            seen.add(seen_key)
+            for match in pattern_named.finditer(chunk):
+                descriptor = " ".join((match.group(1) or "").split()).strip()
+                name = " ".join((match.group(2) or "").split()).strip()
+                key = _descriptor_key(descriptor)
+                if not name or not key:
+                    continue
+                seen_key = (name.casefold(), key)
+                if seen_key in seen:
+                    continue
+                found.append({"name": name, "descriptor": descriptor, "descriptor_key": key, "story": story_title})
+                seen.add(seen_key)
+
+            for match in pattern_appositive.finditer(chunk):
+                name = " ".join((match.group(1) or "").split()).strip()
+                descriptor = " ".join((match.group(2) or "").split()).strip()
+                key = _descriptor_key(descriptor)
+                if not name or not key:
+                    continue
+                if name in bad_appositive_names:
+                    continue
+                if " named " in f" {descriptor.casefold()} ":
+                    continue
+                seen_key = (name.casefold(), key)
+                if seen_key in seen:
+                    continue
+                found.append({"name": name, "descriptor": descriptor, "descriptor_key": key, "story": story_title})
+                seen.add(seen_key)
 
     return found
 

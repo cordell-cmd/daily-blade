@@ -233,11 +233,6 @@ def main() -> int:
     if hasattr(gs, "_maybe_load_dotenv"):
         gs._maybe_load_dotenv()
 
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("ERROR: ANTHROPIC_API_KEY not set.", file=sys.stderr)
-        return 2
-
     date_key = str(args.date).strip()
     title = str(args.title).strip()
     highlighted = str(args.text).strip()
@@ -261,6 +256,11 @@ def main() -> int:
         raw = json.dumps(inferred, ensure_ascii=False)
         print(f"Detected explicit character from story context: {entity.get('name', '')}")
     else:
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not api_key:
+            print("ERROR: ANTHROPIC_API_KEY not set.", file=sys.stderr)
+            return 2
+
         # Call Haiku.
         prompt = build_extract_prompt(highlighted, title, story_text, date_key)
         client = anthropic.Anthropic(api_key=api_key)
