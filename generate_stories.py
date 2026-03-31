@@ -6136,6 +6136,8 @@ def ensure_named_character_mentions_present(lore: dict, stories: list[dict]) -> 
                 aliases = []
             for alias in [old_name, descriptor]:
                 alias = str(alias or "").strip()
+                if _is_descriptor_placeholder_character_name(alias):
+                    continue
                 if alias and alias != name and alias not in aliases:
                     aliases.append(alias)
             placeholder["aliases"] = aliases
@@ -6150,6 +6152,8 @@ def ensure_named_character_mentions_present(lore: dict, stories: list[dict]) -> 
                 aliases = []
             for alias in [descriptor]:
                 alias = str(alias or "").strip()
+                if _is_descriptor_placeholder_character_name(alias):
+                    continue
                 if alias and alias != name and alias not in aliases:
                     aliases.append(alias)
             if aliases:
@@ -6158,10 +6162,11 @@ def ensure_named_character_mentions_present(lore: dict, stories: list[dict]) -> 
                 removals.add(id(placeholder))
 
         if target is None:
+            aliases = [] if _is_descriptor_placeholder_character_name(descriptor) else [descriptor]
             chars.append({
                 "id": _make_snake_id(name),
                 "name": name,
-                "aliases": [descriptor],
+                "aliases": aliases,
                 "tagline": "Named. Present. Emerging.",
                 "role": descriptor.title(),
                 "world": "The Known World",

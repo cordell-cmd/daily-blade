@@ -171,11 +171,13 @@ def infer_explicit_character_from_story(highlighted_text: str, story_title: str,
             continue
         descriptor = str(mention.get("descriptor") or "character").strip() or "character"
         role = descriptor.title()
+        alias_helper = getattr(gs, "_is_descriptor_placeholder_character_name", lambda _x: False)
+        aliases = [] if alias_helper(descriptor) else ([descriptor] if descriptor.casefold() != name.casefold() else [])
         return {
             "category": "characters",
             "entity": {
                 "name": name,
-                "aliases": [descriptor] if descriptor.casefold() != name.casefold() else [],
+                "aliases": aliases,
                 "tagline": "Named. Present. Emerging.",
                 "role": role,
                 "world": "The Known World",

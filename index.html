@@ -1323,6 +1323,24 @@ function buildCodexEntityIndex(data) {
     if (!bucket.has(ek)) bucket.set(ek, { key: ek, type, name: nm });
   };
 
+  const isGenericCharacterAlias = (value) => {
+    const raw = String(value || '').trim();
+    if (!raw) return false;
+    const tokens = raw.toLowerCase().match(/[a-z][a-z'\-]*/g) || [];
+    if (!tokens.length) return false;
+    const stop = new Set(['the', 'a', 'an', 'of', 'and', 'from', 'to', 'for', 'in', 'on', 'at']);
+    const words = tokens.filter(t => !stop.has(t));
+    if (!words.length) return false;
+    const generic = new Set([
+      'young','old','aged','ancient','displaced','junior','senior','nameless','faceless','scarred','cursed','transformed','hidden',
+      'wandering','lost','last','unknown','mysterious','refugee','scholar','scribe','merchant','widow','captain','commander',
+      'auditor','apprentice','keeper','warden','sorcerer','forger','cartographer','alchemist','thief','broker','trader','woman',
+      'man','child','girl','boy','prince','princess','lord','lady','king','queen','emperor','empress','warrior','hunter','archer',
+      'initiate','bone-singer','shade-merchant','deepkin','sailor','diplomat','voice'
+    ]);
+    return words.every(w => generic.has(w));
+  };
+
   categories.forEach(type => {
     const arr = Array.isArray(d[type]) ? d[type] : [];
     arr.forEach(obj => {
@@ -1358,6 +1376,7 @@ function buildCodexEntityIndex(data) {
             akNorm === 'a presence' || akNorm === 'the presence' || akNorm === 'presence'
           );
           if (isWeak) return;
+          if (type === 'characters' && isGenericCharacterAlias(a)) return;
           const ak = normalizeEntityKey(a);
           if (ak && ak !== key) addToIndex(ak, type, obj);
         });
