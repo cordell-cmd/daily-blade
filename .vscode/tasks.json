@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Estimate prompt token sizes",
+			"type": "process",
+			"command": "${workspaceFolder}/.venv/bin/python",
+			"args": [
+				"estimate_prompt_token_sizes.py"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

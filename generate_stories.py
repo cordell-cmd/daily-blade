@@ -1223,6 +1223,7 @@ def build_spotlight_section(lore, seed_text: str, top_per_category=20, random_pe
         lambda w: "• "
             + f"{w.get('name','Unknown')}"
             + (f" Type: {w.get('weapon_type')}" if w.get("weapon_type") else "")
+            + (f" Origin: {(w.get('origin','') or '')[:140]}" if (w.get("origin") or "").strip() else "")
             + (f" Powers: {(w.get('powers','') or '')[:180]}" if (w.get("powers") or "").strip() else "")
             + (f" Holder: {w.get('last_known_holder')}" if w.get("last_known_holder") else ""),
     )
@@ -1293,7 +1294,7 @@ def build_generation_lore_context(lore, seed_text: str):
             ("lore", "KNOWN LORE", lambda it: _compact_generic_line(it)),
             ("substances", "KNOWN SUBSTANCES", lambda it: _compact_generic_line(it)),
             ("rituals", "KNOWN RITUALS", lambda it: _compact_generic_line(it)),
-            ("weapons", "KNOWN WEAPONS", lambda it: _compact_generic_line(it)),
+            ("weapons", "KNOWN WEAPONS", lambda it: _compact_weapon_line(it)),
         ]
         budget = max(1000, ENTITY_DIR_MAX_CHARS)
         budget_used = 0
@@ -1413,6 +1414,39 @@ def _compact_generic_line(it: dict) -> str:
         if len(short) > 100:
             short = short[:97] + "..."
     return f"• {nm}" + (f" — {short}" if short else "")
+
+
+def _compact_weapon_line(it: dict) -> str:
+    """One-line summary for storied weapons: name, type, provenance, power, holder."""
+    nm = (it.get("name") or "").strip()
+    if not nm:
+        return ""
+
+    bits = [nm]
+    weapon_type = (it.get("weapon_type") or "").strip()
+    if weapon_type:
+        bits.append(weapon_type)
+
+    lore_bits = []
+    origin = (it.get("origin") or "").strip()
+    if origin and origin.lower() != "unknown":
+        lore_bits.append(origin.split(".")[0].strip())
+
+    powers = (it.get("powers") or "").strip()
+    if powers and powers.lower() != "unknown":
+        lore_bits.append(powers.split(".")[0].strip())
+
+    holder = (it.get("last_known_holder") or "").strip()
+    if holder and holder.lower() != "unknown":
+        lore_bits.append(f"Holder: {holder}")
+
+    if lore_bits:
+        joined = " | ".join(lore_bits)
+        if len(joined) > 140:
+            joined = joined[:137] + "..."
+        bits.append(joined)
+
+    return "• " + " — ".join(bits[:2]) + (" — " + bits[2] if len(bits) > 2 else "")
 
 
 def _canon_loc_names_from_codex(codex: dict) -> dict[str, list[str]]:
@@ -2276,9 +2310,12 @@ CITY DISTRICTS (important for codex depth):
 - If a story is set in a city (even briefly), name the specific district/ward/quarter/neighborhood (e.g., "Ropewalk Quarter", "Saltward", "Old Wall", "Lantern Market").
 - Districts are intra-city areas; treat them as quarters/wards within a city, not provinces.
 
-MYTH-MAKING WEAPONS (rare, but memorable):
-- In 1–2 stories today, feature a NAMED weapon (blade/axe/spear/bow/etc.) that feels storied and strange — magic that is internal/psychic/binding, not just glowing fire.
-- If a weapon is named, hint at its origin or cost (a forge-cult, a vow, a curse, a sentient hunger).
+LEGENDARY WEAPONS / STORIED ARMAMENTS:
+- In 2–3 stories today, feature a NAMED weapon or war-implement with real mythic gravitas: a king-spear, oath-blade, tyrant's bow, siege hammer, assassin's knife, saint-killing axe, or similarly storied armament.
+- These should feel like weapons people remember and speak about: passed between rulers or champions, hidden after famous battles, feared for a curse, sought for a buried claim, or bound to a vow, bloodline, cult, prophecy, or betrayal.
+- Keep the magic uncanny rather than generic: binding, memory, doom, recognition, hunger, oath-taking, ghost-guidance, storm-calling, kingmaking, gate-opening, name-cutting, etc. Avoid reducing every special weapon to simple glowing elemental power.
+- Not every such weapon must dominate the plot, but when one appears it should carry lineage, reputation, or consequence.
+- If a storied weapon appears, hint at at least one of these: origin, prior wielder, famous battle, price of use, reason it was hidden, or what changes when it changes hands.
 
 FANTASY TOOLBOX (use the full range — these are NOT a limit; invent freely):
 - Non-human peoples (elves, dwarves, goblin-kind, smallfolk, orcs/ogres/trolls — or wholly new lineages).
@@ -2908,7 +2945,7 @@ def build_lore_extraction_prompt(stories, existing_lore):
         # but should still be treated as named artifacts/relics (e.g., "the idol of Khar-Zul").
         # Keep the surface form from the story as closely as possible.
         object_of_re = re.compile(
-            r"\b(?:the\s+)?(idol|crown|throne|blade|dagger|ring|tome|amulet|chalice|mask|orb|eye|eyes)\s+of\s+"
+            r"\b(?:the\s+)?(idol|crown|throne|blade|dagger|sword|sabre|saber|knife|axe|hammer|mace|spear|lance|bow|glaive|halberd|scythe|ring|tome|amulet|chalice|mask|orb|eye|eyes)\s+of\s+"
             r"([A-Z][\w’'\-]+(?:[ \t\-]+[A-Z][\w’'\-]+){0,4})\b"
         )
 
@@ -3040,6 +3077,8 @@ Coverage checklist (per story):
 - Ensure each named thing is represented in at least one output category.
 - Treat patterns like "X of Y" and "The X of Y" as likely names; include them when they read like a title, place, or event.
 - Treat important objects described as "the <object> of <ProperName>" (even if <object> is lowercase) as named artifacts/relics and include them (e.g., "the idol of Khar-Zul").
+- Be especially careful not to miss storied weapons: named blades, spears, bows, axes, hammers, knives, or similar arms with history, titles, curses, prior wielders, or famous battles attached.
+- If an object is primarily wielded as a weapon, put it in "weapons" even if it is magical; use "artifacts" or "relics" only when it is not mainly a weapon.
 
 Naming rules:
 - The `name` field MUST match the surface form used in the story text as closely as possible.
@@ -3091,6 +3130,8 @@ Hard requirement:
 - If a story mentions a named language/dialect/script (e.g. "Old Tongue"), include it under "lore" with category "language".
 
 Classification guidance:
+- weapons is for named or clearly singular armaments used for fighting. A weapon can still be magical, sacred, cursed, royal, or legendary and remain a weapon.
+- artifacts and relics are for powerful objects that are not primarily weapons, or whose main narrative role is ceremonial, devotional, archival, or occult rather than martial.
 - flora_fauna is for species or organisms that exist in the world. Ordinary real-world animals (crows, horses, wolves) MAY be included, but must be clearly distinguished from magical variants:
   - If an animal appears only as a character's magical disguise, familiar form, or shapeshifted body, file the transformation ability under "magic" (as a spell/technique) or mention it in the character's bio. Do NOT list it as flora_fauna.
   - If an ordinary animal also exists naturally in this world (e.g. crows roost on Pelimor's rooftops), it CAN be flora_fauna with rarity "common" and type "creature" (not "spirit" or "familiar").
@@ -3177,11 +3218,11 @@ Respond with ONLY valid JSON in this exact structure (use empty arrays if nothin
       "name": "Weapon Name",
       "tagline": "Three evocative words describing this weapon.",
       "weapon_type": "sword / axe / spear / bow / staff / etc",
-      "origin": "Where it came from or who forged it.",
-      "powers": "Any magical or legendary properties.",
-      "last_known_holder": "Who had it last.",
+            "origin": "Where it came from, who forged it, or what line/battle/oath it is tied to.",
+            "powers": "Any magical, uncanny, symbolic, or legendary properties.",
+            "last_known_holder": "Who had it last, or 'unknown'.",
       "status": "active / destroyed / lost / sealed",
-      "notes": "Any story hooks."
+            "notes": "Any story hooks, prior wielders, famous battles, curses, prices of use, or hidden history."
     }}
   ],
   "deities_and_entities": [
