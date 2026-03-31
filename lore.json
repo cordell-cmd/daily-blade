@@ -8840,7 +8840,7 @@
       "home_place": "unknown",
       "home_region": "unknown",
       "home_realm": "unknown",
-      "travel_scope": "unknown",
+      "travel_scope": "interrealm",
       "bio": "A cosmic entity that sacrificed its consciousness during the Luminous Ascension. Its memory-fragments now circulate through shadow-trading networks, corrupted or guarded by Void-Echoes.",
       "traits": [
         "fractured",
@@ -8856,7 +8856,7 @@
       "notes": "Reassembly of fragments could trigger a second Ascension. Fragmentation traps countless people in fractured identities.",
       "first_story": "The Echo-Merchant's Reckoning",
       "first_date": "2026-03-19",
-      "appearances": 4,
+      "appearances": 5,
       "status_history": [
         {
           "date": "2026-03-21",
@@ -12239,7 +12239,7 @@
       "notes": "Faces moral dilemma at the heart of Story 1; unresolved whether he aids the voice or protects refugees.",
       "first_story": "The Phantom-Echo's Compilation",
       "first_date": "2026-03-31",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-03-31",
@@ -12293,7 +12293,7 @@
       "home_place": "hidden archive",
       "home_region": "unknown",
       "home_realm": "unknown",
-      "travel_scope": "unknown",
+      "travel_scope": "local",
       "bio": "A shard of Nethys's fragmented consciousness that collects stolen memories and weaves them into an account of the old world. Each memory absorbed gives it more coherence but also more pain, pushing it toward either reassembly or dissolution. It is uncertain whether reassembly means salvation or a catastrophic rewrite of reality.",
       "traits": [
         "fragmented",
@@ -12309,7 +12309,7 @@
       "notes": "Central to Story 1 conflict; uncertain of its own nature and ultimate outcome.",
       "first_story": "The Bone-Singer's Vigil",
       "first_date": "2026-03-31",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "vault_keeper",
@@ -16021,7 +16021,7 @@
       "status": "active",
       "notes": "Site of initial discovery in Story 1; contains the phantom-voice's ongoing work.",
       "first_date": "2026-03-31",
-      "appearances": 1
+      "appearances": 2
     }
   ],
   "deities_and_entities": [
@@ -16728,7 +16728,7 @@
       "status": "active (fragmented)",
       "notes": "Seeks to reassemble itself by learning patterns from bone-singers' communion with the dead. Also hunts shadow-witnesses, suggesting it needs to reclaim or consume shadows to reconstitute.",
       "first_date": "2026-03-31",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "the_radiant_ascension",
@@ -16750,7 +16750,7 @@
       "status": "active",
       "notes": "Central to Story 1; uncertain whether reassembly means salvation or catastrophic rewrite.",
       "first_date": "2026-03-31",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "archive_tower_consciousness",
@@ -18413,7 +18413,7 @@
       "significance": "Fundamentally alters the cosmic order and the hierarchies of power that governed the world. The old pacts between sky and earth are no longer sufficient.",
       "notes": "Requires renegotiation of all ancient pacts. Starborn entities are now conscious actors in the world's politics.",
       "first_date": "2026-03-06",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "seers_convention",
@@ -20692,7 +20692,7 @@
       "status": "active",
       "notes": "Become the recipients of the Auditor-General's teaching about memory independent of ledgers. This skill becomes more valuable than gold.",
       "first_date": "2026-03-25",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "resource_hoarders",
@@ -21929,7 +21929,7 @@
       "status": "confirmed",
       "notes": "A cosmic event that reshaped reality. Nethys knew it was coming and chose it because the alternative was worse. Multiple characters seek to understand, undo, or manipulate it.",
       "first_date": "2026-03-31",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "ledger_magic_history",
@@ -21950,6 +21950,28 @@
       "source": "Deepkin and surface realm history",
       "status": "confirmed",
       "notes": "A pact that binds the surface and deep realms together. Its original purpose included prevention of flooding catastrophes. The Covenant is now under renegotiation due to pressure from deepkin factions seeking surface dominion.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "stolen_memories_lore",
+      "name": "stolen memories",
+      "tagline": "Taken. Compiled. Erasing.",
+      "category": "myth",
+      "source": "The phantom-voice's activity; observed by Brenn and refugees.",
+      "status": "confirmed",
+      "notes": "Memories stolen from refugees and compiled by the phantom-voice. Each absorption erases that memory from its original owner, leaving refugees with fractured identities and missing histories.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "old_world_lore",
+      "name": "old world",
+      "tagline": "Lost. Recorded. Fragmented.",
+      "category": "history",
+      "source": "The phantom-voice's compilation; implied prior to the Ascension.",
+      "status": "rumored",
+      "notes": "The world before the Ascension. The phantom-voice seeks to create a comprehensive account of it from stolen memories.",
       "first_date": "2026-03-31",
       "appearances": 1
     }
@@ -23442,7 +23464,7 @@
       "use": "Encoded into the Sovereign's ledger; imparted upon reading; cannot be unlearned; alters perception and identity of those exposed.",
       "notes": "May be gift or poison; unclear if intentional encoding by Zareth or accidental consequence of the Ascension; dangerous knowledge.",
       "first_date": "2026-03-06",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "amber_currency",

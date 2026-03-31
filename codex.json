@@ -6800,12 +6800,14 @@
         "Memory-Thief",
         "phantom-echo",
         "shard of Nethys's consciousness",
-        "phantom-voice"
+        "phantom-voice",
+        "Nethys's shard",
+        "the voice"
       ],
       "tagline": "Fragmented. Desperate. Thieving.",
-      "role": "Cosmic Entity",
+      "role": "Consciousness Fragment",
       "status": "active",
-      "travel_scope": "unknown",
+      "travel_scope": "local",
       "home_place": "hidden archive",
       "home_region": "unknown",
       "home_realm": "unknown",
@@ -6839,11 +6841,12 @@
         }
       ],
       "world": "Edhra",
-      "bio": "A shard of Nethys's fragmented consciousness that collects stolen memories and weaves them into an account of the old world. Each memory absorbed gives it more coherence but also more pain, pushing it toward either reassembly or dissolution. It is uncertain whether reassembly means salvation or a catastrophic rewrite of reality.",
+      "bio": "A shard of Nethys's fragmented consciousness that compiles stolen memories into a comprehensive account of the old world. Each memory absorbed grants it more coherence but also more pain\u2014contradictory experiences pushing it toward either reassembly or dissolution.",
       "traits": [
         "fragmented",
-        "coherence-seeking",
-        "memory-consuming"
+        "painful",
+        "growing",
+        "uncertain"
       ],
       "first_story": "The Bone-Singer's Vigil",
       "first_date": "2026-03-10",
@@ -8341,21 +8344,20 @@
         "Brenn"
       ],
       "tagline": "Pursuer. Curious. Burdened.",
-      "role": "Scholar and moral arbiter",
+      "role": "Scholar",
       "status": "active",
-      "travel_scope": "unknown",
-      "home_place": "hidden archive",
+      "travel_scope": "local",
+      "home_place": "unknown",
       "home_region": "unknown",
       "home_realm": "unknown",
       "status_history": [],
-      "world": "Daily Blade",
-      "bio": "A young scholar who discovers the phantom-voice's work in a hidden archive and becomes obsessed with helping it complete its collection of stolen memories. Brenn believes that restoring Nethys's full consciousness might undo the Ascension, but faces an agonizing moral choice: aiding the cosmic entity or protecting the human lives it consumes through memory absorption.",
+      "world": "Edhra",
+      "bio": "A young scholar who discovers the phantom-voice's work in a hidden archive and becomes obsessed with helping it complete itself. Brenn believes restoring Nethys's full consciousness might undo the Ascension. He must choose between aiding a cosmic entity or protecting the human lives it consumes.",
       "traits": [
-        "scholarly",
         "obsessive",
-        "conflicted",
         "idealistic",
-        "morally conscious"
+        "compassionate",
+        "conflicted"
       ],
       "first_story": "The Cartographer's Descent",
       "first_date": "2026-03-16",
@@ -9550,9 +9552,9 @@
         "Nethys (fragmented)"
       ],
       "tagline": "Cosmic. Sacrificed. Scattered.",
-      "role": "Cosmic Entity, Memory Source",
+      "role": "Cosmic Entity",
       "status": "active",
-      "travel_scope": "unknown",
+      "travel_scope": "interrealm",
       "home_place": "unknown",
       "home_region": "unknown",
       "home_realm": "unknown",
@@ -9568,11 +9570,12 @@
         }
       ],
       "world": "Edhra",
-      "bio": "A cosmic entity that sacrificed its consciousness during the Luminous Ascension. Its memory-fragments now circulate through shadow-trading networks, corrupted or guarded by Void-Echoes.",
+      "bio": "A fragmented cosmic consciousness whose shards persist in the world. Nethys may exist in pieces across reality, with the phantom-voice being one such shard. The entity's reassembly could either restore reality or trigger catastrophic rewrite.",
       "traits": [
-        "fractured",
-        "sacrificial",
-        "cosmic"
+        "fragmented",
+        "powerful",
+        "ambiguous",
+        "in-pain"
       ],
       "first_story": "The Echo-Merchant's Reckoning",
       "first_date": "2026-03-19",
@@ -12544,9 +12547,9 @@
       "atmosphere": "",
       "description": "Auto-added from character home_place.",
       "status": "unknown",
+      "notes": "",
       "first_story": "The Warlord's Widow",
-      "first_date": "2026-03-31",
-      "appearances": 15,
+      "first_date": "2026-02-27",
       "story_appearances": [
         {
           "date": "2026-02-27",
@@ -12609,6 +12612,7 @@
           "title": "The Bargain at Rimveil"
         }
       ],
+      "appearances": 15,
       "aliases": [
         "Sunken Marches"
       ]
@@ -13785,9 +13789,9 @@
       "atmosphere": "",
       "description": "Auto-added from character home_place.",
       "status": "unknown",
-      "first_story": "The Shade-Merchant's Reckoning",
-      "first_date": "2026-03-31",
-      "appearances": 56,
+      "notes": "",
+      "first_story": "The Alchemist's Appetite",
+      "first_date": "2026-02-27",
       "story_appearances": [
         {
           "date": "2026-02-27",
@@ -14014,6 +14018,7 @@
           "title": "The Young Sorcerer's Vault Secret"
         }
       ],
+      "appearances": 56,
       "aliases": [
         "tower"
       ]
@@ -14469,22 +14474,22 @@
     },
     {
       "name": "The Spire of Blackstone",
-      "tagline": "Towering. Ancient. Contested.",
-      "place_type": "fortress / landmark / mountain peak",
-      "world": "Edhra",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "The Known World",
       "parent_place": "",
       "hemisphere": "unknown",
-      "continent": "Valdris",
-      "realm": "unknown",
+      "continent": "unknown",
+      "realm": "Goblin Warrens",
       "province": "unknown",
-      "region": "The Shattered West",
+      "region": "unknown",
       "district": "unknown",
-      "atmosphere": "A massive structure of black stone rising above the earth, dwarven-held above while goblin warrens tunnel beneath, a boundary between worlds.",
-      "description": "The Spire of Blackstone is a massive fortress of black stone above which dwell dwarven holds, and beneath which tunnel the Warrens of the goblins. The structure stands as a contested border between goblin and dwarf domains, though the conflict was resolved through Grethuk's bargain rather than conquest.",
-      "status": "active",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
       "first_story": "The Goblin-King's Mercy",
-      "first_date": "2026-03-31",
-      "appearances": 3,
+      "first_date": "2026-03-01",
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -14499,6 +14504,7 @@
           "title": "The Apprentice's Forbidden Archive"
         }
       ],
+      "appearances": 3,
       "aliases": [
         "Spire of Blackstone"
       ]
@@ -15023,22 +15029,22 @@
     },
     {
       "name": "The Pallid Wastes",
-      "tagline": "Desolate. Wind-scoured. Star-lit.",
-      "place_type": "wilderness",
-      "world": "Edhra",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "The Known World",
       "parent_place": "",
       "hemisphere": "unknown",
-      "continent": "Valdris",
+      "continent": "unknown",
       "realm": "unknown",
       "province": "unknown",
-      "region": "Pallid Wastes",
+      "region": "The Ashen Reach",
       "district": "unknown",
-      "atmosphere": "A sparse, wind-scoured wasteland where few travel, yet the stars burn bright and clear above.",
-      "description": "A desolate expanse across which the hermit woman travels. Few dare venture here. The hermit studies the sky from a wind-scoured peak, reading the new constellations in ash and bone.",
-      "status": "active",
-      "first_story": "The Shepherd of Dying Stars",
-      "first_date": "2026-03-31",
-      "appearances": 2,
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "The Cartographer's Silence",
+      "first_date": "2026-03-07",
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -15049,6 +15055,7 @@
           "title": "The Cartographer's Silence"
         }
       ],
+      "appearances": 2,
       "aliases": [
         "Pallid Wastes"
       ]
@@ -15299,22 +15306,22 @@
     },
     {
       "name": "Spire (Blasted Lands)",
-      "tagline": "Arcane. Towering. Ancient.",
-      "place_type": "fortress",
-      "world": "Edhra",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "The Known World",
       "parent_place": "",
       "hemisphere": "unknown",
-      "continent": "Valdris",
+      "continent": "unknown",
       "realm": "unknown",
       "province": "unknown",
-      "region": "The Ashen Reach",
+      "region": "The Blasted Lands",
       "district": "unknown",
-      "atmosphere": "A structure of immense magical power where ancient knowledge is guarded in the depths. Wards once inviolable now flicker with uncertainty.",
-      "description": "A great structure in the Blasted Lands containing the Elder Mage's Codex in its depths. The Young Sorcerer's home and seat of learning. Wards have become unstable following the Stellar Rite.",
-      "status": "active",
-      "first_story": "The Sorcerer's Heir",
-      "first_date": "2026-03-31",
-      "appearances": 19,
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "The Young Sorcerer's Inheritance",
+      "first_date": "2026-03-04",
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -15393,6 +15400,7 @@
           "title": "The Vault of Answers"
         }
       ],
+      "appearances": 19,
       "aliases": [
         "Spire"
       ]
@@ -15488,22 +15496,22 @@
     },
     {
       "name": "The Iron Coast",
-      "tagline": "Smuggling. Windswept. Maritime.",
-      "place_type": "coastal region",
-      "world": "Edhra",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "The Known World",
       "parent_place": "",
       "hemisphere": "unknown",
-      "continent": "Valdris",
+      "continent": "unknown",
       "realm": "unknown",
       "province": "unknown",
-      "region": "Iron Coast",
+      "region": "The Iron Coast",
       "district": "unknown",
-      "atmosphere": "Wind-haunted ports filled with smugglers, forbidden trade, and maritime secrets.",
-      "description": "The Iron Coast is a region of wind-haunted ports where smugglers like Captain Merra conduct illicit trade. It serves as a hub for contraband\u2014plague-victims, forbidden scrolls, stolen shadows, and living oaths. The sea remembers debts here, and coastal magic runs deep.",
-      "status": "active",
-      "first_story": "The Lamplighter's Accord",
-      "first_date": "2026-03-31",
-      "appearances": 4,
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "The Water-Dancer's Reckoning",
+      "first_date": "2026-03-18",
       "story_appearances": [
         {
           "date": "2026-03-04",
@@ -15522,6 +15530,7 @@
           "title": "The Water-Dancer's Reckoning"
         }
       ],
+      "appearances": 4,
       "aliases": [
         "Iron Coast"
       ]
@@ -15971,9 +15980,9 @@
     },
     {
       "name": "Council of Depths (originally)",
-      "tagline": "Convening. Deciding. Desperate.",
-      "place_type": "hall / council chamber",
-      "world": "Edhra",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "The Known World",
       "parent_place": "",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -15981,12 +15990,12 @@
       "province": "unknown",
       "region": "unknown",
       "district": "unknown",
-      "atmosphere": "A solemn gathering place where the deepkin face impossible choices.",
-      "description": "The governing council of the deepkin where Warden Sylas convenes the leadership. Here they learn a terrible truth: the Celestial Ascension's magic has fractured the barrier between surface world and Abyss Below. The council debates three terrible options: sealing themselves away completely, risking catastrophic war with surface dwellers, or undertaking an expedition to understand what awakens beneath.",
-      "status": "active",
-      "first_story": "The Deepwarden's Vigil",
-      "first_date": "2026-03-31",
-      "appearances": 19,
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "The Drowned Prince's Vigil",
+      "first_date": "2026-03-04",
       "story_appearances": [
         {
           "date": "2026-03-04",
@@ -16065,6 +16074,7 @@
           "title": "The Deepkin Reckoning"
         }
       ],
+      "appearances": 19,
       "aliases": [
         "Council of Depths"
       ]
@@ -16947,22 +16957,22 @@
     },
     {
       "name": "The Burned Expanse",
-      "tagline": "Blighted. Fractured. Haunted.",
-      "place_type": "wilderness",
-      "world": "Edhra",
-      "parent_place": "unknown",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "The Known World",
+      "parent_place": "",
       "hemisphere": "unknown",
-      "continent": "Valdris",
-      "realm": "The Empire",
+      "continent": "unknown",
+      "realm": "unknown",
       "province": "unknown",
-      "region": "Burned Expanse",
+      "region": "unknown",
       "district": "unknown",
-      "atmosphere": "A devastated landscape where reality itself has been fractured by the Luminous Ascension.",
-      "description": "A region destroyed by the Luminous Ascension where villages vanished between heartbeats and merchants were transformed into living light. Refugees from this area carry impossible memories and shifting ages. Iskar wanders these roads compelled toward the Sunken Cathedrals.",
-      "status": "cursed",
-      "first_story": "The Young Sorcerer's New Inheritance",
-      "first_date": "2026-03-31",
-      "appearances": 46,
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "The Auditor's Mercy",
+      "first_date": "2026-03-18",
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -17149,6 +17159,7 @@
           "title": "The Refugee Scribe's Rebellion"
         }
       ],
+      "appearances": 46,
       "aliases": [
         "Burned Expanse"
       ]
@@ -20381,7 +20392,7 @@
       "region": "unknown",
       "district": "unknown",
       "atmosphere": "Secret, densely filled with accumulated knowledge and the work of the phantom-voice.",
-      "description": "An archive where the phantom-voice completes its collection of stolen memories and weaves them into a comprehensive account of the old world. Brenn discovers this work here and becomes obsessed with aiding the voice.",
+      "description": "An archive where Brenn discovers the phantom-voice's compilation work. The location is concealed and contains records or materials of significant power and sensitivity.",
       "status": "active",
       "first_story": "The Phantom-Echo's Compilation",
       "first_date": "2026-03-31",
@@ -22920,8 +22931,8 @@
         "Skyrakis",
         "starborn entities"
       ],
-      "outcome": "A new constellation was created with a new debt paid by unknown powers. The agreement between sky and earth was ruptured. Ancient oath-tracking abilities fracture. New stars prove to be conscious entities with their own obligations.",
-      "significance": "Fundamentally alters the cosmic order and the hierarchies of power that governed the world. The old pacts between sky and earth are no longer sufficient.",
+      "outcome": "Reality was rewritten in some fundamental way, leaving Nethys fragmented and the world altered. The nature and exact consequences remain mysterious.",
+      "significance": "The Ascension fractured Nethys into shards, and Brenn believes its reversal might undo this cataclysm. This event defines the story's central hope and fear.",
       "first_story": "Vex's Fragment Market in Collapse",
       "first_date": "2026-03-06",
       "appearances": 34,
@@ -29372,7 +29383,7 @@
       "name": "refugees",
       "tagline": "Displaced. Learning. Surviving.",
       "alignment": "neutral",
-      "goals": "Survive in the fractured world; learn to remember without institutional ledgers",
+      "goals": "Survive and preserve their memories and identities.",
       "leader": "unknown",
       "status": "active",
       "first_story": "The Shade-Merchant's Reckoning",
@@ -33729,7 +33740,7 @@
       "name": "The Ascension",
       "tagline": "Cosmic. Chosen. Consequential.",
       "category": "history",
-      "source": "Nethys; referenced in all three stories; ninth journal describes Nethys's knowledge and choice.",
+      "source": "World prior event; referenced by Brenn's hope to reverse it.",
       "status": "confirmed",
       "first_story": "The Phantom-Echo's Compilation",
       "first_date": "2026-03-31",
@@ -33925,6 +33936,121 @@
           "date": "2026-03-31",
           "title": "The Warden's Covenant Breaking"
         }
+      ]
+    },
+    {
+      "name": "stolen memories",
+      "tagline": "Taken. Compiled. Erasing.",
+      "category": "myth",
+      "source": "The phantom-voice's activity; observed by Brenn and refugees.",
+      "status": "confirmed",
+      "first_story": "The Phantom-Echo's Compilation",
+      "first_date": "2026-03-31",
+      "appearances": 6,
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "The Refugee Caravan's Price"
+        },
+        {
+          "date": "2026-03-10",
+          "title": "The Memory-Thief's Bargain"
+        },
+        {
+          "date": "2026-03-14",
+          "title": "The Shadow Market's Price"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Refugee's Refuge"
+        },
+        {
+          "date": "2026-03-21",
+          "title": "The Shadow-Broker's Debt"
+        },
+        {
+          "date": "2026-03-31",
+          "title": "The Phantom-Echo's Compilation"
+        }
+      ]
+    },
+    {
+      "name": "The Old World",
+      "tagline": "Lost. Recorded. Fragmented.",
+      "category": "history",
+      "source": "The phantom-voice's compilation; implied prior to the Ascension.",
+      "status": "rumored",
+      "first_story": "The Phantom-Echo's Compilation",
+      "first_date": "2026-03-31",
+      "appearances": 16,
+      "story_appearances": [
+        {
+          "date": "2026-03-16",
+          "title": "The Corsair's Confession"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Young Sorcerer's Tower"
+        },
+        {
+          "date": "2026-03-17",
+          "title": "The Deepkin's Thaw"
+        },
+        {
+          "date": "2026-03-17",
+          "title": "The Tax Collector's Mutation"
+        },
+        {
+          "date": "2026-03-18",
+          "title": "The Auditor's Mercy"
+        },
+        {
+          "date": "2026-03-18",
+          "title": "The Bone-Singer's Pilgrimage"
+        },
+        {
+          "date": "2026-03-18",
+          "title": "The Shade-Echo's Hunger"
+        },
+        {
+          "date": "2026-03-21",
+          "title": "The Scarlet Gambit"
+        },
+        {
+          "date": "2026-03-24",
+          "title": "The Bone-Singer's Inheritance"
+        },
+        {
+          "date": "2026-03-25",
+          "title": "The Memory That Wakes"
+        },
+        {
+          "date": "2026-03-25",
+          "title": "The Tower's Hunger Breaks"
+        },
+        {
+          "date": "2026-03-26",
+          "title": "The Spice-Trader's Testament"
+        },
+        {
+          "date": "2026-03-27",
+          "title": "Vex's Restless Shadows"
+        },
+        {
+          "date": "2026-03-29",
+          "title": "The Bone-Singer's Reckoning"
+        },
+        {
+          "date": "2026-03-29",
+          "title": "The Memory-Thief's Fragmentation"
+        },
+        {
+          "date": "2026-03-31",
+          "title": "The Phantom-Echo's Compilation"
+        }
+      ],
+      "aliases": [
+        "old world"
       ]
     }
   ],
@@ -36682,15 +36808,14 @@
       "tagline": "",
       "continent": "unknown",
       "realm": "unknown",
-      "climate": "unknown",
-      "terrain": "unknown",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
       "first_story": "The Warlord's Widow",
-      "first_date": "2026-03-31",
-      "appearances": 15,
+      "first_date": "2026-02-27",
       "story_appearances": [
         {
           "date": "2026-02-27",
@@ -36753,6 +36878,7 @@
           "title": "The Bargain at Rimveil"
         }
       ],
+      "appearances": 15,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -36791,15 +36917,14 @@
       "tagline": "",
       "continent": "unknown",
       "realm": "unknown",
-      "climate": "unknown",
-      "terrain": "unknown",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
-      "first_story": "Blood-Price of the Caravan",
-      "first_date": "2026-03-31",
-      "appearances": 7,
+      "first_story": "The Crown-Thief of Ashen Wastes",
+      "first_date": "2026-03-01",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -36830,6 +36955,7 @@
           "title": "The Wanderer's Fragment"
         }
       ],
+      "appearances": 7,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -37216,15 +37342,14 @@
       "tagline": "",
       "continent": "unknown",
       "realm": "unknown",
-      "climate": "unknown",
-      "terrain": "unknown",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
-      "first_story": "The Tinker's Tongue",
-      "first_date": "2026-03-31",
-      "appearances": 4,
+      "first_story": "The Warband's Last Song",
+      "first_date": "2026-03-07",
       "story_appearances": [
         {
           "date": "2026-03-02",
@@ -37243,6 +37368,7 @@
           "title": "The Tinker's Tongue"
         }
       ],
+      "appearances": 4,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -37283,21 +37409,21 @@
       "tagline": "",
       "continent": "unknown",
       "realm": "unknown",
-      "climate": "unknown",
-      "terrain": "unknown",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
       "first_story": "The Goblin-King's Mercy",
-      "first_date": "2026-03-31",
-      "appearances": 1,
+      "first_date": "2026-03-01",
       "story_appearances": [
         {
           "date": "2026-03-01",
           "title": "The Goblin-King's Mercy"
         }
       ],
+      "appearances": 1,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -37341,16 +37467,15 @@
       "name": "The Hearthlands",
       "tagline": "",
       "continent": "unknown",
-      "realm": "the Empire",
-      "climate": "unknown",
-      "terrain": "unknown",
+      "realm": "Empire",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
       "first_story": "The Barbarian's Mercy",
-      "first_date": "2026-03-31",
-      "appearances": 13,
+      "first_date": "2026-02-25",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -37405,6 +37530,7 @@
           "title": "The Bone-Thief's Inheritance"
         }
       ],
+      "appearances": 13,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -37449,18 +37575,17 @@
     },
     {
       "name": "The Scorched Reach",
-      "tagline": "Blocked. Shifting. Dangerous.",
-      "continent": "Valdris",
-      "realm": "Empire",
-      "climate": "hot / arid",
-      "terrain": "wasteland / desert",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
-      "function": "A major trade route region whose geography has been disrupted by the cosmic renewal. Critical for spice caravans and imperial commerce. Now impassable without significant risk.",
-      "status": "contested",
-      "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
       "first_story": "The Sorcerer's Heir",
-      "first_date": "2026-03-31",
-      "appearances": 29,
+      "first_date": "2026-03-03",
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -37579,6 +37704,7 @@
           "title": "The Young Sorcerer's Vault Secret"
         }
       ],
+      "appearances": 29,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -37590,18 +37716,17 @@
     },
     {
       "name": "The Borderlands",
-      "tagline": "Liminal. Forested. Grieving.",
-      "continent": "Valdris",
+      "tagline": "",
+      "continent": "unknown",
       "realm": "unknown",
-      "climate": "temperate",
-      "terrain": "forest",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
-      "function": "A region where Thornholt and the forest-keepers coexist. The borderlands were affected by the siege and the Celestial Binding's cosmic wound.",
-      "status": "active",
-      "notes": "The forest-keepers dwelling here have access to earth-lore and understand the cosmic wound's nature.",
-      "first_story": "The Warden's Sorrow",
-      "first_date": "2026-03-31",
-      "appearances": 13,
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "The Merchant's Transformation",
+      "first_date": "2026-03-16",
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -37656,29 +37781,29 @@
           "title": "The Singing Scar's Echo"
         }
       ],
+      "appearances": 13,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
-      "region": "Borderlands",
+      "region": "borderlands",
       "district": "unknown",
       "aliases": [
-        "Borderlands"
+        "borderlands"
       ]
     },
     {
       "name": "The Iron Coast",
-      "tagline": "Maritime. Smuggling. Windswept.",
-      "continent": "Valdris",
+      "tagline": "",
+      "continent": "unknown",
       "realm": "unknown",
-      "climate": "temperate maritime",
-      "terrain": "rocky coast, ports, sea",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
-      "function": "Macro-region of Valdris; hub of maritime trade, smuggling, and coastal magic; center of deepkin interaction with human civilization.",
-      "status": "active",
-      "notes": "Wind-haunted ports suggest volatile weather; active smuggling routes; deepkin maintain presence in nearby waters.",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
       "first_story": "The Lamplighter's Accord",
-      "first_date": "2026-03-31",
-      "appearances": 4,
+      "first_date": "2026-03-04",
       "story_appearances": [
         {
           "date": "2026-03-04",
@@ -37697,6 +37822,7 @@
           "title": "The Water-Dancer's Reckoning"
         }
       ],
+      "appearances": 4,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -37763,16 +37889,15 @@
       "name": "The Ashen Reach",
       "tagline": "",
       "continent": "unknown",
-      "realm": "unknown",
-      "climate": "unknown",
-      "terrain": "unknown",
+      "realm": "The Hegemony",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
-      "first_story": "The Barbarian's Mercy",
-      "first_date": "2026-03-31",
-      "appearances": 15,
+      "first_story": "The Debt of Kessa the Thief",
+      "first_date": "2026-02-25",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -37835,6 +37960,7 @@
           "title": "The Bone-Thief's Inheritance"
         }
       ],
+      "appearances": 15,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -38002,18 +38128,17 @@
     },
     {
       "name": "The Burned Expanse",
-      "tagline": "Blighted. Fractured. Refugee-filled.",
-      "continent": "Valdris",
+      "tagline": "",
+      "continent": "unknown",
       "realm": "The Empire",
-      "climate": "blighted",
-      "terrain": "devastated wasteland",
+      "climate": "",
+      "terrain": "",
       "ruler": "",
-      "function": "A formerly inhabited region devastated by the Luminous Ascension; now a source of refugees carrying impossible memories and a staging ground for transformed beings drawn to the Sunken Cathedrals.",
-      "status": "cursed",
-      "notes": "Reality is unstable; villages vanish; merchants transform into light.",
-      "first_story": "The Young Sorcerer's New Inheritance",
-      "first_date": "2026-03-31",
-      "appearances": 46,
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "The Refugee's Burden",
+      "first_date": "2026-03-10",
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -38200,6 +38325,7 @@
           "title": "The Refugee Scribe's Rebellion"
         }
       ],
+      "appearances": 46,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -39800,8 +39926,8 @@
       "tagline": "Fragmented. Invasive. Haunting.",
       "type": "curse / essence / information",
       "rarity": "rare",
-      "properties": "Fragments of Zareth's memories and experiences; visions of cosmic working and sacrifice; impressions of stars dying and being reborn; experiences that don't belong to the reader.",
-      "use": "Encoded into the Sovereign's ledger; imparted upon reading; cannot be unlearned; alters perception and identity of those exposed.",
+      "properties": "Memories absorbed from refugees; when integrated into the phantom-voice's compilation, grant it more coherence and pain. The act of absorption erases the memory from its original owner.",
+      "use": "Fuel for the phantom-voice's reassembly or dissolution; collateral damage to refugee identities.",
       "status": "unknown",
       "first_story": "The Refugee Caravan's Price",
       "first_date": "2026-03-06",
@@ -40728,9 +40854,15 @@
     {
       "name": "The Empire",
       "tagline": "",
-      "first_story": "",
-      "first_date": "2026-03-31",
-      "appearances": 33,
+      "continent": "unknown",
+      "capital": "unknown",
+      "function": "Auto-added from character home_realm.",
+      "taxation": "unknown",
+      "military": "unknown",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "The Barbarian's Mercy",
+      "first_date": "2026-02-25",
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -40865,14 +40997,7 @@
           "title": "The Wyvern's Debt"
         }
       ],
-      "description": "",
-      "continent": "unknown",
-      "capital": "unknown",
-      "function": "Auto-added from character home_realm.",
-      "taxation": "unknown",
-      "military": "unknown",
-      "status": "unknown",
-      "notes": "",
+      "appearances": 33,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Empire",
@@ -41009,9 +41134,15 @@
     {
       "name": "Council of Depths (originally)",
       "tagline": "",
-      "first_story": "",
-      "first_date": "2026-03-31",
-      "appearances": 19,
+      "continent": "unknown",
+      "capital": "unknown",
+      "function": "Auto-added from character home_realm.",
+      "taxation": "unknown",
+      "military": "unknown",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "The Warden's Descent",
+      "first_date": "2026-03-08",
       "story_appearances": [
         {
           "date": "2026-03-04",
@@ -41090,14 +41221,7 @@
           "title": "The Deepkin Reckoning"
         }
       ],
-      "description": "",
-      "continent": "unknown",
-      "capital": "unknown",
-      "function": "Auto-added from character home_realm.",
-      "taxation": "unknown",
-      "military": "unknown",
-      "status": "unknown",
-      "notes": "",
+      "appearances": 19,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Council of Depths",
@@ -43981,11 +44105,11 @@
           "title": "The Young Sorcerer's Vault Secret"
         }
       ],
-      "type": "entity / consciousness fragment",
+      "type": "cosmic entity",
       "world": "Edhra",
-      "description": "A being whose consciousness was shattered. A phantom-voice fragment persists, watching bone-singers in the Sunken Cathedrals and hunting shadows that witnessed the Stellar Rite from beneath the water. May be the mysterious patron offering Vex payment for a deepkin diplomat's shadow.",
-      "status": "active (fragmented)",
-      "notes": "Seeks to reassemble itself by learning patterns from bone-singers' communion with the dead. Also hunts shadow-witnesses, suggesting it needs to reclaim or consume shadows to reconstitute.",
+      "description": "An ancient cosmic consciousness fragmented by the Ascension. Nethys exists in shards across reality; the phantom-voice is one such shard. Whether its reassembly means salvation or catastrophe is unknown.",
+      "status": "fragmented",
+      "notes": "Central to the story's premise. The entity's nature and true nature remain mysterious; reassembly could rewrite reality again.",
       "aliases": ""
     },
     {
@@ -44027,11 +44151,11 @@
           "title": "The Phantom-Echo's Compilation"
         }
       ],
-      "type": "spirit/fragment",
+      "type": "spirit",
       "world": "Edhra",
-      "description": "A shard of Nethys's fragmented consciousness that collects stolen memories and weaves them into a comprehensive account of the old world. It gains coherence as it absorbs memories but also experiences pain from contradictory experiences.",
+      "description": "A shard of Nethys's fragmented consciousness that compiles stolen memories. It grows more coherent but also more pained with each memory absorbed, potentially approaching either reassembly or dissolution.",
       "status": "active",
-      "notes": "Central to Story 1; uncertain whether reassembly means salvation or catastrophic rewrite.",
+      "notes": "Uncertain about its own fate. The act of reassembling erases memories from refugees, creating a moral dilemma for those who would help it.",
       "aliases": ""
     },
     {
