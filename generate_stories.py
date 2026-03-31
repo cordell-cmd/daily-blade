@@ -5890,6 +5890,217 @@ def filter_lore_to_stories(lore: dict, stories: list[dict]) -> dict:
     return lore
 
 
+def _descriptor_key(text: str) -> str:
+    """Collapse descriptive character labels into a stable comparison key."""
+    s = _norm_text_for_matching(str(text or "").strip())
+    if not s:
+        return ""
+    s = re.sub(r"^(?:the|a|an)\s+", "", s)
+    s = re.sub(r"[^a-z0-9\s'\-]", " ", s)
+    tokens = [t for t in s.split() if t]
+    if not tokens:
+        return ""
+
+    cut_words = {
+        "who", "which", "that", "with", "without", "from", "under", "over",
+        "near", "in", "at", "by", "into", "across", "through", "during",
+        "after", "before", "behind", "beside", "named", "called", "tasked",
+        "drawn", "born", "leading", "studying", "guarding", "working", "haunted",
+        "obsessed", "tracking", "following", "bearing", "seeking", "carrying",
+    }
+    trimmed = []
+    for tok in tokens:
+        if tok in cut_words:
+            break
+        trimmed.append(tok)
+        if len(trimmed) >= 5:
+            break
+    return " ".join(trimmed or tokens[:5]).strip()
+
+
+def _looks_like_descriptor_name(name: str) -> bool:
+    """Return True for extracted placeholder names like 'young scholar'."""
+    raw = str(name or "").strip()
+    if not raw:
+        return False
+    if raw == raw.lower():
+        return True
+    key = _descriptor_key(raw)
+    return bool(key) and key == _norm_text_for_matching(raw)
+
+
+def _extract_named_character_mentions(stories: list[dict]) -> list[dict]:
+    """Find explicit name+descriptor introductions in story text."""
+    if not isinstance(stories, list) or not stories:
+        return []
+
+    pattern_named = re.compile(
+        r"\b(?:a|an|the)\s+([a-z][a-z'\-]*(?:\s+[a-z][a-z'\-]*){0,5})\s+named\s+"
+        r"([A-Z][\w’'\-]+(?:\s+[A-Z][\w’'\-]+){0,3})\b"
+    )
+    pattern_appositive = re.compile(
+        r"\b([A-Z][\w’'\-]+(?:\s+[A-Z][\w’'\-]+){0,3}),\s+(?:a|an|the)\s+([^,.;:!?\n]{3,80})"
+    )
+    bad_appositive_names = {
+        "After", "Before", "But", "Later", "Meanwhile", "Now", "Soon",
+        "Still", "Then", "There", "When", "While",
+    }
+
+    found = []
+    seen = set()
+    for story in stories:
+        if not isinstance(story, dict):
+            continue
+        story_title = str(story.get("title") or "").strip()
+        blob = str(story.get("text") or "")
+        if story_title:
+            blob = story_title + "\n" + blob
+        if not blob.strip():
+            continue
+
+        for match in pattern_named.finditer(blob):
+            descriptor = " ".join((match.group(1) or "").split()).strip()
+            name = " ".join((match.group(2) or "").split()).strip()
+            key = _descriptor_key(descriptor)
+            if not name or not key:
+                continue
+            seen_key = (name.casefold(), key)
+            if seen_key in seen:
+                continue
+            found.append({"name": name, "descriptor": descriptor, "descriptor_key": key, "story": story_title})
+            seen.add(seen_key)
+
+        for match in pattern_appositive.finditer(blob):
+            name = " ".join((match.group(1) or "").split()).strip()
+            descriptor = " ".join((match.group(2) or "").split()).strip()
+            key = _descriptor_key(descriptor)
+            if not name or not key:
+                continue
+            if name in bad_appositive_names:
+                continue
+            if " named " in f" {descriptor.casefold()} ":
+                continue
+            seen_key = (name.casefold(), key)
+            if seen_key in seen:
+                continue
+            found.append({"name": name, "descriptor": descriptor, "descriptor_key": key, "story": story_title})
+            seen.add(seen_key)
+
+    return found
+
+
+def ensure_named_character_mentions_present(lore: dict, stories: list[dict]) -> dict:
+    """Promote explicit named introductions when extraction kept only a descriptor."""
+    if not isinstance(lore, dict):
+        return lore
+
+    mentions = _extract_named_character_mentions(stories)
+    if not mentions:
+        return lore
+
+    chars = lore.setdefault("characters", [])
+    if not isinstance(chars, list):
+        lore["characters"] = []
+        chars = lore["characters"]
+
+    by_name = {}
+    for char in chars:
+        if not isinstance(char, dict):
+            continue
+        name = str(char.get("name") or "").strip()
+        if not name:
+            continue
+        for key in _character_alias_keys(name):
+            by_name.setdefault(key, char)
+        aliases = char.get("aliases")
+        if isinstance(aliases, list):
+            for alias in aliases:
+                alias_key = _norm_entity_key(alias)
+                if alias_key:
+                    by_name.setdefault(alias_key, char)
+
+    removals = set()
+    for mention in mentions:
+        name = mention["name"]
+        name_key = _norm_entity_key(name)
+        descriptor = mention["descriptor"]
+        descriptor_key = mention["descriptor_key"]
+        if not name_key or not entity_name_mentioned_in_text(name, "\n\n".join(str((s.get("text") or "").strip()) + "\n" + str((s.get("title") or "").strip()) for s in stories if isinstance(s, dict))):
+            continue
+
+        target = by_name.get(name_key)
+        placeholder = None
+        for char in chars:
+            if not isinstance(char, dict):
+                continue
+            existing_name = str(char.get("name") or "").strip()
+            if not existing_name:
+                continue
+            existing_key = _descriptor_key(existing_name)
+            if existing_key != descriptor_key:
+                continue
+            if not _looks_like_descriptor_name(existing_name):
+                continue
+            placeholder = char
+            break
+
+        if target is None and placeholder is not None:
+            old_name = str(placeholder.get("name") or "").strip()
+            aliases = placeholder.get("aliases")
+            if not isinstance(aliases, list):
+                aliases = []
+            for alias in [old_name, descriptor]:
+                alias = str(alias or "").strip()
+                if alias and alias != name and alias not in aliases:
+                    aliases.append(alias)
+            placeholder["aliases"] = aliases
+            placeholder["name"] = name
+            if not placeholder.get("id"):
+                placeholder["id"] = _make_snake_id(name)
+            target = placeholder
+            by_name[name_key] = target
+        elif target is not None:
+            aliases = target.get("aliases")
+            if not isinstance(aliases, list):
+                aliases = []
+            for alias in [descriptor]:
+                alias = str(alias or "").strip()
+                if alias and alias != name and alias not in aliases:
+                    aliases.append(alias)
+            if aliases:
+                target["aliases"] = aliases
+            if placeholder is not None and placeholder is not target:
+                removals.add(id(placeholder))
+
+        if target is None:
+            chars.append({
+                "id": _make_snake_id(name),
+                "name": name,
+                "aliases": [descriptor],
+                "tagline": "Named. Present. Emerging.",
+                "role": descriptor.title(),
+                "world": "The Known World",
+                "status": "active",
+                "home_place": "unknown",
+                "home_region": "unknown",
+                "home_realm": "unknown",
+                "travel_scope": "unknown",
+                "bio": f"A named {descriptor} explicitly identified in the story text.",
+                "traits": [],
+                "known_locations": [],
+                "affiliations": [],
+                "notes": "Auto-added because the story explicitly names this character.",
+            })
+            by_name[name_key] = chars[-1]
+
+    if removals:
+        lore["characters"] = [
+            char for char in chars
+            if not (isinstance(char, dict) and id(char) in removals)
+        ]
+    return lore
+
+
 def ensure_named_leaders_present(lore: dict, stories: list[dict]) -> dict:
     """Ensure named leaders mentioned in story text exist as entities.
 
@@ -6700,6 +6911,7 @@ def main():
     print("Calling Claude to extract lore from new stories...")
     new_lore = _extract_lore_batched(client, stories, lore)
     new_lore = filter_lore_to_stories(new_lore, stories)
+    new_lore = ensure_named_character_mentions_present(new_lore, stories)
     new_lore = ensure_named_leaders_present(new_lore, stories)
     for char in new_lore.get("characters", []):
         if not isinstance(char, dict):

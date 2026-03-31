@@ -88,6 +88,7 @@ def main() -> int:
 
     new_lore = gs._extract_lore_batched(client, stories, lore)
     new_lore = gs.filter_lore_to_stories(new_lore, stories)
+    new_lore = gs.ensure_named_character_mentions_present(new_lore, stories)
     new_lore = gs.ensure_named_leaders_present(new_lore, stories)
 
     # Attach first_story to characters

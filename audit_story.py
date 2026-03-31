@@ -146,6 +146,7 @@ def main() -> int:
     extracted = gs.parse_json_response(raw)
     lore = gs.normalize_extracted_lore(extracted)
     lore = gs.filter_lore_to_stories(lore, [story])
+    lore = gs.ensure_named_character_mentions_present(lore, [story])
 
     # Merge into lore.json (same as daily generation and backfill).
     existing_lore = gs.load_lore()

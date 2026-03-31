@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from typing import Any
 
@@ -138,6 +139,61 @@ Rules:
 """
 
 
+def _norm_name_key(text: str) -> str:
+    return re.sub(r"\s+", " ", str(text or "").replace("’", "'").strip()).casefold()
+
+
+def infer_explicit_character_from_story(highlighted_text: str, story_title: str,
+                                        story_text: str, gs) -> dict | None:
+    """Return a character entity when the highlighted text is an explicit named intro.
+
+    This covers cases like:
+    - "a young scholar named Brenn"
+    - "Brenn, a young scholar"
+    """
+    highlighted = str(highlighted_text or "").strip()
+    if not highlighted:
+        return None
+
+    if not hasattr(gs, "_extract_named_character_mentions"):
+        return None
+
+    mentions = gs._extract_named_character_mentions([
+        {"title": story_title, "text": story_text}
+    ])
+    target = _norm_name_key(highlighted)
+    if not target:
+        return None
+
+    for mention in mentions:
+        name = str(mention.get("name") or "").strip()
+        if _norm_name_key(name) != target:
+            continue
+        descriptor = str(mention.get("descriptor") or "character").strip() or "character"
+        role = descriptor.title()
+        return {
+            "category": "characters",
+            "entity": {
+                "name": name,
+                "aliases": [descriptor] if descriptor.casefold() != name.casefold() else [],
+                "tagline": "Named. Present. Emerging.",
+                "role": role,
+                "world": "The Known World",
+                "status": "active",
+                "home_place": "unknown",
+                "home_region": "unknown",
+                "home_realm": "unknown",
+                "travel_scope": "unknown",
+                "bio": f"A named {descriptor} explicitly identified in the story text.",
+                "traits": [],
+                "known_locations": [],
+                "affiliations": [],
+                "notes": "Auto-added from highlighted text plus story context.",
+            },
+        }
+    return None
+
+
 def parse_response(raw: str) -> dict:
     """Parse the JSON response from the model."""
     text = raw.strip()
@@ -198,26 +254,33 @@ def main() -> int:
     story = find_story(day, title)
     story_text = str(story.get("text", "") or "")
 
-    # Call Haiku.
-    prompt = build_extract_prompt(highlighted, title, story_text, date_key)
-    client = anthropic.Anthropic(api_key=api_key)
-    model = getattr(gs, "MODEL", "claude-3-5-haiku-latest")
+    inferred = infer_explicit_character_from_story(highlighted, title, story_text, gs)
+    if inferred is not None:
+        category = inferred["category"]
+        entity = inferred["entity"]
+        raw = json.dumps(inferred, ensure_ascii=False)
+        print(f"Detected explicit character from story context: {entity.get('name', '')}")
+    else:
+        # Call Haiku.
+        prompt = build_extract_prompt(highlighted, title, story_text, date_key)
+        client = anthropic.Anthropic(api_key=api_key)
+        model = getattr(gs, "MODEL", "claude-3-5-haiku-latest")
 
-    print(f"Calling {model}...")
-    resp = client.messages.create(
-        model=model,
-        max_tokens=int(args.max_tokens),
-        messages=[{"role": "user", "content": prompt}],
-    )
+        print(f"Calling {model}...")
+        resp = client.messages.create(
+            model=model,
+            max_tokens=int(args.max_tokens),
+            messages=[{"role": "user", "content": prompt}],
+        )
 
-    raw = resp.content[0].text.strip() if resp and resp.content else ""
-    if not raw:
-        print("ERROR: Empty response from model.", file=sys.stderr)
-        return 3
+        raw = resp.content[0].text.strip() if resp and resp.content else ""
+        if not raw:
+            print("ERROR: Empty response from model.", file=sys.stderr)
+            return 3
 
-    result = parse_response(raw)
-    category = str(result.get("category", "")).strip()
-    entity = result.get("entity")
+        result = parse_response(raw)
+        category = str(result.get("category", "")).strip()
+        entity = result.get("entity")
 
     if not category or category not in CODEX_CATEGORIES:
         print(f"ERROR: Invalid category: {category!r}", file=sys.stderr)
