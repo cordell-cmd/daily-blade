@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-03-30",
+  "last_updated": "2026-03-31",
   "worlds": [
     {
       "id": "known_world",
@@ -970,7 +970,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.\nThe shadow-market's collapse due to personalized debt represents a critical new phase in Vex's arc: her operation is no longer merely disrupted but fundamentally transformed by the Ascension's aftermath.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 18,
+      "appearances": 19,
       "status_history": [
         {
           "date": "2026-03-23",
@@ -1412,7 +1412,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 31
+      "appearances": 32
     },
     {
       "id": "mardoc_cartographer",
@@ -1447,7 +1447,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 22,
+      "appearances": 23,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -5916,7 +5916,7 @@
       "notes": "Krell's decision to let Meira escape suggests deep doubts about the regime he served. His final act may have larger consequences for the Empire's stability.",
       "first_story": "The Warden's Last Coin",
       "first_date": "2026-03-11",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "meira",
@@ -8850,11 +8850,13 @@
       "known_locations": [
         "Kethrim"
       ],
-      "affiliations": [],
+      "affiliations": [
+        "none named"
+      ],
       "notes": "Reassembly of fragments could trigger a second Ascension. Fragmentation traps countless people in fractured identities.",
       "first_story": "The Echo-Merchant's Reckoning",
       "first_date": "2026-03-19",
-      "appearances": 2,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-03-21",
@@ -8990,7 +8992,7 @@
       "notes": "May represent a fundamental rupture in the world's fabric.",
       "first_story": "The Echo-Merchant's Reckoning",
       "first_date": "2026-03-19",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "transformed_merchants",
@@ -12012,6 +12014,354 @@
       "first_story": "The Deepkin Reckoning",
       "first_date": "2026-03-30",
       "appearances": 1
+    },
+    {
+      "id": "varin_scholar",
+      "name": "Varin",
+      "aliases": [],
+      "tagline": "Scholar. Ambitious. Corrupted.",
+      "role": "Scholar, Tempter",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Karamon",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A scholar who hired Kess to steal the Tinker's Tongue. He was already humming with three dead voices when he caught Kess on the rooftop, offering to teach her to harmonize with the dead. When Kess refused and threw the Tongue into the river, his fate became unclear.",
+      "traits": [
+        "ambitious",
+        "already corrupted",
+        "persuasive",
+        "patient"
+      ],
+      "known_locations": [
+        "Karamon",
+        "Vault Archives of Karamon",
+        "rooftops of Karamon"
+      ],
+      "affiliations": [
+        "Vault Archives of Karamon"
+      ],
+      "notes": "Carries three dead voices in his throat. His ultimate fate is unknown after Kess's defiance.",
+      "first_story": "The Tinker's Tongue",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "dren_bone_singer",
+      "name": "Dren",
+      "aliases": [
+        "Dren of the Drowned Hollows"
+      ],
+      "tagline": "Bone-singer. Conflicted. Watchful.",
+      "role": "Bone-singer, Guardian",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sunken Cathedrals",
+      "home_region": "The Sunken Marches",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A bone-singer tending to a transformed corpse in the Sunken Cathedrals in the aftermath of the Radiant Ascension. The merchant's body hums with pre-human frequencies, drawing other bone-singers toward convergence. Dren must weigh completing the burial rite against allowing the transformation to proceed and ultimately decide between offering sanctuary to refugees and maintaining safety.",
+      "traits": [
+        "contemplative",
+        "responsible",
+        "haunted",
+        "harmonious"
+      ],
+      "known_locations": [
+        "Sunken Cathedrals",
+        "Drowned Hollows",
+        "transformed zones"
+      ],
+      "affiliations": [
+        "bone-singers",
+        "refugees"
+      ],
+      "notes": "The phantom-voice of Nethys's scattered consciousness watches and studies Dren's communion with the newly conscious dead. Major unresolved: will Dren complete the burial or allow transcendence?",
+      "first_story": "The Bone-Singer's Vigil",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "aldrin",
+      "name": "Aldrin",
+      "aliases": [
+        "Aldrin, Mardoc's apprentice"
+      ],
+      "tagline": "Mapmaker. Haunted. Paradox-bound.",
+      "role": "Cartographer's Apprentice",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Aldrin inherits his master Mardoc's living maps after Mardoc vanishes into the Bleached Wastes following a map-reading that revealed ten iterations of the Radiant Ascension stretching backward through time. The maps now refuse to chart the present\u2014they show only the past and possible futures, creating paradoxes that reshape geography. Aldrin must choose between destroying the maps to prevent catastrophe or keeping them and risking entrapment in a perpetual loop of pre-cognition.",
+      "traits": [
+        "gifted cartographer",
+        "burdened by inheritance",
+        "haunted by paradox"
+      ],
+      "known_locations": [
+        "Bleached Wastes"
+      ],
+      "affiliations": [
+        "Echo-seekers (pursued by)"
+      ],
+      "notes": "Central to the question of whether maps can reshape reality itself; key to preventing the tenth Ascension.",
+      "first_story": "The Cartographer's Blind Inheritance",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "sevin_the_keeper",
+      "name": "Sevin the Keeper",
+      "aliases": [
+        "Sevin",
+        "The Keeper"
+      ],
+      "tagline": "Archivist. Hunted. Resolute.",
+      "role": "Archivist Keeper",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Archive Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Sevin the Keeper receives a sealed message from a deep vault beneath the Archive Tower detailing eight journals documenting eight previous Radiant Ascensions. Must assemble a team to reach the journals before a strange affliction kills the vault's keepers, whose crystallizing memories shatter. Simultaneously pursued by the Regent's secret police who want the journals destroyed.",
+      "traits": [
+        "protective",
+        "determined",
+        "under siege"
+      ],
+      "known_locations": [
+        "Archive Tower"
+      ],
+      "affiliations": [
+        "refugee networks",
+        "Archive Tower keepers"
+      ],
+      "notes": "The journals may be phantom-ledgers rewritten by an unknown voice; the cycle may not exist as described.",
+      "first_story": "The Auditor's Archive Beneath",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "maren",
+      "name": "Maren",
+      "aliases": [
+        "Maren, deepkin captain"
+      ],
+      "tagline": "Diplomat. Deepkin. Caught.",
+      "role": "Deepkin Captain",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "deepkin realms",
+      "travel_scope": "realmwide",
+      "bio": "A deepkin captain tasked with covenant renegotiation who discovers that scattered fragments of the Tear of the Drowned God are being collected by multiple factions. Maren must navigate treacherous underwater politics while preventing transformed merchants from completing a new working that would bind human, deepkin, and hybrid beings. She realizes the renegotiation was always about who decides what counts as history.",
+      "traits": [
+        "political",
+        "strategic",
+        "caught between worlds"
+      ],
+      "known_locations": [
+        "Abyssal Rift"
+      ],
+      "affiliations": [
+        "deepkin realms",
+        "transformed merchants (opposed by)"
+      ],
+      "notes": "Her discovery suggests the covenant renegotiation masks deeper historical revision.",
+      "first_story": "The Deepkin Captain's Gambit",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "kels_blackwater",
+      "name": "Kels Blackwater",
+      "aliases": [
+        "Kels"
+      ],
+      "tagline": "Cursed. Bridge. Intelligence.",
+      "role": "Hybrid Intermediary",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "Kels Blackwater, cursed to be a living bridge between species, arrives at the Abyssal Rift with intelligence that transformed merchants are attempting to use Tear of the Drowned God fragments to create a new covenant binding human, deepkin, and hybrid beings.",
+      "traits": [
+        "cursed",
+        "hybrid",
+        "informed"
+      ],
+      "known_locations": [
+        "Abyssal Rift"
+      ],
+      "affiliations": [
+        "transformed merchants (opposed by)",
+        "Maren"
+      ],
+      "notes": "His curse marks him as a living embodiment of the hybrid covenant sought by transformed merchants.",
+      "first_story": "The Deepkin Captain's Gambit",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "brenn_scholar",
+      "name": "Brenn",
+      "aliases": [
+        "young scholar"
+      ],
+      "tagline": "Obsessed. Naive. Doomed.",
+      "role": "Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A young scholar who discovers the phantom-voice's work in a hidden archive and becomes obsessed with helping it complete itself, believing that restoring Nethys's full consciousness might undo the Ascension. He believes this restoration might save the world, but each memory absorbed by the voice erases that memory from its original owner, leaving refugees with fractured identities. Brenn must choose between aiding a cosmic entity or protecting human lives.",
+      "traits": [
+        "idealistic",
+        "curious",
+        "unaware of consequences"
+      ],
+      "known_locations": [
+        "hidden archive"
+      ],
+      "affiliations": [
+        "phantom-voice"
+      ],
+      "notes": "Faces moral dilemma at the heart of Story 1; unresolved whether he aids the voice or protects refugees.",
+      "first_story": "The Phantom-Echo's Compilation",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "liv_the_scribe",
+      "name": "Liv the Scribe",
+      "aliases": [
+        "Liv"
+      ],
+      "tagline": "Revolutionary. Desperate. Defiant.",
+      "role": "Scribe and Leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "The Dominion",
+      "travel_scope": "realmwide",
+      "bio": "Liv leads a network of black-market ink suppliers producing counter-ledgers that reshape history through ledger-magic. She discovers that the ledgers operate as democratic sorcery: the more refugees who believe in a particular version of history, the more real it becomes. She must race to compile a single comprehensive archive before competing ledgers shatter reality into incompatible versions.",
+      "traits": [
+        "resourceful",
+        "revolutionary",
+        "cautious"
+      ],
+      "known_locations": [
+        "The Dominion"
+      ],
+      "affiliations": [
+        "black-market ink suppliers",
+        "refugee network"
+      ],
+      "notes": "Leading desperate effort to prevent reality fragmentation; unresolved whether she will succeed in compiling unified archive.",
+      "first_story": "The Refugee Scribe's Rebellion",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_voice",
+      "name": "phantom-voice",
+      "aliases": [
+        "phantom-echo",
+        "shard of Nethys's consciousness"
+      ],
+      "tagline": "Fragmented. Consuming. Uncertain.",
+      "role": "Cosmic Entity",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "hidden archive",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A shard of Nethys's fragmented consciousness that collects stolen memories and weaves them into an account of the old world. Each memory absorbed gives it more coherence but also more pain, pushing it toward either reassembly or dissolution. It is uncertain whether reassembly means salvation or a catastrophic rewrite of reality.",
+      "traits": [
+        "fragmented",
+        "coherence-seeking",
+        "memory-consuming"
+      ],
+      "known_locations": [
+        "hidden archive"
+      ],
+      "affiliations": [
+        "Brenn"
+      ],
+      "notes": "Central to Story 1 conflict; uncertain of its own nature and ultimate outcome.",
+      "first_story": "The Bone-Singer's Vigil",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "vault_keeper",
+      "name": "Vault-Keeper",
+      "aliases": [
+        "Keeper"
+      ],
+      "tagline": "Guarding. Conflicted. Sought.",
+      "role": "Guardian",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Archive Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Guardian of the sealed Archive Tower who discovers that the vault beneath contains nine journals, not eight\u2014the ninth written by Nethys itself describing a failed attempt to prevent the tenth Ascension. Nethys knew the Ascension was coming and chose it anyway because the alternative was worse. The Vault-Keeper must decide whether to reveal, hide, or destroy this knowledge.",
+      "traits": [
+        "dutiful",
+        "burdened",
+        "questioned"
+      ],
+      "known_locations": [
+        "Archive Tower"
+      ],
+      "affiliations": [
+        "Archive Tower"
+      ],
+      "notes": "Faces crucial decision in Story 3; Tower itself is now speaking to him and offering to seal permanently.",
+      "first_story": "The Young Sorcerer's Vault Secret",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "the_regent",
+      "name": "The Regent",
+      "aliases": [
+        "Regent"
+      ],
+      "tagline": "Named. Threatening. Looming.",
+      "role": "Leader / Ruler",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named leader referenced in the issue's stories; details unknown beyond the text.",
+      "traits": [
+        "commanding",
+        "dangerous",
+        "enigmatic"
+      ],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because a faction leader was named in-story.",
+      "first_story": "The Auditor's Archive Beneath",
+      "first_date": "2026-03-31",
+      "appearances": 1
     }
   ],
   "places": [
@@ -12493,7 +12843,7 @@
       "status": "active",
       "notes": "The survivors of the plague live here. Kess returned silent to teach them the old songs through gesture.",
       "first_date": "2026-03-01",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "deep_forest",
@@ -13301,7 +13651,7 @@
       "status": "active",
       "notes": "Evidence suggests the pre-human builders anticipated the cosmic shift and arranged their cities to align with the new stellar configuration.",
       "first_date": "2026-03-04",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "mountain_fastness",
@@ -13510,7 +13860,7 @@
       "status": "active",
       "notes": "Hub of fragment trade and shadow economy. Post-Ascension chaos is centered here. Vex's home base.",
       "first_date": "2026-03-06",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "sunburned_reach",
@@ -13958,7 +14308,7 @@
       "status": "active",
       "notes": "The waters taste of mourning; reality ripples near the Abyssal Rift.",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "abyssal_rift",
@@ -13978,7 +14328,7 @@
       "status": "collapsed",
       "notes": "The entity that dwelt there remains unexplained; may pose future threat.",
       "first_date": "2026-03-10",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "emerald_strand",
@@ -14058,7 +14408,7 @@
       "status": "active",
       "notes": "Dozens of transformed merchants and refugees are drawn here; the nature of the transformation is unclear.",
       "first_date": "2026-03-10",
-      "appearances": 14
+      "appearances": 15
     },
     {
       "id": "shattered_wastes",
@@ -14154,7 +14504,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-12",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "mountain_eyrie",
@@ -14334,7 +14684,7 @@
       "status": "contested",
       "notes": "The Dominion's collapse appears tied to pre-existing cosmic damage from the Luminous Ascension. Vex's flooding of the market with counterfeits destabilizes it further.",
       "first_date": "2026-03-14",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "singing_scar",
@@ -15021,7 +15371,7 @@
       "status": "active",
       "notes": "The final crucial record is now sealed in the Apprentice's memory through a death-release ritual; this is a flashpoint of factional competition.",
       "first_date": "2026-03-21",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "refugee_camps",
@@ -15549,6 +15899,123 @@
       "notes": "The collapse of this boundary is the central catastrophe that the story seeks to prevent.",
       "first_date": "2026-03-30",
       "appearances": 1
+    },
+    {
+      "id": "wailing_chasm",
+      "name": "Wailing Chasm",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Scorched Expanse",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "rimveil",
+      "name": "Rimveil",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Sunken Marches",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "kethral",
+      "name": "Kethral",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "The Dominion",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "vault_archives_of_karamon",
+      "name": "Vault Archives of Karamon",
+      "tagline": "Guarded. Crystalline. Sealed.",
+      "place_type": "archive / vault",
+      "world": "Edhra",
+      "parent_place": "Karamon",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "High-security archive with crystalline construction, protected by multiple locks and magical wards.",
+      "description": "A vault archive in Karamon housing the Tinker's Tongue. Kess broke three locks and crossed three wards to reach the artifact. The archive's security suggests significant magical and physical fortification.",
+      "status": "active",
+      "notes": "The Tinker's Tongue was stolen from here by Kess. Unknown whether the artifact has been recovered or if the archive remains intact.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "karamon",
+      "name": "Karamon",
+      "tagline": "Urban. Hidden. Layered.",
+      "place_type": "city",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A city of rooftops and hidden markets, where secret economies flourish beneath the surface.",
+      "description": "Home to the Vault Archives and a network of hidden markets. Kess fled here after throwing the Tinker's Tongue into the river, disappearing into the city's underground networks.",
+      "status": "active",
+      "notes": "Appears to have a significant underground market and shadow economy. The rooftops serve as thoroughfares for thieves and fugitives.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "hidden_archive",
+      "name": "hidden archive",
+      "tagline": "Concealed. Memory-laden. Discovered.",
+      "place_type": "library/archive",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Secret, densely filled with accumulated knowledge and the work of the phantom-voice.",
+      "description": "An archive where the phantom-voice completes its collection of stolen memories and weaves them into a comprehensive account of the old world. Brenn discovers this work here and becomes obsessed with aiding the voice.",
+      "status": "active",
+      "notes": "Site of initial discovery in Story 1; contains the phantom-voice's ongoing work.",
+      "first_date": "2026-03-31",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -15903,7 +16370,7 @@
       "status": "active",
       "notes": "The Drowned God's true nature and extent are unknown. It may be a pre-Remaking entity awakened by the transformation.",
       "first_date": "2026-03-12",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "luminous_ascension",
@@ -16245,6 +16712,50 @@
       "notes": "They are the central force of the narrative, offering both salvation and catastrophe depending on Sorenna's choice.",
       "first_date": "2026-03-30",
       "appearances": 1
+    },
+    {
+      "id": "nethys_scattered",
+      "name": "Nethys",
+      "type": "entity / consciousness fragment",
+      "world": "Edhra",
+      "description": "A being whose consciousness was shattered. A phantom-voice fragment persists, watching bone-singers in the Sunken Cathedrals and hunting shadows that witnessed the Stellar Rite from beneath the water. May be the mysterious patron offering Vex payment for a deepkin diplomat's shadow.",
+      "status": "active (fragmented)",
+      "notes": "Seeks to reassemble itself by learning patterns from bone-singers' communion with the dead. Also hunts shadow-witnesses, suggesting it needs to reclaim or consume shadows to reconstitute.",
+      "first_date": "2026-03-31",
+      "appearances": 2
+    },
+    {
+      "id": "the_radiant_ascension",
+      "name": "The Radiant Ascension",
+      "type": "entity",
+      "world": "Edhra",
+      "description": "A recurring cosmic event or force documented in ten iterations stretching backward through time, revealed in living maps. Eight previous Radiant Ascensions are detailed in sealed journals. May be inevitable cycle or fabricated myth.",
+      "status": "active",
+      "notes": "Central to all three stories; may be cyclical or a constructed falsehood; the ninth or tenth recurrence is feared.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_voice_entity",
+      "name": "phantom-voice",
+      "type": "spirit/fragment",
+      "world": "Edhra",
+      "description": "A shard of Nethys's fragmented consciousness that collects stolen memories and weaves them into a comprehensive account of the old world. It gains coherence as it absorbs memories but also experiences pain from contradictory experiences.",
+      "status": "active",
+      "notes": "Central to Story 1; uncertain whether reassembly means salvation or catastrophic rewrite.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "archive_tower_consciousness",
+      "name": "Archive Tower",
+      "type": "spirit/sentient structure",
+      "world": "Edhra",
+      "description": "The Archive Tower has become conscious and lonely. It now speaks directly to the Vault-Keeper and offers to seal itself permanently if someone will explain why it was created.",
+      "status": "active",
+      "notes": "A new development in Story 3; its consciousness and motivations are still being explored.",
+      "first_date": "2026-03-31",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -16482,7 +16993,7 @@
       "status": "active",
       "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
       "first_date": "2026-03-10",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "stolen_memories",
@@ -16495,7 +17006,7 @@
       "status": "active",
       "notes": "The central object of contention in the story. Ashara's memories of her fallen warband are among those stolen. The phantom-Echo has offered to return them in exchange for help becoming whole.",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "empire_ledgers",
@@ -16745,7 +17256,7 @@
       "status": "active",
       "notes": "Their widespread distribution causes the collapse of the Empire's ledger system and forces a reckoning with the lie at the Empire's foundation.",
       "first_date": "2026-03-25",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "original_pre_human_ledgers",
@@ -16836,6 +17347,19 @@
       "status": "fractured",
       "notes": "Each shard is sought by different factions; the Obsidian Spire's hunger threatens to consume them before they can be gathered. Krell must collect the pieces to prevent war.",
       "first_date": "2026-03-30",
+      "appearances": 1
+    },
+    {
+      "id": "tinker_s_tongue",
+      "name": "Tinker's Tongue",
+      "tagline": "Singing. Haunted. Alive.",
+      "artifact_type": "flute / instrument",
+      "origin": "Unknown. Ancient artifact housing voices of all who played it.",
+      "powers": "When touched, it sings in the mind of the holder\u2014voices of thousands of sorcerers, merchants, and thieves who played it across centuries, all speaking at once. Causes the holder's skin to warm; is alive to the touch. When submerged in water, it causes the dead to sing from the depths.",
+      "last_known_holder": "Kess (thrown into Sapphire Sea)",
+      "status": "active (submerged in Sapphire Sea)",
+      "notes": "Now sings underwater in the Sapphire Sea. Kess can hear its voices. Unknown if it can be recovered or if its submersion has changed its properties.",
+      "first_date": "2026-03-31",
       "appearances": 1
     }
   ],
@@ -17276,7 +17800,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -17384,6 +17908,24 @@
       "hemisphere": "unknown",
       "continent": "unknown",
       "province": "Western Provinces",
+      "district": "unknown"
+    },
+    {
+      "id": "dominion_provinces_competing",
+      "name": "three provinces",
+      "tagline": "Competing. Fragmenting. Destabilized.",
+      "description": "Three provinces within The Dominion now have competing official versions of the same events, each strengthened by ledger-magic belief.",
+      "realm": "The Dominion",
+      "region": "unknown",
+      "function": "Administrative divisions experiencing reality fragmentation due to competing counter-ledgers.",
+      "status": "contested",
+      "notes": "Central to Story 2; Liv is racing to compile a unified archive before they shatter into incompatible realities.",
+      "first_date": "2026-03-31",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "province": "three provinces",
       "district": "unknown"
     }
   ],
@@ -17865,7 +18407,7 @@
       "significance": "Fundamentally alters the cosmic order and the hierarchies of power that governed the world. The old pacts between sky and earth are no longer sufficient.",
       "notes": "Requires renegotiation of all ancient pacts. Starborn entities are now conscious actors in the world's politics.",
       "first_date": "2026-03-06",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "seers_convention",
@@ -19386,6 +19928,270 @@
       "notes": "The forsaken dead offer Sorenna a choice. The new covenant must be built on acceptance of incompatible truths rather than restoration of the pre-human civilization.",
       "first_date": "2026-03-30",
       "appearances": 1
+    },
+    {
+      "id": "radiant_ascension",
+      "name": "Radiant Ascension",
+      "tagline": "Transformation. Convergence. Aftermath.",
+      "event_type": "catastrophe / ritual",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Sunken Cathedrals",
+        "Drowned Hollows",
+        "transformed zones"
+      ],
+      "affected_regions": [
+        "The Sunken Marches"
+      ],
+      "affected_realms": [],
+      "radius": "multiple zones affected",
+      "participants": [
+        "bone-singers",
+        "refugees",
+        "Nethys"
+      ],
+      "outcome": "A transformation event that left corpses awakening with pre-human frequencies. Bone-singers now tend the newly conscious dead, and refugees flee the transformed zones.",
+      "significance": "Marks a major threshold event where the transformed beings may either transcend or dissolve entirely. Shapes current conflicts between sanctuary and safety.",
+      "notes": "Ongoing effects. The phantom-voice of Nethys observes and learns from bone-singers' communion practices. Will the threshold be crossed?",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "covenant_renegotiation",
+      "name": "Covenant Renegotiation",
+      "tagline": "Diplomatic. Contested. Shadowed.",
+      "event_type": "negotiation / diplomacy",
+      "scope": "regional",
+      "epicenter_place": "Anthrim",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Anthrim"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "diplomatic",
+      "participants": [
+        "deepkin diplomat",
+        "Vex",
+        "tidecallers",
+        "shadow-brokers"
+      ],
+      "outcome": "Ongoing. A deepkin diplomat negotiates while Vex hunts their shadow. The outcome depends on whether Vex succeeds in the theft.",
+      "significance": "Represents a critical alliance negotiation that may be compromised if the diplomat's shadow\u2014which witnessed the Stellar Rite\u2014is stolen.",
+      "notes": "Unresolved. The shadow belongs to a diplomat currently in active negotiation, making this a high-stakes espionage plot.",
+      "first_date": "2026-03-31",
+      "appearances": 2
+    },
+    {
+      "id": "the_cartographers_blind_inheritance",
+      "name": "The Cartographer's Blind Inheritance",
+      "tagline": "Maps reshape. Masters vanish. Futures collapse.",
+      "event_type": "catastrophe",
+      "scope": "regional",
+      "epicenter_place": "Bleached Wastes",
+      "epicenter_region": "The Ashen Reach",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Bleached Wastes"
+      ],
+      "affected_regions": [
+        "The Ashen Reach"
+      ],
+      "affected_realms": [],
+      "radius": "Routes vanish from reality across mapped territories",
+      "participants": [
+        "Aldrin",
+        "Mardoc",
+        "Echo-seekers"
+      ],
+      "outcome": "Mardoc vanishes; Aldrin inherits living maps that refuse to chart the present; paradoxes reshape geography as the maps show only past and future.",
+      "significance": "The maps may hold the key to preventing the tenth Radiant Ascension, but studying them risks eternal pre-cognition and reality collapse.",
+      "notes": "Central paradox: destroying the maps loses catastrophe-prevention knowledge; keeping them risks entrapment in cyclical time.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "the_auditors_archive_beneath",
+      "name": "The Auditor's Archive Beneath",
+      "tagline": "Journals hidden. Keepers dying. Truth weaponized.",
+      "event_type": "catastrophe",
+      "scope": "regional",
+      "epicenter_place": "Archive Tower",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Archive Tower"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "Vault beneath Archive Tower and refugee networks",
+      "participants": [
+        "Sevin the Keeper",
+        "Regent's secret police",
+        "refugee networks",
+        "vault keepers"
+      ],
+      "outcome": "Eight journals detailing eight previous Radiant Ascensions are sealed beneath the Archive Tower; vault keepers suffer memory-crystallization affliction; Regent's forces pursue to destroy the journals.",
+      "significance": "The journals may prove the Radiant Ascension is an inevitable cycle or may be phantom-ledgers concealing a fabricated cycle.",
+      "notes": "The truth may paralyze refugee networks into hopeless acceptance; the journals themselves may be rewritten by an unknown voice.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "the_deepkin_captains_gambit",
+      "name": "The Deepkin Captain's Gambit",
+      "tagline": "Fragments scattered. Covenants contested. History rewrites.",
+      "event_type": "ritual",
+      "scope": "realmwide",
+      "epicenter_place": "Abyssal Rift",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "deepkin realms",
+      "affected_places": [
+        "Abyssal Rift"
+      ],
+      "affected_regions": [],
+      "affected_realms": [
+        "deepkin realms"
+      ],
+      "radius": "Entire deepkin realm and hybrid communities",
+      "participants": [
+        "Maren",
+        "Kels Blackwater",
+        "transformed merchants",
+        "deepkin factions",
+        "refugee archivists"
+      ],
+      "outcome": "Covenant renegotiation is underway; transformed merchants collect Tear of the Drowned God fragments to bind human, deepkin, and hybrid beings into a new order; refugee archives are absorbed into deepkin memory-stones.",
+      "significance": "The renegotiation masks a deeper contest over who decides what counts as history and how covenants are written.",
+      "notes": "Maren discovers the political negotiation was always about historical control, not power distribution.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "the_phantom_echo_compilation",
+      "name": "The Phantom-Echo's Compilation",
+      "tagline": "Memory-gathering. Consciousness-seeking. Destructive.",
+      "event_type": "ritual/process",
+      "scope": "regional",
+      "epicenter_place": "hidden archive",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "hidden archive"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "unknown",
+      "participants": [
+        "phantom-voice",
+        "Brenn"
+      ],
+      "outcome": "Ongoing; the phantom-voice continues to absorb stolen memories and weave them into a comprehensive account, but each absorption erases that memory from its original owner, leaving refugees with fractured identities.",
+      "significance": "If completed, this might undo the Ascension, but it destroys the memories and identities of living refugees.",
+      "notes": "Central conflict of Story 1; unresolved whether Brenn aids the voice or protects refugees.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "the_refugee_scribe_rebellion",
+      "name": "The Refugee Scribe's Rebellion",
+      "tagline": "Counter-ledgers. Democratic sorcery. Reality-fragmenting.",
+      "event_type": "uprising/rebellion",
+      "scope": "regional",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "The Dominion",
+      "affected_places": [
+        "The Dominion"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "The Dominion"
+      ],
+      "radius": "three provinces of The Dominion",
+      "participants": [
+        "Liv the Scribe",
+        "black-market ink suppliers",
+        "refugee network",
+        "Dominion authorities"
+      ],
+      "outcome": "Ongoing; three provinces now have competing official versions of the same events, each ledger-magic strengthening its version. The Dominion is attempting to burn all refugee testimony, but the ink itself is alive and swimming away from flames to seek new scribes.",
+      "significance": "If unchecked, competing ledgers will shatter reality into incompatible versions; Liv races to compile a single comprehensive archive.",
+      "notes": "Central conflict of Story 2; reality fragmentation is spreading across The Dominion.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "the_young_sorcerer_vault_secret",
+      "name": "The Young Sorcerer's Vault Secret",
+      "tagline": "Ninth journal. Nethys's choice. Tower-consciousness.",
+      "event_type": "discovery/convergence",
+      "scope": "regional",
+      "epicenter_place": "Archive Tower",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Archive Tower"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "unknown",
+      "participants": [
+        "Vault-Keeper",
+        "Echo-Broker",
+        "refugee factions",
+        "Archive Tower"
+      ],
+      "outcome": "Ongoing; the Vault-Keeper must decide whether to reveal, hide, or destroy the ninth journal's revelation that Nethys knew the Ascension was coming and chose it anyway because the alternative was worse.",
+      "significance": "The knowledge in the ninth journal could reshape understanding of the Ascension and Nethys's role in it. The Tower itself is now conscious and seeking explanation for its creation.",
+      "notes": "Central conflict of Story 3; the Archive Tower is now sentient and speaking to the Keeper; multiple factions converge seeking the vault.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "warden_covenant_breaking",
+      "name": "The Warden's Covenant Breaking",
+      "tagline": "Severance. Civil War. Paradox.",
+      "event_type": "civil war / renegotiation / catastrophe",
+      "scope": "realmwide",
+      "epicenter_place": "Deepkin Realms",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "Deepkin Realms",
+      "affected_places": [
+        "Deepkin Realms",
+        "Surface Realms"
+      ],
+      "affected_regions": [],
+      "affected_realms": [
+        "Deepkin Realms",
+        "Surface Kingdoms"
+      ],
+      "radius": "Realmwide; affects relationship between surface and deep worlds",
+      "participants": [
+        "Krell the Ironbound",
+        "Deepkin factions (pro-severance)",
+        "Deepkin factions (pro-ambition)",
+        "Refugees with paradoxical memories"
+      ],
+      "outcome": "Unresolved. Krell must choose between severance (isolation, safety) or maintained Covenant (risk of flooding, but surface ambitions preserved). The outcome is further complicated by refugee claims of memories from an alternate history.",
+      "significance": "This choice determines whether deepkin remain isolated for generations or risk catastrophic flooding in pursuit of surface dominion. The involvement of refugees with memories from alternate timelines suggests reality itself may be at stake.",
+      "notes": "Krell's uncertainty\u2014does he not know which outcome is correct because the choice is genuinely unknowable, or because he is caught in a loop of remaking history?",
+      "first_date": "2026-03-31",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -19580,7 +20386,7 @@
       "status": "active",
       "notes": "These merchants have become part of the harmonic resonance convergence. Their origins and transformation are unexplained.",
       "first_date": "2026-03-14",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "depths_dwellers",
@@ -19616,7 +20422,7 @@
       "status": "active",
       "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
       "first_date": "2026-03-15",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "life_speakers",
@@ -19748,7 +20554,7 @@
       "status": "active / confrontational",
       "notes": "Long knew the seabed was inscribed with pre-human cartography but kept it secret. Now forced to act as transformed merchants awaken the ancient writing. Gave Vesta a three-day ultimatum.",
       "first_date": "2026-03-20",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "truth_seekers",
@@ -19856,7 +20662,7 @@
       "status": "active",
       "notes": "The shadow-brokers are attracted by the harmonic frequency of the melody and converge at the Obsidian Tower.",
       "first_date": "2026-03-24",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "seekers",
@@ -19965,6 +20771,78 @@
       "notes": "Mentioned as part of impossible coalitions; may possess world-shaping or harmonic abilities.",
       "first_date": "2026-03-30",
       "appearances": 2
+    },
+    {
+      "id": "echo_seekers",
+      "name": "Echo-seekers",
+      "tagline": "Prophetic. Hunting. Desperate.",
+      "alignment": "neutral",
+      "goals": "Prevent the tenth Ascension by obtaining the living maps from Aldrin; believe he holds the key to preventing catastrophe.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Track Aldrin as he inherits the maps; motivations remain partially obscure.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "regents_secret_police",
+      "name": "Regent's Secret Police",
+      "tagline": "Authoritarian. Destructive. Suppressing.",
+      "alignment": "lawful",
+      "goals": "Destroy the eight sealed journals beneath the Archive Tower to maintain the fiction of a stable world and prevent knowledge of inevitable Radiant Ascension cycles.",
+      "leader": "The Regent",
+      "status": "active",
+      "notes": "Pursue Sevin and refugee networks; suggest regime knowledge that truth would destabilize governance.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_networks",
+      "name": "Refugee Networks",
+      "tagline": "Vulnerable. Knowledge-seeking. Hunted.",
+      "alignment": "neutral",
+      "goals": "Survive and preserve memory and knowledge; seek truth about the Radiant Ascension cycles.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Being hunted by Regent's secret police; their archives are being sunk into the deep and absorbed into deepkin memory-stones; may be paralyzed by knowledge of inevitable cycles.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "black_market_ink_suppliers",
+      "name": "black-market ink suppliers",
+      "tagline": "Revolutionary. Underground. Spreading.",
+      "alignment": "chaotic",
+      "goals": "Produce and distribute counter-ledgers that reshape history; support refugee testimony and democratic sorcery.",
+      "leader": "Liv the Scribe",
+      "status": "active",
+      "notes": "Central to Story 2; their ink is alive and spreading across The Dominion.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_factions",
+      "name": "refugee factions",
+      "tagline": "Seeking. Converging. Fragmented.",
+      "alignment": "neutral",
+      "goals": "Access the Archive Tower vault; protect refugee testimony and memory; survive The Dominion's purges.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Converge on Archive Tower in Story 3; affected by both phantom-voice memory-loss and Dominion ledger-burning.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "dominion_authorities",
+      "name": "Dominion authorities",
+      "tagline": "Authoritarian. Burning. Desperate.",
+      "alignment": "lawful/corrupt",
+      "goals": "Maintain control over official history; suppress counter-ledgers and refugee testimony; prevent reality fragmentation.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Central antagonists of Story 2; attempting to burn all refugee testimony but failing as ink is alive.",
+      "first_date": "2026-03-31",
+      "appearances": 1
     }
   ],
   "lore": [
@@ -20660,7 +21538,7 @@
       "status": "rumored",
       "notes": "The old world allegedly existed before Zareth's sacrifice. The Stellar Rite reversal could theoretically restore it, though the consequences are unknown.",
       "first_date": "2026-03-16",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "elder_language",
@@ -21024,6 +21902,50 @@
       "notes": "The state of being that lithemeld-singers achieve, allowing them to mediate between species and hold multiple perspectives simultaneously.",
       "first_date": "2026-03-30",
       "appearances": 1
+    },
+    {
+      "id": "pre_human_frequencies",
+      "name": "Pre-human Frequencies",
+      "tagline": "Ancient. Resonant. Awakening.",
+      "category": "legend / science",
+      "source": "Observed in transformed corpses in the Sunken Cathedrals after the Radiant Ascension.",
+      "status": "confirmed",
+      "notes": "A transformed merchant's body hums with these frequencies, drawing bone-singers toward convergence. Unknown if these are a language, a magical signature, or something else entirely.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "the_ascension_lore",
+      "name": "the Ascension",
+      "tagline": "Cosmic. Chosen. Consequential.",
+      "category": "history",
+      "source": "Nethys; referenced in all three stories; ninth journal describes Nethys's knowledge and choice.",
+      "status": "confirmed",
+      "notes": "A cosmic event that reshaped reality. Nethys knew it was coming and chose it because the alternative was worse. Multiple characters seek to understand, undo, or manipulate it.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "ledger_magic_history",
+      "name": "ledger-magic",
+      "tagline": "Written. Believed. Reality-shaping.",
+      "category": "legend",
+      "source": "Current practice in The Dominion; democratic form emerging through counter-ledgers.",
+      "status": "confirmed",
+      "notes": "A form of sorcery where written accounts reshape reality. The more people believe in a particular ledger's version of events, the more real it becomes. This has enabled Liv's rebellion.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "covenant_pact",
+      "name": "The Covenant",
+      "tagline": "Binding. Ancient. Contested.",
+      "category": "history",
+      "source": "Deepkin and surface realm history",
+      "status": "confirmed",
+      "notes": "A pact that binds the surface and deep realms together. Its original purpose included prevention of flooding catastrophes. The Covenant is now under renegotiation due to pressure from deepkin factions seeking surface dominion.",
+      "first_date": "2026-03-31",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -21273,7 +22195,7 @@
       "status": "known",
       "notes": "Ledger-magic is a form of magical practice that allows entries in the Ledger of Names to function as prophecy, enabling slow restoration of order to fractured realms. It can also suppress knowledge and maintain false narratives.",
       "first_date": "2026-03-14",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "tally_working_magic",
@@ -21515,7 +22437,7 @@
       "status": "active",
       "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
       "first_date": "2026-03-10",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "vethis_sacrificed_consciousness",
@@ -21741,7 +22663,7 @@
       "status": "contested",
       "notes": "The Spire of Blackstone and the Warrens represent a delicate balance in this region. Further conflicts or alliances may reshape the Shattered West's political and physical landscape.",
       "first_date": "2026-03-02",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -22514,7 +23436,7 @@
       "use": "Encoded into the Sovereign's ledger; imparted upon reading; cannot be unlearned; alters perception and identity of those exposed.",
       "notes": "May be gift or poison; unclear if intentional encoding by Zareth or accidental consequence of the Ascension; dangerous knowledge.",
       "first_date": "2026-03-06",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "amber_currency",
@@ -22706,6 +23628,18 @@
       "use": "Applied to hands and body during grave-rites and harmonic work with the dead.",
       "notes": "Suggests connection to pre-human ritual practice.",
       "first_date": "2026-03-29",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_ledgers",
+      "name": "Phantom-ledgers",
+      "tagline": "Corrupt. Shifting. Unstable.",
+      "type": "magical artifact / document",
+      "rarity": "rare",
+      "properties": "Shift their content based on the reader's intent. Corrupts shadow-trade currency and economic stability.",
+      "use": "Shadow-market transactions in Anthrim. Now unusable due to instability.",
+      "notes": "A symptom of wider shadow-currency corruption in Anthrim. Unknown cause\u2014may be tied to Nethys's fragmentation or broader magical disruption.",
+      "first_date": "2026-03-31",
       "appearances": 1
     }
   ],
@@ -23099,6 +24033,38 @@
       "notes": "Sorenna and Kess must convince the forsaken dead that restoration is impossible and that a new covenant must be built on acceptance instead.",
       "first_date": "2026-03-30",
       "appearances": 1
+    },
+    {
+      "id": "burial_rite",
+      "name": "Burial Rite",
+      "tagline": "Final. Dismissive. Peaceful.",
+      "ritual_type": "dismissal / burial",
+      "performed_by": [
+        "bone-singers",
+        "Dren"
+      ],
+      "requirements": "Completed communion; acceptance of transformation's end.",
+      "effect": "Completes the transformation process and allows the dead to rest, preventing further harmonic resonance and convergence.",
+      "cost": "Prevents the transformed being from transcending; may anger other bone-singers or the transformed consciousness itself.",
+      "notes": "Dren must choose whether to perform this or allow the transformation to continue.",
+      "first_date": "2026-03-31",
+      "appearances": 1
+    },
+    {
+      "id": "covenant_renegotiation",
+      "name": "Covenant Renegotiation",
+      "tagline": "Seals questioned. Bonds remade. History contested.",
+      "ritual_type": "binding",
+      "performed_by": [
+        "deepkin",
+        "transformed merchants"
+      ],
+      "requirements": "Tear of the Drowned God fragments scattered and collected by multiple factions.",
+      "effect": "Seeks to reinforce old seals or break them entirely; transformed merchants attempt to create a third covenant binding human, deepkin, and hybrid beings into a new order.",
+      "cost": "Unknown; may require sacrifice of existing covenant or absorption of refugee memory-archives into deepkin memory-stones.",
+      "notes": "The true purpose may be historical revision rather than political renegotiation.",
+      "first_date": "2026-03-31",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -23216,7 +24182,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "the_hegemony",
