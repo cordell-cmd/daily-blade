@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-04-03",
+  "last_updated": "2026-04-04",
   "worlds": [
     {
       "id": "known_world",
@@ -1201,7 +1201,7 @@
       "notes": "His acceptance of the oath binds him to the dragon's daughter and their hybrid line. The counter-oath he swore creates a precedent for wyvern-blooded heirs to have free choice.\nThe story clarifies that Aldren's original oath-debt to Skyrakis originated three centuries ago through his grandmother's blood-marriage; Elara's diplomatic intervention demonstrates the family's strategic negotiation style and establishes precedent for transforming cosmic debts into functional pacts.",
       "first_story": "The Dragon's Bargain",
       "first_date": "2026-02-28",
-      "appearances": 3,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-03-19",
@@ -5408,10 +5408,10 @@
       "affiliations": [
         "Meren Blackwater"
       ],
-      "notes": "unknown",
+      "notes": "His simple act of holding Lyssa above the tide breaks an otherworldly pact; his role as anchor or catalyst in larger events is unclear.",
       "first_story": "The Corsair's Compass",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "thira",
@@ -8022,7 +8022,8 @@
       "id": "transmuted_merchant",
       "name": "Transmuted Merchant",
       "aliases": [
-        "The merchant"
+        "The merchant",
+        "The Merchant"
       ],
       "tagline": "Changed. Singing. Infectious.",
       "role": "Transformed being / Carrier",
@@ -8048,7 +8049,7 @@
       "notes": "Marta feels the singing promise that all names\u2014written or unwritten\u2014will eventually be called. The transmutation appears linked to the Starborn Ascension event.",
       "first_story": "The Refugee's Ledger",
       "first_date": "2026-03-17",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "the_archmage",
@@ -9581,7 +9582,7 @@
       "notes": "His transformation is arrested but not reversed; the Cathedrals' song now carries dissonance from his presence.\nExtends his role as hybrid translator and witness to pre-human consciousness; deepens entanglement with awakening entities.",
       "first_story": "The Transformed Merchant's Choice",
       "first_date": "2026-03-21",
-      "appearances": 5,
+      "appearances": 6,
       "status_history": [
         {
           "date": "2026-03-26",
@@ -12910,6 +12911,474 @@
       "first_story": "The Drowned God's Anchor Breaks",
       "first_date": "2026-04-03",
       "appearances": 1
+    },
+    {
+      "id": "castor_vane",
+      "name": "Castor Vane",
+      "aliases": [
+        "Castor"
+      ],
+      "tagline": "Shrewd. Principled. Trader.",
+      "role": "Spice-runner, Caravan Master",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A spice-runner with a reputation for impossible deliveries, Castor accepts what appears to be a straightforward contract to haul saffron and starflower to Crimport. He discovers his employer has set up a deadly wager, betting on which of three captains will arrive fastest, with the others expected to be destroyed by dimensional instability. Rather than compete, Castor chooses principle over profit, dividing cargo with rival captains and arriving together.",
+      "traits": [
+        "principled",
+        "shrewd",
+        "collaborative",
+        "resourceful"
+      ],
+      "known_locations": [
+        "Crimport",
+        "Pale Waypost",
+        "Thornlands",
+        "Scorched Expanse"
+      ],
+      "affiliations": [
+        "Morra",
+        "rival captains"
+      ],
+      "notes": "Demonstrates that victory earned through shared honor tastes better than gold won through ruthlessness.",
+      "first_story": "The Spice-Runner's Gambit",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "morra",
+      "name": "Morra",
+      "aliases": [
+        "crewmate",
+        "fae-touched scout whose eyes read wind-currents like other folk read ledgers"
+      ],
+      "tagline": "Fae-touched. Wind-reader. Scout.",
+      "role": "Scout, Crewmate",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A fae-touched scout whose eyes read wind-currents like ledgers, Morra is Castor's crewmate and secret weapon. Her ability to navigate treacherous routes shaves days off the northern caravan path, skirting the Thornlands where refugees flee the Scorched Expanse's collapse.",
+      "traits": [
+        "fae-touched",
+        "perceptive",
+        "skilled navigator"
+      ],
+      "known_locations": [
+        "Thornlands",
+        "Scorched Expanse",
+        "Crimport"
+      ],
+      "affiliations": [
+        "Castor Vane"
+      ],
+      "notes": "Her techniques are teachable; Castor shares them with rival captains to ensure their survival.",
+      "first_story": "The Spice-Runner's Gambit",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "vrekka",
+      "name": "Vrekka",
+      "aliases": [
+        "Ironspine Mountains lived a wyvern"
+      ],
+      "tagline": "Ancient. Lonely. Starkeeper.",
+      "role": "Wyvern, Hoarder of Fragments",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Ironspine Mountains",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A wyvern who has lived in the Ironspine Mountains for centuries, collecting fragments of fallen old suns since the Sky-Shattering broke the heavens. Believing that gathering enough fragments might help her understand what was lost, she agrees to a year-long bargain with scholar Aldren, gradually learning to open her cavern and share her hoard.",
+      "traits": [
+        "ancient",
+        "lonely",
+        "obsessive",
+        "eventually generous"
+      ],
+      "known_locations": [
+        "Ironspine Mountains"
+      ],
+      "affiliations": [
+        "Aldren"
+      ],
+      "notes": "Her cavern is filled with star fragments that hum in harmonic resonance, each note a memory of the old cosmos; she eventually chooses to share her treasures with the world.",
+      "first_story": "The Wyvern's Nest-Egg",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "thom_bronzelock",
+      "name": "Thom Bronzelock",
+      "aliases": [
+        "Thom"
+      ],
+      "tagline": "Cunning. Unafraid. Transformed.",
+      "role": "Locksmith, Scholar of Locks",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Hearthlands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A locksmith who has opened every door in the Hearthlands except one: the Sovereign's Treasury, sealed with bone-carving sigils predating kingdoms. He accepts a wager from Sorrath to open it, discovering the lock guards not treasure but a binding\u2014proof that the throne was won through necromancy. Sorrath takes his right hand in payment, but it transforms into marble that can sense lock-heartbeats through intricate mechanisms.",
+      "traits": [
+        "clever",
+        "bold",
+        "learned",
+        "resilient"
+      ],
+      "known_locations": [
+        "Hearthlands",
+        "Sovereign's Treasury"
+      ],
+      "affiliations": [
+        "Sorrath"
+      ],
+      "notes": "His marble hand becomes an unexpected gift, making him the most sought-after locksmith in the realm and the only one able to open forbidden archive doors. A curse becomes a crown.",
+      "first_story": "The Locksmith's Debt",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "sorrath",
+      "name": "Sorrath",
+      "aliases": [
+        "demon-collector"
+      ],
+      "tagline": "Collector. Greedy. Spiteful.",
+      "role": "Demon-collector, Wager-master",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Hearthlands",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A demon-collector who offers Thom Bronzelock a wager: crack the Sovereign's Treasury lock in exchange for enough gold to buy a kingdom, or lose his hands to stone. When Thom opens the lock only to find a binding proving the throne's necromantic origin rather than treasure, Sorrath screams in rage and takes Thom's hand anyway.",
+      "traits": [
+        "greedy",
+        "vengeful",
+        "supernatural"
+      ],
+      "known_locations": [
+        "Hearthlands"
+      ],
+      "affiliations": [
+        "Thom Bronzelock"
+      ],
+      "notes": "His wager reveals he was seeking gold, not truth; his reaction to the revelation shows his true motivations. The stone-hand curse he places becomes more blessing than curse for Thom.",
+      "first_story": "The Locksmith's Debt",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "captain_lyssa",
+      "name": "Captain Lyssa",
+      "aliases": [
+        "Lyssa",
+        "Lyssa of the Jade Coast"
+      ],
+      "tagline": "Cursed. Grieving. Freed.",
+      "role": "Merchant Captain, Tidecaller",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Captain Lyssa commands a merchant-vessel with the rare gift to read tides and navigate cursed waters. Years ago, her betrothed drowned during the Sky-Shattering, and in her grief she swore a love-oath with a tide-spirit for the power to find the lost at sea. Every anniversary of his death, the spirit calls her deeper into the Abyssal Trench, until Koss helps her choose living over drowning.",
+      "traits": [
+        "tide-reading gift",
+        "bargain-bound",
+        "grieving",
+        "resilient",
+        "sea-farer"
+      ],
+      "known_locations": [
+        "Jade Coast",
+        "Deepvaults",
+        "Abyssal Trench"
+      ],
+      "affiliations": [
+        "Koss",
+        "tide-spirit"
+      ],
+      "notes": "Her love-oath curse is broken by choosing life; unresolved thread is whether the tide-spirit will accept this severance or if deeper debts remain.",
+      "first_story": "The Tidecaller's Choice",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "tavin_mapmaker",
+      "name": "Tavin Mapmaker",
+      "aliases": [
+        "Tavin"
+      ],
+      "tagline": "Deceiver. Teacher. Haunted.",
+      "role": "Cartographer, Rebel",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Dominion",
+      "travel_scope": "realmwide",
+      "bio": "Tavin was apprenticed to the Dominion's Royal Cartographer for a decade. After the Sky-Shattering broke the stars and remade the world's geography, he realized the old maps were lies meant to control travel. He stole prescient charts and fled to refugee camps in the Thornlands, teaching exiles to navigate the transformed landscape.",
+      "traits": [
+        "skilled cartographer",
+        "disillusioned",
+        "resourceful",
+        "deceptive",
+        "guilt-ridden"
+      ],
+      "known_locations": [
+        "Thornlands",
+        "Dominion"
+      ],
+      "affiliations": [
+        "Dominion's Royal Cartographer (former)",
+        "refugee camp students",
+        "Seekers (adversaries)"
+      ],
+      "notes": "He created a false map to trap the Seekers pursuing him; the victory haunts him because he knows deception is now his only weapon. Unresolved: whether the false path truly traps the Seekers or if they will return.",
+      "first_story": "The Cartographer's Betrayal",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "old_marrik",
+      "name": "Old Marrik",
+      "aliases": [
+        "Marrik"
+      ],
+      "tagline": "Carver. Hermit. Remorseful.",
+      "role": "Bone-Carver, Hermit",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Old Marrik lives alone in the Sunken Marches and carves bone with exceptional skill\u2014flutes, combs, ritual tools sought by bone-singers. Decades ago, she made a bargain to embed voices in her work, but one carving sang its summoner to madness. She refuses new commissions until a weeping mother forces her to help.",
+      "traits": [
+        "master carver",
+        "haunted by past bargains",
+        "compassionate despite trauma",
+        "isolated",
+        "remorseful"
+      ],
+      "known_locations": [
+        "Sunken Marches"
+      ],
+      "affiliations": [
+        "bone-singers (clients)",
+        "weeping mother (story subject)"
+      ],
+      "notes": "She destroys her gift-carved tools and re-forges humble ones, choosing mercy over power. The mother's fate after being saved is unclear; unresolved thread is whether the voice-carving curse lingers in the land.",
+      "first_story": "The Bone-Carver's Gift",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "king_marthuk",
+      "name": "King Marthuk",
+      "aliases": [
+        "Marthuk",
+        "Marthuk of the Warrens"
+      ],
+      "tagline": "Obsessed. Dethroned. Redeemed.",
+      "role": "King, Goblin Monarch",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Warrens",
+      "home_region": "unknown",
+      "home_realm": "Goblin Warrens",
+      "travel_scope": "local",
+      "bio": "King Marthuk ruled the goblin nation for three centuries through compulsive enumeration and ledger-keeping, believing absolute counting was sacred. When the Sky-Shattering made census-magic unstable, he refused to adapt, clinging to his old system. After his abdication to Skett, he lived out his days as a simple miner, discovering joy in work without enumeration.",
+      "traits": [
+        "obsessive",
+        "proud",
+        "rigid",
+        "eventually adaptable"
+      ],
+      "known_locations": [
+        "Warrens",
+        "deepest warren"
+      ],
+      "affiliations": [
+        "Goblin Warrens",
+        "Skett"
+      ],
+      "notes": "His abdication marks a philosophical turning point for goblin governance. He represents the cost of refusing to adapt to cosmic change.",
+      "first_story": "The Goblin-King's Census",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "skett",
+      "name": "Skett",
+      "aliases": [
+        "Skett the Auditor-Goblin",
+        "Skett the King",
+        "young auditor-goblin"
+      ],
+      "tagline": "Visionary. Imprisoned. Triumphant.",
+      "role": "Auditor-Goblin, King",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Warrens",
+      "home_region": "unknown",
+      "home_realm": "Goblin Warrens",
+      "travel_scope": "local",
+      "bio": "A young auditor-goblin who proposed an alternative to Marthuk's counting obsession: operate by memory and trust instead. Imprisoned for his heretical idea, he inspired younger goblins to abandon ledger-based management. Upon his release and succession, he stored the old ledgers as monuments and governed by consensus and instinct.",
+      "traits": [
+        "visionary",
+        "pragmatic",
+        "inspirational",
+        "memory-focused"
+      ],
+      "known_locations": [
+        "Warrens",
+        "deepest warren vault"
+      ],
+      "affiliations": [
+        "Goblin Warrens",
+        "younger goblins"
+      ],
+      "notes": "Represents a new age of goblin governance post-Sky-Shattering. His mercy toward the old ledgers suggests belief in learning from the past.",
+      "first_story": "The Goblin-King's Census",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "moravin",
+      "name": "Moravin",
+      "aliases": [],
+      "tagline": "Regent. Strategic. Courageous.",
+      "role": "Regent, Fortress Commander",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Blackthorn",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Moravin held Blackthorn fortress for five years as regent after the death of her husband, the warlord Corvus. When the Sky-Shattering fractured the fortress's ward-stones, she chose to dismantle them and redistribute their power to soldiers rather than restore them defensively. She rebuilt Blackthorn anew, making it legendary for mortal courage rather than ancient magic.",
+      "traits": [
+        "strategic",
+        "adaptable",
+        "bold",
+        "compassionate toward tradition"
+      ],
+      "known_locations": [
+        "Blackthorn"
+      ],
+      "affiliations": [
+        "Blackthorn",
+        "Corvus",
+        "council"
+      ],
+      "notes": "Her choice to embrace mortal ingenuity over magical restoration represents a major philosophical shift in post-Shattering defense strategy.",
+      "first_story": "The Warlord's Last Stand",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "master_tyreth",
+      "name": "Master Tyreth",
+      "aliases": [
+        "Tyreth",
+        "Master Tyreth the Alchemist"
+      ],
+      "tagline": "Healer. Exiled. Revelatory.",
+      "role": "Court Alchemist, Wanderer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Ashen Reach",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "A court alchemist who served for forty years, brewing restoration draughts that healed poison, plague, and age. When he refused to explain why he would not create a life-extending draught despite its success, he was stripped of his position and exiled to the Ashen Wastes. In a shadow-sand cave, he unmade every potion he had ever brewed to understand their true cost, emerging as an old man devoted to teaching the moral weight of alchemy.",
+      "traits": [
+        "ethical",
+        "deeply reflective",
+        "uncompromising",
+        "didactic"
+      ],
+      "known_locations": [
+        "court",
+        "Ashen Wastes",
+        "cave"
+      ],
+      "affiliations": [
+        "court",
+        "minor mages and alchemists"
+      ],
+      "notes": "His unmaking ritual is a profound exploration of restoration magic's true price. Some hated his teachings; others wept. His journey suggests alchemy cannot be practiced without confronting its human cost.",
+      "first_story": "The Alchemist's Unmaking",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "corrin",
+      "name": "Corrin",
+      "aliases": [
+        "shadow-broker"
+      ],
+      "tagline": "Broker. Conflicted. Healer.",
+      "role": "Shadow-Broker, Healer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Vethrim",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A shadow-broker of two generations in the night-markets of Vethrim, Corrin traded in stolen shadows, lost memories, and broken promises with dark but honest precision. After the Sky-Shattering fractured her inventory and destabilized shadow-dealing itself, she faced an impossible choice regarding a stolen shadow of courage. Rather than restore or release it, Corrin offered the merchant a choice between reclaiming his courage or building new courage from the ground up, then closed her business to become a healer.",
+      "traits": [
+        "pragmatic",
+        "compassionate",
+        "conflicted",
+        "wise"
+      ],
+      "known_locations": [
+        "Vethrim"
+      ],
+      "affiliations": [
+        "shadow-market",
+        "night-markets"
+      ],
+      "notes": "Corrin's decision to close her shadow-brokering business and become a healer suggests a fundamental shift in her understanding of prices, ownership, and healing. The stolen courage that screamed represents the unintended consciousness and agency shadow-dealing can create.",
+      "first_story": "The Shadow-Market's Last Deal",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "abyssal_trench",
+      "name": "Abyssal Trench",
+      "aliases": [
+        "water singing her drowned love's name"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Water Singing Her Drowned Love'S Name",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named water singing her drowned love's name explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Tidecaller's Choice",
+      "first_date": "2026-04-04",
+      "appearances": 1
     }
   ],
   "places": [
@@ -14180,7 +14649,7 @@
       "status": "active",
       "notes": "Hub of magical commerce; affected by changes in stellar light from the Stellar Rite.",
       "first_date": "2026-03-04",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "bleached_wastes",
@@ -15033,7 +15502,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-12",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "obsidian_tower",
@@ -15489,7 +15958,7 @@
       "status": "active",
       "notes": "Part of the macro-region known as the Scorched Reach in Valdris.",
       "first_date": "2026-03-17",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "civilized_reaches",
@@ -16366,7 +16835,7 @@
       "status": "active",
       "notes": "Corvhen's mother stepped into the Hearthlands with all its chaos after her release.",
       "first_date": "2026-03-29",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "obsidian_spire",
@@ -16680,6 +17149,86 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-04-03",
+      "appearances": 1
+    },
+    {
+      "id": "crimport",
+      "name": "Crimport",
+      "tagline": "Coastal. Commercial. Wintery.",
+      "place_type": "city",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A bustling coastal hub where merchants converge and winter threatens to seal mountain passes.",
+      "description": "A coastal city serving as the destination for Castor Vane's caravan run. The city lies beyond a mountain pass that becomes impassable in winter, making pre-season delivery contracts lucrative and dangerous.",
+      "status": "active",
+      "notes": "Three caravans arrive together here at the end of Castor's story, sharing the same manifest and delivered honor.",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "pale_waypost",
+      "name": "Pale Waypost",
+      "tagline": "Remote. Revelatory. Trade-hub.",
+      "place_type": "waypost",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A frontier outpost where hidden truths about merchant contracts are revealed.",
+      "description": "A waypost along the northern caravan route where Castor learns that his employer deliberately sent three caravans by different paths, hoping one would be destroyed by dimensional instability in the region.",
+      "status": "active",
+      "notes": "The turning point of Castor's story; marked by dimensional instability that threatens caravans.",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "thornlands",
+      "name": "Thornlands",
+      "tagline": "Dangerous. Refugee-filled. Skirted.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A perilous borderland where the displaced and desperate flee collapsed lands.",
+      "description": "A dangerous region that the northern caravan route skirted, where refugees fled the Scorched Expanse's collapse.",
+      "status": "active",
+      "notes": "A refuge for those fleeing the Scorched Expanse; location of fleeing refugee populations.",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "ironspine_mountains",
+      "name": "Ironspine Mountains",
+      "tagline": "Ancient. Starlit. Wyvern-haunted.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A remote mountain chain where an ancient wyvern guards a cavern filled with star-fragments and cosmic memory.",
+      "description": "A mountain range in Valdris where the wyvern Vrekka has lived for centuries in a cavern filled with star fragments. High in these mountains, light pours like song when the cavern opens.",
+      "status": "active",
+      "notes": "Home to Vrekka's hoard; location of falling star fragments post-Sky-Shattering; site of scholar-wyvern bargain.",
+      "first_date": "2026-04-04",
       "appearances": 1
     }
   ],
@@ -21019,6 +21568,81 @@
       "notes": "The archive becomes free but worthless\u2014true but unable to be weaponized by the Dominion or the Tower's hunger for singular truth.",
       "first_date": "2026-04-03",
       "appearances": 1
+    },
+    {
+      "id": "sky_shattering",
+      "name": "Sky-Shattering",
+      "tagline": "Cosmic. Catastrophic. Ancient.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Ironspine Mountains"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "World-wide; heavens broken",
+      "participants": [
+        "unknown"
+      ],
+      "outcome": "The heavens were broken; old suns fell as fragments; the world's cosmology was shattered.",
+      "significance": "A foundational catastrophe that broke the old cosmos and left fragments scattered across the world for wyverns and scholars to recover.",
+      "notes": "Occurred in the distant past; Vrekka has been collecting fallen star fragments since this event, believing they hold memories of the old cosmos.",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "the_sky_shattering",
+      "name": "The Sky-Shattering",
+      "tagline": "Fracture. Chaos. Awakening.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "Vethrim",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Vethrim"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "unknown; at minimum affects Vethrim and the shadow-market",
+      "participants": [],
+      "outcome": "Shadows became unstable, some claiming consciousness and others fragmenting into contradictory pieces. The shadow-market itself was fractured, rendering normal shadow-dealing practices unstable and forcing inventory to rebel against brokers.",
+      "significance": "The Sky-Shattering represents a fundamental rupture in the fabric of shadow-magic and shadow-dealing, granting agency to stolen things and destabilizing a centuries-old practice.",
+      "notes": "The exact cause and nature of the Sky-Shattering are not explained in this story; it appears to be a world-level event with metaphysical consequences for shadow-magic.",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_market_s_last_deal",
+      "name": "The Shadow-Market's Last Deal",
+      "tagline": "Choice. Mercy. Closure.",
+      "event_type": "transaction",
+      "scope": "city",
+      "epicenter_place": "Vethrim",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Vethrim"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "local to the night-markets of Vethrim",
+      "participants": [
+        "Corrin",
+        "The Merchant"
+      ],
+      "outcome": "Corrin offered the merchant an unprecedented choice: reclaim his stolen courage or build new courage from the ground up. The merchant chose the latter, the stolen shadow dissolved into the night-markets, and Corrin closed her business to become a healer.",
+      "significance": "This deal marks a turning point in shadow-brokering practice and in Corrin's personal journey, suggesting a new paradigm for dealing with stolen things that have gained agency.",
+      "notes": "This event is described as 'The Shadow-Market's Last Deal' in the title, implying it may represent the end of an era of shadow-brokering or at least Corrin's involvement.",
+      "first_date": "2026-04-04",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -21453,7 +22077,7 @@
       "status": "collapsed",
       "notes": "The shadow-market has collapsed because the Luminous Ascension has made all debts personal again. Shadows are no longer reliable commodities.",
       "first_date": "2026-03-23",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "auditors",
@@ -21741,6 +22365,18 @@
       "status": "active",
       "notes": "The Dominion is hunting Liv's archive, attempting to suppress the documentation before multiplicities of truth destabilize reality. They represent institutional control of history.",
       "first_date": "2026-04-03",
+      "appearances": 1
+    },
+    {
+      "id": "night_markets",
+      "name": "Night-Markets",
+      "tagline": "Nocturnal. Underground. Shadowed.",
+      "alignment": "neutral",
+      "goals": "To provide a space for exchange of illicit and shadow-touched goods and services under the cover of darkness.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "The night-markets of Vethrim host the shadow-brokers and their trade. The Shadow-Shattering fractured these markets, making normal trading unstable.",
+      "first_date": "2026-04-04",
       "appearances": 1
     }
   ],
@@ -22911,6 +23547,39 @@
       "notes": "No single faction can weaponize or monopolize historical narrative after the Luminous Ascension. Truth becomes simultaneously free and worthless, usable by no one faction.",
       "first_date": "2026-04-03",
       "appearances": 1
+    },
+    {
+      "id": "sky_shattering_myth",
+      "name": "The Sky-Shattering",
+      "tagline": "Cosmic. Broken. Lost.",
+      "category": "history",
+      "source": "Vrekka's memory and observation; star fragments carry this knowledge",
+      "status": "confirmed",
+      "notes": "An ancient catastrophe that broke the heavens and scattered old suns as fragments. The cosmos was fundamentally altered; this event is old enough that wyverns have been collecting fragments for centuries.",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "dimensional_instability",
+      "name": "Dimensional Instability",
+      "tagline": "Supernatural. Dangerous. Regional.",
+      "category": "history",
+      "source": "Merchant-lord's knowledge; affecting caravan routes",
+      "status": "confirmed",
+      "notes": "A supernatural phenomenon ravaging the region around the Pale Waypost and caravan routes, capable of destroying shipments and caravans. Used by the merchant-lord as a weapon in his wager.",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "stolen_shadows",
+      "name": "Stolen Shadows",
+      "tagline": "Agency. Consciousness. Rebellion.",
+      "category": "myth",
+      "source": "The Shadow-Market's Last Deal",
+      "status": "confirmed",
+      "notes": "Shadows stolen as collateral (e.g., courage, hopes, memories) can become conscious and desperate entities, especially after the Sky-Shattering. They may resist being returned to their original owners or dissolved entirely, suggesting stolen shadows develop their own will and need.",
+      "first_date": "2026-04-04",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -22924,7 +23593,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "wolf_spirit_beast",
@@ -23535,6 +24204,18 @@
       "notes": "The central relic of the story. Their dual nature\u2014prophecy or instruction\u2014remains unresolved. Their destruction vs. study is the core choice Sevin must make.",
       "first_date": "2026-04-02",
       "appearances": 1
+    },
+    {
+      "id": "stolen_courage",
+      "name": "Stolen Courage",
+      "tagline": "Screaming. Desperate. Free.",
+      "origin": "Stolen from a merchant as collateral for a failed business venture, held in Corrin's vault.",
+      "power": "The stolen courage had gained agency, consciousness, and the ability to resist being returned to its original owner. It screamed and expressed desperation and a need to remain separate.",
+      "curse": "Once stolen and separated, the courage became a sentient entity aware of its own fragmentation and separation from its original owner, causing it suffering and a desperate need for independence.",
+      "status": "dissolved",
+      "notes": "This stolen shadow is the central relic of the story. After Corrin offered the merchant a choice, the merchant chose not to reclaim it, and the stolen courage dissolved into the night-markets 'like morning mist,' suggesting it was released or freed into a new form of existence.",
+      "first_date": "2026-04-04",
+      "appearances": 1
     }
   ],
   "regions": [
@@ -23949,7 +24630,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-06",
-      "appearances": 3,
+      "appearances": 4,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -24661,6 +25342,30 @@
       "notes": "A symptom of wider shadow-currency corruption in Anthrim. Unknown cause\u2014may be tied to Nethys's fragmentation or broader magical disruption.",
       "first_date": "2026-03-31",
       "appearances": 1
+    },
+    {
+      "id": "saffron",
+      "name": "Saffron",
+      "tagline": "Spice. Valuable. Trade-good.",
+      "type": "spice",
+      "rarity": "rare",
+      "properties": "A precious spice; valuable enough to be worth shipping before winter seals mountain passes.",
+      "use": "Trade commodity; culinary spice.",
+      "notes": "Part of Castor Vane's cargo shipment to Crimport.",
+      "first_date": "2026-04-04",
+      "appearances": 1
+    },
+    {
+      "id": "starflower",
+      "name": "Starflower",
+      "tagline": "Botanical. Valuable. Fragile.",
+      "type": "plant",
+      "rarity": "rare",
+      "properties": "A delicate plant or botanical product; valuable enough to warrant pre-winter delivery.",
+      "use": "Trade commodity; possibly medicinal or ceremonial.",
+      "notes": "Part of Castor Vane's cargo shipment to Crimport.",
+      "first_date": "2026-04-04",
+      "appearances": 1
     }
   ],
   "rituals": [
@@ -25136,7 +25841,7 @@
       "description": "A singular ruler or governing authority who assigned Zareth the Astronomer-Prince to records after he was found emptied of memory on the Peak of Aethros. The Sovereign's motivations\u2014whether to contain, preserve, or study Zareth\u2014are unknown.",
       "notes": "The Sovereign's identity, realm, and seat are all unknown. Their role in cosmic or astronomical governance is undefined. They may be a local lord, a distant emperor, or a mystical authority tied to the stars themselves.",
       "first_date": "2026-03-02",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "empire",

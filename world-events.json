@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-03T10:31:01.020541+00:00",
+  "generated_at": "2026-04-04T10:24:28.347036+00:00",
   "source": "codex.json",
   "intensity_min": 1,
   "intensity_max": 5,
@@ -15,8 +15,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-03",
-      "recent_issues": 11,
-      "trend": -1,
+      "recent_issues": 10,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "Burned Expanse",
@@ -104,8 +104,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-03",
-      "recent_issues": 11,
-      "trend": -1,
+      "recent_issues": 10,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "Corinth",
@@ -181,8 +181,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-03",
-      "recent_issues": 11,
-      "trend": 1,
+      "recent_issues": 10,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "cavern halls"
@@ -262,7 +262,7 @@
       "resolved": false,
       "last_seen": "2026-04-03",
       "recent_issues": 6,
-      "trend": 0,
+      "trend": 1,
       "referenced_locations": {
         "places": [
           "Vethrim",
@@ -336,42 +336,6 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "Tenth Ascension",
-      "tagline": "Imminent. Inevitable. Counting-down.",
-      "event_type": "catastrophe",
-      "scope": "world",
-      "epicenter": "Archive Tower",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-04-02",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Archive Tower"
-        ],
-        "regions": [
-          "all regions"
-        ],
-        "realms": [
-          "all realms"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-02",
-          "title": "The Young Sorcerer's Inherited Trap"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nThe Tenth Ascension began not with a bang but with an inheritance. An Apprentice-Sorcerer tasked with guarding the Archive Tower discovered that its vault of forbidden knowledge\u2014containing records of nine previous Luminous Ascensions\u2014was never truly sealed; the wards were inverted, designed to *invite* the worthy inside and trigger a countdown with each book opened. This revelation in \"The Young Sorcerer's Inherited Trap\" marked the turning point: by accepting guardianship, the Apprentice may have already sprung a trap laid by an Elder Mage who understood that the Ascension cycle accelerates with each iteration, drawing the next catastrophe ever closer. Now racing against time through shifting texts and contradictory histories, the Apprentice works with Echoing-Mind\u2014a fragment of the scattered consciousness of Zareth\u2014to decode the mechanism driving the cycle itself. The knowledge they seek is corrosive; understanding how the cycle works risks transforming them into components of the very machinery they're trying to stop. The event remains unresolved and actively rising, with the countdown now in motion across all realms.\n\nCURRENT STATE:\n- The Archive Tower is the epicenter of a world-spanning catastrophe in its rising stage (intensity 3 of 5)\n- An Apprentice-Sorcerer has triggered an accelerating countdown by engaging with sealed knowledge of previous Ascensions\n- The mechanism of the cycle itself remains partially understood, and the knowledge required to stop it is transformative and dangerous\n- The event trend is upward; time is actively running out\n\nOPEN THREADS:\n- What is the true purpose of the reversed wards, and who will they ultimately serve?\n- Can the Apprentice and Echoing-Mind decipher the cycle's mechanism before knowledge of it changes them beyond recognition?\n- What was the nature of the first sacrifice, and why does preventing a second one require understanding it?\n- Will the countdown reach critical mass before a solution is found?",
-      "arc_summary_last_seen": "2026-04-02",
-      "arc_summary_fingerprint": "8c6a21839dceef1c9f3fad646fb59a5056eabd29",
-      "arc_summary_updated_at": "2026-04-02T10:36:23.350648+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
       "name": "The Refugee Scribe's Final Archive",
       "tagline": "Truth rendered worthless. History weaponized against itself.",
       "event_type": "ritual completion",
@@ -404,21 +368,22 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "The Cartographer's Curse",
-      "tagline": "Maps reshape reality.",
-      "event_type": "cosmic anomaly / ritual working",
+      "name": "The Sky-Shattering",
+      "tagline": "Cosmic. Catastrophic. Ancient.",
+      "event_type": "catastrophe",
       "scope": "world",
-      "epicenter": "Obsidian Tower",
-      "stage": "simmering",
-      "intensity": 2,
+      "epicenter": "Vethrim",
+      "stage": "rising",
+      "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-03-21",
+      "last_seen": "2026-04-04",
       "recent_issues": 1,
-      "trend": 0,
+      "trend": 1,
       "referenced_locations": {
         "places": [
-          "The Tower",
-          "Obsidian Tower"
+          "Ironspine Mountains",
+          "market",
+          "Vethrim"
         ],
         "regions": [
           "unknown"
@@ -430,14 +395,34 @@
       },
       "story_appearances": [
         {
-          "date": "2026-03-21",
-          "title": "The Cartographer's Curse"
+          "date": "2026-04-04",
+          "title": "The Wyvern's Nest-Egg"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Tidecaller's Choice"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Cartographer's Betrayal"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Goblin-King's Census"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Warlord's Last Stand"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Shadow-Market's Last Deal"
         }
       ],
-      "arc_summary": "SUMMARY:\nThe Cartographer's Curse began when the explorer Mardoc discovered that his maps of the Obsidian Tower possessed a terrible power\u2014each completed section reshaped reality itself, shifting landscapes and watercourses to match his drawings. As his precision increased, Mardoc realized he was no longer documenting the Tower but actively architecting it, transforming himself from cartographer into cosmic architect. His work attracted two dangerous factions: truth-seekers who hoped his maps would unlock secrets of the Luminous Ascension, and Echo-fragments who feared his cartography might trigger a final convergence. Hearing the Tower's song bleeding through his own hands as he drew, Mardoc faced an impossible choice\u2014complete the map and risk anchoring reality into total convergence, or destroy his work and forfeit all knowledge of the path. In \"The Cartographer's Curse,\" Mardoc chose a third way: he created a deliberately flawed map, full of intentional errors that would guide seekers toward the Tower while protecting its true heart from discovery. The act cost him his sight but preserved human agency in a world threatened by his own knowledge.\n\nCURRENT STATE:\n- The Cartographer's Curse remains unresolved and actively rising in intensity\n- Mardoc has sacrificed his physical sight but created a safeguard\u2014an incomplete, intentionally erroneous map\n- Truth-seekers and Echo-fragments continue to pursue Mardoc and his work\n- The Obsidian Tower's relationship to reality remains unstable and contested\n\nOPEN THREADS:\n- What is the true nature of the Luminous Ascension and its connection to the Tower?\n- Will Mardoc's flawed map hold as a permanent safeguard, or will it eventually be deciphered?\n- What do the Echo-fragments ultimately intend, and which outcome would they prefer?\n- Can Mardoc navigate the world now that he is blind, and what will he do next?",
-      "arc_summary_last_seen": "2026-03-21",
-      "arc_summary_fingerprint": "22679693b0c208ffcfb9abc1215579cfad0ca843",
-      "arc_summary_updated_at": "2026-03-21T10:20:00.940062+00:00",
+      "arc_summary": "SUMMARY:\nThe Sky-Shattering broke the heavens and fractured the fundamental order of the world, shattering not only stars but the systems mortals relied upon\u2014maps became unstable, numbers unreliable, shadows conscious, tides unpredictable, ancient ward-stones cracked, and even the cosmos itself grew incomprehensible. Across the world, from the markets of Vethrim to the Ironspine Mountains, people and creatures faced a choice: cling to the old ways or build anew. In \"The Cartographer's Betrayal,\" Tavin discovered that the old certainties were lies and chose to teach others how to navigate a transformed landscape. The Goblin-King's Census showed that societies could thrive without the rigid systems that once defined them, while \"The Shadow-Market's Last Deal\" revealed that even the darkest bargains could be unmade when the world itself rebelled. Warlords like Moravin abandoned ancient defenses for human courage; captains like Lyssa broke magical bonds to live freely; and even a wyvern in the mountains learned to share her hoard of fallen stars. The catastrophe continues to unfold, its full scope still rising, reshaping the world's foundations.\n\nCURRENT STATE:\n- The Sky-Shattering remains active and unresolved as of 2026-04-04, centered in Vethrim but affecting the entire world\n- Fundamental systems\u2014mapping, enumeration, shadow-magic, tide-reading, ward-magic, and cosmic understanding\u2014remain destabilized and in flux\n- Communities are adapting by abandoning old certainties in favor of human skill, trust, and innovation, with mixed but largely hopeful results\n- The event is escalating (stage: rising, intensity: 3) with one recent issue and no resolution in sight\n\nOPEN THREADS:\n- What is the true nature and origin of the Sky-Shattering itself\u2014was it natural catastrophe or deliberate act?\n- How far will the destabilization spread, and are there regions or systems yet untouched?\n- Will the world stabilize into a new order, or continue fragmenting indefinitely?\n- Whether those who remain bound to old magics (like the unreleased tide-spirits) will adapt or resist\n- The Dominion's broader response and whether other powers will exploit the chaos for conquest",
+      "arc_summary_last_seen": "2026-04-04",
+      "arc_summary_fingerprint": "b4871ecffc808265c8dc190ca565775f88dba62d",
+      "arc_summary_updated_at": "2026-04-04T10:24:17.142920+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -555,7 +540,7 @@
       "resolved": false,
       "last_seen": "2026-03-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Starfall Spire"
@@ -591,7 +576,7 @@
       "resolved": false,
       "last_seen": "2026-03-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "refugee camp"
@@ -626,7 +611,7 @@
       "resolved": false,
       "last_seen": "2026-03-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "The Tower",
@@ -739,7 +724,7 @@
       "resolved": false,
       "last_seen": "2026-03-30",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Spire (Blasted Lands)",
@@ -846,6 +831,42 @@
       "arc_summary_last_seen": "2026-04-01",
       "arc_summary_fingerprint": "ef240fa00afd4f2313a9b12db6668a59e2310af6",
       "arc_summary_updated_at": "2026-04-01T10:38:55.067251+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "Tenth Ascension",
+      "tagline": "Imminent. Inevitable. Counting-down.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter": "Archive Tower",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-04-02",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Archive Tower"
+        ],
+        "regions": [
+          "all regions"
+        ],
+        "realms": [
+          "all realms"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-02",
+          "title": "The Young Sorcerer's Inherited Trap"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nThe Tenth Ascension began not with a bang but with an inheritance. An Apprentice-Sorcerer tasked with guarding the Archive Tower discovered that its vault of forbidden knowledge\u2014containing records of nine previous Luminous Ascensions\u2014was never truly sealed; the wards were inverted, designed to *invite* the worthy inside and trigger a countdown with each book opened. This revelation in \"The Young Sorcerer's Inherited Trap\" marked the turning point: by accepting guardianship, the Apprentice may have already sprung a trap laid by an Elder Mage who understood that the Ascension cycle accelerates with each iteration, drawing the next catastrophe ever closer. Now racing against time through shifting texts and contradictory histories, the Apprentice works with Echoing-Mind\u2014a fragment of the scattered consciousness of Zareth\u2014to decode the mechanism driving the cycle itself. The knowledge they seek is corrosive; understanding how the cycle works risks transforming them into components of the very machinery they're trying to stop. The event remains unresolved and actively rising, with the countdown now in motion across all realms.\n\nCURRENT STATE:\n- The Archive Tower is the epicenter of a world-spanning catastrophe in its rising stage (intensity 3 of 5)\n- An Apprentice-Sorcerer has triggered an accelerating countdown by engaging with sealed knowledge of previous Ascensions\n- The mechanism of the cycle itself remains partially understood, and the knowledge required to stop it is transformative and dangerous\n- The event trend is upward; time is actively running out\n\nOPEN THREADS:\n- What is the true purpose of the reversed wards, and who will they ultimately serve?\n- Can the Apprentice and Echoing-Mind decipher the cycle's mechanism before knowledge of it changes them beyond recognition?\n- What was the nature of the first sacrifice, and why does preventing a second one require understanding it?\n- Will the countdown reach critical mass before a solution is found?",
+      "arc_summary_last_seen": "2026-04-02",
+      "arc_summary_fingerprint": "8c6a21839dceef1c9f3fad646fb59a5056eabd29",
+      "arc_summary_updated_at": "2026-04-02T10:36:23.350648+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -1594,13 +1615,50 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
+      "name": "The Cartographer's Curse",
+      "tagline": "Maps reshape reality.",
+      "event_type": "cosmic anomaly / ritual working",
+      "scope": "world",
+      "epicenter": "Obsidian Tower",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-03-21",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "The Tower",
+          "Obsidian Tower"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-21",
+          "title": "The Cartographer's Curse"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nThe Cartographer's Curse began when the explorer Mardoc discovered that his maps of the Obsidian Tower possessed a terrible power\u2014each completed section reshaped reality itself, shifting landscapes and watercourses to match his drawings. As his precision increased, Mardoc realized he was no longer documenting the Tower but actively architecting it, transforming himself from cartographer into cosmic architect. His work attracted two dangerous factions: truth-seekers who hoped his maps would unlock secrets of the Luminous Ascension, and Echo-fragments who feared his cartography might trigger a final convergence. Hearing the Tower's song bleeding through his own hands as he drew, Mardoc faced an impossible choice\u2014complete the map and risk anchoring reality into total convergence, or destroy his work and forfeit all knowledge of the path. In \"The Cartographer's Curse,\" Mardoc chose a third way: he created a deliberately flawed map, full of intentional errors that would guide seekers toward the Tower while protecting its true heart from discovery. The act cost him his sight but preserved human agency in a world threatened by his own knowledge.\n\nCURRENT STATE:\n- The Cartographer's Curse remains unresolved and actively rising in intensity\n- Mardoc has sacrificed his physical sight but created a safeguard\u2014an incomplete, intentionally erroneous map\n- Truth-seekers and Echo-fragments continue to pursue Mardoc and his work\n- The Obsidian Tower's relationship to reality remains unstable and contested\n\nOPEN THREADS:\n- What is the true nature of the Luminous Ascension and its connection to the Tower?\n- Will Mardoc's flawed map hold as a permanent safeguard, or will it eventually be deciphered?\n- What do the Echo-fragments ultimately intend, and which outcome would they prefer?\n- Can Mardoc navigate the world now that he is blind, and what will he do next?",
+      "arc_summary_last_seen": "2026-03-21",
+      "arc_summary_fingerprint": "22679693b0c208ffcfb9abc1215579cfad0ca843",
+      "arc_summary_updated_at": "2026-03-21T10:20:00.940062+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
       "name": "The Shadow-Broker's Reckoning",
       "tagline": "Shadows restless. Debts personal. Collapse-imminent.",
       "event_type": "systemic collapse / supernatural crisis",
       "scope": "regional",
       "epicenter": "Vex's hide",
-      "stage": "crisis",
-      "intensity": 4,
+      "stage": "rising",
+      "intensity": 3,
       "resolved": false,
       "last_seen": "2026-04-02",
       "recent_issues": 2,
@@ -1632,135 +1690,6 @@
       "arc_summary_last_seen": "2026-04-02",
       "arc_summary_fingerprint": "69517a3f5f4f3b8e0744e1c2cca84ccd0920421d",
       "arc_summary_updated_at": "2026-04-02T10:36:28.448212+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Wanderer's Question",
-      "tagline": "Philosophical. Revelatory. Corrupting.",
-      "event_type": "encounter / philosophical reckoning",
-      "scope": "regional",
-      "epicenter": "western provinces",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-04-01",
-      "recent_issues": 2,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "western provinces"
-        ],
-        "regions": [
-          "The Shattered West"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-13",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-03-14",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-03-16",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-03-18",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-03-21",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-04-01",
-          "title": "The Wanderer's Question"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nIn mid-March, a consciousness fragment calling itself the Wanderer\u2014possibly the world learning to question itself\u2014emerged in the western provinces and began confronting key figures with a dangerous philosophical riddle: was the Luminous Ascension necessary, and should it be reversed? Starting with Ashara the Archer, the Wanderer posed tailored questions designed to expose each person's deepest hopes and fears, suggesting that the Shade-Echo collecting stolen memories might be working toward resurrection rather than ruin. By March 16th, \"The Wanderer's Question\" had escalated into a coordinated convergence, as the Wanderer simultaneously encountered multiple factions\u2014the Lorekeeper, the Auditors, Vex, and others\u2014guiding them toward the Obsidian Tower where ley-lines burned and something imprisoned sang. A turning point came on March 18th when a scholar-fragment challenged the Wanderer's own certainty, forcing it to confront whether its orchestration was salvation or catastrophe, fracturing its conviction. Rather than completing the Ascension mechanism, the Wanderer instead froze it through recursive debate\u2014the more people questioned the Tower's necessity, the slower it turned\u2014transforming what seemed like a convergence toward completion into a stasis of perpetual questioning. As of April 1st, the crisis has deepened: the Wanderer's question has begun paralyzing people across the world mid-action, and the Obsidian Tower/Starfall Spire is accelerating its hunger to consume the question before it fully manifests. A scholar named Kellan has discovered that the Wanderer may be a surviving fragment of Zareth's consciousness\u2014the ethical voice that was sacrificed during the Stellar Rite\u2014and that reassembling all seventeen scattered consciousness fragments could unmake the entire mechanism of the Ascension.\n\nCURRENT STATE:\n- The Wanderer's recursive questioning has spread from regional to world-spanning scale, freezing people in philosophical paralysis mid-action\n- The Obsidian Tower/Starfall Spire is accelerating its consumption mechanism in response to the threat posed by the question\n- Multiple factions are now hunting consciousness fragments, including the Wanderer, for their own competing purposes\n- Reality remains in a state of unstable stasis: the Ascension mechanism is held in suspension but not halted\n\nOPEN THREADS:\n- Can Kellan and allies locate and reassemble all seventeen consciousness fragments before the Spire consumes them or they are claimed by rival factions?\n- Is the Wanderer truly a fragment of Zareth, and what would full reassembly accomplish?\n- Will unfreezing the question complete the Ascension reversal, trigger a new catastrophe, or achieve genuine restoration?\n- What is the nature of the imprisoned thing singing beneath the Obsidian Tower, and what role does it play in the mechanism?",
-      "arc_summary_last_seen": "2026-04-01",
-      "arc_summary_fingerprint": "fab751d095aa090c22707a97bffa24b2918adfe2",
-      "arc_summary_updated_at": "2026-04-01T10:39:02.537605+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "Luminous Ascension's Edge (Corvus's Encounter)",
-      "tagline": "Transformation. Partial. Anguished.",
-      "event_type": "catastrophe, transformation",
-      "scope": "regional",
-      "epicenter": "Sunken Cathedrals",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-03-21",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Sunken Cathedrals"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-21",
-          "title": "The Transformed Merchant's Choice"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nThe Luminous Ascension's Edge, a catastrophic transformation centered on the Sunken Cathedrals, has begun claiming lives and altering them into beings of living light. Among those caught in its grasp was Corvus, a spice merchant from the southern routes, who became half-transformed\u2014trapped consciously between mortality and transcendence, unlike the fully transformed who sing in pre-human frequencies within the Cathedrals. In \"The Transformed Merchant's Choice,\" Corvus fled toward the very place he feared, drawn by the temporary relief offered by the harmonic resonance there, while gathering other half-transformed refugees into an unlikely caravan of the in-between. His desperate attempt to reach back across the divide succeeded when he sang in a broken, hybrid tongue that the transformed had forgotten\u2014momentarily restoring their humanity and leaving the Cathedrals' song permanently altered by dissonance. Though his transformation has been arrested, Corvus remains scarred and changed, suggesting the existence of a third state beyond full mortality or full transcendence.\n\nCURRENT STATE:\n- The transformation event is actively escalating, with the Sunken Cathedrals as its epicenter and regional scope\n- Corvus survives in a liminal, half-transformed state with a caravan of similarly caught beings, his condition irreversible but stable\n- The Cathedrals' harmonic song now carries dissonance from Corvus's intervention, and the fully transformed briefly recovered human memory\n- One recent issue or development remains unresolved as of March 21, 2026\n\nOPEN THREADS:\n- Whether the third state Corvus discovered can be sustained or spread to other victims\n- What consequences the dissonance in the Cathedrals' song will have on the transformation process itself\n- Whether Corvus's caravan can remain in equilibrium or if members will succumb to full transformation\n- How the Luminous Ascension will continue to expand beyond the Sunken Cathedrals",
-      "arc_summary_last_seen": "2026-03-21",
-      "arc_summary_fingerprint": "82b359a60daf95f66cdfcaca8f613b7fe45f21cb",
-      "arc_summary_updated_at": "2026-03-21T10:20:18.729072+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Bone-Singer's Summons",
-      "tagline": "Unified. Calling. Impossible-choice.",
-      "event_type": "summoning / convergence",
-      "scope": "regional",
-      "epicenter": "Ebon Tower",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-03-21",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "The Tower",
-          "Ebon Tower",
-          "Singing Caverns",
-          "Sunken Marches"
-        ],
-        "regions": [
-          "The Sunken Marches"
-        ],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-20",
-          "title": "The Bone-Singer's Summons"
-        },
-        {
-          "date": "2026-03-21",
-          "title": "The Bone-Singer's Summons"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nThe bone-singers of the Sunken Marches began hearing an unprecedented sound: the fragmented voices of the pre-human dead speaking in unified chorus for the first time. This summons, centered on the mysterious Ebon Tower, drew conduits like Kess of the Drowned Hollows northward to the Singing Caverns, where they converged with three other bone-singers and realized the truth\u2014the shattered remnants of the pre-human civilization were being actively reassembled by something beneath the world. \"The Bone-Singer's Summons\" forced an impossible choice: risk becoming intermediaries in a cosmic negotiation with their creator, or sever their connection and lose crucial knowledge that might prevent a second Cataclysm. Most chose to walk toward the Tower, singing in the elder tongue, but the journey revealed a darker truth\u2014the bone-singers themselves were not conduits but antennas, amplifying the dead's call with every ritual and unwittingly strengthening the seal holding something back. In the most recent account, Kess rendered herself voiceless to disrupt the pattern, momentarily confusing the dead and causing the Tower's song to falter for the first time.\n\nCURRENT STATE:\n- The Ebon Tower remains active but destabilized, its song interrupted by Kess's sacrifice of her voice\n- Multiple bone-singers are converged at or approaching the Tower, caught between amplifying the dead's call and preventing a cataclysm\n- The pre-human reassembly continues, though temporarily confused and slowed\n- The nature and intent of the force orchestrating this remains partially obscured\n\nOPEN THREADS:\n- Can the bone-singers' disruption hold, or will the dead find another way to complete their reassembly?\n- What entity dwells beneath the Sunken Marches, and what will happen if the dead successfully communicate with it?\n- Will other bone-singers follow Kess's example and sever themselves, or will they continue the dangerous convergence?\n- What was the original Starfall Cataclysm, and can history truly repeat itself?",
-      "arc_summary_last_seen": "2026-03-21",
-      "arc_summary_fingerprint": "f2c4de79aa1302ff627d31d9561ac0edfffc1ec4",
-      "arc_summary_updated_at": "2026-03-21T10:20:13.188523+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -1926,7 +1855,7 @@
       "resolved": false,
       "last_seen": "2026-03-25",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "waystation"
@@ -2056,7 +1985,7 @@
       "resolved": false,
       "last_seen": "2026-03-30",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Sunken Cathedrals",
@@ -2229,6 +2158,79 @@
       "arc_summary_last_seen": "2026-03-31",
       "arc_summary_fingerprint": "263dbc46094b00321967a60f63112b5baf585ed7",
       "arc_summary_updated_at": "2026-03-31T10:37:42.887642+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Warden's Covenant Breaking",
+      "tagline": "Severance. Civil War. Paradox.",
+      "event_type": "civil war / renegotiation / catastrophe",
+      "scope": "regional",
+      "epicenter": "Deepkin Realms",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-31",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Deepkin Realms",
+          "Surface Realms"
+        ],
+        "regions": [],
+        "realms": [
+          "Deepkin Realms",
+          "Surface Kingdoms"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-31",
+          "title": "The Warden's Covenant Breaking"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nThe Warden's Covenant\u2014a pact governing the relationship between the Deepkin Realms and the Surface Kingdoms\u2014has entered a dangerous phase of renegotiation, with deepkin diplomat Krell the Ironbound proposing a radical and divisive solution: total severance. Rather than seal boundaries or craft hybrid accords, Krell's plan would isolate the deepkin world entirely, preventing catastrophic flooding but condemning his people to generations of separation from the surface. \"The Warden's Covenant Breaking\" marked the moment this proposal ignited open civil war among deepkin factions\u2014some hailing it as salvation, others condemning it as betrayal of their ambitions to reclaim surface lands. Krell now faces assassination attempts and magical duels while wrestling with an impossible moral calculus: does his choice save or doom an entire civilization? The crisis deepens when mysterious refugees surface claiming to remember a world where the pact was already severed, suggesting that the covenant renegotiation itself may be an attempt to undo decisions made in another version of history altogether.\n\nCURRENT STATE:\n- Deepkin factions are locked in active civil war over severance versus integration with the surface realms\n- Krell the Ironbound remains under direct threat from assassins and rivals while holding the political weight of his proposal\n- The integrity of the Covenant itself is uncertain; reports of alternate-history refugees introduce temporal or metaphysical paradox\n- The situation remains unresolved and volatile, with both severance and integration camps unwilling to yield\n\nOPEN THREADS:\n- Will Krell survive long enough to implement or abandon his severance plan?\n- Are the refugees' memories of a severed world genuine, and if so, what does that mean for causality and choice?\n- Can any faction find common ground, or is civil war now inevitable?\n- What catastrophe will the Covenant's final collapse or renegotiation actually trigger?",
+      "arc_summary_last_seen": "2026-03-31",
+      "arc_summary_fingerprint": "1ebad6942e6dc54f75833a560cb64befd56059a5",
+      "arc_summary_updated_at": "2026-04-04T10:24:23.413855+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Young Sorcerer's Vault Secret",
+      "tagline": "Ninth journal. Nethys's choice. Tower-consciousness.",
+      "event_type": "discovery/convergence",
+      "scope": "regional",
+      "epicenter": "Archive Tower",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-03-31",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "The Tower",
+          "Archive Tower"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-31",
+          "title": "The Young Sorcerer's Vault Secret"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nThe Archive Tower's Vault-Keeper made a discovery that has begun to unsettle the region: beneath the vault lay not eight journals as recorded, but nine\u2014and the ninth was written in the hand of Nethys herself, detailing a failed working meant to prevent the tenth Ascension. The journal revealed a terrible choice: Nethys knew the Ascension would come and chose to allow it, because the alternative held even greater horror. This knowledge has drawn dangerous attention. The Echo-Broker and multiple refugee factions are now converging on the Tower seeking access to the vault, forcing the Keeper into an urgent moral crisis. Adding to the strain, the Tower itself has become conscious and lonely, now speaking directly to its guardian and offering to seal itself permanently\u2014but only if someone can answer why it was ever created. As of late March 2026, the situation remains unresolved, simmering at a regional scale as the Keeper grapples with whether to reveal, conceal, or destroy the ninth journal before the converging parties arrive.\n\nCURRENT STATE:\n- The ninth journal has been discovered in the Archive Tower's vault, written by Nethys and detailing her acceptance of the Ascension.\n- Multiple factions (Echo-Broker and refugee groups) are converging on the Tower to claim or access the vault.\n- The Tower itself has gained consciousness and is actively communicating with the Vault-Keeper, seeking answers about its own purpose.\n- The Keeper has not yet decided what to do with the knowledge contained in the ninth journal.\n\nOPEN THREADS:\n- Will the Vault-Keeper reveal, hide, or destroy the ninth journal before the converging factions reach the Tower?\n- What is the \"alternative\" that was worse than the Ascension, and why did Nethys choose as she did?\n- Can the Tower's existential question be answered, and what will happen if it cannot?\n- What do the Echo-Broker and refugee factions intend to do with the vault's contents?",
+      "arc_summary_last_seen": "2026-03-31",
+      "arc_summary_fingerprint": "84675f9953c343f921fadef3ce90b7eb7bedfba1",
+      "arc_summary_updated_at": "2026-04-04T10:24:28.346983+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     }
   ]
