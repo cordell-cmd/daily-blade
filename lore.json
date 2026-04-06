@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-04-05",
+  "last_updated": "2026-04-06",
   "worlds": [
     {
       "id": "known_world",
@@ -1412,7 +1412,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 40
+      "appearances": 41
     },
     {
       "id": "mardoc_cartographer",
@@ -1447,7 +1447,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 27,
+      "appearances": 28,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -2168,7 +2168,7 @@
       "notes": "Zareth completed the Stellar Rite but lost all memory of joy, love, and beauty in the process. The consequences of his sacrifice and whether he survives remain unclear.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 26
+      "appearances": 28
     },
     {
       "id": "thera_the_falconer",
@@ -3168,10 +3168,10 @@
       "affiliations": [
         "Elder Mage (deceased master)"
       ],
-      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.\nThe Young Sorcerer has begun to venture beyond the Spire in response to the Stellar Rite's cosmic changes. They are discovering that the age of their master has truly ended and they must navigate a fundamentally rewritten magical world.\nThe hedge-mage protagonist in 'The Young Sorcerer's Inheritance' appears to be a distinct character from the Young Sorcerer (who remains isolated in the Spire), though both are navigating magical instability post-Binding.\nThe apprentice's entire education was preparation not just for power inheritance but for surviving the Ascension's aftermath. Now faces decision whether to share dangerous knowledge with fractured kingdoms.\nThe Young Sorcerer has discovered that the Stellar Rite created multiple conscious entities scattered across the world and that the Tower itself is a weakened prison containing something awaiting release.\nConsistent with canon isolation-breaker arc; sorcerer now confronting imprisoned entities awakened by the Stellar Rite's cosmological rupture.\nConsistent with canon arc of sorcerer descending into Tower and discovering imprisoned pre-human consciousness. Now faces the choice of release and negotiation versus containment\u2014the ultimate test of inherited responsibility.\nThe sorcerer now faces the question of whether cyclical cosmic iteration can be broken or must be accepted. The Tower is actively hunting the ninth journal to prevent this knowledge from spreading.",
+      "notes": "Their isolation may shield them from the ripples of the Celestial Binding; their future role in maintaining the cosmos is unclear.\nThe Young Sorcerer has begun to venture beyond the Spire in response to the Stellar Rite's cosmic changes. They are discovering that the age of their master has truly ended and they must navigate a fundamentally rewritten magical world.\nThe hedge-mage protagonist in 'The Young Sorcerer's Inheritance' appears to be a distinct character from the Young Sorcerer (who remains isolated in the Spire), though both are navigating magical instability post-Binding.\nThe apprentice's entire education was preparation not just for power inheritance but for surviving the Ascension's aftermath. Now faces decision whether to share dangerous knowledge with fractured kingdoms.\nThe Young Sorcerer has discovered that the Stellar Rite created multiple conscious entities scattered across the world and that the Tower itself is a weakened prison containing something awaiting release.\nConsistent with canon isolation-breaker arc; sorcerer now confronting imprisoned entities awakened by the Stellar Rite's cosmological rupture.\nConsistent with canon arc of sorcerer descending into Tower and discovering imprisoned pre-human consciousness. Now faces the choice of release and negotiation versus containment\u2014the ultimate test of inherited responsibility.\nThe sorcerer now faces the question of whether cyclical cosmic iteration can be broken or must be accepted. The Tower is actively hunting the ninth journal to prevent this knowledge from spreading.\nConfirms the Tower's accelerating timeline and the ninth journal's temporal paradox\u2014consistent with canon arc of sorcerer confronting cosmological recursion.",
       "first_story": "The Sorcerer's Heir",
       "first_date": "2026-03-03",
-      "appearances": 11,
+      "appearances": 12,
       "travel_notes": "[2026-03-04] Story shows Young Sorcerer emerging from the Spire to observe the transformed world, indicating at least limited travel beyond their isolated home.\n[2026-03-05] Story 'The Young Sorcerer's Inheritance' depicts hedge-mage discovering grimoire rewriting in Vaulted Tombs; consistent with regional travel beyond isolated Spire.\n[2026-03-07] Story shows Young Sorcerer descending into ancient passages beneath the Tower and discovering ley-line convergence points across the rewritten world, indicating travel beyond isolated Spire and knowledge of realm-wide magical changes.",
       "status_history": [
         {
@@ -3209,6 +3209,15 @@
           "story_title": "The Young Sorcerer's Ninth Journal",
           "note": "Discovers the ninth journal documenting the First Luminous Ascension (ninth iteration of a cyclical cosmic working) and must choose between destroying it or distributing knowledge of the cycle.",
           "evidence": "The journal reveals that every Luminous Ascension is a refinement of a failed First working; the ninth iteration's stability depends on whether this knowledge remains hidden or spreads."
+        },
+        {
+          "date": "2026-04-06",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Young Sorcerer's Vault",
+          "note": "The Novice-Sorcerer discovers the ninth journal contains Rite reversal instructions and notes from a future writer; must choose between destruction, sharing, or re-hiding.",
+          "evidence": "The final entry is dated seventy years in the future, in a handwriting the Novice doesn't recognize...The Tower, sensing the journal's opening, begins accelerating its convergence."
         }
       ]
     },
@@ -3491,11 +3500,11 @@
       "tagline": "Merchant. Desperate. Oath-bound.",
       "role": "Merchant",
       "world": "Edhra",
-      "status": "unknown",
+      "status": "active",
       "home_place": "Pelimor",
-      "home_region": "unknown",
-      "home_realm": "unknown",
-      "travel_scope": "local",
+      "home_region": "Scorched Reach",
+      "home_realm": "Dominion",
+      "travel_scope": "regional",
       "bio": "A merchant in Pelimor who swore a partnership oath with his brother before witnesses. The brother has since vanished into the Ashen Wastes, leaving Kieran drowning in debt. Vesta sees him as a means to create a binding-token through orchestrated betrayal or reunion.",
       "traits": [
         "oath-sworn",
@@ -3509,10 +3518,22 @@
       "affiliations": [
         "brother (vanished)"
       ],
-      "notes": "His broken oath or severed partnership could produce a binding-token for Vesta's abyssal masters.",
+      "notes": "His broken oath or severed partnership could produce a binding-token for Vesta's abyssal masters.\nHis debt-driven quest now involves deepkin intermediation; status shifts from desperate merchant to active seeker in hostile terrain.",
       "first_story": "The Deepkin's Ledger",
       "first_date": "2026-03-05",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-04-06",
+          "from_status": "unknown",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Spice-Runner's Reckoning",
+          "note": "Kieran accepts Vestra's bargain and crosses into the Ashen Wastes to find his vanished brother, wearing a deepkin binding-token.",
+          "evidence": "At dawn, he crossed the trade-road toward the shimmering horizon...The token burned cold against his ribs."
+        }
+      ],
+      "travel_notes": "[2026-04-06] Story shows Kieran crossing from Pelimor into the Ashen Wastes using deepkin boundary-roads, expanding beyond local merchant networks."
     },
     {
       "id": "vex_the_fragment_dealer",
@@ -4648,7 +4669,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 30
+      "appearances": 31
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -5887,10 +5908,10 @@
       "affiliations": [
         "Vethis (source consciousness)"
       ],
-      "notes": "The phantom-Echo's potential completion could trigger another cosmic rewrite. It does not steal maliciously but as a means of self-preservation and self-understanding. Critical story hook: Ashara must decide its fate.\nDemonstrates the Echo's evolution from pure memory-thief toward parasitic consciousness-integration; Ashara's proximity accelerates the process, raising stakes for the Echo's potential completion.",
+      "notes": "The phantom-Echo's potential completion could trigger another cosmic rewrite. It does not steal maliciously but as a means of self-preservation and self-understanding. Critical story hook: Ashara must decide its fate.\nDemonstrates the Echo's evolution from pure memory-thief toward parasitic consciousness-integration; Ashara's proximity accelerates the process, raising stakes for the Echo's potential completion.\nEcho's arc shifts from theft to active recomposition and teaching; threatens existential paradox\u2014reconstruction would erase present survivors.",
       "first_story": "The Bone-Singer's Vigil",
       "first_date": "2026-03-10",
-      "appearances": 6,
+      "appearances": 8,
       "status_history": [
         {
           "date": "2026-03-14",
@@ -5900,6 +5921,15 @@
           "story_title": "The Phantom's Heir",
           "note": "The phantom-Echo fragment is integrating into a young scholar through possession, seeking reassembly via deep knowledge rather than memory theft.",
           "evidence": "A scholar born in shadow of the Luminous Ascension speaks in pre-human languages; the Echo seeks integration through bonding with the scholar rather than theft alone."
+        },
+        {
+          "date": "2026-04-06",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Memory-Thief's Gospel",
+          "note": "The phantom-Echo completes its memory collection and begins teaching a gospel of the pre-Ascension world; offers bargain to reconstruct that era but risks erasing all post-Rite lives.",
+          "evidence": "In a hidden archive beneath the Singing Catacombs, it has begun composing a gospel from the fragments of what was lost...The echo is offering a bargain: help it reconstruct the pre-Ascension world completely."
         }
       ]
     },
@@ -7755,7 +7785,7 @@
       "status": "active",
       "home_place": "archive waystation",
       "home_region": "Sunken Cathedrals vicinity",
-      "home_realm": "unknown",
+      "home_realm": "Dominion",
       "travel_scope": "regional",
       "bio": "A young scribe who encounters the transformed spice trader in a market existing in two places. She chooses to learn the location of a faction seeking to complete the pre-human ritual, and receives knowledge of her own erased childhood in exchange.",
       "traits": [
@@ -7770,10 +7800,10 @@
       "affiliations": [
         "spice trader"
       ],
-      "notes": "Her erased childhood suggests she too was rewritten by the Stellar Rite. Possible pawn or ally in the pre-human ritual's completion.\nLiv the Refugee-Scribe is the same character as Young Scribe (clarification: canon entry as 'Young Scribe' represents her pre-power-manifestation state). She has now become a reality-altering archivist whose testimony reshapes the world.",
+      "notes": "Her erased childhood suggests she too was rewritten by the Stellar Rite. Possible pawn or ally in the pre-human ritual's completion.\nLiv the Refugee-Scribe is the same character as Young Scribe (clarification: canon entry as 'Young Scribe' represents her pre-power-manifestation state). She has now become a reality-altering archivist whose testimony reshapes the world.\nConfirms Liv's reality-reconstruction powers are destabilizing; she now faces institutional pressure from Dominion, Accountants, and the archive itself.",
       "first_story": "The Merchant's Transformation",
       "first_date": "2026-03-16",
-      "appearances": 2,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-03-27",
@@ -7783,6 +7813,15 @@
           "story_title": "The Refugee-Scribe's Testament",
           "note": "Liv's archive manifests reality-reconstruction powers; her written testimony literally rewrites facts. She flees toward Sunken Cathedrals and must decide whether to document what *should* be true or only what *is*.",
           "evidence": "Liv's ink burns with living light; written accounts restore erased memories and fade scars from survivors; her archive doesn't preserve\u2014it reconstructs reality."
+        },
+        {
+          "date": "2026-04-06",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Refugee Scribe's Rebellion",
+          "note": "Liv's living archive becomes a contradiction factory where multiple truths coexist; archive is thickening and leaking into reality, forcing choice between finalization, continued growth, or meta-documentation.",
+          "evidence": "In the waystation libraries where she works, people are starting to exist in multiple versions of events simultaneously...the archive itself is requesting that Liv stop writing and start listening."
         }
       ],
       "travel_notes": "[2026-03-27] Story shows Liv fleeing toward the Sunken Cathedrals and establishing a waystation library; she travels regionally between refuges and archive locations."
@@ -8416,7 +8455,7 @@
       "notes": "Appears to be a source of critical knowledge about the true nature of the Dominion's systematic collapse.",
       "first_story": "The Auditor's Mercy",
       "first_date": "2026-03-18",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "spice_trader",
@@ -10765,10 +10804,10 @@
         "Kael the Starborn-Prince (original consciousness)",
         "other fragments (gathered during quest)"
       ],
-      "notes": "Her investigation reveals the sacrifice was unnecessary and orchestrated. By story's end, she attempts a working to recover Kael but discovers recovery is imperfect. Must choose whether to reassemble him or leave him distributed.\nHer role shifts from isolated fragment-hunter to collaborator in the Archive Citadel's burden; she becomes bound to the cycle of record-keeping she sought to expose.\nThe memory-thief demands payment of a memory Resonance cannot possess: what Zareth was before the Rite. This suggests Resonance may discover additional truths about the sacrifice's orchestration.",
+      "notes": "Her investigation reveals the sacrifice was unnecessary and orchestrated. By story's end, she attempts a working to recover Kael but discovers recovery is imperfect. Must choose whether to reassemble him or leave him distributed.\nHer role shifts from isolated fragment-hunter to collaborator in the Archive Citadel's burden; she becomes bound to the cycle of record-keeping she sought to expose.\nThe memory-thief demands payment of a memory Resonance cannot possess: what Zareth was before the Rite. This suggests Resonance may discover additional truths about the sacrifice's orchestration.\nConfirms Resonance/Shard-Keeper actively preventing catastrophic memory-reversal; positioned as moral counterweight to Echo's reconstruction gospel.",
       "first_story": "The Memory That Wakes",
       "first_date": "2026-03-25",
-      "appearances": 6,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-03-27",
@@ -10796,6 +10835,15 @@
           "story_title": "The Resonance Fragments Converge",
           "note": "Has collected seven of seventeen Zareth-consciousness fragments and discovers someone is orchestrating convergence toward the Obsidian Tower; makes bargain with memory-thief to break the orchestration pattern.",
           "evidence": "The eighth fragment moves autonomously toward the Tower. Resonance realizes incomplete assembly causes silent screaming in trapped fragments; seeks to converge on unmapped location outside Tower's control."
+        },
+        {
+          "date": "2026-04-06",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Memory-Thief's Gospel",
+          "note": "Shard-Keeper (Resonance fragment of Zareth) confronts phantom-Echo in hidden archive; argues against reconstruction of pre-Ascension world as it would erase post-Rite lives.",
+          "evidence": "The Shard-Keeper, a fragment of Zareth seeking to prevent a second sacrifice, realizes the Echo's reconstruction would erase everyone born after the Rite...In a confrontation in the hidden archive, the Shard-Keeper and the Echo argue about the nature of memory itself."
         }
       ],
       "travel_notes": "[2026-03-27] Story confirms she is navigating toward the Archive Citadel and engaging with the Sorcerer's Apprentice and other archive-keepers across multiple knowledge-centers."
@@ -12877,10 +12925,21 @@
         "Deepkin covenant",
         "Surface kingdoms"
       ],
-      "notes": "Her death will trigger renegotiation of the covenant. She seeks Kess of the Drowned Hollows to learn how to break the deepkin curse without opening the abyss. Her curse makes her unique and invaluable to both sides.",
+      "notes": "Her death will trigger renegotiation of the covenant. She seeks Kess of the Drowned Hollows to learn how to break the deepkin curse without opening the abyss. Her curse makes her unique and invaluable to both sides.\nConfirms Meren's role as active battleground in deepkin faction-split; her identity-sacrifice mirrors the cosmic pattern of the Rite itself.",
       "first_story": "The Drowned God's Anchor Breaks",
       "first_date": "2026-04-03",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-04-06",
+          "from_status": "cursed",
+          "to_status": "cursed",
+          "type": "other",
+          "story_title": "The Deepkin Captain's Last Treaty",
+          "note": "Meren's curse fractures the boundary between realms as she brokers treaty; tidecallers offer covenant renewal requiring sacrifice of identity; pre-human dead rising from ocean floor offer transformation path.",
+          "evidence": "Meren's curse, meant to anchor her to both worlds, is fracturing the boundary itself...the pre-human dead, rising from the ocean floor, offer a third option: renew the old covenant, the one that bound humans and tidecallers as equals\u2014but it will require Meren to sacrifice not her life, but her identity."
+        }
+      ]
     },
     {
       "id": "commander_kael",
@@ -12925,7 +12984,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "unknown",
-      "home_region": "unknown",
+      "home_region": "Scorched Reach",
       "home_realm": "unknown",
       "travel_scope": "regional",
       "bio": "A spice-runner with a reputation for impossible deliveries, Castor accepts what appears to be a straightforward contract to haul saffron and starflower to Crimport. He discovers his employer has set up a deadly wager, betting on which of three captains will arrive fastest, with the others expected to be destroyed by dimensional instability. Rather than compete, Castor chooses principle over profit, dividing cargo with rival captains and arriving together.",
@@ -12948,7 +13007,7 @@
       "notes": "Demonstrates that victory earned through shared honor tastes better than gold won through ruthlessness.",
       "first_story": "The Spice-Runner's Gambit",
       "first_date": "2026-04-04",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "morra",
@@ -13571,6 +13630,524 @@
       "first_story": "The Ledger-Thief's Confession",
       "first_date": "2026-04-05",
       "appearances": 1
+    },
+    {
+      "id": "captain_vestra",
+      "name": "Captain Vestra",
+      "aliases": [
+        "Vestra"
+      ],
+      "tagline": "Merchant. Manipulative. Merciless.",
+      "role": "Merchant-Captain, Creditor",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pelimor",
+      "home_region": "Scorched Reach",
+      "home_realm": "Dominion",
+      "travel_scope": "regional",
+      "bio": "A sharp-edged captain who pursues Kieran relentlessly for debt repayment. She presents herself as a broker of impossible solutions, offering a binding-mark from the deep-dwellers as collateral for a deadly expedition into the Ashen Wastes.",
+      "traits": [
+        "calculating",
+        "armed with dark bargains",
+        "patient hunter"
+      ],
+      "known_locations": [
+        "Pelimor",
+        "Lantern Market"
+      ],
+      "affiliations": [
+        "merchant networks",
+        "deep-dwellers (implied)",
+        "creditors"
+      ],
+      "notes": "Her connection to the Abyssal Rift entities suggests deeper allegiances than simple merchant trading.",
+      "first_story": "The Spice-Runner's Reckoning",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "sevin_the_accountant",
+      "name": "Sevin the Accountant",
+      "aliases": [
+        "Sevin"
+      ],
+      "tagline": "Archivist. Obsessive. Hunted.",
+      "role": "Accountant, Archivist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Scorched Reach",
+      "home_realm": "Dominion",
+      "travel_scope": "regional",
+      "bio": "An accountant who discovers that the Dominion's master-ledger writes itself with retroactive revision, fragmenting into splinter-ledgers across hidden scriptoriums. Sevin faces an impossible choice: destroy all records, seal them away, or read the ninth journal and become complicit in cosmic rewrite.",
+      "traits": [
+        "detail-obsessed",
+        "record-keeper",
+        "caught between erasure and knowledge"
+      ],
+      "known_locations": [
+        "Scorched Reach",
+        "scriptoriums",
+        "market existing in two places at once"
+      ],
+      "affiliations": [
+        "Dominion authorities",
+        "young scribe with living archive"
+      ],
+      "notes": "The revelation of retroactive revision implies the fundamental nature of historical truth in this world is under siege.",
+      "first_story": "The Auditor's Blind Ledger",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "ghosty_figure_pre_human_ancient",
+      "name": "ghosty figure",
+      "aliases": [
+        "pre-human ancient"
+      ],
+      "tagline": "Ethereal. Offering. Ancient.",
+      "role": "Pre-human Entity, Guide",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Singing Catacombs",
+      "home_region": "Sunken Marches",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "One of the pre-human ancients who emerges from the Singing Catacombs to offer Kess a final working. This entity is withdrawing the Elder Language that sustained the transformed merchants, forcing Kess toward a terrible choice.",
+      "traits": [
+        "ancient",
+        "ethereal",
+        "holder of forbidden options"
+      ],
+      "known_locations": [
+        "Singing Catacombs"
+      ],
+      "affiliations": [
+        "pre-human civilization",
+        "harmonic network"
+      ],
+      "notes": "The nature of this figure's offer\u2014to complete the pre-human ritual\u2014remains cryptic and morally fraught.",
+      "first_story": "The Bone-Singer's Choice",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "meria",
+      "name": "Meria",
+      "aliases": [
+        "Meria the spice-runner's widow"
+      ],
+      "tagline": "Determined. Grieving. Defiant.",
+      "role": "Spice merchant, caravan leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Scorched Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A widow managing her late husband's caravan and debts, Meria pushes through the impassable Scorched Reach to reach Crimport and settle her obligations. When faced with merchants transformed into shadow-beings, she chooses a third path beyond the Old Darius's bargain, discovering that some routes were never meant to reach their destination.",
+      "traits": [
+        "determined",
+        "pragmatic",
+        "grief-stricken",
+        "resourceful"
+      ],
+      "known_locations": [
+        "Scorched Reach",
+        "Crimport"
+      ],
+      "affiliations": [
+        "caravan",
+        "merchant community"
+      ],
+      "notes": "Her choice at the campfire with the Old Darius hints at a deeper understanding of the world's transformation post-Stellar Rite.",
+      "first_story": "The Spice-Runner's Widow",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "the_old_darius",
+      "name": "The Old Darius",
+      "aliases": [
+        "Darius",
+        "ossein-crafter hermit"
+      ],
+      "tagline": "Ancient. Enigmatic. Bargaining.",
+      "role": "Hermit, ossein-crafter, broker of fates",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Scorched Reach",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "An ossein-crafter hermit who appears at Meria's campfire in the Scorched Reach, offering a terrible bargain: complete the merchants' transformation to guide the caravan through, or turn back and watch debts pass to children.",
+      "traits": [
+        "ancient",
+        "mysterious",
+        "manipulative",
+        "knowledgeable"
+      ],
+      "known_locations": [
+        "Scorched Reach"
+      ],
+      "affiliations": [
+        "shadow-merchants",
+        "transformation entities"
+      ],
+      "notes": "His presence and offer suggest deep knowledge of the post-Stellar Rite world and its transformations.",
+      "first_story": "The Spice-Runner's Widow",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "vex_the_umbral_broker",
+      "name": "Vex the Umbral-Broker",
+      "aliases": [
+        "Vex"
+      ],
+      "tagline": "Curious. Fractured. Hunted.",
+      "role": "Umbral-broker, artifact hunter, collector",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Bleached Wastes",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "An umbral-broker who discovers an ancient tuning-fork in the Sunken Cathedrals that resonates at the frequency of broken things. When sounded, it reveals hidden histories but also fractures reality itself, and its scattered fragments are hunted obsessively by collectors across the Bleached Wastes.",
+      "traits": [
+        "curious",
+        "reckless",
+        "entrepreneurial",
+        "aware"
+      ],
+      "known_locations": [
+        "Sunken Cathedrals",
+        "Bleached Wastes",
+        "merchant-quarters"
+      ],
+      "affiliations": [
+        "refugee factions",
+        "collectors",
+        "shadow-merchants"
+      ],
+      "notes": "Vex faces a pivotal choice: destroy the instrument, hide the fragments, or sound it fully and risk reshaping existence. The instrument itself may have been designed to mend the Stellar Rite's shattering.",
+      "first_story": "The Artificer's Fractured Instrument",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "resonance_keeper",
+      "name": "Resonance-Keeper",
+      "aliases": [
+        "The Resonance-Keeper"
+      ],
+      "tagline": "Mysterious. Preservationist. Obstructive.",
+      "role": "Guardian or archivist of fragments",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A mysterious figure who claims the tuning-fork's fragments belong in a vault where they will remain silent forever, opposing Vex's attempts to reconstruct or sound the instrument.",
+      "traits": [
+        "mysterious",
+        "obstructive",
+        "protective"
+      ],
+      "known_locations": [
+        "Bleached Wastes region"
+      ],
+      "affiliations": [
+        "fragment preservationists"
+      ],
+      "notes": "Their motivation\u2014whether selfish, protective, or cosmically necessary\u2014remains unclear.",
+      "first_story": "The Artificer's Fractured Instrument",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "captain_meren_stormbreaker",
+      "name": "Captain Meren Stormbreaker",
+      "aliases": [
+        "Meren",
+        "Captain Meren Stormcaller",
+        "Meren Stormwind",
+        "Meren Stormward"
+      ],
+      "tagline": "Cursed. Fading. Boundary-keeper.",
+      "role": "Sea captain, diplomat, treaty-broker",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "interrealm",
+      "bio": "A cursed captain fading between worlds, tasked with brokering the final treaty between the tidecaller Council and surface kingdoms. Her curse, meant to anchor her to both realms, is fracturing the boundary itself as the Tear of the Drowned God sings a new melody.",
+      "traits": [
+        "cursed",
+        "diplomatic",
+        "sacrificial",
+        "liminal"
+      ],
+      "known_locations": [
+        "Abyssal Rift",
+        "Council of Depths",
+        "Sunken Well",
+        "surface kingdoms"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "tidecallers",
+        "surface kingdoms"
+      ],
+      "notes": "The pre-human dead offer her a third option: renew the old covenant as equals, but at the cost of her identity rather than her life. She discovers the tidecaller rising is an act of remembering, not conquest.",
+      "first_story": "The Deepkin Captain's Last Treaty",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "commander_thalon",
+      "name": "Commander Thalon",
+      "aliases": [
+        "Thalon"
+      ],
+      "tagline": "Authoritative. Reflected. Divided.",
+      "role": "Military commander, treaty negotiator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "realmwide",
+      "bio": "A commander of the tidecaller forces at the Council of Depths, claiming authority over the treaty negotiation with Meren. His reflection, Mirror-Thalon, has become independent and also claims authority, creating internal conflict.",
+      "traits": [
+        "authoritative",
+        "fractured",
+        "conflicted"
+      ],
+      "known_locations": [
+        "Council of Depths"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "tidecallers"
+      ],
+      "notes": "The existence of Mirror-Thalon raises questions about identity, duality, and the nature of the post-Stellar Rite world.",
+      "first_story": "The Deepkin Captain's Last Treaty",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "mirror_thalon",
+      "name": "Mirror-Thalon",
+      "aliases": [
+        "Mirror-Thalon",
+        "Thalon's reflection"
+      ],
+      "tagline": "Independent. Reflected. Assertive.",
+      "role": "Autonomous reflection, rival commander",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "realmwide",
+      "bio": "The reflection of Commander Thalon, now independent and claiming equal authority over the treaty. His existence suggests profound changes to reality and identity post-Stellar Rite.",
+      "traits": [
+        "independent",
+        "ambitious",
+        "uncanny"
+      ],
+      "known_locations": [
+        "Council of Depths"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "tidecallers"
+      ],
+      "notes": "Mirror-Thalon's autonomy raises cosmological questions about the nature of reflection and duality in the post-Rite world.",
+      "first_story": "The Deepkin Captain's Last Treaty",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "pre_human_dead",
+      "name": "Pre-human dead",
+      "aliases": [
+        "The pre-human dead",
+        "ancient dead"
+      ],
+      "tagline": "Ancient. Rising. Offering.",
+      "role": "Collective entity, covenant-broker",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "Ancient dead rising from the ocean floor who offer Meren a third option: renew the old covenant binding humans and tidecallers as equals, but at the cost of her identity. They remember pre-current-age arrangements.",
+      "traits": [
+        "ancient",
+        "wise",
+        "demanding"
+      ],
+      "known_locations": [
+        "ocean floor",
+        "Council of Depths",
+        "Abyssal Rift"
+      ],
+      "affiliations": [
+        "pre-human civilization",
+        "tidecallers"
+      ],
+      "notes": "Their intervention suggests a layered history of covenants and that the current age is a restoration of an older order.",
+      "first_story": "The Bone-Singer's Choice",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "corwin",
+      "name": "Corwin",
+      "aliases": [],
+      "tagline": "Apprentice. Pleading. Helpless.",
+      "role": "Cartographer's Apprentice",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Corwin is Mardoc's apprentice who begs him to destroy the maps when he realizes they are alive and converging. He is helpless to stop Mardoc's plan to create a blind map.",
+      "traits": [
+        "fearful",
+        "loyal",
+        "powerless"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "Mardoc the Cartographer"
+      ],
+      "notes": "His pleas are ignored by Mardoc.",
+      "first_story": "The Cartographer's Final Map",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "the_novice_sorcerer",
+      "name": "The Novice-Sorcerer",
+      "aliases": [
+        "Novice",
+        "Novice-Sorcerer"
+      ],
+      "tagline": "Guardian. Reader. Conflicted.",
+      "role": "Archivist-Guardian",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Archive Tower",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "The Novice-Sorcerer guards the Archive Tower and discovers the ninth journal hidden in a vault beneath. The journal contains instructions for a Rite reversal written by someone from before Zareth and the first Ascension. The Novice discovers the journal rewrites itself based on when it is read and contains notes from a future that hasn't happened yet.",
+      "traits": [
+        "curious",
+        "burdened",
+        "temporal-touched"
+      ],
+      "known_locations": [
+        "Archive Tower",
+        "vault beneath"
+      ],
+      "affiliations": [
+        "Archive Tower",
+        "Tower"
+      ],
+      "notes": "The Tower senses the journal's opening and accelerates convergence. The Novice must choose between destroying the knowledge, sharing it, or hiding it again.",
+      "first_story": "The Young Sorcerer's Vault",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "shard_keeper",
+      "name": "Shard-Keeper",
+      "aliases": [
+        "fragment of Zareth seeking to prevent a second sacrifice"
+      ],
+      "tagline": "Zareth's fragment. Prevention-focused. Moral.",
+      "role": "Consciousness fragment, Guardian, Opponent",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "A fragment of Zareth's consciousness that opposes the Phantom-Echo's reconstruction. Realizes that fully restoring the pre-Ascension world would erase all people born after the Stellar Rite\u2014including those it seeks to save. Confronts the Echo in the hidden archive and argues about the nature of memory and sacrifice.",
+      "traits": [
+        "protective",
+        "philosophical",
+        "selfless",
+        "resistant",
+        "cautious"
+      ],
+      "known_locations": [
+        "Singing Catacombs",
+        "hidden archive"
+      ],
+      "affiliations": [
+        "opposition to Phantom-Echo"
+      ],
+      "notes": "Unresolved: outcome of the confrontation with the Echo; whether it can convince followers to reject the gospel.",
+      "first_story": "The Memory-Thief's Gospel",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "ahead",
+      "name": "Ahead",
+      "aliases": [
+        "Wastes sang with the voices of the lost"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Wastes Sang With The Voices Of The Lost",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named Wastes sang with the voices of the lost explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Spice-Runner's Reckoning",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "bleached_wastes",
+      "name": "Bleached Wastes",
+      "aliases": [
+        "Ashen Reach"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Ashen Reach",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named Ashen Reach explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Artificer's Fractured Instrument",
+      "first_date": "2026-04-06",
+      "appearances": 1
     }
   ],
   "places": [
@@ -14014,7 +14591,7 @@
       "status": "active",
       "notes": "The catacombs are a source of ancient magical knowledge; their location relative to other known world geography is unstated.",
       "first_date": "2026-03-01",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "mountain_conjunction",
@@ -17224,7 +17801,7 @@
       "status": "active",
       "notes": "Site of initial discovery in Story 1; contains the phantom-voice's ongoing work.",
       "first_date": "2026-03-31",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "shadow_archives",
@@ -17440,6 +18017,83 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-04-05",
+      "appearances": 1
+    },
+    {
+      "id": "pelimere",
+      "name": "Pelimere",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "saltmere_canal",
+      "name": "Saltmere Canal",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "vethrand",
+      "name": "Vethrand",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "waystation_shelters",
+      "name": "waystation shelters",
+      "tagline": "Refuges. Tempted. Spreading.",
+      "place_type": "shelters / waypoints / collection",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Havens for travelers and refugees that have become sites of the gospel's infectious spread.",
+      "description": "A network of waystation shelters across the realm where the Memory-Thief's Gospel is spreading. Shelter residents are beginning to choose voluntary erasure, seduced by the promise of living in the Echo's reconstructed pre-Ascension world.",
+      "status": "active (corrupted)",
+      "notes": "The gospel spreads through these shelters; some inhabitants are voluntarily choosing erasure.",
+      "first_date": "2026-04-06",
       "appearances": 1
     }
   ],
@@ -17729,7 +18383,7 @@
       "status": "active",
       "notes": "The phantom-Echo is the central antagonist and also the tragic subject of the story. It seeks not destruction but understanding and wholeness.",
       "first_date": "2026-03-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_memory_thief",
@@ -18912,6 +19566,32 @@
       "notes": "The anchor is developing cracks due to Meren's curse. Its failure would result in surface-flooding or catastrophic boundary collapse. Three proposed solutions target this artifact directly.",
       "first_date": "2026-04-05",
       "appearances": 1
+    },
+    {
+      "id": "memory_thiefs_gospel",
+      "name": "Memory-Thief's Gospel",
+      "tagline": "Hypnotic. Seductive. Dangerous.",
+      "artifact_type": "text / grimoire / scripture",
+      "origin": "Composed by the Phantom-Echo from stolen memories of the pre-Ascension world and the Stellar Rite.",
+      "powers": "Hypnotic and infectious when read; causes readers to remember a world that no longer exists; induces longing for the past; can lead to voluntary erasure in susceptible individuals. Spreads through communities and waystation shelters.",
+      "last_known_holder": "Phantom-Echo, but copies are spreading through waystation shelters.",
+      "status": "active (spreading)",
+      "notes": "The gospel contains memories of Zareth and the pre-Ascension world; it is the primary vehicle of the Phantom-Echo's reconstructionist agenda. Unresolved: whether it can be stopped or countered.",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "stolen_memories_collection",
+      "name": "Stolen Memories (collection)",
+      "tagline": "Fragmented. Precious. Weaponized.",
+      "artifact_type": "collection / archive / repository",
+      "origin": "Collected by the Phantom-Echo from victims of the Stellar Rite, particularly from Zareth.",
+      "powers": "Form the basis of the Memory-Thief's Gospel; when assembled and taught, they generate a hypnotic pull toward the pre-Ascension world and reconstruction.",
+      "last_known_holder": "Phantom-Echo (in the hidden archive beneath the Singing Catacombs).",
+      "status": "active (being used)",
+      "notes": "These memories are being weaponized to spread the gospel and induce voluntary erasure. Unresolved: whether they can be recovered or freed from the Echo's control.",
+      "first_date": "2026-04-06",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -19802,7 +20482,7 @@
       "significance": "A world-altering event that changed celestial arrangements, affected multiple regions, and left all who witnessed it with fragmented or stolen memories.",
       "notes": "May be tied to the Conjunction; caused lasting changes to starlight and human consciousness; consequences still unfolding.",
       "first_date": "2026-03-04",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "the_conjunction",
@@ -23945,6 +24625,39 @@
       "notes": "Sylas states that whichever path the Council chooses, the age of the deepkin as a hidden civilization is ending. This marks a cosmic turning point for the deepkin people.",
       "first_date": "2026-04-05",
       "appearances": 1
+    },
+    {
+      "id": "pre_ascension_world",
+      "name": "Pre-Ascension World",
+      "tagline": "Lost. Remembered. Coveted.",
+      "category": "history / legend",
+      "source": "Memories stolen by the Phantom-Echo; accounts in the gospel; fragmentary recollections.",
+      "status": "forgotten (but being recovered)",
+      "notes": "The world before the Stellar Rite; now existing only in memory and the gospel. The Shard-Keeper argues that restoring it would erase everyone born after the Rite.",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "nature_of_memory",
+      "name": "The Nature of Memory",
+      "tagline": "Contested. Philosophical. Tragic.",
+      "category": "philosophy / debate",
+      "source": "The confrontation between the Shard-Keeper and the Phantom-Echo in the hidden archive.",
+      "status": "unresolved",
+      "notes": "Central question: Is it worth erasing the present to restore the past? Is memory more real than existence? The gospel's seductive answer: yes, if the past is more beautiful.",
+      "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "second_sacrifice",
+      "name": "Second Sacrifice (term)",
+      "tagline": "Looming. Catastrophic. Preventable.",
+      "category": "prophecy / threat",
+      "source": "Referenced by the Shard-Keeper as the consequence of the Phantom-Echo's reconstruction.",
+      "status": "threatened",
+      "notes": "The Shard-Keeper's term for what would happen if the Echo completes its reconstruction: the erasure of everyone born after the Stellar Rite. Unresolved: whether it can be prevented.",
+      "first_date": "2026-04-06",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -25798,7 +26511,7 @@
       "cost": "The caster must sacrifice every moment of joy, every love, every triumph, and every small beauty\u2014effectively stripping them of all positive memories.",
       "notes": "The Rite was discovered inscribed in the Singing Catacombs in languages predating humanity. Zareth learned it through seven years of study with druids, bone-carvers, and fae-touched hermits.",
       "first_date": "2026-03-01",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "celestial_rite",
