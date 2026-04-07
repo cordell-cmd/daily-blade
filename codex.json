@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-06",
+  "last_updated": "2026-04-07",
   "characters": [
     {
       "name": "Vraxen the Knife",
@@ -360,7 +360,7 @@
       ],
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -369,14 +369,30 @@
         {
           "date": "2026-02-28",
           "title": "The Lich-King's Collectors"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ],
-      "travel_scope": "unknown",
-      "home_place": "unknown",
+      "travel_scope": "regional",
+      "home_place": "Kethrim",
       "home_region": "unknown",
       "home_realm": "unknown",
       "aliases": [
-        "Malachar"
+        "Malachar",
+        "merchant-prince of Kethrim"
+      ],
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "dead",
+          "to_status": "dead",
+          "type": "prequel",
+          "story_title": "The Spice-Runner's Second Chance",
+          "note": "Malachar appears alive as a spice-runner and redemption-seeker in the Scorched Reach, decades before his death and transition to lich-kingship.",
+          "evidence": "Malachar hired himself to a widow named Senna, moved spice-bales through the Scorched Reach, and wept when protected from a shadow-broker's claim."
+        }
       ]
     },
     {
@@ -574,7 +590,7 @@
       ],
       "first_story": "The Crimson Covenant of Vex-Karthul",
       "first_date": "2026-02-25",
-      "appearances": 35,
+      "appearances": 36,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -715,6 +731,10 @@
         {
           "date": "2026-04-06",
           "title": "The Artificer's Fractured Instrument"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
         }
       ],
       "aliases": [
@@ -1305,7 +1325,7 @@
       ],
       "first_story": "Shadows for Sale",
       "first_date": "2026-02-26",
-      "appearances": 35,
+      "appearances": 36,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -1446,6 +1466,10 @@
         {
           "date": "2026-04-06",
           "title": "The Artificer's Fractured Instrument"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
         }
       ],
       "travel_scope": "regional",
@@ -2202,8 +2226,8 @@
       "tagline": "Poisoner. Cursed. Redeemed.",
       "role": "Sacrifice, Cosmic Consciousness",
       "status": "dead",
-      "travel_scope": "unknown",
-      "home_place": "unknown",
+      "travel_scope": "local",
+      "home_place": "Archive Tower",
       "home_region": "unknown",
       "home_realm": "unknown",
       "status_history": [],
@@ -2216,7 +2240,7 @@
       ],
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
-      "appearances": 4,
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-02-26",
@@ -2233,6 +2257,10 @@
         {
           "date": "2026-03-18",
           "title": "The Wanderer's Question"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     },
@@ -2295,7 +2323,7 @@
       ],
       "first_story": "The Scarlet Merchant",
       "first_date": "2026-02-26",
-      "appearances": 43,
+      "appearances": 44,
       "story_appearances": [
         {
           "date": "2026-02-26",
@@ -2468,6 +2496,10 @@
         {
           "date": "2026-04-06",
           "title": "The Bone-Singer's Choice"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ]
     },
@@ -2973,7 +3005,7 @@
       ],
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 43,
+      "appearances": 44,
       "story_appearances": [
         {
           "date": "2026-02-26",
@@ -3146,6 +3178,10 @@
         {
           "date": "2026-04-06",
           "title": "The Bone-Singer's Choice"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ]
     },
@@ -3192,7 +3228,7 @@
       ],
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 19,
+      "appearances": 20,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -3269,6 +3305,10 @@
         {
           "date": "2026-04-06",
           "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ]
     },
@@ -3437,7 +3477,17 @@
       "home_place": "Deepvault",
       "home_region": "Pelimor",
       "home_realm": "unknown",
-      "status_history": [],
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "cursed",
+          "to_status": "cursed",
+          "type": "other",
+          "story_title": "The Cartographer's Last Map",
+          "note": "Gareth appears as Mardoc's apprentice, begging her to stop charting reality-consuming maps in the Bleached Wastes.",
+          "evidence": "Gareth begs Mardoc to stop her final map work, fearing it would trigger reversal the Tower seeks."
+        }
+      ],
       "world": "The Known World",
       "bio": "A dwarf locksmith who worked the Deepvault and was recruited by Tory to breach the crown-vault at the Ruins of Old Keth. Gareth successfully used meteor-iron lockpicks to open the vault, but proximity to the Crown of Karesh caused its curse to seep into his blood. Released from his oath by Tory, he limped northward carrying the crown-wrapped bundle, tasked with breaking the curse however he could.",
       "traits": [
@@ -3448,7 +3498,7 @@
       ],
       "first_story": "The Crown-Thief of Ashen Wastes",
       "first_date": "2026-03-01",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -3457,6 +3507,10 @@
         {
           "date": "2026-03-22",
           "title": "The Widow-Curse of Blackpine"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ]
     },
@@ -3539,7 +3593,7 @@
       ],
       "first_story": "The Crown-Thief of Ashen Wastes",
       "first_date": "2026-03-01",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -3548,6 +3602,10 @@
         {
           "date": "2026-03-28",
           "title": "The Wanderer's Final Question"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ]
     },
@@ -4266,7 +4324,7 @@
       ],
       "first_story": "The Warband's Last Song",
       "first_date": "2026-03-02",
-      "appearances": 11,
+      "appearances": 12,
       "story_appearances": [
         {
           "date": "2026-03-02",
@@ -4311,6 +4369,10 @@
         {
           "date": "2026-04-04",
           "title": "The Shadow-Market's Last Deal"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ]
     },
@@ -5301,7 +5363,7 @@
       ],
       "first_story": "The Wound-Keeper's Vigil",
       "first_date": "2026-03-05",
-      "appearances": 14,
+      "appearances": 15,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -5358,6 +5420,10 @@
         {
           "date": "2026-03-31",
           "title": "The Young Sorcerer's Vault Secret"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ]
     },
@@ -6694,7 +6760,7 @@
       ],
       "first_story": "The Corsair's Compass",
       "first_date": "2026-03-10",
-      "appearances": 14,
+      "appearances": 15,
       "story_appearances": [
         {
           "date": "2026-03-10",
@@ -6751,6 +6817,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ]
     },
@@ -9523,7 +9593,7 @@
       ],
       "first_story": "The Auditor's Mercy",
       "first_date": "2026-03-18",
-      "appearances": 23,
+      "appearances": 24,
       "story_appearances": [
         {
           "date": "2026-03-18",
@@ -9616,6 +9686,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
         }
       ]
     },
@@ -9998,15 +10072,28 @@
     },
     {
       "name": "Corin",
-      "aliases": [],
+      "aliases": [
+        "Monitor",
+        "aging Monitor"
+      ],
       "tagline": "Honest. Conflicted. Auditor.",
       "role": "Imperial auditor",
       "status": "active",
-      "travel_scope": "regional",
+      "travel_scope": "realmwide",
       "home_place": "refugee camp",
       "home_region": "unknown",
       "home_realm": "The Empire",
-      "status_history": [],
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Auditor's Defection",
+          "note": "Corin transitions from Imperial auditor to defector, stealing the master-ledger and walking into Sevin's scriptorium as evidence-bearer.",
+          "evidence": "Corin breaks decades of service, steals the master-ledger showing Dominion erasure of refugee testimony, and directly enters Sevin's hidden scriptorium."
+        }
+      ],
       "world": "Edhra",
       "bio": "An Imperial auditor tasked with verifying supply manifests for refugee camps, Corin discovers that half the listed grain shipments are phantom entries\u2014fragments of the pre-Ascension world bleeding through reality's cracks. Ordered to falsify the records via tally-working magic, he faces an impossible choice: lie and watch refugees starve, or expose the Empire's deception and trigger administrative collapse.",
       "traits": [
@@ -10016,11 +10103,15 @@
       ],
       "first_story": "The Ledger-Keeper's Folly",
       "first_date": "2026-03-19",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-19",
           "title": "The Ledger-Keeper's Folly"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ]
     },
@@ -10286,7 +10377,7 @@
       ],
       "first_story": "The Ash-Singer's Debt",
       "first_date": "2026-03-19",
-      "appearances": 37,
+      "appearances": 41,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -10435,6 +10526,22 @@
         {
           "date": "2026-04-06",
           "title": "The Bone-Singer's Choice"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     },
@@ -10528,11 +10635,15 @@
       ],
       "first_story": "The Initiate's Bargain",
       "first_date": "2026-03-19",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-19",
           "title": "The Initiate's Bargain"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ]
     },
@@ -12185,7 +12296,17 @@
       "home_place": "Wailing Chasm",
       "home_region": "Scorched Expanse",
       "home_realm": "unknown",
-      "status_history": [],
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Transformed Merchant's Testament",
+          "note": "Lysander discovers his consciousness is being copied and echoed by the Tower as it tests different futures and outcomes.",
+          "evidence": "As Lysander records testimony, each memory creates echoes that accumulate agency and will; the Tower is duplicating him to explore possible futures."
+        }
+      ],
       "world": "Edhra",
       "bio": "One of the merchants transformed by the Luminous Ascension, now dwelling in a state between flesh and living light alongside Kael. Lysander faces the same critical threshold: completing the transformation into something beyond mortal comprehension, or remaining in liminality.",
       "traits": [
@@ -12195,7 +12316,7 @@
       ],
       "first_story": "The Transformed Merchant's Choice",
       "first_date": "2026-03-27",
-      "appearances": 4,
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-03-27",
@@ -12212,6 +12333,10 @@
         {
           "date": "2026-04-05",
           "title": "The Merchant's Harmonic Hunger"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
         }
       ]
     },
@@ -12704,11 +12829,15 @@
       ],
       "first_story": "The Forger's Rebellion",
       "first_date": "2026-03-30",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-03-30",
           "title": "The Forger's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ]
     },
@@ -13250,7 +13379,7 @@
       "status": "active",
       "travel_scope": "local",
       "home_place": "Thornholt's Lantern Market",
-      "home_region": "unknown",
+      "home_region": "Burned Expanse",
       "home_realm": "unknown",
       "status_history": [],
       "world": "Edhra",
@@ -13314,7 +13443,17 @@
       "home_place": "Sapphire Deep",
       "home_region": "unknown",
       "home_realm": "Deepkin Realms",
-      "status_history": [],
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepkin's Last Treaty",
+          "note": "Commander Thale negotiates with surface kingdoms while the deepkin council fractures over whether to flood the surface or seal away forever.",
+          "evidence": "Thale brings news that the Abyssal Rift is closing, not widening; deepkin factions disagree on response; Depth-Strikers sabotage negotiation with false intelligence."
+        }
+      ],
       "world": "Edhra",
       "bio": "Commander Thale of the Sapphire Deep arrives at a covenant renegotiation carrying a secret: her reflection has developed independent will and memory since the Luminous Ascension rippled through the Abyssal Rift. She must negotiate for two civilizations while her own identity fragments hourly, faced with threats from the Blackstone Spire and pressure from deepkin council.",
       "traits": [
@@ -13324,11 +13463,15 @@
       ],
       "first_story": "The Deepkin Diplomat's Fractured Self",
       "first_date": "2026-04-02",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-04-02",
           "title": "The Deepkin Diplomat's Fractured Self"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ]
     },
@@ -14243,7 +14386,7 @@
       ],
       "first_story": "The Bone-Singer's Choice",
       "first_date": "2026-04-06",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-04-06",
@@ -14252,6 +14395,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ]
     },
@@ -14364,7 +14511,7 @@
       "traits": [],
       "first_story": "The Artificer's Fractured Instrument",
       "first_date": "2026-04-06",
-      "appearances": 25,
+      "appearances": 26,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -14465,6 +14612,256 @@
         {
           "date": "2026-04-06",
           "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
+        }
+      ]
+    },
+    {
+      "name": "Senna",
+      "aliases": [
+        "widow",
+        "Veris's daughter",
+        "Warden's granddaughter"
+      ],
+      "tagline": "Protective. Grieving. Noble.",
+      "role": "Widow, caravan employer, Warden's descendant",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "unknown",
+      "home_region": "Ashen Reach",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "A widow who lost two daughters to plague-winds. She employs Malachar as a spice-runner on the Ashen caravan route and protects him when a shadow-broker arrives with blood-debts. Her lineage\u2014daughter of Veris, granddaughter of the Warden\u2014carries enough weight to drive away threats.",
+      "traits": [
+        "grieving",
+        "protective",
+        "noble-born",
+        "courageous",
+        "compassionate"
+      ],
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
+        }
+      ]
+    },
+    {
+      "name": "Veris",
+      "aliases": [],
+      "tagline": "Noble. Lineage-bearer. Distant.",
+      "role": "Nobleman, ancestor",
+      "status": "unknown",
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "Father of Senna and child of the Warden. His bloodline carries weight enough to protect debtors and fugitives.",
+      "traits": [
+        "noble"
+      ],
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
+        }
+      ]
+    },
+    {
+      "name": "the Warden",
+      "aliases": [
+        "Warden"
+      ],
+      "tagline": "Ancient. Powerful. Protective.",
+      "role": "Grandparent, authority figure",
+      "status": "unknown",
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "Grandfather of Senna and ancestor of Veris. His lineage name carries enough weight to deter shadow-brokers and protect those under his descendant's care.",
+      "traits": [
+        "powerful",
+        "protective"
+      ],
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
+        }
+      ]
+    },
+    {
+      "name": "Kelven",
+      "aliases": [
+        "spice-runner"
+      ],
+      "tagline": "Curious. Bound. Grieving.",
+      "role": "Spice-runner, heir to merchant guild",
+      "status": "active",
+      "travel_scope": "regional",
+      "home_place": "Anthrim",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "A spice-runner in Anthrim who discovers his late father's merchant guild was a vessel for a bound consciousness\u2014a fragment-entity waiting for a living heir. He must undergo a binding ritual to gain pre-Ascension trade route knowledge, but the binding entangles him with an ancient, grieving consciousness that needs him as much as he needs it.",
+      "traits": [
+        "curious",
+        "dutiful",
+        "haunted",
+        "entangled"
+      ],
+      "first_story": "The Echoing Debt",
+      "first_date": "2026-04-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-07",
+          "title": "The Echoing Debt"
+        }
+      ]
+    },
+    {
+      "name": "fragment-entity",
+      "aliases": [
+        "bound consciousness",
+        "entity"
+      ],
+      "tagline": "Imprisoned. Grieving. Ancient.",
+      "role": "Merchant guild vessel, bound consciousness",
+      "status": "active",
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "Edhra",
+      "bio": "A fragment-entity that was bound into Kelven's late father's merchant guild, waiting for a living heir to reawaken it. It offers knowledge of pre-Ascension trade routes but requires reciprocal entanglement\u2014Kelven must share his mind with something ancient and grieving as the price of survival.",
+      "traits": [
+        "ancient",
+        "grieving",
+        "entangled",
+        "knowledge-keeper"
+      ],
+      "first_story": "The Echoing Debt",
+      "first_date": "2026-04-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-07",
+          "title": "The Echoing Debt"
+        }
+      ]
+    },
+    {
+      "name": "Pale Crossing",
+      "aliases": [
+        "shadow-broker appeared with a ledger marked in Malachar's name"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Shadow-Broker Appeared With A Ledger Marked In Malachar'S Name",
+      "status": "active",
+      "travel_scope": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "status_history": [],
+      "world": "The Known World",
+      "bio": "A named shadow-broker appeared with a ledger marked in Malachar's name explicitly identified in the story text.",
+      "traits": [],
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
+      "appearances": 18,
+      "story_appearances": [
+        {
+          "date": "2026-03-10",
+          "title": "The Refugee's Burden"
+        },
+        {
+          "date": "2026-03-12",
+          "title": "The Singing Stones Awaken"
+        },
+        {
+          "date": "2026-03-13",
+          "title": "The Ledger's Mercy"
+        },
+        {
+          "date": "2026-03-14",
+          "title": "The Refugee's Ledger"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Refugee's Refuge"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Auditor's Last Ledger"
+        },
+        {
+          "date": "2026-03-18",
+          "title": "The Auditor's Mercy"
+        },
+        {
+          "date": "2026-03-21",
+          "title": "The Ledger-Keeper's Lie"
+        },
+        {
+          "date": "2026-03-22",
+          "title": "The Ledger of Ash and Ember"
+        },
+        {
+          "date": "2026-03-23",
+          "title": "The Ash-Scribe's Gambit"
+        },
+        {
+          "date": "2026-03-24",
+          "title": "The Grain-Singer's Gambit"
+        },
+        {
+          "date": "2026-03-25",
+          "title": "The Ledger-Keeper's Lie"
+        },
+        {
+          "date": "2026-03-28",
+          "title": "The Resonance Fragments Wake"
+        },
+        {
+          "date": "2026-03-29",
+          "title": "The Widow's Shadow-Debt"
+        },
+        {
+          "date": "2026-04-01",
+          "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-05",
+          "title": "The Cartographer's Blind Map"
+        },
+        {
+          "date": "2026-04-05",
+          "title": "The Refuge-Keeper's Gambit"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ]
     }
@@ -14558,7 +14955,7 @@
       "description": "One of the macro-regions of Valdris, located in the west. Home to the Drowned Hollows and the pre-human dead who sing in unison. The Ebon Tower draws fragments of Vylthar toward convergence here.",
       "status": "active",
       "first_story": "The Warlord's Widow",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 16,
       "story_appearances": [
         {
@@ -14844,7 +15241,7 @@
       "status": "active",
       "first_story": "The Copper Thief",
       "first_date": "2026-02-26",
-      "appearances": 13,
+      "appearances": 14,
       "story_appearances": [
         {
           "date": "2026-02-26",
@@ -14897,6 +15294,10 @@
         {
           "date": "2026-04-06",
           "title": "The Spice-Runner's Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ],
       "hemisphere": "unknown",
@@ -14982,7 +15383,7 @@
       "description": "A region where a spire is hidden, home to The Sorcerer and their heir. The spire contains master's journals and retains echoes of ancient power.",
       "status": "active",
       "first_story": "Shadows for Sale",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 6,
       "story_appearances": [
         {
@@ -15101,8 +15502,8 @@
       "atmosphere": "",
       "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
       "status": "active",
-      "first_story": "Blood-Price of the Caravan",
-      "first_date": "2026-04-05",
+      "first_story": "The Spice-Runner's Reckoning",
+      "first_date": "2026-04-06",
       "appearances": 9,
       "story_appearances": [
         {
@@ -15838,9 +16239,9 @@
       "atmosphere": "Enigmatic and contested; may or may not be the destination of convergence.",
       "description": "The Wanderer may be orchestrating convergence away from the Tower toward some other horizon.",
       "status": "unknown",
-      "first_story": "The Ledger-Thief's Confession",
-      "first_date": "2026-04-05",
-      "appearances": 72,
+      "first_story": "The Auditor's Blind Ledger",
+      "first_date": "2026-04-06",
+      "appearances": 77,
       "story_appearances": [
         {
           "date": "2026-02-27",
@@ -16129,6 +16530,26 @@
         {
           "date": "2026-04-06",
           "title": "The Young Sorcerer's Vault"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ],
       "aliases": [
@@ -16151,7 +16572,7 @@
       "description": "An impossible fortress whose walls are made of living calcium that split and swallow warriors whole. Its towers bend like intestines in peristaltic waves. The corridors rearrange themselves around intruders. It possesses agency and deliberately chose Varak Ironhelm as a vessel. Upon sating itself, it settles into patient stillness.",
       "status": "active",
       "first_story": "The Bone Citadel's Hunger",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -16407,7 +16828,7 @@
       "description": "A mountain referenced in Resonance's fragmented memories as the place where Kael died during the Stellar Rite. It is the epicenter of the sacrifice that unmade and scattered Kael's consciousness.",
       "status": "active",
       "first_story": "The Starfall Oath",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 10,
       "story_appearances": [
         {
@@ -16471,7 +16892,7 @@
       "status": "active",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 26,
+      "appearances": 27,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -16576,6 +16997,10 @@
         {
           "date": "2026-04-06",
           "title": "The Bone-Singer's Choice"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ]
     },
@@ -16648,7 +17073,7 @@
       "description": "A towering structure that marks the boundary between the surface world and the goblin warrens below. The Spire stands as a monument above the underground kingdoms ruled by Mogrul and serves as a reference point for the deep places where goblins dwell.",
       "status": "standing",
       "first_story": "The Goblin-King's Mercy",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 3,
       "story_appearances": [
         {
@@ -16733,7 +17158,7 @@
       "description": "The Warrens are an expansive underground kingdom beneath the Spire of Blackstone, inhabited by goblins for ten thousand years. They are so vast and strange that dwarven invaders deemed them unconquerable. The Warrens exist in a delicate state of renewal after Grethuk's sacrifice of collective memory allowed them to endure and be reborn as free culture.",
       "status": "active",
       "first_story": "The Goblin-King's Gambit",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 2,
       "story_appearances": [
         {
@@ -16815,38 +17240,94 @@
     },
     {
       "name": "The Bleached Wastes",
-      "tagline": "Ancient. Glowing. Awakening.",
-      "place_type": "wilderness",
-      "world": "The Known World",
-      "parent_place": "",
+      "tagline": "Ash-choked. Ancient. Resonant.",
+      "place_type": "region",
+      "world": "Edhra",
+      "parent_place": "Valdris",
       "hemisphere": "unknown",
       "continent": "Valdris",
       "realm": "unknown",
       "province": "unknown",
       "region": "eastern reaches",
       "district": "unknown",
-      "atmosphere": "A desolate expanse hiding pre-human ruins that glow with inner light when the new stars are visible.",
+      "atmosphere": "Desolate and haunted, filled with the harmonic frequencies of pre-human ruins.",
       "description": "A vast eastern wasteland no kingdom had successfully explored before Mardoc's expedition. Beneath its white surface lies a vast underground city of pre-human ruins that fundamentally changed the Empire's understanding of the continent.",
       "status": "explored",
-      "first_story": "The Cartographer's Lie",
-      "first_date": "2026-04-05",
-      "appearances": 11,
+      "first_story": "The Cartographer's Final Map",
+      "first_date": "2026-04-06",
+      "appearances": 26,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Barbarian's Mercy"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        },
         {
           "date": "2026-03-02",
           "title": "The Cartographer's Lie"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Shepherd of Dying Stars"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Tax Collector's Reckoning"
         },
         {
           "date": "2026-03-04",
           "title": "The Cartographer's Last Map"
         },
         {
+          "date": "2026-03-05",
+          "title": "The Shade-Merchant's Reckoning"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Tax Collector's Question"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-08",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
           "date": "2026-03-09",
           "title": "The Cartographer's Lament"
         },
         {
+          "date": "2026-03-10",
+          "title": "The Ledger-Master's Gambit"
+        },
+        {
           "date": "2026-03-16",
           "title": "The Cartographer's Descent"
+        },
+        {
+          "date": "2026-03-17",
+          "title": "The Harbor Master's Deficit"
+        },
+        {
+          "date": "2026-03-19",
+          "title": "The Wyvern's Dowry"
+        },
+        {
+          "date": "2026-03-29",
+          "title": "The Bone-Thief's Inheritance"
         },
         {
           "date": "2026-03-30",
@@ -16875,10 +17356,14 @@
         {
           "date": "2026-04-06",
           "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ],
       "aliases": [
-        "Bleached Wastes"
+        "Ashen Reach"
       ]
     },
     {
@@ -16897,7 +17382,7 @@
       "status": "discovered",
       "first_story": "The Cartographer's Descent",
       "first_date": "2026-03-16",
-      "appearances": 13,
+      "appearances": 14,
       "story_appearances": [
         {
           "date": "2026-03-02",
@@ -16950,6 +17435,10 @@
         {
           "date": "2026-04-06",
           "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ],
       "parent_place": "Bleached Wastes"
@@ -16970,7 +17459,7 @@
       "description": "A bog landscape where waters possess the power to transform and preserve. The Tidelands became the refuge of the warlord Varak after his binding, where he exists in a half-alive state and speaks prophecy to those mad enough to seek him. The waters are said to hold secrets and connect to bone-magic and oath-curses.",
       "status": "active",
       "first_story": "The Bone-Singer's Choice",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -17214,7 +17703,7 @@
       "description": "A desolate expanse across which the hermit woman travels. Few dare venture here. The hermit studies the sky from a wind-scoured peak, reading the new constellations in ash and bone.",
       "status": "active",
       "first_story": "The Shepherd of Dying Stars",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 2,
       "story_appearances": [
         {
@@ -17277,9 +17766,9 @@
       "atmosphere": "A harsh, dangerous region where trade routes have become suddenly impassable, as if the land itself has shifted.",
       "description": "A trade route region where spice caravans report sudden impassibility. Merchants claim the routes are adjusting to 'changed celestial circumstances.' The land itself may have literally shifted in response to the cosmic changes.",
       "status": "contested",
-      "first_story": "The Sorcerer's Heir",
-      "first_date": "2026-04-05",
-      "appearances": 31,
+      "first_story": "The Auditor's Blind Ledger",
+      "first_date": "2026-04-06",
+      "appearances": 32,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -17404,6 +17893,10 @@
         {
           "date": "2026-04-06",
           "title": "The Spice-Runner's Widow"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ],
       "aliases": [
@@ -17502,7 +17995,7 @@
       "description": "A spire hidden among the Blasted Lands, home to The Sorcerer and their heir. It contains the master's final journal and retains echoes of power that still cling to the stones.",
       "status": "active",
       "first_story": "The Sorcerer's Heir",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 27,
       "story_appearances": [
         {
@@ -17723,7 +18216,7 @@
       "description": "The Iron Coast is a region of wind-haunted ports where smugglers like Captain Merra conduct illicit trade. It serves as a hub for contraband\u2014plague-victims, forbidden scrolls, stolen shadows, and living oaths. The sea remembers debts here, and coastal magic runs deep.",
       "status": "active",
       "first_story": "The Lamplighter's Accord",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 4,
       "story_appearances": [
         {
@@ -18090,7 +18583,7 @@
       "status": "active",
       "first_story": "Vex's Fragment Market in Collapse",
       "first_date": "2026-03-06",
-      "appearances": 8,
+      "appearances": 9,
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -18123,6 +18616,10 @@
         {
           "date": "2026-03-31",
           "title": "The Shade-Merchant's Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Echoing Debt"
         }
       ]
     },
@@ -18225,8 +18722,8 @@
       "atmosphere": "A solemn gathering place where the deepkin face impossible choices.",
       "description": "The governing council of the deepkin where Warden Sylas convenes the leadership. Here they learn a terrible truth: the Celestial Ascension's magic has fractured the barrier between surface world and Abyss Below. The council debates three terrible options: sealing themselves away completely, risking catastrophic war with surface dwellers, or undertaking an expedition to understand what awakens beneath.",
       "status": "active",
-      "first_story": "The Deepkin Ambassador's Divided Loyalty",
-      "first_date": "2026-04-05",
+      "first_story": "The Deepkin Captain's Last Treaty",
+      "first_date": "2026-04-06",
       "appearances": 23,
       "story_appearances": [
         {
@@ -18784,9 +19281,13 @@
         {
           "date": "2026-04-03",
           "title": "The Merchant's Shadow Rebels"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ],
-      "appearances": 7
+      "appearances": 8
     },
     {
       "name": "mountain holds of the dwarves",
@@ -19032,7 +19533,7 @@
       "status": "collapsed",
       "first_story": "The Corsair's Compass",
       "first_date": "2026-03-10",
-      "appearances": 18,
+      "appearances": 19,
       "story_appearances": [
         {
           "date": "2026-03-10",
@@ -19105,6 +19606,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ]
     },
@@ -19186,7 +19691,7 @@
       "status": "active",
       "first_story": "The Refugee's Burden",
       "first_date": "2026-03-10",
-      "appearances": 17,
+      "appearances": 18,
       "story_appearances": [
         {
           "date": "2026-03-10",
@@ -19255,6 +19760,10 @@
         {
           "date": "2026-04-05",
           "title": "The Refuge-Keeper's Gambit"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ]
     },
@@ -19273,9 +19782,9 @@
       "atmosphere": "A devastated landscape where reality itself has been fractured by the Luminous Ascension.",
       "description": "A region destroyed by the Luminous Ascension where villages vanished between heartbeats and merchants were transformed into living light. Refugees from this area carry impossible memories and shifting ages. Iskar wanders these roads compelled toward the Sunken Cathedrals.",
       "status": "cursed",
-      "first_story": "The Ledger-Thief's Confession",
-      "first_date": "2026-04-05",
-      "appearances": 50,
+      "first_story": "The Refugee Scribe's Rebellion",
+      "first_date": "2026-04-06",
+      "appearances": 51,
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -19476,6 +19985,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ],
       "aliases": [
@@ -19499,7 +20012,7 @@
       "status": "active",
       "first_story": "The Singing Merchant",
       "first_date": "2026-03-10",
-      "appearances": 48,
+      "appearances": 49,
       "story_appearances": [
         {
           "date": "2026-03-10",
@@ -19692,6 +20205,10 @@
         {
           "date": "2026-04-06",
           "title": "The Artificer's Fractured Instrument"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ]
     },
@@ -19984,9 +20501,13 @@
         {
           "date": "2026-04-03",
           "title": "The Resonance Fragments Converge"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ],
-      "appearances": 36
+      "appearances": 37
     },
     {
       "name": "Sovereign's Treasury",
@@ -20295,7 +20816,7 @@
       "status": "contested",
       "first_story": "The Shadow Market's Price",
       "first_date": "2026-03-14",
-      "appearances": 23,
+      "appearances": 24,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -20388,6 +20909,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ]
     },
@@ -20532,7 +21057,7 @@
       "status": "active",
       "first_story": "The Auditor's Last Ledger",
       "first_date": "2026-03-15",
-      "appearances": 11,
+      "appearances": 12,
       "story_appearances": [
         {
           "date": "2026-03-15",
@@ -20577,6 +21102,10 @@
         {
           "date": "2026-04-06",
           "title": "The Auditor's Blind Ledger"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
         }
       ]
     },
@@ -20596,7 +21125,7 @@
       "description": "The area surrounding Pale Crossing, plagued by shortages of fresh water and grain. Imperial forces attempt conscription here to maintain order, though their reliability is questioned.",
       "status": "contested",
       "first_story": "The Warden's Sorrow",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 14,
       "story_appearances": [
         {
@@ -20892,9 +21421,13 @@
         {
           "date": "2026-03-25",
           "title": "The Ledger-Keeper's Lie"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
-      "appearances": 3
+      "appearances": 4
     },
     {
       "name": "Thornwick",
@@ -21706,7 +22239,7 @@
       "status": "active",
       "first_story": "The Refugee Archives' Rebellion",
       "first_date": "2026-03-20",
-      "appearances": 9,
+      "appearances": 10,
       "story_appearances": [
         {
           "date": "2026-03-20",
@@ -21743,6 +22276,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ]
     },
@@ -21763,7 +22300,7 @@
       "status": "active",
       "first_story": "The Scarlet Gambit",
       "first_date": "2026-03-21",
-      "appearances": 8,
+      "appearances": 9,
       "story_appearances": [
         {
           "date": "2026-03-21",
@@ -21796,6 +22333,10 @@
         {
           "date": "2026-04-06",
           "title": "The Young Sorcerer's Vault"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     },
@@ -21996,9 +22537,17 @@
         {
           "date": "2026-04-06",
           "title": "The Memory-Thief's Gospel"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
-      "appearances": 14
+      "appearances": 16
     },
     {
       "name": "Vex's hide",
@@ -22216,9 +22765,13 @@
         {
           "date": "2026-04-02",
           "title": "The Refugee Archivist's Burden"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
-      "appearances": 4
+      "appearances": 5
     },
     {
       "name": "archive waystation",
@@ -22486,131 +23039,6 @@
       "appearances": 4
     },
     {
-      "name": "The Bleached Wastes",
-      "tagline": "Ash-choked. Ancient. Resonant.",
-      "place_type": "region",
-      "world": "Edhra",
-      "parent_place": "Valdris",
-      "hemisphere": "unknown",
-      "continent": "Valdris",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "Ashen Reach",
-      "district": "unknown",
-      "atmosphere": "Desolate and haunted, filled with the harmonic frequencies of pre-human ruins.",
-      "description": "A region in eastern Valdris containing catacombs that have begun their song again since the Ascension. The frequency of these catacombs matches pre-human ruins. Family crypts lie buried beneath.",
-      "status": "active",
-      "first_story": "The Barbarian's Mercy",
-      "first_date": "2026-04-05",
-      "appearances": 25,
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "The Barbarian's Mercy"
-        },
-        {
-          "date": "2026-02-25",
-          "title": "The Debt of Kessa the Thief"
-        },
-        {
-          "date": "2026-03-02",
-          "title": "The Cartographer's Lie"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Ghost of the Stellar Rite"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Shepherd of Dying Stars"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Starfall Debt"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Tax Collector's Reckoning"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Shade-Merchant's Reckoning"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Tax Collector's Question"
-        },
-        {
-          "date": "2026-03-06",
-          "title": "The Tax Collector's Reckoning"
-        },
-        {
-          "date": "2026-03-08",
-          "title": "The Tax Collector's Reckoning"
-        },
-        {
-          "date": "2026-03-09",
-          "title": "The Cartographer's Lament"
-        },
-        {
-          "date": "2026-03-10",
-          "title": "The Ledger-Master's Gambit"
-        },
-        {
-          "date": "2026-03-16",
-          "title": "The Cartographer's Descent"
-        },
-        {
-          "date": "2026-03-17",
-          "title": "The Harbor Master's Deficit"
-        },
-        {
-          "date": "2026-03-19",
-          "title": "The Wyvern's Dowry"
-        },
-        {
-          "date": "2026-03-29",
-          "title": "The Bone-Thief's Inheritance"
-        },
-        {
-          "date": "2026-03-30",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-30",
-          "title": "The Deepkin Reckoning"
-        },
-        {
-          "date": "2026-03-31",
-          "title": "The Cartographer's Blind Inheritance"
-        },
-        {
-          "date": "2026-04-02",
-          "title": "The Cartographer's Gambit"
-        },
-        {
-          "date": "2026-04-03",
-          "title": "The Cartographer's Prescient Maps"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Artificer's Fractured Instrument"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Cartographer's Final Map"
-        }
-      ],
-      "aliases": [
-        "Ashen Reach",
-        "The Ashen Reach"
-      ]
-    },
-    {
       "name": "The Hearthlands",
       "tagline": "Chaotic. Awakened. Vivid.",
       "place_type": "region",
@@ -22626,7 +23054,7 @@
       "description": "A central region of Valdris where Corvhen's mother awakened with no memory. Described as a place of chaos in the aftermath of the Ascension.",
       "status": "active",
       "first_story": "The Barbarian's Mercy",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 14,
       "story_appearances": [
         {
@@ -23511,6 +23939,31 @@
       "appearances": 1
     },
     {
+      "name": "waystation shelters",
+      "tagline": "Refuges. Tempted. Spreading.",
+      "place_type": "shelters / waypoints / collection",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Havens for travelers and refugees that have become sites of the gospel's infectious spread.",
+      "description": "A network of waystation shelters across the realm where the Memory-Thief's Gospel is spreading. Shelter residents are beginning to choose voluntary erasure, seduced by the promise of living in the Echo's reconstructed pre-Ascension world.",
+      "status": "active (corrupted)",
+      "first_story": "The Memory-Thief's Gospel",
+      "first_date": "2026-04-06",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-06",
+          "title": "The Memory-Thief's Gospel"
+        }
+      ]
+    },
+    {
       "name": "the Ashen Wastes",
       "tagline": "",
       "place_type": "",
@@ -23525,8 +23978,8 @@
       "atmosphere": "",
       "description": "A blasted wasteland crossed by spice caravans. Controlled by bandits, toll-lords, and worse. Blood-sorcerers operate here. The terrain is hostile enough that crossing it requires hired swords.",
       "status": "active",
-      "first_story": "The Spice-Runner's Reckoning",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 9,
       "story_appearances": [
         {
@@ -23586,7 +24039,7 @@
       "description": "Auto-added from character home_place.",
       "status": "unknown",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 16,
       "story_appearances": [
         {
@@ -23673,9 +24126,9 @@
       "atmosphere": "",
       "description": "Auto-added from character home_place.",
       "status": "unknown",
-      "first_story": "The Auditor's Blind Ledger",
-      "first_date": "2026-04-06",
-      "appearances": 72,
+      "first_story": "The Cartographer's Last Map",
+      "first_date": "2026-04-07",
+      "appearances": 77,
       "story_appearances": [
         {
           "date": "2026-02-27",
@@ -23964,6 +24417,26 @@
         {
           "date": "2026-04-06",
           "title": "The Young Sorcerer's Vault"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
         }
       ],
       "aliases": [
@@ -23986,7 +24459,7 @@
       "description": "An impossible fortress whose walls are made of living calcium that split and swallow warriors whole. Its towers bend like intestines in peristaltic waves. The corridors rearrange themselves around intruders. It possesses agency and deliberately chose Varak Ironhelm as a vessel. Upon sating itself, it settles into patient stillness.",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 1,
       "story_appearances": [
         {
@@ -24014,7 +24487,7 @@
       "description": "A mountain where Zareth climbed to perform the Stellar Rite on the night of the Violet Conjunction, ultimately birthing new stars and sacrificing his memories.",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 10,
       "story_appearances": [
         {
@@ -24078,7 +24551,7 @@
       "description": "The Spire of Blackstone is a massive fortress of black stone above which dwell dwarven holds, and beneath which tunnel the Warrens of the goblins. The structure stands as a contested border between goblin and dwarf domains, though the conflict was resolved through Grethuk's bargain rather than conquest.",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 3,
       "story_appearances": [
         {
@@ -24114,7 +24587,7 @@
       "description": "Auto-added from character home_place.",
       "status": "unknown",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 1,
       "story_appearances": [
         {
@@ -24142,7 +24615,7 @@
       "description": "A desolate expanse across which the hermit woman travels. Few dare venture here. The hermit studies the sky from a wind-scoured peak, reading the new constellations in ash and bone.",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 2,
       "story_appearances": [
         {
@@ -24173,9 +24646,9 @@
       "atmosphere": "A harsh, dangerous region where trade routes have become suddenly impassable, as if the land itself has shifted.",
       "description": "A trade route region where spice caravans report sudden impassibility. Merchants claim the routes are adjusting to 'changed celestial circumstances.' The land itself may have literally shifted in response to the cosmic changes.",
       "status": "contested",
-      "first_story": "The Auditor's Blind Ledger",
-      "first_date": "2026-04-06",
-      "appearances": 31,
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
+      "appearances": 32,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -24300,6 +24773,10 @@
         {
           "date": "2026-04-06",
           "title": "The Spice-Runner's Widow"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ],
       "aliases": [
@@ -24322,7 +24799,7 @@
       "description": "A region where a spire is hidden, home to The Sorcerer and their heir. The spire contains master's journals and retains echoes of ancient power.",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 6,
       "story_appearances": [
         {
@@ -24370,7 +24847,7 @@
       "description": "The Iron Coast is a region of wind-haunted ports where smugglers like Captain Merra conduct illicit trade. It serves as a hub for contraband\u2014plague-victims, forbidden scrolls, stolen shadows, and living oaths. The sea remembers debts here, and coastal magic runs deep.",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 4,
       "story_appearances": [
         {
@@ -24409,25 +24886,81 @@
       "atmosphere": "A desolate expanse hiding pre-human ruins that glow with inner light when the new stars are visible.",
       "description": "The Bleached Wastes span vast territories and contain pre-human ruins arranged in configurations that mirror the new constellation. Since the Violet Conjunction, these ruins have begun to glow faintly at night with light emanating from within the stone itself, and their inscriptions shimmer when the new stars are visible.",
       "status": "active",
-      "first_story": "The Artificer's Fractured Instrument",
-      "first_date": "2026-04-06",
-      "appearances": 11,
+      "first_story": "The Cartographer's Last Map",
+      "first_date": "2026-04-07",
+      "appearances": 26,
       "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Barbarian's Mercy"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        },
         {
           "date": "2026-03-02",
           "title": "The Cartographer's Lie"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Shepherd of Dying Stars"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Tax Collector's Reckoning"
         },
         {
           "date": "2026-03-04",
           "title": "The Cartographer's Last Map"
         },
         {
+          "date": "2026-03-05",
+          "title": "The Shade-Merchant's Reckoning"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Tax Collector's Question"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-08",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
           "date": "2026-03-09",
           "title": "The Cartographer's Lament"
         },
         {
+          "date": "2026-03-10",
+          "title": "The Ledger-Master's Gambit"
+        },
+        {
           "date": "2026-03-16",
           "title": "The Cartographer's Descent"
+        },
+        {
+          "date": "2026-03-17",
+          "title": "The Harbor Master's Deficit"
+        },
+        {
+          "date": "2026-03-19",
+          "title": "The Wyvern's Dowry"
+        },
+        {
+          "date": "2026-03-29",
+          "title": "The Bone-Thief's Inheritance"
         },
         {
           "date": "2026-03-30",
@@ -24456,6 +24989,10 @@
         {
           "date": "2026-04-06",
           "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ],
       "aliases": [
@@ -24478,7 +25015,7 @@
       "description": "A great structure in the Blasted Lands containing the Elder Mage's Codex in its depths. The Young Sorcerer's home and seat of learning. Wards have become unstable following the Stellar Rite.",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 27,
       "story_appearances": [
         {
@@ -24609,8 +25146,8 @@
       "atmosphere": "A solemn gathering place where the deepkin face impossible choices.",
       "description": "The governing council of the deepkin where Warden Sylas convenes the leadership. Here they learn a terrible truth: the Celestial Ascension's magic has fractured the barrier between surface world and Abyss Below. The council debates three terrible options: sealing themselves away completely, risking catastrophic war with surface dwellers, or undertaking an expedition to understand what awakens beneath.",
       "status": "active",
-      "first_story": "The Deepkin Captain's Last Treaty",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 23,
       "story_appearances": [
         {
@@ -24725,9 +25262,9 @@
       "atmosphere": "A devastated landscape where reality itself has been fractured by the Luminous Ascension.",
       "description": "A region destroyed by the Luminous Ascension where villages vanished between heartbeats and merchants were transformed into living light. Refugees from this area carry impossible memories and shifting ages. Iskar wanders these roads compelled toward the Sunken Cathedrals.",
       "status": "cursed",
-      "first_story": "The Refugee Scribe's Rebellion",
-      "first_date": "2026-04-06",
-      "appearances": 50,
+      "first_story": "The Initiate's Tower",
+      "first_date": "2026-04-07",
+      "appearances": 51,
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -24928,6 +25465,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ],
       "aliases": [
@@ -24950,7 +25491,7 @@
       "description": "The area surrounding Pale Crossing, plagued by shortages of fresh water and grain. Imperial forces attempt conscription here to maintain order, though their reliability is questioned.",
       "status": "contested",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 14,
       "story_appearances": [
         {
@@ -25029,9 +25570,9 @@
       "atmosphere": "Desolate and haunted, filled with the harmonic frequencies of pre-human ruins.",
       "description": "A region in eastern Valdris containing catacombs that have begun their song again since the Ascension. The frequency of these catacombs matches pre-human ruins. Family crypts lie buried beneath.",
       "status": "active",
-      "first_story": "The Cartographer's Final Map",
-      "first_date": "2026-04-06",
-      "appearances": 25,
+      "first_story": "",
+      "first_date": "2026-04-07",
+      "appearances": 26,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -25132,6 +25673,10 @@
         {
           "date": "2026-04-06",
           "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ],
       "aliases": [
@@ -25154,7 +25699,7 @@
       "description": "A central region of Valdris where Corvhen's mother awakened with no memory. Described as a place of chaos in the aftermath of the Ascension.",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 14,
       "story_appearances": [
         {
@@ -25234,7 +25779,7 @@
       "description": "Auto-added from character home_place.",
       "status": "unknown",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 2,
       "story_appearances": [
         {
@@ -25248,31 +25793,6 @@
       ],
       "aliases": [
         "Warrens"
-      ]
-    },
-    {
-      "name": "waystation shelters",
-      "tagline": "Refuges. Tempted. Spreading.",
-      "place_type": "shelters / waypoints / collection",
-      "world": "Edhra",
-      "parent_place": "unknown",
-      "hemisphere": "unknown",
-      "continent": "Valdris",
-      "realm": "unknown",
-      "province": "unknown",
-      "region": "unknown",
-      "district": "unknown",
-      "atmosphere": "Havens for travelers and refugees that have become sites of the gospel's infectious spread.",
-      "description": "A network of waystation shelters across the realm where the Memory-Thief's Gospel is spreading. Shelter residents are beginning to choose voluntary erasure, seduced by the promise of living in the Echo's reconstructed pre-Ascension world.",
-      "status": "active (corrupted)",
-      "first_story": "The Memory-Thief's Gospel",
-      "first_date": "2026-04-06",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-04-06",
-          "title": "The Memory-Thief's Gospel"
-        }
       ]
     }
   ],
@@ -26994,7 +27514,7 @@
       "significance": "Fundamentally alters the cosmic order and the hierarchies of power that governed the world. The old pacts between sky and earth are no longer sufficient.",
       "first_story": "Vex's Fragment Market in Collapse",
       "first_date": "2026-03-06",
-      "appearances": 45,
+      "appearances": 48,
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -27175,6 +27695,18 @@
         {
           "date": "2026-04-05",
           "title": "The Merchant's Harmonic Hunger"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     },
@@ -30042,7 +30574,7 @@
       "outcome": "New constellations burned where old ones had dimmed. A figure (possibly Zareth) was stripped of memory and self. Lamp oil rationing began. Night-workers feared the altered dark. Astronomers were suddenly in demand and accused of forbidden workings.",
       "significance": "A major celestial and magical upheaval that altered the stars themselves and required payment in the form of a human consciousness.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 5,
       "story_appearances": [
         {
@@ -30097,8 +30629,8 @@
       ],
       "outcome": "New stars were born, brighter than the old ones. Reality appears to have been subtly rewritten. Merchants in the Scorched Reach were transformed or disappeared. Zareth's memory was erased. Vex's memory became fragmented.",
       "significance": "A world-altering event that changed celestial arrangements, affected multiple regions, and left all who witnessed it with fragmented or stolen memories.",
-      "first_story": "The Spice-Runner's Widow",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 46,
       "story_appearances": [
         {
@@ -30310,7 +30842,7 @@
       "outcome": "This binding has left broken minds in its wake. Those touched by it are healed/tended by Ashara at Thornholt.",
       "significance": "It is a major cosmic event whose ripples affect multiple people and places.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 10,
       "story_appearances": [
         {
@@ -30390,7 +30922,7 @@
       "outcome": "Reality was fundamentally altered. Maps rearrange themselves. Fragments become unstable. Pre-human ruins awaken and sing. A new constellation blazes in the sky, brighter and hotter than before. Merchants vanish. Memory is stolen or transformed.",
       "significance": "The Celestial Ascension is a world-altering event that has broken normal reality. It was supposed to be a solution or ending, but instead opened something far larger. It affects magic, memory, geography, and celestial mechanics.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 7,
       "story_appearances": [
         {
@@ -30454,7 +30986,7 @@
       "outcome": "Reality fractured; villages vanished; merchants transformed into living light; the fundamental act of counting became unstable; abyssal rifts twisted and entities emerged.",
       "significance": "This cataclysm has shattered the Empire's administrative capacity and spawned widespread transformation. It is the root cause of refugee crises, dimensional instability, and the convergence at the Sunken Cathedrals.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 92,
       "story_appearances": [
         {
@@ -30854,7 +31386,7 @@
       "outcome": "Vethis sacrificed its consciousness to birth new stars, fundamentally rewriting the celestial order and erasing or altering memory of the old stars and pre-Ascension world. This sacrifice fragmented Vethis's consciousness into fragments like the phantom-Echo.",
       "significance": "The Luminous Ascension is the foundational cosmic event of this story's world. It created the new stars, erased the old, and fundamentally altered the nature of reality. The memory-theft driven by the phantom-Echo is an attempt to recover what was lost in this rewrite.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 92,
       "story_appearances": [
         {
@@ -31252,7 +31784,7 @@
       "outcome": "The stars and world were fundamentally rewritten. The Sovereign's Ledger of Names was scattered; Imperial authority fractured. Days following the remaking remain unstable.",
       "significance": "A cosmic working that changed the fundamental nature of reality itself. The Ledger now remembers the world before the stars changed.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 7,
       "story_appearances": [
         {
@@ -31309,7 +31841,7 @@
       "outcome": "Vylthar, the pre-human civilization, was shattered into fragments. The dead beneath the world remain conscious and singing.",
       "significance": "The fragments are now being reassembled by some unknown force drawing them toward the Ebon Tower. The pre-human dead are attempting to speak to their creator.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 5,
       "story_appearances": [
         {
@@ -31360,7 +31892,7 @@
       "outcome": "The Luminous Ascension fractured Vex's connection to cosmic consciousness, causing stolen shadows to become restless and organize, eventually returning to their original owners (twisted and angry).",
       "significance": "This cosmic event is rewriting the world's fundamental nature, returning stolen aspects of identity and destabilizing shadow-broking as a practice.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 92,
       "story_appearances": [
         {
@@ -31760,7 +32292,7 @@
       "outcome": "The heavens were broken; old suns fell as fragments; the world's cosmology was shattered.",
       "significance": "A foundational catastrophe that broke the old cosmos and left fragments scattered across the world for wyverns and scholars to recover.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 6,
       "story_appearances": [
         {
@@ -31790,6 +32322,37 @@
       ],
       "aliases": [
         "Sky-Shattering"
+      ]
+    },
+    {
+      "name": "The Question That Breaks Silence",
+      "tagline": "Defiance. Recursion. Remaking.",
+      "event_type": "philosophical upheaval",
+      "scope": "world",
+      "epicenter_place": "Archive Tower",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Archive Tower"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "cascading outward from the Archive Tower",
+      "participants": [
+        "The Wanderer",
+        "Theron",
+        "Archivists"
+      ],
+      "outcome": "The Wanderer posed the question 'If the Ascension is inevitable, do the people who choose to resist it become more real through their defiance, or less real?' This broke the spell-silence protecting the prophecy-ledgers, caused Archivists to stop mid-work, froze transformed merchants mid-transcendence, and made the Archive Tower itself hesitate. The event culminated in Theron choosing silence over further documentation.",
+      "significance": "The event demonstrates that philosophical inquiry can function as sorcery and that the power of the right question can disrupt even the most carefully maintained magical constraints. It suggests that the nature of the Ascension itself is subject to reinterpretation through resistance and questioning.",
+      "first_story": "The Question That Breaks Silence",
+      "first_date": "2026-04-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
+        }
       ]
     }
   ],
@@ -31839,8 +32402,8 @@
     {
       "name": "The Stellar Rite",
       "tagline": "Star-birthing. Memory-sacrificial. Ancient.",
-      "first_story": "The Starfall Oath",
-      "first_date": "2026-04-05",
+      "first_story": "The Spice-Runner's Widow",
+      "first_date": "2026-04-06",
       "appearances": 46,
       "story_appearances": [
         {
@@ -32013,10 +32576,6 @@
         },
         {
           "date": "2026-04-06",
-          "title": "The Spice-Runner's Widow"
-        },
-        {
-          "date": "2026-04-06",
           "title": "The Artificer's Fractured Instrument"
         },
         {
@@ -32026,6 +32585,10 @@
         {
           "date": "2026-04-06",
           "title": "The Memory-Thief's Gospel"
+        },
+        {
+          "date": "2026-04-06",
+          "title": "The Spice-Runner's Widow"
         }
       ],
       "ritual_type": "working / binding",
@@ -32069,7 +32632,7 @@
       "name": "The Celestial Binding",
       "tagline": "Starfall. Voiceless. Costly.",
       "first_story": "The Ghost of the Stellar Rite",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 10,
       "story_appearances": [
         {
@@ -32236,7 +32799,7 @@
       "name": "The Celestial Ascension (Lore)",
       "tagline": "Reality-altering. Catastrophic. Repeating.",
       "first_story": "The Bone-Singer's Dirge",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 7,
       "story_appearances": [
         {
@@ -32284,8 +32847,8 @@
     {
       "name": "Counter-Working (Seasonal Compact Restoration)",
       "tagline": "Sacrificial. Isolating. Desperate.",
-      "first_story": "The Deepkin Warden's Last Treaty",
-      "first_date": "2026-04-05",
+      "first_story": "Silk and Starlight",
+      "first_date": "2026-04-06",
       "appearances": 6,
       "story_appearances": [
         {
@@ -32329,8 +32892,8 @@
     {
       "name": "Luminous Ascension (accidental vs. written)",
       "tagline": "Sacrifice. Rebirth. Rewrite.",
-      "first_story": "The Auditor's Phantom Archive",
-      "first_date": "2026-04-05",
+      "first_story": "The Apprentice's Archive",
+      "first_date": "2026-04-06",
       "appearances": 92,
       "story_appearances": [
         {
@@ -32718,7 +33281,7 @@
       "name": "The Luminous Remaking",
       "tagline": "Reality-breaking. Cyclical. Recursive.",
       "first_story": "The Apprentice's Archive",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 7,
       "story_appearances": [
         {
@@ -32889,7 +33452,7 @@
       "tagline": "Recording. Prophetic. Suppressive.",
       "first_story": "The Auditor's Secret",
       "first_date": "2026-03-14",
-      "appearances": 4,
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -32906,6 +33469,10 @@
         {
           "date": "2026-03-31",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "ritual_type": "magical practice / technique",
@@ -32948,8 +33515,8 @@
     {
       "name": "pre-human ritual (restoration attempt)",
       "tagline": "Ancient. Powerful. Incomplete.",
-      "first_story": "The Merchant's Transformation",
-      "first_date": "2026-04-05",
+      "first_story": "The Bone-Singer's Choice",
+      "first_date": "2026-04-06",
       "appearances": 4,
       "story_appearances": [
         {
@@ -33182,8 +33749,8 @@
     {
       "name": "The Stellar Rite",
       "tagline": "Star-birthing. Memory-sacrificial. Ancient.",
-      "first_story": "The Spice-Runner's Widow",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 46,
       "story_appearances": [
         {
@@ -33387,7 +33954,7 @@
       "name": "The Celestial Binding",
       "tagline": "Starfall. Voiceless. Costly.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 10,
       "story_appearances": [
         {
@@ -33447,7 +34014,7 @@
       "name": "The Celestial Ascension (Lore)",
       "tagline": "Reality-altering. Catastrophic. Repeating.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 7,
       "story_appearances": [
         {
@@ -33496,7 +34063,7 @@
       "name": "Luminous Ascension (accidental vs. written)",
       "tagline": "Sacrifice. Rebirth. Rewrite.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 92,
       "story_appearances": [
         {
@@ -33884,7 +34451,7 @@
       "name": "The Luminous Remaking",
       "tagline": "Reality-breaking. Cyclical. Recursive.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 7,
       "story_appearances": [
         {
@@ -33932,8 +34499,8 @@
     {
       "name": "pre-human ritual (restoration attempt)",
       "tagline": "Ancient. Powerful. Incomplete.",
-      "first_story": "The Bone-Singer's Choice",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 4,
       "story_appearances": [
         {
@@ -33971,7 +34538,7 @@
       "name": "Counter-Working (Seasonal Compact Restoration)",
       "tagline": "Sacrificial. Isolating. Desperate.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 6,
       "story_appearances": [
         {
@@ -34187,7 +34754,7 @@
       "last_known_holder": "",
       "status": "used once \u2014 may be refillable",
       "first_story": "The Lamp of Suroth",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -34674,14 +35241,14 @@
     },
     {
       "name": "Stolen Memories (collection)",
-      "tagline": "Lost. Precious. Recoverable.",
-      "artifact_type": "memories",
-      "origin": "Stolen from various individuals by the phantom-Echo, particularly Ashara the Archer's memories of her warband.",
-      "powers": "Hold the collective recollections of the old stars and the world before the Luminous Ascension rewrite. Can be returned to their original holders.",
-      "last_known_holder": "phantom-Echo",
-      "status": "active",
-      "first_story": "The Memory-Thief's Bargain",
-      "first_date": "2026-03-10",
+      "tagline": "Fragmented. Precious. Weaponized.",
+      "artifact_type": "collection / archive / repository",
+      "origin": "Collected by the Phantom-Echo from victims of the Stellar Rite, particularly from Zareth.",
+      "powers": "Form the basis of the Memory-Thief's Gospel; when assembled and taught, they generate a hypnotic pull toward the pre-Ascension world and reconstruction.",
+      "last_known_holder": "Phantom-Echo (in the hidden archive beneath the Singing Catacombs).",
+      "status": "active (being used)",
+      "first_story": "The Memory-Thief's Gospel",
+      "first_date": "2026-04-06",
       "appearances": 7,
       "story_appearances": [
         {
@@ -34712,9 +35279,6 @@
           "date": "2026-04-06",
           "title": "The Memory-Thief's Gospel"
         }
-      ],
-      "aliases": [
-        "stolen memories"
       ]
     },
     {
@@ -34973,7 +35537,7 @@
       "status": "active",
       "first_story": "The Refugee Archives' Rebellion",
       "first_date": "2026-03-20",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-03-20",
@@ -34994,6 +35558,10 @@
         {
           "date": "2026-03-31",
           "title": "The Deepkin Captain's Gambit"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
         }
       ]
     },
@@ -35147,7 +35715,7 @@
       "status": "active",
       "first_story": "The Ledger-Keeper's Lie",
       "first_date": "2026-03-25",
-      "appearances": 7,
+      "appearances": 8,
       "story_appearances": [
         {
           "date": "2026-03-25",
@@ -35176,6 +35744,10 @@
         {
           "date": "2026-04-03",
           "title": "The Auditor's Final Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     },
@@ -35386,8 +35958,8 @@
       "last_known_holder": "Sevin",
       "status": "active",
       "first_story": "The Auditor's Hidden Archive",
-      "first_date": "2026-04-05",
-      "appearances": 2,
+      "first_date": "2026-04-06",
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-04-02",
@@ -35396,6 +35968,18 @@
         {
           "date": "2026-04-03",
           "title": "The Auditor's Final Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
         }
       ],
       "aliases": [
@@ -35412,7 +35996,7 @@
       "status": "active",
       "first_story": "The Auditor's Hidden Archive",
       "first_date": "2026-04-02",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-04-02",
@@ -35421,6 +36005,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
         }
       ]
     },
@@ -35527,52 +36115,6 @@
       ]
     },
     {
-      "name": "The Lamp of Suroth",
-      "tagline": "",
-      "artifact_type": "",
-      "origin": "",
-      "powers": "",
-      "last_known_holder": "",
-      "status": "used once \u2014 may be refillable",
-      "first_story": "",
-      "first_date": "2026-04-06",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "The Lamp of Suroth"
-        }
-      ],
-      "aliases": [
-        "Lamp of Suroth"
-      ]
-    },
-    {
-      "name": "prophecy-ledgers (self-updating records)",
-      "tagline": "Self-writing. Fate-binding. Reality-sculpting.",
-      "artifact_type": "tome-collection",
-      "origin": "Pre-human civilization, possibly from or beneath the fallen Empire.",
-      "powers": "These ledgers write themselves in scripts that update when unobserved. They describe events before they occur, written in past tense. They may direct the course of reality through the act of documentation itself, functioning as instruction-ledgers that encode catastrophe and ensure its recurrence.",
-      "last_known_holder": "Sevin",
-      "status": "active",
-      "first_story": "",
-      "first_date": "2026-04-06",
-      "appearances": 2,
-      "story_appearances": [
-        {
-          "date": "2026-04-02",
-          "title": "The Auditor's Hidden Archive"
-        },
-        {
-          "date": "2026-04-03",
-          "title": "The Auditor's Final Reckoning"
-        }
-      ],
-      "aliases": [
-        "prophecy-ledgers"
-      ]
-    },
-    {
       "name": "Memory-Thief's Gospel",
       "tagline": "Hypnotic. Seductive. Dangerous.",
       "artifact_type": "text / grimoire / scripture",
@@ -35591,15 +36133,36 @@
       ]
     },
     {
+      "name": "The Lamp of Suroth",
+      "tagline": "",
+      "artifact_type": "",
+      "origin": "",
+      "powers": "",
+      "last_known_holder": "",
+      "status": "used once \u2014 may be refillable",
+      "first_story": "",
+      "first_date": "2026-04-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Lamp of Suroth"
+        }
+      ],
+      "aliases": [
+        "Lamp of Suroth"
+      ]
+    },
+    {
       "name": "Stolen Memories (collection)",
-      "tagline": "Fragmented. Precious. Weaponized.",
-      "artifact_type": "collection / archive / repository",
-      "origin": "Collected by the Phantom-Echo from victims of the Stellar Rite, particularly from Zareth.",
-      "powers": "Form the basis of the Memory-Thief's Gospel; when assembled and taught, they generate a hypnotic pull toward the pre-Ascension world and reconstruction.",
-      "last_known_holder": "Phantom-Echo (in the hidden archive beneath the Singing Catacombs).",
-      "status": "active (being used)",
-      "first_story": "The Memory-Thief's Gospel",
-      "first_date": "2026-04-06",
+      "tagline": "Lost. Precious. Recoverable.",
+      "artifact_type": "memories",
+      "origin": "Stolen from various individuals by the phantom-Echo, particularly Ashara the Archer's memories of her warband.",
+      "powers": "Hold the collective recollections of the old stars and the world before the Luminous Ascension rewrite. Can be returned to their original holders.",
+      "last_known_holder": "phantom-Echo",
+      "status": "active",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 7,
       "story_appearances": [
         {
@@ -35630,6 +36193,46 @@
           "date": "2026-04-06",
           "title": "The Memory-Thief's Gospel"
         }
+      ],
+      "aliases": [
+        "stolen memories"
+      ]
+    },
+    {
+      "name": "prophecy-ledgers (self-updating records)",
+      "tagline": "Self-writing. Fate-binding. Reality-sculpting.",
+      "artifact_type": "tome-collection",
+      "origin": "Pre-human civilization, possibly from or beneath the fallen Empire.",
+      "powers": "These ledgers write themselves in scripts that update when unobserved. They describe events before they occur, written in past tense. They may direct the course of reality through the act of documentation itself, functioning as instruction-ledgers that encode catastrophe and ensure its recurrence.",
+      "last_known_holder": "Sevin",
+      "status": "active",
+      "first_story": "The Shadow-Merchant's Reckoning",
+      "first_date": "2026-04-07",
+      "appearances": 5,
+      "story_appearances": [
+        {
+          "date": "2026-04-02",
+          "title": "The Auditor's Hidden Archive"
+        },
+        {
+          "date": "2026-04-03",
+          "title": "The Auditor's Final Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
+        }
+      ],
+      "aliases": [
+        "prophecy-ledgers"
       ]
     }
   ],
@@ -35992,7 +36595,7 @@
       "status": "active",
       "first_story": "The Lamplighter's Accord",
       "first_date": "2026-03-04",
-      "appearances": 34,
+      "appearances": 35,
       "story_appearances": [
         {
           "date": "2026-03-04",
@@ -36129,6 +36732,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ]
     },
@@ -36178,7 +36785,7 @@
       "leader": "unknown",
       "status": "active",
       "first_story": "The Amber Thief's Gambit",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -36245,7 +36852,7 @@
       "status": "active",
       "first_story": "The Song of the Deep",
       "first_date": "2026-03-14",
-      "appearances": 37,
+      "appearances": 41,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -36394,6 +37001,22 @@
         {
           "date": "2026-04-06",
           "title": "The Bone-Singer's Choice"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     },
@@ -36713,7 +37336,7 @@
       "leader": "unknown",
       "status": "active",
       "first_story": "The Bone-Singer's Pilgrimage",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 6,
       "story_appearances": [
         {
@@ -36842,8 +37465,8 @@
       "goals": "Execute those possessing forbidden knowledge; maintain control over dangerous lore; hunt the Apprentice Sorcerer.",
       "leader": "unknown",
       "status": "active",
-      "first_story": "The Shade-Collector's Unraveling",
-      "first_date": "2026-04-05",
+      "first_story": "The Wanderer's Question",
+      "first_date": "2026-04-06",
       "appearances": 14,
       "story_appearances": [
         {
@@ -36996,7 +37619,7 @@
       "status": "active",
       "first_story": "The Tower's Hunger Breaks",
       "first_date": "2026-03-25",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-03-25",
@@ -37017,6 +37640,10 @@
         {
           "date": "2026-04-04",
           "title": "The Cartographer's Betrayal"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ]
     },
@@ -37029,7 +37656,7 @@
       "status": "active",
       "first_story": "The Shade-Merchant's Reckoning",
       "first_date": "2026-03-25",
-      "appearances": 29,
+      "appearances": 31,
       "story_appearances": [
         {
           "date": "2026-03-25",
@@ -37146,6 +37773,14 @@
         {
           "date": "2026-04-06",
           "title": "The Artificer's Fractured Instrument"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ]
     },
@@ -37192,7 +37827,7 @@
       "status": "active",
       "first_story": "The Deepkin Rising",
       "first_date": "2026-03-27",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-03-27",
@@ -37213,6 +37848,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ]
     },
@@ -37240,8 +37879,8 @@
       "goals": "Renegotiate the Altered Covenant; three competing visions exist within the fractured council.",
       "leader": "unknown; Thoros leads third-path faction",
       "status": "fractured",
-      "first_story": "The Deepkin Ambassador's Divided Loyalty",
-      "first_date": "2026-04-05",
+      "first_story": "The Deepkin Captain's Last Treaty",
+      "first_date": "2026-04-06",
       "appearances": 23,
       "story_appearances": [
         {
@@ -37492,9 +38131,9 @@
       "goals": "Hunt and suppress Liv's archives before they destabilize reality further; maintain singular historical narrative and control.",
       "leader": "unknown",
       "status": "active",
-      "first_story": "The Bone-Singer's Defection",
-      "first_date": "2026-04-05",
-      "appearances": 23,
+      "first_story": "The Auditor's Blind Ledger",
+      "first_date": "2026-04-06",
+      "appearances": 24,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -37587,6 +38226,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "aliases": [
@@ -37657,11 +38300,19 @@
       "status": "active",
       "first_story": "The Auditor's Hidden Archive",
       "first_date": "2026-04-02",
-      "appearances": 1,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-04-02",
           "title": "The Auditor's Hidden Archive"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     },
@@ -37707,7 +38358,7 @@
       "leader": "unknown",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 1,
       "story_appearances": [
         {
@@ -37727,7 +38378,7 @@
       "leader": "unknown",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 6,
       "story_appearances": [
         {
@@ -37767,7 +38418,7 @@
       "leader": "Auditor-General",
       "status": "active",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 14,
       "story_appearances": [
         {
@@ -37838,8 +38489,8 @@
       "goals": "Renegotiate the Altered Covenant; three competing visions exist within the fractured council.",
       "leader": "unknown; Thoros leads third-path faction",
       "status": "fractured",
-      "first_story": "The Deepkin Captain's Last Treaty",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 23,
       "story_appearances": [
         {
@@ -37946,9 +38597,9 @@
       "goals": "Maintain the narrative established by the Luminous Ascension; suppress pre-Ascension truths and archives; control memory and historical record.",
       "leader": "unknown",
       "status": "active",
-      "first_story": "The Auditor's Blind Ledger",
-      "first_date": "2026-04-06",
-      "appearances": 23,
+      "first_story": "The Auditor's Defection",
+      "first_date": "2026-04-07",
+      "appearances": 24,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -38041,6 +38692,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "aliases": [
@@ -38446,8 +39101,8 @@
     {
       "name": "Council of Depths (Deepkin Realms)",
       "tagline": "Deliberating. Deciding. Desperate.",
-      "first_story": "The Deepkin Ambassador's Divided Loyalty",
-      "first_date": "2026-04-05",
+      "first_story": "The Deepkin Captain's Last Treaty",
+      "first_date": "2026-04-06",
       "appearances": 23,
       "story_appearances": [
         {
@@ -38587,9 +39242,9 @@
     {
       "name": "The Dominion",
       "tagline": "Surface authority. Knowledge-controlling. Centralized.",
-      "first_story": "The Bone-Singer's Defection",
-      "first_date": "2026-04-05",
-      "appearances": 23,
+      "first_story": "The Auditor's Blind Ledger",
+      "first_date": "2026-04-06",
+      "appearances": 24,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -38682,6 +39337,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "polity_type": "empire / centralized rule",
@@ -38746,7 +39405,7 @@
       "tagline": "Unified. Threatened. Deciding.",
       "first_story": "The Deepkin Rising",
       "first_date": "2026-03-27",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-03-27",
@@ -38767,6 +39426,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ],
       "polity_type": "multiple crowns / federation",
@@ -38804,8 +39467,8 @@
     {
       "name": "Council of Depths (Deepkin Realms)",
       "tagline": "Deliberating. Deciding. Desperate.",
-      "first_story": "The Deepkin Captain's Last Treaty",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 23,
       "story_appearances": [
         {
@@ -38919,9 +39582,9 @@
     {
       "name": "The Dominion",
       "tagline": "Surface authority. Knowledge-controlling. Centralized.",
-      "first_story": "The Auditor's Blind Ledger",
-      "first_date": "2026-04-06",
-      "appearances": 23,
+      "first_story": "The Auditor's Defection",
+      "first_date": "2026-04-07",
+      "appearances": 24,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -39014,6 +39677,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "polity_type": "empire / centralized rule",
@@ -40313,7 +40980,7 @@
       "source": "Vex's fragmented memory; unstable fragments in shadow-markets",
       "status": "confirmed",
       "first_story": "The Refugee Caravan's Price",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 7,
       "story_appearances": [
         {
@@ -40571,8 +41238,8 @@
       "category": "history / event",
       "source": "Sevin's investigation; archivists' debate",
       "status": "contested",
-      "first_story": "The Auditor's Phantom Archive",
-      "first_date": "2026-04-05",
+      "first_story": "The Apprentice's Archive",
+      "first_date": "2026-04-06",
       "appearances": 92,
       "story_appearances": [
         {
@@ -41202,8 +41869,8 @@
       "category": "history",
       "source": "Instructions preserved in the Spellwright's Journals.",
       "status": "confirmed",
-      "first_story": "The Starfall Oath",
-      "first_date": "2026-04-05",
+      "first_story": "The Spice-Runner's Widow",
+      "first_date": "2026-04-06",
       "appearances": 46,
       "story_appearances": [
         {
@@ -41729,8 +42396,8 @@
       "category": "history",
       "source": "Implied by the Stellar Rite reversal working",
       "status": "rumored",
-      "first_story": "The Corsair's Confession",
-      "first_date": "2026-04-05",
+      "first_story": "The Spice-Runner's Widow",
+      "first_date": "2026-04-06",
       "appearances": 20,
       "story_appearances": [
         {
@@ -41826,7 +42493,7 @@
       "status": "confirmed",
       "first_story": "The Wound That Talks Back",
       "first_date": "2026-03-17",
-      "appearances": 8,
+      "appearances": 9,
       "story_appearances": [
         {
           "date": "2026-03-17",
@@ -41859,6 +42526,10 @@
         {
           "date": "2026-04-06",
           "title": "The Bone-Singer's Choice"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ]
     },
@@ -41889,7 +42560,7 @@
       "source": "Encounters in the borderlands and Sunken Reaches.",
       "status": "confirmed",
       "first_story": "The Bone-Singer's Pilgrimage",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 6,
       "story_appearances": [
         {
@@ -42012,7 +42683,7 @@
       "source": "Kess and the bone-singers' knowledge of pre-human civilization",
       "status": "confirmed",
       "first_story": "The Bone-Singer's Summons",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 5,
       "story_appearances": [
         {
@@ -42048,7 +42719,7 @@
       "status": "confirmed",
       "first_story": "The Bone-Singer's Summons",
       "first_date": "2026-03-20",
-      "appearances": 3,
+      "appearances": 4,
       "story_appearances": [
         {
           "date": "2026-03-20",
@@ -42061,6 +42732,10 @@
         {
           "date": "2026-03-29",
           "title": "The Bone-Singer's Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ]
     },
@@ -42088,7 +42763,7 @@
       "status": "rumored / imminent",
       "first_story": "The Cartographer's Curse",
       "first_date": "2026-03-21",
-      "appearances": 23,
+      "appearances": 25,
       "story_appearances": [
         {
           "date": "2026-03-21",
@@ -42181,6 +42856,14 @@
         {
           "date": "2026-04-06",
           "title": "The Young Sorcerer's Vault"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     },
@@ -42476,7 +43159,7 @@
       "status": "suppressed / preserved",
       "first_story": "The Echo-Broker's Archive",
       "first_date": "2026-03-30",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-03-30",
@@ -42485,6 +43168,10 @@
         {
           "date": "2026-03-31",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ]
     },
@@ -42496,7 +43183,7 @@
       "status": "active",
       "first_story": "The Forger's Rebellion",
       "first_date": "2026-03-30",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-03-30",
@@ -42505,6 +43192,10 @@
         {
           "date": "2026-03-30",
           "title": "The Echo-Broker's Archive"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
         }
       ]
     },
@@ -42580,7 +43271,7 @@
       "status": "confirmed",
       "first_story": "The Phantom-Echo's Compilation",
       "first_date": "2026-03-31",
-      "appearances": 45,
+      "appearances": 48,
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -42761,6 +43452,18 @@
         {
           "date": "2026-04-05",
           "title": "The Merchant's Harmonic Hunger"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ],
       "aliases": [
@@ -42775,7 +43478,7 @@
       "status": "confirmed",
       "first_story": "The Refugee Scribe's Rebellion",
       "first_date": "2026-03-31",
-      "appearances": 4,
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -42792,6 +43495,10 @@
         {
           "date": "2026-03-31",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "aliases": [
@@ -42897,7 +43604,7 @@
       "status": "confirmed (within story)",
       "first_story": "The Auditor's Hidden Archive",
       "first_date": "2026-04-02",
-      "appearances": 2,
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-04-02",
@@ -42906,6 +43613,18 @@
         {
           "date": "2026-04-03",
           "title": "The Auditor's Final Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     },
@@ -43048,7 +43767,7 @@
       "status": "confirmed",
       "first_story": "The Ledger-Thief's Confession",
       "first_date": "2026-04-05",
-      "appearances": 3,
+      "appearances": 7,
       "story_appearances": [
         {
           "date": "2026-04-05",
@@ -43061,6 +43780,22 @@
         {
           "date": "2026-04-05",
           "title": "The Refuge-Keeper's Gambit"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ]
     },
@@ -43081,13 +43816,61 @@
       ]
     },
     {
+      "name": "Pre-Ascension World",
+      "tagline": "Lost. Remembered. Coveted.",
+      "category": "history / legend",
+      "source": "Memories stolen by the Phantom-Echo; accounts in the gospel; fragmentary recollections.",
+      "status": "forgotten (but being recovered)",
+      "first_story": "The Memory-Thief's Gospel",
+      "first_date": "2026-04-06",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-06",
+          "title": "The Memory-Thief's Gospel"
+        }
+      ]
+    },
+    {
+      "name": "The Nature of Memory",
+      "tagline": "Contested. Philosophical. Tragic.",
+      "category": "philosophy / debate",
+      "source": "The confrontation between the Shard-Keeper and the Phantom-Echo in the hidden archive.",
+      "status": "unresolved",
+      "first_story": "The Memory-Thief's Gospel",
+      "first_date": "2026-04-06",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-06",
+          "title": "The Memory-Thief's Gospel"
+        }
+      ]
+    },
+    {
+      "name": "Second Sacrifice (term)",
+      "tagline": "Looming. Catastrophic. Preventable.",
+      "category": "prophecy / threat",
+      "source": "Referenced by the Shard-Keeper as the consequence of the Phantom-Echo's reconstruction.",
+      "status": "threatened",
+      "first_story": "The Memory-Thief's Gospel",
+      "first_date": "2026-04-06",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-06",
+          "title": "The Memory-Thief's Gospel"
+        }
+      ]
+    },
+    {
       "name": "The Cosmic Working (Lore)",
       "tagline": "Ancient. Sacrifice. Reality-bending.",
       "category": "magic / history",
       "source": "Fragments in the Sovereign's ledger; visions experienced by Vesta's crew; the Hermit Woman's understanding.",
       "status": "confirmed",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 7,
       "story_appearances": [
         {
@@ -43130,7 +43913,7 @@
       "source": "Known to witnesses of the old stars and world; subject of the phantom-Echo's memory-theft campaign",
       "status": "confirmed",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 92,
       "story_appearances": [
         {
@@ -43512,8 +44295,8 @@
       "category": "history",
       "source": "Instructions preserved in the Spellwright's Journals.",
       "status": "confirmed",
-      "first_story": "The Spice-Runner's Widow",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 46,
       "story_appearances": [
         {
@@ -43712,7 +44495,7 @@
       "source": "Refugee oral testimony; recorded in the waystation libraries.",
       "status": "confirmed",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 5,
       "story_appearances": [
         {
@@ -43747,7 +44530,7 @@
       "source": "Unknown; referenced by truth-seekers and as a watershed moment",
       "status": "confirmed",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 92,
       "story_appearances": [
         {
@@ -44130,7 +44913,7 @@
       "source": "Deepkin civilization; historical treaty between surface and tidecallers",
       "status": "fractured",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 6,
       "story_appearances": [
         {
@@ -44163,13 +44946,56 @@
       ]
     },
     {
+      "name": "Stolen Memories (collection)",
+      "tagline": "Taken. Compiled. Erasing.",
+      "category": "myth",
+      "source": "The phantom-voice's activity; observed by Brenn and refugees.",
+      "status": "confirmed",
+      "first_story": "",
+      "first_date": "2026-04-07",
+      "appearances": 7,
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "The Refugee Caravan's Price"
+        },
+        {
+          "date": "2026-03-10",
+          "title": "The Memory-Thief's Bargain"
+        },
+        {
+          "date": "2026-03-14",
+          "title": "The Shadow Market's Price"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Refugee's Refuge"
+        },
+        {
+          "date": "2026-03-21",
+          "title": "The Shadow-Broker's Debt"
+        },
+        {
+          "date": "2026-03-31",
+          "title": "The Phantom-Echo's Compilation"
+        },
+        {
+          "date": "2026-04-06",
+          "title": "The Memory-Thief's Gospel"
+        }
+      ],
+      "aliases": [
+        "stolen memories"
+      ]
+    },
+    {
       "name": "The Old World",
       "tagline": "Lost. Recorded. Fragmented.",
       "category": "history",
       "source": "The phantom-voice's compilation; implied prior to the Ascension.",
       "status": "rumored",
-      "first_story": "The Spice-Runner's Widow",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 20,
       "story_appearances": [
         {
@@ -44258,50 +45084,18 @@
       ]
     },
     {
-      "name": "Pre-Ascension World",
-      "tagline": "Lost. Remembered. Coveted.",
-      "category": "history / legend",
-      "source": "Memories stolen by the Phantom-Echo; accounts in the gospel; fragmentary recollections.",
-      "status": "forgotten (but being recovered)",
-      "first_story": "The Memory-Thief's Gospel",
-      "first_date": "2026-04-06",
+      "name": "spell-silence",
+      "tagline": "Protection. Maintained. Broken.",
+      "category": "magical practice",
+      "source": "Archive Tower",
+      "status": "broken",
+      "first_story": "The Question That Breaks Silence",
+      "first_date": "2026-04-07",
       "appearances": 1,
       "story_appearances": [
         {
-          "date": "2026-04-06",
-          "title": "The Memory-Thief's Gospel"
-        }
-      ]
-    },
-    {
-      "name": "The Nature of Memory",
-      "tagline": "Contested. Philosophical. Tragic.",
-      "category": "philosophy / debate",
-      "source": "The confrontation between the Shard-Keeper and the Phantom-Echo in the hidden archive.",
-      "status": "unresolved",
-      "first_story": "The Memory-Thief's Gospel",
-      "first_date": "2026-04-06",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-04-06",
-          "title": "The Memory-Thief's Gospel"
-        }
-      ]
-    },
-    {
-      "name": "Second Sacrifice (term)",
-      "tagline": "Looming. Catastrophic. Preventable.",
-      "category": "prophecy / threat",
-      "source": "Referenced by the Shard-Keeper as the consequence of the Phantom-Echo's reconstruction.",
-      "status": "threatened",
-      "first_story": "The Memory-Thief's Gospel",
-      "first_date": "2026-04-06",
-      "appearances": 1,
-      "story_appearances": [
-        {
-          "date": "2026-04-06",
-          "title": "The Memory-Thief's Gospel"
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ]
     }
@@ -44443,7 +45237,7 @@
       "habitat": "crystal halls",
       "status": "thriving",
       "first_story": "The Dragon's Bargain",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 10,
       "story_appearances": [
         {
@@ -44537,7 +45331,7 @@
       "status": "thriving",
       "first_story": "The Lamplighter's Accord",
       "first_date": "2026-03-04",
-      "appearances": 34,
+      "appearances": 35,
       "story_appearances": [
         {
           "date": "2026-03-04",
@@ -44674,6 +45468,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ]
     },
@@ -44756,7 +45554,7 @@
       "habitat": "crystal halls",
       "status": "thriving",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 10,
       "story_appearances": [
         {
@@ -45604,8 +46402,8 @@
       "element": "stellar / cosmic",
       "difficulty": "forbidden",
       "status": "known",
-      "first_story": "The Starfall Oath",
-      "first_date": "2026-04-05",
+      "first_story": "The Spice-Runner's Widow",
+      "first_date": "2026-04-06",
       "appearances": 46,
       "story_appearances": [
         {
@@ -46052,8 +46850,8 @@
       "element": "nature",
       "difficulty": "master",
       "status": "known",
-      "first_story": "The Deepkin Warden's Last Treaty",
-      "first_date": "2026-04-05",
+      "first_story": "Silk and Starlight",
+      "first_date": "2026-04-06",
       "appearances": 6,
       "story_appearances": [
         {
@@ -46111,7 +46909,7 @@
       "status": "known",
       "first_story": "The Auditor's Secret",
       "first_date": "2026-03-14",
-      "appearances": 4,
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -46128,6 +46926,10 @@
         {
           "date": "2026-03-31",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ]
     },
@@ -46531,8 +47333,8 @@
       "element": "stellar / cosmic",
       "difficulty": "forbidden",
       "status": "known",
-      "first_story": "The Spice-Runner's Widow",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 46,
       "story_appearances": [
         {
@@ -46732,7 +47534,7 @@
       "difficulty": "master",
       "status": "known",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 6,
       "story_appearances": [
         {
@@ -46762,6 +47564,23 @@
       ],
       "aliases": [
         "Counter-Working"
+      ]
+    },
+    {
+      "name": "spell-silence",
+      "tagline": "Protection. Maintained. Broken.",
+      "type": "spell",
+      "element": "sound / knowledge",
+      "difficulty": "master",
+      "status": "known",
+      "first_story": "The Question That Breaks Silence",
+      "first_date": "2026-04-07",
+      "appearances": 1,
+      "story_appearances": [
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
+        }
       ]
     }
   ],
@@ -47362,7 +48181,7 @@
       "status": "active",
       "first_story": "The Cartographer's Blind Truth",
       "first_date": "2026-03-23",
-      "appearances": 36,
+      "appearances": 37,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -47507,6 +48326,10 @@
         {
           "date": "2026-04-03",
           "title": "The Resonance Fragments Converge"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ]
     },
@@ -47604,8 +48427,8 @@
       "curse": "Study carries the risk of being trapped within the cycles they describe. Destruction would break the cycle but erase the only records explaining why the Luminous Ascension occurred or how to prevent future recurrences.",
       "status": "active",
       "first_story": "The Auditor's Hidden Archive",
-      "first_date": "2026-04-05",
-      "appearances": 2,
+      "first_date": "2026-04-06",
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-04-02",
@@ -47614,6 +48437,18 @@
         {
           "date": "2026-04-03",
           "title": "The Auditor's Final Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
         }
       ],
       "aliases": [
@@ -47644,9 +48479,9 @@
       "power": "These ledgers write themselves, describing events in past tense before they occur. They may direct the course of reality through documentation, or they may be prophecies that shape their own fulfillment.",
       "curse": "Study carries the risk of being trapped within the cycles they describe. Destruction would break the cycle but erase the only records explaining why the Luminous Ascension occurred or how to prevent future recurrences.",
       "status": "active",
-      "first_story": "",
-      "first_date": "2026-04-06",
-      "appearances": 2,
+      "first_story": "The Shadow-Merchant's Reckoning",
+      "first_date": "2026-04-07",
+      "appearances": 5,
       "story_appearances": [
         {
           "date": "2026-04-02",
@@ -47655,6 +48490,18 @@
         {
           "date": "2026-04-03",
           "title": "The Auditor's Final Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Shadow-Merchant's Reckoning"
         }
       ],
       "aliases": [
@@ -47675,7 +48522,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "The Warlord's Widow",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 16,
       "story_appearances": [
         {
@@ -47787,8 +48634,8 @@
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
-      "first_story": "Blood-Price of the Caravan",
-      "first_date": "2026-04-05",
+      "first_story": "The Spice-Runner's Reckoning",
+      "first_date": "2026-04-06",
       "appearances": 9,
       "story_appearances": [
         {
@@ -48058,7 +48905,7 @@
       "notes": "Pelimor's night markets and vaults are integral to the shadow-theft economy. Mira operated here for years.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 13,
+      "appearances": 14,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -48111,6 +48958,10 @@
         {
           "date": "2026-04-06",
           "title": "The Spice-Runner's Reckoning"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ],
       "world": "The Known World",
@@ -48132,7 +48983,7 @@
       "notes": "Home to Kess and survivors of the plague. The village still practices bone-singing and old magic traditions.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 26,
+      "appearances": 27,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -48237,6 +49088,10 @@
         {
           "date": "2026-04-06",
           "title": "The Bone-Singer's Choice"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ],
       "world": "The Known World",
@@ -48257,7 +49112,7 @@
       "status": "contested",
       "notes": "The Spire of Blackstone and the Warrens represent a delicate balance in this region. Further conflicts or alliances may reshape the Shattered West's political and physical landscape.",
       "first_story": "The Warband's Last Song",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 5,
       "story_appearances": [
         {
@@ -48328,7 +49183,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "The Goblin-King's Mercy",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 1,
       "story_appearances": [
         {
@@ -48391,7 +49246,7 @@
       "status": "active",
       "notes": "Deepvault is the major landmark within this region.",
       "first_story": "The Barbarian's Mercy",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 14,
       "story_appearances": [
         {
@@ -48472,7 +49327,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "The Shepherd of Dying Stars",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 2,
       "story_appearances": [
         {
@@ -48504,9 +49359,9 @@
       "function": "A eastern region of Valdris most heavily affected by the Star-Rise, where villages vanish overnight and refugees flee westward.",
       "status": "cursed",
       "notes": "The worst consequences of the cosmic rewrite manifest here. The boundary between mapped and unmapped void is dangerously thin.",
-      "first_story": "The Sorcerer's Heir",
-      "first_date": "2026-04-05",
-      "appearances": 31,
+      "first_story": "The Auditor's Blind Ledger",
+      "first_date": "2026-04-06",
+      "appearances": 32,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -48631,6 +49486,10 @@
         {
           "date": "2026-04-06",
           "title": "The Spice-Runner's Widow"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ],
       "world": "The Known World",
@@ -48654,7 +49513,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "The Warden's Sorrow",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 14,
       "story_appearances": [
         {
@@ -48735,7 +49594,7 @@
       "status": "active",
       "notes": "Home to Captain Vesta's operations. The Sapphire Deep is accessible from here. The region appears to be economically vibrant but spiritually burdened.",
       "first_story": "The Lamplighter's Accord",
-      "first_date": "2026-04-05",
+      "first_date": "2026-04-06",
       "appearances": 4,
       "story_appearances": [
         {
@@ -48766,75 +49625,6 @@
     },
     {
       "name": "The Bleached Wastes",
-      "tagline": "Desolate. Ancient. Glowing.",
-      "continent": "Valdris",
-      "realm": "unknown",
-      "climate": "arid, harsh",
-      "terrain": "wastes, ruins",
-      "ruler": "",
-      "function": "An exploration and cartography zone containing pre-human ruins that are awakening under the new stellar influence. A region of scholarly interest and cosmic mystery.",
-      "status": "active",
-      "notes": "The pre-human ruins now glow with inner light and their inscriptions shimmer, suggesting they were built in anticipation of the current cosmic moment.",
-      "first_story": "The Cartographer's Lie",
-      "first_date": "2026-04-05",
-      "appearances": 11,
-      "story_appearances": [
-        {
-          "date": "2026-03-02",
-          "title": "The Cartographer's Lie"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-09",
-          "title": "The Cartographer's Lament"
-        },
-        {
-          "date": "2026-03-16",
-          "title": "The Cartographer's Descent"
-        },
-        {
-          "date": "2026-03-30",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-30",
-          "title": "The Deepkin Reckoning"
-        },
-        {
-          "date": "2026-03-31",
-          "title": "The Cartographer's Blind Inheritance"
-        },
-        {
-          "date": "2026-04-02",
-          "title": "The Cartographer's Gambit"
-        },
-        {
-          "date": "2026-04-03",
-          "title": "The Cartographer's Prescient Maps"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Artificer's Fractured Instrument"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Cartographer's Final Map"
-        }
-      ],
-      "world": "The Known World",
-      "hemisphere": "unknown",
-      "province": "unknown",
-      "region": "Bleached Wastes",
-      "district": "unknown",
-      "aliases": [
-        "Bleached Wastes"
-      ]
-    },
-    {
-      "name": "The Bleached Wastes",
       "tagline": "",
       "continent": "unknown",
       "realm": "unknown",
@@ -48844,9 +49634,9 @@
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
-      "first_story": "The Barbarian's Mercy",
-      "first_date": "2026-04-05",
-      "appearances": 25,
+      "first_story": "The Cartographer's Final Map",
+      "first_date": "2026-04-06",
+      "appearances": 26,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -48947,6 +49737,10 @@
         {
           "date": "2026-04-06",
           "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ],
       "world": "The Known World",
@@ -48955,8 +49749,7 @@
       "region": "Ashen Reach",
       "district": "unknown",
       "aliases": [
-        "Ashen Reach",
-        "The Ashen Reach"
+        "Ashen Reach"
       ]
     },
     {
@@ -49126,9 +49919,9 @@
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
-      "first_story": "The Ledger-Thief's Confession",
-      "first_date": "2026-04-05",
-      "appearances": 50,
+      "first_story": "The Refugee Scribe's Rebellion",
+      "first_date": "2026-04-06",
+      "appearances": 51,
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -49329,6 +50122,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ],
       "world": "The Known World",
@@ -49447,7 +50244,7 @@
       "notes": "The Dominion is actively collapsing. Vex's shadow-markets permeate it as the only stable economy. The Archivist operates within its power vacuum.",
       "first_story": "The Shadow Market's Price",
       "first_date": "2026-03-14",
-      "appearances": 23,
+      "appearances": 24,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -49540,6 +50337,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "world": "The Known World",
@@ -49655,9 +50456,17 @@
         {
           "date": "2026-04-06",
           "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ],
-      "appearances": 15,
+      "appearances": 17,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -49829,7 +50638,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 16,
       "story_appearances": [
         {
@@ -49917,8 +50726,8 @@
       "function": "Auto-added from character home_region.",
       "status": "unknown",
       "notes": "",
-      "first_story": "The Spice-Runner's Reckoning",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 9,
       "story_appearances": [
         {
@@ -49979,7 +50788,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 1,
       "story_appearances": [
         {
@@ -50008,7 +50817,7 @@
       "status": "active",
       "notes": "The Pallid Wastes are the base of operations for the hermit woman and exemplify how the cosmic renewal is reshaping the world's regions.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 2,
       "story_appearances": [
         {
@@ -50040,9 +50849,9 @@
       "function": "A major trade route region whose geography has been disrupted by the cosmic renewal. Critical for spice caravans and imperial commerce. Now impassable without significant risk.",
       "status": "contested",
       "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
-      "first_story": "The Auditor's Blind Ledger",
-      "first_date": "2026-04-06",
-      "appearances": 31,
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
+      "appearances": 32,
       "story_appearances": [
         {
           "date": "2026-03-03",
@@ -50167,6 +50976,10 @@
         {
           "date": "2026-04-06",
           "title": "The Spice-Runner's Widow"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ],
       "world": "The Known World",
@@ -50190,7 +51003,7 @@
       "status": "active",
       "notes": "The forest-keepers dwelling here have access to earth-lore and understand the cosmic wound's nature.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 14,
       "story_appearances": [
         {
@@ -50271,7 +51084,7 @@
       "status": "active",
       "notes": "Wind-haunted ports suggest volatile weather; active smuggling routes; deepkin maintain presence in nearby waters.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 4,
       "story_appearances": [
         {
@@ -50311,159 +51124,9 @@
       "function": "An exploration and cartography zone containing pre-human ruins that are awakening under the new stellar influence. A region of scholarly interest and cosmic mystery.",
       "status": "active",
       "notes": "The pre-human ruins now glow with inner light and their inscriptions shimmer, suggesting they were built in anticipation of the current cosmic moment.",
-      "first_story": "The Artificer's Fractured Instrument",
-      "first_date": "2026-04-06",
-      "appearances": 11,
-      "story_appearances": [
-        {
-          "date": "2026-03-02",
-          "title": "The Cartographer's Lie"
-        },
-        {
-          "date": "2026-03-04",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-09",
-          "title": "The Cartographer's Lament"
-        },
-        {
-          "date": "2026-03-16",
-          "title": "The Cartographer's Descent"
-        },
-        {
-          "date": "2026-03-30",
-          "title": "The Cartographer's Last Map"
-        },
-        {
-          "date": "2026-03-30",
-          "title": "The Deepkin Reckoning"
-        },
-        {
-          "date": "2026-03-31",
-          "title": "The Cartographer's Blind Inheritance"
-        },
-        {
-          "date": "2026-04-02",
-          "title": "The Cartographer's Gambit"
-        },
-        {
-          "date": "2026-04-03",
-          "title": "The Cartographer's Prescient Maps"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Artificer's Fractured Instrument"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Cartographer's Final Map"
-        }
-      ],
-      "world": "The Known World",
-      "hemisphere": "unknown",
-      "province": "unknown",
-      "region": "Bleached Wastes",
-      "district": "unknown",
-      "aliases": [
-        "Bleached Wastes"
-      ]
-    },
-    {
-      "name": "The Hearthlands",
-      "tagline": "",
-      "continent": "unknown",
-      "realm": "the Empire",
-      "climate": "unknown",
-      "terrain": "unknown",
-      "ruler": "",
-      "function": "Auto-added from character home_region.",
-      "status": "unknown",
-      "notes": "",
-      "first_story": "",
-      "first_date": "2026-04-06",
-      "appearances": 14,
-      "story_appearances": [
-        {
-          "date": "2026-02-25",
-          "title": "The Barbarian's Mercy"
-        },
-        {
-          "date": "2026-02-25",
-          "title": "Zareth Among the Stellar Stones"
-        },
-        {
-          "date": "2026-03-01",
-          "title": "The Starfall Oath"
-        },
-        {
-          "date": "2026-03-02",
-          "title": "The Starfall Ritual"
-        },
-        {
-          "date": "2026-03-02",
-          "title": "The Widow's Vengeance"
-        },
-        {
-          "date": "2026-03-03",
-          "title": "The Warden's Forge"
-        },
-        {
-          "date": "2026-03-05",
-          "title": "The Emperor's Silence"
-        },
-        {
-          "date": "2026-03-14",
-          "title": "The Wyvern-Priest's Wager"
-        },
-        {
-          "date": "2026-03-16",
-          "title": "The Shade-Echo's Hunger"
-        },
-        {
-          "date": "2026-03-18",
-          "title": "The Auditor's Mercy"
-        },
-        {
-          "date": "2026-03-19",
-          "title": "The Wyvern's Dowry"
-        },
-        {
-          "date": "2026-03-24",
-          "title": "The Wyvern's Dowry"
-        },
-        {
-          "date": "2026-03-29",
-          "title": "The Bone-Thief's Inheritance"
-        },
-        {
-          "date": "2026-04-04",
-          "title": "The Locksmith's Debt"
-        }
-      ],
-      "world": "The Known World",
-      "hemisphere": "unknown",
-      "province": "unknown",
-      "region": "Hearthlands",
-      "district": "unknown",
-      "aliases": [
-        "Hearthlands"
-      ]
-    },
-    {
-      "name": "The Bleached Wastes",
-      "tagline": "",
-      "continent": "unknown",
-      "realm": "unknown",
-      "climate": "unknown",
-      "terrain": "unknown",
-      "ruler": "",
-      "function": "Auto-added from character home_region.",
-      "status": "unknown",
-      "notes": "",
-      "first_story": "The Cartographer's Final Map",
-      "first_date": "2026-04-06",
-      "appearances": 25,
+      "first_story": "The Cartographer's Last Map",
+      "first_date": "2026-04-07",
+      "appearances": 26,
       "story_appearances": [
         {
           "date": "2026-02-25",
@@ -50564,6 +51227,349 @@
         {
           "date": "2026-04-06",
           "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Bleached Wastes",
+      "district": "unknown",
+      "aliases": [
+        "Bleached Wastes"
+      ]
+    },
+    {
+      "name": "The Bleached Wastes",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "ruler": "",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "",
+      "first_date": "2026-04-07",
+      "appearances": 26,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Barbarian's Mercy"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Shepherd of Dying Stars"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Shade-Merchant's Reckoning"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Tax Collector's Question"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-08",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-09",
+          "title": "The Cartographer's Lament"
+        },
+        {
+          "date": "2026-03-10",
+          "title": "The Ledger-Master's Gambit"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Cartographer's Descent"
+        },
+        {
+          "date": "2026-03-17",
+          "title": "The Harbor Master's Deficit"
+        },
+        {
+          "date": "2026-03-19",
+          "title": "The Wyvern's Dowry"
+        },
+        {
+          "date": "2026-03-29",
+          "title": "The Bone-Thief's Inheritance"
+        },
+        {
+          "date": "2026-03-30",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-03-30",
+          "title": "The Deepkin Reckoning"
+        },
+        {
+          "date": "2026-03-31",
+          "title": "The Cartographer's Blind Inheritance"
+        },
+        {
+          "date": "2026-04-02",
+          "title": "The Cartographer's Gambit"
+        },
+        {
+          "date": "2026-04-03",
+          "title": "The Cartographer's Prescient Maps"
+        },
+        {
+          "date": "2026-04-06",
+          "title": "The Artificer's Fractured Instrument"
+        },
+        {
+          "date": "2026-04-06",
+          "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "aliases": [
+        "The Ashen Reach"
+      ]
+    },
+    {
+      "name": "The Hearthlands",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "the Empire",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "ruler": "",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "",
+      "first_date": "2026-04-07",
+      "appearances": 14,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Barbarian's Mercy"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "Zareth Among the Stellar Stones"
+        },
+        {
+          "date": "2026-03-01",
+          "title": "The Starfall Oath"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Starfall Ritual"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Widow's Vengeance"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Warden's Forge"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Emperor's Silence"
+        },
+        {
+          "date": "2026-03-14",
+          "title": "The Wyvern-Priest's Wager"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Shade-Echo's Hunger"
+        },
+        {
+          "date": "2026-03-18",
+          "title": "The Auditor's Mercy"
+        },
+        {
+          "date": "2026-03-19",
+          "title": "The Wyvern's Dowry"
+        },
+        {
+          "date": "2026-03-24",
+          "title": "The Wyvern's Dowry"
+        },
+        {
+          "date": "2026-03-29",
+          "title": "The Bone-Thief's Inheritance"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Locksmith's Debt"
+        }
+      ],
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Hearthlands",
+      "district": "unknown",
+      "aliases": [
+        "Hearthlands"
+      ]
+    },
+    {
+      "name": "The Bleached Wastes",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "ruler": "",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_story": "",
+      "first_date": "2026-04-07",
+      "appearances": 26,
+      "story_appearances": [
+        {
+          "date": "2026-02-25",
+          "title": "The Barbarian's Mercy"
+        },
+        {
+          "date": "2026-02-25",
+          "title": "The Debt of Kessa the Thief"
+        },
+        {
+          "date": "2026-03-02",
+          "title": "The Cartographer's Lie"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Ghost of the Stellar Rite"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Shepherd of Dying Stars"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Starfall Debt"
+        },
+        {
+          "date": "2026-03-03",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-04",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Shade-Merchant's Reckoning"
+        },
+        {
+          "date": "2026-03-05",
+          "title": "The Tax Collector's Question"
+        },
+        {
+          "date": "2026-03-06",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-08",
+          "title": "The Tax Collector's Reckoning"
+        },
+        {
+          "date": "2026-03-09",
+          "title": "The Cartographer's Lament"
+        },
+        {
+          "date": "2026-03-10",
+          "title": "The Ledger-Master's Gambit"
+        },
+        {
+          "date": "2026-03-16",
+          "title": "The Cartographer's Descent"
+        },
+        {
+          "date": "2026-03-17",
+          "title": "The Harbor Master's Deficit"
+        },
+        {
+          "date": "2026-03-19",
+          "title": "The Wyvern's Dowry"
+        },
+        {
+          "date": "2026-03-29",
+          "title": "The Bone-Thief's Inheritance"
+        },
+        {
+          "date": "2026-03-30",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-03-30",
+          "title": "The Deepkin Reckoning"
+        },
+        {
+          "date": "2026-03-31",
+          "title": "The Cartographer's Blind Inheritance"
+        },
+        {
+          "date": "2026-04-02",
+          "title": "The Cartographer's Gambit"
+        },
+        {
+          "date": "2026-04-03",
+          "title": "The Cartographer's Prescient Maps"
+        },
+        {
+          "date": "2026-04-06",
+          "title": "The Artificer's Fractured Instrument"
+        },
+        {
+          "date": "2026-04-06",
+          "title": "The Cartographer's Final Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ],
       "world": "The Known World",
@@ -50587,7 +51593,7 @@
       "status": "unknown",
       "notes": "",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 5,
       "story_appearances": [
         {
@@ -50631,9 +51637,9 @@
       "function": "A formerly inhabited region devastated by the Luminous Ascension; now a source of refugees carrying impossible memories and a staging ground for transformed beings drawn to the Sunken Cathedrals.",
       "status": "cursed",
       "notes": "Reality is unstable; villages vanish; merchants transform into light.",
-      "first_story": "The Refugee Scribe's Rebellion",
-      "first_date": "2026-04-06",
-      "appearances": 50,
+      "first_story": "The Initiate's Tower",
+      "first_date": "2026-04-07",
+      "appearances": 51,
       "story_appearances": [
         {
           "date": "2026-03-06",
@@ -50834,6 +51840,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ],
       "world": "The Known World",
@@ -51446,7 +52456,7 @@
       "status": "unknown",
       "first_story": "The Song of the Deep",
       "first_date": "2026-03-14",
-      "appearances": 49,
+      "appearances": 50,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -51643,6 +52653,10 @@
         {
           "date": "2026-04-06",
           "title": "The Memory-Thief's Gospel"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
         }
       ]
     },
@@ -51712,7 +52726,7 @@
       "status": "unknown",
       "first_story": "The Wyvern's Dowry",
       "first_date": "2026-03-19",
-      "appearances": 11,
+      "appearances": 12,
       "story_appearances": [
         {
           "date": "2026-03-19",
@@ -51757,6 +52771,10 @@
         {
           "date": "2026-04-06",
           "title": "The Bone-Singer's Choice"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ]
     },
@@ -52006,11 +53024,15 @@
       "status": "unknown",
       "first_story": "The Spice-Runner's Gambit",
       "first_date": "2026-04-04",
-      "appearances": 1,
+      "appearances": 2,
       "story_appearances": [
         {
           "date": "2026-04-04",
           "title": "The Spice-Runner's Gambit"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
         }
       ]
     },
@@ -52048,6 +53070,51 @@
           "date": "2026-04-05",
           "title": "The Shade-Collector's Unraveling"
         }
+      ]
+    },
+    {
+      "name": "Stolen Memories (collection)",
+      "tagline": "Fragmented. Invasive. Haunting.",
+      "type": "curse / essence / information",
+      "rarity": "rare",
+      "properties": "Fragments of Zareth's memories and experiences; visions of cosmic working and sacrifice; impressions of stars dying and being reborn; experiences that don't belong to the reader.",
+      "use": "Encoded into the Sovereign's ledger; imparted upon reading; cannot be unlearned; alters perception and identity of those exposed.",
+      "status": "unknown",
+      "first_story": "",
+      "first_date": "2026-04-07",
+      "appearances": 7,
+      "story_appearances": [
+        {
+          "date": "2026-03-06",
+          "title": "The Refugee Caravan's Price"
+        },
+        {
+          "date": "2026-03-10",
+          "title": "The Memory-Thief's Bargain"
+        },
+        {
+          "date": "2026-03-14",
+          "title": "The Shadow Market's Price"
+        },
+        {
+          "date": "2026-03-15",
+          "title": "The Refugee's Refuge"
+        },
+        {
+          "date": "2026-03-21",
+          "title": "The Shadow-Broker's Debt"
+        },
+        {
+          "date": "2026-03-31",
+          "title": "The Phantom-Echo's Compilation"
+        },
+        {
+          "date": "2026-04-06",
+          "title": "The Memory-Thief's Gospel"
+        }
+      ],
+      "aliases": [
+        "Stolen Memories"
       ]
     }
   ],
@@ -52334,8 +53401,8 @@
     {
       "name": "The Empire",
       "tagline": "Central. Ruling. Scholarly.",
-      "first_story": "The Shade-Collector's Unraveling",
-      "first_date": "2026-04-05",
+      "first_story": "The Barbarian's Mercy",
+      "first_date": "2026-04-06",
       "appearances": 36,
       "story_appearances": [
         {
@@ -52627,8 +53694,8 @@
     {
       "name": "Council of Depths (Deepkin Realms)",
       "tagline": "Ancient. Sealed. Divided.",
-      "first_story": "The Deepkin Ambassador's Divided Loyalty",
-      "first_date": "2026-04-05",
+      "first_story": "The Deepkin Captain's Last Treaty",
+      "first_date": "2026-04-06",
       "appearances": 23,
       "story_appearances": [
         {
@@ -52734,10 +53801,13 @@
       "notes": "This realm's fate hangs on the Council's decision at what may be its final session.",
       "world": "The Known World",
       "hemisphere": "unknown",
-      "realm": "Council of Depths (Deepkin Realms)",
+      "realm": "Council of Depths (originally)",
       "province": "unknown",
       "region": "unknown",
-      "district": "unknown"
+      "district": "unknown",
+      "aliases": [
+        "Council of Depths (originally)"
+      ]
     },
     {
       "name": "Twilight Syndicate",
@@ -52773,9 +53843,9 @@
     {
       "name": "The Dominion",
       "tagline": "Fractured. Governed. Hidden.",
-      "first_story": "The Bone-Singer's Defection",
-      "first_date": "2026-04-05",
-      "appearances": 23,
+      "first_story": "The Auditor's Blind Ledger",
+      "first_date": "2026-04-06",
+      "appearances": 24,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -52868,6 +53938,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "description": "A kingdom secretly fractured by the Luminous Ascension, governed by the Crown through suppression of truth. Its stability depends on compartmentalized knowledge maintained by Ledger-Keepers like Sevin.",
@@ -52940,7 +54014,7 @@
       "tagline": "Human. Unified. Threatened.",
       "first_story": "The Deepkin Rising",
       "first_date": "2026-03-27",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-03-27",
@@ -52961,6 +54035,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ],
       "description": "The collective human and surface-dwelling civilizations above the Abyssal Rift. Face imminent deepkin emergence and must choose negotiation or war.",
@@ -53008,7 +54086,7 @@
       "name": "The Empire",
       "tagline": "",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 36,
       "story_appearances": [
         {
@@ -53177,8 +54255,8 @@
     {
       "name": "Council of Depths (Deepkin Realms)",
       "tagline": "",
-      "first_story": "The Deepkin Captain's Last Treaty",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 23,
       "story_appearances": [
         {
@@ -53295,9 +54373,9 @@
     {
       "name": "The Dominion",
       "tagline": "Fragmented. Desperate. Collapsing.",
-      "first_story": "The Auditor's Blind Ledger",
-      "first_date": "2026-04-06",
-      "appearances": 23,
+      "first_story": "The Auditor's Defection",
+      "first_date": "2026-04-07",
+      "appearances": 24,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -53390,6 +54468,10 @@
         {
           "date": "2026-04-06",
           "title": "The Refugee Scribe's Rebellion"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "description": "A vast realm fractured by the Luminous Ascension and collapsing under the weight of stolen memories and world-fragments. Vex's shadow-markets are the dominant economic force.",
@@ -53413,8 +54495,8 @@
     {
       "name": "Council of Depths (Deepkin Realms)",
       "tagline": "",
-      "first_story": "The Deepkin Captain's Last Treaty",
-      "first_date": "2026-04-06",
+      "first_story": "",
+      "first_date": "2026-04-07",
       "appearances": 23,
       "story_appearances": [
         {
@@ -53568,8 +54650,8 @@
     {
       "name": "Three Provinces (Hegemony)",
       "tagline": "Competing. Fragmenting. Destabilized.",
-      "first_story": "The Ledger-Thief's Confession",
-      "first_date": "2026-04-05",
+      "first_story": "",
+      "first_date": "2026-04-06",
       "appearances": 3,
       "story_appearances": [
         {
@@ -53604,7 +54686,7 @@
       "name": "Three Provinces (Hegemony)",
       "tagline": "Competing. Fragmenting. Destabilized.",
       "first_story": "",
-      "first_date": "2026-04-06",
+      "first_date": "2026-04-07",
       "appearances": 3,
       "story_appearances": [
         {
@@ -53747,10 +54829,15 @@
     {
       "name": "Malachar",
       "tagline": "",
-      "first_story": "",
+      "first_story": "The Spice-Runner's Second Chance",
       "first_date": "2026-03-08",
       "appearances": 1,
-      "story_appearances": [],
+      "story_appearances": [
+        {
+          "date": "2026-04-07",
+          "title": "The Spice-Runner's Second Chance"
+        }
+      ],
       "type": "lich-king / undead / necromancer",
       "world": "known_world",
       "description": "A dead entity of considerable power whose name and will persist through supernatural collectors. Malachar's gold carries debts that compound in blood, loyalty, and life-years. The collectors act as autonomous agents enforcing these eternal debts.",
@@ -53906,7 +54993,7 @@
       "tagline": "",
       "first_story": "The Deepkin's Dilemma",
       "first_date": "2026-03-08",
-      "appearances": 29,
+      "appearances": 30,
       "story_appearances": [
         {
           "date": "2026-03-09",
@@ -54023,6 +55110,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ],
       "type": "entity / race",
@@ -54133,10 +55224,15 @@
     {
       "name": "Fragments of Consciousness (Stellar Rite Creations)",
       "tagline": "",
-      "first_story": "",
+      "first_story": "The Initiate's Tower",
       "first_date": "2026-03-08",
       "appearances": 1,
-      "story_appearances": [],
+      "story_appearances": [
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        }
+      ],
       "type": "spirits / entities",
       "world": "Edhra",
       "description": "Multiple fragments of consciousness created by the Stellar Rite, scattered across the rewritten world like seeds. Some are dormant; others are very much awake. The memory-thief may be one such fragment.",
@@ -55156,7 +56252,7 @@
       "tagline": "",
       "first_story": "The Song of the Deep",
       "first_date": "2026-03-14",
-      "appearances": 30,
+      "appearances": 31,
       "story_appearances": [
         {
           "date": "2026-03-14",
@@ -55277,6 +56373,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ],
       "type": "undead / spirit",
@@ -55660,7 +56760,7 @@
       "tagline": "",
       "first_story": "The Bone-Singer's Summons",
       "first_date": "2026-03-20",
-      "appearances": 24,
+      "appearances": 25,
       "story_appearances": [
         {
           "date": "2026-03-20",
@@ -55757,6 +56857,10 @@
         {
           "date": "2026-04-06",
           "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Bone-Singer's Inheritance"
         }
       ],
       "type": "undead / ancestral consciousness",
@@ -55840,7 +56944,7 @@
       "tagline": "",
       "first_story": "The Apprentice's Archive",
       "first_date": "2026-03-21",
-      "appearances": 20,
+      "appearances": 21,
       "story_appearances": [
         {
           "date": "2026-03-21",
@@ -55921,6 +57025,10 @@
         {
           "date": "2026-04-05",
           "title": "The Merchant's Harmonic Hunger"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ],
       "type": "fragment, spirit, unknown entity",
@@ -56008,7 +57116,7 @@
       "tagline": "",
       "first_story": "The Merchant's Half-Song",
       "first_date": "2026-03-23",
-      "appearances": 17,
+      "appearances": 19,
       "story_appearances": [
         {
           "date": "2026-03-23",
@@ -56077,6 +57185,14 @@
         {
           "date": "2026-04-06",
           "title": "The Memory-Thief's Gospel"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Auditor's Defection"
         }
       ],
       "type": "entity / cosmic force",
@@ -56091,7 +57207,7 @@
       "tagline": "",
       "first_story": "The Deepkin's Tide-Turn",
       "first_date": "2026-03-24",
-      "appearances": 16,
+      "appearances": 20,
       "story_appearances": [
         {
           "date": "2026-03-24",
@@ -56156,6 +57272,22 @@
         {
           "date": "2026-04-05",
           "title": "The Refuge-Keeper's Gambit"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
         }
       ],
       "type": "entity / force / consciousness",
@@ -56236,7 +57368,7 @@
       "tagline": "",
       "first_story": "The Wyvern's Debt",
       "first_date": "2026-03-28",
-      "appearances": 21,
+      "appearances": 26,
       "story_appearances": [
         {
           "date": "2026-03-28",
@@ -56321,6 +57453,26 @@
         {
           "date": "2026-04-06",
           "title": "The Young Sorcerer's Vault"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Cartographer's Last Map"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Transformed Merchant's Testament"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Deepkin's Last Treaty"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ],
       "type": "entity / cosmic force",
@@ -56508,7 +57660,7 @@
       "tagline": "",
       "first_story": "The Auditor's Archive Beneath",
       "first_date": "2026-03-31",
-      "appearances": 5,
+      "appearances": 6,
       "story_appearances": [
         {
           "date": "2026-03-31",
@@ -56529,6 +57681,10 @@
         {
           "date": "2026-04-06",
           "title": "The Young Sorcerer's Vault"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Question That Breaks Silence"
         }
       ],
       "type": "spirit/sentient structure",
@@ -56562,7 +57718,7 @@
       "tagline": "",
       "first_story": "The Obsidian Tower's Hunger Speaks",
       "first_date": "2026-04-02",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-04-02",
@@ -56571,6 +57727,10 @@
         {
           "date": "2026-04-03",
           "title": "The Resonance Fragments Converge"
+        },
+        {
+          "date": "2026-04-07",
+          "title": "The Initiate's Tower"
         }
       ],
       "type": "entity / consciousness / ley-line manifestation",

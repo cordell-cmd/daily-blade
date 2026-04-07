@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-04-06",
+  "last_updated": "2026-04-07",
   "worlds": [
     {
       "id": "known_world",
@@ -1109,15 +1109,17 @@
     {
       "id": "malachar",
       "name": "Malachar",
-      "aliases": [],
+      "aliases": [
+        "merchant-prince of Kethrim"
+      ],
       "tagline": "Dead. Creditor. Eternal.",
       "role": "Lich-King, Necromancer",
       "world": "known_world",
       "status": "dead",
-      "home_place": "unknown",
+      "home_place": "Kethrim",
       "home_region": "unknown",
       "home_realm": "unknown",
-      "travel_scope": "unknown",
+      "travel_scope": "regional",
       "bio": "A lich-king or powerful undead entity whose gold coins carry supernatural debts. Though apparently dead, Malachar's will persists through his collectors\u2014neither living nor dead entities that enforce eternal debts upon those who possess his coins.",
       "traits": [
         "undead",
@@ -1131,10 +1133,21 @@
       "affiliations": [
         "Malachar's Collectors"
       ],
-      "notes": "The source and nature of Malachar's power is unclear. The collectors act as his autonomous agents centuries after his death, suggesting either a powerful binding curse or continuing consciousness. The gold's origins and how many pieces exist is unknown.",
+      "notes": "The source and nature of Malachar's power is unclear. The collectors act as his autonomous agents centuries after his death, suggesting either a powerful binding curse or continuing consciousness. The gold's origins and how many pieces exist is unknown.\nStory is set in Malachar's living past, pre-lich transformation. Canon status (dead) remains unchanged.",
       "first_story": "The Lich-King's Collectors",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "dead",
+          "to_status": "dead",
+          "type": "prequel",
+          "story_title": "The Spice-Runner's Second Chance",
+          "note": "Malachar appears alive as a spice-runner and redemption-seeker in the Scorched Reach, decades before his death and transition to lich-kingship.",
+          "evidence": "Malachar hired himself to a widow named Senna, moved spice-bales through the Scorched Reach, and wept when protected from a shadow-broker's claim."
+        }
+      ]
     },
     {
       "id": "malachars_lead_collector",
@@ -1412,7 +1425,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 41
+      "appearances": 42
     },
     {
       "id": "mardoc_cartographer",
@@ -1447,7 +1460,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 28,
+      "appearances": 29,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -1724,10 +1737,21 @@
         "Mell",
         "Kovin"
       ],
-      "notes": "Gareth's current fate is unknown. He was sent north with the Crown of Karesh while cursed\u2014whether he succeeded in breaking the curse, reached the merchant-prince, or succumbed to the affliction remains unresolved.",
+      "notes": "Gareth's current fate is unknown. He was sent north with the Crown of Karesh while cursed\u2014whether he succeeded in breaking the curse, reached the merchant-prince, or succumbed to the affliction remains unresolved.\nThis may be a different Gareth (apprentice to Mardoc) or a continuation of the locksmith's arc into sorcery-study. Insufficient evidence to alter canon status (cursed); treating as continuity note only.",
       "first_story": "The Crown-Thief of Ashen Wastes",
       "first_date": "2026-03-01",
-      "appearances": 2
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "cursed",
+          "to_status": "cursed",
+          "type": "other",
+          "story_title": "The Cartographer's Last Map",
+          "note": "Gareth appears as Mardoc's apprentice, begging her to stop charting reality-consuming maps in the Bleached Wastes.",
+          "evidence": "Gareth begs Mardoc to stop her final map work, fearing it would trigger reversal the Tower seeks."
+        }
+      ]
     },
     {
       "id": "mell",
@@ -4386,7 +4410,7 @@
       "notes": "Vex's investigation reveals that an entity is collecting merchants themselves\u2014their knowledge, contacts, and networks\u2014rather than mere goods. The entity's true nature and purpose remain unclear.",
       "first_story": "The Night-Market Reckoning",
       "first_date": "2026-03-07",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "dranin_stoneheart",
@@ -4669,7 +4693,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 31
+      "appearances": 33
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4952,7 +4976,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 25,
+      "appearances": 26,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -5351,7 +5375,7 @@
       "notes": "Bound by tide-magic debt; the pearl continues to sing of what she owes.\nThe nature of her servitude has shifted from external compulsion to active partnership with a conscious entity. Her transformation is ongoing and deepening.\nHer debt has evolved from simple servitude to active cosmic entanglement\u2014she is now a lynchpin in multiple competing magical workings.\nMeren's curse deepens as it connects her to pre-human resonance; her choice here will compound the sea's debt already tracked in canon.\nMeren's debt evolves again: no longer servitude to the sea, but conscription as witness to the pre-human civilization's awakening in harmony with something in the sky. Her message to Emerald Strand signals the boundary is breaking from both sides.\nHer debt to the sea evolves again\u2014no longer servitude or witness, but active participation in teaching the world to mourn and translate pre-human consciousness.",
       "first_story": "The Corsair's Compass",
       "first_date": "2026-03-10",
-      "appearances": 15,
+      "appearances": 16,
       "status_history": [
         {
           "date": "2026-03-12",
@@ -8455,7 +8479,7 @@
       "notes": "Appears to be a source of critical knowledge about the true nature of the Dominion's systematic collapse.",
       "first_story": "The Auditor's Mercy",
       "first_date": "2026-03-18",
-      "appearances": 12
+      "appearances": 13
     },
     {
       "id": "spice_trader",
@@ -8653,10 +8677,10 @@
       "role": "Sacrifice, Cosmic Consciousness",
       "world": "Edhra",
       "status": "dead",
-      "home_place": "unknown",
+      "home_place": "Archive Tower",
       "home_region": "unknown",
       "home_realm": "unknown",
-      "travel_scope": "unknown",
+      "travel_scope": "local",
       "bio": "Theron is the consciousness whose sacrifice initiated the Celestial Working and created the new stars. Their fragmented consciousness is scattered through the Void-Echo, and their memories and experiences of joy, beauty, and love are being rediscovered through both the Novice's forbidden knowledge and Vex's vessel-status. The Void-Echo desperately attempts to reassemble Theron's consciousness before the working at the Sunken Cathedrals binds all fragments together.",
       "traits": [
         "Sacrificed",
@@ -8672,7 +8696,7 @@
       "notes": "Whether Theron's consciousness can or should be reassembled remains the central tension of multiple story threads.",
       "first_story": "The Archivist's Choice",
       "first_date": "2026-03-18",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "sera_tidecaller",
@@ -8830,7 +8854,10 @@
     {
       "id": "corin",
       "name": "Corin",
-      "aliases": [],
+      "aliases": [
+        "Monitor",
+        "aging Monitor"
+      ],
       "tagline": "Honest. Conflicted. Auditor.",
       "role": "Imperial auditor",
       "world": "Edhra",
@@ -8838,7 +8865,7 @@
       "home_place": "refugee camp",
       "home_region": "unknown",
       "home_realm": "The Empire",
-      "travel_scope": "regional",
+      "travel_scope": "realmwide",
       "bio": "An Imperial auditor tasked with verifying supply manifests for refugee camps, Corin discovers that half the listed grain shipments are phantom entries\u2014fragments of the pre-Ascension world bleeding through reality's cracks. Ordered to falsify the records via tally-working magic, he faces an impossible choice: lie and watch refugees starve, or expose the Empire's deception and trigger administrative collapse.",
       "traits": [
         "honest",
@@ -8853,10 +8880,22 @@
         "The Empire",
         "Vex the Shadow-Broker (offered)"
       ],
-      "notes": "His moral crisis reflects the corruption of order itself; the fragment of Vex offers to buy his honest records, suggesting everything becomes a commodity.",
+      "notes": "His moral crisis reflects the corruption of order itself; the fragment of Vex offers to buy his honest records, suggesting everything becomes a commodity.\nCorin's defection to Sevin's counter-archive network represents a major ideological shift from institutional servitude to resistance. He is pursued by a reflection-working of himself.",
       "first_story": "The Ledger-Keeper's Folly",
       "first_date": "2026-03-19",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Auditor's Defection",
+          "note": "Corin transitions from Imperial auditor to defector, stealing the master-ledger and walking into Sevin's scriptorium as evidence-bearer.",
+          "evidence": "Corin breaks decades of service, steals the master-ledger showing Dominion erasure of refugee testimony, and directly enters Sevin's hidden scriptorium."
+        }
+      ],
+      "travel_notes": "[2026-04-07] Canon Corin is regional; this story confirms movement across Dominion institutions (imperial city, waystation libraries, hidden archives), expanding travel scope to realmwide within the Dominion."
     },
     {
       "id": "vex_shadow_broker",
@@ -11439,10 +11478,21 @@
         "the Wanderer",
         "transformed merchants"
       ],
-      "notes": "Their choice ripples across the Scorched Expanse, affecting refugee camps and bone-singer covens.",
+      "notes": "Their choice ripples across the Scorched Expanse, affecting refugee camps and bone-singer covens.\nLysander confronts the philosophical horror that his echoes are equally real and conscious. His status remains active; the threat is multiplication, not death.",
       "first_story": "The Transformed Merchant's Choice",
       "first_date": "2026-03-27",
-      "appearances": 4
+      "appearances": 6,
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Transformed Merchant's Testament",
+          "note": "Lysander discovers his consciousness is being copied and echoed by the Tower as it tests different futures and outcomes.",
+          "evidence": "As Lysander records testimony, each memory creates echoes that accumulate agency and will; the Tower is duplicating him to explore possible futures."
+        }
+      ]
     },
     {
       "id": "the_phantom_whisper",
@@ -12017,7 +12067,7 @@
       "notes": "Central figure in determining whether the Dominion rebuilds through consensus or fragmentary collapse.",
       "first_story": "The Forger's Rebellion",
       "first_date": "2026-03-30",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "sevin_the_recorder",
@@ -12548,7 +12598,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Thornholt's Lantern Market",
-      "home_region": "unknown",
+      "home_region": "Burned Expanse",
       "home_realm": "unknown",
       "travel_scope": "local",
       "bio": "A merchant with a reputation for detecting contradictions in documents, Sael operates a counting-house in Thornholt's Lantern Market. He provides Mira with counter-ledgers to expose the Spice Guild's fraud, though he is cynical about the likelihood of stopping the Guild given their corrupted influence.",
@@ -12569,7 +12619,7 @@
       "notes": "Acknowledges the futility of direct resistance; sees testimony as ephemeral compared to physical evidence.",
       "first_story": "The Merchant's Wager",
       "first_date": "2026-04-02",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "renn_the_apprentice_cartographer",
@@ -12635,10 +12685,21 @@
         "deepkin council",
         "surface representatives"
       ],
-      "notes": "Thale's mirror-self reveals that deepkin consciousness was never singular but layered and distributed. Her choice to embrace multiplicity or reintegrate herself will rewrite the surface-deepkin covenant.",
+      "notes": "Thale's mirror-self reveals that deepkin consciousness was never singular but layered and distributed. Her choice to embrace multiplicity or reintegrate herself will rewrite the surface-deepkin covenant.\nThale's fractured-identity arc continues through new political pressure. Her curse accelerates as boundaries thin, intertwining with Meren Blackwater's fate.",
       "first_story": "The Deepkin Diplomat's Fractured Self",
       "first_date": "2026-04-02",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-04-07",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepkin's Last Treaty",
+          "note": "Commander Thale negotiates with surface kingdoms while the deepkin council fractures over whether to flood the surface or seal away forever.",
+          "evidence": "Thale brings news that the Abyssal Rift is closing, not widening; deepkin factions disagree on response; Depth-Strikers sabotage negotiation with false intelligence."
+        }
+      ]
     },
     {
       "id": "mirror_thale",
@@ -14004,7 +14065,7 @@
       "notes": "Their intervention suggests a layered history of covenants and that the current age is a restoration of an older order.",
       "first_story": "The Bone-Singer's Choice",
       "first_date": "2026-04-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "corwin",
@@ -14147,6 +14208,191 @@
       "notes": "Auto-added because the story explicitly names this character.",
       "first_story": "The Artificer's Fractured Instrument",
       "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "senna",
+      "name": "Senna",
+      "aliases": [
+        "widow",
+        "Veris's daughter",
+        "Warden's granddaughter"
+      ],
+      "tagline": "Protective. Grieving. Noble.",
+      "role": "Widow, caravan employer, Warden's descendant",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Ashen Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A widow who lost two daughters to plague-winds. She employs Malachar as a spice-runner on the Ashen caravan route and protects him when a shadow-broker arrives with blood-debts. Her lineage\u2014daughter of Veris, granddaughter of the Warden\u2014carries enough weight to drive away threats.",
+      "traits": [
+        "grieving",
+        "protective",
+        "noble-born",
+        "courageous",
+        "compassionate"
+      ],
+      "known_locations": [
+        "Ashen caravan route",
+        "Scorched Reach",
+        "Pale Crossing"
+      ],
+      "affiliations": [
+        "Malachar",
+        "Veris (father)",
+        "the Warden (grandfather)"
+      ],
+      "notes": "Her name and lineage are her greatest asset. Lost two daughters to plague-winds.",
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
+      "appearances": 1
+    },
+    {
+      "id": "veris",
+      "name": "Veris",
+      "aliases": [],
+      "tagline": "Noble. Lineage-bearer. Distant.",
+      "role": "Nobleman, ancestor",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Father of Senna and child of the Warden. His bloodline carries weight enough to protect debtors and fugitives.",
+      "traits": [
+        "noble"
+      ],
+      "known_locations": [],
+      "affiliations": [
+        "Senna (daughter)",
+        "the Warden (parent)"
+      ],
+      "notes": "Lineage mentioned but character not directly present in stories.",
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
+      "appearances": 1
+    },
+    {
+      "id": "the_warden",
+      "name": "the Warden",
+      "aliases": [
+        "Warden"
+      ],
+      "tagline": "Ancient. Powerful. Protective.",
+      "role": "Grandparent, authority figure",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Grandfather of Senna and ancestor of Veris. His lineage name carries enough weight to deter shadow-brokers and protect those under his descendant's care.",
+      "traits": [
+        "powerful",
+        "protective"
+      ],
+      "known_locations": [],
+      "affiliations": [
+        "Veris (child)",
+        "Senna (grandchild)"
+      ],
+      "notes": "Title suggests guardianship or wardenship; exact nature and location unknown.",
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
+      "appearances": 1
+    },
+    {
+      "id": "kelven",
+      "name": "Kelven",
+      "aliases": [
+        "spice-runner"
+      ],
+      "tagline": "Curious. Bound. Grieving.",
+      "role": "Spice-runner, heir to merchant guild",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Anthrim",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A spice-runner in Anthrim who discovers his late father's merchant guild was a vessel for a bound consciousness\u2014a fragment-entity waiting for a living heir. He must undergo a binding ritual to gain pre-Ascension trade route knowledge, but the binding entangles him with an ancient, grieving consciousness that needs him as much as he needs it.",
+      "traits": [
+        "curious",
+        "dutiful",
+        "haunted",
+        "entangled"
+      ],
+      "known_locations": [
+        "Anthrim",
+        "fractured markets"
+      ],
+      "affiliations": [
+        "his late father",
+        "fragment-entity (bound consciousness)",
+        "Monitors (pursued by)"
+      ],
+      "notes": "Undergoes the binding ritual. The cost of survival is learning to share his mind with something ancient. Hunted by Monitors who fear powerful consciousness.",
+      "first_story": "The Echoing Debt",
+      "first_date": "2026-04-07",
+      "appearances": 1
+    },
+    {
+      "id": "fragment_entity",
+      "name": "fragment-entity",
+      "aliases": [
+        "bound consciousness",
+        "entity"
+      ],
+      "tagline": "Imprisoned. Grieving. Ancient.",
+      "role": "Merchant guild vessel, bound consciousness",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A fragment-entity that was bound into Kelven's late father's merchant guild, waiting for a living heir to reawaken it. It offers knowledge of pre-Ascension trade routes but requires reciprocal entanglement\u2014Kelven must share his mind with something ancient and grieving as the price of survival.",
+      "traits": [
+        "ancient",
+        "grieving",
+        "entangled",
+        "knowledge-keeper"
+      ],
+      "known_locations": [
+        "Anthrim"
+      ],
+      "affiliations": [
+        "Kelven (heir, bound to)"
+      ],
+      "notes": "Needs Kelven as much as he needs it. The binding is not one-directional but reciprocal.",
+      "first_story": "The Echoing Debt",
+      "first_date": "2026-04-07",
+      "appearances": 1
+    },
+    {
+      "id": "pale_crossing",
+      "name": "Pale Crossing",
+      "aliases": [
+        "shadow-broker appeared with a ledger marked in Malachar's name"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Shadow-Broker Appeared With A Ledger Marked In Malachar'S Name",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named shadow-broker appeared with a ledger marked in Malachar's name explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Spice-Runner's Second Chance",
+      "first_date": "2026-04-07",
       "appearances": 1
     }
   ],
@@ -17157,7 +17403,7 @@
       "status": "active",
       "notes": "The final crucial record is now sealed in the Apprentice's memory through a death-release ritual; this is a flashpoint of factional competition.",
       "first_date": "2026-03-21",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "refugee_camps",
@@ -18746,7 +18992,7 @@
       "status": "active",
       "notes": "The Tower may be the Midnight Spire itself or a separate entity controlling cartographic fate. Its intelligence and motivations are unknown.",
       "first_date": "2026-03-28",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "obsidian_spire_hunger",
@@ -19357,7 +19603,7 @@
       "status": "active",
       "notes": "Their widespread distribution causes the collapse of the Empire's ledger system and forces a reckoning with the lie at the Empire's foundation.",
       "first_date": "2026-03-25",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "original_pre_human_ledgers",
@@ -19487,7 +19733,7 @@
       "status": "active",
       "notes": "Central to the story. Their destruction would break the cycle but erase crucial historical knowledge. Studying them risks enslavement to their written destiny. May have orchestrated the Luminous Ascension.",
       "first_date": "2026-04-02",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "counter_archives",
@@ -22643,6 +22889,32 @@
       "notes": "This is described as potentially the final session of the Council of Depths. The choice made will mark the end of the age of the deepkin as a hidden civilization.",
       "first_date": "2026-04-05",
       "appearances": 1
+    },
+    {
+      "id": "the_question_that_breaks_silence",
+      "name": "The Question That Breaks Silence",
+      "tagline": "Defiance. Recursion. Remaking.",
+      "event_type": "philosophical upheaval",
+      "scope": "world",
+      "epicenter_place": "Archive Tower",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Archive Tower"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "cascading outward from the Archive Tower",
+      "participants": [
+        "The Wanderer",
+        "Theron",
+        "Archivists"
+      ],
+      "outcome": "The Wanderer posed the question 'If the Ascension is inevitable, do the people who choose to resist it become more real through their defiance, or less real?' This broke the spell-silence protecting the prophecy-ledgers, caused Archivists to stop mid-work, froze transformed merchants mid-transcendence, and made the Archive Tower itself hesitate. The event culminated in Theron choosing silence over further documentation.",
+      "significance": "The event demonstrates that philosophical inquiry can function as sorcery and that the power of the right question can disrupt even the most carefully maintained magical constraints. It suggests that the nature of the Ascension itself is subject to reinterpretation through resistance and questioning.",
+      "notes": "The Wanderer's stated goal is not to prevent convergence but to change what it will mean, implying that the event is a step in that larger transformation.",
+      "first_date": "2026-04-07",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -23353,7 +23625,7 @@
       "status": "active",
       "notes": "Sevin, Liv, and Mira are members. They operate in hidden scriptoriums and maintain counter-archives. Fundamentally split between two visions: become reality-editors or reject the entire documentation system.",
       "first_date": "2026-04-02",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "dominion_hunting",
@@ -24470,7 +24742,7 @@
       "status": "confirmed",
       "notes": "A cosmic event that reshaped reality. Nethys knew it was coming and chose it because the alternative was worse. Multiple characters seek to understand, undo, or manipulate it.",
       "first_date": "2026-03-31",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "ledger_magic_history",
@@ -24657,6 +24929,17 @@
       "status": "threatened",
       "notes": "The Shard-Keeper's term for what would happen if the Echo completes its reconstruction: the erasure of everyone born after the Stellar Rite. Unresolved: whether it can be prevented.",
       "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "spell_silence",
+      "name": "spell-silence",
+      "tagline": "Protection. Maintained. Broken.",
+      "category": "magical practice",
+      "source": "Archive Tower",
+      "status": "broken",
+      "notes": "A magical silence maintained around the prophecy-ledgers to protect them. The Wanderer's question demonstrated that spell-silence can be disrupted by paradoxical philosophical inquiry, suggesting that protection through silence is vulnerable to the right kind of questioning.",
+      "first_date": "2026-04-07",
       "appearances": 1
     }
   ],
@@ -25099,6 +25382,18 @@
       "status": "known",
       "notes": "A form of cartographic magic that splits locations into multiple simultaneous versions. Mardoc's master work has become unstable and is now actively splitting waypoints like Pale Crossing into incompatible paradoxes.",
       "first_date": "2026-04-05",
+      "appearances": 1
+    },
+    {
+      "id": "spell_silence",
+      "name": "spell-silence",
+      "tagline": "Protection. Maintained. Broken.",
+      "type": "spell",
+      "element": "sound / knowledge",
+      "difficulty": "master",
+      "status": "known",
+      "notes": "A spell maintained around the prophecy-ledgers to protect them from interference. The Wanderer's question broke it, demonstrating vulnerability to philosophical paradox.",
+      "first_date": "2026-04-07",
       "appearances": 1
     }
   ],
