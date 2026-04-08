@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-04-07",
+  "last_updated": "2026-04-08",
   "worlds": [
     {
       "id": "known_world",
@@ -1425,7 +1425,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 42
+      "appearances": 43
     },
     {
       "id": "mardoc_cartographer",
@@ -1460,7 +1460,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 29,
+      "appearances": 30,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -4660,7 +4660,7 @@
       "notes": "His theft may have been orchestrated from the beginning. The Archive's ledger recorded him as 'Employed,' suggesting hidden purposes.",
       "first_story": "The Amber Thief's Gambit",
       "first_date": "2026-03-08",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "sevin_auditor",
@@ -5568,7 +5568,7 @@
       "status": "active",
       "home_place": "unknown",
       "home_region": "Burned Expanse",
-      "home_realm": "unknown",
+      "home_realm": "Dominion",
       "travel_scope": "realmwide",
       "bio": "A spice-merchant transformed by the Luminous Ascension into a half-flesh, half-living-light being. Drawn by a compulsive song only he can hear, Iskar wanders the Burned Expanse seeking the Sunken Cathedrals while his memories slowly dissolve into an alien harmony.",
       "traits": [
@@ -5589,7 +5589,7 @@
       "notes": "His humanity fades as the transformation progresses; dozens of others are converging on the same source.",
       "first_story": "The Singing Merchant",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "vex_the_echo_broker",
@@ -7100,10 +7100,21 @@
       "affiliations": [
         "Kael the Faceless"
       ],
-      "notes": "Successfully aided in the Archive heist. Fate after the escape unknown but implied to have escaped successfully.",
+      "notes": "Successfully aided in the Archive heist. Fate after the escape unknown but implied to have escaped successfully.\nCONFLICT: Canon Morreck is a lockpicking dwarf in Valorun (Story 5, 2026-03-15). This story presents a different Morreck\u2014a smith from a rural village. Likely a separate character or prequel, not an update to canon Morreck. **Recommend treating as a separate character unless future stories explicitly connect them.**",
       "first_story": "The Thief of Starlight",
       "first_date": "2026-03-15",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-04-08",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Dwarven Smith's Reckoning",
+          "note": "A new Morreck story: a smith who forges a hunting weapon to pursue and kill the warlord Garauth in vengeance for burning his forge.",
+          "evidence": "Morreck remade a broken ceremonial blade into a hunter's weapon that could track the warlord across any distance; he confronted Garauth alone and defeated him, then returned to his forge."
+        }
+      ]
     },
     {
       "id": "fae_touched_scout",
@@ -8557,7 +8568,7 @@
       "status": "active",
       "home_place": "unknown",
       "home_region": "The Iron Coast",
-      "home_realm": "unknown",
+      "home_realm": "The Dominion",
       "travel_scope": "realmwide",
       "bio": "A sea captain bearing a curse that binds him to the sea. He receives orders to investigate transformed merchant vessels appearing in the Sapphire Deep, whose crews sing in frequencies that drive ordinary sailors mad. Dorian assembles a crew of the cursed and desperate to descend into transformed waters.",
       "traits": [
@@ -8575,10 +8586,21 @@
         "unknown military/government order",
         "cursed crew"
       ],
-      "notes": "Story climaxes with Dorian choosing to deepen his curse to hold the seal at the Abyssal Rift. Final outcome ambiguous: has he saved anything or merely postponed inevitable transformation?",
+      "notes": "Story climaxes with Dorian choosing to deepen his curse to hold the seal at the Abyssal Rift. Final outcome ambiguous: has he saved anything or merely postponed inevitable transformation?\nCanon Dorian (2026-03-18 onward) is cursed to the sea and holds a seal at the Abyssal Rift\u2014his fate remains ambiguous. This story presents his voluntary final voyage and sacrifice, suggesting a possible arc conclusion or separate timeline.",
       "first_story": "The Warden's Last Duty",
       "first_date": "2026-03-18",
-      "appearances": 3
+      "appearances": 5,
+      "status_history": [
+        {
+          "date": "2026-04-08",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Sea-Captain's Last Voyage",
+          "note": "Dorian deliberately sinks his ship, the Skyward, during a final voyage, leaving behind charters and gold to protect the seas and their people.",
+          "evidence": "Dorian retraced his early voyages, leaving gifts and protections at each port; on the return, a supernatural storm rose and Dorian ordered the crew to safety while he and Sal held the wheel as the Skyward sank."
+        }
+      ]
     },
     {
       "id": "novice_arcanist",
@@ -9306,7 +9328,9 @@
     {
       "id": "sal_first_mate",
       "name": "Sal",
-      "aliases": [],
+      "aliases": [
+        "first mate Sal"
+      ],
       "tagline": "Loyal. Grizzled. Witness.",
       "role": "First mate",
       "world": "Edhra",
@@ -9330,7 +9354,7 @@
       "notes": "Carries the final knowledge of the compass's hunger; final holder of Korvin's grandmother's artifact.",
       "first_story": "The Compass Rose's Hunger",
       "first_date": "2026-03-20",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "vorn_auditor",
@@ -10336,10 +10360,10 @@
         "Mardoc (master)",
         "the Wayfarer"
       ],
-      "notes": "Faces a choice between two paths with world-altering consequences. Meets the Wayfarer at an impossible crossroads.\nHenryk becomes a character in his own right, transcending Mardoc's legacy through synthesis rather than inheritance.",
+      "notes": "Faces a choice between two paths with world-altering consequences. Meets the Wayfarer at an impossible crossroads.\nHenryk becomes a character in his own right, transcending Mardoc's legacy through synthesis rather than inheritance.\nCanon Henryk (2026-03-24 onward) charts a self-rewriting map after his final encounter with the Wayfarer. This story shows an earlier phase of his journey: solitary study of the inherited map before understanding its consequences. Likely a prequel or parallel arc.",
       "first_story": "The Cartographer's Apprentice",
       "first_date": "2026-03-24",
-      "appearances": 4,
+      "appearances": 6,
       "status_history": [
         {
           "date": "2026-03-26",
@@ -10349,6 +10373,15 @@
           "story_title": "The Cartographer's Daughter",
           "note": "Henryk inherits Mardoc's final blank map with instruction not to complete it; discovers completion would lock the world and chooses instead to chart a self-rewriting map.",
           "evidence": "Henryk must chart a third path: a map that rewrites itself, allowing for both stability and transformation."
+        },
+        {
+          "date": "2026-04-08",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Cartographer's Curse",
+          "note": "Henryk inherits Mardoc's living map and sets out toward the Tower's ley-line convergence, choosing understanding over prevention.",
+          "evidence": "Henryk burned all copies of the map, kept only the master, and read Mardoc's final instruction: 'The bearer will die if they try to prevent the Tower, but live if they seek to understand it.' He departed toward the convergence uncertain whether he seeks salvation or surrender."
         }
       ]
     },
@@ -10449,10 +10482,10 @@
         "sea-folk",
         "Deep Council"
       ],
-      "notes": "Thrace discovered that sea-folk were once the Tower's architects. Her pact-breaking will have profound consequences for her civilization.\nHer pact-breaking consequences deepen as she now negotiates the integration of deepkin civilization into surface politics; she becomes a architect of post-Ascension order.",
+      "notes": "Thrace discovered that sea-folk were once the Tower's architects. Her pact-breaking will have profound consequences for her civilization.\nHer pact-breaking consequences deepen as she now negotiates the integration of deepkin civilization into surface politics; she becomes a architect of post-Ascension order.\nThis represents a significant escalation from negotiation (prior canon) to coercive action. Her role shifts from pact-breaker to enforcer of deepkin sovereignty.",
       "first_story": "The Deepkin's Tide-Turn",
       "first_date": "2026-03-24",
-      "appearances": 3,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-03-27",
@@ -10462,6 +10495,15 @@
           "story_title": "The Deepkin Rising",
           "note": "Thrace calls for deepkin emergence and integration with surface kingdoms through radical covenant, initiating a major political shift.",
           "evidence": "Thrace proposes joint governance and resource-sharing between deepkin realms and surface kingdoms; she joins Sylas the Deepwarden in orchestrating emergence through negotiation rather than force."
+        },
+        {
+          "date": "2026-04-08",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepkin's Defiance",
+          "note": "Thrace escalates deepkin sovereignty demands through military action, deliberately sinking three ships to force treaty renegotiation.",
+          "evidence": "When Vorn's fleet advanced into forbidden waters, Thrace called the currents and three ships went down; she then pulled Vorn aboard and delivered a message demanding the surface kingdoms honor the Covenant or face the sea's wrath."
         }
       ]
     },
@@ -11297,7 +11339,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "unknown",
-      "home_region": "unknown",
+      "home_region": "Hearthlands",
       "home_realm": "Summer Dark",
       "travel_scope": "interrealm",
       "bio": "A half-fae prince of the Summer Dark who crossed into mortal lands bearing a wound no earthly blade had made. Morryn hid him and nursed his injury; he bound himself to her through fae knowledge of her hidden heart.",
@@ -11316,10 +11358,21 @@
         "Morryn",
         "Fae Court"
       ],
-      "notes": "His exile or escape from the Summer Dark remains ambiguous; his relationship with Morryn is now bound by fae magic.",
+      "notes": "His exile or escape from the Summer Dark remains ambiguous; his relationship with Morryn is now bound by fae magic.\nCanon Sylvain is a wounded half-fae prince in exile (first appearance 2026-03-27, canon shows him hiding in Thornwood). This story shows him in a diplomatic role post-injury, suggesting timeline progression or parallel narrative.",
       "first_story": "The Warden's Second Sight",
       "first_date": "2026-03-27",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-04-08",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Fae Prince's Bargain",
+          "note": "Sylvain successfully negotiates a third path between mortal and fae courts, establishing trade and cooperation where none existed.",
+          "evidence": "Over three seasons, Sylvain carried messages between Twilight and Hearthlands, gradually shifting both courts' positions; mixed delegations now attend councils and fae-human trade has begun."
+        }
+      ]
     },
     {
       "id": "caldrin",
@@ -11853,7 +11906,7 @@
       "status": "cursed",
       "home_place": "Pale Crossing",
       "home_region": "The Sunken Marches",
-      "home_realm": "unknown",
+      "home_realm": "the dominion",
       "travel_scope": "local",
       "bio": "A widow living in a refugee camp near Pale Crossing who discovers her late husband's debts transferred to her. A shadow-broker arrives with a contract signed in blood-ink, demanding payment in memories of her childhood. She navigates the collapsing shadow-markets alongside Vex.",
       "traits": [
@@ -11872,7 +11925,7 @@
       "notes": "Subject to a shadow-debt contract that demands precious memories as payment. Her husband's debts survive his death.",
       "first_story": "The Widow's Shadow-Debt",
       "first_date": "2026-03-29",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "deepkin_warden",
@@ -12202,7 +12255,7 @@
       "tagline": "Bone-singer. Conflicted. Watchful.",
       "role": "Bone-singer, Guardian",
       "world": "Edhra",
-      "status": "active",
+      "status": "undead",
       "home_place": "Sunken Cathedrals",
       "home_region": "The Sunken Marches",
       "home_realm": "unknown",
@@ -12223,10 +12276,21 @@
         "bone-singers",
         "refugees"
       ],
-      "notes": "The phantom-voice of Nethys's scattered consciousness watches and studies Dren's communion with the newly conscious dead. Major unresolved: will Dren complete the burial or allow transcendence?",
+      "notes": "The phantom-voice of Nethys's scattered consciousness watches and studies Dren's communion with the newly conscious dead. Major unresolved: will Dren complete the burial or allow transcendence?\nCanon Dren is a bone-singer in the Sunken Cathedrals (2026-03-31). This story appears to show her ultimate fate: transformation into an eternal chorus-voice dwelling in the deep places, no longer fully living but preserved as ancestral song.",
       "first_story": "The Bone-Singer's Vigil",
       "first_date": "2026-03-31",
-      "appearances": 3
+      "appearances": 6,
+      "status_history": [
+        {
+          "date": "2026-04-08",
+          "from_status": "active",
+          "to_status": "undead",
+          "type": "other",
+          "story_title": "The Last Bone-Singer",
+          "note": "Dren performs a terminal bone-song ritual to protect an archive from soldiers, sacrificing her corporeal form to become part of the eternal chorus of ancestors.",
+          "evidence": "Dren sang the bones of tens of thousands of ancestors into a wall of memory and protection; her fingers hardened and voice aged as she descended into the catacombs, eventually becoming part of the singing dead permanently."
+        }
+      ]
     },
     {
       "id": "aldrin",
@@ -12510,19 +12574,24 @@
       "home_place": "unknown",
       "home_region": "unknown",
       "home_realm": "unknown",
-      "travel_scope": "unknown",
+      "travel_scope": "realmwide",
       "bio": "A named leader referenced in the issue's stories; details unknown beyond the text.",
       "traits": [
         "commanding",
         "dangerous",
         "enigmatic"
       ],
-      "known_locations": [],
-      "affiliations": [],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "Mira of House Valwyn (family)",
+        "Surface Kingdoms"
+      ],
       "notes": "Auto-added because a faction leader was named in-story.",
       "first_story": "The Auditor's Archive Beneath",
       "first_date": "2026-03-31",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "tavrin_merchant",
@@ -14394,6 +14463,489 @@
       "first_story": "The Spice-Runner's Second Chance",
       "first_date": "2026-04-07",
       "appearances": 1
+    },
+    {
+      "id": "brennus_ironpeak",
+      "name": "Brennus Ironpeak",
+      "aliases": [
+        "Brennus"
+      ],
+      "tagline": "Scarred. Steadfast. Defiant.",
+      "role": "Warlord, Mountain Fastness Lord",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Mountain Fastness (unnamed)",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Brennus Ironpeak held a mountain fastness for thirty winters, answering to no crown. When Mira of House Valwyn fled to him seeking refuge, he sheltered her and together they defended against the Regent's siege for forty days. He offered Mira his name, hold, and life freely, and their bond proved stronger than royal authority.",
+      "traits": [
+        "scarred",
+        "loyal",
+        "strategic",
+        "independent",
+        "romantic"
+      ],
+      "known_locations": [
+        "Mountain Fastness",
+        "ramparts"
+      ],
+      "affiliations": [
+        "Mira of House Valwyn"
+      ],
+      "notes": "Successfully repelled a siege by the Regent's army; his relationship with Mira transcends political boundaries.",
+      "first_story": "The Warden's Daughter",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "mira_of_house_valwyn",
+      "name": "Mira of House Valwyn",
+      "aliases": [
+        "Mira"
+      ],
+      "tagline": "Exiled. Fierce. Regal.",
+      "role": "Noblewoman, Warrior",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Mira of House Valwyn fled to Brennus Ironpeak after her brother's death left her claim contested and her life in danger. She renounced her title and fought alongside Brennus as a cavalry warrior, helping defend his fastness against the Regent's siege.",
+      "traits": [
+        "fierce",
+        "strategic",
+        "exiled",
+        "skilled-with-sword",
+        "abandons-privilege"
+      ],
+      "known_locations": [
+        "Mountain Fastness",
+        "ramparts"
+      ],
+      "affiliations": [
+        "Brennus Ironpeak",
+        "House Valwyn (renounced)"
+      ],
+      "notes": "Brother is dead; claim is contested; renounced title to stay with Brennus; siege lasted forty days and failed.",
+      "first_story": "The Warden's Daughter",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "commander_thrace",
+      "name": "Commander Thrace of the Tidecall",
+      "aliases": [
+        "Thrace"
+      ],
+      "tagline": "Resolute. Commanding. Wrathful.",
+      "role": "Military Commander, Deepkin Leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "interrealm",
+      "bio": "Commander Thrace of the Tidecall has negotiated the Covenant seventeen times on behalf of the Deepkin. When Admiral Vorn violated forbidden waters, she called the currents to sink three of his ships and demonstrated Deepkin sovereignty by sparing him and delivering an ultimatum.",
+      "traits": [
+        "diplomatic",
+        "powerful",
+        "wrathful",
+        "resolute",
+        "ocean-connected"
+      ],
+      "known_locations": [
+        "Abyssal Trench",
+        "forbidden waters"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "Deepkin"
+      ],
+      "notes": "Negotiated Covenant seventeen times; demands include equal trade representation, cessation of Abyssal Trench fishing, and Deepkin sovereignty; next treaty will cost lives.",
+      "first_story": "The Deepkin's Defiance",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "admiral_vorn",
+      "name": "Admiral Vorn",
+      "aliases": [
+        "Vorn",
+        "human admiral"
+      ],
+      "tagline": "Arrogant. Humbled. Surviving.",
+      "role": "Naval Admiral, Surface Kingdoms Representative",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Surface Kingdoms",
+      "travel_scope": "interrealm",
+      "bio": "Admiral Vorn led a fleet into forbidden waters to prove the Deepkin lacked power. When Commander Thrace sank three of his ships and spared his life, he became the messenger bearing her ultimatum that 'the Covenant breaks if only one side honors it.'",
+      "traits": [
+        "arrogant",
+        "defiant",
+        "humbled",
+        "survives"
+      ],
+      "known_locations": [
+        "Abyssal Trench",
+        "forbidden waters"
+      ],
+      "affiliations": [
+        "Surface Kingdoms"
+      ],
+      "notes": "Fleet of three ships sank; sole survivor; forced to deliver Deepkin ultimatum to surface kingdoms; his transgression catalyzed diplomatic crisis.",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "garron",
+      "name": "Garron",
+      "aliases": [
+        "The Mute Bowyer"
+      ],
+      "tagline": "Silent. Skilled. Vengeful.",
+      "role": "Bowyer, Craftsman, Avenger",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Blackthorn",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Garron cannot speak, his throat cut by raiders who burned his village and killed his kin. Over five years he apprenticed under the Master of Bows in Blackthorn's forges, crafting a masterpiece bow that screams with the dying cries of his village when Vorath tests it, driving the warlord mad and into the wastes.",
+      "traits": [
+        "mute",
+        "skilled",
+        "patient",
+        "vengeful",
+        "precise"
+      ],
+      "known_locations": [
+        "Blackthorn",
+        "forges beneath Blackthorn",
+        "Vorath's war-tent",
+        "wastes"
+      ],
+      "affiliations": [
+        "Master of Bows"
+      ],
+      "notes": "Lost his voice and village in a raid; crafted a cursed bow that manifests genocide; carved a final bow for himself; some revenge requires no words.",
+      "first_story": "The Mute Bowyer's Revenge",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "vorath",
+      "name": "Vorath",
+      "aliases": [
+        "warlord who'd conquered three provinces"
+      ],
+      "tagline": "Warlord. Conquered. Cursed.",
+      "role": "Warlord",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Vorath is a warlord who conquered three provinces and was one of the raiders who burned Garron's village. When he tested Garron's bow in his war-tent, the weapon screamed with the ghosts of his victims, driving him mad with the weight of that particular slaughter. He fled into the wastes, forever hearing the voices.",
+      "traits": [
+        "conqueror",
+        "cursed",
+        "maddened",
+        "fleeing"
+      ],
+      "known_locations": [
+        "three provinces",
+        "war-tent",
+        "wastes"
+      ],
+      "affiliations": [],
+      "notes": "Raider of Garron's village; conquered three provinces; cursed by the screaming bow; fled into wastes; likely mad and eternally haunted.",
+      "first_story": "The Mute Bowyer's Revenge",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "master_of_bows",
+      "name": "Master of Bows",
+      "aliases": [],
+      "tagline": "Legendary. Patient. Unknown.",
+      "role": "Master Craftsman, Bowyer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Blackthorn",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "The Master of Bows trained Garron for five years in the forges beneath Blackthorn, teaching him to craft weapons fit for heroes. Known for producing bows of legendary quality.",
+      "traits": [
+        "masterful",
+        "patient",
+        "legendary"
+      ],
+      "known_locations": [
+        "Blackthorn",
+        "forges beneath Blackthorn"
+      ],
+      "affiliations": [
+        "Garron (apprentice)",
+        "Vorath (patron)"
+      ],
+      "notes": "Trained Garron; worked for patron Vorath; based in underground forges; crafts heroic-quality weapons.",
+      "first_story": "The Mute Bowyer's Revenge",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "kelvan",
+      "name": "Kelvan",
+      "aliases": [
+        "Kelvan the Spice-Merchant"
+      ],
+      "tagline": "Reckless. Enterprising. Determined.",
+      "role": "Spice-Merchant, Caravan Master",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Dominion",
+      "travel_scope": "regional",
+      "bio": "Kelvan inherited his father's caravan routes and debts, facing confiscation by the Dominion's tax-collector. Rather than turn to thievery or accept ruin, he negotiated an unconventional loan from the trade-lord Iskar, then undertook a dangerous expedition to Vel-Karsh to trade with the sea-folk for rare spices. He repaid his debt and became Iskar's partner.",
+      "traits": [
+        "pragmatic",
+        "resourceful",
+        "bold",
+        "willing to negotiate"
+      ],
+      "known_locations": [
+        "Vel-Karsh",
+        "Ashen Wastes"
+      ],
+      "affiliations": [
+        "Iskar (partner)",
+        "Dominion (subject to taxation)"
+      ],
+      "notes": "His success demonstrates that unconventional trade routes and partnerships can circumvent the Dominion's rigid tax system. The rare, luminescent spices from Vel-Karsh may have future significance.",
+      "first_story": "The Spice-Merchant's Gamble",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "moll",
+      "name": "Moll",
+      "aliases": [
+        "half-orc"
+      ],
+      "tagline": "Half-orc. Pragmatic. Shadowed.",
+      "role": "Second-in-Command, Caravan Guard",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Dominion",
+      "travel_scope": "regional",
+      "bio": "Moll served as Kelvan's second-in-command in his caravan operation. When Kelvan faced financial ruin, Moll suggested thievery as a solution\u2014a pragmatic but dark alternative to legitimate trade.",
+      "traits": [
+        "pragmatic",
+        "cynical",
+        "loyal",
+        "street-wise"
+      ],
+      "known_locations": [],
+      "affiliations": [
+        "Kelvan (caravan crew)"
+      ],
+      "notes": "Moll's suggestion of thievery reflects how desperate circumstances drive people toward shadow markets and illegal solutions within the Dominion.",
+      "first_story": "The Spice-Merchant's Gamble",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "lysara",
+      "name": "Lysara",
+      "aliases": [
+        "The Tax-Collector"
+      ],
+      "tagline": "Merciless. Administrative. Unyielding.",
+      "role": "Tax-Collector, Dominion Official",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Dominion",
+      "travel_scope": "local",
+      "bio": "Lysara serves as the Dominion's tax-collector, wielding ledgers that cannot be argued against. She demanded payment from Kelvan in saffron and starflower by the solstice or threatened confiscation of his entire caravan operation.",
+      "traits": [
+        "inflexible",
+        "administrative",
+        "merciless",
+        "ledger-bound"
+      ],
+      "known_locations": [],
+      "affiliations": [
+        "Dominion (enforcement)"
+      ],
+      "notes": "Her rigid enforcement exemplifies the Dominion's consolidation of wealth and power through taxation; she may represent why people like Kelvan seek black-market alternatives.",
+      "first_story": "The Spice-Merchant's Gamble",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "morreck_ironfoot",
+      "name": "Morreck Ironfoot",
+      "aliases": [
+        "Morreck"
+      ],
+      "tagline": "Grieving. Forgebound. Vengeful.",
+      "role": "Dwarven Smith",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "dwarven holds",
+      "travel_scope": "regional",
+      "bio": "Morreck Ironfoot is a master smith who forged weapons for forty years without question. After a warlord named Garauth destroyed his forge and shattered his greatest work\u2014a ceremonial blade carved over twenty years\u2014Morreck broke the guild code and remade it as a legendary hunter's weapon. He pursued Garauth across the realm and defeated him in single combat.",
+      "traits": [
+        "skilled craftsman",
+        "honorable",
+        "driven by justice",
+        "rule-breaking"
+      ],
+      "known_locations": [
+        "forge",
+        "roads",
+        "Garauth's throne"
+      ],
+      "affiliations": [
+        "smith's guild",
+        "dwarven kinfolk"
+      ],
+      "notes": "After his vengeance, Morreck returned to his forge. The blade he created may be legendary and sought after.",
+      "first_story": "The Dwarven Smith's Reckoning",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "garauth",
+      "name": "Garauth",
+      "aliases": [],
+      "tagline": "Tyrant. Ambitious. Fallen.",
+      "role": "Warlord",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "newly built throne",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Garauth is a warlord who hired Morreck to forge weapons, then attempted to burn down his forge when refused. He established a new throne and commanded armies, but was challenged and defeated by Morreck in single combat.",
+      "traits": [
+        "ambitious",
+        "tyrannical",
+        "violent",
+        "commanding"
+      ],
+      "known_locations": [
+        "Morreck's forge",
+        "newly built throne"
+      ],
+      "affiliations": [
+        "soldiers",
+        "armies"
+      ],
+      "notes": "Defeated by Morreck's legendary blade. Left broken and mortal.",
+      "first_story": "The Dwarven Smith's Reckoning",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "keeper_of_the_twilight_court",
+      "name": "Keeper of the Twilight Court",
+      "aliases": [
+        "The Keeper"
+      ],
+      "tagline": "Ancient. Alien. Visionary.",
+      "role": "Fae Ruler / Diplomat",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Twilight Court",
+      "home_region": "unknown",
+      "home_realm": "Twilight Syndicate",
+      "travel_scope": "realmwide",
+      "bio": "The Keeper is an ancient, beautiful, and terrifyingly alien ruler of the Twilight Court who recognized Sylvain's potential to bridge the gap between fae and mortal realms. The Keeper offered Sylvain the task of teaching both courts to speak without blood-debt and iron chains.",
+      "traits": [
+        "ancient",
+        "wise",
+        "alien",
+        "visionary"
+      ],
+      "known_locations": [
+        "Twilight Court"
+      ],
+      "affiliations": [
+        "Twilight Court",
+        "Twilight Syndicate"
+      ],
+      "notes": "Praised Sylvain for changing the rules through stubbornness rather than sorcery.",
+      "first_story": "The Fae Prince's Bargain",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "sorenna_husband",
+      "name": "Sorenna's Husband",
+      "aliases": [],
+      "tagline": "Honorable. Dead. Remembered.",
+      "role": "Boundary Guardian / Archive Keeper",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "archive",
+      "home_region": "unknown",
+      "home_realm": "the dominion",
+      "travel_scope": "local",
+      "bio": "Sorenna's husband was an archive keeper who died honorably holding the boundary against the ancient dead. He spent his life defending an archive of pre-Ascension testimony and left behind his journal and a sealed covenant ritual.",
+      "traits": [
+        "honorable",
+        "protective",
+        "devoted"
+      ],
+      "known_locations": [
+        "boundary",
+        "archive"
+      ],
+      "affiliations": [
+        "archive"
+      ],
+      "notes": "His final words and covenant ritual were used by Sorenna to magically protect the archive from Dominion soldiers.",
+      "first_story": "The Widow's Conspiracy",
+      "first_date": "2026-04-08",
+      "appearances": 1
+    },
+    {
+      "id": "verdant_strand",
+      "name": "Verdant Strand",
+      "aliases": [
+        "charter protecting fisher-folk of Vel-Karsh"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Charter Protecting Fisher-Folk Of Vel-Karsh",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named charter protecting fisher-folk of Vel-Karsh explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Sea-Captain's Last Voyage",
+      "first_date": "2026-04-08",
+      "appearances": 1
     }
   ],
   "places": [
@@ -15968,7 +16520,7 @@
       "status": "active",
       "notes": "Key hub for the Refugee Caravan story; serves as point of refuge and departure for those fleeing the Ascension's aftermath.",
       "first_date": "2026-03-06",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "grey_wastes",
@@ -17148,7 +17700,7 @@
       "status": "active",
       "notes": "The port is shut down to outgoing traffic; Commander Vex controls access. Kael seeks passage northward from here.",
       "first_date": "2026-03-18",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "scorched_barrens",
@@ -17383,7 +17935,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-21",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "archive_tower",
@@ -18184,7 +18736,7 @@
       "status": "active",
       "notes": "Three caravans arrive together here at the end of Castor's story, sharing the same manifest and delivered honor.",
       "first_date": "2026-04-04",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "pale_waypost",
@@ -18340,6 +18892,26 @@
       "status": "active (corrupted)",
       "notes": "The gospel spreads through these shelters; some inhabitants are voluntarily choosing erasure.",
       "first_date": "2026-04-06",
+      "appearances": 1
+    },
+    {
+      "id": "skyward",
+      "name": "Skyward",
+      "tagline": "Weathered. Legendary. Doomed.",
+      "place_type": "ship",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "The Dominion",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A vessel as weathered and defiant as her captain, singing as she sinks.",
+      "description": "The Skyward was Captain Dorian Stormcaller's ship, as weathered as he was but unwilling to quit. She was the setting for legendary voyages and ultimately sank heroically during a supernatural storm, with Dorian at her wheel.",
+      "status": "destroyed",
+      "notes": "The ship 'sank singing'\u2014suggesting some magical resonance or mystical final moment. Her sinking becomes the culmination of Dorian's legend.",
+      "first_date": "2026-04-08",
       "appearances": 1
     }
   ],
@@ -20277,7 +20849,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 4,
+      "appearances": 5,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -22915,6 +23487,41 @@
       "notes": "The Wanderer's stated goal is not to prevent convergence but to change what it will mean, implying that the event is a step in that larger transformation.",
       "first_date": "2026-04-07",
       "appearances": 1
+    },
+    {
+      "id": "sea_captains_last_voyage",
+      "name": "The Sea-Captain's Last Voyage",
+      "tagline": "Retraced. Reckoning. Legendary.",
+      "event_type": "voyage / pilgrimage",
+      "scope": "regional",
+      "epicenter_place": "the Skyward",
+      "epicenter_region": "Iron Coast",
+      "epicenter_realm": "The Dominion",
+      "affected_places": [
+        "Jade Coast",
+        "Crimport",
+        "Verdant Strand",
+        "Vel-Karsh"
+      ],
+      "affected_regions": [
+        "Iron Coast"
+      ],
+      "affected_realms": [
+        "The Dominion"
+      ],
+      "radius": "Across contested Dominion waters and friendly harbors.",
+      "participants": [
+        "Captain Dorian Stormcaller",
+        "Sal",
+        "Kess",
+        "Marin",
+        "the Skyward crew"
+      ],
+      "outcome": "Dorian retraced his legendary early routes, leaving gifts and protections behind at each port. His ship sank during a supernatural storm, and the crew survived to spread his legend\u2014not as a conqueror, but as a man who knew when to let go.",
+      "significance": "Established Dorian as a legendary figure and exemplified resistance to the Dominion's naval expansion through defiant independence rather than warfare.",
+      "notes": "The supernatural storm suggests cosmic or divine judgment. The voyage's true victory was in legacy and principle, not conquest.",
+      "first_date": "2026-04-08",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -23661,6 +24268,18 @@
       "status": "active",
       "notes": "They move to seize Vex's collection for study; whether they seek to contain or weaponize the Zareth fragments is unclear.",
       "first_date": "2026-04-05",
+      "appearances": 1
+    },
+    {
+      "id": "dominion_navy",
+      "name": "The Dominion's Navy",
+      "tagline": "Expanding. Acquisitive. Ambitious.",
+      "alignment": "lawful",
+      "goals": "Expand Dominion control over contested waters; acquire privateers' routes and knowledge.",
+      "leader": "unknown",
+      "status": "rising",
+      "notes": "Actively seeking to integrate independent captains and their charts into Dominion control.",
+      "first_date": "2026-04-08",
       "appearances": 1
     }
   ],
@@ -24940,6 +25559,17 @@
       "status": "broken",
       "notes": "A magical silence maintained around the prophecy-ledgers to protect them. The Wanderer's question demonstrated that spell-silence can be disrupted by paradoxical philosophical inquiry, suggesting that protection through silence is vulnerable to the right kind of questioning.",
       "first_date": "2026-04-07",
+      "appearances": 1
+    },
+    {
+      "id": "bone_songs",
+      "name": "Bone-Songs",
+      "tagline": "Mystical. Ancient. Learned.",
+      "category": "legend",
+      "source": "Kess; tradition of bone-singers.",
+      "status": "confirmed",
+      "notes": "A magical tradition learned and practiced by Kess; suggests deeper magical systems tied to life, death, or resonance.",
+      "first_date": "2026-04-08",
       "appearances": 1
     }
   ],
@@ -26775,6 +27405,18 @@
       "notes": "Vex's collection of rare luminescent objects acts as a focal point for Zareth fragment reassembly.",
       "first_date": "2026-04-05",
       "appearances": 1
+    },
+    {
+      "id": "gold",
+      "name": "Gold",
+      "tagline": "Valuable. Liquid. Tangible.",
+      "type": "precious metal",
+      "rarity": "rare",
+      "properties": "Holds value and purchasing power; can be given as gift or payment.",
+      "use": "Dorian left a purse of gold for the orphanage at Verdant Strand as part of his final reckoning.",
+      "notes": "Represents Dorian's wealth and his choice to distribute it rather than hoard it.",
+      "first_date": "2026-04-08",
+      "appearances": 1
     }
   ],
   "rituals": [
@@ -27332,7 +27974,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "the_hegemony",
