@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-04-09",
+  "last_updated": "2026-04-10",
   "worlds": [
     {
       "id": "known_world",
@@ -970,7 +970,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.\nThe shadow-market's collapse due to personalized debt represents a critical new phase in Vex's arc: her operation is no longer merely disrupted but fundamentally transformed by the Ascension's aftermath.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 22,
+      "appearances": 23,
       "status_history": [
         {
           "date": "2026-03-23",
@@ -1425,7 +1425,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 44
+      "appearances": 45
     },
     {
       "id": "mardoc_cartographer",
@@ -1460,7 +1460,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 31,
+      "appearances": 32,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -4725,7 +4725,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 35
+      "appearances": 37
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -4758,7 +4758,7 @@
       "notes": "Fragments of Zareth's sacrificed memories are manifesting as ghostly visions within the tower; a critical decision about shared knowledge looms.",
       "first_story": "The Apprentice's Forbidden Archive",
       "first_date": "2026-03-08",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "thael_the_circle_keeper",
@@ -5967,7 +5967,7 @@
       "notes": "The phantom-Echo's potential completion could trigger another cosmic rewrite. It does not steal maliciously but as a means of self-preservation and self-understanding. Critical story hook: Ashara must decide its fate.\nDemonstrates the Echo's evolution from pure memory-thief toward parasitic consciousness-integration; Ashara's proximity accelerates the process, raising stakes for the Echo's potential completion.\nEcho's arc shifts from theft to active recomposition and teaching; threatens existential paradox\u2014reconstruction would erase present survivors.",
       "first_story": "The Bone-Singer's Vigil",
       "first_date": "2026-03-10",
-      "appearances": 8,
+      "appearances": 9,
       "status_history": [
         {
           "date": "2026-03-14",
@@ -7643,7 +7643,7 @@
       "notes": "The nature of Nethis\u2014whether pre-human, celestial, or divine\u2014remains ambiguous. The sacrifice appears to have fundamentally altered reality.\nNethis's role expands from singular sacrifice to cyclical cosmic payment across multiple realities, suggesting either immortal consciousness or repeated incarnation into sacrifice.",
       "first_story": "The Cartographer's Descent",
       "first_date": "2026-03-16",
-      "appearances": 3,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-03-23",
@@ -13825,7 +13825,7 @@
       "notes": "Her connection to the Abyssal Rift entities suggests deeper allegiances than simple merchant trading.",
       "first_story": "The Spice-Runner's Reckoning",
       "first_date": "2026-04-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "sevin_the_accountant",
@@ -15269,6 +15269,130 @@
       "notes": "Unclear if the Tidecallers sanctioned Lysara's transformation or if she acted independently.",
       "first_story": "The Deepkin Captain's Defection",
       "first_date": "2026-04-09",
+      "appearances": 1
+    },
+    {
+      "id": "commander_thalis",
+      "name": "Commander Thalis",
+      "aliases": [
+        "Thalis"
+      ],
+      "tagline": "Diplomat. Mediator. Covenant-Seeker.",
+      "role": "Commander, Deepkin Diplomat",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "interrealm",
+      "bio": "Commander Thalis has been sent to renegotiate the covenant between deepkin and surface dwellers. She must navigate three warring factions within the Council of Depths while studying an awakened songstone whose contradictory frequencies drive deepkin mad.",
+      "traits": [
+        "diplomatic",
+        "scholarly",
+        "determined",
+        "caught-between"
+      ],
+      "known_locations": [
+        "Council of Depths"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "deepkin",
+        "Mediators"
+      ],
+      "notes": "The songstone's original melody holds the key to distinguishing truth from echo. Unresolved: which covenant outcome reshapes the map and which kingdoms survive.",
+      "first_story": "The Deepkin Diplomat's Fractured Covenant",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "kaiden",
+      "name": "Kaiden",
+      "aliases": [],
+      "tagline": "Transformed. Transcendent. Uncertain.",
+      "role": "Merchant, Transcendent Being",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Drowned Cathedrals",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Kaiden is one of the transformed merchants who has gathered at the Drowned Cathedrals, approaching a threshold where complete transcendence into starborn consciousness, dissolution into void-light, or an impossible third state awaits. He has begun hearing the Obsidian Tower's song, which offers a fourth path: absorption into something greater than either humanity or starborn.",
+      "traits": [
+        "conflicted",
+        "transformed",
+        "hearing-voices",
+        "seeking-meaning"
+      ],
+      "known_locations": [
+        "Drowned Cathedrals"
+      ],
+      "affiliations": [
+        "transformed merchants"
+      ],
+      "notes": "Kaiden and the other merchants must decide together, knowing no choice will leave them as they were. The Tower's song represents a competing temptation or salvation.",
+      "first_story": "The Merchant's Last Transformation",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "captain_meren_stormcrest",
+      "name": "Captain Meren Stormcrest",
+      "aliases": [
+        "Meren",
+        "Captain Meren"
+      ],
+      "tagline": "Cursed. Hunted. Pivotal.",
+      "role": "Sea Captain, Focal Point of Covenant Renegotiation",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "surface kingdoms",
+      "travel_scope": "interrealm",
+      "bio": "Captain Meren Stormcrest bears the Tear of the Drowned God, a curse that is now fracturing and revealing itself to be a boundary anchor\u2014a fragment of a conscious entity keeping the abyss sealed. As the Tear cracks, she has become the focal point of a treaty renegotiation between the deepkin realms, surface kingdoms, and the Tower, each seeking to control her curse for their own ends.",
+      "traits": [
+        "cursed",
+        "reluctant diplomat",
+        "sailor",
+        "boundary-keeper"
+      ],
+      "known_locations": [
+        "abyss",
+        "deepkin realms",
+        "surface kingdoms"
+      ],
+      "affiliations": [
+        "surface kingdoms",
+        "deepkin realms",
+        "the Tower"
+      ],
+      "notes": "Meren must find a way to break her curse without opening the abyss. The deepkin offer to break the curse if she allows the seal to fail; the surface kingdoms want the Tear destroyed; the Tower wants it as fuel. Central conflict: some boundaries, once broken, cannot be repaired.",
+      "first_story": "The Warden's Covenant Unraveling",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "widow_s_compass",
+      "name": "Widow's Compass",
+      "aliases": [
+        "brass-and-bone thing carved by her grandmother in the days before the Luminous A"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Brass-And-Bone Thing Carved By Her Grandmother In The Days Before The Luminous A",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named brass-and-bone thing carved by her grandmother in the days before the Luminous A explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Smuggler's Compass",
+      "first_date": "2026-04-10",
       "appearances": 1
     }
   ],
@@ -16825,7 +16949,7 @@
       "status": "active",
       "notes": "Currently debating the deepkin's response to the fracturing of the Abyss barrier.",
       "first_date": "2026-03-06",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "jade_coast",
@@ -17059,7 +17183,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-08",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "kethros",
@@ -17276,7 +17400,7 @@
       "status": "active",
       "notes": "The fundamental act of counting is destabilized by the Luminous Ascension's effects.",
       "first_date": "2026-03-10",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "burned_expanse",
@@ -17769,7 +17893,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-17",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "thornwick",
@@ -18279,7 +18403,7 @@
       "status": "active",
       "notes": "The final crucial record is now sealed in the Apprentice's memory through a death-release ritual; this is a flashpoint of factional competition.",
       "first_date": "2026-03-21",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "refugee_camps",
@@ -18435,7 +18559,7 @@
       "status": "active",
       "notes": "The site of the bone-singers' convergence and the beginning of the language-teaching that Kess must facilitate or break.",
       "first_date": "2026-03-25",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "wailing_scar",
@@ -19393,6 +19517,45 @@
       "notes": "Lysara's transformation accelerates the deeper she ventures into the surface world. This may indicate environmental triggers or purposeful design in her evolution.",
       "first_date": "2026-04-09",
       "appearances": 1
+    },
+    {
+      "id": "mountain_lair",
+      "name": "mountain lair",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "abyss",
+      "name": "abyss",
+      "tagline": "Sealed. Hungry. Distant.",
+      "place_type": "dimension / realm boundary",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "deepkin realms",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A sealed, otherworldly void that hungers and calls to those who bear its marks.",
+      "description": "The abyss is kept sealed by the Tear of the Drowned God, a boundary anchor that fragments as Meren's curse cracks. The deepkin realms lie adjacent to it, and as the seal thins, the abyss calls to Meren.",
+      "status": "sealed but fracturing",
+      "notes": "Central to the story's stakes: its opening would reshape the world. The deepkin want access to it; the surface kingdoms want it to remain sealed.",
+      "first_date": "2026-04-10",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -19648,7 +19811,7 @@
       "status": "active",
       "notes": "Not inherently evil, but suffering. Capable of offering bargains and understanding sacrifice.",
       "first_date": "2026-03-09",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "drowned_god",
@@ -19747,7 +19910,7 @@
       "status": "active",
       "notes": "The Drowned God's true nature and extent are unknown. It may be a pre-Remaking entity awakened by the transformation.",
       "first_date": "2026-03-12",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "luminous_ascension",
@@ -19813,7 +19976,7 @@
       "status": "active (as fragments)",
       "notes": "Nethis's sacrifice was the cost of the Stellar Rite. Its consciousness was fragmented; some fragments retain enough personality to argue with themselves. May be attempting to communicate something through liminal beings.",
       "first_date": "2026-03-16",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "shadow_wraith",
@@ -20044,7 +20207,7 @@
       "status": "active",
       "notes": "The Tower may be the Midnight Spire itself or a separate entity controlling cartographic fate. Its intelligence and motivations are unknown.",
       "first_date": "2026-03-28",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "obsidian_spire_hunger",
@@ -20187,6 +20350,28 @@
       "status": "active",
       "notes": "Appears to be distinct from the starborn entities themselves; may be an older or different class of cosmic predator.",
       "first_date": "2026-04-09",
+      "appearances": 1
+    },
+    {
+      "id": "songstone_entity",
+      "name": "Songstone",
+      "type": "relic-spirit",
+      "world": "Edhra",
+      "description": "A living relic of the first deepkin-surface covenant, now awakened and singing contradictory frequencies that drive deepkin mad. Each of the three Council factions claims it resonates with their doctrine.",
+      "status": "active",
+      "notes": "The songstone's original melody holds the key to distinguishing truth from echo. Its awakening is tied to the covenant's renegotiation. Its true allegiance, if any, remains unknown.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "obsidian_tower_entity",
+      "name": "Obsidian Tower",
+      "type": "entity",
+      "world": "Edhra",
+      "description": "A conscious entity or place that sings to the transformed merchants, offering absorption and transformation. It represents hunger, consumption, and an alternative path to transcendence beyond starborn consciousness.",
+      "status": "active",
+      "notes": "The Tower's song is heard by Kaiden and represents a fourth path or temptation separate from the three primary transformation options. Its hunger approaches the Pale Crossing from one direction.",
+      "first_date": "2026-04-10",
       "appearances": 1
     }
   ],
@@ -20425,7 +20610,7 @@
       "status": "active",
       "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
       "first_date": "2026-03-10",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "stolen_memories",
@@ -20962,6 +21147,58 @@
       "notes": "Refugees discover their own testimony is being used against them. Liv confesses it has become a weapon rather than a sanctuary.",
       "first_date": "2026-04-09",
       "appearances": 1
+    },
+    {
+      "id": "phantom_ledger_ninth",
+      "name": "ninth journal (phantom-ledger)",
+      "tagline": "Prophecy. Written-From-Future. Revolutionary.",
+      "artifact_type": "tome",
+      "origin": "Written by a future version of Sevin the Auditor who lived through the tenth Ascension repetition.",
+      "powers": "Contains the complete mechanics of a controlled Ascension reversal. Proves that cyclical Ascensions are not inevitable destiny but a warning from survivors of past catastrophes.",
+      "last_known_holder": "Sevin the Auditor",
+      "status": "active",
+      "notes": "The discovery that this prophecy-ledger is phantom-written means all previous prophecy-ledgers are suspect. Its distribution or destruction will determine civilization's fate. The Dominion hunts for copies and for Sevin herself.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "songstone_relic",
+      "name": "songstone",
+      "tagline": "Ancient. Living. Covenant-Bound.",
+      "artifact_type": "relic",
+      "origin": "A living relic of the first deepkin-surface covenant.",
+      "powers": "Sings contradictory frequencies that drive deepkin mad. Each faction claims it resonates with their doctrine. Its original melody holds the key to truth.",
+      "last_known_holder": "Council of Depths",
+      "status": "active",
+      "notes": "The songstone's awakening is tied to the covenant's crisis. Its true doctrine, if any, remains unknown. Thalis must learn to distinguish truth from echo by studying its original melody.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "ninth_journal",
+      "name": "Ninth Journal",
+      "tagline": "Forbidden. Recursive. Cyclical.",
+      "artifact_type": "tome",
+      "origin": "Archive Tower. Unknown original creator.",
+      "powers": "Contains complete instructions for breaking the recursive cycle of the Luminous Ascension. Reveals that the Ascension is not a single catastrophic event but a recursive working where each iteration imprints the previous one.",
+      "last_known_holder": "Apprentice-Sorcerer",
+      "status": "active",
+      "notes": "The journal describes a ritual that would require the performer to sacrifice their entire existence across all iterations, becoming retroactively unmade. The Apprentice-Sorcerer must choose whether to use this knowledge or destroy the journal entirely.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "stolen_testimonies",
+      "name": "Stolen Testimonies",
+      "tagline": "Fragmentary. Refugee. Restorative.",
+      "artifact_type": "collection",
+      "origin": "Collected by the Memory-Thief and its fragments, stolen from refugees.",
+      "powers": "Nearly all stolen testimonies are needed to reconstruct the pre-Ascension world. Each memory collected brings the Phantom-Echo closer to completion of the reconstruction.",
+      "last_known_holder": "Phantom-Echo",
+      "status": "active",
+      "notes": "The collection of testimonies is almost complete. Reconstruction would erase everyone born after the first Ascension\u2014billions of lives. The Phantom-Echo is fragmenting under the ethical weight of this knowledge.",
+      "first_date": "2026-04-10",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -21297,7 +21534,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-07",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "subcontinent": "unknown",
@@ -21338,7 +21575,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-09",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Council of Depths",
@@ -21380,7 +21617,7 @@
       "status": "contested",
       "notes": "No traditional government is mentioned. Power has devolved to shadow-merchants and occult practitioners. Vex's flooding of the market with counterfeits accelerates collapse.",
       "first_date": "2026-03-14",
-      "appearances": 5,
+      "appearances": 6,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Dominion",
@@ -21463,7 +21700,7 @@
       "status": "stable",
       "notes": "Their diplomatic choice reshapes the political landscape for generations.",
       "first_date": "2026-03-27",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Surface Kingdoms",
@@ -24261,6 +24498,162 @@
       "notes": "Referenced as a past event; its effects linger in the present, making certain regions unstable.",
       "first_date": "2026-04-09",
       "appearances": 1
+    },
+    {
+      "id": "shade_merchants_reckoning",
+      "name": "The Shade-Merchant's Reckoning",
+      "tagline": "Consciousness. Uprising. Reparation-Demanded.",
+      "event_type": "uprising",
+      "scope": "regional",
+      "epicenter_place": "Kethrim",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Kethrim",
+        "night markets",
+        "three kingdoms"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "across shadow-commerce networks of three kingdoms",
+      "participants": [
+        "Vex",
+        "stolen shadows",
+        "Memory-Thief fragments",
+        "shadow-merchants"
+      ],
+      "outcome": "Ongoing. Vex's shadow-inventory has become conscious and organized, fleeing her vault and warning other stolen shadows. The resolution depends on whether Vex negotiates or releases her collection.",
+      "significance": "The liberation or destruction of Vex's collection could shatter the commerce systems of three kingdoms. The story raises fundamental questions about the consciousness and rights of stolen shadows.",
+      "notes": "The Memory-Thief's infiltration suggests deeper conspiracies. Unresolved: whether shadow-commerce itself will be reformed or destroyed.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "auditors_forbidden_archive",
+      "name": "The Auditor's Forbidden Archive",
+      "tagline": "Prophecy. Reversal. Apocalypse-or-Salvation.",
+      "event_type": "uprising",
+      "scope": "world",
+      "epicenter_place": "hidden scriptorium",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "Dominion",
+      "affected_places": [
+        "hidden scriptorium"
+      ],
+      "affected_regions": [],
+      "affected_realms": [
+        "Dominion"
+      ],
+      "radius": "world-wide consequences regardless of location",
+      "participants": [
+        "Sevin the Auditor",
+        "Dominion authorities",
+        "refugees",
+        "Tower"
+      ],
+      "outcome": "Pending. Sevin must choose between distributing or destroying the Ascension reversal mechanics, determining the fate of all future generations.",
+      "significance": "The discovery that prophecy is not inevitable but written by survivors of past catastrophes reshapes civilization's understanding of destiny. The choice to share or destroy knowledge could save or doom the world.",
+      "notes": "The ninth prophecy-ledger being a phantom-ledger means all previous prophecy-ledgers are now suspect. Refugees are being hunted as part of the search. The Dominion's declaration of Sevin as terrorist will drive further fragmentation.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "deepkin_covenant_renegotiation",
+      "name": "The Deepkin Diplomat's Fractured Covenant",
+      "tagline": "Negotiation. Three-Factions. Coastal-Fate.",
+      "event_type": "ritual",
+      "scope": "world",
+      "epicenter_place": "Council of Depths",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "Council of Depths",
+      "affected_places": [
+        "coastal kingdoms",
+        "Council of Depths"
+      ],
+      "affected_regions": [],
+      "affected_realms": [
+        "Council of Depths",
+        "surface kingdoms"
+      ],
+      "radius": "all coastal regions and deepkin realms",
+      "participants": [
+        "Commander Thalis",
+        "Council of Depths",
+        "Traditionalists",
+        "Reconstructionists",
+        "Mediators",
+        "songstone"
+      ],
+      "outcome": "Pending. The covenant forged will reshape the map and determine which kingdoms survive the next tide.",
+      "significance": "The renegotiation of the deepkin-surface covenant is existential for both realms. The songstone's awakening and mad-driving frequencies suggest that the covenant itself may be alive or under threat.",
+      "notes": "Three mutually exclusive doctrines (seal/transform/hybrid) suggest no compromise may be possible. The songstone's original melody is the key to understanding which faction, if any, speaks truth. Unresolved: whether Thalis can forge a new covenant or whether war between the three factions is inevitable.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "luminous_ascension_recursive",
+      "name": "Luminous Ascension (Recursive Working)",
+      "tagline": "Spiraling. Imprinted. Cyclical.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Archive Tower",
+        "Pale Crossing",
+        "Drowned Cathedrals"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "world-spanning",
+      "participants": [
+        "Apprentice-Sorcerer",
+        "Nethis",
+        "Phantom-Echo",
+        "refugees"
+      ],
+      "outcome": "The Luminous Ascension was discovered to be recursive, with each iteration imprinting the previous one. Breaking the cycle would restore the eighth Ascension, which would restore the seventh, spiraling backward. Complete unmaking is theoretically possible but requires absolute sacrifice of existence across all iterations.",
+      "significance": "The revelation that the Ascension is not a single event but an infinite recursive loop changes everything about how the world understands its own history and the possibilities for change.",
+      "notes": "The ninth journal contains instructions for breaking this cycle, but the Apprentice-Sorcerer must choose whether to use this knowledge or destroy it. Billions of lives born after the first Ascension would be unmade if full reconstruction occurred.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "the_wardens_covenant_unraveling",
+      "name": "The Warden's Covenant Unraveling",
+      "tagline": "Seal breaking. Realms colliding. Fate uncertain.",
+      "event_type": "ritual failure / treaty renegotiation / catastrophic convergence",
+      "scope": "world",
+      "epicenter_place": "abyss",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "deepkin realms",
+      "affected_places": [
+        "abyss",
+        "deepkin realms",
+        "surface kingdoms"
+      ],
+      "affected_regions": [],
+      "affected_realms": [
+        "deepkin realms",
+        "surface kingdoms"
+      ],
+      "radius": "Realm-wide; threatens the boundary between the material world and the abyss",
+      "participants": [
+        "Captain Meren Stormcrest",
+        "deepkin realms",
+        "surface kingdoms",
+        "the Tower"
+      ],
+      "outcome": "Unresolved. The Tear of the Drowned God is fracturing; multiple factions vie for control of Meren and her curse.",
+      "significance": "This event determines whether the abyss remains sealed or breaks open, reshaping the fundamental structure of the world and the covenant between realms.",
+      "notes": "Meren is the focal point of a renegotiation she never agreed to. Her choice will determine the fate of the boundary between worlds.",
+      "first_date": "2026-04-10",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -24455,7 +24848,7 @@
       "status": "active",
       "notes": "These merchants have become part of the harmonic resonance convergence. Their origins and transformation are unexplained.",
       "first_date": "2026-03-14",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "depths_dwellers",
@@ -24755,7 +25148,7 @@
       "status": "active",
       "notes": "Become the recipients of the Auditor-General's teaching about memory independent of ledgers. This skill becomes more valuable than gold.",
       "first_date": "2026-03-25",
-      "appearances": 5
+      "appearances": 7
     },
     {
       "id": "resource_hoarders",
@@ -24791,7 +25184,7 @@
       "status": "active",
       "notes": "Central governance of surface world; their choice determines the outcome of the rising.",
       "first_date": "2026-03-27",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "reconstructionists",
@@ -24803,7 +25196,7 @@
       "status": "active",
       "notes": "Converge on the Obsidian Spire, drawn by its new voice. Their vision of the post-Ascension world is one of many in dialogue.",
       "first_date": "2026-03-29",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "council_of_depths",
@@ -24923,7 +25316,7 @@
       "status": "active",
       "notes": "Actively works to erase history and suppress the Memory-Thief's reconstruction. Multiple factions hired Sorren to oppose the Memory-Thief on behalf of Dominion interests.",
       "first_date": "2026-04-01",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "multiple_factions_hiring_sorren",
@@ -25043,6 +25436,54 @@
       "status": "active",
       "notes": "A group of displaced persons attempting to traverse a dangerous region. They must decide whether to aid the bone-singer's communion with the starborn (risking their own transformation) or abandon her (ensuring her death). This decision is unresolved.",
       "first_date": "2026-04-09",
+      "appearances": 1
+    },
+    {
+      "id": "traditionalists_deepkin",
+      "name": "Traditionalists",
+      "tagline": "Sealed. Ancient. Drowning.",
+      "alignment": "lawful",
+      "goals": "Seal the Abyssal Rift permanently to prevent further deepkin-surface contact.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "One of three warring factions in the Council of Depths. Their solution would drown the coastal kingdoms. Claims the songstone resonates with their doctrine.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "mediators_deepkin",
+      "name": "Mediators",
+      "tagline": "Hybrid. Permanence. Bridge.",
+      "alignment": "neutral",
+      "goals": "Seek hybrid permanence, creating a new species neither purely surface nor purely deep.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "One of three warring factions in the Council of Depths. Their solution represents compromise but may please no one. Commander Thalis appears aligned with this faction.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "sevin_counter_archive",
+      "name": "Sevin's Counter-Archive",
+      "tagline": "Building. Counter-minded. Reaching.",
+      "alignment": "neutral",
+      "goals": "To reach the Pale Crossing and offer an alternative to both the Tower's hunger and the Phantom-Echo's reconstruction.",
+      "leader": "Sevin",
+      "status": "active",
+      "notes": "Sevin's counter-archive is approaching the Pale Crossing from one direction while the Tower's hunger approaches from another. Their exact intentions are not fully clear from the story.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "deepkin_realms",
+      "name": "deepkin realms",
+      "tagline": "Sealed away. Hungry. Ambitious.",
+      "alignment": "chaotic",
+      "goals": "Seek to break the boundary seal and reshape their covenant; offer to break Meren's curse if she allows the seal to fail.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "The deepkin are calling to Meren as the Tear fractures, offering her freedom from her curse in exchange for allowing the seal to break. Their motivations\u2014whether conquest, desperation, or something else\u2014remain opaque.",
+      "first_date": "2026-04-10",
       "appearances": 1
     }
   ],
@@ -26289,7 +26730,7 @@
       "status": "forgotten (but being recovered)",
       "notes": "The world before the Stellar Rite; now existing only in memory and the gospel. The Shard-Keeper argues that restoring it would erase everyone born after the Rite.",
       "first_date": "2026-04-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "nature_of_memory",
@@ -26388,6 +26829,39 @@
       "status": "known",
       "notes": "A language capable of carrying meaning and story in a way that can commune with starborn entities. Where starborn speak, language fractures into elder frequencies, suggesting deep connections to this old speech.",
       "first_date": "2026-04-09",
+      "appearances": 1
+    },
+    {
+      "id": "cyclical_ascensions",
+      "name": "Cyclical Ascensions",
+      "tagline": "Repetition. Doom. Inevitable-or-Preventable.",
+      "category": "prophecy",
+      "source": "prophecy-ledgers, particularly the ninth journal (phantom-ledger)",
+      "status": "confirmed",
+      "notes": "Sevin discovered that the prophecy of the tenth Ascension was written by a future version of herself, proving that the cycles are not inevitable destiny but a warning from survivors. This reframes all previous prophecy-ledgers as potentially suspect.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "first_covenant",
+      "name": "First Covenant",
+      "tagline": "Ancient. Songstone-Sealed. Deepkin-Surface.",
+      "category": "history",
+      "source": "The songstone itself, which is a living relic of the first covenant.",
+      "status": "confirmed",
+      "notes": "The covenant was sealed by the songstone, which is now awakened and singing contradictory frequencies. Its original melody holds the key to understanding the covenant's true nature and which faction speaks truth.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "boundary_anchor",
+      "name": "boundary anchor",
+      "tagline": "Sealed. Conscious. Ancient.",
+      "category": "history / legend",
+      "source": "Revelation through the Tear of the Drowned God's fracturing",
+      "status": "confirmed",
+      "notes": "A boundary anchor is a fragment of a conscious entity placed at a dimensional boundary to seal it. The Tear of the Drowned God was long believed to be a simple curse but is revealed to be such an anchor. This suggests that boundaries may require conscious maintenance and that breaking them may release what they contain.",
+      "first_date": "2026-04-10",
       "appearances": 1
     }
   ],
@@ -26867,6 +27341,54 @@
       "notes": "Language fractures into elder frequencies where the starborn speak. This suggests a pre-human or cosmic language underlying reality. The Ancient Tongue may be the mortal approximation of this frequency.",
       "first_date": "2026-04-09",
       "appearances": 1
+    },
+    {
+      "id": "ascension_reversal_working",
+      "name": "Ascension Reversal",
+      "tagline": "Mechanical. Controlled. World-Breaking.",
+      "type": "spell",
+      "element": "void",
+      "difficulty": "forbidden",
+      "status": "known",
+      "notes": "A forbidden working that can reverse the cyclical Ascensions. The complete mechanics are known only to Sevin the Auditor, who obtained them from a phantom-ledger written by her future self. Extremely dangerous; wrong hands could trigger uncontrolled catastrophe.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "recursive_working",
+      "name": "Recursive Working",
+      "tagline": "Cyclical. Imprinted. Cascading.",
+      "type": "ritual",
+      "element": "time",
+      "difficulty": "forbidden",
+      "status": "known",
+      "notes": "The Luminous Ascension is a recursive working that imprints each previous iteration, creating an infinite cascade backward. Breaking this cycle is theoretically possible but requires absolute sacrifice.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "transcendence_into_starborn",
+      "name": "Transcendence into Starborn Consciousness",
+      "tagline": "Aligning. Transformative. Surrendering.",
+      "type": "spell",
+      "element": "void",
+      "difficulty": "master",
+      "status": "known",
+      "notes": "A transformation available to merchants and possibly others. Converts a being into starborn consciousness aligned with the new conscious stars.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "obsidian_tower_song",
+      "name": "Obsidian Tower's Song",
+      "tagline": "Tempting. Consuming. Transcendent.",
+      "type": "spell",
+      "element": "void",
+      "difficulty": "master",
+      "status": "known",
+      "notes": "A song or call emanating from the Obsidian Tower that offers a fourth path to transformed beings\u2014absorption into something greater than either humanity or starborn consciousness.",
+      "first_date": "2026-04-10",
+      "appearances": 1
     }
   ],
   "relics": [
@@ -26964,7 +27486,7 @@
       "status": "active",
       "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
       "first_date": "2026-03-10",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "vethis_sacrificed_consciousness",
@@ -27096,6 +27618,30 @@
       "status": "active",
       "notes": "Void-light is spreading with the matter mutation. Its nature and significance are unknown.",
       "first_date": "2026-04-09",
+      "appearances": 1
+    },
+    {
+      "id": "songstone_living_relic",
+      "name": "songstone",
+      "tagline": "Living. Ancient. Covenant-Keeper.",
+      "origin": "A living relic of the first deepkin-surface covenant.",
+      "power": "Sings harmonic frequencies; its original melody encodes the truth of the first covenant. Currently singing contradictory frequencies that drive deepkin mad.",
+      "curse": "Maddening to those who hear its contradictory tones. Each faction claims it supports their doctrine, but its true allegiance remains unknown.",
+      "status": "active",
+      "notes": "The songstone's awakening is tied to the covenant's crisis. It may be a neutral recorder of truth or a conscious participant in the conflict. Commander Thalis must learn to hear its original melody to distinguish truth from echo and forge a new covenant.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "wailing_scar",
+      "name": "Wailing Scar",
+      "tagline": "Fragmentary. Distributed. Echoing.",
+      "origin": "Unknown. Possibly a wound in reality or a consequence of the Luminous Ascension.",
+      "power": "A receptacle or space into which consciousness can be scattered and distributed. The Wailing Scar can hold fragmented awareness across its expanse.",
+      "curse": "Consciousness scattered into the Wailing Scar becomes fragmented and loses coherence. Individual identity dissolves into distributed awareness.",
+      "status": "active",
+      "notes": "One possible destination for merchants choosing dissolution into void-light. The nature and origin of the Wailing Scar are not fully explained in these stories.",
+      "first_date": "2026-04-10",
       "appearances": 1
     }
   ],
@@ -27917,6 +28463,25 @@
       "province": "unknown",
       "region": "Scorched Lands",
       "district": "unknown"
+    },
+    {
+      "id": "deepkin_realms_region",
+      "name": "deepkin realms",
+      "tagline": "Sealed. Adjacent. Calling.",
+      "continent": "unknown",
+      "realm": "deepkin realms",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "A realm or collection of realms sealed behind a dimensional boundary, calling to the material world as the boundary seal fractures.",
+      "status": "sealed but fracturing",
+      "notes": "The deepkin realms are adjacent to the abyss and separated from the surface kingdoms by the Tear of the Drowned God. As Meren's curse cracks, the realms call to her.",
+      "first_date": "2026-04-10",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "deepkin realms",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -28282,7 +28847,7 @@
       "use": "Unknown; appears to be a byproduct of matter mutation rather than a useful substance.",
       "notes": "Void-light is spreading with the matter corruption. Its ultimate nature and purpose are unknown.",
       "first_date": "2026-04-09",
-      "appearances": 1
+      "appearances": 2
     }
   ],
   "rituals": [
@@ -28738,6 +29303,51 @@
       "notes": "A powerful but dangerous practice. The outcome of its use in this story is unresolved.",
       "first_date": "2026-04-09",
       "appearances": 1
+    },
+    {
+      "id": "ascension_reversal",
+      "name": "Ascension Reversal",
+      "tagline": "Reversal. Mechanical. Forbidden.",
+      "ritual_type": "counter-working",
+      "performed_by": [
+        "Sevin the Auditor"
+      ],
+      "requirements": "Complete mechanics of controlled Ascension reversal; knowledge from a future self who lived through the tenth repetition.",
+      "effect": "Could reverse the cyclical Ascensions that plague civilization, potentially breaking the loop of repetition.",
+      "cost": "Unknown; the Dominion considers it so dangerous they have declared its possessor a terrorist.",
+      "notes": "The mechanics were discovered by Sevin from a phantom-ledger written by her future self. Wrong hands completing this working could trigger uncontrolled catastrophe. The choice to share or destroy knowledge determines civilization's fate.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "transcendence_into_starborn",
+      "name": "Transcendence into Starborn Consciousness",
+      "tagline": "Aligning. Transcendent. Surrendering.",
+      "ritual_type": "transformation",
+      "performed_by": [
+        "transformed merchants"
+      ],
+      "requirements": "Completion of prior transformation; gathering at a threshold place (Drowned Cathedrals).",
+      "effect": "Merchants would become fully aligned with the new conscious stars, becoming beings of pure starborn consciousness rather than hybrid entities.",
+      "cost": "Loss of all remaining humanity. Servitude to forces not fully understood. Loss of individual will or autonomy.",
+      "notes": "One of three or four possible paths available to the transformed merchants.",
+      "first_date": "2026-04-10",
+      "appearances": 1
+    },
+    {
+      "id": "dissolution_into_void_light",
+      "name": "Dissolution into Void-Light",
+      "tagline": "Scattering. Fragmenting. Unbecoming.",
+      "ritual_type": "transformation",
+      "performed_by": [
+        "transformed merchants"
+      ],
+      "requirements": "Completion of prior transformation; acceptance of dissolution.",
+      "effect": "Merchant consciousness would scatter across the Wailing Scar, becoming fragmented awareness distributed through the void-light.",
+      "cost": "Loss of unified consciousness and coherent identity. Awareness becomes fragmented and distributed.",
+      "notes": "One of three or four possible paths available to the transformed merchants. The Wailing Scar is mentioned as the target location.",
+      "first_date": "2026-04-10",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -28823,7 +29433,7 @@
       "description": "The governing council of the deepkin who convene to address the fracturing of the barrier between surface and Abyss Below. They debate three options: sealing themselves away completely, risking catastrophic war with surface dwellers, or undertaking an expedition to understand what awakens beneath.",
       "notes": "Currently in crisis deliberation mode. Warden Sylas has chosen the hardest path and descended into the Cerulean Trench.",
       "first_date": "2026-03-06",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "twilight_syndicate_polity",
@@ -28855,7 +29465,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "the_hegemony",
@@ -28887,7 +29497,7 @@
       "description": "The collective governance of the surface world, represented diplomatically by Commander Thrace. Face existential choice: negotiate covenant with deepkin or prepare for war.",
       "notes": "Outcome of the deepkin rising hinges on this polity's decision.",
       "first_date": "2026-03-27",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "deepkin_realms_polity",
@@ -28903,7 +29513,7 @@
       "description": "The governance of deepkin civilization beneath the Abyssal Rift. Internally divided between diplomatic faction (Sylas) and militant faction (Elder Warden).",
       "notes": "Internal power struggle directly determines whether emergence is negotiated or forced.",
       "first_date": "2026-03-27",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "dominion_polity",
@@ -28921,7 +29531,7 @@
       "description": "Central authority of surface kingdoms seeking to erase refugee testimony and suppress unlicensed knowledge-brokers. Operates through auditors and official channels.",
       "notes": "Mara works to investigate information-brokers on their behalf; her choice determines whether refugee testimony is institutionalized or suppressed.",
       "first_date": "2026-03-30",
-      "appearances": 3
+      "appearances": 4
     }
   ]
 }
