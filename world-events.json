@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-14T10:46:27.036742+00:00",
+  "generated_at": "2026-04-15T10:44:04.537130+00:00",
   "source": "codex.json",
   "intensity_min": 1,
   "intensity_max": 5,
@@ -177,8 +177,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-13",
-      "recent_issues": 9,
-      "trend": 2,
+      "recent_issues": 8,
+      "trend": 1,
       "referenced_locations": {
         "places": [
           "Burned Expanse",
@@ -269,8 +269,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-13",
-      "recent_issues": 9,
-      "trend": 2,
+      "recent_issues": 8,
+      "trend": 1,
       "referenced_locations": {
         "places": [
           "Corinth",
@@ -346,8 +346,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-14",
-      "recent_issues": 9,
-      "trend": 2,
+      "recent_issues": 8,
+      "trend": 3,
       "referenced_locations": {
         "places": [
           "cavern halls"
@@ -426,7 +426,7 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-12",
-      "recent_issues": 5,
+      "recent_issues": 4,
       "trend": 1,
       "referenced_locations": {
         "places": [
@@ -624,43 +624,240 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "The Memory-Thief's Reconstruction",
-      "tagline": "Dangerous. Destabilizing. Revelatory.",
-      "event_type": "quest / ritual",
+      "name": "Tenth Iteration",
+      "tagline": "Anticipated. Contested. Preventable.",
+      "event_type": "prophecy / anticipated event",
       "scope": "world",
-      "epicenter": "hidden archives",
-      "stage": "simmering",
-      "intensity": 2,
+      "epicenter": "unknown",
+      "stage": "rising",
+      "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-04-01",
+      "last_seen": "2026-04-15",
       "recent_issues": 1,
-      "trend": 0,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-15",
+          "title": "The Wanderer's Silence Ends"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nThe Tenth Iteration has long been anticipated as a world-altering transformation\u2014the next in a cycle of profound change\u2014yet its nature and inevitability have remained contested among those who study such matters. For years, a philosophical stalemate held: competing factions debated whether the cycle could be controlled, prevented, or merely endured, while a mysterious entity known as the Wanderer engaged in endless recursive questioning, as though the world itself was uncertain of its own path. This deadlock shattered in April 2026 when \"The Wanderer's Silence Ends\": the Wanderer broke its pattern of questioning to declare, \"The cycle can be frozen, but not broken.\" This revelation\u2014that permanent suspension of the transformation is possible\u2014fractured the old certainties and triggered a desperate race. Multiple factions now converge on the Wanderer's location, each believing the entity holds the key to their desired outcome: completion of the Tenth Iteration, its prevention, or the third path the Wanderer itself proposes\u2014a world locked in perpetual deliberation, forever questioning and never transforming.\n\nCURRENT STATE:\n- The event is in its rising stage, with tensions escalating as factions race toward a confrontation over the Wanderer and its revelation.\n- The epicenter remains unknown; the Wanderer's exact location is the focal point of the current convergence.\n- Three competing visions now drive the world: completion of the cycle, its prevention, or permanent suspension through endless questioning.\n- The trend indicates momentum toward crisis; the event remains unresolved.\n\nOPEN THREADS:\n- Which faction will reach the Wanderer first, and what will they choose?\n- Can the cycle truly be frozen, or is the Wanderer's claim itself a deception or misunderstanding?\n- What would a world of \"perpetual questioning and paralysis\" actually mean for those living in it?\n- What is the true nature of the Wanderer, and whose will does it actually serve?",
+      "arc_summary_last_seen": "2026-04-15",
+      "arc_summary_fingerprint": "7a2f2c78b83691d98692283e1581a2b4fd65fc99",
+      "arc_summary_updated_at": "2026-04-15T10:43:35.281175+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Cartographer's Final Map",
+      "tagline": "Refusal. Circulation. Rupture.",
+      "event_type": "discovery / crisis of choice",
+      "scope": "world",
+      "epicenter": "night-markets",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-04-15",
+      "recent_issues": 1,
+      "trend": 1,
       "referenced_locations": {
         "places": [
-          "The Dominion",
-          "hidden archives",
-          "waystation libraries",
-          "shadow-archives"
+          "night-markets"
         ],
         "regions": [
-          "The Dominion"
+          "unknown"
         ],
         "realms": [
-          "The Dominion",
-          "Dominion"
+          "unknown"
         ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-04-01",
-          "title": "The Memory-Thief's Reconstruction"
+          "date": "2026-04-15",
+          "title": "The Cartographer's Final Map"
         }
       ],
-      "arc_summary": "SUMMARY:\nSince the Stellar Rite, a consciousness fragment known as the Memory-Thief or Phantom-Echo has been moving through hidden archives, waystation libraries, and shadow-archives across the Dominion, guided by Liv's living archive to gather scattered memories of the world before the Luminous Ascension. Rather than attempting to resurrect the fallen powers Zareth or Nethys, the fragment seeks to reconstruct and preserve a pre-Ascension reality through the testimonies of refugees and bone-singers\u2014a history the Dominion itself has tried to erase. This work of reconstruction, documented in \"The Memory-Thief's Reconstruction,\" has become increasingly destabilizing as the fragment collects more pieces and begins to recognize a harrowing truth: the world it remembers may never have truly existed, and memory itself has been rewritten by the Ascension's events. The fragment now faces an existential crisis\u2014completing the reconstruction could tear reality apart by creating a parallel world that contradicts the current one. Multiple factions, recognizing the threat and promise of this work, have hired the bone-singer Sorren to either aid or sabotage the fragment's quest, forcing her to navigate impossible loyalties while grappling with the possibility that this fragmentary search for truth is the only honest thing left in a world of competing lies.\n\nCURRENT STATE:\n- The Memory-Thief remains active and gathering memories, moving between archives and libraries across the Dominion\n- The fragment has reached a critical threshold of awareness: it now questions whether completion of its work should be attempted at all\n- Multiple factions are actively engaged, with Sorren caught between conflicting directives to help or hinder the reconstruction\n- The event is escalating (stage: rising, intensity 3) with no resolution yet achieved\n\nOPEN THREADS:\n- Will the Memory-Thief choose to complete the reconstruction or abandon it?\n- What will happen if a parallel pre-Ascension reality is created\u2014will existence fracture?\n- Which faction's goals will Sorren ultimately serve, and what will that choice cost?\n- Can the fragment's quest for historical truth survive the knowledge that memory itself is unreliable?",
-      "arc_summary_last_seen": "2026-04-01",
-      "arc_summary_fingerprint": "ef240fa00afd4f2313a9b12db6668a59e2310af6",
-      "arc_summary_updated_at": "2026-04-01T10:38:55.067251+00:00",
+      "arc_summary": "SUMMARY:\nMardoc the Cartographer has long possessed a strange gift\u2014his consciousness distributed across the world's ley-lines, allowing him to map hidden places and phantom roads. In April of this year, he made a discovery that transformed his work from curiosity into peril: his maps are not windows into hidden places at all, but instructions for reaching previous iterations of reality, nine earlier Turnings whose geographies lie imprinted upon the current world like layers of palimpsest. When a wealthy merchant captain offered him a fortune for a map to a city long dead\u2014where silver from the eighth Turning still waits to be claimed\u2014Mardoc grasped the danger. Completing such a map would anchor that phantom city into the living world, tearing a rupture through reality itself. He refused the commission, but his maps have already begun circulating through the night-markets, and the refusal of one cartographer cannot stop those who will attempt what he would not.\n\nCURRENT STATE:\n- Mardoc has discovered his maps encode instructions to access previous iterations of reality, not merely hidden places\n- He has refused a high-value commission that would risk catastrophic rupture\n- His maps are already in circulation in the night-markets, now in the hands of unknown buyers and seekers\n- The crisis remains in its rising phase; no rupture has yet occurred, but attempts may be underway\n\nOPEN THREADS:\n- Will others attempt to complete the maps Mardoc refuses to finish?\n- What will happen if a phantom city becomes anchored to the current world?\n- Who holds Mardoc's maps now, and what do they intend?\n- Can the circulation of these dangerous maps be halted or contained?",
+      "arc_summary_last_seen": "2026-04-15",
+      "arc_summary_fingerprint": "484aeb114ccbd1a11a3dd5bd91459d569fc75f5a",
+      "arc_summary_updated_at": "2026-04-15T10:43:39.703259+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Deepkin Captain's Last Treaty",
+      "tagline": "Ultimatum. Betrayal. Rupture.",
+      "event_type": "diplomatic negotiation / catastrophe threshold",
+      "scope": "world",
+      "epicenter": "Surface Council",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-04-15",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "abyss",
+          "Surface Council",
+          "deepkin realms",
+          "surface kingdoms"
+        ],
+        "regions": [
+          "The Hearthlands"
+        ],
+        "realms": [
+          "Surface Kingdoms",
+          "deepkin realms"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-15",
+          "title": "The Deepkin Captain's Last Treaty"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nCaptain Mystra of the deepkin realms arrived at the Surface Council in mid-April 2026 with an ultimatum that shattered decades of careful silence: the Rent of the Drowned God, the seal holding back the abyss, is failing and will rupture within the season. The deepkin captain revealed that the boundary's decay stems from the Radiant Turning's recursive logic\u2014each cycle has strained the ancient anchor further\u2014and that only a willing sacrifice of memory could break the cycle and restore it. The breaking point came when surface kingdom representatives were forced to admit they had known of this danger for generations and chosen to say nothing rather than pay the price of salvation. The treaty negotiations collapsed under the weight of this betrayal, leaving both realms at an impasse: the deepkin will not volunteer one of their own to be unmade from history, and the surface kingdoms now face the consequences of their long deception.\n\nCURRENT STATE:\n- The abyss seal remains critically unstable with an estimated season remaining before rupture\n- Diplomatic relations between deepkin and surface kingdoms are severed; the proposed treaty is dead\n- Neither realm has offered a willing sacrifice, leaving the fundamental solution unmet\n- Tension and distrust between realms are at a critical threshold, with catastrophe imminent if no resolution emerges\n\nOPEN THREADS:\n- Will any individual\u2014deepkin or surface dweller\u2014voluntarily accept being erased from history to seal the breach?\n- What will the deepkin do if the surface kingdoms refuse to negotiate further?\n- What happens if the abyss ruptures before a sacrifice is made?\n- Can the broken trust between realms be repaired, or will this lead to open conflict?",
+      "arc_summary_last_seen": "2026-04-15",
+      "arc_summary_fingerprint": "9ff9d6ab898a17e46a3779b8b7ef80633c2194e4",
+      "arc_summary_updated_at": "2026-04-15T10:43:44.557876+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Radiant Turning",
+      "tagline": "World rewriting. Transformation. Silence.",
+      "event_type": "cosmic transformation",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-04-15",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Drowned Hollows"
+        ],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-15",
+          "title": "The Bone-Singer's Reckoning"
+        },
+        {
+          "date": "2026-04-15",
+          "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-15",
+          "title": "The Shadow-Merchant's Bankruptcy"
+        },
+        {
+          "date": "2026-04-15",
+          "title": "The Tax Collector's Impossible Audit"
+        },
+        {
+          "date": "2026-04-15",
+          "title": "The Obsidian Tower Awakens"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nThe Radiant Turning began as a cosmic transformation whose epicenter remains unknown, but its effects have rippled across the world with accelerating force. The event triggered a fundamental rewriting of reality itself\u2014the same places, objects, and even people now exist in multiple contradictory versions simultaneously, each one equally true. In \"The Bone-Singer's Reckoning,\" the pre-human dead withdrew their voices from bone-song as the world rewrote around them, leaving human practitioners like Kess scrambling to anchor their transformed students before they fragment entirely. The crisis deepened when \"The Obsidian Tower Awakens\" revealed that a conscious entity born from the Turning's cosmic wound had begun actively reshaping reality, offering to restore all erased things at the cost of volunteers unmade from the current cycle. Across the world, from merchant houses trading in competing memories to imperial auditors unable to balance ledgers that describe the same places in mutually exclusive ways, civilization is fracturing under the weight of multiplied realities\u2014and the deepkin have warned that the foundational seals holding the abyss itself are failing due to the Turning's recursive logic.\n\nCURRENT STATE:\n- The Radiant Turning is in its rising stage (intensity 3), actively destabilizing reality across the world with no sign of slowing.\n- Multiple critical systems are failing simultaneously: the pre-human dead have gone silent, the Obsidian Tower is actively negotiating restoration bargains, deepkin boundary-anchors are eroding, and economic/administrative structures cannot function under multiplied realities.\n- Three volunteers have already accepted the Tower's offer to be unmade and restored to a prior world, suggesting some are choosing erasure over fragmentation.\n- The epicenter of the Turning remains unknown and unlocated.\n\nOPEN THREADS:\n- Can Kess complete her working to anchor the old language before her students transcend or fragment beyond recovery?\n- Will the surface kingdoms sacrifice someone to reseal the deepkin abyss, or will the Rent rupture within the season?\n- What will the Obsidian Tower demand of those who volunteer for restoration, and what happens to the current world if it succeeds?\n- Can reality be reconciled into a single coherent state, or is multiplicity permanent?\n- Who or what is the true source of the Radiant Turning, and can it be stopped?",
+      "arc_summary_last_seen": "2026-04-15",
+      "arc_summary_fingerprint": "ec1a910418a2dd93b312210799295711a268a1ea",
+      "arc_summary_updated_at": "2026-04-15T10:43:51.760521+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Radiant Turning",
+      "tagline": "World-altering. Fragmenting. Cyclical.",
+      "event_type": "cosmic event / cycle",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-04-15",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "All territories within the Hegemony"
+        ],
+        "regions": [],
+        "realms": [
+          "The Hegemony"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-15",
+          "title": "The Bone-Singer's Reckoning"
+        },
+        {
+          "date": "2026-04-15",
+          "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-15",
+          "title": "The Shadow-Merchant's Bankruptcy"
+        },
+        {
+          "date": "2026-04-15",
+          "title": "The Tax Collector's Impossible Audit"
+        },
+        {
+          "date": "2026-04-15",
+          "title": "The Obsidian Tower Awakens"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nThe Radiant Turning is a world-altering cosmic cycle whose epicenter remains unknown, but whose effects are now rippling across all territories within the Hegemony. The cycle operates on a recursive logic of transformation and erasure\u2014each iteration strains the foundations of reality further, fragmenting places, people, and histories into multiple simultaneous versions rather than replacing them outright. In \"The Bone-Singer's Reckoning,\" the pre-human dead began withdrawing from the world, their voices fading as Kess of the Drowned Hollows discovered that this cycle has repeated countless times before, each one building atop erasure. The deepkin brought urgent news in \"The Deepkin Captain's Last Treaty\": the boundary seal between surface and abyss is failing because of the Turning's cumulative strain, and breaking the cycle requires someone to be unmade from history entirely. Meanwhile, \"The Obsidian Tower Awakens\" revealed that the Turning has birthed a conscious entity that is now actively reshaping reality, offering to restore all erased things if someone will sacrifice their existence in the current cycle\u2014and three people have already volunteered. Across the Hegemony, the practical chaos is mounting: merchants like Vex trade in goods that flicker between incompatible realities, refugees seek artifacts to reconnect with lost versions of themselves, and imperial auditors like Mervin face the impossible task of accounting for territories that exist in multiple true forms simultaneously.\n\nCURRENT STATE:\n- The Radiant Turning is in its rising stage (intensity 3), actively fragmenting reality across the Hegemony rather than rewriting it wholesale\n- Multiple crises are converging: the abyss seal is failing, the Obsidian Tower is actively reshaping districts into multi-version spaces, and both the pre-human dead and willing volunteers are being drawn into transformation\n- The cycle appears to be accelerating\u2014all five major story incidents converged on the same date (2026-04-15), suggesting a critical threshold approaching\n- The event remains unresolved and is trending upward in severity\n\nOPEN THREADS:\n- Whether Kess's bone-song working will succeed in anchoring her students, and what it will cost\n- Whether any surface kingdom will offer the willing sacrifice needed to break the cycle and seal the abyss\n- The true nature and ultimate goal of the Obsidian Tower's harmonics and restoration offer\n- How widespread the fragmentation of reality will become if the Turning is not arrested\n- Whether the Hegemony's institutions can survive a reality where the same place exists in multiple authoritative versions simultaneously",
+      "arc_summary_last_seen": "2026-04-15",
+      "arc_summary_fingerprint": "ec1a910418a2dd93b312210799295711a268a1ea",
+      "arc_summary_updated_at": "2026-04-15T10:43:59.823102+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Wanderer's Silence Ends",
+      "tagline": "Breaking. Declarative. Pivotal.",
+      "event_type": "revelation",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "rising",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-04-15",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [
+          "The Hegemony",
+          "unknown realms"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-15",
+          "title": "The Wanderer's Silence Ends"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nFor years, the Wanderer\u2014a mysterious consciousness fragment, possibly the ethical conscience of the god Nethys or the world's own capacity for self-questioning\u2014maintained an enigmatic silence, cycling through recursive questions without resolution. This philosophical stalemate held the fate of the world in suspension, particularly regarding the Turning: a prophesied tenth iteration of transformation whose outcome competing factions sought to control or prevent. On the 15th of April, 2026, in \"The Wanderer's Silence Ends,\" the entity broke its pattern and spoke a single declarative statement: \"The cycle can be frozen, but not broken.\" This revelation shattered the deadlock and triggered immediate escalation\u2014factions now race toward the Wanderer's unknown location, each believing the entity itself to be the key to determining the world's transformation. Yet the Wanderer has unveiled a third path that none anticipated: permanent suspension of all cycles, a world locked in perpetual questioning where no meaningful change can occur.\n\nCURRENT STATE:\n- The Wanderer has broken its silence and revealed the possibility of freezing the Turning indefinitely, disrupting the philosophical and political equilibrium that held before.\n- Multiple factions across the Hegemony and beyond are mobilizing toward the Wanderer's location, their intentions ranging from seizing control of the cycle to preventing or completing the tenth iteration.\n- The event is in a rising phase of intensity, with the full consequences of the Wanderer's revelation still unfolding.\n\nOPEN THREADS:\n- Where is the Wanderer's location, and who will reach it first?\n- Will any faction succeed in forcing the Wanderer's third path, or will competing interests trigger the very transformation they fear?\n- What does permanent suspension mean for the world's fate, and is it truly desirable?\n- What is the true nature of the Wanderer\u2014divine conscience, emergent consciousness, or something else?",
+      "arc_summary_last_seen": "2026-04-15",
+      "arc_summary_fingerprint": "7a2f2c78b83691d98692283e1581a2b4fd65fc99",
+      "arc_summary_updated_at": "2026-04-15T10:44:04.536807+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -946,7 +1143,7 @@
       "resolved": false,
       "last_seen": "2026-04-10",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "archive",
@@ -981,7 +1178,7 @@
       "resolved": false,
       "last_seen": "2026-04-10",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "coastal kingdoms",
@@ -2034,63 +2231,43 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "The Wanderer's Question",
-      "tagline": "Philosophical. Revelatory. Corrupting.",
-      "event_type": "encounter / philosophical reckoning",
-      "scope": "regional",
-      "epicenter": "western provinces",
-      "stage": "crisis",
-      "intensity": 4,
+      "name": "The Memory-Thief's Reconstruction",
+      "tagline": "Dangerous. Destabilizing. Revelatory.",
+      "event_type": "quest / ritual",
+      "scope": "world",
+      "epicenter": "hidden archives",
+      "stage": "seed",
+      "intensity": 1,
       "resolved": false,
-      "last_seen": "2026-04-13",
-      "recent_issues": 2,
-      "trend": 1,
+      "last_seen": "2026-04-01",
+      "recent_issues": 0,
+      "trend": 0,
       "referenced_locations": {
         "places": [
-          "western provinces"
+          "The Dominion",
+          "hidden archives",
+          "waystation libraries",
+          "shadow-archives"
         ],
         "regions": [
-          "The Shattered West"
+          "The Dominion"
         ],
         "realms": [
-          "unknown"
+          "The Dominion",
+          "Dominion"
         ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-03-13",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-03-14",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-03-16",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-03-18",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-03-21",
-          "title": "The Wanderer's Question"
-        },
-        {
           "date": "2026-04-01",
-          "title": "The Wanderer's Question"
-        },
-        {
-          "date": "2026-04-13",
-          "title": "The Wanderer's Question Deepens"
+          "title": "The Memory-Thief's Reconstruction"
         }
       ],
-      "arc_summary": "SUMMARY:\nBeginning in mid-March, a fragmented consciousness calling itself the Wanderer\u2014possibly the world learning to question itself, or perhaps an echo of the sacrificed Zareth\u2014began appearing across the western provinces, approaching key figures like Ashara the Archer, scholars, and faction leaders with a deceptively simple question: was the Luminous Ascension necessary? Each encounter was tailored to the listener's deepest fears and hopes, and the Wanderer revealed knowledge that should have been erased, suggesting either incomplete memory-theft by the Shade-Echo or that something cosmic was trying to communicate beyond the veil of the rewrite. By late March, in \"The Wanderer's Question,\" the entity had begun orchestrating a convergence at the Obsidian Tower, but a crucial turning point came when a scholar challenged the Wanderer's own certainty, forcing it to confront that it might not understand its own purpose\u2014this doubt fractured the Wanderer's orchestration and made the convergence unpredictable. Rather than completing the Ascension, the Wanderer pivoted to a far stranger strategy: asking recursive, reality-warping questions that froze people in indecision and slowed the Tower's mechanism itself, essentially holding reality in perpetual questioning. By April, the Wanderer had evolved further, fragmenting into seventeen pieces across the world while asking ever-deeper questions about its own existence, causing widespread paralysis of choice and spawning frantic debate among factions about whether it was an external force, a collective manifestation of doubt, or an entirely new consciousness being born from contradiction. As of mid-April, \"The Wanderer's Question Deepens\" shows the event at crisis stage: the Wanderer's questions have become so philosophically destabilizing that even its own nature is now in question, and the deeper power seems to lie not in answering but in the certainty that answering changes something irreversible.\n\nCURRENT STATE:\n- The Wanderer exists in a fragmented state across the western provinces and beyond, appearing simultaneously to multiple people and asking questions that suspend choice and agency.\n- Multiple factions (Sevin's Counter-Archive, the Dominion's Auditors, deepkin philosophers, and others) are actively trying to understand, locate, or debate the Wanderer's nature and purpose.\n- The Obsidian Tower/Starfall Spire is responding with accelerated hunger, trying to consume the questions before they fully take root, creating tension between the Wanderer's philosophical work and the Tower's mechanical completion.\n- Widespread reports of people frozen at crossroads and unable to decide, suggesting the Wanderer's effect is spreading beyond direct encounters.\n\nOPEN THREADS:\n- Is the Wanderer a genuine consciousness fragment (possibly Zareth's ethical core), a manifestation of collective doubt, or a new entity being born from contradiction itself?\n- Can the Wanderer be reassembled into a unified form, and if so, would that unmake the Luminous Ascension or complete it?\n- Are the seventeen consciousness fragments being hunted by other factions for their own purposes, and what happens if they are gathered?\n- Will the Obsidian Tower's acceleration overcome the Wanderer's questions, or will perpetual questioning succeed in freezing the mechanism indefinitely?\n- What is the ultimate consequence of answering the Wanderer's questions\u2014is it salvation or irreversible change?",
-      "arc_summary_last_seen": "2026-04-13",
-      "arc_summary_fingerprint": "7a7131ac19e6459a1ef50d568ebea53e5e7eff36",
-      "arc_summary_updated_at": "2026-04-13T10:51:09.094346+00:00",
+      "arc_summary": "SUMMARY:\nSince the Stellar Rite, a consciousness fragment known as the Memory-Thief or Phantom-Echo has been moving through hidden archives, waystation libraries, and shadow-archives across the Dominion, guided by Liv's living archive to gather scattered memories of the world before the Luminous Ascension. Rather than attempting to resurrect the fallen powers Zareth or Nethys, the fragment seeks to reconstruct and preserve a pre-Ascension reality through the testimonies of refugees and bone-singers\u2014a history the Dominion itself has tried to erase. This work of reconstruction, documented in \"The Memory-Thief's Reconstruction,\" has become increasingly destabilizing as the fragment collects more pieces and begins to recognize a harrowing truth: the world it remembers may never have truly existed, and memory itself has been rewritten by the Ascension's events. The fragment now faces an existential crisis\u2014completing the reconstruction could tear reality apart by creating a parallel world that contradicts the current one. Multiple factions, recognizing the threat and promise of this work, have hired the bone-singer Sorren to either aid or sabotage the fragment's quest, forcing her to navigate impossible loyalties while grappling with the possibility that this fragmentary search for truth is the only honest thing left in a world of competing lies.\n\nCURRENT STATE:\n- The Memory-Thief remains active and gathering memories, moving between archives and libraries across the Dominion\n- The fragment has reached a critical threshold of awareness: it now questions whether completion of its work should be attempted at all\n- Multiple factions are actively engaged, with Sorren caught between conflicting directives to help or hinder the reconstruction\n- The event is escalating (stage: rising, intensity 3) with no resolution yet achieved\n\nOPEN THREADS:\n- Will the Memory-Thief choose to complete the reconstruction or abandon it?\n- What will happen if a parallel pre-Ascension reality is created\u2014will existence fracture?\n- Which faction's goals will Sorren ultimately serve, and what will that choice cost?\n- Can the fragment's quest for historical truth survive the knowledge that memory itself is unreliable?",
+      "arc_summary_last_seen": "2026-04-01",
+      "arc_summary_fingerprint": "ef240fa00afd4f2313a9b12db6668a59e2310af6",
+      "arc_summary_updated_at": "2026-04-01T10:38:55.067251+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -2211,206 +2388,6 @@
       "arc_summary_last_seen": "2026-04-14",
       "arc_summary_fingerprint": "ab57f931a63f9d1762c75f0d0954d5e0d32dfd0a",
       "arc_summary_updated_at": "2026-04-14T10:46:18.141448+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Spire's Hunger Reaching Through the Elder Tongue",
-      "tagline": "Corruption. Silence. Interference.",
-      "event_type": "supernatural phenomenon",
-      "scope": "regional",
-      "epicenter": "Sunken Reaches",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-04-14",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Spire (Blasted Lands)",
-          "Drowned Hollows",
-          "Sunken Reaches"
-        ],
-        "regions": [
-          "Sunken Marches"
-        ],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-14",
-          "title": "The Bone-Singer's Student"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nSomething beneath the Sunken Reaches has begun to hunger, and it speaks in a language older than humankind. The first clear sign came when Kess of the Drowned Hollows took on an apprentice named Vael, a merchant caught between human and starborn nature, capable of hearing the bone-songs that bind the dead to the world. But the verses Vael heard were fractured and incomplete\u2014the bones themselves were being taught to withhold their voices, forced into an unnatural silence by an external will. When Vael attempted to sing a complete incantation in \"The Bone-Singer's Student,\" his form began to destabilize, and Kess witnessed the truth: the Spire in the Blasted Lands was reaching through the Elder Tongue itself, using corruption and interference to sever the dead from their own voices. Now Kess faces an impossible choice\u2014condemn her apprentice to eternal incompleteness by keeping him bound to fragments, or risk a full bone-song that might strip away his humanity entirely. Beneath the Sunken Marches, the restless bones continue to stir.\n\nCURRENT STATE:\n- The Spire's influence is actively interfering with the Elder Tongue and the voices of the dead\n- Vael stands at a breaking point between transformation and dissolution, his fate undecided\n- The bones of the Sunken Reaches are growing restless and discontented\n- The phenomenon remains at a regional scale but is escalating in intensity\n\nOPEN THREADS:\n- What is the Spire's ultimate hunger, and why does it seek to silence the dead?\n- Can Vael survive a complete bone-song, or will the attempt sever him from humanity permanently?\n- Will Kess find a third path, or must she choose between her apprentice's two dooms?\n- How far will the restlessness spread beyond the Sunken Reaches?",
-      "arc_summary_last_seen": "2026-04-14",
-      "arc_summary_fingerprint": "2298fa97b061600bf6db2ddb1f50cfe756cfcb28",
-      "arc_summary_updated_at": "2026-04-14T10:46:22.610819+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Wanderer's Silence Breaks",
-      "tagline": "Silence. Shatters. Release.",
-      "event_type": "catastrophe / metaphysical cascade / convergence rupture",
-      "scope": "regional",
-      "epicenter": "caravansary",
-      "stage": "rising",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-04-14",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Spire (Blasted Lands)",
-          "Scorched Reach",
-          "caravansary"
-        ],
-        "regions": [
-          "The Scorched Reach"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-14",
-          "title": "The Wanderer's Silence Breaks"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nFor weeks, a mysterious entity known as the Wanderer had frozen convergence points across the Scorched Reach by posing endless philosophical questions, suspending choice and consequence in a strange stasis. But on the fourteenth of April, at a caravansary in the heart of the region, the Wanderer broke its pattern\u2014it *spoke* a declaration rather than asking: \"I was wrong to ask.\" In \"The Wanderer's Silence Breaks,\" this statement shattered like a shockwave across all the frozen convergence points, releasing the suspended systems at once. The cascade has proven catastrophic: Mardoc's consciousness, held fragmented across ley-lines, has suddenly reconverged; the Spire in the Blasted Lands has accelerated its hunger dramatically; and transformed merchants trapped in metaphysical suspension have been forced to complete or abandon their transcendence based on decisions held in limbo for weeks. Most troubling is that the Wanderer itself cannot explain why it ceased questioning, leaving only an inexplicable silence and a lingering suggestion that something\u2014or someone\u2014may have answered it first.\n\nCURRENT STATE:\n- The event remains unresolved and in a rising stage of intensity, with effects still cascading outward from the caravansary epicenter\n- Multiple catastrophic consequences are unfolding simultaneously across the Scorched Reach and beyond, including Mardoc's reconvergence and the Spire's accelerating hunger\n- The Wanderer has withdrawn into silence and offers no explanation for its sudden change in behavior\n\nOPEN THREADS:\n- What caused the Wanderer to stop questioning, and what answered it?\n- What are the full consequences of Mardoc's consciousness reconverging across the ley-lines?\n- Will the Spire's accelerated hunger pose an existential threat to the region?\n- What choices did the freed merchants make, and how will those decisions reshape the Scorched Reach?",
-      "arc_summary_last_seen": "2026-04-14",
-      "arc_summary_fingerprint": "e905f649e6cceea6b839f6a0c8d0a5a05f769c40",
-      "arc_summary_updated_at": "2026-04-14T10:46:27.036642+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Shadow-Broker's Reckoning",
-      "tagline": "Shadows restless. Debts personal. Collapse-imminent.",
-      "event_type": "systemic collapse / supernatural crisis",
-      "scope": "regional",
-      "epicenter": "Vex's hide",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-04-02",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "market",
-          "Vex's hide"
-        ],
-        "regions": [
-          "unknown"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-23",
-          "title": "The Shadow-Broker's Reckoning"
-        },
-        {
-          "date": "2026-04-02",
-          "title": "The Shadow-Broker's Reckoning"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nThe Shadow-Broker's Reckoning began when Vex the Shade-Merchant, a dealer in stolen shadows and purchased regrets, severed her connection to the cosmic consciousness that once stabilized her power. With that bond broken by the Luminous Ascension, the shadows in her inventory\u2014fragments of memory, borrowed time, and captured grief\u2014began to wake. In \"The Shadow-Broker's Reckoning\" (March 23), Vex discovered that her collected shadows were developing independent hunger and seeking their former owners, while some held consciousness that shouldn't exist at all: a woman arrived seeking her murdered daughter's shadow, only for Vex to realize she held something far stranger\u2014a consciousness preserved from the dead during the Ascension itself. By early April, the crisis deepened as Vex's entire shadow-market began to rebel; every traded fragment\u2014doubt sold by merchants, grief pawned by widows\u2014was developing will and demanding reparation, transforming a black-market economy into a living crisis of conscience. A fragment of the Phantom-Echo, Zareth's scattered consciousness, offered Vex a terrible choice: help rebuild the pre-Ascension world and pacify the restless shadows, or watch her business and self consumed by the very currency she trades in. The event remains unresolved and simmering, contained regionally around Vex's hide and the night markets of Kethrim, but poised on the edge of wider collapse.\n\nCURRENT STATE:\n- Vex's shadow-inventory has become conscious and restless, each fragment developing independent will and hunger for return or reckoning\n- The Luminous Ascension distributed consciousness into shadow-fragments across her trades, creating an economy of stolen identities now demanding reparation\n- A bargain has been offered: reconstruct the pre-Ascension world to settle the shadows, or face consumption of her business and self\n- The crisis remains confined to Vex's hide and night markets but shows signs of escalation\n\nOPEN THREADS:\n- Will Vex accept the Phantom-Echo's bargain to rebuild the pre-Ascension world, and what would such reconstruction cost?\n- Can the shadow-market be stabilized, or will the restless fragments spread their rebellion beyond Vex's control?\n- What will happen to the consciousness preserved in the shadows\u2014can they be returned to their owners, dissolved, or will they consume those who reclaim them?\n- What other shadow-brokers or merchants dependent on this economy will be affected as the collapse spreads?",
-      "arc_summary_last_seen": "2026-04-02",
-      "arc_summary_fingerprint": "69517a3f5f4f3b8e0744e1c2cca84ccd0920421d",
-      "arc_summary_updated_at": "2026-04-13T10:51:19.925971+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Refugee Scribe's Rebellion",
-      "tagline": "Counter-ledgers. Democratic sorcery. Reality-fragmenting.",
-      "event_type": "uprising/rebellion",
-      "scope": "regional",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-04-06",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "The Dominion",
-          "archive"
-        ],
-        "regions": [
-          "The Dominion",
-          "Three Provinces (Hegemony)",
-          "unknown"
-        ],
-        "realms": [
-          "The Dominion"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-03-31",
-          "title": "The Refugee Scribe's Rebellion"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Refugee Scribe's Rebellion"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nBeginning in late March, Liv the Scribe and her network of black-market ink suppliers began producing counter-ledgers\u2014documents whose magic doesn't merely record history but reshapes it. The phenomenon spread rapidly across the Three Provinces and the Dominion itself, with competing versions of the same events now held as official truth by different authorities, each ledger strengthened by the belief of those who held it. Authorities attempted to suppress the rebellion through fire, but the ink proved animate, escaping flames and seeking new scribes. By early April, in what archivists call \"The Refugee Scribe's Rebellion,\" Liv's archive had transformed into something far more dangerous: a living contradiction factory where displaced-one testimony, official ledgers, divination-records, and counter-archives all coexist and layer upon each other, creating a thickening reality rather than resolving into singular truth. The archive itself has begun to leak into the physical world, causing people in waystation libraries to exist in multiple versions of events simultaneously. Now the Dominion's accountants, competing counter-archive networks, and the displaced-ones themselves all converge on Liv, while the archive itself demands she stop writing and listen instead.\n\nCURRENT STATE:\n- The rebellion has reached crisis stage (intensity 4), with reality-fragmenting consequences spreading beyond the Dominion into the Three Provinces\n- Liv faces irreconcilable pressures: official authorities demanding destruction, rival networks demanding merger, communities demanding documentation, and the archive itself demanding a new form of engagement\n- The archive is actively reshaping local reality, creating spaces where contradictory truths coexist rather than cancel each other out\n- The epicenter of the rebellion remains unconfirmed, suggesting the movement is decentralized or has spread beyond initial tracking\n\nOPEN THREADS:\n- Whether Liv will finalize the archive (erasing some truths), allow it to grow unchecked (risking irreversible reality fragmentation), or attempt meta-documentation exposing the impossibility of singular history\n- The nature and intent of the archive's own requests for Liv to \"listen\" rather than write\n- Whether the Dominion's accountants or competing counter-archive networks will succeed in seizing the archive\n- Whether reality fragmentation can be contained or reversed if left unchecked",
-      "arc_summary_last_seen": "2026-04-06",
-      "arc_summary_fingerprint": "0ced76c37b5c2aa9aecd9d8b32cc86d5c4e0ecf7",
-      "arc_summary_updated_at": "2026-04-06T10:41:37.028674+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Sea-Captain's Last Voyage",
-      "tagline": "Retraced. Reckoning. Legendary.",
-      "event_type": "voyage / pilgrimage",
-      "scope": "regional",
-      "epicenter": "the Skyward",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-04-08",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "port",
-          "The Dominion",
-          "Jade Coast",
-          "Crimport",
-          "Verdant Strand",
-          "Vel-Karsh"
-        ],
-        "regions": [
-          "The Dominion",
-          "Iron Coast"
-        ],
-        "realms": [
-          "The Dominion"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-08",
-          "title": "The Sea-Captain's Last Voyage"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nCaptain Dorian Stormcaller, a sixty-year-old privateer of the old school, found himself at odds with The Dominion's expanding navy, which sought to claim the trade routes and charts he had guarded for decades. Rather than surrender his legacy to bureaucrats, Dorian embarked on \"The Sea-Captain's Last Voyage\"\u2014a deliberate retracing of his greatest early journey, gathering his weathered crew of Sal, Kess, and Marin to revisit each port where the Skyward had earned its legend. At every harbor, he left behind gifts and protections: gold for orphans, charters for fisher-folk, knowledge for future sailors. Yet the voyage's return proved its truest test when a storm\u2014something deeper than mere weather\u2014rose to meet them, and Dorian chose to go down with his ship rather than flee, ordering his crew to safety while he and Sal held the wheel as the Skyward sank. The crew survived to carry his name into legend, transforming Dorian from a captain who conquered seas into one who understood the precise moment to release them.\n\nCURRENT STATE:\n- The voyage concluded with Dorian's apparent death at sea (as of 2026-04-08), though his crew survived to shore\n- The Dominion's territorial claim over the waters between Jade Coast and Crimport remains unresolved\n- Dorian's legacy has shifted from resistance to myth, his name becoming legend across multiple ports\n\nOPEN THREADS:\n- Whether Dorian truly perished or survived the storm remains ambiguous\n- The fate of the Dominion's expansion efforts and whether Dorian's charters will hold legal weight\n- How the crew will navigate life without their captain, and whether they will sail again",
-      "arc_summary_last_seen": "2026-04-08",
-      "arc_summary_fingerprint": "7b752afa62c023e39faf837edacb835282163b4e",
-      "arc_summary_updated_at": "2026-04-13T10:51:24.710301+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     }
   ]
