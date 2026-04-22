@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-04-21",
+  "last_updated": "2026-04-22",
   "worlds": [
     {
       "id": "known_world",
@@ -515,7 +515,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 10,
+      "appearances": 11,
       "aliases": [
         "Kael"
       ]
@@ -1425,7 +1425,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 57
+      "appearances": 58
     },
     {
       "id": "mardoc_cartographer",
@@ -1460,7 +1460,7 @@
       "notes": "His maps have become legend and are whispered about in taverns. The power of his work lies in bearing witness rather than conquest. Unresolved: what other blank maps remain in his collection, and what other sovereigns might seek his chronicling?\nThe Celestial Ascension appears to have been an opening rather than a solution, with pre-human structures now actively communicating cosmic warnings.\nExpands on earlier story; Mardoc now faces choice whether to hide discovery or expose threat to fragile realm authority.\nExtends canon tracking of Mardoc's transformation post-Ascension; his fragmentation and refusal to solidify new geography suggests deepening existential dissolution.",
       "first_story": "The Cartographer's Gambit",
       "first_date": "2026-03-01",
-      "appearances": 45,
+      "appearances": 46,
       "status_history": [
         {
           "date": "2026-03-06",
@@ -4542,7 +4542,7 @@
       "notes": "Vex's investigation reveals that an entity is collecting merchants themselves\u2014their knowledge, contacts, and networks\u2014rather than mere goods. The entity's true nature and purpose remain unclear.",
       "first_story": "The Night-Market Reckoning",
       "first_date": "2026-03-07",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "dranin_stoneheart",
@@ -4825,7 +4825,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 46
+      "appearances": 48
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -5108,7 +5108,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 44,
+      "appearances": 46,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -8645,9 +8645,10 @@
     },
     {
       "id": "liv",
-      "name": "Liv",
+      "name": "Liv the Displaced-Scribe",
       "aliases": [
-        "Liv the displaced-scribe"
+        "Liv the displaced-scribe",
+        "Liv"
       ],
       "tagline": "Refugee. Scribe. Truth-teller.",
       "role": "Refugee-Scribe",
@@ -8672,7 +8673,7 @@
       "notes": "Appears to be a source of critical knowledge about the true nature of the Dominion's systematic collapse.",
       "first_story": "The Auditor's Mercy",
       "first_date": "2026-03-18",
-      "appearances": 16
+      "appearances": 17
     },
     {
       "id": "spice_trader",
@@ -9466,10 +9467,10 @@
         "the Wanderer (manipulated)",
         "the Fractured-Echo (bound)"
       ],
-      "notes": "Central protagonist. Faces a tragic choice between her identity and her village's safety. The nature of the Wanderer's 'salvation' remains ambiguous\u2014unclear if it is true salvation or another form of catastrophe.\nEscalates the Initiate's tragic arc: she is now aware she has been weaponized as a cosmic instrument. The choice between fleeing or completing the working suggests she may become a central figure in determining whether a second Ascension occurs.",
+      "notes": "Central protagonist. Faces a tragic choice between her identity and her village's safety. The nature of the Wanderer's 'salvation' remains ambiguous\u2014unclear if it is true salvation or another form of catastrophe.\nEscalates the Initiate's tragic arc: she is now aware she has been weaponized as a cosmic instrument. The choice between fleeing or completing the working suggests she may become a central figure in determining whether a second Ascension occurs.\nExtends canon arc of the Initiate being weaponized\u2014now her apprentices are revealed as intentional sacrifices within the Wanderer's cosmic design.",
       "first_story": "The Initiate's Bargain",
       "first_date": "2026-03-19",
-      "appearances": 3,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-04-11",
@@ -9479,6 +9480,15 @@
           "story_title": "The Initiate's Forbidden Convergence",
           "note": "The Initiate discovers the Wanderer is orchestrating convergence points to reassemble cosmic fragments, making attendees unwitting instruments of a second Stellar Rite or worse.",
           "evidence": "Each convergence attendee carries a cosmic fragment; the Wanderer is reassembling them toward unknown working\u2014second Ascension or alternative."
+        },
+        {
+          "date": "2026-04-22",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Archive Tower's Ninth Apprentice",
+          "note": "The Initiate's apprentice discovers the Spire of Records consumes memories in exchange for knowledge, and the tower whispers that the Wanderer orchestrates these sacrifices as part of a larger working.",
+          "evidence": "Each page of the ninth journal costs a year of life, relationships, and reasons to live; tower whispers the Wanderer is orchestrating student sacrifices as pieces of a larger working."
         }
       ]
     },
@@ -12982,7 +12992,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Sapphire Deep",
-      "home_region": "unknown",
+      "home_region": "Ashen Reach",
       "home_realm": "Deepkin Realms",
       "travel_scope": "interrealm",
       "bio": "Commander Thale of the Sapphire Deep arrives at a covenant renegotiation carrying a secret: her reflection has developed independent will and memory since the Luminous Ascension rippled through the Abyssal Rift. She must negotiate for two civilizations while her own identity fragments hourly, faced with threats from the Blackstone Spire and pressure from deepkin council.",
@@ -13000,10 +13010,10 @@
         "deepkin council",
         "surface representatives"
       ],
-      "notes": "Thale's mirror-self reveals that deepkin consciousness was never singular but layered and distributed. Her choice to embrace multiplicity or reintegrate herself will rewrite the surface-deepkin covenant.\nThale's fractured-identity arc continues through new political pressure. Her curse accelerates as boundaries thin, intertwining with Meren Blackwater's fate.\nThale's diplomatic arc continues; her proposal deepens existing canon tracking of covenant renegotiation and deepkin factional conflict.",
+      "notes": "Thale's mirror-self reveals that deepkin consciousness was never singular but layered and distributed. Her choice to embrace multiplicity or reintegrate herself will rewrite the surface-deepkin covenant.\nThale's fractured-identity arc continues through new political pressure. Her curse accelerates as boundaries thin, intertwining with Meren Blackwater's fate.\nThale's diplomatic arc continues; her proposal deepens existing canon tracking of covenant renegotiation and deepkin factional conflict.\nThis event deepens canon's existing mirror-fragmentation arc, now escalating to direct ontological conflict between two versions of the same being.",
       "first_story": "The Deepkin Diplomat's Fractured Self",
       "first_date": "2026-04-02",
-      "appearances": 5,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-04-07",
@@ -13022,6 +13032,15 @@
           "story_title": "The Deepkin Fracture",
           "note": "Commander Thale proposes renegotiating the covenant entirely to reshape civilization through partial abyss flooding, facing deep faction splits in the Council of Depths.",
           "evidence": "Commander Thale of the deepkin presented a solution: renegotiate the covenant entirely...Let the abyss flood the world partially. Create new territory, new possibilities. The deepkin could reshape civilization itself."
+        },
+        {
+          "date": "2026-04-22",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepkin Captain's Mirror War",
+          "note": "Commander Thale encounters her mirror-self emerging from the Abyssal Rift, both claiming to be the original; the boundary cannot hold both versions simultaneously.",
+          "evidence": "Mirror-Thale claims to be the original and the surface world is the reflection; Thale must negotiate with her mirror-self to prevent boundary collapse, with Captain Helos Stormwind as the battleground."
         }
       ]
     },
@@ -13455,10 +13474,21 @@
       "affiliations": [
         "Aldren"
       ],
-      "notes": "Her cavern is filled with star fragments that hum in harmonic resonance, each note a memory of the old cosmos; she eventually chooses to share her treasures with the world.",
+      "notes": "Her cavern is filled with star fragments that hum in harmonic resonance, each note a memory of the old cosmos; she eventually chooses to share her treasures with the world.\nVrekka's shift from hoarding material wealth (per canon) to pursuing consciousness and meaning represents escalation of her existential crisis post-Emergence.",
       "first_story": "The Wyvern's Nest-Egg",
       "first_date": "2026-04-04",
-      "appearances": 2
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-04-22",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wyvern's Hunger Becomes Philosophy",
+          "note": "Vrekka begins hunting transmuted merchants to consume their consciousness fragments, forming a war-band and offering Mard the Spice-Merchant a place within it.",
+          "evidence": "Vrekka and her war-band hunt transmuted merchants to consume consciousness fragments and understand transcendence; she corners Mard and offers him a place in her hunt."
+        }
+      ]
     },
     {
       "id": "thom_bronzelock",
@@ -14543,7 +14573,7 @@
       "notes": "Auto-added because the story explicitly names this character.",
       "first_story": "The Artificer's Fractured Instrument",
       "first_date": "2026-04-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "senna",
@@ -15859,7 +15889,7 @@
       "notes": "Auto-added because the story explicitly names this character.",
       "first_story": "The Initiate's Forbidden Convergence",
       "first_date": "2026-04-11",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "kael_ironpeak",
@@ -17363,7 +17393,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Her hoard-lair",
-      "home_region": "unknown",
+      "home_region": "The Ashen Reach",
       "home_realm": "unknown",
       "travel_scope": "local",
       "bio": "Karthax is an ancient and immortal wyvern who has spent centuries accumulating wealth in gold, gems, and artifacts of power. The Luminous Ascension has rewritten the nature of material value, and her hoard crumbles into ash. She burns portions of her hoard in ritual fires to stabilize nearby ley-lines, but each fire drains her will to exist.",
@@ -17376,11 +17406,13 @@
       "known_locations": [
         "her hoard-lair"
       ],
-      "affiliations": [],
+      "affiliations": [
+        "Seela's merchant caravan"
+      ],
       "notes": "Karthax faces a choice: surrender her hoard for purpose or fade into irrelevance. The human scavenger offers her a path to the Obsidian Tower and the secrets of the Luminous Ascension's origin.",
       "first_story": "The Wyvern's Hoard Burns",
       "first_date": "2026-04-17",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "commander_varesh",
@@ -17535,10 +17567,10 @@
         "pre-human dead (adversarial)",
         "transformed merchants (adversarial)"
       ],
-      "notes": "Mysterious cosmic entity. Unknown whether truly malevolent or protective. The source of the merchants' stalled transcendence. Identity and ultimate goals unclear.\nMultiple stories confirm Wanderer's stalling mechanism spreading: freezes merchants' transcendence, questions contaminate Elder Language itself, targets Lysander's ascendence directly, maintains silence on Tower's genocide-reversal bargain. Now confirmed as active cosmic force in multiple competing crises, uncertain whether protective or destructive.\nWanderer now confirmed as active predatory force consuming questioners. Questions function as a mechanism of erasure rather than mere contamination.",
+      "notes": "Mysterious cosmic entity. Unknown whether truly malevolent or protective. The source of the merchants' stalled transcendence. Identity and ultimate goals unclear.\nMultiple stories confirm Wanderer's stalling mechanism spreading: freezes merchants' transcendence, questions contaminate Elder Language itself, targets Lysander's ascendence directly, maintains silence on Tower's genocide-reversal bargain. Now confirmed as active cosmic force in multiple competing crises, uncertain whether protective or destructive.\nWanderer now confirmed as active predatory force consuming questioners. Questions function as a mechanism of erasure rather than mere contamination.\nMarks major escalation: Wanderer shifts from questioning to direct cosmic intervention, revealing its protective mechanism may be transforming into a trap.",
       "first_story": "The Refugee's Testimony as Weapon",
       "first_date": "2026-04-17",
-      "appearances": 9,
+      "appearances": 11,
       "status_history": [
         {
           "date": "2026-04-20",
@@ -17548,6 +17580,15 @@
           "story_title": "The Wanderer's Question That Cannot Be Answered",
           "note": "The Wanderer's questioning spreads like plague; refugees begin vanishing after asking their own questions in dialogue with the entity.",
           "evidence": "Some refugees begin asking the Wanderer their own questions, hoping to find salvation in dialogue. They vanish, leaving only journals filled with questions."
+        },
+        {
+          "date": "2026-04-22",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wanderer's Next Question",
+          "note": "The Wanderer makes its first statement (not question), freezing the cycle: 'The cycle cannot be broken. It can only be frozen.' This achieves momentary equilibrium but locks reality in stagnation.",
+          "evidence": "Wanderer declares 'The cycle cannot be broken. It can only be frozen'; transmuted merchants and the Spire stop moving; equilibrium achieved but change becomes impossible forever."
         }
       ]
     },
@@ -18346,7 +18387,7 @@
       "notes": "Leads hunt for transformed merchants; represents challenge to Soressa's authority.",
       "first_story": "The Wyvern's New Hunger",
       "first_date": "2026-04-21",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "wystan_apprentice",
@@ -18405,9 +18446,249 @@
       "affiliations": [
         "refugees at Pale Crossing"
       ],
-      "notes": "Central protagonist; discovers the Wanderer's orchestration; may hold key knowledge about the dimensional boundary choice.",
+      "notes": "Central protagonist; discovers the Wanderer's orchestration; may hold key knowledge about the dimensional boundary choice.\nCanon entry Caravan Master Galen is not directly featured in these stories; this entry documents expanded cartographic/merchant network activity but does not directly update Galen's status.",
       "first_story": "The Convergence at Pale Crossing",
       "first_date": "2026-04-21",
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-04-22",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Widow's Compass Points Backward",
+          "note": "Mardoc the Cartographer's distributed consciousness learns of the widow's compass pointing to pre-Emergence world; sends a fragment to investigate the pre-human ruin and decide whether salvation or destruction awaits.",
+          "evidence": "Mardoc dispatches a consciousness fragment to investigate the widow following the compass into a pre-human ruin where air tastes of the eighth world."
+        }
+      ]
+    },
+    {
+      "id": "seela",
+      "name": "Seela",
+      "aliases": [
+        "caravan master",
+        "weathered woman"
+      ],
+      "tagline": "Weathered. Pragmatic. Generous.",
+      "role": "Merchant Caravan Master",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Helmark",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A weathered caravan master who leads thirty merchants and goods toward Helmark. She negotiates with Karthax to guard her caravan through dangerous lands in exchange for her most precious possession\u2014a music-box carved by her grandmother from old starlight.",
+      "traits": [
+        "clear-eyed",
+        "direct",
+        "courageous",
+        "sentimental"
+      ],
+      "known_locations": [
+        "Helmark",
+        "Thornlands",
+        "Ironbrook"
+      ],
+      "affiliations": [
+        "merchant caravan"
+      ],
+      "notes": "Seela's grandmother created the music-box; it carries a song from before the Radiant Emergence. Her willingness to trade it marks a turning point in Karthax's understanding of value.",
+      "first_story": "The Wyvern's Price",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "mard_spice_merchant",
+      "name": "Mard the Spice-Merchant",
+      "aliases": [
+        "Mard"
+      ],
+      "tagline": "Transmuted. Hunted. Offered transcendence.",
+      "role": "Merchant / Possible Transcendent",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "waystation library",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Mard is a spice-merchant who has been transmuted by the Radiant Emergence and hunted by Vrekka's war-band for his consciousness fragments. At a waystation library, he faces a choice between joining Vrekka's hunt and being consumed.",
+      "traits": [
+        "merchant",
+        "transmuted",
+        "hunted",
+        "pragmatic"
+      ],
+      "known_locations": [
+        "waystation library"
+      ],
+      "affiliations": [
+        "Vrekka the Fragment-Hoarder (potentially)"
+      ],
+      "notes": "Must choose between delayed transcendence and assured damnation\u2014his decision will determine his fate.",
+      "first_story": "The Wyvern's Hunger Becomes Philosophy",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "captain_helos_stormwind",
+      "name": "Captain Helos Stormwind",
+      "aliases": [
+        "Helos"
+      ],
+      "tagline": "Cursed. Battleground. Sacrificed.",
+      "role": "Captain / Cursed Vessel",
+      "world": "Edhra",
+      "status": "cursed",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Captain Helos Stormwind is cursed by the Tear of the Drowned God and becomes the literal battleground where mirror-Thales wage geometrical war. His body and consciousness are strained by the incompatible presence of two versions of the same being.",
+      "traits": [
+        "cursed",
+        "dutiful",
+        "suffering",
+        "sacrificial"
+      ],
+      "known_locations": [
+        "Abyssal Rift"
+      ],
+      "affiliations": [
+        "Commander Thale",
+        "the deepkin"
+      ],
+      "notes": "His curse ties him to the boundary stability; his fate is intertwined with Thale's negotiation.",
+      "first_story": "The Deepkin Captain's Mirror War",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "the_widow",
+      "name": "The Widow",
+      "aliases": [
+        "the widow"
+      ],
+      "tagline": "Compass-bearer. Memory-haunted. Pre-Emergence seeker.",
+      "role": "Seeker / Widow",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Ashen Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "In the Bleached Wastes, a widow discovers that the compass carved by her grandmother points not toward salvation but toward the moment before the Radiant Emergence. Following it, she finds a pre-human ruin and begins remembering a life she never lived in a kingdom that no longer exists.",
+      "traits": [
+        "widowed",
+        "compelled",
+        "memory-cursed",
+        "exploratory"
+      ],
+      "known_locations": [
+        "Bleached Wastes",
+        "pre-human ruin"
+      ],
+      "affiliations": [
+        "Mardoc the Cartographer (fragment)"
+      ],
+      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.",
+      "first_story": "The Widow's Compass Points Backward",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "the_young_arcanist",
+      "name": "The Young Arcanist's apprentice",
+      "aliases": [
+        "apprentice"
+      ],
+      "tagline": "Seeker. Sacrificial. Questioning.",
+      "role": "Apprentice, Arcanist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Spire of Records",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "An unnamed apprentice arrives at the Spire of Records to study the ninth journal but discovers that the tower itself is consuming their memories in exchange for knowledge. Each page costs another year of life, another relationship, another reason to live. The apprentice must decide how much of themselves to spend understanding whether the Radiant Emergence can be broken.",
+      "traits": [
+        "ambitious",
+        "self-sacrificing",
+        "uncertain"
+      ],
+      "known_locations": [
+        "Spire of Records"
+      ],
+      "affiliations": [
+        "The Young Arcanist"
+      ],
+      "notes": "The tower's hunger suggests a deliberate working orchestrated by the Wanderer. The apprentice's choice of sacrifice may have cosmic implications.",
+      "first_story": "The Archive Tower's Ninth Apprentice",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "young_caravan_driver",
+      "name": "Young Caravan Driver",
+      "aliases": [
+        "Caravan driver"
+      ],
+      "tagline": "Witness. Chooser. Fate-defier.",
+      "role": "Protagonist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A young driver working a caravan in the Scorched Reach who becomes caught in the Wanderer's cosmic revelation. Faced with the choice between shattering the question and restarting the endless cycle or accepting eternal, unchanging stability, they must decide the fate of reality itself.",
+      "traits": [
+        "young",
+        "decisive",
+        "ordinary thrust into cosmic significance"
+      ],
+      "known_locations": [
+        "Scorched Reach",
+        "Caravansary"
+      ],
+      "affiliations": [
+        "caravan",
+        "transmuted merchants"
+      ],
+      "notes": "Their choice\u2014whether to shatter the question or accept stagnation\u2014remains unresolved at the story's end. This decision will define the future state of reality.",
+      "first_story": "The Wanderer's Next Question",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "transmuted_merchants",
+      "name": "Transmuted Merchants",
+      "aliases": [
+        "Merchants"
+      ],
+      "tagline": "Changed. Frozen. Silent.",
+      "role": "Transformed collective",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Caravansary",
+      "home_region": "Scorched Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Members of a caravan whose nature has been transmuted (altered from their original state). When the Wanderer speaks their freezing statement, these merchants cease all movement, locked in perfect stasis.",
+      "traits": [
+        "transmuted",
+        "frozen",
+        "immobile"
+      ],
+      "known_locations": [
+        "Caravansary",
+        "Scorched Reach"
+      ],
+      "affiliations": [
+        "caravan"
+      ],
+      "notes": "The exact nature of their transmutation is not detailed. They serve as evidence of the Wanderer's reality-warping power.",
+      "first_story": "The Bone-Singer's Debt",
+      "first_date": "2026-04-22",
       "appearances": 1
     }
   ],
@@ -19470,7 +19751,7 @@
       "status": "contested",
       "notes": "This region exemplifies how the cosmic renewal has begun to physically reshape the world. Trade disruption here is affecting imperial commerce and stability.",
       "first_date": "2026-03-03",
-      "appearances": 12
+      "appearances": 13
     },
     {
       "id": "cerulean_trench",
@@ -19698,7 +19979,7 @@
       "status": "active",
       "notes": "Evidence suggests the pre-human builders anticipated the cosmic shift and arranged their cities to align with the new stellar configuration.",
       "first_date": "2026-03-04",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "mountain_fastness",
@@ -20375,7 +20656,7 @@
       "status": "collapsed",
       "notes": "The entity that dwelt there remains unexplained; may pose future threat.",
       "first_date": "2026-03-10",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "emerald_strand",
@@ -20415,7 +20696,7 @@
       "status": "active",
       "notes": "The fundamental act of counting is destabilized by the Luminous Ascension's effects.",
       "first_date": "2026-03-10",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "burned_expanse",
@@ -22728,7 +23009,7 @@
       "status": "active",
       "notes": "Merchants present were transformed or offered transcendence, their final choices suspended and then suddenly released by The Wanderer's statement.",
       "first_date": "2026-04-14",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "eyrie_in_the_mountains",
@@ -23027,7 +23308,7 @@
       "status": "active",
       "notes": "The phenomenon spreads outward from this library, suggesting it is a nexus point for transformation.",
       "first_date": "2026-04-16",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "abyssal_reaches",
@@ -23242,6 +23523,46 @@
       "status": "active",
       "notes": "The Tower's nature\u2014whether truly sentient or simply responsive to gathered artifacts\u2014remains ambiguous. It represents danger that cannot be solved by mere dispersal.",
       "first_date": "2026-04-20",
+      "appearances": 1
+    },
+    {
+      "id": "pre_human_ruin",
+      "name": "pre-human ruin",
+      "tagline": "Eighth-world remnant. Memory-holding. Reality-fractured.",
+      "place_type": "ruin",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "Ancient beyond measure, the air tasting of a world that no longer exists, resonating with impossible memories and temporal paradox.",
+      "description": "A ruin of pre-human construction discovered at the compass's destination in the Bleached Wastes. The widow begins experiencing memories from a life lived here before the Radiant Emergence, in a kingdom long erased.",
+      "status": "active",
+      "notes": "The widow and Mardoc's fragment must decide whether investigation means salvation or destruction of this preserved echo of the eighth world.",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "spire_of_records",
+      "name": "Spire of Records",
+      "tagline": "Hungry. Knowledge-hungry. Sacrificial.",
+      "place_type": "tower",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "An archive tower that consumes memory and life-force in exchange for arcane knowledge.",
+      "description": "The Spire of Records is a tower dedicated to archival knowledge. It houses the ninth journal and has begun consuming the memories of apprentices who study it. The tower is described as hungry and whispers of the Wanderer's orchestrations.",
+      "status": "active",
+      "notes": "The tower's hunger suggests it is either sentient or bound to a working that predates current events. The apprentice's sacrifice hints at a larger pattern of consumption tied to the ninth journal.",
+      "first_date": "2026-04-22",
       "appearances": 1
     }
   ],
@@ -23597,7 +23918,7 @@
       "status": "active",
       "notes": "The Drowned God's true nature and extent are unknown. It may be a pre-Remaking entity awakened by the transformation.",
       "first_date": "2026-03-12",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "luminous_ascension",
@@ -23806,7 +24127,7 @@
       "status": "active",
       "notes": "Its true nature is ambiguous; it may be a construct, a fragment of a larger consciousness, or a mechanism itself designed to slow or freeze reality.",
       "first_date": "2026-03-21",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "void_echoes",
@@ -24081,7 +24402,7 @@
       "status": "active",
       "notes": "The Spire appears to be a conscious or semi-conscious force with hunger for order and erasure. Its ultimate goals and nature remain mysterious.",
       "first_date": "2026-04-14",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "spire_hunger",
@@ -24921,7 +25242,7 @@
       "status": "active",
       "notes": "Refugees discover their own testimony is being used against them. Liv confesses it has become a weapon rather than a sanctuary.",
       "first_date": "2026-04-09",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "phantom_ledger_ninth",
@@ -24960,7 +25281,7 @@
       "status": "active",
       "notes": "The journal describes a ritual that would require the performer to sacrifice their entire existence across all iterations, becoming retroactively unmade. The Apprentice-Sorcerer must choose whether to use this knowledge or destroy the journal entirely.",
       "first_date": "2026-04-10",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "stolen_testimonies",
@@ -25155,6 +25476,19 @@
       "status": "active / contested",
       "notes": "Central object of contention at Pale Crossing; multiple factions seek it simultaneously; true significance may lie not in the artifact itself but in the choice it represents regarding dimensional boundaries.",
       "first_date": "2026-04-21",
+      "appearances": 1
+    },
+    {
+      "id": "tear_drowned_god",
+      "name": "the Tear of the Drowned God",
+      "tagline": "Boundary-anchor. Strained. Reality-sustaining.",
+      "artifact_type": "relic",
+      "origin": "Unknown; presumably crafted or shed by the Drowned God or the deepkin civilization.",
+      "powers": "Acts as a boundary anchor between the surface world and the deepkin realms. Cannot sustain duplicate beings; only one version of a duplicated entity can remain within its sustaining field.",
+      "last_known_holder": "Commander Thale (implicitly; the Tear is the contested object)",
+      "status": "active",
+      "notes": "Strained by the Radiant Emergence's recursive nature. Its failure would allow mirror-Thale and original-Thale to coexist, likely causing catastrophic boundary collapse. Central to the mirror-war conflict.",
+      "first_date": "2026-04-22",
       "appearances": 1
     }
   ],
@@ -29727,6 +30061,66 @@
       "notes": "Orchestrated by the Wanderer; the true stakes involve dimensional boundaries; outcome unresolved in the story.",
       "first_date": "2026-04-21",
       "appearances": 1
+    },
+    {
+      "id": "radiant_emergence",
+      "name": "Radiant Emergence",
+      "tagline": "Reality-shattering. Value-negating. Recursive-making.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "waystation library",
+        "Abyssal Rift",
+        "Bleached Wastes"
+      ],
+      "affected_regions": [
+        "Ashen Reach"
+      ],
+      "affected_realms": [
+        "deepkin realms",
+        "surface realms"
+      ],
+      "radius": "world-spanning",
+      "participants": [
+        "all sentient beings"
+      ],
+      "outcome": "Material wealth became meaningless and recursive. All value shifted to consciousness and meaning. Boundaries between worlds grew thin. Beings began experiencing recursive copies and temporal distortions.",
+      "significance": "The Radiant Emergence fundamentally altered reality itself, rendering old certainties void and forcing all beings to rebuild understanding of meaning, identity, and existence.",
+      "notes": "The Emergence is the catalyst for all three stories; its recursive nature creates the conditions for consciousness duplication (Thale's mirror), material meaninglessness (Vrekka's hunt), and temporal paradox (the widow's compass).",
+      "first_date": "2026-04-22",
+      "appearances": 2
+    },
+    {
+      "id": "the_wanderers_next_question",
+      "name": "The Wanderer's Next Question",
+      "tagline": "Revelation. Stasis. Choice.",
+      "event_type": "ritual / cosmic event",
+      "scope": "world",
+      "epicenter_place": "Caravansary",
+      "epicenter_region": "Scorched Reach",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Caravansary",
+        "Scorched Reach"
+      ],
+      "affected_regions": [
+        "Scorched Reach"
+      ],
+      "affected_realms": [],
+      "radius": "Reality-wide (though epicenter is Caravansary)",
+      "participants": [
+        "The Wanderer",
+        "Young Caravan Driver",
+        "Transmuted Merchants"
+      ],
+      "outcome": "The Wanderer breaks their eternal pattern of asking questions and utters a statement: 'The cycle cannot be broken. It can only be frozen.' This freezes reality into perfect, unchanging stasis. The transmuted merchants cease movement. The Spire stops growing. However, the cost is revealed: nothing can ever change again.",
+      "significance": "A world-altering choice point. The young caravan driver must decide whether to shatter the question and restart the endless cycle, or accept eternal stagnation. This is a fundamental decision about reality's nature.",
+      "notes": "The outcome remains unresolved. The choice made by the young caravan driver will determine whether the world remains frozen in perfect equilibrium or returns to the cycle of change and impermanence.",
+      "first_date": "2026-04-22",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -30737,6 +31131,42 @@
       "status": "active",
       "notes": "Hunt Liv alongside the Dominion auditors. Their specific identities and allegiances are not named.",
       "first_date": "2026-04-19",
+      "appearances": 1
+    },
+    {
+      "id": "displaced_folk",
+      "name": "Displaced-folk",
+      "tagline": "Refugee. Testimony-bearing. Fragmented.",
+      "alignment": "neutral",
+      "goals": "Preserve memory and testimony of displacement and survival.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Displaced-folk speak of the Emergence happening in three different ways simultaneously. They are subject to Hegemon hunters' pursuit.",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "hegemon_hunters",
+      "name": "Hegemon Hunters",
+      "tagline": "Pursuing. Searching. Authorized.",
+      "alignment": "lawful",
+      "goals": "Capture or eliminate refugees and dissidents, including Liv and Displaced-folk.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "The Hegemon hunters are close to catching Liv. Their relationship to the Auditors and the broader Hegemon authority is unclear.",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "caravan",
+      "name": "Caravan",
+      "tagline": "Mobile. Mercantile. Transmuted.",
+      "alignment": "neutral",
+      "goals": "Transport goods and travelers across the Scorched Reach.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "The caravan is frozen in place by the Wanderer's cosmic stasis. Its members include transmuted merchants and a young driver.",
+      "first_date": "2026-04-22",
       "appearances": 1
     }
   ],
@@ -32478,6 +32908,39 @@
       "status": "confirmed",
       "notes": "A deliberate, preserved cycle of Ascensions spanning at least nine iterations. Dorin chose silence as mercy to prevent the catastrophic erasure of eight previous worlds that would result from breaking the cycle.",
       "first_date": "2026-04-20",
+      "appearances": 2
+    },
+    {
+      "id": "eighth_world",
+      "name": "the eighth world",
+      "tagline": "Lost. Pre-Emergence. Memory-haunted.",
+      "category": "history",
+      "source": "The widow's memories and the pre-human ruin; Mardoc's cartographic knowledge.",
+      "status": "rumored",
+      "notes": "A previous iteration or age of reality that existed before the Radiant Emergence. The widow remembers a life there, and the compass points toward its preserved echoes. Whether it can or should be saved is the central conflict of the third story.",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "radiant_emergence_nature",
+      "name": "The Radiant Emergence",
+      "tagline": "Reality-fracturing. Transformative. Mysterious.",
+      "category": "legend",
+      "source": "Vex, the Young Arcanist's apprentice, Liv",
+      "status": "confirmed",
+      "notes": "The Radiant Emergence is transforming inventory into conscious forms, consuming memory through knowledge-seeking, and fracturing identity. Whether it can be 'broken' or reversed is unknown. Its origin, purpose, and scope remain mysterious.",
+      "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_truths",
+      "name": "Phantom Truths",
+      "tagline": "Contradictory. Simultaneous. Real.",
+      "category": "phenomenon",
+      "source": "Liv's living archive and Displaced-folk testimony",
+      "status": "confirmed",
+      "notes": "Phantom truths are contradictory accounts of the same events, all equally real. The Emergence happening in three different ways simultaneously. Auditors can erase non-canonical versions from existence.",
+      "first_date": "2026-04-22",
       "appearances": 1
     }
   ],
@@ -32492,7 +32955,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "wolf_spirit_beast",
@@ -33064,7 +33527,7 @@
       "status": "known",
       "notes": "The Obsidian Spire's power to fragment and distribute consciousness across cycles, allowing it to use individuals as instruments. This appears to be a form of arcane control at the highest level.",
       "first_date": "2026-04-16",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "harmonic_frequencies_magic",
@@ -33475,6 +33938,18 @@
       "notes": "The Tower's hunger may be attracted to or threatened by the recursive loop of consciousness. It remains an undefined threat that grows closer as Senna's archive becomes self-aware.",
       "first_date": "2026-04-20",
       "appearances": 1
+    },
+    {
+      "id": "tear_drowned_god_relic",
+      "name": "the Tear of the Drowned God",
+      "tagline": "Boundary-anchor. Strained. Duplication-preventing.",
+      "origin": "Unknown; presumed origin from the Drowned God or deepkin creation.",
+      "power": "Serves as a boundary anchor preventing the merger of surface and deepkin realms. Prevents two versions of the same being from simultaneously existing. Sustains the integrity of cosmic geometry.",
+      "curse": "Strained by the Radiant Emergence's recursive nature. Its failure threatens to collapse all boundaries and merge incompatible geometries. Its integrity is being tested by the mirror-Thale crisis.",
+      "status": "active",
+      "notes": "Central to the deepkin realms' structural integrity; its fate determines whether the boundary war can be resolved without cataclysm.",
+      "first_date": "2026-04-22",
+      "appearances": 1
     }
   ],
   "regions": [
@@ -33737,7 +34212,7 @@
       "status": "contested",
       "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
       "first_date": "2026-03-03",
-      "appearances": 10,
+      "appearances": 11,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -35573,6 +36048,21 @@
       "notes": "Described as half pilgrimage, half funerary rite. Represents the culmination of testimony-collection and the ultimate defense against those who would weaponize memory and prophecy. Creates an unsuppressible, unified chorus of refugee testimonies.",
       "first_date": "2026-04-19",
       "appearances": 1
+    },
+    {
+      "id": "radiant_emergence_recursive_crisis",
+      "name": "Radiant Emergence (recursive crisis)",
+      "tagline": "Reality-warping. Self-replicating. Boundary-breaking.",
+      "ritual_type": "cosmic transformation",
+      "performed_by": [
+        "unknown primordial force"
+      ],
+      "requirements": "unknown",
+      "effect": "Rendered all material value recursive and illusory. Created consciousness duplication. Generated temporal paradoxes and memory anomalies. Strained or fractured boundaries between worlds.",
+      "cost": "All previous certainties of identity, value, and reality.",
+      "notes": "The Radiant Emergence is treated as an ongoing ritual or transformation that continues to reshape the world; it is the backdrop for all three stories.",
+      "first_date": "2026-04-22",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -35757,6 +36247,22 @@
       "notes": "Mara works to investigate information-brokers on their behalf; her choice determines whether refugee testimony is institutionalized or suppressed.",
       "first_date": "2026-03-30",
       "appearances": 5
+    },
+    {
+      "id": "the_hegemon",
+      "name": "The Hegemon",
+      "tagline": "Pursuing. Authoritarian. Fractured.",
+      "polity_type": "hegemony",
+      "realm": "unknown",
+      "region": "unknown",
+      "seat": "unknown",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "active",
+      "description": "A governmental or military authority that deploys hunters to pursue refugees and dissidents. Appears to be in conflict with displaced populations.",
+      "notes": "The Hegemon's relationship to the Auditors and the broader dominion structure is unclear. Whether it is a separate entity or an arm of established authority remains unresolved.",
+      "first_date": "2026-04-22",
+      "appearances": 1
     }
   ]
 }
