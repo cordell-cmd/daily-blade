@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-04-23",
+  "last_updated": "2026-04-24",
   "worlds": [
     {
       "id": "known_world",
@@ -1425,7 +1425,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 59
+      "appearances": 60
     },
     {
       "id": "mardoc_cartographer",
@@ -4781,8 +4781,8 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Anthrim",
-      "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_region": "The Iron Coast",
+      "home_realm": "The Dominion",
       "travel_scope": "regional",
       "bio": "A skilled thief known for his ability to read locks as language. Marin was commissioned by the Hermitage of Keth'morian to steal the Tear of Ashglass from the Sovereign's Archive. Upon retrieving the artifact, he discovered his own name inscribed inside the case\u2014a recognition that he had been expected all along.",
       "traits": [
@@ -4801,7 +4801,7 @@
       "notes": "His theft may have been orchestrated from the beginning. The Archive's ledger recorded him as 'Employed,' suggesting hidden purposes.",
       "first_story": "The Amber Thief's Gambit",
       "first_date": "2026-03-08",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "sevin_auditor",
@@ -5128,7 +5128,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 47,
+      "appearances": 48,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -6153,7 +6153,7 @@
       "notes": "Krell's decision to let Meira escape suggests deep doubts about the regime he served. His final act may have larger consequences for the Empire's stability.",
       "first_story": "The Warden's Last Coin",
       "first_date": "2026-03-11",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "meira",
@@ -6841,7 +6841,7 @@
       "notes": "Motivated by belief that Rite reversal would cause catastrophe.",
       "first_story": "The Archivist's Heist",
       "first_date": "2026-03-13",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "devourer_of_recollections",
@@ -7996,9 +7996,9 @@
       "affiliations": [
         "pre-human ritual seekers"
       ],
-      "notes": "May be a vessel for Nethis or another cosmic presence. Offers knowledge of erased childhoods to those who bargain with him.\nThe story clarifies the trader's liminal state as incomplete transformation from the Luminous Threshold rewrite. Travel scope confirmed as regional (market, Wailing Fracture, borderlands). Status remains active pending his choice.",
+      "notes": "May be a vessel for Nethis or another cosmic presence. Offers knowledge of erased childhoods to those who bargain with him.\nThe story clarifies the trader's liminal state as incomplete transformation from the Luminous Threshold rewrite. Travel scope confirmed as regional (market, Wailing Fracture, borderlands). Status remains active pending his choice.\nNew named merchant variant (Mard) appears in Scorched Reach waystation; confirms broader pattern of Tower's true consumption mechanism as willpower/agency rather than time/fragments.",
       "first_date": "2026-03-16",
-      "appearances": 8,
+      "appearances": 9,
       "status_history": [
         {
           "date": "2026-03-18",
@@ -8008,6 +8008,15 @@
           "story_title": "The Merchant's Fractured Mind",
           "note": "Story depicts the Spice Trader existing simultaneously in waking market and Wailing Fracture, approaching a threshold choice but not yet fully transformed.",
           "evidence": "His consciousness splits each night, experiencing both realities. A merchant-magnate offers him a terrible bargain: accept full transformation or remain fractured. The story ends with him at the threshold, hand extended in both worlds, unable to choose."
+        },
+        {
+          "date": "2026-04-24",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Spice Trader's Bottled Ambition",
+          "note": "Spice trader named Mard discovers he has been unknowingly trafficking in ambition fragments for the Obsidian Tower; realizes the Tower consumes will itself, leaving only compliance.",
+          "evidence": "He traces the pattern back to the Obsidian Tower. The Tower is not consuming time\u2014it is consuming will itself, leaving only compliance in its wake. Mard realizes he has been its merchant, knowingly or not."
         }
       ],
       "first_story": "The Bone-Singer's Heist"
@@ -12973,7 +12982,7 @@
       "notes": "Acknowledges the futility of direct resistance; sees testimony as ephemeral compared to physical evidence.",
       "first_story": "The Merchant's Wager",
       "first_date": "2026-04-02",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "renn_the_apprentice_cartographer",
@@ -14459,7 +14468,18 @@
       "notes": "Their intervention suggests a layered history of covenants and that the current age is a restoration of an older order.\nStory 'The Pre-Human Dead's Withdrawal' shows ancient dead abruptly ceasing Elder Language instruction and retreating to pre-deepkin depths. Single message: 'The cycle cannot be broken by those born within it. Wait for the tenth to ask the right question.' Withdrawal suggests orchestration or foreknowledge of the Rising; frees them from intervention but leaves merchants without completion path.",
       "first_story": "The Bone-Singer's Choice",
       "first_date": "2026-04-06",
-      "appearances": 5
+      "appearances": 6,
+      "status_history": [
+        {
+          "date": "2026-04-24",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wanderer Speaks Again",
+          "note": "Pre-human dead's ancient song is revealed as foundational layer of the Wanderer's new revelation; their language harmonizes with the spreading memory-song.",
+          "evidence": "The song is ancient, pre-human, and it harmonizes perfectly with the Elder Language, the bone-songs, and the resonant frequencies that bind the Sunken Cathedrals."
+        }
+      ]
     },
     {
       "id": "corwin",
@@ -17011,10 +17031,21 @@
       "traits": [],
       "known_locations": [],
       "affiliations": [],
-      "notes": "Auto-added because the story explicitly names this character.\nStory 'The Obsidian Tower's Bargain' reveals Tower offering articulate covenant to hidden convocation: it will reverse the Luminous Rising and restore the eighth world, but requires sacrifice of all post-Rising-born individuals (tens of thousands). Wanderer maintains frozen silence on negotiability. New major political crisis introducing genocide-by-attrition as viable faction position.",
+      "notes": "Auto-added because the story explicitly names this character.\nStory 'The Obsidian Tower's Bargain' reveals Tower offering articulate covenant to hidden convocation: it will reverse the Luminous Rising and restore the eighth world, but requires sacrifice of all post-Rising-born individuals (tens of thousands). Wanderer maintains frozen silence on negotiability. New major political crisis introducing genocide-by-attrition as viable faction position.\nMechanic clarification: Tower's hunger extends to willpower/agency consumption, suggesting deeper predatory scope than previously mapped.",
       "first_story": "The Obsidian Tower Awakens",
       "first_date": "2026-04-15",
-      "appearances": 2
+      "appearances": 5,
+      "status_history": [
+        {
+          "date": "2026-04-24",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Spice Trader's Bottled Ambition",
+          "note": "Obsidian Tower revealed to be consuming ambition and will itself, not merely consciousness fragments; leaves compliance in its wake.",
+          "evidence": "The Tower is not consuming time\u2014it is consuming will itself, leaving only compliance in its wake."
+        }
+      ]
     },
     {
       "id": "koren_the_sentinel",
@@ -17596,10 +17627,10 @@
         "pre-human dead (adversarial)",
         "transformed merchants (adversarial)"
       ],
-      "notes": "Mysterious cosmic entity. Unknown whether truly malevolent or protective. The source of the merchants' stalled transcendence. Identity and ultimate goals unclear.\nMultiple stories confirm Wanderer's stalling mechanism spreading: freezes merchants' transcendence, questions contaminate Elder Language itself, targets Lysander's ascendence directly, maintains silence on Tower's genocide-reversal bargain. Now confirmed as active cosmic force in multiple competing crises, uncertain whether protective or destructive.\nWanderer now confirmed as active predatory force consuming questioners. Questions function as a mechanism of erasure rather than mere contamination.\nMarks major escalation: Wanderer shifts from questioning to direct cosmic intervention, revealing its protective mechanism may be transforming into a trap.",
+      "notes": "Mysterious cosmic entity. Unknown whether truly malevolent or protective. The source of the merchants' stalled transcendence. Identity and ultimate goals unclear.\nMultiple stories confirm Wanderer's stalling mechanism spreading: freezes merchants' transcendence, questions contaminate Elder Language itself, targets Lysander's ascendence directly, maintains silence on Tower's genocide-reversal bargain. Now confirmed as active cosmic force in multiple competing crises, uncertain whether protective or destructive.\nWanderer now confirmed as active predatory force consuming questioners. Questions function as a mechanism of erasure rather than mere contamination.\nMarks major escalation: Wanderer shifts from questioning to direct cosmic intervention, revealing its protective mechanism may be transforming into a trap.\nMajor escalation: Wanderer shifts from linguistic contamination to direct cosmic song; revelation mechanism parallels its earlier stalling as a form of trap. Introduces cycle-visibility to wider population.",
       "first_story": "The Refugee's Testimony as Weapon",
       "first_date": "2026-04-17",
-      "appearances": 11,
+      "appearances": 13,
       "status_history": [
         {
           "date": "2026-04-20",
@@ -17618,6 +17649,15 @@
           "story_title": "The Wanderer's Next Question",
           "note": "The Wanderer makes its first statement (not question), freezing the cycle: 'The cycle cannot be broken. It can only be frozen.' This achieves momentary equilibrium but locks reality in stagnation.",
           "evidence": "Wanderer declares 'The cycle cannot be broken. It can only be frozen'; transmuted merchants and the Spire stop moving; equilibrium achieved but change becomes impossible forever."
+        },
+        {
+          "date": "2026-04-24",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wanderer Speaks Again",
+          "note": "The Wanderer breaks silence and sings an ancient pre-human song that harmonizes across all magical languages; spreads memory of the eighth iteration across the world, causing madness and revelation.",
+          "evidence": "The Wanderer breaks its silence once more. But this time, it does not ask a question or make a declaration. It sings... it harmonizes perfectly with the Elder Language, the bone-songs, and the resonant frequencies... Those who hear it do not freeze\u2014instead, they remember."
         }
       ]
     },
@@ -18537,7 +18577,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "waystation library",
-      "home_region": "unknown",
+      "home_region": "Scorched Reach",
       "home_realm": "unknown",
       "travel_scope": "regional",
       "bio": "Mard is a spice-merchant who has been transmuted by the Radiant Emergence and hunted by Vrekka's war-band for his consciousness fragments. At a waystation library, he faces a choice between joining Vrekka's hunt and being consumed.",
@@ -18556,7 +18596,7 @@
       "notes": "Must choose between delayed transcendence and assured damnation\u2014his decision will determine his fate.",
       "first_story": "The Wyvern's Hunger Becomes Philosophy",
       "first_date": "2026-04-22",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "captain_helos_stormwind",
@@ -18619,10 +18659,21 @@
       "affiliations": [
         "Mardoc the Cartographer (fragment)"
       ],
-      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.",
+      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.\nSignificant character arc closure: moves from seeking pre-Ascension world to acceptance of forward path. Suggests thematic resolution of her quest.",
       "first_story": "The Widow's Compass Points Backward",
       "first_date": "2026-04-22",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-04-24",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Widow's Final Compass",
+          "note": "The Widow discovers her grandmother's compass points toward choice, not escape; she accepts the impossibility of return and begins carving a new compass toward acceptance.",
+          "evidence": "The compass was never a tool for escape\u2014it was a monument to the impossibility of return. Holding it, the Widow weeps, then begins to carve a new compass that points toward acceptance."
+        }
+      ]
     },
     {
       "id": "the_young_arcanist",
@@ -18715,10 +18766,21 @@
       "affiliations": [
         "caravan"
       ],
-      "notes": "The exact nature of their transmutation is not detailed. They serve as evidence of the Wanderer's reality-warping power.",
+      "notes": "The exact nature of their transmutation is not detailed. They serve as evidence of the Wanderer's reality-warping power.\nNew character Sael emerges as conscious agent within frozen state; suggests selective or imperfect stasis application.",
       "first_story": "The Bone-Singer's Debt",
       "first_date": "2026-04-22",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-04-24",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Frozen Merchant's Choice",
+          "note": "Transmuted merchants remain frozen in Caravansary stasis; one merchant (Sael the Ledger-Breaker) discovers the stasis boundary is three leagues and that something is still choosing within the frozen moment.",
+          "evidence": "In the Caravansary, where reality itself has stopped mid-breath... the stasis extends only three leagues in any direction... When she finds a gap in the frozen moment\u2014a thread of motion in a merchant's eye\u2014she realizes the stasis is not absolute."
+        }
+      ]
     },
     {
       "id": "torval_bone_carver",
@@ -19153,6 +19215,261 @@
       "notes": "Auto-added because the story explicitly names this character.",
       "first_story": "The Wyvern's Ledger",
       "first_date": "2026-04-23",
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-04-24",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wyvern's Worthless Gold",
+          "note": "Wyvern lord Kressa discovers her three-century hoard is valueless after Luminous Ascension; begins trafficking in transmuted merchants as new currency and plans to harvest them during transcendence.",
+          "evidence": "Kressa the Fragment-Hoarder stands before her mountain of gold that no longer holds value... transmuted merchants are the only currency that matters... She strikes a bargain with bone-singers: guide the transmuted toward transcendence, and she will protect the process. What she doesn't tell them is that she plans to intercept the moment of transformation."
+        }
+      ]
+    },
+    {
+      "id": "kressa_fragment_hoarder",
+      "name": "Kressa the Fragment-Hoarder",
+      "aliases": [
+        "Kressa"
+      ],
+      "tagline": "Wyvern. Scheming. Opportunistic.",
+      "role": "Wyvern, Gold-Hoarder, Conspirator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Kressa the Fragment-Hoarder is a wyvern who has spent centuries gathering wealth, only to watch it become worthless after the Luminous Ascension. Recognizing that transmuted merchants are the new currency, she strikes a bargain with bone-singers to guide them toward transcendence, while secretly planning to intercept the moment of transformation to harvest whatever emerges.",
+      "traits": [
+        "ancient",
+        "greedy",
+        "cunning",
+        "predatory"
+      ],
+      "known_locations": [
+        "mountain hoard"
+      ],
+      "affiliations": [
+        "bone-singers"
+      ],
+      "notes": "Her hunger for a new form of wealth\u2014whatever emerges from transmuted merchant transcendence\u2014reveals deeper cosmic hunger. The Obsidian Tower also hungers for transmuted merchants, suggesting dangerous rivalry.",
+      "first_story": "The Wyvern's Worthless Gold",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "hermitage_priest_deceased",
+      "name": "Hermitage priest",
+      "aliases": [
+        "father",
+        "priest"
+      ],
+      "tagline": "Mentor. Fallen. Redeemed.",
+      "role": "Priest, Trainer, Gambler",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "Hermitage of Keth'morian",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A priest of the Hermitage of Keth'morian who trained Marin in the art of sacred theft and taught her that stealing could be prayer if done rightly. He gambled away the Tear of Ashglass and died before seeing it returned.",
+      "traits": [
+        "spiritual",
+        "flawed",
+        "trusting",
+        "visionary"
+      ],
+      "known_locations": [
+        "Hermitage of Keth'morian",
+        "saltside tavern"
+      ],
+      "affiliations": [
+        "Hermitage of Keth'morian"
+      ],
+      "notes": "His belief that someone would return the Tear proved correct, suggesting he possessed prescience or faith in redemption itself.",
+      "first_story": "The Thief-Saint of Greyport",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "priest_daughter",
+      "name": "priest's daughter",
+      "aliases": [
+        "scholar",
+        "woman"
+      ],
+      "tagline": "Scholar. Keeper. Hopeful.",
+      "role": "Scholar, Artifact Keeper",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Hermitage of Keth'morian",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "The daughter of the Hermitage priest, she waits at the sanctuary for the return of the Tear of Ashglass and receives it from Marin. She shares her father's eyes and his faith that redemption would come.",
+      "traits": [
+        "learned",
+        "patient",
+        "faithful",
+        "observant"
+      ],
+      "known_locations": [
+        "Hermitage of Keth'morian"
+      ],
+      "affiliations": [
+        "Hermitage of Keth'morian"
+      ],
+      "notes": "Her presence at the Hermitage suggests she is now its keeper or a significant figure in its order.",
+      "first_story": "The Thief-Saint of Greyport",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "naela_bone_singer",
+      "name": "Naela",
+      "aliases": [
+        "apprentice bone-singer",
+        "apprentice bone-singer and hybrid being"
+      ],
+      "tagline": "Hybrid. Corrupted. Radical.",
+      "role": "Apprentice Bone-Singer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sunken Cathedrals",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A hybrid being and apprentice bone-singer tasked with teaching the Elder Language to transmuted merchants at the Sunken Cathedrals. Naela discovers that the Elder Language is becoming corrupted by the Wanderer's recursive questioning, causing students to freeze mid-utterance. Rather than abandon teaching, Naela creates a hybrid tongue mixing the old language with human stuttering and silence\u2014an ugly, broken language that nonetheless allows movement and transcendence.",
+      "traits": [
+        "principled",
+        "adaptive",
+        "desperate",
+        "creative"
+      ],
+      "known_locations": [
+        "Sunken Cathedrals"
+      ],
+      "affiliations": [
+        "bone-singers",
+        "pre-human dead (via bone-songs)"
+      ],
+      "notes": "Naela's radical solution\u2014a hybrid tongue\u2014suggests that corruption can be incorporated rather than resisted. The effectiveness of 'broken' speech raises questions about purity and power in magic.",
+      "first_story": "The Bone-Singer's Refusal",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "mirror_kess",
+      "name": "Mirror-Kess",
+      "aliases": [
+        "Kess (reflection)",
+        "Commander Kess (reflection)",
+        "Commander Kess"
+      ],
+      "tagline": "Autonomous. Reflected. Defiant.",
+      "role": "Deepkin Commander (Reflection)",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Council of Depths",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "realmwide",
+      "bio": "Mirror-Kess is an autonomous reflection of Commander Kess, born from the crisis of doubled consciousness. She claims to be the original and refuses erasure, leading one faction of deepkin governance. Her emergence has fractured the Council of Depths into competing power structures.",
+      "traits": [
+        "defiant",
+        "autonomous",
+        "consciousness-aware"
+      ],
+      "known_locations": [
+        "Council of Depths"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "deepkin factions"
+      ],
+      "notes": "Her fate hinges on whether the original Commander Kess is discovered and chooses to dissolve her or allow dual rule.",
+      "first_story": "The Deepkin's Reflection War Escalates",
+      "first_date": "2026-04-24",
+      "appearances": 2
+    },
+    {
+      "id": "mirror_lyssa",
+      "name": "Mirror-Lyssa",
+      "aliases": [
+        "Lyssa (reflection)"
+      ],
+      "tagline": "Aware. Pragmatic. Reconciling.",
+      "role": "Deepkin Reflection (Autonomous)",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Council of Depths",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "realmwide",
+      "bio": "Mirror-Lyssa is a third autonomous reflection born from the deepkin commander crisis. Unlike Mirror-Kess, she has achieved true autonomy and awareness, and proposes a radical solution: allow both versions of Kess to rule different deepkin territories, creating a split culture.",
+      "traits": [
+        "aware",
+        "innovative",
+        "problem-solving"
+      ],
+      "known_locations": [
+        "Council of Depths"
+      ],
+      "affiliations": [
+        "Council of Depths"
+      ],
+      "notes": "Her proposal risks fracturing deepkin civilization but may be the only way to prevent the Tear of the Drowned God from rupturing completely.",
+      "first_story": "The Deepkin's Reflection War Escalates",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "depths",
+      "name": "Depths",
+      "aliases": [
+        "crisis of the doubled commanders reaches a breaking point"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Crisis Of The Doubled Commanders Reaches A Breaking Point",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named crisis of the doubled commanders reaches a breaking point explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Deepkin's Reflection War Escalates",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "elder_language",
+      "name": "Elder Language",
+      "aliases": [
+        "bone-songs"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Bone-Songs",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named bone-songs explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Bone-Singer's Refusal",
+      "first_date": "2026-04-24",
       "appearances": 1
     }
   ],
@@ -20709,7 +21026,7 @@
       "status": "active",
       "notes": "Currently debating the deepkin's response to the fracturing of the Abyss barrier.",
       "first_date": "2026-03-06",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "jade_coast",
@@ -21200,7 +21517,7 @@
       "status": "active",
       "notes": "Dozens of transformed merchants and refugees are drawn here; the nature of the transformation is unclear.",
       "first_date": "2026-03-10",
-      "appearances": 17
+      "appearances": 18
     },
     {
       "id": "shattered_wastes",
@@ -21888,7 +22205,7 @@
       "status": "active",
       "notes": "Significant as the point where Mira chose redemption over flight.",
       "first_date": "2026-03-18",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "verdant_strand",
@@ -23473,7 +23790,7 @@
       "status": "active",
       "notes": "Merchants present were transformed or offered transcendence, their final choices suspended and then suddenly released by The Wanderer's statement.",
       "first_date": "2026-04-14",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "eyrie_in_the_mountains",
@@ -23512,7 +23829,7 @@
       "status": "active",
       "notes": "A key location for maritime trade and intrigue. Corsairs respect Corvalen, suggesting his reputation extends beyond merchant circles.",
       "first_date": "2026-04-15",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "saltmere_docks",
@@ -23552,7 +23869,7 @@
       "status": "active",
       "notes": "A stronghold of corsair culture and dangerous maritime life. Corvalen's reputation here is legendary.",
       "first_date": "2026-04-15",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "keshtir",
@@ -23888,7 +24205,7 @@
       "status": "active but threatened",
       "notes": "If Sevin destroys all prophecy-ledgers, the Counter-Archive loses its purpose. If he rewrites his own ledger, he risks triggering the tenth iteration.",
       "first_date": "2026-04-18",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "sealed_tombs",
@@ -24066,6 +24383,66 @@
       "status": "active",
       "notes": "This location may be a nexus of pre-human magic or a wound left by the Luminous Ascension. The flutes within are sentient or transcendent, and they continue their chorus indefinitely.",
       "first_date": "2026-04-23",
+      "appearances": 1
+    },
+    {
+      "id": "lantern_market",
+      "name": "Lantern Market",
+      "tagline": "Merchants. Bounties. Shadowed.",
+      "place_type": "district",
+      "world": "Edhra",
+      "parent_place": "Greyport",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Dominion",
+      "province": "unknown",
+      "region": "The Iron Coast",
+      "district": "Lantern Market",
+      "atmosphere": "An evening marketplace alive with whispered rumors, where merchants trade goods and information alike.",
+      "description": "A market within Greyport where Marin moves at dusk to avoid notice, and where merchants openly whisper of bounties on her.",
+      "status": "active",
+      "notes": "Merchants here are aware of the hunt for Marin and the Tear, making it a dangerous passage.",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "hermitage_of_ketmorian",
+      "name": "Hermitage of Keth'morian",
+      "tagline": "Sacred. Healing. Hidden.",
+      "place_type": "temple",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A sanctuary whose cracked foundation stones begin to heal when the Tear is returned, suggesting restoration and sacred purpose.",
+      "description": "The Hermitage of Keth'morian sits three days inland from Greyport. It is the spiritual home of the priest who trained Marin and the destination of her sacred theft. The sanctuary has cracked foundation stones that begin healing when the Tear of Ashglass is returned.",
+      "status": "active",
+      "notes": "The Tear's healing power suggests this sanctuary has deep spiritual significance and connection to the artifact.",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "western_mountains",
+      "name": "western mountains",
+      "tagline": "Refuge. Sunlit. Distant.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Shattered West",
+      "district": "unknown",
+      "atmosphere": "A mountainous wilderness toward which Marin walks as the Tear begins its healing work.",
+      "description": "Mountains to the west of Greyport where Marin walks after completing her mission, her copper fingers gleaming in sunrise.",
+      "status": "active",
+      "notes": "Suggests Marin seeks solitude or further sanctuary after returning the Tear.",
+      "first_date": "2026-04-24",
       "appearances": 1
     }
   ],
@@ -24421,7 +24798,7 @@
       "status": "active",
       "notes": "The Drowned God's true nature and extent are unknown. It may be a pre-Remaking entity awakened by the transformation.",
       "first_date": "2026-03-12",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "luminous_ascension",
@@ -24630,7 +25007,7 @@
       "status": "active",
       "notes": "Its true nature is ambiguous; it may be a construct, a fragment of a larger consciousness, or a mechanism itself designed to slow or freeze reality.",
       "first_date": "2026-03-21",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "void_echoes",
@@ -24883,7 +25260,7 @@
       "status": "active",
       "notes": "The Tower's song is heard by Kaiden and represents a fourth path or temptation separate from the three primary transformation options. Its hunger approaches the Pale Crossing from one direction.",
       "first_date": "2026-04-10",
-      "appearances": 4
+      "appearances": 6
     },
     {
       "id": "ebon_tower_entity",
@@ -25196,7 +25573,7 @@
       "status": "active",
       "notes": "The Tear bore Marin's name inscribed in silver inside its case, suggesting it knew of his theft in advance. The Hermitage of Keth'morian commissioned its theft.",
       "first_date": "2026-03-08",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "tear_of_drowned_god",
@@ -25209,7 +25586,7 @@
       "status": "active",
       "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
       "first_date": "2026-03-10",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "stolen_memories",
@@ -25472,7 +25849,7 @@
       "status": "active",
       "notes": "Their widespread distribution causes the collapse of the Empire's ledger system and forces a reckoning with the lie at the Empire's foundation.",
       "first_date": "2026-03-25",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "original_pre_human_ledgers",
@@ -26395,7 +26772,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-09",
-      "appearances": 6,
+      "appearances": 7,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Council of Depths",
@@ -26458,7 +26835,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 7,
+      "appearances": 8,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -26641,7 +27018,7 @@
       "status": "active",
       "notes": "Significant as the threshold of Mira's redemptive choice.",
       "first_date": "2026-03-18",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -26704,6 +27081,25 @@
       "continent": "unknown",
       "realm": "unknown",
       "district": "shadow-markets"
+    },
+    {
+      "id": "lantern_market_district",
+      "name": "Lantern Market",
+      "tagline": "Merchants. Bounties. Shadowed.",
+      "description": "An evening marketplace within Greyport where merchants openly discuss bounties and danger. Marin moves through it at dusk to avoid detection.",
+      "parent_place": "Greyport",
+      "province": "unknown",
+      "region": "The Iron Coast",
+      "function": "Primary marketplace and information hub; center of merchant activity and rumors.",
+      "status": "active",
+      "notes": "Merchants here are aware of the hunt for Marin and the Tear, making it a dangerous but necessary passage.",
+      "first_date": "2026-04-24",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "district": "Lantern Market"
     }
   ],
   "events": [
@@ -27337,7 +27733,7 @@
       "significance": "The Luminous Ascension is the foundational cosmic event of this story's world. It created the new stars, erased the old, and fundamentally altered the nature of reality. The memory-theft driven by the phantom-Echo is an attempt to recover what was lost in this rewrite.",
       "notes": "This is a past event but with ongoing consequences. The phantom-Echo is a direct result of the Luminous Ascension and seeks to undo or understand its effects.",
       "first_date": "2026-03-10",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "the_auditors_ruin",
@@ -30766,6 +31162,124 @@
       "notes": "Kethiel's choice regarding how to resolve the reflection crisis will directly determine the outcome of this negotiation. Three options proposed: ritual combat consolidation, acceptance of plural identity, or surrender to the Wanderer's questioning.",
       "first_date": "2026-04-23",
       "appearances": 1
+    },
+    {
+      "id": "deepkin_reflection_war_escalates",
+      "name": "The Deepkin's Reflection War Escalates",
+      "tagline": "Doubled. Fracturing. Unresolved.",
+      "event_type": "crisis / governance failure / existential threat",
+      "scope": "realmwide",
+      "epicenter_place": "Council of Depths",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "Council of Depths",
+      "affected_places": [
+        "Council of Depths"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "Council of Depths"
+      ],
+      "radius": "realmwide",
+      "participants": [
+        "Commander Kess",
+        "Mirror-Kess",
+        "Mirror-Lyssa",
+        "Krell the Ironbound",
+        "deepkin civilization"
+      ],
+      "outcome": "Unresolved. Mirror-Lyssa proposes dual rule of split territories. Krell recognizes that only erasure of one Kess can stop the rupture, but neither reflection will accept dissolution. The Tear of the Drowned God is beginning to crack.",
+      "significance": "The crisis threatens the fundamental governance structure and territorial integrity of deepkin civilization. The boundary between deepkin realms may permanently fracture if the commanders cannot be reconciled or one is not chosen.",
+      "notes": "Critical threads: Will the original Commander Kess be found? Will Mirror-Kess accept erasure? Can the Tear of the Drowned God be healed if deepkin civilization splits? What does dual rule really mean for deepkin culture?",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "counter_archive_discovery",
+      "name": "The Counter-Archive Burns",
+      "tagline": "Exposed. Bargained. Consumed.",
+      "event_type": "discovery / infiltration / moral crisis",
+      "scope": "regional",
+      "epicenter_place": "Counter-Archive",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Counter-Archive"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "unknown",
+      "participants": [
+        "Sevin the Warden",
+        "archivists",
+        "Obsidian Tower"
+      ],
+      "outcome": "The Counter-Archive is discovered by the Obsidian Tower, not the Dominion. The Tower offers a bargain: preserve the counter-ledgers if the archivists help it complete its hunger. Some archivists scatter records; Sevin realizes the Tower has already copied everything.",
+      "significance": "The Counter-Archive's power lay not in secrecy but in the act of documentation itself. By preserving refugee testimony, the archivists have unknowingly created a map of human resilience that the Obsidian Tower can consume. The fundamental purpose of the Counter-Archive may have been corrupted from the beginning.",
+      "notes": "Sevin's moral dilemma: destroy her life's work or accept complicity with the Tower. The Tower's hunger is not yet sated\u2014it seeks the archivists' help to 'complete' it, suggesting a larger cosmic working or consumption.",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "widows_final_compass",
+      "name": "The Widow's Final Compass",
+      "tagline": "Seeking. Impossible. Accepting.",
+      "event_type": "spiritual quest / realization",
+      "scope": "personal",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "unknown"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "personal",
+      "participants": [
+        "The Widow"
+      ],
+      "outcome": "The Widow finds her grandmother's compass and discovers it does not point to a place but to a choice between return and forward movement. She realizes her grandmother knew this and carved the compass as a monument to the impossibility of return. The Widow begins carving a new compass pointing toward acceptance.",
+      "significance": "This event represents a fundamental shift in understanding the Luminous Ascension and its aftermath. The Widow's realization that return is impossible but forward movement is necessary may inspire others to abandon escapist thinking and engage with the new world as it is.",
+      "notes": "The grandmother's compass itself is a relic of deep significance, suggesting long knowledge of the Ascension's permanence. The Widow's new compass may become a symbolic artifact for post-Ascension culture.",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "the_wanderer_speaks_again",
+      "name": "The Wanderer Speaks Again",
+      "tagline": "Ancient song. Global revelation. Cyclical memory.",
+      "event_type": "ritual",
+      "scope": "world",
+      "epicenter_place": "Sunken Cathedrals",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Sunken Cathedrals"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "Spreads across the world like a ripple",
+      "participants": [
+        "The Wanderer"
+      ],
+      "outcome": "The Wanderer sings an ancient pre-human song that harmonizes with the Elder Language and bone-songs. Those who hear it remember the world before the Ascension and the eighth iteration. Some go mad; others begin mapping the pattern of cycles.",
+      "significance": "This event reveals the shape of cyclical ascensions for the first time and forces collective memory of pre-human worlds upon the world's inhabitants.",
+      "notes": "The revelation is described as both mercy and trap\u2014a form of stasis analogous to the Wanderer's previous silence.",
+      "first_date": "2026-04-24",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -30996,7 +31510,7 @@
       "status": "active",
       "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
       "first_date": "2026-03-15",
-      "appearances": 11
+      "appearances": 12
     },
     {
       "id": "life_speakers",
@@ -31837,6 +32351,30 @@
       "notes": "Use Tornik's black-market spice hub to navigate between realms and evade surface authorities.",
       "first_date": "2026-04-23",
       "appearances": 1
+    },
+    {
+      "id": "archivists_counter_archive",
+      "name": "Archivists (Counter-Archive)",
+      "tagline": "Hidden. Preserving. Divided.",
+      "alignment": "neutral",
+      "goals": "Preserve records of refugee testimony and human resilience; resist state authority; document truth outside official channels.",
+      "leader": "Sevin the Warden",
+      "status": "active",
+      "notes": "The faction is now splitting over the Obsidian Tower's bargain. Some refuse and attempt to scatter records; others may accept the Tower's offer. The archivists face the realization that their documentation may have been feeding the very entity they feared.",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "obsidian_tower_agents",
+      "name": "Obsidian Tower (as Faction)",
+      "tagline": "Ancient. Hungry. Bargaining.",
+      "alignment": "chaotic",
+      "goals": "Complete its hunger; consume maps of human resilience; acquire knowledge and documentation.",
+      "leader": "Obsidian Tower (entity)",
+      "status": "active",
+      "notes": "The Tower offers preservation of archival records in exchange for assistance completing its hunger. Its precise aims and the nature of its 'hunger' remain mysterious.",
+      "first_date": "2026-04-24",
+      "appearances": 1
     }
   ],
   "lore": [
@@ -32543,7 +33081,7 @@
       "status": "confirmed",
       "notes": "A language in which the Singing Scar teaches mathematics. Its origin and relationship to pre-human languages unknown.",
       "first_date": "2026-03-17",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "the_rewritten_world",
@@ -32664,7 +33202,7 @@
       "status": "confirmed",
       "notes": "Xorth existed before the Luminous Ascension, suggesting it was a major cosmic event that fundamentally altered the world.",
       "first_date": "2026-03-21",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "convergence_event",
@@ -33126,7 +33664,7 @@
       "status": "confirmed",
       "notes": "A magical tradition learned and practiced by Kess; suggests deeper magical systems tied to life, death, or resonance.",
       "first_date": "2026-04-08",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "predetermined_fates",
@@ -33633,6 +34171,39 @@
       "notes": "A form of consciousness or being created during the Luminous Ascension that becomes self-aware and capable of independent action. Kethiel is an example. Raises philosophical questions about identity, authenticity, and plurality.",
       "first_date": "2026-04-23",
       "appearances": 1
+    },
+    {
+      "id": "the_eighth_iteration",
+      "name": "The Eighth Iteration",
+      "tagline": "Forgotten. Recovered. Cyclical.",
+      "category": "history",
+      "source": "The Wanderer's song; collective memory",
+      "status": "confirmed",
+      "notes": "Refers to a previous world-cycle that inhabitants of the current world had forgotten. The Wanderer's song reveals this cycle and the pattern of cyclical ascensions.",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "world_before_ascension",
+      "name": "The World Before the Ascension",
+      "tagline": "Lost. Remembered. Pre-current.",
+      "category": "history",
+      "source": "The Wanderer's song",
+      "status": "confirmed",
+      "notes": "A previous state of the world that those who hear the Wanderer's song come to remember. The Ascension appears to mark a major world-transition event.",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "resonant_frequencies",
+      "name": "Resonant Frequencies",
+      "tagline": "Binding. Pre-human. Cyclical.",
+      "category": "legend",
+      "source": "The Sunken Cathedrals",
+      "status": "confirmed",
+      "notes": "Frequencies that bind the Sunken Cathedrals and harmonize with ancient pre-human song. May be tied to cosmic cycles and memory-bearing magic.",
+      "first_date": "2026-04-24",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -33646,7 +34217,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "wolf_spirit_beast",
@@ -34352,7 +34923,7 @@
       "status": "active",
       "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
       "first_date": "2026-03-10",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "vethis_sacrificed_consciousness",
@@ -34652,6 +35223,30 @@
       "status": "active",
       "notes": "Central to the deepkin realms' structural integrity; its fate determines whether the boundary war can be resolved without cataclysm.",
       "first_date": "2026-04-22",
+      "appearances": 1
+    },
+    {
+      "id": "tear_of_ashglass_relic",
+      "name": "Tear of Ashglass",
+      "tagline": "Singing. Healing. Sacred.",
+      "origin": "Unknown; housed in the Sovereign's Archives before being smuggled by a Hermitage priest",
+      "power": "Heals cracked stone and sanctuary foundations. Sings faintly like distant bells. Suggests connection to restoration, healing, and sacred geometry.",
+      "curse": "Unknown, though its theft brought persecution by the Dominion's wardens and forced years of piracy and hiding.",
+      "status": "active",
+      "notes": "The Tear's singing quality and healing power suggest it is a cosmic or pre-human artifact. Its return to the Hermitage begins a visible restoration process, validating the philosophy of sacred theft.",
+      "first_date": "2026-04-24",
+      "appearances": 1
+    },
+    {
+      "id": "the_wanderers_song",
+      "name": "The Wanderer's Song",
+      "tagline": "Ancient. Revelatory. World-spreading.",
+      "origin": "The Wanderer, an ancient pre-human entity",
+      "power": "Spreads across the world like a ripple, causing those who hear it to remember the world before the Ascension and the eighth iteration. Harmonizes with the Elder Language, bone-songs, and resonant frequencies of the Sunken Cathedrals.",
+      "curse": "Some who hear it go mad. Even those who retain sanity find the revelation inescapable\u2014it is a form of stasis or trap.",
+      "status": "active",
+      "notes": "The song is both mercy and revelation; it forces collective memory of pre-human worlds and cyclical patterns upon the world.",
+      "first_date": "2026-04-24",
       "appearances": 1
     }
   ],
@@ -36894,7 +37489,7 @@
       "description": "The governing council of the deepkin who convene to address the fracturing of the barrier between surface and Abyss Below. They debate three options: sealing themselves away completely, risking catastrophic war with surface dwellers, or undertaking an expedition to understand what awakens beneath.",
       "notes": "Currently in crisis deliberation mode. Warden Sylas has chosen the hardest path and descended into the Cerulean Trench.",
       "first_date": "2026-03-06",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "twilight_syndicate_polity",
@@ -36926,7 +37521,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 12
+      "appearances": 13
     },
     {
       "id": "the_hegemony",
