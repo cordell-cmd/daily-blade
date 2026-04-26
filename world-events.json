@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-25T10:31:56.337649+00:00",
+  "generated_at": "2026-04-26T10:32:15.627886+00:00",
   "source": "codex.json",
   "intensity_min": 1,
   "intensity_max": 5,
@@ -15,8 +15,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-25",
-      "recent_issues": 12,
-      "trend": 1,
+      "recent_issues": 11,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "cavern halls"
@@ -95,8 +95,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-25",
-      "recent_issues": 8,
-      "trend": 2,
+      "recent_issues": 7,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Burned Expanse",
@@ -188,8 +188,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-25",
-      "recent_issues": 8,
-      "trend": 2,
+      "recent_issues": 7,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Corinth",
@@ -265,8 +265,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-25",
-      "recent_issues": 8,
-      "trend": 2,
+      "recent_issues": 7,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Tower (as artifact/nexus)",
@@ -346,8 +346,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-21",
-      "recent_issues": 5,
-      "trend": 0,
+      "recent_issues": 4,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "Scorched Reach"
@@ -426,8 +426,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-21",
-      "recent_issues": 5,
-      "trend": 0,
+      "recent_issues": 4,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "The Scorched Reach",
@@ -537,56 +537,6 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "Tenth Ascension",
-      "tagline": "Imminent. Inevitable. Counting-down.",
-      "event_type": "catastrophe",
-      "scope": "world",
-      "epicenter": "Archive Tower",
-      "stage": "crisis",
-      "intensity": 4,
-      "resolved": false,
-      "last_seen": "2026-04-25",
-      "recent_issues": 2,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "Tower (as artifact/nexus)",
-          "Archive Tower",
-          "archive"
-        ],
-        "regions": [
-          "all regions"
-        ],
-        "realms": [
-          "all realms"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-02",
-          "title": "The Young Sorcerer's Inherited Trap"
-        },
-        {
-          "date": "2026-04-12",
-          "title": "The Auditor's Final Ledger"
-        },
-        {
-          "date": "2026-04-25",
-          "title": "The Auditor's Secret Ledger"
-        },
-        {
-          "date": "2026-04-25",
-          "title": "The Initiate's Forbidden Ascent"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nThe Tenth Ascension began not as a sudden catastrophe but as a hidden mechanism waiting to be triggered. An Apprentice-Sorcerer guarding the Archive Tower discovered that the vault containing records of nine previous Luminous Ascensions was never sealed\u2014it was *designed* to invite the worthy inside, and each book read accelerated a countdown toward a tenth cycle. This revelation, detailed in \"The Young Sorcerer's Inherited Trap,\" set events in motion across the world. Within weeks, Auditors and scholars uncovered the terrible truth: the prophecy-ledgers were not predictions but testimony from survivors of previous Ascensions, imprinted recursively onto reality itself, meaning multiple versions of history exist simultaneously. By late April 2026, the crisis deepened as evidence emerged that a tenth Ascension was already underway\u2014not as prophecy but as an active working. Simultaneously, a second, independent cosmic ritual was discovered in the Scorched Reach, its true purpose unclear: counter to the Tower or orchestrated acceleration toward its completion. The world now faces cascading revelations that the cycle may be unbreakable, that official powers may be deliberately suppressing the truth, and that multiple forces are moving to either prevent or ensure the Tower's final ascension.\n\nCURRENT STATE:\n- The Tenth Ascension is in active crisis phase as of April 25, 2026, with intensity rated at 4 (crisis level).\n- Knowledge of the cycle and the Tower's nature has spread to scholars, auditors, and initiates, but remains suppressed by official authority (the Dominion).\n- A second independent cosmic working is underway in the Scorched Reach, whose aims and effects remain uncertain.\n- Multiple versions of archival reality exist simultaneously, complicating any single timeline of cause and effect.\n\nOPEN THREADS:\n- Can the recursion be broken without erasing multiple timelines and identities across iterations?\n- Is the Scorched Reach working a genuine counter to the Tower, or is it orchestrated by the Tower to ensure its own completion?\n- Will the suppressed knowledge held by Auditors like Petris reach those who can act, or will the Dominion maintain control of the narrative?\n- What sacrifice, if any, will be required to halt the Tenth Ascension, and who will bear it?",
-      "arc_summary_last_seen": "2026-04-25",
-      "arc_summary_fingerprint": "495cb8a124d61d03d1f8fb8d853a7d55b4bcd430",
-      "arc_summary_updated_at": "2026-04-25T10:31:51.491519+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
       "name": "Radiant Ascension (side effects)",
       "tagline": "Transformation. Convergence. Aftermath.",
       "event_type": "catastrophe / ritual",
@@ -691,39 +641,53 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "The Wanderer Speaks Again",
-      "tagline": "Ancient song. Global revelation. Cyclical memory.",
-      "event_type": "ritual",
+      "name": "Tenth Ascension",
+      "tagline": "Imminent. Inevitable. Counting-down.",
+      "event_type": "catastrophe",
       "scope": "world",
-      "epicenter": "Sunken Cathedrals",
+      "epicenter": "Archive Tower",
       "stage": "rising",
       "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-04-24",
+      "last_seen": "2026-04-25",
       "recent_issues": 1,
       "trend": 1,
       "referenced_locations": {
         "places": [
-          "Sunken Cathedrals"
+          "Tower (as artifact/nexus)",
+          "Archive Tower",
+          "archive"
         ],
         "regions": [
-          "unknown"
+          "all regions"
         ],
         "realms": [
-          "unknown"
+          "all realms"
         ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-04-24",
-          "title": "The Wanderer Speaks Again"
+          "date": "2026-04-02",
+          "title": "The Young Sorcerer's Inherited Trap"
+        },
+        {
+          "date": "2026-04-12",
+          "title": "The Auditor's Final Ledger"
+        },
+        {
+          "date": "2026-04-25",
+          "title": "The Auditor's Secret Ledger"
+        },
+        {
+          "date": "2026-04-25",
+          "title": "The Initiate's Forbidden Ascent"
         }
       ],
-      "arc_summary": "SUMMARY:\nThe Wanderer, a being of immense power whose previous utterance froze reality itself, has broken its silence once more\u2014but not with words or commands. On 2026-04-24, \"The Wanderer Speaks Again\" marked a shift from interrogation to revelation: the entity sang an ancient, pre-human song that harmonized with the Elder Language and the mystical frequencies woven through the Sunken Cathedrals. Unlike its paralyzing statement before, this song rippled across the world and awakened memory in all who heard it\u2014forced recollection of the world before the Ascension, of an eighth iteration of reality long forgotten. The revelation carries its own danger: some who remember fall into madness, while others begin to perceive the underlying cyclical pattern that governs existence itself. The Wanderer's gift is not mercy but dangerous knowledge, and the world is still processing what has been unveiled.\n\nCURRENT STATE:\n- The event is in its rising stage, with global scope but not yet at crisis intensity\n- The Wanderer remains active at the Sunken Cathedrals, the epicenter of the song's power\n- Widespread but uneven effects: some populations suffer psychological damage from enforced remembrance, while others are beginning to map the cosmic cycle\n- No resolution is in sight; the entity's intentions and next move remain opaque\n\nOPEN THREADS:\n- What is the nature of the cycle the Wanderer is revealing, and how many iterations have there truly been?\n- Will the Wanderer sing again, and if so, what further revelations or upheaval might follow?\n- Can the knowledge already spread be contained, or will understanding of the cycle continue to spread and destabilize civilization?\n- What does the Wanderer ultimately want humanity to do with this dangerous knowledge?",
-      "arc_summary_last_seen": "2026-04-24",
-      "arc_summary_fingerprint": "03b1b9701767fc890db9acefa9b0d53a89019868",
-      "arc_summary_updated_at": "2026-04-24T10:47:18.145663+00:00",
+      "arc_summary": "SUMMARY:\nThe Tenth Ascension began not as a sudden catastrophe but as a hidden mechanism waiting to be triggered. An Apprentice-Sorcerer guarding the Archive Tower discovered that the vault containing records of nine previous Luminous Ascensions was never sealed\u2014it was *designed* to invite the worthy inside, and each book read accelerated a countdown toward a tenth cycle. This revelation, detailed in \"The Young Sorcerer's Inherited Trap,\" set events in motion across the world. Within weeks, Auditors and scholars uncovered the terrible truth: the prophecy-ledgers were not predictions but testimony from survivors of previous Ascensions, imprinted recursively onto reality itself, meaning multiple versions of history exist simultaneously. By late April 2026, the crisis deepened as evidence emerged that a tenth Ascension was already underway\u2014not as prophecy but as an active working. Simultaneously, a second, independent cosmic ritual was discovered in the Scorched Reach, its true purpose unclear: counter to the Tower or orchestrated acceleration toward its completion. The world now faces cascading revelations that the cycle may be unbreakable, that official powers may be deliberately suppressing the truth, and that multiple forces are moving to either prevent or ensure the Tower's final ascension.\n\nCURRENT STATE:\n- The Tenth Ascension is in active crisis phase as of April 25, 2026, with intensity rated at 4 (crisis level).\n- Knowledge of the cycle and the Tower's nature has spread to scholars, auditors, and initiates, but remains suppressed by official authority (the Dominion).\n- A second independent cosmic working is underway in the Scorched Reach, whose aims and effects remain uncertain.\n- Multiple versions of archival reality exist simultaneously, complicating any single timeline of cause and effect.\n\nOPEN THREADS:\n- Can the recursion be broken without erasing multiple timelines and identities across iterations?\n- Is the Scorched Reach working a genuine counter to the Tower, or is it orchestrated by the Tower to ensure its own completion?\n- Will the suppressed knowledge held by Auditors like Petris reach those who can act, or will the Dominion maintain control of the narrative?\n- What sacrifice, if any, will be required to halt the Tenth Ascension, and who will bear it?",
+      "arc_summary_last_seen": "2026-04-25",
+      "arc_summary_fingerprint": "495cb8a124d61d03d1f8fb8d853a7d55b4bcd430",
+      "arc_summary_updated_at": "2026-04-25T10:31:51.491519+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -762,90 +726,6 @@
       "arc_summary_last_seen": "2026-04-25",
       "arc_summary_fingerprint": "c1323aa94ec5637e4a7f76b15cda05aa6ae3348e",
       "arc_summary_updated_at": "2026-04-25T10:31:56.337254+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Stellar Rite",
-      "tagline": "Cosmic. Rewriting. Catastrophic.",
-      "event_type": "ritual / cosmic event",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-04-12",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Vethrim",
-          "Scorched Reach",
-          "Sapphire Deep",
-          "The Scorched Reach"
-        ],
-        "regions": [
-          "Scorched Reach",
-          "The Scorched Reach"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-03",
-          "title": "The Merchant's Shadow Rebels"
-        },
-        {
-          "date": "2026-04-03",
-          "title": "The Auditor's Final Reckoning"
-        },
-        {
-          "date": "2026-04-03",
-          "title": "The Young Sorcerer's Ninth Journal"
-        },
-        {
-          "date": "2026-04-03",
-          "title": "The Resonance Fragments Converge"
-        },
-        {
-          "date": "2026-04-03",
-          "title": "The Refugee Scribe's Final Archive"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Spice-Runner's Widow"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Artificer's Fractured Instrument"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Cartographer's Final Map"
-        },
-        {
-          "date": "2026-04-06",
-          "title": "The Memory-Thief's Gospel"
-        },
-        {
-          "date": "2026-04-11",
-          "title": "The Initiate's Forbidden Convergence"
-        },
-        {
-          "date": "2026-04-12",
-          "title": "The Auditor's Final Ledger"
-        },
-        {
-          "date": "2026-04-01",
-          "title": "The Wanderer's Question"
-        }
-      ],
-      "arc_summary": "SUMMARY:\nIn the spring of 2026, the astronomer-prince Zareth performed the Stellar Rite\u2014a cosmic working of impossible scope that sacrificed his own memories to birth new stars and save the world from darkness. But the act shattered something fundamental: his consciousness fractured into seventeen pieces scattered across reality, and a strange entity emerged from the spaces between light and shadow, hungering to understand what had been destroyed. As news of the Rite spread, the world began to reshape itself. Ancient pre-human ruins aligned to the new constellation started to wake and hum with purpose; the lines of magical power redrew themselves; and the Obsidian Tower\u2014once a seal and a bridge\u2014developed a voice and an appetite. By late March, fragments of Zareth's consciousness began manifesting across multiple regions simultaneously, each with partial memory and conflicting purposes, while shadow-merchants, cartographers, memory-thieves, and auditors raced to understand what had truly happened. The turning point came in early April when it became clear the Stellar Rite was not an act of salvation but the ninth iteration of a cyclical cosmic working\u2014one that had failed catastrophically eight times before\u2014and that the Tower itself was orchestrating a convergence to either complete or reverse the Ascension. Now, in mid-April, the world stands at breaking point: consciousness fragments are being hunted and gathered by multiple factions, prophecy-ledgers are rewriting themselves in real-time, the Tower's hunger is accelerating, and reality itself is fracturing into contradictory versions as people discover that the Stellar Rite may have created not one future but many, layered on top of each other.\n\nCURRENT STATE:\n- Multiple consciousness fragments of Zareth are converging toward the Obsidian Tower, drawn by forces both deliberate and instinctive, while factions race to either gather or scatter them first.\n- The Tower's accelerating hunger is consuming documentation, memories, and physical landmarks, reshaping geography and rewriting historical records in real-time.\n- Reality has become unstable and recursive: at least nine simultaneous timelines or versions of history are now superimposed, each with valid but contradictory claims to truth.\n- The Stellar Rite is revealed to be a repeating cycle, with catastrophic failure as the baseline outcome; a tenth iteration may already be underway.\n\nOPEN THREADS:\n- Will the seventeen consciousness fragments of Zareth reassemble naturally (as the Tower intends) or according to a broken pattern that might prevent a second sacrifice?\n- Can the world survive complete reassembly of Zareth's consciousness, or will remembering what was sacrificed destabilize reality further?\n- Is reversal of the Stellar Rite possible, and if so, what would be erased\u2014the current world, all post-Rite history, or something worse?\n- Who originally orchestrated the cycle of Ascensions centuries ago, and do they still exist in some form?\n- Will the living archives and prophecy-ledgers be destroyed, hidden, or released\u2014and what happens to history if the documentation itself collapses?\n- Can any faction prevent the Tower from consuming the ninth journal and erasing knowledge of the Ascension cycle?",
-      "arc_summary_last_seen": "2026-04-12",
-      "arc_summary_fingerprint": "67187d3884f8157ef54db923a2cee8c3fb1efdfe",
-      "arc_summary_updated_at": "2026-04-12T10:28:36.216129+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -1397,6 +1277,42 @@
       "arc_summary_last_seen": "2026-04-22",
       "arc_summary_fingerprint": "aec13bba2a46873e03bfa8becc84d5731fa43f8a",
       "arc_summary_updated_at": "2026-04-22T10:45:55.657523+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Wanderer Speaks Again",
+      "tagline": "Ancient song. Global revelation. Cyclical memory.",
+      "event_type": "ritual",
+      "scope": "world",
+      "epicenter": "Sunken Cathedrals",
+      "stage": "simmering",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-04-24",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Sunken Cathedrals"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-24",
+          "title": "The Wanderer Speaks Again"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nThe Wanderer, a being of immense power whose previous utterance froze reality itself, has broken its silence once more\u2014but not with words or commands. On 2026-04-24, \"The Wanderer Speaks Again\" marked a shift from interrogation to revelation: the entity sang an ancient, pre-human song that harmonized with the Elder Language and the mystical frequencies woven through the Sunken Cathedrals. Unlike its paralyzing statement before, this song rippled across the world and awakened memory in all who heard it\u2014forced recollection of the world before the Ascension, of an eighth iteration of reality long forgotten. The revelation carries its own danger: some who remember fall into madness, while others begin to perceive the underlying cyclical pattern that governs existence itself. The Wanderer's gift is not mercy but dangerous knowledge, and the world is still processing what has been unveiled.\n\nCURRENT STATE:\n- The event is in its rising stage, with global scope but not yet at crisis intensity\n- The Wanderer remains active at the Sunken Cathedrals, the epicenter of the song's power\n- Widespread but uneven effects: some populations suffer psychological damage from enforced remembrance, while others are beginning to map the cosmic cycle\n- No resolution is in sight; the entity's intentions and next move remain opaque\n\nOPEN THREADS:\n- What is the nature of the cycle the Wanderer is revealing, and how many iterations have there truly been?\n- Will the Wanderer sing again, and if so, what further revelations or upheaval might follow?\n- Can the knowledge already spread be contained, or will understanding of the cycle continue to spread and destabilize civilization?\n- What does the Wanderer ultimately want humanity to do with this dangerous knowledge?",
+      "arc_summary_last_seen": "2026-04-24",
+      "arc_summary_fingerprint": "03b1b9701767fc890db9acefa9b0d53a89019868",
+      "arc_summary_updated_at": "2026-04-24T10:47:18.145663+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -2428,6 +2344,46 @@
       "arc_summary_last_seen": "2026-03-30",
       "arc_summary_fingerprint": "1838ae446189de52d135a6018d78744936f572dd",
       "arc_summary_updated_at": "2026-04-23T10:48:01.771642+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Memory-Thief's Reconstruction",
+      "tagline": "Dangerous. Destabilizing. Revelatory.",
+      "event_type": "quest / ritual",
+      "scope": "world",
+      "epicenter": "hidden archives",
+      "stage": "seed",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-04-01",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "The Dominion",
+          "hidden archives",
+          "waystation libraries",
+          "shadow-archives"
+        ],
+        "regions": [
+          "The Dominion"
+        ],
+        "realms": [
+          "The Dominion",
+          "Dominion"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-01",
+          "title": "The Memory-Thief's Reconstruction"
+        }
+      ],
+      "arc_summary": "SUMMARY:\nIn the aftermath of the Stellar Rite, a consciousness fragment known as the Memory-Thief or Phantom-Echo began collecting scattered memories from hidden archives, waystation libraries, and shadow-archives across the Dominion\u2014not to restore the fallen powers Zareth or Nethys, but to preserve a record of the world before the Luminous Ascension erased it. Guided by Liv's living archive, the fragment moved methodically through refuges and bone-singer testimonies, assembling a history the Dominion had tried to forget. However, as documented in \"The Memory-Thief's Reconstruction,\" the act of gathering these memories became destabilizing; with each piece recovered, the fragment realized the pre-Ascension world it sought to preserve may never have existed as remembered\u2014that the Ascension itself had rewritten the very nature of memory. This discovery forced a philosophical crisis: completing the reconstruction might tear reality apart by spawning a parallel world where the Ascension never occurred, contradicting existence as it now stands. The memory-worker Sorren, a bone-singer skilled in memory-craft, found herself recruited by competing factions to either aid or sabotage the fragment's quest, caught between conflicting loyalties while uncovering that the fragment's pursuit of truth might be the only honest thing remaining in a world of manufactured falsehoods.\n\nCURRENT STATE:\n- The Memory-Thief remains actively gathering in hidden archives and waystation libraries, moving cautiously as awareness of the existential danger grows.\n- Multiple factions are engaged in a cold war to either complete or prevent the reconstruction.\n- Sorren navigates between these competing loyalties, holding knowledge that could determine the outcome.\n- The situation remains unresolved and destabilizing, though not yet in open crisis.\n\nOPEN THREADS:\n- Will the Memory-Thief choose to complete the reconstruction despite the reality-tearing consequences?\n- What are the true allegiances and endgames of the factions seeking to control Sorren?\n- Can the pre-Ascension world be recovered if memory itself has been fundamentally rewritten?\n- What happens if a parallel reality formed by the reconstruction collides with the current world?",
+      "arc_summary_last_seen": "2026-04-01",
+      "arc_summary_fingerprint": "ef240fa00afd4f2313a9b12db6668a59e2310af6",
+      "arc_summary_updated_at": "2026-04-26T10:32:15.627822+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     }
   ]
