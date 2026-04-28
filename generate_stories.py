@@ -18,6 +18,7 @@ import hashlib
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 import anthropic
+from world_state import sync_world_state_from_codex_and_stories
 
 
 def _parse_date_key(date_key: str):
@@ -54,6 +55,7 @@ LORE_FILE       = "lore.json"
 CHARACTERS_FILE = "characters.json"
 CODEX_FILE      = "codex.json"
 GEOGRAPHY_FILE  = "geography.json"
+WORLD_STATE_FILE = "world-state.json"
 
 # Issue date/timezone: used for archive filenames and 'already generated' checks.
 # Default matches the previous workflow's intended schedule (US/Eastern).
@@ -873,6 +875,156 @@ def load_codex_file():
         except Exception:
             return {}
     return {}
+
+
+CODEX_BALANCE_TRACKED_LABELS = [
+    "weapons",
+    "rituals",
+    "artifacts",
+    "relics",
+    "substances",
+    "factions",
+    "lore",
+    "magic",
+    "characters",
+    "places",
+    "events",
+    "flora_fauna",
+    "polities",
+    "provinces",
+    "districts",
+    "regions",
+]
+
+
+CODEX_BALANCE_CONTEXT_HINTS = {
+    "weapons": [
+        "war, duels, champions, raids, militias, mercenaries, border conflict",
+        "forging/craft traditions, inheritance, discovery in ruins, ceremonial arming, oath-binding, magical creation",
+        "named armaments with lineage, prior wielders, famous battles, makers, or transformative handoffs",
+    ],
+    "rituals": [
+        "temples, cults, coronations, funerals, oaths, celestial events, curses, healing",
+        "seasonal observances and codified rites worth repeating in future lore",
+    ],
+    "substances": [
+        "alchemy, healing, mining, trade, poison, dyes, incense, fuel, resins, powders",
+        "named ingredients/materials with identifiable properties and usage",
+    ],
+    "artifacts": [
+        "ruins, inheritance, vaults, expeditions, dynastic relic chains",
+        "distinct non-weapon objects with provenance and consequence",
+    ],
+    "relics": [
+        "old wars, temple holdings, saintly remains, cursed heirlooms",
+        "named objects with enduring mythic/religious/occult significance",
+    ],
+    "flora_fauna": [
+        "wilderness, trade caravans, hunting grounds, druidic circles, monster routes",
+        "named species/variants that recur beyond a one-off mention",
+    ],
+    "polities": [
+        "crowns, councils, regencies, succession disputes, tax edicts, border law",
+        "named governing institutions tied to a realm or seat",
+    ],
+    "provinces": [
+        "tax zones, marches, governorships, logistics and jurisdiction",
+        "named territorial units that sit between realm and district",
+    ],
+    "districts": [
+        "city wards, quarters, neighborhoods, docks, markets, temple rows",
+        "named intra-city areas with clear function",
+    ],
+}
+
+
+def _list_named_count(items) -> int:
+    if not isinstance(items, list):
+        return 0
+    return sum(
+        1
+        for it in items
+        if isinstance(it, dict) and str(it.get("name") or "").strip()
+    )
+
+
+def summarize_codex_label_balance(codex: dict, tracked_labels=None) -> dict:
+    labels = [x for x in (tracked_labels or CODEX_BALANCE_TRACKED_LABELS) if str(x).strip()]
+    counts = {}
+    for label in labels:
+        counts[label] = _list_named_count((codex or {}).get(label, [])) if isinstance(codex, dict) else 0
+
+    values = sorted(counts.values())
+    if not values:
+        median_count = 0
+    elif len(values) % 2 == 1:
+        median_count = values[len(values) // 2]
+    else:
+        median_count = (values[len(values) // 2 - 1] + values[len(values) // 2]) / 2.0
+
+    target_min_count = max(3, int(round(max(1.0, float(median_count)) * 0.60)))
+
+    underrepresented = []
+    for label in labels:
+        c = int(counts.get(label, 0))
+        if c >= target_min_count:
+            continue
+        deficit = target_min_count - c
+        if c <= int(target_min_count * 0.35):
+            severity = "high"
+        elif c <= int(target_min_count * 0.65):
+            severity = "medium"
+        else:
+            severity = "low"
+        underrepresented.append(
+            {
+                "label": label,
+                "count": c,
+                "target_min_count": target_min_count,
+                "deficit": deficit,
+                "severity": severity,
+                "context_hints": CODEX_BALANCE_CONTEXT_HINTS.get(label, []),
+            }
+        )
+
+    underrepresented.sort(key=lambda x: (int(x.get("deficit") or 0), str(x.get("label") or "")), reverse=True)
+
+    return {
+        "tracked_labels": labels,
+        "counts": counts,
+        "median_count": median_count,
+        "target_min_count": target_min_count,
+        "underrepresented": underrepresented,
+    }
+
+
+def build_codex_balance_guidance_section(codex_balance: dict) -> str:
+    if not isinstance(codex_balance, dict):
+        return ""
+    weak = codex_balance.get("underrepresented")
+    if not isinstance(weak, list) or not weak:
+        return ""
+
+    lines = []
+    lines.append("CODEX LABEL BALANCE SIGNALS (soft priority, quality-first):")
+    lines.append("- Some codex labels are underrepresented. Increase opportunities ONLY when they naturally fit the story context.")
+    lines.append("- Do not force filler entries. Only introduce a new codex entity when it is distinct, named, and worth recurring continuity.")
+    lines.append("- Context cues are examples, not limits. Creative authority remains with the model; use any organic context that supports a meaningful named entity.")
+
+    top = weak[:6]
+    for row in top:
+        label = str(row.get("label") or "").strip()
+        count = int(row.get("count") or 0)
+        target = int(row.get("target_min_count") or 0)
+        severity = str(row.get("severity") or "low")
+        lines.append(f"- Priority label: {label} ({count} entries; target floor ~{target}; severity={severity}).")
+        hints = row.get("context_hints") if isinstance(row.get("context_hints"), list) else []
+        for h in hints[:2]:
+            if str(h).strip():
+                lines.append(f"  - Natural-fit cue: {str(h).strip()}")
+
+    lines.append("- If no natural context exists, skip the label. Story quality and coherence outrank balancing quotas.")
+    return "\n".join(lines).strip()
 
 
 def _codex_entry_map(codex):
@@ -2120,7 +2272,7 @@ def build_world_event_arcs_section(today_str: str, lore: dict, event_arc_dossier
     return "\n".join(lines).strip()
 
 # ── Story generation prompt ──────────────────────────────────────────────
-def build_prompt(today_str, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None):
+def build_prompt(today_str, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None, codex_balance=None):
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     reused_entries = reused_entries or {}
     reuse_details = reuse_details or {}
@@ -2220,6 +2372,11 @@ SOVEREIGNTY / CROWN CONSISTENCY:
     if geo_ctx.strip():
         geo_section = f"\n{geo_ctx}\n"
 
+    codex_balance_section = ""
+    cb = build_codex_balance_guidance_section(codex_balance)
+    if cb:
+        codex_balance_section = f"\n{cb}\n"
+
     return f"""You are a pulp fantasy writer in the tradition of Robert E. Howard, Clark Ashton Smith, and Fritz Leiber.
 Generate exactly 10 original short sword-and-sorcery stories.
 Each story should be vivid, action-packed, and around 120–160 words long.
@@ -2232,6 +2389,7 @@ ORIGINALITY / COPYRIGHT SAFETY:
 Today's date is {today_str}. Use this as subtle creative inspiration if you like.
 {lore_section}
 {geo_section}
+{codex_balance_section}
 {reuse_section}
 {recent_themes_section}
 Respond with ONLY valid JSON — no prose before or after — matching this exact structure:
@@ -2239,6 +2397,16 @@ Respond with ONLY valid JSON — no prose before or after — matching this exac
   {{ "title": "Story Title Here", "subgenre": "Two or Three Word Label", "text": "Full story text here…" }},
   …9 more entries…
 ]
+
+EVENT CAUSALITY + CONSEQUENCE RULES (non-negotiable):
+- Every generated event beat must be caused by at least one prior world condition: active arc, prior event fallout, faction rivalry, regional instability, scarcity, policy shock, or character goal.
+- Use a layered event system across the issue. Not every event should change world-scale simulation metrics:
+    1) flavor events: atmosphere/rumor/oddity/personal texture; no required persistent world-state mutation,
+    2) local consequential events: limited fallout for a person/place/district/situation,
+    3) world-shaping events: broad, persistent shifts (faction metrics, regional conditions, or arc pressure/stage).
+- Require world-state mutation only when the event scale justifies it (world-shaping tier).
+- If an event feels intensity 7+ (historic), it should usually behave as world-shaping and include at least one materially irreversible shift (seizure, wound, death, annexation, betrayal, collapse, revelation, or lasting scar).
+- Avoid empty summary phrasing like "tensions rose" unless you also state exactly what changed and for whom.
 
 CONTENT GUARDRAILS (must follow):
 - Do NOT write stories involving child death or targeted harm to children.
@@ -2911,7 +3079,7 @@ STORIES JSON INPUT:
 """
 
 # ── Lore extraction prompt ───────────────────────────────────────────────
-def build_lore_extraction_prompt(stories, existing_lore):
+def build_lore_extraction_prompt(stories, existing_lore, codex_balance=None):
     def _extract_name_candidates(stories, max_candidates=140):
         """Heuristic list of capitalized name-like candidates from story text.
 
@@ -3054,6 +3222,23 @@ def build_lore_extraction_prompt(stories, existing_lore):
     name_candidates = _extract_name_candidates(stories)
     candidates_block = "\n".join([f"- {c}" for c in name_candidates]) if name_candidates else "- (none)"
 
+    underrep_lines = []
+    weak = codex_balance.get("underrepresented") if isinstance(codex_balance, dict) else []
+    if isinstance(weak, list) and weak:
+        underrep_lines.append("UNDERREPRESENTED LABEL WATCHLIST (quality-first):")
+        underrep_lines.append("- Be extra vigilant for these labels when the story naturally supports them.")
+        underrep_lines.append("- Do NOT invent filler; only extract distinct named entities with clear narrative role.")
+        for row in weak[:8]:
+            if not isinstance(row, dict):
+                continue
+            label = str(row.get("label") or "").strip()
+            if not label:
+                continue
+            count = int(row.get("count") or 0)
+            target = int(row.get("target_min_count") or 0)
+            underrep_lines.append(f"- {label}: current {count}, target floor ~{target}.")
+    underrep_block = "\n".join(underrep_lines).strip()
+
     return f"""You are a lore archivist for a sword-and-sorcery story universe.
 Analyze the following stories and extract lore elements — characters, places, events, weapons, artifacts, factions, polities (governments/crowns/thrones), lore, flora/fauna, magic, relics, regions, substances, and geo hierarchy entries (hemisphere/continent/realm/province/region/district) — that appear in these stories.
 
@@ -3121,6 +3306,8 @@ STORIES TO ANALYZE:
 
 NAME CANDIDATES (for completeness; ignore common words like "The" / "But"):
 {candidates_block}
+
+{underrep_block}
 
 Hard requirement:
 - For every candidate above that is truly a named entity in the story text (person/place/realm/title/institution/event/ritual/spell/object/creature), ensure it appears in at least one output category.
@@ -5371,6 +5558,88 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
     if synced:
         print(f"\u2713 Cross-category sync: updated {synced} entries")
 
+    # Attach lightweight liveness metadata so codex entries can evolve over issues
+    # without changing existing tracking fields.
+    def _attach_codex_liveness_meta(codex_obj: dict):
+        known_dates = _load_known_issue_dates()
+        issue_number = len(known_dates) if date_key in known_dates else (len(known_dates) + 1)
+
+        def _importance_from_appearances(n: int) -> int:
+            n = max(0, int(n or 0))
+            if n >= 20:
+                return 5
+            if n >= 10:
+                return 4
+            if n >= 5:
+                return 3
+            if n >= 2:
+                return 2
+            return 1
+
+        def _story_touched_today(item: dict) -> bool:
+            apps = item.get("story_appearances")
+            if not isinstance(apps, list):
+                return False
+            for a in apps:
+                if isinstance(a, dict) and str(a.get("date") or "").strip() == date_key:
+                    return True
+            return False
+
+        def _default_status(cat: str, item: dict) -> str:
+            if cat == "events":
+                stage = str(item.get("stage") or "").strip().lower()
+                if stage:
+                    return "resolved" if stage in {"resolved", "aftermath"} else f"{stage}"
+                outcome = str(item.get("outcome") or "").strip()
+                return outcome[:120] if outcome else "active"
+            status = str(item.get("status") or "").strip()
+            if status:
+                return status
+            return "active"
+
+        target_categories = [
+            "characters",
+            "places",
+            "events",
+            "weapons",
+            "artifacts",
+            "factions",
+            "lore",
+            "regions",
+            "polities",
+        ]
+
+        for cat in target_categories:
+            items = codex_obj.get(cat)
+            if not isinstance(items, list):
+                continue
+            for it in items:
+                if not isinstance(it, dict):
+                    continue
+
+                apps = it.get("story_appearances") if isinstance(it.get("story_appearances"), list) else []
+                appearances = max(int(it.get("appearances") or 0), len(apps), 1)
+                touched_today = _story_touched_today(it)
+
+                it["importance"] = _importance_from_appearances(appearances)
+                if touched_today or ("lastChangedIssue" not in it):
+                    it["lastChangedIssue"] = issue_number
+                if not str(it.get("currentStatus") or "").strip() or touched_today:
+                    it["currentStatus"] = _default_status(cat, it)
+
+                if cat == "events":
+                    if "relatedFactionIds" not in it:
+                        participants = it.get("participants") if isinstance(it.get("participants"), list) else []
+                        it["relatedFactionIds"] = [str(x).strip() for x in participants[:8] if str(x).strip()]
+                    if "relatedRegionIds" not in it:
+                        affected = it.get("affected_regions") if isinstance(it.get("affected_regions"), list) else []
+                        it["relatedRegionIds"] = [str(x).strip() for x in affected[:8] if str(x).strip()]
+                    if "relatedArcIds" not in it:
+                        nm = str(it.get("name") or "").strip()
+                        it["relatedArcIds"] = [_make_snake_id(nm)] if nm else []
+
+    _attach_codex_liveness_meta(codex)
+
     codex["last_updated"] = date_key
     with open(CODEX_FILE, "w", encoding="utf-8") as f:
         json.dump(codex, f, ensure_ascii=True, indent=2)
@@ -5829,7 +6098,7 @@ def _merge_extracted_batches(batches: list[dict]) -> dict:
     return merged
 
 
-def _extract_lore_batched(client, stories: list[dict], lore: dict) -> dict:
+def _extract_lore_batched(client, stories: list[dict], lore: dict, codex_balance=None) -> dict:
     """Extract lore from stories in batches to avoid output-token truncation.
 
     Splits the story list into batches of EXTRACTION_BATCH_SIZE, calls the
@@ -5861,7 +6130,7 @@ def _extract_lore_batched(client, stories: list[dict], lore: dict) -> dict:
                 max_tokens=max_tokens,
                 messages=[{
                     "role": "user",
-                    "content": build_lore_extraction_prompt(batch_stories, lore),
+                    "content": build_lore_extraction_prompt(batch_stories, lore, codex_balance=codex_balance),
                 }],
             )
 
@@ -6564,6 +6833,20 @@ def main():
     print(f"\u2713 Loaded lore ({len(lore.get('characters', []))} characters, "
           f"{len(lore.get('places', []))} places)")
 
+    codex_for_balance = load_codex_file()
+    codex_balance = summarize_codex_label_balance(codex_for_balance)
+    weak_labels = codex_balance.get("underrepresented") if isinstance(codex_balance, dict) else []
+    if isinstance(weak_labels, list) and weak_labels:
+        watch = ", ".join(
+            f"{str(x.get('label') or '')}:{int(x.get('count') or 0)}"
+            for x in weak_labels[:6]
+            if isinstance(x, dict)
+        )
+        if watch:
+            print(f"\u2713 Codex balance watchlist: {watch}")
+    else:
+        print("\u2713 Codex balance: no underrepresented labels below threshold")
+
     client = anthropic.Anthropic(api_key=api_key)
 
     # ── Optional: Reuse planning (decide reuse + select candidates) ──────
@@ -6722,7 +7005,7 @@ def main():
     message = client.messages.create(
         model=MODEL,
         max_tokens=4096,
-        messages=[{"role": "user", "content": build_prompt(today_str, lore, reused_entries=reused_entries, reuse_details=reuse_details, event_arc_dossiers=event_arc_dossiers)}]
+        messages=[{"role": "user", "content": build_prompt(today_str, lore, reused_entries=reused_entries, reuse_details=reuse_details, event_arc_dossiers=event_arc_dossiers, codex_balance=codex_balance)}]
     )
     raw = message.content[0].text.strip()
     try:
@@ -7040,7 +7323,7 @@ def main():
 
     # ── CALL 2: Extract new lore from generated stories (batched) ───────
     print("Calling Claude to extract lore from new stories...")
-    new_lore = _extract_lore_batched(client, stories, lore)
+    new_lore = _extract_lore_batched(client, stories, lore, codex_balance=codex_balance)
     new_lore = filter_lore_to_stories(new_lore, stories)
     new_lore = ensure_named_character_mentions_present(new_lore, stories)
     new_lore = ensure_named_leaders_present(new_lore, stories)
@@ -7102,6 +7385,25 @@ def main():
 
     # ── Update codex.json ──────────────────────────────────────────────────
     update_codex_file(lore, date_key, stories)
+
+    # ── Sync persistent world-state snapshot (additive simulation layer) ───
+    try:
+        ws = sync_world_state_from_codex_and_stories(
+            codex_path=CODEX_FILE,
+            date_key=date_key,
+            stories=stories,
+            output_path=WORLD_STATE_FILE,
+        )
+        if ws.get("updated"):
+            print(
+                f"\u2713 Saved {WORLD_STATE_FILE} "
+                f"(issue #{ws.get('issue_number')}, observed {ws.get('events_observed', 0)} events, "
+                f"applied {ws.get('events_applied')} persistent deltas)"
+            )
+        else:
+            print(f"WARNING: world-state sync skipped: {ws.get('reason', 'unknown')}", file=sys.stderr)
+    except Exception as e:
+        print(f"WARNING: world-state sync failed: {e}", file=sys.stderr)
 
 if __name__ == "__main__":
     main()

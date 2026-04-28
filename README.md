@@ -6,6 +6,13 @@ Static pulp-fantasy “daily paper” site.
 - Data: `stories.json`, `archive/`, `codex.json`, `lore.json`, `characters.json`
 - Generator: `generate_stories.py` (Anthropic)
 
+## Audit tools
+
+Useful read-only audits during worldbuilding:
+
+- `python audit_codex_label_balance.py`
+- `python audit_geography_coordinates.py`
+
 ## Live, single-source setup
 
 Recommended production setup is:

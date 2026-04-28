@@ -436,6 +436,39 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 .world-events-header { text-align: center; margin-bottom: 1rem; }
 .world-events-header h2 { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 1.6rem; color: var(--gold); letter-spacing: .12em; }
 .world-events-header p { font-size: .82rem; color: var(--aged); margin-top: .3rem; font-style: italic; }
+.world-events-guide {
+  margin: .8rem auto 0;
+  max-width: 920px;
+  padding: .7rem .85rem;
+  border: 1px solid rgba(201,146,42,.18);
+  background: linear-gradient(180deg, rgba(24,12,5,.38), rgba(24,12,5,.24));
+  box-shadow: inset 0 0 28px rgba(0,0,0,.14);
+}
+.world-events-guide-title {
+  font-family: 'Cinzel', serif;
+  font-size: .65rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .45rem;
+}
+.world-events-guide-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .45rem .65rem;
+}
+.world-events-guide-item {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  color: var(--aged);
+  font-size: .72rem;
+  line-height: 1.35;
+}
+.world-events-guide-item .badge {
+  white-space: nowrap;
+}
 .text-input {
   font-family: 'Cinzel', serif;
   font-size: .62rem;
@@ -462,6 +495,10 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 .badge-stage-crisis { background: rgba(139,70,26,.18); border: 1px solid rgba(189,110,48,.58); color: #f1b26c; }
 .badge-stage-climax { background: rgba(139,26,26,.18); border: 1px solid rgba(139,26,26,.55); color: #e07070; }
 .badge-stage-aftermath { background: rgba(92,61,30,.18); border: 1px solid rgba(92,61,30,.55); color: rgba(226,208,168,.85); }
+.badge-setting-active { background: rgba(38,38,22,.18); border: 1px solid rgba(201,146,42,.22); color: rgba(226,208,168,.82); }
+.badge-setting-flashpoint { background: rgba(128,42,18,.18); border: 1px solid rgba(187,88,48,.58); color: #f0b183; }
+.badge-setting-shift { background: rgba(74,120,30,.18); border: 1px solid rgba(74,120,30,.55); color: #9ad07a; }
+.badge-setting-legacy { background: rgba(74,58,96,.18); border: 1px solid rgba(130,112,168,.45); color: #c9b8ef; }
 .badge-intensity-max { background: rgba(139,26,26,.18); border: 1px solid rgba(187,48,48,.72); color: #ff9b9b; box-shadow: 0 0 0 1px rgba(187,48,48,.18) inset; }
 
 #map-view { display: none; padding-top: 1.2rem; }
@@ -479,6 +516,8 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 .map-zoom-controls { position: absolute; top: 10px; right: 10px; display: flex; flex-direction: column; gap: 4px; z-index: 50; }
 .map-zoom-btn { width: 28px; height: 28px; border: 1px solid rgba(90,60,20,.5); background: rgba(212,197,160,.9); color: rgba(60,35,10,.8); font-family: 'Cinzel', serif; font-size: 16px; line-height: 1; text-align: center; cursor: pointer; border-radius: 2px; box-shadow: 0 2px 6px rgba(0,0,0,.3); }
 .map-zoom-btn:hover { background: rgba(201,146,42,.25); border-color: var(--gold); }
+/* Defensive fallback: hide legacy third zoom control (old reset button). */
+.map-zoom-controls .map-zoom-btn:nth-child(n+3) { display: none !important; }
 .map-svg text { font-family: 'IM Fell English', 'Cinzel', serif; pointer-events: none; }
 .map-tooltip { position: absolute; display: none; background: rgba(40,28,12,.95); border: 1px solid rgba(160,120,50,.7); color: #e8dcc0; padding: .55rem .8rem; border-radius: 2px; font-size: .75rem; max-width: 260px; pointer-events: none; z-index: 100; box-shadow: 0 4px 16px rgba(0,0,0,.6); font-family: 'IM Fell English', serif; }
 .map-tooltip .tt-name { font-family: 'Cinzel', serif; font-weight: 700; color: #c9922a; font-size: .8rem; }
@@ -639,6 +678,15 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <div class="world-events-header">
       <h2>World Events</h2>
       <p>A running register of large-scale arcs unfolding across issues</p>
+      <div class="world-events-guide" aria-label="World event label guide">
+        <div class="world-events-guide-title">How To Read The Arc Labels</div>
+        <div class="world-events-guide-items">
+          <div class="world-events-guide-item"><span class="badge badge-setting-active">Active Arc</span><span>An ongoing event still moving through the story.</span></div>
+          <div class="world-events-guide-item"><span class="badge badge-setting-flashpoint">Flashpoint</span><span>A live breaking point with immediate pressure.</span></div>
+          <div class="world-events-guide-item"><span class="badge badge-setting-shift">Setting Shift</span><span>A major change that now shapes the world around it.</span></div>
+          <div class="world-events-guide-item"><span class="badge badge-setting-legacy">Legacy</span><span>A resolved event whose consequences still linger.</span></div>
+        </div>
+      </div>
     </div>
     <div class="controls" style="margin-top:.5rem;">
       <span class="controls-left" id="world-events-count-label">— Loading world events… —</span>
@@ -691,7 +739,6 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
       <div class="map-zoom-controls">
         <button class="map-zoom-btn" id="zoom-in" title="Zoom in">+</button>
         <button class="map-zoom-btn" id="zoom-out" title="Zoom out">−</button>
-        <button class="map-zoom-btn" id="zoom-reset" title="Reset" style="font-size:11px">⟳</button>
       </div>
       <div class="map-tooltip" id="map-tooltip"></div>
     </div>
@@ -4047,6 +4094,22 @@ function _stageBadgeClass(stage) {
   return 'badge-stage-seed';
 }
 
+function _settingBadgeClass(settingState) {
+  const s = String(settingState || '').trim().toLowerCase();
+  if (s === 'flashpoint') return 'badge-setting-flashpoint';
+  if (s === 'setting_shift') return 'badge-setting-shift';
+  if (s === 'legacy') return 'badge-setting-legacy';
+  return 'badge-setting-active';
+}
+
+function _settingBadgeLabel(settingState) {
+  const s = String(settingState || '').trim().toLowerCase();
+  if (s === 'flashpoint') return 'Flashpoint';
+  if (s === 'setting_shift') return 'Setting Shift';
+  if (s === 'legacy') return 'Legacy';
+  return 'Active Arc';
+}
+
 function renderWorldEvents(data) {
   const statusEl = document.getElementById('world-events-status-msg');
   const grid = document.getElementById('world-events-grid');
@@ -4092,6 +4155,8 @@ function renderWorldEvents(data) {
       if (r.epicenter && norm(r.epicenter) !== 'unknown') ex.epicenter = r.epicenter;
     }
     ex.resolved = !!ex.resolved && !!r.resolved;
+    const settingRank = (value) => ({ legacy: 0, active_arc: 1, flashpoint: 2, setting_shift: 3 }[String(value || '').trim().toLowerCase()] || 1);
+    ex.setting_state = settingRank(ex.setting_state) >= settingRank(r.setting_state) ? ex.setting_state : r.setting_state;
     ex.intensity = Math.max(Number(ex.intensity || 1), Number(r.intensity || 1));
     ex.recent_issues = Math.max(Number(ex.recent_issues || 0), Number(r.recent_issues || 0));
     const exTrend = Number(ex.trend || 0);
@@ -4213,6 +4278,7 @@ function renderWorldEvents(data) {
     const eventType = String(e.event_type || '').trim();
     const scopeText = String(e.scope || 'regional').trim();
     const stageText = String(e.stage || 'seed').trim();
+    const settingState = String(e.setting_state || 'active_arc').trim();
     const intensity = Number(e.intensity || 1);
     const intensityClass = intensity >= configuredIntensityMax ? ' badge-intensity-max' : '';
     const epicenter = String(e.epicenter || 'unknown').trim();
@@ -4271,6 +4337,7 @@ function renderWorldEvents(data) {
         ${eventType ? `<span class="badge badge-role">${escHtml(eventType)}</span>` : ''}
         <span class="badge ${_scopeBadgeClass(scopeText)}">${escHtml(scopeText)}</span>
         <span class="badge ${_stageBadgeClass(stageText)}">${escHtml(stageText)}</span>
+        <span class="badge ${_settingBadgeClass(settingState)}">${escHtml(_settingBadgeLabel(settingState))}</span>
         <span class="badge${intensityClass}">Intensity ${escHtml(String(intensity))}</span>
         <span class="badge">Recent ${escHtml(String(recentIssues))}</span>
         ${lastSeen ? `<span class="badge">Last ${escHtml(lastSeen)}</span>` : ''}
@@ -4808,6 +4875,10 @@ function _clientToSVG(e) {
   const container = document.getElementById('map-container');
   const svg = document.getElementById('map-svg');
 
+  // If stale markup still has an old reset control, remove it immediately.
+  const legacyResetButton = document.getElementById('zoom-reset');
+  if (legacyResetButton) legacyResetButton.remove();
+
   // Mouse wheel zoom
   container.addEventListener('wheel', (e) => {
     e.preventDefault();
@@ -4844,7 +4915,6 @@ function _clientToSVG(e) {
   document.getElementById('zoom-out').addEventListener('click', () => {
     _zoomAt(_vb.x + _vb.w/2, _vb.y + _vb.h/2, 1.33);
   });
-  document.getElementById('zoom-reset').addEventListener('click', _resetZoom);
 
   // Touch support for pinch-zoom
   let _lastTouchDist = null;
@@ -4892,6 +4962,134 @@ function renderMap() {
     renderWorldMap(svg);
   }
   _resetZoom();
+}
+
+const VALDRIS_DETAIL_DEFAULTS = Object.freeze({
+  width: 800,
+  height: 600,
+  padding: 25,
+  usable_width: 750,
+  usable_height: 550
+});
+
+function getValdrisDetailConfig() {
+  const cfg = (((mapGeo || {}).map_coordinates || {}).valdris || {}).detail_view || {};
+  const width = Number.isFinite(cfg.width) ? Number(cfg.width) : VALDRIS_DETAIL_DEFAULTS.width;
+  const height = Number.isFinite(cfg.height) ? Number(cfg.height) : VALDRIS_DETAIL_DEFAULTS.height;
+  const padding = Number.isFinite(cfg.padding) ? Number(cfg.padding) : VALDRIS_DETAIL_DEFAULTS.padding;
+  const usableWidth = Number.isFinite(cfg.usable_width) ? Number(cfg.usable_width) : Math.max(1, width - (padding * 2));
+  const usableHeight = Number.isFinite(cfg.usable_height) ? Number(cfg.usable_height) : Math.max(1, height - (padding * 2));
+  return {
+    width,
+    height,
+    padding,
+    usable_width: usableWidth,
+    usable_height: usableHeight
+  };
+}
+
+function getValdrisScaleMiles() {
+  const mapScale = (((mapGeo || {}).map_coordinates || {}).valdris || {}).scale_miles || {};
+  const continent = (mapGeo && Array.isArray(mapGeo.continents))
+    ? mapGeo.continents.find(c => c && c.id === 'valdris')
+    : null;
+  const geo = (continent && continent.geo_dimensions) || {};
+  return {
+    width: Number.isFinite(mapScale.width) ? Number(mapScale.width) : (Number(geo.width_miles) || 2500),
+    height: Number.isFinite(mapScale.height) ? Number(mapScale.height) : (Number(geo.height_miles) || 1830)
+  };
+}
+
+function assignmentPositionPct(assignment) {
+  const explicit = (((assignment || {}).map_coordinates || {}).valdris || {}).position_pct;
+  const base = explicit || (assignment || {}).position_pct || {};
+  const x = Number(base.x);
+  const y = Number(base.y);
+  if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+  return { x, y };
+}
+
+function toValdrisDetailPoint(positionPct, cfg) {
+  if (!positionPct) return null;
+  const useCfg = cfg || getValdrisDetailConfig();
+  return {
+    x: (positionPct.x / 100) * useCfg.usable_width + useCfg.padding,
+    y: (positionPct.y / 100) * useCfg.usable_height + useCfg.padding
+  };
+}
+
+function normalizeValdrisAssignments(assignments) {
+  const all = Array.isArray(assignments) ? assignments : [];
+  const byName = new Map();
+  for (const a of all) {
+    if (!a || !a.place_name) continue;
+    byName.set(a.place_name, a);
+  }
+
+  const childrenByParent = new Map();
+  const markers = [];
+  for (const a of all) {
+    if (!a || !a.place_name) continue;
+    const parentName = String(a.parent_place_name || '').trim();
+    const inherits = a.inherits_position_from_parent === true;
+    if (inherits && parentName && byName.has(parentName)) {
+      if (!childrenByParent.has(parentName)) childrenByParent.set(parentName, []);
+      childrenByParent.get(parentName).push(a.place_name);
+      continue;
+    }
+    markers.push({ ...a });
+  }
+
+  const markerByName = new Map();
+  for (const m of markers) {
+    m.child_places = childrenByParent.get(m.place_name) || [];
+    markerByName.set(m.place_name, m);
+  }
+
+  const lookup = new Map();
+  for (const a of all) {
+    if (!a || !a.place_name) continue;
+    const parentName = String(a.parent_place_name || '').trim();
+    const inherits = a.inherits_position_from_parent === true;
+    if (inherits && parentName && markerByName.has(parentName)) {
+      lookup.set(a.place_name, markerByName.get(parentName));
+    } else if (markerByName.has(a.place_name)) {
+      lookup.set(a.place_name, markerByName.get(a.place_name));
+    }
+  }
+
+  return { markers, lookup };
+}
+
+function getValdrisRiverGeometry(feature) {
+  const geometry = (((feature || {}).map_geometry || {}).valdris || {});
+  const path = Array.isArray(geometry.detail_path) ? geometry.detail_path : [];
+  const points = path
+    .map((pair) => {
+      if (!Array.isArray(pair) || pair.length < 2) return null;
+      const x = Number(pair[0]);
+      const y = Number(pair[1]);
+      if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+      return [x, y];
+    })
+    .filter(Boolean);
+  if (points.length < 2) return null;
+
+  const label = geometry.label || {};
+  const labelPos = Array.isArray(label.position) && label.position.length >= 2
+    ? [Number(label.position[0]), Number(label.position[1])]
+    : null;
+
+  return {
+    points,
+    seedOffset: Number.isFinite(geometry.seed_offset) ? Number(geometry.seed_offset) : 300,
+    strokeWidth: Number.isFinite(geometry.stroke_width) ? Number(geometry.stroke_width) : 1.1,
+    opacity: Number.isFinite(geometry.opacity) ? Number(geometry.opacity) : 0.4,
+    labelText: String(label.text || feature.name || '').trim(),
+    labelPos,
+    labelAngle: Number.isFinite(label.angle) ? Number(label.angle) : 0,
+    labelSize: Number.isFinite(label.font_size) ? Number(label.font_size) : 5.5
+  };
 }
 
 function svgEl(tag, attrs) {
@@ -4970,12 +5168,20 @@ function drawIslandChain(svg, rc, x1, y1, x2, y2, count, avgSize, seedOff, opts)
 function drawMountain(svg, x, y, size, ink) {
   const s = size;
   const col = ink || 'rgba(60,40,15,.7)';
+  svg.appendChild(svgEl('path', {
+    d: `M${x-s*.55},${y+s*.4} L${x-s*.08},${y-s*.45} L${x+s*.02},${y+s*.38} Z`,
+    fill: 'rgba(60,40,15,.16)', stroke: 'none'
+  }));
   // Main peak
   const peak = svgEl('path', {
     d: `M${x-s*.55},${y+s*.4} L${x-s*.08},${y-s*.45} L${x+s*.08},${y-s*.4} L${x+s*.55},${y+s*.4}`,
     stroke: col, 'stroke-width': 1.2, fill: 'none', 'stroke-linecap': 'round'
   });
   svg.appendChild(peak);
+  svg.appendChild(svgEl('path', {
+    d: `M${x-s*.4},${y+s*.22} Q${x},${y+s*.05} ${x+s*.42},${y+s*.22}`,
+    stroke: 'rgba(60,40,15,.28)', 'stroke-width': .8, fill: 'none'
+  }));
   // Shading hatches on right slope
   for (let h = 0; h < 3; h++) {
     const frac = .2 + h*.22;
@@ -4992,11 +5198,129 @@ function drawMountain(svg, x, y, size, ink) {
 function drawTree(svg, x, y, size, ink) {
   const s = size;
   const col = ink || 'rgba(40,60,20,.5)';
-  svg.appendChild(svgEl('line', { x1: x, y1: y, x2: x, y2: y + s*.5, stroke: col, 'stroke-width': .8 }));
+  svg.appendChild(svgEl('line', { x1: x, y1: y + s*.05, x2: x, y2: y + s*.55, stroke: col, 'stroke-width': .8 }));
   svg.appendChild(svgEl('path', {
-    d: `M${x-s*.3},${y+s*.15} Q${x},${y-s*.5} ${x+s*.3},${y+s*.15}`,
+    d: `M${x-s*.34},${y+s*.26} Q${x},${y-s*.16} ${x+s*.34},${y+s*.26}`,
+    fill: 'rgba(55,75,35,.08)', stroke: 'none'
+  }));
+  svg.appendChild(svgEl('path', {
+    d: `M${x-s*.34},${y+s*.22} Q${x},${y-s*.52} ${x+s*.34},${y+s*.22}`,
     stroke: col, 'stroke-width': .8, fill: 'none'
   }));
+  svg.appendChild(svgEl('path', {
+    d: `M${x-s*.22},${y+s*.02} Q${x},${y-s*.36} ${x+s*.22},${y+s*.02}`,
+    stroke: col, 'stroke-width': .65, fill: 'none', opacity: .85
+  }));
+}
+
+function drawHill(svg, x, y, size, ink) {
+  const s = size;
+  const col = ink || 'rgba(85,60,25,.32)';
+  svg.appendChild(svgEl('path', {
+    d: `M${x-s*.8},${y} Q${x-s*.25},${y-s*.55} ${x+s*.15},${y} T${x+s*.8},${y}`,
+    stroke: col, 'stroke-width': .9, fill: 'none'
+  }));
+  svg.appendChild(svgEl('path', {
+    d: `M${x-s*.55},${y+s*.18} Q${x-s*.15},${y-s*.12} ${x+s*.18},${y+s*.16}`,
+    stroke: 'rgba(85,60,25,.2)', 'stroke-width': .7, fill: 'none'
+  }));
+}
+
+function drawDuneStroke(svg, x, y, size, ink) {
+  const s = size;
+  const col = ink || 'rgba(120,90,40,.22)';
+  svg.appendChild(svgEl('path', {
+    d: `M${x-s*.9},${y} Q${x-s*.3},${y-s*.22} ${x+s*.15},${y} T${x+s*.9},${y}`,
+    stroke: col, 'stroke-width': .8, fill: 'none'
+  }));
+}
+
+function drawForestCluster(svg, x, y, count, spread, size, tint) {
+  svg.appendChild(svgEl('ellipse', {
+    cx: x, cy: y + spread * .08, rx: spread * .68, ry: spread * .38,
+    fill: tint || 'rgba(55,75,35,.06)', stroke: 'none'
+  }));
+  for (let i = 0; i < count; i++) {
+    const tx = x + _sn.noise2D(i * 2.1, y * .01) * spread;
+    const ty = y + _sn.noise2D(x * .01, i * 2.1) * spread * .55;
+    drawTree(svg, tx, ty, size * (0.8 + ((i % 3) * .12)), 'rgba(45,62,28,.42)');
+  }
+}
+
+function drawSettlementGlyph(svg, x, y, kind, scale, ink) {
+  const s = scale || 1;
+  const col = ink || 'rgba(55,35,12,.82)';
+  const faint = 'rgba(55,35,12,.18)';
+  svg.appendChild(svgEl('circle', { cx:x, cy:y, r:4.6*s, fill:'rgba(212,197,160,.62)', stroke:'none' }));
+
+  if (kind === 'fort' || kind === 'citadel' || kind === 'castle') {
+    svg.appendChild(svgEl('rect', { x:x-3.6*s, y:y-2.8*s, width:7.2*s, height:5.3*s, fill:'none', stroke:col, 'stroke-width':1 }));
+    svg.appendChild(svgEl('rect', { x:x-4.8*s, y:y-3.8*s, width:1.7*s, height:1.7*s, fill:'rgba(212,197,160,.18)', stroke:col, 'stroke-width':.8 }));
+    svg.appendChild(svgEl('rect', { x:x+3.1*s, y:y-3.8*s, width:1.7*s, height:1.7*s, fill:'rgba(212,197,160,.18)', stroke:col, 'stroke-width':.8 }));
+    svg.appendChild(svgEl('path', { d:`M${x-1.1*s},${y+2.5*s} L${x},${y+.8*s} L${x+1.1*s},${y+2.5*s}`, stroke:col, 'stroke-width':.9, fill:'none' }));
+    return;
+  }
+
+  if (kind === 'tower' || kind === 'spire') {
+    svg.appendChild(svgEl('rect', { x:x-1.5*s, y:y-3.8*s, width:3*s, height:6.2*s, fill:'none', stroke:col, 'stroke-width':.9 }));
+    svg.appendChild(svgEl('path', { d:`M${x-2.1*s},${y-3.8*s} L${x},${y-6.1*s} L${x+2.1*s},${y-3.8*s}`, stroke:col, 'stroke-width':.9, fill:'none' }));
+    return;
+  }
+
+  if (kind === 'ruin' || kind === 'tomb' || kind === 'ziggurat') {
+    svg.appendChild(svgEl('path', { d:`M${x-4*s},${y+2.6*s} L${x-1.8*s},${y-2.6*s} L${x+.4*s},${y+1.2*s} L${x+3.8*s},${y-2.8*s}`, stroke:col, 'stroke-width':1, fill:'none' }));
+    svg.appendChild(svgEl('line', { x1:x-3.6*s, y1:y+2.5*s, x2:x+4*s, y2:y+2.5*s, stroke:col, 'stroke-width':.8 }));
+    return;
+  }
+
+  if (kind === 'port' || kind === 'harbor') {
+    svg.appendChild(svgEl('path', { d:`M${x-3.2*s},${y+1.8*s} Q${x},${y+4.3*s} ${x+3.2*s},${y+1.8*s}`, stroke:col, 'stroke-width':.95, fill:'none' }));
+    svg.appendChild(svgEl('line', { x1:x, y1:y-4.4*s, x2:x, y2:y+2*s, stroke:col, 'stroke-width':.9 }));
+    svg.appendChild(svgEl('line', { x1:x, y1:y-3.1*s, x2:x+2.6*s, y2:y-1.2*s, stroke:col, 'stroke-width':.8 }));
+    return;
+  }
+
+  if (kind === 'temple' || kind === 'palace' || kind === 'court') {
+    svg.appendChild(svgEl('path', { d:`M${x-4*s},${y-1.1*s} L${x},${y-4.4*s} L${x+4*s},${y-1.1*s}`, stroke:col, 'stroke-width':.95, fill:'none' }));
+    svg.appendChild(svgEl('line', { x1:x-3.4*s, y1:y+2.5*s, x2:x+3.4*s, y2:y+2.5*s, stroke:col, 'stroke-width':.9 }));
+    for (const dx of [-2.4, 0, 2.4]) {
+      svg.appendChild(svgEl('line', { x1:x+dx*s, y1:y-1.1*s, x2:x+dx*s, y2:y+2.5*s, stroke:col, 'stroke-width':.7 }));
+    }
+    return;
+  }
+
+  if (kind === 'forge' || kind === 'mine') {
+    svg.appendChild(svgEl('path', { d:`M${x-3.8*s},${y+2.2*s} L${x-1.2*s},${y-2.8*s} L${x+2.6*s},${y-2.8*s} L${x+4*s},${y+2.2*s} Z`, stroke:col, 'stroke-width':.9, fill:'none' }));
+    svg.appendChild(svgEl('line', { x1:x-1.4*s, y1:y-3.1*s, x2:x+1.8*s, y2:y-.4*s, stroke:col, 'stroke-width':.8 }));
+    svg.appendChild(svgEl('line', { x1:x+.8*s, y1:y-3.1*s, x2:x-1.6*s, y2:y-.5*s, stroke:col, 'stroke-width':.8 }));
+    return;
+  }
+
+  if (kind === 'village' || kind === 'hamlet') {
+    svg.appendChild(svgEl('path', { d:`M${x-3.4*s},${y+2.3*s} L${x-3.4*s},${y-.2*s} L${x-1.6*s},${y-1.8*s} L${x+.1*s},${y-.2*s} L${x+.1*s},${y+2.3*s} Z`, stroke:col, 'stroke-width':.85, fill:'none' }));
+    svg.appendChild(svgEl('path', { d:`M${x+.6*s},${y+2.3*s} L${x+.6*s},${y-.9*s} L${x+2.4*s},${y-2.4*s} L${x+4.1*s},${y-.9*s} L${x+4.1*s},${y+2.3*s} Z`, stroke:col, 'stroke-width':.85, fill:'none' }));
+    return;
+  }
+
+  // City / generic settlement
+  svg.appendChild(svgEl('rect', { x:x-3.6*s, y:y-2.8*s, width:7.2*s, height:5.4*s, fill:'none', stroke:col, 'stroke-width':.95 }));
+  svg.appendChild(svgEl('path', { d:`M${x-4.2*s},${y-1.2*s} L${x-1.5*s},${y-3.8*s} L${x+1.6*s},${y-1.2*s} L${x+4.2*s},${y-4.1*s}`, stroke:col, 'stroke-width':.85, fill:'none' }));
+  svg.appendChild(svgEl('line', { x1:x-3.3*s, y1:y+.8*s, x2:x+3.3*s, y2:y+.8*s, stroke:faint, 'stroke-width':.8 }));
+}
+
+function inferPlaceKind(assignment) {
+  const name = String((assignment && assignment.place_name) || '').toLowerCase();
+  const evidence = Array.isArray(assignment && assignment.evidence) ? assignment.evidence.join(' ').toLowerCase() : '';
+  const blob = `${name} ${evidence}`;
+  if (/citadel|castle|fortress|grim[m]?holt|walls|keep/.test(blob)) return 'fort';
+  if (/tower|spire/.test(blob)) return 'tower';
+  if (/port|harbor|dockside|sea lane|coastal/.test(blob)) return 'port';
+  if (/temple|ziggurat|tomb|catacomb|ruin|ossuary/.test(blob)) return 'ruin';
+  if (/palace|court|throne/.test(blob)) return 'palace';
+  if (/forge|mine|deepvault/.test(blob)) return 'forge';
+  if (/village|rest|hollows|warrens|marches/.test(blob)) return 'village';
+  if (/city|pelimor|amrath|ostern|xul|vel-karsh|khar-zul/.test(blob)) return 'city';
+  return 'city';
 }
 
 // Utility: sea wave curls
@@ -5415,7 +5739,9 @@ function renderWorldMap(svg) {
 
 // ── Valdris Detailed View (Tolkien Style) ──────────────────────────
 function renderValdrisMap(svg) {
-  const W = 800, H = 600;
+  const mapCfg = getValdrisDetailConfig();
+  const W = mapCfg.width;
+  const H = mapCfg.height;
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
   svg.innerHTML = '';
   const rc = typeof rough !== 'undefined' ? rough.svg(svg) : null;
@@ -5443,6 +5769,7 @@ function renderValdrisMap(svg) {
 
   // Sea background wash
   svg.appendChild(svgEl('rect', { x:14, y:14, width:W-28, height:H-28, fill:'rgba(120,140,155,.06)', rx:1 }));
+  svg.appendChild(svgEl('rect', { x:18, y:18, width:W-36, height:H-36, fill:'none', stroke:'rgba(90,110,130,.08)', 'stroke-width':1.2, 'stroke-dasharray':'5 8', rx:1 }));
 
   // Sea waves
   const waveZones = [
@@ -5506,6 +5833,7 @@ function renderValdrisMap(svg) {
 
   // Coastline depth line (subtle inner shore line)
   svg.appendChild(svgEl('path', { d: coastD, fill:'none', stroke:'rgba(80,100,130,.12)', 'stroke-width':5, 'pointer-events':'none' }));
+  svg.appendChild(svgEl('path', { d: coastD, fill:'none', stroke:'rgba(80,100,130,.16)', 'stroke-width':1.2, 'stroke-dasharray':'3 9', 'pointer-events':'none' }));
 
   // Region zones — subtle territorial boundaries (fitted to new coastline)
   const regions = mapGeo.macro_regions || [];
@@ -5541,15 +5869,61 @@ function renderValdrisMap(svg) {
 
   // Region labels — italic, aged ink
   for (const r of regions) {
-    const cx = r.center_pct ? (r.center_pct.x / 100) * 750 + 25 : 400;
-    const cy = r.center_pct ? (r.center_pct.y / 100) * 550 + 25 : 300;
+    const center = r.center_pct ? toValdrisDetailPoint(r.center_pct, mapCfg) : { x: W / 2, y: H / 2 };
     const t = svgEl('text', {
-      x: cx, y: cy, 'text-anchor':'middle',
+      x: center.x, y: center.y, 'text-anchor':'middle',
       fill: 'rgba(70,45,15,.45)', 'font-size': 9, 'letter-spacing': '.14em',
       'font-style': 'italic', 'font-family': "'Cinzel', serif"
     });
     t.textContent = r.name; svg.appendChild(t);
   }
+
+  // Terrain embellishment — illustrated forest masses, hills, and arid contours
+  const terrainScenes = [
+    { kind:'forest', x:188, y:190, count:12, spread:34, size:7.2, tint:'rgba(48,68,32,.08)' },
+    { kind:'forest', x:224, y:250, count:10, spread:30, size:6.6, tint:'rgba(48,68,32,.07)' },
+    { kind:'forest', x:365, y:232, count:11, spread:34, size:6.4, tint:'rgba(58,78,38,.06)' },
+    { kind:'forest', x:420, y:286, count:9, spread:28, size:6.2, tint:'rgba(58,78,38,.05)' },
+    { kind:'forest', x:178, y:386, count:8, spread:24, size:6.4, tint:'rgba(58,78,38,.05)' },
+    { kind:'forest', x:418, y:474, count:7, spread:25, size:6.1, tint:'rgba(58,78,38,.05)' },
+    { kind:'hill', x:315, y:178, count:3, spread:26, size:12 },
+    { kind:'hill', x:455, y:210, count:3, spread:24, size:11 },
+    { kind:'hill', x:338, y:448, count:4, spread:22, size:10 },
+    { kind:'dune', x:612, y:236, count:5, spread:18, size:14 },
+    { kind:'dune', x:604, y:304, count:4, spread:16, size:12 }
+  ];
+
+  for (const scene of terrainScenes) {
+    if (scene.kind === 'forest') {
+      drawForestCluster(svg, scene.x, scene.y, scene.count, scene.spread, scene.size, scene.tint);
+      continue;
+    }
+    if (scene.kind === 'hill') {
+      for (let i = 0; i < scene.count; i++) {
+        const hx = scene.x + (i - ((scene.count - 1) / 2)) * scene.spread;
+        const hy = scene.y + _sn.noise2D(scene.x * .01, i * 1.7) * 10;
+        drawHill(svg, hx, hy, scene.size * (0.9 + (i % 2) * .15));
+      }
+      continue;
+    }
+    if (scene.kind === 'dune') {
+      for (let i = 0; i < scene.count; i++) {
+        const dx = scene.x + _sn.noise2D(i * 1.9, scene.y * .01) * scene.spread;
+        const dy = scene.y + i * 10;
+        drawDuneStroke(svg, dx, dy, scene.size * (1 + (i % 2) * .18));
+      }
+    }
+  }
+
+  // Marsh hints in the south-west littoral
+  const marshGroup = svgEl('g', { opacity: '.55' });
+  for (const pool of [[146,404,12,6],[171,426,10,5],[198,445,13,6],[224,463,10,5]]) {
+    marshGroup.appendChild(svgEl('ellipse', {
+      cx: pool[0], cy: pool[1], rx: pool[2], ry: pool[3],
+      fill: 'rgba(80,105,115,.08)', stroke: 'rgba(70,90,100,.14)', 'stroke-width': .8
+    }));
+  }
+  svg.appendChild(marshGroup);
 
   // ── Ironspine Mountains (glyph row) ──────────────
   const features = mapGeo.natural_features || [];
@@ -5580,12 +5954,7 @@ function renderValdrisMap(svg) {
     }
   }
 
-  // ── Rivers (wobbly, tapering) — Realistic hydrology ──────────────
-  // All rivers originate in the Ironspine Mountains or interior highlands
-  // and flow downhill to the nearest coast in dendritic patterns.
-  // Ironspine spine: x≈576-592, y≈77-460  (continental divide)
-  // West coast / Vael Ocean: x≈83-222       South coast / Sapphire Sea: y≈488-540
-  // North coast / Bitter Sea: y≈37-100       East coast / Ashen Reach: x≈627-648
+  // ── Rivers (wobbly, tapering) from geography data ──────────────
 
   function wobblyRiverPath(points, seedOff) {
     let d = `M${points[0][0]},${points[0][1]}`;
@@ -5599,8 +5968,7 @@ function renderValdrisMap(svg) {
     return d;
   }
 
-  // Helper to draw a river with optional label
-  function drawRiver(pts, seedOff, width, opacity, label, labelPos, labelAngle) {
+  function drawRiver(pts, seedOff, width, opacity, label, labelPos, labelAngle, labelSize) {
     const d = wobblyRiverPath(pts, seedOff);
     const stroke = `rgba(50,70,110,${opacity})`;
     if (rc) {
@@ -5611,155 +5979,27 @@ function renderValdrisMap(svg) {
     if (label && labelPos) {
       const lt = svgEl('text', {
         x:labelPos[0], y:labelPos[1], fill:`rgba(50,70,110,${opacity*.6})`,
-        'font-size':5.5, 'font-style':'italic',
+        'font-size': labelSize || 5.5, 'font-style':'italic',
         ...(labelAngle ? { transform:`rotate(${labelAngle},${labelPos[0]},${labelPos[1]})` } : {})
       });
       lt.textContent = label; svg.appendChild(lt);
     }
   }
 
-  // ────────────────────────────────────────────────────
-  // WEST-FLOWING SYSTEM (Ironspine → Hearthlands → coasts)
-  // ────────────────────────────────────────────────────
-
-  // (1) PELIMOR RIVER — the great trunk river of Valdris
-  //     Rises in central Ironspine (~y:240), flows SW through Hearthlands,
-  //     empties into the Sapphire Sea at the south coast
   for (const f of features) {
-    if (f.type === 'river' && f.id === 'pelimor_river') {
-      const pts = [
-        [574,201],[558,219],[542,239],[523,260],[504,284],
-        [482,310],[461,337],[440,365],[421,391],[405,417],
-        [395,444],[393,468],[398,488],[405,507],[410,527]
-      ];
-      const d = wobblyRiverPath(pts, 100);
-      if (rc) {
-        const node = rc.path(d, { stroke:'rgba(50,70,110,.55)', strokeWidth:2.0, fill:'none', roughness:.8, bowing:1.5 });
-        svg.appendChild(node);
-      } else {
-        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.55)', 'stroke-width':2.0, fill:'none' }));
-      }
-      const rl = svgEl('text', { x:469, y:326, fill:'rgba(50,70,110,.35)', 'font-size':6.5, 'font-style':'italic', transform:'rotate(-55,469,326)' });
-      rl.textContent = 'Pelimor R.'; svg.appendChild(rl);
-    }
-  }
-
-  // (2) IRONBROOK — mountain torrent, flows W from N Ironspine foothills
-  //     to join Pelimor River at ~(440,290)
-  for (const f of features) {
-    if (f.type === 'river' && f.id === 'ironbrook') {
-      drawRiver(
-        [[581,160],[563,168],[546,180],[529,195],[516,213],[507,234],[516,251],[523,260]],
-        450, 1.0, .4, 'Ironbrook', [548,171], -20
-      );
-    }
-  }
-
-  // (3) THORNWATER — rises in western Hearthlands hills, flows S/SE
-  //     to join Pelimor at ~(375,378)
-  for (const f of features) {
-    if (f.type === 'river' && f.id === 'thornwater') {
-      drawRiver(
-        [[357,248],[367,270],[380,290],[393,310],[405,332],[418,349],[431,361],[440,365]],
-        600, 1.0, .38, 'Thornwater', [372,284], -65
-      );
-    }
-  }
-
-  // ────────────────────────────────────────────────────
-  // NORTH-FLOWING SYSTEM (Ironspine → Bitter Sea)
-  // ────────────────────────────────────────────────────
-
-  // (4) NORTHMERE RIVER — rises in N Ironspine, flows NW across
-  //     Steppe Marches to the Bitter Sea (north coast)
-  for (const f of features) {
-    if (f.type === 'river' && f.id === 'northmere_river') {
-      drawRiver(
-        [[571,112],[548,100],[523,88],[495,80],[465,73],[433,65],[402,56],[370,49]],
-        400, 1.3, .45, 'Northmere R.', [484,68], -10
-      );
-    }
-  }
-
-  // ────────────────────────────────────────────────────
-  // SHATTERED WEST SYSTEM (highlands → Vael Ocean)
-  // ────────────────────────────────────────────────────
-
-  // (5) WYCHFLOW — main western river, rises in central highlands
-  //     where Ironspine foothills meet Shattered West,
-  //     flows W/SW through dark forests to Vael Ocean (west coast)
-  for (const f of features) {
-    if (f.type === 'river' && f.id === 'wychflow') {
-      drawRiver(
-        [[319,165],[293,183],[270,199],[249,219],[229,243],[214,266],
-         [198,294],[181,322],[168,349],[155,373]],
-        500, 1.4, .42, 'Wychflow R.', [210,248], -60
-      );
-    }
-  }
-
-  // (6) COLDVEIN — smaller tributary, rises in NW highlands,
-  //     flows SE to join Wychflow at ~(225,255)
-  for (const f of features) {
-    if (f.type === 'river' && f.id === 'coldvein') {
-      drawRiver(
-        [[181,124],[194,144],[210,165],[229,187],[242,207],[249,219]],
-        550, .9, .35, 'Coldvein', [191,148], -55
-      );
-    }
-  }
-
-  // ────────────────────────────────────────────────────
-  // SUNKEN MARCHES DRAINAGE (lowlands → south/SW coast)
-  // ────────────────────────────────────────────────────
-
-  // (7) GREYMIST RIVER — drains the Sunken Marches, flows S/SW
-  //     to the coast where S and W coasts meet
-  for (const f of features) {
-    if (f.type === 'river' && f.id === 'greymist_river') {
-      drawRiver(
-        [[185,385],[198,405],[214,424],[232,441],[252,456],[270,471],[283,486],[293,503]],
-        300, 1.1, .4, 'Greymist R.', [210,426], -50
-      );
-    }
-  }
-
-  // ────────────────────────────────────────────────────
-  // EAST-FLOWING SYSTEM (Ironspine → Ashen Reach coast)
-  // ────────────────────────────────────────────────────
-
-  // (8) ASHWATER — rises in E Ironspine, flows E/SE through the
-  //     blighted Ashen Reach to the eastern sea
-  for (const f of features) {
-    if (f.type === 'river' && f.id === 'ashwater') {
-      const pts = [
-        [592,225],[602,246],[609,270],[614,294],[618,320],[622,346],[625,369],[622,388],[614,403]
-      ];
-      const d = wobblyRiverPath(pts, 200);
-      if (rc) {
-        const node = rc.path(d, { stroke:'rgba(50,70,110,.4)', strokeWidth:1.2, fill:'none', roughness:.7 });
-        svg.appendChild(node);
-      } else {
-        svg.appendChild(svgEl('path', { d, stroke:'rgba(50,70,110,.4)', 'stroke-width':1.2, fill:'none' }));
-      }
-      const rl = svgEl('text', { x:631, y:308, fill:'rgba(50,70,110,.3)', 'font-size':5.5, 'font-style':'italic', transform:'rotate(-80,631,308)' });
-      rl.textContent = 'Ashwater'; svg.appendChild(rl);
-    }
-  }
-
-  // ── Scattered trees (forest hints) ──────────────
-  const forestZones = [
-    {x:210,y:201,n:6,spread:28}, // Shattered West forests
-    {x:395,y:260,n:8,spread:36}, // Hearthlands
-    {x:185,y:385,n:5,spread:23}, // Sunken Marches
-    {x:408,y:474,n:4,spread:26}, // Iron Coast
-  ];
-  for (const fz of forestZones) {
-    for (let fi = 0; fi < fz.n; fi++) {
-      const tx = fz.x + _sn.noise2D(fi*3.1, fz.y*.01)*fz.spread;
-      const ty = fz.y + _sn.noise2D(fz.x*.01, fi*3.1)*fz.spread*.7;
-      drawTree(svg, tx, ty, 6 + Math.random()*3);
-    }
+    if (f.type !== 'river') continue;
+    const geom = getValdrisRiverGeometry(f);
+    if (!geom) continue;
+    drawRiver(
+      geom.points,
+      geom.seedOffset,
+      geom.strokeWidth,
+      geom.opacity,
+      geom.labelText,
+      geom.labelPos,
+      geom.labelAngle,
+      geom.labelSize
+    );
   }
 
   // ── Sea labels (italic, spaced) ──────────────────
@@ -5779,53 +6019,65 @@ function renderValdrisMap(svg) {
   }
 
   // ── Place markers (confidence-based styling) ──────
-  const assignments = mapGeo.place_assignments || [];
+  const assignmentView = normalizeValdrisAssignments(mapGeo.place_assignments || []);
+  const assignments = assignmentView.markers;
   for (const a of assignments) {
-    const px = (a.position_pct.x / 100) * 750 + 25;
-    const py = (a.position_pct.y / 100) * 550 + 25;
+    const positionPct = assignmentPositionPct(a);
+    const pt = toValdrisDetailPoint(positionPct, mapCfg);
+    if (!pt) continue;
+    const px = pt.x;
+    const py = pt.y;
     const conf = (a.confidence || '').toLowerCase();
+    const markerAssignment = { ...a, _position_pct: positionPct };
+    const placeKind = inferPlaceKind(a);
+    const labelName = a.place_name || '';
+    const scale = conf === 'high' ? 1 : conf === 'medium' ? .84 : .68;
 
     if (conf === 'high') {
-      // Solid ink dot + crosshair
-      svg.appendChild(svgEl('circle', { cx:px, cy:py, r:3, fill:'rgba(50,30,10,.85)', stroke:'rgba(50,30,10,.5)', 'stroke-width':.8, cursor:'pointer' }));
-      // Tiny crosshairs
-      svg.appendChild(svgEl('line', { x1:px-5,y1:py, x2:px+5,y2:py, stroke:'rgba(50,30,10,.25)', 'stroke-width':.4 }));
-      svg.appendChild(svgEl('line', { x1:px,y1:py-5, x2:px,y2:py+5, stroke:'rgba(50,30,10,.25)', 'stroke-width':.4 }));
+      drawSettlementGlyph(svg, px, py, placeKind, scale, 'rgba(55,35,12,.82)');
+      svg.appendChild(svgEl('line', { x1:px-6,y1:py, x2:px+6,y2:py, stroke:'rgba(50,30,10,.18)', 'stroke-width':.45 }));
+      svg.appendChild(svgEl('line', { x1:px,y1:py-6, x2:px,y2:py+6, stroke:'rgba(50,30,10,.18)', 'stroke-width':.45 }));
     } else if (conf === 'medium') {
-      // Smaller dot, lighter
-      svg.appendChild(svgEl('circle', { cx:px, cy:py, r:2.2, fill:'rgba(80,55,20,.6)', stroke:'none', cursor:'pointer' }));
+      drawSettlementGlyph(svg, px, py, placeKind, scale, 'rgba(80,55,20,.62)');
     } else {
-      // Faded stipple dot
-      svg.appendChild(svgEl('circle', { cx:px, cy:py, r:1.8, fill:'none', stroke:'rgba(80,55,20,.35)', 'stroke-width':.8, 'stroke-dasharray':'1 1.5', cursor:'pointer' }));
+      svg.appendChild(svgEl('circle', { cx:px, cy:py, r:2.2, fill:'rgba(212,197,160,.35)', stroke:'rgba(80,55,20,.28)', 'stroke-width':.7, cursor:'pointer' }));
+      svg.appendChild(svgEl('path', { d:`M${px-2.5},${py+2.5} L${px+2.5},${py-2.5} M${px-2.5},${py-2.5} L${px+2.5},${py+2.5}`, stroke:'rgba(80,55,20,.3)', 'stroke-width':.7, fill:'none' }));
     }
 
     // Interactive tooltip area (invisible larger hit target)
     const hitTarget = svgEl('circle', { cx:px, cy:py, r:8, fill:'transparent', cursor:'pointer' });
-    hitTarget.addEventListener('mouseenter', (e) => showPlaceTooltip(e, a));
+  hitTarget.addEventListener('mouseenter', (e) => showPlaceTooltip(e, markerAssignment));
     hitTarget.addEventListener('mouseleave', hideTooltip);
     svg.appendChild(hitTarget);
 
     // Label for high-confidence places
-    if (conf === 'high' && a.place_name && !a.place_name.match(/^(the |a |dry |deep )/i)) {
+    if (conf === 'high' && labelName && !labelName.match(/^(the |a |dry |deep )/i)) {
+      svg.appendChild(svgEl('rect', {
+        x: px + 4, y: py - 5.8, width: Math.max(24, labelName.length * 3.9), height: 9.2,
+        fill: 'rgba(212,197,160,.42)', stroke: 'none', rx: 1.5, 'pointer-events':'none'
+      }));
       const lbl = svgEl('text', {
         x: px + 7, y: py + 3, fill: 'rgba(50,30,10,.65)', 'font-size': 6.5,
         'font-family': "'IM Fell English', serif", 'pointer-events':'none'
       });
-      lbl.textContent = a.place_name; svg.appendChild(lbl);
-    } else if (conf === 'medium' && a.place_name && a.place_name.length < 16) {
+      lbl.textContent = labelName; svg.appendChild(lbl);
+    } else if (conf === 'medium' && labelName && labelName.length < 18) {
       const lbl = svgEl('text', {
         x: px + 5, y: py + 2.5, fill: 'rgba(70,50,20,.35)', 'font-size': 5.5,
         'font-family': "'IM Fell English', serif", 'font-style':'italic', 'pointer-events':'none'
       });
-      lbl.textContent = a.place_name; svg.appendChild(lbl);
+      lbl.textContent = labelName; svg.appendChild(lbl);
     }
   }
 
   // ── Routes (hand-drawn dotted lines) ──────────────
   const routes = mapGeo.routes || [];
   const placePos = {};
-  for (const a of assignments) {
-    placePos[a.place_name] = { x: (a.position_pct.x/100)*750+25, y: (a.position_pct.y/100)*550+25 };
+  for (const [placeName, placement] of assignmentView.lookup.entries()) {
+    const pct = assignmentPositionPct(placement);
+    const pt = toValdrisDetailPoint(pct, mapCfg);
+    if (!pt) continue;
+    placePos[placeName] = { x: pt.x, y: pt.y };
   }
   for (const rt of routes) {
     const from = placePos[rt.from_place], to = placePos[rt.to_place];
@@ -5847,11 +6099,11 @@ function renderValdrisMap(svg) {
   drawCompass(svg, W-60, 55, 20);
 
   // ── Scale system ──────────────────────────────────
-  // Valdris ≈ Australia: 2500 mi wide × 1830 mi tall
-  // Usable viewport: 750 × 550 px (25 px padding each side)
-  const VALDRIS_WIDTH_MI  = 2500;
-  const VALDRIS_HEIGHT_MI = 1830;
-  const MAP_PX_W = 750, MAP_PX_H = 550, MAP_PAD = 25;
+  const scaleMiles = getValdrisScaleMiles();
+  const VALDRIS_WIDTH_MI = scaleMiles.width;
+  const VALDRIS_HEIGHT_MI = scaleMiles.height;
+  const MAP_PX_W = mapCfg.usable_width;
+  const MAP_PX_H = mapCfg.usable_height;
   const MI_PER_PX = VALDRIS_WIDTH_MI / MAP_PX_W; // ≈ 3.33
 
   // Expose helper for tooltips
@@ -5859,7 +6111,12 @@ function renderValdrisMap(svg) {
     miPerPx: MI_PER_PX,
     pxToMi: (px) => Math.round(px * MI_PER_PX),
     distMi: (x1,y1,x2,y2) => Math.round(Math.sqrt((x2-x1)**2 + (y2-y1)**2) * MI_PER_PX),
-    assignments: assignments
+    assignments: assignments.map((a) => ({ ...a, _position_pct: assignmentPositionPct(a) })),
+    detailConfig: mapCfg,
+    widthMiles: VALDRIS_WIDTH_MI,
+    heightMiles: VALDRIS_HEIGHT_MI,
+    mapPxWidth: MAP_PX_W,
+    mapPxHeight: MAP_PX_H
   };
 
   // ── Scale bar (Tolkien-style) ─────────────────────
@@ -5922,28 +6179,37 @@ function showPlaceTooltip(e, assignment) {
   const regionName = getRegionDisplayName(assignment.macro_region);
   const conf = (assignment.confidence||'unknown').toLowerCase();
   const confLabel = conf === 'high' ? '⬤ Confirmed' : conf === 'medium' ? '◐ Reported' : '○ Uncertain';
+  const childPlaces = Array.isArray(assignment.child_places) ? assignment.child_places : [];
+  const sublocHtml = childPlaces.length
+    ? `<div class="tt-region">Includes: ${escHtml(childPlaces.join(', '))}</div>`
+    : '';
 
   // Distance to nearest notable places
   let distHtml = '';
   if (window._valdrisScale) {
     const sc = window._valdrisScale;
-    const ax = (assignment.position_pct.x / 100) * 750 + 25;
-    const ay = (assignment.position_pct.y / 100) * 550 + 25;
-    const nearby = [];
-    for (const other of sc.assignments) {
-      if (other.place_name === assignment.place_name) continue;
-      if ((other.confidence||'').toLowerCase() === 'low') continue;
-      const bx = (other.position_pct.x / 100) * 750 + 25;
-      const by = (other.position_pct.y / 100) * 550 + 25;
-      const d = sc.distMi(ax, ay, bx, by);
-      if (d > 0 && d < 1200) nearby.push({ name: other.place_name, d });
-    }
-    nearby.sort((a,b) => a.d - b.d);
-    const top3 = nearby.slice(0, 3);
-    if (top3.length) {
-      distHtml = '<div class="tt-dist">' + top3.map(
-        n => `${escHtml(n.name)}: ~${n.d} mi`
-      ).join(' · ') + '</div>';
+    const aPos = assignment._position_pct || assignmentPositionPct(assignment);
+    const aPt = toValdrisDetailPoint(aPos, sc.detailConfig);
+    if (aPt) {
+      const ax = aPt.x;
+      const ay = aPt.y;
+      const nearby = [];
+      for (const other of sc.assignments) {
+        if (other.place_name === assignment.place_name) continue;
+        if ((other.confidence||'').toLowerCase() === 'low') continue;
+        const otherPos = other._position_pct || assignmentPositionPct(other);
+        const bPt = toValdrisDetailPoint(otherPos, sc.detailConfig);
+        if (!bPt) continue;
+        const d = sc.distMi(ax, ay, bPt.x, bPt.y);
+        if (d > 0 && d < 1200) nearby.push({ name: other.place_name, d });
+      }
+      nearby.sort((a,b) => a.d - b.d);
+      const top3 = nearby.slice(0, 3);
+      if (top3.length) {
+        distHtml = '<div class="tt-dist">' + top3.map(
+          n => `${escHtml(n.name)}: ~${n.d} mi`
+        ).join(' · ') + '</div>';
+      }
     }
   }
 
@@ -5951,6 +6217,7 @@ function showPlaceTooltip(e, assignment) {
     <div class="tt-name">${escHtml(assignment.place_name)}</div>
     <div class="tt-region">${escHtml(regionName)}</div>
     <div class="tt-conf">${confLabel}</div>
+    ${sublocHtml}
     ${distHtml}
   `;
   const rect = container.getBoundingClientRect();

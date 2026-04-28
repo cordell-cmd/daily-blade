@@ -67,6 +67,46 @@ def _pick_latest_seen(row: dict) -> str:
     return best
 
 
+def _setting_state(scope: str, arc: dict, story_apps: list) -> str:
+    """Classify whether an event reads like an active arc or a settled world shift."""
+    if bool(arc.get("resolved")):
+        return "legacy"
+
+    scope_rank = {"world": 4, "continental": 3, "regional": 2, "city": 1, "local": 1}.get(
+        str(scope or "").strip().lower(),
+        2,
+    )
+    stage = str(arc.get("stage") or "seed").strip().lower()
+    days_ago = int(arc.get("days_ago") or 999)
+    recent_count = int(arc.get("recent_count") or 0)
+    trend = int(arc.get("trend") or 0)
+    dates = sorted({
+        str(a.get("date") or "").strip()
+        for a in (story_apps if isinstance(story_apps, list) else [])
+        if isinstance(a, dict) and str(a.get("date") or "").strip()
+    })
+    total_issues = len(dates)
+
+    if (
+        scope_rank >= 2
+        and total_issues >= 6
+        and recent_count >= 3
+        and days_ago <= 3
+        and trend <= 1
+    ):
+        return "setting_shift"
+
+    if stage in {"crisis", "climax"} and recent_count >= 3 and days_ago <= 2 and trend >= 0:
+        return "flashpoint"
+
+    return "active_arc"
+
+
+def _setting_state_rank(state: str) -> int:
+    s = str(state or "").strip().lower()
+    return {"legacy": 0, "active_arc": 1, "flashpoint": 2, "setting_shift": 3}.get(s, 1)
+
+
 def _select_story_appearances_for_summary(apps: list, max_tales: int) -> list:
     """Select appearances for summarization.
 
@@ -168,6 +208,7 @@ def _build_fallback_arc_summary(event_row: dict) -> str:
     scope = str(event_row.get("scope") or "").strip()
     epicenter = str(event_row.get("epicenter") or "").strip()
     stage = str(event_row.get("stage") or "").strip()
+    setting_state = str(event_row.get("setting_state") or "").strip()
     intensity = event_row.get("intensity")
     resolved = bool(event_row.get("resolved"))
     last_seen = str(event_row.get("last_seen") or "").strip()
@@ -205,6 +246,8 @@ def _build_fallback_arc_summary(event_row: dict) -> str:
         details.append(f"Epicenter: {epicenter}")
     if stage:
         details.append(f"Stage: {stage}")
+    if setting_state:
+        details.append(f"Mode: {setting_state.replace('_', ' ')}")
     if intensity is not None:
         details.append(f"Intensity: {intensity}")
     if details:
@@ -230,6 +273,8 @@ def _build_fallback_arc_summary(event_row: dict) -> str:
     parts.append(f"- Resolved: {'yes' if resolved else 'no'}")
     if stage:
         parts.append(f"- Stage: {stage}")
+    if setting_state:
+        parts.append(f"- Mode: {setting_state.replace('_', ' ')}")
     if intensity is not None:
         parts.append(f"- Intensity: {intensity}")
     if last_seen:
@@ -320,6 +365,7 @@ def main() -> int:
             "scope": scope,
             "epicenter": epicenter,
             "stage": str(arc.get("stage") or "seed"),
+            "setting_state": _setting_state(scope, arc, story_apps),
             "intensity": int(arc.get("intensity") or 1),
             "resolved": bool(arc.get("resolved")),
             "last_seen": str(arc.get("last_date") or "").strip() or None,
@@ -393,6 +439,9 @@ def main() -> int:
 
         # Keep strongest arc signals.
         ex["resolved"] = bool(ex.get("resolved")) and bool(r.get("resolved"))
+        ex_state = str(ex.get("setting_state") or "active_arc")
+        r_state = str(r.get("setting_state") or "active_arc")
+        ex["setting_state"] = ex_state if _setting_state_rank(ex_state) >= _setting_state_rank(r_state) else r_state
         ex["intensity"] = max(int(ex.get("intensity") or 1), int(r.get("intensity") or 1))
         ex["recent_issues"] = max(int(ex.get("recent_issues") or 0), int(r.get("recent_issues") or 0))
         ex["trend"] = max(int(ex.get("trend") or 0), int(r.get("trend") or 0), key=abs)

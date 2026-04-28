@@ -37,72 +37,167 @@
       "id": "valdris",
       "name": "Valdris",
       "description": "The known continent. A rugged landmass of trade cities, blasted wastes, haunted marshes, and warring provinces. Most recorded history unfolds here.",
-      "hemispheres": ["northern", "western"],
+      "hemispheres": [
+        "northern",
+        "western"
+      ],
       "status": "explored",
-      "climate_zones": ["temperate", "arid", "subarctic", "coastal-maritime"],
-      "svg_bounds": { "x": 120, "y": 100, "w": 380, "h": 350 },
+      "climate_zones": [
+        "temperate",
+        "arid",
+        "subarctic",
+        "coastal-maritime"
+      ],
+      "svg_bounds": {
+        "x": 120,
+        "y": 100,
+        "w": 380,
+        "h": 350
+      },
       "geo_dimensions": {
         "width_miles": 2500,
         "height_miles": 1830,
         "approx_area_sq_miles": 2900000,
-        "scale_note": "Roughly the size of Australia. The detail-map viewport (800×600 SVG units, with 25 px padding) maps to this physical area. 1 SVG unit ≈ 3.33 miles ≈ 5.37 km."
+        "scale_note": "Roughly the size of Australia. The detail-map viewport (800\u00d7600 SVG units, with 25 px padding) maps to this physical area. 1 SVG unit \u2248 3.33 miles \u2248 5.37 km."
       }
     },
     {
       "id": "keth_morath",
       "name": "Keth-Morath",
       "description": "A vast eastern continent of crumbling empires and forgotten cities. Nara the Tide-Thief was hunted across its shores. Connected to Valdris by a narrow land bridge or island chain.",
-      "hemispheres": ["northern", "eastern"],
+      "hemispheres": [
+        "northern",
+        "eastern"
+      ],
       "status": "rumored",
-      "climate_zones": ["temperate", "subtropical", "desert"],
-      "svg_bounds": { "x": 560, "y": 120, "w": 280, "h": 260 }
+      "climate_zones": [
+        "temperate",
+        "subtropical",
+        "desert"
+      ],
+      "svg_bounds": {
+        "x": 560,
+        "y": 120,
+        "w": 280,
+        "h": 260
+      }
     },
     {
       "id": "thul_ashara",
       "name": "Thul-Ashara",
       "description": "The equatorial continent. Steaming jungles, red deserts, and civilizations older than Valdris. Traders speak of fire-temples and spice lords.",
-      "hemispheres": ["southern", "eastern"],
+      "hemispheres": [
+        "southern",
+        "eastern"
+      ],
       "status": "rumored",
-      "climate_zones": ["tropical", "desert", "savanna"],
-      "svg_bounds": { "x": 400, "y": 400, "w": 300, "h": 180 }
+      "climate_zones": [
+        "tropical",
+        "desert",
+        "savanna"
+      ],
+      "svg_bounds": {
+        "x": 400,
+        "y": 400,
+        "w": 300,
+        "h": 180
+      }
     },
     {
       "id": "drakmere",
       "name": "Drakmere",
       "description": "A volcanic archipelago-continent in the southwestern seas. Dragons are said to roost in its caldera peaks. Smoke columns are visible from passing ships.",
-      "hemispheres": ["southern", "western"],
+      "hemispheres": [
+        "southern",
+        "western"
+      ],
       "status": "legendary",
-      "climate_zones": ["volcanic", "tropical"],
-      "svg_bounds": { "x": 80, "y": 440, "w": 240, "h": 200 }
+      "climate_zones": [
+        "volcanic",
+        "tropical"
+      ],
+      "svg_bounds": {
+        "x": 80,
+        "y": 440,
+        "w": 240,
+        "h": 200
+      }
     },
     {
       "id": "sundral",
       "name": "Sundral",
       "description": "A southern continent of sweeping grasslands and deep canyons. Merchant galleons occasionally return with strange spices and stranger tales.",
-      "hemispheres": ["southern", "eastern"],
+      "hemispheres": [
+        "southern",
+        "eastern"
+      ],
       "status": "rumored",
-      "climate_zones": ["temperate", "subtropical"],
-      "svg_bounds": { "x": 620, "y": 480, "w": 240, "h": 180 }
+      "climate_zones": [
+        "temperate",
+        "subtropical"
+      ],
+      "svg_bounds": {
+        "x": 620,
+        "y": 480,
+        "w": 240,
+        "h": 180
+      }
     },
     {
       "id": "frostholme",
       "name": "Frostholme",
       "description": "The northern polar continent. Permanent ice, aurora storms, and the ruins of a pre-human civilization buried under glaciers.",
-      "hemispheres": ["northern"],
+      "hemispheres": [
+        "northern"
+      ],
       "status": "legendary",
-      "climate_zones": ["polar", "tundra"],
-      "svg_bounds": { "x": 250, "y": 15, "w": 400, "h": 80 }
+      "climate_zones": [
+        "polar",
+        "tundra"
+      ],
+      "svg_bounds": {
+        "x": 250,
+        "y": 15,
+        "w": 400,
+        "h": 80
+      }
     },
     {
       "id": "ashenveil",
       "name": "Ashenveil",
       "description": "The southern polar continent. Eternally shrouded in grey mist. Ships that sail too far south do not return. Its very existence is debated by scholars.",
-      "hemispheres": ["southern"],
+      "hemispheres": [
+        "southern"
+      ],
       "status": "mythical",
-      "climate_zones": ["polar"],
-      "svg_bounds": { "x": 200, "y": 620, "w": 500, "h": 60 }
+      "climate_zones": [
+        "polar"
+      ],
+      "svg_bounds": {
+        "x": 200,
+        "y": 620,
+        "w": 500,
+        "h": 60
+      }
     }
   ],
+  "map_coordinates": {
+    "version": "1.0",
+    "valdris": {
+      "canonical_source": "place_assignments.position_pct",
+      "detail_view": {
+        "width": 800,
+        "height": 600,
+        "padding": 25,
+        "usable_width": 750,
+        "usable_height": 550
+      },
+      "scale_miles": {
+        "width": 2500,
+        "height": 1830
+      }
+    }
+  },
   "macro_regions": [
     {
       "id": "steppe_marches",
@@ -111,7 +206,10 @@
       "description": "Vast northern grasslands swept by bitter winds. Nomadic warbands, living fortresses, and contested border keeps. The Bitter Sea gnaws at its northern coast.",
       "climate": "subarctic to temperate",
       "terrain": "grassland, steppe, tundra fringe",
-      "center_pct": { "x": 50, "y": 18 },
+      "center_pct": {
+        "x": 50,
+        "y": 18
+      },
       "color": "#8B7355"
     },
     {
@@ -121,7 +219,10 @@
       "description": "War-torn highlands and dark forests. Once a unified kingdom, now fragmented into squabbling provinces, haunted ruins, and witch-held holdfasts.",
       "climate": "temperate, cool maritime",
       "terrain": "hills, dark forest, moorland, ruins",
-      "center_pct": { "x": 20, "y": 35 },
+      "center_pct": {
+        "x": 20,
+        "y": 35
+      },
       "color": "#6B5B4F"
     },
     {
@@ -131,7 +232,10 @@
       "description": "Waterlogged lowlands where fog never fully lifts. Ghost-kings, drowned villages, and deep enchanted forests where beast-spirits guard the old ways.",
       "climate": "cool maritime, humid",
       "terrain": "marsh, bog, flooded forest, river delta",
-      "center_pct": { "x": 15, "y": 68 },
+      "center_pct": {
+        "x": 15,
+        "y": 68
+      },
       "color": "#5B7B6B"
     },
     {
@@ -141,7 +245,10 @@
       "description": "The civilized heartland of Valdris. River valleys, rolling farmland, and the great trade city of Pelimor. Crowns and councils vie for power; merchant guilds pull the strings.",
       "climate": "temperate, mild",
       "terrain": "plains, river valleys, farmland, cities",
-      "center_pct": { "x": 48, "y": 48 },
+      "center_pct": {
+        "x": 48,
+        "y": 48
+      },
       "color": "#A0926B"
     },
     {
@@ -151,7 +258,10 @@
       "description": "A vast eastern expanse of blasted wastes, cursed deserts, and ancient tombs. The Ironspine Mountains wall it off from the Hearthlands. Caravan routes are its only arteries.",
       "climate": "arid, hot desert",
       "terrain": "desert, wasteland, salt flats, ruins",
-      "center_pct": { "x": 78, "y": 45 },
+      "center_pct": {
+        "x": 78,
+        "y": 45
+      },
       "color": "#B8860B"
     },
     {
@@ -161,7 +271,10 @@
       "description": "The southern seaboard of Valdris. Port cities, fishing villages, and the shimmering Sapphire Sea. Merfolk nations lurk beneath the waves; pirates raid the trade lanes.",
       "climate": "coastal maritime, warm",
       "terrain": "coast, harbors, sea cliffs, islands",
-      "center_pct": { "x": 45, "y": 82 },
+      "center_pct": {
+        "x": 45,
+        "y": 82
+      },
       "color": "#4682B4"
     }
   ],
@@ -177,582 +290,2071 @@
       "name": "The Sapphire Sea",
       "type": "sea",
       "description": "The warm southern sea. Merfolk nations dwell in its depths. Tide-magic pulses through its currents. The Iron Coast draws its wealth from these waters.",
-      "adjacent_regions": ["iron_coast"]
+      "adjacent_regions": [
+        "iron_coast"
+      ]
     },
     {
       "id": "bitter_sea",
       "name": "The Bitter Sea",
       "type": "sea",
       "description": "Cold northern waters between Valdris and Frostholme. Ice floes drift south in winter. Few harbors survive its fury.",
-      "adjacent_regions": ["steppe_marches"]
+      "adjacent_regions": [
+        "steppe_marches"
+      ]
     },
     {
       "id": "ironspine_mountains",
       "name": "The Ironspine Mountains",
       "type": "mountain_range",
       "description": "A jagged north-south spine dividing the Hearthlands from the Ashen Reach. Dwarven holds tunnel through its roots. Passes are few and treacherous.",
-      "adjacent_regions": ["hearthlands", "ashen_reach"]
+      "adjacent_regions": [
+        "hearthlands",
+        "ashen_reach"
+      ]
     },
     {
       "id": "pelimor_river",
       "name": "The Pelimor River",
       "type": "river",
       "description": "The great trade river of the Hearthlands. Flows south from the foothills of the Ironspine through Pelimor and into the Sapphire Sea.",
-      "flows_through": ["hearthlands", "iron_coast"]
+      "flows_through": [
+        "hearthlands",
+        "iron_coast"
+      ],
+      "source_feature_ids": [
+        "ironspine_mountains"
+      ],
+      "source_regions": [
+        "hearthlands"
+      ],
+      "outlet_feature_ids": [
+        "sapphire_sea"
+      ],
+      "outlet_regions": [
+        "iron_coast"
+      ],
+      "map_geometry": {
+        "valdris": {
+          "detail_path": [
+            [
+              574,
+              201
+            ],
+            [
+              558,
+              219
+            ],
+            [
+              542,
+              239
+            ],
+            [
+              523,
+              260
+            ],
+            [
+              504,
+              284
+            ],
+            [
+              482,
+              310
+            ],
+            [
+              461,
+              337
+            ],
+            [
+              440,
+              365
+            ],
+            [
+              421,
+              391
+            ],
+            [
+              405,
+              417
+            ],
+            [
+              395,
+              444
+            ],
+            [
+              393,
+              468
+            ],
+            [
+              398,
+              488
+            ],
+            [
+              405,
+              507
+            ],
+            [
+              410,
+              527
+            ]
+          ],
+          "seed_offset": 100,
+          "stroke_width": 2.0,
+          "opacity": 0.55,
+          "label": {
+            "text": "Pelimor R.",
+            "position": [
+              469,
+              326
+            ],
+            "angle": -55,
+            "font_size": 6.5
+          }
+        }
+      }
     },
     {
       "id": "ashwater",
       "name": "The Ashwater",
       "type": "river",
       "description": "A seasonal river rising on the eastern slopes of the Ironspine Mountains. It flows east and southeast through the Ashen Reach, often reduced to a dry bed in summer. When it flows, it carries ashen silt from the Scorched Flats to the eastern coast.",
-      "flows_through": ["ashen_reach"]
+      "flows_through": [
+        "ashen_reach"
+      ],
+      "source_feature_ids": [
+        "ironspine_mountains"
+      ],
+      "source_regions": [
+        "ashen_reach"
+      ],
+      "outlet_to_coast": true,
+      "outlet_regions": [
+        "ashen_reach"
+      ],
+      "map_geometry": {
+        "valdris": {
+          "detail_path": [
+            [
+              592,
+              225
+            ],
+            [
+              602,
+              246
+            ],
+            [
+              609,
+              270
+            ],
+            [
+              614,
+              294
+            ],
+            [
+              618,
+              320
+            ],
+            [
+              622,
+              346
+            ],
+            [
+              625,
+              369
+            ],
+            [
+              622,
+              388
+            ],
+            [
+              614,
+              403
+            ]
+          ],
+          "seed_offset": 200,
+          "stroke_width": 1.2,
+          "opacity": 0.4,
+          "label": {
+            "text": "Ashwater",
+            "position": [
+              631,
+              308
+            ],
+            "angle": -80,
+            "font_size": 5.5
+          }
+        }
+      }
     },
     {
       "id": "greymist_river",
       "name": "The Greymist River",
       "type": "river",
       "description": "A slow, fog-shrouded river that drains the Sunken Marches, flowing south and southwest to meet the coast where the Vael Ocean and Sapphire Sea merge. Its waters are said to carry whispers of the drowned dead.",
-      "flows_through": ["sunken_marches"]
+      "flows_through": [
+        "sunken_marches"
+      ],
+      "source_regions": [
+        "sunken_marches"
+      ],
+      "source_type": "marsh_headwaters",
+      "outlet_feature_ids": [
+        "vael_ocean",
+        "sapphire_sea"
+      ],
+      "outlet_regions": [
+        "sunken_marches",
+        "iron_coast"
+      ],
+      "map_geometry": {
+        "valdris": {
+          "detail_path": [
+            [
+              185,
+              385
+            ],
+            [
+              198,
+              405
+            ],
+            [
+              214,
+              424
+            ],
+            [
+              232,
+              441
+            ],
+            [
+              252,
+              456
+            ],
+            [
+              270,
+              471
+            ],
+            [
+              283,
+              486
+            ],
+            [
+              293,
+              503
+            ]
+          ],
+          "seed_offset": 300,
+          "stroke_width": 1.1,
+          "opacity": 0.4,
+          "label": {
+            "text": "Greymist R.",
+            "position": [
+              210,
+              426
+            ],
+            "angle": -50,
+            "font_size": 5.5
+          }
+        }
+      }
     },
     {
       "id": "northmere_river",
       "name": "The Northmere",
       "type": "river",
       "description": "A broad, cold river that rises in the northern Ironspine and flows northwest across the Steppe Marches to empty into the Bitter Sea. Frozen solid for three months each winter; the rest of the year it carries furs and grain toward the coast.",
-      "flows_through": ["steppe_marches"]
+      "flows_through": [
+        "steppe_marches"
+      ],
+      "source_feature_ids": [
+        "ironspine_mountains"
+      ],
+      "source_regions": [
+        "steppe_marches"
+      ],
+      "outlet_feature_ids": [
+        "bitter_sea"
+      ],
+      "outlet_regions": [
+        "steppe_marches"
+      ],
+      "map_geometry": {
+        "valdris": {
+          "detail_path": [
+            [
+              571,
+              112
+            ],
+            [
+              548,
+              100
+            ],
+            [
+              523,
+              88
+            ],
+            [
+              495,
+              80
+            ],
+            [
+              465,
+              73
+            ],
+            [
+              433,
+              65
+            ],
+            [
+              402,
+              56
+            ],
+            [
+              370,
+              49
+            ]
+          ],
+          "seed_offset": 400,
+          "stroke_width": 1.3,
+          "opacity": 0.45,
+          "label": {
+            "text": "Northmere R.",
+            "position": [
+              484,
+              68
+            ],
+            "angle": -10,
+            "font_size": 5.5
+          }
+        }
+      }
     },
     {
       "id": "ironbrook",
       "name": "The Ironbrook",
       "type": "river",
       "description": "A fast mountain stream that tumbles from the Ironspine's western foothills to join the Pelimor River. Dwarven runoff taints its waters rust-red in spring.",
-      "flows_through": ["hearthlands"]
+      "flows_through": [
+        "hearthlands"
+      ],
+      "source_feature_ids": [
+        "ironspine_mountains"
+      ],
+      "source_regions": [
+        "hearthlands"
+      ],
+      "outlet_river_ids": [
+        "pelimor_river"
+      ],
+      "map_geometry": {
+        "valdris": {
+          "detail_path": [
+            [
+              581,
+              160
+            ],
+            [
+              563,
+              168
+            ],
+            [
+              546,
+              180
+            ],
+            [
+              529,
+              195
+            ],
+            [
+              516,
+              213
+            ],
+            [
+              507,
+              234
+            ],
+            [
+              516,
+              251
+            ],
+            [
+              523,
+              260
+            ]
+          ],
+          "seed_offset": 450,
+          "stroke_width": 1.0,
+          "opacity": 0.4,
+          "label": {
+            "text": "Ironbrook",
+            "position": [
+              548,
+              171
+            ],
+            "angle": -20,
+            "font_size": 5.5
+          }
+        }
+      }
     },
     {
       "id": "wychflow",
       "name": "The Wychflow",
       "type": "river",
       "description": "The main river of the Shattered West. It rises where the Ironspine foothills meet the western highlands, then winds west and southwest through dark forests and ruined provinces to empty into the Vael Ocean. Witch-lights dance on its surface at night.",
-      "flows_through": ["shattered_west"]
+      "flows_through": [
+        "shattered_west"
+      ],
+      "source_feature_ids": [
+        "ironspine_mountains"
+      ],
+      "source_regions": [
+        "shattered_west"
+      ],
+      "outlet_feature_ids": [
+        "vael_ocean"
+      ],
+      "outlet_regions": [
+        "shattered_west"
+      ],
+      "map_geometry": {
+        "valdris": {
+          "detail_path": [
+            [
+              319,
+              165
+            ],
+            [
+              293,
+              183
+            ],
+            [
+              270,
+              199
+            ],
+            [
+              249,
+              219
+            ],
+            [
+              229,
+              243
+            ],
+            [
+              214,
+              266
+            ],
+            [
+              198,
+              294
+            ],
+            [
+              181,
+              322
+            ],
+            [
+              168,
+              349
+            ],
+            [
+              155,
+              373
+            ]
+          ],
+          "seed_offset": 500,
+          "stroke_width": 1.4,
+          "opacity": 0.42,
+          "label": {
+            "text": "Wychflow R.",
+            "position": [
+              210,
+              248
+            ],
+            "angle": -60,
+            "font_size": 5.5
+          }
+        }
+      }
     },
     {
       "id": "coldvein",
       "name": "The Coldvein",
       "type": "river",
-      "description": "A small, icy tributary of the Wychflow, flowing southeast from the highland moors. Its water is unnaturally cold — locals say a frost-spirit sleeps in its source.",
-      "flows_through": ["shattered_west"]
+      "description": "A small, icy tributary of the Wychflow, flowing southeast from the highland moors. Its water is unnaturally cold \u2014 locals say a frost-spirit sleeps in its source.",
+      "flows_through": [
+        "shattered_west"
+      ],
+      "source_regions": [
+        "shattered_west"
+      ],
+      "source_type": "highland_moor_headwaters",
+      "outlet_river_ids": [
+        "wychflow"
+      ],
+      "map_geometry": {
+        "valdris": {
+          "detail_path": [
+            [
+              181,
+              124
+            ],
+            [
+              194,
+              144
+            ],
+            [
+              210,
+              165
+            ],
+            [
+              229,
+              187
+            ],
+            [
+              242,
+              207
+            ],
+            [
+              249,
+              219
+            ]
+          ],
+          "seed_offset": 550,
+          "stroke_width": 0.9,
+          "opacity": 0.35,
+          "label": {
+            "text": "Coldvein",
+            "position": [
+              191,
+              148
+            ],
+            "angle": -55,
+            "font_size": 5.5
+          }
+        }
+      }
     },
     {
       "id": "thornwater",
       "name": "The Thornwater",
       "type": "river",
       "description": "A sluggish, briar-choked river that rises in the western Hearthlands hills, flowing south and southeast to join the Pelimor River. Its banks are tangled with witch-thorn.",
-      "flows_through": ["hearthlands"]
+      "flows_through": [
+        "hearthlands"
+      ],
+      "source_regions": [
+        "hearthlands"
+      ],
+      "source_type": "hill_headwaters",
+      "outlet_river_ids": [
+        "pelimor_river"
+      ],
+      "map_geometry": {
+        "valdris": {
+          "detail_path": [
+            [
+              357,
+              248
+            ],
+            [
+              367,
+              270
+            ],
+            [
+              380,
+              290
+            ],
+            [
+              393,
+              310
+            ],
+            [
+              405,
+              332
+            ],
+            [
+              418,
+              349
+            ],
+            [
+              431,
+              361
+            ],
+            [
+              440,
+              365
+            ]
+          ],
+          "seed_offset": 600,
+          "stroke_width": 1.0,
+          "opacity": 0.38,
+          "label": {
+            "text": "Thornwater",
+            "position": [
+              372,
+              284
+            ],
+            "angle": -65,
+            "font_size": 5.5
+          }
+        }
+      }
     }
   ],
   "place_assignments": [
     {
       "place_name": "Pelimor",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 48, "y": 46 },
+      "position_pct": {
+        "x": 48,
+        "y": 46
+      },
       "confidence": "high",
-      "evidence": ["Central trade hub in multiple stories", "Blasted Lands are east of Pelimor", "Caravan routes connect to Ashen Wastes"]
+      "evidence": [
+        "Central trade hub in multiple stories",
+        "Blasted Lands are east of Pelimor",
+        "Caravan routes connect to Ashen Wastes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 48,
+            "y": 46
+          }
+        }
+      }
     },
     {
       "place_name": "Amrath",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 42, "y": 55 },
+      "position_pct": {
+        "x": 42,
+        "y": 55
+      },
       "confidence": "medium",
-      "evidence": ["Major city, site of siege", "Conjuress Mel's demon pact occurred here"]
+      "evidence": [
+        "Major city, site of siege",
+        "Conjuress Mel's demon pact occurred here"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 42,
+            "y": 55
+          }
+        }
+      }
     },
     {
       "place_name": "Ostern",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 55, "y": 42 },
+      "position_pct": {
+        "x": 55,
+        "y": 42
+      },
       "confidence": "medium",
-      "evidence": ["Kingdom ruled by King Aldous III", "Houses Plague-Bringer's Crown vault"]
+      "evidence": [
+        "Kingdom ruled by King Aldous III",
+        "Houses Plague-Bringer's Crown vault"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 55,
+            "y": 42
+          }
+        }
+      }
     },
     {
       "place_name": "Crimson Gate",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 52, "y": 52 },
+      "position_pct": {
+        "x": 52,
+        "y": 52
+      },
       "confidence": "low",
-      "evidence": ["Ruins of a burned city", "No strong directional clues"]
+      "evidence": [
+        "Ruins of a burned city",
+        "No strong directional clues"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 52,
+            "y": 52
+          }
+        }
+      }
     },
     {
       "place_name": "Xul'thyris",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 56, "y": 50 },
+      "position_pct": {
+        "x": 56,
+        "y": 50
+      },
       "confidence": "medium",
-      "evidence": ["Magistracy city with gambling dens", "Shadow-broker culture suggests trade nexus near Pelimor"]
+      "evidence": [
+        "Magistracy city with gambling dens",
+        "Shadow-broker culture suggests trade nexus near Pelimor"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 56,
+            "y": 50
+          }
+        }
+      }
     },
     {
       "place_name": "north road",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 48, "y": 38 },
+      "position_pct": {
+        "x": 48,
+        "y": 38
+      },
       "confidence": "medium",
-      "evidence": ["Pieter Vane fled three provinces along it", "Connects Hearthlands northward"]
+      "evidence": [
+        "Pieter Vane fled three provinces along it",
+        "Connects Hearthlands northward"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 48,
+            "y": 38
+          }
+        }
+      }
     },
     {
       "place_name": "dockside tavern",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 47, "y": 47 },
+      "position_pct": {
+        "x": 47,
+        "y": 47
+      },
+      "location_type": "sublocation",
+      "parent_place_name": "Pelimor",
+      "inherits_position_from_parent": true,
       "confidence": "low",
-      "evidence": ["Likely in Pelimor or a port city"]
+      "evidence": [
+        "Likely in Pelimor or a port city"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 47,
+            "y": 47
+          }
+        }
+      }
     },
     {
       "place_name": "Theron's Shop",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 49, "y": 47 },
+      "position_pct": {
+        "x": 49,
+        "y": 47
+      },
+      "location_type": "sublocation",
+      "parent_place_name": "Pelimor",
+      "inherits_position_from_parent": true,
       "confidence": "low",
-      "evidence": ["Scarlet Merchant's base, likely in a trade city"]
+      "evidence": [
+        "Scarlet Merchant's base, likely in a trade city"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 49,
+            "y": 47
+          }
+        }
+      }
     },
     {
       "place_name": "Queen's Court",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 50, "y": 44 },
+      "position_pct": {
+        "x": 50,
+        "y": 44
+      },
       "confidence": "low",
-      "evidence": ["Seat of The Crown, likely in a capital city"]
+      "evidence": [
+        "Seat of The Crown, likely in a capital city"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 50,
+            "y": 44
+          }
+        }
+      }
     },
     {
       "place_name": "throne room",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 50, "y": 44 },
+      "position_pct": {
+        "x": 50,
+        "y": 44
+      },
+      "location_type": "sublocation",
+      "parent_place_name": "Queen's Court",
+      "inherits_position_from_parent": true,
       "confidence": "low",
-      "evidence": ["King Tormund's seat of power"]
+      "evidence": [
+        "King Tormund's seat of power"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 50,
+            "y": 44
+          }
+        }
+      }
     },
     {
       "place_name": "merchant's house",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 49, "y": 48 },
+      "position_pct": {
+        "x": 49,
+        "y": 48
+      },
+      "location_type": "sublocation",
+      "parent_place_name": "Pelimor",
+      "inherits_position_from_parent": true,
       "confidence": "low",
-      "evidence": ["Generic location, likely urban"]
+      "evidence": [
+        "Generic location, likely urban"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 49,
+            "y": 48
+          }
+        }
+      }
     },
     {
       "place_name": "magistrate's villa",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 56, "y": 51 },
+      "position_pct": {
+        "x": 56,
+        "y": 51
+      },
+      "location_type": "sublocation",
+      "parent_place_name": "Xul'thyris",
+      "inherits_position_from_parent": true,
       "confidence": "medium",
-      "evidence": ["Within Xul'thyris"]
+      "evidence": [
+        "Within Xul'thyris"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 56,
+            "y": 51
+          }
+        }
+      }
     },
     {
       "place_name": "Quarantine Streets",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 50, "y": 48 },
+      "position_pct": {
+        "x": 50,
+        "y": 48
+      },
+      "location_type": "sublocation",
+      "parent_place_name": "Pelimor",
+      "inherits_position_from_parent": true,
       "confidence": "low",
-      "evidence": ["Plague-related district within a city"]
+      "evidence": [
+        "Plague-related district within a city"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 50,
+            "y": 48
+          }
+        }
+      }
     },
     {
       "place_name": "the Ashen Wastes",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 72, "y": 42 },
+      "position_pct": {
+        "x": 72,
+        "y": 42
+      },
       "confidence": "high",
-      "evidence": ["Major eastern wasteland", "East of Pelimor", "Connected via caravan routes"]
+      "evidence": [
+        "Major eastern wasteland",
+        "East of Pelimor",
+        "Connected via caravan routes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 72,
+            "y": 42
+          }
+        }
+      }
     },
     {
       "place_name": "The Blasted Lands",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 65, "y": 44 },
+      "position_pct": {
+        "x": 65,
+        "y": 44
+      },
       "confidence": "high",
-      "evidence": ["Explicitly 'east of Pelimor'"]
+      "evidence": [
+        "Explicitly 'east of Pelimor'"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 65,
+            "y": 44
+          }
+        }
+      }
     },
     {
       "place_name": "The Scorched Flats",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 76, "y": 46 },
+      "position_pct": {
+        "x": 76,
+        "y": 46
+      },
       "confidence": "high",
-      "evidence": ["Within the Ashen Wastes", "Crossing route toward Ruins of Old Keth"]
+      "evidence": [
+        "Within the Ashen Wastes",
+        "Crossing route toward Ruins of Old Keth"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 76,
+            "y": 46
+          }
+        }
+      }
     },
     {
       "place_name": "Ruins of Old Keth",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 80, "y": 44 },
+      "position_pct": {
+        "x": 80,
+        "y": 44
+      },
       "confidence": "high",
-      "evidence": ["Accessed via Scorched Flats within Ashen Wastes"]
+      "evidence": [
+        "Accessed via Scorched Flats within Ashen Wastes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 80,
+            "y": 44
+          }
+        }
+      }
     },
     {
       "place_name": "Vetch's Tower",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 74, "y": 40 },
+      "position_pct": {
+        "x": 74,
+        "y": 40
+      },
       "confidence": "medium",
-      "evidence": ["Within Ashen Wastes region"]
+      "evidence": [
+        "Within Ashen Wastes region"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 74,
+            "y": 40
+          }
+        }
+      }
     },
     {
       "place_name": "Wastes of Ashemark",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 78, "y": 50 },
+      "position_pct": {
+        "x": 78,
+        "y": 50
+      },
       "confidence": "medium",
-      "evidence": ["Wasteland with Elder Stones", "Name echoes Ashen Wastes"]
+      "evidence": [
+        "Wasteland with Elder Stones",
+        "Name echoes Ashen Wastes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 78,
+            "y": 50
+          }
+        }
+      }
     },
     {
       "place_name": "Scorched Wastes",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 78, "y": 38 },
+      "position_pct": {
+        "x": 78,
+        "y": 38
+      },
       "confidence": "medium",
-      "evidence": ["Desert region", "Thysara's palace is here", "Shara's homeland"]
+      "evidence": [
+        "Desert region",
+        "Thysara's palace is here",
+        "Shara's homeland"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 78,
+            "y": 38
+          }
+        }
+      }
     },
     {
       "place_name": "Thysara's palace",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 79, "y": 37 },
+      "position_pct": {
+        "x": 80.8,
+        "y": 35.8
+      },
       "confidence": "medium",
-      "evidence": ["Within Scorched Wastes"]
+      "evidence": [
+        "Within Scorched Wastes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 80.8,
+            "y": 35.8
+          }
+        }
+      }
     },
     {
       "place_name": "Vel-Karsh",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 81, "y": 40 },
+      "position_pct": {
+        "x": 81,
+        "y": 40
+      },
       "confidence": "high",
-      "evidence": ["'Ten thousand miles from any ocean' — deep inland desert city"]
+      "evidence": [
+        "'Ten thousand miles from any ocean' \u2014 deep inland desert city"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 81,
+            "y": 40
+          }
+        }
+      }
     },
     {
       "place_name": "dry riverbed",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 75, "y": 48 },
+      "position_pct": {
+        "x": 75,
+        "y": 48
+      },
       "confidence": "medium",
-      "evidence": ["The Ashwater in the wastes"]
+      "evidence": [
+        "The Ashwater in the wastes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 75,
+            "y": 48
+          }
+        }
+      }
     },
     {
       "place_name": "obsidian temple",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 80, "y": 43 },
+      "position_pct": {
+        "x": 82.0,
+        "y": 43.8
+      },
       "confidence": "low",
-      "evidence": ["Daemon-binding, remote desert temple"]
+      "evidence": [
+        "Daemon-binding, remote desert temple"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 82.0,
+            "y": 43.8
+          }
+        }
+      }
     },
     {
       "place_name": "The Bone Citadel",
       "macro_region": "steppe_marches",
-      "position_pct": { "x": 48, "y": 14 },
+      "position_pct": {
+        "x": 48,
+        "y": 14
+      },
       "confidence": "high",
-      "evidence": ["On the steppe", "Roots spread beneath the steppe", "Living bone-white fortress"]
+      "evidence": [
+        "On the steppe",
+        "Roots spread beneath the steppe",
+        "Living bone-white fortress"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 48,
+            "y": 14
+          }
+        }
+      }
     },
     {
       "place_name": "the steppe",
       "macro_region": "steppe_marches",
-      "position_pct": { "x": 50, "y": 18 },
+      "position_pct": {
+        "x": 50,
+        "y": 18
+      },
       "confidence": "high",
-      "evidence": ["Vast northern grassland", "Bone Citadel sits on it"]
+      "evidence": [
+        "Vast northern grassland",
+        "Bone Citadel sits on it"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 50,
+            "y": 18
+          }
+        }
+      }
     },
     {
       "place_name": "Grimmholt",
       "macro_region": "steppe_marches",
-      "position_pct": { "x": 38, "y": 25 },
+      "position_pct": {
+        "x": 38,
+        "y": 25
+      },
       "confidence": "medium",
-      "evidence": ["Border Lands fortress", "Thorne defends against both Rot-King and Crown"]
+      "evidence": [
+        "Border Lands fortress",
+        "Thorne defends against both Rot-King and Crown"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 38,
+            "y": 25
+          }
+        }
+      }
     },
     {
       "place_name": "Northlands",
       "macro_region": "steppe_marches",
-      "position_pct": { "x": 50, "y": 10 },
+      "position_pct": {
+        "x": 50,
+        "y": 10
+      },
       "confidence": "medium",
-      "evidence": ["Referenced as northern direction/region"]
+      "evidence": [
+        "Referenced as northern direction/region"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 50,
+            "y": 10
+          }
+        }
+      }
     },
     {
       "place_name": "Sunken Wells",
       "macro_region": "steppe_marches",
-      "position_pct": { "x": 55, "y": 20 },
+      "position_pct": {
+        "x": 55,
+        "y": 20
+      },
       "confidence": "medium",
-      "evidence": ["On the blasted steppes", "War fought here"]
+      "evidence": [
+        "On the blasted steppes",
+        "War fought here"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 55,
+            "y": 20
+          }
+        }
+      }
     },
     {
       "place_name": "Blackmark",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 22, "y": 32 },
+      "position_pct": {
+        "x": 22,
+        "y": 32
+      },
       "confidence": "high",
-      "evidence": ["Within the Shattered Provinces"]
+      "evidence": [
+        "Within the Shattered Provinces"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 22,
+            "y": 32
+          }
+        }
+      }
     },
     {
       "place_name": "Singing Catacombs",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 18, "y": 38 },
+      "position_pct": {
+        "x": 18,
+        "y": 38
+      },
       "confidence": "medium",
-      "evidence": ["Near or within Shattered Provinces"]
+      "evidence": [
+        "Near or within Shattered Provinces"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 18,
+            "y": 38
+          }
+        }
+      }
     },
     {
       "place_name": "Shattered Provinces",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 20, "y": 35 },
+      "position_pct": {
+        "x": 20,
+        "y": 35
+      },
       "confidence": "high",
-      "evidence": ["War-torn fragmented region in the west"]
+      "evidence": [
+        "War-torn fragmented region in the west"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 20,
+            "y": 35
+          }
+        }
+      }
     },
     {
       "place_name": "Blackthorn",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 24, "y": 40 },
+      "position_pct": {
+        "x": 24,
+        "y": 40
+      },
       "confidence": "medium",
-      "evidence": ["Siege location, clustered with Ravenmoor and Carrion's Rest"]
+      "evidence": [
+        "Siege location, clustered with Ravenmoor and Carrion's Rest"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 24,
+            "y": 40
+          }
+        }
+      }
     },
     {
       "place_name": "Ravenmoor",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 19, "y": 42 },
+      "position_pct": {
+        "x": 19,
+        "y": 42
+      },
       "confidence": "medium",
-      "evidence": ["Witch's dwelling, near Carrion's Rest and Blackthorn"]
+      "evidence": [
+        "Witch's dwelling, near Carrion's Rest and Blackthorn"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 19,
+            "y": 42
+          }
+        }
+      }
     },
     {
       "place_name": "Carrion's Rest",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 21, "y": 44 },
+      "position_pct": {
+        "x": 21,
+        "y": 44
+      },
       "confidence": "medium",
-      "evidence": ["Plague village, near Ravenmoor"]
+      "evidence": [
+        "Plague village, near Ravenmoor"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 21,
+            "y": 44
+          }
+        }
+      }
     },
     {
       "place_name": "Aethermarch",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 16, "y": 30 },
+      "position_pct": {
+        "x": 16,
+        "y": 30
+      },
       "confidence": "low",
-      "evidence": ["Ancient sentient ruin, placed in remote west"]
+      "evidence": [
+        "Ancient sentient ruin, placed in remote west"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 16,
+            "y": 30
+          }
+        }
+      }
     },
     {
       "place_name": "Spire of Blackstone",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 14, "y": 28 },
+      "position_pct": {
+        "x": 14,
+        "y": 28
+      },
       "confidence": "low",
-      "evidence": ["Mogrul's domain, Grey Reaches connection"]
+      "evidence": [
+        "Mogrul's domain, Grey Reaches connection"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 14,
+            "y": 28
+          }
+        }
+      }
     },
     {
       "place_name": "Goblin Warrens",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 14, "y": 29 },
+      "position_pct": {
+        "x": 11.0,
+        "y": 26.2
+      },
       "confidence": "medium",
-      "evidence": ["Beneath Spire of Blackstone"]
+      "evidence": [
+        "Beneath Spire of Blackstone"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 11.0,
+            "y": 26.2
+          }
+        }
+      }
     },
     {
       "place_name": "Sunken Marches",
       "macro_region": "sunken_marches",
-      "position_pct": { "x": 14, "y": 65 },
+      "position_pct": {
+        "x": 14,
+        "y": 65
+      },
       "confidence": "high",
-      "evidence": ["Ghost-king Velgrim's waterlogged realm"]
+      "evidence": [
+        "Ghost-king Velgrim's waterlogged realm"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 14,
+            "y": 65
+          }
+        }
+      }
     },
     {
       "place_name": "Drowned Hollows",
       "macro_region": "sunken_marches",
-      "position_pct": { "x": 16, "y": 62 },
+      "position_pct": {
+        "x": 16,
+        "y": 62
+      },
       "confidence": "medium",
-      "evidence": ["Kess's village, near deep forest and marshland"]
+      "evidence": [
+        "Kess's village, near deep forest and marshland"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 16,
+            "y": 62
+          }
+        }
+      }
     },
     {
       "place_name": "deep forest",
       "macro_region": "sunken_marches",
-      "position_pct": { "x": 18, "y": 58 },
+      "position_pct": {
+        "x": 18,
+        "y": 58
+      },
       "confidence": "medium",
-      "evidence": ["Beast-spirits, wolf-spirit domain, near Drowned Hollows"]
+      "evidence": [
+        "Beast-spirits, wolf-spirit domain, near Drowned Hollows"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 18,
+            "y": 58
+          }
+        }
+      }
     },
     {
       "place_name": "Kalthara",
       "macro_region": "sunken_marches",
-      "position_pct": { "x": 14, "y": 68 },
+      "position_pct": {
+        "x": 14,
+        "y": 68
+      },
       "confidence": "low",
-      "evidence": ["Curse-related ruin, placed in remote marshland"]
+      "evidence": [
+        "Curse-related ruin, placed in remote marshland"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 14,
+            "y": 68
+          }
+        }
+      }
     },
     {
       "place_name": "Morne's Tomb",
       "macro_region": "iron_coast",
-      "position_pct": { "x": 42, "y": 78 },
+      "position_pct": {
+        "x": 42,
+        "y": 78
+      },
       "confidence": "high",
-      "evidence": ["In the Coastal Kingdoms", "Saleth fled south from here"]
+      "evidence": [
+        "In the Coastal Kingdoms",
+        "Saleth fled south from here"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 42,
+            "y": 78
+          }
+        }
+      }
     },
     {
       "place_name": "Coastal Kingdoms",
       "macro_region": "iron_coast",
-      "position_pct": { "x": 45, "y": 80 },
+      "position_pct": {
+        "x": 45,
+        "y": 80
+      },
       "confidence": "high",
-      "evidence": ["Explicitly 'to the south'"]
+      "evidence": [
+        "Explicitly 'to the south'"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 45,
+            "y": 80
+          }
+        }
+      }
     },
     {
       "place_name": "Harbor Walls",
       "macro_region": "iron_coast",
-      "position_pct": { "x": 40, "y": 82 },
+      "position_pct": {
+        "x": 40,
+        "y": 82
+      },
       "confidence": "medium",
-      "evidence": ["Coastal fortification"]
+      "evidence": [
+        "Coastal fortification"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 40,
+            "y": 82
+          }
+        }
+      }
     },
     {
       "place_name": "Sapphire Deep",
       "macro_region": "iron_coast",
-      "position_pct": { "x": 38, "y": 90 },
+      "position_pct": {
+        "x": 38,
+        "y": 90
+      },
       "confidence": "high",
-      "evidence": ["Merfolk homeland, offshore southern sea"]
+      "evidence": [
+        "Merfolk homeland, offshore southern sea"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 38,
+            "y": 90
+          }
+        }
+      }
     },
     {
       "place_name": "Sunken Caverns",
       "macro_region": "iron_coast",
-      "position_pct": { "x": 36, "y": 88 },
+      "position_pct": {
+        "x": 36,
+        "y": 88
+      },
       "confidence": "medium",
-      "evidence": ["Lamia's underwater realm, accessible from port"]
+      "evidence": [
+        "Lamia's underwater realm, accessible from port"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 36,
+            "y": 88
+          }
+        }
+      }
     },
     {
       "place_name": "port",
       "macro_region": "iron_coast",
-      "position_pct": { "x": 38, "y": 84 },
+      "position_pct": {
+        "x": 38,
+        "y": 84
+      },
       "confidence": "medium",
-      "evidence": ["Captain Nerida's base, near Sunken Caverns"]
+      "evidence": [
+        "Captain Nerida's base, near Sunken Caverns"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 38,
+            "y": 84
+          }
+        }
+      }
     },
     {
       "place_name": "deep-sea cities",
       "macro_region": "iron_coast",
-      "position_pct": { "x": 42, "y": 92 },
+      "position_pct": {
+        "x": 42,
+        "y": 92
+      },
       "confidence": "medium",
-      "evidence": ["Merfolk cities of coral and shell, in the Sapphire Sea"]
+      "evidence": [
+        "Merfolk cities of coral and shell, in the Sapphire Sea"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 42,
+            "y": 92
+          }
+        }
+      }
     },
     {
-      "place_name": "Tomb of Shard-Vêl",
+      "place_name": "Tomb of Shard-V\u00eal",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 70, "y": 48 },
+      "position_pct": {
+        "x": 70,
+        "y": 48
+      },
       "confidence": "low",
-      "evidence": ["Sentient tomb, placed in the wastes for atmosphere"]
+      "evidence": [
+        "Sentient tomb, placed in the wastes for atmosphere"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 70,
+            "y": 48
+          }
+        }
+      }
     },
     {
       "place_name": "Master Lethyn's Tower",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 54, "y": 46 },
+      "position_pct": {
+        "x": 54,
+        "y": 46
+      },
       "confidence": "low",
-      "evidence": ["Alchemist's tower, likely near civilization"]
+      "evidence": [
+        "Alchemist's tower, likely near civilization"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 54,
+            "y": 46
+          }
+        }
+      }
     },
     {
       "place_name": "Tomb of Karesh",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 77, "y": 42 },
+      "position_pct": {
+        "x": 77,
+        "y": 42
+      },
       "confidence": "medium",
-      "evidence": ["Houses Crown of Karesh, ancient tomb in the wastes"]
+      "evidence": [
+        "Houses Crown of Karesh, ancient tomb in the wastes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 77,
+            "y": 42
+          }
+        }
+      }
     },
     {
       "place_name": "Sunken Ziggurat of Yeng",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 79, "y": 50 },
+      "position_pct": {
+        "x": 82.0,
+        "y": 53.4
+      },
       "confidence": "low",
-      "evidence": ["Ancient subterranean ruin"]
+      "evidence": [
+        "Ancient subterranean ruin"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 82.0,
+            "y": 53.4
+          }
+        }
+      }
     },
     {
       "place_name": "Castle Greymarch",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 26, "y": 36 },
+      "position_pct": {
+        "x": 26,
+        "y": 36
+      },
       "confidence": "low",
-      "evidence": ["Near Thul-Kâr, cursed treasure"]
+      "evidence": [
+        "Near Thul-K\u00e2r, cursed treasure"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 26,
+            "y": 36
+          }
+        }
+      }
     },
     {
-      "place_name": "Thul-Kâr",
+      "place_name": "Thul-K\u00e2r",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 27, "y": 35 },
+      "position_pct": {
+        "x": 28.4,
+        "y": 34.0
+      },
       "confidence": "low",
-      "evidence": ["Near Castle Greymarch"]
+      "evidence": [
+        "Near Castle Greymarch"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 28.4,
+            "y": 34.0
+          }
+        }
+      }
     },
     {
       "place_name": "Khar-Zul",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 81, "y": 46 },
+      "position_pct": {
+        "x": 81,
+        "y": 46
+      },
       "confidence": "low",
-      "evidence": ["Inner-dark temple, remote and sinister"]
+      "evidence": [
+        "Inner-dark temple, remote and sinister"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 81,
+            "y": 46
+          }
+        }
+      }
     },
     {
       "place_name": "Temple of Khar-Zul",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 81, "y": 46 },
+      "position_pct": {
+        "x": 81,
+        "y": 46
+      },
+      "location_type": "sublocation",
+      "parent_place_name": "Khar-Zul",
+      "inherits_position_from_parent": true,
       "confidence": "low",
-      "evidence": ["Same as Khar-Zul"]
+      "evidence": [
+        "Same as Khar-Zul"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 81,
+            "y": 46
+          }
+        }
+      }
     },
     {
       "place_name": "Crimson Vale",
       "macro_region": "shattered_west",
-      "position_pct": { "x": 25, "y": 48 },
+      "position_pct": {
+        "x": 25,
+        "y": 48
+      },
       "confidence": "low",
-      "evidence": ["Cursed region, Soroth's domain"]
+      "evidence": [
+        "Cursed region, Soroth's domain"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 25,
+            "y": 48
+          }
+        }
+      }
     },
     {
       "place_name": "crystal halls",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 52, "y": 56 },
+      "position_pct": {
+        "x": 52,
+        "y": 56
+      },
       "confidence": "low",
-      "evidence": ["Underground dragon realm, beneath the world"]
+      "evidence": [
+        "Underground dragon realm, beneath the world"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 52,
+            "y": 56
+          }
+        }
+      }
     },
     {
       "place_name": "Ossuary (as Living Entity)",
       "macro_region": "steppe_marches",
-      "position_pct": { "x": 45, "y": 22 },
+      "position_pct": {
+        "x": 45,
+        "y": 22
+      },
       "confidence": "low",
-      "evidence": ["Sentient fortress, placed on steppe fringe"]
+      "evidence": [
+        "Sentient fortress, placed on steppe fringe"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 45,
+            "y": 22
+          }
+        }
+      }
     },
     {
       "place_name": "Gardens of the Underlords",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 80, "y": 52 },
+      "position_pct": {
+        "x": 80,
+        "y": 52
+      },
       "confidence": "low",
-      "evidence": ["Underground, possibly beneath the wastes"]
+      "evidence": [
+        "Underground, possibly beneath the wastes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 80,
+            "y": 52
+          }
+        }
+      }
     },
     {
       "place_name": "Mountain",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 60, "y": 36 },
+      "position_pct": {
+        "x": 60,
+        "y": 36
+      },
       "confidence": "low",
-      "evidence": ["Where Zareth performed Stellar Rite, near Ironspine foothills"]
+      "evidence": [
+        "Where Zareth performed Stellar Rite, near Ironspine foothills"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 60,
+            "y": 36
+          }
+        }
+      }
     },
     {
       "place_name": "Deepvault",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 58, "y": 38 },
+      "position_pct": {
+        "x": 58,
+        "y": 38
+      },
       "confidence": "medium",
-      "evidence": ["Dwarven settlement, likely in the Ironspine Mountains"]
+      "evidence": [
+        "Dwarven settlement, likely in the Ironspine Mountains"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 58,
+            "y": 38
+          }
+        }
+      }
     },
     {
       "place_name": "Bryn's forge",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 59, "y": 37 },
+      "position_pct": {
+        "x": 62.0,
+        "y": 35.0
+      },
       "confidence": "medium",
-      "evidence": ["Dwarven forge in the mountains, near Ironspine"]
+      "evidence": [
+        "Dwarven forge in the mountains, near Ironspine"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 62.0,
+            "y": 35.0
+          }
+        }
+      }
     },
     {
       "place_name": "Wasteland",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 74, "y": 44 },
+      "position_pct": {
+        "x": 74,
+        "y": 44
+      },
       "confidence": "low",
-      "evidence": ["Generic wasteland reference"]
+      "evidence": [
+        "Generic wasteland reference"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 74,
+            "y": 44
+          }
+        }
+      }
     },
     {
       "place_name": "wastelands",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 73, "y": 45 },
+      "position_pct": {
+        "x": 70.8,
+        "y": 44.4
+      },
       "confidence": "low",
-      "evidence": ["Generic wasteland reference"]
+      "evidence": [
+        "Generic wasteland reference"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 70.8,
+            "y": 44.4
+          }
+        }
+      }
     },
     {
       "place_name": "convent",
       "macro_region": "sunken_marches",
-      "position_pct": { "x": 17, "y": 60 },
+      "position_pct": {
+        "x": 17,
+        "y": 60
+      },
       "confidence": "low",
-      "evidence": ["Sister Kess's origin, near Drowned Hollows"]
+      "evidence": [
+        "Sister Kess's origin, near Drowned Hollows"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 17,
+            "y": 60
+          }
+        }
+      }
     },
     {
       "place_name": "tower",
       "macro_region": "hearthlands",
-      "position_pct": { "x": 50, "y": 50 },
+      "position_pct": {
+        "x": 50,
+        "y": 50
+      },
       "confidence": "low",
-      "evidence": ["Generic structure"]
+      "evidence": [
+        "Generic structure"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 50,
+            "y": 50
+          }
+        }
+      }
     },
     {
       "place_name": "Tomb",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 76, "y": 43 },
+      "position_pct": {
+        "x": 76.2,
+        "y": 43.6
+      },
       "confidence": "low",
-      "evidence": ["Generic tomb in the wastes"]
+      "evidence": [
+        "Generic tomb in the wastes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 76.2,
+            "y": 43.6
+          }
+        }
+      }
     },
     {
       "place_name": "Tomb of Dead Merchants",
       "macro_region": "ashen_reach",
-      "position_pct": { "x": 71, "y": 47 },
+      "position_pct": {
+        "x": 72.6,
+        "y": 45.6
+      },
       "confidence": "low",
-      "evidence": ["Tomb associated with trade, near caravan routes"]
+      "evidence": [
+        "Tomb associated with trade, near caravan routes"
+      ],
+      "map_coordinates": {
+        "valdris": {
+          "position_pct": {
+            "x": 72.6,
+            "y": 45.6
+          }
+        }
+      }
     }
   ],
   "routes": [
     {
       "id": "pelimor_ashen_caravan",
-      "name": "Pelimor–Ashen Caravan Route",
+      "name": "Pelimor\u2013Ashen Caravan Route",
       "from_place": "Pelimor",
       "to_place": "the Ashen Wastes",
       "type": "trade_road",
       "distance_miles": 600,
       "travel_note": "Three to four weeks by laden caravan; ten days hard ride.",
       "description": "The great caravan road connecting Pelimor's markets to the Ashen Wastes. Bandits, toll-lords, and spice merchants ply this route.",
-      "passes_through": ["The Blasted Lands"]
+      "passes_through": [
+        "The Blasted Lands"
+      ]
     },
     {
       "id": "north_road",
@@ -763,7 +2365,9 @@
       "distance_miles": 450,
       "travel_note": "Two weeks by horse, longer in winter when snow closes the passes.",
       "description": "The main highway running north from Pelimor through the Hearthlands and into the Steppe Marches. Pieter Vane fled three provinces along it.",
-      "passes_through": ["Grimmholt"]
+      "passes_through": [
+        "Grimmholt"
+      ]
     },
     {
       "id": "iron_coast_sea_lane",
@@ -774,7 +2378,9 @@
       "distance_miles": 350,
       "travel_note": "Four to six days by merchant galley; faster with tide-magic.",
       "description": "Coastal and deep-sea shipping lanes along the Iron Coast. Connects port cities to the merfolk realm.",
-      "passes_through": ["Sunken Caverns"]
+      "passes_through": [
+        "Sunken Caverns"
+      ]
     }
   ]
 }
