@@ -2,54 +2,83 @@
   "findings": [
     {
       "field": "bio",
-      "issue": "missing",
-      "detail": "Story 2 reveals Varak murdered his own father to claim his title; this fundamental character motivation is absent from the bio"
+      "issue": "incorrect",
+      "detail": "Bio refers to Aldwyn as 'he' and 'her' inconsistently. Story 1 uses 'her' (female), but bio uses 'he'. This is a pronoun consistency error across the card."
     },
     {
       "field": "bio",
-      "issue": "missing",
-      "detail": "Story 2 reveals Varak was bound by oath-magic/curse from his father's bones after being exposed by Kess; this is a major status change not mentioned"
-    },
-    {
-      "field": "bio",
-      "issue": "missing",
-      "detail": "Story 2 reveals Varak walked into the Tidelands and became half-alive, speaking prophecy; his location and condition changed significantly from Story 1"
+      "issue": "incomplete",
+      "detail": "Bio describes only one aspect of Aldwyn's role (discovering the self-rewriting counter-ledger in Story 2), but stories 3-7 show Aldwyn appears under different names (Isren, Caldrin, Corvus, Halwin) with distinct identities and transformations, not just one continuous character arc."
     },
     {
       "field": "status_history",
+      "issue": "incorrect",
+      "detail": "Status history entry for '2026-03-27' incorrectly names the character 'Liv' and describes her archive manifesting reality-reconstruction powers. However, Story 4 ('The Singing Scar's Echo') shows the character in that timeframe is named Caldrin and deals with harmonic frequencies and bone-singers, not Liv's reality reconstruction."
+    },
+    {
+      "field": "status_history",
+      "issue": "incorrect",
+      "detail": "Status history entry for '2026-04-06' again references 'Liv' and describes archive contradiction contradictions. However, Story 5 ('The Auditor's Blind Ledger') does not feature a character named Aldwyn/Liv as the primary protagonist—it features Sevin the Accountant discovering the self-writing ledger."
+    },
+    {
+      "field": "status_history",
+      "issue": "stale",
+      "detail": "The status_history entries conflate multiple characters and storylines. Stories 3-7 suggest Aldwyn may not be a single continuous entity but rather appears as different scribes (Isren, Caldrin, Corvus, Halwin) in different locations and with different transformations. The status entries do not reflect this fragmentation or name-shifting."
+    },
+    {
+      "field": "aliases",
       "issue": "incomplete",
-      "detail": "status_history array is empty but should document progression: 'possessed' (Story 1) → 'cursed by father's oath-magic' (Story 2) → 'half-alive in Tidelands speaking prophecy' (Story 2)"
+      "detail": "Aliases list only 'young scribe', 'Aldwyn', and 'Young Scribe'. Stories reveal the character appears as Isren (Story 3), Caldrin (Story 4), Corvus (Story 6), and Halwin (Story 7)—these alternative names are missing from aliases."
+    },
+    {
+      "field": "first_story",
+      "issue": "missing",
+      "detail": "First story is listed as 'The Merchant's Transformation' (2026-03-16), but that story does not name the young scribe character. The first story where 'Aldwyn' is explicitly named is 'The Ledger of Ash and Ember' (2026-03-22, Story 2)."
+    },
+    {
+      "field": "story_appearances",
+      "issue": "missing",
+      "detail": "Story list includes 'The Singing Scar's Echo' (2026-03-27) but does not clarify that Aldwyn appears as 'Caldrin' in that story. Similarly, other stories feature different names for what may be the same character or different incarnations."
+    },
+    {
+      "field": "bio",
+      "issue": "missing",
+      "detail": "Bio makes no mention of Aldwyn's role in Story 3 as Isren, who trades his shadow to Vex the Shade-Merchant and writes 300 refugees into safety—a major transformation event."
+    },
+    {
+      "field": "bio",
+      "issue": "missing",
+      "detail": "Bio makes no mention of Aldwyn's appearance in Story 6 as Corvus, whose voice fails and sound ceases around her—a significant curse/transformation distinct from archive management."
+    },
+    {
+      "field": "traits",
+      "issue": "incomplete",
+      "detail": "Traits list 'curious', 'ethical', 'conflicted', 'record-keeper' but does not account for Corvus/Aldwyn's emerging trait of silence-spreading or Isren/Aldwyn's willingness to make dark bargains with shadow-merchants."
+    },
+    {
+      "field": "travel_scope",
+      "issue": "incomplete",
+      "detail": "Travel scope listed as 'regional' but Story 7 shows Halwin boarding Korwin's caravan heading north toward hidden waystations, suggesting wider travel ambitions. Story 4 places Caldrin in the Keening Rift, Story 3 places Isren in refugee camps east of Pale Crossing—suggesting scope may be larger than 'regional'."
     },
     {
       "field": "home_place",
       "issue": "stale",
-      "detail": "Listed as 'unknown' but Story 2 indicates Varak is now in the Tidelands; this should be updated to reflect his current location"
+      "detail": "Home place is Pale Crossing, but Stories 3-7 show Aldwyn/variations appearing in Keening Rift, refugee camps east of Pale Crossing, markets existing in two places, and traveling with caravans—suggesting home location may no longer be stable or singular."
     },
     {
-      "field": "traits",
-      "issue": "missing",
-      "detail": "Story 2 reveals 'patricide' or 'kinslayer' as a core trait/sin, motivating the curse; 'ambitious' alone does not capture this"
-    },
-    {
-      "field": "bio",
+      "field": "status",
       "issue": "incomplete",
-      "detail": "Bio mentions he turned his sword on survivors but does not clarify whether he was still possessed by the Ossuary during Story 2 events or if the father's curse superseded/replaced that possession"
+      "detail": "Status is 'active' but Corvus in Story 6 has lost her voice and her identity is dissolving within a zone of silence—this represents a significant status change or condition not reflected in the current status field."
     }
   ],
-  "summary": "The codex entry captures Varak's initial possession by the Ossuary but fails to document the significant developments in Story 2, where his true crime (patricide) is revealed and he becomes bound by his father's curse instead. His location has changed from the Ossuary to the Tidelands, his status has evolved beyond simple possession, and critical character motivation (murdering his father for the title) is entirely missing. The status_history field is unused despite multiple status changes across the two stories.",
-  "completeness_pct": 62,
-  "entity_name": "Varak Ironhelm",
+  "summary": "The codex entry for Aldwyn is severely fragmented and internally contradictory. The character appears under at least five different names across seven stories (Aldwyn, Isren, Caldrin, Corvus, Halwin), each with distinct transformations and crises, yet the card treats them as a single linear character arc. The status_history entries incorrectly reference 'Liv' and describe her reality-reconstruction powers while ignoring the actual character transformations that occur in Stories 3-7 (shadow-trading, voice loss, identity dissolution). The bio is incomplete, missing entire story arcs and character development. The aliases field does not include the four alternative names under which Aldwyn manifests. The card appears to conflate Aldwyn's storyline with Liv's storyline and Sevin's storyline, creating fundamental accuracy problems throughout. A complete rework is needed to either unify the character's identity across stories or explicitly document these as separate entities or iterations.",
+  "completeness_pct": 28,
+  "entity_name": "Aldwyn",
   "entity_type": "characters",
-  "stories_checked": 2,
-  "story_appearances_added": [
-    {
-      "date": "2026-03-02",
-      "title": "The Bone-Singer's Choice",
-      "match": "alias_token:Varak:unique"
-    }
-  ],
-  "story_appearances_added_count": 1,
+  "stories_checked": 7,
+  "story_appearances_added": [],
+  "story_appearances_added_count": 0,
   "possible_story_mentions_sample": [],
-  "codex_updated": true,
-  "timestamp": "2026-03-03T00:56:36.200861+00:00"
+  "codex_updated": false,
+  "timestamp": "2026-04-28T18:59:47.783524+00:00"
 }
