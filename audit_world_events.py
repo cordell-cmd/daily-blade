@@ -357,6 +357,20 @@ def main() -> int:
         mentioned_continents = mentions.get("continents") if isinstance(mentions.get("continents"), list) else []
 
         story_apps = e.get("story_appearances") if isinstance(e.get("story_appearances"), list) else []
+        story_apps_unique = []
+        story_seen = set()
+        for a in story_apps:
+            if not isinstance(a, dict):
+                continue
+            d = str(a.get("date") or "").strip()
+            t = str(a.get("title") or "").strip()
+            if not t:
+                continue
+            k = (d, t)
+            if k in story_seen:
+                continue
+            story_seen.add(k)
+            story_apps_unique.append({"date": d, "title": t})
 
         rows.append({
             "name": name,
@@ -378,6 +392,7 @@ def main() -> int:
                 "continents": mentioned_continents[:8],
             },
             "story_appearances": story_apps[-12:],
+            "appearance_total": len(story_apps_unique),
             "story_appearances_all": story_apps,
         })
 
@@ -466,6 +481,11 @@ def main() -> int:
         ex_all = _uniq_story_apps(ex.get("story_appearances_all"))
         r_all = _uniq_story_apps(r.get("story_appearances_all"))
         ex["story_appearances_all"] = (ex_all + [a for a in r_all if a not in ex_all])
+        ex["appearance_total"] = max(
+            int(ex.get("appearance_total") or 0),
+            int(r.get("appearance_total") or 0),
+            len(ex["story_appearances_all"]),
+        )
 
     rows = list(merged.values())
 

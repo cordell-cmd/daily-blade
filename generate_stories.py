@@ -18,6 +18,10 @@ import hashlib
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 import anthropic
+from backfill_character_temporal import refresh_character_temporal
+from build_alliances import refresh_alliances
+from build_lineages import refresh_lineages
+from simulate_character_lifecycle import simulate_lifecycle
 from world_state import sync_world_state_from_codex_and_stories
 
 
@@ -56,6 +60,10 @@ CHARACTERS_FILE = "characters.json"
 CODEX_FILE      = "codex.json"
 GEOGRAPHY_FILE  = "geography.json"
 WORLD_STATE_FILE = "world-state.json"
+CHARACTER_TEMPORAL_FILE = "character-temporal.json"
+CHARACTER_LIFECYCLE_LOG_FILE = "character-lifecycle-log.json"
+LINEAGES_FILE = "lineages.json"
+ALLIANCES_FILE = "alliances.json"
 
 # Issue date/timezone: used for archive filenames and 'already generated' checks.
 # Default matches the previous workflow's intended schedule (US/Eastern).
@@ -1290,6 +1298,147 @@ def allowed_reuse_name_set(full_entries_by_cat):
     return allowed
 
 
+def _last_seen_date_from_entry(entry: dict) -> str:
+    if not isinstance(entry, dict):
+        return ""
+    best = ""
+    apps = entry.get("story_appearances") if isinstance(entry.get("story_appearances"), list) else []
+    for a in apps:
+        if not isinstance(a, dict):
+            continue
+        d = str(a.get("date") or "").strip()
+        if d and d > best:
+            best = d
+    if best:
+        return best
+    return str(entry.get("first_date") or "").strip()
+
+
+def build_reused_character_temporal_snippets(
+    reused_entries: dict,
+    reuse_details: dict,
+    temporal_path: str,
+    current_date_key: str,
+) -> list[dict]:
+    chars = reused_entries.get("characters") if isinstance(reused_entries, dict) else []
+    if not isinstance(chars, list) or not chars:
+        return []
+    if not os.path.exists(temporal_path):
+        return []
+
+    try:
+        payload = json.load(open(temporal_path, "r", encoding="utf-8"))
+    except Exception:
+        return []
+
+    rows = payload.get("characters") if isinstance(payload, dict) else []
+    if not isinstance(rows, list):
+        rows = []
+
+    temporal_by_name = {}
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        nm = str(row.get("name") or "").strip().lower()
+        temporal = row.get("temporal") if isinstance(row.get("temporal"), dict) else None
+        if nm and temporal and nm not in temporal_by_name:
+            temporal_by_name[nm] = temporal
+
+    issue_dates = _load_known_issue_dates()
+    today = str(current_date_key or "").strip()
+    if today and today not in issue_dates:
+        issue_dates.append(today)
+        issue_dates = sorted(set(issue_dates))
+    issue_index = {d: i + 1 for i, d in enumerate(issue_dates)}
+    current_issue_index = int(issue_index.get(today, len(issue_dates) or 1))
+    world_days_per_issue = int(payload.get("world_days_per_issue") or 10)
+
+    intensity_by_name = {}
+    details = reuse_details.get("characters") if isinstance(reuse_details, dict) else []
+    if isinstance(details, list):
+        for d in details:
+            if not isinstance(d, dict):
+                continue
+            nm = str(d.get("name") or "").strip().lower()
+            if nm:
+                intensity_by_name[nm] = str(d.get("intensity") or "cameo").strip().lower()
+
+    out = []
+    for ch in chars:
+        if not isinstance(ch, dict):
+            continue
+        name = str(ch.get("name") or "").strip()
+        if not name:
+            continue
+        temporal = temporal_by_name.get(name.lower())
+        if not isinstance(temporal, dict):
+            continue
+        health = temporal.get("health") if isinstance(temporal.get("health"), dict) else {}
+        active = [str(x or "").strip() for x in (health.get("active_conditions") or []) if str(x or "").strip()]
+        chronic = [str(x or "").strip() for x in (health.get("chronic_conditions") or []) if str(x or "").strip()]
+        last_seen_date = _last_seen_date_from_entry(ch)
+        issues_since = None
+        if last_seen_date and last_seen_date in issue_index:
+            issues_since = max(0, current_issue_index - int(issue_index[last_seen_date]))
+        world_days_since = (issues_since * world_days_per_issue) if isinstance(issues_since, int) else None
+        years_since = round(world_days_since / 365.0, 2) if isinstance(world_days_since, int) else None
+
+        out.append({
+            "name": name,
+            "intensity": intensity_by_name.get(name.lower(), "cameo"),
+            "age_now": temporal.get("current_age_years"),
+            "life_stage": temporal.get("life_stage"),
+            "alive": temporal.get("alive"),
+            "deceased_date": temporal.get("deceased_date"),
+            "aging_profile": temporal.get("aging_profile"),
+            "condition_profile": health.get("condition_profile"),
+            "active_conditions": active[:4],
+            "chronic_conditions": chronic[:4],
+            "last_seen_date": last_seen_date,
+            "issues_since_last_seen": issues_since,
+            "world_days_since_last_seen": world_days_since,
+            "years_since_last_seen": years_since,
+        })
+
+    out.sort(key=lambda item: str(item.get("name") or "").lower())
+    return out
+
+
+def build_reused_character_temporal_section(reused_character_temporal: list[dict]) -> str:
+    rows = reused_character_temporal if isinstance(reused_character_temporal, list) else []
+    rows = [r for r in rows if isinstance(r, dict) and str(r.get("name") or "").strip()]
+    if not rows:
+        return ""
+
+    lines = [
+        "REUSED CHARACTER TEMPORAL SNAPSHOTS (continuity hints):",
+        "Use these only for characters you already choose to reuse. Keep references subtle and story-first.",
+    ]
+    for row in rows:
+        name = str(row.get("name") or "").strip()
+        age_now = row.get("age_now")
+        age_text = f"{float(age_now):.1f}" if isinstance(age_now, (int, float)) else "unknown"
+        life_stage = str(row.get("life_stage") or "unknown").strip()
+        alive = bool(row.get("alive", True))
+        status = "deceased" if not alive else "alive"
+        if not alive and row.get("deceased_date"):
+            status = f"deceased on {row.get('deceased_date')}"
+        aging_profile = str(row.get("aging_profile") or "unknown").strip()
+        condition_profile = str(row.get("condition_profile") or "unknown").strip()
+        active = ", ".join(row.get("active_conditions") or []) or "none"
+        chronic = ", ".join(row.get("chronic_conditions") or []) or "none"
+        gap = "unknown"
+        if isinstance(row.get("issues_since_last_seen"), int):
+            gap = f"{int(row.get('issues_since_last_seen'))} issue(s)"
+            if isinstance(row.get("world_days_since_last_seen"), int):
+                gap += f" (~{int(row.get('world_days_since_last_seen'))} world days)"
+        lines.append(
+            f"- {name} [{str(row.get('intensity') or 'cameo')}]: age {age_text}; stage={life_stage}; status={status}; "
+            f"aging={aging_profile}; body={condition_profile}; active={active}; chronic={chronic}; gap_since_seen={gap}."
+        )
+    return "\n".join(lines)
+
+
 def _pick_top_plus_random(items, top_n: int, random_n: int, seed_text: str, salt: str):
     items = items or []
     top_n = max(0, int(top_n or 0))
@@ -2272,10 +2421,11 @@ def build_world_event_arcs_section(today_str: str, lore: dict, event_arc_dossier
     return "\n".join(lines).strip()
 
 # ── Story generation prompt ──────────────────────────────────────────────
-def build_prompt(today_str, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None, codex_balance=None):
+def build_prompt(today_str, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None, codex_balance=None, reused_character_temporal=None):
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     reused_entries = reused_entries or {}
     reuse_details = reuse_details or {}
+    reused_character_temporal = reused_character_temporal or []
 
     world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
 
@@ -2319,6 +2469,11 @@ RECENT STORIES (from the last few days — DO NOT repeat these same core concept
                         blocks.append(dossier)
                 blocks.append(json.dumps(it, ensure_ascii=False, sort_keys=True))
         reuse_section = "\n" + "\n".join(blocks) + "\n"
+
+    reused_temporal_section = ""
+    temporal_block = build_reused_character_temporal_section(reused_character_temporal)
+    if temporal_block:
+        reused_temporal_section = "\n" + temporal_block + "\n"
     lore_section = ""
     if lore_context.strip():
         lore_section = f"""
@@ -2391,6 +2546,7 @@ Today's date is {today_str}. Use this as subtle creative inspiration if you like
 {geo_section}
 {codex_balance_section}
 {reuse_section}
+{reused_temporal_section}
 {recent_themes_section}
 Respond with ONLY valid JSON — no prose before or after — matching this exact structure:
 [
@@ -3686,6 +3842,54 @@ def _looks_like_specific_character_name(name: str) -> bool:
     return first[:1].isupper()
 
 
+def _should_skip_character_auto_add(lore: dict, name: str, descriptor: str) -> bool:
+    """Reject abstract/event-like concepts being auto-promoted into characters."""
+    descriptor_tokens = {
+        token.casefold()
+        for token in re.findall(r"[A-Za-z][A-Za-z'\-]*", str(descriptor or "").replace("’", "'"))
+    }
+    name_tokens = {
+        token.casefold()
+        for token in re.findall(r"[A-Za-z][A-Za-z'\-]*", str(name or "").replace("’", "'"))
+    }
+    concept_tokens = descriptor_tokens | name_tokens
+    abstract_terms = {
+        "mechanism", "ritual", "working", "event", "cycle", "phenomenon",
+        "process", "aftermath", "collapse", "convergence", "threshold", "reversal",
+        "question", "questions", "questioning", "riddle", "stasis", "recursion",
+    }
+    if not (concept_tokens & abstract_terms):
+        return False
+
+    candidate_keys = _character_alias_keys(name)
+    if not candidate_keys:
+        return False
+
+    non_character_categories = (
+        "events",
+        "rituals",
+        "magic",
+        "lore",
+        "relics",
+        "artifacts",
+        "deities_and_entities",
+    )
+    known_non_character_keys = set()
+    for cat in non_character_categories:
+        for item in (lore.get(cat) or []):
+            if not isinstance(item, dict):
+                continue
+            item_name = str(item.get("name") or "").strip()
+            if item_name:
+                known_non_character_keys.add(_norm_entity_key(item_name))
+            for alias in (item.get("aliases") or []):
+                alias_key = _norm_entity_key(alias)
+                if alias_key:
+                    known_non_character_keys.add(alias_key)
+
+    return any(key in known_non_character_keys for key in candidate_keys)
+
+
 def _should_promote_character_name(existing_name: str, incoming_name: str) -> bool:
     """Return True when the incoming character name should become canonical."""
     exk = _norm_entity_key(existing_name)
@@ -4651,17 +4855,166 @@ def update_codex_file(lore, date_key, stories=None, assume_all_from_stories: boo
                 if ak:
                     existing_chars.setdefault(ak, new_obj)
 
-    # De-dupe obvious alias duplicates (safe case: "X" vs "X the Y")
-    uniq = []
-    seen_ids = set()
+    # Consolidate duplicate character rows by canonical name and drop obvious
+    # abstract/non-character concepts that already live in non-character categories.
+    def _non_character_name_keys(src: dict) -> set:
+        keys = set()
+        if not isinstance(src, dict):
+            return keys
+        for cat in ("events", "rituals", "magic", "lore", "relics", "artifacts", "deities_and_entities"):
+            for item in (src.get(cat) or []):
+                if not isinstance(item, dict):
+                    continue
+                nm = str(item.get("name") or "").strip()
+                if nm:
+                    keys.add(_norm_entity_key(nm))
+                aliases = item.get("aliases") if isinstance(item.get("aliases"), list) else []
+                for alias in aliases:
+                    ak = _norm_entity_key(alias)
+                    if ak:
+                        keys.add(ak)
+        return keys
+
+    def _is_abstract_character_concept(name: str, role: str, bio: str) -> bool:
+        text = " ".join([str(name or ""), str(role or ""), str(bio or "")]).casefold()
+        if not text.strip():
+            return False
+        markers = (
+            "questioning", "questions", "question", "riddle", "ritual", "working",
+            "cycle", "convergence", "ascension", "phenomenon", "recursive",
+        )
+        return any(m in text for m in markers)
+
+    def _dedupe_story_apps_local(apps):
+        if not isinstance(apps, list):
+            return []
+        out = []
+        seen = set()
+        for a in apps:
+            if not isinstance(a, dict):
+                continue
+            d = str(a.get("date") or "").strip()
+            t = str(a.get("title") or "").strip()
+            if not t:
+                continue
+            k = (d, t)
+            if k in seen:
+                continue
+            seen.add(k)
+            out.append({"date": d, "title": t})
+        return out
+
+    def _merge_unique_list_local(a, b):
+        a = a if isinstance(a, list) else []
+        b = b if isinstance(b, list) else []
+        out = list(a)
+        seen = {str(x).strip().lower() for x in a if str(x).strip()}
+        for x in b:
+            k = str(x).strip().lower()
+            if not k or k in seen:
+                continue
+            seen.add(k)
+            out.append(x)
+        return out
+
+    def _merge_character_rows(target: dict, incoming: dict) -> dict:
+        if not isinstance(target, dict):
+            return incoming if isinstance(incoming, dict) else target
+        if not isinstance(incoming, dict):
+            return target
+
+        _ensure_alias_list(target)
+        _merge_aliases(target, incoming.get("aliases") if isinstance(incoming.get("aliases"), list) else [])
+
+        # Prefer richer text fields while preserving known values.
+        for key in ("role", "tagline", "bio"):
+            cur = str(target.get(key) or "").strip()
+            inc = str(incoming.get(key) or "").strip()
+            if inc and (not cur or len(inc) > len(cur)):
+                target[key] = inc
+
+        for key in ("status", "travel_scope", "home_place", "home_region", "home_realm", "world"):
+            inc = incoming.get(key)
+            if isinstance(inc, str):
+                if _truthy_non_unknown(inc) or not str(target.get(key) or "").strip():
+                    target[key] = inc
+            elif inc not in (None, "", [], {}):
+                target[key] = inc
+
+        target["traits"] = _merge_unique_list_local(target.get("traits", []), incoming.get("traits", []))
+
+        sh_cur = target.get("status_history") if isinstance(target.get("status_history"), list) else []
+        sh_inc = incoming.get("status_history") if isinstance(incoming.get("status_history"), list) else []
+        sh_out = list(sh_cur)
+        sh_seen = {
+            (
+                str(x.get("date") or "").strip(),
+                str(x.get("to_status") or "").strip(),
+                str(x.get("story_title") or "").strip(),
+                str(x.get("note") or "").strip(),
+            )
+            for x in sh_cur if isinstance(x, dict)
+        }
+        for row in sh_inc:
+            if not isinstance(row, dict):
+                continue
+            k = (
+                str(row.get("date") or "").strip(),
+                str(row.get("to_status") or "").strip(),
+                str(row.get("story_title") or "").strip(),
+                str(row.get("note") or "").strip(),
+            )
+            if k in sh_seen:
+                continue
+            sh_seen.add(k)
+            sh_out.append(row)
+        if sh_out:
+            target["status_history"] = sh_out
+
+        apps = _dedupe_story_apps_local((target.get("story_appearances") or []) + (incoming.get("story_appearances") or []))
+        apps.sort(key=lambda a: (str(a.get("date") or ""), str(a.get("title") or "")))
+        target["story_appearances"] = apps
+        if apps:
+            target["appearances"] = len(apps)
+            target["first_date"] = apps[0].get("date") or target.get("first_date") or date_key
+            target["first_story"] = apps[0].get("title") or target.get("first_story") or ""
+        else:
+            try:
+                target["appearances"] = max(int(target.get("appearances") or 0), int(incoming.get("appearances") or 0), 1)
+            except Exception:
+                target["appearances"] = 1
+            if not str(target.get("first_date") or "").strip():
+                target["first_date"] = str(incoming.get("first_date") or date_key)
+            if not str(target.get("first_story") or "").strip():
+                target["first_story"] = str(incoming.get("first_story") or "")
+        return target
+
+    non_character_keys = _non_character_name_keys(lore) | _non_character_name_keys(codex)
+    deduped_chars = []
+    by_name_key = {}
     for obj in codex.get("characters", []) or []:
         if not isinstance(obj, dict):
             continue
-        if id(obj) in seen_ids:
+        nm = str(obj.get("name") or "").strip()
+        if not nm:
             continue
-        uniq.append(obj)
-        seen_ids.add(id(obj))
-    codex["characters"] = uniq
+        nm_key = _norm_entity_key(nm)
+        if not nm_key:
+            continue
+
+        if _is_abstract_character_concept(nm, str(obj.get("role") or ""), str(obj.get("bio") or "")) and nm_key in non_character_keys:
+            continue
+
+        existing = by_name_key.get(nm_key)
+        if existing is None:
+            _ensure_alias_list(obj)
+            by_name_key[nm_key] = obj
+            deduped_chars.append(obj)
+            continue
+
+        _merge_character_rows(existing, obj)
+
+    codex["characters"] = deduped_chars
 
     # ── Geo hierarchy categories ─────────────────────────────────────────
     merge_named_category("hemispheres", ["tagline", "description", "function", "status", "notes"]) 
@@ -6472,6 +6825,8 @@ def ensure_named_character_mentions_present(lore: dict, stories: list[dict]) -> 
                 removals.add(id(placeholder))
 
         if target is None:
+            if _should_skip_character_auto_add(lore, name, descriptor):
+                continue
             aliases = [] if _is_descriptor_placeholder_character_name(descriptor) else [descriptor]
             chars.append({
                 "id": _make_snake_id(name),
@@ -6971,6 +7326,15 @@ def main():
     # appearances, we summarize its narrative arc via an API call so the
     # generation prompt gets a compact dossier instead of raw story text.
     event_arc_dossiers = {}
+    reused_character_temporal = build_reused_character_temporal_snippets(
+        reused_entries=reused_entries,
+        reuse_details=reuse_details,
+        temporal_path=CHARACTER_TEMPORAL_FILE,
+        current_date_key=date_key,
+    )
+    if reused_character_temporal:
+        print(f"✓ Temporal continuity snippets for reused characters: {len(reused_character_temporal)}")
+
     if ENABLE_WORLD_EVENT_ARCS and ENABLE_EVENT_ARC_DOSSIER:
         selected_events = _select_world_event_arcs(today_str)
         for evt in selected_events:
@@ -7005,7 +7369,7 @@ def main():
     message = client.messages.create(
         model=MODEL,
         max_tokens=4096,
-        messages=[{"role": "user", "content": build_prompt(today_str, lore, reused_entries=reused_entries, reuse_details=reuse_details, event_arc_dossiers=event_arc_dossiers, codex_balance=codex_balance)}]
+        messages=[{"role": "user", "content": build_prompt(today_str, lore, reused_entries=reused_entries, reuse_details=reuse_details, event_arc_dossiers=event_arc_dossiers, codex_balance=codex_balance, reused_character_temporal=reused_character_temporal)}]
     )
     raw = message.content[0].text.strip()
     try:
@@ -7404,6 +7768,58 @@ def main():
             print(f"WARNING: world-state sync skipped: {ws.get('reason', 'unknown')}", file=sys.stderr)
     except Exception as e:
         print(f"WARNING: world-state sync failed: {e}", file=sys.stderr)
+
+    # ── Refresh temporal sidecars and lifecycle state ─────────────────────
+    try:
+        temporal_payload = refresh_character_temporal(
+            codex_path=CODEX_FILE,
+            output_path=CHARACTER_TEMPORAL_FILE,
+            age_mode="auto",
+            model=MODEL,
+        )
+        print(
+            f"\u2713 Saved {CHARACTER_TEMPORAL_FILE} "
+            f"({temporal_payload.get('count', 0)} characters; age adjudication auto)"
+        )
+    except Exception as e:
+        print(f"WARNING: temporal refresh failed: {e}", file=sys.stderr)
+
+    try:
+        temporal_payload, log_payload = simulate_lifecycle(
+            codex_path=CODEX_FILE,
+            temporal_path=CHARACTER_TEMPORAL_FILE,
+            log_path=CHARACTER_LIFECYCLE_LOG_FILE,
+            mode="auto",
+            lookback_issues=6,
+            max_candidates=120,
+            model=MODEL,
+        )
+        print(
+            f"\u2713 Simulated lifecycle "
+            f"({log_payload.get('count', 0)} events; mode={log_payload.get('mode')})"
+        )
+    except Exception as e:
+        print(f"WARNING: lifecycle simulation failed: {e}", file=sys.stderr)
+
+    try:
+        lineage_payload = refresh_lineages(
+            codex_path=CODEX_FILE,
+            temporal_path=CHARACTER_TEMPORAL_FILE,
+            output_path=LINEAGES_FILE,
+        )
+        print(f"\u2713 Saved {LINEAGES_FILE} ({lineage_payload.get('count', 0)} lineages)")
+    except Exception as e:
+        print(f"WARNING: lineage refresh failed: {e}", file=sys.stderr)
+
+    try:
+        alliance_payload = refresh_alliances(
+            codex_path=CODEX_FILE,
+            temporal_path=CHARACTER_TEMPORAL_FILE,
+            output_path=ALLIANCES_FILE,
+        )
+        print(f"\u2713 Saved {ALLIANCES_FILE} ({alliance_payload.get('count', 0)} alliances)")
+    except Exception as e:
+        print(f"WARNING: alliance refresh failed: {e}", file=sys.stderr)
 
 if __name__ == "__main__":
     main()
