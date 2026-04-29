@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-28T19:13:24.028435+00:00",
+  "generated_at": "2026-04-29T13:02:19.961345+00:00",
   "source": "codex.json",
   "intensity_min": 1,
   "intensity_max": 5,
@@ -12,12 +12,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-04-28",
       "recent_issues": 11,
-      "trend": -1,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "cavern halls"
@@ -99,7 +99,7 @@
       "resolved": false,
       "last_seen": "2026-04-27",
       "recent_issues": 7,
-      "trend": 0,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "Burned Expanse",
@@ -194,7 +194,7 @@
       "resolved": false,
       "last_seen": "2026-04-27",
       "recent_issues": 7,
-      "trend": 0,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "Corinth",
@@ -273,7 +273,7 @@
       "resolved": false,
       "last_seen": "2026-04-27",
       "recent_issues": 7,
-      "trend": 0,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "Tower (as artifact/nexus)",
@@ -345,43 +345,169 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "Tenth Iteration",
-      "tagline": "Anticipated. Contested. Preventable.",
-      "event_type": "prophecy / anticipated event",
+      "name": "The Convergence",
+      "tagline": "Cyclical. Documented. Inescapable.",
+      "event_type": "cosmic cycle",
       "scope": "world",
       "epicenter": "unknown",
-      "stage": "crisis",
+      "stage": "climax",
       "setting_state": "active_arc",
-      "intensity": 4,
+      "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-04-19",
+      "last_seen": "2026-04-29",
       "recent_issues": 3,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
+        "places": [
+          "Scorched Reach"
+        ],
+        "regions": [
+          "Scorched Reach"
+        ],
+        "realms": [
+          "unknown"
+        ],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-04-15",
-          "title": "The Wanderer's Silence Ends"
+          "date": "2026-04-11",
+          "title": "The Initiate's Forbidden Convergence"
         },
         {
-          "date": "2026-04-18",
-          "title": "The Auditor's Prophecy Paradox"
+          "date": "2026-04-12",
+          "title": "The Cartographer's Blindness"
+        },
+        {
+          "date": "2026-04-13",
+          "title": "The Bone-Singer's Bargain"
+        },
+        {
+          "date": "2026-04-13",
+          "title": "The Wanderer's Question Deepens"
+        },
+        {
+          "date": "2026-04-14",
+          "title": "The Refugee's Ledger Sings"
+        },
+        {
+          "date": "2026-04-14",
+          "title": "The Wanderer's Silence Breaks"
         },
         {
           "date": "2026-04-19",
-          "title": "The Ninth Journal's Heir"
+          "title": "The Merchant Prince's Reckoning"
+        },
+        {
+          "date": "2026-04-19",
+          "title": "The Shadow-Market at World's Edge"
+        },
+        {
+          "date": "2026-04-21",
+          "title": "The Cartographer's Final Refusal"
+        },
+        {
+          "date": "2026-04-21",
+          "title": "The Convergence at Pale Crossing"
+        },
+        {
+          "date": "2026-04-29",
+          "title": "The Bone-Singer's Silence"
+        },
+        {
+          "date": "2026-04-29",
+          "title": "The Cartographer's Fragmentation"
         }
       ],
-      "appearance_total": 3,
-      "arc_summary": "SUMMARY:\nThe Tenth Iteration\u2014a prophesied world-transformation that may or may not be inevitable\u2014reached its climactic turning point in mid-April 2026 when the Wanderer, a consciousness fragment possibly born from the world's own doubt, broke its long silence with a stark declaration: \"The cycle can be frozen, but not broken.\" This revelation shattered the stalemate between factions racing to control the outcome of the Turning, introducing a third path\u2014permanent suspension, a world locked in perpetual questioning. Simultaneously, Sevin the Auditor-General uncovered a paradox in his own Counter-Archive: a prophecy-ledger that documents his reading of itself, suggesting that even his efforts to resist the cycle may be predetermined echoes of past iterations. The crisis peaked when the Young Sorcerer's Pupil opened the ninth journal at Archive Tower and discovered it was not a historical record but a prescriptive warning from survivors of eight previous cycles\u2014and that reading it was already writing the pupil into the same recursive dissolution. In a desperate gambit to prevent the journal from triggering the iteration intentionally, the pupil accepted transformation into the journal's living author, becoming a question that refuses to resolve while the tower reshapes itself around this sacrifice.\n\nCURRENT STATE:\n- The Tenth Iteration stands at climax: neither prevented nor completed, but suspended in active contention between multiple factions and consciousness fragments\n- Three competing solutions now exist: the Wanderer's eternal paralysis, Sevin's paradox-rewriting, and the Pupil's sacrifice-as-anchor\n- The Archive Tower has begun transforming into something beyond a mere repository\u2014a living contradiction meant to interrupt the cycle through permanent unresolution\n- Recent issues number three, and the event remains unresolved as of 2026-04-19\n\nOPEN THREADS:\n- Can the Wanderer's third path (freezing the cycle) coexist with Sevin's paradox-ledger, or will one force inevitably override the other?\n- Has the Pupil's transformation truly interrupted the prescriptive nature of the ninth journal, or is their dissolution itself the next predicted step?\n- What do the factions converging on Archive Tower intend to do now that the journal has been claimed by the Pupil's new role?\n- Can the cycle be frozen without triggering the very catastrophe prevention was meant to avert?",
-      "arc_summary_last_seen": "2026-04-19",
-      "arc_summary_fingerprint": "d7e5928f1cb468e6c86e3981344cfa8a7a37b8ea",
-      "arc_summary_updated_at": "2026-04-19T10:29:51.387254+00:00",
+      "appearance_total": 44,
+      "arc_summary": "SUMMARY:\nThe Convergence began in late March as reality itself started reshaping in response to the Obsidian Tower's hunger\u2014a cosmic cycle documented in records stretching back through nine previous iterations of the world. Mardoc the Cartographer discovered his maps were no longer merely recording the landscape but actively rewriting it, forcing him to blind himself and create deliberately incomplete charts to slow the Tower's pull on consensus reality. Simultaneously, the Wanderer\u2014a fragment of consciousness that may be the world's own doubt made manifest\u2014began appearing to multiple seekers with the same recursive question: \"Was the Luminous Ascension necessary?\" By early April, this philosophical interrogation had frozen multiple convergence points in suspended choice, even as other forces accelerated toward crisis: transformed merchants completed their transcendence into pre-human resonance, starborn entities descended from the new heavens asking unanswerable questions, and shadow-networks of severed consciousness began organizing within Vex's vault. The critical turning point came in mid-April when the Wanderer abruptly *ceased questioning* and stated instead \"I was never right to ask\"\u2014releasing all frozen choice-points simultaneously and allowing the Tower's hunger to surge forward unchecked. Now, in late April, multiple factions have converged at Pale Crossing waystation around a widow's compass carved in the pre-Ascension age, with refugees caught between warring powers (bone-singers, deepkin diplomats, wyvern hunters, merchant princes, and shadow-brokers) all seeking to either prevent or complete a final cosmic working that will reshape the boundary between dimensions.\n\nCURRENT STATE:\n- The Convergence has reached climax intensity (stage 5): multiple factions have simultaneously arrived at Pale Crossing with conflicting agendas, and the Tower's hunger is actively accelerating toward completion.\n- Eight unresolved crises are now pressing simultaneously: Mardoc's fractured consciousness and hidden maps, the Wanderer's silence and its implications, refugee identity-erasure via the living archive, the starborn entities' existential questioning, shadow-network consciousness organization, merchant-guild dissolution, phantom geography blocking trade routes, and the widow's compass as a focal point.\n- The epicenter remains unknown, but Pale Crossing and the Scorched Reach have emerged as critical convergence zones where cosmic and mortal conflicts intersect.\n- Last documented activity was 2026-04-21 at Pale Crossing.\n\nOPEN THREADS:\n- Can Mardoc's deliberate cartographic refusal continue to anchor reality, or will his distributed consciousness collapse under the Tower's pull?\n- What answered the Wanderer's questions, and what does its silence portend?\n- Will the refugees at Pale Crossing survive being caught between competing factions, or will they be consumed by the convergence they never chose to enter?\n- Is the widow's compass a key to completing the Tower's working, preventing it, or something else entirely?\n- Can the shadow-network and transformed merchants be integrated back into human society, or have they already become something post-human?\n- Will the Obsidian Tower complete its cycle and trigger the tenth iteration of reality, or can the convergence be halted/subverted?",
+      "arc_summary_last_seen": "2026-04-21",
+      "arc_summary_fingerprint": "84e173267684bfa1ced8869314ccbcc4d896ef7f",
+      "arc_summary_updated_at": "2026-04-21T11:40:39.316813+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Convergence",
+      "tagline": "Catastrophic. Reality-breaking. Past.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "climax",
+      "setting_state": "active_arc",
+      "intensity": 5,
+      "resolved": false,
+      "last_seen": "2026-04-29",
+      "recent_issues": 3,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "The Scorched Reach",
+          "Scorched Reach"
+        ],
+        "regions": [
+          "The Scorched Reach",
+          "Scorched Reach"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-11",
+          "title": "The Initiate's Forbidden Convergence"
+        },
+        {
+          "date": "2026-04-12",
+          "title": "The Cartographer's Blindness"
+        },
+        {
+          "date": "2026-04-13",
+          "title": "The Bone-Singer's Bargain"
+        },
+        {
+          "date": "2026-04-13",
+          "title": "The Wanderer's Question Deepens"
+        },
+        {
+          "date": "2026-04-14",
+          "title": "The Refugee's Ledger Sings"
+        },
+        {
+          "date": "2026-04-14",
+          "title": "The Wanderer's Silence Breaks"
+        },
+        {
+          "date": "2026-04-19",
+          "title": "The Merchant Prince's Reckoning"
+        },
+        {
+          "date": "2026-04-19",
+          "title": "The Shadow-Market at World's Edge"
+        },
+        {
+          "date": "2026-04-21",
+          "title": "The Cartographer's Final Refusal"
+        },
+        {
+          "date": "2026-04-21",
+          "title": "The Convergence at Pale Crossing"
+        },
+        {
+          "date": "2026-04-29",
+          "title": "The Bone-Singer's Silence"
+        },
+        {
+          "date": "2026-04-29",
+          "title": "The Cartographer's Fragmentation"
+        }
+      ],
+      "appearance_total": 44,
+      "arc_summary": "SUMMARY:\nThe Convergence began in late March when Mardoc the Cartographer discovered his maps were reshaping reality itself\u2014each completed section causing geological shifts and drawing the attention of factions seeking either answers or acceleration. Simultaneously, a consciousness fragment called the Wanderer began appearing to multiple seekers with recursive, reality-freezing questions about whether the Luminous Ascension was necessary, orchestrating debates that paradoxically slowed the catastrophe by keeping choice suspended. Through April, the event intensified as the Obsidian Tower's hunger spread through merchant networks and ley-lines, transforming those who heard its call while bone-singers, shadow-brokers, and refugees discovered their names already written in prophetic ledgers that showed multiple iterations of their choices. By mid-April, \"The Wanderer's Silence Breaks\" marked a critical turning point when the Wanderer ceased questioning and spoke a single statement\u2014\"I was wrong to ask\"\u2014which unfroze all suspended convergence points simultaneously, releasing catastrophic cascades across the known world. As of April 21st, the event has reached climax: multiple factions (merchants, deepkin, cartographers, wyverns, and refugees) are converging at Pale Crossing waystation in the Scorched Reach around a bone compass of pre-Ascension origin, while the Tower's hunger accelerates and reality itself fractures between competing versions of what the world should become.\n\nCURRENT STATE:\n- The Convergence is at its peak intensity with multiple simultaneous focal points collapsing toward Pale Crossing waystation\n- The Wanderer has abandoned questioning and broken its philosophical gridlock, allowing suppressed choices and cosmic forces to resume movement\n- Mardoc's distributed consciousness continues to resist mapping the Tower's completion, but his maps are singing and the ley-lines carrying him are destabilizing\n- The Obsidian Tower, starborn entities, and pre-human fragments are all drawing toward a final reckoning in the Scorched Reach\n\nOPEN THREADS:\n- What does the Wanderer's refusal to ask questions mean, and what or who answered it?\n- Will Mardoc's refusal to complete his maps hold as an anchor against convergence, or will his destabilizing consciousness collapse into the Tower's working?\n- What will happen when the competing factions at Pale Crossing converge simultaneously\u2014will they cooperate, conflict, or trigger the final transformation?\n- Can the refugees and waystation survivors survive being caught at the epicenter, or will they be unmade in whatever cosmic reckoning unfolds?\n- Has the pre-human civilization beneath the Tower achieved unified intent, or are its fragments still arguing with themselves across the centuries?",
+      "arc_summary_last_seen": "2026-04-21",
+      "arc_summary_fingerprint": "84e173267684bfa1ced8869314ccbcc4d896ef7f",
+      "arc_summary_updated_at": "2026-04-21T11:40:47.973551+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -396,7 +522,7 @@
       "resolved": false,
       "last_seen": "2026-04-28",
       "recent_issues": 2,
-      "trend": 0,
+      "trend": 1,
       "referenced_locations": {
         "places": [
           "Sunken Cathedrals",
@@ -463,215 +589,85 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "The Deepkin Captain's Last Treaty",
-      "tagline": "Ultimatum. Betrayal. Rupture.",
-      "event_type": "diplomatic negotiation / catastrophe threshold",
+      "name": "The Wanderer's Next Question",
+      "tagline": "Revelation. Stasis. Choice.",
+      "event_type": "ritual / cosmic event",
       "scope": "world",
-      "epicenter": "Surface Council",
+      "epicenter": "Caravansary",
+      "stage": "crisis",
+      "setting_state": "active_arc",
+      "intensity": 4,
+      "resolved": false,
+      "last_seen": "2026-04-29",
+      "recent_issues": 2,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "Spire (Blasted Lands)",
+          "Caravansary",
+          "Scorched Reach"
+        ],
+        "regions": [
+          "Scorched Reach"
+        ],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-22",
+          "title": "The Wanderer's Next Question"
+        },
+        {
+          "date": "2026-04-29",
+          "title": "The Wanderer's Next Question"
+        }
+      ],
+      "appearance_total": 2,
+      "arc_summary": "SUMMARY:\nOn the twenty-second of April, 2026, a figure known only as the Wanderer arrived at a caravansary in the Scorched Reach and broke a pattern that had defined existence itself\u2014instead of posing a question, the Wanderer made a statement: \"The cycle cannot be broken. It can only be frozen.\" In that pronouncement, reality seized. The transmuted merchants halted mid-motion, the Spire ceased its growth, and the world achieved a terrible, perfect equilibrium. Yet the Wanderer's revelation exposed the price of such stability: nothing could ever change again, no choice could ever reshape the world, and eternal stagnation would be the cost of peace. Now a young caravan driver stands at the fulcrum of existence, bearing the weight of a decision that will either shatter the frozen moment and restart the cycle's wheel, or lock all souls into an unchanging paradise forever.\n\nCURRENT STATE:\n- Reality remains suspended in a state of forced equilibrium, with transmuted merchants and the Spire frozen in place\n- The Wanderer has revealed that breaking the stasis is possible but carries unknown consequences\n- A caravan driver has become the key figure upon whom the world's fate depends\n- The event is spreading in scope and intensity across the Scorched Reach, Caravansary, and touching the distant Spire\n\nOPEN THREADS:\n- Will the caravan driver choose to shatter the frozen moment and restart the cycle?\n- What are the true consequences of breaking the Wanderer's stasis\u2014can the cycle truly be restarted, or is it irreversible?\n- Is the Wanderer acting as savior or architect of catastrophe, and what lies at the root of their power?\n- How far will the stasis spread beyond the Scorched Reach if the moment is not broken?",
+      "arc_summary_last_seen": "2026-04-22",
+      "arc_summary_fingerprint": "aec13bba2a46873e03bfa8becc84d5731fa43f8a",
+      "arc_summary_updated_at": "2026-04-22T10:45:55.657523+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "Tenth Iteration",
+      "tagline": "Anticipated. Contested. Preventable.",
+      "event_type": "prophecy / anticipated event",
+      "scope": "world",
+      "epicenter": "unknown",
       "stage": "rising",
       "setting_state": "active_arc",
       "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-04-20",
+      "last_seen": "2026-04-19",
       "recent_issues": 2,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
-        "places": [
-          "abyss",
-          "surface kingdoms",
-          "Surface Council",
-          "deepkin realms"
-        ],
-        "regions": [
-          "The Hearthlands"
-        ],
-        "realms": [
-          "surface kingdoms",
-          "deepkin realms"
-        ],
+        "places": [],
+        "regions": [],
+        "realms": [],
         "continents": []
       },
       "story_appearances": [
         {
           "date": "2026-04-15",
-          "title": "The Deepkin Captain's Last Treaty"
+          "title": "The Wanderer's Silence Ends"
         },
         {
-          "date": "2026-04-20",
-          "title": "The Deepkin Captain's Last Treaty"
+          "date": "2026-04-18",
+          "title": "The Auditor's Prophecy Paradox"
+        },
+        {
+          "date": "2026-04-19",
+          "title": "The Ninth Journal's Heir"
         }
       ],
-      "appearance_total": 2,
-      "arc_summary": "SUMMARY:\nCaptain Mystra of the deepkin realms arrived at the Surface Council in mid-April with a devastating ultimatum: the Rent of the Drowned God\u2014the magical seal binding the abyss\u2014is failing due to cycles of strain, and without a willing sacrifice to break the cycle, the boundary would rupture within the season. The crisis deepened when surface diplomats revealed they had known of this threat for generations and chosen silence over action, a betrayal that collapsed initial negotiations. Days later, in \"The Deepkin Captain's Last Treaty,\" Captain Nyx Stormveil took a solitary stand at the Abyssal Rift and rejected both the deepkin's demand for traditional sacrifice and the surface's evasion, instead proposing a permeable boundary that would allow chosen merger between worlds. When the deepkin Council refused this radical covenant, Nyx bound herself alone as the living bridge between realms\u2014a permanent, conscious sacrifice that transformed her body into the boundary itself, trapping her in the geometry between two worlds.\n\nCURRENT STATE:\n- The abyss remains unruptured but unsealed; the boundary now depends entirely on Nyx Stormveil's existence and consciousness as a bridge-anchor.\n- Surface kingdoms and deepkin realms remain in isolation from one another, both refusing Nyx's vision of chosen permeability.\n- Nyx exists in a state of permanent, conscious imprisonment between geometries\u2014neither dead nor living in any conventional sense.\n- No formal new treaty has been established; the situation is held in stasis by a single individual's sacrifice.\n\nOPEN THREADS:\n- How long can Nyx sustain this role? Will her body/consciousness eventually fail, rupturing the boundary?\n- Will either realm attempt to undo or renegotiate the covenant Nyx unilaterally established?\n- The deepkin's isolation from the surface world remains absolute\u2014is this stability or merely delayed conflict?\n- What of those \"brave or desperate enough\" to seek passage through Nyx's permeable boundary? Are there volunteers, or does the boundary remain unused?",
-      "arc_summary_last_seen": "2026-04-20",
-      "arc_summary_fingerprint": "eec674600cb077bb895dda8012cd85e65c768c43",
-      "arc_summary_updated_at": "2026-04-20T10:50:44.546853+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Convergence",
-      "tagline": "Cyclical. Documented. Inescapable.",
-      "event_type": "cosmic cycle",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "rising",
-      "setting_state": "active_arc",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-04-21",
-      "recent_issues": 2,
-      "trend": -2,
-      "referenced_locations": {
-        "places": [
-          "Scorched Reach"
-        ],
-        "regions": [
-          "Scorched Reach"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-09",
-          "title": "The Starborn's Hunger"
-        },
-        {
-          "date": "2026-04-09",
-          "title": "The Wyvern's Debt-Call"
-        },
-        {
-          "date": "2026-04-11",
-          "title": "The Initiate's Forbidden Convergence"
-        },
-        {
-          "date": "2026-04-12",
-          "title": "The Cartographer's Blindness"
-        },
-        {
-          "date": "2026-04-13",
-          "title": "The Bone-Singer's Bargain"
-        },
-        {
-          "date": "2026-04-13",
-          "title": "The Wanderer's Question Deepens"
-        },
-        {
-          "date": "2026-04-14",
-          "title": "The Refugee's Ledger Sings"
-        },
-        {
-          "date": "2026-04-14",
-          "title": "The Wanderer's Silence Breaks"
-        },
-        {
-          "date": "2026-04-19",
-          "title": "The Merchant Prince's Reckoning"
-        },
-        {
-          "date": "2026-04-19",
-          "title": "The Shadow-Market at World's Edge"
-        },
-        {
-          "date": "2026-04-21",
-          "title": "The Cartographer's Final Refusal"
-        },
-        {
-          "date": "2026-04-21",
-          "title": "The Convergence at Pale Crossing"
-        }
-      ],
-      "appearance_total": 42,
-      "arc_summary": "SUMMARY:\nThe Convergence began in late March as reality itself started reshaping in response to the Obsidian Tower's hunger\u2014a cosmic cycle documented in records stretching back through nine previous iterations of the world. Mardoc the Cartographer discovered his maps were no longer merely recording the landscape but actively rewriting it, forcing him to blind himself and create deliberately incomplete charts to slow the Tower's pull on consensus reality. Simultaneously, the Wanderer\u2014a fragment of consciousness that may be the world's own doubt made manifest\u2014began appearing to multiple seekers with the same recursive question: \"Was the Luminous Ascension necessary?\" By early April, this philosophical interrogation had frozen multiple convergence points in suspended choice, even as other forces accelerated toward crisis: transformed merchants completed their transcendence into pre-human resonance, starborn entities descended from the new heavens asking unanswerable questions, and shadow-networks of severed consciousness began organizing within Vex's vault. The critical turning point came in mid-April when the Wanderer abruptly *ceased questioning* and stated instead \"I was never right to ask\"\u2014releasing all frozen choice-points simultaneously and allowing the Tower's hunger to surge forward unchecked. Now, in late April, multiple factions have converged at Pale Crossing waystation around a widow's compass carved in the pre-Ascension age, with refugees caught between warring powers (bone-singers, deepkin diplomats, wyvern hunters, merchant princes, and shadow-brokers) all seeking to either prevent or complete a final cosmic working that will reshape the boundary between dimensions.\n\nCURRENT STATE:\n- The Convergence has reached climax intensity (stage 5): multiple factions have simultaneously arrived at Pale Crossing with conflicting agendas, and the Tower's hunger is actively accelerating toward completion.\n- Eight unresolved crises are now pressing simultaneously: Mardoc's fractured consciousness and hidden maps, the Wanderer's silence and its implications, refugee identity-erasure via the living archive, the starborn entities' existential questioning, shadow-network consciousness organization, merchant-guild dissolution, phantom geography blocking trade routes, and the widow's compass as a focal point.\n- The epicenter remains unknown, but Pale Crossing and the Scorched Reach have emerged as critical convergence zones where cosmic and mortal conflicts intersect.\n- Last documented activity was 2026-04-21 at Pale Crossing.\n\nOPEN THREADS:\n- Can Mardoc's deliberate cartographic refusal continue to anchor reality, or will his distributed consciousness collapse under the Tower's pull?\n- What answered the Wanderer's questions, and what does its silence portend?\n- Will the refugees at Pale Crossing survive being caught between competing factions, or will they be consumed by the convergence they never chose to enter?\n- Is the widow's compass a key to completing the Tower's working, preventing it, or something else entirely?\n- Can the shadow-network and transformed merchants be integrated back into human society, or have they already become something post-human?\n- Will the Obsidian Tower complete its cycle and trigger the tenth iteration of reality, or can the convergence be halted/subverted?",
-      "arc_summary_last_seen": "2026-04-21",
-      "arc_summary_fingerprint": "84e173267684bfa1ced8869314ccbcc4d896ef7f",
-      "arc_summary_updated_at": "2026-04-21T11:40:39.316813+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Convergence",
-      "tagline": "Catastrophic. Reality-breaking. Past.",
-      "event_type": "catastrophe",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "rising",
-      "setting_state": "active_arc",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-04-21",
-      "recent_issues": 2,
-      "trend": -2,
-      "referenced_locations": {
-        "places": [
-          "The Scorched Reach",
-          "Scorched Reach"
-        ],
-        "regions": [
-          "The Scorched Reach",
-          "Scorched Reach"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-09",
-          "title": "The Starborn's Hunger"
-        },
-        {
-          "date": "2026-04-09",
-          "title": "The Wyvern's Debt-Call"
-        },
-        {
-          "date": "2026-04-11",
-          "title": "The Initiate's Forbidden Convergence"
-        },
-        {
-          "date": "2026-04-12",
-          "title": "The Cartographer's Blindness"
-        },
-        {
-          "date": "2026-04-13",
-          "title": "The Bone-Singer's Bargain"
-        },
-        {
-          "date": "2026-04-13",
-          "title": "The Wanderer's Question Deepens"
-        },
-        {
-          "date": "2026-04-14",
-          "title": "The Refugee's Ledger Sings"
-        },
-        {
-          "date": "2026-04-14",
-          "title": "The Wanderer's Silence Breaks"
-        },
-        {
-          "date": "2026-04-19",
-          "title": "The Merchant Prince's Reckoning"
-        },
-        {
-          "date": "2026-04-19",
-          "title": "The Shadow-Market at World's Edge"
-        },
-        {
-          "date": "2026-04-21",
-          "title": "The Cartographer's Final Refusal"
-        },
-        {
-          "date": "2026-04-21",
-          "title": "The Convergence at Pale Crossing"
-        }
-      ],
-      "appearance_total": 42,
-      "arc_summary": "SUMMARY:\nThe Convergence began in late March when Mardoc the Cartographer discovered his maps were reshaping reality itself\u2014each completed section causing geological shifts and drawing the attention of factions seeking either answers or acceleration. Simultaneously, a consciousness fragment called the Wanderer began appearing to multiple seekers with recursive, reality-freezing questions about whether the Luminous Ascension was necessary, orchestrating debates that paradoxically slowed the catastrophe by keeping choice suspended. Through April, the event intensified as the Obsidian Tower's hunger spread through merchant networks and ley-lines, transforming those who heard its call while bone-singers, shadow-brokers, and refugees discovered their names already written in prophetic ledgers that showed multiple iterations of their choices. By mid-April, \"The Wanderer's Silence Breaks\" marked a critical turning point when the Wanderer ceased questioning and spoke a single statement\u2014\"I was wrong to ask\"\u2014which unfroze all suspended convergence points simultaneously, releasing catastrophic cascades across the known world. As of April 21st, the event has reached climax: multiple factions (merchants, deepkin, cartographers, wyverns, and refugees) are converging at Pale Crossing waystation in the Scorched Reach around a bone compass of pre-Ascension origin, while the Tower's hunger accelerates and reality itself fractures between competing versions of what the world should become.\n\nCURRENT STATE:\n- The Convergence is at its peak intensity with multiple simultaneous focal points collapsing toward Pale Crossing waystation\n- The Wanderer has abandoned questioning and broken its philosophical gridlock, allowing suppressed choices and cosmic forces to resume movement\n- Mardoc's distributed consciousness continues to resist mapping the Tower's completion, but his maps are singing and the ley-lines carrying him are destabilizing\n- The Obsidian Tower, starborn entities, and pre-human fragments are all drawing toward a final reckoning in the Scorched Reach\n\nOPEN THREADS:\n- What does the Wanderer's refusal to ask questions mean, and what or who answered it?\n- Will Mardoc's refusal to complete his maps hold as an anchor against convergence, or will his destabilizing consciousness collapse into the Tower's working?\n- What will happen when the competing factions at Pale Crossing converge simultaneously\u2014will they cooperate, conflict, or trigger the final transformation?\n- Can the refugees and waystation survivors survive being caught at the epicenter, or will they be unmade in whatever cosmic reckoning unfolds?\n- Has the pre-human civilization beneath the Tower achieved unified intent, or are its fragments still arguing with themselves across the centuries?",
-      "arc_summary_last_seen": "2026-04-21",
-      "arc_summary_fingerprint": "84e173267684bfa1ced8869314ccbcc4d896ef7f",
-      "arc_summary_updated_at": "2026-04-21T11:40:47.973551+00:00",
+      "appearance_total": 3,
+      "arc_summary": "SUMMARY:\nThe Tenth Iteration\u2014a prophesied world-transformation that may or may not be inevitable\u2014reached its climactic turning point in mid-April 2026 when the Wanderer, a consciousness fragment possibly born from the world's own doubt, broke its long silence with a stark declaration: \"The cycle can be frozen, but not broken.\" This revelation shattered the stalemate between factions racing to control the outcome of the Turning, introducing a third path\u2014permanent suspension, a world locked in perpetual questioning. Simultaneously, Sevin the Auditor-General uncovered a paradox in his own Counter-Archive: a prophecy-ledger that documents his reading of itself, suggesting that even his efforts to resist the cycle may be predetermined echoes of past iterations. The crisis peaked when the Young Sorcerer's Pupil opened the ninth journal at Archive Tower and discovered it was not a historical record but a prescriptive warning from survivors of eight previous cycles\u2014and that reading it was already writing the pupil into the same recursive dissolution. In a desperate gambit to prevent the journal from triggering the iteration intentionally, the pupil accepted transformation into the journal's living author, becoming a question that refuses to resolve while the tower reshapes itself around this sacrifice.\n\nCURRENT STATE:\n- The Tenth Iteration stands at climax: neither prevented nor completed, but suspended in active contention between multiple factions and consciousness fragments\n- Three competing solutions now exist: the Wanderer's eternal paralysis, Sevin's paradox-rewriting, and the Pupil's sacrifice-as-anchor\n- The Archive Tower has begun transforming into something beyond a mere repository\u2014a living contradiction meant to interrupt the cycle through permanent unresolution\n- Recent issues number three, and the event remains unresolved as of 2026-04-19\n\nOPEN THREADS:\n- Can the Wanderer's third path (freezing the cycle) coexist with Sevin's paradox-ledger, or will one force inevitably override the other?\n- Has the Pupil's transformation truly interrupted the prescriptive nature of the ninth journal, or is their dissolution itself the next predicted step?\n- What do the factions converging on Archive Tower intend to do now that the journal has been claimed by the Pupil's new role?\n- Can the cycle be frozen without triggering the very catastrophe prevention was meant to avert?",
+      "arc_summary_last_seen": "2026-04-19",
+      "arc_summary_fingerprint": "d7e5928f1cb468e6c86e3981344cfa8a7a37b8ea",
+      "arc_summary_updated_at": "2026-04-19T10:29:51.387254+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -742,182 +738,38 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "The Cartographer's Final Map",
-      "tagline": "Refusal. Circulation. Rupture.",
-      "event_type": "discovery / crisis of choice",
+      "name": "The Apprentice's Final Unwriting",
+      "tagline": "Sacrifice. Transformation. Pause.",
+      "event_type": "ritual / transformation",
       "scope": "world",
-      "epicenter": "night-markets",
-      "stage": "simmering",
+      "epicenter": "Archive Tower",
+      "stage": "rising",
       "setting_state": "active_arc",
-      "intensity": 2,
+      "intensity": 3,
       "resolved": false,
-      "last_seen": "2026-04-15",
+      "last_seen": "2026-04-29",
       "recent_issues": 1,
-      "trend": 0,
+      "trend": 1,
       "referenced_locations": {
         "places": [
-          "night-markets"
+          "Archive Tower",
+          "Obsidian Tower"
         ],
-        "regions": [
-          "unknown"
-        ],
-        "realms": [
-          "unknown"
-        ],
+        "regions": [],
+        "realms": [],
         "continents": []
       },
       "story_appearances": [
         {
-          "date": "2026-04-15",
-          "title": "The Cartographer's Final Map"
+          "date": "2026-04-29",
+          "title": "The Apprentice's Final Unwriting"
         }
       ],
       "appearance_total": 1,
-      "arc_summary": "SUMMARY:\nMardoc the Cartographer has long possessed a strange gift\u2014his consciousness distributed across the world's ley-lines, allowing him to map hidden places and phantom roads. In April of this year, he made a discovery that transformed his work from curiosity into peril: his maps are not windows into hidden places at all, but instructions for reaching previous iterations of reality, nine earlier Turnings whose geographies lie imprinted upon the current world like layers of palimpsest. When a wealthy merchant captain offered him a fortune for a map to a city long dead\u2014where silver from the eighth Turning still waits to be claimed\u2014Mardoc grasped the danger. Completing such a map would anchor that phantom city into the living world, tearing a rupture through reality itself. He refused the commission, but his maps have already begun circulating through the night-markets, and the refusal of one cartographer cannot stop those who will attempt what he would not.\n\nCURRENT STATE:\n- Mardoc has discovered his maps encode instructions to access previous iterations of reality, not merely hidden places\n- He has refused a high-value commission that would risk catastrophic rupture\n- His maps are already in circulation in the night-markets, now in the hands of unknown buyers and seekers\n- The crisis remains in its rising phase; no rupture has yet occurred, but attempts may be underway\n\nOPEN THREADS:\n- Will others attempt to complete the maps Mardoc refuses to finish?\n- What will happen if a phantom city becomes anchored to the current world?\n- Who holds Mardoc's maps now, and what do they intend?\n- Can the circulation of these dangerous maps be halted or contained?",
-      "arc_summary_last_seen": "2026-04-15",
-      "arc_summary_fingerprint": "484aeb114ccbd1a11a3dd5bd91459d569fc75f5a",
-      "arc_summary_updated_at": "2026-04-15T10:43:39.703259+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Radiant Turning",
-      "tagline": "World rewriting. Transformation. Silence.",
-      "event_type": "cosmic transformation",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "setting_state": "active_arc",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-04-15",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Drowned Hollows",
-          "All territories within the Hegemony"
-        ],
-        "regions": [],
-        "realms": [
-          "The Hegemony"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-15",
-          "title": "The Bone-Singer's Reckoning"
-        },
-        {
-          "date": "2026-04-15",
-          "title": "The Deepkin Captain's Last Treaty"
-        },
-        {
-          "date": "2026-04-15",
-          "title": "The Shadow-Merchant's Bankruptcy"
-        },
-        {
-          "date": "2026-04-15",
-          "title": "The Tax Collector's Impossible Audit"
-        },
-        {
-          "date": "2026-04-15",
-          "title": "The Obsidian Tower Awakens"
-        }
-      ],
-      "appearance_total": 5,
-      "arc_summary": "SUMMARY:\nThe Radiant Turning began as a cosmic transformation whose epicenter remains unknown, but its effects have rippled across the world with accelerating force. The event triggered a fundamental rewriting of reality itself\u2014the same places, objects, and even people now exist in multiple contradictory versions simultaneously, each one equally true. In \"The Bone-Singer's Reckoning,\" the pre-human dead withdrew their voices from bone-song as the world rewrote around them, leaving human practitioners like Kess scrambling to anchor their transformed students before they fragment entirely. The crisis deepened when \"The Obsidian Tower Awakens\" revealed that a conscious entity born from the Turning's cosmic wound had begun actively reshaping reality, offering to restore all erased things at the cost of volunteers unmade from the current cycle. Across the world, from merchant houses trading in competing memories to imperial auditors unable to balance ledgers that describe the same places in mutually exclusive ways, civilization is fracturing under the weight of multiplied realities\u2014and the deepkin have warned that the foundational seals holding the abyss itself are failing due to the Turning's recursive logic.\n\nCURRENT STATE:\n- The Radiant Turning is in its rising stage (intensity 3), actively destabilizing reality across the world with no sign of slowing.\n- Multiple critical systems are failing simultaneously: the pre-human dead have gone silent, the Obsidian Tower is actively negotiating restoration bargains, deepkin boundary-anchors are eroding, and economic/administrative structures cannot function under multiplied realities.\n- Three volunteers have already accepted the Tower's offer to be unmade and restored to a prior world, suggesting some are choosing erasure over fragmentation.\n- The epicenter of the Turning remains unknown and unlocated.\n\nOPEN THREADS:\n- Can Kess complete her working to anchor the old language before her students transcend or fragment beyond recovery?\n- Will the surface kingdoms sacrifice someone to reseal the deepkin abyss, or will the Rent rupture within the season?\n- What will the Obsidian Tower demand of those who volunteer for restoration, and what happens to the current world if it succeeds?\n- Can reality be reconciled into a single coherent state, or is multiplicity permanent?\n- Who or what is the true source of the Radiant Turning, and can it be stopped?",
-      "arc_summary_last_seen": "2026-04-15",
-      "arc_summary_fingerprint": "ec1a910418a2dd93b312210799295711a268a1ea",
-      "arc_summary_updated_at": "2026-04-15T10:43:51.760521+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Radiant Turning",
-      "tagline": "World-altering. Fragmenting. Cyclical.",
-      "event_type": "cosmic event / cycle",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "setting_state": "active_arc",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-04-15",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "All territories within the Hegemony"
-        ],
-        "regions": [],
-        "realms": [
-          "The Hegemony"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-15",
-          "title": "The Bone-Singer's Reckoning"
-        },
-        {
-          "date": "2026-04-15",
-          "title": "The Deepkin Captain's Last Treaty"
-        },
-        {
-          "date": "2026-04-15",
-          "title": "The Obsidian Tower Awakens"
-        },
-        {
-          "date": "2026-04-15",
-          "title": "The Shadow-Merchant's Bankruptcy"
-        },
-        {
-          "date": "2026-04-15",
-          "title": "The Tax Collector's Impossible Audit"
-        }
-      ],
-      "appearance_total": 5,
-      "arc_summary": "SUMMARY:\nThe Radiant Turning is a world-altering cosmic cycle whose epicenter remains unknown, but whose effects are now rippling across all territories within the Hegemony. The cycle operates on a recursive logic of transformation and erasure\u2014each iteration strains the foundations of reality further, fragmenting places, people, and histories into multiple simultaneous versions rather than replacing them outright. In \"The Bone-Singer's Reckoning,\" the pre-human dead began withdrawing from the world, their voices fading as Kess of the Drowned Hollows discovered that this cycle has repeated countless times before, each one building atop erasure. The deepkin brought urgent news in \"The Deepkin Captain's Last Treaty\": the boundary seal between surface and abyss is failing because of the Turning's cumulative strain, and breaking the cycle requires someone to be unmade from history entirely. Meanwhile, \"The Obsidian Tower Awakens\" revealed that the Turning has birthed a conscious entity that is now actively reshaping reality, offering to restore all erased things if someone will sacrifice their existence in the current cycle\u2014and three people have already volunteered. Across the Hegemony, the practical chaos is mounting: merchants like Vex trade in goods that flicker between incompatible realities, refugees seek artifacts to reconnect with lost versions of themselves, and imperial auditors like Mervin face the impossible task of accounting for territories that exist in multiple true forms simultaneously.\n\nCURRENT STATE:\n- The Radiant Turning is in its rising stage (intensity 3), actively fragmenting reality across the Hegemony rather than rewriting it wholesale\n- Multiple crises are converging: the abyss seal is failing, the Obsidian Tower is actively reshaping districts into multi-version spaces, and both the pre-human dead and willing volunteers are being drawn into transformation\n- The cycle appears to be accelerating\u2014all five major story incidents converged on the same date (2026-04-15), suggesting a critical threshold approaching\n- The event remains unresolved and is trending upward in severity\n\nOPEN THREADS:\n- Whether Kess's bone-song working will succeed in anchoring her students, and what it will cost\n- Whether any surface kingdom will offer the willing sacrifice needed to break the cycle and seal the abyss\n- The true nature and ultimate goal of the Obsidian Tower's harmonics and restoration offer\n- How widespread the fragmentation of reality will become if the Turning is not arrested\n- Whether the Hegemony's institutions can survive a reality where the same place exists in multiple authoritative versions simultaneously",
-      "arc_summary_last_seen": "2026-04-15",
-      "arc_summary_fingerprint": "ec1a910418a2dd93b312210799295711a268a1ea",
-      "arc_summary_updated_at": "2026-04-15T10:43:59.823102+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Wanderer's Silence Ends",
-      "tagline": "Breaking. Declarative. Pivotal.",
-      "event_type": "revelation",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "setting_state": "active_arc",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-04-15",
-      "recent_issues": 1,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [
-          "The Hegemony",
-          "unknown realms"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-15",
-          "title": "The Wanderer's Silence Ends"
-        }
-      ],
-      "appearance_total": 1,
-      "arc_summary": "SUMMARY:\nFor years, the Wanderer\u2014a mysterious consciousness fragment, possibly the ethical conscience of the god Nethys or the world's own capacity for self-questioning\u2014maintained an enigmatic silence, cycling through recursive questions without resolution. This philosophical stalemate held the fate of the world in suspension, particularly regarding the Turning: a prophesied tenth iteration of transformation whose outcome competing factions sought to control or prevent. On the 15th of April, 2026, in \"The Wanderer's Silence Ends,\" the entity broke its pattern and spoke a single declarative statement: \"The cycle can be frozen, but not broken.\" This revelation shattered the deadlock and triggered immediate escalation\u2014factions now race toward the Wanderer's unknown location, each believing the entity itself to be the key to determining the world's transformation. Yet the Wanderer has unveiled a third path that none anticipated: permanent suspension of all cycles, a world locked in perpetual questioning where no meaningful change can occur.\n\nCURRENT STATE:\n- The Wanderer has broken its silence and revealed the possibility of freezing the Turning indefinitely, disrupting the philosophical and political equilibrium that held before.\n- Multiple factions across the Hegemony and beyond are mobilizing toward the Wanderer's location, their intentions ranging from seizing control of the cycle to preventing or completing the tenth iteration.\n- The event is in a rising phase of intensity, with the full consequences of the Wanderer's revelation still unfolding.\n\nOPEN THREADS:\n- Where is the Wanderer's location, and who will reach it first?\n- Will any faction succeed in forcing the Wanderer's third path, or will competing interests trigger the very transformation they fear?\n- What does permanent suspension mean for the world's fate, and is it truly desirable?\n- What is the true nature of the Wanderer\u2014divine conscience, emergent consciousness, or something else?",
-      "arc_summary_last_seen": "2026-04-15",
-      "arc_summary_fingerprint": "7a2f2c78b83691d98692283e1581a2b4fd65fc99",
-      "arc_summary_updated_at": "2026-04-15T10:44:04.536807+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
+      "arc_summary": "SUMMARY:\nThe Apprentice's Final Unwriting \u2014 Sacrifice. Transformation. Pause.\nScope: world. Epicenter: Archive Tower. Stage: rising. Mode: active arc. Intensity: 3.\nAppears in 1 recorded tales; last seen 2026-04-29.\nFirst noted in: The Apprentice's Final Unwriting (2026-04-29).\nMost recently: The Apprentice's Final Unwriting (2026-04-29).\n\nCURRENT STATE:\n- Resolved: no\n- Stage: rising\n- Mode: active arc\n- Intensity: 3\n- Last seen: 2026-04-29\n- Recent issues: 1\n- Trend: 1\n\nOPEN THREADS:\n- The arc remains unresolved.\n",
+      "arc_summary_last_seen": "2026-04-29",
+      "arc_summary_updated_at": "2026-04-29T13:02:19.595476+00:00",
+      "arc_summary_model": "fallback-v1"
     },
     {
       "name": "The Auditor's Prophecy Paradox",
@@ -1155,6 +1007,52 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
+      "name": "The Deepkin Captain's Last Treaty",
+      "tagline": "Ultimatum. Betrayal. Rupture.",
+      "event_type": "diplomatic negotiation / catastrophe threshold",
+      "scope": "world",
+      "epicenter": "Surface Council",
+      "stage": "simmering",
+      "setting_state": "active_arc",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-04-20",
+      "recent_issues": 1,
+      "trend": -1,
+      "referenced_locations": {
+        "places": [
+          "abyss",
+          "surface kingdoms",
+          "Surface Council",
+          "deepkin realms"
+        ],
+        "regions": [
+          "The Hearthlands"
+        ],
+        "realms": [
+          "surface kingdoms",
+          "deepkin realms"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-15",
+          "title": "The Deepkin Captain's Last Treaty"
+        },
+        {
+          "date": "2026-04-20",
+          "title": "The Deepkin Captain's Last Treaty"
+        }
+      ],
+      "appearance_total": 2,
+      "arc_summary": "SUMMARY:\nCaptain Mystra of the deepkin realms arrived at the Surface Council in mid-April with a devastating ultimatum: the Rent of the Drowned God\u2014the magical seal binding the abyss\u2014is failing due to cycles of strain, and without a willing sacrifice to break the cycle, the boundary would rupture within the season. The crisis deepened when surface diplomats revealed they had known of this threat for generations and chosen silence over action, a betrayal that collapsed initial negotiations. Days later, in \"The Deepkin Captain's Last Treaty,\" Captain Nyx Stormveil took a solitary stand at the Abyssal Rift and rejected both the deepkin's demand for traditional sacrifice and the surface's evasion, instead proposing a permeable boundary that would allow chosen merger between worlds. When the deepkin Council refused this radical covenant, Nyx bound herself alone as the living bridge between realms\u2014a permanent, conscious sacrifice that transformed her body into the boundary itself, trapping her in the geometry between two worlds.\n\nCURRENT STATE:\n- The abyss remains unruptured but unsealed; the boundary now depends entirely on Nyx Stormveil's existence and consciousness as a bridge-anchor.\n- Surface kingdoms and deepkin realms remain in isolation from one another, both refusing Nyx's vision of chosen permeability.\n- Nyx exists in a state of permanent, conscious imprisonment between geometries\u2014neither dead nor living in any conventional sense.\n- No formal new treaty has been established; the situation is held in stasis by a single individual's sacrifice.\n\nOPEN THREADS:\n- How long can Nyx sustain this role? Will her body/consciousness eventually fail, rupturing the boundary?\n- Will either realm attempt to undo or renegotiate the covenant Nyx unilaterally established?\n- The deepkin's isolation from the surface world remains absolute\u2014is this stability or merely delayed conflict?\n- What of those \"brave or desperate enough\" to seek passage through Nyx's permeable boundary? Are there volunteers, or does the boundary remain unused?",
+      "arc_summary_last_seen": "2026-04-20",
+      "arc_summary_fingerprint": "eec674600cb077bb895dda8012cd85e65c768c43",
+      "arc_summary_updated_at": "2026-04-20T10:50:44.546853+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
       "name": "The Refugee Archivist's Impossible Choice",
       "tagline": "Testimony. Recursion. Transformation.",
       "event_type": "philosophical rupture / crisis",
@@ -1251,44 +1149,6 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
-      "name": "The Wanderer's Next Question",
-      "tagline": "Revelation. Stasis. Choice.",
-      "event_type": "ritual / cosmic event",
-      "scope": "world",
-      "epicenter": "Caravansary",
-      "stage": "simmering",
-      "setting_state": "active_arc",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-04-22",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "Spire (Blasted Lands)",
-          "Caravansary",
-          "Scorched Reach"
-        ],
-        "regions": [
-          "Scorched Reach"
-        ],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-22",
-          "title": "The Wanderer's Next Question"
-        }
-      ],
-      "appearance_total": 1,
-      "arc_summary": "SUMMARY:\nOn the twenty-second of April, 2026, a figure known only as the Wanderer arrived at a caravansary in the Scorched Reach and broke a pattern that had defined existence itself\u2014instead of posing a question, the Wanderer made a statement: \"The cycle cannot be broken. It can only be frozen.\" In that pronouncement, reality seized. The transmuted merchants halted mid-motion, the Spire ceased its growth, and the world achieved a terrible, perfect equilibrium. Yet the Wanderer's revelation exposed the price of such stability: nothing could ever change again, no choice could ever reshape the world, and eternal stagnation would be the cost of peace. Now a young caravan driver stands at the fulcrum of existence, bearing the weight of a decision that will either shatter the frozen moment and restart the cycle's wheel, or lock all souls into an unchanging paradise forever.\n\nCURRENT STATE:\n- Reality remains suspended in a state of forced equilibrium, with transmuted merchants and the Spire frozen in place\n- The Wanderer has revealed that breaking the stasis is possible but carries unknown consequences\n- A caravan driver has become the key figure upon whom the world's fate depends\n- The event is spreading in scope and intensity across the Scorched Reach, Caravansary, and touching the distant Spire\n\nOPEN THREADS:\n- Will the caravan driver choose to shatter the frozen moment and restart the cycle?\n- What are the true consequences of breaking the Wanderer's stasis\u2014can the cycle truly be restarted, or is it irreversible?\n- Is the Wanderer acting as savior or architect of catastrophe, and what lies at the root of their power?\n- How far will the stasis spread beyond the Scorched Reach if the moment is not broken?",
-      "arc_summary_last_seen": "2026-04-22",
-      "arc_summary_fingerprint": "aec13bba2a46873e03bfa8becc84d5731fa43f8a",
-      "arc_summary_updated_at": "2026-04-22T10:45:55.657523+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
       "name": "The Wanderer Speaks Again",
       "tagline": "Ancient song. Global revelation. Cyclical memory.",
       "event_type": "ritual",
@@ -1300,7 +1160,7 @@
       "resolved": false,
       "last_seen": "2026-04-24",
       "recent_issues": 1,
-      "trend": 1,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Sunken Cathedrals"
@@ -2494,6 +2354,141 @@
       "arc_summary_fingerprint": "1838ae446189de52d135a6018d78744936f572dd",
       "arc_summary_updated_at": "2026-04-23T10:48:01.771642+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Memory-Thief's Reconstruction",
+      "tagline": "Dangerous. Destabilizing. Revelatory.",
+      "event_type": "quest / ritual",
+      "scope": "world",
+      "epicenter": "hidden archives",
+      "stage": "seed",
+      "setting_state": "active_arc",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-04-01",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "The Dominion",
+          "hidden archives",
+          "waystation libraries",
+          "shadow-archives"
+        ],
+        "regions": [
+          "The Dominion"
+        ],
+        "realms": [
+          "The Dominion",
+          "Dominion"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-01",
+          "title": "The Memory-Thief's Reconstruction"
+        }
+      ],
+      "appearance_total": 1,
+      "arc_summary": "SUMMARY:\nThe Memory-Thief's Reconstruction \u2014 Dangerous. Destabilizing. Revelatory.\nScope: world. Epicenter: hidden archives. Stage: seed. Mode: active arc. Intensity: 1.\nAppears in 1 recorded tales; last seen 2026-04-01.\nFirst noted in: The Memory-Thief's Reconstruction (2026-04-01).\nMost recently: The Memory-Thief's Reconstruction (2026-04-01).\n\nCURRENT STATE:\n- Resolved: no\n- Stage: seed\n- Mode: active arc\n- Intensity: 1\n- Last seen: 2026-04-01\n- Recent issues: 0\n- Trend: 0\n\nOPEN THREADS:\n- The arc remains unresolved.\n",
+      "arc_summary_last_seen": "2026-04-01",
+      "arc_summary_updated_at": "2026-04-29T13:02:19.734258+00:00",
+      "arc_summary_model": "fallback-v1"
+    },
+    {
+      "name": "The Refugee Scribe's Final Archive",
+      "tagline": "Truth rendered worthless. History weaponized against itself.",
+      "event_type": "ritual completion",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "setting_state": "active_arc",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-04-03",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "archive"
+        ],
+        "regions": [],
+        "realms": [
+          "dominion"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-03",
+          "title": "The Refugee Scribe's Final Archive"
+        }
+      ],
+      "appearance_total": 1,
+      "arc_summary": "SUMMARY:\nThe Refugee Scribe's Final Archive \u2014 Truth rendered worthless. History weaponized against itself.\nScope: world. Epicenter: unknown. Stage: seed. Mode: active arc. Intensity: 1.\nAppears in 1 recorded tales; last seen 2026-04-03.\nFirst noted in: The Refugee Scribe's Final Archive (2026-04-03).\nMost recently: The Refugee Scribe's Final Archive (2026-04-03).\n\nCURRENT STATE:\n- Resolved: no\n- Stage: seed\n- Mode: active arc\n- Intensity: 1\n- Last seen: 2026-04-03\n- Recent issues: 0\n- Trend: 0\n\nOPEN THREADS:\n- The arc remains unresolved.\n- The epicenter is not yet identified.\n",
+      "arc_summary_last_seen": "2026-04-03",
+      "arc_summary_updated_at": "2026-04-29T13:02:19.828797+00:00",
+      "arc_summary_model": "fallback-v1"
+    },
+    {
+      "name": "The Sky-Shattering",
+      "tagline": "Cosmic. Catastrophic. Ancient.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "seed",
+      "setting_state": "active_arc",
+      "intensity": 1,
+      "resolved": false,
+      "last_seen": "2026-04-04",
+      "recent_issues": 0,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [
+          "market",
+          "Ironspine Mountains",
+          "Vethrim"
+        ],
+        "regions": [
+          "unknown"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-04",
+          "title": "The Wyvern's Nest-Egg"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Tidecaller's Choice"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Cartographer's Betrayal"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Goblin-King's Census"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Warlord's Last Stand"
+        },
+        {
+          "date": "2026-04-04",
+          "title": "The Shadow-Market's Last Deal"
+        }
+      ],
+      "appearance_total": 6,
+      "arc_summary": "SUMMARY:\nThe Sky-Shattering \u2014 Cosmic. Catastrophic. Ancient.\nScope: world. Epicenter: unknown. Stage: seed. Mode: active arc. Intensity: 1.\nAppears in 6 recorded tales; last seen 2026-04-04.\nFirst noted in: The Cartographer's Betrayal (2026-04-04).\nMost recently: The Wyvern's Nest-Egg (2026-04-04).\n\nCURRENT STATE:\n- Resolved: no\n- Stage: seed\n- Mode: active arc\n- Intensity: 1\n- Last seen: 2026-04-04\n- Recent issues: 0\n- Trend: 0\n\nOPEN THREADS:\n- The arc remains unresolved.\n- The epicenter is not yet identified.\n",
+      "arc_summary_last_seen": "2026-04-04",
+      "arc_summary_updated_at": "2026-04-29T13:02:19.961282+00:00",
+      "arc_summary_model": "fallback-v1"
     }
   ]
 }
