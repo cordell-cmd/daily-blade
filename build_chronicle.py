@@ -21,6 +21,8 @@ WORLD_EVENTS_FILE = ROOT / "world-events.json"
 ARCHIVE_INDEX_FILE = ROOT / "archive" / "index.json"
 ARCHIVE_DIR = ROOT / "archive"
 OUTPUT_FILE = ROOT / "chronicle.json"
+CHRONICLE_ARCHIVE_DIR = ROOT / "chronicle-archive"
+CHRONICLE_ARCHIVE_INDEX_FILE = CHRONICLE_ARCHIVE_DIR / "index.json"
 
 MODEL = os.environ.get("ANTHROPIC_MODEL", "claude-haiku-4-5-20251001").strip() or "claude-haiku-4-5-20251001"
 ISSUE_TIMEZONE = (os.environ.get("ISSUE_TIMEZONE") or "America/New_York").strip()
@@ -160,6 +162,43 @@ def _load_json(path: Path, default: Any) -> Any:
 def _write_json(path: Path, data: Any) -> None:
     with path.open("w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=True, indent=2)
+
+
+def _archive_stamp(value: str) -> str:
+    raw = str(value or "").strip() or _now_iso()
+    return re.sub(r"[^0-9A-Za-z-]+", "-", raw.replace(":", "-"))
+
+
+def _archive_chronicle_entry(entry: dict[str, Any]) -> None:
+    CHRONICLE_ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+
+    stem = _archive_stamp(entry.get("generated_at") or entry.get("date") or _now_iso())
+    archive_path = CHRONICLE_ARCHIVE_DIR / f"{stem}.json"
+    suffix = 2
+    while archive_path.exists():
+        archive_path = CHRONICLE_ARCHIVE_DIR / f"{stem}-{suffix}.json"
+        suffix += 1
+
+    _write_json(archive_path, entry)
+
+    index_payload = _load_json(CHRONICLE_ARCHIVE_INDEX_FILE, {"entries": []})
+    index_entries = index_payload.get("entries") if isinstance(index_payload, dict) and isinstance(index_payload.get("entries"), list) else []
+    index_entries = [row for row in index_entries if isinstance(row, dict) and str(row.get("path") or "").strip() != archive_path.name]
+    index_entries.insert(
+        0,
+        {
+            "generated_at": entry.get("generated_at"),
+            "date": entry.get("date"),
+            "issue_number": entry.get("issue_number"),
+            "title": entry.get("title"),
+            "model": entry.get("model"),
+            "window_start": entry.get("window_start"),
+            "window_end": entry.get("window_end"),
+            "path": archive_path.name,
+        },
+    )
+    index_entries.sort(key=lambda row: str(row.get("generated_at") or ""), reverse=True)
+    _write_json(CHRONICLE_ARCHIVE_INDEX_FILE, {"entries": index_entries})
 
 
 def _parse_date_key(value: str) -> datetime.date | None:
@@ -322,10 +361,17 @@ def _clean_history(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def _select_window_dates(archive_dates_desc: list[str], end_date_key: str, last_date_key: str | None, cadence_days: int) -> list[str]:
+def _select_window_dates(archive_dates_desc: list[str], end_date_key: str, last_date_key: str | None, cadence_days: int, full_history: bool = False) -> list[str]:
     end_date = _parse_date_key(end_date_key)
     if not end_date:
         return []
+    if full_history:
+        picked = []
+        for value in reversed(archive_dates_desc):
+            d = _parse_date_key(value)
+            if d and d <= end_date:
+                picked.append(value)
+        return picked
     lower_bound = end_date - timedelta(days=max(0, cadence_days - 1))
     if last_date_key:
         last_date = _parse_date_key(last_date_key)
@@ -895,6 +941,14 @@ def main() -> int:
 
     prior_entries = chronicle_history.get("entries") if isinstance(chronicle_history.get("entries"), list) else []
     last_completed_window_date = latest_entry_date or None
+    earlier_entry_dates = []
+    for row in prior_entries:
+        if not isinstance(row, dict):
+            continue
+        row_date = str(row.get("date") or "").strip()
+        if row_date and row_date != end_date_key:
+            earlier_entry_dates.append(row_date)
+    use_full_history_window = not earlier_entry_dates
     if latest_entry_date == end_date_key:
         last_completed_window_date = None
         for row in prior_entries:
@@ -905,7 +959,13 @@ def main() -> int:
                 last_completed_window_date = row_date
                 break
 
-    window_dates = _select_window_dates(archive_dates_desc, end_date_key, last_completed_window_date, CADENCE_DAYS)
+    window_dates = _select_window_dates(
+        archive_dates_desc,
+        end_date_key,
+        last_completed_window_date,
+        CADENCE_DAYS,
+        full_history=use_full_history_window,
+    )
     stories, issue_numbers = _load_window_stories(window_dates, archive_dates_desc)
     world_events = _rank_world_events(world_events_payload, {row.get("date") for row in stories if row.get("date")})
     ranked_entities, top_entities, top_connections = _rank_entities(codex, stories, world_events, CADENCE_DAYS)
@@ -963,6 +1023,7 @@ def main() -> int:
         "entries": kept,
     }
     _write_json(OUTPUT_FILE, payload)
+    _archive_chronicle_entry(entry)
     print(
         f"✓ Wrote {OUTPUT_FILE.name} "
         f"({entry['title']} · {entry['window_start']} → {entry['window_end']} · model={entry['model']})"
