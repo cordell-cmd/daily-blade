@@ -31,6 +31,10 @@ MAX_WORLD_EVENTS = int(os.environ.get("CHRONICLE_MAX_WORLD_EVENTS", "8") or 8)
 MAX_ENTITIES = int(os.environ.get("CHRONICLE_MAX_ENTITIES", "18") or 18)
 MAX_STORIES = int(os.environ.get("CHRONICLE_MAX_STORIES", "12") or 12)
 MAX_CONNECTIONS = int(os.environ.get("CHRONICLE_MAX_CONNECTIONS", "10") or 10)
+MAX_WORLD_EVENTS_FULL_HISTORY = int(os.environ.get("CHRONICLE_FULL_HISTORY_MAX_WORLD_EVENTS", "10") or 10)
+MAX_ENTITIES_FULL_HISTORY = int(os.environ.get("CHRONICLE_FULL_HISTORY_MAX_ENTITIES", "24") or 24)
+MAX_STORIES_FULL_HISTORY = int(os.environ.get("CHRONICLE_FULL_HISTORY_MAX_STORIES", "16") or 16)
+MAX_CONNECTIONS_FULL_HISTORY = int(os.environ.get("CHRONICLE_FULL_HISTORY_MAX_CONNECTIONS", "12") or 12)
 MAX_TOKENS = int(os.environ.get("CHRONICLE_MAX_TOKENS", "2200") or 2200)
 KEEP_ENTRIES = int(os.environ.get("CHRONICLE_KEEP_ENTRIES", "32") or 32)
 ALLOW_FALLBACK = (os.environ.get("CHRONICLE_ALLOW_FALLBACK", "1").strip().lower() in {"1", "true", "yes", "y"})
@@ -219,6 +223,28 @@ def _normalize_name(value: str) -> str:
     return re.sub(r"\s+", " ", str(value or "").strip()).lower()
 
 
+def _concept_key(value: str) -> str:
+    normalized = _normalize_name(value)
+    normalized = re.sub(r"\s*\([^)]*\)", "", normalized)
+    normalized = re.sub(r"^(?:the|a|an)\s+", "", normalized)
+    normalized = re.sub(r"[^a-z0-9]+", " ", normalized)
+    return re.sub(r"\s+", " ", normalized).strip()
+
+
+def _display_name_rank(value: str) -> tuple[int, int, int]:
+    raw = str(value or "").strip()
+    lowered = raw.lower()
+    return (
+        1 if re.match(r"^(?:the|a|an)\s+", lowered) else 0,
+        1 if "(" in raw and ")" in raw else 0,
+        len(raw),
+    )
+
+
+def _cap_for_run(default_cap: int, full_history_cap: int, full_history: bool) -> int:
+    return max(1, full_history_cap if full_history else default_cap)
+
+
 def _truncate(text: str, limit: int = 420) -> str:
     raw = re.sub(r"\s+", " ", str(text or "").strip())
     if len(raw) <= limit:
@@ -313,6 +339,66 @@ def _unique_nonempty(values: list[str]) -> list[str]:
         seen.add(item)
         out.append(item)
     return out
+
+
+def _dedupe_entity_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    deduped: list[dict[str, Any]] = []
+    concept_index: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        name = str(row.get("name") or "").strip()
+        key = _concept_key(name)
+        if not key:
+            continue
+        existing = concept_index.get(key)
+        if existing is None:
+            copied = dict(row)
+            concept_index[key] = copied
+            deduped.append(copied)
+            continue
+        if _display_name_rank(name) < _display_name_rank(str(existing.get("name") or "")):
+            existing["name"] = name
+        existing_why = existing.get("why") if isinstance(existing.get("why"), list) else []
+        row_why = row.get("why") if isinstance(row.get("why"), list) else []
+        existing["why"] = _unique_nonempty([*existing_why, *[str(item).strip() for item in row_why if str(item).strip()]])
+        for field in ("recent_appearances", "appearance_total", "network_degree", "connection_weight", "world_event_overlap", "score"):
+            existing[field] = max(int(existing.get(field) or 0), int(row.get(field) or 0))
+        if not str(existing.get("last_seen") or "") or str(row.get("last_seen") or "") > str(existing.get("last_seen") or ""):
+            existing["last_seen"] = row.get("last_seen")
+    return deduped
+
+
+def _dedupe_story_entities(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    deduped: list[dict[str, Any]] = []
+    seen: dict[str, dict[str, Any]] = {}
+    for row in rows:
+        name = str(row.get("name") or "").strip()
+        key = _concept_key(name)
+        if not key:
+            continue
+        existing = seen.get(key)
+        if existing is None:
+            copied = dict(row)
+            seen[key] = copied
+            deduped.append(copied)
+            continue
+        if _display_name_rank(name) < _display_name_rank(str(existing.get("name") or "")):
+            existing["name"] = name
+        existing["score"] = max(int(existing.get("score") or 0), int(row.get("score") or 0))
+    return deduped
+
+
+def _dedupe_connections(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    deduped: list[dict[str, Any]] = []
+    seen: set[tuple[str, str]] = set()
+    for row in rows:
+        source = row.get("source") if isinstance(row.get("source"), dict) else {}
+        target = row.get("target") if isinstance(row.get("target"), dict) else {}
+        pair = tuple(sorted((_concept_key(source.get("name") or ""), _concept_key(target.get("name") or ""))))
+        if not pair[0] or not pair[1] or pair[0] == pair[1] or pair in seen:
+            continue
+        seen.add(pair)
+        deduped.append(row)
+    return deduped
 
 
 def _entity_summary(category: str, row: dict[str, Any]) -> str:
@@ -420,7 +506,7 @@ def _load_window_stories(window_dates: list[str], archive_dates_desc: list[str])
     return stories, issue_numbers
 
 
-def _rank_world_events(payload: dict[str, Any], window_date_set: set[str]) -> list[dict[str, Any]]:
+def _rank_world_events(payload: dict[str, Any], window_date_set: set[str], max_world_events: int) -> list[dict[str, Any]]:
     events = payload.get("events") if isinstance(payload.get("events"), list) else []
     stage_rank = {"seed": 1, "simmering": 2, "rising": 3, "crisis": 4, "climax": 5, "aftermath": 0}
     setting_rank = {"legacy": 0, "active_arc": 1, "setting_shift": 2, "flashpoint": 3}
@@ -428,7 +514,7 @@ def _rank_world_events(payload: dict[str, Any], window_date_set: set[str]) -> li
     for row in events:
         if not isinstance(row, dict):
             continue
-        key = _normalize_name(row.get("name") or "")
+        key = _concept_key(row.get("name") or "")
         if not key:
             continue
         apps = row.get("story_appearances") if isinstance(row.get("story_appearances"), list) else []
@@ -449,10 +535,10 @@ def _rank_world_events(payload: dict[str, Any], window_date_set: set[str]) -> li
         if prev is None or int(prev.get("_score") or 0) < score:
             deduped[key] = enriched
     ranked = sorted(deduped.values(), key=lambda row: (int(row.get("_score") or 0), str(row.get("name") or "")), reverse=True)
-    return ranked[:MAX_WORLD_EVENTS]
+    return ranked[:max_world_events]
 
 
-def _rank_entities(codex: dict[str, Any], stories: list[dict[str, Any]], world_events: list[dict[str, Any]], cadence_days: int) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
+def _rank_entities(codex: dict[str, Any], stories: list[dict[str, Any]], world_events: list[dict[str, Any]], cadence_days: int, max_entities: int, max_connections: int) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     story_lookup = {row["key"]: row for row in stories}
     top_event_story_keys = {
         _story_key(app.get("date") or "", app.get("title") or "")
@@ -460,7 +546,7 @@ def _rank_entities(codex: dict[str, Any], stories: list[dict[str, Any]], world_e
         for app in (event.get("story_appearances") if isinstance(event.get("story_appearances"), list) else [])
         if isinstance(app, dict)
     }
-    top_event_name_keys = {_normalize_name(row.get("name") or "") for row in world_events}
+    top_event_name_keys = {_concept_key(row.get("name") or "") for row in world_events}
 
     entity_rows: list[dict[str, Any]] = []
     story_entities: dict[str, list[str]] = defaultdict(list)
@@ -547,7 +633,7 @@ def _rank_entities(codex: dict[str, Any], stories: list[dict[str, Any]], world_e
                 days_since = max(0, (end_date - last_seen).days)
                 recency_bonus = max(0, cadence_days - days_since)
         overlap = len([key for key in entity.get("story_keys") or [] if key in top_event_story_keys])
-        if entity["type"] == "events" and _normalize_name(entity["name"]) in top_event_name_keys:
+        if entity["type"] == "events" and _concept_key(entity["name"]) in top_event_name_keys:
             overlap += 2
         entity["world_event_overlap"] = overlap
         entity["network_degree"] = len(neighbors.get(entity["id"], {}))
@@ -585,7 +671,7 @@ def _rank_entities(codex: dict[str, Any], stories: list[dict[str, Any]], world_e
         entity["why"] = why
 
     ranked_entities = sorted(entity_rows, key=lambda row: (int(row.get("score") or 0), str(row.get("name") or "")), reverse=True)
-    top_entities = ranked_entities[:MAX_ENTITIES]
+    top_entities = _dedupe_entity_rows(ranked_entities)[:max_entities]
 
     connection_rows = []
     for (left, right), conn in connections.items():
@@ -600,10 +686,10 @@ def _rank_entities(codex: dict[str, Any], stories: list[dict[str, Any]], world_e
             }
         )
     connection_rows.sort(key=lambda row: (int(row.get("weight") or 0), row["source"]["name"], row["target"]["name"]), reverse=True)
-    return ranked_entities, top_entities, connection_rows[:MAX_CONNECTIONS]
+    return ranked_entities, top_entities, _dedupe_connections(connection_rows)[:max_connections]
 
 
-def _rank_stories(stories: list[dict[str, Any]], entity_rows: list[dict[str, Any]], world_events: list[dict[str, Any]]) -> list[dict[str, Any]]:
+def _rank_stories(stories: list[dict[str, Any]], entity_rows: list[dict[str, Any]], world_events: list[dict[str, Any]], max_stories: int) -> list[dict[str, Any]]:
     story_map = {row["key"]: dict(row) for row in stories}
     entity_by_story: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for entity in entity_rows:
@@ -620,24 +706,27 @@ def _rank_stories(stories: list[dict[str, Any]], entity_rows: list[dict[str, Any
 
     ranked = []
     for key, story in story_map.items():
-        entities = entity_by_story.get(key, [])
-        score = sum(min(20, int(entity.get("score") or 0)) for entity in entities[:8])
-        score += len({entity.get("type") for entity in entities}) * 4
+        entities = sorted(entity_by_story.get(key, []), key=lambda row: int(row.get("score") or 0), reverse=True)
+        deduped_entities = _dedupe_story_entities(
+            [
+                {"name": entity.get("name"), "type": entity.get("type"), "score": entity.get("score")}
+                for entity in entities
+            ]
+        )
+        score = sum(min(20, int(entity.get("score") or 0)) for entity in deduped_entities[:8])
+        score += len({entity.get("type") for entity in deduped_entities}) * 4
         if key in top_event_keys:
             score += 18
         story["_score"] = score
-        story["entities"] = [
-            {"name": entity.get("name"), "type": entity.get("type"), "score": entity.get("score")}
-            for entity in sorted(entities, key=lambda row: int(row.get("score") or 0), reverse=True)[:8]
-        ]
+        story["entities"] = deduped_entities[:8]
         ranked.append(story)
     ranked.sort(key=lambda row: (int(row.get("_score") or 0), str(row.get("date") or ""), str(row.get("title") or "")), reverse=True)
-    return ranked[:MAX_STORIES]
+    return ranked[:max_stories]
 
 
-def _build_dossier(window_dates: list[str], stories: list[dict[str, Any]], world_events: list[dict[str, Any]], ranked_entities: list[dict[str, Any]], top_entities: list[dict[str, Any]], connections: list[dict[str, Any]], chronicle_history: dict[str, Any]) -> dict[str, Any]:
+def _build_dossier(window_dates: list[str], stories: list[dict[str, Any]], world_events: list[dict[str, Any]], ranked_entities: list[dict[str, Any]], top_entities: list[dict[str, Any]], connections: list[dict[str, Any]], chronicle_history: dict[str, Any], max_stories: int) -> dict[str, Any]:
     previous = chronicle_history.get("latest_entry") if isinstance(chronicle_history.get("latest_entry"), dict) else None
-    selected_stories = _rank_stories(stories, ranked_entities, world_events)
+    selected_stories = _rank_stories(stories, ranked_entities, world_events, max_stories)
     top_by_type: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in ranked_entities:
         if len(top_by_type[row["type"]]) >= 4:
@@ -966,10 +1055,14 @@ def main() -> int:
         CADENCE_DAYS,
         full_history=use_full_history_window,
     )
+    max_world_events = _cap_for_run(MAX_WORLD_EVENTS, MAX_WORLD_EVENTS_FULL_HISTORY, use_full_history_window)
+    max_entities = _cap_for_run(MAX_ENTITIES, MAX_ENTITIES_FULL_HISTORY, use_full_history_window)
+    max_stories = _cap_for_run(MAX_STORIES, MAX_STORIES_FULL_HISTORY, use_full_history_window)
+    max_connections = _cap_for_run(MAX_CONNECTIONS, MAX_CONNECTIONS_FULL_HISTORY, use_full_history_window)
     stories, issue_numbers = _load_window_stories(window_dates, archive_dates_desc)
-    world_events = _rank_world_events(world_events_payload, {row.get("date") for row in stories if row.get("date")})
-    ranked_entities, top_entities, top_connections = _rank_entities(codex, stories, world_events, CADENCE_DAYS)
-    dossier = _build_dossier(window_dates, stories, world_events, ranked_entities, top_entities, top_connections, chronicle_history)
+    world_events = _rank_world_events(world_events_payload, {row.get("date") for row in stories if row.get("date")}, max_world_events)
+    ranked_entities, top_entities, top_connections = _rank_entities(codex, stories, world_events, CADENCE_DAYS, max_entities, max_connections)
+    dossier = _build_dossier(window_dates, stories, world_events, ranked_entities, top_entities, top_connections, chronicle_history, max_stories)
 
     issue_number = _issue_number(archive_dates_desc, end_date_key)
     api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
