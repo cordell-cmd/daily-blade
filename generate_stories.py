@@ -945,6 +945,12 @@ CODEX_BALANCE_CONTEXT_HINTS = {
     ],
 }
 
+CODEX_BALANCE_PRIORITY_ORDER = [
+    "weapons",
+    "flora_fauna",
+    "districts",
+]
+
 
 def _list_named_count(items) -> int:
     if not isinstance(items, list):
@@ -1013,13 +1019,76 @@ def build_codex_balance_guidance_section(codex_balance: dict) -> str:
     if not isinstance(weak, list) or not weak:
         return ""
 
+    severity_rank = {"high": 0, "medium": 1, "low": 2}
+    priority_rank = {label: idx for idx, label in enumerate(CODEX_BALANCE_PRIORITY_ORDER)}
+
+    def _ranked_rows(rows: list[dict]) -> list[dict]:
+        def _sort_key(row: dict):
+            label = str(row.get("label") or "").strip()
+            severity = str(row.get("severity") or "low").strip().lower()
+            deficit = int(row.get("deficit") or 0)
+            if label in priority_rank:
+                return (0, priority_rank[label], severity_rank.get(severity, 9), -deficit, label)
+            return (1, severity_rank.get(severity, 9), -deficit, label)
+
+        return sorted((row for row in rows if isinstance(row, dict)), key=_sort_key)
+
+    ranked = _ranked_rows(weak)
+    ranked_labels = {str(row.get("label") or "").strip(): row for row in ranked}
+
     lines = []
     lines.append("CODEX LABEL BALANCE SIGNALS (soft priority, quality-first):")
     lines.append("- Some codex labels are underrepresented. Increase opportunities ONLY when they naturally fit the story context.")
     lines.append("- Do not force filler entries. Only introduce a new codex entity when it is distinct, named, and worth recurring continuity.")
     lines.append("- Context cues are examples, not limits. Creative authority remains with the model; use any organic context that supports a meaningful named entity.")
+    if any(label in ranked_labels for label in CODEX_BALANCE_PRIORITY_ORDER):
+        ordered = [label for label in CODEX_BALANCE_PRIORITY_ORDER if label in ranked_labels]
+        lines.append(f"- If several natural opportunities compete today, prefer them in this order: {', '.join(ordered)}.")
 
-    top = weak[:6]
+    weapon_row = ranked_labels.get("weapons")
+    if weapon_row:
+        weapon_severity = str(weapon_row.get("severity") or "").lower()
+        if weapon_severity == "high":
+            lines.append(
+                "- Weapons emphasis: let about 2 stories naturally feature a DISTINCT named storied weapon that matters to reputation, inheritance, conflict, or handoff."
+            )
+        elif weapon_severity == "medium":
+            lines.append(
+                "- Weapons emphasis: let about 1 story naturally hinge on a DISTINCT named storied weapon with clear lineage, consequence, or handoff."
+            )
+        else:
+            lines.append(
+                "- Weapons maintenance: if a story already wants a storied armament, lean into it, but do not chase a daily weapon quota."
+            )
+
+    flora_row = ranked_labels.get("flora_fauna")
+    if flora_row:
+        flora_severity = str(flora_row.get("severity") or "").lower()
+        if flora_severity in {"high", "medium"}:
+            lines.append(
+                "- Flora & fauna emphasis: let about 1 story naturally include a named species, beast, grove, tree-kind, or dangerous plant that materially affects travel, trade, survival, wonder, or magic."
+            )
+            lines.append(
+                "- Forested, overgrown, druidic, caravan-route, or beast-haunted settings are especially useful when they fit the issue naturally."
+            )
+        else:
+            lines.append(
+                "- Flora & fauna maintenance: when wilderness or trade-route stories already fit the issue, prefer a named creature or plant with a real narrative role."
+            )
+
+    district_row = ranked_labels.get("districts")
+    if district_row:
+        district_severity = str(district_row.get("severity") or "").lower()
+        if district_severity == "high":
+            lines.append(
+                "- District emphasis: when a city appears, make about 1 story naturally hinge on a named ward/quarter/market/dock/temple row whose function matters to the conflict."
+            )
+        else:
+            lines.append(
+                "- District maintenance: whenever a city story already exists, prefer a named ward, quarter, market, dock, or temple row when it fits naturally."
+            )
+
+    top = ranked[:6]
     for row in top:
         label = str(row.get("label") or "").strip()
         count = int(row.get("count") or 0)
