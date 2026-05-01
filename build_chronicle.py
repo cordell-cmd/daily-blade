@@ -233,6 +233,18 @@ def _coerce_story_apps(obj: dict[str, Any]) -> list[dict[str, str]]:
     return out
 
 
+def _unique_nonempty(values: list[str]) -> list[str]:
+    seen: set[str] = set()
+    out: list[str] = []
+    for value in values:
+        item = str(value or "").strip()
+        if not item or item in seen:
+            continue
+        seen.add(item)
+        out.append(item)
+    return out
+
+
 def _entity_summary(category: str, row: dict[str, Any]) -> str:
     candidates = [
         row.get("tagline"),
@@ -335,12 +347,12 @@ def _rank_world_events(payload: dict[str, Any], window_date_set: set[str]) -> li
     events = payload.get("events") if isinstance(payload.get("events"), list) else []
     stage_rank = {"seed": 1, "simmering": 2, "rising": 3, "crisis": 4, "climax": 5, "aftermath": 0}
     setting_rank = {"legacy": 0, "active_arc": 1, "setting_shift": 2, "flashpoint": 3}
-    deduped: dict[tuple[str, str], dict[str, Any]] = {}
+    deduped: dict[str, dict[str, Any]] = {}
     for row in events:
         if not isinstance(row, dict):
             continue
-        key = (_normalize_name(row.get("name") or ""), _normalize_name(row.get("event_type") or ""))
-        if not any(key):
+        key = _normalize_name(row.get("name") or "")
+        if not key:
             continue
         apps = row.get("story_appearances") if isinstance(row.get("story_appearances"), list) else []
         recent_overlap = sum(1 for app in apps if isinstance(app, dict) and str(app.get("date") or "") in window_date_set)
@@ -365,7 +377,6 @@ def _rank_world_events(payload: dict[str, Any], window_date_set: set[str]) -> li
 
 def _rank_entities(codex: dict[str, Any], stories: list[dict[str, Any]], world_events: list[dict[str, Any]], cadence_days: int) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]]]:
     story_lookup = {row["key"]: row for row in stories}
-    window_date_set = {row.get("date") for row in stories if row.get("date")}
     top_event_story_keys = {
         _story_key(app.get("date") or "", app.get("title") or "")
         for event in world_events
@@ -391,35 +402,51 @@ def _rank_entities(codex: dict[str, Any], stories: list[dict[str, Any]], world_e
             total_keys = [_story_key(app.get("date") or "", app.get("title") or "") for app in apps]
             total_keys = [key for key in total_keys if key]
             recent_keys = [key for key in total_keys if key in story_lookup]
-            total_dates = sorted({str(app.get("date") or "") for app in apps if str(app.get("date") or "").strip()})
-            recent_dates = sorted({story_lookup[key]["date"] for key in recent_keys})
             if not total_keys and not recent_keys:
                 continue
-            for key in recent_keys:
-                story_entities[key].append(entity_id)
-            entity = {
-                "id": entity_id,
-                "name": name,
-                "type": category,
-                "label": TYPE_LABELS.get(category, category.replace("_", " ").title()),
-                "summary": _entity_summary(category, obj),
-                "recent_appearances": len(recent_keys),
-                "recent_issue_count": len(recent_dates),
-                "appearance_total": len(total_keys),
-                "issue_span": len(set(total_dates)),
-                "last_seen": recent_dates[-1] if recent_dates else (total_dates[-1] if total_dates else ""),
-                "story_keys": recent_keys,
-                "all_story_keys": total_keys,
-                "score": 0,
-                "category_weight": CATEGORY_WEIGHTS.get(category, 3),
-                "network_degree": 0,
-                "connection_weight": 0,
-                "world_event_overlap": 0,
-                "linked_entities": [],
-                "why": [],
-            }
-            entity_rows.append(entity)
-            entity_index[entity_id] = entity
+            summary = _entity_summary(category, obj)
+            entity = entity_index.get(entity_id)
+            if entity is None:
+                entity = {
+                    "id": entity_id,
+                    "name": name,
+                    "type": category,
+                    "label": TYPE_LABELS.get(category, category.replace("_", " ").title()),
+                    "summary": summary,
+                    "recent_appearances": 0,
+                    "recent_issue_count": 0,
+                    "appearance_total": 0,
+                    "issue_span": 0,
+                    "last_seen": "",
+                    "story_keys": [],
+                    "all_story_keys": [],
+                    "score": 0,
+                    "category_weight": CATEGORY_WEIGHTS.get(category, 3),
+                    "network_degree": 0,
+                    "connection_weight": 0,
+                    "world_event_overlap": 0,
+                    "linked_entities": [],
+                    "why": [],
+                }
+                entity_rows.append(entity)
+                entity_index[entity_id] = entity
+            elif summary and len(summary) > len(str(entity.get("summary") or "")):
+                entity["summary"] = summary
+
+            entity["story_keys"] = _unique_nonempty([*(entity.get("story_keys") or []), *recent_keys])
+            entity["all_story_keys"] = _unique_nonempty([*(entity.get("all_story_keys") or []), *total_keys])
+
+    for entity in entity_rows:
+        for key in entity.get("story_keys") or []:
+            story_entities[key].append(entity["id"])
+
+        recent_dates = sorted({story_lookup[key]["date"] for key in entity.get("story_keys") or [] if key in story_lookup})
+        all_dates = sorted({key.split("::", 1)[0] for key in entity.get("all_story_keys") or [] if "::" in key})
+        entity["recent_appearances"] = len(entity.get("story_keys") or [])
+        entity["recent_issue_count"] = len(recent_dates)
+        entity["appearance_total"] = len(entity.get("all_story_keys") or [])
+        entity["issue_span"] = len(all_dates)
+        entity["last_seen"] = recent_dates[-1] if recent_dates else (all_dates[-1] if all_dates else "")
 
     connections: dict[tuple[str, str], dict[str, Any]] = {}
     neighbors: dict[str, defaultdict[str, int]] = defaultdict(lambda: defaultdict(int))
