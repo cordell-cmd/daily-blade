@@ -663,8 +663,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
   <div id="char-view">
     <!-- Entity type filter pills -->
     <div class="codex-filter-bar" id="codex-filter-bar" role="group" aria-label="Filter codex by type">
-      <button class="codex-filter-btn active" data-type="all">All Entries</button>
-      <button class="codex-filter-btn" data-type="characters">⚔ Characters</button>
+      <button class="codex-filter-btn active" data-type="characters">⚔ Characters</button>
       <button class="codex-filter-btn" data-type="lineages">🫀 Lineages</button>
       <button class="codex-filter-btn" data-type="alliances">🤝 Alliances</button>
       <button class="codex-filter-btn" data-type="places">🏰 Places</button>
@@ -1239,7 +1238,7 @@ let ARCHIVE_INDEX_PROMISE = null;
 let currentTab      = 'tales';
 let activeGenre     = 'all';
 let codexLoaded     = false;
-let activeCodexType = 'all';
+let activeCodexType = 'characters';
 
 // Per-category alphabet filtering (keyed by codex entity type)
 let activeCodexLetterByType = {};
@@ -2339,10 +2338,6 @@ function visibleCodexCards() {
 function updateCodexCountLabel() {
   const label = document.getElementById('char-count-label');
   const visible = visibleCodexCards().length;
-  if (activeCodexType === 'all') {
-    label.textContent = `— ${visible} Entr${visible !== 1 ? 'ies' : 'y'} in the Codex —`;
-    return;
-  }
   const typeLabel = {
     characters: 'Characters',
     lineages: 'Lineages',
@@ -2396,10 +2391,8 @@ function applyCodexOrganization() {
   const base = Array.from(grid.querySelectorAll('.codex-card'))
     .filter(c => !c.classList.contains('hidden') && !c.classList.contains('hidden-alpha'));
 
-  // Special case: when viewing "All Entries", grouping-by-label isn't meaningful.
-  // In this case we interpret "By Label" as "By Category" and hide the label filter.
-  const groupByCategory = (activeCodexType === 'all');
-  if (labelSelect) labelSelect.style.display = groupByCategory ? 'none' : '';
+  const groupByCategory = false;
+  if (labelSelect) labelSelect.style.display = '';
 
   if (!groupByCategory && activeCodexOrganizeLabel && activeCodexOrganizeLabel !== 'all') {
     const needle = activeCodexOrganizeLabel.toLowerCase();
@@ -2717,7 +2710,7 @@ function codexAlphaForCard(card) {
 function renderCodexAlphaBar() {
   const bar = document.getElementById('codex-alpha-bar');
   if (!bar) return;
-  if (!codexLoaded || activeCodexType === 'all') {
+  if (!codexLoaded) {
     bar.style.display = 'none';
     return;
   }
@@ -2733,15 +2726,8 @@ function renderCodexAlphaBar() {
 }
 
 function applyCodexAlphaFilter(type) {
-  const t = String(type || activeCodexType || 'all');
+  const t = String(type || activeCodexType || 'characters');
   const cards = document.querySelectorAll('.codex-card');
-
-  if (t === 'all') {
-    cards.forEach(c => c.classList.remove('hidden-alpha'));
-    renderCodexAlphaBar();
-    updateCodexCountLabel();
-    return;
-  }
 
   const want = (activeCodexLetterByType[t] || 'all');
   cards.forEach(card => {
@@ -2759,18 +2745,19 @@ function applyCodexAlphaFilter(type) {
 
 // ── Codex Filter ─────────────────────────────────────────────────────
 function applyCodexFilter(type) {
-  activeCodexType = type;
+  const resolvedType = (!type || type === 'all') ? 'characters' : String(type);
+  activeCodexType = resolvedType;
   document.querySelectorAll('.codex-filter-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.type === type);
+    btn.classList.toggle('active', btn.dataset.type === resolvedType);
   });
   const cards = document.querySelectorAll('.codex-card');
   cards.forEach(card => {
-    const match = type === 'all' || card.dataset.entityType === type;
+    const match = card.dataset.entityType === resolvedType;
     card.classList.toggle('hidden', !match);
   });
 
   // Apply per-category alphabet filtering after type filter.
-  if (activeCodexType !== 'all' && !activeCodexLetterByType[activeCodexType]) {
+  if (!activeCodexLetterByType[activeCodexType]) {
     activeCodexLetterByType[activeCodexType] = 'all';
   }
   applyCodexAlphaFilter(activeCodexType);
@@ -5023,7 +5010,7 @@ document.querySelectorAll('.codex-filter-btn').forEach(btn => {
       const btn = e.target && e.target.closest ? e.target.closest('.codex-alpha-btn') : null;
       if (!btn) return;
       if (!codexLoaded) return;
-      if (!activeCodexType || activeCodexType === 'all') return;
+      if (!activeCodexType) return;
       const letter = String(btn.dataset.letter || 'all');
       activeCodexLetterByType[activeCodexType] = letter;
       applyCodexAlphaFilter(activeCodexType);
