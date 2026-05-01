@@ -812,6 +812,10 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <div class="controls" style="margin-top:.5rem;">
       <span class="controls-left" id="chronicle-count-label">— Loading the chronicle… —</span>
       <div class="controls-right">
+        <label class="codex-organize-label" for="chronicle-entry-select">Snapshot</label>
+        <select id="chronicle-entry-select" class="codex-organize-select" aria-label="Select chronicle snapshot">
+          <option value="latest">Loading snapshots…</option>
+        </select>
         <button class="btn" id="chronicle-refresh" aria-label="Refresh chronicle">Refresh</button>
       </div>
     </div>
@@ -869,6 +873,8 @@ const LINEAGES_URL   = './lineages.json';
 const ALLIANCES_URL  = './alliances.json';
 const WORLD_EVENTS_URL = './world-events.json';
 const CHRONICLE_URL  = './chronicle.json';
+const CHRONICLE_ARCHIVE_INDEX_URL = './chronicle-archive/index.json';
+const CHRONICLE_ARCHIVE_ENTRY_URL = (path) => `./chronicle-archive/${encodeURIComponent(String(path || '').trim())}`;
 const GEOGRAPHY_URL  = './geography.json';
 const DEFAULT_GITHUB_REPO = { owner: 'cordell-cmd', repo: 'daily-blade' };
 const AUDIT_WORKFLOW_FILE = 'audit.yml';
@@ -1319,8 +1325,11 @@ let LINEAGE_PROMISE = null;
 let ALLIANCE_CACHE = null;
 let ALLIANCE_PROMISE = null;
 let CHRONICLE_DATA_CACHE = null;
+let CHRONICLE_ARCHIVE_INDEX_CACHE = null;
+const CHRONICLE_ARCHIVE_ENTRY_CACHE = new Map();
 let chronicleLoaded = false;
 let activeChronicleMode = 'overview';
+let activeChronicleEntryRef = 'latest';
 
 // Entity linking (clickable names inside story text)
 let codexDataLoaded = false;
@@ -1345,6 +1354,17 @@ function todayStr() { return new Date().toISOString().slice(0, 10); }
 function formatDate(isoStr) {
   const d = new Date(isoStr + 'T12:00:00');
   return d.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+}
+function formatDateTime(isoStr) {
+  const d = new Date(String(isoStr || ''));
+  if (Number.isNaN(d.getTime())) return String(isoStr || '');
+  return d.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+  });
 }
 function stripControlChars(str) {
   // Remove non-printable control characters that can render as tofu/rectangles.
@@ -4946,6 +4966,70 @@ function chronicleBadge(type, text) {
   return `<span class="badge ${escHtml(type)}">${escHtml(text)}</span>`;
 }
 
+function chronicleSnapshotOptions(data, archiveIndex) {
+  const archiveEntries = archiveIndex && Array.isArray(archiveIndex.entries) ? archiveIndex.entries : [];
+  const options = [];
+  const seen = new Set();
+  archiveEntries.forEach((row) => {
+    const path = String(row && row.path || '').trim();
+    if (!path) return;
+    const value = `archive:${path}`;
+    if (seen.has(value)) return;
+    seen.add(value);
+    const issue = Number.isFinite(Number(row && row.issue_number)) ? `Issue ${String(row.issue_number).padStart(3, '0')}` : 'Chronicle';
+    const dateText = row && row.date ? formatDate(row.date) : 'Unknown date';
+    const generatedText = row && row.generated_at ? formatDateTime(row.generated_at) : 'Unknown time';
+    const label = `${issue} · ${dateText} · ${row && row.title ? row.title : 'Untitled'} · saved ${generatedText}`;
+    options.push({ value, label });
+  });
+
+  if (options.length) return options;
+
+  const entries = data && Array.isArray(data.entries) ? data.entries : [];
+  entries.forEach((entry, idx) => {
+    const value = `entry:${idx}`;
+    const issue = Number.isFinite(Number(entry && entry.issue_number)) ? `Issue ${String(entry.issue_number).padStart(3, '0')}` : 'Chronicle';
+    const dateText = entry && entry.date ? formatDate(entry.date) : 'Unknown date';
+    const label = `${issue} · ${dateText} · ${entry && entry.title ? entry.title : 'Untitled'}`;
+    options.push({ value, label });
+  });
+
+  if (options.length) return options;
+  return [{ value: 'latest', label: 'Latest Chronicle' }];
+}
+
+function populateChronicleEntrySelect(data, archiveIndex) {
+  const select = document.getElementById('chronicle-entry-select');
+  if (!select) return [];
+  const options = chronicleSnapshotOptions(data, archiveIndex);
+  select.innerHTML = options.map((option) => `<option value="${escHtml(option.value)}">${escHtml(option.label)}</option>`).join('');
+  if (!options.some((option) => option.value === activeChronicleEntryRef)) {
+    activeChronicleEntryRef = options[0] ? options[0].value : 'latest';
+  }
+  select.value = activeChronicleEntryRef;
+  select.disabled = options.length <= 1;
+  return options;
+}
+
+async function resolveChronicleEntry(data, entryRef, force = false) {
+  const ref = String(entryRef || 'latest');
+  if (ref.startsWith('archive:')) {
+    const path = ref.slice('archive:'.length).trim();
+    if (!path) return latestChronicleEntry(data);
+    if (!force && CHRONICLE_ARCHIVE_ENTRY_CACHE.has(path)) return CHRONICLE_ARCHIVE_ENTRY_CACHE.get(path);
+    const payload = await fetchJsonWithTimeout(CHRONICLE_ARCHIVE_ENTRY_URL(path) + '?t=' + Date.now(), { timeoutMs: 12000 });
+    CHRONICLE_ARCHIVE_ENTRY_CACHE.set(path, payload);
+    return payload;
+  }
+  if (ref.startsWith('entry:')) {
+    const idx = Number.parseInt(ref.slice('entry:'.length), 10);
+    if (Array.isArray(data && data.entries) && Number.isInteger(idx) && idx >= 0 && idx < data.entries.length) {
+      return data.entries[idx];
+    }
+  }
+  return latestChronicleEntry(data);
+}
+
 function renderChronicleOverview(entry) {
   const issue = Number.isFinite(Number(entry.issue_number)) ? `Issue ${String(entry.issue_number).padStart(3, '0')}` : 'Chronicle';
   const windowText = entry.window_start && entry.window_end ? `${formatDate(entry.window_start)} → ${formatDate(entry.window_end)}` : 'Window unavailable';
@@ -5091,11 +5175,11 @@ function bindChronicleLinks(root) {
   });
 }
 
-function renderChronicle(data) {
+function renderChronicle(data, entry) {
   const statusEl = document.getElementById('chronicle-status-msg');
   const shell = document.getElementById('chronicle-shell');
   const countLabel = document.getElementById('chronicle-count-label');
-  const entry = latestChronicleEntry(data);
+  const options = chronicleSnapshotOptions(data, CHRONICLE_ARCHIVE_INDEX_CACHE);
 
   document.querySelectorAll('.chronicle-mode-btn').forEach((btn) => {
     const active = btn.dataset.mode === activeChronicleMode;
@@ -5112,17 +5196,37 @@ function renderChronicle(data) {
     return;
   }
 
-  const totalEntries = Array.isArray(data && data.entries) ? data.entries.length : 1;
-  countLabel.textContent = `— ${escHtml(entry.title || 'Chronicle')} · ${totalEntries} entr${totalEntries !== 1 ? 'ies' : 'y'} recorded —`;
+  const totalEntries = options.length || (Array.isArray(data && data.entries) ? data.entries.length : 1);
+  countLabel.textContent = `— ${entry.title || 'Chronicle'} · ${totalEntries} snapshot${totalEntries !== 1 ? 's' : ''} available —`;
   shell.innerHTML = activeChronicleMode === 'pipeline' ? renderChroniclePipeline(entry) : renderChronicleOverview(entry);
   bindChronicleLinks(shell);
   statusEl.style.display = 'none';
   shell.style.display = '';
 }
 
+async function renderChronicleSelection(forceEntryFetch = false) {
+  if (!CHRONICLE_DATA_CACHE) return;
+  const statusEl = document.getElementById('chronicle-status-msg');
+  const shell = document.getElementById('chronicle-shell');
+  try {
+    statusEl.innerHTML = '<span class="spinner"></span><em>Consulting the selected chronicle snapshot…</em>';
+    statusEl.style.display = '';
+    shell.style.display = 'none';
+    const entry = await resolveChronicleEntry(CHRONICLE_DATA_CACHE, activeChronicleEntryRef, forceEntryFetch);
+    renderChronicle(CHRONICLE_DATA_CACHE, entry);
+  } catch (err) {
+    console.error(err);
+    document.getElementById('chronicle-count-label').textContent = '— Chronicle snapshot unavailable —';
+    statusEl.innerHTML = errorBoxHtml('⚠ Chronicle Snapshot Unavailable', `Could not load the selected chronicle snapshot: ${err && err.message ? err.message : String(err)}`);
+    statusEl.style.display = '';
+    shell.style.display = 'none';
+  }
+}
+
 async function loadChronicle(force = false) {
   if (chronicleLoaded && !force && CHRONICLE_DATA_CACHE) {
-    renderChronicle(CHRONICLE_DATA_CACHE);
+    populateChronicleEntrySelect(CHRONICLE_DATA_CACHE, CHRONICLE_ARCHIVE_INDEX_CACHE);
+    await renderChronicleSelection(false);
     return;
   }
   const statusEl = document.getElementById('chronicle-status-msg');
@@ -5132,10 +5236,19 @@ async function loadChronicle(force = false) {
   shell.style.display = 'none';
   shell.innerHTML = '';
   try {
-    const data = await fetchJsonWithTimeout(CHRONICLE_URL + '?t=' + Date.now(), { timeoutMs: 12000 });
+    const [data, archiveIndex] = await Promise.all([
+      fetchJsonWithTimeout(CHRONICLE_URL + '?t=' + Date.now(), { timeoutMs: 12000 }),
+      fetchJsonWithTimeout(CHRONICLE_ARCHIVE_INDEX_URL + '?t=' + Date.now(), { timeoutMs: 12000 }).catch((err) => {
+        console.warn('Chronicle archive index unavailable:', err);
+        return null;
+      }),
+    ]);
     CHRONICLE_DATA_CACHE = data;
+    CHRONICLE_ARCHIVE_INDEX_CACHE = archiveIndex;
+    if (force) CHRONICLE_ARCHIVE_ENTRY_CACHE.clear();
     chronicleLoaded = true;
-    renderChronicle(data);
+    populateChronicleEntrySelect(data, archiveIndex);
+    await renderChronicleSelection(force);
   } catch (err) {
     console.error(err);
     document.getElementById('chronicle-count-label').textContent = '— Chronicle unavailable —';
@@ -5256,10 +5369,14 @@ document.getElementById('tab-map').addEventListener('click', () => switchTab('ma
 
 document.getElementById('chronicle-refresh').addEventListener('click', () => loadChronicle(true));
 document.querySelectorAll('.chronicle-mode-btn').forEach((btn) => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', async () => {
     activeChronicleMode = btn.dataset.mode || 'overview';
-    if (CHRONICLE_DATA_CACHE) renderChronicle(CHRONICLE_DATA_CACHE);
+    if (CHRONICLE_DATA_CACHE) await renderChronicleSelection(false);
   });
+});
+document.getElementById('chronicle-entry-select').addEventListener('change', async (e) => {
+  activeChronicleEntryRef = e && e.target ? e.target.value || 'latest' : 'latest';
+  if (CHRONICLE_DATA_CACHE) await renderChronicleSelection(false);
 });
 
 {
