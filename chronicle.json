@@ -1,0 +1,3888 @@
+{
+  "generated_at": "2026-05-01T18:19:32Z",
+  "cadence_days": 16,
+  "latest_entry": {
+    "date": "2026-05-01",
+    "issue_number": 66,
+    "window_start": "2026-04-16",
+    "window_end": "2026-05-01",
+    "generated_at": "2026-05-01T18:19:32Z",
+    "model": "fallback-v1",
+    "title": "Chronicle of The Ascension",
+    "dek": "A stitched overview of the strongest pressures shaping Edhra and Valdris.",
+    "chronicle": "By 2026-05-01, the world of Edhra is being pulled most strongly by The Ascension, Luminous Ascension (accidental vs. written), and Luminous Ascension (accidental vs. written). These arcs are no longer isolated disturbances; they are the pressures around which the current age is organizing itself.\n\nThe figures and forces surfacing most often in this span include The Ascension, archive, Tower (as artifact/nexus), Tower (as artifact/nexus). Their repeated intersections suggest that the world is cohering around recurring centers of consequence rather than disconnected adventures.\n\nRecent turning points cluster around tales such as The Wanderer's Final Question, The Cartographer's Daughter, The Deepkin Commander's Reflection, The Wyvern's Hunger Returns. Taken together, they show a setting where personal decisions, factional maneuvers, and larger catastrophes are feeding one another instead of unfolding in separate lanes.",
+    "current_state": [
+      "The Ascension is currently at climax stage.",
+      "Luminous Ascension (accidental vs. written) is currently at climax stage.",
+      "Luminous Ascension (accidental vs. written) is currently at climax stage.",
+      "Luminous Ascension (accidental vs. written) is currently at climax stage."
+    ],
+    "ongoing_threads": [
+      "A full Haiku chronicle synthesis has not yet been produced."
+    ],
+    "pipeline": {
+      "scoring_weights": [
+        {
+          "signal": "Recent appearances",
+          "weight": "+12 each",
+          "description": "Entities repeating across the current chronicle window matter most."
+        },
+        {
+          "signal": "Recent issue spread",
+          "weight": "+6 each issue",
+          "description": "Recurring across multiple issues outranks a one-day spike."
+        },
+        {
+          "signal": "Lifetime appearances",
+          "weight": "+3 each (capped)",
+          "description": "Long-running continuity raises baseline importance."
+        },
+        {
+          "signal": "Co-appearance network",
+          "weight": "+2 degree, +1 edge weight",
+          "description": "Entities that intersect many others become chronicle-worthy hubs."
+        },
+        {
+          "signal": "World-event overlap",
+          "weight": "+5 each overlap",
+          "description": "Direct ties to major arcs push entities upward."
+        },
+        {
+          "signal": "Category baseline",
+          "weight": "3-12",
+          "description": "Events, characters, and places get slightly higher starting weight because they anchor narrative continuity."
+        }
+      ],
+      "top_entities": [
+        {
+          "name": "The Ascension",
+          "type": "events",
+          "label": "Events",
+          "score": 889,
+          "recent_appearances": 50,
+          "appearance_total": 116,
+          "network_degree": 311,
+          "connection_weight": 977,
+          "world_event_overlap": 21,
+          "last_seen": "2026-05-01",
+          "why": [
+            "50 recent tale appearance(s)",
+            "overlaps 21 major arc beat(s)",
+            "connected to 311 other ranked entities",
+            "116 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "archive",
+          "type": "places",
+          "label": "Places",
+          "score": 849,
+          "recent_appearances": 49,
+          "appearance_total": 67,
+          "network_degree": 266,
+          "connection_weight": 920,
+          "world_event_overlap": 11,
+          "last_seen": "2026-05-01",
+          "why": [
+            "49 recent tale appearance(s)",
+            "overlaps 11 major arc beat(s)",
+            "connected to 266 other ranked entities",
+            "67 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Tower (as artifact/nexus)",
+          "type": "places",
+          "label": "Places",
+          "score": 835,
+          "recent_appearances": 48,
+          "appearance_total": 147,
+          "network_degree": 288,
+          "connection_weight": 1147,
+          "world_event_overlap": 13,
+          "last_seen": "2026-05-01",
+          "why": [
+            "48 recent tale appearance(s)",
+            "overlaps 13 major arc beat(s)",
+            "connected to 288 other ranked entities",
+            "147 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Tower (as artifact/nexus)",
+          "type": "places",
+          "label": "Places",
+          "score": 835,
+          "recent_appearances": 48,
+          "appearance_total": 147,
+          "network_degree": 288,
+          "connection_weight": 1147,
+          "world_event_overlap": 13,
+          "last_seen": "2026-05-01",
+          "why": [
+            "48 recent tale appearance(s)",
+            "overlaps 13 major arc beat(s)",
+            "connected to 288 other ranked entities",
+            "147 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Tower (as artifact/nexus)",
+          "type": "places",
+          "label": "Places",
+          "score": 835,
+          "recent_appearances": 48,
+          "appearance_total": 147,
+          "network_degree": 288,
+          "connection_weight": 1147,
+          "world_event_overlap": 13,
+          "last_seen": "2026-05-01",
+          "why": [
+            "48 recent tale appearance(s)",
+            "overlaps 13 major arc beat(s)",
+            "connected to 288 other ranked entities",
+            "147 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Tower (as artifact/nexus)",
+          "type": "artifacts",
+          "label": "Artifacts",
+          "score": 830,
+          "recent_appearances": 48,
+          "appearance_total": 147,
+          "network_degree": 288,
+          "connection_weight": 1147,
+          "world_event_overlap": 13,
+          "last_seen": "2026-05-01",
+          "why": [
+            "48 recent tale appearance(s)",
+            "overlaps 13 major arc beat(s)",
+            "connected to 288 other ranked entities",
+            "147 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Tower",
+          "type": "deities_and_entities",
+          "label": "Entities",
+          "score": 815,
+          "recent_appearances": 47,
+          "appearance_total": 47,
+          "network_degree": 280,
+          "connection_weight": 1135,
+          "world_event_overlap": 13,
+          "last_seen": "2026-05-01",
+          "why": [
+            "47 recent tale appearance(s)",
+            "overlaps 13 major arc beat(s)",
+            "connected to 280 other ranked entities"
+          ]
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "type": "events",
+          "label": "Events",
+          "score": 709,
+          "recent_appearances": 39,
+          "appearance_total": 146,
+          "network_degree": 251,
+          "connection_weight": 853,
+          "world_event_overlap": 15,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 15 major arc beat(s)",
+            "connected to 251 other ranked entities",
+            "146 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "type": "events",
+          "label": "Events",
+          "score": 709,
+          "recent_appearances": 39,
+          "appearance_total": 146,
+          "network_degree": 251,
+          "connection_weight": 853,
+          "world_event_overlap": 15,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 15 major arc beat(s)",
+            "connected to 251 other ranked entities",
+            "146 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "type": "events",
+          "label": "Events",
+          "score": 709,
+          "recent_appearances": 39,
+          "appearance_total": 146,
+          "network_degree": 251,
+          "connection_weight": 853,
+          "world_event_overlap": 15,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 15 major arc beat(s)",
+            "connected to 251 other ranked entities",
+            "146 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "type": "events",
+          "label": "Events",
+          "score": 709,
+          "recent_appearances": 39,
+          "appearance_total": 146,
+          "network_degree": 251,
+          "connection_weight": 853,
+          "world_event_overlap": 15,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 15 major arc beat(s)",
+            "connected to 251 other ranked entities",
+            "146 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "type": "events",
+          "label": "Events",
+          "score": 709,
+          "recent_appearances": 39,
+          "appearance_total": 146,
+          "network_degree": 251,
+          "connection_weight": 853,
+          "world_event_overlap": 15,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 15 major arc beat(s)",
+            "connected to 251 other ranked entities",
+            "146 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "type": "events",
+          "label": "Events",
+          "score": 709,
+          "recent_appearances": 39,
+          "appearance_total": 146,
+          "network_degree": 251,
+          "connection_weight": 853,
+          "world_event_overlap": 15,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 15 major arc beat(s)",
+            "connected to 251 other ranked entities",
+            "146 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Luminous Ascension",
+          "type": "deities_and_entities",
+          "label": "Entities",
+          "score": 695,
+          "recent_appearances": 39,
+          "appearance_total": 135,
+          "network_degree": 251,
+          "connection_weight": 853,
+          "world_event_overlap": 13,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 13 major arc beat(s)",
+            "connected to 251 other ranked entities",
+            "135 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "The Seventeen Transformed Merchants",
+          "type": "characters",
+          "label": "Characters",
+          "score": 693,
+          "recent_appearances": 39,
+          "appearance_total": 87,
+          "network_degree": 222,
+          "connection_weight": 863,
+          "world_event_overlap": 6,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 6 major arc beat(s)",
+            "connected to 222 other ranked entities",
+            "87 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "type": "rituals",
+          "label": "Rituals",
+          "score": 692,
+          "recent_appearances": 39,
+          "appearance_total": 146,
+          "network_degree": 251,
+          "connection_weight": 853,
+          "world_event_overlap": 13,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 13 major arc beat(s)",
+            "connected to 251 other ranked entities",
+            "146 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "type": "rituals",
+          "label": "Rituals",
+          "score": 692,
+          "recent_appearances": 39,
+          "appearance_total": 146,
+          "network_degree": 251,
+          "connection_weight": 853,
+          "world_event_overlap": 13,
+          "last_seen": "2026-05-01",
+          "why": [
+            "39 recent tale appearance(s)",
+            "overlaps 13 major arc beat(s)",
+            "connected to 251 other ranked entities",
+            "146 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Unknown Woman (Daughter's Mother)",
+          "type": "characters",
+          "label": "Characters",
+          "score": 690,
+          "recent_appearances": 38,
+          "appearance_total": 53,
+          "network_degree": 252,
+          "connection_weight": 797,
+          "world_event_overlap": 8,
+          "last_seen": "2026-04-30",
+          "why": [
+            "38 recent tale appearance(s)",
+            "overlaps 8 major arc beat(s)",
+            "connected to 252 other ranked entities",
+            "53 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "top_entities_by_type": {
+        "Artifacts": [
+          {
+            "name": "Tower (as artifact/nexus)",
+            "type": "artifacts",
+            "score": 830,
+            "why": [
+              "48 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 288 other ranked entities",
+              "147 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Obsidian Tower (as Faction)",
+            "type": "artifacts",
+            "score": 523,
+            "why": [
+              "26 recent tale appearance(s)",
+              "overlaps 8 major arc beat(s)",
+              "connected to 190 other ranked entities",
+              "70 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Obsidian Tower (as Faction)",
+            "type": "artifacts",
+            "score": 523,
+            "why": [
+              "26 recent tale appearance(s)",
+              "overlaps 8 major arc beat(s)",
+              "connected to 190 other ranked entities",
+              "70 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "living archive",
+            "type": "artifacts",
+            "score": 342,
+            "why": [
+              "13 recent tale appearance(s)",
+              "overlaps 3 major arc beat(s)",
+              "connected to 121 other ranked entities",
+              "17 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Characters": [
+          {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "characters",
+            "score": 693,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 222 other ranked entities",
+              "87 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Unknown Woman (Daughter's Mother)",
+            "type": "characters",
+            "score": 690,
+            "why": [
+              "38 recent tale appearance(s)",
+              "overlaps 8 major arc beat(s)",
+              "connected to 252 other ranked entities",
+              "53 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Dominion",
+            "type": "characters",
+            "score": 663,
+            "why": [
+              "37 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 242 other ranked entities",
+              "77 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Obsidian Tower (as Faction)",
+            "type": "characters",
+            "score": 529,
+            "why": [
+              "26 recent tale appearance(s)",
+              "overlaps 8 major arc beat(s)",
+              "connected to 190 other ranked entities",
+              "70 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Districts": [
+          {
+            "name": "Shadow-Markets",
+            "type": "districts",
+            "score": 304,
+            "why": [
+              "11 recent tale appearance(s)",
+              "overlaps 3 major arc beat(s)",
+              "connected to 131 other ranked entities",
+              "17 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "merchant quarter",
+            "type": "districts",
+            "score": 112,
+            "why": [
+              "2 recent tale appearance(s)",
+              "connected to 42 other ranked entities",
+              "3 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Saltward",
+            "type": "districts",
+            "score": 112,
+            "why": [
+              "2 recent tale appearance(s)",
+              "connected to 45 other ranked entities",
+              "3 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Lantern Market",
+            "type": "districts",
+            "score": 112,
+            "why": [
+              "2 recent tale appearance(s)",
+              "connected to 45 other ranked entities",
+              "3 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Entities": [
+          {
+            "name": "Tower",
+            "type": "deities_and_entities",
+            "score": 815,
+            "why": [
+              "47 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 280 other ranked entities"
+            ]
+          },
+          {
+            "name": "Luminous Ascension",
+            "type": "deities_and_entities",
+            "score": 695,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "135 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "the Tower",
+            "type": "deities_and_entities",
+            "score": 673,
+            "why": [
+              "36 recent tale appearance(s)",
+              "overlaps 11 major arc beat(s)",
+              "connected to 258 other ranked entities",
+              "79 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Wanderer",
+            "type": "deities_and_entities",
+            "score": 659,
+            "why": [
+              "37 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 247 other ranked entities",
+              "66 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Events": [
+          {
+            "name": "The Ascension",
+            "type": "events",
+            "score": 889,
+            "why": [
+              "50 recent tale appearance(s)",
+              "overlaps 21 major arc beat(s)",
+              "connected to 311 other ranked entities",
+              "116 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events",
+            "score": 709,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 15 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events",
+            "score": 709,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 15 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events",
+            "score": 709,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 15 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Factions": [
+          {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "factions",
+            "score": 690,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 222 other ranked entities",
+              "88 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "factions",
+            "score": 690,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 222 other ranked entities",
+              "87 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "factions",
+            "score": 690,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 222 other ranked entities",
+              "87 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Dominion",
+            "type": "factions",
+            "score": 660,
+            "why": [
+              "37 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 242 other ranked entities",
+              "77 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Flora & Fauna": [
+          {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "flora_fauna",
+            "score": 687,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 222 other ranked entities",
+              "87 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "deepkin (via Council of Depths)",
+            "type": "flora_fauna",
+            "score": 552,
+            "why": [
+              "28 recent tale appearance(s)",
+              "overlaps 3 major arc beat(s)",
+              "connected to 215 other ranked entities",
+              "78 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "deepkin (via Council of Depths)",
+            "type": "flora_fauna",
+            "score": 552,
+            "why": [
+              "28 recent tale appearance(s)",
+              "overlaps 3 major arc beat(s)",
+              "connected to 215 other ranked entities",
+              "78 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Skarath the Wyvern",
+            "type": "flora_fauna",
+            "score": 488,
+            "why": [
+              "22 recent tale appearance(s)",
+              "overlaps 7 major arc beat(s)",
+              "connected to 178 other ranked entities",
+              "36 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Magic": [
+          {
+            "name": "cartography",
+            "type": "magic",
+            "score": 303,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 5 major arc beat(s)",
+              "connected to 100 other ranked entities",
+              "22 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Ley-lines",
+            "type": "magic",
+            "score": 298,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 4 major arc beat(s)",
+              "connected to 93 other ranked entities",
+              "31 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "distributed consciousness",
+            "type": "magic",
+            "score": 144,
+            "why": [
+              "4 recent tale appearance(s)",
+              "connected to 49 other ranked entities"
+            ]
+          },
+          {
+            "name": "Pre-human Frequencies",
+            "type": "magic",
+            "score": 137,
+            "why": [
+              "3 recent tale appearance(s)",
+              "connected to 56 other ranked entities",
+              "5 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Places": [
+          {
+            "name": "archive",
+            "type": "places",
+            "score": 849,
+            "why": [
+              "49 recent tale appearance(s)",
+              "overlaps 11 major arc beat(s)",
+              "connected to 266 other ranked entities",
+              "67 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Tower (as artifact/nexus)",
+            "type": "places",
+            "score": 835,
+            "why": [
+              "48 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 288 other ranked entities",
+              "147 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Tower (as artifact/nexus)",
+            "type": "places",
+            "score": 835,
+            "why": [
+              "48 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 288 other ranked entities",
+              "147 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Tower (as artifact/nexus)",
+            "type": "places",
+            "score": 835,
+            "why": [
+              "48 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 288 other ranked entities",
+              "147 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Polities": [
+          {
+            "name": "The Dominion",
+            "type": "polities",
+            "score": 660,
+            "why": [
+              "37 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 242 other ranked entities",
+              "77 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Dominion",
+            "type": "polities",
+            "score": 660,
+            "why": [
+              "37 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 242 other ranked entities",
+              "77 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Council of Depths (Deepkin Realms)",
+            "type": "polities",
+            "score": 298,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 2 major arc beat(s)",
+              "connected to 87 other ranked entities",
+              "42 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Council of Depths (Deepkin Realms)",
+            "type": "polities",
+            "score": 298,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 2 major arc beat(s)",
+              "connected to 87 other ranked entities",
+              "42 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Provinces": [
+          {
+            "name": "Three Provinces (Hegemony)",
+            "type": "provinces",
+            "score": 144,
+            "why": [
+              "3 recent tale appearance(s)",
+              "connected to 51 other ranked entities",
+              "7 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Three Provinces (Hegemony)",
+            "type": "provinces",
+            "score": 144,
+            "why": [
+              "3 recent tale appearance(s)",
+              "connected to 51 other ranked entities",
+              "7 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "western provinces",
+            "type": "provinces",
+            "score": 14,
+            "why": [
+              "3 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Realms": [
+          {
+            "name": "The Dominion",
+            "type": "realms",
+            "score": 658,
+            "why": [
+              "37 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 242 other ranked entities",
+              "77 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Dominion",
+            "type": "realms",
+            "score": 658,
+            "why": [
+              "37 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 242 other ranked entities",
+              "77 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Council of Depths (Deepkin Realms)",
+            "type": "realms",
+            "score": 296,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 2 major arc beat(s)",
+              "connected to 87 other ranked entities",
+              "42 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Council of Depths (Deepkin Realms)",
+            "type": "realms",
+            "score": 296,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 2 major arc beat(s)",
+              "connected to 87 other ranked entities",
+              "42 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Regions": [
+          {
+            "name": "The Dominion",
+            "type": "regions",
+            "score": 658,
+            "why": [
+              "37 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 242 other ranked entities",
+              "77 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Burned Expanse",
+            "type": "regions",
+            "score": 367,
+            "why": [
+              "16 recent tale appearance(s)",
+              "overlaps 3 major arc beat(s)",
+              "connected to 135 other ranked entities",
+              "71 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Burned Expanse",
+            "type": "regions",
+            "score": 367,
+            "why": [
+              "16 recent tale appearance(s)",
+              "overlaps 3 major arc beat(s)",
+              "connected to 135 other ranked entities",
+              "71 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Council of Depths (Deepkin Realms)",
+            "type": "regions",
+            "score": 296,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 2 major arc beat(s)",
+              "connected to 87 other ranked entities",
+              "42 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Relics": [
+          {
+            "name": "Obsidian Tower (as Faction)",
+            "type": "relics",
+            "score": 522,
+            "why": [
+              "26 recent tale appearance(s)",
+              "overlaps 8 major arc beat(s)",
+              "connected to 190 other ranked entities",
+              "70 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "the Tear",
+            "type": "relics",
+            "score": 299,
+            "why": [
+              "11 recent tale appearance(s)",
+              "overlaps 1 major arc beat(s)",
+              "connected to 111 other ranked entities",
+              "12 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "the Tear of the Drowned God",
+            "type": "relics",
+            "score": 287,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 1 major arc beat(s)",
+              "connected to 91 other ranked entities",
+              "27 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "the Tear of the Drowned God",
+            "type": "relics",
+            "score": 287,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 1 major arc beat(s)",
+              "connected to 91 other ranked entities",
+              "26 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Rituals": [
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "rituals",
+            "score": 692,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "rituals",
+            "score": 692,
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Unknown Woman (Daughter's Mother)",
+            "type": "rituals",
+            "score": 684,
+            "why": [
+              "38 recent tale appearance(s)",
+              "overlaps 8 major arc beat(s)",
+              "connected to 252 other ranked entities",
+              "53 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "the Tower's hunger",
+            "type": "rituals",
+            "score": 281,
+            "why": [
+              "10 recent tale appearance(s)",
+              "overlaps 4 major arc beat(s)",
+              "connected to 114 other ranked entities",
+              "20 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "Substances": [
+          {
+            "name": "transcendence",
+            "type": "substances",
+            "score": 471,
+            "why": [
+              "23 recent tale appearance(s)",
+              "overlaps 4 major arc beat(s)",
+              "connected to 161 other ranked entities"
+            ]
+          },
+          {
+            "name": "Gold",
+            "type": "substances",
+            "score": 470,
+            "why": [
+              "22 recent tale appearance(s)",
+              "overlaps 5 major arc beat(s)",
+              "connected to 185 other ranked entities",
+              "30 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Singing",
+            "type": "substances",
+            "score": 376,
+            "why": [
+              "16 recent tale appearance(s)",
+              "overlaps 3 major arc beat(s)",
+              "connected to 177 other ranked entities",
+              "80 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Starlight",
+            "type": "substances",
+            "score": 330,
+            "why": [
+              "13 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 145 other ranked entities"
+            ]
+          }
+        ],
+        "Weapons": [
+          {
+            "name": "War-axe",
+            "type": "weapons",
+            "score": 9,
+            "why": [
+              "1 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Malachar's blade",
+            "type": "weapons",
+            "score": 9,
+            "why": [
+              "1 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Kael's enchanted blade",
+            "type": "weapons",
+            "score": 9,
+            "why": [
+              "1 total recorded appearance(s)"
+            ]
+          }
+        ]
+      },
+      "top_world_events": [
+        {
+          "name": "The Ascension",
+          "stage": "climax",
+          "setting_state": "active_arc",
+          "intensity": 5,
+          "recent_issues": 11,
+          "score": 342
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "stage": "climax",
+          "setting_state": "active_arc",
+          "intensity": 5,
+          "recent_issues": 8,
+          "score": 325
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "stage": "climax",
+          "setting_state": "active_arc",
+          "intensity": 5,
+          "recent_issues": 8,
+          "score": 325
+        },
+        {
+          "name": "Luminous Ascension (accidental vs. written)",
+          "stage": "climax",
+          "setting_state": "active_arc",
+          "intensity": 5,
+          "recent_issues": 8,
+          "score": 325
+        },
+        {
+          "name": "The Convergence",
+          "stage": "climax",
+          "setting_state": "flashpoint",
+          "intensity": 5,
+          "recent_issues": 4,
+          "score": 263
+        },
+        {
+          "name": "The Convergence",
+          "stage": "climax",
+          "setting_state": "flashpoint",
+          "intensity": 5,
+          "recent_issues": 4,
+          "score": 263
+        },
+        {
+          "name": "Tenth Iteration",
+          "stage": "climax",
+          "setting_state": "active_arc",
+          "intensity": 5,
+          "recent_issues": 4,
+          "score": 223
+        },
+        {
+          "name": "Radiant Ascension (side effects)",
+          "stage": "rising",
+          "setting_state": "active_arc",
+          "intensity": 3,
+          "recent_issues": 2,
+          "score": 157
+        }
+      ],
+      "top_connections": [
+        {
+          "source": {
+            "name": "Tower (as artifact/nexus)",
+            "type": "artifacts"
+          },
+          "target": {
+            "name": "Tower (as artifact/nexus)",
+            "type": "places"
+          },
+          "weight": 48,
+          "stories": [
+            "The Shadow-Merchant's Final Bargain",
+            "The Shadow-Vault's Unmaking",
+            "The Shadow-Market's Reckoning",
+            "The Shadow-Merchant's Reckoning"
+          ]
+        },
+        {
+          "source": {
+            "name": "Tower (as artifact/nexus)",
+            "type": "artifacts"
+          },
+          "target": {
+            "name": "Tower",
+            "type": "deities_and_entities"
+          },
+          "weight": 47,
+          "stories": [
+            "The Shadow-Merchant's Final Bargain",
+            "The Shadow-Vault's Unmaking",
+            "The Shadow-Market's Reckoning",
+            "The Shadow-Merchant's Reckoning"
+          ]
+        },
+        {
+          "source": {
+            "name": "Tower",
+            "type": "deities_and_entities"
+          },
+          "target": {
+            "name": "Tower (as artifact/nexus)",
+            "type": "places"
+          },
+          "weight": 47,
+          "stories": [
+            "The Shadow-Merchant's Final Bargain",
+            "The Shadow-Vault's Unmaking",
+            "The Shadow-Market's Reckoning",
+            "The Shadow-Merchant's Reckoning"
+          ]
+        },
+        {
+          "source": {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "characters"
+          },
+          "target": {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "factions"
+          },
+          "weight": 39,
+          "stories": [
+            "The Shadow-Vault's Unmaking",
+            "The Bone-Singer's Inheritance",
+            "The Bone-Singer's Second Student",
+            "The Bone-Singer's Burden"
+          ]
+        },
+        {
+          "source": {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "characters"
+          },
+          "target": {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "flora_fauna"
+          },
+          "weight": 39,
+          "stories": [
+            "The Shadow-Vault's Unmaking",
+            "The Bone-Singer's Inheritance",
+            "The Bone-Singer's Second Student",
+            "The Bone-Singer's Burden"
+          ]
+        },
+        {
+          "source": {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "factions"
+          },
+          "target": {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "flora_fauna"
+          },
+          "weight": 39,
+          "stories": [
+            "The Shadow-Vault's Unmaking",
+            "The Bone-Singer's Inheritance",
+            "The Bone-Singer's Second Student",
+            "The Bone-Singer's Burden"
+          ]
+        },
+        {
+          "source": {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events"
+          },
+          "target": {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "rituals"
+          },
+          "weight": 39,
+          "stories": [
+            "The Shadow-Broker's Inventory Audit",
+            "The Deepkin Reflection's Choice",
+            "The Smuggler's Daughter",
+            "The Convergence at Pale Crossing"
+          ]
+        },
+        {
+          "source": {
+            "name": "Luminous Ascension",
+            "type": "deities_and_entities"
+          },
+          "target": {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events"
+          },
+          "weight": 39,
+          "stories": [
+            "The Shadow-Broker's Inventory Audit",
+            "The Deepkin Reflection's Choice",
+            "The Smuggler's Daughter",
+            "The Convergence at Pale Crossing"
+          ]
+        },
+        {
+          "source": {
+            "name": "Luminous Ascension",
+            "type": "deities_and_entities"
+          },
+          "target": {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "rituals"
+          },
+          "weight": 39,
+          "stories": [
+            "The Shadow-Broker's Inventory Audit",
+            "The Deepkin Reflection's Choice",
+            "The Smuggler's Daughter",
+            "The Convergence at Pale Crossing"
+          ]
+        },
+        {
+          "source": {
+            "name": "Unknown Woman (Daughter's Mother)",
+            "type": "characters"
+          },
+          "target": {
+            "name": "Unknown Woman (Daughter's Mother)",
+            "type": "rituals"
+          },
+          "weight": 38,
+          "stories": [
+            "The Deepkin Reflection's Choice",
+            "The Cartographer's Student",
+            "The Bone-Singer's Apprentice",
+            "The Convergence at Pale Crossing"
+          ]
+        }
+      ],
+      "selected_stories": [
+        {
+          "date": "2026-04-30",
+          "title": "The Wanderer's Final Question",
+          "subgenre": "philosophical horror / cosmological thriller",
+          "score": 230,
+          "entities": [
+            {
+              "name": "archive",
+              "type": "places",
+              "score": 849
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts",
+              "score": 830
+            },
+            {
+              "name": "Tower",
+              "type": "deities_and_entities",
+              "score": 815
+            },
+            {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "characters",
+              "score": 693
+            },
+            {
+              "name": "Unknown Woman (Daughter's Mother)",
+              "type": "characters",
+              "score": 690
+            }
+          ]
+        },
+        {
+          "date": "2026-05-01",
+          "title": "The Cartographer's Daughter",
+          "subgenre": "geography / resistance",
+          "score": 226,
+          "entities": [
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts",
+              "score": 830
+            },
+            {
+              "name": "Tower",
+              "type": "deities_and_entities",
+              "score": 815
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            }
+          ]
+        },
+        {
+          "date": "2026-04-28",
+          "title": "The Deepkin Commander's Reflection",
+          "subgenre": "identity politics",
+          "score": 226,
+          "entities": [
+            {
+              "name": "The Ascension",
+              "type": "events",
+              "score": 889
+            },
+            {
+              "name": "deepkin (via Council of Depths)",
+              "type": "factions",
+              "score": 555
+            },
+            {
+              "name": "deepkin (via Council of Depths)",
+              "type": "factions",
+              "score": 555
+            },
+            {
+              "name": "deepkin",
+              "type": "deities_and_entities",
+              "score": 555
+            },
+            {
+              "name": "deepkin (via Council of Depths)",
+              "type": "flora_fauna",
+              "score": 552
+            },
+            {
+              "name": "deepkin (via Council of Depths)",
+              "type": "flora_fauna",
+              "score": 552
+            },
+            {
+              "name": "Skarath the Wyvern",
+              "type": "characters",
+              "score": 494
+            },
+            {
+              "name": "Skarath the Wyvern",
+              "type": "flora_fauna",
+              "score": 488
+            }
+          ]
+        },
+        {
+          "date": "2026-05-01",
+          "title": "The Wyvern's Hunger Returns",
+          "subgenre": "dark dragon fantasy",
+          "score": 222,
+          "entities": [
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts",
+              "score": 830
+            },
+            {
+              "name": "Tower",
+              "type": "deities_and_entities",
+              "score": 815
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            }
+          ]
+        },
+        {
+          "date": "2026-05-01",
+          "title": "The Deepkin's Silent Reflection",
+          "subgenre": "deepkin politics / paradox",
+          "score": 222,
+          "entities": [
+            {
+              "name": "The Ascension",
+              "type": "events",
+              "score": 889
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts",
+              "score": 830
+            },
+            {
+              "name": "Tower",
+              "type": "deities_and_entities",
+              "score": 815
+            },
+            {
+              "name": "the Tower",
+              "type": "deities_and_entities",
+              "score": 673
+            },
+            {
+              "name": "deepkin (via Council of Depths)",
+              "type": "factions",
+              "score": 555
+            }
+          ]
+        },
+        {
+          "date": "2026-04-30",
+          "title": "The Refugee Archivist's Living Ledger",
+          "subgenre": "magical realism / epistemic horror",
+          "score": 222,
+          "entities": [
+            {
+              "name": "archive",
+              "type": "places",
+              "score": 849
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension",
+              "type": "deities_and_entities",
+              "score": 695
+            }
+          ]
+        },
+        {
+          "date": "2026-04-30",
+          "title": "The Bone-Singer's Defiance",
+          "subgenre": "cosmic horror / philosophical struggle",
+          "score": 222,
+          "entities": [
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts",
+              "score": 830
+            },
+            {
+              "name": "Tower",
+              "type": "deities_and_entities",
+              "score": 815
+            },
+            {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "characters",
+              "score": 693
+            },
+            {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "factions",
+              "score": 690
+            },
+            {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "factions",
+              "score": 690
+            }
+          ]
+        },
+        {
+          "date": "2026-04-28",
+          "title": "The Spice-Merchant's Testimony",
+          "subgenre": "reality fragmentation",
+          "score": 222,
+          "entities": [
+            {
+              "name": "The Ascension",
+              "type": "events",
+              "score": 889
+            },
+            {
+              "name": "archive",
+              "type": "places",
+              "score": 849
+            },
+            {
+              "name": "transcendence",
+              "type": "substances",
+              "score": 471
+            },
+            {
+              "name": "Threshold",
+              "type": "deities_and_entities",
+              "score": 410
+            },
+            {
+              "name": "Sunken Cathedrals",
+              "type": "places",
+              "score": 352
+            },
+            {
+              "name": "living archive",
+              "type": "artifacts",
+              "score": 342
+            },
+            {
+              "name": "The Hegemony",
+              "type": "factions",
+              "score": 294
+            },
+            {
+              "name": "The Hegemony",
+              "type": "factions",
+              "score": 294
+            }
+          ]
+        },
+        {
+          "date": "2026-04-28",
+          "title": "The Merchant's Final Account",
+          "subgenre": "mercantile intrigue",
+          "score": 222,
+          "entities": [
+            {
+              "name": "The Ascension",
+              "type": "events",
+              "score": 889
+            },
+            {
+              "name": "Unknown Woman (Daughter's Mother)",
+              "type": "characters",
+              "score": 690
+            },
+            {
+              "name": "Unknown Woman (Daughter's Mother)",
+              "type": "rituals",
+              "score": 684
+            },
+            {
+              "name": "Gold",
+              "type": "substances",
+              "score": 470
+            },
+            {
+              "name": "Shadow-Markets",
+              "type": "places",
+              "score": 310
+            },
+            {
+              "name": "Shadow-Markets",
+              "type": "factions",
+              "score": 308
+            },
+            {
+              "name": "Shadow-Markets",
+              "type": "districts",
+              "score": 304
+            },
+            {
+              "name": "The Hegemony",
+              "type": "factions",
+              "score": 294
+            }
+          ]
+        },
+        {
+          "date": "2026-04-25",
+          "title": "The Spice-Runner's Gambit",
+          "subgenre": "mercenary fantasy",
+          "score": 222,
+          "entities": [
+            {
+              "name": "The Ascension",
+              "type": "events",
+              "score": 889
+            },
+            {
+              "name": "archive",
+              "type": "places",
+              "score": 849
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            }
+          ]
+        },
+        {
+          "date": "2026-04-25",
+          "title": "The Merchant's Threshold",
+          "subgenre": "transformative sorcery",
+          "score": 222,
+          "entities": [
+            {
+              "name": "The Ascension",
+              "type": "events",
+              "score": 889
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts",
+              "score": 830
+            },
+            {
+              "name": "Tower",
+              "type": "deities_and_entities",
+              "score": 815
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            }
+          ]
+        },
+        {
+          "date": "2026-04-30",
+          "title": "The Wyvern Hoarders' Last Hunt",
+          "subgenre": "draconic politics / predatory fantasy",
+          "score": 218,
+          "entities": [
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts",
+              "score": 830
+            },
+            {
+              "name": "Tower",
+              "type": "deities_and_entities",
+              "score": 815
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709
+            }
+          ]
+        }
+      ]
+    },
+    "input_stats": {
+      "issue_count": 16,
+      "story_count": 160,
+      "selected_world_events": 8,
+      "selected_entities": 18,
+      "selected_stories": 12
+    }
+  },
+  "entries": [
+    {
+      "date": "2026-05-01",
+      "issue_number": 66,
+      "window_start": "2026-04-16",
+      "window_end": "2026-05-01",
+      "generated_at": "2026-05-01T18:19:32Z",
+      "model": "fallback-v1",
+      "title": "Chronicle of The Ascension",
+      "dek": "A stitched overview of the strongest pressures shaping Edhra and Valdris.",
+      "chronicle": "By 2026-05-01, the world of Edhra is being pulled most strongly by The Ascension, Luminous Ascension (accidental vs. written), and Luminous Ascension (accidental vs. written). These arcs are no longer isolated disturbances; they are the pressures around which the current age is organizing itself.\n\nThe figures and forces surfacing most often in this span include The Ascension, archive, Tower (as artifact/nexus), Tower (as artifact/nexus). Their repeated intersections suggest that the world is cohering around recurring centers of consequence rather than disconnected adventures.\n\nRecent turning points cluster around tales such as The Wanderer's Final Question, The Cartographer's Daughter, The Deepkin Commander's Reflection, The Wyvern's Hunger Returns. Taken together, they show a setting where personal decisions, factional maneuvers, and larger catastrophes are feeding one another instead of unfolding in separate lanes.",
+      "current_state": [
+        "The Ascension is currently at climax stage.",
+        "Luminous Ascension (accidental vs. written) is currently at climax stage.",
+        "Luminous Ascension (accidental vs. written) is currently at climax stage.",
+        "Luminous Ascension (accidental vs. written) is currently at climax stage."
+      ],
+      "ongoing_threads": [
+        "A full Haiku chronicle synthesis has not yet been produced."
+      ],
+      "pipeline": {
+        "scoring_weights": [
+          {
+            "signal": "Recent appearances",
+            "weight": "+12 each",
+            "description": "Entities repeating across the current chronicle window matter most."
+          },
+          {
+            "signal": "Recent issue spread",
+            "weight": "+6 each issue",
+            "description": "Recurring across multiple issues outranks a one-day spike."
+          },
+          {
+            "signal": "Lifetime appearances",
+            "weight": "+3 each (capped)",
+            "description": "Long-running continuity raises baseline importance."
+          },
+          {
+            "signal": "Co-appearance network",
+            "weight": "+2 degree, +1 edge weight",
+            "description": "Entities that intersect many others become chronicle-worthy hubs."
+          },
+          {
+            "signal": "World-event overlap",
+            "weight": "+5 each overlap",
+            "description": "Direct ties to major arcs push entities upward."
+          },
+          {
+            "signal": "Category baseline",
+            "weight": "3-12",
+            "description": "Events, characters, and places get slightly higher starting weight because they anchor narrative continuity."
+          }
+        ],
+        "top_entities": [
+          {
+            "name": "The Ascension",
+            "type": "events",
+            "label": "Events",
+            "score": 889,
+            "recent_appearances": 50,
+            "appearance_total": 116,
+            "network_degree": 311,
+            "connection_weight": 977,
+            "world_event_overlap": 21,
+            "last_seen": "2026-05-01",
+            "why": [
+              "50 recent tale appearance(s)",
+              "overlaps 21 major arc beat(s)",
+              "connected to 311 other ranked entities",
+              "116 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "archive",
+            "type": "places",
+            "label": "Places",
+            "score": 849,
+            "recent_appearances": 49,
+            "appearance_total": 67,
+            "network_degree": 266,
+            "connection_weight": 920,
+            "world_event_overlap": 11,
+            "last_seen": "2026-05-01",
+            "why": [
+              "49 recent tale appearance(s)",
+              "overlaps 11 major arc beat(s)",
+              "connected to 266 other ranked entities",
+              "67 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Tower (as artifact/nexus)",
+            "type": "places",
+            "label": "Places",
+            "score": 835,
+            "recent_appearances": 48,
+            "appearance_total": 147,
+            "network_degree": 288,
+            "connection_weight": 1147,
+            "world_event_overlap": 13,
+            "last_seen": "2026-05-01",
+            "why": [
+              "48 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 288 other ranked entities",
+              "147 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Tower (as artifact/nexus)",
+            "type": "places",
+            "label": "Places",
+            "score": 835,
+            "recent_appearances": 48,
+            "appearance_total": 147,
+            "network_degree": 288,
+            "connection_weight": 1147,
+            "world_event_overlap": 13,
+            "last_seen": "2026-05-01",
+            "why": [
+              "48 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 288 other ranked entities",
+              "147 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Tower (as artifact/nexus)",
+            "type": "places",
+            "label": "Places",
+            "score": 835,
+            "recent_appearances": 48,
+            "appearance_total": 147,
+            "network_degree": 288,
+            "connection_weight": 1147,
+            "world_event_overlap": 13,
+            "last_seen": "2026-05-01",
+            "why": [
+              "48 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 288 other ranked entities",
+              "147 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Tower (as artifact/nexus)",
+            "type": "artifacts",
+            "label": "Artifacts",
+            "score": 830,
+            "recent_appearances": 48,
+            "appearance_total": 147,
+            "network_degree": 288,
+            "connection_weight": 1147,
+            "world_event_overlap": 13,
+            "last_seen": "2026-05-01",
+            "why": [
+              "48 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 288 other ranked entities",
+              "147 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Tower",
+            "type": "deities_and_entities",
+            "label": "Entities",
+            "score": 815,
+            "recent_appearances": 47,
+            "appearance_total": 47,
+            "network_degree": 280,
+            "connection_weight": 1135,
+            "world_event_overlap": 13,
+            "last_seen": "2026-05-01",
+            "why": [
+              "47 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 280 other ranked entities"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events",
+            "label": "Events",
+            "score": 709,
+            "recent_appearances": 39,
+            "appearance_total": 146,
+            "network_degree": 251,
+            "connection_weight": 853,
+            "world_event_overlap": 15,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 15 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events",
+            "label": "Events",
+            "score": 709,
+            "recent_appearances": 39,
+            "appearance_total": 146,
+            "network_degree": 251,
+            "connection_weight": 853,
+            "world_event_overlap": 15,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 15 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events",
+            "label": "Events",
+            "score": 709,
+            "recent_appearances": 39,
+            "appearance_total": 146,
+            "network_degree": 251,
+            "connection_weight": 853,
+            "world_event_overlap": 15,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 15 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events",
+            "label": "Events",
+            "score": 709,
+            "recent_appearances": 39,
+            "appearance_total": 146,
+            "network_degree": 251,
+            "connection_weight": 853,
+            "world_event_overlap": 15,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 15 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events",
+            "label": "Events",
+            "score": 709,
+            "recent_appearances": 39,
+            "appearance_total": 146,
+            "network_degree": 251,
+            "connection_weight": 853,
+            "world_event_overlap": 15,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 15 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "events",
+            "label": "Events",
+            "score": 709,
+            "recent_appearances": 39,
+            "appearance_total": 146,
+            "network_degree": 251,
+            "connection_weight": 853,
+            "world_event_overlap": 15,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 15 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension",
+            "type": "deities_and_entities",
+            "label": "Entities",
+            "score": 695,
+            "recent_appearances": 39,
+            "appearance_total": 135,
+            "network_degree": 251,
+            "connection_weight": 853,
+            "world_event_overlap": 13,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "135 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "The Seventeen Transformed Merchants",
+            "type": "characters",
+            "label": "Characters",
+            "score": 693,
+            "recent_appearances": 39,
+            "appearance_total": 87,
+            "network_degree": 222,
+            "connection_weight": 863,
+            "world_event_overlap": 6,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 6 major arc beat(s)",
+              "connected to 222 other ranked entities",
+              "87 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "rituals",
+            "label": "Rituals",
+            "score": 692,
+            "recent_appearances": 39,
+            "appearance_total": 146,
+            "network_degree": 251,
+            "connection_weight": 853,
+            "world_event_overlap": 13,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "type": "rituals",
+            "label": "Rituals",
+            "score": 692,
+            "recent_appearances": 39,
+            "appearance_total": 146,
+            "network_degree": 251,
+            "connection_weight": 853,
+            "world_event_overlap": 13,
+            "last_seen": "2026-05-01",
+            "why": [
+              "39 recent tale appearance(s)",
+              "overlaps 13 major arc beat(s)",
+              "connected to 251 other ranked entities",
+              "146 total recorded appearance(s)"
+            ]
+          },
+          {
+            "name": "Unknown Woman (Daughter's Mother)",
+            "type": "characters",
+            "label": "Characters",
+            "score": 690,
+            "recent_appearances": 38,
+            "appearance_total": 53,
+            "network_degree": 252,
+            "connection_weight": 797,
+            "world_event_overlap": 8,
+            "last_seen": "2026-04-30",
+            "why": [
+              "38 recent tale appearance(s)",
+              "overlaps 8 major arc beat(s)",
+              "connected to 252 other ranked entities",
+              "53 total recorded appearance(s)"
+            ]
+          }
+        ],
+        "top_entities_by_type": {
+          "Artifacts": [
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts",
+              "score": 830,
+              "why": [
+                "48 recent tale appearance(s)",
+                "overlaps 13 major arc beat(s)",
+                "connected to 288 other ranked entities",
+                "147 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Obsidian Tower (as Faction)",
+              "type": "artifacts",
+              "score": 523,
+              "why": [
+                "26 recent tale appearance(s)",
+                "overlaps 8 major arc beat(s)",
+                "connected to 190 other ranked entities",
+                "70 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Obsidian Tower (as Faction)",
+              "type": "artifacts",
+              "score": 523,
+              "why": [
+                "26 recent tale appearance(s)",
+                "overlaps 8 major arc beat(s)",
+                "connected to 190 other ranked entities",
+                "70 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "living archive",
+              "type": "artifacts",
+              "score": 342,
+              "why": [
+                "13 recent tale appearance(s)",
+                "overlaps 3 major arc beat(s)",
+                "connected to 121 other ranked entities",
+                "17 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Characters": [
+            {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "characters",
+              "score": 693,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 222 other ranked entities",
+                "87 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Unknown Woman (Daughter's Mother)",
+              "type": "characters",
+              "score": 690,
+              "why": [
+                "38 recent tale appearance(s)",
+                "overlaps 8 major arc beat(s)",
+                "connected to 252 other ranked entities",
+                "53 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "The Dominion",
+              "type": "characters",
+              "score": 663,
+              "why": [
+                "37 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 242 other ranked entities",
+                "77 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Obsidian Tower (as Faction)",
+              "type": "characters",
+              "score": 529,
+              "why": [
+                "26 recent tale appearance(s)",
+                "overlaps 8 major arc beat(s)",
+                "connected to 190 other ranked entities",
+                "70 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Districts": [
+            {
+              "name": "Shadow-Markets",
+              "type": "districts",
+              "score": 304,
+              "why": [
+                "11 recent tale appearance(s)",
+                "overlaps 3 major arc beat(s)",
+                "connected to 131 other ranked entities",
+                "17 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "merchant quarter",
+              "type": "districts",
+              "score": 112,
+              "why": [
+                "2 recent tale appearance(s)",
+                "connected to 42 other ranked entities",
+                "3 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Saltward",
+              "type": "districts",
+              "score": 112,
+              "why": [
+                "2 recent tale appearance(s)",
+                "connected to 45 other ranked entities",
+                "3 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Lantern Market",
+              "type": "districts",
+              "score": 112,
+              "why": [
+                "2 recent tale appearance(s)",
+                "connected to 45 other ranked entities",
+                "3 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Entities": [
+            {
+              "name": "Tower",
+              "type": "deities_and_entities",
+              "score": 815,
+              "why": [
+                "47 recent tale appearance(s)",
+                "overlaps 13 major arc beat(s)",
+                "connected to 280 other ranked entities"
+              ]
+            },
+            {
+              "name": "Luminous Ascension",
+              "type": "deities_and_entities",
+              "score": 695,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 13 major arc beat(s)",
+                "connected to 251 other ranked entities",
+                "135 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "the Tower",
+              "type": "deities_and_entities",
+              "score": 673,
+              "why": [
+                "36 recent tale appearance(s)",
+                "overlaps 11 major arc beat(s)",
+                "connected to 258 other ranked entities",
+                "79 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "The Wanderer",
+              "type": "deities_and_entities",
+              "score": 659,
+              "why": [
+                "37 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 247 other ranked entities",
+                "66 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Events": [
+            {
+              "name": "The Ascension",
+              "type": "events",
+              "score": 889,
+              "why": [
+                "50 recent tale appearance(s)",
+                "overlaps 21 major arc beat(s)",
+                "connected to 311 other ranked entities",
+                "116 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 15 major arc beat(s)",
+                "connected to 251 other ranked entities",
+                "146 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 15 major arc beat(s)",
+                "connected to 251 other ranked entities",
+                "146 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events",
+              "score": 709,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 15 major arc beat(s)",
+                "connected to 251 other ranked entities",
+                "146 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Factions": [
+            {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "factions",
+              "score": 690,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 222 other ranked entities",
+                "88 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "factions",
+              "score": 690,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 222 other ranked entities",
+                "87 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "factions",
+              "score": 690,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 222 other ranked entities",
+                "87 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "The Dominion",
+              "type": "factions",
+              "score": 660,
+              "why": [
+                "37 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 242 other ranked entities",
+                "77 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Flora & Fauna": [
+            {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "flora_fauna",
+              "score": 687,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 222 other ranked entities",
+                "87 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "deepkin (via Council of Depths)",
+              "type": "flora_fauna",
+              "score": 552,
+              "why": [
+                "28 recent tale appearance(s)",
+                "overlaps 3 major arc beat(s)",
+                "connected to 215 other ranked entities",
+                "78 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "deepkin (via Council of Depths)",
+              "type": "flora_fauna",
+              "score": 552,
+              "why": [
+                "28 recent tale appearance(s)",
+                "overlaps 3 major arc beat(s)",
+                "connected to 215 other ranked entities",
+                "78 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Skarath the Wyvern",
+              "type": "flora_fauna",
+              "score": 488,
+              "why": [
+                "22 recent tale appearance(s)",
+                "overlaps 7 major arc beat(s)",
+                "connected to 178 other ranked entities",
+                "36 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Magic": [
+            {
+              "name": "cartography",
+              "type": "magic",
+              "score": 303,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 5 major arc beat(s)",
+                "connected to 100 other ranked entities",
+                "22 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Ley-lines",
+              "type": "magic",
+              "score": 298,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 4 major arc beat(s)",
+                "connected to 93 other ranked entities",
+                "31 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "distributed consciousness",
+              "type": "magic",
+              "score": 144,
+              "why": [
+                "4 recent tale appearance(s)",
+                "connected to 49 other ranked entities"
+              ]
+            },
+            {
+              "name": "Pre-human Frequencies",
+              "type": "magic",
+              "score": 137,
+              "why": [
+                "3 recent tale appearance(s)",
+                "connected to 56 other ranked entities",
+                "5 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Places": [
+            {
+              "name": "archive",
+              "type": "places",
+              "score": 849,
+              "why": [
+                "49 recent tale appearance(s)",
+                "overlaps 11 major arc beat(s)",
+                "connected to 266 other ranked entities",
+                "67 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835,
+              "why": [
+                "48 recent tale appearance(s)",
+                "overlaps 13 major arc beat(s)",
+                "connected to 288 other ranked entities",
+                "147 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835,
+              "why": [
+                "48 recent tale appearance(s)",
+                "overlaps 13 major arc beat(s)",
+                "connected to 288 other ranked entities",
+                "147 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places",
+              "score": 835,
+              "why": [
+                "48 recent tale appearance(s)",
+                "overlaps 13 major arc beat(s)",
+                "connected to 288 other ranked entities",
+                "147 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Polities": [
+            {
+              "name": "The Dominion",
+              "type": "polities",
+              "score": 660,
+              "why": [
+                "37 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 242 other ranked entities",
+                "77 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "The Dominion",
+              "type": "polities",
+              "score": 660,
+              "why": [
+                "37 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 242 other ranked entities",
+                "77 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Council of Depths (Deepkin Realms)",
+              "type": "polities",
+              "score": 298,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 2 major arc beat(s)",
+                "connected to 87 other ranked entities",
+                "42 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Council of Depths (Deepkin Realms)",
+              "type": "polities",
+              "score": 298,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 2 major arc beat(s)",
+                "connected to 87 other ranked entities",
+                "42 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Provinces": [
+            {
+              "name": "Three Provinces (Hegemony)",
+              "type": "provinces",
+              "score": 144,
+              "why": [
+                "3 recent tale appearance(s)",
+                "connected to 51 other ranked entities",
+                "7 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Three Provinces (Hegemony)",
+              "type": "provinces",
+              "score": 144,
+              "why": [
+                "3 recent tale appearance(s)",
+                "connected to 51 other ranked entities",
+                "7 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "western provinces",
+              "type": "provinces",
+              "score": 14,
+              "why": [
+                "3 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Realms": [
+            {
+              "name": "The Dominion",
+              "type": "realms",
+              "score": 658,
+              "why": [
+                "37 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 242 other ranked entities",
+                "77 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "The Dominion",
+              "type": "realms",
+              "score": 658,
+              "why": [
+                "37 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 242 other ranked entities",
+                "77 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Council of Depths (Deepkin Realms)",
+              "type": "realms",
+              "score": 296,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 2 major arc beat(s)",
+                "connected to 87 other ranked entities",
+                "42 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Council of Depths (Deepkin Realms)",
+              "type": "realms",
+              "score": 296,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 2 major arc beat(s)",
+                "connected to 87 other ranked entities",
+                "42 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Regions": [
+            {
+              "name": "The Dominion",
+              "type": "regions",
+              "score": 658,
+              "why": [
+                "37 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 242 other ranked entities",
+                "77 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "The Burned Expanse",
+              "type": "regions",
+              "score": 367,
+              "why": [
+                "16 recent tale appearance(s)",
+                "overlaps 3 major arc beat(s)",
+                "connected to 135 other ranked entities",
+                "71 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "The Burned Expanse",
+              "type": "regions",
+              "score": 367,
+              "why": [
+                "16 recent tale appearance(s)",
+                "overlaps 3 major arc beat(s)",
+                "connected to 135 other ranked entities",
+                "71 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Council of Depths (Deepkin Realms)",
+              "type": "regions",
+              "score": 296,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 2 major arc beat(s)",
+                "connected to 87 other ranked entities",
+                "42 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Relics": [
+            {
+              "name": "Obsidian Tower (as Faction)",
+              "type": "relics",
+              "score": 522,
+              "why": [
+                "26 recent tale appearance(s)",
+                "overlaps 8 major arc beat(s)",
+                "connected to 190 other ranked entities",
+                "70 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "the Tear",
+              "type": "relics",
+              "score": 299,
+              "why": [
+                "11 recent tale appearance(s)",
+                "overlaps 1 major arc beat(s)",
+                "connected to 111 other ranked entities",
+                "12 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "the Tear of the Drowned God",
+              "type": "relics",
+              "score": 287,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 1 major arc beat(s)",
+                "connected to 91 other ranked entities",
+                "27 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "the Tear of the Drowned God",
+              "type": "relics",
+              "score": 287,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 1 major arc beat(s)",
+                "connected to 91 other ranked entities",
+                "26 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Rituals": [
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "rituals",
+              "score": 692,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 13 major arc beat(s)",
+                "connected to 251 other ranked entities",
+                "146 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "rituals",
+              "score": 692,
+              "why": [
+                "39 recent tale appearance(s)",
+                "overlaps 13 major arc beat(s)",
+                "connected to 251 other ranked entities",
+                "146 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Unknown Woman (Daughter's Mother)",
+              "type": "rituals",
+              "score": 684,
+              "why": [
+                "38 recent tale appearance(s)",
+                "overlaps 8 major arc beat(s)",
+                "connected to 252 other ranked entities",
+                "53 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "the Tower's hunger",
+              "type": "rituals",
+              "score": 281,
+              "why": [
+                "10 recent tale appearance(s)",
+                "overlaps 4 major arc beat(s)",
+                "connected to 114 other ranked entities",
+                "20 total recorded appearance(s)"
+              ]
+            }
+          ],
+          "Substances": [
+            {
+              "name": "transcendence",
+              "type": "substances",
+              "score": 471,
+              "why": [
+                "23 recent tale appearance(s)",
+                "overlaps 4 major arc beat(s)",
+                "connected to 161 other ranked entities"
+              ]
+            },
+            {
+              "name": "Gold",
+              "type": "substances",
+              "score": 470,
+              "why": [
+                "22 recent tale appearance(s)",
+                "overlaps 5 major arc beat(s)",
+                "connected to 185 other ranked entities",
+                "30 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Singing",
+              "type": "substances",
+              "score": 376,
+              "why": [
+                "16 recent tale appearance(s)",
+                "overlaps 3 major arc beat(s)",
+                "connected to 177 other ranked entities",
+                "80 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Starlight",
+              "type": "substances",
+              "score": 330,
+              "why": [
+                "13 recent tale appearance(s)",
+                "overlaps 6 major arc beat(s)",
+                "connected to 145 other ranked entities"
+              ]
+            }
+          ],
+          "Weapons": [
+            {
+              "name": "War-axe",
+              "type": "weapons",
+              "score": 9,
+              "why": [
+                "1 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Malachar's blade",
+              "type": "weapons",
+              "score": 9,
+              "why": [
+                "1 total recorded appearance(s)"
+              ]
+            },
+            {
+              "name": "Kael's enchanted blade",
+              "type": "weapons",
+              "score": 9,
+              "why": [
+                "1 total recorded appearance(s)"
+              ]
+            }
+          ]
+        },
+        "top_world_events": [
+          {
+            "name": "The Ascension",
+            "stage": "climax",
+            "setting_state": "active_arc",
+            "intensity": 5,
+            "recent_issues": 11,
+            "score": 342
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "stage": "climax",
+            "setting_state": "active_arc",
+            "intensity": 5,
+            "recent_issues": 8,
+            "score": 325
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "stage": "climax",
+            "setting_state": "active_arc",
+            "intensity": 5,
+            "recent_issues": 8,
+            "score": 325
+          },
+          {
+            "name": "Luminous Ascension (accidental vs. written)",
+            "stage": "climax",
+            "setting_state": "active_arc",
+            "intensity": 5,
+            "recent_issues": 8,
+            "score": 325
+          },
+          {
+            "name": "The Convergence",
+            "stage": "climax",
+            "setting_state": "flashpoint",
+            "intensity": 5,
+            "recent_issues": 4,
+            "score": 263
+          },
+          {
+            "name": "The Convergence",
+            "stage": "climax",
+            "setting_state": "flashpoint",
+            "intensity": 5,
+            "recent_issues": 4,
+            "score": 263
+          },
+          {
+            "name": "Tenth Iteration",
+            "stage": "climax",
+            "setting_state": "active_arc",
+            "intensity": 5,
+            "recent_issues": 4,
+            "score": 223
+          },
+          {
+            "name": "Radiant Ascension (side effects)",
+            "stage": "rising",
+            "setting_state": "active_arc",
+            "intensity": 3,
+            "recent_issues": 2,
+            "score": 157
+          }
+        ],
+        "top_connections": [
+          {
+            "source": {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts"
+            },
+            "target": {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places"
+            },
+            "weight": 48,
+            "stories": [
+              "The Shadow-Merchant's Final Bargain",
+              "The Shadow-Vault's Unmaking",
+              "The Shadow-Market's Reckoning",
+              "The Shadow-Merchant's Reckoning"
+            ]
+          },
+          {
+            "source": {
+              "name": "Tower (as artifact/nexus)",
+              "type": "artifacts"
+            },
+            "target": {
+              "name": "Tower",
+              "type": "deities_and_entities"
+            },
+            "weight": 47,
+            "stories": [
+              "The Shadow-Merchant's Final Bargain",
+              "The Shadow-Vault's Unmaking",
+              "The Shadow-Market's Reckoning",
+              "The Shadow-Merchant's Reckoning"
+            ]
+          },
+          {
+            "source": {
+              "name": "Tower",
+              "type": "deities_and_entities"
+            },
+            "target": {
+              "name": "Tower (as artifact/nexus)",
+              "type": "places"
+            },
+            "weight": 47,
+            "stories": [
+              "The Shadow-Merchant's Final Bargain",
+              "The Shadow-Vault's Unmaking",
+              "The Shadow-Market's Reckoning",
+              "The Shadow-Merchant's Reckoning"
+            ]
+          },
+          {
+            "source": {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "characters"
+            },
+            "target": {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "factions"
+            },
+            "weight": 39,
+            "stories": [
+              "The Shadow-Vault's Unmaking",
+              "The Bone-Singer's Inheritance",
+              "The Bone-Singer's Second Student",
+              "The Bone-Singer's Burden"
+            ]
+          },
+          {
+            "source": {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "characters"
+            },
+            "target": {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "flora_fauna"
+            },
+            "weight": 39,
+            "stories": [
+              "The Shadow-Vault's Unmaking",
+              "The Bone-Singer's Inheritance",
+              "The Bone-Singer's Second Student",
+              "The Bone-Singer's Burden"
+            ]
+          },
+          {
+            "source": {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "factions"
+            },
+            "target": {
+              "name": "The Seventeen Transformed Merchants",
+              "type": "flora_fauna"
+            },
+            "weight": 39,
+            "stories": [
+              "The Shadow-Vault's Unmaking",
+              "The Bone-Singer's Inheritance",
+              "The Bone-Singer's Second Student",
+              "The Bone-Singer's Burden"
+            ]
+          },
+          {
+            "source": {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events"
+            },
+            "target": {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "rituals"
+            },
+            "weight": 39,
+            "stories": [
+              "The Shadow-Broker's Inventory Audit",
+              "The Deepkin Reflection's Choice",
+              "The Smuggler's Daughter",
+              "The Convergence at Pale Crossing"
+            ]
+          },
+          {
+            "source": {
+              "name": "Luminous Ascension",
+              "type": "deities_and_entities"
+            },
+            "target": {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "events"
+            },
+            "weight": 39,
+            "stories": [
+              "The Shadow-Broker's Inventory Audit",
+              "The Deepkin Reflection's Choice",
+              "The Smuggler's Daughter",
+              "The Convergence at Pale Crossing"
+            ]
+          },
+          {
+            "source": {
+              "name": "Luminous Ascension",
+              "type": "deities_and_entities"
+            },
+            "target": {
+              "name": "Luminous Ascension (accidental vs. written)",
+              "type": "rituals"
+            },
+            "weight": 39,
+            "stories": [
+              "The Shadow-Broker's Inventory Audit",
+              "The Deepkin Reflection's Choice",
+              "The Smuggler's Daughter",
+              "The Convergence at Pale Crossing"
+            ]
+          },
+          {
+            "source": {
+              "name": "Unknown Woman (Daughter's Mother)",
+              "type": "characters"
+            },
+            "target": {
+              "name": "Unknown Woman (Daughter's Mother)",
+              "type": "rituals"
+            },
+            "weight": 38,
+            "stories": [
+              "The Deepkin Reflection's Choice",
+              "The Cartographer's Student",
+              "The Bone-Singer's Apprentice",
+              "The Convergence at Pale Crossing"
+            ]
+          }
+        ],
+        "selected_stories": [
+          {
+            "date": "2026-04-30",
+            "title": "The Wanderer's Final Question",
+            "subgenre": "philosophical horror / cosmological thriller",
+            "score": 230,
+            "entities": [
+              {
+                "name": "archive",
+                "type": "places",
+                "score": 849
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "artifacts",
+                "score": 830
+              },
+              {
+                "name": "Tower",
+                "type": "deities_and_entities",
+                "score": 815
+              },
+              {
+                "name": "The Seventeen Transformed Merchants",
+                "type": "characters",
+                "score": 693
+              },
+              {
+                "name": "Unknown Woman (Daughter's Mother)",
+                "type": "characters",
+                "score": 690
+              }
+            ]
+          },
+          {
+            "date": "2026-05-01",
+            "title": "The Cartographer's Daughter",
+            "subgenre": "geography / resistance",
+            "score": 226,
+            "entities": [
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "artifacts",
+                "score": 830
+              },
+              {
+                "name": "Tower",
+                "type": "deities_and_entities",
+                "score": 815
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              }
+            ]
+          },
+          {
+            "date": "2026-04-28",
+            "title": "The Deepkin Commander's Reflection",
+            "subgenre": "identity politics",
+            "score": 226,
+            "entities": [
+              {
+                "name": "The Ascension",
+                "type": "events",
+                "score": 889
+              },
+              {
+                "name": "deepkin (via Council of Depths)",
+                "type": "factions",
+                "score": 555
+              },
+              {
+                "name": "deepkin (via Council of Depths)",
+                "type": "factions",
+                "score": 555
+              },
+              {
+                "name": "deepkin",
+                "type": "deities_and_entities",
+                "score": 555
+              },
+              {
+                "name": "deepkin (via Council of Depths)",
+                "type": "flora_fauna",
+                "score": 552
+              },
+              {
+                "name": "deepkin (via Council of Depths)",
+                "type": "flora_fauna",
+                "score": 552
+              },
+              {
+                "name": "Skarath the Wyvern",
+                "type": "characters",
+                "score": 494
+              },
+              {
+                "name": "Skarath the Wyvern",
+                "type": "flora_fauna",
+                "score": 488
+              }
+            ]
+          },
+          {
+            "date": "2026-05-01",
+            "title": "The Wyvern's Hunger Returns",
+            "subgenre": "dark dragon fantasy",
+            "score": 222,
+            "entities": [
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "artifacts",
+                "score": 830
+              },
+              {
+                "name": "Tower",
+                "type": "deities_and_entities",
+                "score": 815
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              }
+            ]
+          },
+          {
+            "date": "2026-05-01",
+            "title": "The Deepkin's Silent Reflection",
+            "subgenre": "deepkin politics / paradox",
+            "score": 222,
+            "entities": [
+              {
+                "name": "The Ascension",
+                "type": "events",
+                "score": 889
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "artifacts",
+                "score": 830
+              },
+              {
+                "name": "Tower",
+                "type": "deities_and_entities",
+                "score": 815
+              },
+              {
+                "name": "the Tower",
+                "type": "deities_and_entities",
+                "score": 673
+              },
+              {
+                "name": "deepkin (via Council of Depths)",
+                "type": "factions",
+                "score": 555
+              }
+            ]
+          },
+          {
+            "date": "2026-04-30",
+            "title": "The Refugee Archivist's Living Ledger",
+            "subgenre": "magical realism / epistemic horror",
+            "score": 222,
+            "entities": [
+              {
+                "name": "archive",
+                "type": "places",
+                "score": 849
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension",
+                "type": "deities_and_entities",
+                "score": 695
+              }
+            ]
+          },
+          {
+            "date": "2026-04-30",
+            "title": "The Bone-Singer's Defiance",
+            "subgenre": "cosmic horror / philosophical struggle",
+            "score": 222,
+            "entities": [
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "artifacts",
+                "score": 830
+              },
+              {
+                "name": "Tower",
+                "type": "deities_and_entities",
+                "score": 815
+              },
+              {
+                "name": "The Seventeen Transformed Merchants",
+                "type": "characters",
+                "score": 693
+              },
+              {
+                "name": "The Seventeen Transformed Merchants",
+                "type": "factions",
+                "score": 690
+              },
+              {
+                "name": "The Seventeen Transformed Merchants",
+                "type": "factions",
+                "score": 690
+              }
+            ]
+          },
+          {
+            "date": "2026-04-28",
+            "title": "The Spice-Merchant's Testimony",
+            "subgenre": "reality fragmentation",
+            "score": 222,
+            "entities": [
+              {
+                "name": "The Ascension",
+                "type": "events",
+                "score": 889
+              },
+              {
+                "name": "archive",
+                "type": "places",
+                "score": 849
+              },
+              {
+                "name": "transcendence",
+                "type": "substances",
+                "score": 471
+              },
+              {
+                "name": "Threshold",
+                "type": "deities_and_entities",
+                "score": 410
+              },
+              {
+                "name": "Sunken Cathedrals",
+                "type": "places",
+                "score": 352
+              },
+              {
+                "name": "living archive",
+                "type": "artifacts",
+                "score": 342
+              },
+              {
+                "name": "The Hegemony",
+                "type": "factions",
+                "score": 294
+              },
+              {
+                "name": "The Hegemony",
+                "type": "factions",
+                "score": 294
+              }
+            ]
+          },
+          {
+            "date": "2026-04-28",
+            "title": "The Merchant's Final Account",
+            "subgenre": "mercantile intrigue",
+            "score": 222,
+            "entities": [
+              {
+                "name": "The Ascension",
+                "type": "events",
+                "score": 889
+              },
+              {
+                "name": "Unknown Woman (Daughter's Mother)",
+                "type": "characters",
+                "score": 690
+              },
+              {
+                "name": "Unknown Woman (Daughter's Mother)",
+                "type": "rituals",
+                "score": 684
+              },
+              {
+                "name": "Gold",
+                "type": "substances",
+                "score": 470
+              },
+              {
+                "name": "Shadow-Markets",
+                "type": "places",
+                "score": 310
+              },
+              {
+                "name": "Shadow-Markets",
+                "type": "factions",
+                "score": 308
+              },
+              {
+                "name": "Shadow-Markets",
+                "type": "districts",
+                "score": 304
+              },
+              {
+                "name": "The Hegemony",
+                "type": "factions",
+                "score": 294
+              }
+            ]
+          },
+          {
+            "date": "2026-04-25",
+            "title": "The Spice-Runner's Gambit",
+            "subgenre": "mercenary fantasy",
+            "score": 222,
+            "entities": [
+              {
+                "name": "The Ascension",
+                "type": "events",
+                "score": 889
+              },
+              {
+                "name": "archive",
+                "type": "places",
+                "score": 849
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              }
+            ]
+          },
+          {
+            "date": "2026-04-25",
+            "title": "The Merchant's Threshold",
+            "subgenre": "transformative sorcery",
+            "score": 222,
+            "entities": [
+              {
+                "name": "The Ascension",
+                "type": "events",
+                "score": 889
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "artifacts",
+                "score": 830
+              },
+              {
+                "name": "Tower",
+                "type": "deities_and_entities",
+                "score": 815
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              }
+            ]
+          },
+          {
+            "date": "2026-04-30",
+            "title": "The Wyvern Hoarders' Last Hunt",
+            "subgenre": "draconic politics / predatory fantasy",
+            "score": 218,
+            "entities": [
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "places",
+                "score": 835
+              },
+              {
+                "name": "Tower (as artifact/nexus)",
+                "type": "artifacts",
+                "score": 830
+              },
+              {
+                "name": "Tower",
+                "type": "deities_and_entities",
+                "score": 815
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              },
+              {
+                "name": "Luminous Ascension (accidental vs. written)",
+                "type": "events",
+                "score": 709
+              }
+            ]
+          }
+        ]
+      },
+      "input_stats": {
+        "issue_count": 16,
+        "story_count": 160,
+        "selected_world_events": 8,
+        "selected_entities": 18,
+        "selected_stories": 12
+      }
+    }
+  ]
+}

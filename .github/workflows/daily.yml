@@ -18,6 +18,11 @@ on:
         required: false
         default: false
         type: boolean
+      refresh_chronicle:
+        description: Regenerate the world chronicle now (bypasses the 16-day cadence)
+        required: false
+        default: false
+        type: boolean
 
 
 concurrency:
@@ -62,11 +67,13 @@ jobs:
         run: |
           python -m py_compile generate_stories.py
           python -m py_compile audit_world_events.py
+          python -m py_compile build_chronicle.py
 
       - name: Decide whether to generate
         id: gate
         env:
           FORCE_SUMMARY_REFRESH: ${{ github.event.inputs.refresh_world_event_summaries }}
+          FORCE_CHRONICLE_REFRESH: ${{ github.event.inputs.refresh_chronicle }}
         run: |
           python - <<'PY'
           import json
@@ -77,6 +84,7 @@ jobs:
           NUM_STORIES = 10
           event_name = os.environ.get("GITHUB_EVENT_NAME", "")
           force_summary_refresh = str(os.environ.get("FORCE_SUMMARY_REFRESH", "") or "").strip().lower() in {"1", "true", "yes", "y"}
+          force_chronicle_refresh = str(os.environ.get("FORCE_CHRONICLE_REFRESH", "") or "").strip().lower() in {"1", "true", "yes", "y"}
           now = datetime.now(ZoneInfo("America/New_York"))
           date_key = now.strftime("%Y-%m-%d")
 
@@ -97,11 +105,13 @@ jobs:
           should_run = allowed_by_time and (not already)
           should_run_stories = should_run
           should_run_summaries = should_run or (event_name == "workflow_dispatch" and force_summary_refresh)
+          should_run_chronicle = should_run or (event_name == "workflow_dispatch" and force_chronicle_refresh)
           print(f"Event={event_name} now_ET={now.isoformat()} date_key={date_key} allowed_by_time={allowed_by_time} already={already} should_run={should_run}")
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
             f.write(f"date_key={date_key}\n")
             f.write(f"run_stories={'true' if should_run_stories else 'false'}\n")
             f.write(f"run_summaries={'true' if should_run_summaries else 'false'}\n")
+            f.write(f"run_chronicle={'true' if should_run_chronicle else 'false'}\n")
           PY
 
       - name: Generate stories
@@ -120,16 +130,24 @@ jobs:
           WORLD_EVENT_SUMMARY_FORCE_REGEN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.refresh_world_event_summaries && '1' || '0' }}
         run: python audit_world_events.py
 
+      - name: Generate world chronicle
+        if: steps.gate.outputs.run_chronicle == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CHRONICLE_CADENCE_DAYS: "16"
+          FORCE_CHRONICLE_REGEN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.refresh_chronicle && '1' || '0' }}
+        run: python build_chronicle.py
+
 
       - name: Commit and push stories
-        if: steps.gate.outputs.run_stories == 'true' || steps.gate.outputs.run_summaries == 'true'
+        if: steps.gate.outputs.run_stories == 'true' || steps.gate.outputs.run_summaries == 'true' || steps.gate.outputs.run_chronicle == 'true'
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           git config user.name  "Daily Blade Bot"
           git config user.email "actions@github.com"
           git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git add stories.json archive/ lore.json characters.json codex.json world-events.json
+          git add stories.json archive/ lore.json characters.json codex.json world-events.json chronicle.json
           # Only commit if something actually changed
           git diff --cached --quiet || git commit -m "🗡️ Daily stories — $(date -u '+%Y-%m-%d')"
           git push origin "HEAD:${GITHUB_REF_NAME}"

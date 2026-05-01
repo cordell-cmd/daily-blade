@@ -537,6 +537,47 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 .badge-setting-legacy { background: rgba(74,58,96,.18); border: 1px solid rgba(130,112,168,.45); color: #c9b8ef; }
 .badge-intensity-max { background: rgba(139,26,26,.18); border: 1px solid rgba(187,48,48,.72); color: #ff9b9b; box-shadow: 0 0 0 1px rgba(187,48,48,.18) inset; }
 
+#chronicle-view { display: none; padding-top: 1.2rem; }
+.chronicle-header { text-align: center; margin-bottom: 1rem; }
+.chronicle-header h2 { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 1.6rem; color: var(--gold); letter-spacing: .12em; }
+.chronicle-header p { font-size: .82rem; color: var(--aged); margin-top: .3rem; font-style: italic; }
+.chronicle-mode-bar { display: flex; justify-content: center; gap: .5rem; margin: .7rem 0 1rem; flex-wrap: wrap; }
+.chronicle-mode-btn { font-family: 'Cinzel', serif; font-size: .6rem; letter-spacing: .16em; text-transform: uppercase; background: none; border: 1px solid rgba(201,146,42,.3); color: var(--muted); padding: .35rem .8rem; border-radius: 2px; cursor: pointer; transition: background .15s, color .15s, border-color .15s; }
+.chronicle-mode-btn:hover { border-color: var(--gold); color: var(--aged); }
+.chronicle-mode-btn.active { background: rgba(201,146,42,.15); border-color: var(--gold); color: var(--gold); }
+.chronicle-shell { display: flex; flex-direction: column; gap: 1rem; }
+.chronicle-card { background: linear-gradient(180deg, rgba(24,12,5,.55), rgba(16,8,3,.88)); border: 1px solid rgba(201,146,42,.18); box-shadow: inset 0 0 28px rgba(0,0,0,.18), 0 8px 28px rgba(0,0,0,.35); border-radius: 3px; padding: 1.2rem 1.3rem; }
+.chronicle-title { font-family: 'Cinzel Decorative', 'Cinzel', serif; font-size: 1.35rem; color: var(--gold); line-height: 1.25; letter-spacing: .06em; }
+.chronicle-dek { color: var(--aged); font-style: italic; margin-top: .4rem; font-size: .92rem; line-height: 1.6; }
+.chronicle-meta { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .8rem; }
+.chronicle-body { display: grid; gap: 1rem; }
+.chronicle-prose { font-size: .95rem; line-height: 1.9; color: var(--aged); }
+.chronicle-prose p { margin: 0 0 1rem; }
+.chronicle-section-title { font-family: 'Cinzel', serif; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: .55rem; }
+.chronicle-list { margin: 0; padding-left: 1.1rem; color: var(--aged); line-height: 1.7; }
+.chronicle-list li + li { margin-top: .35rem; }
+.chronicle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .85rem; }
+.chronicle-mini-card { border: 1px solid rgba(201,146,42,.16); background: rgba(10,5,2,.28); padding: .8rem .9rem; min-width: 0; }
+.chronicle-mini-card h3 { margin: 0 0 .35rem; font-family: 'Cinzel', serif; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(226,208,168,.88); }
+.chronicle-mini-card p { margin: 0; color: var(--aged); font-size: .82rem; line-height: 1.55; }
+.chronicle-ranked-list { display: grid; gap: .7rem; }
+.chronicle-ranked-item { border-top: 1px solid rgba(201,146,42,.12); padding-top: .7rem; }
+.chronicle-ranked-item:first-child { border-top: none; padding-top: 0; }
+.chronicle-ranked-name { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem .45rem; margin-bottom: .35rem; }
+.chronicle-ranked-meta { color: var(--muted); font-size: .76rem; line-height: 1.55; }
+.chronicle-ranked-meta strong { color: rgba(226,208,168,.84); font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .12em; text-transform: uppercase; margin-right: .35rem; }
+.chronicle-why { margin-top: .4rem; display: flex; flex-wrap: wrap; gap: .35rem; }
+.chronicle-story-stack { display: grid; gap: .9rem; }
+.chronicle-story-card { border: 1px solid rgba(201,146,42,.14); background: rgba(10,5,2,.24); padding: .9rem 1rem; }
+.chronicle-story-topline { display: flex; justify-content: space-between; gap: .7rem; flex-wrap: wrap; margin-bottom: .35rem; }
+.chronicle-story-title { font-family: 'Cinzel', serif; font-size: .88rem; color: var(--gold); letter-spacing: .04em; }
+.chronicle-story-summary { color: var(--aged); font-size: .84rem; line-height: 1.65; margin-top: .35rem; }
+.chronicle-empty { text-align: center; color: var(--muted); font-style: italic; padding: 2rem 1rem; }
+
+@media (min-width: 980px) {
+  .chronicle-body { grid-template-columns: minmax(0, 1.5fr) minmax(280px, .9fr); align-items: start; }
+}
+
 #map-view { display: none; padding-top: 1.2rem; }
 .map-header { text-align: center; margin-bottom: 1rem; }
 /* ── Tolkien Map ─────────────────────────────────────────────── */
@@ -634,6 +675,7 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <button class="main-tab active" id="tab-tales" aria-selected="true">⚔ Tales</button>
     <button class="main-tab" id="tab-characters" aria-selected="false">📖 Codex</button>
     <button class="main-tab" id="tab-world-events" aria-selected="false">⚡ World Events</button>
+    <button class="main-tab" id="tab-chronicle" aria-selected="false">📚 Chronicle</button>
     <button class="main-tab" id="tab-map" aria-selected="false">🗺 Map</button>
     <div class="main-nav-right">
       <button class="btn" id="archive-btn" aria-label="Browse the archive">📜 Archive</button>
@@ -761,6 +803,29 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
     <div class="char-grid" id="world-events-grid" style="display:none;"></div>
   </div>
 
+  <!-- ── Chronicle View ───────────────────────────────────────── -->
+  <div id="chronicle-view">
+    <div class="chronicle-header">
+      <h2>The Chronicle of Edhra</h2>
+      <p>A periodic Haiku-forged overview of the world, built from canon, overlap, and recurring pressure.</p>
+    </div>
+    <div class="controls" style="margin-top:.5rem;">
+      <span class="controls-left" id="chronicle-count-label">— Loading the chronicle… —</span>
+      <div class="controls-right">
+        <button class="btn" id="chronicle-refresh" aria-label="Refresh chronicle">Refresh</button>
+      </div>
+    </div>
+    <div class="chronicle-mode-bar" role="tablist" aria-label="Chronicle sections">
+      <button class="chronicle-mode-btn active" id="chronicle-mode-overview" data-mode="overview" aria-selected="true">Overview</button>
+      <button class="chronicle-mode-btn" id="chronicle-mode-pipeline" data-mode="pipeline" aria-selected="false">Pipeline</button>
+    </div>
+    <div id="chronicle-status-msg" class="char-status">
+      <span class="spinner"></span>
+      <em>Consulting the long chronicle…</em>
+    </div>
+    <div id="chronicle-shell" class="chronicle-shell" style="display:none;"></div>
+  </div>
+
   <!-- ── Map View ─────────────────────────────────────────────── -->
   <div id="map-view">
     <div class="map-header">
@@ -803,6 +868,7 @@ const CHARACTER_TEMPORAL_URL = './character-temporal.json';
 const LINEAGES_URL   = './lineages.json';
 const ALLIANCES_URL  = './alliances.json';
 const WORLD_EVENTS_URL = './world-events.json';
+const CHRONICLE_URL  = './chronicle.json';
 const GEOGRAPHY_URL  = './geography.json';
 const DEFAULT_GITHUB_REPO = { owner: 'cordell-cmd', repo: 'daily-blade' };
 const AUDIT_WORKFLOW_FILE = 'audit.yml';
@@ -1252,6 +1318,9 @@ let LINEAGE_CACHE = null;
 let LINEAGE_PROMISE = null;
 let ALLIANCE_CACHE = null;
 let ALLIANCE_PROMISE = null;
+let CHRONICLE_DATA_CACHE = null;
+let chronicleLoaded = false;
+let activeChronicleMode = 'overview';
 
 // Entity linking (clickable names inside story text)
 let codexDataLoaded = false;
@@ -4867,19 +4936,230 @@ async function loadWorldEvents(force = false) {
   }
 }
 
+function latestChronicleEntry(data) {
+  if (data && data.latest_entry && typeof data.latest_entry === 'object') return data.latest_entry;
+  if (data && Array.isArray(data.entries) && data.entries.length) return data.entries[0];
+  return null;
+}
+
+function chronicleBadge(type, text) {
+  return `<span class="badge ${escHtml(type)}">${escHtml(text)}</span>`;
+}
+
+function renderChronicleOverview(entry) {
+  const issue = Number.isFinite(Number(entry.issue_number)) ? `Issue ${String(entry.issue_number).padStart(3, '0')}` : 'Chronicle';
+  const windowText = entry.window_start && entry.window_end ? `${formatDate(entry.window_start)} → ${formatDate(entry.window_end)}` : 'Window unavailable';
+  const paragraphs = String(entry.chronicle || '').split(/\n\n+/).map(s => s.trim()).filter(Boolean);
+  const currentState = Array.isArray(entry.current_state) ? entry.current_state : [];
+  const threads = Array.isArray(entry.ongoing_threads) ? entry.ongoing_threads : [];
+  const stats = entry.input_stats && typeof entry.input_stats === 'object' ? entry.input_stats : {};
+  return `
+    <div class="chronicle-card">
+      <div class="chronicle-title">${escHtml(entry.title || 'World Chronicle')}</div>
+      ${entry.dek ? `<div class="chronicle-dek">${escHtml(entry.dek)}</div>` : ''}
+      <div class="chronicle-meta">
+        ${chronicleBadge('badge-role', issue)}
+        ${chronicleBadge('badge-status-default', entry.date ? formatDate(entry.date) : 'Unknown date')}
+        ${chronicleBadge('badge-status-default', windowText)}
+        ${entry.model ? chronicleBadge('badge-status-default', `Model ${entry.model}`) : ''}
+        ${stats.selected_entities ? chronicleBadge('badge-status-default', `${stats.selected_entities} ranked entities`) : ''}
+        ${stats.selected_world_events ? chronicleBadge('badge-status-default', `${stats.selected_world_events} top arcs`) : ''}
+      </div>
+    </div>
+    <div class="chronicle-body">
+      <div class="chronicle-card">
+        <div class="chronicle-section-title">Narrative Overview</div>
+        <div class="chronicle-prose">${paragraphs.map(p => `<p>${escHtml(p)}</p>`).join('') || '<p>No chronicle text is available yet.</p>'}</div>
+      </div>
+      <div class="chronicle-shell">
+        <div class="chronicle-card">
+          <div class="chronicle-section-title">Current State</div>
+          <ul class="chronicle-list">${currentState.map(item => `<li>${escHtml(item)}</li>`).join('') || '<li>No current-state bullets yet.</li>'}</ul>
+        </div>
+        <div class="chronicle-card">
+          <div class="chronicle-section-title">Open Threads</div>
+          <ul class="chronicle-list">${threads.map(item => `<li>${escHtml(item)}</li>`).join('') || '<li>No open threads recorded yet.</li>'}</ul>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderChroniclePipeline(entry) {
+  const pipeline = entry.pipeline && typeof entry.pipeline === 'object' ? entry.pipeline : {};
+  const scoring = Array.isArray(pipeline.scoring_weights) ? pipeline.scoring_weights : [];
+  const topEvents = Array.isArray(pipeline.top_world_events) ? pipeline.top_world_events : [];
+  const topEntities = Array.isArray(pipeline.top_entities) ? pipeline.top_entities : [];
+  const topConnections = Array.isArray(pipeline.top_connections) ? pipeline.top_connections : [];
+  const selectedStories = Array.isArray(pipeline.selected_stories) ? pipeline.selected_stories : [];
+
+  const storyCards = selectedStories.map((story) => {
+    const entities = Array.isArray(story.entities) ? story.entities : [];
+    const entityBits = entities.slice(0, 6).map((row) => `<button type="button" class="badge entity-badge ${badgeClassForEntityType(row.type || '')} chronicle-entity-link" data-entity-type="${escHtml(row.type || '')}" data-entity-key="${escHtml(row.name || '')}">${escHtml(row.name || '')}</button>`).join('');
+    return `
+      <div class="chronicle-story-card">
+        <div class="chronicle-story-topline">
+          <div class="chronicle-story-title">${escHtml(story.title || 'Untitled')}</div>
+          <div class="chronicle-ranked-meta">${escHtml(story.date || '')}${story.subgenre ? ` · ${escHtml(story.subgenre)}` : ''}</div>
+        </div>
+        ${entities.length ? `<div class="chronicle-why">${entityBits}</div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="chronicle-card">
+      <div class="chronicle-section-title">How The Chronicle Is Chosen</div>
+      <div class="chronicle-grid">
+        ${scoring.map((row) => `
+          <div class="chronicle-mini-card">
+            <h3>${escHtml(row.signal || 'Signal')}</h3>
+            <p><strong>${escHtml(row.weight || '')}</strong> · ${escHtml(row.description || '')}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+    <div class="chronicle-body">
+      <div class="chronicle-shell">
+        <div class="chronicle-card">
+          <div class="chronicle-section-title">Top Ranked Arcs</div>
+          <div class="chronicle-ranked-list">
+            ${topEvents.map((row) => `
+              <div class="chronicle-ranked-item">
+                <div class="chronicle-ranked-name">
+                  <span class="badge badge-role">${escHtml(row.name || 'Unnamed Arc')}</span>
+                  ${row.stage ? `<span class="badge ${_stageBadgeClass(row.stage)}">${escHtml(row.stage)}</span>` : ''}
+                  ${row.setting_state ? `<span class="badge ${_settingBadgeClass(row.setting_state)}">${escHtml(_settingBadgeLabel(row.setting_state))}</span>` : ''}
+                  ${row.intensity ? `<span class="badge">Intensity ${escHtml(String(row.intensity))}</span>` : ''}
+                </div>
+                <div class="chronicle-ranked-meta"><strong>Score</strong>${escHtml(String(row.score || 0))} · <strong>Recent issues</strong>${escHtml(String(row.recent_issues || 0))}</div>
+              </div>
+            `).join('') || '<div class="chronicle-empty">No arc rankings available yet.</div>'}
+          </div>
+        </div>
+        <div class="chronicle-card">
+          <div class="chronicle-section-title">Top Ranked Entities</div>
+          <div class="chronicle-ranked-list">
+            ${topEntities.map((row) => `
+              <div class="chronicle-ranked-item">
+                <div class="chronicle-ranked-name">
+                  <button type="button" class="badge entity-badge ${badgeClassForEntityType(row.type || '')} chronicle-entity-link" data-entity-type="${escHtml(row.type || '')}" data-entity-key="${escHtml(row.name || '')}">${escHtml(row.name || '')}</button>
+                  <span class="badge badge-status-default">Score ${escHtml(String(row.score || 0))}</span>
+                  ${row.last_seen ? `<span class="badge badge-status-default">Last ${escHtml(row.last_seen)}</span>` : ''}
+                </div>
+                <div class="chronicle-ranked-meta">
+                  <strong>Type</strong>${escHtml(row.label || codexTypeLabel(row.type || ''))}
+                  · <strong>Recent</strong>${escHtml(String(row.recent_appearances || 0))}
+                  · <strong>Total</strong>${escHtml(String(row.appearance_total || 0))}
+                  · <strong>Network</strong>${escHtml(String(row.network_degree || 0))}
+                </div>
+                ${Array.isArray(row.why) && row.why.length ? `<div class="chronicle-why">${row.why.map((item) => `<span class="badge badge-status-default">${escHtml(item)}</span>`).join('')}</div>` : ''}
+              </div>
+            `).join('') || '<div class="chronicle-empty">No entity rankings available yet.</div>'}
+          </div>
+        </div>
+      </div>
+      <div class="chronicle-shell">
+        <div class="chronicle-card">
+          <div class="chronicle-section-title">Strongest Connections</div>
+          <div class="chronicle-ranked-list">
+            ${topConnections.map((row) => `
+              <div class="chronicle-ranked-item">
+                <div class="chronicle-ranked-name">
+                  <button type="button" class="badge entity-badge ${badgeClassForEntityType(row.source && row.source.type || '')} chronicle-entity-link" data-entity-type="${escHtml(row.source && row.source.type || '')}" data-entity-key="${escHtml(row.source && row.source.name || '')}">${escHtml(row.source && row.source.name || '')}</button>
+                  <span class="badge badge-status-default">↔ ${escHtml(String(row.weight || 0))}</span>
+                  <button type="button" class="badge entity-badge ${badgeClassForEntityType(row.target && row.target.type || '')} chronicle-entity-link" data-entity-type="${escHtml(row.target && row.target.type || '')}" data-entity-key="${escHtml(row.target && row.target.name || '')}">${escHtml(row.target && row.target.name || '')}</button>
+                </div>
+                ${Array.isArray(row.stories) && row.stories.length ? `<div class="chronicle-ranked-meta"><strong>Shared tales</strong>${escHtml(row.stories.join(', '))}</div>` : ''}
+              </div>
+            `).join('') || '<div class="chronicle-empty">No connection graph available yet.</div>'}
+          </div>
+        </div>
+        <div class="chronicle-card">
+          <div class="chronicle-section-title">Stories Fed To The Chronicle</div>
+          <div class="chronicle-story-stack">${storyCards || '<div class="chronicle-empty">No selected stories are available yet.</div>'}</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function bindChronicleLinks(root) {
+  if (!root) return;
+  root.querySelectorAll('.chronicle-entity-link').forEach((btn) => {
+    btn.addEventListener('click', () => openCodexEntryByKey(btn.dataset.entityKey || '', btn.dataset.entityType || ''));
+  });
+}
+
+function renderChronicle(data) {
+  const statusEl = document.getElementById('chronicle-status-msg');
+  const shell = document.getElementById('chronicle-shell');
+  const countLabel = document.getElementById('chronicle-count-label');
+  const entry = latestChronicleEntry(data);
+
+  document.querySelectorAll('.chronicle-mode-btn').forEach((btn) => {
+    const active = btn.dataset.mode === activeChronicleMode;
+    btn.classList.toggle('active', active);
+    btn.setAttribute('aria-selected', active ? 'true' : 'false');
+  });
+
+  if (!entry) {
+    countLabel.textContent = '— No chronicle generated yet —';
+    statusEl.innerHTML = '<div class="chronicle-empty"><em>No chronicle entry has been generated yet. Run the chronicle pipeline to create the first overview.</em></div>';
+    statusEl.style.display = '';
+    shell.style.display = 'none';
+    shell.innerHTML = '';
+    return;
+  }
+
+  const totalEntries = Array.isArray(data && data.entries) ? data.entries.length : 1;
+  countLabel.textContent = `— ${escHtml(entry.title || 'Chronicle')} · ${totalEntries} entr${totalEntries !== 1 ? 'ies' : 'y'} recorded —`;
+  shell.innerHTML = activeChronicleMode === 'pipeline' ? renderChroniclePipeline(entry) : renderChronicleOverview(entry);
+  bindChronicleLinks(shell);
+  statusEl.style.display = 'none';
+  shell.style.display = '';
+}
+
+async function loadChronicle(force = false) {
+  if (chronicleLoaded && !force && CHRONICLE_DATA_CACHE) {
+    renderChronicle(CHRONICLE_DATA_CACHE);
+    return;
+  }
+  const statusEl = document.getElementById('chronicle-status-msg');
+  const shell = document.getElementById('chronicle-shell');
+  statusEl.innerHTML = '<span class="spinner"></span><em>Consulting the long chronicle…</em>';
+  statusEl.style.display = '';
+  shell.style.display = 'none';
+  shell.innerHTML = '';
+  try {
+    const data = await fetchJsonWithTimeout(CHRONICLE_URL + '?t=' + Date.now(), { timeoutMs: 12000 });
+    CHRONICLE_DATA_CACHE = data;
+    chronicleLoaded = true;
+    renderChronicle(data);
+  } catch (err) {
+    console.error(err);
+    document.getElementById('chronicle-count-label').textContent = '— Chronicle unavailable —';
+    statusEl.innerHTML = errorBoxHtml('⚠ Chronicle Unavailable', `Could not load ${CHRONICLE_URL}: ${err && err.message ? err.message : String(err)}`);
+    statusEl.style.display = '';
+    shell.style.display = 'none';
+  }
+}
+
 // ── Tab Switching ──────────────────────────────────────────────────
 function switchTab(tab) {
   currentTab = tab;
   const talesView = document.getElementById('tales-view');
   const charView  = document.getElementById('char-view');
   const worldEventsView = document.getElementById('world-events-view');
+  const chronicleView = document.getElementById('chronicle-view');
   const mapView   = document.getElementById('map-view');
   const tabTales  = document.getElementById('tab-tales');
   const tabChars  = document.getElementById('tab-characters');
   const tabWorldEvents = document.getElementById('tab-world-events');
+  const tabChronicle = document.getElementById('tab-chronicle');
   const tabMap    = document.getElementById('tab-map');
-  const allTabs = [tabTales, tabChars, tabWorldEvents, tabMap];
-  const allViews = { tales: talesView, characters: charView, 'world-events': worldEventsView, map: mapView };
+  const allTabs = [tabTales, tabChars, tabWorldEvents, tabChronicle, tabMap];
+  const allViews = { tales: talesView, characters: charView, 'world-events': worldEventsView, chronicle: chronicleView, map: mapView };
   allTabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
   Object.values(allViews).forEach(v => { if (v) v.style.display = 'none'; });
   if (tab === 'tales') {
@@ -4896,6 +5176,11 @@ function switchTab(tab) {
     tabWorldEvents.classList.add('active');
     tabWorldEvents.setAttribute('aria-selected', 'true');
     loadWorldEvents(true);
+  } else if (tab === 'chronicle') {
+    chronicleView.style.display = 'block';
+    tabChronicle.classList.add('active');
+    tabChronicle.setAttribute('aria-selected', 'true');
+    loadChronicle(true);
   } else if (tab === 'map') {
     mapView.style.display = 'block';
     tabMap.classList.add('active');
@@ -4966,7 +5251,16 @@ async function loadArchiveIndex() {
 document.getElementById('tab-tales').addEventListener('click', () => switchTab('tales'));
 document.getElementById('tab-characters').addEventListener('click', () => switchTab('characters'));
 document.getElementById('tab-world-events').addEventListener('click', () => switchTab('world-events'));
+document.getElementById('tab-chronicle').addEventListener('click', () => switchTab('chronicle'));
 document.getElementById('tab-map').addEventListener('click', () => switchTab('map'));
+
+document.getElementById('chronicle-refresh').addEventListener('click', () => loadChronicle(true));
+document.querySelectorAll('.chronicle-mode-btn').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    activeChronicleMode = btn.dataset.mode || 'overview';
+    if (CHRONICLE_DATA_CACHE) renderChronicle(CHRONICLE_DATA_CACHE);
+  });
+});
 
 {
   const shareBtn = document.getElementById('share-btn');
