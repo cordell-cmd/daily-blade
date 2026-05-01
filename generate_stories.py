@@ -2215,8 +2215,22 @@ def _select_world_event_arcs(today_str: str, codex=None) -> list:
         scored.append((weight, e, arc))
 
     scored.sort(key=lambda x: x[0], reverse=True)
-    picked = [e for _, e, _ in scored[: max(1, min(WORLD_EVENT_ARCS_MAX, 4))]]
-    picked = picked[: max(0, int(WORLD_EVENT_ARCS_MAX or 0))]
+
+    picked = []
+    seen = set()
+    for _weight, event_row, _arc in scored:
+        name_key = (event_row.get("name") or "").strip().lower()
+        type_key = (event_row.get("event_type") or "").strip().lower()
+        dedupe_key = (name_key, type_key)
+        if not any(dedupe_key):
+            continue
+        if dedupe_key in seen:
+            continue
+        seen.add(dedupe_key)
+        picked.append(event_row)
+        if len(picked) >= max(0, int(WORLD_EVENT_ARCS_MAX or 0)):
+            break
+
     return picked
 
 
@@ -6199,6 +6213,10 @@ def coerce_story_dict(obj: object) -> dict:
     return {"title": title, "text": text, "subgenre": subgenre}
 
 
+def _story_title_key(title: object) -> str:
+    return re.sub(r"\s+", " ", str(title or "").strip()).lower()
+
+
 def build_story_json_reformat_prompt(raw_response_text: str, num_stories: int = NUM_STORIES) -> str:
     return f"""You previously generated sword-and-sorcery stories, but the JSON shape may be wrapped or inconsistent.
 
@@ -6234,6 +6252,81 @@ Canon guidance:
 Existing lore context (use as inspiration; do not contradict):
 {lore_context}
 """
+
+
+def extend_with_missing_story_batches(
+    client,
+    today_str: str,
+    lore: dict,
+    stories: list[dict],
+    event_arc_dossiers=None,
+) -> list[dict]:
+    """Fill missing stories with smaller follow-up batches.
+
+    The one-shot recovery path can still underfill when the model is already
+    struggling with a large prompt. Smaller batches are more reliable and let us
+    accumulate progress instead of aborting after one short response.
+    """
+    stories = list(stories or [])
+    batch_size = max(1, int(os.environ.get("MISSING_STORY_BATCH_SIZE", "3") or 3))
+    max_passes = max(1, int(os.environ.get("MISSING_STORY_MAX_PASSES", "5") or 5))
+    passes = 0
+
+    while len(stories) < NUM_STORIES and passes < max_passes:
+        missing = NUM_STORIES - len(stories)
+        request_n = min(missing, batch_size)
+        existing_titles = [s.get("title") for s in stories if isinstance(s, dict)]
+        seen_titles = {_story_title_key(title) for title in existing_titles if title}
+
+        print(
+            f"WARNING: Still missing {missing} story(ies); requesting {request_n} more.",
+            file=sys.stderr,
+        )
+
+        try:
+            extra_msg = client.messages.create(
+                model=MODEL,
+                max_tokens=max(1024, min(4096, 900 * request_n)),
+                messages=[{
+                    "role": "user",
+                    "content": build_missing_stories_prompt(
+                        today_str,
+                        lore,
+                        request_n,
+                        existing_titles=existing_titles,
+                        event_arc_dossiers=event_arc_dossiers,
+                    ),
+                }],
+            )
+            extra_raw = extra_msg.content[0].text.strip()
+            extra_parsed = parse_json_response(extra_raw)
+            extra_items = extract_story_items(extra_parsed) or []
+        except Exception as e:
+            print(f"WARNING: Extra-story batch failed: {e}", file=sys.stderr)
+            passes += 1
+            continue
+
+        new_stories = []
+        for item in extra_items:
+            story = coerce_story_dict(item)
+            title_key = _story_title_key(story.get("title"))
+            if title_key and title_key in seen_titles:
+                continue
+            if title_key:
+                seen_titles.add(title_key)
+            new_stories.append(story)
+            if len(new_stories) >= request_n:
+                break
+
+        if not new_stories:
+            print("WARNING: Extra-story batch returned no usable stories.", file=sys.stderr)
+            passes += 1
+            continue
+
+        stories.extend(new_stories)
+        passes += 1
+
+    return stories
 
 
 def normalize_extracted_lore(extracted):
@@ -7135,6 +7228,23 @@ def _truthy_env(name: str) -> bool:
     return (os.environ.get(name) or "").strip().lower() in {"1", "true", "yes", "y", "on"}
 
 
+def _is_anthropic_usage_limit_error(exc: Exception) -> bool:
+    text = str(exc or "").strip().lower()
+    if not text:
+        return False
+    return (
+        "usage limits" in text
+        or "you have reached your specified api usage limits" in text
+        or ("invalid_request_error" in text and "regain access on" in text)
+    )
+
+
+def _extract_anthropic_reset_hint(exc: Exception) -> str:
+    text = str(exc or "")
+    m = re.search(r"regain access on\s+([^.'}\n]+)", text, flags=re.IGNORECASE)
+    return (m.group(1) or "").strip() if m else ""
+
+
 def _issue_now() -> datetime:
     """Current datetime in the configured issue timezone.
 
@@ -7414,24 +7524,13 @@ def main():
             print(f"WARNING: JSON repair attempt failed: {e}", file=sys.stderr)
 
     if len(stories) < NUM_STORIES:
-        missing = NUM_STORIES - len(stories)
-        print(f"WARNING: Still missing {missing} story(ies); generating extras.", file=sys.stderr)
-        try:
-            extra_msg = client.messages.create(
-                model=MODEL,
-                max_tokens=4096,
-                messages=[{
-                    "role": "user",
-                    "content": build_missing_stories_prompt(today_str, lore, missing, existing_titles=[s.get("title") for s in stories if isinstance(s, dict)], event_arc_dossiers=event_arc_dossiers),
-                }],
-            )
-            extra_raw = extra_msg.content[0].text.strip()
-            extra_parsed = parse_json_response(extra_raw)
-            extra_items = extract_story_items(extra_parsed) or []
-            extras = [coerce_story_dict(s) for s in extra_items[:missing]]
-            stories.extend(extras)
-        except Exception as e:
-            print(f"WARNING: Extra-story generation failed: {e}", file=sys.stderr)
+        stories = extend_with_missing_story_batches(
+            client,
+            today_str,
+            lore,
+            stories,
+            event_arc_dossiers=event_arc_dossiers,
+        )
 
     if len(stories) < NUM_STORIES:
         print(f"ERROR: Only {len(stories)}/{NUM_STORIES} stories available; aborting.", file=sys.stderr)
@@ -7822,4 +7921,17 @@ def main():
         print(f"WARNING: alliance refresh failed: {e}", file=sys.stderr)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except anthropic.BadRequestError as e:
+        in_github_actions = (os.environ.get("GITHUB_ACTIONS") or "").strip().lower() == "true"
+        if not in_github_actions or not _is_anthropic_usage_limit_error(e):
+            raise
+        reset_hint = _extract_anthropic_reset_hint(e)
+        print(
+            "WARNING: Anthropic API usage limit reached; skipping story generation for this run.",
+            file=sys.stderr,
+        )
+        if reset_hint:
+            print(f"INFO: Anthropic reports access returns {reset_hint}.", file=sys.stderr)
+        raise SystemExit(0)

@@ -2,10 +2,11 @@ name: Generate Daily Stories
 
 
 on:
-  # Run hourly; we gate generation in-job so it runs at ~06:00 America/New_York
-  # (DST-safe), and also catches up ASAP if a run was missed.
+  # Run every two hours; we gate generation in-job so it runs once the local
+  # day reaches morning in America/New_York, then keeps retrying the same day
+  # until today's issue exists.
   schedule:
-    - cron: "5 * * * *"
+    - cron: "5 */2 * * *"
 
 
 
