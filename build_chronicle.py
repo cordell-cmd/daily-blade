@@ -806,7 +806,19 @@ def main() -> int:
         print(f"Chronicle not due yet (latest: {latest_entry_date}, cadence: {CADENCE_DAYS} days).")
         return 0
 
-    window_dates = _select_window_dates(archive_dates_desc, end_date_key, latest_entry_date or None, CADENCE_DAYS)
+    prior_entries = chronicle_history.get("entries") if isinstance(chronicle_history.get("entries"), list) else []
+    last_completed_window_date = latest_entry_date or None
+    if latest_entry_date == end_date_key:
+        last_completed_window_date = None
+        for row in prior_entries:
+            if not isinstance(row, dict):
+                continue
+            row_date = str(row.get("date") or "").strip()
+            if row_date and row_date != end_date_key:
+                last_completed_window_date = row_date
+                break
+
+    window_dates = _select_window_dates(archive_dates_desc, end_date_key, last_completed_window_date, CADENCE_DAYS)
     stories, issue_numbers = _load_window_stories(window_dates, archive_dates_desc)
     world_events = _rank_world_events(world_events_payload, {row.get("date") for row in stories if row.get("date")})
     ranked_entities, top_entities, top_connections = _rank_entities(codex, stories, world_events, CADENCE_DAYS)
@@ -853,7 +865,6 @@ def main() -> int:
         },
     }
 
-    prior_entries = chronicle_history.get("entries") if isinstance(chronicle_history.get("entries"), list) else []
     kept = [row for row in prior_entries if isinstance(row, dict) and str(row.get("date") or "").strip() != end_date_key]
     kept.insert(0, entry)
     kept = kept[: max(1, KEEP_ENTRIES)]
