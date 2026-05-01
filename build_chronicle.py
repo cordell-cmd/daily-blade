@@ -194,12 +194,43 @@ def _multiline_truncate(text: str, limit: int = 1200) -> str:
     return raw[: max(0, limit - 1)].rstrip() + "…"
 
 
-def _parse_model_json(text: str) -> dict[str, Any]:
+def _normalize_model_payload(text: str) -> str:
     payload = str(text or "").strip()
     if payload.startswith("```"):
         payload = re.sub(r"^```(?:json)?\s*", "", payload)
         payload = re.sub(r"\s*```$", "", payload)
-    return json.loads(payload)
+    return payload.strip()
+
+
+def _extract_json_object(payload: str) -> str:
+    start = payload.find("{")
+    end = payload.rfind("}")
+    if start >= 0 and end > start:
+        return payload[start : end + 1]
+    return payload
+
+
+def _parse_model_json(text: str) -> dict[str, Any]:
+    payload = _normalize_model_payload(text)
+    candidates = [payload]
+    extracted = _extract_json_object(payload)
+    if extracted != payload:
+        candidates.append(extracted)
+
+    last_error: Exception | None = None
+    for candidate in candidates:
+        try:
+            parsed = json.loads(candidate)
+        except Exception as exc:
+            last_error = exc
+            continue
+        if isinstance(parsed, dict):
+            return parsed
+        raise ValueError("Chronicle model response was not a JSON object")
+
+    if last_error is not None:
+        raise last_error
+    raise ValueError("Chronicle model response was empty")
 
 
 def _issue_number(dates_desc: list[str], date_key: str) -> int | None:
@@ -774,18 +805,47 @@ def _fallback_entry(issue_date: str, issue_number: int | None, dossier: dict[str
     }
 
 
-def _call_model(prompt: str, api_key: str) -> dict[str, Any]:
-    client = anthropic.Anthropic(api_key=api_key)
+def _build_json_repair_prompt(invalid_response: str) -> str:
+    return f"""You previously responded to a chronicle request with malformed JSON.
+
+Rewrite the response below as valid JSON only.
+
+Requirements:
+- Return ONLY a JSON object.
+- Do not use markdown fences.
+- Preserve the prose and bullet text as faithfully as possible.
+- The object must contain exactly these keys:
+  - title: string
+  - dek: string
+  - chronicle: string
+  - current_state: array of strings
+  - ongoing_threads: array of strings
+
+Malformed response:
+{invalid_response}
+"""
+
+
+def _call_model_once(client: anthropic.Anthropic, prompt: str) -> str:
     msg = client.messages.create(
         model=MODEL,
         max_tokens=MAX_TOKENS,
         messages=[{"role": "user", "content": prompt}],
     )
-    text = str(msg.content[0].text or "").strip()
-    payload = _parse_model_json(text)
-    if not isinstance(payload, dict):
-        raise ValueError("Chronicle model response was not a JSON object")
-    return payload
+    return str(msg.content[0].text or "").strip()
+
+
+def _call_model(prompt: str, api_key: str) -> dict[str, Any]:
+    client = anthropic.Anthropic(api_key=api_key)
+    text = _call_model_once(client, prompt)
+    try:
+        return _parse_model_json(text)
+    except Exception:
+        repaired_text = _call_model_once(client, _build_json_repair_prompt(_normalize_model_payload(text)))
+        payload = _parse_model_json(repaired_text)
+        if not isinstance(payload, dict):
+            raise ValueError("Chronicle model response was not a JSON object")
+        return payload
 
 
 def _build_empty_payload() -> dict[str, Any]:
