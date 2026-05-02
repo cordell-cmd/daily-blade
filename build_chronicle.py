@@ -14,6 +14,8 @@ from zoneinfo import ZoneInfo
 
 import anthropic
 
+from world_time import build_world_clock
+
 
 ROOT = Path(__file__).resolve().parent
 CODEX_FILE = ROOT / "codex.json"
@@ -38,6 +40,15 @@ MAX_CONNECTIONS_FULL_HISTORY = int(os.environ.get("CHRONICLE_FULL_HISTORY_MAX_CO
 MAX_TOKENS = int(os.environ.get("CHRONICLE_MAX_TOKENS", "2200") or 2200)
 KEEP_ENTRIES = int(os.environ.get("CHRONICLE_KEEP_ENTRIES", "32") or 32)
 ALLOW_FALLBACK = (os.environ.get("CHRONICLE_ALLOW_FALLBACK", "1").strip().lower() in {"1", "true", "yes", "y"})
+
+GREGORIAN_MONTH_RE = re.compile(
+    r"\b(january|february|march|april|may|june|july|august|september|october|november|december)\b",
+    flags=re.IGNORECASE,
+)
+GREGORIAN_MONTH_PHRASE_RE = re.compile(
+    r"\b(early|mid|late)\s+(january|february|march|april|may|june|july|august|september|october|november|december)\b",
+    flags=re.IGNORECASE,
+)
 
 ENTITY_CATEGORIES = [
     "characters",
@@ -845,13 +856,56 @@ def _build_dossier(window_dates: list[str], stories: list[dict[str, Any]], world
     }
 
 
-def _build_prompt(issue_date: str, issue_number: int | None, dossier: dict[str, Any]) -> str:
+def _has_gregorian_month(text: Any) -> bool:
+    return bool(GREGORIAN_MONTH_RE.search(str(text or "")))
+
+
+def _replace_gregorian_months(text: str, world_month_name: str) -> str:
+    text = GREGORIAN_MONTH_PHRASE_RE.sub(lambda m: f"{m.group(1)} {world_month_name}", text)
+    return GREGORIAN_MONTH_RE.sub(world_month_name, text)
+
+
+def _sanitize_chronicle_temporal_language(entry: dict[str, Any], world_date_label: str, world_month_name: str) -> dict[str, Any]:
+    sanitized = dict(entry or {})
+    chronicle_text = str(sanitized.get("chronicle") or "").strip()
+    if _has_gregorian_month(chronicle_text):
+        chronicle_text = _replace_gregorian_months(chronicle_text, world_month_name)
+        sanitized["chronicle"] = chronicle_text
+
+    for key in ("dek", "title"):
+        value = str(sanitized.get(key) or "").strip()
+        if _has_gregorian_month(value):
+            sanitized[key] = _replace_gregorian_months(value, world_month_name)
+
+    for key in ("current_state", "ongoing_threads"):
+        items = sanitized.get(key)
+        if not isinstance(items, list):
+            continue
+        cleaned: list[str] = []
+        for item in items:
+            text = str(item or "").strip()
+            if not text:
+                continue
+            cleaned.append(_replace_gregorian_months(text, world_month_name) if _has_gregorian_month(text) else text)
+        sanitized[key] = cleaned
+    return sanitized
+
+
+def _build_prompt(
+    issue_date: str,
+    issue_number: int | None,
+    dossier: dict[str, Any],
+    world_date_label: str,
+    world_window_label: str,
+) -> str:
     issue_label = f"Issue {issue_number:03d}" if isinstance(issue_number, int) else "Latest Issue"
     return f"""You are the chronicler of Edhra, writing an ongoing narrative overview of the world behind The Daily Blade.
 
 Your source material is already curated from canon. Treat the dossier below as authoritative.
 
-DATE ANCHOR: {issue_date}
+ARCHIVE DATE ANCHOR: {issue_date}
+WORLD DATE ANCHOR: {world_date_label}
+WORLD WINDOW: {world_window_label}
 ISSUE LABEL: {issue_label}
 
 DOSSIER JSON:
@@ -862,6 +916,7 @@ Task:
 - Pull together the most important overlaps across characters, places, events, factions, and ongoing pressures.
 - Emphasize cause/effect, escalation, and how one storyline affects another.
 - Focus on what matters now in Edhra and Valdris.
+- Any in-world temporal reference must use the Edhran calendar anchor above, never Gregorian months, weekdays, or real-world calendar names.
 - You may infer significance and connective tissue, but do NOT invent unsupported facts.
 
 Style constraints:
@@ -881,7 +936,7 @@ Return ONLY valid JSON matching exactly this shape:
 """
 
 
-def _fallback_entry(issue_date: str, issue_number: int | None, dossier: dict[str, Any]) -> dict[str, Any]:
+def _fallback_entry(issue_date: str, issue_number: int | None, dossier: dict[str, Any], world_date_label: str) -> dict[str, Any]:
     top_events = dossier.get("world_events") if isinstance(dossier.get("world_events"), list) else []
     top_entities = dossier.get("selected_entities") if isinstance(dossier.get("selected_entities"), list) else []
     top_stories = dossier.get("selected_stories") if isinstance(dossier.get("selected_stories"), list) else []
@@ -894,7 +949,7 @@ def _fallback_entry(issue_date: str, issue_number: int | None, dossier: dict[str
     paragraphs = []
     if event_names:
         paragraphs.append(
-            f"By {issue_date}, the world of Edhra is being pulled most strongly by {', '.join(event_names[:-1]) + (', and ' + event_names[-1] if len(event_names) > 1 else event_names[0])}. These arcs are no longer isolated disturbances; they are the pressures around which the current age is organizing itself."
+            f"By {world_date_label}, the world of Edhra is being pulled most strongly by {', '.join(event_names[:-1]) + (', and ' + event_names[-1] if len(event_names) > 1 else event_names[0])}. These arcs are no longer isolated disturbances; they are the pressures around which the current age is organizing itself."
         )
     if figure_names:
         paragraphs.append(
@@ -1005,6 +1060,11 @@ def main() -> int:
     archive_idx = _load_json(ARCHIVE_INDEX_FILE, {"dates": []})
     chronicle_history = _clean_history(_load_json(OUTPUT_FILE, _build_empty_payload()))
     world_events_payload = _load_json(WORLD_EVENTS_FILE, {"events": []})
+    world_clock = build_world_clock(
+        archive_index_path=str(ARCHIVE_INDEX_FILE),
+        stories_path=str(ROOT / "stories.json"),
+        config_path=str(ROOT / "world_time_config.json"),
+    )
 
     archive_dates_desc = archive_idx.get("dates") if isinstance(archive_idx, dict) and isinstance(archive_idx.get("dates"), list) else []
     archive_dates_desc = [str(value).strip() for value in archive_dates_desc if _parse_date_key(str(value).strip())]
@@ -1065,29 +1125,39 @@ def main() -> int:
     dossier = _build_dossier(window_dates, stories, world_events, ranked_entities, top_entities, top_connections, chronicle_history, max_stories)
 
     issue_number = _issue_number(archive_dates_desc, end_date_key)
+    world_date_label = world_clock.format_world_date(end_date_key) or end_date_key
+    world_date_obj = world_clock.world_date_for_date(end_date_key)
+    world_month_name = world_clock.calendar.month_names[world_date_obj.month - 1] if world_date_obj else world_date_label
+    world_window_start_label = world_clock.format_world_date(dossier["window"]["start_date"]) or dossier["window"]["start_date"]
+    world_window_end_label = world_clock.format_world_date(dossier["window"]["end_date"]) or dossier["window"]["end_date"]
+    world_window_label = f"{world_window_start_label} -> {world_window_end_label}"
     api_key = (os.environ.get("ANTHROPIC_API_KEY") or "").strip()
 
     if api_key:
         try:
-            chronicle_core = _call_model(_build_prompt(end_date_key, issue_number, dossier), api_key)
+            chronicle_core = _call_model(_build_prompt(end_date_key, issue_number, dossier, world_date_label, world_window_label), api_key)
+            chronicle_core = _sanitize_chronicle_temporal_language(chronicle_core, world_date_label, world_month_name)
             model_name = MODEL
         except Exception as exc:
             if not ALLOW_FALLBACK:
                 raise
             print(f"WARNING: Chronicle synthesis failed; using fallback summary: {exc}", file=sys.stderr)
-            chronicle_core = _fallback_entry(end_date_key, issue_number, dossier)
+            chronicle_core = _fallback_entry(end_date_key, issue_number, dossier, world_date_label)
             model_name = chronicle_core.get("model") or "fallback-v1"
     else:
         if not ALLOW_FALLBACK:
             raise SystemExit("ERROR: ANTHROPIC_API_KEY is required to build the chronicle.")
-        chronicle_core = _fallback_entry(end_date_key, issue_number, dossier)
+        chronicle_core = _fallback_entry(end_date_key, issue_number, dossier, world_date_label)
         model_name = chronicle_core.get("model") or "fallback-v1"
 
     entry = {
         "date": end_date_key,
+        "world_date": world_date_label,
         "issue_number": issue_number,
         "window_start": dossier["window"]["start_date"],
+        "world_window_start": world_window_start_label,
         "window_end": dossier["window"]["end_date"],
+        "world_window_end": world_window_end_label,
         "generated_at": _now_iso(),
         "model": model_name,
         "title": str(chronicle_core.get("title") or f"Chronicle of Issue {issue_number:03d}" if isinstance(issue_number, int) else f"Chronicle of {end_date_key}").strip(),

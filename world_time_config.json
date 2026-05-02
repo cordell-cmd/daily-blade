@@ -1,3 +1,36 @@
 {
-  "world_days_per_issue": 10
+  "world_days_per_issue": 10,
+  "calendar": {
+    "era": "AE",
+    "anchor_real_date": "2026-02-25",
+    "anchor_world_date": {
+      "year": 472,
+      "month": 1,
+      "day": 1
+    },
+    "month_names": [
+      "Frostwane",
+      "Thawrise",
+      "Rainmoot",
+      "Bloomtide",
+      "Highsun",
+      "Goldwane",
+      "Emberturn",
+      "Harvestmere",
+      "Redfall",
+      "Mistmere",
+      "Longnight",
+      "Dawnbreak"
+    ],
+    "month_lengths": [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+    "weekday_names": [
+      "Crown's Day",
+      "Forge Day",
+      "Tide Day",
+      "Market Day",
+      "Hearth Day",
+      "Saints' Day",
+      "Ash Day"
+    ]
+  }
 }

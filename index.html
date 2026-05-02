@@ -1383,6 +1383,19 @@ const STORY_DAY_CACHE = new Map();
 let STORY_MODAL_APPEARANCES = [];
 let STORY_MODAL_INDEX = 0;
 
+const WORLD_CALENDAR = {
+  worldDaysPerIssue: 10,
+  anchorIssueNumber: 1,
+  anchorWorldYear: 472,
+  anchorWorldMonth: 1,
+  anchorWorldDay: 1,
+  era: 'AE',
+  monthNames: ['Frostwane', 'Thawrise', 'Rainmoot', 'Bloomtide', 'Highsun', 'Goldwane', 'Emberturn', 'Harvestmere', 'Redfall', 'Mistmere', 'Longnight', 'Dawnbreak'],
+  monthLengths: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+};
+const GREGORIAN_MONTH_RE = /\b(january|february|march|april|may|june|july|august|september|october|november|december)\b/ig;
+const GREGORIAN_MONTH_PHRASE_RE = /\b(early|mid|late)\s+(january|february|march|april|may|june|july|august|september|october|november|december)\b/ig;
+
 // ── Helpers ─────────────────────────────────────────────────────────
 function todayStr() { return new Date().toISOString().slice(0, 10); }
 function formatDate(isoStr) {
@@ -1399,6 +1412,67 @@ function formatDateTime(isoStr) {
     hour: 'numeric',
     minute: '2-digit',
   });
+}
+function worldDateFromIssueNumber(issueNumber) {
+  const parsedIssue = Number.parseInt(issueNumber, 10);
+  if (!Number.isInteger(parsedIssue) || parsedIssue < 1) return null;
+  const cfg = WORLD_CALENDAR;
+  const daysPerYear = cfg.monthLengths.reduce((sum, value) => sum + value, 0);
+  const anchorDayOfYear = cfg.monthLengths.slice(0, Math.max(0, cfg.anchorWorldMonth - 1)).reduce((sum, value) => sum + value, 0) + cfg.anchorWorldDay;
+  let ordinal = (anchorDayOfYear - 1) + ((parsedIssue - cfg.anchorIssueNumber) * cfg.worldDaysPerIssue);
+  if (!Number.isFinite(ordinal) || ordinal < 0) ordinal = 0;
+  const yearOffset = Math.floor(ordinal / daysPerYear);
+  let dayOffset = ordinal % daysPerYear;
+  let month = 1;
+  for (let idx = 0; idx < cfg.monthLengths.length; idx += 1) {
+    const monthLength = cfg.monthLengths[idx];
+    if (dayOffset < monthLength) {
+      month = idx + 1;
+      break;
+    }
+    dayOffset -= monthLength;
+  }
+  const day = dayOffset + 1;
+  const monthName = cfg.monthNames[month - 1] || 'Unknown';
+  const year = cfg.anchorWorldYear + yearOffset;
+  return {
+    year,
+    month,
+    day,
+    monthName,
+    label: `${day} ${monthName} ${year} ${cfg.era}`.trim(),
+  };
+}
+function replaceChronicleGregorianMonths(text, worldMonthName) {
+  const raw = String(text || '');
+  if (!worldMonthName) return raw;
+  return raw
+    .replace(GREGORIAN_MONTH_PHRASE_RE, (_, prefix) => `${prefix} ${worldMonthName}`)
+    .replace(GREGORIAN_MONTH_RE, worldMonthName);
+}
+function chronicleWorldDate(entry) {
+  if (entry && entry.world_date) {
+    const raw = String(entry.world_date || '').trim();
+    const parts = raw.split(/\s+/);
+    return {
+      label: raw,
+      monthName: parts.length >= 2 ? parts[1] : '',
+    };
+  }
+  return worldDateFromIssueNumber(entry && entry.issue_number);
+}
+function chronicleWorldWindowText(entry) {
+  if (entry && entry.world_window_start && entry.world_window_end) {
+    return `${entry.world_window_start} → ${entry.world_window_end}`;
+  }
+  const issueNumber = Number.parseInt(entry && entry.issue_number, 10);
+  const issueCount = Number.parseInt(entry && entry.input_stats && entry.input_stats.issue_count, 10);
+  if (Number.isInteger(issueNumber) && issueNumber > 0 && Number.isInteger(issueCount) && issueCount > 0) {
+    const start = worldDateFromIssueNumber(Math.max(1, issueNumber - issueCount + 1));
+    const end = worldDateFromIssueNumber(issueNumber);
+    if (start && end) return `${start.label} → ${end.label}`;
+  }
+  return entry && entry.window_start && entry.window_end ? `${formatDate(entry.window_start)} → ${formatDate(entry.window_end)}` : 'Window unavailable';
 }
 function stripControlChars(str) {
   // Remove non-printable control characters that can render as tofu/rectangles.
@@ -5066,18 +5140,23 @@ async function resolveChronicleEntry(data, entryRef, force = false) {
 
 function renderChronicleOverview(entry) {
   const issue = Number.isFinite(Number(entry.issue_number)) ? `Issue ${String(entry.issue_number).padStart(3, '0')}` : 'Chronicle';
-  const windowText = entry.window_start && entry.window_end ? `${formatDate(entry.window_start)} → ${formatDate(entry.window_end)}` : 'Window unavailable';
-  const paragraphs = String(entry.chronicle || '').split(/\n\n+/).map(s => s.trim()).filter(Boolean);
-  const currentState = Array.isArray(entry.current_state) ? entry.current_state : [];
-  const threads = Array.isArray(entry.ongoing_threads) ? entry.ongoing_threads : [];
+  const worldDate = chronicleWorldDate(entry);
+  const dateText = worldDate && worldDate.label ? worldDate.label : (entry && entry.date ? formatDate(entry.date) : 'Unknown date');
+  const windowText = chronicleWorldWindowText(entry);
+  const monthName = worldDate && worldDate.monthName ? worldDate.monthName : '';
+  const titleText = monthName ? replaceChronicleGregorianMonths(entry.title || 'World Chronicle', monthName) : String(entry.title || 'World Chronicle');
+  const dekText = monthName ? replaceChronicleGregorianMonths(entry.dek || '', monthName) : String(entry.dek || '');
+  const paragraphs = String(entry.chronicle || '').split(/\n\n+/).map(s => (monthName ? replaceChronicleGregorianMonths(s.trim(), monthName) : s.trim())).filter(Boolean);
+  const currentState = Array.isArray(entry.current_state) ? entry.current_state.map((item) => monthName ? replaceChronicleGregorianMonths(item, monthName) : item) : [];
+  const threads = Array.isArray(entry.ongoing_threads) ? entry.ongoing_threads.map((item) => monthName ? replaceChronicleGregorianMonths(item, monthName) : item) : [];
   const stats = entry.input_stats && typeof entry.input_stats === 'object' ? entry.input_stats : {};
   return `
     <div class="chronicle-card">
-      <div class="chronicle-title">${escHtml(entry.title || 'World Chronicle')}</div>
-      ${entry.dek ? `<div class="chronicle-dek">${escHtml(entry.dek)}</div>` : ''}
+      <div class="chronicle-title">${escHtml(titleText)}</div>
+      ${dekText ? `<div class="chronicle-dek">${escHtml(dekText)}</div>` : ''}
       <div class="chronicle-meta">
         ${chronicleBadge('badge-role', issue)}
-        ${chronicleBadge('badge-status-default', entry.date ? formatDate(entry.date) : 'Unknown date')}
+        ${chronicleBadge('badge-status-default', dateText)}
         ${chronicleBadge('badge-status-default', windowText)}
         ${entry.model ? chronicleBadge('badge-status-default', `Model ${entry.model}`) : ''}
         ${stats.selected_entities ? chronicleBadge('badge-status-default', `${stats.selected_entities} ranked entities`) : ''}

@@ -22,6 +22,7 @@ from backfill_character_temporal import refresh_character_temporal
 from build_alliances import refresh_alliances
 from build_lineages import refresh_lineages
 from simulate_character_lifecycle import simulate_lifecycle
+from world_time import build_world_clock
 from world_state import sync_world_state_from_codex_and_stories
 
 
@@ -722,7 +723,7 @@ def _sample_candidates(items, k: int, seed_text: str, salt: str):
     return rng.sample(items, k=k)
 
 
-def build_reuse_plan_prompt(today_str, lore, candidates_by_category):
+def build_reuse_plan_prompt(today_str, world_date_label, lore, candidates_by_category):
     """Ask the model whether to reuse canon today, and if so pick from provided candidates."""
     world = lore.get("worlds", [{}])[0] if lore.get("worlds") else {}
     rules = world.get("rules", []) if isinstance(world.get("rules", []), list) else []
@@ -748,7 +749,8 @@ def build_reuse_plan_prompt(today_str, lore, candidates_by_category):
 
     return f"""You are planning today's issue of an ongoing sword-and-sorcery universe.
 
-Today's date: {today_str}
+Archive date: {today_str}
+World date in Edhra: {world_date_label}
 
 Canon rules:
 {rules_block}
@@ -2504,7 +2506,7 @@ def build_world_event_arcs_section(today_str: str, lore: dict, event_arc_dossier
     return "\n".join(lines).strip()
 
 # ── Story generation prompt ──────────────────────────────────────────────
-def build_prompt(today_str, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None, codex_balance=None, reused_character_temporal=None):
+def build_prompt(today_str, world_date_label, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None, codex_balance=None, reused_character_temporal=None):
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     reused_entries = reused_entries or {}
     reuse_details = reuse_details or {}
@@ -2624,7 +2626,9 @@ ORIGINALITY / COPYRIGHT SAFETY:
 - Do NOT use or reference recognizable copyrighted names or specific settings from existing works (e.g., no Gandalf, no Middle-earth, etc.).
 - Generic fantasy archetypes are fine (wizards, dragons, elves, dwarves, etc.), but names and particulars must be newly invented.
 
-Today's date is {today_str}. Use this as subtle creative inspiration if you like.
+Archive date is {today_str}. Use it only as an out-of-world production label.
+The in-world Edhran date is {world_date_label}.
+- Any in-world temporal reference must use the Edhran calendar date above, never Gregorian months, weekdays, or real-world calendar names.
 {lore_section}
 {geo_section}
 {codex_balance_section}
@@ -3333,6 +3337,7 @@ def build_lore_extraction_prompt(stories, existing_lore, codex_balance=None):
             "than", "that", "the", "their", "then", "there", "these", "they", "this",
             "those", "three", "to", "too", "two", "under", "up", "upon", "was", "we",
             "were", "what", "when", "who", "why", "will", "with", "you", "your",
+            "above", "below",
         }
         # Allow multi-word titles like "High Magistrate" (don’t stopword-filter phrases).
         bad_single = {
@@ -3499,6 +3504,7 @@ Coverage checklist (per story):
 - If a story refers to a governing institution ("the Crown", "the Throne", "the Regency", "the Council"), capture it as a Polity tied to a realm/seat.
 - Do NOT classify a realm's rulership institution as a Faction unless it is explicitly a distinct factional group.
 - Ensure each named thing is represented in at least one output category.
+- Do NOT treat sentence-start directional or positional words like "Above" or "Below" as entities unless the story clearly establishes them as proper nouns.
 - Treat patterns like "X of Y" and "The X of Y" as likely names; include them when they read like a title, place, or event.
 - Treat important objects described as "the <object> of <ProperName>" (even if <object> is lowercase) as named artifacts/relics and include them (e.g., "the idol of Khar-Zul").
 - Be especially careful not to miss storied weapons: named blades, spears, bows, axes, hammers, knives, or similar arms with history, titles, curses, prior wielders, or famous battles attached.
@@ -6302,13 +6308,15 @@ Here is the prior response (verbatim):
 """
 
 
-def build_missing_stories_prompt(today_str: str, lore: dict, missing: int, existing_titles=None, event_arc_dossiers=None) -> str:
+def build_missing_stories_prompt(today_str: str, world_date_label: str, lore: dict, missing: int, existing_titles=None, event_arc_dossiers=None) -> str:
     existing_titles = existing_titles or []
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
     avoid = "\n".join(f"- {t}" for t in existing_titles if t)
     avoid_section = f"\nDo not reuse these existing titles:\n{avoid}\n" if avoid else ""
     return f"""Generate {int(missing)} additional sword-and-sorcery stories for the issue dated {today_str}.
+
+The in-world Edhran date is {world_date_label}. Use only that calendar for any temporal references inside the stories; never use Gregorian month or weekday names.
 
 Format rules:
 - Output ONLY valid JSON.
@@ -6326,6 +6334,7 @@ Existing lore context (use as inspiration; do not contradict):
 def extend_with_missing_story_batches(
     client,
     today_str: str,
+    world_date_label: str,
     lore: dict,
     stories: list[dict],
     event_arc_dossiers=None,
@@ -6360,6 +6369,7 @@ def extend_with_missing_story_batches(
                     "role": "user",
                     "content": build_missing_stories_prompt(
                         today_str,
+                        world_date_label,
                         lore,
                         request_n,
                         existing_titles=existing_titles,
@@ -7347,6 +7357,8 @@ def main():
     issue_now = _issue_now()
     today_str = issue_now.strftime("%B %d, %Y")
     date_key = issue_now.strftime("%Y-%m-%d")
+    world_clock = build_world_clock()
+    world_date_label = world_clock.format_world_date(date_key) or date_key
     print(f"Generating stories for {date_key} (tz={ISSUE_TIMEZONE})...")
 
     if _already_generated_for_date(date_key) and not _truthy_env("FORCE_REGENERATE"):
@@ -7406,7 +7418,7 @@ def main():
             plan_msg = client.messages.create(
                 model=MODEL,
                 max_tokens=1024,
-                messages=[{"role": "user", "content": build_reuse_plan_prompt(today_str, lore, candidates_by_cat)}],
+                messages=[{"role": "user", "content": build_reuse_plan_prompt(today_str, world_date_label, lore, candidates_by_cat)}],
             )
             plan_raw = plan_msg.content[0].text.strip()
             try:
@@ -7548,7 +7560,7 @@ def main():
     message = client.messages.create(
         model=MODEL,
         max_tokens=4096,
-        messages=[{"role": "user", "content": build_prompt(today_str, lore, reused_entries=reused_entries, reuse_details=reuse_details, event_arc_dossiers=event_arc_dossiers, codex_balance=codex_balance, reused_character_temporal=reused_character_temporal)}]
+        messages=[{"role": "user", "content": build_prompt(today_str, world_date_label, lore, reused_entries=reused_entries, reuse_details=reuse_details, event_arc_dossiers=event_arc_dossiers, codex_balance=codex_balance, reused_character_temporal=reused_character_temporal)}]
     )
     raw = message.content[0].text.strip()
     try:
@@ -7596,6 +7608,7 @@ def main():
         stories = extend_with_missing_story_batches(
             client,
             today_str,
+            world_date_label,
             lore,
             stories,
             event_arc_dossiers=event_arc_dossiers,
