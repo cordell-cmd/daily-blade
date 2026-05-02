@@ -84,7 +84,8 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 .controls-left-wrap { display: flex; flex-direction: column; gap: .15rem; min-width: 0; }
 .controls-left { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .72rem; letter-spacing: .2em; color: var(--gold); text-transform: uppercase; }
 .controls-left-sub { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(201,146,42,.68); display: none; }
-.controls-right { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; justify-content: flex-end; }
+.controls-right { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; justify-content: flex-end; min-width: 0; }
+.controls-right > * { min-width: 0; max-width: 100%; }
 
 .codex-organize-label { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(201,146,42,.65); }
 .codex-organize-select {
@@ -106,6 +107,11 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
   background-repeat: no-repeat;
   background-position: right .55rem center;
   background-size: 1rem;
+  min-width: 0;
+  max-width: min(100%, 24rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .codex-organize-select:focus { border-color: rgba(201,146,42,.75); box-shadow: 0 0 0 2px rgba(201,146,42,.12); }
 .codex-organize-select option { background: #120803; color: var(--gold); }
@@ -223,7 +229,7 @@ body::before { content: ''; position: fixed; inset: 0; background-image: url("da
 
 /* ── Character Cards ───────────────────────────────────────────── */
 .char-card { background: linear-gradient(160deg, #1b0c05 0%, #110904 100%); border: 1px solid rgba(201,146,42,.3); border-top: 3px solid var(--darkgold); }
-.badge { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 2px; white-space: nowrap; background: rgba(0,0,0,.18); border: 1px solid rgba(201,146,42,.22); color: rgba(226,208,168,.9); }
+.badge { font-family: 'Cinzel', "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", serif; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase; padding: .18rem .5rem; border-radius: 2px; white-space: nowrap; background: rgba(0,0,0,.18); border: 1px solid rgba(201,146,42,.22); color: rgba(226,208,168,.9); max-width: 100%; }
 .badge-role { background: rgba(201,146,42,.15); border: 1px solid rgba(201,146,42,.4); color: var(--gold); }
 .badge-status-active { background: rgba(30,80,30,.3); border: 1px solid #3a8a3a; color: #6dbb6d; }
 .badge-status-dead { background: rgba(80,10,10,.3); border: 1px solid #8b1a1a; color: #c96060; }
@@ -517,6 +523,8 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
   border-radius: 2px;
   outline: none;
   min-width: 12rem;
+  width: min(100%, 20rem);
+  max-width: 100%;
 }
 .text-input::placeholder { color: rgba(201,146,42,.5); text-transform: none; letter-spacing: .04em; }
 .text-input:focus { border-color: rgba(201,146,42,.75); box-shadow: 0 0 0 2px rgba(201,146,42,.12); }
@@ -573,6 +581,32 @@ footer a:hover { color: var(--parchment); border-bottom-color: var(--gold); }
 .chronicle-story-title { font-family: 'Cinzel', serif; font-size: .88rem; color: var(--gold); letter-spacing: .04em; }
 .chronicle-story-summary { color: var(--aged); font-size: .84rem; line-height: 1.65; margin-top: .35rem; }
 .chronicle-empty { text-align: center; color: var(--muted); font-style: italic; padding: 2rem 1rem; }
+
+@media (max-width: 620px) {
+  .page-wrap { padding: 0 1rem 3rem; }
+  .controls { align-items: flex-start; }
+  .controls-left,
+  .controls-left-sub { letter-spacing: .16em; }
+  .controls-right { width: 100%; justify-content: flex-start; gap: .45rem; }
+  .controls-right .codex-organize-label { flex: 0 0 100%; }
+  .controls-right .codex-organize-select,
+  .controls-right .text-input,
+  .controls-right .btn { flex: 1 1 100%; width: 100%; max-width: 100%; }
+  .btn,
+  .genre-btn,
+  .codex-filter-btn,
+  .chronicle-mode-btn,
+  .map-control-btn,
+  .badge { white-space: normal; }
+  .badge { line-height: 1.35; overflow-wrap: anywhere; word-break: break-word; }
+  .chronicle-header h2,
+  .world-events-header h2,
+  .map-header h2 { font-size: 1.28rem; letter-spacing: .08em; }
+  .chronicle-card,
+  .chronicle-story-card { padding: 1rem; }
+  .chronicle-title { font-size: 1.15rem; }
+  .chronicle-grid { grid-template-columns: 1fr; }
+}
 
 @media (min-width: 980px) {
   .chronicle-body { grid-template-columns: minmax(0, 1.5fr) minmax(280px, .9fr); align-items: start; }
