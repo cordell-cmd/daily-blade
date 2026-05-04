@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-05-03",
+  "last_updated": "2026-05-04",
   "worlds": [
     {
       "id": "known_world",
@@ -94,12 +94,12 @@
       ],
       "first_story": "Blood-Price of the Caravan",
       "first_date": "2026-02-25",
-      "appearances": 7,
+      "appearances": 8,
       "notes": "A man without a shadow wandering the Known World. His fate may have interesting consequences.\nAldric remains shadow-stolen but is now curse-free. His daughter Mira has become the new bearer of lock-curse magic.\nAldric appears in 'The Wanderer's Mirror' as a scholar documenting the Wayfarer's riddles across the Burned Expanse\u2014a prequel or alternate timeline appearance, as canon Aldric is shadow-stolen and confined to known locations (Ashen Wastes, Pelimor). No status change warranted; travel_scope already reflects broader movements.",
       "travel_scope": "local",
       "home_place": "Archive Tower",
-      "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_region": "The Scorched Reach",
+      "home_realm": "Dominion",
       "hemisphere": "unknown",
       "continent": "unknown",
       "realm": "unknown",
@@ -481,7 +481,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 13,
+      "appearances": 14,
       "aliases": [
         "Kael"
       ]
@@ -1102,7 +1102,7 @@
       "notes": "The source and nature of Malachar's power is unclear. The collectors act as his autonomous agents centuries after his death, suggesting either a powerful binding curse or continuing consciousness. The gold's origins and how many pieces exist is unknown.\nStory is set in Malachar's living past, pre-lich transformation. Canon status (dead) remains unchanged.",
       "first_story": "The Lich-King's Collectors",
       "first_date": "2026-02-28",
-      "appearances": 3,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-04-07",
@@ -1391,7 +1391,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 69
+      "appearances": 70
     },
     {
       "id": "mardoc_cartographer",
@@ -3175,7 +3175,7 @@
       "notes": "Nerys is preparing the sea-folk to respond to whatever demands the cosmic renewal may trigger. Her search for the Astronomer-Prince parallels the hermit woman's quest.",
       "first_story": "The Merfolk's Remembrance",
       "first_date": "2026-03-03",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "the_sorcerer",
@@ -4800,7 +4800,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 56
+      "appearances": 57
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -5094,7 +5094,7 @@
       "notes": "Each recovered memory requires sacrificing another fragment's perspective. Identity itself is the central metaphor. Must choose which memories to keep and which to sacrifice. Stability draws closer to Ancient Tombs.\nWanderer/Zareth is approaching a critical junction: reconstituting full identity risks triggering catastrophic counter-working against the new stars. Currently sustained by fragmented memory recovery from witnesses.",
       "first_story": "The Wanderer's Fragment",
       "first_date": "2026-03-08",
-      "appearances": 57,
+      "appearances": 59,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -5266,7 +5266,8 @@
       ],
       "notes": "Her discovery suggests spice trade routes have become vectors for transformation; broader implications for commerce and consciousness remain unclear.",
       "first_date": "2026-03-09",
-      "appearances": 1
+      "appearances": 2,
+      "first_story": "The Cartographer's Fracture"
     },
     {
       "id": "kess_bone_singer",
@@ -5645,7 +5646,9 @@
     {
       "id": "thode",
       "name": "Thode",
-      "aliases": [],
+      "aliases": [
+        "Caravan Master Thode"
+      ],
       "tagline": "Bureaucrat. Conflicted. Mercy-torn.",
       "role": "Caravan Master",
       "world": "Edhra",
@@ -5672,7 +5675,7 @@
       "notes": "His choice between silence and mercy will echo the larger fracture tearing the Empire apart.",
       "first_story": "The Refugee's Burden",
       "first_date": "2026-03-10",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "iskar_spice_merchant",
@@ -8245,7 +8248,7 @@
       "status": "active",
       "home_place": "Whitecross waystation",
       "home_region": "Pelimor",
-      "home_realm": "unknown",
+      "home_realm": "Dominion",
       "travel_scope": "regional",
       "bio": "A scribe who fled the Scorched Expanse with nothing but her clothes and a half-filled journal. In the chaos following the Starborn Ascension, she arrives at Whitecross waystation and begins documenting refugee names the official ledgers erase, hidden beneath merchant inventories.",
       "traits": [
@@ -8265,7 +8268,7 @@
       "notes": "She understands that ledgers become prophecy and prophecy becomes a weapon. Her hidden list is an act of remembrance and quiet resistance.",
       "first_story": "The Refugee's Ledger",
       "first_date": "2026-03-17",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "auditor_sevin",
@@ -10079,7 +10082,7 @@
       "notes": "The phantom ledger's rewriting suggests agency in the record itself, or an external force rewriting futures. Aldwyn's choice will determine whether truth or survival takes precedence in the Radiant Rising's wake.",
       "first_story": "The Ledger of Ash and Ember",
       "first_date": "2026-03-22",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "kalris_the_forger",
@@ -10407,7 +10410,7 @@
       "notes": "Her spoken-spell archive followed soldiers home and made them forget their orders. Living memory proved stronger than written law.",
       "first_story": "The Refugee-Scribe's Archive",
       "first_date": "2026-03-23",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "tornas",
@@ -10577,7 +10580,9 @@
     {
       "id": "sorren_grain_singer",
       "name": "Sorren",
-      "aliases": [],
+      "aliases": [
+        "grain-singer"
+      ],
       "tagline": "Young. Haunted. Convergent.",
       "role": "Grain-singer, memory-worker",
       "world": "Edhra",
@@ -10606,7 +10611,7 @@
       "notes": "The Wayfarer's final question haunts her: 'What is the difference between singing something into being and remembering it was never lost?' She has opened a convergence point toward the Tower.",
       "first_story": "The Grain-Singer's Gambit",
       "first_date": "2026-03-24",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "henryk_apprentice",
@@ -11822,7 +11827,7 @@
       "notes": "Their choice ripples across the Scorched Expanse, affecting refugee camps and bone-singer covens.\nLysander confronts the philosophical horror that his echoes are equally real and conscious. His status remains active; the threat is multiplication, not death.\nStory 'The Spire-Merchant's Ascension' shows Lysander beginning transcendence despite Wanderer's stalling, becoming luminous bridge between old and new stars. If transcendence completes, he may mediate Rising reversal; if he surrenders to Wanderer's questions, he accepts eternal liminality. Central conflict mirrors broader Spire/Wanderer struggle.",
       "first_story": "The Transformed Merchant's Choice",
       "first_date": "2026-03-27",
-      "appearances": 9,
+      "appearances": 10,
       "status_history": [
         {
           "date": "2026-04-07",
@@ -12567,7 +12572,7 @@
       "notes": "The phantom-voice of Nethys's scattered consciousness watches and studies Dren's communion with the newly conscious dead. Major unresolved: will Dren complete the burial or allow transcendence?\nCanon Dren is a bone-singer in the Sunken Cathedrals (2026-03-31). This story appears to show her ultimate fate: transformation into an eternal chorus-voice dwelling in the deep places, no longer fully living but preserved as ancestral song.\nDren's journey toward the Tower represents a critical narrative turn: the undead bone-singer is no longer a keeper of the dead but an active agent in the Tower's agenda. Her teaching of bone-songs to survivors positions her as a bridge between preservation and transformation.",
       "first_story": "The Bone-Singer's Vigil",
       "first_date": "2026-03-31",
-      "appearances": 11,
+      "appearances": 12,
       "status_history": [
         {
           "date": "2026-04-08",
@@ -13518,7 +13523,7 @@
       "notes": "Her cavern is filled with star fragments that hum in harmonic resonance, each note a memory of the old cosmos; she eventually chooses to share her treasures with the world.\nVrekka's shift from hoarding material wealth (per canon) to pursuing consciousness and meaning represents escalation of her existential crisis post-Emergence.",
       "first_story": "The Wyvern's Nest-Egg",
       "first_date": "2026-04-04",
-      "appearances": 4,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-04-22",
@@ -14766,7 +14771,7 @@
       "notes": "Undergoes the binding ritual. The cost of survival is learning to share his mind with something ancient. Hunted by Monitors who fear powerful consciousness.",
       "first_story": "The Echoing Debt",
       "first_date": "2026-04-07",
-      "appearances": 4
+      "appearances": 6
     },
     {
       "id": "fragment_entity",
@@ -16207,9 +16212,9 @@
       "role": "Thief, Outlaw",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Anthrim",
       "home_region": "The Hearthlands, The Iron Coast",
-      "home_realm": "unknown",
+      "home_realm": "The Dominion",
       "travel_scope": "regional",
       "bio": "Korvin has stolen from every crown between the Hearthlands and the Iron Coast. He broke into the temple of Vesh in Pelimor's Old Market Quarter seeking the Flame-Eyed Scepter. Confronted by a priestess with foreknowledge of his crime, he chose to refuse the curse's wager and walked away empty-handed\u2014keeping only the memory of what he might have become.",
       "traits": [
@@ -16231,7 +16236,7 @@
       "notes": "The priestess's warning suggests Vesh is a god who actively punishes thieves through personal loss. Korvin's refusal to accept the wager is framed as genuine wisdom, not cowardice\u2014a rare moment of victory through restraint.",
       "first_story": "The Thief-Lord's Last Wager",
       "first_date": "2026-04-13",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "vesh",
@@ -16736,7 +16741,9 @@
     {
       "id": "corthin",
       "name": "Corthin",
-      "aliases": [],
+      "aliases": [
+        "spice trader"
+      ],
       "tagline": "Merchant. Transcendent. Frozen.",
       "role": "Merchant, Student of the Elder Tongue",
       "world": "Edhra",
@@ -16764,7 +16771,7 @@
       "notes": "His stasis is affecting the other sixteen merchants. His human form is beginning to consume itself. He must choose: break free (risking dissolution), reject transcendence (scarring group harmony), or find incomplete transformation.",
       "first_story": "The Merchant's Transcendence Stalls",
       "first_date": "2026-04-14",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "ashen_wastes",
@@ -17367,7 +17374,7 @@
       "notes": "His decision between delivering the stone or destroying it remains unresolved. The epithet 'Copper-Handed' is unexplained in the story.",
       "first_story": "The Wasting Song",
       "first_date": "2026-04-17",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "apprentice_deepkin",
@@ -18437,7 +18444,7 @@
       "role": "Wyvern War-band Leader",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Ironspine Mountains",
       "home_region": "Burned Expanse",
       "home_realm": "unknown",
       "travel_scope": "regional",
@@ -18457,7 +18464,7 @@
       "notes": "Leads hunt for transformed merchants; represents challenge to Soressa's authority.",
       "first_story": "The Wyvern's New Hunger",
       "first_date": "2026-04-21",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "wystan_apprentice",
@@ -19268,7 +19275,7 @@
       "notes": "Her hunger for a new form of wealth\u2014whatever emerges from transmuted merchant transcendence\u2014reveals deeper cosmic hunger. The Obsidian Tower also hungers for transmuted merchants, suggesting dangerous rivalry.",
       "first_story": "The Wyvern's Worthless Gold",
       "first_date": "2026-04-24",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "hermitage_priest_deceased",
@@ -19369,7 +19376,7 @@
       "notes": "Naela's radical solution\u2014a hybrid tongue\u2014suggests that corruption can be incorporated rather than resisted. The effectiveness of 'broken' speech raises questions about purity and power in magic.\nStory 'The Bone-Singer's Breaking Voice' shows Naela developing new song-form independent of pre-human dead; melody emerges from living memory instead, producing resonance that acknowledges fragility and asks forgiveness.",
       "first_story": "The Bone-Singer's Refusal",
       "first_date": "2026-04-24",
-      "appearances": 5
+      "appearances": 7
     },
     {
       "id": "mirror_kess",
@@ -21306,7 +21313,7 @@
       "notes": "His rebellion against the Counter-Archive's restrictions inadvertently jeopardizes the merchants' transcendence. His true motivations\u2014whether archival, rebellious, or experimental\u2014are not fully revealed. Valern's choice hinges on his mentor's actions.",
       "first_story": "The Bone-Singer's Apprentice",
       "first_date": "2026-05-01",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "lenna_cartographer",
@@ -21380,7 +21387,7 @@
       "role": "Wyvern Lord",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Ironspine Mountains",
       "home_region": "unknown",
       "home_realm": "unknown",
       "travel_scope": "regional",
@@ -21400,7 +21407,7 @@
       "notes": "Central tension: Sethrak's realization that the Tower may recognize him as one of its architects. What role did he play in its creation?",
       "first_story": "The Wyvern's Hunger Returns",
       "first_date": "2026-05-01",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "asha",
@@ -21433,7 +21440,7 @@
       "notes": "Central tension: Can Asha stabilize her archive before it escapes her control? What does it mean for the archive to become prophecy?",
       "first_story": "The Refugee's Counter-Ledger",
       "first_date": "2026-05-01",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "commander_thella",
@@ -21862,6 +21869,153 @@
       "notes": "Auto-added because the story explicitly names this character.",
       "first_story": "The Auditor's Forbidden Copy",
       "first_date": "2026-05-03",
+      "appearances": 1
+    },
+    {
+      "id": "kess_ledger_keeper",
+      "name": "Kess the Ledger-Keeper",
+      "aliases": [
+        "Kess",
+        "Thief-Queen"
+      ],
+      "tagline": "Shadow-worn. Ruthless. Revolutionary.",
+      "role": "Thief-Queen, Shadow-Market Reformer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Greyport",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Kess spent twenty years as a thief before claiming the shadow-markets of Greyport's Saltward docks through blackmail and fire. She uses stolen Dominion ledgers as leverage to unite the dock-lords under her rule, then redistributes their hoarded wealth to refugee families. She recruits Kaelen, a rival thief, as her partner in transforming shadow-commerce into a system that feeds rather than starves.",
+      "traits": [
+        "cunning",
+        "ruthless",
+        "visionary",
+        "pragmatic"
+      ],
+      "known_locations": [
+        "Greyport",
+        "Saltward",
+        "Saltward south pier"
+      ],
+      "affiliations": [
+        "Kaelen",
+        "refugee families of Greyport",
+        "shadow-markets"
+      ],
+      "notes": "Transforms from villain to thief-queen through calculated mercy. Her ledger-based governance is a novel approach to rule through documented truth.",
+      "first_story": "The Thief-Queen's Gambit",
+      "first_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": "isra_transformed_merchant",
+      "name": "Isra",
+      "aliases": [],
+      "tagline": "Transcendent. Wavering. Trapped.",
+      "role": "Transformed Merchant / Ascendant",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Scorched Reach",
+      "home_region": "The Scorched Reach",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "One of the Seventeen Transformed Merchants at the caravansary of the Scorched Reach, caught between transcendence and mortal form. Her body flickers between translucent starlight and weathered flesh across fractured timelines. Unable to hear or comprehend Kess's bone-songs due to the pre-human dead's withdrawal of guidance.",
+      "traits": [
+        "liminal",
+        "transcendent",
+        "incomplete",
+        "suffering"
+      ],
+      "known_locations": [
+        "Scorched Reach",
+        "caravansary at the Scorched Reach"
+      ],
+      "affiliations": [
+        "Seventeen Transformed Merchants",
+        "Kess"
+      ],
+      "notes": "Isra's existence across multiple simultaneous states of being\u2014full transcendence, agonized incompleteness, and non-existence\u2014embodies the cost of the Wanderer's stasis-breaking.",
+      "first_story": "The Silence After Shattering",
+      "first_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": "auditor_unnamed",
+      "name": "young auditor",
+      "aliases": [],
+      "tagline": "Fearful. Helpful. Ambiguous.",
+      "role": "Auditor / Low-Rank Bureaucrat",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "The Hearthlands",
+      "home_realm": "Dominion",
+      "travel_scope": "local",
+      "bio": "An unnamed young auditor who approaches Kelven in fear, bearing a ledger marked in Malachar's name. Warns him not to ask questions at the Caravansary on day seven and advises trusting the Wanderer's silence to keep that stretch of road real.",
+      "traits": [
+        "fearful",
+        "knowing",
+        "helpful",
+        "conflicted"
+      ],
+      "known_locations": [
+        "Pale Crossing"
+      ],
+      "affiliations": [
+        "Dominion auditors",
+        "Malachar"
+      ],
+      "notes": "Suggests that some Dominion auditors are aware of and complicit in the fragmentation, and that knowledge of the Wanderer's silence is dangerous.",
+      "first_story": "The Spice-Runner's Last Gambit",
+      "first_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": "instead",
+      "name": "Instead",
+      "aliases": [
+        "deepkin captain offered something else",
+        "merchants find themselves *aware*"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Deepkin Captain Offered Something Else",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named deepkin captain offered something else explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Thief-Queen's Gambit",
+      "first_date": "2026-05-04",
+      "appearances": 1
+    },
+    {
+      "id": "yes",
+      "name": "Yes",
+      "aliases": [
+        "refugees who took different routes experienced different hardships"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Refugees Who Took Different Routes Experienced Different Hardships",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named refugees who took different routes experienced different hardships explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Cartographer's Fracture",
+      "first_date": "2026-05-04",
       "appearances": 1
     }
   ],
@@ -25028,7 +25182,7 @@
       "status": "active",
       "notes": "The site of the bone-singers' convergence and the beginning of the language-teaching that Kess must facilitate or break.",
       "first_date": "2026-03-25",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "wailing_scar",
@@ -27477,7 +27631,7 @@
       "status": "active",
       "notes": "The pre-human dead are no longer passive tools. They represent a collective agency that may be reshaping the world. What will emerge from their resurrection is unknown.",
       "first_date": "2026-03-14",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "the_faceless_wanderer_entity",
@@ -29126,6 +29280,19 @@
       "status": "active",
       "notes": "Kess uses her bone-knife to carve a hybrid language symbol into the cathedral floor, suggesting it is a tool of ritual inscription and binding magic.",
       "first_date": "2026-05-03",
+      "appearances": 1
+    },
+    {
+      "id": "elder_tongue",
+      "name": "Elder Tongue",
+      "tagline": "Ancient. Misunderstood. Binding.",
+      "artifact_type": "language / teaching",
+      "origin": "Pre-human civilization; taught to bone-singers through covenant.",
+      "powers": "The Elder Tongue creates harmonic patterns that can guide or bind consciousness during transformation. It is derived from the oldest carving-songs, which were traditionally used for binding rather than freeing. Its true function\u2014transcendence or binding\u2014is no longer understood even by those who teach it.",
+      "last_known_holder": "Bone-singers (specifically Dren and Naela at the Drowned Cathedrals)",
+      "status": "active but corrupted",
+      "notes": "The central ambiguity: the bone-singers do not know if they are teaching transcendence or binding. This uncertainty drives Naela's moral crisis and ultimate refusal.",
+      "first_date": "2026-05-04",
       "appearances": 1
     }
   ],
@@ -34588,7 +34755,7 @@
       "status": "active",
       "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
       "first_date": "2026-03-15",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "life_speakers",
@@ -37493,7 +37660,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 17
+      "appearances": 18
     },
     {
       "id": "wolf_spirit_beast",
@@ -37825,7 +37992,7 @@
       "status": "known",
       "notes": "The song of the Sunken Cathedrals creates harmonic resonance that offers relief to half-transformed beings like Corvus but also threatens complete transformation. Corvus's hybrid tongue introduces dissonance into this resonance.",
       "first_date": "2026-03-21",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "pre_human_frequency",
@@ -40175,7 +40342,7 @@
       "use": "Trade in night-markets; feeding to cosmic entities like the Obsidian Tower; accumulation as wealth.",
       "notes": "Consciousness-fragments represent the shift from material to metaphysical wealth; they retain agency and memory of their origin.",
       "first_date": "2026-04-27",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "phantom_truths_substance",
