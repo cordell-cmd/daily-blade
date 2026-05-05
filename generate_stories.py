@@ -6347,10 +6347,12 @@ def extend_with_missing_story_batches(
     """
     stories = list(stories or [])
     batch_size = max(1, int(os.environ.get("MISSING_STORY_BATCH_SIZE", "3") or 3))
-    max_passes = max(1, int(os.environ.get("MISSING_STORY_MAX_PASSES", "5") or 5))
+    max_passes = max(1, int(os.environ.get("MISSING_STORY_MAX_PASSES", "8") or 8))
+    max_idle_passes = max(1, int(os.environ.get("MISSING_STORY_MAX_IDLE_PASSES", "3") or 3))
     passes = 0
+    idle_passes = 0
 
-    while len(stories) < NUM_STORIES and passes < max_passes:
+    while len(stories) < NUM_STORIES and passes < max_passes and idle_passes < max_idle_passes:
         missing = NUM_STORIES - len(stories)
         request_n = min(missing, batch_size)
         existing_titles = [s.get("title") for s in stories if isinstance(s, dict)]
@@ -6383,6 +6385,7 @@ def extend_with_missing_story_batches(
         except Exception as e:
             print(f"WARNING: Extra-story batch failed: {e}", file=sys.stderr)
             passes += 1
+            idle_passes += 1
             continue
 
         new_stories = []
@@ -6400,10 +6403,12 @@ def extend_with_missing_story_batches(
         if not new_stories:
             print("WARNING: Extra-story batch returned no usable stories.", file=sys.stderr)
             passes += 1
+            idle_passes += 1
             continue
 
         stories.extend(new_stories)
         passes += 1
+        idle_passes = 0
 
     return stories
 
