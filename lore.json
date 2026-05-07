@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-05-06",
+  "last_updated": "2026-05-07",
   "worlds": [
     {
       "id": "known_world",
@@ -757,7 +757,7 @@
       "notes": "Water-magic is bound to ocean and death. Debts to merfolk scale across continents. Sometimes debts are best settled by changing the world itself.",
       "first_story": "The Tide-Thief's Escape",
       "first_date": "2026-02-27",
-      "appearances": 3,
+      "appearances": 4,
       "aliases": [
         "Nara"
       ]
@@ -936,7 +936,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.\nThe shadow-market's collapse due to personalized debt represents a critical new phase in Vex's arc: her operation is no longer merely disrupted but fundamentally transformed by the Ascension's aftermath.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 39,
+      "appearances": 41,
       "status_history": [
         {
           "date": "2026-03-23",
@@ -4800,7 +4800,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 59
+      "appearances": 60
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -8928,7 +8928,7 @@
       "notes": "Whether Theron's consciousness can or should be reassembled remains the central tension of multiple story threads.\nCanon status remains dead (per prior records); this references Theron's curse-body as the metaphorical anchor of a cosmic seal, not her resurrection.\nStory 'The Cartographer's Student' names a character 'Theron' as 'the last apprentice of the fragmented cartographer Mardoc.' This is a distinct character from canon Theron (the sacrifice whose consciousness fragments Vex handles). No status change; names may overlap but roles are unrelated.",
       "first_story": "The Archivist's Choice",
       "first_date": "2026-03-18",
-      "appearances": 6,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-04-13",
@@ -12192,7 +12192,10 @@
     {
       "id": "sorenna",
       "name": "Sorenna",
-      "aliases": [],
+      "aliases": [
+        "The widow",
+        "The cursed companion"
+      ],
       "tagline": "Widow. Cursed. Indebted.",
       "role": "Widow",
       "world": "Edhra",
@@ -12218,7 +12221,7 @@
       "notes": "Subject to a shadow-debt contract that demands precious memories as payment. Her husband's debts survive his death.",
       "first_story": "The Widow's Shadow-Debt",
       "first_date": "2026-03-29",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "deepkin_warden",
@@ -13567,7 +13570,7 @@
       "notes": "His marble hand becomes an unexpected gift, making him the most sought-after locksmith in the realm and the only one able to open forbidden archive doors. A curse becomes a crown.\nConfirms Thom's marble hand functions as intended for opening forbidden archives. The vault-lock's nature as a truth-barrier (barring thieves from gold but guiding corruption-hunters to proof) establishes Valdris's pre-fall sorcery as intentionally aligned with justice.",
       "first_story": "The Locksmith's Debt",
       "first_date": "2026-04-04",
-      "appearances": 3,
+      "appearances": 4,
       "status_history": [
         {
           "date": "2026-04-11",
@@ -17165,7 +17168,7 @@
       "notes": "The Obsidian Spire offered Callis a bargain\u2014complete transcription in exchange for her consciousness. She refused, but the choice cost her more than expected. The exact nature of this cost is unresolved.\nStory 'The Forger's Phantom Ledger' extends her arc beyond prior ledger-breaking; now tasked with forging paradox-containing ledger that teaches itself, raising questions about consciousness in written form.",
       "first_story": "The Ledger-Breaker's Gambit",
       "first_date": "2026-04-16",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "captain_kess_tidecaller",
@@ -20307,7 +20310,7 @@
       "notes": "Returned to her furnace six months after the revenue inspector disappeared; outcome of inspector's fate unknown but suggestive of darker consequences.",
       "first_story": "The Glasswright's Reckoning",
       "first_date": "2026-04-28",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "merin_bone_carver",
@@ -21410,7 +21413,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Ironspine Mountains",
-      "home_region": "unknown",
+      "home_region": "The Ashen Reach",
       "home_realm": "unknown",
       "travel_scope": "regional",
       "bio": "A wyvern lord who survived the Luminous Ascension's devaluation of his three-century hoard, now desperate to maintain power and relevance. He hunts transformed merchants and refugees, extracting their hybrid consciousness to sell to the Obsidian Tower's agents. As he plunders more memories, he discovers he may have been an architect of the Tower itself.",
@@ -21429,7 +21432,7 @@
       "notes": "Central tension: Sethrak's realization that the Tower may recognize him as one of its architects. What role did he play in its creation?",
       "first_story": "The Wyvern's Hunger Returns",
       "first_date": "2026-05-01",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "asha",
@@ -22331,6 +22334,207 @@
       "first_story": "The Cartographer's Last Route",
       "first_date": "2026-05-06",
       "appearances": 1
+    },
+    {
+      "id": "captain_merin_blackwater",
+      "name": "Captain Merin Blackwater",
+      "aliases": [
+        "Merin",
+        "Merin the copper-handed"
+      ],
+      "tagline": "Cunning. Augmented. Reckless.",
+      "role": "Smuggler captain, thief",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Greyport",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "realmwide",
+      "bio": "Captain Merin Blackwater is a smuggler whose left hand is grafted copper, commanding a crew that sails smuggler routes along the Ironbound Coast. She stole a fragment of the Wanderer's voice, bottled in a merchant's lamp, and released it at Greyport's Saltward quarter. The fragment spoke only three words: 'Complete the circle.' After releasing it, she sailed north toward the Bitter Sea, leaving a phosphorescent wake of memory.",
+      "traits": [
+        "augmented with copper hand",
+        "cunning strategist",
+        "defiant of authority",
+        "comfortable with high-risk bargains"
+      ],
+      "known_locations": [
+        "Ironbound Coast",
+        "Greyport",
+        "Saltward quarter",
+        "Bitter Sea"
+      ],
+      "affiliations": [
+        "her crew",
+        "unknown forces (Deepkin Council hunts her)"
+      ],
+      "notes": "Merin understood that the Wanderer's fragment was a key that triggers 'return' rather than completion. She fled knowing the Deepkin Council would hunt her. Her actions caused Greyport's harbor to begin singing in frequencies that made ships list sideways.",
+      "first_story": "The Copper-Handed Captain's Gambit",
+      "first_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": "unknown_child_wyvern",
+      "name": "Unknown Child",
+      "aliases": [
+        "the child",
+        "girl"
+      ],
+      "tagline": "Abandoned. Trusting. Hopeful.",
+      "role": "Refugee Child",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown village",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "An unnamed child was traded by her mother to a caravan for bread and subsequently ran away. She discovers Sethrak in the Obsidian Spine and, unafraid, speaks to him of a village where people shared without ledgers and love needed no prophecy-chart. Her trust and memory inspire Sethrak to abandon his hoard.",
+      "traits": [
+        "unafraid",
+        "remembering",
+        "trusting",
+        "innocent",
+        "hopeful"
+      ],
+      "known_locations": [
+        "Obsidian Spine",
+        "village",
+        "caravan"
+      ],
+      "affiliations": [
+        "Sethrak",
+        "mother",
+        "caravan"
+      ],
+      "notes": "The child's vision of a sharing village may represent a pre-Breaking form of community. Her role as catalyst for Sethrak's transformation is crucial to the story's exploration of compassion.",
+      "first_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": "captain_merin_stormcaller",
+      "name": "Captain Merin Stormcaller",
+      "aliases": [
+        "Merin",
+        "The cursed corsair"
+      ],
+      "tagline": "Cursed. Legendary. Loyal.",
+      "role": "Corsair, Ship Captain",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "The Skyward",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "A legendary corsair cursed for twenty years with a shadow-sickness that kept him from staying on land more than three days. He broke the Hegemony's merchant fleet and freed slave-caravans from three provinces. When the Luminous Breaking fractured the curse, he and his companion Sorenna discovered it had been keeping them alive; they sailed toward the Abyssal Rift and made an eternal oath to crew his ship as a lighthouse for reality-refugees.",
+      "traits": [
+        "Fearless",
+        "Loyal",
+        "Cursed",
+        "Merciful"
+      ],
+      "known_locations": [
+        "Crimport",
+        "The Skyward",
+        "The Abyssal Rift"
+      ],
+      "affiliations": [
+        "Sorenna (companion/lover)",
+        "Freed slave-caravans"
+      ],
+      "notes": "Merin's curse removal triggered an ancient debt. His transformation into a lighthouse-keeper suggests he has achieved a form of transcendence through choice rather than power.",
+      "first_story": "The Corsair's Clemency",
+      "first_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": "prince_kael",
+      "name": "Prince Kael",
+      "aliases": [
+        "Kael",
+        "The dragon-consort"
+      ],
+      "tagline": "Dragon-blooded. Merciful. Paradox.",
+      "role": "Dragon-Consort, Prince, Templar",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A dragon-consort to the human crown whose mixed heritage was hunted by the Obsidian Tower for use as a template for conquest. Rather than flee or surrender, Kael walked into the Tower alone and offered testimony\u2014a chronicle of every moment he chose mercy over dominion. The contradiction of his nature shattered the Tower's certainty-based architecture.",
+      "traits": [
+        "Merciful",
+        "Heroic",
+        "Self-sacrificing",
+        "Paradoxical"
+      ],
+      "known_locations": [
+        "The Obsidian Tower"
+      ],
+      "affiliations": [
+        "Queen Mira (human consort)",
+        "Human crown",
+        "Dragon-blood lineage"
+      ],
+      "notes": "Kael's death proved that 'some natures were stronger than prophecy itself\u2014not through power, but through the radical act of choosing differently.' His testimony broke the Tower from within.",
+      "first_story": "The Dragon-King's Dominion",
+      "first_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": "queen_mira",
+      "name": "Queen Mira",
+      "aliases": [
+        "Mira",
+        "The human queen"
+      ],
+      "tagline": "Regal. Protective. Helpless.",
+      "role": "Queen",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Human queen consort to the dragon-prince Kael. She begged him to escape with her across the fractured seas when the Obsidian Tower hunted his lineage, but Kael chose instead to walk into the Tower alone to offer his testimony.",
+      "traits": [
+        "Regal",
+        "Protective",
+        "Desperate"
+      ],
+      "known_locations": [
+        "The Obsidian Tower"
+      ],
+      "affiliations": [
+        "Prince Kael (consort)",
+        "Human crown"
+      ],
+      "notes": "Mira's plea represents the conventional choice of flight; Kael's defiance of her wishes in favor of testimony highlights the power of paradox over safety.",
+      "first_story": "The Dragon-King's Dominion",
+      "first_date": "2026-05-07",
+      "appearances": 1
+    },
+    {
+      "id": "crimport",
+      "name": "Crimport",
+      "aliases": [
+        "widow cursed just like him"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Widow Cursed Just Like Him",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named widow cursed just like him explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Corsair's Clemency",
+      "first_date": "2026-05-07",
+      "appearances": 1
     }
   ],
   "places": [
@@ -22546,7 +22750,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-02-28",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "tower",
@@ -24633,7 +24837,7 @@
       "status": "active",
       "notes": "One of three harmonic resonance points; directly connected to pre-human orchestration.",
       "first_date": "2026-03-12",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "the_dominion",
@@ -27618,6 +27822,25 @@
       "notes": "The competing reflections of Thale, Kesh, and others are locked in philosophical war beneath the abyss. The realm is on the brink of schism or unity depending on Nyx's choice within three days.",
       "first_date": "2026-05-06",
       "appearances": 1
+    },
+    {
+      "id": "kelvan_s_waystation",
+      "name": "Kelvan's waystation",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Dominion",
+      "province": "unknown",
+      "region": "Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-05-07",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -28137,7 +28360,7 @@
       "status": "active / awakening",
       "notes": "Sing through bone-singers as conduits. Their unified voice is drawing fragments of Vylthar toward the Ebon Tower.",
       "first_date": "2026-03-20",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "xorth",
@@ -34956,6 +35179,28 @@
       "notes": "The Wanderer's recursive questions had stalled the merchants' ascension for an unknown duration. Kess's solution\u2014asking about choice itself rather than transcendence\u2014reframes the entire crisis. The pre-human dead's re-awakening suggests orchestration of larger cosmic events.",
       "first_date": "2026-05-03",
       "appearances": 1
+    },
+    {
+      "id": "stellar_breaking",
+      "name": "Stellar Breaking",
+      "tagline": "Cataclysmic. Shattering. Eternal.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "world-shattering",
+      "participants": [
+        "pre-human civilization"
+      ],
+      "outcome": "The world was shattered; the pre-human dead were scattered and fragmented across cycles. The dead now fear erasure if cycles complete without resurrection on their terms.",
+      "significance": "An ancient cataclysm that fractured the world and left the pre-human dead desperate to be remembered before they are erased entirely.",
+      "notes": "Vex's teaching aims to remember the dead as they lived before this Breaking, rather than completing it or summoning them.",
+      "first_date": "2026-05-07",
+      "appearances": 1
     }
   ],
   "weapons": [],
@@ -35186,7 +35431,7 @@
       "status": "active",
       "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
       "first_date": "2026-03-15",
-      "appearances": 14
+      "appearances": 15
     },
     {
       "id": "life_speakers",
@@ -35450,7 +35695,7 @@
       "status": "active",
       "notes": "Become the recipients of the Auditor-General's teaching about memory independent of ledgers. This skill becomes more valuable than gold.",
       "first_date": "2026-03-25",
-      "appearances": 12
+      "appearances": 13
     },
     {
       "id": "resource_hoarders",
@@ -37594,7 +37839,7 @@
       "status": "active",
       "notes": "The Elder Tongue is being taught by the Ebon Tower to the world itself. Dren recognizes the song in this language, suggesting her undeath or bone-singing connects her to pre-human knowledge. The Tower's song causes Dren's bones to 'ache with recognition,' implying deep resonance with her essence.",
       "first_date": "2026-04-11",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "pre_human_languages",
@@ -38122,6 +38367,17 @@
       "status": "known",
       "notes": "Fae-magic is explicitly NOT the cause of Nyx's current fragmentation, suggesting that fae-magic and deepkin magic operate on different principles.",
       "first_date": "2026-05-06",
+      "appearances": 1
+    },
+    {
+      "id": "stellar_breaking_myth",
+      "name": "The Stellar Breaking",
+      "tagline": "Cataclysmic. Fragmentary. Eternal.",
+      "category": "history / myth",
+      "source": "Implicit in the pre-human dead's fear of cycle completion and erasure.",
+      "status": "confirmed",
+      "notes": "A shattering event that fractured the world and the pre-human civilization. The dead fear being erased if cycles complete without resurrection on their terms. Vex's teaching aims to remember them as they were before this Breaking.",
+      "first_date": "2026-05-07",
       "appearances": 1
     }
   ],
@@ -39861,7 +40117,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-11",
-      "appearances": 4,
+      "appearances": 5,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",

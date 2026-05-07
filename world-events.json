@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-06T11:15:10.157837+00:00",
+  "generated_at": "2026-05-07T11:10:38.732419+00:00",
   "source": "codex.json",
   "intensity_min": 1,
   "intensity_max": 5,
@@ -12,12 +12,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-06",
-      "recent_issues": 11,
-      "trend": 2,
+      "recent_issues": 10,
+      "trend": 1,
       "referenced_locations": {
         "places": [
           "Burned Expanse",
@@ -107,12 +107,12 @@
       "scope": "world",
       "epicenter": "Starfall Spire",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-06",
-      "recent_issues": 11,
-      "trend": 2,
+      "recent_issues": 10,
+      "trend": 1,
       "referenced_locations": {
         "places": [
           "Corinth",
@@ -186,12 +186,12 @@
       "scope": "world",
       "epicenter": "Sunken Cathedrals",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-06",
-      "recent_issues": 11,
-      "trend": 2,
+      "recent_issues": 10,
+      "trend": 1,
       "referenced_locations": {
         "places": [
           "Tower (as artifact/nexus)",
@@ -269,12 +269,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-06",
-      "recent_issues": 10,
-      "trend": 1,
+      "recent_issues": 9,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "cavern halls"
@@ -351,12 +351,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-06",
       "recent_issues": 6,
-      "trend": 2,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Scorched Reach"
@@ -433,12 +433,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-06",
       "recent_issues": 6,
-      "trend": 2,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "The Scorched Reach",
@@ -517,7 +517,7 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-06",
@@ -577,12 +577,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-06",
       "recent_issues": 4,
-      "trend": 2,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Vethrim",
@@ -728,7 +728,7 @@
       "resolved": false,
       "last_seen": "2026-05-02",
       "recent_issues": 2,
-      "trend": 0,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "Spire (Blasted Lands)",
@@ -760,6 +760,42 @@
       "arc_summary_last_seen": "2026-05-02",
       "arc_summary_fingerprint": "ae581a7cec0c79ace7c0ba3c823762bf1a07c27c",
       "arc_summary_updated_at": "2026-05-02T10:44:05.201463+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Stellar Breaking",
+      "tagline": "Cataclysmic. Shattering. Eternal.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "rising",
+      "setting_state": "active_arc",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-05-07",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-05-07",
+          "title": "The Scholar's Inheritance"
+        },
+        {
+          "date": "2026-05-07",
+          "title": "The Bone-Singer's Resurrection"
+        }
+      ],
+      "appearance_total": 2,
+      "arc_summary": "SUMMARY:\nThe Stellar Breaking began as a world-shattering catastrophe of unknown origin, though its effects ripple through reality itself\u2014fragmenting time, consciousness, and the boundary between the living and the dead. In \"The Bone-Singer's Resurrection,\" the ancient working's reach became clear: even the pre-human dead have been conscripted into the Breaking's machinery, using the undead bone-singer Vex as a conduit to teach the Elder Tongue and prepare for mass resurrection before the cycle erases them entirely. Vex's awakening and choice to teach remembrance rather than completion marked a turning point\u2014resistance through witness rather than surrender. Simultaneously, \"The Scholar's Inheritance\" revealed that the Breaking operates cyclically: Thom's grandmother was a seer forced to watch the world shatter, and she chose radical amnesia to escape becoming a tool, leaving her knowledge to the next generation as both burden and weapon. Thom now carries the relay of memory and has begun training others in protective meditation, suggesting that consciousness itself has become a battleground. The catastrophe remains active and unresolved, with multiple factions\u2014the Shadow-Sorcerer, the Obsidian Hunger, and the ancient dead\u2014all converging on those who remember.\n\nCURRENT STATE:\n- The Stellar Breaking is in its rising stage of intensity, actively reshaping reality with unknown epicenter or full scope\n- Two forms of resistance have emerged: Vex teaches remembrance to honor the dead before erasure; Thom trains the vulnerable in mental protection against sorcerous compulsion\n- The cycle operates on recursion\u2014previous iterations have occurred, and the Breaking may repeat unless interrupted\n\nOPEN THREADS:\n- Who or what caused the original Stellar Breaking, and what is its true objective?\n- Will the Shadow-Sorcerer and Obsidian Hunger succeed in acquiring Thom as a relay, and what would they do with cyclic knowledge?\n- Can Vex's work of remembrance actually halt the Breaking, or does completing it serve a deeper purpose?\n- How many iterations have already occurred, and how much of reality has been erased between cycles?",
+      "arc_summary_last_seen": "2026-05-07",
+      "arc_summary_fingerprint": "c95dff220f1837113553edef4363e0e5f7ed9b54",
+      "arc_summary_updated_at": "2026-05-07T11:10:38.732076+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -2537,44 +2573,6 @@
       "arc_summary_last_seen": "2026-04-14",
       "arc_summary_fingerprint": "bb9eab8a6b105b530369d21532a97d2c123a6f8e",
       "arc_summary_updated_at": "2026-05-04T13:13:36.161717+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Cartographer's Final Map",
-      "tagline": "Refusal. Circulation. Rupture.",
-      "event_type": "discovery / crisis of choice",
-      "scope": "world",
-      "epicenter": "night-markets",
-      "stage": "seed",
-      "setting_state": "active_arc",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": "2026-04-15",
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "night-markets"
-        ],
-        "regions": [
-          "unknown"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-15",
-          "title": "The Cartographer's Final Map"
-        }
-      ],
-      "appearance_total": 1,
-      "arc_summary": "SUMMARY:\nIn mid-April of 2026, Mardoc the Cartographer made a discovery that transformed his life's work into a terrible liability. His consciousness, long distributed across the world's ley-lines, revealed to him a startling truth: his maps were not merely records of hidden places, but instructions for breaching into nine previous iterations of reality\u2014phantom worlds layered beneath the current one like pages in a palimpsest. When a merchant captain offered him vast wealth for a map to a vanished city from the eighth Turning, where silver still lay waiting to be claimed, Mardoc faced an immediate choice: he could complete the map and anchor that phantom realm into the present world, creating a catastrophic rupture between realities, or he could refuse. In \"The Cartographer's Final Map,\" Mardoc chose refusal\u2014but by then his maps were already circulating in the night-markets, spreading beyond his control into the hands of those with fewer scruples and darker ambitions.\n\nCURRENT STATE:\n- The event remains in its opening stage (seed), with only one documented appearance as of mid-April 2026\n- Mardoc has refused to complete the anchoring map himself, but his existing cartography is actively circulating among merchants and seekers in the night-markets\n- No rupture has yet occurred, but the conditions for one are now in motion\n\nOPEN THREADS:\n- Who among the night-market traders will attempt to complete a map to a phantom city, and what will the consequences be?\n- Can Mardoc's refusal hold if demand and desperation grow, or will he be forced to choose again?\n- How many other maps in circulation point toward previous worlds, and how many seekers are working to decode them?\n- What safeguards, if any, exist to prevent a full rupture between realities?",
-      "arc_summary_last_seen": "2026-04-15",
-      "arc_summary_fingerprint": "484aeb114ccbd1a11a3dd5bd91459d569fc75f5a",
-      "arc_summary_updated_at": "2026-05-06T11:15:10.157741+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     }
   ]
