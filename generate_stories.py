@@ -53,6 +53,9 @@ _CONTROL_CHAR_RE = re.compile(r"[\x00-\x08\x0B\x0C\x0E-\x1F\x7F-\x9F]")
 # ── Config ────────────────────────────────────────────────────────────────
 MODEL           = "claude-haiku-4-5-20251001"
 NUM_STORIES     = 10
+STORY_WORD_MIN  = int(os.environ.get("STORY_WORD_MIN", "120"))
+STORY_WORD_MAX  = int(os.environ.get("STORY_WORD_MAX", "160"))
+STORY_WORD_HARD_MAX = int(os.environ.get("STORY_WORD_HARD_MAX", "180"))
 OUTPUT_FILE     = "stories.json"
 ARCHIVE_DIR     = "archive"
 ARCHIVE_IDX     = "archive/index.json"
@@ -127,6 +130,13 @@ ENABLE_EXISTING_CHARACTER_UPDATES = os.environ.get(
 # Haiku 3.5 max output is 8192 tokens; a single call can't cover 10 stories × 20 categories.
 EXTRACTION_BATCH_SIZE = int(os.environ.get("EXTRACTION_BATCH_SIZE", "3"))
 EXTRACTION_MAX_TOKENS = int(os.environ.get("EXTRACTION_MAX_TOKENS", "8192"))
+
+# Story generation: keep rich prompts, but split output into smaller batches so
+# the model can return complete JSON without truncation.
+INITIAL_STORY_BATCH_SIZE = int(os.environ.get("INITIAL_STORY_BATCH_SIZE", "5"))
+INITIAL_STORY_MAX_PASSES = int(os.environ.get("INITIAL_STORY_MAX_PASSES", "4"))
+STORY_GENERATION_MAX_TOKENS = int(os.environ.get("STORY_GENERATION_MAX_TOKENS", "8192"))
+JSON_REPAIR_MAX_TOKENS = int(os.environ.get("JSON_REPAIR_MAX_TOKENS", "8192"))
 
 # Prompt size controls (do not limit lore growth; only limit what we *send* each run).
 # Set to 0 to disable that section.
@@ -2506,11 +2516,12 @@ def build_world_event_arcs_section(today_str: str, lore: dict, event_arc_dossier
     return "\n".join(lines).strip()
 
 # ── Story generation prompt ──────────────────────────────────────────────
-def build_prompt(today_str, world_date_label, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None, codex_balance=None, reused_character_temporal=None):
+def build_prompt(today_str, world_date_label, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None, codex_balance=None, reused_character_temporal=None, num_stories: int = NUM_STORIES, existing_titles=None):
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     reused_entries = reused_entries or {}
     reuse_details = reuse_details or {}
     reused_character_temporal = reused_character_temporal or []
+    existing_titles = existing_titles or []
 
     world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
 
@@ -2523,6 +2534,15 @@ RECENT STORIES (from the last few days — DO NOT repeat these same core concept
 {recent_themes_raw}
 - You may reference the same WORLD (locations, characters) but choose DIFFERENT themes, conflicts, and plot shapes.
 - If the recent list is heavy on one motif (e.g. shadow trade, oaths, demon pacts), deliberately steer AWAY from that motif today.
+"""
+
+    avoid_titles_section = ""
+    if existing_titles:
+        avoid_titles = "\n".join(f"- {t}" for t in existing_titles if t)
+        if avoid_titles:
+            avoid_titles_section = f"""
+DO NOT REUSE THESE TITLES IN THIS BATCH:
+{avoid_titles}
 """
 
     reuse_section = ""
@@ -2617,9 +2637,11 @@ SOVEREIGNTY / CROWN CONSISTENCY:
     if cb:
         codex_balance_section = f"\n{cb}\n"
 
+    length_rules = "\n".join(_story_length_rule_lines())
+
     return f"""You are a pulp fantasy writer in the tradition of Robert E. Howard, Clark Ashton Smith, and Fritz Leiber.
-Generate exactly 10 original short sword-and-sorcery stories.
-Each story should be vivid, action-packed, and around 120–160 words long.
+Generate exactly {int(num_stories)} original short sword-and-sorcery stories.
+{length_rules}
 
 ORIGINALITY / COPYRIGHT SAFETY:
 - Create ONLY original characters, places, factions, creatures, spells, artifacts, and titles.
@@ -2635,10 +2657,11 @@ The in-world Edhran date is {world_date_label}.
 {reuse_section}
 {reused_temporal_section}
 {recent_themes_section}
+{avoid_titles_section}
 Respond with ONLY valid JSON — no prose before or after — matching this exact structure:
 [
   {{ "title": "Story Title Here", "subgenre": "Two or Three Word Label", "text": "Full story text here…" }},
-  …9 more entries…
+    …additional entries until there are exactly {int(num_stories)} total objects…
 ]
 
 EVENT CAUSALITY + CONSEQUENCE RULES (non-negotiable):
@@ -6313,13 +6336,28 @@ def _story_title_key(title: object) -> str:
     return re.sub(r"\s+", " ", str(title or "").strip()).lower()
 
 
+def _story_length_rule_lines() -> list[str]:
+    return [
+        f"- Each story should target {STORY_WORD_MIN}-{STORY_WORD_MAX} words.",
+        f"- Hard cap: no story may exceed {STORY_WORD_HARD_MAX} words.",
+        "- If a draft runs long, compress it instead of trailing off or returning partial JSON.",
+    ]
+
+
+def _story_generation_max_tokens(request_n: int) -> int:
+    return max(2048, min(STORY_GENERATION_MAX_TOKENS, 1400 * max(1, int(request_n))))
+
+
 def build_story_json_reformat_prompt(raw_response_text: str, num_stories: int = NUM_STORIES) -> str:
+    length_rules = "\n".join(_story_length_rule_lines())
     return f"""You previously generated sword-and-sorcery stories, but the JSON shape may be wrapped or inconsistent.
 
 Task:
 - Output ONLY valid JSON.
 - The JSON must be a single array of exactly {int(num_stories)} objects.
 - Each object must have: title (string), text (string), subgenre (string).
+- Preserve the intended story length discipline:
+{length_rules}
 - If the previous response contains fewer than {int(num_stories)} stories, invent additional stories to reach {int(num_stories)}.
 
 Here is the prior response (verbatim):
@@ -6339,7 +6377,7 @@ def _parse_story_items_with_repair(client, raw_text: str, num_stories: int) -> l
     except Exception as first_error:
         repair_msg = client.messages.create(
             model=MODEL,
-            max_tokens=max(1024, min(4096, 900 * max(1, int(num_stories)))),
+            max_tokens=max(1024, min(JSON_REPAIR_MAX_TOKENS, 1200 * max(1, int(num_stories)))),
             messages=[{
                 "role": "user",
                 "content": build_story_json_reformat_prompt(raw_text, num_stories),
@@ -6362,6 +6400,7 @@ def build_missing_stories_prompt(today_str: str, world_date_label: str, lore: di
     world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
     avoid = "\n".join(f"- {t}" for t in existing_titles if t)
     avoid_section = f"\nDo not reuse these existing titles:\n{avoid}\n" if avoid else ""
+    length_rules = "\n".join(_story_length_rule_lines())
     return f"""Generate {int(missing)} additional sword-and-sorcery stories for the issue dated {today_str}.
 
 The in-world Edhran date is {world_date_label}. Use only that calendar for any temporal references inside the stories; never use Gregorian month or weekday names.
@@ -6370,6 +6409,8 @@ Format rules:
 - Output ONLY valid JSON.
 - The JSON must be a single array of exactly {int(missing)} objects.
 - Each object must have: title (string), text (string), subgenre (string).
+- Length rules:
+{length_rules}
 {avoid_section}
 Canon guidance:
 {world_events_section}
@@ -6396,6 +6437,7 @@ def build_child_harm_replacement_prompt(
     flagged = "\n".join(f"- {t}" for t in violating_titles if t)
     avoid_section = f"\nDo not reuse these existing titles:\n{avoid}\n" if avoid else ""
     flagged_section = f"\nReplace these violating stories with brand-new stories:\n{flagged}\n" if flagged else ""
+    length_rules = "\n".join(_story_length_rule_lines())
     return f"""Generate {int(replacement_count)} replacement sword-and-sorcery stories for the issue dated {today_str}.
 
 The in-world Edhran date is {world_date_label}. Use only that calendar for any temporal references inside the stories; never use Gregorian month or weekday names.
@@ -6404,6 +6446,8 @@ Format rules:
 - Output ONLY valid JSON.
 - The JSON must be a single array of exactly {int(replacement_count)} objects.
 - Each object must have: title (string), text (string), subgenre (string).
+- Length rules:
+{length_rules}
 - These are replacement stories for an existing 10-story issue, so they should feel fresh and distinct from the surviving stories.
 {avoid_section}{flagged_section}
 Safety rules:
@@ -6578,6 +6622,79 @@ def extend_with_missing_story_batches(
         stories.extend(new_stories)
         passes += 1
         idle_passes = 0
+
+    return stories
+
+
+def generate_initial_story_batches(
+    client,
+    today_str: str,
+    world_date_label: str,
+    lore: dict,
+    reused_entries=None,
+    reuse_details=None,
+    event_arc_dossiers=None,
+    codex_balance=None,
+    reused_character_temporal=None,
+) -> list[dict]:
+    stories = []
+    passes = 0
+
+    while len(stories) < NUM_STORIES and passes < INITIAL_STORY_MAX_PASSES:
+        missing = NUM_STORIES - len(stories)
+        request_n = min(missing, max(1, INITIAL_STORY_BATCH_SIZE))
+        existing_titles = [s.get("title") for s in stories if isinstance(s, dict)]
+        seen_titles = {_story_title_key(title) for title in existing_titles if title}
+
+        print(
+            f"Calling Claude to generate {request_n} story(ies) in an initial batch ({len(stories)}/{NUM_STORIES} complete)..."
+        )
+
+        message = client.messages.create(
+            model=MODEL,
+            max_tokens=_story_generation_max_tokens(request_n),
+            messages=[{
+                "role": "user",
+                "content": build_prompt(
+                    today_str,
+                    world_date_label,
+                    lore,
+                    reused_entries=reused_entries,
+                    reuse_details=reuse_details,
+                    event_arc_dossiers=event_arc_dossiers,
+                    codex_balance=codex_balance,
+                    reused_character_temporal=reused_character_temporal,
+                    num_stories=request_n,
+                    existing_titles=existing_titles,
+                ),
+            }],
+        )
+        raw = message.content[0].text.strip()
+        try:
+            story_items = _parse_story_items_with_repair(client, raw, request_n)
+        except Exception as e:
+            print(f"WARNING: Initial story batch failed: {e}", file=sys.stderr)
+            break
+
+        new_stories = []
+        for item in story_items:
+            story = coerce_story_dict(item)
+            title_key = _story_title_key(story.get("title"))
+            if title_key and title_key in seen_titles:
+                continue
+            if title_key:
+                seen_titles.add(title_key)
+            new_stories.append(story)
+            if len(new_stories) >= request_n:
+                break
+
+        if not new_stories:
+            print("WARNING: Initial story batch returned no usable stories.", file=sys.stderr)
+            break
+
+        stories.extend(new_stories)
+        passes += 1
+        print(f"✓ Generated {len(new_stories)} story(ies) in batch ({len(stories)}/{NUM_STORIES} total)")
 
     return stories
 
@@ -7730,53 +7847,17 @@ def main():
                 print(f"WARNING: Event arc dossier failed for \"{evt_name}\": {e}", file=sys.stderr)
 
     # ── CALL 1: Generate stories with lore context ───────────────────────
-    print("Calling Claude to generate stories...")
-    message = client.messages.create(
-        model=MODEL,
-        max_tokens=4096,
-        messages=[{"role": "user", "content": build_prompt(today_str, world_date_label, lore, reused_entries=reused_entries, reuse_details=reuse_details, event_arc_dossiers=event_arc_dossiers, codex_balance=codex_balance, reused_character_temporal=reused_character_temporal)}]
+    stories = generate_initial_story_batches(
+        client,
+        today_str,
+        world_date_label,
+        lore,
+        reused_entries=reused_entries,
+        reuse_details=reuse_details,
+        event_arc_dossiers=event_arc_dossiers,
+        codex_balance=codex_balance,
+        reused_character_temporal=reused_character_temporal,
     )
-    raw = message.content[0].text.strip()
-    try:
-        stories_raw = parse_json_response(raw)
-    except (ValueError, json.JSONDecodeError) as e:
-        print(f"ERROR: Could not parse story JSON: {e}", file=sys.stderr)
-        print("Raw response:", raw[:500], file=sys.stderr)
-        sys.exit(1)
-
-    story_items = extract_story_items(stories_raw)
-    if not isinstance(story_items, list):
-        print("ERROR: Parsed story JSON did not contain a story list in a known shape.", file=sys.stderr)
-        if isinstance(stories_raw, dict):
-            keys = ", ".join(sorted(str(k) for k in stories_raw.keys())[:40])
-            print(f"Top-level keys: {keys}", file=sys.stderr)
-        print(f"Parsed type: {type(stories_raw)}", file=sys.stderr)
-        sys.exit(1)
-
-    stories = [coerce_story_dict(s) for s in story_items[:NUM_STORIES]]
-
-    # If we didn't get all expected stories, try a lightweight repair:
-    # 1) Ask Claude to reformat the prior response into an exact JSON array.
-    # 2) If still short, ask for only the missing number of additional stories.
-    if len(stories) < NUM_STORIES:
-        print(
-            f"WARNING: Only parsed {len(stories)}/{NUM_STORIES} stories; attempting JSON repair.",
-            file=sys.stderr,
-        )
-        try:
-            repair_msg = client.messages.create(
-                model=MODEL,
-                max_tokens=4096,
-                messages=[{"role": "user", "content": build_story_json_reformat_prompt(raw, NUM_STORIES)}],
-            )
-            repair_raw = repair_msg.content[0].text.strip()
-            repaired = parse_json_response(repair_raw)
-            repaired_items = extract_story_items(repaired) or []
-            repaired_stories = [coerce_story_dict(s) for s in repaired_items[:NUM_STORIES]]
-            if len(repaired_stories) >= len(stories):
-                stories = repaired_stories
-        except Exception as e:
-            print(f"WARNING: JSON repair attempt failed: {e}", file=sys.stderr)
 
     if len(stories) < NUM_STORIES:
         stories = extend_with_missing_story_batches(
