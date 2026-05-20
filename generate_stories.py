@@ -473,6 +473,63 @@ def sanitize_stories(stories):
     return out
 
 
+_STORY_WORD_RE = re.compile(r"[A-Za-z0-9]+(?:['’\-][A-Za-z0-9]+)?")
+
+
+def story_word_count(text: str) -> int:
+    return len(_STORY_WORD_RE.findall(str(text or "")))
+
+
+def _compress_story_text_to_hard_max(text: str, hard_max: int) -> str:
+    raw = str(text or "").strip()
+    if not raw:
+        return ""
+    limit = max(1, int(hard_max or STORY_WORD_HARD_MAX))
+    sentences = [seg.strip() for seg in re.split(r"(?<=[.!?])\s+", raw) if seg.strip()]
+    if not sentences:
+        words = _STORY_WORD_RE.findall(raw)
+        return " ".join(words[:limit]).strip()
+
+    kept: list[str] = []
+    total = 0
+    for sentence in sentences:
+        count = story_word_count(sentence)
+        if count <= 0:
+            continue
+        if total + count > limit:
+            break
+        kept.append(sentence)
+        total += count
+
+    if kept:
+        compressed = " ".join(kept).strip()
+        if story_word_count(compressed) <= limit:
+            return compressed
+
+    words = _STORY_WORD_RE.findall(raw)
+    return " ".join(words[:limit]).strip()
+
+
+def enforce_story_hard_max(stories: list[dict]) -> list[dict]:
+    out = []
+    trimmed = 0
+    for story in stories or []:
+        if not isinstance(story, dict):
+            continue
+        new_story = dict(story)
+        text = str(new_story.get("text") or "")
+        if story_word_count(text) > STORY_WORD_HARD_MAX:
+            new_story["text"] = _compress_story_text_to_hard_max(text, STORY_WORD_HARD_MAX)
+            trimmed += 1
+        out.append(new_story)
+    if trimmed:
+        print(
+            f"WARNING: Story length hard cap exceeded in {trimmed} stor{'y' if trimmed == 1 else 'ies'}; compressed to {STORY_WORD_HARD_MAX} words max.",
+            file=sys.stderr,
+        )
+    return out
+
+
 def _make_snake_id(name: str) -> str:
     base = re.sub(r"[^a-zA-Z0-9]+", "_", (name or "").strip().lower()).strip("_")
     return base or "unknown"
@@ -2721,6 +2778,7 @@ These are HARD constraints, not suggestions. Follow them exactly.
    - At MOST 1 story may center on a living fortress / sentient architecture.
    - At MOST 1 story may center on bone carving / necromantic animation.
    - If the RECENT STORIES section above shows heavy use of a motif, use ZERO of that motif today.
+    - Oath/vow/geas plots are an overused fallback in this project; prefer trade conflict, exploration, craft, diplomacy, beast-bonding, wilderness survival, political intrigue, romance, or trickery before using an oath-driven central hook.
    EXCEPTION — ACTIVE WORLD EVENT ARCS: If the ISSUE-WIDE WORLD EVENTS section lists an active
    event at "rising", "crisis", or "climax" stage, MORE stories may reflect that event's motif
    (up to 4 stories showing its effects). This is expected — large-scale events naturally
@@ -2760,9 +2818,9 @@ CITY DISTRICTS (important for codex depth):
 - Districts are intra-city areas; treat them as quarters/wards within a city, not provinces.
 
 LEGENDARY WEAPONS / STORIED ARMAMENTS:
-- In 2–3 stories today, feature a NAMED weapon or war-implement with real mythic gravitas: a king-spear, oath-blade, tyrant's bow, siege hammer, assassin's knife, saint-killing axe, or similarly storied armament.
-- These should feel like weapons people remember and speak about: passed between rulers or champions, hidden after famous battles, feared for a curse, sought for a buried claim, or bound to a vow, bloodline, cult, prophecy, or betrayal.
-- Keep the magic uncanny rather than generic: binding, memory, doom, recognition, hunger, oath-taking, ghost-guidance, storm-calling, kingmaking, gate-opening, name-cutting, etc. Avoid reducing every special weapon to simple glowing elemental power.
+- In 2–3 stories today, feature a NAMED weapon or war-implement with real mythic gravitas: a king-spear, reef-hook, tyrant's bow, siege hammer, assassin's knife, saint-killing axe, or similarly storied armament.
+- These should feel like weapons people remember and speak about: passed between rulers or champions, hidden after famous battles, feared for a curse, sought for a buried claim, or tied to a bloodline, cult, prophecy, betrayal, storm, or lost campaign.
+- Keep the magic uncanny rather than generic: binding, memory, doom, recognition, hunger, ghost-guidance, storm-calling, kingmaking, gate-opening, name-cutting, tide-turning, etc. Avoid reducing every special weapon to simple glowing elemental power.
 - Not every such weapon must dominate the plot, but when one appears it should carry lineage, reputation, or consequence.
 - If a storied weapon appears, hint at at least one of these: origin, prior wielder, famous battle, price of use, reason it was hidden, or what changes when it changes hands.
 
@@ -8180,6 +8238,7 @@ def main():
 
     # ── Sanitize story text (removes stray control characters) ─────────
     stories = sanitize_stories(stories)
+    stories = enforce_story_hard_max(stories)
 
     # ── Optional: Update existing characters (death/resurrection/etc.) ───
     if ENABLE_EXISTING_CHARACTER_UPDATES:

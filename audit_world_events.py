@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import os
 import hashlib
+import re
 from datetime import datetime, timezone
 
 import anthropic
@@ -28,8 +29,24 @@ def _norm(s: str) -> str:
     return str(s or "").strip().lower()
 
 
+def _canonical_event_name(name: str) -> str:
+    raw = str(name or "").strip()
+    if not raw:
+        return ""
+    raw = re.sub(r"\s*\([^)]*\)\s*$", "", raw).strip()
+    return _norm(raw)
+
+
+def _event_merge_key(name: str, event_type: str = "") -> tuple[str, str]:
+    # Merge by canonical event name rather than exact event_type label. In
+    # practice the codex often drifts on event_type wording while referring to
+    # the same long-running arc, which produces visible duplicates in
+    # world-events.json.
+    return (_canonical_event_name(name), "")
+
+
 def _load_previous_summaries(path: str) -> dict[tuple[str, str], dict]:
-    """Return a mapping (name_lc, event_type_lc) -> prior event dict."""
+    """Return a mapping canonical-name key -> prior event dict."""
     if not os.path.exists(path):
         return {}
     try:
@@ -42,7 +59,7 @@ def _load_previous_summaries(path: str) -> dict[tuple[str, str], dict]:
         for e in events:
             if not isinstance(e, dict):
                 continue
-            k = (_norm(e.get("name")), _norm(e.get("event_type")))
+            k = _event_merge_key(e.get("name"), e.get("event_type"))
             if not any(k):
                 continue
             out[k] = e
@@ -396,8 +413,8 @@ def main() -> int:
             "story_appearances_all": story_apps,
         })
 
-    # De-dupe by (name, event_type). This protects against codex merge mishaps
-    # (e.g., whitespace variants) while preserving useful continuity signals.
+    # De-dupe by canonical name. This collapses duplicate arc rows caused by
+    # event_type wording drift while preserving one long-running event history.
     def _uniq_story_apps(apps):
         if not isinstance(apps, list):
             return []
@@ -436,7 +453,7 @@ def main() -> int:
     for r in rows:
         if not isinstance(r, dict):
             continue
-        k = (_norm(r.get("name")), _norm(r.get("event_type")))
+        k = _event_merge_key(r.get("name"), r.get("event_type"))
         if not any(k):
             continue
 
@@ -446,6 +463,8 @@ def main() -> int:
 
         ex = merged[k]
         # Prefer richer metadata.
+        if len(str(r.get("event_type") or "")) > len(str(ex.get("event_type") or "")):
+            ex["event_type"] = r.get("event_type")
         if not ex.get("tagline") and r.get("tagline"):
             ex["tagline"] = r.get("tagline")
         if not ex.get("epicenter") or str(ex.get("epicenter") or "").strip().lower() == "unknown":
@@ -512,7 +531,7 @@ def main() -> int:
     # We only regenerate when the event has new story appearances since the last summary.
     updates_done = 0
     for r in top:
-        k = (_norm(r.get("name")), _norm(r.get("event_type")))
+        k = _event_merge_key(r.get("name"), r.get("event_type"))
         prev = prev_by_key.get(k) or {}
         prev_summary = str(prev.get("arc_summary") or "").strip()
         prev_last = str(prev.get("arc_summary_last_seen") or "").strip()
