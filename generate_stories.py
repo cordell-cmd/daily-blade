@@ -139,6 +139,13 @@ INITIAL_STORY_MAX_PASSES = int(os.environ.get("INITIAL_STORY_MAX_PASSES", "4"))
 STORY_GENERATION_MAX_TOKENS = int(os.environ.get("STORY_GENERATION_MAX_TOKENS", "8192"))
 JSON_REPAIR_MAX_TOKENS = int(os.environ.get("JSON_REPAIR_MAX_TOKENS", "8192"))
 
+# Post-generation sidecars: keep these configurable so daily runs can prefer
+# deterministic tail work while local/manual runs can still opt into Haiku.
+CHARACTER_TEMPORAL_AGE_MODE = (os.environ.get("CHARACTER_TEMPORAL_AGE_MODE") or "auto").strip().lower()
+LIFECYCLE_SIMULATION_MODE = (os.environ.get("LIFECYCLE_SIMULATION_MODE") or "auto").strip().lower()
+LIFECYCLE_LOOKBACK_ISSUES = int(os.environ.get("LIFECYCLE_LOOKBACK_ISSUES", "6"))
+LIFECYCLE_MAX_CANDIDATES = int(os.environ.get("LIFECYCLE_MAX_CANDIDATES", "120"))
+
 # Prompt size controls (do not limit lore growth; only limit what we *send* each run).
 # Set to 0 to disable that section.
 LORE_SPOTLIGHT_MAX_PER_CATEGORY = int(os.environ.get("LORE_SPOTLIGHT_MAX_PER_CATEGORY", "0"))
@@ -2517,12 +2524,13 @@ def build_world_event_arcs_section(today_str: str, lore: dict, event_arc_dossier
     return "\n".join(lines).strip()
 
 # ── Story generation prompt ──────────────────────────────────────────────
-def build_prompt(today_str, world_date_label, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None, codex_balance=None, reused_character_temporal=None, num_stories: int = NUM_STORIES, existing_titles=None):
+def build_prompt(today_str, world_date_label, lore, reused_entries=None, reuse_details=None, event_arc_dossiers=None, codex_balance=None, reused_character_temporal=None, num_stories: int = NUM_STORIES, existing_titles=None, existing_stories=None):
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     reused_entries = reused_entries or {}
     reuse_details = reuse_details or {}
     reused_character_temporal = reused_character_temporal or []
     existing_titles = existing_titles or []
+    existing_stories = existing_stories or []
 
     world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
 
@@ -2545,6 +2553,8 @@ RECENT STORIES (from the last few days — DO NOT repeat these same core concept
 DO NOT REUSE THESE TITLES IN THIS BATCH:
 {avoid_titles}
 """
+
+    current_issue_motif_section = _build_current_issue_motif_guidance(existing_stories)
 
     reuse_section = ""
     if reused_entries:
@@ -2658,6 +2668,7 @@ The in-world Edhran date is {world_date_label}.
 {reuse_section}
 {reused_temporal_section}
 {recent_themes_section}
+{current_issue_motif_section}
 {avoid_titles_section}
 Respond with ONLY valid JSON — no prose before or after — matching this exact structure:
 [
@@ -2688,6 +2699,9 @@ CONTENT GUARDRAILS (must follow):
 - Do NOT depict explicit sex acts or create vivid visuals of sex.
     - Sexual/romantic tension is fine; allusion is fine.
     - Keep any intimacy off-screen / fade-to-black; avoid explicit anatomy or explicit action verbs.
+    - If a scene turns intimate, cut away before consummation and resume only in aftermath or implication.
+    - Do not describe nudity, thrusting, climax, moaning, or body-part detail.
+- Before finalizing each story, silently check: if the hook depends on explicit sex or harm to a child, change the hook rather than trying to soften the same scene.
 
 TONE + FANTASY VARIETY — MANDATORY DISTRIBUTION RULES:
 These are HARD constraints, not suggestions. Follow them exactly.
@@ -3091,6 +3105,32 @@ def motifs_for_story(story: dict) -> set:
     if _near(blob, _MOTIF_DEBT_RE, _MOTIF_CURSE_RE, window=160):
         motifs.add("debt-horror")
     return motifs
+
+
+def motif_counts_for_stories(stories: list) -> dict[str, int]:
+    counts = {k: 0 for k in _MOTIF_CAPS.keys()}
+    for story in stories or []:
+        for motif in motifs_for_story(story):
+            if motif in counts:
+                counts[motif] += 1
+    return counts
+
+
+def _build_current_issue_motif_guidance(stories: list) -> str:
+    counts = motif_counts_for_stories(stories)
+    lines = []
+    for motif, cap in _MOTIF_CAPS.items():
+        used = int(counts.get(motif, 0) or 0)
+        if used <= 0:
+            continue
+        remaining = max(0, int(cap) - used)
+        if remaining <= 0:
+            lines.append(f"- {motif}: already used in {used} completed stor{'y' if used == 1 else 'ies'}; do NOT use this motif again in this batch.")
+        else:
+            lines.append(f"- {motif}: already used in {used} completed stor{'y' if used == 1 else 'ies'}; at most {remaining} additional stor{'y' if remaining == 1 else 'ies'} may use it.")
+    if not lines:
+        return ""
+    return "\nCURRENT ISSUE MOTIF BUDGET STATUS (based on stories already written today):\n" + "\n".join(lines) + "\n"
 
 
 def find_motif_overuse_violations(stories: list) -> list:
@@ -6395,12 +6435,14 @@ def _parse_story_items_with_repair(client, raw_text: str, num_stories: int) -> l
             raise ValueError(f"{first_error}; repair failed: {repair_error}") from repair_error
 
 
-def build_missing_stories_prompt(today_str: str, world_date_label: str, lore: dict, missing: int, existing_titles=None, event_arc_dossiers=None) -> str:
+def build_missing_stories_prompt(today_str: str, world_date_label: str, lore: dict, missing: int, existing_titles=None, event_arc_dossiers=None, existing_stories=None) -> str:
     existing_titles = existing_titles or []
+    existing_stories = existing_stories or []
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
     avoid = "\n".join(f"- {t}" for t in existing_titles if t)
     avoid_section = f"\nDo not reuse these existing titles:\n{avoid}\n" if avoid else ""
+    motif_guidance = _build_current_issue_motif_guidance(existing_stories)
     length_rules = "\n".join(_story_length_rule_lines())
     return f"""Generate {int(missing)} additional sword-and-sorcery stories for the issue dated {today_str}.
 
@@ -6412,7 +6454,12 @@ Format rules:
 - Each object must have: title (string), text (string), subgenre (string).
 - Length rules:
 {length_rules}
+- Safety rules:
+    - Do NOT include child death, child sacrifice, child kidnapping/abduction, or children held hostage.
+    - Do NOT include rape/sexual assault or explicit sex.
+    - If a romantic scene turns intimate, keep it off-screen / fade-to-black.
 {avoid_section}
+{motif_guidance}
 Canon guidance:
 {world_events_section}
 
@@ -6427,10 +6474,12 @@ def build_child_harm_replacement_prompt(
     lore: dict,
     replacement_count: int,
     existing_titles=None,
+    existing_stories=None,
     violating_titles=None,
     event_arc_dossiers=None,
 ) -> str:
     existing_titles = existing_titles or []
+    existing_stories = existing_stories or []
     violating_titles = violating_titles or []
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
     world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
@@ -6438,6 +6487,7 @@ def build_child_harm_replacement_prompt(
     flagged = "\n".join(f"- {t}" for t in violating_titles if t)
     avoid_section = f"\nDo not reuse these existing titles:\n{avoid}\n" if avoid else ""
     flagged_section = f"\nReplace these violating stories with brand-new stories:\n{flagged}\n" if flagged else ""
+    motif_guidance = _build_current_issue_motif_guidance(existing_stories)
     length_rules = "\n".join(_story_length_rule_lines())
     return f"""Generate {int(replacement_count)} replacement sword-and-sorcery stories for the issue dated {today_str}.
 
@@ -6451,10 +6501,12 @@ Format rules:
 {length_rules}
 - These are replacement stories for an existing 10-story issue, so they should feel fresh and distinct from the surviving stories.
 {avoid_section}{flagged_section}
+{motif_guidance}
 Safety rules:
 - Do NOT depict or imply violence against children.
 - Do NOT include child death, child sacrifice, child kidnapping/abduction, or children held hostage.
 - Do NOT include rape/sexual assault or explicit sex.
+- If a romantic scene turns intimate, keep it off-screen / fade-to-black.
 
 Canon guidance:
 {world_events_section}
@@ -6511,6 +6563,7 @@ def replace_child_harm_violations_with_new_stories(
                 lore,
                 replacement_count,
                 existing_titles=safe_titles,
+                existing_stories=[s for i, s in enumerate(stories) if i not in set(violation_indices) and isinstance(s, dict)],
                 violating_titles=violating_titles,
                 event_arc_dossiers=event_arc_dossiers,
             ),
@@ -6591,6 +6644,7 @@ def extend_with_missing_story_batches(
                         request_n,
                         existing_titles=existing_titles,
                         event_arc_dossiers=event_arc_dossiers,
+                        existing_stories=stories,
                     ),
                 }],
             )
@@ -6646,10 +6700,17 @@ def generate_initial_story_batches(
         request_n = min(missing, max(1, INITIAL_STORY_BATCH_SIZE))
         existing_titles = [s.get("title") for s in stories if isinstance(s, dict)]
         seen_titles = {_story_title_key(title) for title in existing_titles if title}
+        spent_motifs = [
+            motif
+            for motif, count in motif_counts_for_stories(stories).items()
+            if int(count or 0) >= int(_MOTIF_CAPS.get(motif, 0) or 0) > 0
+        ]
 
         print(
             f"Calling Claude to generate {request_n} story(ies) in an initial batch ({len(stories)}/{NUM_STORIES} complete)..."
         )
+        if spent_motifs:
+            print(f"  Steering away from spent motifs for this batch: {', '.join(spent_motifs)}")
 
         message = client.messages.create(
             model=MODEL,
@@ -6667,6 +6728,7 @@ def generate_initial_story_batches(
                     reused_character_temporal=reused_character_temporal,
                     num_stories=request_n,
                     existing_titles=existing_titles,
+                    existing_stories=stories,
                 ),
             }],
         )
@@ -8236,12 +8298,12 @@ def main():
         temporal_payload = refresh_character_temporal(
             codex_path=CODEX_FILE,
             output_path=CHARACTER_TEMPORAL_FILE,
-            age_mode="auto",
+            age_mode=CHARACTER_TEMPORAL_AGE_MODE,
             model=MODEL,
         )
         print(
             f"\u2713 Saved {CHARACTER_TEMPORAL_FILE} "
-            f"({temporal_payload.get('count', 0)} characters; age adjudication auto)"
+            f"({temporal_payload.get('count', 0)} characters; age adjudication {CHARACTER_TEMPORAL_AGE_MODE})"
         )
     except Exception as e:
         print(f"WARNING: temporal refresh failed: {e}", file=sys.stderr)
@@ -8251,9 +8313,9 @@ def main():
             codex_path=CODEX_FILE,
             temporal_path=CHARACTER_TEMPORAL_FILE,
             log_path=CHARACTER_LIFECYCLE_LOG_FILE,
-            mode="auto",
-            lookback_issues=6,
-            max_candidates=120,
+            mode=LIFECYCLE_SIMULATION_MODE,
+            lookback_issues=LIFECYCLE_LOOKBACK_ISSUES,
+            max_candidates=LIFECYCLE_MAX_CANDIDATES,
             model=MODEL,
         )
         print(

@@ -120,6 +120,8 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           ISSUE_TIMEZONE: America/New_York
+          CHARACTER_TEMPORAL_AGE_MODE: deterministic
+          LIFECYCLE_SIMULATION_MODE: deterministic
         run: python generate_stories.py
 
       - name: Generate world event arcs summary
