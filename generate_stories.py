@@ -6329,6 +6329,33 @@ Here is the prior response (verbatim):
 """
 
 
+def _parse_story_items_with_repair(client, raw_text: str, num_stories: int) -> list:
+    try:
+        parsed = parse_json_response(raw_text)
+        items = extract_story_items(parsed) or []
+        if items:
+            return items
+        raise ValueError("Parsed JSON did not contain any story items")
+    except Exception as first_error:
+        repair_msg = client.messages.create(
+            model=MODEL,
+            max_tokens=max(1024, min(4096, 900 * max(1, int(num_stories)))),
+            messages=[{
+                "role": "user",
+                "content": build_story_json_reformat_prompt(raw_text, num_stories),
+            }],
+        )
+        repair_raw = repair_msg.content[0].text.strip()
+        try:
+            repaired = parse_json_response(repair_raw)
+            repaired_items = extract_story_items(repaired) or []
+            if repaired_items:
+                return repaired_items
+            raise ValueError("Repair JSON did not contain any story items")
+        except Exception as repair_error:
+            raise ValueError(f"{first_error}; repair failed: {repair_error}") from repair_error
+
+
 def build_missing_stories_prompt(today_str: str, world_date_label: str, lore: dict, missing: int, existing_titles=None, event_arc_dossiers=None) -> str:
     existing_titles = existing_titles or []
     lore_context = build_generation_lore_context(lore, seed_text=today_str)
@@ -6523,8 +6550,7 @@ def extend_with_missing_story_batches(
                 }],
             )
             extra_raw = extra_msg.content[0].text.strip()
-            extra_parsed = parse_json_response(extra_raw)
-            extra_items = extract_story_items(extra_parsed) or []
+            extra_items = _parse_story_items_with_repair(client, extra_raw, request_n)
         except Exception as e:
             print(f"WARNING: Extra-story batch failed: {e}", file=sys.stderr)
             passes += 1
