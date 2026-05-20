@@ -127,9 +127,10 @@ ENABLE_EXISTING_CHARACTER_UPDATES = os.environ.get(
 ).strip().lower() in {"1", "true", "yes", "y"}
 
 # Lore extraction: batch stories to avoid truncated output.
-# Haiku 3.5 max output is 8192 tokens; a single call can't cover 10 stories × 20 categories.
+# Claude Haiku 4.5 supports much larger outputs; default higher here so extraction
+# can preserve richer entity coverage before falling back to truncation recovery.
 EXTRACTION_BATCH_SIZE = int(os.environ.get("EXTRACTION_BATCH_SIZE", "3"))
-EXTRACTION_MAX_TOKENS = int(os.environ.get("EXTRACTION_MAX_TOKENS", "8192"))
+EXTRACTION_MAX_TOKENS = int(os.environ.get("EXTRACTION_MAX_TOKENS", "16384"))
 
 # Story generation: keep rich prompts, but split output into smaller batches so
 # the model can return complete JSON without truncation.
