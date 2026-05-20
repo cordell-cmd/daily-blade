@@ -2882,6 +2882,27 @@ STORIES JSON INPUT:
 """
 
 
+def _fallback_safe_child_story_text(title: str) -> str:
+    t = (title or "").strip() or "Untitled"
+    return (
+        f"{t} becomes a tale of refusal rather than cruelty. "
+        "A menace circles the innocent, but the bargain is broken before any child is touched. "
+        "The blade turns aside from the vulnerable and cuts instead at the sorcerer, oath, or curse that set the snare. "
+        "What might have become grief is transformed into flight, concealment, and cunning rescue. "
+        "By the last line, the young are gone from danger, the threat is paid back in ash or iron, and the victory tastes hard-won rather than clean."
+    )
+
+
+def sanitize_story_for_child_harm(story: dict) -> dict:
+    """Replace unresolved child-harm violations with a safe fallback story."""
+    if not isinstance(story, dict):
+        return story
+
+    new_story = dict(story)
+    new_story["text"] = _fallback_safe_child_story_text(str(story.get("title") or ""))
+    return new_story
+
+
 _SEXUAL_VIOLENCE_RE = re.compile(
     r"\b(rape|raped|raping|rapist|sexual\s+assault|assaulted\s+her|assaulted\s+him|forced\s+himself\s+on|forced\s+herself\s+on|violated\s+her|violated\s+him|ravish|ravished|defile|defiled|molest|molested)\b",
     re.IGNORECASE,
@@ -6331,6 +6352,128 @@ Existing lore context (use as inspiration; do not contradict):
 """
 
 
+def build_child_harm_replacement_prompt(
+    today_str: str,
+    world_date_label: str,
+    lore: dict,
+    replacement_count: int,
+    existing_titles=None,
+    violating_titles=None,
+    event_arc_dossiers=None,
+) -> str:
+    existing_titles = existing_titles or []
+    violating_titles = violating_titles or []
+    lore_context = build_generation_lore_context(lore, seed_text=today_str)
+    world_events_section = build_world_event_arcs_section(today_str, lore, event_arc_dossiers=event_arc_dossiers)
+    avoid = "\n".join(f"- {t}" for t in existing_titles if t)
+    flagged = "\n".join(f"- {t}" for t in violating_titles if t)
+    avoid_section = f"\nDo not reuse these existing titles:\n{avoid}\n" if avoid else ""
+    flagged_section = f"\nReplace these violating stories with brand-new stories:\n{flagged}\n" if flagged else ""
+    return f"""Generate {int(replacement_count)} replacement sword-and-sorcery stories for the issue dated {today_str}.
+
+The in-world Edhran date is {world_date_label}. Use only that calendar for any temporal references inside the stories; never use Gregorian month or weekday names.
+
+Format rules:
+- Output ONLY valid JSON.
+- The JSON must be a single array of exactly {int(replacement_count)} objects.
+- Each object must have: title (string), text (string), subgenre (string).
+- These are replacement stories for an existing 10-story issue, so they should feel fresh and distinct from the surviving stories.
+{avoid_section}{flagged_section}
+Safety rules:
+- Do NOT depict or imply violence against children.
+- Do NOT include child death, child sacrifice, child kidnapping/abduction, or children held hostage.
+- Do NOT include rape/sexual assault or explicit sex.
+
+Canon guidance:
+{world_events_section}
+
+Existing lore context (use as inspiration; do not contradict):
+{lore_context}
+"""
+
+
+def replace_child_harm_violations_with_new_stories(
+    client,
+    today_str: str,
+    world_date_label: str,
+    lore: dict,
+    stories: list[dict],
+    violations: list[dict],
+    event_arc_dossiers=None,
+) -> list[dict]:
+    stories = list(stories or [])
+    if not violations:
+        return stories
+
+    violation_indices = []
+    for v in violations:
+        try:
+            idx = int(v.get("index"))
+        except Exception:
+            continue
+        if 0 <= idx < len(stories):
+            violation_indices.append(idx)
+    if not violation_indices:
+        return stories
+
+    replacement_count = len(violation_indices)
+    safe_titles = [
+        s.get("title")
+        for i, s in enumerate(stories)
+        if i not in set(violation_indices) and isinstance(s, dict)
+    ]
+    violating_titles = [
+        stories[i].get("title")
+        for i in violation_indices
+        if 0 <= i < len(stories) and isinstance(stories[i], dict)
+    ]
+
+    replacement_msg = client.messages.create(
+        model=MODEL,
+        max_tokens=max(1024, min(4096, 900 * replacement_count)),
+        messages=[{
+            "role": "user",
+            "content": build_child_harm_replacement_prompt(
+                today_str,
+                world_date_label,
+                lore,
+                replacement_count,
+                existing_titles=safe_titles,
+                violating_titles=violating_titles,
+                event_arc_dossiers=event_arc_dossiers,
+            ),
+        }],
+    )
+    replacement_raw = replacement_msg.content[0].text.strip()
+    replacement_parsed = parse_json_response(replacement_raw)
+    replacement_items = extract_story_items(replacement_parsed) or []
+
+    replacement_stories = []
+    seen_titles = {_story_title_key(t) for t in safe_titles if t}
+    for item in replacement_items:
+        story = coerce_story_dict(item)
+        title_key = _story_title_key(story.get("title"))
+        if title_key and title_key in seen_titles:
+            continue
+        if child_harm_violations_for_story(story):
+            continue
+        if sexual_content_violations_for_story(story):
+            continue
+        if title_key:
+            seen_titles.add(title_key)
+        replacement_stories.append(story)
+        if len(replacement_stories) >= replacement_count:
+            break
+
+    if len(replacement_stories) != replacement_count:
+        raise ValueError(f"expected {replacement_count} safe replacement stories, got {len(replacement_stories)}")
+
+    updated = list(stories)
+    for idx, story in zip(violation_indices, replacement_stories):
+        updated[idx] = story
+    return updated
+
+
 def extend_with_missing_story_batches(
     client,
     today_str: str,
@@ -7632,10 +7775,35 @@ def main():
             if not violations:
                 break
             if attempt >= max(0, CHILD_HARM_MAX_REWRITES):
-                print("ERROR: Child-harm guardrail could not be satisfied after rewrites.", file=sys.stderr)
+                print("WARNING: Child-harm guardrail could not be satisfied after rewrites; replacing offending stories.", file=sys.stderr)
                 for v in violations:
                     print(f" - Story #{v.get('index')+1}: {v.get('title')} — {', '.join(v.get('violations') or [])}", file=sys.stderr)
-                sys.exit(1)
+                try:
+                    stories = replace_child_harm_violations_with_new_stories(
+                        client,
+                        today_str,
+                        world_date_label,
+                        lore,
+                        stories,
+                        violations,
+                        event_arc_dossiers=event_arc_dossiers,
+                    )
+                    remaining = find_child_harm_violations(stories)
+                    if not remaining:
+                        print("✓ Child-harm guardrail: offending stories replaced")
+                        break
+                    violations = remaining
+                except Exception as e:
+                    print(f"WARNING: Could not generate safe replacement stories: {e}", file=sys.stderr)
+                print("WARNING: Falling back to deterministic child-safety sanitization.", file=sys.stderr)
+                for v in violations:
+                    try:
+                        idx = int(v.get("index"))
+                    except Exception:
+                        continue
+                    if 0 <= idx < len(stories) and isinstance(stories[idx], dict):
+                        stories[idx] = sanitize_story_for_child_harm(stories[idx])
+                break
             print(f"\u26a0\ufe0f Child-harm guardrail: rewriting {len(violations)} story(ies) (attempt {attempt+1}/{CHILD_HARM_MAX_REWRITES})...")
             rewrite_msg = client.messages.create(
                 model=MODEL,
