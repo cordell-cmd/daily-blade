@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-05-20",
+  "last_updated": "2026-05-21",
   "worlds": [
     {
       "id": "known_world",
@@ -1391,7 +1391,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 73
+      "appearances": 75
     },
     {
       "id": "mardoc_cartographer",
@@ -1895,7 +1895,7 @@
       "notes": "Nerida is now magically bound to the merfolk as a captain of their deep-navy. She maintains contact with her old crew through coral messages left each new moon. Her transformation and the nature of her ongoing service remain significant unresolved threads.",
       "first_story": "The Sea-Debt",
       "first_date": "2026-03-01",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-03-01",
@@ -1930,10 +1930,10 @@
         "Lamia",
         "Nerida"
       ],
-      "notes": "Merfolk culture, governance, and full capabilities remain largely mysterious. Their transformation magic and ability to summon storms suggest advanced magical knowledge.\nThe merfolk are now actively investigating the aftermath of the Crimson Convergence and aware of an ancient pact with land-dwellers regarding the stars. Commander Nerys is actively mobilizing reconnaissance efforts.",
+      "notes": "Merfolk culture, governance, and full capabilities remain largely mysterious. Their transformation magic and ability to summon storms suggest advanced magical knowledge.\nThe merfolk are now actively investigating the aftermath of the Crimson Convergence and aware of an ancient pact with land-dwellers regarding the stars. Commander Nerys is actively mobilizing reconnaissance efforts.\nStory 'The Tide-Caller's Bargain' shows merfolk captain Nerida (canon character) actively negotiating with land-dwellers regarding estuary protection, consistent with prior canon of merfolk engagement with mortal affairs. No new status but reinforces realmwide coordination.",
       "first_story": "The Sea-Debt",
       "first_date": "2026-03-01",
-      "appearances": 2,
+      "appearances": 3,
       "travel_notes": "[2026-03-03] Story shows merfolk actively tasking swimmers to search surface settlements and listen in harbors and trade posts, indicating broad-realm travel capacity beyond their home regions."
     },
     {
@@ -3546,7 +3546,7 @@
       "status": "active",
       "home_place": "Iron Coast",
       "home_region": "The Iron Coast",
-      "home_realm": "unknown",
+      "home_realm": "Surface Kingdoms",
       "travel_scope": "regional",
       "bio": "Captain Vesta has built a smuggling empire trading in forbidden cargo\u2014plague-victims, shadow-fragments, forbidden scrolls. She stands indebted to the abyssal singers of the Sapphire Deep, who demand binding-tokens to prevent her drowning. With nine months remaining, she seeks to orchestrate betrayals and broken oaths to produce the tokens required.",
       "traits": [
@@ -3568,7 +3568,7 @@
       "notes": "Her ship is her base of operations. The abyssal ledger always balances; her fate depends on producing binding-tokens before year's end.",
       "first_story": "The Deepkin's Ledger",
       "first_date": "2026-03-05",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "kieran",
@@ -6434,7 +6434,7 @@
       "notes": "The Ledger sings to her in the dark and remembers the world before the stars changed. Her family's triple-listing suggests she may not be who she thinks she is.",
       "first_story": "The Ledger's Shadow",
       "first_date": "2026-03-12",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "caravan_master_thorne",
@@ -7304,7 +7304,7 @@
       "notes": "Identity not fully revealed in story. Characteristics suggest fae ancestry or transformation.",
       "first_story": "The Thief of Starlight",
       "first_date": "2026-03-15",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "merchant_captain_old_woman",
@@ -9073,14 +9073,16 @@
     {
       "id": "mael",
       "name": "Mael",
-      "aliases": [],
+      "aliases": [
+        "Mael the bone-carver"
+      ],
       "tagline": "Transformed. Haunted. Seeker.",
       "role": "Singer, former caravan master",
       "world": "Edhra",
       "status": "active",
       "home_place": "unknown",
       "home_region": "The Ashen Reach",
-      "home_realm": "unknown",
+      "home_realm": "Dominion",
       "travel_scope": "regional",
       "bio": "Once a caravan master, Mael was shattered and transformed by the Luminous Ascension. Now she hears voices of the Sunken Cathedrals calling her north, each note stripping another memory away. She discovers that the pre-human dead seek not to rebuild civilization but to wear human bodies as masks. She seeks a third path: teaching the dead to sing with the living, not as them.",
       "traits": [
@@ -9100,7 +9102,7 @@
       "notes": "Her transformation grants her hearing of the bone-songs but costs her memories. Her quest to find a third path suggests deep agency within cosmic forces.",
       "first_story": "The Ash-Singer's Debt",
       "first_date": "2026-03-19",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "corin",
@@ -11552,7 +11554,7 @@
       "notes": "Caught between imperial orders and truth; his role is to reveal the lie that undermines both sides.",
       "first_story": "The Deepkin's Emissary",
       "first_date": "2026-03-26",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "ostaine",
@@ -15075,9 +15077,10 @@
     },
     {
       "id": "kelvan",
-      "name": "Kelvan",
+      "name": "Kelvan the spice-merchant",
       "aliases": [
-        "Kelvan the Spice-Merchant"
+        "Kelvan the Spice-Merchant",
+        "Kelvan"
       ],
       "tagline": "Reckless. Enterprising. Determined.",
       "role": "Spice-Merchant, Caravan Master",
@@ -15086,7 +15089,7 @@
       "home_place": "Kelvan's waystation",
       "home_region": "Scorched Reach",
       "home_realm": "Dominion",
-      "travel_scope": "regional",
+      "travel_scope": "interrealm",
       "bio": "Kelvan inherited his father's caravan routes and debts, facing confiscation by the Dominion's tax-collector. Rather than turn to thievery or accept ruin, he negotiated an unconventional loan from the trade-lord Iskar, then undertook a dangerous expedition to Vel-Karsh to trade with the sea-folk for rare spices. He repaid his debt and became Iskar's partner.",
       "traits": [
         "pragmatic",
@@ -15102,10 +15105,11 @@
         "Iskar (partner)",
         "Dominion (subject to taxation)"
       ],
-      "notes": "His success demonstrates that unconventional trade routes and partnerships can circumvent the Dominion's rigid tax system. The rare, luminescent spices from Vel-Karsh may have future significance.",
+      "notes": "His success demonstrates that unconventional trade routes and partnerships can circumvent the Dominion's rigid tax system. The rare, luminescent spices from Vel-Karsh may have future significance.\nKelvan's conscious entry into the Wailing Scar suggests movement beyond regional trade into liminal/interrealm travel, escalating from prior regional scope.",
       "first_story": "The Spice-Merchant's Gamble",
       "first_date": "2026-04-08",
-      "appearances": 3
+      "appearances": 5,
+      "travel_notes": "[2026-05-21] Story 'The Spice-Runner's Inheritance' shows Kelvan discovering a hidden passage through the Wailing Scar to access old spice sources, then voluntarily entering the Scar itself\u2014evidence of crossing realm boundaries."
     },
     {
       "id": "moll",
@@ -18208,7 +18212,8 @@
       "name": "refugee child",
       "aliases": [
         "the girl",
-        "the child"
+        "the child",
+        "The girl"
       ],
       "tagline": "Innocent. Recipient. Unknowing.",
       "role": "Refugee",
@@ -18232,7 +18237,7 @@
       "notes": "The child's fate and understanding of what they possess remains unknown.",
       "first_story": "The Shadow-Merchant's Final Bargain",
       "first_date": "2026-04-20",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "captain_nyx_stormveil",
@@ -20318,7 +20323,7 @@
       "notes": "Returned to her furnace six months after the revenue inspector disappeared; outcome of inspector's fate unknown but suggestive of darker consequences.",
       "first_story": "The Glasswright's Reckoning",
       "first_date": "2026-04-28",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "merin_bone_carver",
@@ -21438,10 +21443,10 @@
       "affiliations": [
         "Obsidian Tower"
       ],
-      "notes": "Central tension: Sethrak's realization that the Tower may recognize him as one of its architects. What role did he play in its creation?",
+      "notes": "Central tension: Sethrak's realization that the Tower may recognize him as one of its architects. What role did he play in its creation?\nStory 'The Wyvern's Hunger Turns Inward' shows Sethrak the Fragment-Hoarder consuming his own worthless gold and experiencing liberation through the act\u2014psychological arc of releasing hoarding compulsion while consciousness-fragments dissolve around him. No status change but significant character development.",
       "first_story": "The Wyvern's Hunger Returns",
       "first_date": "2026-05-01",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "asha",
@@ -22798,7 +22803,7 @@
       "notes": "Her arc mirrors Kressa's but reaches a different conclusion: she abandons hoarding entirely to understand who she was before wealth defined her.",
       "first_story": "The Wyvern's Last Audit",
       "first_date": "2026-05-09",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "wyvern_council",
@@ -23440,6 +23445,131 @@
       "first_story": "The Wyvern's Inheritance",
       "first_date": "2026-05-20",
       "appearances": 1
+    },
+    {
+      "id": "sethrak_fragment_hoarder",
+      "name": "Sethrak the Fragment-Hoarder",
+      "aliases": [
+        "Sethrak",
+        "the Fragment-Hoarder"
+      ],
+      "tagline": "Greedy. Despairing. Enlightened.",
+      "role": "Wyvern, Hoarder, Seeker",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Sethrak is an ancient wyvern who spent two hundred years accumulating gold in vast caverns, driven by the need to possess something certain and permanent. When gold ceased to satisfy, he hunted consciousness-fragments from merchants, bone-singers, and wanderers, but fragments dissolved rather than accumulated. In his cavern surrounded by useless gold, he realized he had never truly possessed anything. He began eating the gold coin by coin, discovering unexpected lightness and freedom in emptiness.",
+      "traits": [
+        "driven to hoard",
+        "ancient and reflective",
+        "willing to transform"
+      ],
+      "known_locations": [
+        "his caverns"
+      ],
+      "affiliations": [
+        "none stated"
+      ],
+      "notes": "His throat burned with ancient hunger as he consumed metal. His arc from possession to liberation suggests a spiritual transformation. The nature of his consciousness-fragments remains unclear.",
+      "first_story": "The Wyvern's Hunger Turns Inward",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "hadrin_spice_merchant",
+      "name": "Hadrin",
+      "aliases": [],
+      "tagline": "Compassionate. Risk-taking. Haunted.",
+      "role": "Merchant, Spice Trader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pelimor",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Hadrin is a forty-year veteran of spice caravans who trades between the Scorched Reach and coastal markets. When a fae-touched scout brought three luminous, warm seed-like substances to his warehouse in Pelimor and requested passage west away from the Dominion's auditors, Hadrin risked his merchant's charter to help her escape, drawn by both compassion and the seeds' otherworldly call.",
+      "traits": [
+        "experienced",
+        "compassionate",
+        "risk-aware",
+        "merchant-minded",
+        "touched by fae-magic"
+      ],
+      "known_locations": [
+        "Pelimor",
+        "warehouse",
+        "Scorched Reach",
+        "coastal markets"
+      ],
+      "affiliations": [
+        "Fae-touched scout"
+      ],
+      "notes": "Hadrin now possesses three luminous fae-seeds that called to him in a non-linguistic language. His future with the Dominion's auditors remains unresolved. Fae-trade is restricted, raising questions about his safety.",
+      "first_story": "The Merchant's Last Gambit",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "naela_the_bone_carver",
+      "name": "Naela the bone-carver",
+      "aliases": [
+        "Naela"
+      ],
+      "tagline": "Merciful. Defiant. Choosing.",
+      "role": "Bone-carver, Bone-singer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "hidden catacomb",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Naela learned the Old Language from Kess, a bone-singer who taught mercy instead of resurrection. Confronted with a child's rib that refused to sing falsely, she discovered that the Old Language cannot lie without breaking. She walked into the Wailing Scar, found herself five years hence teaching in a hidden catacomb, and chose that path. She now leads a bone-singer resistance against auditors using the refuse-song.",
+      "traits": [
+        "merciful",
+        "principled",
+        "defiant",
+        "truth-seeker",
+        "chosen"
+      ],
+      "known_locations": [
+        "Wailing Scar",
+        "workshop",
+        "hidden catacomb"
+      ],
+      "affiliations": [
+        "bone-singers",
+        "Kess"
+      ],
+      "notes": "She discovered that the Old Language is bound to truth and cannot be weaponized for lies. The bone-singers are making a stand by winter. Three uses of the refuse-song erased auditor memories.",
+      "first_story": "The Bone-Singer's Choice",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "wailing_scar",
+      "name": "Wailing Scar",
+      "aliases": [
+        "liminal path where the old spices still thrived"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Liminal Path Where The Old Spices Still Thrived",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named liminal path where the old spices still thrived explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Bone-Singer's Choice",
+      "first_date": "2026-05-21",
+      "appearances": 1
     }
   ],
   "places": [
@@ -23494,7 +23624,7 @@
       "place": "",
       "parent_place": "",
       "place_type": "market",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "sunken_ziggurat_of_yeng",
@@ -24501,7 +24631,7 @@
       "status": "contested",
       "notes": "This region exemplifies how the cosmic renewal has begun to physically reshape the world. Trade disruption here is affecting imperial commerce and stability.",
       "first_date": "2026-03-03",
-      "appearances": 16
+      "appearances": 17
     },
     {
       "id": "cerulean_trench",
@@ -26194,7 +26324,7 @@
       "status": "active",
       "notes": "The port is shut down to outgoing traffic; Commander Vex controls access. Kael seeks passage northward from here.",
       "first_date": "2026-03-18",
-      "appearances": 2
+      "appearances": 4
     },
     {
       "id": "scorched_barrens",
@@ -26625,7 +26755,7 @@
       "status": "active",
       "notes": "The epicenter of Kess's choice between completing the teaching or breaking the songs.",
       "first_date": "2026-03-25",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "the_mountain",
@@ -27210,7 +27340,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-04-03",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "crimport",
@@ -27230,7 +27360,7 @@
       "status": "active",
       "notes": "Three caravans arrive together here at the end of Castor's story, sharing the same manifest and delivered honor.",
       "first_date": "2026-04-04",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "pale_waypost",
@@ -27759,7 +27889,7 @@
       "status": "active",
       "notes": "Merchants present were transformed or offered transcendence, their final choices suspended and then suddenly released by The Wanderer's statement.",
       "first_date": "2026-04-14",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "eyrie_in_the_mountains",
@@ -27818,7 +27948,7 @@
       "status": "active",
       "notes": "A nexus of maritime intrigue and theft. The location where the compass-theft arc begins.",
       "first_date": "2026-04-15",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "rust_shoals",
@@ -27858,7 +27988,7 @@
       "status": "contested",
       "notes": "A nexus of archival warfare and narrative conflict. Communities are caught between contradictory official histories.",
       "first_date": "2026-04-15",
-      "appearances": 4
+      "appearances": 6
     },
     {
       "id": "surface_council",
@@ -28706,7 +28836,7 @@
       "status": "active / fragmented",
       "notes": "Nyx has three days before Dominion naval forces arrive. The water's singing and remembering suggests an entity or force is working against the boundary's stability. May be related to the Tear of the Drowned God.",
       "first_date": "2026-05-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "deepkin_realms",
@@ -28823,7 +28953,7 @@
       "status": "active",
       "notes": "Fires here burn blue and hot rather than destroying; glass grows more alive with each burning; becoming a symbol of resistance.",
       "first_date": "2026-05-20",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "old_market_quarter",
@@ -28923,6 +29053,244 @@
       "status": "active",
       "notes": "Likely location of the cargo swap that placed consciousness-fragments into Kelven's caravan.",
       "first_date": "2026-05-20",
+      "appearances": 1
+    },
+    {
+      "id": "southern_cities",
+      "name": "southern cities",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "fold_village",
+      "name": "fold village",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "harbormaster_tower",
+      "name": "harbormaster's tower",
+      "tagline": "Command. Hospitality. Observation.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "parent_place": "Verdant Strand",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "Surface Kingdoms",
+      "province": "unknown",
+      "region": "The Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A tower of authority and hospitality where Captain Vesta conducts both logistics and delicate diplomacy.",
+      "description": "The harbormaster's tower is Captain Vesta's seat of command in Verdant Strand. Vesta offered hospitality to the deepkin envoy here, including rum and fresh catch, while subtly discerning the truth of its nature.",
+      "status": "active",
+      "notes": "The tower serves as a formal meeting place for covenant negotiations and diplomatic inquiry.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "deep_forests",
+      "name": "deep forests",
+      "tagline": "Ancient. Song-keeping. Remote.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Primordial forests where ancient traditions of singing and song-keeping persist outside state control.",
+      "description": "The deep forests are a remote wilderness where songkeepers still sing, maintaining traditions that predate the current empire. Merin entrusted three wanderers to carry the cups of old queens' songs to safety in these forests.",
+      "status": "active",
+      "notes": "These forests represent a refuge for pre-imperial traditions and may be outside the direct control of the Dominion or Syndicate.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "kiln_heart",
+      "name": "kiln's heart",
+      "tagline": "Hidden. Sacred. Preserved.",
+      "place_type": "structure",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Dominion",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "Lampwick Quarter",
+      "atmosphere": "The innermost chamber of a furnace serving as a secret vault for forbidden songs.",
+      "description": "The kiln's heart is the inner chamber of Merin's furnace where she hid the three cups containing the last songs of the old queens before destroying the furnace itself.",
+      "status": "active",
+      "notes": "The three cups remain hidden here unless discovered by Syndicate authorities. This location is critical to the preservation of pre-imperial song tradition.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "ward_school",
+      "name": "Ward-school",
+      "tagline": "Threatened. Innocent. Leverage.",
+      "place_type": "structure",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Dominion",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A schoolhouse where children were used as leverage against Mael, threatened by Dominion agents to coerce her compliance.",
+      "description": "A school for children located adjacent to Mael's workshop. The Dominion's agents threatened the children within to pressure Mael into carving false confession-bones.",
+      "status": "active",
+      "notes": "The Dominion's willingness to threaten children shows the brutality of their confession-protocol. Mael's refusal to comply despite these threats demonstrates her moral strength.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "flooded_ruins_beneath_verdant",
+      "name": "Flooded ruins beneath the city",
+      "tagline": "Drowned. Ancient. Merfolk-haunted.",
+      "place_type": "ruin",
+      "world": "Edhra",
+      "parent_place": "Verdant Strand",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Submerged chambers where merfolk dwell, a liminal space between human city and deep waters, accessed by descending beneath Verdant Strand.",
+      "description": "Ancient flooded ruins lie beneath Verdant Strand, inhabited by merfolk like Captain Nerida. Kess descended into these ruins to meet Nerida and discuss the threat posed by the Harbor-Master's dam.",
+      "status": "active",
+      "notes": "The ruins suggest Verdant Strand was built atop older civilization or water-systems. They represent a space where humans and merfolk can negotiate.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "harbor_master_tower",
+      "name": "Harbor-Master's tower",
+      "tagline": "Lofty. Administrative. Changed.",
+      "place_type": "structure",
+      "world": "Edhra",
+      "parent_place": "Verdant Strand",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Dominion",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "The administrative seat of the Harbor-Master, where Kess spread three centuries of tide-charts across his desk and changed his mind about the estuary's future.",
+      "description": "A tower in Verdant Strand serving as the office and residence of the Dominion's Harbor-Master. Kess climbed it at night with evidence to convince him to sign the estuary protection charter.",
+      "status": "active",
+      "notes": "The tower's occupation by a Dominion administrator indicates how far inland Dominion authority extends. Its nighttime ascent by Kess suggests she acted with determination and some risk.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "ironspine_caves",
+      "name": "Ironspine caves",
+      "tagline": "Hoarded. Ancient. Solitary.",
+      "place_type": "cave system",
+      "world": "Edhra",
+      "parent_place": "Ironspine",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A vast cavern filled with centuries of accumulated gold and silver, now rendered worthless by the Luminous Ascension.",
+      "description": "Sorrath's home for three hundred years, a cave system within the Ironspine where he accumulated vast quantities of gold and silver that tumbled like sand from his hoard-pile. The caves are now a monument to vanished value.",
+      "status": "active",
+      "notes": "The girl seeks Sorrath here. It is a place of isolation and reflection on the post-Ascension collapse of material value.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "scorched_reach",
+      "name": "The Scorched Reach",
+      "tagline": "Barren. Changed. Deserted.",
+      "place_type": "region",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Dominion",
+      "province": "unknown",
+      "region": "The Scorched Reach",
+      "district": "unknown",
+      "atmosphere": "Once fertile, now ash and desolation after the Luminous Ascension reordered what grows where.",
+      "description": "A region that once yielded starflower and saffron but now yields only ash. The Luminous Ascension reordered the world's flora, leaving this region barren and its merchants desperate.",
+      "status": "active",
+      "notes": "Kelvan inherited his merchant route through this region from his mother. The hidden passage through the Wailing Scar leads to places where old spices still grow.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "hidden_catacomb",
+      "name": "hidden catacomb",
+      "tagline": "Secret. Teaching. Sanctuary.",
+      "place_type": "catacomb",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A secret underground chamber where bone-singers teach the Old Language to new generations.",
+      "description": "A hidden location where Naela found herself five years hence, teaching the Old Language. This appears to be the safe haven of the bone-singer resistance.",
+      "status": "active",
+      "notes": "Naela chose to go there after her encounter in the Wailing Scar. It is the center of bone-singer resistance by winter.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "ironspine",
+      "name": "Ironspine",
+      "tagline": "Ancient. Mineral-rich. Solitary.",
+      "place_type": "mountain range",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A mountain range with ancient caves that have sheltered hoarders and seekers for centuries.",
+      "description": "A mountain range containing caves where Sorrath has lived for three hundred years. The caves are part of the Iron Coast region.",
+      "status": "active",
+      "notes": "The Ironspine caves within this range are Sorrath's home and a place of pilgrimage for those seeking wisdom about the post-Ascension world.",
+      "first_date": "2026-05-21",
       "appearances": 1
     }
   ],
@@ -29883,7 +30251,7 @@
       "status": "active",
       "notes": "Represents existential threat opposite to boundary rupture. Meren must navigate between this hunger and the Tear's failure.",
       "first_date": "2026-05-05",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "tear_of_the_drowned_god",
@@ -29927,6 +30295,17 @@
       "status": "active",
       "notes": "The mountain appears to be a force of balance and justice rather than pure vengeance; it is unclear whether it is a single entity or a manifestation of older powers.",
       "first_date": "2026-05-20",
+      "appearances": 1
+    },
+    {
+      "id": "the_syndicate",
+      "name": "The Syndicate",
+      "type": "polity / faction",
+      "world": "Edhra",
+      "description": "A governing or controlling institution that has issued edicts to seize ornamental glass for the war effort in Keshtir and the broader Dominion.",
+      "status": "active",
+      "notes": "The Syndicate appears to be either a faction within the Dominion government or the government itself. Their control extends to cultural and economic seizure during wartime.",
+      "first_date": "2026-05-21",
       "appearances": 1
     }
   ],
@@ -31131,6 +31510,32 @@
       "notes": "Henryk burns his official maps to protect this hidden map. The fold it marks remains open, whispered about only in shadow-markets by those who have made it through and survived.",
       "first_date": "2026-05-20",
       "appearances": 1
+    },
+    {
+      "id": "tide_charts_kess",
+      "name": "Three centuries of tide-charts",
+      "tagline": "Historical. Ecological. Decisive.",
+      "artifact_type": "archive",
+      "origin": "Maintained by tide-callers for three hundred years; compiled by Kess and her mother.",
+      "powers": "Document the complete ecological cycle of the Saltmere estuary, showing its necessity for watershed protection, storm-surge prevention, and fishery sustainability. Proved persuasive enough to change the Harbor-Master's mind.",
+      "last_known_holder": "Kess",
+      "status": "active",
+      "notes": "The charts are more than records\u2014they are evidence of sustained human understanding and stewardship of a living system. Their persuasive power demonstrates the value of long-term observation.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "leather_journal",
+      "name": "leather journal",
+      "tagline": "Secret. Revelatory. Dangerous.",
+      "artifact_type": "book",
+      "origin": "Found in the master's tent of the ruined caravansary among dead merchants from the Seventeen.",
+      "powers": "It details a hidden passage through the Wailing Scar where old spices still thrive and value retains meaning beyond the Dominion's ledgers. Its knowledge represents an alternative path outside the post-Ascension order.",
+      "last_known_holder": "Kelvan the spice-merchant, who burned it after reading it.",
+      "status": "destroyed",
+      "notes": "Kelvan chose to destroy this artifact rather than report it to the Dominion, making it a symbol of his defiance. The journal's destruction is an act of rebellion that marks his commitment to seeking the hidden path.",
+      "first_date": "2026-05-21",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -31466,7 +31871,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-07",
-      "appearances": 5,
+      "appearances": 6,
       "world": "The Known World",
       "hemisphere": "unknown",
       "subcontinent": "unknown",
@@ -31549,7 +31954,7 @@
       "status": "contested",
       "notes": "No traditional government is mentioned. Power has devolved to shadow-merchants and occult practitioners. Vex's flooding of the market with counterfeits accelerates collapse.",
       "first_date": "2026-03-14",
-      "appearances": 21,
+      "appearances": 23,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Dominion",
@@ -31570,7 +31975,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 9,
+      "appearances": 11,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -31888,7 +32293,7 @@
       "status": "active",
       "notes": "The Dominion attempted to burn it twice; fires burn blue and hot rather than destroying; glass becomes more alive and magical with each burning attempt.",
       "first_date": "2026-05-20",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -32487,7 +32892,7 @@
       "significance": "This cataclysm has shattered the Empire's administrative capacity and spawned widespread transformation. It is the root cause of refugee crises, dimensional instability, and the convergence at the Sunken Cathedrals.",
       "notes": "The exact nature and cause remain mysterious; aftermath continues to unfold.",
       "first_date": "2026-03-10",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "the_memory_thief_bargain",
@@ -36422,6 +36827,34 @@
       "notes": "Vex's teaching aims to remember the dead as they lived before this Breaking, rather than completing it or summoning them.",
       "first_date": "2026-05-07",
       "appearances": 1
+    },
+    {
+      "id": "korra_inspector_confrontation",
+      "name": "The Glasswright's Gambit",
+      "tagline": "Defiance. Revelation. Silencing.",
+      "event_type": "confrontation",
+      "scope": "city",
+      "epicenter_place": "Keshtir",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "Dominion",
+      "affected_places": [
+        "Keshtir"
+      ],
+      "affected_regions": [],
+      "affected_realms": [
+        "Dominion"
+      ],
+      "radius": "citywide",
+      "participants": [
+        "Korra",
+        "Dominion inspector",
+        "other seized craftspeople"
+      ],
+      "outcome": "Korra used a memory-infused sapphire-blue glass cup to reveal the inspector's hidden crime (theft of his master's kiln twenty years prior). The inspector departed without further inspections, effectively protecting Korra's workshop.",
+      "significance": "Demonstrates that individual craftspeople can resist Dominion control through ingenuity and dangerous secrets. Sets a precedent for using memory-craft as leverage.",
+      "notes": "The inspector's silence suggests either shame, fear, or complicity in Korra's continued operation.",
+      "first_date": "2026-05-21",
+      "appearances": 1
     }
   ],
   "weapons": [
@@ -36666,7 +37099,7 @@
       "status": "active",
       "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
       "first_date": "2026-03-15",
-      "appearances": 18
+      "appearances": 19
     },
     {
       "id": "life_speakers",
@@ -36882,7 +37315,7 @@
       "status": "active",
       "notes": "The Auditor-General commands soldiers to suppress refugee testimony and burn counter-ledgers. Their soldiers were made to forget their orders after encountering Liv's spoken-spell testimony.",
       "first_date": "2026-03-23",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "merchant_caravan",
@@ -37266,7 +37699,7 @@
       "status": "active",
       "notes": "The deepkin are calling to Meren as the Tear fractures, offering her freedom from her curse in exchange for allowing the seal to break. Their motivations\u2014whether conquest, desperation, or something else\u2014remain opaque.",
       "first_date": "2026-04-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "displaced_settlers",
@@ -37494,7 +37927,7 @@
       "status": "active",
       "notes": "Corvus works with or against this archive while trying to reconcile contradictory records. Their conflict with the Dominion's official archives may be central to the world's truth crisis.",
       "first_date": "2026-04-23",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "surface_refugees",
@@ -37710,6 +38143,66 @@
       "status": "active",
       "notes": "Kelven carried their sigil on his sealed manifests, indicating he was in good standing. The Guild's authority is recognized in Pelimor and at Crimport.",
       "first_date": "2026-05-20",
+      "appearances": 1
+    },
+    {
+      "id": "the_syndicate_faction",
+      "name": "The Syndicate",
+      "tagline": "Authoritarian. War-driven. Controlling.",
+      "alignment": "lawful / corrupt",
+      "goals": "Centralize control of resources for war effort; suppress ornamental craftsmanship; consolidate state power.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Operating in the Dominion; has sufficient authority to seize private furnaces and artisan goods. Enforces edicts through violence (beating of Merin for furnace loss).",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "songkeepers",
+      "name": "songkeepers",
+      "tagline": "Preserving. Remote. Ancient.",
+      "alignment": "neutral / idealistic",
+      "goals": "Preserve singing traditions and old songs; maintain cultural continuity outside state control.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Located in the deep forests; maintain traditions that predate the current empire. They are the intended recipients and awakeners of the old queens' songs.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "wanderers",
+      "name": "wanderers",
+      "tagline": "Mobile. Trustworthy. Diverse.",
+      "alignment": "neutral / idealistic",
+      "goals": "Carry forbidden artifacts and knowledge; aid in cultural preservation; maintain freedom of movement.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Composed of a carpenter, a weaver, and a bone-singer. Accepted Merin's bargain to carry the cups of old queens' songs to the deep forests. They represent a network of non-state actors.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "dominion_agents",
+      "name": "Dominion's agents",
+      "tagline": "Authoritarian. Coercive. Enforcers.",
+      "alignment": "lawful",
+      "goals": "Enforce Dominion control through forced confession-carving; maintain surveillance and intimidation; suppress resistance.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "The agents are willing to threaten children and destroy livelihoods to extract compliance. Their reliance on confession-carving suggests the Dominion's control is built on forced testimony.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "the_seventeen",
+      "name": "The Seventeen",
+      "tagline": "Shadowed. Networked. Resisting.",
+      "alignment": "neutral",
+      "goals": "To operate outside the Dominion's authority and maintain value and trade in hidden paths (possibly through or beyond the Wailing Scar).",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "The Seventeen are merchants or traders who maintain secret routes and knowledge. Their caravans carry cargo of transformed starlight and gold. Kelvan adopts their symbol and joins their network by donning their cloak.",
+      "first_date": "2026-05-21",
       "appearances": 1
     }
   ],
@@ -38791,7 +39284,7 @@
       "status": "confirmed",
       "notes": "A cosmic event that reshaped reality. Nethys knew it was coming and chose it because the alternative was worse. Multiple characters seek to understand, undo, or manipulate it.",
       "first_date": "2026-03-31",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "ledger_magic_history",
@@ -39705,6 +40198,28 @@
       "notes": "Local wisdom holds that the Scorched Reach has a supernatural or magical capacity to remember thefts and punish those who walk it unclean. The narrative suggests this may be literal\u2014the fragments scatter into the earth and the Reach remembers.",
       "first_date": "2026-05-20",
       "appearances": 1
+    },
+    {
+      "id": "old_language",
+      "name": "Old Language",
+      "tagline": "Ancient. Truthful. Unbreakable.",
+      "category": "legend / magic",
+      "source": "Taught by Kess to Naela; carved into bone by bone-carvers; used by bone-singers in ritual and teaching.",
+      "status": "confirmed",
+      "notes": "The Old Language is bound to truth in ways human speech is not. It cannot be used to lie without the language itself breaking and cracking under the carver's stylus. When used backward as the refuse-song, it can erase memories. It was taught to Naela by Kess as a tool of mercy rather than resurrection. The Dominion's auditors seek to suppress knowledge of it.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "glass_remembers",
+      "name": "Glass Remembers",
+      "tagline": "Memory. Craft. Ancient.",
+      "category": "legend",
+      "source": "Korra's understanding of her own craft; implied to be an old tradition among glasswrights.",
+      "status": "confirmed",
+      "notes": "The principle that glass shaped by a craftsperson retains a fragment of their will and memories, and can even recall the hands that break it.",
+      "first_date": "2026-05-21",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -39718,7 +40233,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 19
+      "appearances": 20
     },
     {
       "id": "wolf_spirit_beast",
@@ -39856,6 +40371,42 @@
       "status": "active",
       "notes": "The wyvern Fragment-Hoarders are a distinct faction or sub-species desperately hoarding consciousness-fragments and seeking a pact with the Hunger-Ledger. They are distinct from ordinary wyverns in their desperation and systematic behavior.",
       "first_date": "2026-05-08",
+      "appearances": 1
+    },
+    {
+      "id": "merfolk_species",
+      "name": "Merfolk",
+      "tagline": "Aquatic. Intelligent. Singing.",
+      "type": "creature",
+      "rarity": "rare",
+      "habitat": "Saltmere estuary; flooded ruins beneath Verdant Strand; deep waters.",
+      "status": "thriving",
+      "notes": "Merfolk like Captain Nerida are sentient, capable of speech and negotiation, and described with voices 'like drowning, like grace.' They inhabit flooded ruins beneath cities and defend their waters from destruction.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "starflower",
+      "name": "starflower",
+      "tagline": "Rare. Valuable. Lost.",
+      "type": "plant",
+      "rarity": "rare",
+      "habitat": "Once grew in the Scorched Reach; now grows only in hidden places beyond the Wailing Scar.",
+      "status": "endangered in the post-Ascension world",
+      "notes": "Starflower was Kelvan's primary trade good until the Luminous Ascension reordered what grows where. Its scarcity drives his quest for the hidden path through the Wailing Scar, where old growth patterns persist.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "saffron",
+      "name": "saffron",
+      "tagline": "Precious. Displaced. Sought.",
+      "type": "plant",
+      "rarity": "rare",
+      "habitat": "Once grew in the Scorched Reach; now grows only in hidden places beyond the Wailing Scar.",
+      "status": "endangered in the post-Ascension world",
+      "notes": "Saffron was part of Kelvan's inherited merchant route. Its disappearance from the Scorched Reach after the Luminous Ascension symbolizes the collapse of the old world's agricultural and economic systems.",
+      "first_date": "2026-05-21",
       "appearances": 1
     }
   ],
@@ -40905,6 +41456,18 @@
       "notes": "The Luminous Ascension is the defining event of these three stories. It created the conditions for all three tales\u2014Sorresh's transformation, Henryk's mercy, and Kess's defiance. Its effects are ongoing and irreversible.",
       "first_date": "2026-05-20",
       "appearances": 1
+    },
+    {
+      "id": "towers_hunger",
+      "name": "Tower's hunger",
+      "tagline": "Consuming. Active. Predatory.",
+      "origin": "A manifestation or curse tied to a Tower (possibly the obsidian tower mentioned in existing canon).",
+      "power": "It hunts and consumes, taking the girl's sister and others. It is a force that Sorrath suggests can be redirected by teaching it to consume itself.",
+      "curse": "Its hunger is insatiable and self-perpetuating. It takes victims. It may bind consciousness or fragment identity.",
+      "status": "active",
+      "notes": "The girl's quest to understand and break the Tower's hunger drives her to Sorrath. His wisdom\u2014teaching hunger to eat itself\u2014may be a key to containing or redirecting this relic's power. The Tower's hunger is both entity and curse.",
+      "first_date": "2026-05-21",
+      "appearances": 1
     }
   ],
   "regions": [
@@ -41167,7 +41730,7 @@
       "status": "contested",
       "notes": "The Scorched Reach exemplifies how the cosmic changes are physically reshaping the world and disrupting established trade networks. Merchants report the land itself has shifted.",
       "first_date": "2026-03-03",
-      "appearances": 14,
+      "appearances": 15,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -41396,7 +41959,7 @@
       "status": "cursed",
       "notes": "The worst consequences of the cosmic rewrite manifest here. The boundary between mapped and unmapped void is dangerously thin.",
       "first_date": "2026-03-08",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -41934,6 +42497,25 @@
       "province": "unknown",
       "region": "Boundary-Waters",
       "district": "unknown"
+    },
+    {
+      "id": "sapphire_sea_area",
+      "name": "Sapphire Sea area",
+      "tagline": "",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "unknown",
+      "terrain": "unknown",
+      "function": "Auto-added from character home_region.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-05-21",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Sapphire Sea area",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -42251,7 +42833,7 @@
       "use": "Trade commodity; culinary spice.",
       "notes": "Part of Castor Vane's cargo shipment to Crimport.",
       "first_date": "2026-04-04",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "starflower",
@@ -42263,7 +42845,7 @@
       "use": "Trade commodity; possibly medicinal or ceremonial.",
       "notes": "Part of Castor Vane's cargo shipment to Crimport.",
       "first_date": "2026-04-04",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "rare_luminescence",
@@ -42287,7 +42869,7 @@
       "use": "Dorian left a purse of gold for the orphanage at Verdant Strand as part of his final reckoning.",
       "notes": "Represents Dorian's wealth and his choice to distribute it rather than hoard it.",
       "first_date": "2026-04-08",
-      "appearances": 3
+      "appearances": 5
     },
     {
       "id": "void_light_substance",
@@ -42431,7 +43013,7 @@
       "use": "Unknown; possibly consumed or breathed to access preserved knowledge",
       "notes": "The presence of starlight in Singing Gorge suggests connection to celestial or cosmic magic post-Ascension.",
       "first_date": "2026-04-23",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "transcendent_consciousness",
@@ -42467,7 +43049,7 @@
       "use": "Trade in night-markets; feeding to cosmic entities like the Obsidian Tower; accumulation as wealth.",
       "notes": "Consciousness-fragments represent the shift from material to metaphysical wealth; they retain agency and memory of their origin.",
       "first_date": "2026-04-27",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "phantom_truths_substance",
@@ -42503,6 +43085,30 @@
       "use": "Trade commodity. Half of it was offered by Merrin to the bone-singers in exchange for laundering consciousness-fragments.",
       "notes": "Kelven's silk is so precious that he chooses honesty and death rather than use it to escape through Merrin's scheme.",
       "first_date": "2026-05-20",
+      "appearances": 1
+    },
+    {
+      "id": "ornamental_glass",
+      "name": "ornamental glass",
+      "tagline": "Beautiful. Useful. Seized.",
+      "type": "material / craft material",
+      "rarity": "common / rare (for singing-glass)",
+      "properties": "Can be crafted into vessels; capable of holding voice-songs through glass-singing technique; valued for beauty and cultural significance",
+      "use": "Decoration, craft tradition, voice preservation, weapon-glass for military purposes",
+      "notes": "Ornamental glass is seized by the Syndicate for conversion into weapon-glass. The singing-glass variant is particularly valuable and rare, known only to Merin's lineage.",
+      "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "weapon_glass",
+      "name": "weapon-glass",
+      "tagline": "Military. Destructive. Cold.",
+      "type": "material / military material",
+      "rarity": "rare",
+      "properties": "Produced from melted ornamental glass; used for war effort",
+      "use": "Military weapons and equipment",
+      "notes": "The Dominion/Syndicate converts ornamental glass into weapon-glass, destroying cultural artifacts in the process. The specific properties of weapon-glass are unspecified.",
+      "first_date": "2026-05-21",
       "appearances": 1
     }
   ],
@@ -43236,6 +43842,22 @@
       "notes": "The bone-singers' covenant was ancient and bound to the pre-human dead. When the Luminous Ascension caused the pre-human dead to withdraw, the covenant broke and Kess had to sing alone. Her defiant, personal singing in resistance proved more powerful than the ritual form.",
       "first_date": "2026-05-20",
       "appearances": 1
+    },
+    {
+      "id": "refuse_song",
+      "name": "refuse-song",
+      "tagline": "Backward. Erasing. Merciful.",
+      "ritual_type": "dismissal / counter-spell",
+      "performed_by": [
+        "Naela",
+        "bone-singers"
+      ],
+      "requirements": "Knowledge of the Old Language used backward. Appears to require three separate utterances.",
+      "effect": "When sung three times, the refuse-song erased all memory of why auditors had come to confront the bone-singers. It works by reversing the Old Language itself.",
+      "cost": "unknown, though mercy may be implicit in its use",
+      "notes": "This is a newly discovered or rediscovered technique. By winter, whispers spread of the bone-singers using it, suggesting it becomes a tool of resistance. It represents the Old Language's capacity for truth-telling even when used in reversal.",
+      "first_date": "2026-05-21",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -43353,7 +43975,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 21
+      "appearances": 25
     },
     {
       "id": "the_hegemony",
