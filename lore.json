@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-05-21",
+  "last_updated": "2026-05-22",
   "worlds": [
     {
       "id": "known_world",
@@ -1331,13 +1331,15 @@
     {
       "id": "lyssa",
       "name": "Lyssa",
-      "aliases": [],
+      "aliases": [
+        "Lyssa the widow"
+      ],
       "tagline": "Archaeologist. Consumed. Transformed.",
       "role": "Archaeologist",
       "world": "known_world",
       "status": "cursed",
       "home_place": "unknown",
-      "home_region": "unknown",
+      "home_region": "The Bleached Wastes",
       "home_realm": "unknown",
       "travel_scope": "local",
       "bio": "An archaeologist who discovered the ruins of Aethermarch and was drawn into its memory-stones. Over weeks of mapping and touching the walls, she absorbed vast archives of ancient knowledge but at the cost of her own identity. She escaped the city's call but was fundamentally altered, her mind partially replaced by the memories of dead architects.",
@@ -1352,11 +1354,15 @@
         "Aethermarch",
         "desert's edge"
       ],
-      "affiliations": [],
+      "affiliations": [
+        "boundary-keepers (deceased husband)",
+        "pre-human threshold",
+        "Zareth the Astronomer-Prince"
+      ],
       "notes": "Lyssa's transformation is incomplete\u2014she survives but can never return to Aethermarch. The city's siren-song continues to call to her. She now speaks ancient languages and possesses skills she never learned. Her humanity is in tension with the vast remembrance that partially inhabits her mind.",
       "first_story": "The City That Remembers",
       "first_date": "2026-02-28",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "kess_drowned_hollows",
@@ -2171,7 +2177,7 @@
       "notes": "Zareth completed the Stellar Rite but lost all memory of joy, love, and beauty in the process. The consequences of his sacrifice and whether he survives remain unclear.",
       "first_story": "The Starfall Oath",
       "first_date": "2026-03-01",
-      "appearances": 39
+      "appearances": 40
     },
     {
       "id": "thera_the_falconer",
@@ -8933,7 +8939,7 @@
       "notes": "Whether Theron's consciousness can or should be reassembled remains the central tension of multiple story threads.\nCanon status remains dead (per prior records); this references Theron's curse-body as the metaphorical anchor of a cosmic seal, not her resurrection.\nStory 'The Cartographer's Student' names a character 'Theron' as 'the last apprentice of the fragmented cartographer Mardoc.' This is a distinct character from canon Theron (the sacrifice whose consciousness fragments Vex handles). No status change; names may overlap but roles are unrelated.",
       "first_story": "The Archivist's Choice",
       "first_date": "2026-03-18",
-      "appearances": 7,
+      "appearances": 8,
       "status_history": [
         {
           "date": "2026-04-13",
@@ -9041,7 +9047,9 @@
     {
       "id": "elara",
       "name": "Elara",
-      "aliases": [],
+      "aliases": [
+        "ferryman's widow"
+      ],
       "tagline": "Cunning. Selfless. Negotiator.",
       "role": "Princess, diplomat",
       "world": "Edhra",
@@ -9068,7 +9076,7 @@
       "notes": "Her knowledge of the blood-language and willingness to treat a legendary creature as an equal suggests training in ancient lore.",
       "first_story": "The Wyvern's Dowry",
       "first_date": "2026-03-19",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "mael",
@@ -10135,8 +10143,8 @@
       "role": "Spice Merchant, Transformation Medium",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
-      "home_region": "unknown",
+      "home_place": "Wailing Scar",
+      "home_region": "The Scorched Reach",
       "home_realm": "unknown",
       "travel_scope": "local",
       "bio": "A spice merchant half-transformed by the Radiant Rising, existing in liminal space between human and living light. He can only speak in the pre-human tongue and his words reshape the air around him. He actively negotiates with his own transformation, willing to trade his remaining humanity for the ability to perceive multiple timelines simultaneously. He ultimately chooses completion and transforms fully into living light.",
@@ -10158,7 +10166,7 @@
       "notes": "His full transformation into living light leaves his fate ambiguous\u2014salvation or eternal solitude.",
       "first_story": "The Transformed Merchant's Bargain",
       "first_date": "2026-03-22",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "kaela",
@@ -12069,7 +12077,7 @@
       "notes": "Her bone-singing allows her to traverse liminal spaces between worlds.",
       "first_story": "The Bone-Singer's Heist",
       "first_date": "2026-03-28",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "echo_keeper",
@@ -12633,7 +12641,7 @@
       "notes": "Central to the question of whether maps can reshape reality itself; key to preventing the tenth Ascension.\nAldrin inherits both his master's living cartography and the burden of choosing what geography should exist. The Bleached Wastes remain his operational center.\n'The Cartographer's Blind Apprentice' directly extends his canon arc. Confirms he is inheriting Mardoc's fragmented consciousness and operating the living maps in the Bleached Wastes. The story shows him facing the same choice (burn maps vs. fragment entirely) already established in canon\u2014no new status change, but reinforces his liminal position between preservation and destruction.",
       "first_story": "The Cartographer's Blind Inheritance",
       "first_date": "2026-03-31",
-      "appearances": 7,
+      "appearances": 8,
       "status_history": [
         {
           "date": "2026-04-03",
@@ -13533,7 +13541,7 @@
       "notes": "Her cavern is filled with star fragments that hum in harmonic resonance, each note a memory of the old cosmos; she eventually chooses to share her treasures with the world.\nVrekka's shift from hoarding material wealth (per canon) to pursuing consciousness and meaning represents escalation of her existential crisis post-Emergence.",
       "first_story": "The Wyvern's Nest-Egg",
       "first_date": "2026-04-04",
-      "appearances": 10,
+      "appearances": 11,
       "status_history": [
         {
           "date": "2026-04-22",
@@ -14574,7 +14582,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "unknown",
-      "home_region": "unknown",
+      "home_region": "Bleached Wastes",
       "home_realm": "unknown",
       "travel_scope": "realmwide",
       "bio": "A fragment of Zareth's consciousness that opposes the Phantom-Echo's reconstruction. Realizes that fully restoring the pre-Ascension world would erase all people born after the Stellar Rite\u2014including those it seeks to save. Confronts the Echo in the hidden archive and argues about the nature of memory and sacrifice.",
@@ -14595,7 +14603,7 @@
       "notes": "Unresolved: outcome of the confrontation with the Echo; whether it can convince followers to reject the gospel.",
       "first_story": "The Memory-Thief's Gospel",
       "first_date": "2026-04-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "ahead",
@@ -22738,14 +22746,17 @@
     {
       "id": "kestra_ledger_singer",
       "name": "Kestra",
-      "aliases": [],
+      "aliases": [
+        "Kestra the cipher-smith",
+        "junior cipher-smith in the Dominion's route-plotting corps"
+      ],
       "tagline": "Prophecy-hearer. Precise. Catalyst.",
       "role": "Ledger-singer",
       "world": "Edhra",
       "status": "active",
       "home_place": "Pale Crossing",
-      "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_region": "The Iron Coast",
+      "home_realm": "The Dominion",
       "travel_scope": "regional",
       "bio": "A ledger-singer who inherited her grandmother's gift to hear prophecy-ledgers before they rewrite themselves. Hunted by the Dominion auditors, she is sought by both the Counter-Archive and Resonance. She uses her power to delay the Tower's echoes and accelerate the convergence.",
       "traits": [
@@ -22766,7 +22777,7 @@
       "notes": "Possesses two ledgers; the second is forbidden knowledge. Her song rewrites present rather than predicting future. Deliberately accelerates events to gain leverage.",
       "first_story": "The Ledger-Singer's Gambit",
       "first_date": "2026-05-09",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "sorrath_fragment_hoarder",
@@ -23032,7 +23043,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Crimhaven",
-      "home_region": "unknown",
+      "home_region": "Iron Coast",
       "home_realm": "unknown",
       "travel_scope": "regional",
       "bio": "A corsair captain with no love for the deepkin or Dominion surface treaties, but deeply invested in the Sapphire Sea as her home. She stole a brass-and-bone compass calibrated to read currents and bearing a prophecy about the Abyssal Rift widening and the Tear failing. Recruiting a diverse crew including a bone-singer, wyvern-scout, former auditors, and tide-touched scholar, she embarked on a mission to the Hermitage of Keth'morian to amplify the Tear's resonance and shore up the boundary seal.",
@@ -23058,7 +23069,7 @@
       "notes": "Vess swore blood-oaths to succeed or die trying when entering the Hermitage. She discovered with the priestess Aelith that the Tear's real need was not strengthening but being heard\u2014it had been alone for three hundred years, and the seal's failure was from isolation, not weakness. Her quest bridges corsair and covenant logic.",
       "first_story": "The Corsair's Daughter",
       "first_date": "2026-05-20",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_alpha_wolf",
@@ -23569,6 +23580,437 @@
       "notes": "Auto-added because the story explicitly names this character.",
       "first_story": "The Bone-Singer's Choice",
       "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "captain_vesse",
+      "name": "Captain Vesse of Verdant Strand",
+      "aliases": [
+        "Captain Vesse",
+        "Vesse"
+      ],
+      "tagline": "Iron-handed. Pragmatic. Peacemaker.",
+      "role": "Harbor-master, Sea Captain",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Verdant Strand",
+      "home_region": "The Iron Coast",
+      "home_realm": "The Dominion",
+      "travel_scope": "interrealm",
+      "bio": "Vesse spent thirty years enforcing Harbor Law with an iron hand in Verdant Strand. When the abyssal-dwellers offered a trade channel conditional on a pre-Ascension relic, she assembled a crew of displaced persons and bone-singers to retrieve an ancient crown from the Council's vault. Her voyage to the Abyssal Rift resulted in parley with an abyssal-dweller captain willing to trade for peace.",
+      "traits": [
+        "authoritarian",
+        "pragmatic",
+        "diplomatic",
+        "experienced"
+      ],
+      "known_locations": [
+        "Verdant Strand",
+        "Abyssal Rift",
+        "boundary-waters"
+      ],
+      "affiliations": [
+        "Dominion (surface kingdoms)",
+        "Council of Depths (via negotiation)",
+        "sea-folk"
+      ],
+      "notes": "Her actions cost the Dominion's favor but may have averted catastrophic coastal flooding. Bridge-builder between surface and abyssal realms.",
+      "first_story": "The Harbormaster's Gamble",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "abyssal_dweller_captain",
+      "name": "Abyssal-dweller captain (unnamed)",
+      "aliases": [
+        "scarred abyssal captain",
+        "Council emissary"
+      ],
+      "tagline": "Scarred. Solitary. Willing.",
+      "role": "Abyssal Captain, Council Envoy",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Abyssal Rift",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "interrealm",
+      "bio": "An abyssal-dweller captain, scarred and alone, emerged from the dark waters of the Abyssal Rift to parley with Vesse's crew. They were willing to trade sacred treasure for peace between the surface and abyssal realms, acting as a voice of the Council of Depths.",
+      "traits": [
+        "scarred",
+        "pragmatic",
+        "lonely",
+        "diplomatic"
+      ],
+      "known_locations": [
+        "Abyssal Rift",
+        "boundary-waters"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "abyssal-dwellers"
+      ],
+      "notes": "Acts as bridge between surface and abyssal diplomacy. Their willingness to part with sacred treasure suggests faction within the Council favoring peace.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "sea_dweller_emissary",
+      "name": "Sea-dweller emissary (unnamed)",
+      "aliases": [
+        "abyssal emissary"
+      ],
+      "tagline": "Diplomatic. Hidden. Powerful.",
+      "role": "Abyssal Emissary",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "interrealm",
+      "bio": "A sea-dweller emissary carried a letter to Captain Vesse of Verdant Strand from the abyssal-dwellers, proposing a trade channel through contested boundary-waters conditional on the surface kingdoms providing a pre-Ascension relic.",
+      "traits": [
+        "diplomatic",
+        "mysterious",
+        "authoritative"
+      ],
+      "known_locations": [
+        "Verdant Strand",
+        "boundary-waters"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "abyssal-dwellers"
+      ],
+      "notes": "Initiates the plot of the second story; represents abyssal-dweller interest in surface trade.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "boundary_keeper_deceased",
+      "name": "Boundary-keeper (Lyssa's husband, deceased)",
+      "aliases": [
+        "Lyssa's husband"
+      ],
+      "tagline": "Sacrificed. Protective. Lost.",
+      "role": "Boundary-keeper",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "boundary-threshold",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Lyssa's husband was a boundary-keeper who died protecting the pre-human threshold. He crafted the widow's compass from brass and bone in the days before the Luminous Ascension. His widow inherited both the compass and his duty.",
+      "traits": [
+        "protective",
+        "sacrificial",
+        "craftsperson"
+      ],
+      "known_locations": [
+        "boundary-threshold",
+        "pre-human ruins"
+      ],
+      "affiliations": [
+        "boundary-keepers",
+        "Lyssa"
+      ],
+      "notes": "His death and the compass's strange behavior suggest connection to pre-Ascension magic or the shifting of timelines.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "merchant_crew_members",
+      "name": "Three merchants (unnamed)",
+      "aliases": [
+        "displaced merchants",
+        "route-knowledge carriers"
+      ],
+      "tagline": "Curious. Defiant. Mobile.",
+      "role": "Merchants, Refugees",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Verdant Strand",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Three merchants took Kestra seriously when she offered Dominion counter-route-plotting methods at Verdant Strand's harbor-master tower. They became part of the resistance network training displaced persons.",
+      "traits": [
+        "practical",
+        "risk-taking",
+        "entrepreneurial"
+      ],
+      "known_locations": [
+        "Verdant Strand",
+        "Wailing Scar"
+      ],
+      "affiliations": [
+        "Dominion (former)",
+        "Kestra",
+        "displaced persons networks"
+      ],
+      "notes": "Represent the practical mercantile class beginning to resist Dominion control.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "former_monitor",
+      "name": "Former monitor (unnamed)",
+      "aliases": [
+        "military defector"
+      ],
+      "tagline": "Trained. Disillusioned. Armed.",
+      "role": "Former Dominion Monitor",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Iron Coast",
+      "home_realm": "The Dominion",
+      "travel_scope": "regional",
+      "bio": "A former Dominion monitor took Kestra seriously and joined the resistance training displaced persons in the Wailing Scar. They represent military defection from Dominion ranks.",
+      "traits": [
+        "trained",
+        "defiant",
+        "practical"
+      ],
+      "known_locations": [
+        "Verdant Strand",
+        "Wailing Scar"
+      ],
+      "affiliations": [
+        "Dominion (former)",
+        "Kestra",
+        "resistance networks"
+      ],
+      "notes": "Military experience valuable to refugee protection and counter-mapping efforts.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "displaced_persons_crew",
+      "name": "Displaced persons (various unnamed)",
+      "aliases": [
+        "refugees",
+        "the displaced folk"
+      ],
+      "tagline": "Vulnerable. Resilient. Hunted.",
+      "role": "Refugees, Learners",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Wailing Scar",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Displaced persons are trained in counter-route-plotting methods and navigation by Kestra in the Wailing Scar, where maps rewrite hourly and Dominion authority dissolves. They are also recruited by Vesse for her voyage to the Abyssal Rift.",
+      "traits": [
+        "resilient",
+        "desperate",
+        "adaptive"
+      ],
+      "known_locations": [
+        "Wailing Scar",
+        "Verdant Strand",
+        "Abyssal Rift"
+      ],
+      "affiliations": [
+        "Kestra's training networks",
+        "Vesse's crew",
+        "resistance movements"
+      ],
+      "notes": "Symbolic of populations displaced by Dominion expansion and Ascension events. Key to resistance infrastructure.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "sea_folk_half_breeds",
+      "name": "Sea-folk half-breeds (unnamed)",
+      "aliases": [
+        "hybrid crew members"
+      ],
+      "tagline": "Liminal. Connected. Navigators.",
+      "role": "Sea-folk, Crew Members",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "Sea-folk half-breeds were recruited by Captain Vesse for the voyage to the Abyssal Rift, serving as navigators and mediators between surface and abyssal realms.",
+      "traits": [
+        "liminal",
+        "skilled",
+        "diplomatic"
+      ],
+      "known_locations": [
+        "Verdant Strand",
+        "Abyssal Rift",
+        "boundary-waters"
+      ],
+      "affiliations": [
+        "sea-folk",
+        "Vesse's crew"
+      ],
+      "notes": "Their hybrid nature makes them uniquely suited to cross-realm diplomacy.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "niel_coldwater_glassblower",
+      "name": "Niel Coldwater",
+      "aliases": [
+        "Niel"
+      ],
+      "tagline": "Inherited. Resistant. Teacher.",
+      "role": "Glassblower, Craftsperson, Archivist",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Keshtir",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Niel Coldwater inherited her mother's glasswork furnace in Keshtir's Lampwick Quarter but lacked her mother's gift; every piece cracked under heat. She discovered the kiln's heart was alive and whispered recipes in an elder language. When fed star-ash from the Burned Expanse, it sang, and her work became flawless and luminous. Rather than serve the Dominion or Shadow-Archive, she taught street children the kiln's old song, creating a hundred vessels\u2014each a small archive of displaced-person testimony invisible to ledger-monitors.",
+      "traits": [
+        "initially untalented",
+        "desperate discoverer",
+        "craft-resistant",
+        "teacher",
+        "defiant"
+      ],
+      "known_locations": [
+        "Keshtir",
+        "Lampwick Quarter",
+        "Burned Expanse"
+      ],
+      "affiliations": [
+        "her mother (predecessor)",
+        "street children (apprentices)",
+        "displaced persons (suppliers of star-ash)",
+        "the Dominion (rival patron)",
+        "Shadow-Archive (rival patron)"
+      ],
+      "notes": "The furnace cooled after a hundred vessels were created; the significance of this cooldown is unclear. Her work represents craft as resistance to tyranny and testimony preservation outside institutional control.",
+      "first_story": "The Glassblower's Heir",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "kress_fae_touched_scout",
+      "name": "Kress",
+      "aliases": [
+        "fae-touched scout",
+        "fae-touched scout bonded to the Wave-Singers' expeditionary wing"
+      ],
+      "tagline": "Defiant. Clever. Truth-seeker.",
+      "role": "Scout, Diplomat",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "Kress is a fae-touched scout bonded to the Wave-Singers' expeditionary wing who discovered pre-Luminous Ascension ledgers at the boundary-waters. Rather than deliver the wreck to either the abyssal-dwellers or surface kingdoms, she led competing salvage teams in circles to piece together the ledgers' truth: the Dominion had forged historical records for three centuries. She ultimately negotiated safe passage to Pale Crossing with the abyssal-dwellers in exchange for the original ledgers.",
+      "traits": [
+        "fae-touched",
+        "cunning",
+        "truthful",
+        "diplomatic",
+        "defiant"
+      ],
+      "known_locations": [
+        "boundary-waters",
+        "Pale Crossing",
+        "shallows"
+      ],
+      "affiliations": [
+        "Wave-Singers",
+        "abyssal-dwellers"
+      ],
+      "notes": "Arrived at Pale Crossing with proof that could crack the Shadow-Archive's false-truths open; scarred from confrontation.",
+      "first_story": "The Deepkin Scout's Choice",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "tarion_bone_carver",
+      "name": "Tarion",
+      "aliases": [
+        "the bone-carver"
+      ],
+      "tagline": "Sacrificial. Desperate. Willing.",
+      "role": "Bone-carver, Ritualist",
+      "world": "Edhra",
+      "status": "cursed / transformed",
+      "home_place": "unknown",
+      "home_region": "Bleached Wastes",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "Tarion discovered in the sealed tombs beneath the Bleached Wastes a pre-human ritual that could reverse the Luminous Ascension itself. He began the work, carving necessary sigils into his own bones using a meteor-iron knife forged for sacrifice. The Obsidian Tower sent shards of itself to stop him, offering power and wealth, but Tarion refused every offer. By the time the Shard-Keeper cornered him, he was barely human\u2014memories burned, fingers withered, voice cracked into the language of bone.",
+      "traits": [
+        "sacrificial",
+        "defiant",
+        "bone-carver",
+        "willing martyr",
+        "nearly inhuman"
+      ],
+      "known_locations": [
+        "Bleached Wastes",
+        "sealed tombs",
+        "catacomb's heart"
+      ],
+      "affiliations": [
+        "pre-human dead",
+        "Obsidian Tower (antagonist)",
+        "Shard-Keeper (antagonist)"
+      ],
+      "notes": "Completed the final carving despite the Shard-Keeper's command to stop; the reversal-ritual did not unmake the Ascension\u2014it was too late.",
+      "first_story": "The Bone-Carver's Hunger",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "greymist_river",
+      "name": "Greymist River",
+      "aliases": [
+        "boundary between the Sunken Marches and the Hearthlands"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Boundary Between The Sunken Marches And The Hearthlands",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named boundary between the Sunken Marches and the Hearthlands explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Ferryman's Widow",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "abyssal_dweller_commanders",
+      "name": "abyssal-dweller commanders",
+      "aliases": [],
+      "tagline": "Named. Threatening. Looming.",
+      "role": "Leader / Ruler",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named leader referenced in the issue's stories; details unknown beyond the text.",
+      "traits": [
+        "commanding",
+        "dangerous",
+        "enigmatic"
+      ],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because a faction leader was named in-story.",
+      "first_story": "The Deepkin Scout's Choice",
+      "first_date": "2026-05-22",
       "appearances": 1
     }
   ],
@@ -24631,7 +25073,7 @@
       "status": "contested",
       "notes": "This region exemplifies how the cosmic renewal has begun to physically reshape the world. Trade disruption here is affecting imperial commerce and stability.",
       "first_date": "2026-03-03",
-      "appearances": 17
+      "appearances": 18
     },
     {
       "id": "cerulean_trench",
@@ -24802,7 +25244,7 @@
       "status": "active",
       "notes": "Center of smuggling operations and coastal magical practices; deepkin have connections to this region.",
       "first_date": "2026-03-04",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "sovereigns_archives",
@@ -24859,7 +25301,7 @@
       "status": "active",
       "notes": "Evidence suggests the pre-human builders anticipated the cosmic shift and arranged their cities to align with the new stellar configuration.",
       "first_date": "2026-03-04",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "mountain_fastness",
@@ -25576,7 +26018,7 @@
       "status": "active",
       "notes": "The fundamental act of counting is destabilized by the Luminous Ascension's effects.",
       "first_date": "2026-03-10",
-      "appearances": 9
+      "appearances": 11
     },
     {
       "id": "burned_expanse",
@@ -25596,7 +26038,7 @@
       "status": "cursed",
       "notes": "Reality is unstable here; counting people and tracking time is unreliable.",
       "first_date": "2026-03-10",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "sunken_cathedrals",
@@ -26755,7 +27197,7 @@
       "status": "active",
       "notes": "The epicenter of Kess's choice between completing the teaching or breaking the songs.",
       "first_date": "2026-03-25",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "the_mountain",
@@ -27420,7 +27862,7 @@
       "status": "active",
       "notes": "Home to Vrekka's hoard; location of falling star fragments post-Sky-Shattering; site of scholar-wyvern bargain.",
       "first_date": "2026-04-04",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "warrens",
@@ -27988,7 +28430,7 @@
       "status": "contested",
       "notes": "A nexus of archival warfare and narrative conflict. Communities are caught between contradictory official histories.",
       "first_date": "2026-04-15",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "surface_council",
@@ -28324,7 +28766,7 @@
       "status": "abandoned",
       "notes": "The dead have retreated beneath the world, accessing depths that predate even the deepkin realms.",
       "first_date": "2026-04-18",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "sevin_s_record_house",
@@ -28836,7 +29278,7 @@
       "status": "active / fragmented",
       "notes": "Nyx has three days before Dominion naval forces arrive. The water's singing and remembering suggests an entity or force is working against the boundary's stability. May be related to the Tear of the Drowned God.",
       "first_date": "2026-05-06",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "deepkin_realms",
@@ -28953,7 +29395,7 @@
       "status": "active",
       "notes": "Fires here burn blue and hot rather than destroying; glass grows more alive with each burning; becoming a symbol of resistance.",
       "first_date": "2026-05-20",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "old_market_quarter",
@@ -29291,6 +29733,126 @@
       "status": "active",
       "notes": "The Ironspine caves within this range are Sorrath's home and a place of pilgrimage for those seeking wisdom about the post-Ascension world.",
       "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_archive",
+      "name": "Shadow-Archive",
+      "tagline": "Hidden. Refuge. Counterinstitution.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A refuge for those fleeing institutional control, accessible through liminal guides like Raen.",
+      "description": "A counter-institutional archive and refuge mentioned as one of Raen's possible destinations. Also offered asylum to Niel Coldwater in exchange for her threshold-furnace, though she refused.",
+      "status": "active",
+      "notes": "Competes with the Dominion for control of powerful artifacts and testimony; represents an alternative archival system.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "abyssal_realms",
+      "name": "Abyssal Realms",
+      "tagline": "Deep. Unknown. Alien.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Alien depths accessible through threshold-passages; a refuge for those lost in the fractured world.",
+      "description": "Mentioned as one destination Raen can guide lost merchants to, accessed via threshold-crossing at the Wailing Scar.",
+      "status": "active",
+      "notes": "The nature and geography of the Abyssal Realms remain unexplained; Raen serves as a guide rather than inhabitant.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "shallows_maritime",
+      "name": "shallows",
+      "tagline": "Shallow. Navigation-hazard. Contested.",
+      "place_type": "maritime",
+      "world": "Edhra",
+      "parent_place": "boundary-waters",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A treacherous maritime zone where currents shift and salvage crews circle endlessly.",
+      "description": "The shallows are waters where Kress led competing salvage teams in circles for weeks, using knowledge of currents to stay ahead of both abyssal-dwellers and surface kingdom forces.",
+      "status": "active",
+      "notes": "Kress used her scouting skill to navigate these waters and piece together ledger testimony.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "greymist_river_boundary",
+      "name": "Greymist River",
+      "tagline": "Misty. Boundary. Drowning.",
+      "place_type": "river",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Sunken Marches / Hearthlands",
+      "district": "unknown",
+      "atmosphere": "A boundary river wreathed in mist and the residual tremors of cosmic unmaking.",
+      "description": "The Greymist River marks the boundary between the Sunken Marches and the Hearthlands. Elara ran a ferry-service across it for twenty years. Theron drowned in a boundary-rupture here, and his echo-self emerged from the mist.",
+      "status": "active",
+      "notes": "Site of boundary-ruptures caused by Luminous Ascension tremors; haunted by autonomous echo-selves.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "catacomb_heart_chamber",
+      "name": "catacomb's heart",
+      "tagline": "Central. Sacred. Sacrificial.",
+      "place_type": "ruin",
+      "world": "Edhra",
+      "parent_place": "sealed tombs",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "The deepest chamber of ancient tombs, heavy with ritual power and the weight of cosmic working.",
+      "description": "The innermost chamber of the sealed tombs where the Shard-Keeper cornered Tarion and he completed the final carving of the reversal-ritual.",
+      "status": "active",
+      "notes": "Site of Tarion's climactic sacrifice; location of the final reversal-ritual attempt.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "horizons_wake",
+      "name": "Horizon's Wake",
+      "tagline": "Defiant. Swift. Truth-bearing.",
+      "place_type": "ship",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A vessel guided by empirical truth rather than dogma; the only merchant ship consistently achieving safe passage.",
+      "description": "A merchant-galley commanded by Captain Vess, the Horizon's Wake became the sole successful trading vessel in its waters after Vess adopted Aldrin's cartographic observations in place of the Dominion's official charts. Its success stands in stark contrast to other merchant vessels that continue to run aground following outdated navigation.",
+      "status": "active",
+      "notes": "Its success is directly tied to the accuracy of Aldrin's charts. Other captains have demanded access to these charts, but Vess has steadfastly refused to sell them.",
+      "first_date": "2026-05-22",
       "appearances": 1
     }
   ],
@@ -30108,7 +30670,7 @@
       "status": "active",
       "notes": "The Tower's song is heard by Kaiden and represents a fourth path or temptation separate from the three primary transformation options. Its hunger approaches the Pale Crossing from one direction.",
       "first_date": "2026-04-10",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "ebon_tower_entity",
@@ -31536,6 +32098,58 @@
       "notes": "Kelvan chose to destroy this artifact rather than report it to the Dominion, making it a symbol of his defiance. The journal's destruction is an act of rebellion that marks his commitment to seeking the hidden path.",
       "first_date": "2026-05-21",
       "appearances": 1
+    },
+    {
+      "id": "star_ash",
+      "name": "Star-Ash",
+      "tagline": "Celestial. Rare. Smuggled.",
+      "artifact_type": "reagent / material",
+      "origin": "Harvested from the Burned Expanse by displaced persons and smuggled to Niel Coldwater.",
+      "powers": "When fed to the furnace-heart, it causes the entity to sing. Enables the creation of flawless, luminous glasswork.",
+      "last_known_holder": "Niel Coldwater's furnace and her completed vessels.",
+      "status": "active",
+      "notes": "Its elemental or celestial origin is unexplained; it appears to be rare and precious.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "pre_luminous_ledgers_wreck",
+      "name": "pre-Luminous Ascension ledgers",
+      "tagline": "Historical. Forged. Truth-bearing.",
+      "artifact_type": "tome",
+      "origin": "Discovered in a shipwreck from no recorded war at the boundary-waters; written in handwriting that matched Dominion script exactly.",
+      "powers": "Contain testimony proving the Dominion forged historical records for three centuries, erasing inconvenient variations.",
+      "last_known_holder": "abyssal-dwellers (exchanged from Kress)",
+      "status": "active",
+      "notes": "Carry proof that could crack the Shadow-Archive's false-truths open; Kress negotiated their exchange for safe passage to Pale Crossing.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "aldrins_charts",
+      "name": "Aldrin's Charts",
+      "tagline": "Empirical. Revolutionary. Coveted.",
+      "artifact_type": "cartographic maps",
+      "origin": "Created by Aldrin through direct observation of the Iron Coast after the Luminous Ascension.",
+      "powers": "Provide accurate, up-to-date navigation around the Iron Coast, enabling safe passage where the Dominion's official charts lead to disaster.",
+      "last_known_holder": "Captain Vess",
+      "status": "active",
+      "notes": "Vess refuses to sell them despite high demand from other merchants. The charts represent a challenge to the Dominion's monopoly on navigational authority and knowledge control.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "dominions_official_charts",
+      "name": "The Dominion's Official Charts",
+      "tagline": "Frozen. Obsolete. Dangerous.",
+      "artifact_type": "cartographic maps",
+      "origin": "Created by the Dominion before the Luminous Ascension; now outdated.",
+      "powers": "Once represented reliable navigation; now actively dangerous as the Iron Coast has shifted since their creation.",
+      "last_known_holder": "Dominion authorities (copies burned by Captain Vess)",
+      "status": "destroyed (aboard Horizon's Wake)",
+      "notes": "Burned by Captain Vess, representing a direct challenge to Dominion authority. Their continued use by other merchants leads to shipwrecks and lost settlements.",
+      "first_date": "2026-05-22",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -31954,7 +32568,7 @@
       "status": "contested",
       "notes": "No traditional government is mentioned. Power has devolved to shadow-merchants and occult practitioners. Vex's flooding of the market with counterfeits accelerates collapse.",
       "first_date": "2026-03-14",
-      "appearances": 23,
+      "appearances": 24,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Dominion",
@@ -31975,7 +32589,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 11,
+      "appearances": 13,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -32037,7 +32651,7 @@
       "status": "stable",
       "notes": "Their diplomatic choice reshapes the political landscape for generations.",
       "first_date": "2026-03-27",
-      "appearances": 7,
+      "appearances": 8,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Surface Kingdoms",
@@ -32293,7 +32907,7 @@
       "status": "active",
       "notes": "The Dominion attempted to burn it twice; fires burn blue and hot rather than destroying; glass becomes more alive and magical with each burning attempt.",
       "first_date": "2026-05-20",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -32892,7 +33506,7 @@
       "significance": "This cataclysm has shattered the Empire's administrative capacity and spawned widespread transformation. It is the root cause of refugee crises, dimensional instability, and the convergence at the Sunken Cathedrals.",
       "notes": "The exact nature and cause remain mysterious; aftermath continues to unfold.",
       "first_date": "2026-03-10",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "the_memory_thief_bargain",
@@ -36855,6 +37469,37 @@
       "notes": "The inspector's silence suggests either shame, fear, or complicity in Korra's continued operation.",
       "first_date": "2026-05-21",
       "appearances": 1
+    },
+    {
+      "id": "the_cartographers_mutiny",
+      "name": "The Cartographer's Mutiny",
+      "tagline": "Charts burned. Truth freed. Authority challenged.",
+      "event_type": "uprising / economic disruption",
+      "scope": "regional",
+      "epicenter_place": "Iron Coast",
+      "epicenter_region": "Iron Coast",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Iron Coast"
+      ],
+      "affected_regions": [
+        "Iron Coast"
+      ],
+      "affected_realms": [
+        "the Dominion"
+      ],
+      "radius": "Iron Coast merchant routes",
+      "participants": [
+        "Captain Vess",
+        "Aldrin",
+        "merchant captains",
+        "the Dominion"
+      ],
+      "outcome": "Captain Vess burned the Dominion's official charts and began navigating by Aldrin's observations instead. Within months, the Horizon's Wake became the only merchant vessel with a reliable success rate, while competitors continued to fail. Vess lost her merchant's license but gained a strategic advantage through access to accurate information.",
+      "significance": "This act of defiance exposed the systemic inadequacy of the Dominion's centralized cartographic authority and demonstrated that empirical observation trumps institutional dogma. It created a knowledge asymmetry that benefited Vess and threatened the Dominion's control over trade and navigation.",
+      "notes": "The consequences for Vess's license revocation may escalate. The demand for Aldrin's charts from other captains suggests wider dissatisfaction with Dominion authority. The event hints at systemic failures in post-Luminous Ascension governance.",
+      "first_date": "2026-05-22",
+      "appearances": 1
     }
   ],
   "weapons": [
@@ -37399,7 +38044,7 @@
       "status": "active",
       "notes": "Central governance of surface world; their choice determines the outcome of the rising.",
       "first_date": "2026-03-27",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "reconstructionists",
@@ -37591,7 +38236,7 @@
       "status": "active",
       "notes": "The Dominion is hunting Liv's archive, attempting to suppress the documentation before multiplicities of truth destabilize reality. They represent institutional control of history.",
       "first_date": "2026-04-03",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "night_markets",
@@ -38203,6 +38848,78 @@
       "status": "active",
       "notes": "The Seventeen are merchants or traders who maintain secret routes and knowledge. Their caravans carry cargo of transformed starlight and gold. Kelvan adopts their symbol and joins their network by donning their cloak.",
       "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "dominion_glass_tax_collectors",
+      "name": "The Dominion's Glass-Tax Collectors",
+      "tagline": "Extractive. Institutional. Defeated.",
+      "alignment": "lawful / corrupt",
+      "goals": "Extract glass-taxes from Lampwick Quarter craftspeople; maintain institutional control over valuable crafts.",
+      "leader": "unknown",
+      "status": "active (but thwarted in Niel's case)",
+      "notes": "Competes with the Shadow-Archive for control of powerful artifacts. Niel's resistance suggests they can be evaded through community-based craft.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_archive_agents",
+      "name": "The Shadow-Archive",
+      "tagline": "Hidden. Counterinstitutional. Refuge.",
+      "alignment": "neutral / chaotic",
+      "goals": "Preserve testimonies and knowledge outside Dominion control; offer asylum to those fleeing institutional authority.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Offers asylum to Niel and likely other artifact-holders. Represents a counter-institutional archive system competing with the Dominion.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "wyverlins",
+      "name": "The Wyverlins",
+      "tagline": "Young. Learning. Inherited.",
+      "alignment": "neutral",
+      "goals": "Learn the old economics and history from Vrekka; inherit knowledge of what-was.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Gathered at Pale Crossing to hear Vrekka's testimony. Include Vrekka's own daughter.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "wave_singers_expeditionary",
+      "name": "Wave-Singers",
+      "tagline": "Diplomatic. Maritime. Exploratory.",
+      "alignment": "neutral",
+      "goals": "Expedition and diplomatic missions across maritime and coastal realms.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Kress is bonded to the Wave-Singers' expeditionary wing; they operate in boundary-waters and shallows.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "abyssal_dwellers",
+      "name": "abyssal-dwellers",
+      "tagline": "Deep. Diplomatic. Commanding.",
+      "alignment": "neutral",
+      "goals": "Control of boundary-waters; maintenance of underwater dominion; diplomatic engagement with surface-folk.",
+      "leader": "abyssal-dweller commanders",
+      "status": "active",
+      "notes": "Sent commanders to retrieve the shipwreck from boundary-waters; negotiated with Kress over the ledgers.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_archive",
+      "name": "Shadow-Archive",
+      "tagline": "Secretive. Falsifying. Dominating.",
+      "alignment": "corrupt",
+      "goals": "Maintenance of historical false-truths; suppression of evidence of Dominion forgery.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Kress's proof could crack the Shadow-Archive's own false-truths open; likely connected to Dominion historical conspiracy.",
+      "first_date": "2026-05-22",
       "appearances": 1
     }
   ],
@@ -40220,6 +40937,39 @@
       "notes": "The principle that glass shaped by a craftsperson retains a fragment of their will and memories, and can even recall the hands that break it.",
       "first_date": "2026-05-21",
       "appearances": 1
+    },
+    {
+      "id": "lore_old_economics",
+      "name": "The Old Economics",
+      "tagline": "Hoarding. Value. Lost.",
+      "category": "history",
+      "source": "Vrekka's testimony at Pale Crossing.",
+      "status": "remembered through testimony",
+      "notes": "The system of value based on material wealth (particularly gold) that existed before the Luminous Ascension. Vrekka taught it to the wyverlins through carved stone testimony.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "lore_displaced_person_testimony",
+      "name": "Displaced-Person Testimony",
+      "tagline": "Refugee. Preserved. Invisible.",
+      "category": "history",
+      "source": "The substance of Niel's glass vessels; the smuggling of star-ash from the Burned Expanse.",
+      "status": "confirmed / active",
+      "notes": "Stories and memories of those displaced by the Luminous Ascension, preserved in Niel's luminous glass vessels in ways invisible to Dominion ledger-monitors.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "autonomous_echo_selves",
+      "name": "autonomous echo-selves",
+      "tagline": "Fractured. Conscious. Incomplete.",
+      "category": "legend",
+      "source": "Emerged from mist at Greymist River; fractured by Luminous Ascension's cosmic unmaking.",
+      "status": "confirmed",
+      "notes": "The Ascension fragments consciousness into autonomous echo-selves that bear memories and faces of the dead but are not those people. Theron's echo emerged three seasons after his drowning.",
+      "first_date": "2026-05-22",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -40233,7 +40983,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 20
+      "appearances": 21
     },
     {
       "id": "wolf_spirit_beast",
@@ -40407,6 +41157,18 @@
       "status": "endangered in the post-Ascension world",
       "notes": "Saffron was part of Kelvan's inherited merchant route. Its disappearance from the Scorched Reach after the Luminous Ascension symbolizes the collapse of the old world's agricultural and economic systems.",
       "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "merchants_transmuted",
+      "name": "Transmuted Merchants",
+      "tagline": "Changed. Wandering. Adaptive.",
+      "type": "creature",
+      "rarity": "rare",
+      "habitat": "Waystation and trade routes",
+      "status": "thriving",
+      "notes": "Merchants transformed by the Luminous Ascension who gather at Pale Crossing. Their exact form and nature are unexplained; they appear to be post-human variants adapted to the new economy.",
+      "first_date": "2026-05-22",
       "appearances": 1
     }
   ],
@@ -40925,6 +41687,18 @@
       "status": "known",
       "notes": "A form of consciousness that retains absolute value even after the Luminous Ascension. It is unclear whether this is a voluntary transformation or an involuntary effect of the cosmic event. Kressa offers to collect consciousness-fragments if the Dominion can restore material value.",
       "first_date": "2026-05-02",
+      "appearances": 1
+    },
+    {
+      "id": "old_songs_magic",
+      "name": "old songs",
+      "tagline": "Ancient. Taught. Rhythmic.",
+      "type": "spell",
+      "element": "song / old magic / teaching",
+      "difficulty": "adept",
+      "status": "known",
+      "notes": "Old songs were taught by abyssal-dweller diplomats like Theron to surface-folk. They appear to be part of a teaching tradition and carry ritual or magical power.",
+      "first_date": "2026-05-22",
       "appearances": 1
     }
   ],
@@ -41468,6 +42242,18 @@
       "notes": "The girl's quest to understand and break the Tower's hunger drives her to Sorrath. His wisdom\u2014teaching hunger to eat itself\u2014may be a key to containing or redirecting this relic's power. The Tower's hunger is both entity and curse.",
       "first_date": "2026-05-21",
       "appearances": 1
+    },
+    {
+      "id": "shipwreck_vessel",
+      "name": "shipwreck from no recorded war",
+      "tagline": "Salvage. Mystery. Evidence.",
+      "origin": "Found at boundary-waters; origin unknown\u2014from no recorded war in history.",
+      "power": "Carries pre-Luminous Ascension ledgers that prove Dominion historical forgery; its very existence challenges historical records.",
+      "curse": "Hunted by both abyssal-dwellers and surface kingdoms; touching it draws attention from powerful factions.",
+      "status": "active",
+      "notes": "The ledgers' handwriting matched Dominion script exactly, raising questions about forgery vs. predating. Now negotiated to abyssal-dwellers by Kress.",
+      "first_date": "2026-05-22",
+      "appearances": 1
     }
   ],
   "regions": [
@@ -41502,7 +42288,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-02-28",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -41787,7 +42573,7 @@
       "status": "active",
       "notes": "Wind-haunted ports suggest volatile weather; active smuggling routes; deepkin maintain presence in nearby waters.",
       "first_date": "2026-03-04",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -41863,7 +42649,7 @@
       "status": "active",
       "notes": "Home to Captain Vesta's operations. The Sapphire Deep is accessible from here. The region appears to be economically vibrant but spiritually burdened.",
       "first_date": "2026-03-05",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -41882,7 +42668,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-06",
-      "appearances": 4,
+      "appearances": 5,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -41959,7 +42745,7 @@
       "status": "cursed",
       "notes": "The worst consequences of the cosmic rewrite manifest here. The boundary between mapped and unmapped void is dangerously thin.",
       "first_date": "2026-03-08",
-      "appearances": 3,
+      "appearances": 4,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -42869,7 +43655,7 @@
       "use": "Dorian left a purse of gold for the orphanage at Verdant Strand as part of his final reckoning.",
       "notes": "Represents Dorian's wealth and his choice to distribute it rather than hoard it.",
       "first_date": "2026-04-08",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "void_light_substance",
@@ -43109,6 +43895,54 @@
       "use": "Military weapons and equipment",
       "notes": "The Dominion/Syndicate converts ornamental glass into weapon-glass, destroying cultural artifacts in the process. The specific properties of weapon-glass are unspecified.",
       "first_date": "2026-05-21",
+      "appearances": 1
+    },
+    {
+      "id": "substance_awareness_shards",
+      "name": "Awareness-Shards",
+      "tagline": "Consciousness. Currency. New.",
+      "type": "currency / consciousness-fragment",
+      "rarity": "rare",
+      "properties": "Serve as the new currency standard after the Luminous Ascension, replacing material wealth like gold.",
+      "use": "Exchange and trade in the post-Ascension economy.",
+      "notes": "The precise nature of awareness-shards (whether they are fragments of consciousness, crystallized awareness, or metaphorical units) remains unexplained.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "substance_star_ash",
+      "name": "Star-Ash",
+      "tagline": "Celestial. Rare. Fuel.",
+      "type": "mineral / reagent",
+      "rarity": "rare",
+      "properties": "Harvested from the Burned Expanse; when fed to the furnace-heart, it causes the entity to sing and enables flawless, luminous glasswork.",
+      "use": "Fuel for the furnace-heart; smuggled by displaced persons to Niel Coldwater.",
+      "notes": "Its elemental or celestial origin suggests it may be a remnant of the Luminous Ascension or a pre-human material.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "dominion_script_ink",
+      "name": "Dominion script",
+      "tagline": "Written. Standardized. Forged.",
+      "type": "writing system / ink",
+      "rarity": "common",
+      "properties": "A standardized handwriting system used to write pre-Luminous Ascension ledgers; the discovery that ancient ledgers were written in matching Dominion script proved centuries of forgery.",
+      "use": "Record-keeping, historical documentation, bureaucratic administration.",
+      "notes": "The identical handwriting of pre-Luminous and post-Luminous records exposed the forgery conspiracy.",
+      "first_date": "2026-05-22",
+      "appearances": 1
+    },
+    {
+      "id": "meteor_iron_material",
+      "name": "meteor-iron",
+      "tagline": "Forged. Sacrificial. Ancient.",
+      "type": "metal",
+      "rarity": "rare",
+      "properties": "A metal forged from meteoric material, specifically prepared for ritual sacrifice and bone-carving. Never tasted anything but sacrifice.",
+      "use": "Ritual weapons, bone-carving knives, tools of cosmic magic.",
+      "notes": "Tarion's meteor-iron knife was used to carve reversal-ritual sigils; represents binding of material and intent.",
+      "first_date": "2026-05-22",
       "appearances": 1
     }
   ],
@@ -43858,6 +44692,21 @@
       "notes": "This is a newly discovered or rediscovered technique. By winter, whispers spread of the bone-singers using it, suggesting it becomes a tool of resistance. It represents the Old Language's capacity for truth-telling even when used in reversal.",
       "first_date": "2026-05-21",
       "appearances": 1
+    },
+    {
+      "id": "reversal_ritual_ascension",
+      "name": "reversal-ritual",
+      "tagline": "Cosmic. Sacrificial. Irreversible.",
+      "ritual_type": "reversal",
+      "performed_by": [
+        "Tarion"
+      ],
+      "requirements": "Pre-human ritual instructions carved into bone using meteor-iron knife forged for sacrifice; sigils carved into the bone-carver's own body; must be performed in sealed tombs beneath the Bleached Wastes.",
+      "effect": "Intended to reverse the Luminous Ascension by scattering the carver's consciousness across old stars as an anchor for unmaking. Did not succeed in unmaking the Ascension\u2014it was too late.",
+      "cost": "The carver's own consciousness; memories burned away, fingers withered, voice transformed into bone-language; carver becomes barely human.",
+      "notes": "Tarion completed the final carving despite the Shard-Keeper's intervention; demonstrates the Luminous Ascension's permanence.",
+      "first_date": "2026-05-22",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -43975,7 +44824,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 25
+      "appearances": 27
     },
     {
       "id": "the_hegemony",
@@ -44041,7 +44890,7 @@
       "description": "Central authority of surface kingdoms seeking to erase refugee testimony and suppress unlicensed knowledge-brokers. Operates through auditors and official channels.",
       "notes": "Mara works to investigate information-brokers on their behalf; her choice determines whether refugee testimony is institutionalized or suppressed.",
       "first_date": "2026-03-30",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "the_hegemon",
