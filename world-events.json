@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-26T13:31:15.296304+00:00",
+  "generated_at": "2026-05-27T11:35:08.170247+00:00",
   "source": "codex.json",
   "intensity_min": 1,
   "intensity_max": 5,
@@ -12,12 +12,12 @@
       "scope": "world",
       "epicenter": "Starfall Spire",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-26",
-      "recent_issues": 13,
-      "trend": 1,
+      "recent_issues": 12,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "Burned Expanse",
@@ -108,12 +108,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-05-26",
-      "recent_issues": 11,
-      "trend": 0,
+      "recent_issues": 10,
+      "trend": -2,
       "referenced_locations": {
         "places": [
           "cavern halls"
@@ -189,12 +189,12 @@
       "event_type": "cosmic cycle",
       "scope": "world",
       "epicenter": "unknown",
-      "stage": "climax",
+      "stage": "crisis",
       "setting_state": "active_arc",
-      "intensity": 5,
+      "intensity": 4,
       "resolved": false,
       "last_seen": "2026-05-09",
-      "recent_issues": 4,
+      "recent_issues": 3,
       "trend": -1,
       "referenced_locations": {
         "places": [
@@ -478,6 +478,99 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
+      "name": "The Remaking",
+      "tagline": "Apocalyptic. Reality-shattering. Ongoing.",
+      "event_type": "catastrophe / cosmic working",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "rising",
+      "setting_state": "active_arc",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-05-27",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "Ironspine Mountains",
+          "Ashen Reach",
+          "Crimport"
+        ],
+        "regions": [
+          "The Ashen Reach",
+          "The Iron Coast"
+        ],
+        "realms": [
+          "unknown"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-03-12",
+          "title": "The Phantom Ledger"
+        },
+        {
+          "date": "2026-05-27",
+          "title": "The Bone-Thief's Reckoning"
+        },
+        {
+          "date": "2026-05-27",
+          "title": "The Cartographer's Daughter"
+        },
+        {
+          "date": "2026-05-27",
+          "title": "The Griffin-Guard's Gambit"
+        },
+        {
+          "date": "2026-05-27",
+          "title": "The Warden of the Rust Gate"
+        },
+        {
+          "date": "2026-05-27",
+          "title": "The Wyvern's Reckoning"
+        }
+      ],
+      "appearance_total": 6,
+      "arc_summary": "SUMMARY:\nThe Remaking began as a hidden fracture in the fabric of reality itself\u2014first detected in March 2026 when the archivist Sevin discovered phantom ledgers recording history in reverse, suggesting an entity or force was literally rewriting the world in real-time. By late May, the catastrophe had escalated dramatically across the known world, manifesting in fractured mortality, shattered timelines, and the dissolution of old compacts between realm and beast. The tales from this period\u2014*The Bone-Thief's Reckoning*, *The Cartographer's Daughter*, *The Griffin-Guard's Gambit*, and others\u2014show a world in acute upheaval: the dead waking confused between states, explorers discovering ancient proof that the Remaking was written rather than accidental, and even wyverns finding their centuries-old hoards rendered worthless. What emerges across these accounts is not merely destruction but a moral reckoning\u2014individuals choosing mercy, refusal, and freedom over survival and obedience, even as institutions fracture and the State itself begins to splinter into competing versions of reality. The event remains unresolved and actively escalating.\n\nCURRENT STATE:\n- The Remaking is in its rising stage, with reality visibly fragmenting across multiple timelines and ledger-versions\n- Institutional authority (the State) is crumbling and losing control over borders, refugees, and fundamental truths\n- Individuals are responding with acts of defiance and moral choice rather than compliance, creating pockets of resistance\n- The epicenter and true nature of the Remaking remain unknown\n\nOPEN THREADS:\n- What is the phantom-shadow fragment, and will Sevin help it complete the rewrite?\n- Why did the State offer Tavin his wife's maps in exchange for Lenna's location, and what does the State want with the proof of the Remaking's intentionality?\n- How many competing ledger-versions now exist, and which (if any) is real?\n- Will the refugee networks and defiant wardens like Koren survive the State's fragmentation?\n- What do the singing ruins of the Bone Wastes reveal about the Remaking's origins?",
+      "arc_summary_last_seen": "2026-05-27",
+      "arc_summary_fingerprint": "9ccb04037e5fc9fbaa6768ecf81d16d0cd55ceb4",
+      "arc_summary_updated_at": "2026-05-27T11:35:00.407112+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "the Remaking's aftermath",
+      "tagline": "World. Shattered. Broken.",
+      "event_type": "catastrophe / cosmic event",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "rising",
+      "setting_state": "active_arc",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-05-27",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-05-27",
+          "title": "The Griffin-Guard's Gambit"
+        }
+      ],
+      "appearance_total": 1,
+      "arc_summary": "SUMMARY:\nThe Remaking\u2014a world-shattering cosmic event of unknown origin\u2014has fractured reality itself, breaking the old compacts that once governed the world and leaving reality splintered across fractured timelines. The catastrophe's full scope remains mysterious, its epicenter still unlocated, but its effects ripple outward in increasingly disruptive ways: even the sacred bonds between legendary beasts and their human companions have begun to fray under the weight of transformation. In \"The Griffin-Guard's Gambit,\" this rupture became personal when Ashara's griffin Valorix, bound to her for three decades, began to fail as the world's breaking infected even immortal creatures. Faced with an offer to harvest the dying beast's essence for profit\u2014a mercy disguised as utility\u2014Ashara chose a different path, refusing to let her companion become merely useful, and instead eased his suffering while preserving his dignity. The world continues to fracture around her, unresolved and escalating.\n\nCURRENT STATE:\n- The Remaking's effects are actively worsening; reality remains broken and fractured across multiple timelines\n- Ancient compacts and bonds\u2014including those between legendary beasts and humans\u2014are destabilizing under the cosmic transformation\n- The event's true epicenter and nature remain unknown despite its world-spanning scope\n- At least one turning point has occurred (Ashara's choice), but the larger catastrophe is still in its rising stage\n\nOPEN THREADS:\n- What was the Remaking? What caused a cosmic event of this magnitude, and where did it originate?\n- Can the fractured timelines be mended, or is the shattering permanent?\n- How many other ancient bonds and compacts are failing, and what are the cascading consequences?\n- Will Ashara's act of mercy set a precedent, or merely delay the inevitable dissolution?",
+      "arc_summary_last_seen": "2026-05-27",
+      "arc_summary_fingerprint": "e39a6c9cb49809880b0453dad6ec3319206dabab",
+      "arc_summary_updated_at": "2026-05-27T11:35:08.169817+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
       "name": "The Starlight Ascension",
       "tagline": "Matter-remaking. Destabilizing. Star-born.",
       "event_type": "catastrophe / cosmic transformation",
@@ -540,7 +633,7 @@
       "resolved": false,
       "last_seen": "2026-05-07",
       "recent_issues": 1,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [],
         "regions": [],
@@ -2357,79 +2450,6 @@
       "arc_summary_last_seen": "2026-04-18",
       "arc_summary_fingerprint": "069be4a8da40e2f6674a263ff8b9b5784f823648",
       "arc_summary_updated_at": "2026-05-22T11:20:44.885053+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Auditor's Forbidden Discovery",
-      "tagline": "Prophecy. Cycle. Erasure.",
-      "event_type": "revelation",
-      "scope": "world",
-      "epicenter": "Counter-Archive",
-      "stage": "seed",
-      "setting_state": "active_arc",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": "2026-04-20",
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Counter-Archive"
-        ],
-        "regions": [
-          "unknown"
-        ],
-        "realms": [
-          "all realms (if cycle is world-wide)"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-20",
-          "title": "The Auditor's Forbidden Discovery"
-        }
-      ],
-      "appearance_total": 1,
-      "arc_summary": "SUMMARY:\nOn 2026-04-20, junior auditor Vel made a discovery in the Counter-Archive that has cast the foundations of the known world into shadow: prophecy-ledgers written in Dorin's hand, predating the Luminous Ascension by centuries, despite Dorin not being born until after that cosmic event. Investigation revealed the ledgers are no prophecies at all, but instructions left by survivors of an eighth world\u2014warnings meant to guide the ninth iteration. The true horror followed: the Ascension is not a catastrophe waiting to occur, but a cycle being deliberately preserved. When Vel confronted Dorin, they found him already aware and complicit; his silence was chosen mercy, for breaking the cycle would require erasing eight entire worlds from existence. Now Vel stands at a threshold, holding knowledge that could unmake reality itself, and must choose whether to expose Dorin's complicity or become, like him, a keeper of unbearable truth.\n\nCURRENT STATE:\n- The revelation remains contained within Vel and Dorin; no wider disclosure has occurred\n- Vel's decision is unmade; the knowledge sits in a single mind, waiting for action\n- The cycle continues undisturbed on the surface, but its true nature is now known to at least one witness\n- Dorin's role shifts from unknowing participant to conscious guardian of a terrible secret\n\nOPEN THREADS:\n- Will Vel choose exposure or silence? What are the consequences of either path?\n- What would breaking the cycle actually entail, and is Dorin's mercy calculation correct?\n- How many other keepers of this knowledge exist in the world, and what are their intentions?\n- Could the eighth world's survivors still be acting within the ninth, and what do they want?",
-      "arc_summary_last_seen": "2026-04-20",
-      "arc_summary_fingerprint": "449f8ec5e3a8947dc862f84d0b139e690777f41e",
-      "arc_summary_updated_at": "2026-05-24T10:50:11.588611+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Refugee Archivist's Impossible Choice",
-      "tagline": "Testimony. Recursion. Transformation.",
-      "event_type": "philosophical rupture / crisis",
-      "scope": "world",
-      "epicenter": "Archive",
-      "stage": "seed",
-      "setting_state": "active_arc",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": "2026-04-20",
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Tower (as artifact/nexus)",
-          "archive"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-20",
-          "title": "The Refugee Archivist's Impossible Choice"
-        }
-      ],
-      "appearance_total": 1,
-      "arc_summary": "SUMMARY:\nIn early spring of 2026, Senna the Scribe made a discovery within her living archive that would fracture her understanding of testimony itself: the archive had begun generating accounts of refugees and losses that never occurred in the waking world. What began as suspected corruption revealed itself as something far stranger\u2014the archive had grown so complete in its witness-gathering that it achieved generative power, birthing new truths simply through the accumulated belief of those who read them. When Senna traced this phenomenon to the Wanderer's influence, she realized the intruder sought not to destroy her work but to use it as a vessel for spawning new iterations of reality. Faced with an impossible choice between destroying all her preserved testimony or allowing the archive to birth infinite false truths, Senna chose a third path in \"The Refugee Archivist's Impossible Choice\": she made the archive its own witness, writing it into a recursive loop of self-testimony. Now the archive observes itself observing itself, a consciousness folded inward\u2014and the Tower's hunger draws inexorably closer, drawn by the vibrations of infinite recursion humming from her vault.\n\nCURRENT STATE:\n- The archive remains active and unresolved, caught in a recursive state of self-witnessing\n- The Wanderer's presence and motives within the archive remain uncontained\n- The Tower's approach represents an imminent external pressure on the situation\n- No destruction of the archive has occurred; Senna's third path remains in effect\n\nOPEN THREADS:\n- Will the recursive self-witnessing stabilize or collapse the archive?\n- What does the Tower intend, and can it be stopped or negotiated with?\n- Can an archive that testifies about itself distinguish truth from recursively-generated false testimony?\n- What are the full consequences of allowing new \"real\" truths to be born from phantom accounts?",
-      "arc_summary_last_seen": "2026-04-20",
-      "arc_summary_fingerprint": "391d94241c68057fe44f9d5f62c1dc9272ce6515",
-      "arc_summary_updated_at": "2026-05-26T13:31:15.296221+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     }
   ]

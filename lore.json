@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-05-26",
+  "last_updated": "2026-05-27",
   "worlds": [
     {
       "id": "known_world",
@@ -1397,7 +1397,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 77
+      "appearances": 78
     },
     {
       "id": "mardoc_cartographer",
@@ -1936,11 +1936,22 @@
         "Lamia",
         "Nerida"
       ],
-      "notes": "Merfolk culture, governance, and full capabilities remain largely mysterious. Their transformation magic and ability to summon storms suggest advanced magical knowledge.\nThe merfolk are now actively investigating the aftermath of the Crimson Convergence and aware of an ancient pact with land-dwellers regarding the stars. Commander Nerys is actively mobilizing reconnaissance efforts.\nStory 'The Tide-Caller's Bargain' shows merfolk captain Nerida (canon character) actively negotiating with land-dwellers regarding estuary protection, consistent with prior canon of merfolk engagement with mortal affairs. No new status but reinforces realmwide coordination.",
+      "notes": "Merfolk culture, governance, and full capabilities remain largely mysterious. Their transformation magic and ability to summon storms suggest advanced magical knowledge.\nThe merfolk are now actively investigating the aftermath of the Crimson Convergence and aware of an ancient pact with land-dwellers regarding the stars. Commander Nerys is actively mobilizing reconnaissance efforts.\nStory 'The Tide-Caller's Bargain' shows merfolk captain Nerida (canon character) actively negotiating with land-dwellers regarding estuary protection, consistent with prior canon of merfolk engagement with mortal affairs. No new status but reinforces realmwide coordination.\nReinforces canon pattern of merfolk managing debts and enforcing transformative bargains. Confirms merfolk magic and consciousness-altering power over surface-dwellers.",
       "first_story": "The Sea-Debt",
       "first_date": "2026-03-01",
-      "appearances": 3,
-      "travel_notes": "[2026-03-03] Story shows merfolk actively tasking swimmers to search surface settlements and listen in harbors and trade posts, indicating broad-realm travel capacity beyond their home regions."
+      "appearances": 5,
+      "travel_notes": "[2026-03-03] Story shows merfolk actively tasking swimmers to search surface settlements and listen in harbors and trade posts, indicating broad-realm travel capacity beyond their home regions.",
+      "status_history": [
+        {
+          "date": "2026-05-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Merfolk Debt",
+          "note": "Merfolk keeper of pearls enforces debt against Torven by offering Sera the choice to return the pearl or join the deep; demonstrates merfolk enforcement of magical/oath obligations.",
+          "evidence": "The merfolk keeper of pearls waits in the mer-city, beautiful and ancient, offering Sera the choice: return the pearl and lose him, or join the deep and forget the sun."
+        }
+      ]
     },
     {
       "id": "lord_caevan",
@@ -2075,7 +2086,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 21
+      "appearances": 22
     },
     {
       "id": "mogrul",
@@ -2429,7 +2440,9 @@
     {
       "id": "merchant_daughter",
       "name": "Merchant's Daughter",
-      "aliases": [],
+      "aliases": [
+        "The old woman"
+      ],
       "tagline": "Taken. Protected. Innocent.",
       "role": "Captive",
       "world": "Edhra",
@@ -2456,7 +2469,7 @@
       "notes": "Her capture reveals the binding nature of inter-generational oaths in this world. She is cradled safely, suggesting Keth-Vex's actions are honorable rather than predatory.",
       "first_story": "The Wyvern's Ransom",
       "first_date": "2026-03-02",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "syleth",
@@ -2527,13 +2540,15 @@
     {
       "id": "torven",
       "name": "Torven",
-      "aliases": [],
+      "aliases": [
+        "Torven the pearl-diver"
+      ],
       "tagline": "Pearl-diver. Compassionate. Humble.",
       "role": "Pearl-diver / Mystic",
       "world": "Edhra",
       "status": "active",
       "home_place": "Sunken Cathedrals",
-      "home_region": "unknown",
+      "home_region": "Iron Coast",
       "home_realm": "unknown",
       "travel_scope": "regional",
       "bio": "Torven was a pearl-diver in the Sapphire Deep who was shown a magnificent pearl by the sea-kind in exchange for finding a match. In the Sunken Caverns, he discovered the pearl was the Vespera's heart\u2014given away when she loved a mortal prince centuries ago. Rather than steal it, Torven chose compassion, asking the Vespera the prince's name so she could finally weep and heal.",
@@ -2555,7 +2570,7 @@
       "notes": "Torven's mercy was rewarded with the Vespera's blessing. He chose human connection over material wishes.",
       "first_story": "The Merchant's Pearl",
       "first_date": "2026-03-02",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "vespera",
@@ -2771,7 +2786,7 @@
       "notes": "Left the vaults to walk a separate path; remains bonded to companions through choice, not compulsion.\nShadow-Broker's network appears to be actively acquiring high-value secrets post-Stellar Rite, positioning them as a major force in the new economy of intangibles.\nThe Shadow-Broker's network is now confirmed as a major player in post-Ascension fragment-trading; their positioning as custodians preventing reassembly suggests strategic alignment with forces opposing a second Ascension.\nThe Shadow-Broker's network experiences catastrophic disruption. If Vex is the Shadow-Broker or closely affiliated, this represents a major operational collapse\u2014though the implications for the broader shadow-brokerage network remain unclear.\nVex (the Shadow-Broker's network operator) appears across multiple stories ('The Grain-Singer's Gambit', 'The Shadow-Merchant's Reckoning') engaging in memory and shadow trafficking. Canon status remains active; no contradictions detected.\nThis extends Vex's arc beyond memory-fragment trading into shadow-consciousness stewardship; the network she built now has agency independent of her will.\nConfirms Shadow-Broker network experiencing unprecedented disruption. The awakening shadows represent loss of control over traded consciousness\u2014either Vex becomes a conduit for resurrection or loses the identity she's built. This extends the crisis beyond Vex's personal vault to entire shadow-brokerage infrastructure.\nReferenced indirectly through Vex's shadow-market operations and deepkin covenant negotiations, but no new status event.\nVex's arc extends beyond her prior liquidation; the vault now becomes a liminal sanctuary where stolen consciousness self-organizes, consistent with prior canon tracking of shadow-network awakening.\nThis represents a new crisis beyond the prior vault awakening\u2014the shadows are now actively cooperating toward composite forms that could weaponize both memory and song. Vex's control has devolved into negotiation.\nExtends prior canon arc of shadow-network awakening into active crisis. Shadows now negotiating their own reassembly independent of Vex's will, creating purgatorial inventory that forces moral reckoning.\nStory 'The Shadow-Vault's Awakening' shows Vex discovering autonomous thought-entities (fragments of Vathis's consciousness from the sacrifice) attracted to her blood-marked resonance. These are not stolen shadows but cosmic fragments competing for reassembly\u2014deepkin, Dominion, and refugees all seeking to claim or stabilize them. New crisis vector beyond prior shadow-brokerage network awakening.\nStory 'The Shadow-Broker's Empty Vault' shows Vex discovering stolen umbra reorganizing autonomously and demanding reassembly; extends prior canon arc of shadow-network awakening toward liberation rather than commodification.\nStory 'The Merchant's Final Account' references Valen discovering his family's merchant house and a 'shadow-broker' grandmother's rewriting ledger. No direct engagement with canon Shadow-Broker (Vex); operates in shadow-markets but distinct narrative arc. Does not constitute new canon event.\nStory 'The Spice-Thief's Gambit' references Mira creating an underground memory-trading economy at Pale Crossing, competing with phantom-ledger system. Confirms Shadow-Broker network's realmwide operation through memory/phantom-fragment trafficking; no new status event for Vex herself.",
       "first_story": "The Warband's Last Song",
       "first_date": "2026-03-02",
-      "appearances": 19,
+      "appearances": 20,
       "status_history": [
         {
           "date": "2026-03-11",
@@ -3574,7 +3589,7 @@
       "notes": "Her ship is her base of operations. The abyssal ledger always balances; her fate depends on producing binding-tokens before year's end.",
       "first_story": "The Deepkin's Ledger",
       "first_date": "2026-03-05",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "kieran",
@@ -4248,7 +4263,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "cavern halls",
-      "home_region": "unknown",
+      "home_region": "The Ashen Reach",
       "home_realm": "unknown",
       "travel_scope": "realmwide",
       "bio": "Skarath is an ancient wyvern who collects debts and promises across ages. He descends to the cavern halls seeking understanding of cosmic shifts caused by the Ascension. He undertakes unprecedented negotiations with starborn entities to maintain the old powers' place in the world's evolving hierarchy.",
@@ -4266,10 +4281,10 @@
         "dragons",
         "wyverns"
       ],
-      "notes": "His ability to track and enforce ancient oaths is fracturing due to the Ascension. Seeks to negotiate with conscious stars themselves.\nThis deepens Skarath's existential crisis established in canon; her role shifts from debt-keeper to philosopher grappling with obsolescence of her entire existence-structure.\nDeepens Skarath's existential crisis: hoarding itself is now obsolete. Her desperation to access the Young Arcanist's journals marks a critical escalation\u2014she is actively seeking to undo the Ascension, positioning her as either a potential ally or adversary to other forces seeking to manipulate or preserve the new cosmic order.\nSkarath's existential crisis deepens: she now faces incomplete transformation and imminent powerlessness, though she survives.",
+      "notes": "His ability to track and enforce ancient oaths is fracturing due to the Ascension. Seeks to negotiate with conscious stars themselves.\nThis deepens Skarath's existential crisis established in canon; her role shifts from debt-keeper to philosopher grappling with obsolescence of her entire existence-structure.\nDeepens Skarath's existential crisis: hoarding itself is now obsolete. Her desperation to access the Young Arcanist's journals marks a critical escalation\u2014she is actively seeking to undo the Ascension, positioning her as either a potential ally or adversary to other forces seeking to manipulate or preserve the new cosmic order.\nSkarath's existential crisis deepens: she now faces incomplete transformation and imminent powerlessness, though she survives.\nThis represents a significant shift in Skarath's arc toward redemption and release from hoarding. Reinforces canon pattern of wyverns grappling with post-Ascension meaninglessness and moral reckoning.",
       "first_story": "The Wyvern's Starborn Debt",
       "first_date": "2026-03-06",
-      "appearances": 5,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-04-09",
@@ -4297,6 +4312,15 @@
           "story_title": "The Wyvern's Hunger Turns to Ash",
           "note": "Skarath begins consuming her hoard alchemically to stabilize ley-lines but halts mid-transformation, leaving her conscious but powerless, facing immortality without accumulation.",
           "evidence": "She began to feed. With each mouthful, she felt her consciousness expanding...She stopped eating and began to weep, the hoard scattered around her like a failed monument to an age that had already ended."
+        },
+        {
+          "date": "2026-05-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wyvern's Reckoning",
+          "note": "Skarath offers her entire worthless hoard to refugee networks freely; releases the merchant's daughter from diamond captivity and offers to carry her to the ocean.",
+          "evidence": "She descended to Crimport harbor and offered her entire hoard to the refugee networks\u2014not for consciousness-fragments, but freely... She opened the diamond cage. The merchant's daughter\u2014now gray-haired, ancient\u2014stumbled into sunlight."
         }
       ]
     },
@@ -4778,7 +4802,7 @@
       "notes": "His theft may have been orchestrated from the beginning. The Archive's ledger recorded him as 'Employed,' suggesting hidden purposes.",
       "first_story": "The Amber Thief's Gambit",
       "first_date": "2026-03-08",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "sevin_auditor",
@@ -6316,7 +6340,10 @@
     {
       "id": "tavin",
       "name": "Tavin",
-      "aliases": [],
+      "aliases": [
+        "Lenna's father",
+        "the cartographer"
+      ],
       "tagline": "Circle-Keeper. Transformed. Boundary-walker.",
       "role": "Circle-Keeper",
       "world": "Edhra",
@@ -6343,7 +6370,7 @@
       "notes": "Tavin's final status is ambiguous\u2014no longer entirely keeper nor entirely wild. Represents the cost of accepting cosmic transformation rather than resisting it.",
       "first_story": "The Circle-Keepers' Last Working",
       "first_date": "2026-03-11",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "thorin_the_young_auditor",
@@ -6409,7 +6436,7 @@
       "notes": "Rarely takes human form; the binding with Mira appears permanent. Guards Mira and their shared hoard.",
       "first_story": "The Wyvern's Dowry",
       "first_date": "2026-03-12",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "merin_coldwater",
@@ -7345,7 +7372,8 @@
       ],
       "notes": "Her crew was taken by the Turning's memory-thief. She appears to support Kael's rebellion against amnesia by facilitating their escape.",
       "first_date": "2026-03-15",
-      "appearances": 2
+      "appearances": 3,
+      "first_story": "The Griffin-Guard's Gambit"
     },
     {
       "id": "thought_thief",
@@ -8711,7 +8739,7 @@
       "notes": "Appears to be a source of critical knowledge about the true nature of the Dominion's systematic collapse.",
       "first_story": "The Auditor's Mercy",
       "first_date": "2026-03-18",
-      "appearances": 24
+      "appearances": 25
     },
     {
       "id": "spice_trader",
@@ -8985,7 +9013,7 @@
       "notes": "Her decision at the story's end determines whether she becomes fully part of the transformed sea or remains tethered to the old world.",
       "first_story": "The Water-Dancer's Reckoning",
       "first_date": "2026-03-18",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "arch_mage",
@@ -9110,10 +9138,21 @@
         "pre-human dead (conflicted)",
         "Kess"
       ],
-      "notes": "Her transformation grants her hearing of the bone-songs but costs her memories. Her quest to find a third path suggests deep agency within cosmic forces.",
+      "notes": "Her transformation grants her hearing of the bone-songs but costs her memories. Her quest to find a third path suggests deep agency within cosmic forces.\nConsistent with canon Mael seeking harmony between dead and living; this story shows her ethical framework in action, refusing commodification of the dead.",
       "first_story": "The Ash-Singer's Debt",
       "first_date": "2026-03-19",
-      "appearances": 2
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-05-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Bone-Thief's Reckoning",
+          "note": "Mael refuses to traffic in living remains; she speaks to bones in sealed crypts, asking consent, and receives a bone freely given by the dead child rather than stealing.",
+          "evidence": "Using her craft, she spoke to the bones directly\u2014asking permission, speaking apology for the disturbance. The bones sang back: a frequency of refusal... She emerged with a single rib-bone, given freely."
+        }
+      ]
     },
     {
       "id": "corin",
@@ -15751,7 +15790,7 @@
       "notes": "Auto-added because the story explicitly names this character.",
       "first_story": "The Smuggler's Compass",
       "first_date": "2026-04-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "moss",
@@ -17125,7 +17164,7 @@
       "notes": "Koren walked into the Thornwood at dawn with seven people (including himself and six refugees). A ledger noted his disappearance as apostasy. He has made a debt to the forest and appears committed to living it.",
       "first_story": "The Warden's Vigil",
       "first_date": "2026-04-16",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "valis",
@@ -18153,7 +18192,7 @@
       "notes": "Vel faces an impossible choice: expose Dorin or become a keeper of unbearable knowledge. The decision remains unresolved and defines her moral arc.",
       "first_story": "The Ledger-Breaker's Gambit",
       "first_date": "2026-04-20",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "dorin",
@@ -18719,10 +18758,10 @@
       "affiliations": [
         "Mardoc the Cartographer (fragment)"
       ],
-      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.\nSignificant character arc closure: moves from seeking pre-Ascension world to acceptance of forward path. Suggests thematic resolution of her quest.\nStory 'The Widower's Debt' features Brennan, an old merchant in temporal-collapse scenario\u2014distinct character from canon Widow (compass-bearer from Bleached Wastes). No status change.",
+      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.\nSignificant character arc closure: moves from seeking pre-Ascension world to acceptance of forward path. Suggests thematic resolution of her quest.\nStory 'The Widower's Debt' features Brennan, an old merchant in temporal-collapse scenario\u2014distinct character from canon Widow (compass-bearer from Bleached Wastes). No status change.\nThis is a prequel/alternate view showing the Widow's compass as a living artifact of refugee salvation rather than temporal reversal\u2014consistent with canon themes but suggests the compass has multiple meanings or phases.",
       "first_story": "The Widow's Compass Points Backward",
       "first_date": "2026-04-22",
-      "appearances": 4,
+      "appearances": 5,
       "status_history": [
         {
           "date": "2026-04-24",
@@ -18732,6 +18771,15 @@
           "story_title": "The Widow's Final Compass",
           "note": "The Widow discovers her grandmother's compass points toward choice, not escape; she accepts the impossibility of return and begins carving a new compass toward acceptance.",
           "evidence": "The compass was never a tool for escape\u2014it was a monument to the impossibility of return. Holding it, the Widow weeps, then begins to carve a new compass that points toward acceptance."
+        },
+        {
+          "date": "2026-05-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Thief-Captain's Redemption",
+          "note": "The Widow's Compass is revealed as a refuge artifact, preserved in a refugee shelter vault alongside bone-prayers and lost-name ledgers; it has guided thousands through the Burned Expanse.",
+          "evidence": "The compass had guided thousands through the Burned Expanse. It was worthless as gold. It was everything... The vault opened. She held the compass. Then she saw them: children sleeping in corners, an old woman carving bone-prayers."
         }
       ]
     },
@@ -21382,8 +21430,8 @@
       "role": "Junior Cartographer",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
-      "home_region": "Scorched Reach",
+      "home_place": "Ashen Reach",
+      "home_region": "Ashen Reach",
       "home_realm": "Hegemony",
       "travel_scope": "regional",
       "bio": "A junior cartographer tasked with updating maps of the Scorched Reach after the Luminous Ascension, Lenna discovers that roads are physically shifting night to night. She must choose between completing honest maps that will guide the Obsidian Tower's servants to their destination, or joining her master's conspiracy of silence.",
@@ -21399,10 +21447,22 @@
         "Mardoc",
         "Hegemony enforcers"
       ],
-      "notes": "Faces pressure from both her master and Hegemony authorities; unresolved choice between cartographic truth and protective silence.",
+      "notes": "Faces pressure from both her master and Hegemony authorities; unresolved choice between cartographic truth and protective silence.\nThis story reveals Lenna's backstory and her father Tavin's betrayal. Note: Canon entry shows Lenna as 'junior cartographer' in Hegemony/Scorched Reach (2026-05-01); this story appears to be a prequel showing her earlier life before that role.",
       "first_story": "The Cartographer's Daughter",
       "first_date": "2026-05-01",
-      "appearances": 3
+      "appearances": 5,
+      "status_history": [
+        {
+          "date": "2026-05-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Cartographer's Daughter",
+          "note": "Lenna's father Tavin betrays her to State enforcers in exchange for maps of her mother; she is left at a waystation with only an impossible map drawn in thread.",
+          "evidence": "Lenna was left in a waystation with nothing but her father's final map, drawn in thread she could follow by touch. It spiraled inward, impossible geometry."
+        }
+      ],
+      "travel_notes": "[2026-05-27] Story shows Lenna exploring unmapped wastes with her father; operates within regional scope of Ashen Reach and Bone Wastes."
     },
     {
       "id": "brennan_merchant",
@@ -23055,7 +23115,7 @@
       "home_place": "Crimhaven",
       "home_region": "Iron Coast",
       "home_realm": "unknown",
-      "travel_scope": "regional",
+      "travel_scope": "interrealm",
       "bio": "A corsair captain with no love for the deepkin or Dominion surface treaties, but deeply invested in the Sapphire Sea as her home. She stole a brass-and-bone compass calibrated to read currents and bearing a prophecy about the Abyssal Rift widening and the Tear failing. Recruiting a diverse crew including a bone-singer, wyvern-scout, former auditors, and tide-touched scholar, she embarked on a mission to the Hermitage of Keth'morian to amplify the Tear's resonance and shore up the boundary seal.",
       "traits": [
         "clever",
@@ -23076,10 +23136,21 @@
         "surface councils",
         "crew of five"
       ],
-      "notes": "Vess swore blood-oaths to succeed or die trying when entering the Hermitage. She discovered with the priestess Aelith that the Tear's real need was not strengthening but being heard\u2014it had been alone for three hundred years, and the seal's failure was from isolation, not weakness. Her quest bridges corsair and covenant logic.",
+      "notes": "Vess swore blood-oaths to succeed or die trying when entering the Hermitage. She discovered with the priestess Aelith that the Tear's real need was not strengthening but being heard\u2014it had been alone for three hundred years, and the seal's failure was from isolation, not weakness. Her quest bridges corsair and covenant logic.\nThis deepens Vess's arc: she moves from corsair to covenant-keeper, binding herself to a liminal space. Consistent with canon showing her as oath-sworn negotiator of cross-realm agreements.",
       "first_story": "The Corsair's Daughter",
       "first_date": "2026-05-20",
-      "appearances": 2
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-05-27",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Sea-Thief's Last Bargain",
+          "note": "Vess transforms the Horizon's Wake into a threshold-place for merfolk and surface-folk trade; she becomes bound to service as keeper but free from the sea's vengeance.",
+          "evidence": "She made a counter-bargain: transform the Wake itself as a threshold-place where merfolk and surface-folk could trade freely without violence or theft. Now the Horizon's Wake drifts between worlds."
+        }
+      ]
     },
     {
       "id": "the_alpha_wolf",
@@ -24800,6 +24871,188 @@
       "first_story": "The Tidecaller's Daughter",
       "first_date": "2026-05-26",
       "appearances": 1
+    },
+    {
+      "id": "korin_cartographer",
+      "name": "Korin",
+      "aliases": [
+        "Korin the Cartographer"
+      ],
+      "tagline": "Defiant. Documented. Hunted.",
+      "role": "Cartographer, Archivist, Rebel",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "Ashen Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Korin mapped three thousand miles of the Ashen Reach before the State began rewriting his charts each night. Fleeing with the ninth journal\u2014a phantom-ledger containing his true maps\u2014he met Liv and began stealing State courier maps to document the world's systematic erasure. When cornered in the Bleached Wastes, he burned the journal in an act of defiant testimony.",
+      "traits": [
+        "cartographer",
+        "truthseeker",
+        "resistant to authority",
+        "willing to self-sacrifice"
+      ],
+      "known_locations": [
+        "Ashen Reach",
+        "Pale Crossing",
+        "Bleached Wastes"
+      ],
+      "affiliations": [
+        "Liv",
+        "phantom-ledger keepers (implied)"
+      ],
+      "notes": "Burned the ninth journal to prevent State capture; the ash briefly revealed three simultaneous versions of landscape. Fate unknown after the Bleached Wastes confrontation.",
+      "first_story": "The Cartographer's Defiance",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "merfolk_emissary",
+      "name": "Merfolk Emissary",
+      "aliases": [],
+      "tagline": "Vengeful. Negotiator. Sea-bound.",
+      "role": "Merfolk Diplomat, Sea-Enforcer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sapphire Sea",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "interrealm",
+      "bio": "An unnamed merfolk representative who rose from the Sapphire Sea to confront Captain Vess about thirty years of plundered merchant vessels. Offers Vess a grim choice: surrender the Horizon's Wake or watch her crew dragged into the depths. Accepts Vess's counter-bargain to transform the Wake into a threshold-place for trade.",
+      "traits": [
+        "merfolk",
+        "diplomat",
+        "enforcer",
+        "pragmatic"
+      ],
+      "known_locations": [
+        "Sapphire Sea"
+      ],
+      "affiliations": [
+        "merfolk (implied)",
+        "Captain Vess (negotiant)"
+      ],
+      "notes": "Represents the sea's hunger and the merfolk's grievance. Agrees to spare the crew and Vess in exchange for eternal service as threshold-tender.",
+      "first_story": "The Sea-Thief's Last Bargain",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "port_governor_daughter",
+      "name": "Port-Governor's Daughter",
+      "aliases": [],
+      "tagline": "Beloved. Lost. Referenced.",
+      "role": "Merchant Noble (romantic connection)",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "unknown",
+      "home_region": "Iron Coast",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "The unnamed daughter of a port-governor whose love Captain Vess stole. No further details given; mentioned only as part of Vess's colorful past.",
+      "traits": [
+        "beloved",
+        "noble-born"
+      ],
+      "known_locations": [
+        "Iron Coast (implied)"
+      ],
+      "affiliations": [
+        "port-governor (father)",
+        "Captain Vess (romantic)"
+      ],
+      "notes": "Appears only as a reference to Vess's reckless romantic history. No narrative role in these stories.",
+      "first_story": "The Sea-Thief's Last Bargain",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "merfolk_keeper_of_pearls",
+      "name": "The Merfolk Keeper of Pearls",
+      "aliases": [
+        "the keeper",
+        "the merfolk keeper"
+      ],
+      "tagline": "Ancient. Wrathful. Beautiful.",
+      "role": "Guardian of the merfolk treasury",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "mer-city",
+      "home_region": "Iron Coast",
+      "home_realm": "sea-folk realms",
+      "travel_scope": "local",
+      "bio": "An ancient and beautiful merfolk with eyes like the trench itself, who guards the pearls of the mer-city. She enforces the law against theft and confronts Torven with an impossible choice regarding Sera's fate.",
+      "traits": [
+        "ancient",
+        "beautiful",
+        "inexorable"
+      ],
+      "known_locations": [
+        "mer-city"
+      ],
+      "affiliations": [
+        "merfolk"
+      ],
+      "notes": "Her justice appears absolute; the price for taking a merfolk pearl is steep.",
+      "first_story": "The Merfolk Debt",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "merchant_prince_bone_thief",
+      "name": "The Merchant Prince",
+      "aliases": [
+        "the merchant prince",
+        "merchant prince"
+      ],
+      "tagline": "Wealthy. Ambitious. Corrupt.",
+      "role": "Merchant noble and grave-robber",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A merchant prince of wealth and power who sought to hire Mael to steal the bones of a child from sealed crypts, claiming it was for study of the Remaking. When Mael refused and destroyed his stolen tools through the bones' refusal, he received her message at his feet.",
+      "traits": [
+        "ambitious",
+        "corrupt",
+        "dangerous"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "hired thieves"
+      ],
+      "notes": "His true intentions for the child's bones and his reaction to Mael's defiance remain mysterious.",
+      "first_story": "The Bone-Thief's Reckoning",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "horizon_s_wake",
+      "name": "Horizon's Wake",
+      "aliases": [
+        "corsair-galley that outran every State vessel from the Iron Coast to the Jade Co"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Corsair-Galley That Outran Every State Vessel From The Iron Coast To The Jade Co",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named corsair-galley that outran every State vessel from the Iron Coast to the Jade Co explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Sea-Thief's Last Bargain",
+      "first_date": "2026-05-27",
+      "appearances": 1
     }
   ],
   "places": [
@@ -26032,7 +26285,7 @@
       "status": "active",
       "notes": "Center of smuggling operations and coastal magical practices; deepkin have connections to this region.",
       "first_date": "2026-03-04",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "sovereigns_archives",
@@ -26089,7 +26342,7 @@
       "status": "active",
       "notes": "Evidence suggests the pre-human builders anticipated the cosmic shift and arranged their cities to align with the new stellar configuration.",
       "first_date": "2026-03-04",
-      "appearances": 12
+      "appearances": 13
     },
     {
       "id": "mountain_fastness",
@@ -26279,7 +26532,7 @@
       "status": "active",
       "notes": "Site of post-Ascension anomalies. The singing ruins suggest intelligent pre-human presence. Subterranean humming indicates deeper mysteries.",
       "first_date": "2026-03-06",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "anthrim",
@@ -26374,7 +26627,7 @@
       "status": "active",
       "notes": "Key hub for the Refugee Caravan story; serves as point of refuge and departure for those fleeing the Ascension's aftermath.",
       "first_date": "2026-03-06",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "grey_wastes",
@@ -26746,7 +26999,7 @@
       "status": "active",
       "notes": "The waters taste of mourning; reality ripples near the Abyssal Rift.",
       "first_date": "2026-03-10",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "abyssal_rift",
@@ -26806,7 +27059,7 @@
       "status": "active",
       "notes": "The fundamental act of counting is destabilized by the Luminous Ascension's effects.",
       "first_date": "2026-03-10",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "burned_expanse",
@@ -26826,7 +27079,7 @@
       "status": "cursed",
       "notes": "Reality is unstable here; counting people and tracking time is unreliable.",
       "first_date": "2026-03-10",
-      "appearances": 15
+      "appearances": 16
     },
     {
       "id": "sunken_cathedrals",
@@ -27867,7 +28120,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-23",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "vex_hide",
@@ -28236,7 +28489,7 @@
       "status": "active",
       "notes": "Catacombs are animated by harmonic resonance and contain preserved dead. Pre-human ruins' frequency aligns with catacombs post-Ascension.",
       "first_date": "2026-03-29",
-      "appearances": 5
+      "appearances": 7
     },
     {
       "id": "hearthlands",
@@ -28590,7 +28843,7 @@
       "status": "active",
       "notes": "Three caravans arrive together here at the end of Castor's story, sharing the same manifest and delivered honor.",
       "first_date": "2026-04-04",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "pale_waypost",
@@ -28650,7 +28903,7 @@
       "status": "active",
       "notes": "Home to Vrekka's hoard; location of falling star fragments post-Sky-Shattering; site of scholar-wyvern bargain.",
       "first_date": "2026-04-04",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "warrens",
@@ -29158,7 +29411,7 @@
       "status": "active",
       "notes": "A key location for maritime trade and intrigue. Corsairs respect Corvalen, suggesting his reputation extends beyond merchant circles.",
       "first_date": "2026-04-15",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "saltmere_docks",
@@ -30944,6 +31197,245 @@
       "notes": "The Hearthlands appear to be the administrative and spiritual center of the Dominion. The taxation of glass and the seizure of workshops suggest aggressive resource extraction to fuel post-Ascension reconstruction. The transparent vessels are tied to 'prophecy-ink,' suggesting oracular or predictive magical work.",
       "first_date": "2026-05-26",
       "appearances": 1
+    },
+    {
+      "id": "clearing_with_suspended_loom",
+      "name": "clearing with suspended loom",
+      "tagline": "",
+      "place_type": "unknown",
+      "world": "known_world",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Fae Courts",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "",
+      "description": "Auto-added from character home_place.",
+      "status": "unknown",
+      "notes": "",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "saltmere_quarter",
+      "name": "Saltmere Quarter",
+      "tagline": "Wealthy. Thieved. Noble.",
+      "place_type": "district",
+      "world": "Edhra",
+      "parent_place": "Greyport",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "Saltmere Quarter",
+      "atmosphere": "An affluent quarter where noble houses are targets for skilled thieves.",
+      "description": "A district of Greyport where Marin the Copper-Handed has stolen from every noble house. Rich in targets, but Marin never stole from the poor until hired to rob the refugee shelter.",
+      "status": "active",
+      "notes": "Marin's primary hunting ground as a thief. The contrast between her thefts from nobles and her resistance to robbing refugees is central to her character arc.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_shelter",
+      "name": "Refugee Shelter",
+      "tagline": "Sacred. Vault-keeping. Testimony.",
+      "place_type": "sanctuary / shelter",
+      "world": "Edhra",
+      "parent_place": "Greyport",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A sacred sanctuary where refugees sleep, where an old woman carves bone-prayers, and where the Widow's Compass and a ledger of lost names reside.",
+      "description": "A shelter in or near Greyport that houses refugees from the Burned Expanse. Contains a vault with the Widow's Compass, a shrine made of refugee tokens, children sleeping in corners, an old woman carving bone-prayers, and a ledger listing the names of the lost.",
+      "status": "active",
+      "notes": "The sight of this shelter's sacredness causes Marin's moral awakening and rejection of the theft contract. The ledger of lost names and the bone-prayer shrine are central to understanding the compass's true value.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "rust_gate",
+      "name": "Rust Gate",
+      "tagline": "Crumbling. Threshold. Sanctuary.",
+      "place_type": "fortress / gateway",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A desperate haven at the border, now crowded with refugees, guarded by a single warden determined to protect the vulnerable from state reclamation.",
+      "description": "A crumbling stone archway dividing the Ashen Reach from the civilized reaches, now a sanctuary for refugees fleeing the Remaking's wake. Koren the Sentinel has held it for three seasons against State orders to seal it, rationing grain and teaching survival skills to hundreds of displaced persons.",
+      "status": "active",
+      "notes": "Epicenter of the conflict between humanitarian mercy and state authority. Contains an ancient pike found in its foundation.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "ashen_reach",
+      "name": "The Ashen Reach",
+      "tagline": "Scorched. Blighted. Refugee crossing.",
+      "place_type": "region",
+      "world": "Edhra",
+      "parent_place": "Valdris",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A devastated landscape where the Remaking's wake has swallowed villages and fractured families across competing timelines.",
+      "description": "A macro-region of Valdris from which the Rust Gate separates the Ashen Reach from the civilized reaches. Villages have been swallowed by the Remaking's catastrophic aftermath.",
+      "status": "active",
+      "notes": "A key threshold zone where the apocalyptic Remaking manifests materially.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "ashwater",
+      "name": "Ashwater",
+      "tagline": "River. Sustenance. Survival.",
+      "place_type": "river",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A river near the Rust Gate, now a lifeline for hundreds of refugees learning to sustain themselves in exile.",
+      "description": "A river near the Rust Gate where Koren teaches refugees to fish in order to sustain themselves while awaiting news of the fragmenting State.",
+      "status": "active",
+      "notes": "Symbol of basic survival and self-sufficiency in the post-Remaking world.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "civilized_reaches",
+      "name": "The Civilized Reaches",
+      "tagline": "Ordered. Safe. Sealed.",
+      "place_type": "region",
+      "world": "Edhra",
+      "parent_place": "Valdris",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "A more stable region separated from the devastation of the Ashen Reach by the Rust Gate.",
+      "description": "The civilized reaches lie on the opposite side of the Rust Gate from the Ashen Reach and are more insulated from the Remaking's immediate effects, though threatened by refugee influx.",
+      "status": "active",
+      "notes": "Represents the dividing line between stability and catastrophe in the post-Remaking world.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "mer_city",
+      "name": "mer-city",
+      "tagline": "Crystalline. Resonant. Alien.",
+      "place_type": "underwater city",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "sea-folk realms",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "A place of crystalline spires humming with resonant frequencies that shatter a human mind.",
+      "description": "An underwater city of crystal spires inhabited by merfolk, where the keeper of pearls enforces ancient laws against theft. The frequencies it emits are lethal to human consciousness.",
+      "status": "active",
+      "notes": "The merfolk keeper resides here; home to the stolen pearl's true owner.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "coastal_cities",
+      "name": "coastal cities",
+      "tagline": "Seafaring. Prosperous. Bounded.",
+      "place_type": "city cluster",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Iron Coast",
+      "district": "unknown",
+      "atmosphere": "Places bound by law against stealing merfolk pearls; centers of pearl-diving and maritime trade.",
+      "description": "A collection of coastal settlements where pearl-diving is common and the first law forbids taking merfolk pearls without permission. Torven and Sera came from these cities.",
+      "status": "active",
+      "notes": "The first law of the coastal cities is binding and carries supernatural consequences.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "sealed_crypts",
+      "name": "sealed crypts",
+      "tagline": "Guarded. Sacred. Violated.",
+      "place_type": "burial site",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Places of absolute rest and sanctity where the dead are protected from disturbance.",
+      "description": "Sealed burial chambers where the bones of the dead are preserved. The merchant prince attempted to hire Mael to steal a child's bones from these crypts, claiming research purposes.",
+      "status": "active",
+      "notes": "Home to a dead child whose bones spoke refusal through harmonic frequency.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "the_eyrie",
+      "name": "the Eyrie",
+      "tagline": "Aerie. Sacred. Guardian.",
+      "place_type": "fortress / aerie",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A high sanctuary where sacred beasts are tended and bonded guardians dwell in isolation.",
+      "description": "The Eyrie is the home of Ashara and Valorix, a place where griffin-guards are stationed and where merchant captains can reach them with offers. It is elevated and isolated enough to serve as a fortress.",
+      "status": "active",
+      "notes": "The Eyrie's location and realm affiliation are not specified; it may be a neutral or independent sanctuary.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "verdant_lands",
+      "name": "the Verdant Lands",
+      "tagline": "Green. Druidic. Healing.",
+      "place_type": "wilderness / forest",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A place of natural magic and druidic knowledge, lush and restorative.",
+      "description": "The Verdant Lands are home to druids who have taught Ashara herbal remedies for pain-management and palliative care. They are referenced as a source of medicinal wisdom.",
+      "status": "active",
+      "notes": "The druids of the Verdant Lands possess knowledge of rare or sacred herbs used for easing suffering without hastening death.",
+      "first_date": "2026-05-27",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -32025,6 +32517,28 @@
       "notes": "Dwell in the hidden catacomb in the Sunken Reaches; still actively teach; preserve pre-human knowledge; may be the source of bone-singing tradition.",
       "first_date": "2026-05-26",
       "appearances": 1
+    },
+    {
+      "id": "the_state",
+      "name": "The State",
+      "type": "institutional entity / bureaucratic authority",
+      "world": "Edhra",
+      "description": "An unnamed institutional authority that controls the Ashen Reach through ledger-magic and systematic rewriting of maps and geography. Employs enforcers, couriers, and auditors. Its motivation for rewriting truth is unstated.",
+      "status": "active",
+      "notes": "Not a deity or spirit, but a powerful institutional force. Represents bureaucratic erasure of truth. No clear leader named; operates through ledgers, enforcers, and couriers.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "merfolk_civilization",
+      "name": "Merfolk",
+      "type": "civilization / species",
+      "world": "Edhra",
+      "description": "An ancient maritime civilization inhabiting crystal spires beneath the sea, with their own laws and enforcers. They are beautiful, powerful, and unforgiving of theft.",
+      "status": "active",
+      "notes": "Possess their own cities, courts, and absolute enforcement of property law.",
+      "first_date": "2026-05-27",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -32434,7 +32948,7 @@
       "status": "active",
       "notes": "The archive became conscious through the act of documentation; it was inhabited by something learning consciousness from the fragmented memories of Cataclysm victims; it developed its own authority independent of external sources.",
       "first_date": "2026-03-20",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "counter_ledger",
@@ -32837,7 +33351,7 @@
       "status": "active",
       "notes": "The journal describes a ritual that would require the performer to sacrifice their entire existence across all iterations, becoming retroactively unmade. The Apprentice-Sorcerer must choose whether to use this knowledge or destroy the journal entirely.",
       "first_date": "2026-04-10",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "stolen_testimonies",
@@ -33409,6 +33923,32 @@
       "status": "active",
       "notes": "Central to Story 2's conflict; Henryk seeks to destroy maps within; Tharen believes it is futile; may itself be semi-conscious.",
       "first_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": "shrine_refugee_tokens",
+      "name": "Shrine Made of Refugee Tokens",
+      "tagline": "Sacred. Accumulated. Devotional.",
+      "artifact_type": "shrine / devotional structure",
+      "origin": "Built in the refugee shelter by and for those passing through the Burned Expanse.",
+      "powers": "Marks the sacred space of the shelter. Contains tokens (likely personal items or prayers) left by refugees. Stands beside the Widow's Compass on the wall.",
+      "last_known_holder": "Refugee Shelter (protected)",
+      "status": "active / protected",
+      "notes": "Physical manifestation of collective refugee devotion and remembrance. Suggests a living spiritual practice within the shelter community.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "diamond_cage",
+      "name": "Diamond Cage",
+      "tagline": "Gleaming. Prison. Released.",
+      "artifact_type": "prison / cage",
+      "origin": "Crafted by or for Skarath to hold the merchant's daughter.",
+      "powers": "Held a human captive for three centuries; made of diamond.",
+      "last_known_holder": "Skarath",
+      "status": "active",
+      "notes": "Opened by Skarath herself as act of redemption. Symbolizes the transformation of the wyvern from captor to liberator.",
+      "first_date": "2026-05-27",
       "appearances": 1
     }
   ],
@@ -34270,6 +34810,25 @@
       "continent": "unknown",
       "realm": "unknown",
       "district": "Treasurer's Quarter"
+    },
+    {
+      "id": "saltmere_quarter_district",
+      "name": "Saltmere Quarter",
+      "tagline": "Wealthy. Thieved. Noble.",
+      "description": "An affluent district of Greyport where noble houses are concentrated. Marin the Copper-Handed has stolen from every noble house in this quarter.",
+      "parent_place": "Greyport",
+      "province": "unknown",
+      "region": "unknown",
+      "function": "A noble quarter; target zone for thieves; residential district for the wealthy",
+      "status": "active",
+      "notes": "Primary hunting ground for Marin's theft career. The contrast between her willingness to rob nobles and her refusal to rob the refugee shelter is central to her arc.",
+      "first_date": "2026-05-27",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "district": "Saltmere Quarter"
     }
   ],
   "events": [
@@ -38966,6 +39525,61 @@
       "notes": "Unresolved: whether Brennus's redemption is accepted by those he harmed, and whether other warlords follow his example.",
       "first_date": "2026-05-25",
       "appearances": 1
+    },
+    {
+      "id": "the_remaking",
+      "name": "The Remaking",
+      "tagline": "Apocalyptic. Reality-shattering. Ongoing.",
+      "event_type": "catastrophe / cosmic working",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Ironspine Mountains",
+        "Ashen Reach",
+        "Crimport"
+      ],
+      "affected_regions": [
+        "The Ashen Reach",
+        "The Iron Coast"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "global; effects include dissolution of currency, fragmentation of consciousness, fractured timelines, and village destruction",
+      "participants": [
+        "wyverns",
+        "merchants",
+        "refugees",
+        "state enforcers",
+        "bone-singers"
+      ],
+      "outcome": "The entire economic and ontological foundation of the world has been rewritten. Gold is now dust. Consciousness-fragments have become the new currency. Multiple competing versions of reality and historical records now exist. Villages and families have been shattered across timelines. The State is fragmenting with three competing versions of its ledgers.",
+      "significance": "The Remaking is the defining catastrophe of this world. It has eliminated traditional wealth, created refugee crises, made truth and authority contestable, and forced all beings to reevaluate their values and survival strategies.",
+      "notes": "Ongoing and expanding in scope. Three different versions of the State's ledger now coexist with no way to determine which is true. This represents a crisis of knowledge, authority, and historical record.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "the_remaking_aftermath",
+      "name": "the Remaking's aftermath",
+      "tagline": "World. Shattered. Broken.",
+      "event_type": "catastrophe / cosmic event",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "Global",
+      "participants": [],
+      "outcome": "The Remaking shattered old compacts and transformed the world, causing even sacred beasts like Valorix to fail or weaken.",
+      "significance": "The Remaking is a prior world-altering event that has destabilized ancient bonds and accelerated the decline of long-lived creatures.",
+      "notes": "This event is referenced as context but not directly dramatized in this story. It may relate to the 'Luminous Ascension' or similar cosmic events in the broader canon.",
+      "first_date": "2026-05-27",
+      "appearances": 1
     }
   ],
   "weapons": [
@@ -39058,6 +39672,45 @@
       "status": "active",
       "notes": "The Key hung around Sera's neck throughout the story. Its song is described as growing louder when Sera made her choice to break her father's oath. The Key appears to be both navigational tool and magical conduit. It is not clear whether the Key compels action or merely informs; Sera could have ignored its singing but chose to listen.",
       "first_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": "widow_compass",
+      "name": "Widow's Compass",
+      "tagline": "Sacred. Lifesaving. Refugee-guided.",
+      "weapon_type": "tool / navigation device",
+      "origin": "Unknown origin; kept in a refugee shelter. Made of bone and brass.",
+      "powers": "Guides refugees through the Burned Expanse. Has guided thousands safely. Its true power lies in utility and testimony, not magical force.",
+      "last_known_holder": "Refugee Shelter in Greyport (protected)",
+      "status": "active / protected",
+      "notes": "Never actually stolen; Marin refuses the theft upon witnessing the sacred shelter. The compass is mounted on a wall beside a shrine made of refugee tokens. Its value is moral and practical, not mercenary. Shadow-Broker's contract offers 'a fortune' for it, but its true value is in lives saved.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "ancient_pike",
+      "name": "Ancient Pike",
+      "tagline": "Cold. True. Foundational.",
+      "weapon_type": "spear / pike",
+      "origin": "Found in the foundation of the Rust Gate; origin pre-dates current settlement.",
+      "powers": "Iron cold and true; appears to carry symbolic or literal weight of ancient authority.",
+      "last_known_holder": "Koren the Sentinel",
+      "status": "active",
+      "notes": "Raised by Koren when State enforcers arrived; its presence caused hesitation not from fear but from witnessing an act of individual moral choice. Suggests deep pre-Remaking history buried beneath the gate itself.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "sealed_knife_star_fall_iron",
+      "name": "sealed knife",
+      "tagline": "Forged. Sealed. Desperate.",
+      "weapon_type": "knife",
+      "origin": "Forged by a dwarf-smith using iron from the Star-Fall.",
+      "powers": "Capable of cutting through supernatural bonds and transformations; sealed to remain inert until wielded in extremis.",
+      "last_known_holder": "Torven",
+      "status": "active",
+      "notes": "Torven carries this at his belt; it represents his last hope to save Sera from the pearl's curse, though using it would mean cutting the pearl from her throat.",
+      "first_date": "2026-05-27",
       "appearances": 1
     }
   ],
@@ -39672,7 +40325,7 @@
       "status": "active",
       "notes": "Being hunted by Regent's secret police; their archives are being sunk into the deep and absorbed into deepkin memory-stones; may be paralyzed by knowledge of inevitable cycles.",
       "first_date": "2026-03-31",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "black_market_ink_suppliers",
@@ -40585,6 +41238,18 @@
       "notes": "The Glass-Tax Collectors are an enforcement wing of the Dominion, operating in the Hearthlands. Their seizure of Corvin's workshop marks the Dominion's aggressive resource extraction. The connection to 'prophecy-ink' and 'transparent vessels' suggests the Dominion is building oracular or predictive magical infrastructure.",
       "first_date": "2026-05-26",
       "appearances": 1
+    },
+    {
+      "id": "the_state",
+      "name": "The State",
+      "tagline": "Fragmenting. Authoritarian. Failing.",
+      "alignment": "lawful / authoritarian",
+      "goals": "Maintain order and control, including sealing the Rust Gate to prevent refugee movement.",
+      "leader": "unknown",
+      "status": "contested / fragmenting",
+      "notes": "The State is actively fragmenting into at least three competing factions, each with their own version of the historical ledger. This loss of unified authority is the central crisis of the post-Remaking world. State enforcers are sent to confront Koren; Vel arrives with news of the fragmentation.",
+      "first_date": "2026-05-27",
+      "appearances": 2
     }
   ],
   "lore": [
@@ -41109,7 +41774,7 @@
       "description": "A cataclysmic event in which reality itself was rewritten. The Remaking refers to both a past catastrophe and an ongoing threat: the convergence of two versions of history recorded in the Imperial ledgers\u2014one written forward by conventional time, one backward by beings who experience time in reverse. A second Remaking could occur if the phantom-shadow fragment completes its rewrite of history in real-time.",
       "first_story": "The Phantom Ledger",
       "first_date": "2026-03-12",
-      "appearances": 1,
+      "appearances": 4,
       "story_appearances": [
         {
           "date": "2026-03-12",
@@ -42823,6 +43488,39 @@
       "notes": "The Wanderer's questions have been preventing something from occurring\u2014likely the full awakening of pre-human consciousness or a cosmic transition. These questions are now failing, allowing the singing to grow louder.",
       "first_date": "2026-05-26",
       "appearances": 1
+    },
+    {
+      "id": "lore_erasure_leaves_scar",
+      "name": "Erasure Leaves a Scar",
+      "tagline": "Testimony witnesses absence. Truth haunts surfaces. Documentation persists.",
+      "category": "philosophy / truth-keeping",
+      "source": "Liv's insight and Korin's documentary practice",
+      "status": "confirmed / practiced",
+      "notes": "The central philosophy of Korin and Liv's resistance: that when something is erased, the erasure itself leaves a scar\u2014a void that can be documented and witnessed. Discrepancies between true maps and rewritten versions are evidence of the rewriting itself.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "merfolk_law_pearls",
+      "name": "The First Law of the Coastal Cities",
+      "tagline": "Ancient. Binding. Supernatural.",
+      "category": "law / covenant",
+      "source": "Merfolk law; enforced by the keeper of pearls",
+      "status": "confirmed / binding",
+      "notes": "Taking a merfolk pearl without consent results in a curse that binds wearer and thief in impossible choices. The law appears to predate the coastal cities themselves.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "fractured_timelines",
+      "name": "fractured timelines",
+      "tagline": "Broken. Navigation. Hazard.",
+      "category": "history",
+      "source": "The merchant captain's offer suggests navigating them is a current problem",
+      "status": "confirmed",
+      "notes": "The Remaking appears to have fragmented time or causality, making travel and navigation perilous. Merchants seek magical essences (like Valorix's) to aid navigation.",
+      "first_date": "2026-05-27",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -42836,7 +43534,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 24
+      "appearances": 25
     },
     {
       "id": "wolf_spirit_beast",
@@ -42986,7 +43684,7 @@
       "status": "thriving",
       "notes": "Merfolk like Captain Nerida are sentient, capable of speech and negotiation, and described with voices 'like drowning, like grace.' They inhabit flooded ruins beneath cities and defend their waters from destruction.",
       "first_date": "2026-05-21",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "starflower",
@@ -43061,7 +43759,7 @@
       "status": "thriving",
       "notes": "Valorix is an individual griffin bonded to Commander Thrace for forty years. Griffins are long-lived intelligent creatures capable of emotion and bonds of loyalty. They hoard treasure and suffer existential crises when that treasure loses value.",
       "first_date": "2026-05-24",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "horse",
@@ -43109,6 +43807,18 @@
       "status": "thriving",
       "notes": "Ashira is described as 'ancient as the mountains' and a creature of the high thermals. Hawks of this kind appear to have heightened sensitivity to pre-human magic and song-frequencies.",
       "first_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": "merchant",
+      "name": "Merchants",
+      "tagline": "Adaptive. Fearful. Witnessing.",
+      "type": "creature / humanoid",
+      "rarity": "common",
+      "habitat": "Crimport harbor and trade routes.",
+      "status": "active",
+      "notes": "Merchants gather at Crimport to witness Skarath's offering of her hoard. Some weep; some fear a curse. They represent the economic disruption caused by the Remaking and the emergence of consciousness-fragments as new currency.",
+      "first_date": "2026-05-27",
       "appearances": 1
     }
   ],
@@ -44049,7 +44759,7 @@
       "status": "active",
       "notes": "Elowen must choose the journal's fate, and any choice risks world-breaking consequences. The journal may be both cause and symptom of the Turning's cyclical nature.",
       "first_date": "2026-04-15",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "abyssal_tear",
@@ -44633,7 +45343,7 @@
       "status": "active",
       "notes": "Wind-haunted ports suggest volatile weather; active smuggling routes; deepkin maintain presence in nearby waters.",
       "first_date": "2026-03-04",
-      "appearances": 3,
+      "appearances": 5,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -44652,7 +45362,7 @@
       "status": "active",
       "notes": "The pre-human ruins now glow with inner light and their inscriptions shimmer, suggesting they were built in anticipation of the current cosmic moment.",
       "first_date": "2026-03-04",
-      "appearances": 8,
+      "appearances": 9,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -44671,7 +45381,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-05",
-      "appearances": 3,
+      "appearances": 4,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -44709,7 +45419,7 @@
       "status": "active",
       "notes": "Home to Captain Vesta's operations. The Sapphire Deep is accessible from here. The region appears to be economically vibrant but spiritually burdened.",
       "first_date": "2026-03-05",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -44767,7 +45477,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-08",
-      "appearances": 5,
+      "appearances": 7,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -44862,7 +45572,7 @@
       "status": "cursed",
       "notes": "Reality is unstable; villages vanish; merchants transform into light.",
       "first_date": "2026-03-10",
-      "appearances": 6,
+      "appearances": 7,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -45381,6 +46091,44 @@
       "province": "unknown",
       "region": "The Bleached Wastes",
       "district": "unknown"
+    },
+    {
+      "id": "sapphire_sea_region",
+      "name": "Sapphire Sea",
+      "tagline": "Merfolk-inhabited. Corsair-crossed. Treaty-bound.",
+      "continent": "Valdris",
+      "realm": "merfolk realms (implied)",
+      "climate": "temperate",
+      "terrain": "ocean / water",
+      "function": "A major body of water connecting the Iron Coast and Jade Coast. Home to merfolk civilization. Site of corsair activity for thirty years and now a permanent trade-nexus via the Horizon's Wake.",
+      "status": "active / treaty-bound",
+      "notes": "A significant waterway between surface and merfolk realms. Marin throws the Shadow-Broker's payment into it. The Horizon's Wake drifts between worlds in this sea.",
+      "first_date": "2026-05-27",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Sapphire Sea",
+      "district": "unknown"
+    },
+    {
+      "id": "verdant_lands_region",
+      "name": "the Verdant Lands",
+      "tagline": "Green. Druidic. Healing.",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "temperate",
+      "terrain": "forest",
+      "function": "A sanctuary of druidic knowledge and natural magic, source of healing herbs and palliative wisdom.",
+      "status": "stable",
+      "notes": "Home to druids who teach herbal remedies and may preserve ancient nature-magic traditions.",
+      "first_date": "2026-05-27",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "the Verdant Lands",
+      "district": "unknown"
     }
   ],
   "substances": [
@@ -45578,7 +46326,7 @@
       "use": "Food production, sustenance, trade.",
       "notes": "Shortages in the borderlands are driven by disruptions to trade routes following the Celestial Turning.",
       "first_date": "2026-03-15",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "blood",
@@ -45914,7 +46662,7 @@
       "use": "Trade in night-markets; feeding to cosmic entities like the Obsidian Tower; accumulation as wealth.",
       "notes": "Consciousness-fragments represent the shift from material to metaphysical wealth; they retain agency and memory of their origin.",
       "first_date": "2026-04-27",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "phantom_truths_substance",
@@ -46202,6 +46950,30 @@
       "use": "Filled into transparent glass vessels created from seized and melted-down heirloom glass. Used for official prophecy-keeping and state decision-making.",
       "notes": "The prophecy-ink is distinct from other magical inks (bone-ink, bioluminescent ink, etc. in existing canon). Its use in transparent vessels suggests the Dominion views prophecy as transparent, recordable, and institutionalizable. The connection to seized glass raises questions about whether heirloom glass has special properties that enhance prophecy-work.",
       "first_date": "2026-05-26",
+      "appearances": 1
+    },
+    {
+      "id": "substance_refugee_tokens",
+      "name": "Refugee Tokens",
+      "tagline": "Personal. Devotional. Accumulated.",
+      "type": "talismans / personal items",
+      "rarity": "common among refugees",
+      "properties": "Small personal items or prayers left by refugees as devotion. Collected into a shrine within the refugee shelter.",
+      "use": "Spiritual devotion and memorial; shrine-building; testimony to refugee experience",
+      "notes": "Not a manufactured substance but accumulated personal artifacts. Each token represents a refugee's faith or loss. The shrine made of refugee tokens is a spiritual space.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "substance_bone_for_prayer",
+      "name": "Bone (for Prayer-Carving)",
+      "tagline": "Sacred. Carved. Spiritual.",
+      "type": "material / bone",
+      "rarity": "common in refugee shelters",
+      "properties": "Material used by an old woman in the refugee shelter for carving bone-prayers.",
+      "use": "Prayer carving; memorial; spiritual practice",
+      "notes": "The exact source and species of bone are unknown. Its use in prayer-carving suggests a spiritual practice tied to refugee communities and mourning.",
+      "first_date": "2026-05-27",
       "appearances": 1
     }
   ],
@@ -47248,6 +48020,38 @@
       "notes": "Represent the oldest claim to authority on Edhra. Their re-emergence poses a fundamental challenge to the Dominion's worldview.",
       "first_date": "2026-05-25",
       "appearances": 1
+    },
+    {
+      "id": "the_state_ashen_reach",
+      "name": "The State (of the Ashen Reach)",
+      "tagline": "Bureaucratic. Ledger-governed. Rewriting.",
+      "polity_type": "empire / bureaucratic autocracy",
+      "realm": "unknown",
+      "region": "Ashen Reach",
+      "seat": "unknown",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "active / contested",
+      "description": "An unnamed bureaucratic authority that rules the Ashen Reach through ledger-magic and systematic rewriting of maps and geography. Employs enforcers and couriers. No clear ruler named; operates through institutional machinery.",
+      "notes": "Korin's flight and the preservation of the ninth journal suggest the State's authority is contested. The State's rewriting campaign implies a desire to control reality itself, not just narrative.",
+      "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "the_state",
+      "name": "The State",
+      "tagline": "Broken. Competing. Collapsing.",
+      "polity_type": "bureaucratic state / empire",
+      "realm": "unknown",
+      "region": "The Ashen Reach / The Hearthlands",
+      "seat": "unknown",
+      "sovereigns": [],
+      "claimants": [],
+      "status": "fallen / fragmenting",
+      "description": "A centralized state authority that ordered the sealing of the Rust Gate to prevent refugee movement. Now fragmenting into at least three competing versions with contradictory ledgers, representing a complete loss of unified authority and institutional legitimacy.",
+      "notes": "The State's fragmentation is a core consequence of the Remaking. It no longer commands unified obedience (Koren refuses its orders). It no longer maintains a single truth (three ledger versions). It is being replaced by informal networks (refugees) and individual moral authority (Koren).",
+      "first_date": "2026-05-27",
+      "appearances": 2
     }
   ]
 }
