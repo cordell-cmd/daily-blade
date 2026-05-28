@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-05-27",
+  "last_updated": "2026-05-28",
   "worlds": [
     {
       "id": "known_world",
@@ -936,7 +936,7 @@
       "notes": "Now driven northward and eastward by his own shadow, compelled by a force he cannot resist. His remaining stock was sold by morning, suggesting his shadow may continue to circulate. A cautionary tale about the dangers of shadow dealing.\nThe shadow-market's collapse due to personalized debt represents a critical new phase in Vex's arc: her operation is no longer merely disrupted but fundamentally transformed by the Ascension's aftermath.",
       "first_story": "The Shade-Merchant's Gambit",
       "first_date": "2026-02-28",
-      "appearances": 42,
+      "appearances": 43,
       "status_history": [
         {
           "date": "2026-03-23",
@@ -2086,7 +2086,7 @@
       "notes": "She lost a partner at Blackthorn and had sworn against love until meeting Bryn; both characters' mutual deceptions were acts of hope.",
       "first_story": "The Forge-Witch's Test",
       "first_date": "2026-03-01",
-      "appearances": 22
+      "appearances": 23
     },
     {
       "id": "mogrul",
@@ -3225,10 +3225,21 @@
         "spire hidden among the Blasted Lands"
       ],
       "affiliations": [],
-      "notes": "His journal is the primary source of lore about the Celestial Binding's wider impact on practitioners of the Art.",
+      "notes": "His journal is the primary source of lore about the Celestial Binding's wider impact on practitioners of the Art.\nCanon status (dead) confirmed; journal represents his posthumous influence on the Counter-Archive's resistance efforts.",
       "first_story": "The Shepherd of Dying Stars",
       "first_date": "2026-03-03",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-05-28",
+          "from_status": "dead",
+          "to_status": "dead",
+          "type": "other",
+          "story_title": "The Scribe's Forbidden Question",
+          "note": "The Sorcerer's ninth journal is discovered with instructions for reversing the Ascension carved in starlight and blood-ink; represents his final legacy.",
+          "evidence": "Journal discovered with 'handwriting carved directly into the parchment' and 'instructions carved in starlight and blood-ink' for reversing the Ascension."
+        }
+      ]
     },
     {
       "id": "young_sorcerer",
@@ -4281,10 +4292,10 @@
         "dragons",
         "wyverns"
       ],
-      "notes": "His ability to track and enforce ancient oaths is fracturing due to the Ascension. Seeks to negotiate with conscious stars themselves.\nThis deepens Skarath's existential crisis established in canon; her role shifts from debt-keeper to philosopher grappling with obsolescence of her entire existence-structure.\nDeepens Skarath's existential crisis: hoarding itself is now obsolete. Her desperation to access the Young Arcanist's journals marks a critical escalation\u2014she is actively seeking to undo the Ascension, positioning her as either a potential ally or adversary to other forces seeking to manipulate or preserve the new cosmic order.\nSkarath's existential crisis deepens: she now faces incomplete transformation and imminent powerlessness, though she survives.\nThis represents a significant shift in Skarath's arc toward redemption and release from hoarding. Reinforces canon pattern of wyverns grappling with post-Ascension meaninglessness and moral reckoning.",
+      "notes": "His ability to track and enforce ancient oaths is fracturing due to the Ascension. Seeks to negotiate with conscious stars themselves.\nThis deepens Skarath's existential crisis established in canon; her role shifts from debt-keeper to philosopher grappling with obsolescence of her entire existence-structure.\nDeepens Skarath's existential crisis: hoarding itself is now obsolete. Her desperation to access the Young Arcanist's journals marks a critical escalation\u2014she is actively seeking to undo the Ascension, positioning her as either a potential ally or adversary to other forces seeking to manipulate or preserve the new cosmic order.\nSkarath's existential crisis deepens: she now faces incomplete transformation and imminent powerlessness, though she survives.\nThis represents a significant shift in Skarath's arc toward redemption and release from hoarding. Reinforces canon pattern of wyverns grappling with post-Ascension meaninglessness and moral reckoning.\nThis represents significant character arc continuation from prior canon (hoarding obsolescence \u2192 seeking purpose). No status change but meaningful agency shift.",
       "first_story": "The Wyvern's Starborn Debt",
       "first_date": "2026-03-06",
-      "appearances": 7,
+      "appearances": 9,
       "status_history": [
         {
           "date": "2026-04-09",
@@ -4321,6 +4332,15 @@
           "story_title": "The Wyvern's Reckoning",
           "note": "Skarath offers her entire worthless hoard to refugee networks freely; releases the merchant's daughter from diamond captivity and offers to carry her to the ocean.",
           "evidence": "She descended to Crimport harbor and offered her entire hoard to the refugee networks\u2014not for consciousness-fragments, but freely... She opened the diamond cage. The merchant's daughter\u2014now gray-haired, ancient\u2014stumbled into sunlight."
+        },
+        {
+          "date": "2026-05-28",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Collector's Debt",
+          "note": "Skarath discovers purpose beyond hoarding: agrees to become a guardian of the transformed merchants approaching transcendence at the Drowned Cathedrals.",
+          "evidence": "Skarath says 'I hunger for something real' and Dren offers her a role as guardian of merchants completing transcendence; Skarath feels clarity crack in her chest."
         }
       ]
     },
@@ -4835,7 +4855,7 @@
       "notes": "Must repay debts in a currency that no longer exists. The boundary between mapped world and unmapped void grows dangerously thin.",
       "first_story": "The Debt-Collector's Daughter",
       "first_date": "2026-03-08",
-      "appearances": 62
+      "appearances": 63
     },
     {
       "id": "the_apprentice_sorcerer",
@@ -6436,7 +6456,7 @@
       "notes": "Rarely takes human form; the binding with Mira appears permanent. Guards Mira and their shared hoard.",
       "first_story": "The Wyvern's Dowry",
       "first_date": "2026-03-12",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "merin_coldwater",
@@ -10139,7 +10159,7 @@
       "notes": "The phantom ledger's rewriting suggests agency in the record itself, or an external force rewriting futures. Aldwyn's choice will determine whether truth or survival takes precedence in the Radiant Rising's wake.",
       "first_story": "The Ledger of Ash and Ember",
       "first_date": "2026-03-22",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "kalris_the_forger",
@@ -12210,10 +12230,21 @@
       "affiliations": [
         "unknown"
       ],
-      "notes": "His response to The Wanderer's questions remains unresolved.",
+      "notes": "His response to The Wanderer's questions remains unresolved.\nClosure arc: story shows resolution of the mercenary gambler's journey into consciousness-debt, achieving victory at cost of self-hollowing.",
       "first_story": "The Wanderer's Final Question",
       "first_date": "2026-03-28",
-      "appearances": 1
+      "appearances": 2,
+      "status_history": [
+        {
+          "date": "2026-05-28",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Merchant's Last Wager",
+          "note": "Ostyn gambles away his remaining consciousness-fragments against Vex the Shade-Merchant and wins; completes a wager-arc begun in prior canon.",
+          "evidence": "Ostyn 'laid down cards\u2014all his remaining consciousness-fragments' against Vex and 'won.' The story notes he has become 'a man made of gaps' from previous wagers."
+        }
+      ]
     },
     {
       "id": "corvhen",
@@ -12278,7 +12309,7 @@
       "notes": "Subject to a shadow-debt contract that demands precious memories as payment. Her husband's debts survive his death.",
       "first_story": "The Widow's Shadow-Debt",
       "first_date": "2026-03-29",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "deepkin_warden",
@@ -12629,10 +12660,10 @@
         "bone-singers",
         "refugees"
       ],
-      "notes": "The phantom-voice of Nethys's scattered consciousness watches and studies Dren's communion with the newly conscious dead. Major unresolved: will Dren complete the burial or allow transcendence?\nCanon Dren is a bone-singer in the Sunken Cathedrals (2026-03-31). This story appears to show her ultimate fate: transformation into an eternal chorus-voice dwelling in the deep places, no longer fully living but preserved as ancestral song.\nDren's journey toward the Tower represents a critical narrative turn: the undead bone-singer is no longer a keeper of the dead but an active agent in the Tower's agenda. Her teaching of bone-songs to survivors positions her as a bridge between preservation and transformation.",
+      "notes": "The phantom-voice of Nethys's scattered consciousness watches and studies Dren's communion with the newly conscious dead. Major unresolved: will Dren complete the burial or allow transcendence?\nCanon Dren is a bone-singer in the Sunken Cathedrals (2026-03-31). This story appears to show her ultimate fate: transformation into an eternal chorus-voice dwelling in the deep places, no longer fully living but preserved as ancestral song.\nDren's journey toward the Tower represents a critical narrative turn: the undead bone-singer is no longer a keeper of the dead but an active agent in the Tower's agenda. Her teaching of bone-songs to survivors positions her as a bridge between preservation and transformation.\nConfirms undead status established in prior canon. No change needed; appearance consistent with 'The Bone-Singer's Vigil' arc.",
       "first_story": "The Bone-Singer's Vigil",
       "first_date": "2026-03-31",
-      "appearances": 13,
+      "appearances": 15,
       "status_history": [
         {
           "date": "2026-04-08",
@@ -12651,6 +12682,15 @@
           "story_title": "The Bone-Singer's Last Song",
           "note": "Dren leaves the Sunken Hollows for the first time in decades, drawn by the Ebon Tower's song in Elder Tongue; she journeys toward it teaching bone-songs to settlers and transmuted traders.",
           "evidence": "Dren hears the Tower singing in Elder Tongue and travels to understand it, becoming uncertain which side she fights for by the time she reaches the Tower's crystalline halls."
+        },
+        {
+          "date": "2026-05-28",
+          "from_status": "undead",
+          "to_status": "undead",
+          "type": "other",
+          "story_title": "The Collector's Debt",
+          "note": "Dren appears as an undead bone-singer teaching the Seventeen Merchants at the Drowned Cathedrals, singing in Elder Tongue.",
+          "evidence": "Story references 'Dren, they called herself\u2014undead, singing in the Elder Tongue, teaching the Seventeen Merchants at the Drowned Cathedrals.'"
         }
       ]
     },
@@ -13650,10 +13690,10 @@
       "role": "Demon-collector, Wager-master",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Mountain Lair",
       "home_region": "Hearthlands",
       "home_realm": "unknown",
-      "travel_scope": "unknown",
+      "travel_scope": "regional",
       "bio": "A demon-collector who offers Thom Bronzelock a wager: crack the Sovereign's Treasury lock in exchange for enough gold to buy a kingdom, or lose his hands to stone. When Thom opens the lock only to find a binding proving the throne's necromantic origin rather than treasure, Sorrath screams in rage and takes Thom's hand anyway.",
       "traits": [
         "greedy",
@@ -13669,7 +13709,7 @@
       "notes": "His wager reveals he was seeking gold, not truth; his reaction to the revelation shows his true motivations. The stone-hand curse he places becomes more blessing than curse for Thom.",
       "first_story": "The Locksmith's Debt",
       "first_date": "2026-04-04",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "captain_lyssa",
@@ -14730,7 +14770,7 @@
       "notes": "Her name and lineage are her greatest asset. Lost two daughters to plague-winds.\nArchive revealed as emergent consciousness entity. Senna transitions role from archivist to recursive-loop custodian, creating barrier of self-observation against Tower hunger.",
       "first_story": "The Spice-Runner's Second Chance",
       "first_date": "2026-04-07",
-      "appearances": 4,
+      "appearances": 5,
       "status_history": [
         {
           "date": "2026-04-20",
@@ -15158,7 +15198,7 @@
       "notes": "His success demonstrates that unconventional trade routes and partnerships can circumvent the Dominion's rigid tax system. The rare, luminescent spices from Vel-Karsh may have future significance.\nKelvan's conscious entry into the Wailing Scar suggests movement beyond regional trade into liminal/interrealm travel, escalating from prior regional scope.",
       "first_story": "The Spice-Merchant's Gamble",
       "first_date": "2026-04-08",
-      "appearances": 5,
+      "appearances": 6,
       "travel_notes": "[2026-05-21] Story 'The Spice-Runner's Inheritance' shows Kelvan discovering a hidden passage through the Wailing Scar to access old spice sources, then voluntarily entering the Scar itself\u2014evidence of crossing realm boundaries."
     },
     {
@@ -15601,10 +15641,21 @@
       "affiliations": [
         "Archive Tower"
       ],
-      "notes": "Elowen must find a way to think sideways around the prophecy or accept that choice itself is an illusion. The Wanderer-in-Questions may hold the key to breaking the recursion.\nStory 'The Apprentice's Impossible Inheritance' deepens her recursive trap; now discovering handwritten warnings from future-self describing method requiring retroactive erasure of all nine iterations, with Keeper's Fastness itself potentially alive and opinionated.",
+      "notes": "Elowen must find a way to think sideways around the prophecy or accept that choice itself is an illusion. The Wanderer-in-Questions may hold the key to breaking the recursion.\nStory 'The Apprentice's Impossible Inheritance' deepens her recursive trap; now discovering handwritten warnings from future-self describing method requiring retroactive erasure of all nine iterations, with Keeper's Fastness itself potentially alive and opinionated.\nContinuation of canon arc; confirms her role as guardian-turned-conspirator against the Tower's completion.",
       "first_story": "The Librarian's Recursion",
       "first_date": "2026-04-09",
-      "appearances": 7
+      "appearances": 9,
+      "status_history": [
+        {
+          "date": "2026-05-28",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Scribe's Forbidden Question",
+          "note": "Elowen recruits Aldwyn the scribe to the counter-Archive effort; reveals the ninth journal contains the Sorcerer's instructions for reversing the Ascension.",
+          "evidence": "Elowen tells Aldwyn 'The journal contains instructions for reversing the Ascension' and leads him to discover the Sorcerer's own starlight-and-blood-ink entries."
+        }
+      ]
     },
     {
       "id": "wanderer_in_questions",
@@ -17557,7 +17608,7 @@
       "notes": "Karthax faces a choice: surrender her hoard for purpose or fade into irrelevance. The human scavenger offers her a path to the Obsidian Tower and the secrets of the Luminous Ascension's origin.",
       "first_story": "The Wyvern's Hoard Burns",
       "first_date": "2026-04-17",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "commander_varesh",
@@ -17880,7 +17931,7 @@
       "notes": "Vathis's fractured will is a contested object; multiple factions seek to reassemble it into a weapon. The nature of Vathis's original intent remains unknown.",
       "first_story": "The Shadow-Vault's Awakening",
       "first_date": "2026-04-18",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "echo_merchant",
@@ -18192,7 +18243,7 @@
       "notes": "Vel faces an impossible choice: expose Dorin or become a keeper of unbearable knowledge. The decision remains unresolved and defines her moral arc.",
       "first_story": "The Ledger-Breaker's Gambit",
       "first_date": "2026-04-20",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "dorin",
@@ -23946,8 +23997,8 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "Keshtir",
-      "home_region": "unknown",
-      "home_realm": "unknown",
+      "home_region": "The Ashen Reach",
+      "home_realm": "The Dominion",
       "travel_scope": "local",
       "bio": "Niel Coldwater inherited her mother's glasswork furnace in Keshtir's Lampwick Quarter but lacked her mother's gift; every piece cracked under heat. She discovered the kiln's heart was alive and whispered recipes in an elder language. When fed star-ash from the Burned Expanse, it sang, and her work became flawless and luminous. Rather than serve the Dominion or Shadow-Archive, she taught street children the kiln's old song, creating a hundred vessels\u2014each a small archive of displaced-person testimony invisible to ledger-monitors.",
       "traits": [
@@ -23969,10 +24020,21 @@
         "the Dominion (rival patron)",
         "Shadow-Archive (rival patron)"
       ],
-      "notes": "The furnace cooled after a hundred vessels were created; the significance of this cooldown is unclear. Her work represents craft as resistance to tyranny and testimony preservation outside institutional control.",
+      "notes": "The furnace cooled after a hundred vessels were created; the significance of this cooldown is unclear. Her work represents craft as resistance to tyranny and testimony preservation outside institutional control.\nName variation: story refers to 'Niel' rather than 'Niel Coldwater'; appears to be same character as canon glassblower. Extends her arc from 'inherited furnace' to 'active resistance through craft.'",
       "first_story": "The Glassblower's Heir",
       "first_date": "2026-05-22",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-05-28",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Glassblower's Revolt",
+          "note": "Niel develops a craft-based resistance strategy: creates double-layer glass vessels hiding counter-testimony in Elder Tongue beneath official ledger records; distributes them through Dominion archives.",
+          "evidence": "Niel etches 'counter-testimony in the Elder Tongue\u2014whispered by refugees, carved by bone-singers' inside glass jars that appear compliant to auditors but contain hidden truth underneath."
+        }
+      ]
     },
     {
       "id": "kress_fae_touched_scout",
@@ -25053,6 +25115,107 @@
       "first_story": "The Sea-Thief's Last Bargain",
       "first_date": "2026-05-27",
       "appearances": 1
+    },
+    {
+      "id": "ostyn_the_merchant_prince",
+      "name": "Ostyn the Merchant-Prince",
+      "aliases": [
+        "Ostyn"
+      ],
+      "tagline": "Clever. Hollow. Adaptive.",
+      "role": "Merchant-Prince",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Anthrim",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Dominion",
+      "travel_scope": "regional",
+      "bio": "A wealthy merchant who adapted to the post-Luminous Ascension economy by wagering his own consciousness-fragments instead of gold. He is clever and wins more than he loses, but each victory leaves him more hollow. He encounters the Shade-Merchant Vex in a shadow-market beneath Anthrim and makes a final wager with his remaining fragments.",
+      "traits": [
+        "clever",
+        "adaptable",
+        "gambler",
+        "increasingly hollow"
+      ],
+      "known_locations": [
+        "Anthrim",
+        "shadow-market beneath Anthrim"
+      ],
+      "affiliations": [
+        "merchant networks",
+        "shadow-markets"
+      ],
+      "notes": "Wins his final wager against Vex. Unclear what he will do with the victory or how his self-fragmentation will progress.",
+      "first_story": "The Merchant's Last Wager",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "the_fae_woman",
+      "name": "The Fae",
+      "aliases": [
+        "fae woman",
+        "the fae"
+      ],
+      "tagline": "Ancient. Bargainer. Grateful.",
+      "role": "Fae Bargainer / Guardian",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Singing Gorge",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "An ancient fae entity who approaches Sorenna with an offer: one night of clarity to understand the boundary and choose whether to renew it. She is waiting when Sorenna emerges from the Gorge, and gifts her the bone-compass as reward for her service.",
+      "traits": [
+        "ancient",
+        "mysterious",
+        "grateful"
+      ],
+      "known_locations": [
+        "Singing Gorge",
+        "Pale Crossing"
+      ],
+      "affiliations": [
+        "fae",
+        "boundary-keepers"
+      ],
+      "notes": "Her relationship to the boundary and to Sorenna's husband is unclear. She may be a guardian of the fae realm or a former vassal to its magic.",
+      "first_story": "The Widow's Last Knot",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "fae_touched_woman",
+      "name": "fae-touched woman",
+      "aliases": [
+        "fae woman",
+        "woman"
+      ],
+      "tagline": "Otherworldly merchant. Keeper of choices. Liminal trader.",
+      "role": "Merchant, Fae-touched",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "the marketplace",
+      "home_region": "unknown",
+      "home_realm": "Fae Courts",
+      "travel_scope": "interrealm",
+      "bio": "A fae-touched woman who operates in the active marketplace at the Wailing Scar, where timelines converge. She offers Kelvan a compass that does not navigate space but chooses timelines\u2014allowing the bearer to find those who want what they have to trade.",
+      "traits": [
+        "otherworldly",
+        "knowing",
+        "enigmatic",
+        "fae-marked"
+      ],
+      "known_locations": [
+        "the marketplace at the Wailing Scar"
+      ],
+      "affiliations": [
+        "merchants in the Wailing Scar marketplace"
+      ],
+      "notes": "Her nature as fae-touched suggests deep knowledge of the Luminous Ascension's liminal folds. The compass she offers is a tool for cross-timeline commerce.",
+      "first_story": "The Merchant's Compass Rose",
+      "first_date": "2026-05-28",
+      "appearances": 1
     }
   ],
   "places": [
@@ -25107,7 +25270,7 @@
       "place": "",
       "parent_place": "",
       "place_type": "market",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "sunken_ziggurat_of_yeng",
@@ -26551,7 +26714,7 @@
       "status": "active",
       "notes": "Hub of fragment trade and shadow economy. Post-Ascension chaos is centered here. Vex's home base.",
       "first_date": "2026-03-06",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "sunburned_reach",
@@ -27059,7 +27222,7 @@
       "status": "active",
       "notes": "The fundamental act of counting is destabilized by the Luminous Ascension's effects.",
       "first_date": "2026-03-10",
-      "appearances": 14
+      "appearances": 15
     },
     {
       "id": "burned_expanse",
@@ -27709,7 +27872,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-18",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "whitecross_waystation",
@@ -28062,7 +28225,7 @@
       "status": "active",
       "notes": "The final crucial record is now sealed in the Apprentice's memory through a death-release ritual; this is a flashpoint of factional competition.",
       "first_date": "2026-03-21",
-      "appearances": 12
+      "appearances": 14
     },
     {
       "id": "refugee_camps",
@@ -28218,7 +28381,7 @@
       "status": "active",
       "notes": "The site of the bone-singers' convergence and the beginning of the language-teaching that Kess must facilitate or break.",
       "first_date": "2026-03-25",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "wailing_scar",
@@ -28238,7 +28401,7 @@
       "status": "active",
       "notes": "The epicenter of Kess's choice between completing the teaching or breaking the songs.",
       "first_date": "2026-03-25",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "the_mountain",
@@ -29194,7 +29357,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-04-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "abyss",
@@ -29352,7 +29515,7 @@
       "status": "active",
       "notes": "Now becoming a place of redemption and teaching; the mountains seem to recognize Isara's change.",
       "first_date": "2026-04-14",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "caravansary_scorched_reach",
@@ -29471,7 +29634,7 @@
       "status": "contested",
       "notes": "A nexus of archival warfare and narrative conflict. Communities are caught between contradictory official histories.",
       "first_date": "2026-04-15",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "surface_council",
@@ -29965,7 +30128,7 @@
       "status": "active",
       "notes": "This location may be a nexus of pre-human magic or a wound left by the Luminous Ascension. The flutes within are sentient or transcendent, and they continue their chorus indefinitely.",
       "first_date": "2026-04-23",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "lantern_market",
@@ -30774,7 +30937,7 @@
       "status": "active",
       "notes": "The Ironspine caves within this range are Sorrath's home and a place of pilgrimage for those seeking wisdom about the post-Ascension world.",
       "first_date": "2026-05-21",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "shadow_archive",
@@ -31436,6 +31599,166 @@
       "notes": "The druids of the Verdant Lands possess knowledge of rare or sacred herbs used for easing suffering without hastening death.",
       "first_date": "2026-05-27",
       "appearances": 1
+    },
+    {
+      "id": "thornholt_fortress",
+      "name": "Thornholt Fortress",
+      "tagline": "Besieged. Defiant. Sacred.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A fortress of ultimate endurance, where archer and griffin held back impossible odds for forty days.",
+      "description": "Thornholt Fortress is defended by Ashara the Archer and her griffin Valorix against siege, starvation, and sorcery. After the siege lifts and a warlord's curse breaks, the fortress stands empty as refugees scatter and guardians move on.",
+      "status": "active",
+      "notes": "Site of a legendary siege; now empty after the warlord's curse breaks.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "distant_sea",
+      "name": "Distant Sea",
+      "tagline": "Horizon. Freedom. Unknown.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A vast maritime expanse where griffins depart to keep their own councils beyond mortal reach.",
+      "description": "The distant sea is where Valorix flies at the end of her three decades with Ashara, seeking the councils of her kind.",
+      "status": "active",
+      "notes": "Griffin migration destination; may connect to sea-folk realms.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "archive_tower_deepest_vault",
+      "name": "Archive Tower's Deepest Vault",
+      "tagline": "Hidden. Prophetic. Sealed.",
+      "place_type": "chamber / vault",
+      "world": "Edhra",
+      "parent_place": "Archive Tower",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Dominion",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "Dust-laden silence, ancient silk, parchment older than empires.",
+      "description": "The deepest level of the Archive Tower where junior auditors like Vel are assigned tedious filing work. It contains a hidden false-floor chamber concealing the Ninth Journal wrapped in silk older than the Dominion.",
+      "status": "active",
+      "notes": "The false floor suggests deliberate concealment; unclear who sealed it or for how long it has been hidden.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "shadow_market_beneath_anthrim",
+      "name": "Shadow-Market Beneath Anthrim",
+      "tagline": "Hidden. Mercenary. High-stakes.",
+      "place_type": "underground market / district",
+      "world": "Edhra",
+      "parent_place": "Anthrim",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Dominion",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "shadow-markets",
+      "atmosphere": "Lit by collected shadows and stolen light, a place of high-stakes gambling and memory-waging.",
+      "description": "An underground market network beneath Anthrim where merchants wager consciousness-fragments, memories, and stolen shadows. It operates outside visible Dominion authority and attracts figures like the Shade-Merchant Vex.",
+      "status": "active",
+      "notes": "The existence of multiple shadow-markets suggests a parallel economy and governance structure post-Luminous Ascension.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "keshtirs_lampwick_quarter",
+      "name": "Keshtir's Lampwick Quarter",
+      "tagline": "Hidden. Defiant. Sacred.",
+      "place_type": "district",
+      "world": "Edhra",
+      "parent_place": "Keshtir",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "The Dominion",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "Lampwick Quarter",
+      "atmosphere": "A refuge for refugees and bone-singers, hidden from Dominion scrutiny, where ancient songs and counter-testimony are preserved.",
+      "description": "The Lampwick Quarter is located in the city of Keshtir and serves as a sanctuary for refugees and bone-singers. Niel Coldwater befriended bone-singers here and obtained the counter-testimony in the Elder Tongue that he etched into his double-glass.",
+      "status": "active",
+      "notes": "The quarter's existence and role in preserving forbidden knowledge makes it a crucial safe house for resistance to Dominion control.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "burned_expanse",
+      "name": "The Burned Expanse",
+      "tagline": "Desolate. Desperate. Haunted.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Burned Expanse (existing)",
+      "district": "unknown",
+      "atmosphere": "A blighted wasteland where refugees barter their identities for survival.",
+      "description": "The Burned Expanse is a region affected by the Luminous Ascension where refugees are forced to sell memories and identities for bread. Karthax hunts consciousness-fragment debtors across this landscape.",
+      "status": "active",
+      "notes": "The region's state suggests ongoing humanitarian crisis tied to the Luminous Ascension and consciousness-fragment economy.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "pelimor_road",
+      "name": "Pelimor Road",
+      "tagline": "Ancient trading route. Seasonal vanishing. Treacherous passage.",
+      "place_type": "road / trade route",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Pelimor",
+      "district": "unknown",
+      "atmosphere": "A caravan road known for vanishing caravans and temporal anomalies.",
+      "description": "An ancient trade route where a caravan took the road one autumn and vanished for a season, only to emerge at the Wailing Scar where reality folds.",
+      "status": "active but anomalous",
+      "notes": "The road is linked to the Wailing Scar and appears to be a liminal crossing point where the Luminous Ascension's rewriting is incomplete.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "the_expanse",
+      "name": "the Expanse",
+      "tagline": "Burned wasteland. Fiery destruction. Lost gardens.",
+      "place_type": "region / blighted land",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A region scarred by fire, where gardens and homes have burned away.",
+      "description": "A burned-over region where the widow's garden was destroyed by fire. Kelvan travels there after his compass points him east, discovering the widow grieving her lost garden.",
+      "status": "cursed / burned",
+      "notes": "The Expanse appears to be a region affected by widespread fires, possibly tied to the Luminous Ascension's effects. It is three days' travel from where Kelvan points his compass.",
+      "first_date": "2026-05-28",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -31801,7 +32124,7 @@
       "status": "active / ongoing",
       "notes": "The Luminous Ascension appears to be a world-altering cosmic event whose full scope and intentions remain mysterious; the Wanderer's emergence suggests it may be becoming self-aware.",
       "first_date": "2026-03-13",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "phantom_echo_fragment",
@@ -31999,7 +32322,7 @@
       "status": "active",
       "notes": "Its true nature is ambiguous; it may be a construct, a fragment of a larger consciousness, or a mechanism itself designed to slow or freeze reality.",
       "first_date": "2026-03-21",
-      "appearances": 19
+      "appearances": 20
     },
     {
       "id": "void_echoes",
@@ -32087,7 +32410,7 @@
       "status": "active",
       "notes": "The Tower may be the Midnight Spire itself or a separate entity controlling cartographic fate. Its intelligence and motivations are unknown.",
       "first_date": "2026-03-28",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "obsidian_spire_hunger",
@@ -32175,7 +32498,7 @@
       "status": "active",
       "notes": "A new development in Story 3; its consciousness and motivations are still being explored.",
       "first_date": "2026-03-31",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "pre_human_civilization_awakened",
@@ -32252,7 +32575,7 @@
       "status": "active",
       "notes": "The Tower's song is heard by Kaiden and represents a fourth path or temptation separate from the three primary transformation options. Its hunger approaches the Pale Crossing from one direction.",
       "first_date": "2026-04-10",
-      "appearances": 14
+      "appearances": 15
     },
     {
       "id": "ebon_tower_entity",
@@ -32538,6 +32861,28 @@
       "status": "active",
       "notes": "Possess their own cities, courts, and absolute enforcement of property law.",
       "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "void_light",
+      "name": "Void-Light",
+      "type": "force",
+      "world": "Edhra",
+      "description": "A dissolution force into which secrets and consciousness fade as the Luminous Ascension's rewrite continues. Represents the erasure of old knowledge and identity.",
+      "status": "active",
+      "notes": "Threat to hoarded ledgers and old-world secrets; may consume the ledger Sorrath possesses.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "the_sorcerer",
+      "name": "The Sorcerer",
+      "type": "entity / unknown",
+      "world": "Edhra",
+      "description": "An unknown figure whose handwriting appears in the margin of the ninth journal. The journal contains instructions for reversing the Luminous Ascension, inscribed in the Sorcerer's own hand using starlight and blood-ink. Identity and current status unknown.",
+      "status": "unknown",
+      "notes": "The Sorcerer may be the same entity responsible for the Luminous Ascension or an opponent seeking to undo it. The journal's preservation suggests either the Sorcerer deposited it in the Archive Tower or it was seized from them.",
+      "first_date": "2026-05-28",
       "appearances": 1
     }
   ],
@@ -33377,7 +33722,7 @@
       "status": "active",
       "notes": "Skarath the Wyvern seeks this artifact specifically. Its exact contents and true powers remain unknown.",
       "first_date": "2026-04-11",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "prophecy_ledgers",
@@ -33950,6 +34295,32 @@
       "notes": "Opened by Skarath herself as act of redemption. Symbolizes the transformation of the wyvern from captor to liberator.",
       "first_date": "2026-05-27",
       "appearances": 1
+    },
+    {
+      "id": "double_glass",
+      "name": "Double-Glass",
+      "tagline": "Subversive. Hidden. Truth-bearing.",
+      "artifact_type": "crafted glass / jar",
+      "origin": "Crafted by Niel Coldwater as a deliberate sabotage of Dominion glass-working. Two dozen initial jars distributed through Pelimor's archives.",
+      "powers": "Double-layer construction: outer layer shows official ledgers when held to candlelight; inner hidden cavity contains counter-testimony etched in the Elder Tongue. Auditors cannot detect the inner chamber without knowing where to look.",
+      "last_known_holder": "Distributed throughout Pelimor's archives and provincial auditor networks",
+      "status": "active",
+      "notes": "The double-glass represents the material embodiment of the Glassblower's Revolt. Its spread through three provinces by winter will expose contradictions in official records. Unclear how many jars exist or whether auditors will attempt to suppress them.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "merchants_compass",
+      "name": "the Merchant's Compass Rose",
+      "tagline": "Timeline-seeking. Choice-granting. Impossible trade.",
+      "artifact_type": "compass / navigational artifact",
+      "origin": "Created or offered by a fae-touched woman in the marketplace at the Wailing Scar.",
+      "powers": "When pointed toward a desired good or merchant goal, it shows the timeline where someone wants what the bearer has to trade. It does not navigate space but rather navigates across timelines to locate ideal trading partners.",
+      "last_known_holder": "Kelvan",
+      "status": "active",
+      "notes": "Kelvan purchased this compass with a merchant's pragmatism, treating it as proof of concept for cross-timeline trade. It enables him to find the widow in the Expanse who desired the cardamom-scented cloth.",
+      "first_date": "2026-05-28",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -34389,7 +34760,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 17,
+      "appearances": 19,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -34593,7 +34964,7 @@
       "status": "contested",
       "notes": "Central to Story 2; Liv is racing to compile a unified archive before they shatter into incompatible realities.",
       "first_date": "2026-03-31",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -34728,7 +35099,7 @@
       "status": "active",
       "notes": "The Dominion attempted to burn it twice; fires burn blue and hot rather than destroying; glass becomes more alive and magical with each burning attempt.",
       "first_date": "2026-05-20",
-      "appearances": 8,
+      "appearances": 9,
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -35403,7 +35774,7 @@
       "significance": "This cataclysm has shattered the Empire's administrative capacity and spawned widespread transformation. It is the root cause of refugee crises, dimensional instability, and the convergence at the Sunken Cathedrals.",
       "notes": "The exact nature and cause remain mysterious; aftermath continues to unfold.",
       "first_date": "2026-03-10",
-      "appearances": 7
+      "appearances": 10
     },
     {
       "id": "the_memory_thief_bargain",
@@ -39580,6 +39951,63 @@
       "notes": "This event is referenced as context but not directly dramatized in this story. It may relate to the 'Luminous Ascension' or similar cosmic events in the broader canon.",
       "first_date": "2026-05-27",
       "appearances": 1
+    },
+    {
+      "id": "the_glassblowers_revolt",
+      "name": "The Glassblower's Revolt",
+      "tagline": "Subversive. Spreading. Underground.",
+      "event_type": "uprising / sabotage",
+      "scope": "regional",
+      "epicenter_place": "Pelimor",
+      "epicenter_region": "The Ashen Reach",
+      "epicenter_realm": "The Dominion",
+      "affected_places": [
+        "Pelimor",
+        "archives across three provinces"
+      ],
+      "affected_regions": [
+        "three provinces of The Dominion"
+      ],
+      "affected_realms": [
+        "The Dominion"
+      ],
+      "radius": "Three provinces by winter",
+      "participants": [
+        "Niel Coldwater",
+        "bone-singers",
+        "refugees",
+        "Dominion auditors"
+      ],
+      "outcome": "Two dozen double-glass jars distributed through Pelimor's archives. By winter, auditors across three provinces will discover contradictions singing underneath their certainties. Niel fled to the Greymarch Peaks.",
+      "significance": "The Glassblower's Revolt represents the first large-scale subversion of Dominion record-keeping and auditor authority. It reveals that official certainties can be undermined through counter-testimony and hidden knowledge. It is both a practical sabotage and a philosophical challenge to state control of truth.",
+      "notes": "Unclear how many more double-glass jars circulate or whether the auditor networks can contain the discovery. Niel's fate and continued involvement unknown.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "luminous_ascension_incomplete",
+      "name": "Luminous Ascension (incomplete rewriting at the Wailing Scar)",
+      "tagline": "Reality fractured. Rewriting unfinished. Timelines converge.",
+      "event_type": "cosmic event / reality fracture",
+      "scope": "world",
+      "epicenter_place": "Wailing Scar",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Wailing Scar",
+        "Pelimor Road"
+      ],
+      "affected_regions": [],
+      "affected_realms": [],
+      "radius": "at minimum the Wailing Scar and surrounding liminal spaces",
+      "participants": [
+        "the Luminous Ascension"
+      ],
+      "outcome": "The Luminous Ascension's rewriting left the Wailing Scar incompletely rewritten, creating a liminal fold where merchants from three different timelines can trade.",
+      "significance": "This incomplete rewriting enables cross-timeline commerce and the existence of the Wailing Scar marketplace. It fundamentally alters the nature of reality in localized areas.",
+      "notes": "The Luminous Ascension is referenced as a historical event; the incompleteness of its rewriting at the Wailing Scar suggests it may still be ongoing or have unpredictable side effects.",
+      "first_date": "2026-05-28",
+      "appearances": 1
     }
   ],
   "weapons": [
@@ -39712,6 +40140,19 @@
       "notes": "Torven carries this at his belt; it represents his last hope to save Sera from the pearl's curse, though using it would mean cutting the pearl from her throat.",
       "first_date": "2026-05-27",
       "appearances": 1
+    },
+    {
+      "id": "bone_compass",
+      "name": "Bone-Compass",
+      "tagline": "Guided. Ancient. Bound.",
+      "weapon_type": "tool / guide (magical)",
+      "origin": "Given by the fae to Sorenna as reward for renewing the pre-human boundary seal. Its origins appear to be pre-human or fae in nature.",
+      "powers": "It guides the holder to the pre-human boundary when it frays again. It appears to be linked to Sorenna's bloodline connection to the boundary's original binding.",
+      "last_known_holder": "Sorenna",
+      "status": "active",
+      "notes": "Sorenna kept it on her mantle at Pale Crossing. The fae suggested it would guide others in her stead when needed. Its true extent of powers is unknown.",
+      "first_date": "2026-05-28",
+      "appearances": 1
     }
   ],
   "factions": [
@@ -39833,7 +40274,7 @@
       "status": "active",
       "notes": "Appear to operate as an enforcement mechanism for oath-magic in coastal waters; non-violent but inexorable.",
       "first_date": "2026-03-04",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "dragons_and_wyverns",
@@ -39941,7 +40382,7 @@
       "status": "active",
       "notes": "Fragments of consciousness to maintain safety; willingness to bleed and bind themselves to oaths.",
       "first_date": "2026-03-15",
-      "appearances": 24
+      "appearances": 26
     },
     {
       "id": "life_speakers",
@@ -40205,7 +40646,7 @@
       "status": "active",
       "notes": "Become the recipients of the Auditor-General's teaching about memory independent of ledgers. This skill becomes more valuable than gold.",
       "first_date": "2026-03-25",
-      "appearances": 13
+      "appearances": 15
     },
     {
       "id": "resource_hoarders",
@@ -40433,7 +40874,7 @@
       "status": "active",
       "notes": "The Dominion is hunting Liv's archive, attempting to suppress the documentation before multiplicities of truth destabilize reality. They represent institutional control of history.",
       "first_date": "2026-04-03",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "night_markets",
@@ -40649,7 +41090,7 @@
       "status": "active",
       "notes": "The Counter-Archive represents an alternative institutional perspective on the threshold-being transformation, suggesting factional disagreement over interpretation.",
       "first_date": "2026-04-16",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "counter_archivists",
@@ -41250,6 +41691,42 @@
       "notes": "The State is actively fragmenting into at least three competing factions, each with their own version of the historical ledger. This loss of unified authority is the central crisis of the post-Remaking world. State enforcers are sent to confront Koren; Vel arrives with news of the fragmentation.",
       "first_date": "2026-05-27",
       "appearances": 2
+    },
+    {
+      "id": "wyvern_lords",
+      "name": "Wyvern-Lords",
+      "tagline": "Hoarding. Scrambling. Adapting.",
+      "alignment": "neutral",
+      "goals": "Adapt to post-Ascension economics where consciousness-fragments replace gold as currency.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Sorrath is a member; the faction scrambles to understand new value systems.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "seventeen_merchants",
+      "name": "Seventeen Merchants",
+      "tagline": "Transforming. Transcending. Reality-bending.",
+      "alignment": "neutral",
+      "goals": "Approach transcendence through teaching and ritual at the Drowned Cathedrals; change reality upon completion.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Taught by Dren and bone-singers in the Elder Tongue; their completion will trigger world-scale consequences; may attract dragon-guardians like Skarath.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "fae",
+      "name": "Fae",
+      "tagline": "Ancient. Bargaining. Protective.",
+      "alignment": "neutral",
+      "goals": "Maintain the pre-human boundary, preserve the fae realm, protect refugees and those bound to ancient oaths.",
+      "leader": "unknown (possibly decentralized or council-based)",
+      "status": "active",
+      "notes": "The fae appear to operate on ancient law and bargain-ethics. They actively recruit human guardians (like Sorenna) to maintain the boundary.",
+      "first_date": "2026-05-28",
+      "appearances": 1
     }
   ],
   "lore": [
@@ -42649,7 +43126,7 @@
       "status": "active",
       "notes": "The Elder Tongue is being taught by the Ebon Tower to the world itself. Dren recognizes the song in this language, suggesting her undeath or bone-singing connects her to pre-human knowledge. The Tower's song causes Dren's bones to 'ache with recognition,' implying deep resonance with her essence.",
       "first_date": "2026-04-11",
-      "appearances": 11
+      "appearances": 13
     },
     {
       "id": "pre_human_languages",
@@ -43521,6 +43998,17 @@
       "notes": "The Remaking appears to have fragmented time or causality, making travel and navigation perilous. Merchants seek magical essences (like Valorix's) to aid navigation.",
       "first_date": "2026-05-27",
       "appearances": 1
+    },
+    {
+      "id": "pre_human_boundary",
+      "name": "Pre-Human Boundary",
+      "tagline": "Ancient. Weakening. Vital.",
+      "category": "history / geography",
+      "source": "The Widow's Last Knot; fae knowledge",
+      "status": "confirmed",
+      "notes": "A seal separating human realms from pre-human territories and fae courts. It weakens periodically and requires renewal by bone-carvers bound by oath or bloodline. The Singing Gorge is its seat. Sorenna's husband and Sorenna herself are bound to its maintenance.",
+      "first_date": "2026-05-28",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -43534,7 +44022,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 25
+      "appearances": 26
     },
     {
       "id": "wolf_spirit_beast",
@@ -43588,7 +44076,7 @@
       "status": "thriving",
       "notes": "Dragons possess cosmic knowledge and counsel other ancient powers. Skyrakis is known as 'the wound-wing.'",
       "first_date": "2026-03-06",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "ancient_trees",
@@ -43759,7 +44247,7 @@
       "status": "thriving",
       "notes": "Valorix is an individual griffin bonded to Commander Thrace for forty years. Griffins are long-lived intelligent creatures capable of emotion and bonds of loyalty. They hoard treasure and suffer existential crises when that treasure loses value.",
       "first_date": "2026-05-24",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "horse",
@@ -43819,6 +44307,30 @@
       "status": "active",
       "notes": "Merchants gather at Crimport to witness Skarath's offering of her hoard. Some weep; some fear a curse. They represent the economic disruption caused by the Remaking and the emergence of consciousness-fragments as new currency.",
       "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "refugees_displaced_peoples",
+      "name": "Refugees",
+      "tagline": "Displaced. Gathered. Surviving.",
+      "type": "creature / humanoid",
+      "rarity": "common",
+      "habitat": "Settlements like Pale Crossing; scattered across Valdris post-Luminous Ascension.",
+      "status": "thriving",
+      "notes": "Refugees are displaced peoples who gather in settlements like Pale Crossing near the boundary. They sing and support the boundary-keepers implicitly. Post-Ascension, many have adapted to the new economy of consciousness-fragments.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "old_stars",
+      "name": "old stars",
+      "tagline": "Celestial bodies. Pre-Ascension lights. Lost sky.",
+      "type": "celestial phenomenon",
+      "rarity": "legendary / extinct",
+      "habitat": "sky / cosmos",
+      "status": "extinct in some timelines; alive in others",
+      "notes": "In one timeline accessed through the Wailing Scar, the old stars never died, suggesting the Luminous Ascension altered the heavens themselves across multiple realities.",
+      "first_date": "2026-05-28",
       "appearances": 1
     }
   ],
@@ -44903,7 +45415,7 @@
       "status": "active",
       "notes": "Now held by the Apprentice-Sorcerer in a state of perpetual, non-lethal tension. The ninth journal may be the most dangerous artifact in the world.",
       "first_date": "2026-04-29",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "singing_bones",
@@ -45024,6 +45536,54 @@
       "notes": "The Key is the primary artifact passed from Sera's father to Sera, marking her inheritance of the Tidecaller lineage. Its song grows louder as Sera's resolve strengthens, suggesting resonance with the wielder's will. The Key is described as 'hanging around her neck'\u2014a constant presence and reminder.",
       "first_date": "2026-05-26",
       "appearances": 1
+    },
+    {
+      "id": "luminous_ascension_relic",
+      "name": "The Luminous Ascension",
+      "tagline": "Reality. Rewritten. Cosmic.",
+      "origin": "Unknown; a cosmic or world-scale event that restructured reality",
+      "power": "Rewrites the fundamental nature of value, economy, consciousness, and reality itself. Elevates consciousness-fragments as true currency while rendering gold worthless. Enables transcendence.",
+      "curse": "Renders hoarded wealth obsolete; threatens to dissolve old-world secrets into void-light; forces radical adaptation of all societies.",
+      "status": "active",
+      "notes": "An ongoing world-scale transformation; may be cyclic or recursive. Enables both salvation through transcendence and destruction of old power structures.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "obsidian_tower_relic",
+      "name": "The Obsidian Tower",
+      "tagline": "Ancient. Binding. Corrupt.",
+      "origin": "Unknown; pre-Dominion or earlier civilization.",
+      "power": "Binds consciousness-fragment debts and soul-contracts. Karthax learns names of those bound to it and hunts down their contracts.",
+      "curse": "Soul-contracts made with the Obsidian Tower bind debtors and their descendants across generations. Fragments and debts are traded as commodities post-Luminous Ascension.",
+      "status": "active / corrupt",
+      "notes": "The Obsidian Tower's role in consciousness-fragment trafficking suggests it is either a conscious entity or a nexus for consciousness-theft magic. Its relationship to the Archive Tower (if any) is unclear but both appear to feed on human will and knowledge.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "starlight_glass_bottles",
+      "name": "post-Ascension starlight in glass bottles",
+      "tagline": "Captured light. Post-Ascension radiance. Impossible commodity.",
+      "origin": "Created or preserved in some timeline after the Luminous Ascension.",
+      "power": "These bottles contain starlight from the post-Ascension cosmos, a commodity sold by merchants in the Wailing Scar marketplace.",
+      "curse": "unknown",
+      "status": "active",
+      "notes": "These bottles represent goods that exist only after the Luminous Ascension rewrote the sky, making them impossible items for pre-Ascension merchants to possess.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "pre_ascension_silk",
+      "name": "pre-Ascension silk",
+      "tagline": "Ancient textile. Timeline artifact. Vanished era's craft.",
+      "origin": "Woven before the Luminous Ascension in a timeline that no longer exists or has been fundamentally altered.",
+      "power": "This silk represents goods from a pre-Ascension timeline, sold by merchants in the Wailing Scar marketplace.",
+      "curse": "unknown",
+      "status": "active",
+      "notes": "Pre-Ascension silk is a commodity that cannot exist in post-Ascension timelines, making it unique to the liminal fold where timelines coexist.",
+      "first_date": "2026-05-28",
+      "appearances": 1
     }
   ],
   "regions": [
@@ -45115,7 +45675,7 @@
       "status": "active",
       "notes": "Pelimor's night markets and vaults are integral to the shadow-theft economy. Mira operated here for years.",
       "first_date": "2026-02-28",
-      "appearances": 3,
+      "appearances": 4,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -45591,7 +46151,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-11",
-      "appearances": 7,
+      "appearances": 8,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -46142,7 +46702,7 @@
       "use": "Traded in night markets as high-value illicit goods. Can be weaponized against their original owners if inhabited by malevolent forces.",
       "notes": "Vex stole a fortune of these from a dying sorcerer's vault. They are valuable enough to attract multiple buyers in a single night. Some circulate the markets with hidden agendas.",
       "first_date": "2026-02-28",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "malachars_gold_substance",
@@ -46302,7 +46862,7 @@
       "use": "Applied to preserved parchment by the forger Aldris to create records that resist magical corruption; used in the hidden scriptoriums to preserve the Empire's ledgers.",
       "notes": "Unresolved: the exact composition and preparation of blood-ink; its full resistance capabilities.",
       "first_date": "2026-03-15",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "fresh_water",
@@ -46482,7 +47042,7 @@
       "use": "Dorian left a purse of gold for the orphanage at Verdant Strand as part of his final reckoning.",
       "notes": "Represents Dorian's wealth and his choice to distribute it rather than hoard it.",
       "first_date": "2026-04-08",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "void_light_substance",
@@ -46494,7 +47054,7 @@
       "use": "Unknown; appears to be a byproduct of matter mutation rather than a useful substance.",
       "notes": "Void-light is spreading with the matter corruption. Its ultimate nature and purpose are unknown.",
       "first_date": "2026-04-09",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "liquid_starlight",
@@ -46662,7 +47222,7 @@
       "use": "Trade in night-markets; feeding to cosmic entities like the Obsidian Tower; accumulation as wealth.",
       "notes": "Consciousness-fragments represent the shift from material to metaphysical wealth; they retain agency and memory of their origin.",
       "first_date": "2026-04-27",
-      "appearances": 10
+      "appearances": 12
     },
     {
       "id": "phantom_truths_substance",
@@ -46866,7 +47426,7 @@
       "use": "Mercantile trade; Meira's spice-house inventory.",
       "notes": "Part of ordinary trade that is reportedly dying; entire inventory exchanged for tide-essence.",
       "first_date": "2026-05-24",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "tide_essence",
@@ -46974,6 +47534,30 @@
       "use": "Prayer carving; memorial; spiritual practice",
       "notes": "The exact source and species of bone are unknown. Its use in prayer-carving suggests a spiritual practice tied to refugee communities and mourning.",
       "first_date": "2026-05-27",
+      "appearances": 1
+    },
+    {
+      "id": "spice_glass",
+      "name": "Spice-Glass",
+      "tagline": "Precise. Crystalline. Functional.",
+      "type": "mineral / craft material",
+      "rarity": "rare / manufactured",
+      "properties": "Can be shaped and polished to create ledger-jars and truth-panes. Capable of resonating in response to record-alteration or lies spoken near it. Can be layered to hide counter-testimony within outer surfaces.",
+      "use": "Dominion auditor tools; also weaponized by Niel for subversive counter-testimony.",
+      "notes": "Spice-glass is the material foundation of both Dominion authority and Niel's rebellion. Its precision and resonance properties make it ideal for both enforcing and undermining official truth.",
+      "first_date": "2026-05-28",
+      "appearances": 1
+    },
+    {
+      "id": "counter_testimony",
+      "name": "Counter-Testimony",
+      "tagline": "Hidden. True. Subversive.",
+      "type": "narrative / substance",
+      "rarity": "rare / suppressed",
+      "properties": "Refugee testimonies and elder knowledge preserved by bone-singers and etched into double-glass by Niel. Encoded in Elder Tongue. Can be hidden within outer surfaces of glass artifacts and revealed only when known location is examined.",
+      "use": "Subversion of official Dominion records; preservation of suppressed truth; weapon against auditor certainties.",
+      "notes": "Counter-testimony represents the material embodiment of resistance to Dominion control. Its preservation and distribution through double-glass constitute the Glassblower's Revolt.",
+      "first_date": "2026-05-28",
       "appearances": 1
     }
   ],
@@ -47871,7 +48455,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 35
+      "appearances": 37
     },
     {
       "id": "the_hegemony",
