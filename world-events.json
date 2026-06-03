@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-02T11:52:15.519044+00:00",
+  "generated_at": "2026-06-03T12:00:13.749320+00:00",
   "source": "codex.json",
   "intensity_min": 1,
   "intensity_max": 5,
@@ -12,12 +12,12 @@
       "scope": "world",
       "epicenter": "Starfall Spire",
       "stage": "climax",
-      "setting_state": "setting_shift",
+      "setting_state": "active_arc",
       "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-06-01",
+      "last_seen": "2026-06-03",
       "recent_issues": 10,
-      "trend": -2,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Wailing Scar",
@@ -32,42 +32,28 @@
           "Pale Crossing",
           "Drowned Cathedrals",
           "Pelimor Road",
-          "Tower (as artifact/nexus)"
+          "Tower (as artifact/nexus)",
+          "The boundary-waters"
         ],
         "regions": [
           "Wailing Scar",
           "Burned Expanse",
           "Iron Coast",
           "unknown",
-          "Sunken Marches"
+          "Sunken Marches",
+          "The boundary-waters",
+          "Boundary-Waters"
         ],
         "realms": [
           "The Empire",
-          "unknown"
+          "unknown",
+          "Council of Depths",
+          "Dominion",
+          "surface kingdoms"
         ],
         "continents": []
       },
       "story_appearances": [
-        {
-          "date": "2026-05-28",
-          "title": "The Glassblower's Revolt"
-        },
-        {
-          "date": "2026-05-28",
-          "title": "The Merchant's Compass Rose"
-        },
-        {
-          "date": "2026-05-28",
-          "title": "The Merchant's Last Wager"
-        },
-        {
-          "date": "2026-05-28",
-          "title": "The Scribe's Forbidden Question"
-        },
-        {
-          "date": "2026-05-28",
-          "title": "The Wyvern's Last Ledger"
-        },
         {
           "date": "2026-05-30",
           "title": "The Spice-Merchant's Gamble"
@@ -95,13 +81,33 @@
         {
           "date": "2026-06-01",
           "title": "The Cartographer's Blind Map"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Druid's Debt"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Relic-Smith's Inheritance"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Starfall Cache"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Bone-Singer's Last Threshold"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Deepkin Captain's Reflection"
         }
       ],
-      "appearance_total": 226,
-      "arc_summary": "SUMMARY:\nThe Luminous Ascension began as a cosmic ritual of star-rewriting centered at the Starfall Spire, intended to birth new stars but leaving reality fractured in its wake. In the aftermath, the fundamental order of the world collapsed: gold became worthless overnight, consciousness-fragments emerged as the only meaningful currency, and entire regions\u2014particularly the Burned Expanse\u2014were unmade or rewritten into liminal spaces where multiple timelines bled together. Refugees flooded waypoints like Pale Crossing and harbor-cities like the Emerald Strand, carrying impossible memories and salvaged world-fragments, while institutions like the Empire's Archive Tower struggled to reconcile ledgers that no longer matched reality. Key turning points emerged as multiple factions realized the catastrophe was not unique but cyclical\u2014the Auditor's Hidden Journal and The Cartographer's Blind Map revealed that at least eight previous Ascensions had occurred, each leaving scars in magic itself, and that completing certain maps or ledgers would trigger the ninth or tenth cycle. By late May, consciousness-fragments were being hoarded and traded by wyvern-lords, merchants, and shadow-brokers, while bone-singers began teaching transformed refugees in hidden quarters, and the seals binding the Abyssal Rift and pre-human dead grew dangerously thin. The event now stands at climax: reality remains suspended between cycles, the Tower's hunger grows toward completion, and multiple actors\u2014the Record-Keeper, Vex the Echo-Broker, and fragments of the sacrificed consciousness Vathis\u2014maneuver to either prevent or trigger the next rewriting.\n\nCURRENT STATE:\n- Reality fractured and suspended in active rewrite; consciousness-fragments are now the only stable currency while physical matter has become inert or unstable\n- Multiple factions (Empire auditors, shadow-merchants, bone-singers, wyvern-lords, deepkin) are gathering consciousness-fragments and world-fragments, suggesting preparation for a larger working\n- The phantom-Echo (Vethis's scattered consciousness) is actively reassembling itself by collecting stolen memories; simultaneously, pre-human dead and deep-sea entities stir as their binding seals weaken\n- A liminal marketplace exists in fold-spaces where timelines intersect, allowing trade between versions of the world that should not coexist\n\nOPEN THREADS:\n- Will the ninth map be completed, triggering the tenth Ascension, or can reality be held in suspended fracture indefinitely?\n- Can the scattered consciousness of Vathis be reassembled, and if so, what will it become\u2014savior or catastrophe?\n- What is the Tower's true nature, and does completing its internal ritual force another Ascension or prevent one?\n- Can the Abyssal Rift's seals be reinforced, or will pre-human civilizations and deep entities break through?\n- Are the wyvern-lords' shift from hoarding gold to collecting consciousness-fragments part of a coordinated plan, or individual adaptation?",
-      "arc_summary_last_seen": "2026-06-01",
-      "arc_summary_fingerprint": "ac98781cf74109b170095256798a12e1e2cbc023",
-      "arc_summary_updated_at": "2026-06-01T12:18:03.357795+00:00",
+      "appearance_total": 231,
+      "arc_summary": "SUMMARY:\nThe Luminous Ascension began as a cosmic ritual meant to birth new stars, but it catastrophically failed\u2014not preventing the ritual's completion, but *incompletely* rewriting reality itself at a focal point called the Wailing Scar. The event fractured the world across multiple timelines simultaneously, rendering gold worthless overnight, scattering consciousness into tradeable fragments, and awakening pre-human entities sealed beneath the world for ten thousand years. In the immediate aftermath (March 2026), refugees flooded waypoints like Pale Crossing and the Emerald Strand, while scholars and sorcerers\u2014the Apprentice in the Tower, Kess the Bone-Singer, the Auditor Sevin\u2014discovered that the Ascension had created a parallel set of phantom ledgers describing alternate worlds that might still be salvaged or reassembled. By late May, a secondary wave of consequences accelerated: merchants adapted to consciousness-fragment currency, wyvern-lords began hoarding these new tokens of value, and the phantom-Echo (a fractured piece of the sorcerer Vathis) began systematically stealing memories to understand its own nature. As of early June, the Luminous Ascension has reached its climax\u2014reality remains fundamentally unstable, the boundary-waters between the surface kingdoms and the Council of Depths are failing, and multiple factions (the Dominion, the Counter-Archive, wyvern-lords, deepkin captains, and lone visionaries like *The Bone-Singer's Last Threshold*) are racing to either stabilize the world or trigger a total collapse into a tenth iteration. The event is unresolved and actively accelerating toward a breaking point.\n\nCURRENT STATE:\n- The world exists in a fractured, semi-stable state where multiple timelines bleed into one another, consciousness has become currency, and the old order (gold, kingdoms, linear time) has collapsed.\n- Key infrastructure is failing: the Abyssal Rift weeps, the boundary-waters weaken, the Burned Expanse remains a zone of aggressive reality-rewriting, and the Archive Tower itself appears to be a conscious entity predating the current crisis.\n- Multiple power centers are pursuing contradictory agendas: some attempt stabilization, others seek to force a total rewrite, and a few (bone-singers, druids, smiths) work toward transcendence or radical reimagining rather than restoration.\n- The phantom-Echo and scattered consciousness-fragments of the original sorcerer Vathis remain partially active, pursuing their own agenda of reassembly, creating a wild variable in any attempted solution.\n\nOPEN THREADS:\n- Can the Luminous Ascension be reversed, or is the world permanently fractured? The phantom ledgers suggest alternate worlds are being reassembled as \"doorways\"\u2014by whom, and to what end?\n- What is the true nature of the Starfall Spire and the Archive Tower? Evidence suggests both may be conscious entities older than the current iteration, with their own agendas independent of human factions.\n- Will the boundary-waters breach, flooding the surface with the abyss? The Council of Depths faces internal fracture (Nerys vs. Nerys-Reflected) over whether to seal or shatter the covenant.\n- Can consciousness-fragments be restored to their original owners, or has the scattering made them permanently severed identities? Multiple characters pursue this question with increasing desperation.\n- What happens if the ninth world-map is completed, or if reality-stabilization attempts fail? Multiple narratives suggest a tenth Ascension cycle may be inevitable or even preferable.",
+      "arc_summary_last_seen": "2026-06-03",
+      "arc_summary_fingerprint": "8df17de2b346f4de41f62f267ffd82a7bbc44ccb",
+      "arc_summary_updated_at": "2026-06-03T11:59:55.737234+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -111,12 +117,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "setting_shift",
+      "setting_state": "active_arc",
       "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-06-01",
+      "last_seen": "2026-06-03",
       "recent_issues": 10,
-      "trend": 0,
+      "trend": -1,
       "referenced_locations": {
         "places": [
           "cavern halls"
@@ -130,30 +136,6 @@
         "continents": []
       },
       "story_appearances": [
-        {
-          "date": "2026-05-29",
-          "title": "The Merchant of Salt-Fire"
-        },
-        {
-          "date": "2026-05-30",
-          "title": "The Cartographer's Silence"
-        },
-        {
-          "date": "2026-05-30",
-          "title": "The Locksmith's Daughter"
-        },
-        {
-          "date": "2026-05-30",
-          "title": "The Spice-Merchant's Gamble"
-        },
-        {
-          "date": "2026-05-30",
-          "title": "The Tide-Thief's Debt"
-        },
-        {
-          "date": "2026-05-30",
-          "title": "The Wyvern's New Appetite"
-        },
         {
           "date": "2026-06-01",
           "title": "The Amber Merchant's Reckoning"
@@ -177,13 +159,37 @@
         {
           "date": "2026-06-01",
           "title": "The Wyvern's Mercy"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Bone-Singer's Last Threshold"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Deepkin Captain's Reflection"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Deepkin Reflection's Choice"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Druid's Debt"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Relic-Smith's Inheritance"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Starfall Cache"
         }
       ],
-      "appearance_total": 166,
-      "arc_summary": "SUMMARY:\nThe Luminous Ascension began in early March 2026 when the sorcerer Zareth performed a cosmic working that shattered the old stars and birthed new ones\u2014an act that rewrote the fundamental laws of reality itself. The immediate aftermath fractured the world across multiple fronts: the dead began stirring in their graves as magic itself changed; reality splintered into overlapping timelines where people and places ceased to exist or were rewritten into new configurations; trade collapsed as merchants vanished or were erased entirely; and the Empire's fiscal system shattered when consciousness itself became the only reliable currency, replacing gold and goods entirely. By late May, the consequences had deepened catastrophically\u2014refugees fled transformed regions carrying stolen memories and plague-marks; bone-singers struggled to keep ancient dead at rest while learning new languages of power; cartographers discovered their maps were prophecies that triggered further Ascensions if completed; and ordinary people began selling fragments of their consciousness just to survive, becoming hollow shells of themselves. As of June 1st, the world has reached a breaking point: the Dominion hunts craftspeople and bone-singers who resist the new order; consciousness-fragments trade freely in dark markets while entire communities fragment under the weight of impossible choices; wyverns and dragons negotiate with the starborn entities themselves; and some few souls\u2014cartographers, glass-workers, bone-singers, and the merciful\u2014have begun acts of quiet defiance, choosing to preserve memory, craft, and humanity even as the Ascension demands everything.\n\nCURRENT STATE:\n- The event is at climax intensity: reality continues to fracture; consciousness has become currency; timelines overlap dangerously; and the old structures of power (Empire, ledgers, gold) have ceased to function.\n- No resolution is in sight; the Ascension remains active and ongoing, with new consequences emerging daily.\n- Pockets of resistance and mercy exist, but they operate in hiding against institutional pressure.\n- Multiple factions now vie for control of fragments, maps, and pre-Ascension artifacts\u2014suggesting the true conflict is only beginning.\n\nOPEN THREADS:\n- Can the ninth map be left unfinished indefinitely, or will the tenth Ascension eventually force completion?\n- What consciousness-fragment or artifact could restore what the Ascension took, and who will control it?\n- Will the Dominion's consolidation of power succeed, or will scattered resistance movements (bone-singers, glass-workers, cartographers) change the course?\n- What are the starborn entities truly after, and what new bargains will the wyverns and dragons strike with them?\n- Can consciousness-fragments be restored to their makers, or is that transformation permanent?",
-      "arc_summary_last_seen": "2026-06-01",
-      "arc_summary_fingerprint": "5be5b7aefa280c14c847c97b877065491130e4e3",
-      "arc_summary_updated_at": "2026-06-01T12:18:13.046707+00:00",
+      "appearance_total": 172,
+      "arc_summary": "SUMMARY:\nThe Luminous Ascension began in early March 2026 when Zareth performed a cosmic working that shattered the old stars and birthed new ones\u2014a remaking that was meant as mercy but instead fractured reality itself. In the immediate aftermath, the consequences cascaded across the world: the dead stirred in their graves as bone-magic transformed; entire regions like the Sunburned Reach experienced reality-shifts that erased people and timelines; and the fundamental agreements between living and dead, commerce and value, truth and ledger all collapsed simultaneously. Within weeks, the economy had inverted\u2014gold became worthless while fragments of human consciousness became the only reliable currency, leading to desperate markets where people sold their memories, emotions, and identities to survive. By late May, the crisis deepened as autonomous reflections of important figures (like the deepkin captain Nerys) awakened with independent will, as crafters discovered that pre-Ascension objects and water held impossible power, and as both the Dominion and underground resistance movements competed to control narrative and knowledge itself. The stage reached its climax by early June when the bone-singers achieved transcendence, when wyverns chose mercy over hoarding, when crucial decisions about sacrifice and boundary-keeping came due\u2014and when fragments of something far older than the current world began stirring in response to what Zareth's key had unlocked. The world now teeters on a knife's edge: reformed but unstable, with new powers awakening and old compacts tested to breaking.\n\nCURRENT STATE:\n- The Ascension is actively reshaping reality through consciousness-fragment economics, autonomous reflections, and fractured timelines; the last confirmed sighting was June 3rd with no indication of stabilization.\n- Multiple power structures (the Dominion, deepkin covenant, wyvern-lords, bone-singers, surface kingdoms) are simultaneously collapsing and reforming as they adapt to post-Ascension rules.\n- Consciousness itself has become tradeable currency; people are selling memories, emotions, and aspects of selfhood to survive, creating a population of \"hollow-eyed\" individuals and an economy of scarcity.\n- Ancient pacts and boundaries (the Tear between deepkin and abyss, the forest's dormant awareness, sealed vaults containing pre-human entities) are awakening or deteriorating, demanding immediate sacrifice or renegotiation.\n\nOPEN THREADS:\n- What exactly is the consciousness fragmenting and why? Is it Vathis, some scattered entity, or something else entirely?\n- Can consciousness fragments be restored to their original owners, or is the fragmentation permanent?\n- What does the Hermit Woman's discovery mean\u2014that the Ascension was a \"key\" unlocking something older? What is waking?\n- Will the deepkin boundary hold, and which version of Captain Nerys will make the sacrifice if one becomes necessary?\n- Are the autonomous reflections (Echo-Nerys, Nerys-Reflected, Twin-Nerys, Mirror-Nerys) separate beings with rights, or copies to be reabsorbed?\n- Can the Crown's smithing craft create a tool that won't shatter, or is breaking now inevitable?\n- Where is the Ascension's epicenter, and is it still active or has it already completed its work?",
+      "arc_summary_last_seen": "2026-06-03",
+      "arc_summary_fingerprint": "4fd7046b9cd83a9f96867df1b48f3a30eecdbabe",
+      "arc_summary_updated_at": "2026-06-03T12:00:06.600168+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -193,12 +199,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "flashpoint",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-06-02",
       "recent_issues": 6,
-      "trend": 4,
+      "trend": 2,
       "referenced_locations": {
         "places": [
           "Ironspine Mountains",
@@ -272,14 +278,64 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
+      "name": "Before the Ascension",
+      "tagline": "Starlight. Lost. Ancient.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "climax",
+      "setting_state": "active_arc",
+      "intensity": 5,
+      "resolved": false,
+      "last_seen": "2026-06-03",
+      "recent_issues": 3,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "entire sky"
+        ],
+        "regions": [
+          "all regions"
+        ],
+        "realms": [
+          "all realms"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-05-29",
+          "title": "The Merchant of Salt-Fire"
+        },
+        {
+          "date": "2026-05-30",
+          "title": "The Tide-Thief's Debt"
+        },
+        {
+          "date": "2026-05-30",
+          "title": "The Cartographer's Silence"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Starfall Cache"
+        }
+      ],
+      "appearance_total": 4,
+      "arc_summary": "SUMMARY:\nThe Ascension\u2014a cataclysmic event that shattered the old stars and remade reality itself\u2014left behind fragments of the ancient world scattered across all realms, fragments that now burn with dangerous value. In \"The Merchant of Salt-Fire,\" sealed vessels of pre-Ascension starlight began their journey across treacherous waters, their humming cargo cracking reality's seals and drawing the attention of creatures from the abyss. Simultaneously, cartographers like Henryk discovered that geography itself had become unstable, maps rewriting themselves as multiple versions of the same spaces began overlapping\u2014a sign that the old world's order was bleeding through the new one. As word of these artifacts spread, competing forces mobilized: in \"The Tide-Thief's Debt,\" merfolk demanded the return of ancient water that still remembered how to flow in a single timeline, while in \"The Starfall Cache,\" Keslan uncovered perfectly preserved fragments of pre-Remaking starlight in the Bleached Wastes, attracting both scholars desperate to reconstruct lost reality and authorities bent on suppressing proof that the old world had ever been knowable. Now, at the climax, multiple factions are converging on scattered caches of star-memory and reality-warping artifacts, the entire sky has become a contested space, and the boundaries between old and new creation are visibly fracturing.\n\nCURRENT STATE:\n- The event remains unresolved and actively escalating across all realms and regions\n- Multiple parties are now competing for control of pre-Ascension artifacts with reality-altering properties\n- Geographic and temporal instability is spreading; the rules of the world are demonstrably breaking down\n- Recent discoveries (as of June 3, 2026) suggest the old world is reasserting itself through fragments\n\nOPEN THREADS:\n- Will the sealed star-memory vessels reach their destination, or will deeper forces claim them first?\n- Can the old world's order be fully reconstructed, and what happens if it succeeds?\n- What is the true nature and origin of the Ascension\u2014was it catastrophe or transformation?\n- Who controls the narrative: the Counter-Archive, the Dominion auditors, or something older still?",
+      "arc_summary_last_seen": "2026-06-03",
+      "arc_summary_fingerprint": "d03c4dd6ba994e7fa5082b26f991d2457a4faa28",
+      "arc_summary_updated_at": "2026-06-03T12:00:13.748807+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
       "name": "Tenth Ascension",
       "tagline": "Imminent. Inevitable. Counting-down.",
       "event_type": "catastrophe",
       "scope": "world",
       "epicenter": "Archive Tower",
-      "stage": "climax",
+      "stage": "crisis",
       "setting_state": "setting_shift",
-      "intensity": 5,
+      "intensity": 4,
       "resolved": false,
       "last_seen": "2026-06-01",
       "recent_issues": 3,
@@ -341,86 +397,6 @@
       "arc_summary_last_seen": "2026-06-01",
       "arc_summary_fingerprint": "014cd72a8fb14f9e4ee8618333e5ce4ae23978b2",
       "arc_summary_updated_at": "2026-06-01T12:18:31.122781+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "Before the Ascension",
-      "tagline": "Starlight. Lost. Ancient.",
-      "event_type": "catastrophe",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "crisis",
-      "setting_state": "active_arc",
-      "intensity": 4,
-      "resolved": false,
-      "last_seen": "2026-05-30",
-      "recent_issues": 2,
-      "trend": 2,
-      "referenced_locations": {
-        "places": [
-          "entire sky"
-        ],
-        "regions": [
-          "all regions"
-        ],
-        "realms": [
-          "all realms"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-05-29",
-          "title": "The Merchant of Salt-Fire"
-        },
-        {
-          "date": "2026-05-30",
-          "title": "The Tide-Thief's Debt"
-        },
-        {
-          "date": "2026-05-30",
-          "title": "The Cartographer's Silence"
-        }
-      ],
-      "appearance_total": 3,
-      "arc_summary": "SUMMARY:\nBefore the Ascension refers to the era and its remnants before the stars themselves shattered and were reborn\u2014a cataclysm that rewrote the fundamental rules of the world, fragmenting geography, collapsing currency systems, and leaving only memory and consciousness as valuable exchange. In the aftermath, artifacts and substances from that lost age have become coveted beyond measure: star-memory sealed in vessels, water that remembers singular timelines, maps that no longer hold meaning. \"The Merchant of Salt-Fire\" captures the first wave of this hunger, as traders begin moving these precious relics across the world\u2014cargo so potent it draws attention from creatures of the deep who sense reality itself cracking at the seams. By \"The Cartographer's Silence,\" the instability has spread beyond trade routes; entire regions now exist in multiple overlapping versions, and those who once mapped the world have been forced to abandon their craft entirely. The situation escalates sharply in \"The Tide-Thief's Debt,\" where even ordinary merchants find themselves holding world-breaking cargo, and forces both ancient and powerful are moving to reclaim or control what remains of the pre-Ascension age. The event has reached its peak: reality itself is fragmenting, multiple factions compete for artifacts of the lost world, and the pressure points of this conflict are spreading across all realms.\n\nCURRENT STATE:\n- The event is actively unfolding at climactic intensity, with no resolution in sight\n- Multiple independent actors (merchants, corsairs, deepkin, merfolk) are now in active conflict over pre-Ascension relics\n- Geography and reality layers are destabilizing across entire regions, making navigation and survival increasingly difficult\n- Last confirmed activity was 2026-05-30, suggesting the situation is still rapidly evolving\n\nOPEN THREADS:\n- The true epicenter and ultimate cause of the original Ascension cataclysm remains unknown\n- What is the Merchant of Salt-Fire's ultimate goal with the star-memory cargo?\n- Will the artifacts be returned, destroyed, or used as weapons in an escalating conflict?\n- Can Henryk's knowledge of fractured geography be leveraged to navigate the spreading instability?\n- How many factions are now actively pursuing these relics, and what do they intend to do with them?",
-      "arc_summary_last_seen": "2026-05-30",
-      "arc_summary_fingerprint": "30530aa29bcc1e3999e3bceb510d0378bfbba97d",
-      "arc_summary_updated_at": "2026-05-30T10:56:08.467575+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Last Star-Fall",
-      "tagline": "Celestial. Apocalyptic. Ancient.",
-      "event_type": "catastrophe",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "rising",
-      "setting_state": "active_arc",
-      "intensity": 3,
-      "resolved": false,
-      "last_seen": "2026-06-01",
-      "recent_issues": 1,
-      "trend": 1,
-      "referenced_locations": {
-        "places": [
-          "All of Edhra"
-        ],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-06-01",
-          "title": "The Wyvern's Last Hoard"
-        }
-      ],
-      "appearance_total": 1,
-      "arc_summary": "SUMMARY:\nThe Last Star-Fall remains one of the world's great mysteries\u2014a celestial catastrophe of unknown origin that has shaken the foundations of Edhra itself. The event's true nature and epicenter are still shrouded in shadow, but its effects have rippled across the entire world, disrupting even the ancient wisdom that once guided the greatest powers. The silence of the pre-human dead\u2014those voices that counseled dragon-hoarders and shaped civilizations\u2014marks the rupture's severity. In the tale \"The Wyvern's Last Hoard,\" the dragon Sorresh confronted the reality that the old order had fractured beyond repair: hoarding gold meant nothing when the voices that sanctified such accumulation had vanished. The turning point came when Sorresh chose to transform greed into grace, melting ancient coins to forge identity anchors for refugees displaced by the shattering. This act suggests that survival in the aftermath demands not preservation of the old world, but reimagining of purpose itself. The Last Star-Fall continues to unfold across Edhra, its full scope and consequences still emerging.\n\nCURRENT STATE:\n- The event is in its rising stage, intensifying but not yet at crisis or climax\n- All of Edhra has been touched by its effects, though the epicenter remains unknown\n- Ancient counsel has been severed, leaving societies and individuals to navigate without pre-human guidance\n- Refugee populations are forming, requiring new structures of identity and belonging\n\nOPEN THREADS:\n- What was the true nature and origin of the celestial catastrophe?\n- Why did the pre-human voices fall silent?\n- How will societies across Edhra adapt to permanent loss of ancient wisdom?\n- What other consequences of the star-fall have yet to manifest?",
-      "arc_summary_last_seen": "2026-06-01",
-      "arc_summary_fingerprint": "8e79bbc5bffc91f53b58bfa21f5f1c6dc3dd8bb6",
-      "arc_summary_updated_at": "2026-06-01T12:18:35.802145+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -536,6 +512,40 @@
       "arc_summary_last_seen": "2026-05-30",
       "arc_summary_fingerprint": "e1f61183f8fc766c94e0927e19f7cbb175608659",
       "arc_summary_updated_at": "2026-05-30T10:56:13.581557+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "The Last Star-Fall",
+      "tagline": "Celestial. Apocalyptic. Ancient.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "simmering",
+      "setting_state": "active_arc",
+      "intensity": 2,
+      "resolved": false,
+      "last_seen": "2026-06-01",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [
+          "All of Edhra"
+        ],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-06-01",
+          "title": "The Wyvern's Last Hoard"
+        }
+      ],
+      "appearance_total": 1,
+      "arc_summary": "SUMMARY:\nThe Last Star-Fall remains one of the world's great mysteries\u2014a celestial catastrophe of unknown origin that has shaken the foundations of Edhra itself. The event's true nature and epicenter are still shrouded in shadow, but its effects have rippled across the entire world, disrupting even the ancient wisdom that once guided the greatest powers. The silence of the pre-human dead\u2014those voices that counseled dragon-hoarders and shaped civilizations\u2014marks the rupture's severity. In the tale \"The Wyvern's Last Hoard,\" the dragon Sorresh confronted the reality that the old order had fractured beyond repair: hoarding gold meant nothing when the voices that sanctified such accumulation had vanished. The turning point came when Sorresh chose to transform greed into grace, melting ancient coins to forge identity anchors for refugees displaced by the shattering. This act suggests that survival in the aftermath demands not preservation of the old world, but reimagining of purpose itself. The Last Star-Fall continues to unfold across Edhra, its full scope and consequences still emerging.\n\nCURRENT STATE:\n- The event is in its rising stage, intensifying but not yet at crisis or climax\n- All of Edhra has been touched by its effects, though the epicenter remains unknown\n- Ancient counsel has been severed, leaving societies and individuals to navigate without pre-human guidance\n- Refugee populations are forming, requiring new structures of identity and belonging\n\nOPEN THREADS:\n- What was the true nature and origin of the celestial catastrophe?\n- Why did the pre-human voices fall silent?\n- How will societies across Edhra adapt to permanent loss of ancient wisdom?\n- What other consequences of the star-fall have yet to manifest?",
+      "arc_summary_last_seen": "2026-06-01",
+      "arc_summary_fingerprint": "8e79bbc5bffc91f53b58bfa21f5f1c6dc3dd8bb6",
+      "arc_summary_updated_at": "2026-06-01T12:18:35.802145+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {

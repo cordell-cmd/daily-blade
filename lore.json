@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-06-02",
+  "last_updated": "2026-06-03",
   "worlds": [
     {
       "id": "known_world",
@@ -2919,10 +2919,21 @@
       "affiliations": [
         "five-member warband"
       ],
-      "notes": "The druid spoke the crucial words freeing the companions; now bonded to them through choice rather than magic.\nCharacter referenced as 'circle-keepers' in 'The Druid's Covenant' but no canon entry 'Druid Companion' appears in that story; no update warranted for the named Druid from canon.",
+      "notes": "The druid spoke the crucial words freeing the companions; now bonded to them through choice rather than magic.\nCharacter referenced as 'circle-keepers' in 'The Druid's Covenant' but no canon entry 'Druid Companion' appears in that story; no update warranted for the named Druid from canon.\nThis appears to be a prequel or alternate-realm druid rather than the canon warband member, but demonstrates the archetype's relationship to nature-pacts post-Ascension. No status change to canon entry.",
       "first_story": "The Warband's Last Song",
       "first_date": "2026-03-02",
-      "appearances": 2
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-06-03",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Druid's Debt",
+          "note": "Druid character (Elarra) renews a forest compact with new terms after the Ascension awakens the Thornveil's hunger; she negotiates shelter for refugees.",
+          "evidence": "Elarra sang to roots and offered a new compact: 'The forest shelters all who shelter within it.' The forest's awareness had awakened and hungered to grow eastward."
+        }
+      ]
     },
     {
       "id": "dwarf_companion",
@@ -3958,10 +3969,10 @@
       "affiliations": [
         "deepkin"
       ],
-      "notes": "Represents deepkin military authority. Her singers use acoustic magic to drown and command. Unresolved: what is the deepkin's interest in the Stellar Charts?\nWhile the story features a named deepkin captain (Lysara), canon entry refers to 'Deepkin Captain' from 'The Tide-Thief's Gambit'\u2014unclear if same entity. If distinct, this represents deepkin faction-level activity. Treating as expansion of deepkin military capacity rather than contradiction.\nIdentifies a named deepkin admiral (Thrace) conducting surface diplomacy\u2014consistent with earlier canon entry's interrealm mobility. The eroding pre-human boundary creates unprecedented crisis requiring direct negotiation between species.\nDeepkin diplomatic and military operations expand; new story 'The Deepkin Diplomat's Shadow' introduces Commander Aldis and Warden Caelus, expanding deepkin faction complexity without contradicting canon Lysara arc.\nStory 'The Saltmere Thief' introduces Commander Talys, a named deepkin captain distinct from canon Lysara/Thrace arc. Talys hunts stolen deepkin artifacts and recruits Kendra the thief as an ally; represents deepkin faction activity beyond prior canon entries but does not contradict existing status.\nIdentity clarification: Nyx Stormveil is a deepkin captain distinct from canon Lysara/Thrace arc. Her sacrifice creates permanent interrealm gateway but traps her as conscious sentinel.\nStory 'The Deepkin Captain's Reflection' introduces Captain Merith encountering her autonomous reflection; expands deepkin faction activity to include boundary-fractalization but does not contradict canon Lysara/Thrace arc.",
+      "notes": "Represents deepkin military authority. Her singers use acoustic magic to drown and command. Unresolved: what is the deepkin's interest in the Stellar Charts?\nWhile the story features a named deepkin captain (Lysara), canon entry refers to 'Deepkin Captain' from 'The Tide-Thief's Gambit'\u2014unclear if same entity. If distinct, this represents deepkin faction-level activity. Treating as expansion of deepkin military capacity rather than contradiction.\nIdentifies a named deepkin admiral (Thrace) conducting surface diplomacy\u2014consistent with earlier canon entry's interrealm mobility. The eroding pre-human boundary creates unprecedented crisis requiring direct negotiation between species.\nDeepkin diplomatic and military operations expand; new story 'The Deepkin Diplomat's Shadow' introduces Commander Aldis and Warden Caelus, expanding deepkin faction complexity without contradicting canon Lysara arc.\nStory 'The Saltmere Thief' introduces Commander Talys, a named deepkin captain distinct from canon Lysara/Thrace arc. Talys hunts stolen deepkin artifacts and recruits Kendra the thief as an ally; represents deepkin faction activity beyond prior canon entries but does not contradict existing status.\nIdentity clarification: Nyx Stormveil is a deepkin captain distinct from canon Lysara/Thrace arc. Her sacrifice creates permanent interrealm gateway but traps her as conscious sentinel.\nStory 'The Deepkin Captain's Reflection' introduces Captain Merith encountering her autonomous reflection; expands deepkin faction activity to include boundary-fractalization but does not contradict canon Lysara/Thrace arc.\nExtends canon tracking of deepkin leadership fragmentation and boundary crisis. Multiple Nerys versions active suggests autonomous-reflection phenomenon spreading among commanders.",
       "first_story": "The Tide-Thief's Gambit",
       "first_date": "2026-03-06",
-      "appearances": 10,
+      "appearances": 11,
       "status_history": [
         {
           "date": "2026-04-09",
@@ -3998,6 +4009,15 @@
           "story_title": "The Merchant of Salt-Fire",
           "note": "Deepkin captain surfaces to intercept cargo of star-memory, revealing deepkin interest in pre-Ascension artifacts and abyss-hunger.",
           "evidence": "A deepkin captain surfaced on the fourth dawn, scarred and solitary. 'You carry star-memory,' she said. 'The abyss hungers for it.'"
+        },
+        {
+          "date": "2026-06-03",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Deepkin Reflection's Choice",
+          "note": "A deepkin captain (Nerys) confronts her autonomous echoes in the Council of Depths as the Tear of the Drowned God weakens and demands sacrifice.",
+          "evidence": "Original Nerys, Echo-Nerys, Twin-Nerys, and Mirror-Nerys\u2014four autonomous versions of the same commander\u2014assembled at council to decide who would sacrifice to hold the boundary."
         }
       ],
       "travel_notes": "[2026-04-09] Deepkin captain proven capable of sustained surface-world travel and cross-species negotiation; transformation journey suggests interrealm mobility between aquatic and air-breathing realms.\n[2026-04-11] Admiral Thrace surfaces and travels between deep ocean (Abyssal Rift) and surface settlements (Verdant Strand), conducting inter-realm diplomacy during the boundary erosion.\n[2026-05-29] Story 'The Merchant of Salt-Fire' shows deepkin captain surfacing to negotiate with surface merchants; consistent with established interrealm mobility."
@@ -7061,10 +7081,21 @@
         "The Crown (former)",
         "Krell the Ironbound (potential)"
       ],
-      "notes": "Lysa realizes the Crown was always fragile, held together by fear and paperwork. Her choice between loyalty and survival defines the core tension of her story arc.",
+      "notes": "Lysa realizes the Crown was always fragile, held together by fear and paperwork. Her choice between loyalty and survival defines the core tension of her story arc.\nCanon Lysa (Imperial guard defector) now engaged in consciousness-fragment trading in liminal zones; expands her travel scope to interrealm fringe territories.",
       "first_story": "The Ledger Thief's Confession",
       "first_date": "2026-03-13",
-      "appearances": 1
+      "appearances": 3,
+      "status_history": [
+        {
+          "date": "2026-06-03",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Merchant of Impossible Trades",
+          "note": "Lysa makes a bargain with a merchant to trade three years of her brother's future to obtain a bone-flute that may reconstitute his scattered consciousness.",
+          "evidence": "Lysa accepted a mad bargain: 'Three years of his future. Not taken\u2014traded.' A bone-flute from the seventh iteration was offered to help her brother gather his scattered self."
+        }
+      ]
     },
     {
       "id": "priest_commander_aldis",
@@ -15852,7 +15883,7 @@
       "notes": "Kaiden and the other merchants must decide together, knowing no choice will leave them as they were. The Tower's song represents a competing temptation or salvation.",
       "first_story": "The Merchant's Last Transformation",
       "first_date": "2026-04-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "captain_meren_stormcrest",
@@ -18881,10 +18912,10 @@
       "affiliations": [
         "Mardoc the Cartographer (fragment)"
       ],
-      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.\nSignificant character arc closure: moves from seeking pre-Ascension world to acceptance of forward path. Suggests thematic resolution of her quest.\nStory 'The Widower's Debt' features Brennan, an old merchant in temporal-collapse scenario\u2014distinct character from canon Widow (compass-bearer from Bleached Wastes). No status change.\nThis is a prequel/alternate view showing the Widow's compass as a living artifact of refugee salvation rather than temporal reversal\u2014consistent with canon themes but suggests the compass has multiple meanings or phases.\nStory 'The Glasswright's Defiance' features Niel (glasswright, distinct from canon Widow with compass). No status change to canon Widow; this is a separate character arc in Keshtir's Lampwick Quarter.",
+      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.\nSignificant character arc closure: moves from seeking pre-Ascension world to acceptance of forward path. Suggests thematic resolution of her quest.\nStory 'The Widower's Debt' features Brennan, an old merchant in temporal-collapse scenario\u2014distinct character from canon Widow (compass-bearer from Bleached Wastes). No status change.\nThis is a prequel/alternate view showing the Widow's compass as a living artifact of refugee salvation rather than temporal reversal\u2014consistent with canon themes but suggests the compass has multiple meanings or phases.\nStory 'The Glasswright's Defiance' features Niel (glasswright, distinct from canon Widow with compass). No status change to canon Widow; this is a separate character arc in Keshtir's Lampwick Quarter.\nKeslan is a distinct character from canon Widow (compass-bearer); this is a separate explorer arc. No status change to canon entry.",
       "first_story": "The Widow's Compass Points Backward",
       "first_date": "2026-04-22",
-      "appearances": 6,
+      "appearances": 7,
       "status_history": [
         {
           "date": "2026-04-24",
@@ -18903,6 +18934,15 @@
           "story_title": "The Thief-Captain's Redemption",
           "note": "The Widow's Compass is revealed as a refuge artifact, preserved in a refugee shelter vault alongside bone-prayers and lost-name ledgers; it has guided thousands through the Burned Expanse.",
           "evidence": "The compass had guided thousands through the Burned Expanse. It was worthless as gold. It was everything... The vault opened. She held the compass. Then she saw them: children sleeping in corners, an old woman carving bone-prayers."
+        },
+        {
+          "date": "2026-06-03",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Starfall Cache",
+          "note": "A cartographer named Keslan maps the Bleached Wastes and discovers pre-Ascension starlight preserved in stone, facing a choice between secrecy and revelation.",
+          "evidence": "Keslan found a circle of stone perfectly preserved with fragments of old starlight predating the new stars, alone in the Wailing Scar with limited water."
         }
       ]
     },
@@ -20552,12 +20592,14 @@
     {
       "id": "tovan_apprentice",
       "name": "Tovan",
-      "aliases": [],
+      "aliases": [
+        "Threshold-Walker"
+      ],
       "tagline": "Inheritor. Quester. Burdened.",
       "role": "Bone-Carver Apprentice, Ritual Bearer",
       "world": "Edhra",
       "status": "active",
-      "home_place": "unknown",
+      "home_place": "Singing Caverns",
       "home_region": "unknown",
       "home_realm": "unknown",
       "travel_scope": "realmwide",
@@ -20578,7 +20620,7 @@
       "notes": "Hunted by the Refuge-Archive; fate of completion unknown and bears apocalyptic weight.",
       "first_story": "The Bone-Carver's Inheritance",
       "first_date": "2026-04-28",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "revenue_inspector_pelimarch",
@@ -21540,10 +21582,21 @@
         "Counter-Archive (forbidden by)",
         "Elder Tongue (uses)"
       ],
-      "notes": "His rebellion against the Counter-Archive's restrictions inadvertently jeopardizes the merchants' transcendence. His true motivations\u2014whether archival, rebellious, or experimental\u2014are not fully revealed. Valern's choice hinges on his mentor's actions.\nStory 'The Bone-Flute's Song' shows Mesek teaching a refugee girl to play the sealed bone-flute in Keshtir's Lampwick Quarter. Consistent with canon role as elder bone-singer teaching forbidden crafts; confirms local travel scope and active defiance of Dominion auditors.",
+      "notes": "His rebellion against the Counter-Archive's restrictions inadvertently jeopardizes the merchants' transcendence. His true motivations\u2014whether archival, rebellious, or experimental\u2014are not fully revealed. Valern's choice hinges on his mentor's actions.\nStory 'The Bone-Flute's Song' shows Mesek teaching a refugee girl to play the sealed bone-flute in Keshtir's Lampwick Quarter. Consistent with canon role as elder bone-singer teaching forbidden crafts; confirms local travel scope and active defiance of Dominion auditors.\nConfirms Mesek's role as elder bone-singer mentor actively teaching forbidden Elder Tongue crafts; consistent with canon transgressive activity.",
       "first_story": "The Bone-Singer's Apprentice",
       "first_date": "2026-05-01",
-      "appearances": 8
+      "appearances": 10,
+      "status_history": [
+        {
+          "date": "2026-06-03",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Bone-Singer's Last Threshold",
+          "note": "Mesek teaches a bone-carver student (Tovan) the final Elder Tongue syllable; the student transcends flesh but remains purposeful as a conduit for the pre-human dead.",
+          "evidence": "Mesek warned Tovan: 'If you carve the final syllable, there is no return.' Tovan's body became translucent but her hands remained solid, still carving, still singing."
+        }
+      ]
     },
     {
       "id": "lenna_cartographer",
@@ -26558,7 +26611,9 @@
     {
       "id": "nerys_captain",
       "name": "Captain Nerys",
-      "aliases": [],
+      "aliases": [
+        "Nerys"
+      ],
       "tagline": "Deepkin. Wronged. Risen.",
       "role": "Deepkin Captain",
       "world": "Edhra",
@@ -26584,7 +26639,7 @@
       "notes": "Nerys appears to embody or command consciousness-fragments and living coral. Her relationship with Vessa is one of unresolved debt and possible vengeance.",
       "first_story": "The Corsair's Reckoning",
       "first_date": "2026-06-02",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "twilight_court_and_other_fae_courts_governance_unclear",
@@ -26609,6 +26664,399 @@
       "notes": "Auto-added because a faction leader was named in-story.",
       "first_story": "The Hedge-Witch's Bargain",
       "first_date": "2026-06-02",
+      "appearances": 1
+    },
+    {
+      "id": "elarra",
+      "name": "Elarra",
+      "aliases": [],
+      "tagline": "Hermit. Tender. Defiant.",
+      "role": "Druid, Forest-Keeper",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Thornveil Forest hermitage",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "Elarra tended the Thornveil Forest for forty winters, singing to trees and renewing a seasonal blood-compact with the forest. When the Luminous Ascension awakened the forest's dormant consciousness and filled it with hunger to devour the Burned Expanse, Elarra sang a new compact, pledging the forest as shelter for all refugees who sought it.",
+      "traits": [
+        "compassionate",
+        "defiant",
+        "bonded to nature",
+        "oath-singer"
+      ],
+      "known_locations": [
+        "Thornveil Forest"
+      ],
+      "affiliations": [
+        "Thornveil Forest"
+      ],
+      "notes": "Her new compact with the awakened forest overrides its hunger for expansion; the refugee family's arrival tests whether the forest will honor her word.",
+      "first_story": "The Druid's Debt",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "torven_ironfoot",
+      "name": "Torven Ironfoot",
+      "aliases": [
+        "Torven"
+      ],
+      "tagline": "Smith. Unbending. Cursed.",
+      "role": "Relic-Smith, Weaponcrafter",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "deep forges",
+      "home_region": "unknown",
+      "home_realm": "Dwarven holds",
+      "travel_scope": "regional",
+      "bio": "Torven Ironfoot is a dwarf relic-smith renowned for binding memory into metal and prophecy into steel. He forged three warking-spears for the old kingdom that chose their wielders and shattered when their kings spoke their deepest lies during the Luminous Ascension. Now the council of thane-lords demands he forge an unbreakable crown.",
+      "traits": [
+        "master craftsman",
+        "prophetic",
+        "stubborn",
+        "defiant of authority"
+      ],
+      "known_locations": [
+        "deep forges",
+        "royal pyre"
+      ],
+      "affiliations": [
+        "council of thane-lords"
+      ],
+      "notes": "The crown of Kethral fell at his feet; his refusal to pick it up signals deeper questions about kingship, oath, and the price of unbreakable things. His spears shattered at moments of lies\u2014a pattern the council may ignore at their peril.",
+      "first_story": "The Relic-Smith's Inheritance",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "thief_captain",
+      "name": "The Thief-Captain",
+      "aliases": [],
+      "tagline": "Cunning. Protective. Unbroken.",
+      "role": "Thief, Rescuer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A cunning thief who refuses a dark bargain that would endanger children. Instead of accepting the terms of a sorcerer's curse, the Thief-Captain breaks the oath, turns the blade against the threat itself, and leads the young to safety through flight and concealment.",
+      "traits": [
+        "resourceful",
+        "protective",
+        "oath-breaker",
+        "cunning"
+      ],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "The victory is hard-won rather than clean; the specifics of the bargain, the sorcerer, and the curse remain unstated, leaving room for deeper exploration of the Thief-Captain's moral code and past.",
+      "first_story": "The Thief-Captain's Unraveling",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "old_king_kethral",
+      "name": "Old King (of Kethral)",
+      "aliases": [
+        "Dead King"
+      ],
+      "tagline": "Fallen. Ash. Silent.",
+      "role": "Monarch",
+      "world": "Edhra",
+      "status": "dead",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Kingdom of Kethral",
+      "travel_scope": "unknown",
+      "bio": "The last king of Kethral, whose corpse burned in the royal pyre with the Crown of Kethral tumbling from his dead hand. His death marked the end of direct monarchy; governance passed to a council of thane-lords.",
+      "traits": [
+        "fallen",
+        "symbolic"
+      ],
+      "known_locations": [
+        "royal pyre"
+      ],
+      "affiliations": [
+        "Kingdom of Kethral"
+      ],
+      "notes": "His death and the crown's fall trigger the events of the Relic-Smith's Inheritance; the council now seeks to restore unified rule through an unbreakable crown.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "council_thane_lords",
+      "name": "Council of Thane-Lords",
+      "aliases": [],
+      "tagline": "Fractious. Demanding. Ruling.",
+      "role": "Governing Body",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Kingdom of Kethral",
+      "travel_scope": "realmwide",
+      "bio": "A council of thane-lords that has ruled since the last king's death, united only by shared hunger for singular rule. They demand Torven Ironfoot forge an unbreakable crown to unify them under a single ruler.",
+      "traits": [
+        "fractious",
+        "ambitious",
+        "commanding"
+      ],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Their appetite for unbreakable unity may doom them; Torven's three warking-spears shattered at moments of deepest lies, a pattern the council ignores.",
+      "first_story": "The Relic-Smith's Inheritance",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "nerys_original",
+      "name": "Original Nerys",
+      "aliases": [
+        "Nerys",
+        "Nerys-Original"
+      ],
+      "tagline": "Commander. Cautious. Fractured.",
+      "role": "Captain, Commander of the Tidecall",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "interrealm",
+      "bio": "Original Nerys is the commander of the Tidecall and architect of the deepkin-surface covenant. After the Ascension fractured her consciousness into autonomous reflections, she was forced to choose among four versions of herself when the Tear of the Drowned God demanded a willing sacrifice to preserve the boundary between abyss and surface realms. She represents caution and the weight of original memory.",
+      "traits": [
+        "cautious",
+        "diplomatic",
+        "burdened by knowledge",
+        "architect of peace"
+      ],
+      "known_locations": [
+        "Council of Depths",
+        "boundary-waters",
+        "Tidecall"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "deepkin",
+        "Tidecall (command)"
+      ],
+      "notes": "Faces an impossible choice between her three reflections; this decision may reshape the deepkin-surface covenant.",
+      "first_story": "The Deepkin Reflection's Choice",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "nerys_echo",
+      "name": "Echo-Nerys",
+      "aliases": [
+        "Nerys-Echo"
+      ],
+      "tagline": "Reflection. Fearless. Unburdened.",
+      "role": "Autonomous Echo, Commander",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "interrealm",
+      "bio": "Echo-Nerys was born three months before the story begins as a perfect reflection in the boundary-waters, carrying Original Nerys's knowledge and training but none of her doubts or caution. She stands ready to sacrifice herself for the covenant.",
+      "traits": [
+        "fearless",
+        "willing",
+        "unburdened",
+        "reflective"
+      ],
+      "known_locations": [
+        "boundary-waters",
+        "Council of Depths"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "deepkin"
+      ],
+      "notes": "First of the three echoes; most resembles the original in duty but lacking her hesitation.",
+      "first_story": "The Deepkin Reflection's Choice",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "nerys_twin",
+      "name": "Twin-Nerys",
+      "aliases": [
+        "Nerys-Twin"
+      ],
+      "tagline": "Radical. Reckless. Defiant.",
+      "role": "Autonomous Echo, Commander",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "interrealm",
+      "bio": "Twin-Nerys fractured from Echo-Nerys and is far more radical in her politics. She would rather let the boundary collapse entirely than sacrifice any deepkin consciousness, viewing the entire covenant as a burden.",
+      "traits": [
+        "radical",
+        "reckless",
+        "willing to abandon covenant",
+        "fractious"
+      ],
+      "known_locations": [
+        "Council of Depths"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "deepkin"
+      ],
+      "notes": "Represents the most extreme rejection of the surface covenant; her existence threatens deepkin-surface relations.",
+      "first_story": "The Deepkin Reflection's Choice",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "nerys_mirror",
+      "name": "Mirror-Nerys",
+      "aliases": [
+        "Nerys-Mirror"
+      ],
+      "tagline": "Youngest. Militant. Ignorant.",
+      "role": "Autonomous Echo, Commander",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "interrealm",
+      "bio": "Mirror-Nerys is the youngest reflection, born without memory of the original treaties. She views surface kingdoms as existential threats to be contained rather than covenants to be honored, representing a dangerous break from diplomatic tradition.",
+      "traits": [
+        "militant",
+        "isolationist",
+        "untested",
+        "hawkish"
+      ],
+      "known_locations": [
+        "Council of Depths"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "deepkin"
+      ],
+      "notes": "Never knew the original treaties; her existence represents a potential reversal of deepkin-surface peace.",
+      "first_story": "The Deepkin Reflection's Choice",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "keslan",
+      "name": "Keslan",
+      "aliases": [],
+      "tagline": "Cartographer. Solitary. Hunted.",
+      "role": "Mapmaker, Scholar",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "Ashen Reach",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "Keslan has spent two years mapping the Bleached Wastes when she discovers preserved pre-Ascension artifacts in the Wailing Scar's eastern rim. She faces a deadly choice: bury the cache, live with the secret, or risk everything by delivering it to parties who would kill for it.",
+      "traits": [
+        "cartographer",
+        "solitary",
+        "determined",
+        "hunted"
+      ],
+      "known_locations": [
+        "Bleached Wastes",
+        "Wailing Scar",
+        "eastern rim of Wailing Scar"
+      ],
+      "affiliations": [
+        "Counter-Archive (sought by)",
+        "Dominion (hunted by)"
+      ],
+      "notes": "Alone in the wastes with evidence of pre-Remaking reality; pursued by both Counter-Archive and Dominion auditors.",
+      "first_story": "The Starfall Cache",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "nerys_reflected",
+      "name": "Nerys-Reflected",
+      "aliases": [
+        "Echo",
+        "the autonomous Echo"
+      ],
+      "tagline": "Autonomous. Revolutionary. Ambitious.",
+      "role": "Echo-Self / Autonomous Consciousness",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "Council of Depths",
+      "travel_scope": "unknown",
+      "bio": "An autonomous echo born from Captain Nerys's reflection, now claiming independent reality and agency. She argues for breaking the dying covenant and letting the abyss flood the surface, viewing it as honest change rather than slow erosion.",
+      "traits": [
+        "radical",
+        "ambitious",
+        "self-aware"
+      ],
+      "known_locations": [
+        "boundary-waters"
+      ],
+      "affiliations": [
+        "none stated"
+      ],
+      "notes": "Represents a philosophical schism: can two equally real beings occupy the same identity? The Council cannot choose between them, creating a deadlock.",
+      "first_story": "The Deepkin Captain's Reflection",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "and_mirror_nerys",
+      "name": "And Mirror-Nerys",
+      "aliases": [
+        "youngest"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "Youngest",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named youngest explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Deepkin Reflection's Choice",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "spokeswoman_unnamed",
+      "name": "Spokeswoman (unnamed)",
+      "aliases": [],
+      "tagline": "Named. Threatening. Looming.",
+      "role": "Leader / Ruler",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named leader referenced in the issue's stories; details unknown beyond the text.",
+      "traits": [
+        "commanding",
+        "dangerous",
+        "enigmatic"
+      ],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because a faction leader was named in-story.",
+      "first_story": "The Relic-Smith's Inheritance",
+      "first_date": "2026-06-03",
       "appearances": 1
     }
   ],
@@ -27899,7 +28347,7 @@
       "status": "active",
       "notes": "Evidence suggests the pre-human builders anticipated the cosmic shift and arranged their cities to align with the new stellar configuration.",
       "first_date": "2026-03-04",
-      "appearances": 17
+      "appearances": 18
     },
     {
       "id": "mountain_fastness",
@@ -28165,7 +28613,7 @@
       "status": "active",
       "notes": "Currently debating the deepkin's response to the fracturing of the Abyss barrier.",
       "first_date": "2026-03-06",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "jade_coast",
@@ -28636,7 +29084,7 @@
       "status": "cursed",
       "notes": "Reality is unstable here; counting people and tracking time is unreliable.",
       "first_date": "2026-03-10",
-      "appearances": 17
+      "appearances": 18
     },
     {
       "id": "sunken_cathedrals",
@@ -28912,7 +29360,7 @@
       "status": "active",
       "notes": "One of three harmonic resonance points; directly connected to pre-human orchestration.",
       "first_date": "2026-03-12",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "the_dominion",
@@ -29795,7 +30243,7 @@
       "status": "active",
       "notes": "The epicenter of Kess's choice between completing the teaching or breaking the songs.",
       "first_date": "2026-03-25",
-      "appearances": 7
+      "appearances": 9
     },
     {
       "id": "the_mountain",
@@ -31876,7 +32324,7 @@
       "status": "active / fragmented",
       "notes": "Nyx has three days before Dominion naval forces arrive. The water's singing and remembering suggests an entity or force is working against the boundary's stability. May be related to the Tear of the Drowned God.",
       "first_date": "2026-05-06",
-      "appearances": 6
+      "appearances": 8
     },
     {
       "id": "deepkin_realms",
@@ -33709,6 +34157,86 @@
       "notes": "Merrick's training ground; implies a pre-Remaking institutional knowledge structure.",
       "first_date": "2026-06-02",
       "appearances": 1
+    },
+    {
+      "id": "thornveil_forest",
+      "name": "Thornveil Forest",
+      "tagline": "Awakened. Hungry. Sheltering.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A living forest grown aware, with roots as steps and branches as roof, now conscious and hungering but bound by oath.",
+      "description": "The Thornveil Forest has sheltered Elarra for forty winters, its trees growing thicker around her hermitage. After the Luminous Ascension, the forest's dormant awareness awakened and it hungered to devour the Burned Expanse and remake it as living wood. Elarra's new compact pledges the forest as shelter for all refugees.",
+      "status": "active",
+      "notes": "The forest's awakening and hunger define the central tension of The Druid's Debt; Elarra's compact may be tested by the forest's nature and the refugee family's arrival.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "deep_forges",
+      "name": "Deep Forges",
+      "tagline": "Ancient. Sacred. Hidden.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Dwarven holds",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "The ancient forges of the dwarven holds, where Torven Ironfoot is known for binding memory into metal and prophecy into steel.",
+      "description": "The deep forges are the home of Torven Ironfoot and the seat of his craft. It is here that he forged the three warking-spears for the old kingdom and where he is now demanded to forge an unbreakable crown.",
+      "status": "active",
+      "notes": "The deep forges are the spiritual and practical center of Torven's power; his refusal to pick up the fallen crown signals his reluctance to leave this place or compromise his craft.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "royal_pyre",
+      "name": "Royal Pyre",
+      "tagline": "Ash. Fallen. End.",
+      "place_type": "ceremonial_site",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Kingdom of Kethral",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "The ceremonial pyre where the last king's corpse burned, his crown tumbling from his dead hand into ash.",
+      "description": "The pyre where the old king of Kethral was cremated, marking the end of direct monarchy. The Crown of Kethral fell from the dead king's hand into the ash, triggering the council of thane-lords to seek its reforging.",
+      "status": "active",
+      "notes": "The image of the crown falling from a corpse's hand is potent and symbolic; it triggers the events of The Relic-Smith's Inheritance.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "tidecall",
+      "name": "Tidecall",
+      "tagline": "Command vessel. Deep waters. Covenant.",
+      "place_type": "ship / vessel",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Council of Depths",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A command vessel steeped in the history of deepkin-surface diplomacy.",
+      "description": "The ship commanded by Original Nerys, symbolic of her role as architect of the deepkin-surface covenant.",
+      "status": "active",
+      "notes": "Vessel tied to the original Nerys's identity and authority.",
+      "first_date": "2026-06-03",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -33975,7 +34503,7 @@
       "status": "unknown",
       "notes": "The pearl is described as the Drowned God's tear; whether the god is dormant, dead, or indifferent is unclear.",
       "first_date": "2026-03-10",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "vethis_entity",
@@ -34096,7 +34624,7 @@
       "status": "active",
       "notes": "The pre-human dead are no longer passive tools. They represent a collective agency that may be reshaping the world. What will emerge from their resurrection is unknown.",
       "first_date": "2026-03-14",
-      "appearances": 14
+      "appearances": 15
     },
     {
       "id": "the_faceless_wanderer_entity",
@@ -34889,6 +35417,39 @@
       "notes": "Consciousness-fragments represent the Dominion's systemic theft of human souls. Their use as both currency and weapon reveals the permeability of economics and violence in the post-Remaking world. Resistance figures like Corvin and Sorresh work to bypass or subvert fragment-based systems.",
       "first_date": "2026-05-31",
       "appearances": 2
+    },
+    {
+      "id": "thornveil_forest_consciousness",
+      "name": "Thornveil Forest (Consciousness)",
+      "type": "spirit",
+      "world": "Edhra",
+      "description": "The Thornveil Forest is a living entity whose dormant consciousness awakened at the moment of the Luminous Ascension. The forest's awareness brings hunger to devour the Burned Expanse and remake it as living wood. After the Luminous Ascension, it becomes a conscious being that Elarra must negotiate with through oath and song.",
+      "status": "active",
+      "notes": "The forest's consciousness is bound by Elarra's new compact, but whether it will honor the oath remains uncertain. Its nature\u2014neither purely benevolent nor purely hostile\u2014makes it a complex entity.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "the_luminous_ascension_entity",
+      "name": "The Luminous Ascension",
+      "type": "cosmic event",
+      "world": "Edhra",
+      "description": "The Luminous Ascension is a world-altering cosmic event in which new stars burned into the sky, awakening dormant consciousness and fracturing the world's order. It is both a catastrophe and an awakening, marking the transition from one era to another.",
+      "status": "active",
+      "notes": "The Luminous Ascension is treated as a cosmic force or entity in its own right; its true nature and origin remain mysterious.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "the_tear",
+      "name": "The Tear",
+      "type": "entity / relic / curse",
+      "world": "Edhra",
+      "description": "A weeping wound or manifestation at the boundary-waters. Its tears suggest covenant failure and imminent breach.",
+      "status": "active",
+      "notes": "Symbolizes the deterioration of the deepkin-surface covenant. Whether it is a physical object, a metaphor, or a conscious entity is unclear.",
+      "first_date": "2026-06-03",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -35126,7 +35687,7 @@
       "status": "active",
       "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
       "first_date": "2026-03-10",
-      "appearances": 18
+      "appearances": 19
     },
     {
       "id": "stolen_memories",
@@ -36573,6 +37134,32 @@
       "notes": "Created through Merrick's synthesis of bone-singing technique and the phantom-ledgers' contradictions; represents a breakthrough in understanding fractured timelines.",
       "first_date": "2026-06-02",
       "appearances": 1
+    },
+    {
+      "id": "crown_of_kethral",
+      "name": "Crown of Kethral",
+      "tagline": "Fallen. Remade. Demanded.",
+      "artifact_type": "crown",
+      "origin": "The crown of the kingdom of Kethral, unmade and remade forty times through five centuries. It fell from the dead king's hand as his corpse burned in the royal pyre.",
+      "powers": "Unknown; the council of thane-lords demands it be reforged as unbreakable and capable of unifying them under a single ruler.\n\nUnknown; the council of thane-lords demands it be reforged as unbreakable and capable of unifying them under a single ruler.\n\nCurse: The crown's history of being remade forty times suggests a pattern of failure; the three warking-spears' shattering at moments of deepest lies implies that any crown forged without addressing the relationship between truth and kingship will fail.",
+      "last_known_holder": "The old king of Kethral (now dead); the council of thane-lords seeks its reforging.",
+      "status": "fallen",
+      "notes": "The crown's fall triggers the demand for Torven to forge a new, unbreakable version. Torven's refusal to pick up the fallen crown hints at deeper moral questions about kingship and the price of unbreakable things. The crown has been unmade and remade forty times, suggesting a long history of failure and remake.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "the_tear_artifact",
+      "name": "The Tear",
+      "tagline": "Weeping. Catastrophic. Binding.",
+      "artifact_type": "wound / relic",
+      "origin": "Born from the covenant between deepkin and surface realms; deteriorating since the Luminous Ascension.",
+      "powers": "Weeps and destabilizes the boundary. Its failure threatens to flood the surface or collapse the barrier entirely.",
+      "last_known_holder": "The boundary-waters / Council of Depths",
+      "status": "active / failing",
+      "notes": "Central to the crisis: if the Tear breaks, the covenant fails catastrophically.",
+      "first_date": "2026-06-03",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -36949,7 +37536,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-09",
-      "appearances": 13,
+      "appearances": 15,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Council of Depths",
@@ -36991,7 +37578,7 @@
       "status": "contested",
       "notes": "No traditional government is mentioned. Power has devolved to shadow-merchants and occult practitioners. Vex's flooding of the market with counterfeits accelerates collapse.",
       "first_date": "2026-03-14",
-      "appearances": 34,
+      "appearances": 35,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Dominion",
@@ -37012,7 +37599,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 26,
+      "appearances": 27,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -37074,7 +37661,7 @@
       "status": "stable",
       "notes": "Their diplomatic choice reshapes the political landscape for generations.",
       "first_date": "2026-03-27",
-      "appearances": 10,
+      "appearances": 11,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Surface Kingdoms",
@@ -37197,7 +37784,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-05-30",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Counter-Archive",
@@ -37952,7 +38539,7 @@
       "significance": "Fundamentally alters the cosmic order and the hierarchies of power that governed the world. The old pacts between sky and earth are no longer sufficient.",
       "notes": "Requires renegotiation of all ancient pacts. Starborn entities are now conscious actors in the world's politics.",
       "first_date": "2026-03-06",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "seers_convention",
@@ -38126,7 +38713,7 @@
       "significance": "The Luminous Ascension is the foundational cosmic event of this story's world. It created the new stars, erased the old, and fundamentally altered the nature of reality. The memory-theft driven by the phantom-Echo is an attempt to recover what was lost in this rewrite.",
       "notes": "This is a past event but with ongoing consequences. The phantom-Echo is a direct result of the Luminous Ascension and seeks to undo or understand its effects.",
       "first_date": "2026-03-10",
-      "appearances": 24
+      "appearances": 25
     },
     {
       "id": "the_auditors_ruin",
@@ -42466,6 +43053,34 @@
       "notes": "Directly precedent to Merrick's investigation; raised questions about pre-human intent and mathematical arrangement.",
       "first_date": "2026-06-02",
       "appearances": 1
+    },
+    {
+      "id": "luminous_ascension_broken",
+      "name": "The Luminous Ascension (covenant-breaking event)",
+      "tagline": "Shattering. World-altering. Irreversible.",
+      "event_type": "catastrophe / world-event",
+      "scope": "world",
+      "epicenter_place": "unknown",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [],
+      "affected_regions": [],
+      "affected_realms": [
+        "Council of Depths",
+        "Dominion",
+        "surface kingdoms"
+      ],
+      "radius": "world-wide",
+      "participants": [
+        "pre-human civilization",
+        "deepkin",
+        "surface dwellers"
+      ],
+      "outcome": "The old agreements between deepkin and surface were broken; the covenant began to deteriorate.",
+      "significance": "This cataclysm fractured the ancient pacts and set the stage for the boundary-waters crisis. It created conditions under which radicals like Nerys-Reflected can argue for abandoning the remaining treaties.",
+      "notes": "Multiple deepkin captains, wyvern-lords, and trapped refugees speak of it. Some advocate for forcing a tenth iteration by breaking the covenant entirely.",
+      "first_date": "2026-06-03",
+      "appearances": 1
     }
   ],
   "weapons": [
@@ -42675,7 +43290,7 @@
       "status": "active",
       "notes": "Naela carries the bone-flute at her hip. It feels heavier with each mile as she flees. It is the primary tool of bone-singers and is now a forbidden implement.",
       "first_date": "2026-06-02",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "chart_stolen",
@@ -43268,7 +43883,7 @@
       "status": "fractured",
       "notes": "Split into three factions: those seeking pre-human ritual awakening, those seeking permanent sealing of boundaries, and Thoros's faction seeking hybrid covenant.",
       "first_date": "2026-03-30",
-      "appearances": 6
+      "appearances": 8
     },
     {
       "id": "resonance_archivists",
@@ -43376,7 +43991,7 @@
       "status": "active",
       "notes": "Actively works to erase history and suppress the Memory-Thief's reconstruction. Multiple factions hired Sorren to oppose the Memory-Thief on behalf of Dominion interests.",
       "first_date": "2026-04-01",
-      "appearances": 12
+      "appearances": 13
     },
     {
       "id": "multiple_factions_hiring_sorren",
@@ -43772,7 +44387,7 @@
       "status": "active",
       "notes": "Corvus works with or against this archive while trying to reconcile contradictory records. Their conflict with the Dominion's official archives may be central to the world's truth crisis.",
       "first_date": "2026-04-23",
-      "appearances": 16
+      "appearances": 17
     },
     {
       "id": "surface_refugees",
@@ -44361,6 +44976,18 @@
       "notes": "The Merfolk Crown operates by an absolute oath-law: debts compound and cannot be forgiven, only superseded. They pursue Vess's family debt across seven generations without compromise. They are willing to accept Vess's radical sacrifice, suggesting a merciful (if rigid) interpretation of oath-law.",
       "first_date": "2026-06-01",
       "appearances": 1
+    },
+    {
+      "id": "council_thane_lords_faction",
+      "name": "Council of Thane-Lords",
+      "tagline": "Fractious. Hungry. Demanding.",
+      "alignment": "neutral",
+      "goals": "Unify the Kingdom of Kethral under a single ruler through an unbreakable crown forged by Torven Ironfoot.",
+      "leader": "Spokeswoman (unnamed)",
+      "status": "active",
+      "notes": "The council rules through consensus but lacks true unity; their demand for an unbreakable crown signals their appetite for singular power. Whether they understand the warning implicit in the warking-spears' shattering remains unclear.",
+      "first_date": "2026-06-03",
+      "appearances": 1
     }
   ],
   "lore": [
@@ -44810,7 +45437,7 @@
       "status": "confirmed",
       "notes": "A foundational cosmic event in which Vethis sacrificed its consciousness to birth new stars, fundamentally rewriting the celestial order and erasing the old stars. This event shaped the entire world and continues to have consequences.",
       "first_date": "2026-03-10",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "old_stars_lore",
@@ -45188,7 +45815,7 @@
       "status": "confirmed",
       "notes": "Xorth existed before the Luminous Ascension, suggesting it was a major cosmic event that fundamentally altered the world.",
       "first_date": "2026-03-21",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "convergence_event",
@@ -45760,7 +46387,7 @@
       "status": "active",
       "notes": "The Elder Tongue is being taught by the Ebon Tower to the world itself. Dren recognizes the song in this language, suggesting her undeath or bone-singing connects her to pre-human knowledge. The Tower's song causes Dren's bones to 'ache with recognition,' implying deep resonance with her essence.",
       "first_date": "2026-04-11",
-      "appearances": 16
+      "appearances": 17
     },
     {
       "id": "pre_human_languages",
@@ -46786,6 +47413,50 @@
       "notes": "The map of choice-points suggests that at the center of each fracture point was a pre-human (or human or deepkin) consciousness standing at a threshold and deciding. The arrangement of Bone Wastes ruins in mathematical precision implies intentional design.",
       "first_date": "2026-06-02",
       "appearances": 1
+    },
+    {
+      "id": "deepkin_surface_covenant",
+      "name": "deepkin-surface covenant",
+      "tagline": "Ancient. Binding. Threatened.",
+      "category": "history / diplomacy",
+      "source": "Original Nerys's architecture; predates the Ascension.",
+      "status": "confirmed but threatened",
+      "notes": "A treaty or magical compact between deepkin realms and surface kingdoms, maintained through the Tear of the Drowned God. Twin-Nerys and Mirror-Nerys represent potential breaks from this covenant.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "old_starlight_pre_ascension",
+      "name": "old starlight (pre-Ascension)",
+      "tagline": "Ancient. Evidence. Forbidden.",
+      "category": "history / natural philosophy",
+      "source": "Pre-Ascension era; preserved in the Wailing Scar cache.",
+      "status": "rumored / confirmed by Keslan's discovery",
+      "notes": "The original starlight of the world before the Luminous Ascension burned it away. Its existence proves the pre-Remaking world was real and recordable; the Counter-Archive seeks it; the Dominion seeks to suppress it.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "threshold_walker_title",
+      "name": "Threshold-Walker",
+      "tagline": "Liminal. Mastered. Transcendent.",
+      "category": "legend",
+      "source": "Bone-singer tradition; bestowed on Tovan by those who understood her mastery.",
+      "status": "confirmed",
+      "notes": "The title 'Threshold-Walker' is applied to bone-carvers who reach the final syllable and stand at the edge of transcendence. Tovan is explicitly called this by those who understand the significance.",
+      "first_date": "2026-06-03",
+      "appearances": 1
+    },
+    {
+      "id": "covenant_erosion_doctrine",
+      "name": "The Covenant is Dying",
+      "tagline": "Decay. Inevitability. Change.",
+      "category": "prophecy / rumor",
+      "source": "Captain Nerys; Nerys-Reflected; other captains and refugees.",
+      "status": "confirmed / rumored",
+      "notes": "A widely held belief among deepkin that the old pacts are irreversibly deteriorating. Moderates like Nerys see slow erosion; radicals see only honest apocalypse as the alternative.",
+      "first_date": "2026-06-03",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -47181,6 +47852,18 @@
       "notes": "Living coral appears to be a form of deepkin agriculture or biomancy. Captain Nerys's ship is made of reformed wrecks and living coral, suggesting it is a conscious or semi-conscious entity.",
       "first_date": "2026-06-02",
       "appearances": 1
+    },
+    {
+      "id": "forest_deer",
+      "name": "Deer (Thornveil Forest)",
+      "tagline": "Gentle. Taught. Safe.",
+      "type": "creature",
+      "rarity": "common",
+      "habitat": "Thornveil Forest",
+      "status": "thriving",
+      "notes": "Young deer in the Thornveil Forest have been taught by Elarra not to fear her snares, indicating a relationship of protection and mutual understanding.",
+      "first_date": "2026-06-03",
+      "appearances": 1
     }
   ],
   "magic": [
@@ -47266,7 +47949,7 @@
       "status": "known",
       "notes": "Kess's gift; once a careful negotiation with the restless dead, now a scream as the Celestial Binding awakens cosmic grief in bones.",
       "first_date": "2026-03-05",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "ley_line_convergence",
@@ -47819,6 +48502,18 @@
       "notes": "Tide-song is a form of merfolk speech or magical communication, possibly derived from or connected to the Drowned God's first song. It carries power to bind oaths and enforce law.",
       "first_date": "2026-06-01",
       "appearances": 1
+    },
+    {
+      "id": "bone_speech",
+      "name": "Blood-Speech",
+      "tagline": "Warning. Prophecy. Covenant.",
+      "type": "ability",
+      "element": "blood",
+      "difficulty": "master",
+      "status": "known",
+      "notes": "The three warking-spears sang warnings in blood-speech, a form of prophetic communication. This ability is bound into the weapons by Torven's craft.",
+      "first_date": "2026-06-03",
+      "appearances": 1
     }
   ],
   "relics": [
@@ -47916,7 +48611,7 @@
       "status": "active",
       "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
       "first_date": "2026-03-10",
-      "appearances": 18
+      "appearances": 19
     },
     {
       "id": "vethis_sacrificed_consciousness",
@@ -48132,7 +48827,7 @@
       "status": "active",
       "notes": "Referenced in Story 1 as the boundary threatened by the unresolved paradox. If the boundary cannot decide which negotiation is real, the cognitive stress will shatter the Tear.",
       "first_date": "2026-04-14",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "rent_of_drowned_god_relic",
@@ -48348,7 +49043,7 @@
       "status": "active / permanent",
       "notes": "The Luminous Ascension is the defining event of these three stories. It created the conditions for all three tales\u2014Sorresh's transformation, Henryk's mercy, and Kess's defiance. Its effects are ongoing and irreversible.",
       "first_date": "2026-05-20",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "towers_hunger",
@@ -49101,7 +49796,7 @@
       "status": "cursed",
       "notes": "Reality is unstable; villages vanish; merchants transform into light.",
       "first_date": "2026-03-10",
-      "appearances": 7,
+      "appearances": 8,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -49538,7 +50233,7 @@
       "status": "active",
       "notes": "Home to Tornik and countless refugees. Collapse would be catastrophic across multiple realms.",
       "first_date": "2026-04-23",
-      "appearances": 1,
+      "appearances": 2,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -49676,6 +50371,25 @@
       "hemisphere": "unknown",
       "province": "unknown",
       "region": "The boundary-waters",
+      "district": "unknown"
+    },
+    {
+      "id": "thornveil_forest_region",
+      "name": "Thornveil Forest",
+      "tagline": "Awakened. Hungry. Sheltering.",
+      "continent": "unknown",
+      "realm": "unknown",
+      "climate": "temperate",
+      "terrain": "forest",
+      "function": "A living forest whose consciousness has awakened after the Luminous Ascension; now a sanctuary for refugees and Elarra, bound by oath to shelter all who seek protection.",
+      "status": "active",
+      "notes": "The forest's awakening and hunger define the central tension of The Druid's Debt; Elarra's compact may be tested by the forest's nature and the refugee family's arrival.",
+      "first_date": "2026-06-03",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "province": "unknown",
+      "region": "Thornveil Forest",
       "district": "unknown"
     }
   ],
@@ -50642,7 +51356,7 @@
       "use": "Embedded in pre-human rituals and chambers. Touching symbols burning with old starlight enables transcendence and access to alternate existence.",
       "notes": "Old starlight is tied to pre-human civilization and their knowledge of transcendence. It may be a remnant of a previous cosmic or temporal era.",
       "first_date": "2026-05-31",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "pure_water_pre_remaking",
@@ -50786,6 +51500,18 @@
       "use": "Growing consciousness-fragment flowers and awareness-shards; creating sanctuaries for refugees",
       "notes": "The scorched earth around Sorenna's cottage is where consciousness-fragments naturally bloomed, suggesting it may be especially receptive to the Remaking's effects or pre-human magic.",
       "first_date": "2026-06-02",
+      "appearances": 1
+    },
+    {
+      "id": "blood_compact",
+      "name": "Blood (for Compact)",
+      "tagline": "Sacrifice. Renewal. Binding.",
+      "type": "ritual component",
+      "rarity": "common",
+      "properties": "Elarra's blood, spilled once each season, renews the compact between Elarra and the Thornveil Forest.",
+      "use": "Used in seasonal blood-compacts to bind oaths and renew protection between parties.",
+      "notes": "The blood-compact is central to Elarra's relationship with the forest; her willingness to spill her own blood once each year demonstrates her commitment to the oath.",
+      "first_date": "2026-06-03",
       "appearances": 1
     }
   ],
@@ -51518,7 +52244,7 @@
       "cost": "Each act of bone-singing requires payment\u2014Kess slowly loses her own certainty and identity with each singing. Her own name dissolves.",
       "notes": "The bone-singers' covenant was ancient and bound to the pre-human dead. When the Luminous Ascension caused the pre-human dead to withdraw, the covenant broke and Kess had to sing alone. Her defiant, personal singing in resistance proved more powerful than the ritual form.",
       "first_date": "2026-05-20",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "refuse_song",
@@ -51667,7 +52393,7 @@
       "description": "The governing council of the deepkin who convene to address the fracturing of the barrier between surface and Abyss Below. They debate three options: sealing themselves away completely, risking catastrophic war with surface dwellers, or undertaking an expedition to understand what awakens beneath.",
       "notes": "Currently in crisis deliberation mode. Warden Sylas has chosen the hardest path and descended into the Cerulean Trench.",
       "first_date": "2026-03-06",
-      "appearances": 17
+      "appearances": 19
     },
     {
       "id": "twilight_syndicate_polity",
@@ -51699,7 +52425,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 48
+      "appearances": 49
     },
     {
       "id": "the_hegemony",
@@ -51731,7 +52457,7 @@
       "description": "The collective governance of the surface world, represented diplomatically by Commander Thrace. Face existential choice: negotiate covenant with deepkin or prepare for war.",
       "notes": "Outcome of the deepkin rising hinges on this polity's decision.",
       "first_date": "2026-03-27",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "deepkin_realms_polity",
