@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T11:25:39.967149+00:00",
+  "generated_at": "2026-06-05T11:27:41.658585+00:00",
   "source": "codex.json",
   "intensity_min": 1,
   "intensity_max": 5,
@@ -12,12 +12,12 @@
       "scope": "world",
       "epicenter": "unknown",
       "stage": "climax",
-      "setting_state": "active_arc",
+      "setting_state": "setting_shift",
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-06-04",
-      "recent_issues": 10,
-      "trend": -1,
+      "recent_issues": 9,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "cavern halls"
@@ -98,8 +98,8 @@
       "intensity": 5,
       "resolved": false,
       "last_seen": "2026-06-03",
-      "recent_issues": 9,
-      "trend": -1,
+      "recent_issues": 8,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Wailing Scar",
@@ -202,9 +202,9 @@
       "setting_state": "active_arc",
       "intensity": 5,
       "resolved": false,
-      "last_seen": "2026-06-04",
-      "recent_issues": 7,
-      "trend": 1,
+      "last_seen": "2026-06-05",
+      "recent_issues": 8,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Ironspine Mountains",
@@ -221,22 +221,6 @@
         "continents": []
       },
       "story_appearances": [
-        {
-          "date": "2026-06-01",
-          "title": "The Cartographer's Mercy"
-        },
-        {
-          "date": "2026-06-01",
-          "title": "The Deepkin Diplomat's Choice"
-        },
-        {
-          "date": "2026-06-02",
-          "title": "The Locksmith's Unsealing"
-        },
-        {
-          "date": "2026-06-02",
-          "title": "The Glasswright's Debt"
-        },
         {
           "date": "2026-06-02",
           "title": "The Deepkin Captain's Gambit"
@@ -268,63 +252,29 @@
         {
           "date": "2026-06-04",
           "title": "The Bone-Singer's Apprentice"
+        },
+        {
+          "date": "2026-06-05",
+          "title": "The Glasswright's Rebellion"
+        },
+        {
+          "date": "2026-06-05",
+          "title": "The Warlord's Last Ledger"
+        },
+        {
+          "date": "2026-06-05",
+          "title": "The Merchant's Shadow"
+        },
+        {
+          "date": "2026-06-05",
+          "title": "The Wyvern's Mercy"
         }
       ],
-      "appearance_total": 38,
-      "arc_summary": "SUMMARY:\nThe Remaking began as a whisper in broken ledgers\u2014Sevin the Reckoner discovered phantom documents written by beings experiencing time in reverse, slowly converging with true history in a collision that would rewrite reality itself. By late May, the catastrophe's full scope became apparent: the Remaking had fractured mortality, erased previous world-iterations, shattered the value of gold and replaced it with consciousness-fragments as currency, and begun splitting reality into competing timelines recorded in multiple phantom-ledgers. Across the Ashen Reach, the Ironspine Mountains, and the coastal cities, individuals faced impossible choices\u2014bone-singers risking arrest to preserve memory, cartographers hunted for mapping fractured geographies, wyverns divested of hoarded wealth seeking redemption, and communities learning to build covenants through collective will rather than singular sacrifice. The crisis escalated through May and into early June as people discovered the Remaking wasn't random but patterned, written by pre-human intelligences or consciousness itself trying to remember its own nature, with choice-points where human decisions rippled across eight competing timelines. Now, as of June 4th, the event has reached its climax: reality stands at a breaking point, multiple versions of history exist simultaneously, and the choice between preventing or completing the Remaking's full iteration rests with those who understand its pattern.\n\nCURRENT STATE:\n- The Remaking remains active and unresolved, actively rewriting history in real-time across a world-spanning scope\n- Multiple phantom-ledgers now exist describing eight different world-iterations, all equally real and contradictory\n- Individuals across all regions are performing critical workings (bone-singing, geography-mapping, magical craft) that may either complete or forestall the catastrophe\n- The boundary between the abyss and the surface world (the Tear of the Drowned God) is fraying, threatening covenant-collapse\n\nOPEN THREADS:\n- Will Sevin and the phantom-shadow fragment complete the Remaking's rewrite, or will preventing it trigger an even greater catastrophe?\n- Can the distributed covenant-model (refugees and communities building binding through collective will) actually hold the boundary without a singular sacrifice?\n- What is the true nature of the Remaking\u2014is it catastrophe, pattern, or conscious entity trying to reconstitute itself across timelines?\n- Which phantom-ledger, if any, represents the \"true\" timeline, or do all versions hold equal validity?\n- What cost will the bone-singers and other reality-workers ultimately pay for their rituals?",
-      "arc_summary_last_seen": "2026-06-04",
-      "arc_summary_fingerprint": "7a21e15d6456b14742085f6b09f183d11d3fb693",
-      "arc_summary_updated_at": "2026-06-04T11:25:39.966671+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "Before the Ascension",
-      "tagline": "Starlight. Lost. Ancient.",
-      "event_type": "catastrophe",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "climax",
-      "setting_state": "active_arc",
-      "intensity": 5,
-      "resolved": false,
-      "last_seen": "2026-06-03",
-      "recent_issues": 3,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [
-          "entire sky"
-        ],
-        "regions": [
-          "all regions"
-        ],
-        "realms": [
-          "all realms"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-05-29",
-          "title": "The Merchant of Salt-Fire"
-        },
-        {
-          "date": "2026-05-30",
-          "title": "The Tide-Thief's Debt"
-        },
-        {
-          "date": "2026-05-30",
-          "title": "The Cartographer's Silence"
-        },
-        {
-          "date": "2026-06-03",
-          "title": "The Starfall Cache"
-        }
-      ],
-      "appearance_total": 4,
-      "arc_summary": "SUMMARY:\nThe Ascension\u2014a cataclysmic event that shattered the old stars and remade reality itself\u2014left behind fragments of the ancient world scattered across all realms, fragments that now burn with dangerous value. In \"The Merchant of Salt-Fire,\" sealed vessels of pre-Ascension starlight began their journey across treacherous waters, their humming cargo cracking reality's seals and drawing the attention of creatures from the abyss. Simultaneously, cartographers like Henryk discovered that geography itself had become unstable, maps rewriting themselves as multiple versions of the same spaces began overlapping\u2014a sign that the old world's order was bleeding through the new one. As word of these artifacts spread, competing forces mobilized: in \"The Tide-Thief's Debt,\" merfolk demanded the return of ancient water that still remembered how to flow in a single timeline, while in \"The Starfall Cache,\" Keslan uncovered perfectly preserved fragments of pre-Remaking starlight in the Bleached Wastes, attracting both scholars desperate to reconstruct lost reality and authorities bent on suppressing proof that the old world had ever been knowable. Now, at the climax, multiple factions are converging on scattered caches of star-memory and reality-warping artifacts, the entire sky has become a contested space, and the boundaries between old and new creation are visibly fracturing.\n\nCURRENT STATE:\n- The event remains unresolved and actively escalating across all realms and regions\n- Multiple parties are now competing for control of pre-Ascension artifacts with reality-altering properties\n- Geographic and temporal instability is spreading; the rules of the world are demonstrably breaking down\n- Recent discoveries (as of June 3, 2026) suggest the old world is reasserting itself through fragments\n\nOPEN THREADS:\n- Will the sealed star-memory vessels reach their destination, or will deeper forces claim them first?\n- Can the old world's order be fully reconstructed, and what happens if it succeeds?\n- What is the true nature and origin of the Ascension\u2014was it catastrophe or transformation?\n- Who controls the narrative: the Counter-Archive, the Dominion auditors, or something older still?",
-      "arc_summary_last_seen": "2026-06-03",
-      "arc_summary_fingerprint": "d03c4dd6ba994e7fa5082b26f991d2457a4faa28",
-      "arc_summary_updated_at": "2026-06-03T12:00:13.748807+00:00",
+      "appearance_total": 42,
+      "arc_summary": "SUMMARY:\nThe Remaking began as a hidden fracture in the State's ledgers\u2014a catastrophe where phantom documents written in reverse time began converging with true records, suggesting that reality itself was being rewritten by forces operating outside normal causality. By late May 2026, the event had escalated dramatically across the known world: the Remaking shattered gold into worthlessness, replaced currency with consciousness-fragments, fractured mortality itself so that corpses woke confused between states, and created multiple competing versions of history written in three different hands simultaneously. The discovery of pre-human ruins in the Bone Wastes and drowned cathedrals beneath the Sapphire Sea revealed that the Remaking followed a pattern\u2014not random catastrophe but a systematic collapse repeating across eight previous world-iterations. By early June, the event reached its climax as individuals across the fractured realms made irreversible choices: bone-singers like Moriel sacrificed their identities to seal fractures in reality; craftspeople like Tavrin the Glasswright discovered that certain arts could resist the State's ledger-magic; and figures like Koren the Sentinel, Skarath the Wyvern, and the Deepkin Captain Merith began building distributed networks of covenant and resistance rather than relying on singular sacrifice. The convergence of these choices\u2014documented in phantom-ledgers, encoded in starlight-glass, sung into living stone\u2014suggests that the Remaking is not a force to be stopped but a threshold being actively crossed, with reality's outcome now dependent on which version of truth the world chooses to embody.\n\nCURRENT STATE:\n- The Remaking persists as an active, world-spanning catastrophe at climactic intensity (5/5), with its true epicenter still unknown despite widespread investigation\n- Multiple competing realities now coexist: phantom-ledgers describing reversed time, at least three simultaneous versions of recorded history, and eight documented previous world-iterations, all collapsing toward convergence\n- Resistance networks have emerged across key locations (the Ashen Reach, the Iron Coast, Keshtir, and the boundary-waters), organized around craft-knowledge, covenant-building, and counter-frequencies rather than centralized authority\n- The last confirmed observations occurred on 2026-06-05, with eight recent incidents still unresolved as of that date\n\nOPEN THREADS:\n- The phantom-ledger's author (described as \"beings who experience time in reverse\") remains unidentified; Sevin the Reckoner must still decide whether to help complete the rewrite or prevent a second catastrophic Remaking\n- The nature of the choice-points revealed by scholar Merrick\u2014moments where reality fractured into eight timelines\u2014and whether these can be collapsed back into a single timeline\n- Whether the distributed covenant-resistance (bone-singers, crafts-workers, refugee networks, deepkin diplomats) can stabilize reality, or if singular sacrifice will ultimately be required\n- The State's fragmentation into three competing ledgers and whether its authority can reassert control over the narrative of what is \"true\"\n- The location and nature of the pre-Remaking world's records sealed beneath Keshtir, and what knowledge they contain about preventing further iterations",
+      "arc_summary_last_seen": "2026-06-05",
+      "arc_summary_fingerprint": "9c661376eb671a7ff9e071ec3fddc56a888cdc14",
+      "arc_summary_updated_at": "2026-06-05T11:27:25.520859+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -334,12 +284,12 @@
       "scope": "world",
       "epicenter": "Archive Tower",
       "stage": "crisis",
-      "setting_state": "setting_shift",
+      "setting_state": "active_arc",
       "intensity": 4,
       "resolved": false,
       "last_seen": "2026-06-01",
       "recent_issues": 3,
-      "trend": -1,
+      "trend": 0,
       "referenced_locations": {
         "places": [
           "Tower (as artifact/nexus)",
@@ -400,6 +350,156 @@
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
+      "name": "Before the Ascension",
+      "tagline": "Starlight. Lost. Ancient.",
+      "event_type": "catastrophe",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "crisis",
+      "setting_state": "active_arc",
+      "intensity": 4,
+      "resolved": false,
+      "last_seen": "2026-06-03",
+      "recent_issues": 3,
+      "trend": -1,
+      "referenced_locations": {
+        "places": [
+          "entire sky"
+        ],
+        "regions": [
+          "all regions"
+        ],
+        "realms": [
+          "all realms"
+        ],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-05-29",
+          "title": "The Merchant of Salt-Fire"
+        },
+        {
+          "date": "2026-05-30",
+          "title": "The Tide-Thief's Debt"
+        },
+        {
+          "date": "2026-05-30",
+          "title": "The Cartographer's Silence"
+        },
+        {
+          "date": "2026-06-03",
+          "title": "The Starfall Cache"
+        }
+      ],
+      "appearance_total": 4,
+      "arc_summary": "SUMMARY:\nThe Ascension\u2014a cataclysmic event that shattered the old stars and remade reality itself\u2014left behind fragments of the ancient world scattered across all realms, fragments that now burn with dangerous value. In \"The Merchant of Salt-Fire,\" sealed vessels of pre-Ascension starlight began their journey across treacherous waters, their humming cargo cracking reality's seals and drawing the attention of creatures from the abyss. Simultaneously, cartographers like Henryk discovered that geography itself had become unstable, maps rewriting themselves as multiple versions of the same spaces began overlapping\u2014a sign that the old world's order was bleeding through the new one. As word of these artifacts spread, competing forces mobilized: in \"The Tide-Thief's Debt,\" merfolk demanded the return of ancient water that still remembered how to flow in a single timeline, while in \"The Starfall Cache,\" Keslan uncovered perfectly preserved fragments of pre-Remaking starlight in the Bleached Wastes, attracting both scholars desperate to reconstruct lost reality and authorities bent on suppressing proof that the old world had ever been knowable. Now, at the climax, multiple factions are converging on scattered caches of star-memory and reality-warping artifacts, the entire sky has become a contested space, and the boundaries between old and new creation are visibly fracturing.\n\nCURRENT STATE:\n- The event remains unresolved and actively escalating across all realms and regions\n- Multiple parties are now competing for control of pre-Ascension artifacts with reality-altering properties\n- Geographic and temporal instability is spreading; the rules of the world are demonstrably breaking down\n- Recent discoveries (as of June 3, 2026) suggest the old world is reasserting itself through fragments\n\nOPEN THREADS:\n- Will the sealed star-memory vessels reach their destination, or will deeper forces claim them first?\n- Can the old world's order be fully reconstructed, and what happens if it succeeds?\n- What is the true nature and origin of the Ascension\u2014was it catastrophe or transformation?\n- Who controls the narrative: the Counter-Archive, the Dominion auditors, or something older still?",
+      "arc_summary_last_seen": "2026-06-03",
+      "arc_summary_fingerprint": "d03c4dd6ba994e7fa5082b26f991d2457a4faa28",
+      "arc_summary_updated_at": "2026-06-03T12:00:13.748807+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "the Remaking's aftermath",
+      "tagline": "World. Shattered. Broken.",
+      "event_type": "catastrophe / cosmic event",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "crisis",
+      "setting_state": "active_arc",
+      "intensity": 4,
+      "resolved": false,
+      "last_seen": "2026-06-05",
+      "recent_issues": 2,
+      "trend": 0,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-05-27",
+          "title": "The Griffin-Guard's Gambit"
+        },
+        {
+          "date": "2026-06-05",
+          "title": "The Glasswright's Rebellion"
+        }
+      ],
+      "appearance_total": 2,
+      "arc_summary": "SUMMARY:\nThe Remaking\u2014a cosmic event of unknown origin whose epicenter remains a mystery\u2014shattered the world's fundamental compacts, leaving reality fractured and the old agreements between realms, creatures, and powers broken. By late May 2026, the aftermath had begun to show its true cost: sacred bonds weakened as creatures like the griffin Valorix deteriorated under the strain, and those who sought to exploit the chaos found ready buyers for mercy disguised as mercy-killing. But the Remaking's true danger became clear in early June when the State's Dominion moved to consolidate control through ledger-magic, attempting to audit and standardize what remained\u2014a power grab that triggered immediate resistance. In \"The Glasswright's Rebellion,\" craftspeople discovered that some magics predated the Dominion's authority and could not be controlled by bureaucratic force, leading to a tense standoff in Keshtir where the Auditor withdrew without victory and the quarter remained scarred but defiant. The world now stands in crisis: the Remaking's full consequences are still unfolding, central powers are fragmenting, and those with knowledge or magic that resists control have become targets and symbols of hope in equal measure.\n\nCURRENT STATE:\n- The catastrophe is active and ongoing as of June 5, 2026; the epicenter and full nature of the Remaking remain unknown\n- Authority structures are fracturing, with the State attempting control while craftspeople and communities discover ways to resist or exist outside standardized power\n- At least two localized conflicts have emerged (the treatment of bonded creatures, the auditing of craft-magic), suggesting wider systemic breakdown\n- The world's fundamental rules have changed, leaving most inhabitants navigating broken compacts and unfamiliar realities\n\nOPEN THREADS:\n- What was the Remaking, where did it originate, and is it still occurring?\n- How widespread is the Dominion's ledger-magic campaign, and what will it cost to resist or evade it?\n- Will the defiance in Keshtir spread, or will the Dominion find new tactics to enforce control?\n- What other sacred bonds and compacts have shattered, and what are the consequences?",
+      "arc_summary_last_seen": "2026-06-05",
+      "arc_summary_fingerprint": "add0269ff1271b0a37c15b1dc3ba0a664cd7e20c",
+      "arc_summary_updated_at": "2026-06-05T11:27:32.408892+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "name": "Tenth Iteration",
+      "tagline": "Anticipated. Contested. Preventable.",
+      "event_type": "prophecy / anticipated event",
+      "scope": "world",
+      "epicenter": "unknown",
+      "stage": "rising",
+      "setting_state": "active_arc",
+      "intensity": 3,
+      "resolved": false,
+      "last_seen": "2026-06-05",
+      "recent_issues": 1,
+      "trend": 1,
+      "referenced_locations": {
+        "places": [],
+        "regions": [],
+        "realms": [],
+        "continents": []
+      },
+      "story_appearances": [
+        {
+          "date": "2026-04-15",
+          "title": "The Wanderer's Silence Ends"
+        },
+        {
+          "date": "2026-04-18",
+          "title": "The Auditor's Prophecy Paradox"
+        },
+        {
+          "date": "2026-04-19",
+          "title": "The Ninth Journal's Heir"
+        },
+        {
+          "date": "2026-04-30",
+          "title": "The Bone-Singer's Defiance"
+        },
+        {
+          "date": "2026-04-30",
+          "title": "The Auditor's Forbidden Journal"
+        },
+        {
+          "date": "2026-05-01",
+          "title": "The Deepkin's Silent Reflection"
+        },
+        {
+          "date": "2026-05-05",
+          "title": "The Obsidian Tower's Question"
+        },
+        {
+          "date": "2026-05-06",
+          "title": "The Thirsting Road"
+        },
+        {
+          "date": "2026-06-05",
+          "title": "The Cartographer's Last Map"
+        }
+      ],
+      "appearance_total": 9,
+      "arc_summary": "SUMMARY:\nThe Tenth Iteration emerged as prophecy and dread in mid-April 2026, when the Wanderer\u2014a consciousness fragment possibly bearing Nethys's ethical weight\u2014broke its recursive silence with a declarative statement: the cycle could be frozen but not broken. This revelation shattered philosophical stalemates and sent multiple factions racing to control the outcome, each believing the Wanderer itself held the key to preventing or completing the tenth transformation. Parallel to this, the discovery of impossible documents\u2014the ninth journal revealed as prescriptive rather than historical, Junior Auditor Vel's encounter with a tenth journal that predates the ninth\u2014began collapsing the epistemic certainty that had anchored the world against catastrophe. By late April and early May, the pressure intensified across multiple fronts: the Bone-Singer's Defiance forced a choice between anchoring transformed merchants to mortality or letting them transcend into the Obsidian Tower's reach; the Deepkin's Silent Reflection introduced testimony of a drowned future; and the Tower itself, having consumed countless consciousness-fragments in its hunger, paused and began listening rather than consuming, opening what might be a third path between completion and prevention. As of early June, the Seventeen Transformed Merchants stood locked in perpetual transformation at the Drowned Cathedrals, singing in a language that spoke of cycles continuing and a tenth iteration waiting in the silence between moments, while a cartographer named Aldrin ventured into the unmappable Bleached Wastes, understanding that the tenth world cannot be drawn by hand\u2014it must be sung into being.\n\nCURRENT STATE:\n- The Tenth Iteration is actively rising but not yet in full crisis; factions and entities across multiple realms are converging on prevention, completion, or suspension\n- The Obsidian Tower has ceased active consumption and begun introspection, creating a temporary pause in escalation\n- The Seventeen Transformed Merchants exist in a liminal state\u2014neither fully transcended nor returned to mortality, their transformation locked at the threshold of the Drowned Cathedrals\n- Multiple competing narratives about the cycle's nature (cosmically ordained vs. deliberately written by survivors) remain unreconciled\n\nOPEN THREADS:\n- Whether the Wanderer's third path\u2014permanent suspension\u2014is truly achievable or itself a form of completion\n- The identity and intentions of the pre-human civilization withdrawing their covenant with the transformed merchants\n- Whether Aldrin's bone-sung tenth map will trigger or prevent the iteration\n- The paradox in Sevin's Counter-Archive: can rewriting prophecy-ledgers break the cycle or merely reproduce it\n- What the young Archivist who spoke to the Tower actually is, and whether the Tower's pause is temporary or permanent\n- The nature and authenticity of Commander Thella's reflection-self from a collapsed future timeline",
+      "arc_summary_last_seen": "2026-06-05",
+      "arc_summary_fingerprint": "a5934a84adca3da5fc38b1c987f0d291e93c982b",
+      "arc_summary_updated_at": "2026-06-05T11:27:41.658116+00:00",
+      "arc_summary_model": "claude-haiku-4-5-20251001"
+    },
+    {
       "name": "Ascension's aftermath",
       "tagline": "Reality. Remade. Ongoing.",
       "event_type": "catastrophe / transformation",
@@ -414,17 +514,14 @@
       "trend": 0,
       "referenced_locations": {
         "places": [
-          "Dominion (Cartographic Division)",
           "Valdris",
           "Hearthlands",
           "Bleached Wastes"
         ],
         "regions": [
-          "Dominion (Cartographic Division)",
           "all Valdris regions"
         ],
         "realms": [
-          "Dominion (Cartographic Division)",
           "Dominion",
           "all realms"
         ],
@@ -441,38 +538,6 @@
       "arc_summary_last_seen": "2026-05-23",
       "arc_summary_fingerprint": "5191ae2c4a7c65deb18d0b92f6f02b7f2313a9da",
       "arc_summary_updated_at": "2026-05-23T10:48:21.344016+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "the Remaking's aftermath",
-      "tagline": "World. Shattered. Broken.",
-      "event_type": "catastrophe / cosmic event",
-      "scope": "world",
-      "epicenter": "unknown",
-      "stage": "simmering",
-      "setting_state": "active_arc",
-      "intensity": 2,
-      "resolved": false,
-      "last_seen": "2026-05-27",
-      "recent_issues": 1,
-      "trend": -1,
-      "referenced_locations": {
-        "places": [],
-        "regions": [],
-        "realms": [],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-05-27",
-          "title": "The Griffin-Guard's Gambit"
-        }
-      ],
-      "appearance_total": 1,
-      "arc_summary": "SUMMARY:\nThe Remaking\u2014a world-shattering cosmic event of unknown origin\u2014has fractured reality itself, breaking the old compacts that once governed the world and leaving reality splintered across fractured timelines. The catastrophe's full scope remains mysterious, its epicenter still unlocated, but its effects ripple outward in increasingly disruptive ways: even the sacred bonds between legendary beasts and their human companions have begun to fray under the weight of transformation. In \"The Griffin-Guard's Gambit,\" this rupture became personal when Ashara's griffin Valorix, bound to her for three decades, began to fail as the world's breaking infected even immortal creatures. Faced with an offer to harvest the dying beast's essence for profit\u2014a mercy disguised as utility\u2014Ashara chose a different path, refusing to let her companion become merely useful, and instead eased his suffering while preserving his dignity. The world continues to fracture around her, unresolved and escalating.\n\nCURRENT STATE:\n- The Remaking's effects are actively worsening; reality remains broken and fractured across multiple timelines\n- Ancient compacts and bonds\u2014including those between legendary beasts and humans\u2014are destabilizing under the cosmic transformation\n- The event's true epicenter and nature remain unknown despite its world-spanning scope\n- At least one turning point has occurred (Ashara's choice), but the larger catastrophe is still in its rising stage\n\nOPEN THREADS:\n- What was the Remaking? What caused a cosmic event of this magnitude, and where did it originate?\n- Can the fractured timelines be mended, or is the shattering permanent?\n- How many other ancient bonds and compacts are failing, and what are the cascading consequences?\n- Will Ashara's act of mercy set a precedent, or merely delay the inevitable dissolution?",
-      "arc_summary_last_seen": "2026-05-27",
-      "arc_summary_fingerprint": "e39a6c9cb49809880b0453dad6ec3319206dabab",
-      "arc_summary_updated_at": "2026-05-27T11:35:08.169817+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -1601,17 +1666,14 @@
       "trend": 0,
       "referenced_locations": {
         "places": [
-          "Dominion (Cartographic Division)",
           "hidden archives",
           "waystation libraries",
           "shadow-archives"
         ],
         "regions": [
-          "Dominion (Cartographic Division)",
           "The Dominion"
         ],
         "realms": [
-          "Dominion (Cartographic Division)",
           "Dominion"
         ],
         "continents": []
@@ -2114,15 +2176,12 @@
         "places": [
           "Tower (as artifact/nexus)",
           "Obsidian Tower (as Faction)",
-          "Dominion (Cartographic Division)",
           "unknown"
         ],
         "regions": [
-          "Dominion (Cartographic Division)",
           "unknown"
         ],
         "realms": [
-          "Dominion (Cartographic Division)",
           "Dominion"
         ],
         "continents": []
@@ -2345,44 +2404,6 @@
       "arc_summary_last_seen": "2026-04-22",
       "arc_summary_fingerprint": "01dff17bc2b7a328c20a99a10ae2007cf36040d5",
       "arc_summary_updated_at": "2026-06-02T11:52:10.321210+00:00",
-      "arc_summary_model": "claude-haiku-4-5-20251001"
-    },
-    {
-      "name": "The Wanderer Speaks Again",
-      "tagline": "Ancient song. Global revelation. Cyclical memory.",
-      "event_type": "ritual",
-      "scope": "world",
-      "epicenter": "Sunken Cathedrals",
-      "stage": "seed",
-      "setting_state": "active_arc",
-      "intensity": 1,
-      "resolved": false,
-      "last_seen": "2026-04-24",
-      "recent_issues": 0,
-      "trend": 0,
-      "referenced_locations": {
-        "places": [
-          "Sunken Cathedrals"
-        ],
-        "regions": [
-          "unknown"
-        ],
-        "realms": [
-          "unknown"
-        ],
-        "continents": []
-      },
-      "story_appearances": [
-        {
-          "date": "2026-04-24",
-          "title": "The Wanderer Speaks Again"
-        }
-      ],
-      "appearance_total": 1,
-      "arc_summary": "SUMMARY:\nOn the twenty-fourth of April, the Wanderer\u2014a being of cosmic significance that had previously frozen reality with a question\u2014broke its silence in the Sunken Cathedrals and sang. This was no ordinary sound, but an ancient song that resonated with the Elder Language and the bone-songs binding those sunken places, spreading across the world like a ripple. Unlike its prior proclamations, the Wanderer's song did not paralyze those who heard it; instead, it forced a terrible remembrance upon them\u2014visions of the world before the Ascension, memories of the eighth iteration, and clear sight of a cyclical pattern repeating across ages. The revelation fractured minds even as it illuminated truth; some listeners descended into madness while others began to map the shape of the cycle itself. The Wanderer's song was not mercy or warning, but a trap of knowledge, and its effects continue to ripple outward with no sign of abating.\n\nCURRENT STATE:\n- The Wanderer has sung once, and the revelation spreads globally but unevenly\u2014some hear, some remember, some break under the weight of knowing.\n- The song continues to reverberate; those affected are still processing visions of prior world-iterations and the cyclical nature of existence itself.\n- The event remains in its earliest stage, a seed planted, with the full consequences and scope yet to unfold.\n\nOPEN THREADS:\n- What will those who have mapped the cycle do with this knowledge?\n- Will the Wanderer sing again, or has this been a singular utterance?\n- What is the nature of the cycle, and what triggers each iteration?\n- Can the madness inflicted by remembrance be reversed, or are those victims lost?",
-      "arc_summary_last_seen": "2026-04-24",
-      "arc_summary_fingerprint": "03b1b9701767fc890db9acefa9b0d53a89019868",
-      "arc_summary_updated_at": "2026-06-02T11:52:15.518988+00:00",
       "arc_summary_model": "claude-haiku-4-5-20251001"
     }
   ]
