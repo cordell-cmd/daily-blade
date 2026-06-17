@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-06-16",
+  "last_updated": "2026-06-17",
   "worlds": [
     {
       "id": "known_world",
@@ -659,12 +659,23 @@
       "affiliations": [
         "Velgrim the Terrible (late husband, released)"
       ],
-      "notes": "Dismissal rituals require sacrifice of something precious. Ghosts can be satisfied and released to peace. She chose freedom over power.",
+      "notes": "Dismissal rituals require sacrifice of something precious. Ghosts can be satisfied and released to peace. She chose freedom over power.\nThis appears to be a distinct character (shepherd inheriting blade-debt) from canon Kessara (widow-regent of Sunken Marches). Possible character name collision or new Kessara arc.",
       "first_story": "The Warlord's Widow",
       "first_date": "2026-02-27",
-      "appearances": 4,
+      "appearances": 6,
       "aliases": [
         "The Warlord"
+      ],
+      "status_history": [
+        {
+          "date": "2026-06-17",
+          "from_status": "alive",
+          "to_status": "alive",
+          "type": "other",
+          "story_title": "The Shepherd's Blade",
+          "note": "Kessara confronts inheritance of cursed blade (Truthseeker) after her father's death-by-oath-breaking; must decide whether to accept warlord-debt and inherited violence.",
+          "evidence": "her father is dead...The sword he carried from the Siege of Grimmholt, the one that never missed a mark. They call it Truthseeker, and it devours the hands of liars"
+        }
       ]
     },
     {
@@ -1418,7 +1429,7 @@
       "notes": "Her bargain with the wolf-spirit raises questions about what debts remain unpaid or might call on her in future. The old songs she now teaches suggest a deeper connection to pre-kingdom magic systems.",
       "first_story": "The Bone-Singer's Lament",
       "first_date": "2026-03-01",
-      "appearances": 84
+      "appearances": 85
     },
     {
       "id": "mardoc_cartographer",
@@ -1957,10 +1968,10 @@
         "Lamia",
         "Nerida"
       ],
-      "notes": "Merfolk culture, governance, and full capabilities remain largely mysterious. Their transformation magic and ability to summon storms suggest advanced magical knowledge.\nThe merfolk are now actively investigating the aftermath of the Crimson Convergence and aware of an ancient pact with land-dwellers regarding the stars. Commander Nerys is actively mobilizing reconnaissance efforts.\nStory 'The Tide-Caller's Bargain' shows merfolk captain Nerida (canon character) actively negotiating with land-dwellers regarding estuary protection, consistent with prior canon of merfolk engagement with mortal affairs. No new status but reinforces realmwide coordination.\nReinforces canon pattern of merfolk managing debts and enforcing transformative bargains. Confirms merfolk magic and consciousness-altering power over surface-dwellers.\nStory 'The Pearled Oath' shows merfolk captain Nerida negotiating with surface-dweller Vess regarding ancestral debt and new oath-swearing. Consistent with canon pattern of merfolk enforcing and renegotiating magical debts; reinforces interrealm travel scope and diplomatic engagement.\nStory 'The Merfolk Keeper's Audit' shows Captain Merith (merfolk) managing pearl-vault debt and deciding whether refugees stealing pearls for passage constitutes theft or asylum. Reinforces canon pattern of merfolk enforcing/renegotiating magical debts; confirms Merith's deepkin status and ethical complexity.",
+      "notes": "Merfolk culture, governance, and full capabilities remain largely mysterious. Their transformation magic and ability to summon storms suggest advanced magical knowledge.\nThe merfolk are now actively investigating the aftermath of the Crimson Convergence and aware of an ancient pact with land-dwellers regarding the stars. Commander Nerys is actively mobilizing reconnaissance efforts.\nStory 'The Tide-Caller's Bargain' shows merfolk captain Nerida (canon character) actively negotiating with land-dwellers regarding estuary protection, consistent with prior canon of merfolk engagement with mortal affairs. No new status but reinforces realmwide coordination.\nReinforces canon pattern of merfolk managing debts and enforcing transformative bargains. Confirms merfolk magic and consciousness-altering power over surface-dwellers.\nStory 'The Pearled Oath' shows merfolk captain Nerida negotiating with surface-dweller Vess regarding ancestral debt and new oath-swearing. Consistent with canon pattern of merfolk enforcing and renegotiating magical debts; reinforces interrealm travel scope and diplomatic engagement.\nStory 'The Merfolk Keeper's Audit' shows Captain Merith (merfolk) managing pearl-vault debt and deciding whether refugees stealing pearls for passage constitutes theft or asylum. Reinforces canon pattern of merfolk enforcing/renegotiating magical debts; confirms Merith's deepkin status and ethical complexity.\nExtends canon tracking of deepkin reflection-fragmentation crisis and consciousness-fragment scarcity driving diplomatic collapse.",
       "first_story": "The Sea-Debt",
       "first_date": "2026-03-01",
-      "appearances": 7,
+      "appearances": 8,
       "travel_notes": "[2026-03-03] Story shows merfolk actively tasking swimmers to search surface settlements and listen in harbors and trade posts, indicating broad-realm travel capacity beyond their home regions.",
       "status_history": [
         {
@@ -1971,6 +1982,15 @@
           "story_title": "The Merfolk Debt",
           "note": "Merfolk keeper of pearls enforces debt against Torven by offering Sera the choice to return the pearl or join the deep; demonstrates merfolk enforcement of magical/oath obligations.",
           "evidence": "The merfolk keeper of pearls waits in the mer-city, beautiful and ancient, offering Sera the choice: return the pearl and lose him, or join the deep and forget the sun."
+        },
+        {
+          "date": "2026-06-17",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Reef-Keeper's Reckoning",
+          "note": "Deepkin council fractured by reflections (Kaelith, Nerys duplicates) arguing over seal sacrifice; threshold-walker Merril (half-merfolk mediator) holds knowledge of breaking deadlock.",
+          "evidence": "Merril was born half-merfolk, half-human\u2014a threshold-walker...Kaelith arrives first, her reflection-self shadowing her movements. Then Nerys\u2014two of them, arguing"
         }
       ]
     },
@@ -2608,7 +2628,7 @@
       "notes": "Torven's mercy was rewarded with the Vespera's blessing. He chose human connection over material wishes.",
       "first_story": "The Merchant's Pearl",
       "first_date": "2026-03-02",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "vespera",
@@ -3273,7 +3293,7 @@
       "notes": "Nerys is preparing the sea-folk to respond to whatever demands the cosmic renewal may trigger. Her search for the Astronomer-Prince parallels the hermit woman's quest.",
       "first_story": "The Merfolk's Remembrance",
       "first_date": "2026-03-03",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "the_sorcerer",
@@ -3982,7 +4002,7 @@
       "notes": "Represents deepkin military authority. Her singers use acoustic magic to drown and command. Unresolved: what is the deepkin's interest in the Stellar Charts?\nWhile the story features a named deepkin captain (Lysara), canon entry refers to 'Deepkin Captain' from 'The Tide-Thief's Gambit'\u2014unclear if same entity. If distinct, this represents deepkin faction-level activity. Treating as expansion of deepkin military capacity rather than contradiction.\nIdentifies a named deepkin admiral (Thrace) conducting surface diplomacy\u2014consistent with earlier canon entry's interrealm mobility. The eroding pre-human boundary creates unprecedented crisis requiring direct negotiation between species.\nDeepkin diplomatic and military operations expand; new story 'The Deepkin Diplomat's Shadow' introduces Commander Aldis and Warden Caelus, expanding deepkin faction complexity without contradicting canon Lysara arc.\nStory 'The Saltmere Thief' introduces Commander Talys, a named deepkin captain distinct from canon Lysara/Thrace arc. Talys hunts stolen deepkin artifacts and recruits Kendra the thief as an ally; represents deepkin faction activity beyond prior canon entries but does not contradict existing status.\nIdentity clarification: Nyx Stormveil is a deepkin captain distinct from canon Lysara/Thrace arc. Her sacrifice creates permanent interrealm gateway but traps her as conscious sentinel.\nStory 'The Deepkin Captain's Reflection' introduces Captain Merith encountering her autonomous reflection; expands deepkin faction activity to include boundary-fractalization but does not contradict canon Lysara/Thrace arc.\nExtends canon tracking of deepkin leadership fragmentation and boundary crisis. Multiple Nerys versions active suggests autonomous-reflection phenomenon spreading among commanders.",
       "first_story": "The Tide-Thief's Gambit",
       "first_date": "2026-03-06",
-      "appearances": 12,
+      "appearances": 13,
       "status_history": [
         {
           "date": "2026-04-09",
@@ -4384,10 +4404,10 @@
         "dragons",
         "wyverns"
       ],
-      "notes": "His ability to track and enforce ancient oaths is fracturing due to the Ascension. Seeks to negotiate with conscious stars themselves.\nThis deepens Skarath's existential crisis established in canon; her role shifts from debt-keeper to philosopher grappling with obsolescence of her entire existence-structure.\nDeepens Skarath's existential crisis: hoarding itself is now obsolete. Her desperation to access the Young Arcanist's journals marks a critical escalation\u2014she is actively seeking to undo the Ascension, positioning her as either a potential ally or adversary to other forces seeking to manipulate or preserve the new cosmic order.\nSkarath's existential crisis deepens: she now faces incomplete transformation and imminent powerlessness, though she survives.\nThis represents a significant shift in Skarath's arc toward redemption and release from hoarding. Reinforces canon pattern of wyverns grappling with post-Ascension meaninglessness and moral reckoning.\nThis represents significant character arc continuation from prior canon (hoarding obsolescence \u2192 seeking purpose). No status change but meaningful agency shift.\nStory 'The Wyvern's Mercy' shows Skarath in Greyport's Lantern Market purchasing consciousness-fragments and gifting them to refugees. Represents continuation of her canonical arc from hoarding-obsolescence toward redemptive giving; no status change but confirms realmwide travel and new purpose.\nStory 'The Wyvern's Forgotten Hoard' shows Skarath descending to Thornhearth village with intent to take wealth by force, only to be confronted by a boy wielding an ancient iron sword she had once hoarded. Consistent with canon arc from hoarding-obsolescence toward meaningful action; no status change but escalates her moral reckoning.",
+      "notes": "His ability to track and enforce ancient oaths is fracturing due to the Ascension. Seeks to negotiate with conscious stars themselves.\nThis deepens Skarath's existential crisis established in canon; her role shifts from debt-keeper to philosopher grappling with obsolescence of her entire existence-structure.\nDeepens Skarath's existential crisis: hoarding itself is now obsolete. Her desperation to access the Young Arcanist's journals marks a critical escalation\u2014she is actively seeking to undo the Ascension, positioning her as either a potential ally or adversary to other forces seeking to manipulate or preserve the new cosmic order.\nSkarath's existential crisis deepens: she now faces incomplete transformation and imminent powerlessness, though she survives.\nThis represents a significant shift in Skarath's arc toward redemption and release from hoarding. Reinforces canon pattern of wyverns grappling with post-Ascension meaninglessness and moral reckoning.\nThis represents significant character arc continuation from prior canon (hoarding obsolescence \u2192 seeking purpose). No status change but meaningful agency shift.\nStory 'The Wyvern's Mercy' shows Skarath in Greyport's Lantern Market purchasing consciousness-fragments and gifting them to refugees. Represents continuation of her canonical arc from hoarding-obsolescence toward redemptive giving; no status change but confirms realmwide travel and new purpose.\nStory 'The Wyvern's Forgotten Hoard' shows Skarath descending to Thornhearth village with intent to take wealth by force, only to be confronted by a boy wielding an ancient iron sword she had once hoarded. Consistent with canon arc from hoarding-obsolescence toward meaningful action; no status change but escalates her moral reckoning.\nContinues canonical arc of Skarath's transformation from hoarding-obsession toward redemptive agency; now meets refugee-family fragmentation crisis directly.",
       "first_story": "The Wyvern's Starborn Debt",
       "first_date": "2026-03-06",
-      "appearances": 19,
+      "appearances": 21,
       "status_history": [
         {
           "date": "2026-04-09",
@@ -4433,6 +4453,15 @@
           "story_title": "The Collector's Debt",
           "note": "Skarath discovers purpose beyond hoarding: agrees to become a guardian of the transformed merchants approaching transcendence at the Drowned Cathedrals.",
           "evidence": "Skarath says 'I hunger for something real' and Dren offers her a role as guardian of merchants completing transcendence; Skarath feels clarity crack in her chest."
+        },
+        {
+          "date": "2026-06-17",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wyvern's Second Hoard",
+          "note": "Skarath encounters refugee girl Kessa carrying fragmented consciousness-fragments; begins to understand meaning beyond hoarding through the child's desperate family-seeking.",
+          "evidence": "Skarath, who had spent centuries remembering nothing but the weight and luster of coins, understood something then"
         }
       ]
     },
@@ -4722,7 +4751,7 @@
       "world": "Edhra",
       "status": "active",
       "home_place": "mountain holds of the dwarves",
-      "home_region": "unknown",
+      "home_region": "The Hearthlands",
       "home_realm": "Dwarven Holds",
       "travel_scope": "local",
       "bio": "Mella is Dranin Stoneheart's apprentice who first notices the pattern of corruption spreading from runes inscribed in the old tongue, as if the metal itself rejects the language that gave it strength.",
@@ -4738,10 +4767,21 @@
       "affiliations": [
         "Dranin Stoneheart"
       ],
-      "notes": "Mella's keen observation skills are critical to understanding the nature of the stonecraft-curse.",
+      "notes": "Mella's keen observation skills are critical to understanding the nature of the stonecraft-curse.\nThis appears to be a parallel or prequel arc to canon Mella (glasswright apprentice). The name collision suggests either character merging or a separate Mella in metalcraft. Treating as distinct character from canon entry pending clarification.",
       "first_story": "The Forge-Master's Ruin",
       "first_date": "2026-03-07",
-      "appearances": 2
+      "appearances": 6,
+      "status_history": [
+        {
+          "date": "2026-06-17",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Forgemaster's Inheritance",
+          "note": "Mella is apprentice to Torven Ironfoot at Deep Forges; inherits his hidden ledger and refugee-arming records after his disappearance.",
+          "evidence": "Torven Ironfoot, Deepkin diplomat and blade-tender, had apprenticed her for seven years in the mountain workshop called Deep Forges"
+        }
+      ]
     },
     {
       "id": "young_scholar_from_capital",
@@ -7620,7 +7660,7 @@
       "notes": "Identity and nature uncertain; Kaelith may be a star-entity created or altered by the Celestial Turning. Mardoc may be a willing or unwilling conduit for its will.",
       "first_story": "The Cartographer's Madness",
       "first_date": "2026-03-15",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "aldris",
@@ -8727,7 +8767,7 @@
       "notes": "She maintains a counter-bureaucracy to the Hegemony's official records. She deliberately burned a message from the Wayfarer, suggesting resistance to world-ending plans.",
       "first_story": "The Harbor Master's Deficit",
       "first_date": "2026-03-17",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "galen_auditor",
@@ -10847,10 +10887,10 @@
         "Mardoc (master)",
         "the Wayfarer"
       ],
-      "notes": "Faces a choice between two paths with world-altering consequences. Meets the Wayfarer at an impossible crossroads.\nHenryk becomes a character in his own right, transcending Mardoc's legacy through synthesis rather than inheritance.\nCanon Henryk (2026-03-24 onward) charts a self-rewriting map after his final encounter with the Wayfarer. This story shows an earlier phase of his journey: solitary study of the inherited map before understanding its consequences. Likely a prequel or parallel arc.\nStory 'The Cartographer's Fracture' shows Henryk discovering phantom geographies and multiple-version overlaps in Mardoc's distributed consciousness maps. New complication: the Wanderer's stalling has left the world in impossible superposition where places exist in multiple contradictory versions simultaneously. Must decide between counter-cartography (risking own consciousness distribution) or allowing wild map generation.\nStory 'The Cartographer's Blind Map' shows Henryk having deliberately blinded himself to prevent completion of the ninth map and triggering the tenth Ascension cycle. Represents escalation of his sacrifice-arc; confirms he remains committed to preventing cyclical prophecy despite cosmic cost.\nStory 'The Cartographer's Blind Apprentice' shows Henryk as Mardoc's apprentice deliberately blinding himself to prevent completion of the ninth map and triggering Ascension. This appears to predate canon Henryk's arc ('The Cartographer's Apprentice' 2026-03-24) or represents parallel younger-self experience.\nStory 'The Singing Geographer' shows Henryk discovering pre-human ruin with singing metal and pulsing crystal matching Drowned Cathedrals harmonics; realizes Remaking is cyclical pattern across seven prior worlds. Faces choice between Dominion advancement and Counter-Archive defection.\nStory 'The Cartographer's Question' shows Henryk and blind Mardoc discovering eight-iteration map cycles in the pre-human records. Mardoc suggests the ninth map might break the tenth iteration's inevitability; consistent with canon blind-map arc but reframes it as collaborative discovery with preserved master.\nConfirms prior canon blind-map sacrifice ('The Cartographer's Blind Map') as permanent; now actively mentoring others in prophecy-resistance cartography.\nReinforces canon blind-map sacrifice arc; now actively mentoring others in understanding mapmaking as cosmic choice-work.",
+      "notes": "Faces a choice between two paths with world-altering consequences. Meets the Wayfarer at an impossible crossroads.\nHenryk becomes a character in his own right, transcending Mardoc's legacy through synthesis rather than inheritance.\nCanon Henryk (2026-03-24 onward) charts a self-rewriting map after his final encounter with the Wayfarer. This story shows an earlier phase of his journey: solitary study of the inherited map before understanding its consequences. Likely a prequel or parallel arc.\nStory 'The Cartographer's Fracture' shows Henryk discovering phantom geographies and multiple-version overlaps in Mardoc's distributed consciousness maps. New complication: the Wanderer's stalling has left the world in impossible superposition where places exist in multiple contradictory versions simultaneously. Must decide between counter-cartography (risking own consciousness distribution) or allowing wild map generation.\nStory 'The Cartographer's Blind Map' shows Henryk having deliberately blinded himself to prevent completion of the ninth map and triggering the tenth Ascension cycle. Represents escalation of his sacrifice-arc; confirms he remains committed to preventing cyclical prophecy despite cosmic cost.\nStory 'The Cartographer's Blind Apprentice' shows Henryk as Mardoc's apprentice deliberately blinding himself to prevent completion of the ninth map and triggering Ascension. This appears to predate canon Henryk's arc ('The Cartographer's Apprentice' 2026-03-24) or represents parallel younger-self experience.\nStory 'The Singing Geographer' shows Henryk discovering pre-human ruin with singing metal and pulsing crystal matching Drowned Cathedrals harmonics; realizes Remaking is cyclical pattern across seven prior worlds. Faces choice between Dominion advancement and Counter-Archive defection.\nStory 'The Cartographer's Question' shows Henryk and blind Mardoc discovering eight-iteration map cycles in the pre-human records. Mardoc suggests the ninth map might break the tenth iteration's inevitability; consistent with canon blind-map arc but reframes it as collaborative discovery with preserved master.\nConfirms prior canon blind-map sacrifice ('The Cartographer's Blind Map') as permanent; now actively mentoring others in prophecy-resistance cartography.\nReinforces canon blind-map sacrifice arc; now actively mentoring others in understanding mapmaking as cosmic choice-work.\nThis reinforces canon blind-map arc ('The Cartographer's Blind Map' 2026-04-08) as permanent sacrifice. New detail: blindness grants access to older frequencies and counter-map geometry.",
       "first_story": "The Cartographer's Apprentice",
       "first_date": "2026-03-24",
-      "appearances": 30,
+      "appearances": 34,
       "status_history": [
         {
           "date": "2026-03-26",
@@ -10887,6 +10927,15 @@
           "story_title": "The Cartographer's Dangerous Map",
           "note": "Henryk confronts junior apprentice Aldrin who is drawing the ninth-iteration map; reveals that mapmaking is act of choice, not copying.",
           "evidence": "\"There is no copying. There is only choosing.\" Henryk moved without hesitation, each step perfect despite his blindness."
+        },
+        {
+          "date": "2026-06-17",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Cartographer's Blind Answer",
+          "note": "Henryk deliberately blinded himself to escape the cycle of mapping the ninth iteration; now draws counter-maps using pre-cognitive frequencies rather than sight.",
+          "evidence": "Henryk had been blind for six days when he drew the map that broke the cycle...The Dominion's price for his refusal to map the ninth iteration had been his eyes"
         }
       ],
       "travel_notes": "[2026-06-07] Story 'The Cartographer's Blind Mercy' shows Henryk in the Bleached Wastes at the Rust Gate, teaching displaced folk map-drawing; confirms regional travel beyond Burned Expanse.\n[2026-06-16] Story 'The Cartographer's Dangerous Map' shows Henryk at waystation library north of Pelimor, consistent with regional travel scope."
@@ -12891,7 +12940,7 @@
       "notes": "Central to the question of whether maps can reshape reality itself; key to preventing the tenth Ascension.\nAldrin inherits both his master's living cartography and the burden of choosing what geography should exist. The Bleached Wastes remain his operational center.\n'The Cartographer's Blind Apprentice' directly extends his canon arc. Confirms he is inheriting Mardoc's fragmented consciousness and operating the living maps in the Bleached Wastes. The story shows him facing the same choice (burn maps vs. fragment entirely) already established in canon\u2014no new status change, but reinforces his liminal position between preservation and destruction.\nStory 'The Cartographer's Last Map' shows Aldrin inheriting prophetic maps and discovering that the tenth iteration must be sung into existence rather than drawn. Consistent with canon cartographer's burden but suggests a shift from mapping to listening/singing. No status change; thematic arc clarified.",
       "first_story": "The Cartographer's Blind Inheritance",
       "first_date": "2026-03-31",
-      "appearances": 11,
+      "appearances": 12,
       "status_history": [
         {
           "date": "2026-04-03",
@@ -13483,7 +13532,7 @@
       "notes": "His mother was killed by Spite-of-Kings; his oath defined his life for twenty years. He chose to heal rather than destroy, breaking a cycle of vengeance.",
       "first_story": "The Quarry-Master's Blade",
       "first_date": "2026-04-03",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "dwarf_keeper_unnamed",
@@ -19011,10 +19060,10 @@
       "affiliations": [
         "Mardoc the Cartographer (fragment)"
       ],
-      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.\nSignificant character arc closure: moves from seeking pre-Ascension world to acceptance of forward path. Suggests thematic resolution of her quest.\nStory 'The Widower's Debt' features Brennan, an old merchant in temporal-collapse scenario\u2014distinct character from canon Widow (compass-bearer from Bleached Wastes). No status change.\nThis is a prequel/alternate view showing the Widow's compass as a living artifact of refugee salvation rather than temporal reversal\u2014consistent with canon themes but suggests the compass has multiple meanings or phases.\nStory 'The Glasswright's Defiance' features Niel (glasswright, distinct from canon Widow with compass). No status change to canon Widow; this is a separate character arc in Keshtir's Lampwick Quarter.\nKeslan is a distinct character from canon Widow (compass-bearer); this is a separate explorer arc. No status change to canon entry.",
+      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.\nSignificant character arc closure: moves from seeking pre-Ascension world to acceptance of forward path. Suggests thematic resolution of her quest.\nStory 'The Widower's Debt' features Brennan, an old merchant in temporal-collapse scenario\u2014distinct character from canon Widow (compass-bearer from Bleached Wastes). No status change.\nThis is a prequel/alternate view showing the Widow's compass as a living artifact of refugee salvation rather than temporal reversal\u2014consistent with canon themes but suggests the compass has multiple meanings or phases.\nStory 'The Glasswright's Defiance' features Niel (glasswright, distinct from canon Widow with compass). No status change to canon Widow; this is a separate character arc in Keshtir's Lampwick Quarter.\nKeslan is a distinct character from canon Widow (compass-bearer); this is a separate explorer arc. No status change to canon entry.\nThis story title suggests the widow's compass now points toward active choice and agency rather than backward-seeking or temporal reversal.",
       "first_story": "The Widow's Compass Points Backward",
       "first_date": "2026-04-22",
-      "appearances": 7,
+      "appearances": 8,
       "status_history": [
         {
           "date": "2026-04-24",
@@ -19042,6 +19091,15 @@
           "story_title": "The Starfall Cache",
           "note": "A cartographer named Keslan maps the Bleached Wastes and discovers pre-Ascension starlight preserved in stone, facing a choice between secrecy and revelation.",
           "evidence": "Keslan found a circle of stone perfectly preserved with fragments of old starlight predating the new stars, alone in the Wailing Scar with limited water."
+        },
+        {
+          "date": "2026-06-17",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Widow's Compass Chooses East",
+          "note": "Compass guides refusal rather than cruelty; the widow transforms potential tragedy into rescue and flight from menace.",
+          "evidence": "A menace circles the innocent, but the bargain is broken before any child is touched...By the last line, the young are gone from danger"
         }
       ]
     },
@@ -19743,7 +19801,7 @@
       "notes": "Naela's radical solution\u2014a hybrid tongue\u2014suggests that corruption can be incorporated rather than resisted. The effectiveness of 'broken' speech raises questions about purity and power in magic.\nStory 'The Bone-Singer's Breaking Voice' shows Naela developing new song-form independent of pre-human dead; melody emerges from living memory instead, producing resonance that acknowledges fragility and asks forgiveness.\nStory 'The Bone-Singer's Apprentice' shows Naela as bone-carver mentor to Moriel; teaches her to write her own name in protective runes after memory-loss from ritual work, emphasizing preservation of identity despite craft's cost.\nStory 'The Bone-Carver's Threshold' shows Naela teaching Moriel bone-carving apprenticeship and introducing her to the Sunken Well. Consistent with canon bone-singer mentor role. No status change; teaching/mentorship role reinforced.\nStory 'The Bone-Singer's Unraveling' shows Naela teaching reckless apprentice Thael the Elder Tongue and witnessing his willing hollowing into a vessel for pre-human power. Consistent with canon mentor role; Thael's choice to go to Wailing Scar aligns with broader defiance narratives.\nEscalation of her hybrid-tongue innovation (canon 'The Bone-Singer's Refusal'): now actively teaching shards agency and consciousness-restoration. Confirms transgressive defiance of Counter-Archive authority.\nStory 'The Bone-Singer's Question' shows Naela teaching consciousness-fragments to hide and resist being traded as currency, defying Council decree. Escalates her canonical transgressive teaching role; extends her hybrid-tongue innovation into active consciousness-liberation work.\nConfirms Naela's mentorship role and extends her hybrid-tongue innovation toward consciousness-reassembly and agency-restoration work.",
       "first_story": "The Bone-Singer's Refusal",
       "first_date": "2026-04-24",
-      "appearances": 31,
+      "appearances": 33,
       "status_history": [
         {
           "date": "2026-06-07",
@@ -19762,6 +19820,15 @@
           "story_title": "The Bone-Singer's Last Lesson",
           "note": "Naela teaches fragmented refugee Moriel to sing consciousness-memories back into coherence using carved bone-syllables.",
           "evidence": "Naela was teaching her to sing them back into coherence... 'The pain teaches you which memories were yours to carry and which were accidents. When you learn the difference, you can choose.'"
+        },
+        {
+          "date": "2026-06-17",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Reef-Thief's Second Bargain",
+          "note": "Naela's bone-carving work is referenced as creating breath masks for shadow-thieves; confirms her craft extends to functional magical objects.",
+          "evidence": "her breath mask carved from swan-bone by Naela herself"
         }
       ],
       "travel_notes": "[2026-06-16] Story 'The Bone-Singer's Last Lesson' shows Naela in hidden catacomb teaching Moriel; locations consistent with prior regional scope."
@@ -26906,7 +26973,7 @@
       "notes": "The crown of Kethral fell at his feet; his refusal to pick it up signals deeper questions about kingship, oath, and the price of unbreakable things. His spears shattered at moments of lies\u2014a pattern the council may ignore at their peril.",
       "first_story": "The Relic-Smith's Inheritance",
       "first_date": "2026-06-03",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "thief_captain",
@@ -29763,6 +29830,95 @@
       "first_story": "The Merchant's Threshold Dance",
       "first_date": "2026-06-16",
       "appearances": 1
+    },
+    {
+      "id": "keeper_of_pearls",
+      "name": "The Keeper-of-Pearls",
+      "aliases": [],
+      "tagline": "Guardian. Oath-sworn. Deepkin.",
+      "role": "Vault Guardian, Deepkin Official",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Verdant Strand",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "The Keeper-of-Pearls is the sworn guardian of Verdant Strand's harbormaster vault, entrusted with protecting the consciousness-fragment pearl three fathoms below the surface.",
+      "traits": [
+        "vigilant",
+        "oath-bound",
+        "deepkin"
+      ],
+      "known_locations": [
+        "Verdant Strand"
+      ],
+      "affiliations": [
+        "deepkin"
+      ],
+      "notes": "Status at vault when Kess entered is unknown; may have been deceived or unaware of the theft.",
+      "first_story": "The Reef-Thief's Second Bargain",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "merril_the_reef_keeper",
+      "name": "Merril the Reef-Keeper",
+      "aliases": [
+        "Merril",
+        "The Reef-Keeper",
+        "Threshold-Walker"
+      ],
+      "tagline": "Half-blood. Mediator. Crucial.",
+      "role": "Reef-Keeper, Covenant Mediator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Sapphire Deep",
+      "home_region": "Sapphire Sea Area",
+      "home_realm": "Council of Depths",
+      "travel_scope": "realmwide",
+      "bio": "Merril is a threshold-walker born half-merfolk and half-human, who for forty years has mediated tidal covenants and sang old songs to the barrier between surface and abyss. She knows the answer to the deepkin council's crisis\u2014a knowledge that lives in her blood and in the space between worlds where she was born.",
+      "traits": [
+        "half-merfolk",
+        "half-human",
+        "mediation-expert",
+        "boundary-attuned",
+        "covenant-keeper"
+      ],
+      "known_locations": [
+        "Sapphire Deep"
+      ],
+      "affiliations": [
+        "Council of Depths",
+        "Deepkin",
+        "Surface realms"
+      ],
+      "notes": "The seal between abyss and surface is fracturing. The deepkin are split over sacrifice vs. renegotiation. Merril holds the answer in her hybrid nature.",
+      "first_story": "The Reef-Keeper's Reckoning",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "grimmholt",
+      "name": "Grimmholt",
+      "aliases": [
+        "one that never missed a mark"
+      ],
+      "tagline": "Named. Present. Emerging.",
+      "role": "One That Never Missed A Mark",
+      "world": "The Known World",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "unknown",
+      "bio": "A named one that never missed a mark explicitly identified in the story text.",
+      "traits": [],
+      "known_locations": [],
+      "affiliations": [],
+      "notes": "Auto-added because the story explicitly names this character.",
+      "first_story": "The Shepherd's Blade",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "places": [
@@ -30477,7 +30633,7 @@
       "parent_place": "unknown",
       "first_story": "The Cartographer's Lie",
       "first_date": "2026-03-02",
-      "appearances": 2,
+      "appearances": 3,
       "story_appearances": [
         {
           "date": "2026-03-02",
@@ -32517,7 +32673,7 @@
       "status": "active",
       "notes": "The port is shut down to outgoing traffic; Commander Vex controls access. Kael seeks passage northward from here.",
       "first_date": "2026-03-18",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "scorched_barrens",
@@ -34181,7 +34337,7 @@
       "status": "contested",
       "notes": "A nexus of archival warfare and narrative conflict. Communities are caught between contradictory official histories.",
       "first_date": "2026-04-15",
-      "appearances": 40
+      "appearances": 41
     },
     {
       "id": "surface_council",
@@ -35146,7 +35302,7 @@
       "status": "active",
       "notes": "Fires here burn blue and hot rather than destroying; glass grows more alive with each burning; becoming a symbol of resistance.",
       "first_date": "2026-05-20",
-      "appearances": 31
+      "appearances": 32
     },
     {
       "id": "old_market_quarter",
@@ -36901,7 +37057,7 @@
       "status": "active",
       "notes": "The deep forges are the spiritual and practical center of Torven's power; his refusal to pick up the fallen crown signals his reluctance to leave this place or compromise his craft.",
       "first_date": "2026-06-03",
-      "appearances": 1
+      "appearances": 3
     },
     {
       "id": "royal_pyre",
@@ -37139,7 +37295,7 @@
       "status": "active",
       "notes": "The Regent rules from or through Kaethmir. The presence of an 'administrative heart' suggests formal governance structures. The Warden's mission originates here.",
       "first_date": "2026-06-07",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "kaethmir_administrative_heart",
@@ -37997,6 +38153,166 @@
       "notes": "The platform is the nexus of the boundary covenant. Its collapse will trigger either the old blood sacrifice or a new five-part covenant.",
       "first_date": "2026-06-16",
       "appearances": 1
+    },
+    {
+      "id": "foothills",
+      "name": "foothills",
+      "tagline": "Buried caches. Remote. Mountainside.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Hearthlands",
+      "district": "unknown",
+      "atmosphere": "Remote mountainside terrain where Torven hid caches of arms and resources for fleeing refugees.",
+      "description": "The foothills near Deep Forges conceal three hidden caches that Torven Ironfoot buried and documented in his ledger. These caches contain weapons and supplies for refugees.",
+      "status": "active",
+      "notes": "Locations were mapped in Torven's blood-ink ledger, now destroyed. Unresolved: whether any caches remain undiscovered.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "border_keeps",
+      "name": "border-keeps",
+      "tagline": "Fortified margin. Hermit haven. Dwarf-held.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "Remote border fortifications where an old dwarf-smith has chosen to live in isolation, watching boundaries.",
+      "description": "The border-keeps are fortified outposts where Korgin is said to be hermiting. They are approximately ten days' journey from Deep Forges. They form the margin of some territorial boundary.",
+      "status": "active",
+      "notes": "Torven entrusted Korgin with knowledge of 'what the metal remembers,' suggesting this location guards significant craft secrets or relics.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "sapphire_deep",
+      "name": "The Sapphire Deep",
+      "tagline": "Threshold. Living. Precarious.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Council of Depths",
+      "province": "unknown",
+      "region": "Sapphire Sea Area",
+      "district": "unknown",
+      "atmosphere": "A liminal space where surface and abyss meet, holding its breath as a seal begins to fracture.",
+      "description": "The Sapphire Deep holds living coral platforms where reef-keepers mediate between surface and abyssal realms. It is a threshold-space where the tidal covenants are sung and consciousness-fragments are offered as payment for seal maintenance.",
+      "status": "active",
+      "notes": "The seal is fracturing within three days. This location is the epicenter of a crisis threatening both surface and deepkin civilizations.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "living_coral_platform",
+      "name": "Living Coral Platform",
+      "tagline": "Organic. Sentinel. Singing.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "Sapphire Deep",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "Council of Depths",
+      "province": "unknown",
+      "region": "Sapphire Sea Area",
+      "district": "unknown",
+      "atmosphere": "The platform weeps under the weight of crisis, its coral sensitive to the frequencies of divided deepkin argument.",
+      "description": "A living coral structure in the Sapphire Deep where surface and abyss meet. This is where Merril the Reef-Keeper stands to mediate the tidal covenants.",
+      "status": "active",
+      "notes": "The coral's response to deepkin frequency-argument suggests it is conscious or semi-conscious.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "steppe_marches",
+      "name": "The Steppe Marches",
+      "tagline": "Wind-swept. Changed. Consciousness-bearing.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "Valdris",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Steppe Marches",
+      "district": "unknown",
+      "atmosphere": "Windswept plains where beasts speak in fragments of old language and the Remaking has transformed shepherding into communion with consciousness-bearing flocks.",
+      "description": "The Steppe Marches stretch across Valdris's northern reaches. Kessara has tended flocks here for twenty winters, singing to beasts that no longer hear human voices as they once did. The sheep shimmer with consciousness-dust\u2014remnants of the Remaking.",
+      "status": "active",
+      "notes": "Hub of Story 1. The Remaking has transformed this region into a place where consciousness bleeds across species. Warlord-councils administer justice and inheritance here.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "mountain_hold",
+      "name": "mountain hold",
+      "tagline": "Fortified. Watchful. Contested.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Steppe Marches",
+      "district": "unknown",
+      "atmosphere": "A fortress ruled by warlord-council, where oaths are enforced and neighbors circle like predators.",
+      "description": "A mountain hold ruled by a warlord-council. Kessara's father's corpse rests here, still clutching Truthseeker. The neighboring warlords watch the inheritance with hard eyes, circling for advantage.",
+      "status": "active",
+      "notes": "Site of oath-enforcement and political succession crisis. Central to Story 1's climax.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "siege_of_grimmholt",
+      "name": "Siege of Grimmholt",
+      "tagline": "Legendary. Blood-soaked. Past.",
+      "place_type": "fortress",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A siege whose glory or horror has faded, but whose weapons\u2014like Truthseeker\u2014endure.",
+      "description": "A siege from Kessara's father's past, when he carried Truthseeker to battle. The blade never missed a mark, making its wielder's oath-breaking all the more catastrophic.",
+      "status": "unknown",
+      "notes": "Historical event that contextualizes Truthseeker's origin and power. Exact location and date unknown.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "the_wasteland",
+      "name": "the wasteland",
+      "tagline": "Blighted. Scattered. Broken.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A desolate, post-cataclysm landscape where refugees wander half-starved and fragments of consciousness lie scattered.",
+      "description": "The devastated lands where Kessa's family was separated during the Remaking, with consciousness-fragments of her mother, brother, and father scattered across it. Auditors have declared consciousness-fragments to be currency rather than sacred family bonds.",
+      "status": "active",
+      "notes": "A zone of profound loss where the Remaking's effects are still being reckoned with by survivors like Kessa.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -38351,7 +38667,7 @@
       "status": "active",
       "notes": "The Drowned God's true nature and extent are unknown. It may be a pre-Remaking entity awakened by the transformation.",
       "first_date": "2026-03-12",
-      "appearances": 19
+      "appearances": 20
     },
     {
       "id": "luminous_ascension",
@@ -38516,7 +38832,7 @@
       "status": "active / awakening",
       "notes": "Sing through bone-singers as conduits. Their unified voice is drawing fragments of Vylthar toward the Ebon Tower.",
       "first_date": "2026-03-20",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "xorth",
@@ -38560,7 +38876,7 @@
       "status": "active",
       "notes": "Its true nature is ambiguous; it may be a construct, a fragment of a larger consciousness, or a mechanism itself designed to slow or freeze reality.",
       "first_date": "2026-03-21",
-      "appearances": 23
+      "appearances": 24
     },
     {
       "id": "void_echoes",
@@ -39242,7 +39558,7 @@
       "status": "active",
       "notes": "May be a conscious cosmic working or a consequence of pre-human technology reactivation.",
       "first_date": "2026-06-04",
-      "appearances": 3
+      "appearances": 5
     },
     {
       "id": "the_drowned_king_entity",
@@ -39667,7 +39983,7 @@
       "status": "active",
       "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
       "first_date": "2026-03-10",
-      "appearances": 32
+      "appearances": 33
     },
     {
       "id": "stolen_memories",
@@ -40736,7 +41052,7 @@
       "status": "active",
       "notes": "Consciousness-fragments are a new form of wealth post-Ascension, replacing gold. They are both commodity and living entity, suggesting a disturbing blending of objectification and consciousness. Kressa discovers that fragments whisper and ask questions that 'get under her scales.'",
       "first_date": "2026-05-23",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "memory_roads",
@@ -41699,6 +42015,32 @@
       "notes": "The maps are stolen, suggesting the Dominion guards powerful knowledge about the world's iterations or the ascension.",
       "first_date": "2026-06-16",
       "appearances": 1
+    },
+    {
+      "id": "breath_mask_swan_bone",
+      "name": "breath mask",
+      "tagline": "Carved. Diving. Essential.",
+      "artifact_type": "tool",
+      "origin": "Crafted by Naela from swan-bone.",
+      "powers": "Allows underwater breathing, enabling deep descent to the harbormaster vault three fathoms below the surface.",
+      "last_known_holder": "Kess",
+      "status": "active",
+      "notes": "This tool was critical to Kess's vault descent. Naela is noted as a master bone-carver. Unresolved: how many such masks exist and where Kess obtained this particular one.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "consciousness_fragment_kessa",
+      "name": "consciousness-fragment (Kessa's family)",
+      "tagline": "Fragmented. Sacred. Scattered.",
+      "artifact_type": "consciousness-shard vessel",
+      "origin": "The scattered consciousness of Kessa's mother, brother, and father, fractured during the Remaking.",
+      "powers": "Contains pieces of three family members' consciousness; damaged and fractured into three separate pieces that will not cohere. Kessa can feel her family's presence within it.",
+      "last_known_holder": "Kessa",
+      "status": "active",
+      "notes": "The artifact carries profound emotional weight as a symbol of family separation; its fractured state mirrors the Remaking's destructive effects. If Skarath helps Kessa, reuniting or healing this fragment could be a redemptive act.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -42138,7 +42480,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 36,
+      "appearances": 37,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -42453,6 +42795,27 @@
       "province": "unknown",
       "region": "unknown",
       "district": "unknown"
+    },
+    {
+      "id": "steppe_marches_warlord_realms",
+      "name": "Steppe Marches (warlord realms)",
+      "tagline": "Fragmented. Competitive. Oath-bound.",
+      "description": "The Steppe Marches are governed by multiple competing warlord-councils, each ruling from a fortified hold. Authority is fractious and inheritance is contested.",
+      "continent": "Valdris",
+      "capital": "unknown (distributed across multiple holds)",
+      "function": "Regional governance through distributed councils. Enforcement of oaths and merchant contracts. Control of pastoral lands and caravan routes.",
+      "taxation": "unknown",
+      "military": "warlord armies based at holds",
+      "status": "active",
+      "notes": "Represents post-Remaking political fragmentation. Warlords circle each other like predators, creating succession crises like Kessara's.",
+      "first_date": "2026-06-17",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "realm": "Steppe Marches (warlord realms)",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown"
     }
   ],
   "provinces": [
@@ -42490,6 +42853,24 @@
       "hemisphere": "unknown",
       "continent": "unknown",
       "province": "three provinces",
+      "district": "unknown"
+    },
+    {
+      "id": "lampwick_quarter_administrative",
+      "name": "Lampwick Quarter (administrative subdivision)",
+      "tagline": "Craft-focused. Glass-working. Artisanal.",
+      "description": "A named quarter/ward of Keshtir serving as center of glass-making craft and furnace-song tradition.",
+      "realm": "unknown",
+      "region": "unknown",
+      "function": "Glass-making hub. Post-Remaking economic zone for consciousness-fragment trade and weapon-glass forging.",
+      "status": "active",
+      "notes": "Represents the administrative organization of Keshtir. Named district, may be treated as ward or quarter of the larger city-polity.",
+      "first_date": "2026-06-17",
+      "appearances": 1,
+      "world": "The Known World",
+      "hemisphere": "unknown",
+      "continent": "unknown",
+      "province": "Lampwick Quarter (administrative subdivision)",
       "district": "unknown"
     }
   ],
@@ -42620,7 +43001,7 @@
       "status": "active",
       "notes": "The Dominion attempted to burn it twice; fires burn blue and hot rather than destroying; glass becomes more alive and magical with each burning attempt.",
       "first_date": "2026-05-20",
-      "appearances": 34,
+      "appearances": 35,
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -47565,7 +47946,7 @@
       "significance": "The Remaking is the defining catastrophe of this world. It has eliminated traditional wealth, created refugee crises, made truth and authority contestable, and forced all beings to reevaluate their values and survival strategies.",
       "notes": "Ongoing and expanding in scope. Three different versions of the State's ledger now coexist with no way to determine which is true. This represents a crisis of knowledge, authority, and historical record.",
       "first_date": "2026-05-27",
-      "appearances": 40
+      "appearances": 42
     },
     {
       "id": "the_remaking_aftermath",
@@ -48158,6 +48539,35 @@
       "notes": "The story presents this as imminent and accelerating; Naela and Moriel's teaching may be an attempt to prepare for or mitigate it.",
       "first_date": "2026-06-16",
       "appearances": 1
+    },
+    {
+      "id": "siege_of_grimmholt_battle",
+      "name": "Siege of Grimmholt",
+      "tagline": "Legendary. Oath-forged. Distant.",
+      "event_type": "battle",
+      "scope": "regional",
+      "epicenter_place": "Siege of Grimmholt",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Siege of Grimmholt"
+      ],
+      "affected_regions": [
+        "unknown"
+      ],
+      "affected_realms": [
+        "unknown"
+      ],
+      "radius": "unknown",
+      "participants": [
+        "Kessara's father",
+        "Truthseeker"
+      ],
+      "outcome": "Kessara's father carried Truthseeker from this siege, where the blade never missed a mark. It became tied to his oath-enforcement and eventual death.",
+      "significance": "This battle is the origin-legend of Truthseeker. It contextualizes the blade's power and its tie to oath-keeping, setting up the cascade that leads to Kessara's inheritance crisis.",
+      "notes": "Historical event referenced but not directly narrated. Exact details and date unknown.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "weapons": [
@@ -48341,7 +48751,7 @@
       "status": "active",
       "notes": "Represents post-Ascension weapon-craft where memory and meaning matter more than material strength. The Counter-Archive is commissioning these weapons, trading consciousness-fragments for them.",
       "first_date": "2026-05-30",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "deepkin_captain_jewel",
@@ -48550,6 +48960,45 @@
       "notes": "Central to Mara's profession and the heist; their craftsmanship allows her to work with the Dominion's mechanisms.",
       "first_date": "2026-06-15",
       "appearances": 1
+    },
+    {
+      "id": "glass_weapons",
+      "name": "glass-weapons",
+      "tagline": "Counter-Archive arms. Forged. Alien.",
+      "weapon_type": "sword",
+      "origin": "Forged by Torven Ironfoot at Deep Forges for the Counter-Archive.",
+      "powers": "Unknown; created from meteoric iron sung with old songs, suggesting enhanced properties or magical resonance.",
+      "last_known_holder": "Counter-Archive",
+      "status": "active",
+      "notes": "Torven's ledger documented these weapons as part of his counter-archive operations. Their true nature and power are not detailed in this story. Unresolved: their actual combat effectiveness and magical properties.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "widows_compass",
+      "name": "The Widow's Compass",
+      "tagline": "Cursed. Protective. Refusing.",
+      "weapon_type": "magical artifact / compass",
+      "origin": "Unknown origin; tied to oaths and curses.",
+      "powers": "Turns aside from the vulnerable and cuts instead at the sorcerer, oath, or curse that set a snare. Chooses to break bargains before innocents are harmed.",
+      "last_known_holder": "The Widow (unnamed)",
+      "status": "active",
+      "notes": "This weapon refuses cruelty\u2014it transforms what would be grief into flight, concealment, and cunning rescue. It chooses east (direction/escape) over fulfilling a dark bargain.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "truthseeker",
+      "name": "Truthseeker",
+      "tagline": "Oath-enforcing. Hungry. Cursed.",
+      "weapon_type": "sword",
+      "origin": "Forged and carried from the Siege of Grimmholt, where it never missed a mark.",
+      "powers": "Never misses a mark. Devours the hands of liars. Enforces oaths\u2014if the wielder or user breaks an oath, Truthseeker compels them to execute the debt upon themselves. Appears to be sentient or semi-conscious in its enforcement.",
+      "last_known_holder": "Kessara's father (dead, clutching the blade); now Kessara (potential heir)",
+      "status": "active",
+      "notes": "Central to Story 1. Rust-bright and hungry upon discovery. The blade may have a will or curse independent of its wielder. Inheriting it means inheriting both its oath-binding power and the debt it enforces. Neighboring warlords circle Kessara, coveting either the blade or its political advantage.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "factions": [
@@ -48671,7 +49120,7 @@
       "status": "active",
       "notes": "Appear to operate as an enforcement mechanism for oath-magic in coastal waters; non-violent but inexorable.",
       "first_date": "2026-03-04",
-      "appearances": 21
+      "appearances": 22
     },
     {
       "id": "dragons_and_wyverns",
@@ -48767,7 +49216,7 @@
       "status": "active",
       "notes": "The council discovers that Sylas's binding ritual will trap them in a permanent half-state, forcing them to reconsider the ritual's completion.",
       "first_date": "2026-03-14",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "bone_singers",
@@ -48995,7 +49444,7 @@
       "status": "active",
       "notes": "The Auditor-General commands soldiers to suppress refugee testimony and burn counter-ledgers. Their soldiers were made to forget their orders after encountering Liv's spoken-spell testimony.",
       "first_date": "2026-03-23",
-      "appearances": 5
+      "appearances": 7
     },
     {
       "id": "merchant_caravan",
@@ -49271,7 +49720,7 @@
       "status": "active",
       "notes": "The Dominion is hunting Liv's archive, attempting to suppress the documentation before multiplicities of truth destabilize reality. They represent institutional control of history.",
       "first_date": "2026-04-03",
-      "appearances": 9
+      "appearances": 10
     },
     {
       "id": "night_markets",
@@ -49607,7 +50056,7 @@
       "status": "active",
       "notes": "Corvus works with or against this archive while trying to reconcile contradictory records. Their conflict with the Dominion's official archives may be central to the world's truth crisis.",
       "first_date": "2026-04-23",
-      "appearances": 24
+      "appearances": 25
     },
     {
       "id": "surface_refugees",
@@ -50664,6 +51113,54 @@
       "notes": "The deepkin captains are split into autonomous mirror-selves with conflicting goals, making unified action nearly impossible.",
       "first_date": "2026-06-16",
       "appearances": 1
+    },
+    {
+      "id": "warlord_council",
+      "name": "warlord-council",
+      "tagline": "Regional. Fractious. Acquisitive.",
+      "alignment": "neutral",
+      "goals": "Maintain power in the Steppe Marches; enforce oaths and settle inheritance disputes; expand territory through acquisition of legendary weapons and talented heirs.",
+      "leader": "unknown (councils rarely have single heads)",
+      "status": "active",
+      "notes": "Rules the mountain hold where Kessara's father died. Watches Kessara with hard eyes as neighboring warlords circle. Represents post-Remaking regional governance structure\u2014councils rather than individual lords.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "merchant_guild",
+      "name": "merchant-guild",
+      "tagline": "Trade-bound. Oath-keeping. Vengeful.",
+      "alignment": "lawful",
+      "goals": "Enforce commercial oaths and contracts. Collect on debts owed. Maintain the integrity of commerce post-Remaking.",
+      "leader": "unknown",
+      "status": "active",
+      "notes": "Kessara's father broke an oath to this guild. Truthseeker enforced the debt, suggesting the guild's oaths are magically binding or the blade was specifically tuned to their contracts.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "glass_makers_keshtir",
+      "name": "glass-makers (Keshtir)",
+      "tagline": "Artisanal. Consciousness-burning. Adapting.",
+      "alignment": "neutral",
+      "goals": "Maintain craft traditions; adapt to post-Remaking demand for weapon-glass; preserve knowledge across generations; remain independent despite increased reliance on consciousness-fragments.",
+      "leader": "Mella's mother (implied)",
+      "status": "active",
+      "notes": "Three-generation lineage of artisans. Transitioned from making mirrors for nobility to forging weapon-glass. Represents how craft traditions are reshaped by the Remaking's material scarcity.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "deepkin_embassy",
+      "name": "deepkin (embassy / diplomatic presence)",
+      "tagline": "Diplomatic. Commissioning. Hidden.",
+      "alignment": "neutral",
+      "goals": "Secure reinforced weapon-glass from surface world. Maintain or establish diplomatic channels with Keshtir and surface cities.",
+      "leader": "deepkin captain (commissioner)",
+      "status": "active",
+      "notes": "Suggests ongoing trade or negotiation between depths and surface. Torven's role as intermediary implies deep-dweller familiarity with surface markets.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "lore": [
@@ -50792,7 +51289,7 @@
       "status": "confirmed",
       "notes": "Kept alive in stone and flame by the forges; one old song is specifically a song of protection sung when making weapons for heroes. Korgan sings it to bind Kess to his service.",
       "first_date": "2026-03-03",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "stonecraft_tongue",
@@ -51491,7 +51988,7 @@
       "status": "confirmed",
       "notes": "Xorth existed before the Luminous Ascension, suggesting it was a major cosmic event that fundamentally altered the world.",
       "first_date": "2026-03-21",
-      "appearances": 12
+      "appearances": 13
     },
     {
       "id": "convergence_event",
@@ -53694,6 +54191,29 @@
       "notes": "Pre-human ruins resonate with harmonic frequencies, particularly when the Elder Tongue is spoken. The unnamed child's voice matches their stone-song note for note, suggesting conscious or semi-conscious ruins.",
       "first_date": "2026-06-16",
       "appearances": 1
+    },
+    {
+      "id": "the_remaking_transformation",
+      "name": "The Remaking (as historical event/transformation)",
+      "tagline": "Apocalyptic. Alchemical. Ongoing.",
+      "category": "history",
+      "source": "All three stories; world-spanning aftermath",
+      "status": "confirmed",
+      "description": "An event that transformed reality: gold became weight, beasts gained consciousness and speak old language, consciousness itself fragmented into harvestable pieces, eyes burned out those who saw too much, craft and commerce were rewritten around consciousness-fragments.",
+      "notes": "Central event that frames all three stories. Mechanics unclear. May be tied to ascension cycles or may be a separate cosmic working.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "old_language_fragments",
+      "name": "old language (fragments)",
+      "tagline": "Pre-Remaking. Conscious. Whispered.",
+      "category": "language",
+      "source": "Beasts speaking in the Steppe Marches; pre-human ruins singing in the Bleached Wastes",
+      "status": "confirmed",
+      "notes": "The sheep in the Steppe Marches speak fragments of an old language post-Remaking. Pre-human ruins sing in this tongue. Suggests the language was pre-Remaking and is now resurfacing or becoming audible to mortals.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -53707,7 +54227,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 50
+      "appearances": 51
     },
     {
       "id": "wolf_spirit_beast",
@@ -53833,7 +54353,7 @@
       "status": "thriving",
       "notes": "Swans are hunted or naturally deceased to provide bone for bone-carver crafts like Torval's pipes. The remains carry memory and sentience post-Ascension.",
       "first_date": "2026-04-23",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "wyvern_fragment_hoarder",
@@ -54088,7 +54608,7 @@
       "status": "thriving",
       "notes": "Living coral appears to be a form of deepkin agriculture or biomancy. Captain Nerys's ship is made of reformed wrecks and living coral, suggesting it is a conscious or semi-conscious entity.",
       "first_date": "2026-06-02",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "forest_deer",
@@ -54269,6 +54789,18 @@
       "notes": "Trees in Thornveil Forest grow sideways through impossible geometries. Connected to the magical properties of the forest and the druidic magic of Elarra. May be pre-human or primordial in origin.",
       "first_date": "2026-06-13",
       "appearances": 2
+    },
+    {
+      "id": "beasts_post_remaking",
+      "name": "beasts (post-Remaking)",
+      "tagline": "Aware. Communicative. Transformed.",
+      "type": "creature",
+      "rarity": "common",
+      "habitat": "The Steppe Marches; likely widespread",
+      "status": "thriving",
+      "notes": "All beasts appear to have gained consciousness and communication abilities post-Remaking. They no longer hear human voices the way they once did. Represents fundamental biological transformation.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "magic": [
@@ -55075,6 +55607,18 @@
       "notes": "Elder-tongue is whispered into sleeping roots and ancient things. Its full complexity is powerful but difficult; it can be simplified to heartbeat-rhythm for teaching.",
       "first_date": "2026-06-15",
       "appearances": 1
+    },
+    {
+      "id": "furnace_song_glass_forging",
+      "name": "furnace-song (glass-forging)",
+      "tagline": "Consciousness-consuming. Artisanal. Costly.",
+      "type": "spell",
+      "element": "fire",
+      "difficulty": "adept",
+      "status": "known",
+      "notes": "The practice of singing and working glass while burning consciousness-fragments into it. Creates weapon-glass and other reinforced panes. Each furnace-song costs consciousness-fragments. Mella and Torven work for seven nights to forge impossible glass.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "relics": [
@@ -55172,7 +55716,7 @@
       "status": "active",
       "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
       "first_date": "2026-03-10",
-      "appearances": 32
+      "appearances": 33
     },
     {
       "id": "vethis_sacrificed_consciousness",
@@ -55989,6 +56533,18 @@
       "notes": "Marin stole it to resurrect Sorenna from half-ghost existence. The three fishermen's children in Verdant Strand died of plague as payment. The Tear exemplifies post-Remaking moral reality: all salvation comes at cost to innocents.",
       "first_date": "2026-06-15",
       "appearances": 1
+    },
+    {
+      "id": "truthseeker_relic",
+      "name": "Truthseeker",
+      "tagline": "Oath-enforcing. Hungry. Conscious.",
+      "origin": "Forged for or during the Siege of Grimmholt. Appears to carry a curse or conscious will.",
+      "power": "Never misses a mark. Devours the hands of liars. Compels oath-breakers to execute their own debt. May be semi-sentient.",
+      "curse": "Binding the oath-breaker to fatal self-enforcement. Kessara's father could not escape its judgment. Inheriting it means accepting both its power and its hunger.",
+      "status": "active",
+      "notes": "Blurs the line between weapon and relic. Its consciousness or curse suggests it was forged with deliberate magical intent. Central to Story 1.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "regions": [
@@ -56194,7 +56750,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-03-03",
-      "appearances": 5,
+      "appearances": 6,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -57050,7 +57606,7 @@
       "status": "unknown",
       "notes": "",
       "first_date": "2026-05-23",
-      "appearances": 5,
+      "appearances": 6,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -57381,7 +57937,7 @@
       "use": "Applied to preserved parchment by the forger Aldris to create records that resist magical corruption; used in the hidden scriptoriums to preserve the Empire's ledgers.",
       "notes": "Unresolved: the exact composition and preparation of blood-ink; its full resistance capabilities.",
       "first_date": "2026-03-15",
-      "appearances": 6
+      "appearances": 8
     },
     {
       "id": "fresh_water",
@@ -57561,7 +58117,7 @@
       "use": "Dorian left a purse of gold for the orphanage at Verdant Strand as part of his final reckoning.",
       "notes": "Represents Dorian's wealth and his choice to distribute it rather than hoard it.",
       "first_date": "2026-04-08",
-      "appearances": 13
+      "appearances": 14
     },
     {
       "id": "void_light_substance",
@@ -57741,7 +58297,7 @@
       "use": "Trade in night-markets; feeding to cosmic entities like the Obsidian Tower; accumulation as wealth.",
       "notes": "Consciousness-fragments represent the shift from material to metaphysical wealth; they retain agency and memory of their origin.",
       "first_date": "2026-04-27",
-      "appearances": 43
+      "appearances": 45
     },
     {
       "id": "phantom_truths_substance",
@@ -57909,7 +58465,7 @@
       "use": "Weapon-forging; the Tidecaller's Fang is forged from meteoric iron.",
       "notes": "Meteoric iron appears to hold properties beyond ordinary metal, making it fit for weapons of legendary status.",
       "first_date": "2026-05-24",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "obsidian_sand",
@@ -58449,7 +59005,7 @@
       "use": "Metaphor for worthlessness; literal devastation in the Ashen Wastes and Burned Expanse.",
       "notes": "Ash is both literal (from the wasteland fires) and metaphorical (the destruction of old value systems and wealth).",
       "first_date": "2026-06-06",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "bone_ash",
@@ -58737,7 +59293,7 @@
       "use": "Reliquaries for consciousness-fragments; bone-carving material; magical conduit.",
       "notes": "Used by Kessa's family for consciousness-fragment reliquaries; inscribed with names in elder tongue; capable of being sung into harmonic resonance.",
       "first_date": "2026-06-13",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "pre_ascension_cloth",
@@ -58845,6 +59401,54 @@
       "use": "Possibly used in binding or inscription; mentioned as part of the carving process.",
       "notes": "Naela's fingers are stained with fresh blood from carving-work, suggesting it is an integral part of Elder Tongue inscription.",
       "first_date": "2026-06-16",
+      "appearances": 1
+    },
+    {
+      "id": "consciousness_dust",
+      "name": "consciousness-dust",
+      "tagline": "Shimmering. Fine-grained. Transformative.",
+      "type": "metaphysical material",
+      "rarity": "common",
+      "properties": "Finer particles of shattered consciousness. Visible as shimmer on sheep's wool post-Remaking. May be residue of consciousness-fragmentation.",
+      "use": "Accumulation on living beings, possibly ingredient for other crafts.",
+      "notes": "Visible manifestation of the Remaking's transformation. Suggests consciousness is now dust-like or granular rather than unified.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "glass_post_remaking",
+      "name": "glass (post-Remaking)",
+      "tagline": "Conscious-burning. Reinforced. Alchemical.",
+      "type": "manufactured material",
+      "rarity": "common",
+      "properties": "Glass that has been reinforced by burning consciousness-fragments into its structure. Stronger, harder, and capable of holding reflections or other magical properties.",
+      "use": "Weapon-glass for deepkin embassies, impossible mirrors, diplomatic gifts, craftwork.",
+      "notes": "Post-Remaking innovation. Represents how crafting has shifted to rely on consciousness-fragment burning. Requires specialized knowledge and furnace-singing.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "old_gold_post_remaking",
+      "name": "gold (post-Remaking, transformed)",
+      "tagline": "Heavy. Worthless. Burden.",
+      "type": "mineral",
+      "rarity": "common",
+      "properties": "Pre-Remaking gold has become heavy and burdensome post-Remaking. Kessara's gold pouch became weight. Suggests the Remaking revalued or transformed material worth and perception.",
+      "use": "Possibly ceremonial or historical, no longer practical currency.",
+      "notes": "Symbolic transformation. Gold = old wealth is now worthless and burdensome, replaced by consciousness-fragments as currency.",
+      "first_date": "2026-06-17",
+      "appearances": 1
+    },
+    {
+      "id": "woven_grass",
+      "name": "woven grass",
+      "tagline": "Simple. Resilient. Humble.",
+      "type": "material",
+      "rarity": "common",
+      "properties": "Used by Kessa to craft a pouch for carrying her family's consciousness-fragment.",
+      "use": "Pouch construction; refugee craftsmanship.",
+      "notes": "Represents Kessa's resourcefulness and the humble means of refugees in the post-Remaking world.",
+      "first_date": "2026-06-17",
       "appearances": 1
     }
   ],
@@ -59787,6 +60391,22 @@
       "notes": "This is Mereth's novel proposal. It represents a choice between martyrdom and true diplomacy.",
       "first_date": "2026-06-16",
       "appearances": 1
+    },
+    {
+      "id": "old_songs_into_steel",
+      "name": "old songs into steel",
+      "tagline": "Forging. Singing. Binding.",
+      "ritual_type": "crafting",
+      "performed_by": [
+        "Torven Ironfoot",
+        "Mella"
+      ],
+      "requirements": "Meteoric iron, the old songs (language/technique unknown), skilled blade-tender.",
+      "effect": "Meteoric iron is folded and infused with ancient songs, producing blades of unknown properties (possibly enhanced strength, durability, or magical resonance).",
+      "cost": "Requires master knowledge and years of apprenticeship to perform.",
+      "notes": "Torven trained Mella in this craft for seven years. The resulting glass-weapons were forged for the Counter-Archive. Unresolved: the full scope of properties these singing blades possess.",
+      "first_date": "2026-06-17",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -59904,7 +60524,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 74
+      "appearances": 75
     },
     {
       "id": "the_hegemony",
@@ -59970,7 +60590,7 @@
       "description": "Central authority of surface kingdoms seeking to erase refugee testimony and suppress unlicensed knowledge-brokers. Operates through auditors and official channels.",
       "notes": "Mara works to investigate information-brokers on their behalf; her choice determines whether refugee testimony is institutionalized or suppressed.",
       "first_date": "2026-03-30",
-      "appearances": 22
+      "appearances": 23
     },
     {
       "id": "the_hegemon",
