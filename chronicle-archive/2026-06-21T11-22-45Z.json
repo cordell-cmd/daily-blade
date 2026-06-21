@@ -1,0 +1,1994 @@
+{
+  "date": "2026-06-21",
+  "world_date": "27 Longnight 474 AE",
+  "issue_number": 107,
+  "window_start": "2026-06-06",
+  "world_window_start": "30 Goldwane 474 AE",
+  "window_end": "2026-06-21",
+  "world_window_end": "27 Longnight 474 AE",
+  "generated_at": "2026-06-21T11:22:45Z",
+  "model": "fallback-v1",
+  "title": "Chronicle of the Ascension (as prophecy or inevitability)",
+  "dek": "A stitched overview of the strongest pressures shaping Edhra and Valdris.",
+  "chronicle": "By 27 Longnight 474 AE, the world of Edhra is being pulled most strongly by the Ascension (as prophecy or inevitability), The Remaking (as historical event/transformation), and Luminous Ascension (incomplete rewriting at the Wailing Scar). These arcs are no longer isolated disturbances; they are the pressures around which the current age is organizing itself.\n\nThe figures and forces surfacing most often in this span include The Remaking, Bone-Singers (Fragment-Consolidation Collective), bone (for Carved Tongue carving), Fragments. Their repeated intersections suggest that the world is cohering around recurring centers of consequence rather than disconnected adventures.\n\nRecent turning points cluster around tales such as The Merchant's Threshold, The Glasswright's Gambit, The Glassblower's Reckoning, The Reef-Keeper's Betrayal. Taken together, they show a setting where personal decisions, factional maneuvers, and larger catastrophes are feeding one another instead of unfolding in separate lanes.",
+  "current_state": [
+    "the Ascension (as prophecy or inevitability) is currently at climax stage.",
+    "The Remaking (as historical event/transformation) is currently at climax stage.",
+    "Luminous Ascension (incomplete rewriting at the Wailing Scar) is currently at climax stage.",
+    "Tenth Ascension is currently at climax stage."
+  ],
+  "ongoing_threads": [
+    "A full Haiku chronicle synthesis has not yet been produced."
+  ],
+  "pipeline": {
+    "scoring_weights": [
+      {
+        "signal": "Recent appearances",
+        "weight": "+12 each",
+        "description": "Entities repeating across the current chronicle window matter most."
+      },
+      {
+        "signal": "Recent issue spread",
+        "weight": "+6 each issue",
+        "description": "Recurring across multiple issues outranks a one-day spike."
+      },
+      {
+        "signal": "Lifetime appearances",
+        "weight": "+3 each (capped)",
+        "description": "Long-running continuity raises baseline importance."
+      },
+      {
+        "signal": "Co-appearance network",
+        "weight": "+2 degree, +1 edge weight",
+        "description": "Entities that intersect many others become chronicle-worthy hubs."
+      },
+      {
+        "signal": "World-event overlap",
+        "weight": "+5 each overlap",
+        "description": "Direct ties to major arcs push entities upward."
+      },
+      {
+        "signal": "Category baseline",
+        "weight": "3-12",
+        "description": "Events, characters, and places get slightly higher starting weight because they anchor narrative continuity."
+      }
+    ],
+    "top_entities": [
+      {
+        "name": "The Remaking",
+        "type": "events",
+        "label": "Events",
+        "score": 1279,
+        "recent_appearances": 79,
+        "appearance_total": 121,
+        "network_degree": 611,
+        "connection_weight": 2883,
+        "world_event_overlap": 27,
+        "last_seen": "2026-06-21",
+        "why": [
+          "79 recent tale appearance(s)",
+          "overlaps 27 major arc beat(s)",
+          "connected to 611 other ranked entities",
+          "121 total recorded appearance(s)",
+          "overlaps 25 major arc beat(s)",
+          "77 recent tale appearance(s)",
+          "overlaps 23 major arc beat(s)",
+          "connected to 601 other ranked entities",
+          "85 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "Bone-Singers (Fragment-Consolidation Collective)",
+        "type": "characters",
+        "label": "Characters",
+        "score": 1219,
+        "recent_appearances": 76,
+        "appearance_total": 299,
+        "network_degree": 599,
+        "connection_weight": 3003,
+        "world_event_overlap": 20,
+        "last_seen": "2026-06-21",
+        "why": [
+          "76 recent tale appearance(s)",
+          "overlaps 20 major arc beat(s)",
+          "connected to 599 other ranked entities",
+          "298 total recorded appearance(s)",
+          "299 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "bone (for Carved Tongue carving)",
+        "type": "substances",
+        "label": "Substances",
+        "score": 1100,
+        "recent_appearances": 68,
+        "appearance_total": 109,
+        "network_degree": 602,
+        "connection_weight": 2559,
+        "world_event_overlap": 17,
+        "last_seen": "2026-06-21",
+        "why": [
+          "68 recent tale appearance(s)",
+          "overlaps 17 major arc beat(s)",
+          "connected to 602 other ranked entities",
+          "109 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "Fragments",
+        "type": "substances",
+        "label": "Substances",
+        "score": 1078,
+        "recent_appearances": 65,
+        "appearance_total": 73,
+        "network_degree": 559,
+        "connection_weight": 2474,
+        "world_event_overlap": 21,
+        "last_seen": "2026-06-21",
+        "why": [
+          "65 recent tale appearance(s)",
+          "overlaps 21 major arc beat(s)",
+          "connected to 559 other ranked entities",
+          "73 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "Instead",
+        "type": "characters",
+        "label": "Characters",
+        "score": 906,
+        "recent_appearances": 52,
+        "appearance_total": 128,
+        "network_degree": 471,
+        "connection_weight": 1645,
+        "world_event_overlap": 15,
+        "last_seen": "2026-06-21",
+        "why": [
+          "52 recent tale appearance(s)",
+          "overlaps 15 major arc beat(s)",
+          "connected to 471 other ranked entities",
+          "128 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "Consciousness-Fragments",
+        "type": "characters",
+        "label": "Characters",
+        "score": 863,
+        "recent_appearances": 49,
+        "appearance_total": 113,
+        "network_degree": 478,
+        "connection_weight": 1955,
+        "world_event_overlap": 16,
+        "last_seen": "2026-06-21",
+        "why": [
+          "49 recent tale appearance(s)",
+          "overlaps 16 major arc beat(s)",
+          "connected to 478 other ranked entities",
+          "113 total recorded appearance(s)",
+          "65 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "Ascension",
+        "type": "events",
+        "label": "Events",
+        "score": 862,
+        "recent_appearances": 45,
+        "appearance_total": 218,
+        "network_degree": 486,
+        "connection_weight": 1722,
+        "world_event_overlap": 24,
+        "last_seen": "2026-06-21",
+        "why": [
+          "45 recent tale appearance(s)",
+          "overlaps 24 major arc beat(s)",
+          "connected to 486 other ranked entities",
+          "218 total recorded appearance(s)",
+          "overlaps 22 major arc beat(s)",
+          "98 total recorded appearance(s)",
+          "8 recent tale appearance(s)",
+          "overlaps 2 major arc beat(s)",
+          "connected to 156 other ranked entities",
+          "9 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "gold (post-Remaking, transformed)",
+        "type": "substances",
+        "label": "Substances",
+        "score": 838,
+        "recent_appearances": 47,
+        "appearance_total": 153,
+        "network_degree": 452,
+        "connection_weight": 1606,
+        "world_event_overlap": 15,
+        "last_seen": "2026-06-21",
+        "why": [
+          "47 recent tale appearance(s)",
+          "overlaps 15 major arc beat(s)",
+          "connected to 452 other ranked entities",
+          "153 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "ledger",
+        "type": "artifacts",
+        "label": "Artifacts",
+        "score": 716,
+        "recent_appearances": 40,
+        "appearance_total": 40,
+        "network_degree": 445,
+        "connection_weight": 1560,
+        "world_event_overlap": 7,
+        "last_seen": "2026-06-21",
+        "why": [
+          "40 recent tale appearance(s)",
+          "overlaps 7 major arc beat(s)",
+          "connected to 445 other ranked entities"
+        ]
+      },
+      {
+        "name": "deepkin",
+        "type": "factions",
+        "label": "Factions",
+        "score": 687,
+        "recent_appearances": 37,
+        "appearance_total": 164,
+        "network_degree": 428,
+        "connection_weight": 1448,
+        "world_event_overlap": 9,
+        "last_seen": "2026-06-21",
+        "why": [
+          "37 recent tale appearance(s)",
+          "overlaps 9 major arc beat(s)",
+          "connected to 428 other ranked entities",
+          "164 total recorded appearance(s)",
+          "160 total recorded appearance(s)",
+          "6 recent tale appearance(s)",
+          "overlaps 3 major arc beat(s)",
+          "connected to 123 other ranked entities"
+        ]
+      },
+      {
+        "name": "The Auditors",
+        "type": "characters",
+        "label": "Characters",
+        "score": 672,
+        "recent_appearances": 36,
+        "appearance_total": 105,
+        "network_degree": 452,
+        "connection_weight": 1546,
+        "world_event_overlap": 9,
+        "last_seen": "2026-06-21",
+        "why": [
+          "36 recent tale appearance(s)",
+          "overlaps 9 major arc beat(s)",
+          "connected to 452 other ranked entities",
+          "105 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "Displaced persons (various unnamed)",
+        "type": "characters",
+        "label": "Characters",
+        "score": 619,
+        "recent_appearances": 33,
+        "appearance_total": 183,
+        "network_degree": 407,
+        "connection_weight": 1212,
+        "world_event_overlap": 6,
+        "last_seen": "2026-06-19",
+        "why": [
+          "33 recent tale appearance(s)",
+          "overlaps 6 major arc beat(s)",
+          "connected to 407 other ranked entities",
+          "182 total recorded appearance(s)",
+          "183 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "wyvern (Fragment-Hoarder variant)",
+        "type": "characters",
+        "label": "Characters",
+        "score": 611,
+        "recent_appearances": 30,
+        "appearance_total": 115,
+        "network_degree": 299,
+        "connection_weight": 1001,
+        "world_event_overlap": 10,
+        "last_seen": "2026-06-21",
+        "why": [
+          "30 recent tale appearance(s)",
+          "overlaps 10 major arc beat(s)",
+          "connected to 299 other ranked entities",
+          "115 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "Tear",
+        "type": "artifacts",
+        "label": "Artifacts",
+        "score": 589,
+        "recent_appearances": 30,
+        "appearance_total": 66,
+        "network_degree": 343,
+        "connection_weight": 1263,
+        "world_event_overlap": 8,
+        "last_seen": "2026-06-21",
+        "why": [
+          "30 recent tale appearance(s)",
+          "overlaps 8 major arc beat(s)",
+          "connected to 343 other ranked entities",
+          "66 total recorded appearance(s)",
+          "29 recent tale appearance(s)",
+          "overlaps 7 major arc beat(s)",
+          "connected to 324 other ranked entities",
+          "33 total recorded appearance(s)",
+          "18 recent tale appearance(s)",
+          "connected to 266 other ranked entities"
+        ]
+      },
+      {
+        "name": "Dominion",
+        "type": "deities_and_entities",
+        "label": "Entities",
+        "score": 586,
+        "recent_appearances": 30,
+        "appearance_total": 30,
+        "network_degree": 382,
+        "connection_weight": 1228,
+        "world_event_overlap": 14,
+        "last_seen": "2026-06-21",
+        "why": [
+          "30 recent tale appearance(s)",
+          "overlaps 14 major arc beat(s)",
+          "connected to 382 other ranked entities",
+          "19 recent tale appearance(s)",
+          "overlaps 9 major arc beat(s)",
+          "connected to 309 other ranked entities"
+        ]
+      },
+      {
+        "name": "archive",
+        "type": "places",
+        "label": "Places",
+        "score": 555,
+        "recent_appearances": 26,
+        "appearance_total": 152,
+        "network_degree": 367,
+        "connection_weight": 1084,
+        "world_event_overlap": 11,
+        "last_seen": "2026-06-21",
+        "why": [
+          "26 recent tale appearance(s)",
+          "overlaps 11 major arc beat(s)",
+          "connected to 367 other ranked entities",
+          "152 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "Singing",
+        "type": "substances",
+        "label": "Substances",
+        "score": 548,
+        "recent_appearances": 28,
+        "appearance_total": 173,
+        "network_degree": 409,
+        "connection_weight": 968,
+        "world_event_overlap": 5,
+        "last_seen": "2026-06-21",
+        "why": [
+          "28 recent tale appearance(s)",
+          "overlaps 5 major arc beat(s)",
+          "connected to 409 other ranked entities",
+          "173 total recorded appearance(s)"
+        ]
+      },
+      {
+        "name": "Vex's vault",
+        "type": "characters",
+        "label": "Characters",
+        "score": 538,
+        "recent_appearances": 26,
+        "appearance_total": 69,
+        "network_degree": 385,
+        "connection_weight": 991,
+        "world_event_overlap": 5,
+        "last_seen": "2026-06-21",
+        "why": [
+          "26 recent tale appearance(s)",
+          "overlaps 5 major arc beat(s)",
+          "connected to 385 other ranked entities",
+          "69 total recorded appearance(s)"
+        ]
+      }
+    ],
+    "top_entities_by_type": {
+      "Artifacts": [
+        {
+          "name": "Consciousness-Fragments (in Swan-Bone Reliquaries)",
+          "type": "artifacts",
+          "score": 857,
+          "why": [
+            "49 recent tale appearance(s)",
+            "overlaps 16 major arc beat(s)",
+            "connected to 478 other ranked entities",
+            "113 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "ledger",
+          "type": "artifacts",
+          "score": 716,
+          "why": [
+            "40 recent tale appearance(s)",
+            "overlaps 7 major arc beat(s)",
+            "connected to 445 other ranked entities"
+          ]
+        },
+        {
+          "name": "Tear (of the Drowned God)",
+          "type": "artifacts",
+          "score": 589,
+          "why": [
+            "30 recent tale appearance(s)",
+            "overlaps 8 major arc beat(s)",
+            "connected to 343 other ranked entities",
+            "66 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "boundary-anchor",
+          "type": "artifacts",
+          "score": 525,
+          "why": [
+            "26 recent tale appearance(s)",
+            "overlaps 6 major arc beat(s)",
+            "connected to 307 other ranked entities",
+            "59 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Characters": [
+        {
+          "name": "The Remaking (as historical event/transformation)",
+          "type": "characters",
+          "score": 1268,
+          "why": [
+            "79 recent tale appearance(s)",
+            "overlaps 25 major arc beat(s)",
+            "connected to 611 other ranked entities",
+            "121 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "characters",
+          "score": 1219,
+          "why": [
+            "76 recent tale appearance(s)",
+            "overlaps 20 major arc beat(s)",
+            "connected to 599 other ranked entities",
+            "298 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Instead",
+          "type": "characters",
+          "score": 906,
+          "why": [
+            "52 recent tale appearance(s)",
+            "overlaps 15 major arc beat(s)",
+            "connected to 471 other ranked entities",
+            "128 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Consciousness-Fragments (in Swan-Bone Reliquaries)",
+          "type": "characters",
+          "score": 863,
+          "why": [
+            "49 recent tale appearance(s)",
+            "overlaps 16 major arc beat(s)",
+            "connected to 478 other ranked entities",
+            "113 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Districts": [
+        {
+          "name": "Quarter",
+          "type": "districts",
+          "score": 471,
+          "why": [
+            "22 recent tale appearance(s)",
+            "overlaps 5 major arc beat(s)",
+            "connected to 244 other ranked entities",
+            "48 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Lampwick Quarter (administrative subdivision)",
+          "type": "districts",
+          "score": 401,
+          "why": [
+            "18 recent tale appearance(s)",
+            "overlaps 3 major arc beat(s)",
+            "connected to 191 other ranked entities",
+            "40 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Shadow-Markets (as faction)",
+          "type": "districts",
+          "score": 204,
+          "why": [
+            "5 recent tale appearance(s)",
+            "overlaps 2 major arc beat(s)",
+            "connected to 127 other ranked entities",
+            "38 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "shadow-market",
+          "type": "districts",
+          "score": 150,
+          "why": [
+            "3 recent tale appearance(s)",
+            "connected to 92 other ranked entities",
+            "17 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Entities": [
+        {
+          "name": "The Remaking",
+          "type": "deities_and_entities",
+          "score": 1231,
+          "why": [
+            "77 recent tale appearance(s)",
+            "overlaps 23 major arc beat(s)",
+            "connected to 601 other ranked entities",
+            "85 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Consciousness-Fragments",
+          "type": "deities_and_entities",
+          "score": 860,
+          "why": [
+            "49 recent tale appearance(s)",
+            "overlaps 16 major arc beat(s)",
+            "connected to 478 other ranked entities",
+            "65 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Ascension",
+          "type": "deities_and_entities",
+          "score": 848,
+          "why": [
+            "45 recent tale appearance(s)",
+            "overlaps 22 major arc beat(s)",
+            "connected to 486 other ranked entities",
+            "98 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "deepkin",
+          "type": "deities_and_entities",
+          "score": 687,
+          "why": [
+            "37 recent tale appearance(s)",
+            "overlaps 9 major arc beat(s)",
+            "connected to 428 other ranked entities",
+            "160 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Events": [
+        {
+          "name": "The Remaking (as historical event/transformation)",
+          "type": "events",
+          "score": 1279,
+          "why": [
+            "79 recent tale appearance(s)",
+            "overlaps 27 major arc beat(s)",
+            "connected to 611 other ranked entities",
+            "121 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "the Ascension (as prophecy or inevitability)",
+          "type": "events",
+          "score": 862,
+          "why": [
+            "45 recent tale appearance(s)",
+            "overlaps 24 major arc beat(s)",
+            "connected to 486 other ranked entities",
+            "218 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Luminous Ascension (incomplete rewriting at the Wailing Scar)",
+          "type": "events",
+          "score": 468,
+          "why": [
+            "19 recent tale appearance(s)",
+            "overlaps 14 major arc beat(s)",
+            "connected to 316 other ranked entities",
+            "250 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Tenth Ascension",
+          "type": "events",
+          "score": 260,
+          "why": [
+            "6 recent tale appearance(s)",
+            "overlaps 8 major arc beat(s)",
+            "connected to 134 other ranked entities",
+            "15 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Factions": [
+        {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "factions",
+          "score": 1216,
+          "why": [
+            "76 recent tale appearance(s)",
+            "overlaps 20 major arc beat(s)",
+            "connected to 599 other ranked entities",
+            "299 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "deepkin (embassy / diplomatic presence)",
+          "type": "factions",
+          "score": 687,
+          "why": [
+            "37 recent tale appearance(s)",
+            "overlaps 9 major arc beat(s)",
+            "connected to 428 other ranked entities",
+            "164 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "The Auditors",
+          "type": "factions",
+          "score": 669,
+          "why": [
+            "36 recent tale appearance(s)",
+            "overlaps 9 major arc beat(s)",
+            "connected to 452 other ranked entities",
+            "105 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Displaced persons (various unnamed)",
+          "type": "factions",
+          "score": 616,
+          "why": [
+            "33 recent tale appearance(s)",
+            "overlaps 6 major arc beat(s)",
+            "connected to 407 other ranked entities",
+            "183 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Flora & Fauna": [
+        {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "flora_fauna",
+          "score": 1213,
+          "why": [
+            "76 recent tale appearance(s)",
+            "overlaps 20 major arc beat(s)",
+            "connected to 599 other ranked entities",
+            "299 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Consciousness-Fragments (in Swan-Bone Reliquaries)",
+          "type": "flora_fauna",
+          "score": 857,
+          "why": [
+            "49 recent tale appearance(s)",
+            "overlaps 16 major arc beat(s)",
+            "connected to 478 other ranked entities",
+            "113 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "deepkin (embassy / diplomatic presence)",
+          "type": "flora_fauna",
+          "score": 684,
+          "why": [
+            "37 recent tale appearance(s)",
+            "overlaps 9 major arc beat(s)",
+            "connected to 428 other ranked entities",
+            "164 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Displaced persons (various unnamed)",
+          "type": "flora_fauna",
+          "score": 613,
+          "why": [
+            "33 recent tale appearance(s)",
+            "overlaps 6 major arc beat(s)",
+            "connected to 407 other ranked entities",
+            "183 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Magic": [
+        {
+          "name": "Elder Tongue (as Inscribed Substance)",
+          "type": "magic",
+          "score": 497,
+          "why": [
+            "25 recent tale appearance(s)",
+            "overlaps 3 major arc beat(s)",
+            "connected to 314 other ranked entities",
+            "79 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "the old songs",
+          "type": "magic",
+          "score": 351,
+          "why": [
+            "14 recent tale appearance(s)",
+            "overlaps 4 major arc beat(s)",
+            "connected to 280 other ranked entities",
+            "25 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Ledger-Magic (The Dominion's System)",
+          "type": "magic",
+          "score": 311,
+          "why": [
+            "12 recent tale appearance(s)",
+            "overlaps 3 major arc beat(s)",
+            "connected to 222 other ranked entities",
+            "27 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "furnace-song (glass-forging)",
+          "type": "magic",
+          "score": 193,
+          "why": [
+            "6 recent tale appearance(s)",
+            "connected to 115 other ranked entities"
+          ]
+        }
+      ],
+      "Places": [
+        {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "places",
+          "score": 1218,
+          "why": [
+            "76 recent tale appearance(s)",
+            "overlaps 20 major arc beat(s)",
+            "connected to 599 other ranked entities",
+            "298 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "archive",
+          "type": "places",
+          "score": 555,
+          "why": [
+            "26 recent tale appearance(s)",
+            "overlaps 11 major arc beat(s)",
+            "connected to 367 other ranked entities",
+            "152 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Vex's vault",
+          "type": "places",
+          "score": 537,
+          "why": [
+            "26 recent tale appearance(s)",
+            "overlaps 5 major arc beat(s)",
+            "connected to 385 other ranked entities",
+            "69 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "abyss",
+          "type": "places",
+          "score": 499,
+          "why": [
+            "23 recent tale appearance(s)",
+            "overlaps 7 major arc beat(s)",
+            "connected to 281 other ranked entities",
+            "63 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Polities": [
+        {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "polities",
+          "score": 1216,
+          "why": [
+            "76 recent tale appearance(s)",
+            "overlaps 20 major arc beat(s)",
+            "connected to 599 other ranked entities",
+            "298 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "The Counter-Archive",
+          "type": "polities",
+          "score": 477,
+          "why": [
+            "21 recent tale appearance(s)",
+            "overlaps 9 major arc beat(s)",
+            "connected to 301 other ranked entities",
+            "120 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "The State (of the Ashen Reach)",
+          "type": "polities",
+          "score": 232,
+          "why": [
+            "7 recent tale appearance(s)",
+            "overlaps 2 major arc beat(s)",
+            "connected to 132 other ranked entities",
+            "16 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "surface kingdoms",
+          "type": "polities",
+          "score": 207,
+          "why": [
+            "5 recent tale appearance(s)",
+            "overlaps 3 major arc beat(s)",
+            "connected to 121 other ranked entities",
+            "34 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Provinces": [
+        {
+          "name": "Lampwick Quarter (administrative subdivision)",
+          "type": "provinces",
+          "score": 402,
+          "why": [
+            "18 recent tale appearance(s)",
+            "overlaps 3 major arc beat(s)",
+            "connected to 191 other ranked entities",
+            "40 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Three Provinces (Hegemony)",
+          "type": "provinces",
+          "score": 125,
+          "why": [
+            "1 recent tale appearance(s)",
+            "overlaps 1 major arc beat(s)",
+            "connected to 56 other ranked entities",
+            "11 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "western provinces",
+          "type": "provinces",
+          "score": 14,
+          "why": [
+            "3 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Realms": [
+        {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "realms",
+          "score": 1214,
+          "why": [
+            "76 recent tale appearance(s)",
+            "overlaps 20 major arc beat(s)",
+            "connected to 599 other ranked entities",
+            "298 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "The Counter-Archive",
+          "type": "realms",
+          "score": 475,
+          "why": [
+            "21 recent tale appearance(s)",
+            "overlaps 9 major arc beat(s)",
+            "connected to 301 other ranked entities",
+            "120 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Steppe Marches (warlord realms)",
+          "type": "realms",
+          "score": 235,
+          "why": [
+            "7 recent tale appearance(s)",
+            "overlaps 1 major arc beat(s)",
+            "connected to 94 other ranked entities",
+            "18 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "surface kingdoms",
+          "type": "realms",
+          "score": 205,
+          "why": [
+            "5 recent tale appearance(s)",
+            "overlaps 3 major arc beat(s)",
+            "connected to 121 other ranked entities",
+            "34 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Regions": [
+        {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "regions",
+          "score": 1214,
+          "why": [
+            "76 recent tale appearance(s)",
+            "overlaps 20 major arc beat(s)",
+            "connected to 599 other ranked entities",
+            "298 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Ironspine",
+          "type": "regions",
+          "score": 429,
+          "why": [
+            "18 recent tale appearance(s)",
+            "overlaps 7 major arc beat(s)",
+            "connected to 196 other ranked entities",
+            "28 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "The Sapphire Sea",
+          "type": "regions",
+          "score": 395,
+          "why": [
+            "17 recent tale appearance(s)",
+            "overlaps 4 major arc beat(s)",
+            "connected to 290 other ranked entities",
+            "44 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "The Sapphire Deep",
+          "type": "regions",
+          "score": 355,
+          "why": [
+            "14 recent tale appearance(s)",
+            "overlaps 3 major arc beat(s)",
+            "connected to 210 other ranked entities",
+            "29 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Relics": [
+        {
+          "name": "The Remaking (as historical event/transformation)",
+          "type": "relics",
+          "score": 1261,
+          "why": [
+            "79 recent tale appearance(s)",
+            "overlaps 25 major arc beat(s)",
+            "connected to 611 other ranked entities",
+            "121 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "the Ascension (as prophecy or inevitability)",
+          "type": "relics",
+          "score": 844,
+          "why": [
+            "45 recent tale appearance(s)",
+            "overlaps 22 major arc beat(s)",
+            "connected to 486 other ranked entities",
+            "218 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Tear (of the Drowned God)",
+          "type": "relics",
+          "score": 588,
+          "why": [
+            "30 recent tale appearance(s)",
+            "overlaps 8 major arc beat(s)",
+            "connected to 343 other ranked entities",
+            "66 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "the Tear of the Drowned God",
+          "type": "relics",
+          "score": 500,
+          "why": [
+            "24 recent tale appearance(s)",
+            "overlaps 6 major arc beat(s)",
+            "connected to 287 other ranked entities",
+            "67 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Rituals": [
+        {
+          "name": "Luminous Ascension (incomplete rewriting at the Wailing Scar)",
+          "type": "rituals",
+          "score": 451,
+          "why": [
+            "19 recent tale appearance(s)",
+            "overlaps 12 major arc beat(s)",
+            "connected to 316 other ranked entities",
+            "251 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "the old songs",
+          "type": "rituals",
+          "score": 352,
+          "why": [
+            "14 recent tale appearance(s)",
+            "overlaps 4 major arc beat(s)",
+            "connected to 280 other ranked entities",
+            "25 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Ledger-Magic (The Dominion's System)",
+          "type": "rituals",
+          "score": 312,
+          "why": [
+            "12 recent tale appearance(s)",
+            "overlaps 3 major arc beat(s)",
+            "connected to 222 other ranked entities",
+            "27 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "furnace-song (glass-forging)",
+          "type": "rituals",
+          "score": 194,
+          "why": [
+            "6 recent tale appearance(s)",
+            "connected to 115 other ranked entities"
+          ]
+        }
+      ],
+      "Substances": [
+        {
+          "name": "bone (for Carved Tongue carving)",
+          "type": "substances",
+          "score": 1100,
+          "why": [
+            "68 recent tale appearance(s)",
+            "overlaps 17 major arc beat(s)",
+            "connected to 602 other ranked entities",
+            "109 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Fragments",
+          "type": "substances",
+          "score": 1078,
+          "why": [
+            "65 recent tale appearance(s)",
+            "overlaps 21 major arc beat(s)",
+            "connected to 559 other ranked entities",
+            "73 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Consciousness-Fragments (in Swan-Bone Reliquaries)",
+          "type": "substances",
+          "score": 855,
+          "why": [
+            "49 recent tale appearance(s)",
+            "overlaps 16 major arc beat(s)",
+            "connected to 478 other ranked entities",
+            "113 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "gold (post-Remaking, transformed)",
+          "type": "substances",
+          "score": 838,
+          "why": [
+            "47 recent tale appearance(s)",
+            "overlaps 15 major arc beat(s)",
+            "connected to 452 other ranked entities",
+            "153 total recorded appearance(s)"
+          ]
+        }
+      ],
+      "Weapons": [
+        {
+          "name": "weapon-glass",
+          "type": "weapons",
+          "score": 282,
+          "why": [
+            "9 recent tale appearance(s)",
+            "overlaps 4 major arc beat(s)",
+            "connected to 152 other ranked entities",
+            "13 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "chart (stolen from Dominion)",
+          "type": "weapons",
+          "score": 162,
+          "why": [
+            "4 recent tale appearance(s)",
+            "overlaps 1 major arc beat(s)",
+            "connected to 118 other ranked entities",
+            "7 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "Bone-Flute (of Mesek)",
+          "type": "weapons",
+          "score": 150,
+          "why": [
+            "3 recent tale appearance(s)",
+            "overlaps 1 major arc beat(s)",
+            "connected to 94 other ranked entities",
+            "7 total recorded appearance(s)"
+          ]
+        },
+        {
+          "name": "The Widow's Compass",
+          "type": "weapons",
+          "score": 126,
+          "why": [
+            "2 recent tale appearance(s)",
+            "connected to 48 other ranked entities",
+            "8 total recorded appearance(s)"
+          ]
+        }
+      ]
+    },
+    "top_world_events": [
+      {
+        "name": "the Ascension (as prophecy or inevitability)",
+        "stage": "climax",
+        "setting_state": "active_arc",
+        "intensity": 5,
+        "recent_issues": 13,
+        "score": 369
+      },
+      {
+        "name": "The Remaking (as historical event/transformation)",
+        "stage": "climax",
+        "setting_state": "active_arc",
+        "intensity": 5,
+        "recent_issues": 13,
+        "score": 359
+      },
+      {
+        "name": "Luminous Ascension (incomplete rewriting at the Wailing Scar)",
+        "stage": "climax",
+        "setting_state": "setting_shift",
+        "intensity": 5,
+        "recent_issues": 9,
+        "score": 347
+      },
+      {
+        "name": "Tenth Ascension",
+        "stage": "climax",
+        "setting_state": "active_arc",
+        "intensity": 5,
+        "recent_issues": 5,
+        "score": 238
+      },
+      {
+        "name": "the Remaking's aftermath",
+        "stage": "climax",
+        "setting_state": "setting_shift",
+        "intensity": 5,
+        "recent_issues": 4,
+        "score": 233
+      },
+      {
+        "name": "Tenth Iteration",
+        "stage": "crisis",
+        "setting_state": "active_arc",
+        "intensity": 4,
+        "recent_issues": 2,
+        "score": 171
+      },
+      {
+        "name": "Before the Ascension",
+        "stage": "simmering",
+        "setting_state": "active_arc",
+        "intensity": 2,
+        "recent_issues": 1,
+        "score": 95
+      },
+      {
+        "name": "The Star-Rise",
+        "stage": "seed",
+        "setting_state": "active_arc",
+        "intensity": 1,
+        "recent_issues": 0,
+        "score": 55
+      }
+    ],
+    "top_connections": [
+      {
+        "source": {
+          "name": "The Remaking (as historical event/transformation)",
+          "type": "characters"
+        },
+        "target": {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "factions"
+        },
+        "weight": 49,
+        "stories": [
+          "The Shardkeeper's Choice",
+          "The Locksmith's Mirror",
+          "The Merchant's Impossible Question",
+          "The Bone-Singer's Inheritance"
+        ]
+      },
+      {
+        "source": {
+          "name": "Consciousness-Fragments (in Swan-Bone Reliquaries)",
+          "type": "artifacts"
+        },
+        "target": {
+          "name": "Fragments",
+          "type": "substances"
+        },
+        "weight": 49,
+        "stories": [
+          "The Glassblower's Daughter",
+          "The Bone-Singer's Inheritance",
+          "The Wyvern's Debt-Keeper",
+          "The Fragment-Maker's Gambit"
+        ]
+      },
+      {
+        "source": {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "characters"
+        },
+        "target": {
+          "name": "bone (for Carved Tongue carving)",
+          "type": "substances"
+        },
+        "weight": 45,
+        "stories": [
+          "The Shardkeeper's Choice",
+          "The Locksmith's Mirror",
+          "The Bone-Singer's Inheritance",
+          "The Bone-Singer's Unraveling"
+        ]
+      },
+      {
+        "source": {
+          "name": "The Remaking (as historical event/transformation)",
+          "type": "characters"
+        },
+        "target": {
+          "name": "Fragments",
+          "type": "substances"
+        },
+        "weight": 42,
+        "stories": [
+          "The Shardkeeper's Choice",
+          "The Glassblower's Daughter",
+          "The Shepherd's Blade",
+          "The Bone-Singer's Inheritance"
+        ]
+      },
+      {
+        "source": {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "characters"
+        },
+        "target": {
+          "name": "Fragments",
+          "type": "substances"
+        },
+        "weight": 39,
+        "stories": [
+          "The Merchant's Son and the First Kindness",
+          "The Shardkeeper's Choice",
+          "The Bone-Singer's Inheritance",
+          "The Wyvern's Debt-Keeper"
+        ]
+      },
+      {
+        "source": {
+          "name": "The Remaking (as historical event/transformation)",
+          "type": "characters"
+        },
+        "target": {
+          "name": "gold (post-Remaking, transformed)",
+          "type": "substances"
+        },
+        "weight": 37,
+        "stories": [
+          "The Ironfoot's Last Commission",
+          "The Shardkeeper's Choice",
+          "The Silk Merchant's Third Wife",
+          "The Shepherd's Blade"
+        ]
+      },
+      {
+        "source": {
+          "name": "The Remaking (as historical event/transformation)",
+          "type": "characters"
+        },
+        "target": {
+          "name": "bone (for Carved Tongue carving)",
+          "type": "substances"
+        },
+        "weight": 36,
+        "stories": [
+          "The Ironfoot's Last Commission",
+          "The Shardkeeper's Choice",
+          "The Silk Merchant's Third Wife",
+          "The Locksmith's Mirror"
+        ]
+      },
+      {
+        "source": {
+          "name": "The Remaking (as historical event/transformation)",
+          "type": "characters"
+        },
+        "target": {
+          "name": "Consciousness-Fragments (in Swan-Bone Reliquaries)",
+          "type": "flora_fauna"
+        },
+        "weight": 35,
+        "stories": [
+          "The Glassblower's Daughter",
+          "The Bone-Singer's Inheritance",
+          "The Wyvern's Debt-Keeper",
+          "The Fragment-Maker's Gambit"
+        ]
+      },
+      {
+        "source": {
+          "name": "bone (for Carved Tongue carving)",
+          "type": "substances"
+        },
+        "target": {
+          "name": "Fragments",
+          "type": "substances"
+        },
+        "weight": 32,
+        "stories": [
+          "The Shardkeeper's Choice",
+          "The Bone-Singer's Inheritance",
+          "The Wyvern's Debt-Keeper",
+          "The Fragment-Maker's Gambit"
+        ]
+      },
+      {
+        "source": {
+          "name": "The Auditors",
+          "type": "characters"
+        },
+        "target": {
+          "name": "Bone-Singers (Fragment-Consolidation Collective)",
+          "type": "factions"
+        },
+        "weight": 32,
+        "stories": [
+          "The Merchant's Impossible Question",
+          "The Bone-Singer's Inheritance",
+          "The Thief-Queen's Gambit",
+          "The Archivist's Rescue"
+        ]
+      }
+    ],
+    "selected_stories": [
+      {
+        "date": "2026-06-20",
+        "title": "The Merchant's Threshold",
+        "subgenre": "Trade & Transformation",
+        "score": 218,
+        "entities": [
+          {
+            "name": "bone (for Carved Tongue carving)",
+            "type": "substances",
+            "score": 1100
+          },
+          {
+            "name": "Ascension",
+            "type": "events",
+            "score": 862
+          },
+          {
+            "name": "Singing",
+            "type": "substances",
+            "score": 548
+          },
+          {
+            "name": "The Sapphire Sea",
+            "type": "places",
+            "score": 399
+          },
+          {
+            "name": "Echo-Thale",
+            "type": "characters",
+            "score": 394
+          },
+          {
+            "name": "Naela the bone-carver",
+            "type": "characters",
+            "score": 390
+          },
+          {
+            "name": "market",
+            "type": "places",
+            "score": 362
+          },
+          {
+            "name": "spice",
+            "type": "substances",
+            "score": 333
+          }
+        ]
+      },
+      {
+        "date": "2026-06-21",
+        "title": "The Glasswright's Gambit",
+        "subgenre": "Craft & Uprising",
+        "score": 214,
+        "entities": [
+          {
+            "name": "Bone-Singers (Fragment-Consolidation Collective)",
+            "type": "characters",
+            "score": 1219
+          },
+          {
+            "name": "bone (for Carved Tongue carving)",
+            "type": "substances",
+            "score": 1100
+          },
+          {
+            "name": "Fragments",
+            "type": "substances",
+            "score": 1078
+          },
+          {
+            "name": "Consciousness-Fragments",
+            "type": "characters",
+            "score": 863
+          },
+          {
+            "name": "Ascension",
+            "type": "events",
+            "score": 862
+          },
+          {
+            "name": "ledger",
+            "type": "artifacts",
+            "score": 716
+          },
+          {
+            "name": "The Auditors",
+            "type": "characters",
+            "score": 672
+          },
+          {
+            "name": "Dominion",
+            "type": "deities_and_entities",
+            "score": 586
+          }
+        ]
+      },
+      {
+        "date": "2026-06-21",
+        "title": "The Glassblower's Reckoning",
+        "subgenre": "Craft & Defiance",
+        "score": 214,
+        "entities": [
+          {
+            "name": "The Remaking",
+            "type": "events",
+            "score": 1279
+          },
+          {
+            "name": "Bone-Singers (Fragment-Consolidation Collective)",
+            "type": "characters",
+            "score": 1219
+          },
+          {
+            "name": "Fragments",
+            "type": "substances",
+            "score": 1078
+          },
+          {
+            "name": "Consciousness-Fragments",
+            "type": "characters",
+            "score": 863
+          },
+          {
+            "name": "ledger",
+            "type": "artifacts",
+            "score": 716
+          },
+          {
+            "name": "The Auditors",
+            "type": "characters",
+            "score": 672
+          },
+          {
+            "name": "Dominion",
+            "type": "deities_and_entities",
+            "score": 586
+          },
+          {
+            "name": "archive",
+            "type": "places",
+            "score": 555
+          }
+        ]
+      },
+      {
+        "date": "2026-06-20",
+        "title": "The Reef-Keeper's Betrayal",
+        "subgenre": "Sea Diplomacy & Rupture",
+        "score": 214,
+        "entities": [
+          {
+            "name": "The Remaking",
+            "type": "events",
+            "score": 1279
+          },
+          {
+            "name": "Bone-Singers (Fragment-Consolidation Collective)",
+            "type": "characters",
+            "score": 1219
+          },
+          {
+            "name": "Fragments",
+            "type": "substances",
+            "score": 1078
+          },
+          {
+            "name": "Instead",
+            "type": "characters",
+            "score": 906
+          },
+          {
+            "name": "Consciousness-Fragments",
+            "type": "characters",
+            "score": 863
+          },
+          {
+            "name": "ledger",
+            "type": "artifacts",
+            "score": 716
+          },
+          {
+            "name": "deepkin",
+            "type": "factions",
+            "score": 687
+          },
+          {
+            "name": "The Auditors",
+            "type": "characters",
+            "score": 672
+          }
+        ]
+      },
+      {
+        "date": "2026-06-12",
+        "title": "The Glassblower of Keshtir's Lampwick",
+        "subgenre": "Craft & Rebellion",
+        "score": 214,
+        "entities": [
+          {
+            "name": "Bone-Singers (Fragment-Consolidation Collective)",
+            "type": "characters",
+            "score": 1219
+          },
+          {
+            "name": "bone (for Carved Tongue carving)",
+            "type": "substances",
+            "score": 1100
+          },
+          {
+            "name": "Fragments",
+            "type": "substances",
+            "score": 1078
+          },
+          {
+            "name": "Instead",
+            "type": "characters",
+            "score": 906
+          },
+          {
+            "name": "Ascension",
+            "type": "events",
+            "score": 862
+          },
+          {
+            "name": "ledger",
+            "type": "artifacts",
+            "score": 716
+          },
+          {
+            "name": "The Auditors",
+            "type": "characters",
+            "score": 672
+          },
+          {
+            "name": "Starlight (Physical)",
+            "type": "substances",
+            "score": 496
+          }
+        ]
+      },
+      {
+        "date": "2026-06-21",
+        "title": "The Reef-Keeper's Tidal Bargain",
+        "subgenre": "Sea Diplomacy & Wonder",
+        "score": 210,
+        "entities": [
+          {
+            "name": "The Remaking",
+            "type": "events",
+            "score": 1279
+          },
+          {
+            "name": "Instead",
+            "type": "characters",
+            "score": 906
+          },
+          {
+            "name": "deepkin",
+            "type": "factions",
+            "score": 687
+          },
+          {
+            "name": "Tear",
+            "type": "artifacts",
+            "score": 589
+          },
+          {
+            "name": "Singing",
+            "type": "substances",
+            "score": 548
+          },
+          {
+            "name": "boundary-anchor",
+            "type": "characters",
+            "score": 531
+          },
+          {
+            "name": "Drowned God",
+            "type": "deities_and_entities",
+            "score": 528
+          },
+          {
+            "name": "Tear of the Drowned God",
+            "type": "deities_and_entities",
+            "score": 504
+          }
+        ]
+      },
+      {
+        "date": "2026-06-19",
+        "title": "The Shard-Singer's Gambit",
+        "subgenre": "dark-fantasy",
+        "score": 210,
+        "entities": [
+          {
+            "name": "The Remaking",
+            "type": "events",
+            "score": 1279
+          },
+          {
+            "name": "Bone-Singers (Fragment-Consolidation Collective)",
+            "type": "characters",
+            "score": 1219
+          },
+          {
+            "name": "bone (for Carved Tongue carving)",
+            "type": "substances",
+            "score": 1100
+          },
+          {
+            "name": "Fragments",
+            "type": "substances",
+            "score": 1078
+          },
+          {
+            "name": "The Auditors",
+            "type": "characters",
+            "score": 672
+          },
+          {
+            "name": "Dominion",
+            "type": "deities_and_entities",
+            "score": 586
+          },
+          {
+            "name": "Kess of the Drowned Hollows",
+            "type": "characters",
+            "score": 538
+          },
+          {
+            "name": "singers",
+            "type": "factions",
+            "score": 533
+          }
+        ]
+      },
+      {
+        "date": "2026-06-16",
+        "title": "The Warden's Final Question",
+        "subgenre": "Political Intrigue & Crisis",
+        "score": 210,
+        "entities": [
+          {
+            "name": "Instead",
+            "type": "characters",
+            "score": 906
+          },
+          {
+            "name": "Ascension",
+            "type": "events",
+            "score": 862
+          },
+          {
+            "name": "deepkin",
+            "type": "factions",
+            "score": 687
+          },
+          {
+            "name": "Tear",
+            "type": "artifacts",
+            "score": 589
+          },
+          {
+            "name": "boundary-anchor",
+            "type": "characters",
+            "score": 531
+          },
+          {
+            "name": "Drowned God",
+            "type": "deities_and_entities",
+            "score": 528
+          },
+          {
+            "name": "Tear of the Drowned God",
+            "type": "deities_and_entities",
+            "score": 504
+          },
+          {
+            "name": "abyss",
+            "type": "places",
+            "score": 499
+          }
+        ]
+      },
+      {
+        "date": "2026-06-16",
+        "title": "The Glassblower's Mercy",
+        "subgenre": "Craft & Redemption",
+        "score": 210,
+        "entities": [
+          {
+            "name": "The Remaking",
+            "type": "events",
+            "score": 1279
+          },
+          {
+            "name": "Bone-Singers (Fragment-Consolidation Collective)",
+            "type": "characters",
+            "score": 1219
+          },
+          {
+            "name": "bone (for Carved Tongue carving)",
+            "type": "substances",
+            "score": 1100
+          },
+          {
+            "name": "Fragments",
+            "type": "substances",
+            "score": 1078
+          },
+          {
+            "name": "Instead",
+            "type": "characters",
+            "score": 906
+          },
+          {
+            "name": "Consciousness-Fragments",
+            "type": "characters",
+            "score": 863
+          },
+          {
+            "name": "Ascension",
+            "type": "events",
+            "score": 862
+          },
+          {
+            "name": "gold (post-Remaking, transformed)",
+            "type": "substances",
+            "score": 838
+          }
+        ]
+      },
+      {
+        "date": "2026-06-15",
+        "title": "The Wyvern's Mercy Hunt",
+        "subgenre": "Dragon's Reckoning & Wonder",
+        "score": 210,
+        "entities": [
+          {
+            "name": "The Remaking",
+            "type": "events",
+            "score": 1279
+          },
+          {
+            "name": "bone (for Carved Tongue carving)",
+            "type": "substances",
+            "score": 1100
+          },
+          {
+            "name": "gold (post-Remaking, transformed)",
+            "type": "substances",
+            "score": 838
+          },
+          {
+            "name": "Displaced persons (various unnamed)",
+            "type": "characters",
+            "score": 619
+          },
+          {
+            "name": "wyvern (Fragment-Hoarder variant)",
+            "type": "characters",
+            "score": 611
+          },
+          {
+            "name": "Starlight (Physical)",
+            "type": "substances",
+            "score": 496
+          },
+          {
+            "name": "Ash (Post-Remaking)",
+            "type": "characters",
+            "score": 484
+          },
+          {
+            "name": "Kael's Shadow",
+            "type": "characters",
+            "score": 482
+          }
+        ]
+      },
+      {
+        "date": "2026-06-15",
+        "title": "The Cartographer's Dangerous Question",
+        "subgenre": "Exploration & Wonder",
+        "score": 210,
+        "entities": [
+          {
+            "name": "The Remaking",
+            "type": "events",
+            "score": 1279
+          },
+          {
+            "name": "Bone-Singers (Fragment-Consolidation Collective)",
+            "type": "characters",
+            "score": 1219
+          },
+          {
+            "name": "Ascension",
+            "type": "events",
+            "score": 862
+          },
+          {
+            "name": "Dominion",
+            "type": "deities_and_entities",
+            "score": 586
+          },
+          {
+            "name": "Singing",
+            "type": "substances",
+            "score": 548
+          },
+          {
+            "name": "Luminous Ascension",
+            "type": "events",
+            "score": 468
+          },
+          {
+            "name": "Henryk the Cartographer",
+            "type": "characters",
+            "score": 409
+          },
+          {
+            "name": "The Bleached Wastes",
+            "type": "characters",
+            "score": 359
+          }
+        ]
+      },
+      {
+        "date": "2026-06-15",
+        "title": "The Ashglass Thief's Reckoning",
+        "subgenre": "Heist & Damnation",
+        "score": 210,
+        "entities": [
+          {
+            "name": "The Remaking",
+            "type": "events",
+            "score": 1279
+          },
+          {
+            "name": "Bone-Singers (Fragment-Consolidation Collective)",
+            "type": "characters",
+            "score": 1219
+          },
+          {
+            "name": "bone (for Carved Tongue carving)",
+            "type": "substances",
+            "score": 1100
+          },
+          {
+            "name": "Fragments",
+            "type": "substances",
+            "score": 1078
+          },
+          {
+            "name": "Consciousness-Fragments",
+            "type": "characters",
+            "score": 863
+          },
+          {
+            "name": "gold (post-Remaking, transformed)",
+            "type": "substances",
+            "score": 838
+          },
+          {
+            "name": "The Auditors",
+            "type": "characters",
+            "score": 672
+          },
+          {
+            "name": "Tear",
+            "type": "artifacts",
+            "score": 589
+          }
+        ]
+      }
+    ]
+  },
+  "input_stats": {
+    "issue_count": 16,
+    "story_count": 160,
+    "selected_world_events": 8,
+    "selected_entities": 18,
+    "selected_stories": 12
+  }
+}
