@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-06-23",
   "worlds": [
     {
       "id": "known_world",
@@ -481,7 +481,7 @@
       "notes": "His fate warns of the dangers of shadow-magic; shadows retain autonomy and appetite. The shadow-broker trade may be larger than a single practitioner.",
       "first_story": "The Shadow-Broker's Debt",
       "first_date": "2026-02-27",
-      "appearances": 20,
+      "appearances": 21,
       "aliases": [
         "Kael"
       ]
@@ -7303,10 +7303,21 @@
       "affiliations": [
         "Merrin"
       ],
-      "notes": "His role in the larger conspiracy is unclear; he may be informant or unwitting herald.",
+      "notes": "His role in the larger conspiracy is unclear; he may be informant or unwitting herald.\nThis story features Pale Crossing waystation (canon location for Caravan Master Dorn) but does not directly update Dorn's status\u2014it shows another merchant's choice at the same waystation.",
       "first_story": "The Refugee's Ledger",
       "first_date": "2026-03-14",
-      "appearances": 3
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-06-23",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Merchant of Salt-Fire",
+          "note": "Kelvan the merchant passes through Pale Crossing waystation where auditors attempt to buy consciousness-fragments; he refuses to trade.",
+          "evidence": "At Pale Crossing waystation, a famine-thin auditor approached him. 'We'll buy the fragments. Double what you paid.' The man's ledger was pristine."
+        }
+      ]
     },
     {
       "id": "the_faceless_wanderer",
@@ -9295,7 +9306,7 @@
       "notes": "Her knowledge of the blood-language and willingness to treat a legendary creature as an equal suggests training in ancient lore.",
       "first_story": "The Wyvern's Dowry",
       "first_date": "2026-03-19",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "mael",
@@ -15010,7 +15021,7 @@
       "notes": "Her name and lineage are her greatest asset. Lost two daughters to plague-winds.\nArchive revealed as emergent consciousness entity. Senna transitions role from archivist to recursive-loop custodian, creating barrier of self-observation against Tower hunger.",
       "first_story": "The Spice-Runner's Second Chance",
       "first_date": "2026-04-07",
-      "appearances": 5,
+      "appearances": 6,
       "status_history": [
         {
           "date": "2026-04-20",
@@ -15026,20 +15037,24 @@
     {
       "id": "veris",
       "name": "Veris",
-      "aliases": [],
+      "aliases": [
+        "old songs"
+      ],
       "tagline": "Noble. Lineage-bearer. Distant.",
       "role": "Nobleman, ancestor",
       "world": "Edhra",
-      "status": "unknown",
+      "status": "captured",
       "home_place": "unknown",
       "home_region": "unknown",
-      "home_realm": "unknown",
-      "travel_scope": "unknown",
+      "home_realm": "The Dominion",
+      "travel_scope": "local",
       "bio": "Father of Senna and child of the Warden. His bloodline carries weight enough to protect debtors and fugitives.",
       "traits": [
         "noble"
       ],
-      "known_locations": [],
+      "known_locations": [
+        "unknown"
+      ],
       "affiliations": [
         "Senna (daughter)",
         "the Warden (parent)"
@@ -15047,7 +15062,7 @@
       "notes": "Lineage mentioned but character not directly present in stories.",
       "first_story": "The Spice-Runner's Second Chance",
       "first_date": "2026-04-07",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "the_warden",
@@ -15440,7 +15455,7 @@
       "notes": "His success demonstrates that unconventional trade routes and partnerships can circumvent the Dominion's rigid tax system. The rare, luminescent spices from Vel-Karsh may have future significance.\nKelvan's conscious entry into the Wailing Scar suggests movement beyond regional trade into liminal/interrealm travel, escalating from prior regional scope.",
       "first_story": "The Spice-Merchant's Gamble",
       "first_date": "2026-04-08",
-      "appearances": 8,
+      "appearances": 9,
       "travel_notes": "[2026-05-21] Story 'The Spice-Runner's Inheritance' shows Kelvan discovering a hidden passage through the Wailing Scar to access old spice sources, then voluntarily entering the Scar itself\u2014evidence of crossing realm boundaries."
     },
     {
@@ -18281,7 +18296,7 @@
       "notes": "This auditor realizes the true danger of Vex's vault and becomes party to Vex's decision to scatter the fragments.",
       "first_story": "The Ledger That Sings",
       "first_date": "2026-04-19",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "mirror_thalis",
@@ -18372,7 +18387,7 @@
       "notes": "Auto-added because the story explicitly names this character.",
       "first_story": "The Splintered Compass",
       "first_date": "2026-04-19",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "copper_handed",
@@ -19062,10 +19077,10 @@
       "affiliations": [
         "Mardoc the Cartographer (fragment)"
       ],
-      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.\nSignificant character arc closure: moves from seeking pre-Ascension world to acceptance of forward path. Suggests thematic resolution of her quest.\nStory 'The Widower's Debt' features Brennan, an old merchant in temporal-collapse scenario\u2014distinct character from canon Widow (compass-bearer from Bleached Wastes). No status change.\nThis is a prequel/alternate view showing the Widow's compass as a living artifact of refugee salvation rather than temporal reversal\u2014consistent with canon themes but suggests the compass has multiple meanings or phases.\nStory 'The Glasswright's Defiance' features Niel (glasswright, distinct from canon Widow with compass). No status change to canon Widow; this is a separate character arc in Keshtir's Lampwick Quarter.\nKeslan is a distinct character from canon Widow (compass-bearer); this is a separate explorer arc. No status change to canon entry.\nThis story title suggests the widow's compass now points toward active choice and agency rather than backward-seeking or temporal reversal.",
+      "notes": "Must decide whether finding the pre-Emergence world means saving it or destroying it. Her grandmother's compass may be a relic or curse.\nSignificant character arc closure: moves from seeking pre-Ascension world to acceptance of forward path. Suggests thematic resolution of her quest.\nStory 'The Widower's Debt' features Brennan, an old merchant in temporal-collapse scenario\u2014distinct character from canon Widow (compass-bearer from Bleached Wastes). No status change.\nThis is a prequel/alternate view showing the Widow's compass as a living artifact of refugee salvation rather than temporal reversal\u2014consistent with canon themes but suggests the compass has multiple meanings or phases.\nStory 'The Glasswright's Defiance' features Niel (glasswright, distinct from canon Widow with compass). No status change to canon Widow; this is a separate character arc in Keshtir's Lampwick Quarter.\nKeslan is a distinct character from canon Widow (compass-bearer); this is a separate explorer arc. No status change to canon entry.\nThis story title suggests the widow's compass now points toward active choice and agency rather than backward-seeking or temporal reversal.\nThis parallels canon Widow's arc (who carves a new compass toward acceptance). Alenna's narrative shows the compass functioning as a healing tool rather than temporal reversal\u2014consistent with canon thematic trajectory.",
       "first_story": "The Widow's Compass Points Backward",
       "first_date": "2026-04-22",
-      "appearances": 8,
+      "appearances": 11,
       "status_history": [
         {
           "date": "2026-04-24",
@@ -19102,6 +19117,15 @@
           "story_title": "The Widow's Compass Chooses East",
           "note": "Compass guides refusal rather than cruelty; the widow transforms potential tragedy into rescue and flight from menace.",
           "evidence": "A menace circles the innocent, but the bargain is broken before any child is touched...By the last line, the young are gone from danger"
+        },
+        {
+          "date": "2026-06-23",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "prequel",
+          "story_title": "The Widow's Compass Points Home",
+          "note": "Alenna (compass-bearer) discovers the widow's compass points not to the dead but toward what needs healing in refugee camps; she plants a garden.",
+          "evidence": "The compass had led her to the refugee camps at Pale Crossing...She stopped walking toward her past and started walking toward their futures."
         }
       ]
     },
@@ -19642,15 +19666,15 @@
       "home_place": "unknown",
       "home_region": "unknown",
       "home_realm": "unknown",
-      "travel_scope": "unknown",
+      "travel_scope": "regional",
       "bio": "A named wyvern lord whose three-century hoard has been rendered worthless by the Luminou explicitly identified in the story text.",
       "traits": [],
       "known_locations": [],
       "affiliations": [],
-      "notes": "Auto-added because the story explicitly names this character.\nStory 'The Wyvern Lord's Worthless Throne' shows Kressa abandoning traditional hoarding and visiting Inverse-Archive; begins questioning what wyverns can become when hoarding ceases to be viable, with spring thaw as decision-point.\nStory 'The Wyvern's Hunger Turns Inward' identifies Fragment-Hoarder as Kreth, a wyvern actively trafficking consciousness-fragments and feeding fragmentation into the Obsidian Tower's hunger\u2014positioning her as a major predatory force in the post-Ascension economy.\nStory identifies fragment-hoarder protagonist as 'Kressa' in negotiation narrative; canon identifies her as wyvern 'Kreth' in other stories. Both refer to same individual (centuries-old hoarder, predatory consciousness-trader). Kressa's failed Monolith bargain extends her arc of economic collapse and predatory reorientation.",
+      "notes": "Auto-added because the story explicitly names this character.\nStory 'The Wyvern Lord's Worthless Throne' shows Kressa abandoning traditional hoarding and visiting Inverse-Archive; begins questioning what wyverns can become when hoarding ceases to be viable, with spring thaw as decision-point.\nStory 'The Wyvern's Hunger Turns Inward' identifies Fragment-Hoarder as Kreth, a wyvern actively trafficking consciousness-fragments and feeding fragmentation into the Obsidian Tower's hunger\u2014positioning her as a major predatory force in the post-Ascension economy.\nStory identifies fragment-hoarder protagonist as 'Kressa' in negotiation narrative; canon identifies her as wyvern 'Kreth' in other stories. Both refer to same individual (centuries-old hoarder, predatory consciousness-trader). Kressa's failed Monolith bargain extends her arc of economic collapse and predatory reorientation.\nCanon entry identifies Fragment-Hoarder as Kreth/Kressa, a wyvern lord. This story shows her transitioning from pure predatory hoarding to humanitarian relief\u2014consistent with her arc of economic collapse and reorientation.",
       "first_story": "The Wyvern's Ledger",
       "first_date": "2026-04-23",
-      "appearances": 5,
+      "appearances": 6,
       "status_history": [
         {
           "date": "2026-04-24",
@@ -19669,6 +19693,15 @@
           "story_title": "The Wyvern's Failed Bargain",
           "note": "Kressa the fragment-hoarder negotiates with the Monolith, discovers it demands willing transcendence of sapient being as price for hoard restoration, faces covenant-breaking choice.",
           "evidence": "Kressa 'has spent weeks negotiating with the Monolith, offering consciousness-fragments'; Monolith 'demands something more: the willing transcendence of a sapient being\u2014a complete surrender of identity.'"
+        },
+        {
+          "date": "2026-06-23",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Wyvern's Winter Mercy",
+          "note": "Velka (Fragment-Hoarder) reveals her hoarding shift: she opens her consciousness-fragment hoard to refugee populations and builds shelter in her mountain.",
+          "evidence": "She opened her hoard to the refugees trickling into her mountain. Not all of it\u2014a dragon's pride remained\u2014but enough. Enough for winter."
         }
       ]
     },
@@ -22161,10 +22194,21 @@
         "Deepkin (via the Tear)",
         "Kess (via binding)"
       ],
-      "notes": "Its fragmentation may be related to the Ascension's shattering of reality. Accepts Kess's shadow as a mediating vessel.",
+      "notes": "Its fragmentation may be related to the Ascension's shattering of reality. Accepts Kess's shadow as a mediating vessel.\nCanon Drowned God is fragmented and bound to the Tear. This story shows the Tear's failure pattern expanding across fractured versions of reality, with negotiation replacing traditional sacrifice.",
       "first_story": "The Deepkin Caller's Mercy",
       "first_date": "2026-05-02",
-      "appearances": 2
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-06-23",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Reef-Keeper's Vigil",
+          "note": "The Tear of the Drowned God is shown failing in seven iterations; Captain Naida reframes it as a breathing seal requiring constant maintenance rather than singular sacrifice.",
+          "evidence": "The Tear continued to weaken\u2014but it did not break. Instead, it opened into something negotiable."
+        }
+      ]
     },
     {
       "id": "the_frost_keeper",
@@ -27349,7 +27393,8 @@
       "id": "fragmented_merchant",
       "name": "Fragmented Merchant",
       "aliases": [
-        "young merchant"
+        "young merchant",
+        "Young Merchant"
       ],
       "tagline": "Desperate. Broken. Half-lucid.",
       "role": "Refugee, Merchant",
@@ -27375,7 +27420,8 @@
       ],
       "notes": "Her fragmentation and the sacrifices she made to survive suggest wider desperation across the realm and possibly the consequences of consciousness-trading.",
       "first_date": "2026-06-04",
-      "appearances": 1
+      "appearances": 2,
+      "first_story": "The Wyvern's Broken Hoard"
     },
     {
       "id": "mera_merchants_daughter",
@@ -27579,10 +27625,21 @@
       "affiliations": [
         "The Dominion"
       ],
-      "notes": "The Auditor's decision to withdraw suggests a hierarchy above them or recognition of limits to their authority. The 'scar' left on the quarter implies subtle retaliation or warning.",
+      "notes": "The Auditor's decision to withdraw suggests a hierarchy above them or recognition of limits to their authority. The 'scar' left on the quarter implies subtle retaliation or warning.\nCanon Auditor (2026-06-05) withdrew from Lampwick Quarter when confronted with starlight-glass resistance. This story extends that theme: auditor encounters the glass-maker's defiant act and artifact.",
       "first_story": "The Glasswright's Rebellion",
       "first_date": "2026-06-05",
-      "appearances": 1
+      "appearances": 5,
+      "status_history": [
+        {
+          "date": "2026-06-23",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Glass-Maker's Defiance",
+          "note": "An auditor witnesses weapon-glass refuse tyrannical command and a furnace transform into something that reveals collective sacrifice; auditor retreats.",
+          "evidence": "The auditors retreated, shielding their faces from the light...the sword lay transformed into something no longer a weapon at all. A mirror."
+        }
+      ]
     },
     {
       "id": "master_tavrin",
@@ -27770,10 +27827,21 @@
         "The Warden",
         "The Regent"
       ],
-      "notes": "His lock embodies the central paradox of the Shattering: singularity becomes a form of power when consensus fractures. The lock's song and condition suggest deep connection to pre-Ascension magic.",
+      "notes": "His lock embodies the central paradox of the Shattering: singularity becomes a form of power when consensus fractures. The lock's song and condition suggest deep connection to pre-Ascension magic.\nCanon Gorven is a locksmith commissioned by The Warden (2026-06-07). This story appears to be a parallel narrative or prequel showing a different iteration of the locksmith archetype operating in resistance.",
       "first_story": "The Locksmith's Last Commission",
       "first_date": "2026-06-07",
-      "appearances": 3
+      "appearances": 4,
+      "status_history": [
+        {
+          "date": "2026-06-23",
+          "from_status": "active",
+          "to_status": "active",
+          "type": "other",
+          "story_title": "The Lockpick's Mercy",
+          "note": "Gorven the Conjurer (distinct from canon Gorven the Locksmith) uses meteoric copper lockpicks and grandmother's bloodline magic to steal starlight-cure from Dominion vault.",
+          "evidence": "She brought her grandmother's lockpicks\u2014meteoric copper, bone-resonant, older than empires. She touched the seal, and it recognized her bloodline."
+        }
+      ]
     },
     {
       "id": "thoren_merchant",
@@ -28944,7 +29012,7 @@
       "notes": "Seeks the return of a pearl from the First Dawn, stolen before either the Keeper or Sera's father were born.",
       "first_story": "The Salt-Thief's Daughter",
       "first_date": "2026-06-12",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "merith_fifth_sister",
@@ -30489,6 +30557,328 @@
       "first_story": "The Reef-Keeper's Choice",
       "first_date": "2026-06-22",
       "appearances": 1
+    },
+    {
+      "id": "gorven_the_conjurer",
+      "name": "Gorven the Conjurer",
+      "aliases": [
+        "Gorven"
+      ],
+      "tagline": "Skilled. Merciful. Hunted.",
+      "role": "Lockpick, Thief",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Dominion",
+      "travel_scope": "regional",
+      "bio": "A master lockpick of forty years who refuses payment in consciousness-fragments. Gorven stole pre-Remaking starlight from the Dominion's vault beneath Kaethmir to cure a dying refugee child. She carries her grandmother's lockpicks\u2014meteoric copper tools bone-resonant and older than empires\u2014and recognized by their bone-resonance seal.",
+      "traits": [
+        "skilled",
+        "compassionate",
+        "hunted",
+        "principled"
+      ],
+      "known_locations": [
+        "Kaethmir"
+      ],
+      "affiliations": [
+        "refugees",
+        "victims of the Dominion"
+      ],
+      "notes": "Now hunted by Dominion auditors after leaving blank ledger-pages in place of stolen starlight. Her grandmother was also a thief who stole from tyrants.",
+      "first_story": "The Lockpick's Mercy",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "velka_the_fragment_hoarder",
+      "name": "Velka the Fragment-Hoarder",
+      "aliases": [
+        "Velka"
+      ],
+      "tagline": "Ancient. Transformed. Merciful.",
+      "role": "Dragon, Hoarder",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Ironspine cavern",
+      "home_region": "The Steppe Marches",
+      "home_realm": "unknown",
+      "travel_scope": "local",
+      "bio": "A wyvern who has hoarded consciousness-fragments for three centuries in her Ironspine cavern since the Remaking. When a refugee child from the burned lands sought shelter, Velka was moved to compassion\u2014offering tea and eventually opening her hoard to refugees seeking winter shelter.",
+      "traits": [
+        "ancient",
+        "hoarder",
+        "transformed by compassion",
+        "prideful"
+      ],
+      "known_locations": [
+        "Ironspine",
+        "Ironspine cavern"
+      ],
+      "affiliations": [
+        "refugees"
+      ],
+      "notes": "The Ascension changed her hoarding from gold to consciousness-fragments. First act of mercy after three hundred years suggests deep change in her nature.",
+      "first_story": "The Wyvern's Winter Mercy",
+      "first_date": "2026-06-23",
+      "appearances": 2
+    },
+    {
+      "id": "vena",
+      "name": "Vena",
+      "aliases": [],
+      "tagline": "Captain. Impossible. Beloved.",
+      "role": "Captain, Navigator",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "The Deepkin Realms",
+      "travel_scope": "interrealm",
+      "bio": "A deepkin captain navigating the boundary-waters where the Tear of the Drowned God flickers. Vena met Kael at the Wailing Scar between timelines and shared a threshold kiss before being separated by cosmic collapse.",
+      "traits": [
+        "captain",
+        "navigator",
+        "impossible",
+        "devoted"
+      ],
+      "known_locations": [
+        "boundary-waters",
+        "Wailing Scar"
+      ],
+      "affiliations": [
+        "Kael",
+        "deepkin"
+      ],
+      "notes": "Carries charts of drowned cities. Questions which version of Kael will remain when the Tear breaks.",
+      "first_story": "The Merchant's Threshold Kiss",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "telyn",
+      "name": "Telyn",
+      "aliases": [],
+      "tagline": "Defiant. Burned. Liberated.",
+      "role": "Glass-forger, Artisan",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Keshtir",
+      "home_region": "The Hearthlands",
+      "home_realm": "The Dominion",
+      "travel_scope": "local",
+      "bio": "A glass-forger of Keshtir's Lampwick Quarter who burned her hands a hundred times learning to forge weapon-glass in the kiln-houses. She spent six months creating a single sword that refused to serve tyrants, transforming it into a mirror that reveals what the watcher has sacrificed. She walked out of the Lampwick Quarter and inspired other furnace-workers to sing the old songs.",
+      "traits": [
+        "defiant",
+        "skilled artisan",
+        "conscious of cost",
+        "catalyst for change"
+      ],
+      "known_locations": [
+        "Keshtir",
+        "Keshtir's Lampwick Quarter"
+      ],
+      "affiliations": [
+        "furnace-workers"
+      ],
+      "notes": "Her act of defiance inspired other workers to resist Dominion control. The transformed sword/mirror may have significant ramifications on Dominion power.",
+      "first_story": "The Glass-Maker's Defiance",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "alenna",
+      "name": "Alenna",
+      "aliases": [],
+      "tagline": "Grieving. Redirected. Healer.",
+      "role": "Wanderer, Healer, Refugee-aid worker",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "Pale Crossing",
+      "home_region": "unknown",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A widow who walked the Bleached Wastes for forty days searching for her dead husband using a bone-carved grandmother-blessed compass. She came to understand that the compass pointed not to the dead but to what could be healed. She redirected her journey to the refugee camps at Pale Crossing, where she now plants gardens and tends to the broken.",
+      "traits": [
+        "grieving",
+        "accepting",
+        "compassionate",
+        "practical"
+      ],
+      "known_locations": [
+        "Bleached Wastes",
+        "Pale Crossing"
+      ],
+      "affiliations": [
+        "refugees"
+      ],
+      "notes": "The widow's compass may be an artifact of note; its ability to sense what needs healing could be significant to larger struggles. Her relocation to Pale Crossing may seed a new community.",
+      "first_story": "The Widow's Compass Points Home",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "thyra",
+      "name": "Thyra",
+      "aliases": [],
+      "tagline": "Defiant. Hidden. Sacrificial.",
+      "role": "Glass-forger, Artisan, Resistance figure",
+      "world": "Edhra",
+      "status": "unknown",
+      "home_place": "unknown",
+      "home_region": "unknown",
+      "home_realm": "The Dominion",
+      "travel_scope": "local",
+      "bio": "A glass-forger who hid a furnace beneath three layers of stone to evade Dominion auditors. She taught her apprentice Veris the old songs and forged meteoric spear-heads from consciousness-fragments. When auditors came, she sang a new song and reduced her life's work to luminous dust rather than let it be captured.",
+      "traits": [
+        "defiant",
+        "secretive",
+        "sacrificial",
+        "devoted to craft"
+      ],
+      "known_locations": [
+        "unknown"
+      ],
+      "affiliations": [
+        "furnace-workers",
+        "resistance (implicit)"
+      ],
+      "notes": "Veris, her apprentice, was taken in a night raid. Thyra's fate after the auditors' arrival is unclear; she may have been captured, killed, or escaped. Her willingness to destroy her work rather than have it weaponized is significant.",
+      "first_story": "The Glassblower's Reckoning",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "elara_granddaughter",
+      "name": "Elara's granddaughter",
+      "aliases": [
+        "the girl"
+      ],
+      "tagline": "Desperate. Young. Guide.",
+      "role": "Refugee leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "burned lands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A young woman who led a group of refugees from the burned lands seeking escape and survival. She came to her grandmother Elara seeking guidance and aid, bringing knowledge of a passage through the Bleached Wastes to old settlements.",
+      "traits": [
+        "determined",
+        "resourceful",
+        "desperate",
+        "brave"
+      ],
+      "known_locations": [
+        "burned lands",
+        "Bleached Wastes"
+      ],
+      "affiliations": [
+        "refugees",
+        "Elara (grandmother)"
+      ],
+      "notes": "Acts as shepherd and hope-bearer for her refugee group.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_child_seer",
+      "name": "child among refugees",
+      "aliases": [
+        "the child"
+      ],
+      "tagline": "Gifted. Perceptive. Young.",
+      "role": "Seer",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "burned lands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A child traveling with the refugee group who possesses the rare gift of seeing colors others have forgotten. This gift made them one of the key individuals for whom Elara carved a personalized bone-compass.",
+      "traits": [
+        "gifted",
+        "perceptive",
+        "young"
+      ],
+      "known_locations": [
+        "burned lands",
+        "Bleached Wastes"
+      ],
+      "affiliations": [
+        "refugees"
+      ],
+      "notes": "Specific color-sight gift remains unexplained\u2014may indicate latent magical ability.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "refugee_elder",
+      "name": "elder of the refugees",
+      "aliases": [
+        "the elder"
+      ],
+      "tagline": "Wise. Memory-keeper. Navigating.",
+      "role": "Elder, guide",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "unknown",
+      "home_region": "burned lands",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "An elder refugee whose mind still holds maps and memories of abandoned villages in the old settlements. Elara carved him a bone-compass pointing toward shelter, drawing on his stored knowledge.",
+      "traits": [
+        "wise",
+        "memory-keeper",
+        "experienced"
+      ],
+      "known_locations": [
+        "burned lands",
+        "Bleached Wastes",
+        "old settlements (knowledge of)"
+      ],
+      "affiliations": [
+        "refugees"
+      ],
+      "notes": "His memory of village locations may be crucial for the group's survival and resettlement.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "captain_naida",
+      "name": "Captain Naida",
+      "aliases": [
+        "Naida"
+      ],
+      "tagline": "Fractured. Wise. Adaptive.",
+      "role": "Captain, seal-keeper, leader",
+      "world": "Edhra",
+      "status": "active",
+      "home_place": "living coral platform",
+      "home_region": "boundary-waters",
+      "home_realm": "unknown",
+      "travel_scope": "regional",
+      "bio": "A captain with fractured consciousness who stands guard at the living coral platform where the boundary-waters meet the abyss. She discovered that the Tear of the Drowned God required not eternal rigidity but dynamic balance\u2014like coral itself, constantly rebuilding and adapting. Over three days, she learned to balance her competing fractured selves to maintain a breathable, negotiable seal.",
+      "traits": [
+        "fractured-consciousness",
+        "wise",
+        "adaptive",
+        "determined",
+        "protective"
+      ],
+      "known_locations": [
+        "living coral platform",
+        "boundary-waters"
+      ],
+      "affiliations": [
+        "Keeper of Pearls",
+        "boundary-waters (guardian of)"
+      ],
+      "notes": "Her fractured consciousness is both curse and strength; her innovation suggests new approaches to ancient seals. The seal remains in active negotiation.",
+      "first_story": "The Reef-Keeper's Vigil",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "places": [
@@ -30543,7 +30933,7 @@
       "place": "",
       "parent_place": "",
       "place_type": "market",
-      "appearances": 26
+      "appearances": 27
     },
     {
       "id": "sunken_ziggurat_of_yeng",
@@ -31778,7 +32168,7 @@
       "status": "active",
       "notes": "Evidence suggests the pre-human builders anticipated the cosmic shift and arranged their cities to align with the new stellar configuration.",
       "first_date": "2026-03-04",
-      "appearances": 30
+      "appearances": 32
     },
     {
       "id": "mountain_fastness",
@@ -32495,7 +32885,7 @@
       "status": "active",
       "notes": "The fundamental act of counting is destabilized by the Luminous Ascension's effects.",
       "first_date": "2026-03-10",
-      "appearances": 23
+      "appearances": 24
     },
     {
       "id": "burned_expanse",
@@ -32711,7 +33101,7 @@
       "status": "active",
       "notes": "The refugees report a compulsion drawing them eastward toward the Sunken Cathedrals.",
       "first_date": "2026-03-12",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "charred_expanse",
@@ -33674,7 +34064,7 @@
       "status": "active",
       "notes": "The epicenter of Kess's choice between completing the teaching or breaking the songs.",
       "first_date": "2026-03-25",
-      "appearances": 20
+      "appearances": 21
     },
     {
       "id": "the_mountain",
@@ -34650,7 +35040,7 @@
       "status": "sealed but fracturing",
       "notes": "Central to the story's stakes: its opening would reshape the world. The deepkin want access to it; the surface kingdoms want it to remain sealed.",
       "first_date": "2026-04-10",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "sunscoured_wastes",
@@ -34907,7 +35297,7 @@
       "status": "contested",
       "notes": "A nexus of archival warfare and narrative conflict. Communities are caught between contradictory official histories.",
       "first_date": "2026-04-15",
-      "appearances": 44
+      "appearances": 45
     },
     {
       "id": "surface_council",
@@ -35755,7 +36145,7 @@
       "status": "active / fragmented",
       "notes": "Nyx has three days before Dominion naval forces arrive. The water's singing and remembering suggests an entity or force is working against the boundary's stability. May be related to the Tear of the Drowned God.",
       "first_date": "2026-05-06",
-      "appearances": 21
+      "appearances": 23
     },
     {
       "id": "deepkin_realms",
@@ -36210,7 +36600,7 @@
       "status": "active",
       "notes": "The Ironspine caves within this range are Sorrath's home and a place of pilgrimage for those seeking wisdom about the post-Ascension world.",
       "first_date": "2026-05-21",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "shadow_archive",
@@ -36971,7 +37361,7 @@
       "status": "active",
       "notes": "The quarter's existence and role in preserving forbidden knowledge makes it a crucial safe house for resistance to Dominion control.",
       "first_date": "2026-05-28",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "burned_expanse",
@@ -37865,7 +38255,7 @@
       "status": "active",
       "notes": "The Regent rules from or through Kaethmir. The presence of an 'administrative heart' suggests formal governance structures. The Warden's mission originates here.",
       "first_date": "2026-06-07",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "kaethmir_administrative_heart",
@@ -37885,7 +38275,7 @@
       "status": "active",
       "notes": "The administrative structure here has been destabilized by the Shattering, making traditional security measures like Gorven's locks increasingly vital.",
       "first_date": "2026-06-07",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "ravine_three_winds",
@@ -38702,7 +39092,7 @@
       "status": "active",
       "notes": "Sorrath gathers the Wyvern-Council here to reveal the true treasures beneath the worthless gold.",
       "first_date": "2026-06-16",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "boundary_platform",
@@ -38802,7 +39192,7 @@
       "status": "active",
       "notes": "The coral's response to deepkin frequency-argument suggests it is conscious or semi-conscious.",
       "first_date": "2026-06-17",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "steppe_marches",
@@ -39323,6 +39713,66 @@
       "notes": "The market's mobility and use of acoustic/thermal interference suggests organized, sophisticated resistance to Dominion control.",
       "first_date": "2026-06-22",
       "appearances": 1
+    },
+    {
+      "id": "burned_lands",
+      "name": "burned lands",
+      "tagline": "Devastated. Refugee. Blighted.",
+      "place_type": "wilderness",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "The Ashen Reach",
+      "district": "unknown",
+      "atmosphere": "A devastated region where refugees flee from destruction.",
+      "description": "A blighted region from which refugees, including the child who sought shelter with Velka, have fled.",
+      "status": "active",
+      "notes": "Source of displaced refugees seeking shelter in the Ironspine cavern.",
+      "first_date": "2026-06-23",
+      "appearances": 2
+    },
+    {
+      "id": "caravan_waystation",
+      "name": "caravan waystation",
+      "tagline": "Transient. Desperate. Merchant.",
+      "place_type": "waystation",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "unknown",
+      "district": "unknown",
+      "atmosphere": "A rest-stop and trading post where merchants and refugees meet, where starving widows sell their most precious goods and travelers acquire supplies for long journeys.",
+      "description": "A waystation along caravan routes where merchants and refugees converge. Kelvan purchased seventeen consciousness-fragments here from a widow desperate from famine.",
+      "status": "active",
+      "notes": "Critical node for consciousness-fragment trade and refugee supply networks.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "old_settlements",
+      "name": "old settlements",
+      "tagline": "Abandoned. Resourceful. Refuge.",
+      "place_type": "ruins / settlement",
+      "world": "Edhra",
+      "parent_place": "unknown",
+      "hemisphere": "unknown",
+      "continent": "Valdris",
+      "realm": "unknown",
+      "province": "unknown",
+      "region": "Bleached Wastes",
+      "district": "unknown",
+      "atmosphere": "Desolate but habitable, offering food and shelter to those who can locate and reach them, preserved in the elder refugee's memory.",
+      "description": "Abandoned settlements beyond the Bleached Wastes that contain food and shelter. The elder refugee retains mental maps of these locations. They represent survival and hope for the fleeing refugees.",
+      "status": "active",
+      "notes": "Target destination for refugee group; maps held by elder; critical for survival narrative.",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "deities_and_entities": [
@@ -39589,7 +40039,7 @@
       "status": "unknown",
       "notes": "The pearl is described as the Drowned God's tear; whether the god is dormant, dead, or indifferent is unclear.",
       "first_date": "2026-03-10",
-      "appearances": 34
+      "appearances": 36
     },
     {
       "id": "vethis_entity",
@@ -40568,7 +41018,7 @@
       "status": "active",
       "notes": "May be a conscious cosmic working or a consequence of pre-human technology reactivation.",
       "first_date": "2026-06-04",
-      "appearances": 7
+      "appearances": 8
     },
     {
       "id": "the_drowned_king_entity",
@@ -40822,6 +41272,17 @@
       "notes": "The demon may be a pre-human entity awakened by the Remaking, or a creature native to the abyss.",
       "first_date": "2026-06-22",
       "appearances": 1
+    },
+    {
+      "id": "keeper_of_pearls_entity",
+      "name": "Keeper of Pearls",
+      "type": "spirit / ancient entity",
+      "world": "Edhra",
+      "description": "An ancient, nearly immeasurable guardian entity who oversees the Tear of the Drowned God and demands traditional blood sacrifice and renewal. Associated with rigid, eternal seal-keeping philosophy.",
+      "status": "active",
+      "notes": "Represents conservative/rigid approach to cosmic binding; accepted Naida's innovation.",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "artifacts": [
@@ -41059,7 +41520,7 @@
       "status": "active",
       "notes": "The pearl accepted Meren's theft as a request for partnership, not plunder. It continues to sing and extract debt in miles sailed, storms weathered, and secrets drowned.",
       "first_date": "2026-03-10",
-      "appearances": 41
+      "appearances": 43
     },
     {
       "id": "stolen_memories",
@@ -41829,7 +42290,7 @@
       "status": "active / contested",
       "notes": "Central object of contention at Pale Crossing; multiple factions seek it simultaneously; true significance may lie not in the artifact itself but in the choice it represents regarding dimensional boundaries.",
       "first_date": "2026-04-21",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "tear_drowned_god",
@@ -42128,7 +42589,7 @@
       "status": "active",
       "notes": "Consciousness-fragments are a new form of wealth post-Ascension, replacing gold. They are both commodity and living entity, suggesting a disturbing blending of objectification and consciousness. Kressa discovers that fragments whisper and ask questions that 'get under her scales.'",
       "first_date": "2026-05-23",
-      "appearances": 8
+      "appearances": 9
     },
     {
       "id": "memory_roads",
@@ -42817,7 +43278,7 @@
       "status": "active",
       "notes": "Stolen by Vex to trade to refugee scribes for Counter-Archive histories. They are bait for the pre-human consciousness. Mesek uses them to recruit Vex for the theft of the Primal Shard.",
       "first_date": "2026-06-10",
-      "appearances": 1
+      "appearances": 2
     },
     {
       "id": "primal_shard",
@@ -43429,6 +43890,45 @@
       "notes": "These records suggest the Ascension is cyclical and that previous iterations existed and were forgotten. They are crucial to understanding whether the Tenth Ascension was preventable or inevitable.",
       "first_date": "2026-06-22",
       "appearances": 1
+    },
+    {
+      "id": "vial_of_pre_remaking_starlight",
+      "name": "vial of pre-Remaking starlight",
+      "tagline": "Glowing. Precious. Stolen.",
+      "artifact_type": "vial",
+      "origin": "Pre-Remaking era. Locked in the Dominion vault beneath Kaethmir as evidence.",
+      "powers": "Cure for wasting sickness/consumption. Glows like captured hope.",
+      "last_known_holder": "Gorven the Conjurer (stolen for the refugee child)",
+      "status": "active",
+      "notes": "The Dominion hoarded it and refused to release it. Gorven stole it to save a dying child. Now the subject of auditor pursuit.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "phantom_ledger_seal",
+      "name": "phantom-ledger seal",
+      "tagline": "Warded. Audited. Vocal.",
+      "artifact_type": "seal",
+      "origin": "Created by the Dominion's auditors to guard their vault.",
+      "powers": "Hums with a frequency that makes teeth ache. Warded with ledger-magic. Recognizes bloodline bonds to the original makers.",
+      "last_known_holder": "Kaethmir vault beneath administrative heart",
+      "status": "active",
+      "notes": "Gorven's grandmother's lockpicks could open it because of the bloodline bond. The seal whispered the grandmother's name.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "bone_compass_personalized",
+      "name": "bone-compass (Elara's craft)",
+      "tagline": "Guiding. Personal. Magical.",
+      "artifact_type": "compass / amulet",
+      "origin": "Carved by Elara from bone, each one personalized to individual holder's gift and strength.",
+      "powers": "Points toward the holder's hidden strength or gift rather than cardinal directions. Water-compass points to wells. Shelter-compass reveals memory of safe places. Color-compass enhances seer-sight.",
+      "last_known_holder": "Refugees (Elara's granddaughter, well-digger woman, elder refugee, child seer); Elara (one final silver compass on hearthstone).",
+      "status": "active",
+      "notes": "Represents personalized magic tied to individual nature rather than universal law. The final silver compass remains unexplained\u2014may be for Elara herself or a future use.",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "hemispheres": [
@@ -43847,7 +44347,7 @@
       "status": "contested",
       "notes": "No traditional government is mentioned. Power has devolved to shadow-merchants and occult practitioners. Vex's flooding of the market with counterfeits accelerates collapse.",
       "first_date": "2026-03-14",
-      "appearances": 69,
+      "appearances": 70,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "Dominion",
@@ -43868,7 +44368,7 @@
       "status": "stable (but secretly fractured)",
       "notes": "The Dominion's true state is the Crown's deepest secret. Sevin is now bound to maintain this illusion.",
       "first_date": "2026-03-14",
-      "appearances": 40,
+      "appearances": 42,
       "world": "The Known World",
       "hemisphere": "unknown",
       "realm": "The Dominion",
@@ -44431,7 +44931,7 @@
       "status": "active",
       "notes": "The Dominion attempted to burn it twice; fires burn blue and hot rather than destroying; glass becomes more alive and magical with each burning attempt.",
       "first_date": "2026-05-20",
-      "appearances": 39,
+      "appearances": 40,
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -44545,7 +45045,7 @@
       "status": "active",
       "notes": "The district's location above Gorven's workshop suggests the locksmith's work is essential to governmental security and control.",
       "first_date": "2026-06-07",
-      "appearances": 2,
+      "appearances": 3,
       "world": "The Known World",
       "hemisphere": "unknown",
       "continent": "unknown",
@@ -49395,7 +49895,7 @@
       "significance": "The Remaking is the defining catastrophe of this world. It has eliminated traditional wealth, created refugee crises, made truth and authority contestable, and forced all beings to reevaluate their values and survival strategies.",
       "notes": "Ongoing and expanding in scope. Three different versions of the State's ledger now coexist with no way to determine which is true. This represents a crisis of knowledge, authority, and historical record.",
       "first_date": "2026-05-27",
-      "appearances": 53
+      "appearances": 54
     },
     {
       "id": "the_remaking_aftermath",
@@ -50017,6 +50517,94 @@
       "notes": "Historical event referenced but not directly narrated. Exact details and date unknown.",
       "first_date": "2026-06-17",
       "appearances": 1
+    },
+    {
+      "id": "the_lockpicks_mercy",
+      "name": "The Lockpick's Mercy",
+      "tagline": "Theft. Compassion. Hunted.",
+      "event_type": "heist",
+      "scope": "city",
+      "epicenter_place": "Kaethmir",
+      "epicenter_region": "The Hearthlands",
+      "epicenter_realm": "The Dominion",
+      "affected_places": [
+        "Kaethmir"
+      ],
+      "affected_regions": [
+        "The Hearthlands"
+      ],
+      "affected_realms": [
+        "The Dominion"
+      ],
+      "radius": "Kaethmir and surrounding refugee camps",
+      "participants": [
+        "Gorven the Conjurer",
+        "refugee woman",
+        "Dominion auditors"
+      ],
+      "outcome": "Gorven successfully stole a vial of pre-Remaking starlight from the Dominion's vault, leaving blank ledger-pages in its place. The cure saved a dying child from wasting sickness, but now auditors hunt Gorven.",
+      "significance": "An act of defiance against Dominion hoarding that prioritizes individual mercy over state law. Demonstrates that the vault's security can be breached.",
+      "notes": "Auditors will hunt Gorven. The refugee woman offered consciousness-fragments as payment, which Gorven refused.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "the_wyverns_winter_mercy",
+      "name": "The Wyvern's Winter Mercy",
+      "tagline": "Redemption. Shelter. Compassion.",
+      "event_type": "encounter",
+      "scope": "regional",
+      "epicenter_place": "Ironspine cavern",
+      "epicenter_region": "The Steppe Marches",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Ironspine",
+        "burned lands"
+      ],
+      "affected_regions": [
+        "The Steppe Marches",
+        "The Ashen Reach"
+      ],
+      "affected_realms": [],
+      "radius": "Ironspine mountain range and surrounding refugee routes",
+      "participants": [
+        "Velka the Fragment-Hoarder",
+        "refugee child",
+        "refugees"
+      ],
+      "outcome": "Velka, moved by the child's story, opened her consciousness-fragment hoard to provide shelter and sustenance for refugees fleeing the burned lands through the winter. A dragon's pride remains, but enough is shared for survival.",
+      "significance": "First act of compassion by Velka in three hundred years. Transforms a hoarder into a shelter-keeper and suggests the Ascension/Remaking has changed even ancient beings.",
+      "notes": "Child's story about families split across competing ledgers and mothers selling consciousness-fragments moved Velka to action.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "the_merchants_threshold_kiss",
+      "name": "The Merchant's Threshold Kiss",
+      "tagline": "Love. Impossible. Separated.",
+      "event_type": "encounter",
+      "scope": "world",
+      "epicenter_place": "Wailing Scar",
+      "epicenter_region": "unknown",
+      "epicenter_realm": "unknown",
+      "affected_places": [
+        "Wailing Scar"
+      ],
+      "affected_regions": [],
+      "affected_realms": [
+        "The Dominion",
+        "The Deepkin Realms"
+      ],
+      "radius": "Between the eighth and ninth worlds",
+      "participants": [
+        "Kael",
+        "Vena"
+      ],
+      "outcome": "Kael and Vena met at the Wailing Scar, shared a threshold kiss, and affirmed their love across impossible realities. The threshold then collapsed, separating them permanently but leaving them with the knowledge that their love survives across worlds.",
+      "significance": "Demonstrates that love and connection can persist across cosmic barriers and timeline boundaries. A poignant affirmation that some bonds transcend physics.",
+      "notes": "Kael exists half-transcended between the eighth and ninth world. Vena is a deepkin captain. Their separation is permanent but they chose to remain devoted.",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "weapons": [
@@ -50500,6 +51088,32 @@
       "notes": "The Jewel is both an object of theft and a source of prophecy or agency. It offers binary choices, suggesting it may contain or convey divine will or wisdom. Its 'last prayer of a dying god' suggests it is a relic of a defunct deity.",
       "first_date": "2026-06-19",
       "appearances": 1
+    },
+    {
+      "id": "grandmothers_lockpicks",
+      "name": "grandmother's lockpicks",
+      "tagline": "Ancient. Bone-resonant. Hereditary.",
+      "weapon_type": "lockpicks",
+      "origin": "Crafted by Gorven's grandmother, who was also a thief who stole from tyrants. Made of meteoric copper.",
+      "powers": "Bone-resonant. Can recognize and open seals sealed with bone-resonance magic. Recognize Gorven's bloodline lineage.",
+      "last_known_holder": "Gorven the Conjurer",
+      "status": "active",
+      "notes": "Older than empires. Whispered Gorven's grandmother's name when used on the Dominion vault seal. Suggest hereditary magical bond.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "widow_consciousness_fragments_as_weapons",
+      "name": "consciousness-fragments (widow's seventeen)",
+      "tagline": "Haunting. Sentient. Traded.",
+      "weapon_type": "spiritual weapon / curse",
+      "origin": "Unknown; purchased from widow by Kelvan at caravan waystation. Represent voices and consciousness of drowned cartographer, bone-singers, soldiers, and others.",
+      "powers": "Fragments sing memories and emotions; communicate across distances; carry knowledge of drowned history and pre-Remaking starlight; may grant insight to holder or inflict psychological pressure.",
+      "last_known_holder": "Kelvan (abandoned sale at Pale Crossing waystation); current location unknown.",
+      "status": "unknown",
+      "notes": "Fragments' autonomous consciousness and singing suggest they are quasi-sentient weapons or tools; may be used for divination, cursing, communication, or consciousness-based magic.",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "factions": [
@@ -50945,7 +51559,7 @@
       "status": "active",
       "notes": "The Auditor-General commands soldiers to suppress refugee testimony and burn counter-ledgers. Their soldiers were made to forget their orders after encountering Liv's spoken-spell testimony.",
       "first_date": "2026-03-23",
-      "appearances": 10
+      "appearances": 11
     },
     {
       "id": "merchant_caravan",
@@ -50993,7 +51607,7 @@
       "status": "active",
       "notes": "Become the recipients of the Auditor-General's teaching about memory independent of ledgers. This skill becomes more valuable than gold.",
       "first_date": "2026-03-25",
-      "appearances": 22
+      "appearances": 25
     },
     {
       "id": "resource_hoarders",
@@ -52770,6 +53384,30 @@
       "notes": "The Seventeen are merfolk-touched merchants suspended at transcendence. They sing harmonics that make the Tear vibrate, suggesting they are magically significant or partially divine.",
       "first_date": "2026-06-22",
       "appearances": 1
+    },
+    {
+      "id": "furnace_workers",
+      "name": "Furnace-workers",
+      "tagline": "Burned. Controlled. Resisting.",
+      "alignment": "neutral / resisting tyranny",
+      "goals": "Maintain craft autonomy, preserve old songs and techniques, resist Dominion control of glass-forging.",
+      "leader": "Telyn (emerging, inspirational)",
+      "status": "rising",
+      "notes": "After Telyn's defiance, other furnace-workers began to sing the old songs, suggesting emerging collective resistance. May be organizing or gaining confidence.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "refugees_burned_lands",
+      "name": "refugees (from burned lands)",
+      "tagline": "Displaced. Desperate. Surviving.",
+      "alignment": "neutral / chaotic",
+      "goals": "Escape the burned lands; reach old settlements with food and shelter; survive through the Bleached Wastes.",
+      "leader": "Elara's granddaughter (de facto)",
+      "status": "active",
+      "notes": "Led by young woman; aided by Elara's bone-compasses; traveling through Bleached Wastes on hope and guidance.",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "lore": [
@@ -52898,7 +53536,7 @@
       "status": "confirmed",
       "notes": "Kept alive in stone and flame by the forges; one old song is specifically a song of protection sung when making weapons for heroes. Korgan sings it to bind Kess to his service.",
       "first_date": "2026-03-03",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "stonecraft_tongue",
@@ -53294,7 +53932,7 @@
       "description": "A cataclysmic event in which reality itself was rewritten. The Remaking refers to both a past catastrophe and an ongoing threat: the convergence of two versions of history recorded in the Imperial ledgers\u2014one written forward by conventional time, one backward by beings who experience time in reverse. A second Remaking could occur if the phantom-shadow fragment completes its rewrite of history in real-time.",
       "first_story": "The Phantom Ledger",
       "first_date": "2026-03-12",
-      "appearances": 23,
+      "appearances": 26,
       "story_appearances": [
         {
           "date": "2026-03-12",
@@ -53850,7 +54488,7 @@
       "status": "confirmed",
       "notes": "A cosmic event that reshaped reality. Nethys knew it was coming and chose it because the alternative was worse. Multiple characters seek to understand, undo, or manipulate it.",
       "first_date": "2026-03-31",
-      "appearances": 5
+      "appearances": 6
     },
     {
       "id": "ledger_magic_history",
@@ -55922,6 +56560,28 @@
       "notes": "A state of being caught at the exact moment of cosmic convergence, resulting in partial luminosity, backward-cast shadow, and the ability to walk between competing world-iterations. Lysander is the known case.",
       "first_date": "2026-06-21",
       "appearances": 1
+    },
+    {
+      "id": "wasting_sickness",
+      "name": "wasting sickness",
+      "tagline": "Consuming. Epidemic. Fatal.",
+      "category": "legend",
+      "source": "Refugee camps",
+      "status": "confirmed",
+      "notes": "A consumption disease spreading through refugee camps. Can be cured by pre-Remaking starlight. The Dominion hoarded the cure and refused to release it.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "consciousness_fragments_as_fuel",
+      "name": "Consciousness-fragments as Fuel",
+      "tagline": "Price. Memory. Labor.",
+      "category": "history / economics",
+      "source": "Dominion policy enforced by auditors",
+      "status": "confirmed / active",
+      "notes": "The Dominion requires consciousness-fragments as payment/fuel for artisan labor. Each piece of glass costs memory; each blade costs identity. This is a form of magical tax or indentured labor that extracts souls.",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "flora_fauna": [
@@ -55935,7 +56595,7 @@
       "status": "thriving",
       "notes": "The offspring of Prince Aldren and Skyrakis's daughter are described as 'wyvern-blooded heirs.' Aldren's counter-oath ensures these hybrid creatures will have the free choice to serve either their dragon heritage or their human kin.",
       "first_date": "2026-02-28",
-      "appearances": 58
+      "appearances": 60
     },
     {
       "id": "wolf_spirit_beast",
@@ -56316,7 +56976,7 @@
       "status": "thriving",
       "notes": "Living coral appears to be a form of deepkin agriculture or biomancy. Captain Nerys's ship is made of reformed wrecks and living coral, suggesting it is a conscious or semi-conscious entity.",
       "first_date": "2026-06-02",
-      "appearances": 4
+      "appearances": 5
     },
     {
       "id": "forest_deer",
@@ -57398,7 +58058,7 @@
       "status": "known",
       "notes": "A technique tied to glass-forging that allows consciousness-fragments to resonate and reform from fractured states. It is tied to the old tongue and pre-Remaking craft knowledge. The Dominion actively suppresses this technique.",
       "first_date": "2026-06-18",
-      "appearances": 3
+      "appearances": 4
     },
     {
       "id": "old_tongue",
@@ -57628,7 +58288,7 @@
       "status": "active",
       "notes": "Accepted by Meren Blackwater; the nature of the debt is ongoing.",
       "first_date": "2026-03-10",
-      "appearances": 41
+      "appearances": 42
     },
     {
       "id": "vethis_sacrificed_consciousness",
@@ -58565,6 +59225,42 @@
       "notes": "Broken open by Ashira's ancient singing. Represents the fragility of pre-Remaking magical systems.",
       "first_date": "2026-06-22",
       "appearances": 1
+    },
+    {
+      "id": "blank_ledger_pages",
+      "name": "blank ledger-pages",
+      "tagline": "Empty. Defiant. Unmarked.",
+      "origin": "Created by Gorven as replacement theft.",
+      "power": "Serve as stand-in for stolen vial, create auditor confusion and delay.",
+      "curse": "Drawing auditor attention and pursuit.",
+      "status": "active",
+      "notes": "Gorven left three blank ledger-pages in place of the stolen starlight vial. Auditors found them and began hunting her.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "starlight_glass",
+      "name": "starlight-glass",
+      "tagline": "Luminous. Impossible. Transcendent.",
+      "origin": "Kael carries it as a merchant item between worlds.",
+      "power": "Commodity traded at the threshold where impossible commerce happens. Holds or reflects starlight.",
+      "curse": "unknown",
+      "status": "active",
+      "notes": "Kael carries starlight-glass; Vena carries charts of drowned cities. Both are impossible items for commerce between timelines.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "widow_compass_relic",
+      "name": "Widow's Compass",
+      "tagline": "Bone. Guidance. Healing.",
+      "origin": "Bone-carved and grandmother-blessed; passed to Alenna the widow.",
+      "power": "Points toward what needs healing or fixing rather than toward the lost or dead. Navigates the lost and broken toward healing communities.",
+      "curse": "The compass is a liar in that it does not point toward the dead, which caused Alenna grief\u2014it could not bring her husband back.",
+      "status": "active",
+      "notes": "Now points downward toward seeds and growing things. Alenna uses it to navigate toward refugee camps and healing work. Its ultimate power and origin (grandmother's blessing? elder craft? both?) remain mysterious.",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "regions": [
@@ -58903,7 +59599,7 @@
       "status": "active",
       "notes": "The pre-human ruins now glow with inner light and their inscriptions shimmer, suggesting they were built in anticipation of the current cosmic moment.",
       "first_date": "2026-03-04",
-      "appearances": 17,
+      "appearances": 18,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -59588,7 +60284,7 @@
       "status": "contested / fragmented",
       "notes": "The waters are singing and remembering. The boundary-covenant is failing or being actively broken. Three days remain before Dominion intervention.",
       "first_date": "2026-05-06",
-      "appearances": 6,
+      "appearances": 7,
       "world": "The Known World",
       "hemisphere": "unknown",
       "province": "unknown",
@@ -60412,7 +61108,7 @@
       "use": "Trade in night-markets; feeding to cosmic entities like the Obsidian Tower; accumulation as wealth.",
       "notes": "Consciousness-fragments represent the shift from material to metaphysical wealth; they retain agency and memory of their origin.",
       "first_date": "2026-04-27",
-      "appearances": 51
+      "appearances": 53
     },
     {
       "id": "phantom_truths_substance",
@@ -60472,7 +61168,7 @@
       "use": "Military weapons and equipment",
       "notes": "The Dominion/Syndicate converts ornamental glass into weapon-glass, destroying cultural artifacts in the process. The specific properties of weapon-glass are unspecified.",
       "first_date": "2026-05-21",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "substance_awareness_shards",
@@ -60580,7 +61276,7 @@
       "use": "Weapon-forging; the Tidecaller's Fang is forged from meteoric iron.",
       "notes": "Meteoric iron appears to hold properties beyond ordinary metal, making it fit for weapons of legendary status.",
       "first_date": "2026-05-24",
-      "appearances": 6
+      "appearances": 7
     },
     {
       "id": "obsidian_sand",
@@ -61036,7 +61732,7 @@
       "use": "Pre-Remaking wealth storage and hoarding; no longer valuable.",
       "notes": "Kolrith's nine-century hoard of gold became worthless after The Remaking, driving her philosophical shift toward teaching Mera instead of profiting from her.",
       "first_date": "2026-06-04",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "starlight_glass",
@@ -61588,7 +62284,7 @@
       "use": "Forged into hands or tools for lockpicking and safecracking. Given as payment by curse-merchants.",
       "notes": "Appears to be extraterrestrial in origin. Resistant to normal corrosion until cursed.",
       "first_date": "2026-06-18",
-      "appearances": 2
+      "appearances": 3
     },
     {
       "id": "starlight_fragments",
@@ -61792,6 +62488,42 @@
       "use": "For mapping, recording journeys, and learning cartography. In the post-Remaking world, blank parchment is covered across waystation libraries, awaiting new methods of documentation.",
       "notes": "Symbolically important: the blank parchment represents both the unknown future and the challenge of documenting a remade world without relying on traditional cartography.",
       "first_date": "2026-06-22",
+      "appearances": 1
+    },
+    {
+      "id": "pre_remaking_starlight",
+      "name": "pre-Remaking starlight",
+      "tagline": "Ancient. Glowing. Precious.",
+      "type": "essence",
+      "rarity": "legendary",
+      "properties": "Glows like captured hope. Has medicinal/curative properties.",
+      "use": "Cure for wasting sickness/consumption. Hoarded by the Dominion as evidence. Traded at threshold-commerce.",
+      "notes": "Stored in vials. The Dominion locked a vial in Kaethmir vault and refused to release it despite its curative powers. Gorven stole it to save a dying child.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "bone_carving_material",
+      "name": "bone (for compass carving)",
+      "tagline": "Sacred. Attuned. Guiding.",
+      "type": "material / crafting medium",
+      "rarity": "common / rare (when attuned)",
+      "properties": "Bone can be carved into compasses that attune to individual human gifts and strengths. Responds to personal knowledge and magical intention during carving process.",
+      "use": "Primary material for bone-compass crafting; represents connection to personal gift and strength rather than universal magnetism.",
+      "notes": "Elara uses bone as medium; suggests bone-singing traditions and prior magical use of bone in this world.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "silver_substance",
+      "name": "silver (for compass)",
+      "tagline": "Rare. Special. Final.",
+      "type": "metal / crafting material",
+      "rarity": "rare",
+      "properties": "Silver used by Elara to create final mysterious compass left on hearthstone. Properties and purpose unclear.",
+      "use": "Crafting compass of unknown purpose; may have special magical properties for seal-keeping, personal magic, or communication.",
+      "notes": "Elara's choice of silver over bone for final compass suggests different purpose or significance. May connect to moon magic, consciousness-based systems, or personal ritual.",
+      "first_date": "2026-06-23",
       "appearances": 1
     }
   ],
@@ -62926,6 +63658,38 @@
       "notes": "The renewal is being forced by the Tear's failure and the deepkin council's demands for certainty.",
       "first_date": "2026-06-22",
       "appearances": 1
+    },
+    {
+      "id": "furnace_song_old",
+      "name": "Furnace-song (Old Songs)",
+      "tagline": "Ancient. Resistant. Artistic.",
+      "ritual_type": "craft / resistance / memory",
+      "performed_by": [
+        "Telyn",
+        "furnace-workers"
+      ],
+      "requirements": "Knowledge of old songs predating Dominion control. A furnace or kiln-heart. Consciousness-fragments as fuel.",
+      "effect": "When sung by defiant artisans, the furnace sings not docile Dominion songs but something older that remembers when glass-work was art. This causes transformation\u2014Telyn's blade became a mirror; Thyra's spear-heads became luminous dust.",
+      "cost": "Consciousness-fragments as fuel. The artisan must resist Dominion authority and risk auditor discovery.",
+      "notes": "The old songs appear to predate the Dominion and preserve pre-conquest craft memory. They may be tied to pre-human civilization or elder magic. Multiple artisans are learning them, suggesting organized resistance.",
+      "first_date": "2026-06-23",
+      "appearances": 1
+    },
+    {
+      "id": "furnace_song_dominion",
+      "name": "Furnace-song (Dominion Version)",
+      "tagline": "Controlled. Docile. Enforced.",
+      "ritual_type": "craft / labor control",
+      "performed_by": [
+        "auditors",
+        "Dominion-compliant artisans"
+      ],
+      "requirements": "Consciousness-fragments as fuel. Auditor oversight. Furnace or kiln-heart.",
+      "effect": "The Dominion-taught furnace-song produces predictable, obedient weapon-glass that shatters, dulls, and serves tyrants as intended.",
+      "cost": "Consciousness-fragments (paid as tax or forced labor). Artistic autonomy. Identity and memory.",
+      "notes": "This version is described as 'docile' and enforces Dominion control over artisan labor. Resistance involves learning the older version.",
+      "first_date": "2026-06-23",
+      "appearances": 1
     }
   ],
   "polities": [
@@ -63043,7 +63807,7 @@
       "description": "A realm that is actively collapsing under the weight of fractured realities, stolen memories, and the Archivist's grand working. The black market in shadow-merchants has become the only reliable currency and governance structure.",
       "notes": "No traditional sovereign is mentioned. Power appears to have shifted to the black market and shadow-merchants. The Archivist operates within this power vacuum.",
       "first_date": "2026-03-14",
-      "appearances": 84
+      "appearances": 86
     },
     {
       "id": "the_hegemony",
@@ -63109,7 +63873,7 @@
       "description": "Central authority of surface kingdoms seeking to erase refugee testimony and suppress unlicensed knowledge-brokers. Operates through auditors and official channels.",
       "notes": "Mara works to investigate information-brokers on their behalf; her choice determines whether refugee testimony is institutionalized or suppressed.",
       "first_date": "2026-03-30",
-      "appearances": 30
+      "appearances": 31
     },
     {
       "id": "the_hegemon",
